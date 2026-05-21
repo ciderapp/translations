@@ -1,0 +1,50 @@
+name: 🌐 Translation contribution
+description: Propose or correct a translation for any locale.
+title: "[translation] "
+labels: ["translation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Fill in the fields below. The bot validates and posts a preview within ~1 minute. A maintainer reviews and labels the issue `approved` to apply the change.
+
+        Adding a brand-new language? Use the `[language] Add <Name>` title pattern instead; the bot skips those and a maintainer handles them manually.
+
+  - type: input
+    id: language
+    attributes:
+      label: Language code
+      description: |
+        BCP-47 locale code, e.g. `es`, `fr`, `de`, `pt-BR`, `zh-CN`.
+        Must already exist in [`locales/languages.yml`](../blob/main/locales/languages.yml).
+      placeholder: es
+    validations:
+      required: true
+
+  - type: textarea
+    id: translations
+    attributes:
+      label: Translations
+      description: |
+        One per line as `key.path: Translated text`, or a YAML block.
+        Wrap any value that contains a colon in double quotes.
+
+        **Placeholders must be preserved exactly.** If the English string is `Loading {n} tracks…`, your translation must include `{n}`. The bot will flag missing placeholders.
+
+        **Proper nouns stay in English:** Cider, Apple Music, AirPlay, Dolby Atmos, Chromecast, AudioLab, ListenBrainz, Last.fm, Maloja, Discord.
+      placeholder: |
+        action.apply: Aplicar
+        action.back: Atrás
+        smartPlaylist.building.analyzing: "Analizando flujo ({done}/{total})…"
+      render: yaml
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes (optional)
+      description: |
+        Anything worth flagging: ambiguity in the English, cultural considerations, regional variation, alternatives you considered, etc.
+    validations:
+      required: false

@@ -1,0 +1,78 @@
+#############################################################################################
+# AI translation fill
+#
+# Purpose: When locales/en-US.yml changes (because Citadel just synced it),
+#          run Gemini to fill new and changed strings into every other locale.
+#          Commits directly to main with [skip ci] so we don't recurse.
+#
+# Required secrets:
+#   GEMINI_API_KEY: Google Gemini API key with generateContent access.
+#############################################################################################
+
+name: AI fill
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "locales/en-US.yml"
+      - "locales/languages.yml"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Re-translate everything (ignores existing files)"
+        type: boolean
+        default: false
+      lang:
+        description: "Limit to one locale (e.g. es). Leave blank for all."
+        type: string
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ai-fill-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  fill:
+    name: Translate delta with Gemini
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Need previous commit so the translator can git-show HEAD:locales/en-US.yml
+          # and diff to detect which keys changed.
+          fetch-depth: 2
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - run: npm install --no-package-lock
+
+      - name: Translate delta
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          FORCE_FLAG: ${{ inputs.force }}
+          LANG_FILTER: ${{ inputs.lang }}
+        run: |
+          set -euo pipefail
+          args=()
+          if [ "${FORCE_FLAG}" = "true" ]; then args+=(--force); fi
+          if [ -n "${LANG_FILTER:-}" ]; then args+=(--lang "${LANG_FILTER}"); fi
+          node scripts/i18n-translate.mjs "${args[@]}"
+
+      - name: Commit translations
+        run: |
+          set -euo pipefail
+          if git diff --quiet locales/; then
+            echo "No locale changes after translation pass."
+            exit 0
+          fi
+          git config user.name  'cider-i18n-bot'
+          git config user.email 'i18n-bot@cider.sh'
+          git add locales/
+          git commit -m "chore(i18n): AI fill [skip ci]"
+          git push

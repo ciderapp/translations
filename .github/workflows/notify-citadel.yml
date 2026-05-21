@@ -1,0 +1,74 @@
+#############################################################################################
+# Notify Citadel
+#
+# Purpose: After any locale file is updated here (AI fill or community
+#          contribution), dispatch a repository_dispatch event to
+#          ciderapp/Citadel so its i18n-pull workflow can fetch the updates
+#          and open a PR for the next OTA build.
+#
+# Required secrets (org-level, see SETUP.md):
+#   CIDER_I18N_BOT_APP_ID      — GitHub App identifier
+#   CIDER_I18N_BOT_PRIVATE_KEY — PEM contents of the App's private key
+# The App must be installed on ciderapp/Citadel with Contents: write.
+#############################################################################################
+
+name: Notify Citadel
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "locales/*.yml"
+
+# This workflow uses a freshly-minted GitHub App installation token for the
+# cross-repo dispatch and never touches GITHUB_TOKEN. Stripping default-token
+# permissions removes the blast radius if a future step accidentally
+# references it.
+permissions: {}
+
+# Debounce bursts of locale commits (AI fill of N locales, back-to-back
+# community-issue applies, etc.) into a single dispatch. The job sleeps for
+# DEBOUNCE_SECONDS; any newer push to locales/ cancels this run and starts a
+# fresh one. After the quiet window passes, the latest run wakes up and fires
+# one dispatch carrying the most recent SHA.
+concurrency:
+  group: notify-citadel
+  cancel-in-progress: true
+
+jobs:
+  dispatch:
+    name: Debounce and fire repository_dispatch
+    runs-on: ubuntu-latest
+    env:
+      DEBOUNCE_SECONDS: 90
+    steps:
+      - name: ⏳ Debounce window
+        run: |
+          echo "Waiting ${DEBOUNCE_SECONDS}s. A newer push to locales/ will cancel this run."
+          sleep "${DEBOUNCE_SECONDS}"
+
+      - name: 🪪 Mint App installation token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.CIDER_I18N_BOT_APP_ID }}
+          private-key: ${{ secrets.CIDER_I18N_BOT_PRIVATE_KEY }}
+          owner: ciderapp
+          repositories: Citadel
+          permission-contents: write
+
+      - name: POST /repos/ciderapp/Citadel/dispatches
+        env:
+          DISPATCH_TOKEN: ${{ steps.app-token.outputs.token }}
+          TRANSLATIONS_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+
+          curl --fail-with-body -sS -X POST \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer ${DISPATCH_TOKEN}" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            https://api.github.com/repos/ciderapp/Citadel/dispatches \
+            -d "{\"event_type\":\"translations-updated\",\"client_payload\":{\"translations_sha\":\"${TRANSLATIONS_SHA}\"}}"
+
+          echo "Dispatched translations-updated to ciderapp/Citadel"
