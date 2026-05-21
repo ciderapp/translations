@@ -1,0 +1,36 @@
+#############################################################################################
+# Bot test suite
+#
+# Runs on PR when scripts or tests change. Covers the issue bot's parser,
+# security gates, and validation pipeline. Keeps the hardening from regressing.
+#############################################################################################
+
+name: Tests
+
+on:
+  pull_request:
+    paths:
+      - "scripts/**"
+      - "test/**"
+      - "package.json"
+  push:
+    branches: [main]
+    paths:
+      - "scripts/**"
+      - "test/**"
+      - "package.json"
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: node --test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - run: npm install --no-package-lock
+      - run: npm test

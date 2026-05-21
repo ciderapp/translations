@@ -1,0 +1,92 @@
+#############################################################################################
+# Translation issue bot
+#
+# Purpose: Community contributions come in as issues, not PRs. This workflow:
+#   1. On opened/edited: validate the issue body, post a preview comment.
+#   2. On labeled `approved` (by a maintainer): apply the translation to the
+#      target locale file, commit it, close the issue.
+#
+# The `approved` label is only honored when added by a repo MEMBER, OWNER, or
+# COLLABORATOR. Ordinary users adding the label have no effect.
+#############################################################################################
+
+name: Translation issue
+
+on:
+  issues:
+    types: [opened, edited, labeled]
+
+# Least-privilege at the workflow level. Individual jobs widen as needed.
+# Nothing here ever runs on pull_request, so even if a malicious PR landed,
+# this workflow's secrets would not be reachable from that PR's code.
+permissions: {}
+
+jobs:
+  validate:
+    if: |
+      contains(github.event.issue.labels.*.name, 'translation') &&
+      (github.event.action == 'opened' || github.event.action == 'edited')
+    name: Validate and preview
+    runs-on: ubuntu-latest
+    # Just needs to post a comment on the issue.
+    permissions:
+      issues: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - run: npm install --no-package-lock
+      - name: Run linter
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          MODE: validate
+        run: node scripts/lint-translation-issue.mjs
+
+  apply:
+    if: |
+      github.event.action == 'labeled' &&
+      github.event.label.name == 'approved' &&
+      contains(github.event.issue.labels.*.name, 'translation') &&
+      contains(fromJSON('["MEMBER","OWNER","COLLABORATOR"]'), github.event.sender.author_association)
+    name: Apply approved translation
+    runs-on: ubuntu-latest
+    # Needs to write the locale file (contents) and comment + close (issues).
+    permissions:
+      contents: write
+      issues: write
+    # Serialize approvals so two simultaneous `approved` labels can't race
+    # against each other when writing the same locale file. Don't cancel:
+    # losing an approved contribution mid-write would be worse than waiting.
+    concurrency:
+      group: translation-issue-apply
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - run: npm install --no-package-lock
+      - name: Apply to locale file
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          MODE: apply
+        run: node scripts/lint-translation-issue.mjs
+      - name: Commit and push
+        run: |
+          set -euo pipefail
+          if git diff --quiet locales/; then
+            echo "No file changes after apply. Was the issue already applied?"
+            exit 0
+          fi
+          git config user.name  'cider-i18n-bot'
+          git config user.email 'i18n-bot@cider.sh'
+          git add locales/
+          git commit -m "feat(i18n): apply translation from #${{ github.event.issue.number }}"
+          git push
