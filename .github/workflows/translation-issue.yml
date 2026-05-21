@@ -79,7 +79,8 @@ jobs:
           permission-contents: write
       - uses: actions/checkout@v4
         with:
-          token: ${{ steps.app-token.outputs.token }}
+          # The push authenticates explicitly with the App token below.
+          persist-credentials: false
       - uses: actions/setup-node@v4
         with:
           node-version: "24"
@@ -93,6 +94,8 @@ jobs:
           MODE: apply
         run: node scripts/lint-translation-issue.mjs
       - name: Commit and push
+        env:
+          APP_TOKEN: ${{ steps.app-token.outputs.token }}
         run: |
           set -euo pipefail
           # Stage first, then diff the index. A first-ever contribution for a
@@ -106,4 +109,5 @@ jobs:
           git config user.name  'saki-yuzishima[bot]'
           git config user.email '286499753+saki-yuzishima[bot]@users.noreply.github.com'
           git commit -m "feat(i18n): apply translation from #${{ github.event.issue.number }}"
-          git push
+          # Token explicit in the URL — does not depend on stored credentials.
+          git push "https://x-access-token:${APP_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" HEAD:main

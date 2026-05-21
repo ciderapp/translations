@@ -4,12 +4,20 @@
 # Purpose: When locales/en-US.yml changes (because Citadel just synced it),
 #          run Gemini to fill new and changed strings into every other locale.
 #
-# Commits + pushes via the Saki-Yuzishima App installation token, NOT the
-# default GITHUB_TOKEN. This is deliberate: GITHUB_TOKEN pushes do not trigger
-# downstream workflows, which would leave notify-citadel.yml dormant and break
-# the sync chain to Citadel. An App-token push triggers it normally. No
-# recursion: this workflow only triggers on en-US.yml / languages.yml, and the
-# files it commits are the *other* locales.
+# Token handling, learned the expensive way:
+#   - The Gemini pass can run well over an hour. A GitHub App installation
+#     token only lives 1 hour, so it is minted AFTER translation, immediately
+#     before the push — never at job start.
+#   - The push authenticates with that token explicitly in the remote URL. It
+#     does not rely on actions/checkout credential persistence (checkout runs
+#     with persist-credentials: false).
+#   - Pushing via the App token (not GITHUB_TOKEN) is also what lets the push
+#     trigger notify-citadel.yml; GITHUB_TOKEN pushes do not trigger workflows.
+#   - The translated files are uploaded as an artifact before the push, so a
+#     run's Gemini spend is recoverable even if the push somehow fails.
+#
+# No recursion: this workflow triggers only on en-US.yml / languages.yml, and
+# the files it commits are the *other* locales.
 #
 # Required secrets (org-level):
 #   GEMINI_API_KEY             — Google Gemini API key with generateContent access
@@ -48,21 +56,13 @@ jobs:
     name: Translate delta with Gemini
     runs-on: ubuntu-latest
     steps:
-      - name: 🪪 Mint App installation token
-        id: app-token
-        uses: actions/create-github-app-token@v1
-        with:
-          app-id: ${{ secrets.CIDER_I18N_BOT_APP_ID }}
-          private-key: ${{ secrets.CIDER_I18N_BOT_PRIVATE_KEY }}
-          permission-contents: write
-
       - uses: actions/checkout@v4
         with:
           # fetch-depth 2 lets the translator inspect the prior en-US.yml.
-          # token: the App installation token, so the later push is attributed
-          # to saki-yuzishima[bot] and triggers notify-citadel.yml.
+          # persist-credentials: false — the push at the end authenticates
+          # explicitly with a freshly-minted App token, not a stored one.
           fetch-depth: 2
-          token: ${{ steps.app-token.outputs.token }}
+          persist-credentials: false
 
       - uses: actions/setup-node@v4
         with:
@@ -82,7 +82,32 @@ jobs:
           if [ -n "${LANG_FILTER:-}" ]; then args+=(--lang "${LANG_FILTER}"); fi
           node scripts/i18n-translate.mjs "${args[@]}"
 
-      - name: Commit translations
+      # Recovery net: upload the translated files before the push is attempted.
+      # If the push fails for any reason, the run's Gemini output is still
+      # downloadable from the run's Artifacts, so the spend is never lost.
+      - name: Upload translated locales (recovery artifact)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: locales
+          path: locales/
+          retention-days: 7
+          if-no-files-found: warn
+
+      # Minted HERE, not at job start: a full fill can outlast the 1-hour
+      # installation-token lifetime. Minting right before the push keeps the
+      # token fresh when it is actually used.
+      - name: 🪪 Mint App installation token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.CIDER_I18N_BOT_APP_ID }}
+          private-key: ${{ secrets.CIDER_I18N_BOT_PRIVATE_KEY }}
+          permission-contents: write
+
+      - name: Commit and push translations
+        env:
+          APP_TOKEN: ${{ steps.app-token.outputs.token }}
         run: |
           set -euo pipefail
           # Stage first, then diff the index. `git diff` alone ignores
@@ -96,4 +121,6 @@ jobs:
           git config user.name  'saki-yuzishima[bot]'
           git config user.email '286499753+saki-yuzishima[bot]@users.noreply.github.com'
           git commit -m "chore(i18n): AI fill"
-          git push
+          # Token explicit in the URL — does not depend on stored credentials.
+          # GITHUB_REPOSITORY is owner/repo; the App token is auto-masked in logs.
+          git push "https://x-access-token:${APP_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" HEAD:main
