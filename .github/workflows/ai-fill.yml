@@ -67,12 +67,15 @@ jobs:
       - name: Commit translations
         run: |
           set -euo pipefail
-          if git diff --quiet locales/; then
+          # Stage first, then diff the index. `git diff` alone ignores
+          # untracked files, so a first-ever fill (all-new locale files)
+          # would look like "no changes" and never commit.
+          git add locales/
+          if git diff --cached --quiet; then
             echo "No locale changes after translation pass."
             exit 0
           fi
           git config user.name  'cider-i18n-bot'
           git config user.email 'i18n-bot@cider.sh'
-          git add locales/
           git commit -m "chore(i18n): AI fill [skip ci]"
           git push
