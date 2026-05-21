@@ -113,23 +113,41 @@ function saveTranslation(lang, entries) {
 }
 
 // ── Source snapshotting (git-backed staleness detection) ─────────────────────
-// To know which keys changed since the last AI pass, compare the working-tree
-// en-US.yml against its committed version. Keys whose English value differs
-// need re-translation in every locale, regardless of provenance.
+// changedSourceKeys = keys whose English text differs from the previous
+// en-US.yml state. `sourceStrings` (read in main) is always the working tree;
+// this returns the "before" snapshot to diff it against:
+//   - en-US.yml has uncommitted edits → the latest change is local, so
+//     "before" is HEAD (covers a dev running the extractor, then this script).
+//   - en-US.yml is clean → the latest change IS the HEAD commit (the normal
+//     CI case: en-US.yml arrived already committed), so "before" is HEAD~1.
+// A missing ref or path (first commit, fresh clone, non-git) falls back to {},
+// so every key counts as new.
 function loadPreviousSource() {
   const relPath = relative(ROOT, SOURCE_FILE).replace(/\\/g, '/');
+
+  const showAtRef = (ref) => {
+    try {
+      const out = execSync(`git show ${ref}:${relPath}`, {
+        cwd: ROOT,
+        encoding: 'utf8',
+        stdio: ['ignore', 'pipe', 'ignore'],
+      });
+      return parseYaml(out) ?? {};
+    } catch {
+      return null;
+    }
+  };
+
+  let workingTreeDirty = false;
   try {
-    const out = execSync(`git show HEAD:${relPath}`, {
-      cwd: ROOT,
-      encoding: 'utf8',
-      stdio: ['ignore', 'pipe', 'ignore'],
-    });
-    return parseYaml(out) ?? {};
+    execSync(`git diff --quiet HEAD -- ${relPath}`, { cwd: ROOT, stdio: 'ignore' });
   } catch {
-    // File didn't exist at HEAD (first commit, or rename), or not a git
-    // checkout. Treat all keys as new.
-    return {};
+    // Non-zero exit: en-US.yml differs from HEAD (or there is no HEAD).
+    workingTreeDirty = true;
   }
+
+  const before = workingTreeDirty ? showAtRef('HEAD') : showAtRef('HEAD~1');
+  return before ?? {};
 }
 
 // ── Gemini API ────────────────────────────────────────────────────────────────
@@ -302,9 +320,9 @@ async function main() {
   if (FORCE) {
     log.warn('--force: every key will be re-translated');
   } else if (changedSourceKeys.size > 0) {
-    log.info(`Source changes since last commit: ${changedSourceKeys.size} key(s)`);
+    log.info(`Changed English keys to re-translate: ${changedSourceKeys.size}`);
   } else {
-    log.info('Source unchanged since last commit. Only filling missing entries.');
+    log.info('No English changes detected. Only filling missing entries.');
   }
 
   // Resolve target languages from locales/languages.yml.
