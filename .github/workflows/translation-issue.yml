@@ -81,12 +81,15 @@ jobs:
       - name: Commit and push
         run: |
           set -euo pipefail
-          if git diff --quiet locales/; then
+          # Stage first, then diff the index. A first-ever contribution for a
+          # language creates a new untracked file, which `git diff` alone
+          # would not see.
+          git add locales/
+          if git diff --cached --quiet; then
             echo "No file changes after apply. Was the issue already applied?"
             exit 0
           fi
           git config user.name  'cider-i18n-bot'
           git config user.email 'i18n-bot@cider.sh'
-          git add locales/
           git commit -m "feat(i18n): apply translation from #${{ github.event.issue.number }}"
           git push
