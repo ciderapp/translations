@@ -61,6 +61,10 @@ jobs:
           ISSUE_NUMBER: ${{ github.event.issue.number }}
           ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
           ISSUE_BODY: ${{ github.event.issue.body }}
+          # 'opened' or 'edited': the linter uses this to phrase the comment
+          # differently and to upsert (edit) its own previous comment rather
+          # than posting a new one for every edit.
+          ISSUE_ACTION: ${{ github.event.action }}
           MODE: validate
         run: node scripts/lint-translation-issue.mjs
 
@@ -121,6 +125,7 @@ jobs:
           ISSUE_NUMBER: ${{ github.event.issue.number }}
           ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
           ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_ACTION: ${{ github.event.action }}
           MODE: apply
         run: node scripts/lint-translation-issue.mjs
       - name: Commit and push

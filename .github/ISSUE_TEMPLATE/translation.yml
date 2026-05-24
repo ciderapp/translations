@@ -8,6 +8,12 @@ body:
       value: |
         Fill in the fields below. The bot validates and posts a preview within ~1 minute. A maintainer reviews and labels the issue `approved` to apply the change.
 
+        ### Where to find keys
+
+        - 🇬🇧 **English source of truth:** [`locales/en-US.yml`](https://github.com/ciderapp/translations/blob/main/locales/en-US.yml) lists every translatable key with its English text.
+        - 🌐 **Your language's current state:** browse [`locales/`](https://github.com/ciderapp/translations/tree/main/locales) and open `<your-code>.yml` to see what's already translated (or AI-filled) for the language you want to improve.
+        - 📚 **Supported locale codes:** [`locales/languages.yml`](https://github.com/ciderapp/translations/blob/main/locales/languages.yml).
+
         Adding a brand-new language? Use the `[language] Add <Name>` title pattern instead; the bot skips those and a maintainer handles them manually.
 
   - type: input
@@ -15,8 +21,7 @@ body:
     attributes:
       label: Language code
       description: |
-        BCP-47 locale code, e.g. `es`, `fr`, `de`, `pt-BR`, `zh-CN`.
-        Must already exist in [`locales/languages.yml`](../blob/main/locales/languages.yml).
+        BCP-47 locale code, e.g. `es`, `fr`, `de`, `pt-BR`, `zh-CN`. Must already exist in [`locales/languages.yml`](https://github.com/ciderapp/translations/blob/main/locales/languages.yml).
       placeholder: es
     validations:
       required: true
@@ -26,8 +31,9 @@ body:
     attributes:
       label: Translations
       description: |
-        One per line as `key.path: Translated text`, or a YAML block.
-        Wrap any value that contains a colon in double quotes.
+        Look up the keys you want to translate in [`locales/en-US.yml`](https://github.com/ciderapp/translations/blob/main/locales/en-US.yml), then check your language's existing entries at `locales/<your-code>.yml` (browse the directory [here](https://github.com/ciderapp/translations/tree/main/locales)).
+
+        One per line as `key.path: Translated text`, or a YAML block. Wrap any value that contains a colon in double quotes.
 
         **Placeholders must be preserved exactly.** If the English string is `Loading {n} tracks…`, your translation must include `{n}`. The bot will flag missing placeholders.
 
