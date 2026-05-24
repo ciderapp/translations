@@ -13,18 +13,10 @@ Community translation files for [Cider](https://cider.sh)
 </p>
 
 <p align="center">
-  <a href="../../actions/workflows/ai-fill.yml">
-    <img alt="AI fill" src="https://img.shields.io/github/actions/workflow/status/ciderapp/translations/ai-fill.yml?branch=main&label=AI%20fill&style=flat-square">
-  </a>
-  <a href="../../actions/workflows/translation-issue.yml">
-    <img alt="Issue bot" src="https://img.shields.io/github/actions/workflow/status/ciderapp/translations/translation-issue.yml?branch=main&label=Issue%20bot&style=flat-square">
-  </a>
-  <a href="locales/languages.yml">
-    <img alt="Languages" src="https://img.shields.io/badge/languages-30-blue?style=flat-square">
-  </a>
-  <a href="../../graphs/contributors">
-    <img alt="Contributors" src="https://img.shields.io/github/contributors/ciderapp/translations?style=flat-square&color=blue">
-  </a>
+  <a href="../../actions/workflows/ai-fill.yml"><img alt="AI fill" src="https://img.shields.io/github/actions/workflow/status/ciderapp/translations/ai-fill.yml?branch=main&label=AI%20fill&style=flat-square"></a>
+  <a href="../../actions/workflows/translation-issue.yml"><img alt="Issue bot" src="https://img.shields.io/github/actions/workflow/status/ciderapp/translations/translation-issue.yml?branch=main&label=Issue%20bot&style=flat-square"></a>
+  <a href="locales/languages.yml"><img alt="Languages" src="https://img.shields.io/badge/Languages-30-blue?style=flat-square"></a>
+  <a href="../../graphs/contributors"><img alt="Contributors" src="https://img.shields.io/github/contributors/ciderapp/translations?label=Contributors&style=flat-square&color=blue"></a>
 </p>
 
 ---
