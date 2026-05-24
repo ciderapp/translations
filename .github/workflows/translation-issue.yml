@@ -6,12 +6,18 @@
 #   2. On labeled `approved` (by a maintainer): apply the translation to the
 #      target locale file, commit it, close the issue.
 #
-# The `approved` label is only honored when added by a repo MEMBER, OWNER, or
-# COLLABORATOR. Ordinary users adding the label have no effect.
+# The `approved` label is only acted on if the labeler has write/maintain/admin
+# permission on this repo, verified via the GitHub API at the top of the apply
+# job. (`github.event.sender.author_association` is NOT populated on the issues
+# event: `author_association` lives on Issue/Comment/Review entities, not on
+# the simple-user `sender`, so an `if:`-based check would silently always be
+# false and no apply would ever fire.)
 #
-# The apply job commits via the Saki-Yuzishima App installation token, so the
-# push triggers notify-citadel.yml (GITHUB_TOKEN pushes do not). Requires org
-# secrets CIDER_I18N_BOT_APP_ID and CIDER_I18N_BOT_PRIVATE_KEY.
+# Comments and the apply commit both authenticate through the Saki-Yuzishima
+# App installation token, so the bot shows up as `saki-yuzishima[bot]` rather
+# than the generic `github-actions[bot]`. Requires org secrets
+# CIDER_I18N_BOT_APP_ID and CIDER_I18N_BOT_PRIVATE_KEY, and the App must have
+# `Contents: write` and `Issues: write` granted on this repo.
 #############################################################################################
 
 name: Translation issue
@@ -32,10 +38,16 @@ jobs:
       (github.event.action == 'opened' || github.event.action == 'edited')
     name: Validate and preview
     runs-on: ubuntu-latest
-    # Just needs to post a comment on the issue.
-    permissions:
-      issues: write
+    # No GITHUB_TOKEN usage in this job: comments post under the App token.
+    permissions: {}
     steps:
+      - name: 🪪 Mint App installation token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.CIDER_I18N_BOT_APP_ID }}
+          private-key: ${{ secrets.CIDER_I18N_BOT_PRIVATE_KEY }}
+          permission-issues: write
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
@@ -43,7 +55,9 @@ jobs:
       - run: npm install --no-package-lock
       - name: Run linter
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Pass the App token as GITHUB_TOKEN so the preview comment posts
+          # as saki-yuzishima[bot] instead of the generic github-actions[bot].
+          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
           ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
           ISSUE_BODY: ${{ github.event.issue.body }}
@@ -54,15 +68,13 @@ jobs:
     if: |
       github.event.action == 'labeled' &&
       github.event.label.name == 'approved' &&
-      contains(github.event.issue.labels.*.name, 'translation') &&
-      contains(fromJSON('["MEMBER","OWNER","COLLABORATOR"]'), github.event.sender.author_association)
+      contains(github.event.issue.labels.*.name, 'translation')
     name: Apply approved translation
     runs-on: ubuntu-latest
-    # GITHUB_TOKEN posts the comment and closes the issue. The git push uses
-    # the App installation token (minted below), so the default token does
-    # not need `contents`.
-    permissions:
-      issues: write
+    # GITHUB_TOKEN is used only by the Verify step (collaborator-permission
+    # lookup needs metadata:read, which is granted implicitly). The actual
+    # apply, push, and comment all authenticate via the App token.
+    permissions: {}
     # Serialize approvals so two simultaneous `approved` labels can't race
     # against each other when writing the same locale file. Don't cancel:
     # losing an approved contribution mid-write would be worse than waiting.
@@ -70,6 +82,21 @@ jobs:
       group: translation-issue-apply
       cancel-in-progress: false
     steps:
+      - name: 🛡️ Verify approver has write access
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          perm=$(gh api "repos/${GITHUB_REPOSITORY}/collaborators/${GITHUB_ACTOR}/permission" --jq .permission)
+          case "$perm" in
+            admin|maintain|write)
+              echo "✓ @${GITHUB_ACTOR} has $perm; proceeding."
+              ;;
+            *)
+              echo "::error::@${GITHUB_ACTOR} cannot apply translations (permission: $perm). Only repo members with write/maintain/admin may approve."
+              exit 1
+              ;;
+          esac
       - name: 🪪 Mint App installation token
         id: app-token
         uses: actions/create-github-app-token@v1
@@ -77,6 +104,7 @@ jobs:
           app-id: ${{ secrets.CIDER_I18N_BOT_APP_ID }}
           private-key: ${{ secrets.CIDER_I18N_BOT_PRIVATE_KEY }}
           permission-contents: write
+          permission-issues: write
       - uses: actions/checkout@v4
         with:
           # The push authenticates explicitly with the App token below.
@@ -87,7 +115,9 @@ jobs:
       - run: npm install --no-package-lock
       - name: Apply to locale file
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # App token so the success comment + close-issue both come from
+          # saki-yuzishima[bot].
+          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
           ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
           ISSUE_BODY: ${{ github.event.issue.body }}
@@ -109,5 +139,5 @@ jobs:
           git config user.name  'saki-yuzishima[bot]'
           git config user.email '286499753+saki-yuzishima[bot]@users.noreply.github.com'
           git commit -m "feat(i18n): apply translation from #${{ github.event.issue.number }}"
-          # Token explicit in the URL — does not depend on stored credentials.
+          # Token explicit in the URL: does not depend on stored credentials.
           git push "https://x-access-token:${APP_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" HEAD:main
