@@ -7,8 +7,9 @@
  *   apply:    re-parse, write to locales/<lang>.yml with provenance,
  *             post a success comment, close the issue.
  *
- * The `apply` path is gated by author_association in translation-issue.yml;
- * this script trusts that gate and does no extra permission checks.
+ * The `apply` path is gated by an actor-permission check in
+ * translation-issue.yml (the labeler must have write/maintain/admin on this
+ * repo); this script trusts that gate and does no extra permission checks.
  *
  * Inputs (env):
  *   GITHUB_TOKEN
@@ -234,38 +235,40 @@ function previewComment(language, languageName, translations, warnings) {
   );
   const more = count > 15 ? `\n\n…and ${count - 15} more.` : '';
   const warn = warnings.length
-    ? `\n\n#### ⚠️ Warnings\n\n${warnings.map(w => `- ${w}`).join('\n')}\n\n_These don't block approval, but worth a look._`
+    ? `\n\n#### Heads-up (not blockers)\n\n${warnings.map(w => `- ${w}`).join('\n')}`
     : '';
 
   return [
-    `### ✅ Validation passed`,
+    `### 🌐 Thanks for the translation, @${ISSUE_AUTHOR}!`,
     ``,
-    `**${count}** translation${count === 1 ? '' : 's'} for **${languageName}** (\`${language}\`):`,
+    `Your **${count}** entr${count === 1 ? 'y' : 'ies'} for **${languageName}** (\`${language}\`) parsed cleanly. Here's a quick preview:`,
     ``,
     items.join('\n') + more,
     warn,
     ``,
-    `A maintainer can add the \`approved\` label to apply this. The bot will commit with you credited (\`source: human, by: @${ISSUE_AUTHOR}, issue: ${ISSUE_NUMBER}\`).`,
+    `A Cider maintainer will give this a quick look and add the \`approved\` label to merge it. You'll be credited inside the file (\`source: human, by: @${ISSUE_AUTHOR}, issue: ${ISSUE_NUMBER}\`) and your work will ship in the next OTA build. Appreciate you helping make Cider feel native to more people!`,
   ].join('\n');
 }
 
 function errorComment(errors) {
   return [
-    `### ❌ Validation failed`,
+    `### Hey @${ISSUE_AUTHOR}, a couple of things to fix first`,
+    ``,
+    `Thanks for taking the time to submit! Before a maintainer can merge this, a few items need a tweak:`,
     ``,
     errors.map(e => `- ${e}`).join('\n'),
     ``,
-    `Edit the issue body to fix these and the bot will re-check.`,
+    `Edit the issue body and the bot will re-check automatically. If anything is unclear, drop a comment and we'll help out.`,
   ].join('\n');
 }
 
 function appliedComment(language, languageName, count) {
   return [
-    `### ✅ Applied, thanks @${ISSUE_AUTHOR}`,
+    `### 🎉 Merged, thanks @${ISSUE_AUTHOR}!`,
     ``,
-    `Your ${count} translation${count === 1 ? '' : 's'} ${count === 1 ? 'has' : 'have'} been committed to \`locales/${language}.yml\` (${languageName}) with credit attached.`,
+    `Your ${count} translation${count === 1 ? '' : 's'} ${count === 1 ? 'is' : 'are'} now live in \`locales/${language}.yml\` (${languageName}), with credit attached. It will ship to users in the next OTA build.`,
     ``,
-    `Closing this issue. If the bot got something wrong, comment here or open a new issue.`,
+    `Closing this one out. Come back any time you spot something that could be improved, and feel free to reach out on the Cider Discord if you'd like to chat with the team. Thanks again for making Cider better!`,
   ].join('\n');
 }
 
@@ -329,11 +332,13 @@ async function main() {
   // (the issue body could have been edited after the approved label was set).
   if (errors.length) {
     await postComment([
-      `### ❌ Could not apply, validation failed at apply time`,
+      `### Couldn't apply this: the issue body changed after approval`,
+      ``,
+      `Looks like the issue body was edited after the \`approved\` label was set, and the new content doesn't validate:`,
       ``,
       errors.map(e => `- ${e}`).join('\n'),
       ``,
-      `The issue body may have been edited after the \`approved\` label was set. Re-check and re-label to retry.`,
+      `Once @${ISSUE_AUTHOR} fixes the issue, a maintainer can re-apply the \`approved\` label to try again.`,
     ].join('\n'));
     process.exit(1);
   }
@@ -370,7 +375,7 @@ if (isEntrypoint) {
   main().catch(err => {
     console.error(err);
     // Best-effort error report. Don't leak stack traces; just the message.
-    postComment(`### 💥 Bot crashed\n\n\`\`\`\n${String(err.message).slice(0, 1500)}\n\`\`\`\n\ncc @cider-maintainers`)
+    postComment(`### 💥 Bot hit an error\n\n\`\`\`\n${String(err.message).slice(0, 1500)}\n\`\`\`\n\nNot your fault, @${ISSUE_AUTHOR}. A Cider maintainer will take a look. Sorry for the friction.`)
       .catch(() => {})
       .finally(() => process.exit(1));
   });
