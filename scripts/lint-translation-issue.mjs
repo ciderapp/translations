@@ -42,7 +42,13 @@ export const PROPER_NOUNS = [
 // Strict shape gates. Everything from the issue body is untrusted input,
 // so we never let it reach a filesystem path or an object index without
 // passing these.
-export const KEY_RE     = /^[a-zA-Z][a-zA-Z0-9]*(?:\.[a-zA-Z][a-zA-Z0-9]*)+$/;
+// KEY_RE: dot-separated segments. Each segment must start with a letter so
+// reserved names like __proto__, _proto_, and bare identifiers like
+// `constructor` (no dot) can't pass; segment bodies can carry letters,
+// digits, hyphens, and underscores because legacy en-US.yml keys use them
+// (e.g. `settings.notyf.updateCider.update-downloaded`,
+// `settings.option.audio...atmosphereRealizerMode.NATURAL_PLUS`).
+export const KEY_RE     = /^[a-zA-Z][a-zA-Z0-9_-]*(?:\.[a-zA-Z][a-zA-Z0-9_-]*)+$/;
 export const LANG_RE    = /^[a-z]{2,3}(?:-[A-Za-z0-9]{2,4})?$/;
 export const AUTHOR_RE  = /^[A-Za-z0-9](?:[A-Za-z0-9-]{0,38})$/;
 
@@ -143,7 +149,7 @@ export function validateTranslations(translations, sourceStrings) {
     // filters out __proto__, constructor, prototype, and other unsafe names
     // since none of them match KEY_RE.
     if (!KEY_RE.test(key)) {
-      errors.push(`\`${key}\`: not a valid key shape (expected lowerCamelCase segments joined by dots, e.g. \`action.apply\`).`);
+      errors.push(`\`${key}\`: not a valid key shape (dot-separated segments, each starting with a letter; letters, digits, hyphens, and underscores allowed inside a segment, e.g. \`action.apply\`).`);
       continue;
     }
 
@@ -308,13 +314,41 @@ function buildDiffBlock(translations, existingLocale, sourceStrings) {
   return '```diff\n' + lines.join('\n') + '\n```';
 }
 
-function previewComment(language, languageName, translations, warnings, existingLocale, sourceStrings) {
+// Compact, single-section note about entries that were dropped because they
+// were empty. Two buckets:
+//   - sourceEmpty: source en-US text is also blank (legacy keys never wired
+//     up). Silent informational note; nothing to translate, nothing wrong.
+//   - submissionOnly: source has text but the submission left it blank. The
+//     contributor probably meant to translate this and missed it; surface
+//     it more prominently so they can fix on edit.
+function buildSkipNote(sourceEmpty, submissionOnly) {
+  if (!sourceEmpty.length && !submissionOnly.length) return '';
+  const fmt = (keys, limit = 8) => {
+    const head = keys.slice(0, limit).map(k => `\`${k}\``).join(', ');
+    return keys.length > limit ? `${head}, +${keys.length - limit} more` : head;
+  };
+  const parts = [];
+  if (sourceEmpty.length) {
+    parts.push(
+      `_${sourceEmpty.length} entr${sourceEmpty.length === 1 ? 'y' : 'ies'} skipped: the English source in \`en-US.yml\` is empty for ${sourceEmpty.length === 1 ? 'this key' : 'these keys'} (legacy entries not yet wired up), so there's nothing to translate — ${fmt(sourceEmpty)}._`,
+    );
+  }
+  if (submissionOnly.length) {
+    parts.push(
+      `⚠️ **Heads-up:** ${submissionOnly.length} entr${submissionOnly.length === 1 ? 'y was' : 'ies were'} left blank, but the English source has text. Did you mean to translate ${fmt(submissionOnly)}?`,
+    );
+  }
+  return '\n\n' + parts.join('\n\n');
+}
+
+function previewComment(language, languageName, translations, warnings, existingLocale, sourceStrings, sourceEmptySkips = [], submissionEmptySkips = []) {
   const count = Object.keys(translations).length;
   const isEdit = ISSUE_ACTION === 'edited';
   const diff = buildDiffBlock(translations, existingLocale, sourceStrings);
   const warn = warnings.length
     ? `\n\n#### Heads-up (not blockers)\n\n${warnings.map(w => `- ${w}`).join('\n')}`
     : '';
+  const skipNote = buildSkipNote(sourceEmptySkips, submissionEmptySkips);
 
   const heading = isEdit
     ? `### 🔄 Updated preview for @${ISSUE_AUTHOR}`
@@ -331,12 +365,13 @@ function previewComment(language, languageName, translations, warnings, existing
     ``,
     diff,
     warn,
+    skipNote,
     ``,
     `A Cider maintainer will give this a quick look and add the \`approved\` label to merge it. You'll be credited inside the file (\`source: human, by: @${ISSUE_AUTHOR}, issue: ${ISSUE_NUMBER}\`) and your work will ship in the next OTA build. Appreciate you helping make Cider feel native to more people!`,
   ].join('\n');
 }
 
-function errorComment(errors) {
+function errorComment(errors, sourceEmptySkips = [], submissionEmptySkips = []) {
   const isEdit = ISSUE_ACTION === 'edited';
   const heading = isEdit
     ? `### Almost there, @${ISSUE_AUTHOR}`
@@ -344,12 +379,14 @@ function errorComment(errors) {
   const intro = isEdit
     ? `Thanks for the update! A few things still need a tweak before a maintainer can merge this:`
     : `Thanks for taking the time to submit! Before a maintainer can merge this, a few items need a tweak:`;
+  const skipNote = buildSkipNote(sourceEmptySkips, submissionEmptySkips);
   return [
     heading,
     ``,
     intro,
     ``,
     errors.map(e => `- ${e}`).join('\n'),
+    skipNote,
     ``,
     `Edit the issue body and this comment will refresh automatically. If anything is unclear, drop a reply and we'll help out.`,
   ].join('\n');
@@ -386,6 +423,29 @@ async function main() {
   const languages = parseYaml(readFileSync('locales/languages.yml', 'utf8'))?.languages ?? {};
   const sourceStrings = parseYaml(readFileSync('locales/en-US.yml', 'utf8')) ?? {};
 
+  // Drop empty submissions before validation. A common pattern: contributors
+  // copy every key out of en-US.yml as a starting point, but a handful of
+  // legacy keys have empty English (e.g. oobe.amsignin.title — never wired
+  // up). The contributor naturally leaves those empty too. There's nothing
+  // to translate, so silently skipping is friendlier than rejecting the
+  // whole batch. Split into two buckets so the preview can flag the case
+  // where the English source DOES have text and the submission just missed
+  // it, vs. the legacy-stub case where there's nothing to do.
+  const sourceEmptySkips = [];
+  const submissionEmptySkips = [];
+  if (translations && !translations.__error) {
+    for (const k of Object.keys(translations)) {
+      const v = translations[k];
+      if (typeof v === 'string' && !v.trim()) {
+        const sourceVal = sourceStrings[k];
+        const sourceEmpty = typeof sourceVal !== 'string' || !sourceVal.trim();
+        if (sourceEmpty) sourceEmptySkips.push(k);
+        else submissionEmptySkips.push(k);
+        delete translations[k];
+      }
+    }
+  }
+
   const errors = [];
   if (!language) {
     errors.push('Language code missing. Fill in the form.');
@@ -417,7 +477,7 @@ async function main() {
 
   if (MODE === 'validate') {
     if (errors.length) {
-      await upsertValidationComment(errorComment(errors));
+      await upsertValidationComment(errorComment(errors, sourceEmptySkips, submissionEmptySkips));
       process.exit(0);
     }
     await upsertValidationComment(previewComment(
@@ -427,6 +487,8 @@ async function main() {
       warnings,
       existingLocale,
       sourceStrings,
+      sourceEmptySkips,
+      submissionEmptySkips,
     ));
     return;
   }
