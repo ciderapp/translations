@@ -139,6 +139,20 @@ describe('KEY_RE — translation key shape', () => {
     }
   });
 
+  test('accepts hyphens and underscores in segment bodies (legacy keys)', () => {
+    // Real keys in en-US.yml that pre-date the lowerCamelCase convention.
+    // Each segment still starts with a letter; the body widens to include
+    // `-` and `_` so contributors can submit translations for them.
+    for (const k of [
+      'settings.notyf.updateCider.update-downloaded',
+      'settings.option.audio.atmosphereRealizerMode.E168_1',
+      'settings.option.audio.atmosphereRealizerMode.NATURAL_PLUS',
+      'a.b-c_d',
+    ]) {
+      assert.ok(KEY_RE.test(k), `should accept: ${k}`);
+    }
+  });
+
   test('rejects prototype-pollution attacks', () => {
     for (const k of ['__proto__', 'constructor', 'prototype', '__proto__.polluted']) {
       assert.ok(!KEY_RE.test(k), `should reject: ${k}`);
