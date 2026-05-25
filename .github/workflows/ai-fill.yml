@@ -121,6 +121,29 @@ jobs:
           git config user.name  'saki-yuzishima[bot]'
           git config user.email '286499753+saki-yuzishima[bot]@users.noreply.github.com'
           git commit -m "chore(i18n): AI fill"
-          # Token explicit in the URL — does not depend on stored credentials.
-          # GITHUB_REPOSITORY is owner/repo; the App token is auto-masked in logs.
-          git push "https://x-access-token:${APP_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" HEAD:main
+
+          # Push with rebase-retry. Cross-workflow pushes (apply commits from
+          # translation-issue, en-US mirror from Citadel) can land between
+          # checkout and push and cause a non-fast-forward rejection. Rebase
+          # our commit onto the new remote tip and retry; the AI fill's diff
+          # only touches missing keys, so rebasing across an unrelated commit
+          # is a clean replay in practice. Token explicit in the URL — does
+          # not depend on stored credentials. GITHUB_REPOSITORY is owner/repo;
+          # the App token is auto-masked in logs.
+          REMOTE="https://x-access-token:${APP_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          for attempt in 1 2 3 4 5; do
+            if git push "$REMOTE" HEAD:main; then
+              echo "push succeeded (attempt $attempt)"
+              exit 0
+            fi
+            echo "::warning::push attempt $attempt rejected (likely concurrent push). Rebasing onto origin/main..."
+            git fetch "$REMOTE" main
+            if ! git rebase FETCH_HEAD; then
+              echo "::error::rebase conflicts the bot can't resolve. Translated locales are uploaded as an artifact on this run — re-run the workflow or apply manually from the artifact."
+              git rebase --abort || true
+              exit 1
+            fi
+            sleep $((attempt + RANDOM % 3))
+          done
+          echo "::error::push failed after 5 attempts; the remote ref keeps moving."
+          exit 1
