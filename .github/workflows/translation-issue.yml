@@ -144,5 +144,28 @@ jobs:
           git config user.name  'saki-yuzishima[bot]'
           git config user.email '286499753+saki-yuzishima[bot]@users.noreply.github.com'
           git commit -m "feat(i18n): apply translation from #${{ github.event.issue.number }}"
+
+          # Push with rebase-retry. The job-level concurrency group serializes
+          # apply runs against each other, but cross-workflow pushes (ai-fill
+          # commits, en-US mirror from Citadel) can still land between this
+          # checkout and our push, causing a non-fast-forward rejection. On
+          # rejection, fetch the new tip, rebase our commit on top, retry.
           # Token explicit in the URL: does not depend on stored credentials.
-          git push "https://x-access-token:${APP_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" HEAD:main
+          REMOTE="https://x-access-token:${APP_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          for attempt in 1 2 3 4 5; do
+            if git push "$REMOTE" HEAD:main; then
+              echo "push succeeded (attempt $attempt)"
+              exit 0
+            fi
+            echo "::warning::push attempt $attempt rejected (likely concurrent push). Rebasing onto origin/main..."
+            git fetch "$REMOTE" main
+            if ! git rebase FETCH_HEAD; then
+              echo "::error::rebase conflicts the bot can't resolve. A maintainer can re-apply the 'approved' label to retry from a fresh checkout."
+              git rebase --abort || true
+              exit 1
+            fi
+            # Jittered backoff so concurrent retries don't synchronize.
+            sleep $((attempt + RANDOM % 3))
+          done
+          echo "::error::push failed after 5 attempts; the remote ref keeps moving."
+          exit 1
