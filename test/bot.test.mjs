@@ -266,12 +266,16 @@ describe('validateTranslations', () => {
     assert.equal(warnings.length, 0);
   });
 
-  test('flags missing placeholders', () => {
-    const { errors } = validateTranslations({
+  test('warns (but does not block) on missing placeholders', () => {
+    // Dropping a placeholder is sometimes a legitimate rephrasing choice
+    // (e.g. Chinese "這首歌" replaces a `{songName}` variable). Surface it
+    // as a heads-up so the maintainer can sanity-check, but don't reject.
+    const { errors, warnings } = validateTranslations({
       'home.greeting': 'Hola, tienes mensajes',  // both {name} and {count} dropped
     }, source);
-    assert.ok(errors.some(e => e.includes('{name}')));
-    assert.ok(errors.some(e => e.includes('{count}')));
+    assert.equal(errors.length, 0, 'missing placeholders should not be hard errors');
+    assert.ok(warnings.some(w => w.includes('{name}')));
+    assert.ok(warnings.some(w => w.includes('{count}')));
   });
 
   test('flags empty values', () => {

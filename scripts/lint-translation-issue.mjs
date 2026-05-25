@@ -176,7 +176,11 @@ export function validateTranslations(translations, sourceStrings) {
     const actual = extractPlaceholders(value);
     for (const ph of expected) {
       if (!actual.has(ph)) {
-        errors.push(`\`${key}\`: missing placeholder \`${ph}\`. English: "${english}"`);
+        // Heads-up, not an error. Translators legitimately drop placeholders
+        // when rephrasing (e.g. Chinese "這首歌" / "this song" replacing
+        // `{songName}`). Hard-failing on this blocks valid contributions, so
+        // surface it for the maintainer to eyeball instead.
+        warnings.push(`\`${key}\`: translation drops the \`${ph}\` placeholder from the English source (\`${english}\`). Fine if intentional (rephrased), worth a double-check otherwise.`);
       }
     }
 
