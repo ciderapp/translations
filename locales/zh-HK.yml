@@ -96,6 +96,9 @@ action.playTracksLater: 稍後播放 ${app.selectedMediaItems.length} 首歌曲
 action.playTracksNext: 插播 ${app.selectedMediaItems.length} 首歌曲
 action.plugins.enableVitePlugins: 為外掛程式啟用 Vite
 action.properties: 詳細內容
+action.queueGuard.askEveryTime: 每次都詢問我
+action.queueGuard.playAndClear: 播放並清除
+action.queueGuard.prompt: 播放此內容後，你想繼續播放之前加入佇列的音樂嗎？
 action.quit.consent: 你確定要關閉該應用程式嗎？
 action.reboot: 重新啟動
 action.refresh: 重新整理
@@ -292,6 +295,13 @@ library.favoritesOnly: 僅限最愛
 library.itemSize: 項目大小
 library.itemSize.comfortable: 寬鬆
 library.randomAlbums: 隨機專輯
+library.randomAlbums.anyGenres: 任何類型
+library.randomAlbums.minTrackCount: 最少歌曲數目
+library.randomAlbums.nGenres: "{{ count }} 個類型"
+library.randomAlbums.noAlbumsFound: 找不到符合最少歌曲數目的專輯
+library.randomAlbums.numAlbums: 專輯數量
+library.randomAlbums.resetGenres: 重設類型
+library.randomAlbums.unknownGenre: 未知類型
 locale.lang.ar: 阿拉伯文
 locale.lang.de: 德文
 locale.lang.en: 英文
@@ -545,6 +555,24 @@ podcast.playEpisode: 播放單集
 podcast.subscribedOnItunes: 已在 iTunes 上訂閱
 podcast.subscribeOnItunes: 在 iTunes 上訂閱
 podcast.website: Podcast 網頁
+properties.apiHref: API Href
+properties.appleMusicId: Apple Music ID
+properties.audio.acousticness: 原音感
+properties.audio.bpm: BPM
+properties.audio.danceability: 舞動感
+properties.audio.energy: 能量
+properties.audio.key: 調
+properties.audio.melodicness: 旋律感
+properties.audio.valence: 正向度
+properties.audioAnalysis: 音訊分析
+properties.audioTraits: 音訊特徵
+properties.colorCopied: 已複製顏色樣本
+properties.setHomeArtwork: 設為首頁插圖
+properties.setHomeArtworkVideo: 設為首頁插圖 (影片)
+properties.trait.atmos: Dolby Atmos
+properties.trait.lossless: 無損音訊
+properties.trait.lossyStereo: AAC 立體聲
+properties.trait.spatial: 空間音訊
 remote.web.description: 掃描以下的 QR Code 以控制 Cider
 remote.web.title: 遙距控制 Cider
 replay.uniqueAlbums: 超過 {count} 張不同的專輯
@@ -802,6 +830,46 @@ settings.description.songs: 歌曲
 settings.discord.clientName.hint: 選擇要連接的 Discord 用戶端。
 settings.discord.customize.hint: 自訂你在 Discord 上的狀態顯示。
 settings.equalizer.warning: 我們對你的耳朵或揚聲器造成的任何損壞概不負責。請負責任地使用。
+settings.extensions.addBuiltInSnippet: 新增內建片段
+settings.extensions.browsePluginMarket: 瀏覽外掛程式市場
+settings.extensions.browseThemeMarket: 瀏覽主題市場
+settings.extensions.checkUpdates: 啟動時檢查擴充功能更新
+settings.extensions.checkUpdates.desc: 每次啟動 Cider 時檢查主題、片段和外掛程式的更新。
+settings.extensions.createPlugin: 建立外掛程式
+settings.extensions.createSnippet: 建立新片段
+settings.extensions.createTheme: 建立新主題
+settings.extensions.cssSnippets: CSS 片段
+settings.extensions.fileWatcher: 啟用主題檔案監控
+settings.extensions.fileWatcher.desc: 當磁碟上的檔案變更時，自動重新載入主題樣式表。
+settings.extensions.importFromFile: 從檔案匯入
+settings.extensions.maintenance: 維護
+settings.extensions.newThemeDialog.identifier: 識別碼
+settings.extensions.newThemeDialog.name: 主題名稱
+settings.extensions.newThemeDialog.title: 新主題
+settings.extensions.openAppData: 開啟 AppData 資料夾
+settings.extensions.openAppData.desc: 顯示 Cider 讀取擴充功能的資料夾。
+settings.extensions.plugins.empty: 未安裝任何外掛程式。
+settings.extensions.plugins.running: 執行中
+settings.extensions.refresh: 重新整理擴充功能
+settings.extensions.refresh.desc: 從磁碟重新掃描主題、片段和外掛程式。
+settings.extensions.refreshed: 已重新整理主題、片段和外掛程式
+settings.extensions.snippets.created: 已建立片段
+settings.extensions.snippets.createTitle: 建立新 CSS 片段
+settings.extensions.snippets.deleteConfirm: 你確定要刪除此 CSS 片段嗎？此操作無法復原。
+settings.extensions.snippets.deleted: 已刪除片段
+settings.extensions.snippets.deleteTitle: 刪除 CSS 片段
+settings.extensions.snippets.empty: 未安裝任何 CSS 片段。
+settings.extensions.snippets.exported: 已匯出片段
+settings.extensions.snippets.imported: 已匯入 {{ count }} 個片段
+settings.extensions.snippets.importFailed: 無法匯入 {{ file }}：{{ error }}
+settings.extensions.snippets.namePrompt: 請輸入新 CSS 程式碼片段的名稱。
+settings.extensions.snippets.orderUpdated: 順序已更新
+settings.extensions.snippets.saved: 程式碼片段已儲存
+settings.extensions.themeCreated: 已成功建立新主題
+settings.extensions.themes.activeCount: "{{ count }} 個已啟用"
+settings.extensions.themes.empty: 未安裝任何主題。
+settings.extensions.themes.stylesheetMany: "{{ count }} 個樣式表"
+settings.extensions.themes.stylesheetOne: 1 個樣式表
 settings.fonts.description: 變更應用程式中使用的字型
 settings.fonts.lyrics: 歌詞字型
 settings.fonts.lyrics.description: 用於歌詞的字型
@@ -1955,6 +2023,7 @@ term.appSettings: 應用程式設定
 term.artistChips: 藝人短片
 term.artistList: 藝人列表
 term.artists: 藝人
+term.artwork: 插圖
 term.ascending: 遞增
 term.attention: 注意
 term.audioControls: 音量控制
@@ -1976,6 +2045,7 @@ term.check: 檢查
 term.ciderTeam: Cider 團隊
 term.clearAll: 清空
 term.clearQueue: 清空
+term.clipboard: 剪貼簿
 term.close: 關閉
 term.collapse: 收起/展開側邊欄
 term.commandPalette: 終端機
@@ -1993,6 +2063,7 @@ term.createBugIssueReport: 建立錯誤 / 問題報告
 term.createNewPlaylist: 新增播放列表
 term.createNewPlaylistFolder: 新增播放列表資料夾
 term.creditDesignedBy: 由 ${authorUsername} 設計
+term.credits: 製作人員
 term.curators: 策展人
 term.current: 目前
 term.date: 日期
@@ -2003,6 +2074,7 @@ term.deletedpreset: 已刪除
 term.deletePlaylist: 你確定要刪除這個播放列表？
 term.deletepreset.warn: 你確認要刪除這個範本？
 term.descending: 遞減
+term.details: 詳細資料
 term.developer: 開發者
 term.device: 裝置：{name}
 term.disable: 關閉
@@ -2042,6 +2114,7 @@ term.help: 說明
 term.hideSearch: 隱藏搜尋列
 term.history: 紀錄
 term.immersive: 沉浸模式
+term.info: 資訊
 term.items: 個項目
 term.itunes: iTunes
 term.language: 語言
@@ -2085,6 +2158,7 @@ term.newPlaylist: 新播放列表
 term.newPlaylistFolder: 新播放列表資料夾
 term.newpreset.name: 新等化器範本名稱
 term.next: 下一首
+term.no: 否
 term.noLyrics: 載入中…… / 找不到歌詞。/ 純音樂。
 term.none: 無
 term.noVideos: 沒有找到影片。
@@ -2154,6 +2228,7 @@ term.replay.uniqueArtists: "{count} 位獨特藝人"
 term.replay.uniqueSongs: "{count} 首獨特歌曲"
 term.requestError: 處理請求時發生錯誤
 term.reset: 重置
+term.response: 回應
 term.restartRequired: 需要重新啟動。
 term.rightsReserved: 保留一切權利。
 term.scroll: 滾動模式
@@ -2205,6 +2280,7 @@ term.system: 系統
 term.themeManaged: 此功能現在由主題管理。
 term.themeManager: 佈景主題管理
 term.themes: 主題
+term.time: 時間
 term.time.added: 加入於
 term.time.day.one: 天
 term.time.day.other: 天
@@ -2245,6 +2321,7 @@ term.uniqueArtists: 位匠心藝人
 term.uniqueSongs: 首獨特歌曲
 term.unknownArtist: 未知藝人
 term.unknownDevice: 未知裝置
+term.unknownError: 未知錯誤
 term.unmute: 取消靜音
 term.unnamed: 未命名
 term.upAfter: 稍後播放
@@ -2267,6 +2344,7 @@ term.warning: 警告
 term.webremote: 顯示遙控器的 QR Code
 term.whatsNew: 立即聆聽
 term.widget: 小工具
+term.yes: 是
 term.yesterday: 昨天
 term.zoom: 縮放
 term.zoomin: 放大

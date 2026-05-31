@@ -96,6 +96,9 @@ action.playTracksLater: Redă ${app.selectedMediaItems.length} de melodii mai t�
 action.playTracksNext: Redă ${app.selectedMediaItems.length} de melodii în continuare
 action.plugins.enableVitePlugins: Activează Vite pentru plugin-uri
 action.properties: Proprietăți
+action.queueGuard.askEveryTime: Întreabă-mă de fiecare dată
+action.queueGuard.playAndClear: Redă și golește
+action.queueGuard.prompt: După redarea acesteia, dorești să continui redarea muzicii puse anterior în coadă?
 action.quit.consent: Ești sigur că vrei să ieși din aplicație?
 action.reboot: Repornește
 action.refresh: Reîmprospătare
@@ -297,6 +300,13 @@ library.favoritesOnly: Doar favorite
 library.itemSize: Dimensiune elemente
 library.itemSize.comfortable: Aerisit
 library.randomAlbums: Albume aleatorii
+library.randomAlbums.anyGenres: Orice gen(uri)
+library.randomAlbums.minTrackCount: Număr minim de piese
+library.randomAlbums.nGenres: "{{ count }} gen(uri)"
+library.randomAlbums.noAlbumsFound: Nu s-au găsit albume cu numărul minim de piese
+library.randomAlbums.numAlbums: Număr de albume
+library.randomAlbums.resetGenres: Resetează genurile
+library.randomAlbums.unknownGenre: Gen necunoscut
 locale.lang.ar: Arabă
 locale.lang.de: Germană
 locale.lang.en: Engleză
@@ -559,6 +569,24 @@ podcast.playEpisode: Începe Episodul
 podcast.subscribedOnItunes: Abonat pe iTunes
 podcast.subscribeOnItunes: Abonează-te pe iTunes
 podcast.website: Pagină Podcast
+properties.apiHref: API Href
+properties.appleMusicId: ID Apple Music
+properties.audio.acousticness: Acusticitate
+properties.audio.bpm: BPM
+properties.audio.danceability: Dansabilitate
+properties.audio.energy: Energie
+properties.audio.key: Tonalitate
+properties.audio.melodicness: Melodicitate
+properties.audio.valence: Valență
+properties.audioAnalysis: Analiză audio
+properties.audioTraits: Caracteristici audio
+properties.colorCopied: Mostră de culoare copiată
+properties.setHomeArtwork: Setează ca ilustrație Acasă
+properties.setHomeArtworkVideo: Setează ca ilustrație Acasă (Video)
+properties.trait.atmos: Dolby Atmos
+properties.trait.lossless: Lossless
+properties.trait.lossyStereo: AAC Stereo
+properties.trait.spatial: Audio spațial
 remote.web.description: Scanează codul QR pentru a împerechea telefonul tău cu această instanță Cider
 remote.web.title: Telecomandă Cider
 replay.uniqueAlbums: Peste {count} albume unice
@@ -816,6 +844,46 @@ settings.description.songs: Melodii
 settings.discord.clientName.hint: Selectați clientul Discord la care doriți să vă conectați.
 settings.discord.customize.hint: Personalizați modul în care apare starea dvs. pe Discord.
 settings.equalizer.warning: Nu ne asumăm răspunderea pentru eventualele deteriorări ale auzului sau ale difuzoarelor. Vă rugăm să utilizați cu responsabilitate.
+settings.extensions.addBuiltInSnippet: Adaugă un snippet integrat
+settings.extensions.browsePluginMarket: Răsfoiește magazinul de pluginuri
+settings.extensions.browseThemeMarket: Răsfoiește magazinul de teme
+settings.extensions.checkUpdates: Caută actualizări pentru extensii la pornire
+settings.extensions.checkUpdates.desc: Caută actualizări pentru teme, snippeturi și pluginuri la fiecare pornire Cider.
+settings.extensions.createPlugin: Creează un plugin
+settings.extensions.createSnippet: Creează un snippet nou
+settings.extensions.createTheme: Creează o temă nouă
+settings.extensions.cssSnippets: Snippeturi CSS
+settings.extensions.fileWatcher: Activează monitorizarea fișierelor de teme
+settings.extensions.fileWatcher.desc: Reîncarcă automat foile de stil ale temei când fișierele acestora se modifică pe disc.
+settings.extensions.importFromFile: Importă din fișier
+settings.extensions.maintenance: Mentenanță
+settings.extensions.newThemeDialog.identifier: Identificator
+settings.extensions.newThemeDialog.name: Nume temă
+settings.extensions.newThemeDialog.title: Temă nouă
+settings.extensions.openAppData: Deschide dosarul AppData
+settings.extensions.openAppData.desc: Afișează dosarul din care Cider citește extensiile.
+settings.extensions.plugins.empty: Nu există pluginuri instalate.
+settings.extensions.plugins.running: Rulează
+settings.extensions.refresh: Reîmprospătează extensiile
+settings.extensions.refresh.desc: Rescanează temele, snippeturile și pluginurile de pe disc.
+settings.extensions.refreshed: S-au reîmprospătat temele, snippeturile și pluginurile
+settings.extensions.snippets.created: Snippet creat
+settings.extensions.snippets.createTitle: Creează un snippet CSS nou
+settings.extensions.snippets.deleteConfirm: Sigur dorești să ștergi acest snippet CSS? Această acțiune este ireversibilă.
+settings.extensions.snippets.deleted: Snippet șters
+settings.extensions.snippets.deleteTitle: Șterge snippetul CSS
+settings.extensions.snippets.empty: Nu există snippeturi CSS instalate.
+settings.extensions.snippets.exported: Snippet exportat
+settings.extensions.snippets.imported: S-au importat {{ count }} snippet-uri
+settings.extensions.snippets.importFailed: "Eroare la importarea {{ file }}: {{ error }}"
+settings.extensions.snippets.namePrompt: Introdu un nume pentru noul tău fragment CSS.
+settings.extensions.snippets.orderUpdated: Ordine actualizată
+settings.extensions.snippets.saved: Fragment salvat
+settings.extensions.themeCreated: Temă nouă creată cu succes
+settings.extensions.themes.activeCount: "{{ count }} active"
+settings.extensions.themes.empty: Nicio temă instalată.
+settings.extensions.themes.stylesheetMany: "{{ count }} foi de stil"
+settings.extensions.themes.stylesheetOne: 1 foaie de stil
 settings.fonts.description: Schimbați fontul utilizat în aplicație
 settings.fonts.lyrics: Font pentru versuri
 settings.fonts.lyrics.description: Fontul utilizat pentru versuri
@@ -1969,6 +2037,7 @@ term.appSettings: Setări aplicație
 term.artistChips: Chipuri de Artist
 term.artistList: Listă Artist
 term.artists: Artiști
+term.artwork: Copertă
 term.ascending: Ascendent
 term.attention: Attention
 term.audioControls: Reglaj de volum
@@ -1990,6 +2059,7 @@ term.check: Verificare
 term.ciderTeam: Echipa Cider
 term.clearAll: Ștergere toate
 term.clearQueue: Curăță
+term.clipboard: Clipboard
 term.close: Închide
 term.collapse: Restrânge
 term.commandPalette: Paletă de comandă
@@ -2007,6 +2077,7 @@ term.createBugIssueReport: Creați un raport de eroare / problemă
 term.createNewPlaylist: Creează un Playlist Nou
 term.createNewPlaylistFolder: Creează un Dosar Playlist Nou
 term.creditDesignedBy: Conceput de ${authorUsername}
+term.credits: Credite
 term.curators: Curatori
 term.current: Curent
 term.date: Dată
@@ -2017,6 +2088,7 @@ term.deletedpreset: Presetare eliminată
 term.deletePlaylist: Sunteți siguri că vreți să ștergeți acest Playlist?
 term.deletepreset.warn: Sunteţi sigur că doriţi să ştergeţi această presetare?
 term.descending: Descendent
+term.details: Detalii
 term.developer: Dezvoltatori
 term.device: "Dispozitiv: {name}"
 term.disable: Dezactivare
@@ -2056,6 +2128,7 @@ term.help: Ajutor
 term.hideSearch: Ascunde bara de căutare
 term.history: Istoric
 term.immersive: Imersiv
+term.info: Info
 term.items: elemente
 term.itunes: iTunes
 term.language: Limbă
@@ -2099,6 +2172,7 @@ term.newPlaylist: Playlist Nou
 term.newPlaylistFolder: Dosar Playlist Nou
 term.newpreset.name: Nume nou de presetare EQ
 term.next: Înainte
+term.no: Nu
 term.noLyrics: Incărcare... / Versurile nu au fost găsite./ Instrumental.
 term.none: Niciunul
 term.noVideos: Niciun videoclip găsit.
@@ -2168,6 +2242,7 @@ term.replay.uniqueArtists: "{count} Artiști Unici"
 term.replay.uniqueSongs: "{count} Melodii unice"
 term.requestError: A apărut o problemă cu solicitarea.
 term.reset: Resetare la setările din fabrică
+term.response: Răspuns
 term.restartRequired: Este necesară repornirea.
 term.rightsReserved: Toate drepturile rezervate.
 term.scroll: Modul de derulare
@@ -2219,6 +2294,7 @@ term.system: Sistem
 term.themeManaged: Gestionat de o temă
 term.themeManager: Manager Teme
 term.themes: Themes
+term.time: Timp
 term.time.added: Adăugate
 term.time.day.one: zi
 term.time.day.other: zile
@@ -2259,6 +2335,7 @@ term.uniqueArtists: Artiști Unici
 term.uniqueSongs: Melodii unice
 term.unknownArtist: Artist necunoscut
 term.unknownDevice: Dispozitiv necunoscut
+term.unknownError: Eroare necunoscută
 term.unmute: Activare sunet
 term.unnamed: Fără nume
 term.upAfter: Urmează după
@@ -2281,6 +2358,7 @@ term.warning: Warning
 term.webremote: Telecomandă Web
 term.whatsNew: Ce este nou
 term.widget: Widget
+term.yes: Da
 term.yesterday: Ieri
 term.zoom: Zoom
 term.zoomin: Mărire

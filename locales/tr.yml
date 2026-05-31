@@ -124,6 +124,9 @@ action.playTracksLater:
 action.playTracksNext: ${app.selectedMediaItems.length} adet şarkıyı sıraya ekle
 action.plugins.enableVitePlugins: Eklentiler için Vite'ı Etkinleştir
 action.properties: Özellikler
+action.queueGuard.askEveryTime: Her zaman sor
+action.queueGuard.playAndClear: Oynat ve Temizle
+action.queueGuard.prompt: Bu çalındıktan sonra, daha önce sıraya aldığınız müzikleri çalmaya devam etmek istiyor musunuz?
 action.quit.consent: Uygulamadan çıkmak istediğine emin misin?
 action.reboot: Yeniden Başlat
 action.refresh: Yenile
@@ -344,6 +347,13 @@ library.favoritesOnly: Yalnızca Favoriler
 library.itemSize: Öğe Boyutu
 library.itemSize.comfortable: Rahat
 library.randomAlbums: Rastgele Albümler
+library.randomAlbums.anyGenres: Herhangi Bir Tür
+library.randomAlbums.minTrackCount: Minimum Parça Sayısı
+library.randomAlbums.nGenres: "{{ count }} Tür"
+library.randomAlbums.noAlbumsFound: Minimum parça sayısına sahip albüm bulunamadı
+library.randomAlbums.numAlbums: Albüm Sayısı
+library.randomAlbums.resetGenres: Türleri Sıfırla
+library.randomAlbums.unknownGenre: Bilinmeyen Tür
 locale.lang.ar: Arapça
 locale.lang.de: Almanca
 locale.lang.en: İngilizce
@@ -606,6 +616,24 @@ podcast.playEpisode: Bölümü Oynat
 podcast.subscribedOnItunes: iTunes'de Abone Olundu
 podcast.subscribeOnItunes: itunes'de Abone Ol
 podcast.website: Web Sayfası
+properties.apiHref: API Href
+properties.appleMusicId: Apple Music Kimliği
+properties.audio.acousticness: Akustiklik
+properties.audio.bpm: BPM
+properties.audio.danceability: Dans Edilebilirlik
+properties.audio.energy: Enerji
+properties.audio.key: Ton
+properties.audio.melodicness: Melodiklik
+properties.audio.valence: Valans
+properties.audioAnalysis: Ses Analizi
+properties.audioTraits: Ses Özellikleri
+properties.colorCopied: Renk örneği kopyalandı
+properties.setHomeArtwork: Ana Sayfa Görseli Yap
+properties.setHomeArtworkVideo: Ana Sayfa Görseli Yap (Video)
+properties.trait.atmos: Dolby Atmos
+properties.trait.lossless: Kayıpsız
+properties.trait.lossyStereo: AAC Stereo
+properties.trait.spatial: Uzamsal Ses
 remote.web.description: Telefonunuzu Bu Cider Oturumuyla Eşleştirmek için QR Kodunu Tarayın
 remote.web.title: Cider'e Bağlan
 replay.uniqueAlbums: "{count} Üzerinde Benzersiz Albüm"
@@ -864,6 +892,46 @@ settings.description.songs: Şarkılar
 settings.discord.clientName.hint: Bağlanılacak Discord istemcisini seçin.
 settings.discord.customize.hint: Discord'daki durumunuzun nasıl görüneceğini özelleştirin.
 settings.equalizer.warning: Kulaklarınıza veya hoparlörlerinize gelebilecek herhangi bir hasardan sorumlu değiliz. Lütfen sorumlu bir şekilde kullanın.
+settings.extensions.addBuiltInSnippet: Yerleşik kod parçacığı ekle
+settings.extensions.browsePluginMarket: Eklenti Mağazasına Göz At
+settings.extensions.browseThemeMarket: Tema Mağazasına Göz At
+settings.extensions.checkUpdates: Başlangıçta uzantı güncellemelerini denetle
+settings.extensions.checkUpdates.desc: Cider her başlatıldığında tema, kod parçacığı ve eklenti güncellemelerini ara.
+settings.extensions.createPlugin: Eklenti oluştur
+settings.extensions.createSnippet: Yeni kod parçacığı oluştur
+settings.extensions.createTheme: Yeni tema oluştur
+settings.extensions.cssSnippets: CSS Kod Parçacıkları
+settings.extensions.fileWatcher: Tema dosyası izleyicisini etkinleştir
+settings.extensions.fileWatcher.desc: Disk üzerindeki dosyalar değiştiğinde tema stil sayfalarını otomatik olarak yeniden yükle.
+settings.extensions.importFromFile: Dosyadan içe aktar
+settings.extensions.maintenance: Bakım
+settings.extensions.newThemeDialog.identifier: Kimlik
+settings.extensions.newThemeDialog.name: Tema Adı
+settings.extensions.newThemeDialog.title: Yeni Tema
+settings.extensions.openAppData: AppData klasörünü aç
+settings.extensions.openAppData.desc: Cider'ın uzantıları okuduğu klasörü göster.
+settings.extensions.plugins.empty: Yüklü eklenti yok.
+settings.extensions.plugins.running: Çalışıyor
+settings.extensions.refresh: Uzantıları yenile
+settings.extensions.refresh.desc: Temaları, kod parçacıklarını ve eklentileri diskten yeniden tara.
+settings.extensions.refreshed: Temalar, kod parçacıkları ve eklentiler yenilendi
+settings.extensions.snippets.created: Kod parçacığı oluşturuldu
+settings.extensions.snippets.createTitle: Yeni CSS Kod Parçacığı Oluştur
+settings.extensions.snippets.deleteConfirm: Bu CSS kod parçacığını silmek istediğinize emin misiniz? Bu işlem geri alınamaz.
+settings.extensions.snippets.deleted: Kod parçacığı silindi
+settings.extensions.snippets.deleteTitle: CSS Kod Parçacığını Sil
+settings.extensions.snippets.empty: Yüklü CSS kod parçacığı yok.
+settings.extensions.snippets.exported: Kod parçacığı dışa aktarıldı
+settings.extensions.snippets.imported: "{{ count }} kod parçacığı içe aktarıldı"
+settings.extensions.snippets.importFailed: "{{ file }} içe aktarılamadı: {{ error }}"
+settings.extensions.snippets.namePrompt: Yeni CSS kod parçacığınız için bir ad girin.
+settings.extensions.snippets.orderUpdated: Sıralama güncellendi
+settings.extensions.snippets.saved: Kod parçacığı kaydedildi
+settings.extensions.themeCreated: Yeni tema başarıyla oluşturuldu
+settings.extensions.themes.activeCount: "{{ count }} aktif"
+settings.extensions.themes.empty: Yüklü tema yok.
+settings.extensions.themes.stylesheetMany: "{{ count }} stil sayfası"
+settings.extensions.themes.stylesheetOne: 1 stil sayfası
 settings.fonts.description: Uygulamada kullanılan yazı tipini değiştirin
 settings.fonts.lyrics: Şarkı Sözü Yazı Tipi
 settings.fonts.lyrics.description: Şarkı sözleri için kullanılan yazı tipi
@@ -2025,6 +2093,7 @@ term.appSettings: Uygulama Ayarları
 term.artistChips: Sanatçı Çipleri
 term.artistList: Sanatçı Listesi
 term.artists: Sanatçılar
+term.artwork: Albüm Kapağı
 term.ascending: Artan
 term.attention: Dikkat
 term.audioControls: Ses kontrolleri
@@ -2046,6 +2115,7 @@ term.check: Şimdi Kontrol Et
 term.ciderTeam: Cider Ekibi
 term.clearAll: Tümünü Temizle
 term.clearQueue: Temizle
+term.clipboard: Pano
 term.close: Kapat
 term.collapse: Daralt
 term.commandPalette: Komut Paleti
@@ -2063,6 +2133,7 @@ term.createBugIssueReport: Hata / Sorun Raporu Oluştur
 term.createNewPlaylist: Yeni Liste Oluştur
 term.createNewPlaylistFolder: Yeni Klasör Oluştur
 term.creditDesignedBy: ${authorUsername} tarafından tasarlandı
+term.credits: Emeği Geçenler
 term.curators: Editörler
 term.current: Şu anki
 term.date: Tarih
@@ -2073,6 +2144,7 @@ term.deletedpreset: Önayar Silindi
 term.deletePlaylist: Bu listeyi silmek istediğinize emin misiniz?
 term.deletepreset.warn: Bu önayarı silmek istediğinize emin misiniz?
 term.descending: Azalan
+term.details: Ayrıntılar
 term.developer: Geliştirici
 term.device: "Aygıt: {name}"
 term.disable: Kapa
@@ -2113,6 +2185,7 @@ term.help: Yardım
 term.hideSearch: Arama Çubuğunu Gizle
 term.history: Geçmiş
 term.immersive: Tam Ekran
+term.info: Bilgi
 term.items: öğe
 term.itunes: iTunes
 term.language: Dil
@@ -2156,6 +2229,7 @@ term.newPlaylist: Yeni Liste
 term.newPlaylistFolder: Yeni Klasör
 term.newpreset.name: Yeni Önayar İsmi
 term.next: Sonraki
+term.no: Hayır
 term.noLyrics: Yükleniyor... / Şarkı Sözü Bulunamadı./ Enstrumantal.
 term.none: Hiçbiri
 term.noVideos: Kayıtlı video bulunamadı.
@@ -2230,6 +2304,7 @@ term.replay.uniqueArtists: "{count} Benzersiz Sanatçı"
 term.replay.uniqueSongs: "{count} Benzersiz Şarkı"
 term.requestError: Bir sorun oldu.
 term.reset: Sıfırla
+term.response: Yanıt
 term.restartRequired: Yeniden başlatma gerekiyor.
 term.rightsReserved: Tüm Haklası Saklıdır.
 term.scroll: Kaydırma Modu
@@ -2285,6 +2360,7 @@ term.system: Sistem
 term.themeManaged: Bir tema tarafından yönetiliyor
 term.themeManager: Tema Yöneticisi
 term.themes: Temalar
+term.time: Süre
 term.time.added: "Şu tarihte eklendi: "
 term.time.day.one: gün
 term.time.day.other: gün
@@ -2325,6 +2401,7 @@ term.uniqueArtists: Özgün Sanatçılar
 term.uniqueSongs: Özgün Şarkılar
 term.unknownArtist: Bilinmeyen Sanatçı
 term.unknownDevice: Bilinmeyen Aygıt
+term.unknownError: Bilinmeyen hata
 term.unmute: Sesi Aç
 term.unnamed: Adsız
 term.upAfter: Daha Sonra
@@ -2347,6 +2424,7 @@ term.warning: Uyarı
 term.webremote: Uzaktan Web
 term.whatsNew: Yenilikler
 term.widget: Widget
+term.yes: Evet
 term.yesterday: Dün
 term.zoom: Yakınlaştır
 term.zoomin: Yakınlaştır

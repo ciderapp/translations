@@ -96,6 +96,9 @@ action.playTracksLater: Hrát ${app.selectedMediaItems.length} stopy později
 action.playTracksNext: Přehrát další ${app.selectedMediaItems.length} skladby
 action.plugins.enableVitePlugins: Povolit Vite pro doplňky
 action.properties: Vlastnosti
+action.queueGuard.askEveryTime: Vždy se zeptat
+action.queueGuard.playAndClear: Přehrát a smazat
+action.queueGuard.prompt: Chcete po dohrání této skladby pokračovat v přehrávání dříve přidané hudby?
 action.quit.consent: Opravdu chcete ukončit aplikaci?
 action.reboot: Restartovat
 action.refresh: Aktualizovat
@@ -297,6 +300,13 @@ library.favoritesOnly: Pouze oblíbené
 library.itemSize: Velikost položek
 library.itemSize.comfortable: Pohodlné
 library.randomAlbums: Náhodná alba
+library.randomAlbums.anyGenres: Libovolný žánr
+library.randomAlbums.minTrackCount: Minimální počet skladeb
+library.randomAlbums.nGenres: "{{ count }} žánr(ů)"
+library.randomAlbums.noAlbumsFound: Nenalezena žádná alba s minimálním počtem skladeb
+library.randomAlbums.numAlbums: Počet alb
+library.randomAlbums.resetGenres: Obnovit žánry
+library.randomAlbums.unknownGenre: Neznámý žánr
 locale.lang.ar: Arabština
 locale.lang.de: Němčina
 locale.lang.en: Angličtina
@@ -559,6 +569,24 @@ podcast.playEpisode: Přehrát epizodu
 podcast.subscribedOnItunes: Předplaceno na iTunes
 podcast.subscribeOnItunes: Předplatit na iTunes
 podcast.website: "Webová stránka podcastun "
+properties.apiHref: API Href
+properties.appleMusicId: Apple Music ID
+properties.audio.acousticness: Akustičnost
+properties.audio.bpm: BPM
+properties.audio.danceability: Tanečnost
+properties.audio.energy: Energie
+properties.audio.key: Tónina
+properties.audio.melodicness: Melodičnost
+properties.audio.valence: Valence
+properties.audioAnalysis: Analýza zvuku
+properties.audioTraits: Zvukové vlastnosti
+properties.colorCopied: Vzorek barvy zkopírován
+properties.setHomeArtwork: Nastavit jako pozadí Domů
+properties.setHomeArtworkVideo: Nastavit jako pozadí Domů (video)
+properties.trait.atmos: Dolby Atmos
+properties.trait.lossless: Beztrátový
+properties.trait.lossyStereo: AAC Stereo
+properties.trait.spatial: Prostorový zvuk
 remote.web.description: Naskenujte QR kód a spárujte svůj telefon s touto instancí Cider
 remote.web.title: Vzdálený Cider
 replay.uniqueAlbums: Více než {count} jedinečných alb
@@ -816,6 +844,46 @@ settings.description.songs: Skladby
 settings.discord.clientName.hint: Vyberte, ke kterému klientu Discord se chcete připojit.
 settings.discord.customize.hint: Přizpůsobte si, jak bude vypadat vaše aktivita na Discordu.
 settings.equalizer.warning: Neneseme odpovědnost za jakékoli poškození vašeho sluchu nebo reproduktorů. Používejte prosím zodpovědně.
+settings.extensions.addBuiltInSnippet: Přidat vestavěný snippet
+settings.extensions.browsePluginMarket: Procházet obchod s doplňky
+settings.extensions.browseThemeMarket: Procházet obchod s motivy
+settings.extensions.checkUpdates: Zkontrolovat aktualizace rozšíření při spuštění
+settings.extensions.checkUpdates.desc: Vyhledat aktualizace motivů, snippetů a doplňků při každém spuštění aplikace Cider.
+settings.extensions.createPlugin: Vytvořit doplněk
+settings.extensions.createSnippet: Vytvořit nový snippet
+settings.extensions.createTheme: Vytvořit nový motiv
+settings.extensions.cssSnippets: CSS snippety
+settings.extensions.fileWatcher: Povolit sledování souborů motivu
+settings.extensions.fileWatcher.desc: Automaticky znovu načíst styly motivu, pokud dojde ke změně jejich souborů na disku.
+settings.extensions.importFromFile: Importovat ze souboru
+settings.extensions.maintenance: Údržba
+settings.extensions.newThemeDialog.identifier: Identifikátor
+settings.extensions.newThemeDialog.name: Název motivu
+settings.extensions.newThemeDialog.title: Nový motiv
+settings.extensions.openAppData: Otevřít složku AppData
+settings.extensions.openAppData.desc: Zobrazit složku, ze které Cider načítá rozšíření.
+settings.extensions.plugins.empty: Nejsou nainstalovány žádné doplňky.
+settings.extensions.plugins.running: Spuštěno
+settings.extensions.refresh: Obnovit rozšíření
+settings.extensions.refresh.desc: Znovu načíst motivy, snippety a doplňky z disku.
+settings.extensions.refreshed: Motivy, snippety a doplňky byly obnoveny
+settings.extensions.snippets.created: Snippet byl vytvořen
+settings.extensions.snippets.createTitle: Vytvořit nový CSS snippet
+settings.extensions.snippets.deleteConfirm: Opravdu chcete tento CSS snippet smazat? Tuto akci nelze vrátit zpět.
+settings.extensions.snippets.deleted: Snippet byl smazán
+settings.extensions.snippets.deleteTitle: Smazat CSS snippet
+settings.extensions.snippets.empty: Nejsou nainstalovány žádné CSS snippety.
+settings.extensions.snippets.exported: Snippet byl exportován
+settings.extensions.snippets.imported: Importováno {{ count }} snippet(ů)
+settings.extensions.snippets.importFailed: "Nepodařilo se importovat {{ file }}: {{ error }}"
+settings.extensions.snippets.namePrompt: Zadejte název pro nový CSS snippet.
+settings.extensions.snippets.orderUpdated: Pořadí aktualizováno
+settings.extensions.snippets.saved: Snippet uložen
+settings.extensions.themeCreated: Nový motiv byl úspěšně vytvořen
+settings.extensions.themes.activeCount: "{{ count }} aktivních"
+settings.extensions.themes.empty: Nejsou nainstalovány žádné motivy.
+settings.extensions.themes.stylesheetMany: "{{ count }} stylopisů"
+settings.extensions.themes.stylesheetOne: 1 stylopis
 settings.fonts.description: Změna písma použitého v aplikaci
 settings.fonts.lyrics: Písmo textů skladeb
 settings.fonts.lyrics.description: Písmo používané pro texty skladeb
@@ -1969,6 +2037,7 @@ term.appSettings: Nastavení aplikace
 term.artistChips: Žeton umělce
 term.artistList: Seznam umělců
 term.artists: Umělci
+term.artwork: Obal
 term.ascending: Vzestupně
 term.attention: Attention
 term.audioControls: Ovládání hlasitosti
@@ -1990,6 +2059,7 @@ term.check: Zkontrolovat
 term.ciderTeam: Cider Tým
 term.clearAll: Vymazat vše
 term.clearQueue: Vyčistit
+term.clipboard: Schránka
 term.close: Zavřít
 term.collapse: Sbalit
 term.commandPalette: Paleta příkazu
@@ -2007,6 +2077,7 @@ term.createBugIssueReport: Vytvořit chybu/hlášení problémů
 term.createNewPlaylist: Vytvořit nový seznam playlistov
 term.createNewPlaylistFolder: Vytvořit nový seznam playlist složka
 term.creditDesignedBy: Navrženo ${authorUsername}
+term.credits: Tvůrci
 term.curators: Kurátoři
 term.current: Aktuální
 term.date: Datum
@@ -2017,6 +2088,7 @@ term.deletedpreset: Předvolba byla odstraněna
 term.deletePlaylist: Opravdu chcete tento playlist smazat?
 term.deletepreset.warn: Opravdu chcete tuto předvolbu smazat?
 term.descending: Sestupně
+term.details: Podrobnosti
 term.developer: Vývojář
 term.device: "Zařízení: {name}"
 term.disable: Vypnout
@@ -2056,6 +2128,7 @@ term.help: Nápověda
 term.hideSearch: Skrýt vyhledávací panel
 term.history: Historie
 term.immersive: Pohlcující
+term.info: Info
 term.items: položky
 term.itunes: iTunes
 term.language: Jazyk
@@ -2099,6 +2172,7 @@ term.newPlaylist: Nový seznam playlistu
 term.newPlaylistFolder: Nová složka playlistov
 term.newpreset.name: Název nové předvolby EQ
 term.next: Další
+term.no: Ne
 term.noLyrics: Načítání... / Text nenalezen./ Instrumentální.
 term.none: Nic
 term.noVideos: Nenalezena žádná videa.
@@ -2168,6 +2242,7 @@ term.replay.uniqueArtists: "{count} unikátní interpreti"
 term.replay.uniqueSongs: "{count} Unikátní skladby"
 term.requestError: Vyskytl se problém s požadavkem.
 term.reset: Resetovat
+term.response: Odpověď
 term.restartRequired: Je vyžadován restart.
 term.rightsReserved: Všechna práva vyhrazena.
 term.scroll: Režim skrolování
@@ -2219,6 +2294,7 @@ term.system: Systém
 term.themeManaged: Spravováno podle motivu
 term.themeManager: Správce motivů
 term.themes: Themes
+term.time: Čas
 term.time.added: Přidané
 term.time.day.one: den
 term.time.day.other: dny
@@ -2259,6 +2335,7 @@ term.uniqueArtists: Unikátní interpreti
 term.uniqueSongs: Unikátní skladby
 term.unknownArtist: Neznámý interpret
 term.unknownDevice: Neznámé zařízení
+term.unknownError: Neznámá chyba
 term.unmute: Ztlumit
 term.unnamed: Bez názvu
 term.upAfter: Následuje po
@@ -2281,6 +2358,7 @@ term.warning: Warning
 term.webremote: Vzdálený web
 term.whatsNew: Co je nového
 term.widget: Widget
+term.yes: Ano
 term.yesterday: Včera
 term.zoom: Zvětšení
 term.zoomin: Přiblížit

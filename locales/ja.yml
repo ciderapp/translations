@@ -132,6 +132,9 @@ action.playTracksLater: ${app.selectedMediaItems.length}曲が最後に再生
 action.playTracksNext: ${app.selectedMediaItems.length}曲が次に再生
 action.plugins.enableVitePlugins: プラグインでViteを有効にする
 action.properties: 情報を見る
+action.queueGuard.askEveryTime: 毎回確認する
+action.queueGuard.playAndClear: 再生して消去
+action.queueGuard.prompt: これを再生した後、以前キューに追加した曲の再生を続けますか？
 action.quit.consent: アプリを終了してもよろしいですか？
 action.reboot: 再起動
 action.refresh: 更新
@@ -359,6 +362,13 @@ library.favoritesOnly: お気に入りのみ
 library.itemSize: アイテムのサイズ
 library.itemSize.comfortable: ゆったり
 library.randomAlbums: ランダムなアルバム
+library.randomAlbums.anyGenres: すべてのジャンル
+library.randomAlbums.minTrackCount: 最小トラック数
+library.randomAlbums.nGenres: "{{ count }}個のジャンル"
+library.randomAlbums.noAlbumsFound: 最小トラック数を満たすアルバムが見つかりませんでした
+library.randomAlbums.numAlbums: アルバム数
+library.randomAlbums.resetGenres: ジャンルをリセット
+library.randomAlbums.unknownGenre: 不明なジャンル
 locale.lang.ar: アラビア語
 locale.lang.de: ドイツ語
 locale.lang.en: 英語
@@ -621,6 +631,24 @@ podcast.playEpisode: 再生
 podcast.subscribedOnItunes: iTunesで購読中
 podcast.subscribeOnItunes: iTunesで購読
 podcast.website: Podcastウェブ
+properties.apiHref: API Href
+properties.appleMusicId: Apple Music ID
+properties.audio.acousticness: アコースティック感
+properties.audio.bpm: BPM
+properties.audio.danceability: ダンス度
+properties.audio.energy: エナジー
+properties.audio.key: キー
+properties.audio.melodicness: メロディアス感
+properties.audio.valence: バレンス
+properties.audioAnalysis: オーディオ分析
+properties.audioTraits: オーディオ特性
+properties.colorCopied: カラースウォッチをコピーしました
+properties.setHomeArtwork: ホームのアートワークに設定
+properties.setHomeArtworkVideo: ホームのアートワークに設定（ビデオ）
+properties.trait.atmos: Dolby Atmos
+properties.trait.lossless: ロスレス
+properties.trait.lossyStereo: AACステレオ
+properties.trait.spatial: 空間オーディオ
 remote.web.description: QRコードを使用して、Ciderとスマートフォンをペアリングする
 remote.web.title: Cider リモート
 replay.uniqueAlbums: "{count}枚以上のユニークなアルバム"
@@ -880,6 +908,46 @@ settings.description.songs: 曲
 settings.discord.clientName.hint: 接続する Discord クライアントを選択します。
 settings.discord.customize.hint: Discord でのステータス表示をカスタマイズします。
 settings.equalizer.warning: 耳やスピーカーへのいかなる損害についても、当方は責任を負いません。自己責任において適切にご使用ください。
+settings.extensions.addBuiltInSnippet: 組み込みスニペットを追加
+settings.extensions.browsePluginMarket: プラグインマーケットプレイスを閲覧
+settings.extensions.browseThemeMarket: テーママーケットプレイスを閲覧
+settings.extensions.checkUpdates: 起動時に拡張機能のアップデートを確認する
+settings.extensions.checkUpdates.desc: Ciderの起動時に、テーマ、スニペット、プラグインのアップデートを確認します。
+settings.extensions.createPlugin: プラグインを作成
+settings.extensions.createSnippet: 新規スニペットを作成
+settings.extensions.createTheme: 新規テーマを作成
+settings.extensions.cssSnippets: CSSスニペット
+settings.extensions.fileWatcher: テーマファイルの監視を有効にする
+settings.extensions.fileWatcher.desc: ディスク上のファイルが変更されたときに、テーマのスタイルシートを自動的に再読み込みします。
+settings.extensions.importFromFile: ファイルからインポート
+settings.extensions.maintenance: メンテナンス
+settings.extensions.newThemeDialog.identifier: 識別子
+settings.extensions.newThemeDialog.name: テーマ名
+settings.extensions.newThemeDialog.title: 新規テーマ
+settings.extensions.openAppData: AppDataフォルダーを開く
+settings.extensions.openAppData.desc: Ciderが拡張機能を読み込むフォルダーを表示します。
+settings.extensions.plugins.empty: プラグインがインストールされていません。
+settings.extensions.plugins.running: 実行中
+settings.extensions.refresh: 拡張機能を更新
+settings.extensions.refresh.desc: ディスクからテーマ、スニペット、プラグインを再スキャンします。
+settings.extensions.refreshed: テーマ、スニペット、プラグインを更新しました
+settings.extensions.snippets.created: スニペットを作成しました
+settings.extensions.snippets.createTitle: 新規CSSスニペットを作成
+settings.extensions.snippets.deleteConfirm: このCSSスニペットを削除してもよろしいですか？この操作は取り消せません。
+settings.extensions.snippets.deleted: スニペットを削除しました
+settings.extensions.snippets.deleteTitle: CSSスニペットを削除
+settings.extensions.snippets.empty: CSSスニペットがインストールされていません。
+settings.extensions.snippets.exported: スニペットをエクスポートしました
+settings.extensions.snippets.imported: "{{ count }}個のスニペットをインポートしました"
+settings.extensions.snippets.importFailed: "{{ file }} のインポートに失敗しました: {{ error }}"
+settings.extensions.snippets.namePrompt: 新しいCSSスニペットの名前を入力してください。
+settings.extensions.snippets.orderUpdated: 順序を更新しました
+settings.extensions.snippets.saved: スニペットを保存しました
+settings.extensions.themeCreated: 新しいテーマを作成しました
+settings.extensions.themes.activeCount: "{{ count }}件有効"
+settings.extensions.themes.empty: インストールされているテーマはありません。
+settings.extensions.themes.stylesheetMany: "{{ count }}件のスタイルシート"
+settings.extensions.themes.stylesheetOne: 1件のスタイルシート
 settings.fonts.description: アプリで使用するフォントを変更します
 settings.fonts.lyrics: 歌詞のフォント
 settings.fonts.lyrics.description: 歌詞に使用されるフォント
@@ -2055,6 +2123,7 @@ term.appSettings: アプリの設定
 term.artistChips: アーティストチップ
 term.artistList: アーティスト一覧
 term.artists: アーティスト
+term.artwork: アートワーク
 term.ascending: 昇順
 term.attention: 注意
 term.audioControls: ボリューム設定
@@ -2076,6 +2145,7 @@ term.check: 確認
 term.ciderTeam: Cider チーム
 term.clearAll: 消去
 term.clearQueue: キューをクリア
+term.clipboard: クリップボード
 term.close: 閉じる
 term.collapse: 折りたたむ
 term.commandPalette: コマンドパレット
@@ -2093,6 +2163,7 @@ term.createBugIssueReport: 問題の報告
 term.createNewPlaylist: 新しいプレイリストを作る
 term.createNewPlaylistFolder: 新しいプレイリストフォルダを作る
 term.creditDesignedBy: ${authorUsername}によってデザインされました
+term.credits: クレジット
 term.curators: キュレーター
 term.current: 現在
 term.date: 日付
@@ -2103,6 +2174,7 @@ term.deletedpreset: プリセットを削除
 term.deletePlaylist: 本当にこのプレイリストを削除しますか？
 term.deletepreset.warn: 本当にこのプリセットを削除しますか？
 term.descending: 降順
+term.details: 詳細
 term.developer: 開発者
 term.device: "デバイス: {name}"
 term.disable: OFF
@@ -2142,6 +2214,7 @@ term.help: ヘルプ
 term.hideSearch: 検索バーを非表示
 term.history: 履歴
 term.immersive: 没入
+term.info: 情報
 term.items: 項目
 term.itunes: iTunes
 term.language: 言語
@@ -2185,6 +2258,7 @@ term.newPlaylist: 新規プレイリスト
 term.newPlaylistFolder: 新しいプレイリストフォルダ
 term.newpreset.name: 名前を入力
 term.next: 次へ
+term.no: いいえ
 term.noLyrics: ロード中... / 歌詞が見つかりません / インストゥルメンタル.
 term.none: なし
 term.noVideos: ビデオが見つかりませんでした
@@ -2254,6 +2328,7 @@ term.replay.uniqueArtists: "{count} 人のアーティスト"
 term.replay.uniqueSongs: "{count} 曲"
 term.requestError: リクエストに問題がありました
 term.reset: リセット
+term.response: レスポンス
 term.restartRequired: 再起動が必要です。
 term.rightsReserved: 全著作権所有。
 term.scroll: スクロールモード
@@ -2313,6 +2388,7 @@ term.system: システム
 term.themeManaged: テーマによって管理されています
 term.themeManager: テーマ 管理
 term.themes: テーマ
+term.time: 時間
 term.time.added: 追加日
 term.time.day.one: 日
 term.time.day.other: 日
@@ -2353,6 +2429,7 @@ term.uniqueArtists: ユニークアーティスト
 term.uniqueSongs: ユニークソング
 term.unknownArtist: 不明なアーティスト
 term.unknownDevice: 不明なデバイス
+term.unknownError: 不明なエラー
 term.unmute: ミュート解除
 term.unnamed: 名称未設定
 term.upAfter: その後に再生
@@ -2375,6 +2452,7 @@ term.warning: 警告
 term.webremote: Webリモート
 term.whatsNew: 新着情報
 term.widget: ウィジェット
+term.yes: はい
 term.yesterday: 昨日
 term.zoom: ズーム
 term.zoomin: ズームイン

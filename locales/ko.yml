@@ -96,6 +96,9 @@ action.playTracksLater: ${app.selectedMediaItems.length} 맨 나중에 재생
 action.playTracksNext: ${app.selectedMediaItems.length} 바로 다음에 재생
 action.plugins.enableVitePlugins: 플러그인에 Vite 활성화
 action.properties: 속성
+action.queueGuard.askEveryTime: 매번 확인
+action.queueGuard.playAndClear: 재생 및 지우기
+action.queueGuard.prompt: 이 곡을 재생한 후, 이전에 대기 목록에 추가한 음악을 계속 재생하시겠습니까?
 action.quit.consent: Are you sure you want to quit the app?
 action.reboot: 재시작
 action.refresh: 다시 불러오기
@@ -297,6 +300,13 @@ library.favoritesOnly: 선호하는 항목만
 library.itemSize: 항목 크기
 library.itemSize.comfortable: 여유롭게
 library.randomAlbums: 임의의 앨범
+library.randomAlbums.anyGenres: 모든 장르
+library.randomAlbums.minTrackCount: 최소 트랙 수
+library.randomAlbums.nGenres: "{{ count }}개 장르"
+library.randomAlbums.noAlbumsFound: 최소 트랙 수를 만족하는 앨범을 찾을 수 없습니다.
+library.randomAlbums.numAlbums: 앨범 수
+library.randomAlbums.resetGenres: 장르 재설정
+library.randomAlbums.unknownGenre: 알 수 없는 장르
 locale.lang.ar: 아랍어
 locale.lang.de: 독일어
 locale.lang.en: 영어
@@ -559,6 +569,24 @@ podcast.playEpisode: 재생
 podcast.subscribedOnItunes: 구독 중
 podcast.subscribeOnItunes: iTunes에서 구독
 podcast.website: 팟캐스트 사이트
+properties.apiHref: API Href
+properties.appleMusicId: Apple Music ID
+properties.audio.acousticness: 어쿠스틱 정도
+properties.audio.bpm: BPM
+properties.audio.danceability: 댄스 적합도
+properties.audio.energy: 에너지
+properties.audio.key: 키
+properties.audio.melodicness: 멜로디 정도
+properties.audio.valence: 긍정성
+properties.audioAnalysis: 오디오 분석
+properties.audioTraits: 오디오 특성
+properties.colorCopied: 색상 견본이 복사되었습니다
+properties.setHomeArtwork: 홈 아트워크로 설정
+properties.setHomeArtworkVideo: 홈 아트워크로 설정 (비디오)
+properties.trait.atmos: Dolby Atmos
+properties.trait.lossless: 무손실
+properties.trait.lossyStereo: AAC 스테레오
+properties.trait.spatial: 공간 음향
 remote.web.description: QR 코드를 스캔해서 Cider와 스마트폰 연결하기
 remote.web.title: Cider 리모트
 replay.uniqueAlbums: "{count}개 이상의 고유 앨범"
@@ -816,6 +844,46 @@ settings.description.songs: 노래
 settings.discord.clientName.hint: 연결할 Discord 클라이언트를 선택하세요.
 settings.discord.customize.hint: Discord에서 표시될 상태 정보를 설정합니다.
 settings.equalizer.warning: 귀나 스피커의 손상에 대해 당사는 책임을 지지 않습니다. 책임감 있게 사용해 주십시오.
+settings.extensions.addBuiltInSnippet: 내장 스니펫 추가
+settings.extensions.browsePluginMarket: 플러그인 마켓플레이스 둘러보기
+settings.extensions.browseThemeMarket: 테마 마켓플레이스 둘러보기
+settings.extensions.checkUpdates: 시작 시 확장 프로그램 업데이트 확인
+settings.extensions.checkUpdates.desc: Cider가 실행될 때마다 테마, 스니펫 및 플러그인 업데이트를 확인합니다.
+settings.extensions.createPlugin: 플러그인 만들기
+settings.extensions.createSnippet: 새 스니펫 만들기
+settings.extensions.createTheme: 새 테마 만들기
+settings.extensions.cssSnippets: CSS 스니펫
+settings.extensions.fileWatcher: 테마 파일 변경 감지 활성화
+settings.extensions.fileWatcher.desc: 디스크에서 테마 파일이 변경되면 스타일시트를 자동으로 다시 로드합니다.
+settings.extensions.importFromFile: 파일에서 가져오기
+settings.extensions.maintenance: 유지 관리
+settings.extensions.newThemeDialog.identifier: 식별자
+settings.extensions.newThemeDialog.name: 테마 이름
+settings.extensions.newThemeDialog.title: 새 테마
+settings.extensions.openAppData: AppData 폴더 열기
+settings.extensions.openAppData.desc: Cider가 확장 프로그램을 읽는 폴더를 엽니다.
+settings.extensions.plugins.empty: 설치된 플러그인이 없습니다.
+settings.extensions.plugins.running: 실행 중
+settings.extensions.refresh: 확장 프로그램 새로고침
+settings.extensions.refresh.desc: 디스크에서 테마, 스니펫, 플러그인을 다시 스캔합니다.
+settings.extensions.refreshed: 테마, 스니펫, 플러그인을 새로고침했습니다
+settings.extensions.snippets.created: 스니펫이 생성되었습니다
+settings.extensions.snippets.createTitle: 새 CSS 스니펫 만들기
+settings.extensions.snippets.deleteConfirm: 이 CSS 스니펫을 삭제하시겠습니까? 이 작업은 취소할 수 없습니다.
+settings.extensions.snippets.deleted: 스니펫이 삭제되었습니다
+settings.extensions.snippets.deleteTitle: CSS 스니펫 삭제
+settings.extensions.snippets.empty: 설치된 CSS 스니펫이 없습니다.
+settings.extensions.snippets.exported: 스니펫을 내보냈습니다
+settings.extensions.snippets.imported: "{{ count }}개의 스니펫을 가져왔습니다"
+settings.extensions.snippets.importFailed: "{{ file }} 가져오기 실패: {{ error }}"
+settings.extensions.snippets.namePrompt: 새 CSS 스니펫의 이름을 입력하세요.
+settings.extensions.snippets.orderUpdated: 순서가 업데이트되었습니다
+settings.extensions.snippets.saved: 스니펫이 저장되었습니다
+settings.extensions.themeCreated: 새 테마를 성공적으로 생성했습니다
+settings.extensions.themes.activeCount: "{{ count }}개 활성화됨"
+settings.extensions.themes.empty: 설치된 테마가 없습니다.
+settings.extensions.themes.stylesheetMany: "{{ count }}개의 스타일시트"
+settings.extensions.themes.stylesheetOne: 1개의 스타일시트
 settings.fonts.description: 앱에서 사용할 서체 변경
 settings.fonts.lyrics: 가사 서체
 settings.fonts.lyrics.description: 가사에 사용할 서체
@@ -1969,6 +2037,7 @@ term.appSettings: 앱 설정
 term.artistChips: Artist Chips
 term.artistList: 아티스트 목록
 term.artists: 아티스트
+term.artwork: 아트워크
 term.ascending: 오름차순
 term.attention: Attention
 term.audioControls: 볼륨 제어
@@ -1990,6 +2059,7 @@ term.check: 확인
 term.ciderTeam: Cider 팀
 term.clearAll: 비우기
 term.clearQueue: 비우기
+term.clipboard: 클립보드
 term.close: 닫기
 term.collapse: 접기
 term.commandPalette: 명령 팔레트
@@ -2007,6 +2077,7 @@ term.createBugIssueReport: 버그/이슈 리포트 생성하기
 term.createNewPlaylist: 새로운 플레이리스트 만들기
 term.createNewPlaylistFolder: 새로운 플레이리스트 폴더 만들기
 term.creditDesignedBy: ${authorUsername}에 의해 디자인됨
+term.credits: 크레딧
 term.curators: 큐레이터
 term.current: 현재
 term.date: 날짜
@@ -2017,6 +2088,7 @@ term.deletedpreset: 프리셋 삭제
 term.deletePlaylist: 정말 플레이리스트를 삭제하시겠습니까?
 term.deletepreset.warn: 정말로 프리셋을 삭제하시겠습니까?
 term.descending: 내림차순
+term.details: 상세 정보
 term.developer: 개발자
 term.device: "기기: {name}"
 term.disable: 비활성화
@@ -2056,6 +2128,7 @@ term.help: 도움말
 term.hideSearch: 검색 바 가리기
 term.history: 기록
 term.immersive: 몰입
+term.info: 정보
 term.items: 개 항목
 term.itunes: iTunes
 term.language: 언어
@@ -2099,6 +2172,7 @@ term.newPlaylist: 새로운 플레이리스트
 term.newPlaylistFolder: 새로운 플레이리스트 폴더
 term.newpreset.name: 새 이퀄라이저 프리셋
 term.next: 다음
+term.no: 아니요
 term.noLyrics: 불러오는 중... / 가사를 찾을 수 없습니다./ 연주곡
 term.none: 없음
 term.noVideos: 발견된 비디오가 없습니다.
@@ -2168,6 +2242,7 @@ term.replay.uniqueArtists: "{count}명의 아티스트"
 term.replay.uniqueSongs: "{count}개의 곡"
 term.requestError: 요청에 문제가 있습니다.
 term.reset: 초기화
+term.response: 응답
 term.restartRequired: 재시작이 필요합니다.
 term.rightsReserved: All Rights Reserved.
 term.scroll: 스크롤 모드
@@ -2219,6 +2294,7 @@ term.system: 시스템
 term.themeManaged: 테마에 의해 관리됨
 term.themeManager: 테마 관리자
 term.themes: Themes
+term.time: 시간
 term.time.added: 추가
 term.time.day.one: 일
 term.time.day.other: 일
@@ -2259,6 +2335,7 @@ term.uniqueArtists: 고유한 아티스트
 term.uniqueSongs: 고유한 노래
 term.unknownArtist: 알 수 없는 아티스트
 term.unknownDevice: 알 수 없는 기기
+term.unknownError: 알 수 없는 오류
 term.unmute: 음소거 해제
 term.unnamed: 이름 없음
 term.upAfter: 이어서 재생할 곡
@@ -2281,6 +2358,7 @@ term.warning: Warning
 term.webremote: 웹 리모트
 term.whatsNew: 새로운 소식
 term.widget: 위젯
+term.yes: 예
 term.yesterday: 어제
 term.zoom: 확대/축소
 term.zoomin: 확대

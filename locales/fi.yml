@@ -96,6 +96,9 @@ action.playTracksLater: Toista ${app.selectedMediaItems.length} kappaleet myöhe
 action.playTracksNext: Toista ${app.selectedMediaItems.length} kappaleet seuraavaksi
 action.plugins.enableVitePlugins: Ota Vite käyttöön liitännäisille
 action.properties: Ominaisuudet
+action.queueGuard.askEveryTime: Kysy joka kerta
+action.queueGuard.playAndClear: Toista ja tyhjennä
+action.queueGuard.prompt: Haluatko tämän toiston jälkeen jatkaa aiemmin jonoon lisäämäsi musiikin toistamista?
 action.quit.consent: Oletko varma, että haluat lopettaa sovelluksen?
 action.reboot: Käynnistä uudelleen
 action.refresh: Päivitä
@@ -297,6 +300,13 @@ library.favoritesOnly: Vain suosikit
 library.itemSize: Kohteen koko
 library.itemSize.comfortable: Väljä
 library.randomAlbums: Satunnaiset albumit
+library.randomAlbums.anyGenres: Mikä tahansa tyylilaji
+library.randomAlbums.minTrackCount: Kappaleiden vähimmäismäärä
+library.randomAlbums.nGenres: "{{ count }} tyylilaji(a)"
+library.randomAlbums.noAlbumsFound: Albumeita ei löytynyt vähimmäiskappalemäärällä
+library.randomAlbums.numAlbums: Albumien määrä
+library.randomAlbums.resetGenres: Nollaa tyylilajit
+library.randomAlbums.unknownGenre: Tuntematon tyylilaji
 locale.lang.ar: Arabia
 locale.lang.de: Saksa
 locale.lang.en: Englanti
@@ -559,6 +569,24 @@ podcast.playEpisode: Toista jakso
 podcast.subscribedOnItunes: Tilattu iTunesissa
 podcast.subscribeOnItunes: Tilaa iTunesissa
 podcast.website: Avaa nettisivu
+properties.apiHref: API Href
+properties.appleMusicId: Apple Music -tunnus
+properties.audio.acousticness: Akustisuus
+properties.audio.bpm: BPM
+properties.audio.danceability: Tanssittavuus
+properties.audio.energy: Energisyys
+properties.audio.key: Sävellaji
+properties.audio.melodicness: Melodisuus
+properties.audio.valence: Valenssi
+properties.audioAnalysis: Äänianalyysi
+properties.audioTraits: Ääniominaisuudet
+properties.colorCopied: Värinäyte kopioitu
+properties.setHomeArtwork: Aseta Koti-näkymän kuvitukseksi
+properties.setHomeArtworkVideo: Aseta Koti-näkymän kuvitukseksi (video)
+properties.trait.atmos: Dolby Atmos
+properties.trait.lossless: Häviötön
+properties.trait.lossyStereo: AAC-stereo
+properties.trait.spatial: Tilaääni
 remote.web.description: Skannaa QR-koodi yhdistääksesi puhelimesi tämän Cider-instanssin kanssa
 remote.web.title: Ciderin kaukosäädin
 replay.uniqueAlbums: Yli {count} eri albumia
@@ -816,6 +844,46 @@ settings.description.songs: Kappaleet
 settings.discord.clientName.hint: Valitse, mihin Discord-sovellukseen yhdistetään.
 settings.discord.customize.hint: Mukauta sitä, miltä tilasi näyttää Discordissa.
 settings.equalizer.warning: Emme ole vastuussa korvillesi tai kaiuttimillesi aiheutuneista vaurioista. Käytäthän vastuullisesti.
+settings.extensions.addBuiltInSnippet: Lisää sisäänrakennettu koodinpätkä
+settings.extensions.browsePluginMarket: Selaa lisäosakauppaa
+settings.extensions.browseThemeMarket: Selaa teemakauppaa
+settings.extensions.checkUpdates: Tarkista laajennusten päivitykset käynnistyksen yhteydessä
+settings.extensions.checkUpdates.desc: Etsi teema-, koodinpätkä- ja lisäosapäivityksiä aina kun Cider käynnistetään.
+settings.extensions.createPlugin: Luo lisäosa
+settings.extensions.createSnippet: Luo uusi koodinpätkä
+settings.extensions.createTheme: Luo uusi teema
+settings.extensions.cssSnippets: CSS-koodinpätkät
+settings.extensions.fileWatcher: Ota käyttöön teematiedostojen tarkkailija
+settings.extensions.fileWatcher.desc: Lataa teeman tyylitiedostot uudelleen automaattisesti, kun niiden tiedostot muuttuvat levyllä.
+settings.extensions.importFromFile: Tuo tiedostosta
+settings.extensions.maintenance: Ylläpito
+settings.extensions.newThemeDialog.identifier: Tunniste
+settings.extensions.newThemeDialog.name: Teeman nimi
+settings.extensions.newThemeDialog.title: Uusi teema
+settings.extensions.openAppData: Avaa AppData-kansio
+settings.extensions.openAppData.desc: Näytä kansio, josta Cider lukee laajennukset.
+settings.extensions.plugins.empty: Ei asennettuja lisäosia.
+settings.extensions.plugins.running: Käynnissä
+settings.extensions.refresh: Päivitä laajennukset
+settings.extensions.refresh.desc: Skannaa teemat, koodinpätkät ja lisäosat uudelleen levyltä.
+settings.extensions.refreshed: Teemat, koodinpätkät ja lisäosat päivitetty
+settings.extensions.snippets.created: Koodinpätkä luotu
+settings.extensions.snippets.createTitle: Luo uusi CSS-koodinpätkä
+settings.extensions.snippets.deleteConfirm: Haluatko varmasti poistaa tämän CSS-koodinpätkän? Tätä toimintoa ei voi peruuttaa.
+settings.extensions.snippets.deleted: Koodinpätkä poistettu
+settings.extensions.snippets.deleteTitle: Poista CSS-koodinpätkä
+settings.extensions.snippets.empty: Ei asennettuja CSS-koodinpätkiä.
+settings.extensions.snippets.exported: Koodinpätkä viety
+settings.extensions.snippets.imported: Tuotu {{ count }} koodinpätkä(ä)
+settings.extensions.snippets.importFailed: "Tiedoston {{ file }} tuonti epäonnistui: {{ error }}"
+settings.extensions.snippets.namePrompt: Anna nimi uudelle CSS-koodinpätkälle.
+settings.extensions.snippets.orderUpdated: Järjestys päivitetty
+settings.extensions.snippets.saved: Koodinpätkä tallennettu
+settings.extensions.themeCreated: Uusi teema luotu onnistuneesti
+settings.extensions.themes.activeCount: "{{ count }} aktiivista"
+settings.extensions.themes.empty: Ei asennettuja teemoja.
+settings.extensions.themes.stylesheetMany: "{{ count }} tyylitiedostoa"
+settings.extensions.themes.stylesheetOne: 1 tyylitiedosto
 settings.fonts.description: Vaihda sovelluksessa käytettävää fonttia
 settings.fonts.lyrics: Sanoitusten fontti
 settings.fonts.lyrics.description: Sanoituksissa käytettävä fontti
@@ -1969,6 +2037,7 @@ term.appSettings: Sovelluksen asetukset
 term.artistChips: Esittäjän Sirut
 term.artistList: Esittäjän Luettelo
 term.artists: Artistit
+term.artwork: Kansikuva
 term.ascending: Nouseva
 term.attention: Attention
 term.audioControls: Äänenvoimakkuuden Säätimet
@@ -1990,6 +2059,7 @@ term.check: Tarkista
 term.ciderTeam: Cider tiimi
 term.clearAll: Puhdista kaikki
 term.clearQueue: Tyhjennä
+term.clipboard: Leikepöytä
 term.close: Sulje
 term.collapse: Kutista
 term.commandPalette: Komentopaletti
@@ -2007,6 +2077,7 @@ term.createBugIssueReport: Luo Vikailmoitus / Ongelmaraportti
 term.createNewPlaylist: Luo uusi soittolista
 term.createNewPlaylistFolder: Luo uusi soittolistakansio
 term.creditDesignedBy: Suunnitellut ${authorUsername}
+term.credits: Tekijät
 term.curators: Kuraattorit
 term.current: Nykyinen
 term.date: Päivämäärä
@@ -2017,6 +2088,7 @@ term.deletedpreset: Poistettu esiasetus
 term.deletePlaylist: Oletko varma, että haluat poistaa tämän soittolistan?
 term.deletepreset.warn: Oletko varma, että haluat poistaa esiasetuksen?
 term.descending: Laskeva
+term.details: Tiedot
 term.developer: Kehittäjä
 term.device: "Laite: {name}"
 term.disable: Poista käytöstä
@@ -2056,6 +2128,7 @@ term.help: Ohje
 term.hideSearch: Piilota hakupalkki
 term.history: Historia
 term.immersive: Immersive
+term.info: Info
 term.items: kohdetta
 term.itunes: iTunes
 term.language: Kieli
@@ -2099,6 +2172,7 @@ term.newPlaylist: Uusi soittolista
 term.newPlaylistFolder: Uusi soittolistakansio
 term.newpreset.name: Uusi Eq-Esiasetus Nimi
 term.next: Seuraava
+term.no: Ei
 term.noLyrics: Ei sanoituksia
 term.none: Ei Mitään
 term.noVideos: Videoita ei löytynyt.
@@ -2168,6 +2242,7 @@ term.replay.uniqueArtists: "{count} Ainutlaatuista Esittäjää"
 term.replay.uniqueSongs: "{count} Ainutlaatuista Kappaletta"
 term.requestError: Pyyntöön liittyi jokin ongelma.
 term.reset: Nollaa
+term.response: Vastaus
 term.restartRequired: Vaatii uudelleenkäynnistyksen.
 term.rightsReserved: Oikeudet pidätetään
 term.scroll: Vieritä Tila
@@ -2219,6 +2294,7 @@ term.system: Järjestelmä
 term.themeManaged: Hallinnoitu teemalla
 term.themeManager: Teeman Hallinta
 term.themes: Themes
+term.time: Aika
 term.time.added: Lisätty
 term.time.day.one: päivä
 term.time.day.other: päivää
@@ -2259,6 +2335,7 @@ term.uniqueArtists: Ainutlaatuiset Esittäjät
 term.uniqueSongs: Yksilölliset Kappaleet
 term.unknownArtist: Tuntematon esittäjä
 term.unknownDevice: Tuntematon laite
+term.unknownError: Tuntematon virhe
 term.unmute: Poista mykistys
 term.unnamed: Nimetön
 term.upAfter: Tämän jälkeen
@@ -2281,6 +2358,7 @@ term.warning: Warning
 term.webremote: Etä Webissä
 term.whatsNew: Mitä Uutta
 term.widget: Pienoisohjelma
+term.yes: Kyllä
 term.yesterday: Eilen
 term.zoom: Zoomaus
 term.zoomin: Zoomaa Sisään
