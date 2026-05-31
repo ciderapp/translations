@@ -96,6 +96,9 @@ action.playTracksLater: Spela ${app.selectedMediaItems.length} låtar sist
 action.playTracksNext: Spela ${app.selectedMediaItems.length} låtar härnäst
 action.plugins.enableVitePlugins: Aktivera Vite för tillägg
 action.properties: Egenskaper
+action.queueGuard.askEveryTime: Fråga mig varje gång
+action.queueGuard.playAndClear: Spela och rensa
+action.queueGuard.prompt: Vill du fortsätta spela musiken du tidigare köade efter att detta har spelats?
 action.quit.consent: Är du säker på att du vill avsluta appen?
 action.reboot: Starta om
 action.refresh: Uppdatera
@@ -297,6 +300,13 @@ library.favoritesOnly: Endast favoriter
 library.itemSize: Objektstorlek
 library.itemSize.comfortable: Luftig
 library.randomAlbums: Slumpmässiga album
+library.randomAlbums.anyGenres: Valfria genrer
+library.randomAlbums.minTrackCount: Minsta antal låtar
+library.randomAlbums.nGenres: "{{ count }} genre(r)"
+library.randomAlbums.noAlbumsFound: Inga album hittades med det minsta antalet låtar
+library.randomAlbums.numAlbums: Antal album
+library.randomAlbums.resetGenres: Återställ genrer
+library.randomAlbums.unknownGenre: Okänd genre
 locale.lang.ar: Arabiska
 locale.lang.de: Tyska
 locale.lang.en: Engelska
@@ -559,6 +569,24 @@ podcast.playEpisode: Spela avsnitt
 podcast.subscribedOnItunes: Följer på iTunes
 podcast.subscribeOnItunes: Följ på iTunes
 podcast.website: Öppna webbsida
+properties.apiHref: API-href
+properties.appleMusicId: Apple Music-ID
+properties.audio.acousticness: Akustiskhet
+properties.audio.bpm: BPM
+properties.audio.danceability: Dansbarhet
+properties.audio.energy: Energi
+properties.audio.key: Tonart
+properties.audio.melodicness: Melodiskhet
+properties.audio.valence: Valens
+properties.audioAnalysis: Ljudanalys
+properties.audioTraits: Ljudegenskaper
+properties.colorCopied: Färgprov kopierat
+properties.setHomeArtwork: Ställ in som omslagsbild för Hem
+properties.setHomeArtworkVideo: Ställ in som omslagsbild för Hem (video)
+properties.trait.atmos: Dolby Atmos
+properties.trait.lossless: Lossless
+properties.trait.lossyStereo: AAC-stereo
+properties.trait.spatial: Rumsanpassat ljud
 remote.web.description: Skanna QR koden för att ansluta din telefon till Cider.
 remote.web.title: Cider fjärrkontroll
 replay.uniqueAlbums: Över {count} unika album
@@ -816,6 +844,46 @@ settings.description.songs: Låtar
 settings.discord.clientName.hint: Välj vilken Discord-klient du vill ansluta till.
 settings.discord.customize.hint: Anpassa hur din status visas på Discord.
 settings.equalizer.warning: Vi ansvarar inte för eventuella skador på dina öron eller högtalare. Använd med eftertanke.
+settings.extensions.addBuiltInSnippet: Lägg till ett inbyggt kodavsnitt
+settings.extensions.browsePluginMarket: Bläddra i plugin-marknaden
+settings.extensions.browseThemeMarket: Bläddra i temamarknaden
+settings.extensions.checkUpdates: Sök efter uppdateringar för tillägg vid start
+settings.extensions.checkUpdates.desc: Sök efter uppdateringar för teman, kodavsnitt och plugin-program varje gång Cider startas.
+settings.extensions.createPlugin: Skapa ett plugin-program
+settings.extensions.createSnippet: Skapa nytt kodavsnitt
+settings.extensions.createTheme: Skapa nytt tema
+settings.extensions.cssSnippets: CSS-kodavsnitt
+settings.extensions.fileWatcher: Aktivera filbevakare för teman
+settings.extensions.fileWatcher.desc: Läs in temats stilmallar automatiskt när deras filer ändras på disken.
+settings.extensions.importFromFile: Importera från fil
+settings.extensions.maintenance: Underhåll
+settings.extensions.newThemeDialog.identifier: Identifierare
+settings.extensions.newThemeDialog.name: Temanamn
+settings.extensions.newThemeDialog.title: Nytt tema
+settings.extensions.openAppData: Öppna AppData-mappen
+settings.extensions.openAppData.desc: Visa mappen som Cider läser tillägg från.
+settings.extensions.plugins.empty: Inga plugin-program installerade.
+settings.extensions.plugins.running: Körs
+settings.extensions.refresh: Uppdatera tillägg
+settings.extensions.refresh.desc: Sök igenom teman, kodavsnitt och plugin-program på disken igen.
+settings.extensions.refreshed: Teman, kodavsnitt och plugin-program har uppdaterats
+settings.extensions.snippets.created: Kodavsnitt skapat
+settings.extensions.snippets.createTitle: Skapa nytt CSS-kodavsnitt
+settings.extensions.snippets.deleteConfirm: Är du säker på att du vill ta bort detta CSS-kodavsnitt? Denna åtgärd kan inte ångras.
+settings.extensions.snippets.deleted: Kodavsnitt borttaget
+settings.extensions.snippets.deleteTitle: Ta bort CSS-kodavsnitt
+settings.extensions.snippets.empty: Inga CSS-kodavsnitt installerade.
+settings.extensions.snippets.exported: Kodavsnitt exporterat
+settings.extensions.snippets.imported: Importerade {{ count }} kodavsnitt
+settings.extensions.snippets.importFailed: "Misslyckades med att importera {{ file }}: {{ error }}"
+settings.extensions.snippets.namePrompt: Ange ett namn för din nya CSS-kodsnutt.
+settings.extensions.snippets.orderUpdated: Ordningen uppdaterad
+settings.extensions.snippets.saved: Kodsnutten sparad
+settings.extensions.themeCreated: Nytt tema har skapats
+settings.extensions.themes.activeCount: "{{ count }} aktiva"
+settings.extensions.themes.empty: Inga teman installerade.
+settings.extensions.themes.stylesheetMany: "{{ count }} formatmallar"
+settings.extensions.themes.stylesheetOne: 1 formatmall
 settings.fonts.description: Ändra typsnittet som används i appen
 settings.fonts.lyrics: Typsnitt för låttexter
 settings.fonts.lyrics.description: Typsnittet som används för låttexter
@@ -1969,6 +2037,7 @@ term.appSettings: Appinställningar
 term.artistChips: Artist marker
 term.artistList: Lista över artister
 term.artists: Artister
+term.artwork: Omslag
 term.ascending: Stigande
 term.attention: Obs
 term.audioControls: Volymkontroll
@@ -1990,6 +2059,7 @@ term.check: Sök efter uppdateringar
 term.ciderTeam: Cider teamet
 term.clearAll: Rensa allt
 term.clearQueue: Rensa
+term.clipboard: Urklipp
 term.close: Stäng
 term.collapse: Komprimera
 term.commandPalette: Kommando palett
@@ -2007,6 +2077,7 @@ term.createBugIssueReport: Skapa bugg / Ärenderapport
 term.createNewPlaylist: Skapa ny spellista
 term.createNewPlaylistFolder: Skapa ny spellistemapp
 term.creditDesignedBy: Designad av ${authorUsername}
+term.credits: Medverkande
 term.curators: Kuratorer
 term.current: Aktuell
 term.date: Datum
@@ -2017,6 +2088,7 @@ term.deletedpreset: Tog bort förval
 term.deletePlaylist: Är du säker att du vill ta bort den här spellistan?
 term.deletepreset.warn: Är du säker på att du vill ta bort denna förinställning?
 term.descending: Fallande
+term.details: Detaljer
 term.developer: Utvecklare
 term.device: "Enhet: {name}"
 term.disable: Inaktivera
@@ -2056,6 +2128,7 @@ term.help: Hjälp
 term.hideSearch: Dölj sökfältet
 term.history: Historik
 term.immersive: Uppslukande
+term.info: Info
 term.items: objekt
 term.itunes: iTunes
 term.language: Språk (Language)
@@ -2099,6 +2172,7 @@ term.newPlaylist: Ny spellista
 term.newPlaylistFolder: Ny spellistemapp
 term.newpreset.name: Nytt förinställningsnamn för EQ
 term.next: Nästa
+term.no: Nej
 term.noLyrics: Laddar... / Inga låttexter hittades./ Instrumental.
 term.none: Ingen
 term.noVideos: Inga videor hittades.
@@ -2168,6 +2242,7 @@ term.replay.uniqueArtists: "{count} Unika artister"
 term.replay.uniqueSongs: "{count} unika låtar"
 term.requestError: Det uppstod ett problem med begäran.
 term.reset: Återställ
+term.response: Svar
 term.restartRequired: Omstart krävs.
 term.rightsReserved: Alla rättigheter behålls.
 term.scroll: Rulla läge
@@ -2219,6 +2294,7 @@ term.system: System
 term.themeManaged: Hanteras av ett tema
 term.themeManager: Tema hanterare
 term.themes: Themes
+term.time: Tid
 term.time.added: Tillagd
 term.time.day.one: dag
 term.time.day.other: dagar
@@ -2259,6 +2335,7 @@ term.uniqueArtists: Unika artister
 term.uniqueSongs: Unika låtar
 term.unknownArtist: Okänd artist
 term.unknownDevice: Okänd enhet
+term.unknownError: Okänt fel
 term.unmute: Sluta tysta
 term.unnamed: Namnlös
 term.upAfter: Spelas efter
@@ -2281,6 +2358,7 @@ term.warning: Varning
 term.webremote: Fjärrkontroll på webben
 term.whatsNew: Vad är nytt
 term.widget: Widget
+term.yes: Ja
 term.yesterday: Igår
 term.zoom: Zoom
 term.zoomin: Zooma in

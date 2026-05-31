@@ -98,6 +98,9 @@ action.playTracksLater: Speel ${app.selectedMediaItems.length} nummers later
 action.playTracksNext: Speel ${app.selectedMediaItems.length} nummers als volgende
 action.plugins.enableVitePlugins: Vite inschakelen voor plug-ins
 action.properties: Eigenschappen
+action.queueGuard.askEveryTime: Vraag me elke keer
+action.queueGuard.playAndClear: Speel af en wis
+action.queueGuard.prompt: Wil je na het afspelen hiervan doorgaan met de muziek die je eerder in de wachtrij hebt gezet?
 action.quit.consent: Weet u zeker dat u de app wilt afsluiten?
 action.reboot: Herstarten
 action.refresh: Herladen
@@ -295,6 +298,13 @@ library.favoritesOnly: Alleen favorieten
 library.itemSize: Grootte van onderdelen
 library.itemSize.comfortable: Comfortabel
 library.randomAlbums: Willekeurige albums
+library.randomAlbums.anyGenres: Alle genres
+library.randomAlbums.minTrackCount: Minimumaantal nummers
+library.randomAlbums.nGenres: "{{ count }} genre(s)"
+library.randomAlbums.noAlbumsFound: Geen albums gevonden met het minimumaantal nummers
+library.randomAlbums.numAlbums: Aantal albums
+library.randomAlbums.resetGenres: Genres herstellen
+library.randomAlbums.unknownGenre: Onbekend genre
 locale.lang.ar: Arabisch
 locale.lang.de: Duits
 locale.lang.en: Engels
@@ -557,6 +567,24 @@ podcast.playEpisode: Speel aflevering
 podcast.subscribedOnItunes: Geabonneerd op iTunes
 podcast.subscribeOnItunes: Abonneer op iTunes
 podcast.website: Podcast website
+properties.apiHref: API-href
+properties.appleMusicId: Apple Music-ID
+properties.audio.acousticness: Akoestiek
+properties.audio.bpm: BPM
+properties.audio.danceability: Dansbaarheid
+properties.audio.energy: Energie
+properties.audio.key: Toonsoort
+properties.audio.melodicness: Melodiciteit
+properties.audio.valence: Valentie
+properties.audioAnalysis: Audioanalyse
+properties.audioTraits: Audiokenmerken
+properties.colorCopied: Kleurstaal gekopieerd
+properties.setHomeArtwork: Als startpagina-illustratie instellen
+properties.setHomeArtworkVideo: Als startpagina-illustratie instellen (video)
+properties.trait.atmos: Dolby Atmos
+properties.trait.lossless: Lossless
+properties.trait.lossyStereo: AAC-stereo
+properties.trait.spatial: Ruimtelijke audio
 remote.web.description: Scan de QR-code om je telefoon te koppelen met deze Cider-instantie
 remote.web.title: Cider Webbediening
 replay.uniqueAlbums: Meer dan {count} unieke albums
@@ -814,6 +842,46 @@ settings.description.songs: Nummers
 settings.discord.clientName.hint: Selecteer met welke Discord-client verbinding moet worden gemaakt.
 settings.discord.customize.hint: Pas aan hoe je status eruitziet op Discord.
 settings.equalizer.warning: Wij zijn niet verantwoordelijk voor eventuele schade aan je gehoor of luidsprekers. Gebruik dit op verantwoorde wijze.
+settings.extensions.addBuiltInSnippet: Ingebouwd fragment toevoegen
+settings.extensions.browsePluginMarket: Plugin-marktplaats verkennen
+settings.extensions.browseThemeMarket: Thema-marktplaats verkennen
+settings.extensions.checkUpdates: Bij opstarten controleren op updates voor extensies
+settings.extensions.checkUpdates.desc: Zoek naar updates voor thema's, fragmenten en plugins telkens wanneer Cider wordt gestart.
+settings.extensions.createPlugin: Plugin maken
+settings.extensions.createSnippet: Nieuw fragment maken
+settings.extensions.createTheme: Nieuw thema maken
+settings.extensions.cssSnippets: CSS-fragmenten
+settings.extensions.fileWatcher: Themabestandscontrole inschakelen
+settings.extensions.fileWatcher.desc: Themastijlbladen automatisch opnieuw laden wanneer de bestanden op de schijf worden gewijzigd.
+settings.extensions.importFromFile: Importeren uit bestand
+settings.extensions.maintenance: Onderhoud
+settings.extensions.newThemeDialog.identifier: ID
+settings.extensions.newThemeDialog.name: Themanaam
+settings.extensions.newThemeDialog.title: Nieuw thema
+settings.extensions.openAppData: AppData-map openen
+settings.extensions.openAppData.desc: Open de map waaruit Cider extensies leest.
+settings.extensions.plugins.empty: Geen plugins geïnstalleerd.
+settings.extensions.plugins.running: Actief
+settings.extensions.refresh: Extensies vernieuwen
+settings.extensions.refresh.desc: Thema's, fragmenten en plugins opnieuw scannen vanaf de schijf.
+settings.extensions.refreshed: Thema's, fragmenten en plugins vernieuwd
+settings.extensions.snippets.created: Fragment gemaakt
+settings.extensions.snippets.createTitle: Nieuw CSS-fragment maken
+settings.extensions.snippets.deleteConfirm: Weet je zeker dat je dit CSS-fragment wilt verwijderen? Deze actie kan niet ongedaan worden gemaakt.
+settings.extensions.snippets.deleted: Fragment verwijderd
+settings.extensions.snippets.deleteTitle: CSS-fragment verwijderen
+settings.extensions.snippets.empty: Geen CSS-fragmenten geïnstalleerd.
+settings.extensions.snippets.exported: Fragment geëxporteerd
+settings.extensions.snippets.imported: "{{ count }} fragment(en) geïmporteerd"
+settings.extensions.snippets.importFailed: "Importeren van {{ file }} mislukt: {{ error }}"
+settings.extensions.snippets.namePrompt: Voer een naam in voor je nieuwe CSS-snippet.
+settings.extensions.snippets.orderUpdated: Volgorde bijgewerkt
+settings.extensions.snippets.saved: Snippet opgeslagen
+settings.extensions.themeCreated: Nieuw thema succesvol aangemaakt
+settings.extensions.themes.activeCount: "{{ count }} actief"
+settings.extensions.themes.empty: Geen thema's geïnstalleerd.
+settings.extensions.themes.stylesheetMany: "{{ count }} stylesheets"
+settings.extensions.themes.stylesheetOne: 1 stylesheet
 settings.fonts.description: Wijzig het lettertype dat in de app wordt gebruikt
 settings.fonts.lyrics: Lettertype voor songteksten
 settings.fonts.lyrics.description: Het lettertype dat wordt gebruikt voor songteksten
@@ -1967,6 +2035,7 @@ term.appSettings: App-instellingen
 term.artistChips: Kunstenaar frietjes
 term.artistList: Artiestenlijst
 term.artists: Artiesten
+term.artwork: Artwork
 term.ascending: Oplopend
 term.attention: Attention
 term.audioControls: Volumeregeling
@@ -1988,6 +2057,7 @@ term.check: Controleer
 term.ciderTeam: Cider team
 term.clearAll: Wis alles
 term.clearQueue: Verwijderen
+term.clipboard: Klembord
 term.close: Sluiten
 term.collapse: Samenvouwen
 term.commandPalette: Commando palet
@@ -2005,6 +2075,7 @@ term.createBugIssueReport: Bug of probleemrapport aanmaken
 term.createNewPlaylist: Nieuwe afspeellijst
 term.createNewPlaylistFolder: Nieuwe map
 term.creditDesignedBy: Ontworpen door ${authorUsername}
+term.credits: Credits
 term.curators: Curatoren
 term.current: Huidige
 term.date: Datum
@@ -2015,6 +2086,7 @@ term.deletedpreset: Verwijderde voorinstelling
 term.deletePlaylist: Weet je zeker dat je deze afspeellijst wilt verwijderen?
 term.deletepreset.warn: Weet u zeker dat u deze voorinstelling wilt verwijderen?
 term.descending: Aflopend
+term.details: Details
 term.developer: Ontwikkelaar
 term.device: "Apparaat: {name}"
 term.disable: Uitschakelen
@@ -2054,6 +2126,7 @@ term.help: Help
 term.hideSearch: Verberg zoekbalk
 term.history: Geschiedenis
 term.immersive: Immersive
+term.info: Info
 term.items: items
 term.itunes: iTunes
 term.language: Taal
@@ -2098,6 +2171,7 @@ term.newPlaylist: Nieuwe afspeellijst
 term.newPlaylistFolder: Nieuwe map
 term.newpreset.name: Nieuwe EQ-voorinstellingsnaam
 term.next: Volgende
+term.no: Nee
 term.noLyrics: Laden... /Songtekst niet gevonden./ Instrumentaal.
 term.none: Geen
 term.noVideos: Geen video's gevonden.
@@ -2167,6 +2241,7 @@ term.replay.uniqueArtists: "{count} Unieke Artiesten"
 term.replay.uniqueSongs: "{count} Unieke Nummers"
 term.requestError: Er was een probleem met het verzoek.
 term.reset: Resetten
+term.response: Respons
 term.restartRequired: Opnieuw opstarten vereist.
 term.rightsReserved: Alle rechten voorbehouden.
 term.scroll: Scroll-modus
@@ -2218,6 +2293,7 @@ term.system: Systeem
 term.themeManaged: Beheerd door een thema
 term.themeManager: Themamanager
 term.themes: Themes
+term.time: Tijd
 term.time.added: Toegevoegd
 term.time.day.one: dag
 term.time.day.other: dagen
@@ -2258,6 +2334,7 @@ term.uniqueArtists: verschillende  artiesten
 term.uniqueSongs: verschillende nummers
 term.unknownArtist: Onbekende artiest
 term.unknownDevice: Onbekend apparaat
+term.unknownError: Onbekende fout
 term.unmute: Dempen opheffen
 term.unnamed: Naamloos
 term.upAfter: Daarna
@@ -2280,6 +2357,7 @@ term.warning: Warning
 term.webremote: Webbediening
 term.whatsNew: Wat is er nieuw
 term.widget: Widget
+term.yes: Ja
 term.yesterday: Gisteren
 term.zoom: Zoom
 term.zoomin: Inzoemen

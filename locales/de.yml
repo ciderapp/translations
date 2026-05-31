@@ -96,6 +96,9 @@ action.playTracksLater: ${app.selectedMediaItems.length} Titel später wiedergeb
 action.playTracksNext: ${app.selectedMediaItems.length} Titel als Nächstes spielen
 action.plugins.enableVitePlugins: Vite für Plugins aktivieren
 action.properties: Eigenschaften
+action.queueGuard.askEveryTime: Frag mich jedes Mal
+action.queueGuard.playAndClear: Abspielen und löschen
+action.queueGuard.prompt: Möchtest du nach der Wiedergabe dieses Titels die zuvor eingereihte Musik weiter abspielen?
 action.quit.consent: Möchtest du die App wirklich beenden?
 action.reboot: Neustarten
 action.refresh: Aktualisieren
@@ -297,6 +300,13 @@ library.favoritesOnly: Nur Favoriten
 library.itemSize: Objektgröße
 library.itemSize.comfortable: Komfortabel
 library.randomAlbums: Zufällige Alben
+library.randomAlbums.anyGenres: Beliebige(s) Genre(s)
+library.randomAlbums.minTrackCount: Mindestanzahl an Titeln
+library.randomAlbums.nGenres: "{{ count }} Genre(s)"
+library.randomAlbums.noAlbumsFound: Keine Alben mit der Mindestanzahl an Titeln gefunden
+library.randomAlbums.numAlbums: Anzahl der Alben
+library.randomAlbums.resetGenres: Genres zurücksetzen
+library.randomAlbums.unknownGenre: Unbekanntes Genre
 locale.lang.ar: Arabisch
 locale.lang.de: Deutsch
 locale.lang.en: Englisch
@@ -559,6 +569,24 @@ podcast.playEpisode: Folge abspielen
 podcast.subscribedOnItunes: Auf iTunes abonniert
 podcast.subscribeOnItunes: Auf iTunes abonnieren
 podcast.website: Podcast-Website
+properties.apiHref: API-Href
+properties.appleMusicId: Apple Music-ID
+properties.audio.acousticness: Akustik
+properties.audio.bpm: BPM
+properties.audio.danceability: Tanzbarkeit
+properties.audio.energy: Energie
+properties.audio.key: Tonart
+properties.audio.melodicness: Melodik
+properties.audio.valence: Valenz
+properties.audioAnalysis: Audioanalyse
+properties.audioTraits: Audioeigenschaften
+properties.colorCopied: Farbfeld kopiert
+properties.setHomeArtwork: Als Home-Artwork festlegen
+properties.setHomeArtworkVideo: Als Home-Artwork festlegen (Video)
+properties.trait.atmos: Dolby Atmos
+properties.trait.lossless: Lossless
+properties.trait.lossyStereo: AAC-Stereo
+properties.trait.spatial: 3D-Audio
 remote.web.description: Scanne den QR-Code, um dein Smartphone mit dieser Cider-Instanz zu koppeln
 remote.web.title: Cider Remote
 replay.uniqueAlbums: Über {count} verschiedene Alben
@@ -816,6 +844,46 @@ settings.description.songs: Titel
 settings.discord.clientName.hint: Wähle aus, mit welchem Discord-Client eine Verbindung hergestellt werden soll.
 settings.discord.customize.hint: Passe an, wie dein Status auf Discord angezeigt wird.
 settings.equalizer.warning: Wir übernehmen keine Haftung für Schäden an deinen Ohren oder Lautsprechern. Bitte verantwortungsvoll verwenden.
+settings.extensions.addBuiltInSnippet: Integriertes Snippet hinzufügen
+settings.extensions.browsePluginMarket: Plugin-Marktplatz durchsuchen
+settings.extensions.browseThemeMarket: Theme-Marktplatz durchsuchen
+settings.extensions.checkUpdates: Beim Start nach Erweiterungs-Updates suchen
+settings.extensions.checkUpdates.desc: Bei jedem Start von Cider nach Updates für Themes, Snippets und Plugins suchen.
+settings.extensions.createPlugin: Plugin erstellen
+settings.extensions.createSnippet: Neues Snippet erstellen
+settings.extensions.createTheme: Neues Theme erstellen
+settings.extensions.cssSnippets: CSS-Snippets
+settings.extensions.fileWatcher: Theme-Dateiüberwachung aktivieren
+settings.extensions.fileWatcher.desc: Theme-Stylesheets automatisch neu laden, wenn ihre Dateien auf dem Datenträger geändert werden.
+settings.extensions.importFromFile: Aus Datei importieren
+settings.extensions.maintenance: Wartung
+settings.extensions.newThemeDialog.identifier: Kennung
+settings.extensions.newThemeDialog.name: Theme-Name
+settings.extensions.newThemeDialog.title: Neues Theme
+settings.extensions.openAppData: AppData-Ordner öffnen
+settings.extensions.openAppData.desc: Den Ordner anzeigen, aus dem Cider Erweiterungen liest.
+settings.extensions.plugins.empty: Keine Plugins installiert.
+settings.extensions.plugins.running: Aktiv
+settings.extensions.refresh: Erweiterungen aktualisieren
+settings.extensions.refresh.desc: Themes, Snippets und Plugins vom Datenträger neu einlesen.
+settings.extensions.refreshed: Themes, Snippets und Plugins aktualisiert
+settings.extensions.snippets.created: Snippet erstellt
+settings.extensions.snippets.createTitle: Neues CSS-Snippet erstellen
+settings.extensions.snippets.deleteConfirm: Möchtest du dieses CSS-Snippet wirklich löschen? Diese Aktion kann nicht rückgängig gemacht werden.
+settings.extensions.snippets.deleted: Snippet gelöscht
+settings.extensions.snippets.deleteTitle: CSS-Snippet löschen
+settings.extensions.snippets.empty: Keine CSS-Snippets installiert.
+settings.extensions.snippets.exported: Snippet exportiert
+settings.extensions.snippets.imported: "{{ count }} Snippet(s) importiert"
+settings.extensions.snippets.importFailed: "Fehler beim Importieren von {{ file }}: {{ error }}"
+settings.extensions.snippets.namePrompt: Gib einen Namen für dein neues CSS-Snippet ein.
+settings.extensions.snippets.orderUpdated: Reihenfolge aktualisiert
+settings.extensions.snippets.saved: Snippet gespeichert
+settings.extensions.themeCreated: Neues Theme erfolgreich erstellt
+settings.extensions.themes.activeCount: "{{ count }} aktiv"
+settings.extensions.themes.empty: Keine Themes installiert.
+settings.extensions.themes.stylesheetMany: "{{ count }} Stylesheets"
+settings.extensions.themes.stylesheetOne: 1 Stylesheet
 settings.fonts.description: Die in der App verwendete Schriftart ändern
 settings.fonts.lyrics: Songtext-Schriftart
 settings.fonts.lyrics.description: Die für Songtexte verwendete Schriftart
@@ -1969,6 +2037,7 @@ term.appSettings: App-Einstellungen
 term.artistChips: Künstler-Chips
 term.artistList: Künstlerliste
 term.artists: Künstler
+term.artwork: Cover
 term.ascending: Aufsteigend
 term.attention: Achtung
 term.audioControls: Lautstärkeregler
@@ -1990,6 +2059,7 @@ term.check: Prüfen
 term.ciderTeam: Cider-Team
 term.clearAll: Alle löschen
 term.clearQueue: Leeren
+term.clipboard: Zwischenablage
 term.close: Schließen
 term.collapse: Einklappen
 term.commandPalette: Befehlspalette
@@ -2007,6 +2077,7 @@ term.createBugIssueReport: Fehlerbericht erstellen
 term.createNewPlaylist: Neue Playlist erstellen
 term.createNewPlaylistFolder: Neuen Playlist-Ordner erstellen
 term.creditDesignedBy: Design von ${authorUsername}
+term.credits: Mitwirkende
 term.curators: Kuratoren
 term.current: Aktuell
 term.date: Datum
@@ -2017,6 +2088,7 @@ term.deletedpreset: Preset entfernt
 term.deletePlaylist: Möchtest du diese Playlist wirklich löschen?
 term.deletepreset.warn: Möchtest du dieses Preset wirklich löschen?
 term.descending: Absteigend
+term.details: Details
 term.developer: Entwickler
 term.device: "Gerät: {name}"
 term.disable: Deaktivieren
@@ -2056,6 +2128,7 @@ term.help: Hilfe
 term.hideSearch: Suchleiste ausblenden
 term.history: Verlauf
 term.immersive: Immersiv
+term.info: Info
 term.items: Objekte
 term.itunes: iTunes
 term.language: Sprache
@@ -2099,6 +2172,7 @@ term.newPlaylist: Neue Playlist
 term.newPlaylistFolder: Neuer Playlist-Ordner
 term.newpreset.name: Name für neues EQ-Preset
 term.next: Weiter
+term.no: Nein
 term.noLyrics: Instrumental / Kein Songtext.
 term.none: Keine
 term.noVideos: Keine Videos gefunden.
@@ -2168,6 +2242,7 @@ term.replay.uniqueArtists: "{count} verschiedene Künstler"
 term.replay.uniqueSongs: "{count} verschiedene Titel"
 term.requestError: Es gab ein Problem mit der Anfrage.
 term.reset: Zurücksetzen
+term.response: Antwort
 term.restartRequired: Neustart erforderlich.
 term.rightsReserved: Alle Rechte vorbehalten.
 term.scroll: Scrollmodus
@@ -2219,6 +2294,7 @@ term.system: System
 term.themeManaged: Von einem Theme verwaltet
 term.themeManager: Theme-Manager
 term.themes: Themes
+term.time: Zeit
 term.time.added: Hinzugefügt
 term.time.day.one: Tag
 term.time.day.other: Tage
@@ -2259,6 +2335,7 @@ term.uniqueArtists: Einzigartige Künstler
 term.uniqueSongs: Einzigartige Titel
 term.unknownArtist: Unbekannter Künstler
 term.unknownDevice: Unbekanntes Gerät
+term.unknownError: Unbekannter Fehler
 term.unmute: Stummschaltung aufheben
 term.unnamed: Unbenannt
 term.upAfter: Danach
@@ -2281,6 +2358,7 @@ term.warning: Warnung
 term.webremote: Web-Remote
 term.whatsNew: Was gibt's Neues
 term.widget: Widget
+term.yes: Ja
 term.yesterday: Gestern
 term.zoom: Zoom
 term.zoomin: Vergrößern

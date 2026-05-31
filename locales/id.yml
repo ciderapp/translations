@@ -96,6 +96,9 @@ action.playTracksLater: Mainkan ${app.selectedMediaItems.length} lagu nanti
 action.playTracksNext: Mainkan ${app.selectedMediaItems.length} lagu selanjutnya
 action.plugins.enableVitePlugins: Aktifkan Vite untuk Plugin
 action.properties: Properties
+action.queueGuard.askEveryTime: Tanyakan setiap kali
+action.queueGuard.playAndClear: Putar dan Bersihkan
+action.queueGuard.prompt: Setelah ini diputar, apakah Anda ingin terus memutar musik yang Anda antrekan sebelumnya?
 action.quit.consent: Are you sure you want to quit the app?
 action.reboot: Mulai Ulang
 action.refresh: Muat ulang
@@ -297,6 +300,13 @@ library.favoritesOnly: Hanya Favorit
 library.itemSize: Ukuran Item
 library.itemSize.comfortable: Nyaman
 library.randomAlbums: Album Acak
+library.randomAlbums.anyGenres: Genre Apa Saja
+library.randomAlbums.minTrackCount: Jumlah Trek Minimum
+library.randomAlbums.nGenres: "{{ count }} Genre"
+library.randomAlbums.noAlbumsFound: Tidak ada album yang ditemukan dengan jumlah trek minimum
+library.randomAlbums.numAlbums: Jumlah Album
+library.randomAlbums.resetGenres: Atur Ulang Genre
+library.randomAlbums.unknownGenre: Genre Tidak Diketahui
 locale.lang.ar: Arab
 locale.lang.de: Jerman
 locale.lang.en: Inggris
@@ -559,6 +569,24 @@ podcast.playEpisode: Mainkan Episode
 podcast.subscribedOnItunes: Telah Berlangganan di iTunes
 podcast.subscribeOnItunes: Langganan di iTunes
 podcast.website: Website Podcast
+properties.apiHref: API Href
+properties.appleMusicId: ID Apple Music
+properties.audio.acousticness: Keakustikan
+properties.audio.bpm: BPM
+properties.audio.danceability: Dansaibilitas
+properties.audio.energy: Energi
+properties.audio.key: Nada Dasar
+properties.audio.melodicness: Kemelodisan
+properties.audio.valence: Valensi
+properties.audioAnalysis: Analisis Audio
+properties.audioTraits: Karakteristik Audio
+properties.colorCopied: Sampel warna disalin
+properties.setHomeArtwork: Atur sebagai Karya Seni Beranda
+properties.setHomeArtworkVideo: Atur sebagai Karya Seni Beranda (Video)
+properties.trait.atmos: Dolby Atmos
+properties.trait.lossless: Lossless
+properties.trait.lossyStereo: AAC Stereo
+properties.trait.spatial: Audio Spasial
 remote.web.description: Pindai kode QR untuk memasangkan ponsel Anda dengan Cider.
 remote.web.title: Remote Cider
 replay.uniqueAlbums: Lebih dari {count} Album Unik
@@ -816,6 +844,46 @@ settings.description.songs: Lagu
 settings.discord.clientName.hint: Pilih klien Discord mana yang ingin dihubungkan.
 settings.discord.customize.hint: Sesuaikan tampilan kehadiran Anda di Discord.
 settings.equalizer.warning: Kami tidak bertanggung jawab atas kerusakan pada telinga atau speaker Anda. Harap gunakan dengan bijak.
+settings.extensions.addBuiltInSnippet: Tambah cuplikan bawaan
+settings.extensions.browsePluginMarket: Telusuri Bursa Pengaya
+settings.extensions.browseThemeMarket: Telusuri Bursa Tema
+settings.extensions.checkUpdates: Periksa pembaruan Ekstensi saat memulai
+settings.extensions.checkUpdates.desc: Cari pembaruan tema, cuplikan, dan pengaya setiap kali Cider dijalankan.
+settings.extensions.createPlugin: Buat pengaya
+settings.extensions.createSnippet: Buat cuplikan baru
+settings.extensions.createTheme: Buat tema baru
+settings.extensions.cssSnippets: Cuplikan CSS
+settings.extensions.fileWatcher: Aktifkan pemantau berkas tema
+settings.extensions.fileWatcher.desc: Muat ulang lembar gaya tema secara otomatis saat berkasnya berubah di penyimpanan.
+settings.extensions.importFromFile: Impor dari berkas
+settings.extensions.maintenance: Pemeliharaan
+settings.extensions.newThemeDialog.identifier: Pengidentifikasi
+settings.extensions.newThemeDialog.name: Nama Tema
+settings.extensions.newThemeDialog.title: Tema Baru
+settings.extensions.openAppData: Buka folder AppData
+settings.extensions.openAppData.desc: Tampilkan folder tempat Cider membaca ekstensi.
+settings.extensions.plugins.empty: Tidak ada pengaya yang terinstal.
+settings.extensions.plugins.running: Berjalan
+settings.extensions.refresh: Segarkan ekstensi
+settings.extensions.refresh.desc: Pindai ulang tema, cuplikan, dan pengaya dari penyimpanan.
+settings.extensions.refreshed: Tema, cuplikan, dan pengaya telah disegarkan
+settings.extensions.snippets.created: Cuplikan dibuat
+settings.extensions.snippets.createTitle: Buat Cuplikan CSS Baru
+settings.extensions.snippets.deleteConfirm: Apakah Anda yakin ingin menghapus cuplikan CSS ini? Tindakan ini tidak dapat dibatalkan.
+settings.extensions.snippets.deleted: Cuplikan dihapus
+settings.extensions.snippets.deleteTitle: Hapus Cuplikan CSS
+settings.extensions.snippets.empty: Tidak ada cuplikan CSS yang terinstal.
+settings.extensions.snippets.exported: Cuplikan diekspor
+settings.extensions.snippets.imported: Berhasil mengimpor {{ count }} cuplikan
+settings.extensions.snippets.importFailed: "Gagal mengimpor {{ file }}: {{ error }}"
+settings.extensions.snippets.namePrompt: Masukkan nama untuk cuplikan CSS baru Anda.
+settings.extensions.snippets.orderUpdated: Urutan diperbarui
+settings.extensions.snippets.saved: Cuplikan disimpan
+settings.extensions.themeCreated: Tema baru berhasil dibuat
+settings.extensions.themes.activeCount: "{{ count }} aktif"
+settings.extensions.themes.empty: Tidak ada tema yang terinstal.
+settings.extensions.themes.stylesheetMany: "{{ count }} stylesheet"
+settings.extensions.themes.stylesheetOne: 1 stylesheet
 settings.fonts.description: Ubah font yang digunakan di aplikasi
 settings.fonts.lyrics: Font Lirik
 settings.fonts.lyrics.description: Font yang digunakan untuk lirik
@@ -1969,6 +2037,7 @@ term.appSettings: Pengaturan Aplikasi
 term.artistChips: Artist Chips
 term.artistList: Daftar Artis
 term.artists: Artis
+term.artwork: Karya Seni
 term.ascending: Menaik
 term.attention: Attention
 term.audioControls: Kontrol Volume
@@ -1990,6 +2059,7 @@ term.check: Cek
 term.ciderTeam: Cider Team
 term.clearAll: Bersihkan Semua
 term.clearQueue: Clear
+term.clipboard: Papan Klip
 term.close: Tutup
 term.collapse: Collapse
 term.commandPalette: Command Palette
@@ -2007,6 +2077,7 @@ term.createBugIssueReport: Create Bug / Issue Report
 term.createNewPlaylist: Buat Playlist Baru
 term.createNewPlaylistFolder: Buat Folder Playlist Baru
 term.creditDesignedBy: Dirancang oleh ${authorUsername}
+term.credits: Kredit
 term.curators: Kurator
 term.current: Saat Ini
 term.date: Tanggal
@@ -2017,6 +2088,7 @@ term.deletedpreset: Preset dihapus
 term.deletePlaylist: Yakin ingin menghapus playlist ini?
 term.deletepreset.warn: Yakin ingin menghapus preset ini?
 term.descending: Menurun
+term.details: Detail
 term.developer: Pengembang
 term.device: "Perangkat: {name}"
 term.disable: Nonaktifkan
@@ -2056,6 +2128,7 @@ term.help: Bantuan
 term.hideSearch: Sembunyikan kolom pencarian
 term.history: Riwayat
 term.immersive: Immersive
+term.info: Info
 term.items: item
 term.itunes: iTunes
 term.language: Bahasa
@@ -2099,6 +2172,7 @@ term.newPlaylist: Playlist Baru
 term.newPlaylistFolder: Folder Playlist Baru
 term.newpreset.name: Nama Preset EQ Baru
 term.next: Selanjutnya
+term.no: Tidak
 term.noLyrics: Memuat... / Lirik tidak ditermukan./ Instrumental.
 term.none: None
 term.noVideos: Video tidak ditemukan.
@@ -2168,6 +2242,7 @@ term.replay.uniqueArtists: "{count} Artis Unik"
 term.replay.uniqueSongs: "{count} Lagu Unik"
 term.requestError: Ada masalah dengan permintaan.
 term.reset: Atur Ulang
+term.response: Respons
 term.restartRequired: Mulai ulang diperlukan.
 term.rightsReserved: Hak cipta dilindungi Undang-undang.
 term.scroll: Mode Scroll
@@ -2219,6 +2294,7 @@ term.system: System
 term.themeManaged: Diatur oleh tema
 term.themeManager: Theme Manager
 term.themes: Themes
+term.time: Waktu
 term.time.added: Ditambahkan
 term.time.day.one: hari
 term.time.day.other: hari
@@ -2259,6 +2335,7 @@ term.uniqueArtists: Artis Spesial
 term.uniqueSongs: Lagu Spesial
 term.unknownArtist: Artis Tidak Dikenal
 term.unknownDevice: Perangkat Tidak Dikenal
+term.unknownError: Kesalahan tidak diketahui
 term.unmute: Bunyikan
 term.unnamed: Tanpa Nama
 term.upAfter: Diputar Setelah Ini
@@ -2281,6 +2358,7 @@ term.warning: Warning
 term.webremote: Remot Web
 term.whatsNew: What's New
 term.widget: Widget
+term.yes: Ya
 term.yesterday: Kemarin
 term.zoom: Zoom
 term.zoomin: Perbesar

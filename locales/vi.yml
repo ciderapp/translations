@@ -96,6 +96,9 @@ action.playTracksLater: Phát ${app.selectedMediaItems.length} bài cuối cùng
 action.playTracksNext: Phát ${app.selectedMediaItems.length} bài tiếp theo
 action.plugins.enableVitePlugins: Bật Vite cho các Plugin
 action.properties: Tuỳ chỉnh
+action.queueGuard.askEveryTime: Hỏi tôi mỗi lần
+action.queueGuard.playAndClear: Phát và xóa
+action.queueGuard.prompt: Sau khi bài này phát xong, bạn có muốn tiếp tục phát nhạc đã thêm vào hàng chờ trước đó không?
 action.quit.consent: Bạn có chắc muốn thoát ứng dụng không?
 action.reboot: Khởi động lại
 action.refresh: Làm mới
@@ -297,6 +300,13 @@ library.favoritesOnly: Chỉ yêu thích
 library.itemSize: Kích cỡ mục
 library.itemSize.comfortable: Thoải mái
 library.randomAlbums: Album ngẫu nhiên
+library.randomAlbums.anyGenres: Bất kỳ thể loại nào
+library.randomAlbums.minTrackCount: Số lượng bài hát tối thiểu
+library.randomAlbums.nGenres: "{{ count }} Thể loại"
+library.randomAlbums.noAlbumsFound: Không tìm thấy album nào có số lượng bài hát tối thiểu
+library.randomAlbums.numAlbums: Số lượng album
+library.randomAlbums.resetGenres: Đặt lại thể loại
+library.randomAlbums.unknownGenre: Thể loại không xác định
 locale.lang.ar: Tiếng Ả Rập
 locale.lang.de: Tiếng Đức
 locale.lang.en: Tiếng Anh
@@ -559,6 +569,24 @@ podcast.playEpisode: Phát
 podcast.subscribedOnItunes: Đang theo dõi trên iTunes
 podcast.subscribeOnItunes: Theo dõi trên iTunes
 podcast.website: Trang chủ
+properties.apiHref: API Href
+properties.appleMusicId: Apple Music ID
+properties.audio.acousticness: Độ mộc mạc
+properties.audio.bpm: BPM
+properties.audio.danceability: Khả năng nhảy
+properties.audio.energy: Năng lượng
+properties.audio.key: Tông
+properties.audio.melodicness: Độ du dương
+properties.audio.valence: Độ tích cực
+properties.audioAnalysis: Phân tích âm thanh
+properties.audioTraits: Đặc tính âm thanh
+properties.colorCopied: Đã sao chép mẫu màu
+properties.setHomeArtwork: Đặt làm ảnh bìa Trang chủ
+properties.setHomeArtworkVideo: Đặt làm ảnh bìa Trang chủ (Video)
+properties.trait.atmos: Dolby Atmos
+properties.trait.lossless: Lossless
+properties.trait.lossyStereo: AAC Stereo
+properties.trait.spatial: Âm thanh không gian
 remote.web.description: Quét mã QR để kết nối thiết bị của bạn với Cider
 remote.web.title: Điều khiển từ xa của Cider
 replay.uniqueAlbums: Hơn {count} Album khác nhau
@@ -816,6 +844,46 @@ settings.description.songs: Bài hát
 settings.discord.clientName.hint: Chọn ứng dụng Discord để kết nối.
 settings.discord.customize.hint: Tùy chỉnh trạng thái hoạt động của bạn hiển thị trên Discord.
 settings.equalizer.warning: Chúng tôi không chịu trách nhiệm cho bất kỳ tổn hại nào đối với tai hoặc loa của bạn. Vui lòng sử dụng một cách có trách nhiệm.
+settings.extensions.addBuiltInSnippet: Thêm đoạn mã tích hợp
+settings.extensions.browsePluginMarket: Duyệt cửa hàng plugin
+settings.extensions.browseThemeMarket: Duyệt cửa hàng giao diện
+settings.extensions.checkUpdates: Kiểm tra bản cập nhật tiện ích mở rộng khi khởi động
+settings.extensions.checkUpdates.desc: Tìm kiếm bản cập nhật cho giao diện, đoạn mã và plugin mỗi khi Cider khởi động.
+settings.extensions.createPlugin: Tạo plugin
+settings.extensions.createSnippet: Tạo đoạn mã mới
+settings.extensions.createTheme: Tạo giao diện mới
+settings.extensions.cssSnippets: Đoạn mã CSS
+settings.extensions.fileWatcher: Bật trình theo dõi tệp giao diện
+settings.extensions.fileWatcher.desc: Tự động tải lại biểu mẫu kiểu (stylesheet) của giao diện khi tệp thay đổi trên ổ đĩa.
+settings.extensions.importFromFile: Nhập từ tệp
+settings.extensions.maintenance: Bảo trì
+settings.extensions.newThemeDialog.identifier: Mã định danh
+settings.extensions.newThemeDialog.name: Tên giao diện
+settings.extensions.newThemeDialog.title: Giao diện mới
+settings.extensions.openAppData: Mở thư mục AppData
+settings.extensions.openAppData.desc: Hiển thị thư mục mà Cider đọc các tiện ích mở rộng từ đó.
+settings.extensions.plugins.empty: Chưa cài đặt plugin nào.
+settings.extensions.plugins.running: Đang chạy
+settings.extensions.refresh: Làm mới tiện ích mở rộng
+settings.extensions.refresh.desc: Quét lại giao diện, đoạn mã và plugin từ ổ đĩa.
+settings.extensions.refreshed: Đã làm mới giao diện, đoạn mã và plugin
+settings.extensions.snippets.created: Đã tạo đoạn mã
+settings.extensions.snippets.createTitle: Tạo đoạn mã CSS mới
+settings.extensions.snippets.deleteConfirm: Bạn có chắc chắn muốn xóa đoạn mã CSS này không? Hành động này không thể hoàn tác.
+settings.extensions.snippets.deleted: Đã xóa đoạn mã
+settings.extensions.snippets.deleteTitle: Xóa đoạn mã CSS
+settings.extensions.snippets.empty: Chưa cài đặt đoạn mã CSS nào.
+settings.extensions.snippets.exported: Đã xuất đoạn mã
+settings.extensions.snippets.imported: Đã nhập {{ count }} đoạn mã
+settings.extensions.snippets.importFailed: "Không thể nhập {{ file }}: {{ error }}"
+settings.extensions.snippets.namePrompt: Nhập tên cho đoạn mã CSS mới của bạn.
+settings.extensions.snippets.orderUpdated: Đã cập nhật thứ tự
+settings.extensions.snippets.saved: Đã lưu đoạn mã
+settings.extensions.themeCreated: Đã tạo chủ đề mới thành công
+settings.extensions.themes.activeCount: "{{ count }} đang hoạt động"
+settings.extensions.themes.empty: Chưa cài đặt chủ đề nào.
+settings.extensions.themes.stylesheetMany: "{{ count }} bảng kiểu"
+settings.extensions.themes.stylesheetOne: 1 bảng kiểu
 settings.fonts.description: Thay đổi phông chữ được sử dụng trong ứng dụng
 settings.fonts.lyrics: Phông chữ lời bài hát
 settings.fonts.lyrics.description: Phông chữ được sử dụng cho lời bài hát
@@ -1969,6 +2037,7 @@ term.appSettings: Cài đặt ứng dụng
 term.artistChips: Ảnh nghệ sĩ nhỏ
 term.artistList: Danh sách Nghệ sĩ
 term.artists: Nghệ sĩ
+term.artwork: Ảnh bìa
 term.ascending: Tăng dần
 term.attention: Chú ý
 term.audioControls: Điều khiển âm lượng
@@ -1990,6 +2059,7 @@ term.check: Kiểm tra
 term.ciderTeam: Cider Team
 term.clearAll: Xoá tất cả
 term.clearQueue: Xoá
+term.clipboard: Khay nhớ tạm
 term.close: Đóng
 term.collapse: Thu gọn
 term.commandPalette: Bảng lệnh
@@ -2007,6 +2077,7 @@ term.createBugIssueReport: Báo cáo lỗi / sự cố
 term.createNewPlaylist: Tạo playlist
 term.createNewPlaylistFolder: Tạo cụm playlist
 term.creditDesignedBy: Thiết kế bởi ${authorUsername}
+term.credits: Người thực hiện
 term.curators: Nhà tuyển chọn
 term.current: Hiện tại
 term.date: Ngày
@@ -2017,6 +2088,7 @@ term.deletedpreset: Thiết lập đã bị xoá
 term.deletePlaylist: Bạn có muốn xoá playlist này?
 term.deletepreset.warn: Bạn có muốn xoá thiết lập này?
 term.descending: Giảm dần
+term.details: Chi tiết
 term.developer: Lập trình viên
 term.device: "Thiết bị: {name}"
 term.disable: Tắt
@@ -2056,6 +2128,7 @@ term.help: Trợ giúp
 term.hideSearch: Ẩn thanh tìm kiếm
 term.history: Lịch sử
 term.immersive: Toàn màn hình
+term.info: Thông tin
 term.items: mục
 term.itunes: iTunes
 term.language: Ngôn ngữ
@@ -2099,6 +2172,7 @@ term.newPlaylist: Playlist mới
 term.newPlaylistFolder: Cụm playlist mới
 term.newpreset.name: Tạo thiét lập EQ
 term.next: Tiếp theo
+term.no: Không
 term.noLyrics: Đang tìm... / Không có lời bài hát.
 term.none: Không chọn
 term.noVideos: Không tìm thấy video.
@@ -2168,6 +2242,7 @@ term.replay.uniqueArtists: "{count} Nghệ sĩ độc nhất."
 term.replay.uniqueSongs: "{count} Bài hát độc nhất."
 term.requestError: Có vấn đề khi thực hiện yêu cầu.
 term.reset: Đặt về mặc định
+term.response: Phản hồi
 term.restartRequired: Yêu cầu khởi động lại.
 term.rightsReserved: Mọi quyền thuộc về các chủ sở hữu.
 term.scroll: Chế độ Cuộn
@@ -2219,6 +2294,7 @@ term.system: Hệ thống
 term.themeManaged: Được quản lý bở một theme
 term.themeManager: Quản lý Giao diện
 term.themes: Chủ đề
+term.time: Thời gian
 term.time.added: Thêm vào ngày
 term.time.day.one: ngày
 term.time.day.other: ngày
@@ -2259,6 +2335,7 @@ term.uniqueArtists: Các nghệ sĩ nổi bật
 term.uniqueSongs: Các bài hát nổi bật
 term.unknownArtist: Nghệ sĩ không xác định
 term.unknownDevice: Thiết bị không xác định
+term.unknownError: Lỗi không xác định
 term.unmute: Huỷ tắt tiếng
 term.unnamed: Chưa đặt tên
 term.upAfter: Phát sau
@@ -2281,6 +2358,7 @@ term.warning: Cảnh báo
 term.webremote: Điều khiển từ xa
 term.whatsNew: Có gì mới
 term.widget: Tiện ích
+term.yes: Có
 term.yesterday: Hôm qua
 term.zoom: Thu phóng
 term.zoomin: Phóng to
