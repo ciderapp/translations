@@ -353,7 +353,11 @@ action.goToArtist:
   source: human
   by: "@Tesutarin"
   issue: 7
-action.goToSongPage: 前往歌曲
+action.goToSongPage:
+  value: 前往歌曲页面
+  source: human
+  by: "@Tesutarin"
+  issue: 40
 action.hideLibrary:
   value: 隐藏资料库
   source: human
@@ -459,7 +463,11 @@ action.pinToHome:
   source: human
   by: "@Tesutarin"
   issue: 7
-action.pinToJumpList: 固定到跳转列表
+action.pinToJumpList:
+  value: 置顶到跳转列表
+  source: human
+  by: "@Tesutarin"
+  issue: 40
 action.playLater:
   value: 稍后播放
   source: human
@@ -520,7 +528,11 @@ action.refresh:
   source: human
   by: "@Tesutarin"
   issue: 7
-action.reinstall: 重新安装
+action.reinstall:
+  value: 重新安装
+  source: human
+  by: "@Tesutarin"
+  issue: 40
 action.relaunch.confirm:
   value: 确定要重新启动 Cider 吗？
   source: human
@@ -661,13 +673,21 @@ action.showInPlaylist:
   source: human
   by: "@Tesutarin"
   issue: 7
-action.showLess: 显示更少
+action.showLess:
+  value: 收起
+  source: human
+  by: "@Tesutarin"
+  issue: 40
 action.showLibrary:
   value: 显示资料库
   source: human
   by: "@Tesutarin"
   issue: 7
-action.showMore: 显示更多
+action.showMore:
+  value: 展开
+  source: human
+  by: "@Tesutarin"
+  issue: 40
 action.showWebRemoteQR:
   value: 网页遥控
   source: human
@@ -823,7 +843,11 @@ action.unpinFromHome:
   source: human
   by: "@Tesutarin"
   issue: 7
-action.unpinFromJumpList: 从跳转列表取消固定
+action.unpinFromJumpList:
+  value: 从跳转列表取消置顶
+  source: human
+  by: "@Tesutarin"
+  issue: 40
 action.update:
   value: 更新
   source: human
@@ -1041,31 +1065,131 @@ ciderAudio.marketplacePresetMigrationNotice:
   source: human
   by: "@Tesutarin"
   issue: 7
-client.boot.cancel: 取消
-client.boot.failedDetailDefault: 准备应用时出错。您可以重试，或使用下方的恢复选项来恢复正常。
-client.boot.failedTitle: Cider 无法启动
-client.boot.initializing: 正在初始化 Cider...
-client.boot.initializingComponents: 正在初始化组件...
-client.boot.launching: 正在启动 Cider...
-client.boot.loadingWindowConfig: 正在加载窗口配置...
-client.boot.noAppData: 没有可重建的 AppData 文件夹。点击“重试”以启动 Cider。
-client.boot.openAppData: 打开 AppData
-client.boot.openAppDataDesc: 显示日志与配置
-client.boot.preparing: 正在准备启动 Cider...
-client.boot.quit: 退出
-client.boot.ready: Cider 已就绪。
-client.boot.rebuildAppData: 重建 AppData
-client.boot.rebuildAppDataDesc: 备份并重置存储的数据
-client.boot.recoveryOptions: 恢复选项
-client.boot.resetConfig: 重置配置
-client.boot.resetConfigCleared: 配置已清除。点击“重试”以重新启动 Cider。
-client.boot.resetConfigDesc: 恢复默认设置
-client.boot.resetWindow: 重置窗口
-client.boot.resetWindowCleared: 窗口位置已清除。点击“重试”以重新启动 Cider。
-client.boot.resetWindowDesc: 清除保存的位置/大小
-client.boot.restoringWindow: 正在恢复窗口位置...
-client.boot.retry: 重试
-client.boot.settingUpAudio: 正在设置音频会话...
+client.boot.cancel:
+  value: 取消
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+client.boot.failedDetailDefault:
+  value: 准备应用时出现问题。你可以重试，或使用以下恢复选项恢复正常。
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+client.boot.failedTitle:
+  value: Cider 无法启动
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+client.boot.initializing:
+  value: 正在初始化 Cider…
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+client.boot.initializingComponents:
+  value: 正在初始化组件…
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+client.boot.launching:
+  value: 正在启动 Cider…
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+client.boot.loadingWindowConfig:
+  value: 正在加载窗口配置…
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+client.boot.noAppData:
+  value: 没有可重建的 AppData 文件夹，点击“重试”以启动 Cider。
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+client.boot.openAppData:
+  value: 打开 AppData
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+client.boot.openAppDataDesc:
+  value: 查看日志与配置
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+client.boot.preparing:
+  value: 正在准备启动 Cider…
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+client.boot.quit:
+  value: 退出
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+client.boot.ready:
+  value: Cider 已就绪。
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+client.boot.rebuildAppData:
+  value: 重建 AppData
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+client.boot.rebuildAppDataDesc:
+  value: 备份并重置已存储的数据
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+client.boot.recoveryOptions:
+  value: 恢复选项
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+client.boot.resetConfig:
+  value: 还原配置
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+client.boot.resetConfigCleared:
+  value: 配置已清除，点击“重试”以重新启动 Cider。
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+client.boot.resetConfigDesc:
+  value: 恢复默认设置
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+client.boot.resetWindow:
+  value: 还原窗口
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+client.boot.resetWindowCleared:
+  value: 窗口位置已清除，点击“重试”以重新启动 Cider。
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+client.boot.resetWindowDesc:
+  value: 清除已存储的位置/大小
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+client.boot.restoringWindow:
+  value: 正在恢复窗口位置…
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+client.boot.retry:
+  value: 重试
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+client.boot.settingUpAudio:
+  value: 正在设置音频会话…
+  source: human
+  by: "@Tesutarin"
+  issue: 40
 commandCenter.addedToQueue:
   value: “{name}”已添加到队列
   source: human
@@ -1266,7 +1390,11 @@ gallery.explorePlugins:
   source: human
   by: "@Tesutarin"
   issue: 7
-gallery.exploreSnippets: 探索片段
+gallery.exploreSnippets:
+  value: 探索代码片段
+  source: human
+  by: "@Tesutarin"
+  issue: 40
 gallery.exploreThemes:
   value: 探索主题
   source: human
@@ -1282,14 +1410,26 @@ gallery.marketplace.title:
   source: human
   by: "@Tesutarin"
   issue: 7
-gallery.noSnippetsFound: 未找到片段。
-gallery.searchSnippets: 搜索片段
+gallery.noSnippetsFound:
+  value: 未找到代码片段。
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+gallery.searchSnippets:
+  value: 搜索代码片段
+  source: human
+  by: "@Tesutarin"
+  issue: 40
 gallery.submitPlugin:
   value: 提交插件
   source: human
   by: "@Tesutarin"
   issue: 25
-gallery.submitSnippet: 提交您的片段
+gallery.submitSnippet:
+  value: 提交代码片段
+  source: human
+  by: "@Tesutarin"
+  issue: 40
 gallery.submitTheme:
   value: 提交主题
   source: human
@@ -2500,31 +2640,131 @@ menubar.options.zoom:
   source: human
   by: "@Tesutarin"
   issue: 7
-nativeUi.exitCider: 退出 Cider
-nativeUi.jumpCategoryPinned: 已固定
-nativeUi.jumpCategoryRecent: 最近
-nativeUi.jumpDiscoveryDesc: 启动“发现电台”
-nativeUi.jumpDiscoveryTitle: 发现新音乐
-nativeUi.jumpMiniplayerDesc: 切换迷你播放器模式
-nativeUi.jumpMiniplayerTitle: 切换迷你播放器
-nativeUi.jumpPersonalStationDesc: 启动基于您音乐喜好的个人电台
-nativeUi.jumpPersonalStationTitle: 您的个人电台
-nativeUi.jumpPlayRecentDesc: 开始播放您最近播放的音乐
-nativeUi.jumpPlayRecentTitle: 播放最近的音乐
-nativeUi.jumpRecentlyAddedDesc: 查看您最近添加的音乐
-nativeUi.jumpRecentlyAddedTitle: 最近添加
-nativeUi.jumpShuffleDesc: 随机播放您的音乐库
-nativeUi.jumpShuffleTitle: 随机播放资料库
-nativeUi.nextTrack: 下一首
-nativeUi.notPlaying: 未在播放
-nativeUi.openCider: 打开 Cider
-nativeUi.previousTrack: 上一首
-nativeUi.removeFromFavorites: 从最爱中移除
-nativeUi.resume: 恢复播放
-nativeUi.showWindow: 显示窗口
-nativeUi.toggleRepeat: 切换重复播放
-nativeUi.toggleShuffle: 切换随机播放
-nativeUi.unknownTitle: 未知标题
+nativeUi.exitCider:
+  value: 退出 Cider
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+nativeUi.jumpCategoryPinned:
+  value: 已固定
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+nativeUi.jumpCategoryRecent:
+  value: 最近
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+nativeUi.jumpDiscoveryDesc:
+  value: 开始探索电台
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+nativeUi.jumpDiscoveryTitle:
+  value: 探索新音乐
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+nativeUi.jumpMiniplayerDesc:
+  value: 切换迷你播放器模式
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+nativeUi.jumpMiniplayerTitle:
+  value: 切换迷你播放器
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+nativeUi.jumpPersonalStationDesc:
+  value: 根据你的音乐品味开始个性化电台
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+nativeUi.jumpPersonalStationTitle:
+  value: 我的个人电台
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+nativeUi.jumpPlayRecentDesc:
+  value: 开始播放最近播放过的音乐
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+nativeUi.jumpPlayRecentTitle:
+  value: 播放最近音乐
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+nativeUi.jumpRecentlyAddedDesc:
+  value: 查看最近添加的音乐
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+nativeUi.jumpRecentlyAddedTitle:
+  value: 最近添加
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+nativeUi.jumpShuffleDesc:
+  value: 随机播放你的音乐资料库
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+nativeUi.jumpShuffleTitle:
+  value: 随机播放资料库
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+nativeUi.nextTrack:
+  value: 下一首
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+nativeUi.notPlaying:
+  value: 未在播放
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+nativeUi.openCider:
+  value: 打开 Cider
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+nativeUi.previousTrack:
+  value: 上一首
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+nativeUi.removeFromFavorites:
+  value: 从喜爱中移除
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+nativeUi.resume:
+  value: 继续
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+nativeUi.showWindow:
+  value: 显示窗口
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+nativeUi.toggleRepeat:
+  value: 切换重复播放
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+nativeUi.toggleShuffle:
+  value: 切换随机播放
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+nativeUi.unknownTitle:
+  value: 未知标题
+  source: human
+  by: "@Tesutarin"
+  issue: 40
 notification.buildingPlaylistCache:
   value: 正在构建播放列表缓存…
   source: human
@@ -2621,7 +2861,11 @@ oobe.general.title:
   source: human
   by: "@Tesutarin"
   issue: 7
-oobe.intro.personalizeYourExperience: 个性化您的体验
+oobe.intro.personalizeYourExperience:
+  value: 个性化你的体验
+  source: human
+  by: "@Tesutarin"
+  issue: 40
 oobe.intro.subtitle: ""
 oobe.intro.text:
   value: 让我们先进行一些设置，让 Cider 更符合你的使用习惯。这些设置之后均可随时更改。
@@ -4830,25 +5074,101 @@ settings.lyrics.localeOverrides.translateToLabel:
   source: human
   by: "@Tesutarin"
   issue: 8
-settings.lyrics.player.cascade: 级联强度
-settings.lyrics.player.cascade.desc: 调整歌词逐行交错进入时的明显程度。
-settings.lyrics.player.cta: 歌词动画
-settings.lyrics.player.cta.description: 微调歌词动画的外观和行为，包括强调、发光、单词浮动、速度、填充柔和度以及级联效果。
-settings.lyrics.player.deselScale: 非活动行缩放
-settings.lyrics.player.deselScale.desc: 非当前播放歌词行的大小；数值越低，当前播放行越突出。
-settings.lyrics.player.emphasis: 强调强度
-settings.lyrics.player.emphasis.desc: 应用于长音词的缩放/突显幅度。
-settings.lyrics.player.fade: 填充柔和度
-settings.lyrics.player.fade.desc: 卡拉OK填充边缘的柔和度。
-settings.lyrics.player.glow: 发光强度
-settings.lyrics.player.glow.desc: 被强调词语上白色光晕的强度。
-settings.lyrics.player.lift: 单词浮动
-settings.lyrics.player.lift.desc: 每个单词在被唱到时升起的高度。
-settings.lyrics.player.preview: 实时预览
-settings.lyrics.player.reset: 恢复默认设置
-settings.lyrics.player.speed: 动画速度
-settings.lyrics.player.speed.desc: 歌词行过渡的弹性速度——数值越高越灵敏。
-settings.lyrics.player.title: 歌词动画
+settings.lyrics.player.cascade:
+  value: 层叠强度
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+settings.lyrics.player.cascade.desc:
+  value: 逐行交错入场效果的明显程度。
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+settings.lyrics.player.cta:
+  value: 歌词动画
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+settings.lyrics.player.cta.description:
+  value: 精细调整歌词动画的外观与行为，包括强调、发光、上浮、速度、淡化和层叠效果。
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+settings.lyrics.player.deselScale:
+  value: 非活跃行缩放比例
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+settings.lyrics.player.deselScale.desc:
+  value: 非活跃行的大小，数值越低当前行越突出。
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+settings.lyrics.player.emphasis:
+  value: 强调强度
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+settings.lyrics.player.emphasis.desc:
+  value: 长音词的缩放/凸起幅度。
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+settings.lyrics.player.fade:
+  value: 填充柔化
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+settings.lyrics.player.fade.desc:
+  value: 卡拉 OK 填充边缘的柔和程度。
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+settings.lyrics.player.glow:
+  value: 发光强度
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+settings.lyrics.player.glow.desc:
+  value: 强调词白色发光的强度。
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+settings.lyrics.player.lift:
+  value: 词语上浮
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+settings.lyrics.player.lift.desc:
+  value: 每个词演唱时向上浮动的幅度。
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+settings.lyrics.player.preview:
+  value: 实时预览
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+settings.lyrics.player.reset:
+  value: 还原默认值
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+settings.lyrics.player.speed:
+  value: 动画速度
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+settings.lyrics.player.speed.desc:
+  value: 行切换弹簧速度，数值越高越快。
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+settings.lyrics.player.title:
+  value: 歌词动画
+  source: human
+  by: "@Tesutarin"
+  issue: 40
 settings.lyrics.scroll.duration:
   value: 歌词滚动时长
   source: human
@@ -5469,10 +5789,26 @@ settings.option.advanced.lyrics.scaleOnAny.description:
   source: human
   by: "@Tesutarin"
   issue: 28
-settings.option.advanced.lyrics.singEngine: Sing 引擎
-settings.option.advanced.lyrics.singEngine.description: GPU 通过 Web Animations API 渲染逐字 Sing 动画（更流畅，CPU 占用更低）。旧版则使用原有的逐帧渲染器。
-settings.option.advanced.lyrics.singEngine.legacy: 旧版
-settings.option.advanced.lyrics.singEngine.waapi: GPU (Web Animations)
+settings.option.advanced.lyrics.singEngine:
+  value: 逐字歌词引擎
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+settings.option.advanced.lyrics.singEngine.description:
+  value: GPU 模式使用 Web Animations API 渲染逐词动画（更流畅，CPU 占用更低）；旧版使用原始逐帧渲染器。
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+settings.option.advanced.lyrics.singEngine.legacy:
+  value: 旧版
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+settings.option.advanced.lyrics.singEngine.waapi:
+  value: GPU（Web Animations）
+  source: human
+  by: "@Tesutarin"
+  issue: 40
 settings.option.advanced.lyrics.singLyricsEverywhere:
   value: 全局启用逐字歌词
   source: human
@@ -6753,8 +7089,16 @@ settings.option.general.header.app:
   source: human
   by: "@Tesutarin"
   issue: 10
-settings.option.general.jumpListClickPlays: 点击跳转列表直接播放
-settings.option.general.jumpListClickPlays.description: 在 Windows 任务栏的跳转列表中点击最近或已固定的专辑/歌单将立即播放，而不是打开其页面。
+settings.option.general.jumpListClickPlays:
+  value: 点击跳转列表即播放
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+settings.option.general.jumpListClickPlays.description:
+  value: 在 Windows 任务栏跳转列表中点击最近或已固定的专辑/播放列表时，直接播放而非打开其页面。
+  source: human
+  by: "@Tesutarin"
+  issue: 40
 settings.option.general.keybindings:
   value: 快捷键
   source: human
@@ -7135,8 +7479,16 @@ settings.option.lyrics.enableYoutubeLyrics:
   source: human
   by: "@Tesutarin"
   issue: 10
-settings.option.lyrics.keepCompleted: 保留已播放歌词
-settings.option.lyrics.keepCompleted.description: 在当前行上方保持已唱过的歌词行可见（变暗）。关闭时，已唱过的歌词行将被隐藏。
+settings.option.lyrics.keepCompleted:
+  value: 保留已唱歌词
+  source: human
+  by: "@Tesutarin"
+  issue: 40
+settings.option.lyrics.keepCompleted.description:
+  value: 将已唱过的歌词保持可见（变暗）并显示在当前行上方，关闭后已唱歌词将隐藏。
+  source: human
+  by: "@Tesutarin"
+  issue: 40
 settings.option.lyrics.localeOverrides:
   value: 语言复写
   source: human
@@ -10568,10 +10920,10 @@ term.gridView:
   by: "@Tesutarin"
   issue: 11
 term.handle:
-  value: 处理
+  value: 用户名
   source: human
   by: "@Tesutarin"
-  issue: 32
+  issue: 40
 term.help:
   value: 帮助
   source: human
@@ -10698,10 +11050,10 @@ term.liveRadio.previouslyAired:
   by: "@Tesutarin"
   issue: 11
 term.liveRadio.queueNote:
-  value: 这是直播广播。无法加入队列。
+  value: 这是直播电台。无法加入队列。
   source: human
   by: "@Tesutarin"
-  issue: 32
+  issue: 40
 term.liveStation:
   value: 直播电台
   source: human
@@ -10817,7 +11169,11 @@ term.no:
   source: human
   by: "@Tesutarin"
   issue: 32
-term.noDescription: 未提供描述。
+term.noDescription:
+  value: 暂无描述。
+  source: human
+  by: "@Tesutarin"
+  issue: 40
 term.noLyrics:
   value: 纯音乐 / 无歌词。
   source: human
@@ -11274,7 +11630,11 @@ term.sleepTimer:
   source: human
   by: "@Tesutarin"
   issue: 32
-term.snippets: 片段
+term.snippets:
+  value: 代码片段
+  source: human
+  by: "@Tesutarin"
+  issue: 40
 term.socials:
   value: 社交媒体
   source: human
