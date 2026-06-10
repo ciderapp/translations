@@ -94,6 +94,12 @@ jobs:
           retention-days: 7
           if-no-files-found: warn
 
+      # Refresh credit badges + README table. Mostly a no-op here (AI fills
+      # don't add translators), but this is the workflow that fires when
+      # languages.yml changes, so it's what keeps the Languages badge honest.
+      - name: Update credits and badges
+        run: node scripts/update-credits.mjs
+
       # Minted HERE, not at job start: a full fill can outlast the 1-hour
       # installation-token lifetime. Minting right before the push keeps the
       # token fresh when it is actually used.
@@ -113,7 +119,7 @@ jobs:
           # Stage first, then diff the index. `git diff` alone ignores
           # untracked files, so a first-ever fill (all-new locale files)
           # would look like "no changes" and never commit.
-          git add locales/
+          git add locales/ .github/badges/ README.md
           if git diff --cached --quiet; then
             echo "No locale changes after translation pass."
             exit 0
