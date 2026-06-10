@@ -5,8 +5,12 @@
 # on 2026-05-20, ahead of Rise being phased out. This file is the
 # canonical list. Runtime, scripts, and CI all read from here.
 #
-# Adding a language? Add it here, run `yarn i18n:translate` to fill it,
-# and update locales/<code>.yml with the result.
+# Adding a language? Add it HERE (in Citadel), not in the translations
+# repo: the i18n-extract sync copies this file over ciderapp/translations'
+# languages.yml on every run, so registry edits made over there get
+# silently clobbered (this wiped Croatian on 2026-05-25 and Estonian on
+# 2026-06-08). Once the entry lands here, the sync propagates it and the
+# translations repo's AI fill populates locales/<code>.yml on its own.
 
 source:
   url: https://exp-rise.cider.sh/api/v1/localization/languages
@@ -35,6 +39,9 @@ languages:
   es-ES:
     name: Spanish (Spain)
     native: Español (España)
+  et:
+    name: Estonian
+    native: Eesti
   fi:
     name: Finnish
     native: Suomi
@@ -47,6 +54,9 @@ languages:
   hi:
     name: Hindi
     native: हिन्दी
+  hr:
+    name: Croatian
+    native: Hrvatski
   hu:
     name: Hungarian
     native: Magyar
