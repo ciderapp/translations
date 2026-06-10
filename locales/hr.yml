@@ -353,6 +353,7 @@ action.goToArtist:
   source: human
   by: "@Vudgekek"
   issue: 5
+action.goToSongPage: Idi na pjesmu
 action.hideLibrary:
   value: Sakrij knjižnicu
   source: human
@@ -458,6 +459,7 @@ action.pinToHome:
   source: human
   by: "@Vudgekek"
   issue: 5
+action.pinToJumpList: Prikvači na Jump List
 action.playLater:
   value: Pusti kasnije
   source: human
@@ -488,6 +490,9 @@ action.properties:
   source: human
   by: "@Vudgekek"
   issue: 5
+action.queueGuard.askEveryTime: Pitaj me svaki put
+action.queueGuard.playAndClear: Reproduciraj i očisti
+action.queueGuard.prompt: Želite li nakon ovoga nastaviti reproducirati glazbu koju ste prethodno dodali u red čekanja?
 action.quit.consent:
   value: Jeste li sigurni da želite zatvoriti aplikaciju?
   source: human
@@ -503,6 +508,7 @@ action.refresh:
   source: human
   by: "@Vudgekek"
   issue: 5
+action.reinstall: Ponovno instaliraj
 action.relaunch.confirm:
   value: Želite li ponovno pokrenuti Cider?
   source: human
@@ -539,7 +545,9 @@ action.showAll: Prikaži sve
 action.showArtwork: Prikaži naslovnicu
 action.showInAppleMusic: Prikaži u Apple Music
 action.showInPlaylist: Prikaži u popisu pjesama
+action.showLess: Prikaži manje
 action.showLibrary: Prikaži knjižnicu
+action.showMore: Prikaži više
 action.showWebRemoteQR: Web daljinski
 action.shuffle.disable: Isključi nasumično
 action.shuffle.enable: Uključi nasumično
@@ -571,6 +579,7 @@ action.unlove: Ukloni 'Sviđa mi se'
 action.unpair: Prekini uparivanje
 action.unpin: Otkvači
 action.unpinFromHome: Otkvači s Početno
+action.unpinFromJumpList: Otkvači s Jump Lista
 action.update: Ažuriraj
 action.validate: Potvrdi
 airplay.codeDialog.message: Unesite kod prikazan na vašem Apple TV-u
@@ -600,6 +609,7 @@ album.track.unableToPlay.message: Nije moguće reproducirati ovu stavku.
 album.track.unableToPlay.title: Reprodukcija nije moguća
 album.track.unavailable.noDuration: Stavka nema trajanje, vjerojatno još nije objavljena.
 album.track.unavailable.noPlayParams: Nedostaju PlayParams. Ova je pjesma vjerojatno uklonjena s usluge Apple Music.
+album.track.unavailable.unreleased: Ova stavka još nije objavljena.
 album.track.unavailable.zeroDuration: Trajanje stavke je 0 sekundi, vjerojatno još nije objavljena.
 app.name: Cider
 app.unsupportedClient.message: Ovaj klijent nije podržan. Provjerite koristite li najnoviju verziju aplikacije Cider.
@@ -623,6 +633,31 @@ ciderAudio.marketplacePresetMigrationNotice: "Jedan ili više konfiguriranih pre
   <br>\r
 
   Instalacija novih predložaka s Marketplacea vratit će vaše prethodne postavke."
+client.boot.cancel: Odustani
+client.boot.failedDetailDefault: Došlo je do pogreške tijekom pripreme aplikacije. Možete pokušati ponovno ili upotrijebiti jednu od opcija oporavka u nastavku kako biste riješili problem.
+client.boot.failedTitle: Cider se nije mogao pokrenuti
+client.boot.initializing: Inicijalizacija Cidera...
+client.boot.initializingComponents: Inicijalizacija komponenti...
+client.boot.launching: Pokretanje Cidera...
+client.boot.loadingWindowConfig: Učitavanje konfiguracije prozora...
+client.boot.noAppData: Nema mape AppData za ponovnu izgradnju. Kliknite Pokušaj ponovno za pokretanje Cidera.
+client.boot.openAppData: Otvori AppData
+client.boot.openAppDataDesc: Prikaži zapise i konfiguraciju
+client.boot.preparing: Priprema za pokretanje Cidera...
+client.boot.quit: Izađi
+client.boot.ready: Cider je spreman.
+client.boot.rebuildAppData: Ponovno izgradi AppData
+client.boot.rebuildAppDataDesc: Izradi sigurnosnu kopiju i resetiraj pohranjene podatke
+client.boot.recoveryOptions: OPCIJE OPORAVKA
+client.boot.resetConfig: Resetiraj konfiguraciju
+client.boot.resetConfigCleared: Konfiguracija je očišćena. Kliknite Pokušaj ponovno za ponovno pokretanje Cidera.
+client.boot.resetConfigDesc: Vrati zadane postavke
+client.boot.resetWindow: Resetiraj prozor
+client.boot.resetWindowCleared: Položaj prozora je očišćen. Kliknite Pokušaj ponovno za ponovno pokretanje Cidera.
+client.boot.resetWindowDesc: Očisti spremljeni položaj/veličinu
+client.boot.restoringWindow: Obnavljanje položaja prozora...
+client.boot.retry: Pokušaj ponovno
+client.boot.settingUpAudio: Postavljanje audio sesije...
 commandCenter.addedToQueue: '"{name}" dodano u redoslijed'
 commandCenter.feelingLucky: Prati me sreća
 commandCenter.hint.default: Pretražite pjesme, izvođače, albume, popise pjesama i još mnogo toga
@@ -663,10 +698,14 @@ error.musickitError: "MusicKit je naišao na pogrešku: "
 error.noResults: Nema rezultata.
 error.noResults.description: Pokušajte s novim pretraživanjem.
 gallery.explorePlugins: Istraži priključke
+gallery.exploreSnippets: Istraži isječke
 gallery.exploreThemes: Istraži teme
 gallery.marketplace.subtitle: Mjesto za sve vezano uz Cider
 gallery.marketplace.title: Cider Marketplace
+gallery.noSnippetsFound: Nema pronađenih isječaka.
+gallery.searchSnippets: Pretraži isječke
 gallery.submitPlugin: Pošalji svoj priključak
+gallery.submitSnippet: Pošaljite svoj isječak
 gallery.submitTheme: Pošalji svoju temu
 general.closeToTray: Zatvori u sistemsku traku
 general.closeToTray.description: Gumb za zatvaranje minimizirat će prozor aplikacije Cider
@@ -708,6 +747,13 @@ library.favoritesOnly: Samo favoriti
 library.itemSize: Veličina stavke
 library.itemSize.comfortable: Prostrano
 library.randomAlbums: Nasumični albumi
+library.randomAlbums.anyGenres: Bilo koji žanr(ovi)
+library.randomAlbums.minTrackCount: Minimalan broj pjesama
+library.randomAlbums.nGenres: "{{ count }} žanr(ova)"
+library.randomAlbums.noAlbumsFound: Nema pronađenih albuma s minimalnim brojem pjesama
+library.randomAlbums.numAlbums: Broj albuma
+library.randomAlbums.resetGenres: Resetiraj žanrove
+library.randomAlbums.unknownGenre: Nepoznat žanr
 locale.lang.ar: Arapski
 locale.lang.de: Njemački
 locale.lang.en: Engleski
@@ -727,6 +773,159 @@ locale.lang.th: Tajlandski
 locale.lang.tr: Turski
 locale.lang.vi: Vijetnamski
 locale.lang.zh: Kineski (pojednostavljeni)
+lyrics.contrib.confirm.cancel: Odustani
+lyrics.contrib.confirm.note: Vaši tekstovi pjesama bit će poslani u knjižnicu zajednice i pripisani vama.
+lyrics.contrib.confirm.title: Poslati tekst pjesme?
+lyrics.contrib.cta.submit: Pošalji tekst pjesme
+lyrics.contrib.drafts.button: Skice
+lyrics.contrib.drafts.delete: Obriši
+lyrics.contrib.drafts.empty: Još nema spremljenih skica. Vaš se rad automatski sprema tijekom uređivanja.
+lyrics.contrib.drafts.load: Učitaj
+lyrics.contrib.drafts.saveCurrent: Spremi trenutačno
+lyrics.contrib.drafts.title: Spremljene skice
+lyrics.contrib.editor.addLine: Dodaj redak
+lyrics.contrib.editor.align: Uskladi vrijeme
+lyrics.contrib.editor.alignHint: Uskladite odabrane retke s vremenom istaknutog referentnog retka
+lyrics.contrib.editor.balance: Balans
+lyrics.contrib.editor.balanceHint: Ujednačite vremensko usklađivanje riječi u ponovljenim redcima, npr. refrenu
+lyrics.contrib.editor.batchBg: Uključi/isključi pozadinske vokale na odabranim redcima
+lyrics.contrib.editor.batchV2: Uključi/isključi drugog vokala na odabranim redcima
+lyrics.contrib.editor.dragReorder: Povucite za promjenu redoslijeda
+lyrics.contrib.editor.duplicate: Dupliciraj
+lyrics.contrib.editor.duplicateHint: Dupliciraj odabrani redak (Ctrl+D)
+lyrics.contrib.editor.empty: Još nema redaka. Dodajte svoj prvi redak ili uvezite/zalijepite TTML.
+lyrics.contrib.editor.insert: Umetni
+lyrics.contrib.editor.insertInterlude: + Instrumental
+lyrics.contrib.editor.insertInterludeHint: Umetni instrumentalnu stanku nakon odabranog retka
+lyrics.contrib.editor.insertLine: + Redak
+lyrics.contrib.editor.insertLineHint: Umetni redak nakon odabranog retka
+lyrics.contrib.editor.interlude: Instrumental
+lyrics.contrib.editor.issues: problem(i)
+lyrics.contrib.editor.line: Redak
+lyrics.contrib.editor.markerAdd: Dodaj marker na trenutnu poziciju reprodukcije
+lyrics.contrib.editor.markerJump: Skoči na marker
+lyrics.contrib.editor.markers: Markeri
+lyrics.contrib.editor.markersClear: Očisti
+lyrics.contrib.editor.modeEdit: Uredi
+lyrics.contrib.editor.modePreview: Pregled
+lyrics.contrib.editor.modeTime: Vrijeme
+lyrics.contrib.editor.noLines: Nema redaka
+lyrics.contrib.editor.offTrackHint: Reproducira se druga pjesma — kliknite za reprodukciju ove
+lyrics.contrib.editor.playThisTrack: Reproduciraj ovu pjesmu
+lyrics.contrib.editor.previewingInPlayer: Pregled u reproduktoru
+lyrics.contrib.editor.repeats: Ponavljanja
+lyrics.contrib.editor.segment: Segment
+lyrics.contrib.editor.segmentAll: Sve
+lyrics.contrib.editor.segmentAllHint: Podijeli svaki sinkronizirani redak na riječi
+lyrics.contrib.editor.selected: odabrano
+lyrics.contrib.editor.selectWord: Odaberi riječ…
+lyrics.contrib.editor.showInPlayer: Prikaži u reproduktoru
+lyrics.contrib.editor.showInPlayerHint: Prikaži ovaj nacrt u ploči s tekstom reproduktora tijekom reprodukcije pjesme
+lyrics.contrib.editor.showInPlayerOff: Pokrenite ovu pjesmu za pregled nacrta u reproduktoru
+lyrics.contrib.editor.speedHint: Brzina reprodukcije — usporite radi točnijeg usklađivanja vremena
+lyrics.contrib.editor.splitWords: Podijeli na riječi
+lyrics.contrib.editor.splitWordsHint: Podijeli ovaj redak na vremensko usklađivanje riječ po riječ
+lyrics.contrib.editor.submit: Pošalji
+lyrics.contrib.editor.unsynced: Nesinkronizirano
+lyrics.contrib.editor.word: Riječ
+lyrics.contrib.leaderboard.contributor: Suradnik
+lyrics.contrib.leaderboard.empty: Još nema suradnika.
+lyrics.contrib.leaderboard.error: Nije moguće učitati ljestvicu poretka.
+lyrics.contrib.leaderboard.loading: Učitavanje…
+lyrics.contrib.leaderboard.loadMore: Učitaj više
+lyrics.contrib.leaderboard.plays: Reprodukcije
+lyrics.contrib.leaderboard.submissions: Tekstovi pjesama
+lyrics.contrib.menu.addEdit: Dodaj / uredi tekst pjesme
+lyrics.contrib.mine.cancel: Cancel
+lyrics.contrib.mine.chooseName: Odaberite prikazano ime
+lyrics.contrib.mine.chooseNameSub: Postavite javno ime koje će se prikazivati na ljestvici poretka i označavati vaš doprinos tekstovima pjesama.
+lyrics.contrib.mine.edit: Uredi
+lyrics.contrib.mine.error: Nije moguće učitati vaš profil.
+lyrics.contrib.mine.joined: Član od
+lyrics.contrib.mine.listNote: Vaši doprinosi prikazuju se u aplikaciji na pjesmama kojima ste dodali tekst.
+lyrics.contrib.mine.loading: Učitavanje…
+lyrics.contrib.mine.namePlaceholder: Prikazano ime
+lyrics.contrib.mine.retry: Pokušaj ponovno
+lyrics.contrib.mine.save: Spremi
+lyrics.contrib.mine.saved: Prikazano ime je spremljeno.
+lyrics.contrib.mine.saveFailed: Spremanje vašeg imena nije uspjelo.
+lyrics.contrib.mine.saving: Spremanje…
+lyrics.contrib.mine.statPlays: Ukupno reprodukcija
+lyrics.contrib.mine.statSubmissions: Doprineseni tekstovi
+lyrics.contrib.mine.vanityTooShort: Odaberite ime od najmanje 2 znaka.
+lyrics.contrib.notify.importedApple: Uvezeni tekstovi iz usluge Apple Music.
+lyrics.contrib.notify.importedUser: Uvezeni postojeći tekstovi zajednice.
+lyrics.contrib.notify.importFailed: Uvoz tekstova nije uspio.
+lyrics.contrib.notify.importNone: Nema dostupnih tekstova za uvoz za ovu pjesmu.
+lyrics.contrib.notify.noCurrent: Trenutačno se ne reproducira nijedna pjesma.
+lyrics.contrib.notify.notLoggedIn: Morate se prijaviti za prijenos tekstova.
+lyrics.contrib.notify.submitFailed: Slanje tekstova nije uspjelo.
+lyrics.contrib.notify.submitted: Tekstovi su poslani — hvala vam na doprinosu!
+lyrics.contrib.preview.empty: Zalijepite ili uvezite TTML za pregled tekstova ovdje.
+lyrics.contrib.signin.button: Prijavite se putem usluge Cider Taproom
+lyrics.contrib.signin.manual: Ručno unesite token
+lyrics.contrib.signin.sub: Povežite svoj Cider Taproom račun kako biste prenosili tekstove i pojavili se na ljestvici poretka.
+lyrics.contrib.signin.title: Prijavite se za doprinos tekstovima
+lyrics.contrib.signin.tokenPrompt: Unesite svoj pristupni token
+lyrics.contrib.signin.tokenTitle: Taproom token
+lyrics.contrib.signin.waiting: Čekanje preglednika…
+lyrics.contrib.subtitle: Prenosite sinkronizirane tekstove, pratite svoj utjecaj i uspnite se na ljestvici poretka.
+lyrics.contrib.success.sub: Hvala vam na doprinosu.
+lyrics.contrib.success.title: Tekstovi su poslani!
+lyrics.contrib.sync.back: Natrag
+lyrics.contrib.sync.endGap: Kraj (praznina)
+lyrics.contrib.sync.endNext: Kraj i sljedeći redak
+lyrics.contrib.sync.follow: Prati
+lyrics.contrib.sync.followHint: Prati pokazivač reprodukcije kada se ne mjeri vrijeme
+lyrics.contrib.sync.fromHere: Odavde
+lyrics.contrib.sync.fromHereHint: Pomakni kursor na redak na pokazivaču reprodukcije
+lyrics.contrib.sync.hint: Dodirnite svaki redak kada započne
+lyrics.contrib.sync.kFollow: prati
+lyrics.contrib.sync.kGap: kraj praznine
+lyrics.contrib.sync.kHere: ovdje
+lyrics.contrib.sync.kMark: označi
+lyrics.contrib.sync.kMove: pomakni
+lyrics.contrib.sync.kRedo: ponovi
+lyrics.contrib.sync.kTap: dodirni
+lyrics.contrib.sync.redo: Ponovi
+lyrics.contrib.sync.skip: Preskoči
+lyrics.contrib.sync.start: Početak retka
+lyrics.contrib.sync.tapBegin: Dodirnite kada ovaj redak započne
+lyrics.contrib.sync.timing: Sinkronizacija
+lyrics.contrib.tab.leaderboard: Ljestvica poretka
+lyrics.contrib.tab.mine: Moji doprinosi
+lyrics.contrib.tab.upload: Prenesi
+lyrics.contrib.time.begin: početak
+lyrics.contrib.time.empty: Prvo dodajte retke na kartici Uredi, a zatim im ovdje odredite vrijeme.
+lyrics.contrib.time.end: kraj
+lyrics.contrib.time.gran.line: Sinkronizacija redaka
+lyrics.contrib.time.gran.word: Riječ
+lyrics.contrib.time.hintPre: Pokrenite pjesmu, a zatim dodirnite
+lyrics.contrib.time.markBegin: Početak
+lyrics.contrib.time.markEnd: Kraj
+lyrics.contrib.time.markNext: Sljedeće
+lyrics.contrib.time.next: sljedeće
+lyrics.contrib.upload.change: Promijeni
+lyrics.contrib.upload.import: Uvezi trenutačne tekstove
+lyrics.contrib.upload.language: Jezik
+lyrics.contrib.upload.lyrics: Tekst pjesme
+lyrics.contrib.upload.noResults: Nema pronađenih pjesama.
+lyrics.contrib.upload.openWindow: Otvori u prozoru
+lyrics.contrib.upload.preview: Pregled
+lyrics.contrib.upload.searchPlaceholder: Pretraži Apple Music katalog…
+lyrics.contrib.upload.submit: Pošalji tekst
+lyrics.contrib.upload.submitting: Slanje…
+lyrics.contrib.upload.track: Pjesma
+lyrics.contrib.upload.ttml: Tekst (TTML)
+lyrics.contrib.upload.useCurrent: Koristi trenutnu pjesmu
+lyrics.contrib.upload.writers: Autori (neobavezno)
+lyrics.contrib.upload.writersPlaceholder: Imena odvojena zarezom
+lyrics.contrib.validate.invalidXml: Nevaljani XML — provjerite TTML sintaksu.
+lyrics.contrib.validate.lines: redaka
+lyrics.contrib.validate.noLyrics: Nije pronađen tekst u ovom TTML-u.
+lyrics.contrib.validate.noTimed: Nije pronađen sinkronizirani tekst u ovom TTML-u.
+lyrics.contrib.validate.parseError: Nije moguće analizirati TTML.
+lyrics.contrib.validate.valid: Ispravno
 marketplace.trustedAuthor.tooltip: Ovo je pouzdani i verificirani autor
 menu.signIn: Prijava
 menu.signOut: Odjava
@@ -749,6 +948,31 @@ menubar.options.volumedown: Smanji glasnoću
 menubar.options.volumeup: Povećaj glasnoću
 menubar.options.window: Prozor
 menubar.options.zoom: Zumiranje
+nativeUi.exitCider: Izađi iz Cidera
+nativeUi.jumpCategoryPinned: Prikvačeno
+nativeUi.jumpCategoryRecent: Nedavno
+nativeUi.jumpDiscoveryDesc: Pokrenite postaju za otkrivanje
+nativeUi.jumpDiscoveryTitle: Otkrijte novu glazbu
+nativeUi.jumpMiniplayerDesc: Uključite/isključite način rada mini-playera
+nativeUi.jumpMiniplayerTitle: Uključite/isključite mini-player
+nativeUi.jumpPersonalStationDesc: Pokrenite osobnu postaju na temelju svog glazbenog ukusa
+nativeUi.jumpPersonalStationTitle: Vaša osobna postaja
+nativeUi.jumpPlayRecentDesc: Pokrenite reprodukciju nedavno slušane glazbe
+nativeUi.jumpPlayRecentTitle: Reproducirajte nedavnu glazbu
+nativeUi.jumpRecentlyAddedDesc: Pregledajte nedavno dodanu glazbu
+nativeUi.jumpRecentlyAddedTitle: Nedavno dodano
+nativeUi.jumpShuffleDesc: Nasumično reproducirajte glazbenu knjižnicu
+nativeUi.jumpShuffleTitle: Nasumično reproducirajte knjižnicu
+nativeUi.nextTrack: Sljedeća pjesma
+nativeUi.notPlaying: Ništa se ne reproducira
+nativeUi.openCider: Otvori Cider
+nativeUi.previousTrack: Prethodna pjesma
+nativeUi.removeFromFavorites: Ukloni iz omiljenih
+nativeUi.resume: Nastavi
+nativeUi.showWindow: Prikaži prozor
+nativeUi.toggleRepeat: Uključi/isključi ponavljanje
+nativeUi.toggleShuffle: Uključi/isključi nasumično
+nativeUi.unknownTitle: Nepoznat naslov
 notification.buildingPlaylistCache: Izgradnja predmemorije popisa pjesama...
 notification.playlistRefresh: Osvježavanje popisa pjesama...
 notification.restrictedStorefront: Eksplicitan sadržaj u vašoj trenutnoj trgovini ograničen je na $POLICY. Možda nećete moći vidjeti/reproducirati eksplicitan sadržaj.
@@ -777,6 +1001,7 @@ oobe.done: Gotovo
 oobe.general.subtitle: ""
 oobe.general.text: ""
 oobe.general.title: Općenito
+oobe.intro.personalizeYourExperience: Personalizirajte svoje iskustvo
 oobe.intro.subtitle: ""
 oobe.intro.text: Postavimo nekoliko stvari kako biste mogli koristiti Cider onako kako želite. Ove postavke uvijek možete promijeniti kasnije.
 oobe.intro.title: Dobrodošli u Cider
@@ -817,6 +1042,24 @@ podcast.playEpisode: Reproduciraj epizodu
 podcast.subscribedOnItunes: Pretplaćeno na iTunesu
 podcast.subscribeOnItunes: Pretplatite se na iTunesu
 podcast.website: Web-stranica podcasta
+properties.apiHref: API Href
+properties.appleMusicId: Apple Music ID
+properties.audio.acousticness: Akustičnost
+properties.audio.bpm: BPM
+properties.audio.danceability: Plesnost
+properties.audio.energy: Energija
+properties.audio.key: Tonalitet
+properties.audio.melodicness: Melodičnost
+properties.audio.valence: Valencija
+properties.audioAnalysis: Analiza zvuka
+properties.audioTraits: Zvučne osobine
+properties.colorCopied: Uzorak boje kopiran
+properties.setHomeArtwork: Postavi kao naslovnu sliku
+properties.setHomeArtworkVideo: Postavi kao naslovnu sliku (video)
+properties.trait.atmos: Dolby Atmos
+properties.trait.lossless: Lossless
+properties.trait.lossyStereo: AAC Stereo
+properties.trait.spatial: Prostorni zvuk
 remote.web.description: Skenirajte QR kod za uparivanje telefona s ovom instancom Cidera
 remote.web.title: Cider Remote
 replay.uniqueAlbums: Više od {count} jedinstvenih albuma
@@ -877,6 +1120,8 @@ settings.automix.description: Inteligentni prijelaz između pjesama na temelju t
 settings.automix.disableFor: Onemogući Automix za...
 settings.automix.disableForAlbums: Albume
 settings.automix.disableForAlbumsHint: Nemoj primijeniti Automix pri reprodukciji s albuma.
+settings.automix.disableForAutoplayContinuation: Nastavak automatske reprodukcije
+settings.automix.disableForAutoplayContinuationHint: Nemoj primijeniti automiks nakon što reprodukcija prijeđe na postaju / automatski reproducirane pjesme nakon završetka izvorne kolekcije.
 settings.automix.disableForDjMixes: DJ mikseve
 settings.automix.disableForDjMixesHint: Nemoj primijeniti Automix za DJ mikseve i neprekidne mikseve.
 settings.automix.disableForLiveAlbums: Albume uživo
@@ -1037,6 +1282,8 @@ settings.crossfade.duration: Trajanje
 settings.crossfade.enable: Omogući pretapanje
 settings.crossfade.exclusions.albums: Albumi
 settings.crossfade.exclusions.albums.description: Bez pretapanja pri reprodukciji iz albuma.
+settings.crossfade.exclusions.autoplayContinuation: Nastavak automatske reprodukcije
+settings.crossfade.exclusions.autoplayContinuation.description: Nemoj primijeniti stapanje (crossfade) nakon što reprodukcija prijeđe na postaju / automatski reproducirane pjesme nakon završetka izvorne kolekcije.
 settings.crossfade.exclusions.djMixes: DJ miksevi
 settings.crossfade.exclusions.djMixes.description: Bez pretapanja za DJ mikseve i neprekidne mikseve.
 settings.crossfade.exclusions.liveAlbums: Uživo albumi
@@ -1070,6 +1317,46 @@ settings.description.songs: Pjesme
 settings.discord.clientName.hint: Odaberite s kojim se Discord klijentom želite povezati.
 settings.discord.customize.hint: Prilagodite kako vaš status izgleda na Discordu.
 settings.equalizer.warning: Ne odgovaramo za bilo kakvo oštećenje vašeg sluha ili zvučnika. Koristite odgovorno.
+settings.extensions.addBuiltInSnippet: Dodaj ugrađeni isječak
+settings.extensions.browsePluginMarket: Pregledaj trgovinu dodataka
+settings.extensions.browseThemeMarket: Pregledaj trgovinu tema
+settings.extensions.checkUpdates: Provjeri ažuriranja proširenja pri pokretanju
+settings.extensions.checkUpdates.desc: Potraži ažuriranja tema, isječaka i dodataka pri svakom pokretanju aplikacije Cider.
+settings.extensions.createPlugin: Stvori dodatak
+settings.extensions.createSnippet: Stvori novi isječak
+settings.extensions.createTheme: Stvori novu temu
+settings.extensions.cssSnippets: CSS isječci
+settings.extensions.fileWatcher: Omogući praćenje datoteka tema
+settings.extensions.fileWatcher.desc: Automatski ponovno učitaj stilove tema kada se njihove datoteke promijene na disku.
+settings.extensions.importFromFile: Uvezi iz datoteke
+settings.extensions.maintenance: Održavanje
+settings.extensions.newThemeDialog.identifier: Identifikator
+settings.extensions.newThemeDialog.name: Naziv teme
+settings.extensions.newThemeDialog.title: Nova tema
+settings.extensions.openAppData: Otvori mapu AppData
+settings.extensions.openAppData.desc: Prikaži mapu iz koje Cider čita proširenja.
+settings.extensions.plugins.empty: Nema instaliranih dodataka.
+settings.extensions.plugins.running: Pokrenuto
+settings.extensions.refresh: Osvježi proširenja
+settings.extensions.refresh.desc: Ponovno skeniraj teme, isječke i dodatke s diska.
+settings.extensions.refreshed: Teme, isječci i dodaci su osvježeni
+settings.extensions.snippets.created: Isječak je stvoren
+settings.extensions.snippets.createTitle: Stvori novi CSS isječak
+settings.extensions.snippets.deleteConfirm: Jeste li sigurni da želite izbrisati ovaj CSS isječak? Ova se radnja ne može poništiti.
+settings.extensions.snippets.deleted: Isječak je izbrisan
+settings.extensions.snippets.deleteTitle: Izbriši CSS isječak
+settings.extensions.snippets.empty: Nema instaliranih CSS isječaka.
+settings.extensions.snippets.exported: Isječak je izvezen
+settings.extensions.snippets.imported: "Uvezeno: {{ count }} isječak(a)"
+settings.extensions.snippets.importFailed: "Uvoz datoteke {{ file }} nije uspio: {{ error }}"
+settings.extensions.snippets.namePrompt: Unesite naziv za svoj novi CSS isječak.
+settings.extensions.snippets.orderUpdated: Redoslijed je ažuriran
+settings.extensions.snippets.saved: Isječak je spremljen
+settings.extensions.themeCreated: Nova tema uspješno je stvorena
+settings.extensions.themes.activeCount: "{{ count }} aktivno"
+settings.extensions.themes.empty: Nema instaliranih tema.
+settings.extensions.themes.stylesheetMany: "{{ count }} tablica stilova"
+settings.extensions.themes.stylesheetOne: 1 tablica stilova
 settings.fonts.description: Promijenite font koji se koristi u aplikaciji
 settings.fonts.lyrics: Font tekstova pjesama
 settings.fonts.lyrics.description: Font koji se koristi za tekstove pjesama
@@ -1163,6 +1450,25 @@ settings.lyrics.localeOverrides.provider.user: Korisnički poslano
 settings.lyrics.localeOverrides.providerLabel: "Pružatelj:"
 settings.lyrics.localeOverrides.translateTo: Prevedi na
 settings.lyrics.localeOverrides.translateToLabel: "Prevedi na:"
+settings.lyrics.player.cascade: Intenzitet kaskade
+settings.lyrics.player.cascade.desc: Koliko je izražen stupnjeviti ulazak redak po redak.
+settings.lyrics.player.cta: Animacije tekstova pjesama
+settings.lyrics.player.cta.description: Prilagodite izgled i ponašanje animacija teksta, uključujući naglasak, sjaj, podizanje, brzinu, blijeđenje i kaskadne efekte.
+settings.lyrics.player.deselScale: Veličina neaktivnog retka
+settings.lyrics.player.deselScale.desc: Veličina neaktivnih redaka; manja vrijednost čini aktivni redak istaknutijim.
+settings.lyrics.player.emphasis: Jačina naglaska
+settings.lyrics.player.emphasis.desc: Povećanje primijenjeno na dugotrajne riječi.
+settings.lyrics.player.fade: Mekoća ispune
+settings.lyrics.player.fade.desc: Mekoća ruba karaoke ispune.
+settings.lyrics.player.glow: Jačina sjaja
+settings.lyrics.player.glow.desc: Intenzitet bijelog sjaja na naglašenim riječima.
+settings.lyrics.player.lift: Podizanje riječi
+settings.lyrics.player.lift.desc: Koliko se visoko svaka riječ podiže dok se pjeva.
+settings.lyrics.player.preview: Pregled uživo
+settings.lyrics.player.reset: Vrati na zadano
+settings.lyrics.player.speed: Brzina animacije
+settings.lyrics.player.speed.desc: Brzina opruge prijelaza stihova — veća vrijednost pruža brži odziv.
+settings.lyrics.player.title: Animacije stihova
 settings.lyrics.scroll.duration: Trajanje pomicanja teksta
 settings.lyrics.scroll.duration.desc1: Prilagodite brzinu pomicanja teksta u
 settings.lyrics.scroll.duration.desc2: Ovo neće utjecati na brzinu pjesme.
@@ -1287,6 +1593,10 @@ settings.option.advanced.lyrics.lineStaggeringImmersive: Postupno prikazivanje r
 settings.option.advanced.lyrics.lineStaggeringImmersive.description: Zahtijeva više resursa.
 settings.option.advanced.lyrics.scaleOnAny: Dopusti efekt povećanja na bilo kojoj riječi
 settings.option.advanced.lyrics.scaleOnAny.description: Omogućuje potencijalno povećanje bilo koje riječi, ne samo onih naglašenih
+settings.option.advanced.lyrics.singEngine: Sing mehanizam
+settings.option.advanced.lyrics.singEngine.description: GPU iscrtava Sing animaciju riječ po riječ pomoću Web Animations API-ja (glatkije, znatno manje opterećenje procesora). Klasični način koristi izvorni renderer po sličici.
+settings.option.advanced.lyrics.singEngine.legacy: Klasično
+settings.option.advanced.lyrics.singEngine.waapi: GPU (Web Animations)
 settings.option.advanced.lyrics.singLyricsEverywhere: Tekst za pjevanje svugdje
 settings.option.advanced.lyrics.singLyricsEverywhere.description: Omogući tekst za pjevanje izvan imerzivnog prikaza. Zahtijeva više resursa.
 settings.option.advanced.mavericksLcd: Mavericks LCD
@@ -1543,6 +1853,8 @@ settings.option.general.filterDislikedOnAdd: Filtriraj nesviđene pjesme pri dod
 settings.option.general.filterDislikedOnAdd.description: Automatski filtriraj nesviđene pjesme prilikom dodavanja stavki u red čekanja.
 settings.option.general.geolocation: Geolokacija
 settings.option.general.header.app: Aplikacija
+settings.option.general.jumpListClickPlays: Reprodukcija klikom na Jump List
+settings.option.general.jumpListClickPlays.description: Klikom na nedavni ili prikvačeni album/popis pjesama u Jump Listu na Windows traci zadataka odmah se pokreće reprodukcija umjesto otvaranja stranice.
 settings.option.general.keybindings: Tipkovni prečaci
 settings.option.general.keybindings.advanced: Napredno
 settings.option.general.keybindings.control: Kontrole
@@ -1601,6 +1913,8 @@ settings.option.general.useSmartQueueByDefault.description: Automatski primijeni
 settings.option.general.warnBeforeQueueOverride: Upozori prije prepisivanja reda čekanja
 settings.option.hide: Sakrij
 settings.option.left: Lijevo
+settings.option.lyrics.contributeCta: Doprinesi i prenesi stihove
+settings.option.lyrics.contributeCta.description: Prenesi sinkronizirane stihove, pregledaj ih uživo i pogledaj ljestvicu doprinositelja.
 settings.option.lyrics.customScrollerProperties: Prilagođena svojstva klizača
 settings.option.lyrics.customScrollerProperties.description: Omogućite prilagođeni stil za animacije pomicanja tekstova pjesama.
 settings.option.lyrics.defaultProvider: Zadani pružatelj usluge
@@ -1617,6 +1931,8 @@ settings.option.lyrics.enableStaticLyrics.description: Prikažite tekstove čak 
 settings.option.lyrics.enableTranslations: Omogući prijevode
 settings.option.lyrics.enableTranslations.description: Prikažite prevedene tekstove kada su dostupni. Prijevodi potječu od doprinosa zajednice Musixmatch ili strojnog prevođenja.
 settings.option.lyrics.enableYoutubeLyrics: Omogući Youtube tekstove za glazbene videozapise
+settings.option.lyrics.keepCompleted: Zadrži otpjevane stihove
+settings.option.lyrics.keepCompleted.description: Zadrži već otpjevane stihove vidljivima (zatamnjenima) iznad trenutnog stiha. Kada je isključeno, dovršeni stihovi se skrivaju.
 settings.option.lyrics.localeOverrides: Nadjačavanje lokalnih postavki
 settings.option.lyrics.localeOverrides.description: Postavite prilagođenog pružatelja i pravila prevođenja za određene jezike zvuka
 settings.option.lyrics.musixmatchPreferredLanguage: Željeni jezik prijevoda za Musixmatch
@@ -1734,6 +2050,10 @@ settings.option.visual.animatedArtwork.warningDescription: Prikaži animirane na
 settings.option.visual.animatedArtworkQuality: Razina kvalitete animiranih naslovnica
 settings.option.visual.animatedBackgroundFramerate: Broj sličica u sekundi animirane pozadine
 settings.option.visual.animatedWindowBackground: Animirana pozadina prozora
+settings.option.visual.artistHeaderAlignment: Izgled zaglavlja izvođača
+settings.option.visual.artistHeaderAlignment.center: Centrirano
+settings.option.visual.artistHeaderAlignment.description: Položaj imena izvođača i radnji u zaglavlju stranice izvođača.
+settings.option.visual.artistHeaderAlignment.left: Lijevo (zadano)
 settings.option.visual.artworkLoadingMethod: Način učitavanja naslovnica
 settings.option.visual.artworkLoadingMethod.eager: Odmah
 settings.option.visual.artworkLoadingMethod.lazy: Po potrebi
@@ -1977,6 +2297,16 @@ settings.updates.firstInstalled: Prva instalacija
 settings.updates.platform: Platforma
 settings.updates.progress.failed: Ažuriranje nije uspjelo
 settings.updates.progress.failed.sub: Došlo je do pogreške tijekom ažuriranja.
+settings.updates.progress.phase.connecting: Povezivanje...
+settings.updates.progress.phase.connecting.sub: Povezivanje s poslužiteljem za ažuriranje...
+settings.updates.progress.phase.downloading: Preuzimanje ažuriranja
+settings.updates.progress.phase.downloading.sub: Pokretanje preuzimanja...
+settings.updates.progress.phase.extracting: Raspakiravanje ažuriranja
+settings.updates.progress.phase.extracting.sub: Raspakiravanje paketa...
+settings.updates.progress.phase.saving: Dovršavanje ažuriranja
+settings.updates.progress.phase.saving.sub: Zapisivanje datoteka na disk...
+settings.updates.progress.phase.verifying: Provjera ažuriranja
+settings.updates.progress.phase.verifying.sub: Provjera potpisa i hasha...
 settings.updates.progress.success: Ažuriranje je instalirano
 settings.updates.progress.success.sub: Ponovno pokrenite Cider kako biste primijenili promjene.
 settings.updates.progress.working: Instaliranje ažuriranja
@@ -2211,6 +2541,8 @@ term.appSettings: Postavke aplikacije
 term.artistChips: Oznake izvođača
 term.artistList: Popis izvođača
 term.artists: Izvođači
+term.artistTopSongs: Najpopularnije pjesme izvođača {0}
+term.artwork: Ilustracija
 term.ascending: Uzlazno
 term.attention: Pažnja
 term.audioControls: Kontrole glasnoće
@@ -2232,6 +2564,7 @@ term.check: Provjeri
 term.ciderTeam: Cider tim
 term.clearAll: Očisti sve
 term.clearQueue: Očisti
+term.clipboard: Međuspremnik
 term.close: Zatvori
 term.collapse: Sažmi
 term.commandPalette: Paleta naredbi
@@ -2249,6 +2582,7 @@ term.createBugIssueReport: Prijavi pogrešku / problem
 term.createNewPlaylist: Stvori novi popis pjesama
 term.createNewPlaylistFolder: Stvori novu mapu popisa pjesama
 term.creditDesignedBy: Dizajnirao ${authorUsername}
+term.credits: Zasluge
 term.curators: Kustosi
 term.current: Trenutno
 term.date: Datum
@@ -2259,6 +2593,7 @@ term.deletedpreset: Uklonjeni predložak
 term.deletePlaylist: Sigurno želite izbrisati ovaj popis pjesama?
 term.deletepreset.warn: Sigurno želite izbrisati ovaj predložak?
 term.descending: Silazno
+term.details: Pojedinosti
 term.developer: Razvojni programer
 term.device: "Uređaj: {name}"
 term.disable: Onemogući
@@ -2298,6 +2633,7 @@ term.help: Pomoć
 term.hideSearch: Sakrij traku za pretraživanje
 term.history: Povijest
 term.immersive: Imerzivan
+term.info: Informacije
 term.items: stavke
 term.itunes: iTunes
 term.language: Jezik
@@ -2314,6 +2650,12 @@ term.listenedTo: "Slušano:"
 term.listenNow: Slušajte odmah
 term.listView: Popis
 term.live: UŽIVO
+term.liveRadio.eyebrow: Uživo na radiju
+term.liveRadio.listeningTime: Vrijeme slušanja ove stanice
+term.liveRadio.playPreviouslyAired: Reproduciraj ovu pjesmu
+term.liveRadio.previouslyAired: Prethodno emitirano
+term.liveRadio.queueNote: Ovo je prijenos uživo — pjesme se ne mogu dodati u red čekanja.
+term.liveStation: Stanica uživo
 term.loading: Učitavanje...
 term.localFiles: Lokalne datoteke
 term.location: Lokacija
@@ -2335,6 +2677,8 @@ term.newPlaylist: Novi popis pjesama
 term.newPlaylistFolder: Nova mapa popisa pjesama
 term.newpreset.name: Naziv nove EQ postavke
 term.next: Sljedeće
+term.no: Ne
+term.noDescription: Opis nije naveden.
 term.noLyrics: Instrumentalna pjesma / Nema teksta.
 term.none: Nijedno
 term.noVideos: Nema pronađenih videozapisa.
@@ -2404,6 +2748,7 @@ term.replay.uniqueArtists: "{count} jedinstvenih izvođača"
 term.replay.uniqueSongs: "{count} jedinstvenih pjesama"
 term.requestError: Došlo je do problema sa zahtjevom.
 term.reset: Ponovno postavi
+term.response: Odgovor
 term.restartRequired: Potrebno je ponovno pokretanje.
 term.rightsReserved: Sva prava pridržana.
 term.scroll: Način pomicanja
@@ -2425,6 +2770,7 @@ term.size.compact: Kompaktno
 term.size.normal: Normalno
 term.skip: Preskoči
 term.sleepTimer: Mjerač vremena za spavanje
+term.snippets: Isječci
 term.socials: Društvene mreže
 term.socialTeam: Tim za društvene mreže
 term.song: Pjesma
@@ -2455,6 +2801,7 @@ term.system: Sustav
 term.themeManaged: Upravlja tema
 term.themeManager: Upravitelj temama
 term.themes: Teme
+term.time: Vrijeme
 term.time.added: Dodano
 term.time.day.one: dan
 term.time.day.other: dana
@@ -2495,6 +2842,7 @@ term.uniqueArtists: Jedinstveni izvođači
 term.uniqueSongs: Jedinstvene pjesme
 term.unknownArtist: Nepoznati izvođač
 term.unknownDevice: Nepoznati uređaj
+term.unknownError: Nepoznata pogreška
 term.unmute: Uključi zvuk
 term.unnamed: Neimenovano
 term.upAfter: Sljedeće nakon
@@ -2517,6 +2865,7 @@ term.warning: Upozorenje
 term.webremote: Web daljinski
 term.whatsNew: Što je novo
 term.widget: Widget
+term.yes: Da
 term.yesterday: Jučer
 term.zoom: Zumiranje
 term.zoomin: Povećaj
