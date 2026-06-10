@@ -155,9 +155,9 @@ jobs:
           # commit byline credit the human; committer stays the bot. The
           # id+login noreply address keeps the attribution attached to the
           # account even if the user later renames. (Values come in via env,
-          # not inline ${{ }}, so nothing user-controlled touches the script
-          # source; logins are [A-Za-z0-9-] and the apply step has already
-          # hard-failed on anything weirder via AUTHOR_RE.)
+          # not inline workflow expressions, so nothing user-controlled
+          # touches the script source; logins are [A-Za-z0-9-] and the apply
+          # step has already hard-failed on anything weirder via AUTHOR_RE.)
           git commit \
             --author="${ISSUE_AUTHOR} <${ISSUE_AUTHOR_ID}+${ISSUE_AUTHOR}@users.noreply.github.com>" \
             -m "feat(i18n): apply translation from #${ISSUE_NUMBER}"
