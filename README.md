@@ -80,9 +80,9 @@ Every entry below came from a community member through a [translation issue](../
 | [@Vudgekek](https://github.com/Vudgekek) | Croatian | 103 |
 | [@lumaa-dev](https://github.com/lumaa-dev) | French | 68 |
 | [@MP-K](https://github.com/MP-K) | Korean | 27 |
+| [@nekocats](https://github.com/nekocats) | Estonian | 22 |
 | [@ramuuflor](https://github.com/ramuuflor) | Japanese | 22 |
 | [@itsmeares](https://github.com/itsmeares) | Turkish | 17 |
-| [@nekocats](https://github.com/nekocats) | Estonian | 6 |
 <!-- translators:end -->
 
 ## License
