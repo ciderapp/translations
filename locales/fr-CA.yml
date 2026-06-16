@@ -32,6 +32,7 @@ action.cast.scan: Analyser
 action.cast.scanning: Analyse en cours...
 action.cast.stop: Arrêter la diffusion sur tous les appareils
 action.cast.todevices: Diffuser vers des appareils
+action.change: Modifier
 action.clear: Effacer
 action.close: Fermer
 action.connect: Connecter
@@ -89,10 +90,12 @@ action.openArtworkInBrowser: Ouvrir l'œuvre dans le navigateur
 action.openInNewTab: Ouvrir dans un nouvel onglet
 action.openUrl: Ouvrir l'URL
 action.paste: Coller
+action.pause: Pause
 action.pickTime: Choisir l’heure
 action.pin: Épingler
 action.pinToHome: Épingler à l'accueil
 action.pinToJumpList: Épingler à la liste de raccourcis
+action.play: Lire
 action.playLater: Jouer plus tard
 action.playNext: Jouer en prochaine
 action.playTracksLater: Joue ${app.selectedMediaItems.length} chansons plus tard
@@ -301,6 +304,61 @@ general.closeToTray: Fermer la zone de notification
 general.closeToTray.description: Le bouton Fermer devrait minimiser la fenêtre de cidre
 home.artistsFeed: Votre flux d'artistes
 home.artistsFeed.noArtist: Suivez certains artistes  en premier et leurs dernières sorties seront ici
+home.bento.a11y.boardLabel: Widgets de l'accueil
+home.bento.a11y.instructions: Tableau de widgets. Appuyez sur Entrée pour modifier la disposition, puis utilisez les touches fléchées pour déplacer un widget, les crochets pour le redimensionner et Supprimer pour le retirer.
+home.bento.addWidget: Ajouter un widget
+home.bento.artistFeed.empty: Aucune nouveauté de vos artistes.
+home.bento.backToClassic: Retour à l'accueil classique
+home.bento.classicHome: Accueil classique
+home.bento.done: Terminé
+home.bento.editLayout: Modifier la disposition
+home.bento.empty: Aucun widget pour l'instant.
+home.bento.emptyGeneric: Rien ici pour l'instant.
+home.bento.friends.empty: Aucune activité d'amis pour le moment.
+home.bento.group.action: Grouper
+home.bento.group.rename: Renommer
+home.bento.group.select: Sélectionner pour grouper
+home.bento.group.titlePlaceholder: Groupe
+home.bento.group.ungroup: Dégrouper
+home.bento.group.untitled: Groupe
+home.bento.hideCards: Masquer l'arrière-plan des cartes
+home.bento.hideGreeting: Masquer le message d'accueil
+home.bento.lastfm: Last.fm
+home.bento.lastfm.connect: Connectez Last.fm dans les réglages pour voir vos scrobbles.
+home.bento.lastfm.empty: Aucun scrobble pour cette période.
+home.bento.lastfm.emptyRecent: Aucun scrobble pour l'instant.
+home.bento.lastfm.error: Impossible de charger les scrobbles Last.fm.
+home.bento.lastfm.recent: Scrobbles récents
+home.bento.lastfm.scrobbles: Scrobbles
+home.bento.lastfm.since: depuis
+home.bento.lyrics.loading: Chargement des paroles…
+home.bento.lyrics.none: Aucune parole pour ce morceau.
+home.bento.madeForYou.empty: Aucune recommandation pour l'instant.
+home.bento.nowPlaying.empty: Aucune lecture en cours
+home.bento.pinned.empty: Aucun élément épinglé pour l'instant.
+home.bento.quickActions: Actions rapides
+home.bento.recentlyPlayed.empty: Rien d'écouté récemment.
+home.bento.removeWidget: Retirer le widget
+home.bento.replay: Replay
+home.bento.replay.empty: Rien ici pour l'instant.
+home.bento.replay.error: Impossible de charger vos statistiques Replay.
+home.bento.replay.listened: Écouté
+home.bento.replay.none: Aucun Replay Apple Music pour l'instant — continuez d'écouter!
+home.bento.replay.topArtists: Principaux artistes
+home.bento.reset: Réinitialiser le tableau
+home.bento.reset.confirm: Reconstruire le tableau à partir de vos sections d'accueil? La disposition de vos widgets sera perdue.
+home.bento.resize: Redimensionner
+home.bento.showCards: Afficher l'arrière-plan des cartes
+home.bento.showGreeting: Afficher le message d'accueil
+home.bento.shuffleLibrary: Lecture aléatoire de la bibliothèque
+home.bento.spotlight.choose: Choisir un élément à mettre en vedette
+home.bento.spotlight.noCandidates: Rien à choisir pour l'instant — épinglez ou écoutez de la musique.
+home.bento.stubSub: Le tableau de widgets personnalisable prend forme. Votre disposition de départ a été générée à partir de vos sections d'accueil.
+home.bento.title: Accueil
+home.bento.toggleCard: Afficher/masquer l'arrière-plan de la carte
+home.bento.upNext: À suivre
+home.bento.upNext.empty: Rien à suivre.
+home.editName: Modifier votre nom d'affichage
 home.followedArtists: Artistes suivis
 home.friendsListeningTo: Amis écoutant
 home.greeting.afternoon: Bonjour, ${name}
@@ -325,6 +383,7 @@ home.settings.artwork.settings: Paramètres de l'œuvre
 home.settings.order.edit: Modifier la commande
 home.settings.order.edit.done: Édition terminée
 home.settings.sections.add: Ajouter une section
+home.settings.tryBento: Essayer le tableau Bento (bêta)
 home.syncFavorites: Synchroniser les Favoris
 home.syncFavorites.gettingArtists: Récupération des artistes favoris...
 home.title: Maison
@@ -344,6 +403,10 @@ library.randomAlbums.noAlbumsFound: Aucun album trouvé avec le nombre minimal d
 library.randomAlbums.numAlbums: Nombre d'albums
 library.randomAlbums.resetGenres: Réinitialiser les genres
 library.randomAlbums.unknownGenre: Genre inconnu
+library.releaseType: Type de parution
+library.releaseTypeAlbums: Albums seulement
+library.releaseTypeAll: Toutes les parutions
+library.releaseTypeSingles: Singles et EP
 locale.lang.ar: Arabe
 locale.lang.de: Allemand
 locale.lang.en: Anglais
@@ -1834,6 +1897,8 @@ settings.option.visual.layoutType.montara: Montara
 settings.option.visual.layoutType.montara.description: Barre latérale pleine hauteur avec un lecteur en haut à l'intérieur de la zone de contenu.
 settings.option.visual.lcdChromaticAberration: Aberration chromatique ACL
 settings.option.visual.lcdChromaticAberration.description: Réfracter l'arrière-plan ACL de lecture en cours à travers le nuanceur de verre liquide avec une frange RVB.
+settings.option.visual.liquidGlassPlayer: Barre de lecture Liquid Glass
+settings.option.visual.liquidGlassPlayer.description: Utiliser la surface en verre liquide pour la barre de lecture À l'écoute. Désactivez cette option pour obtenir un panneau plat et uni (également plus léger à afficher).
 settings.option.visual.mainMenuPosition: Position du menu principal
 settings.option.visual.mergeAppleMusicPlaylists: Fusionner les listes de lecture Apple Music
 settings.option.visual.mergeAppleMusicPlaylists.description: Mélanger les listes de lecture sélectionnées par Apple Music dans la section principale Listes de lecture au lieu de les afficher dans un groupe distinct.

@@ -32,6 +32,7 @@ action.cast.scan: 찾기
 action.cast.scanning: 찾는 중...
 action.cast.stop: 모든 기기에서 전송을 멈추기
 action.cast.todevices: 기기로 전송하기
+action.change: 변경
 action.clear: 지우기
 action.close: 닫기
 action.connect: 연결
@@ -105,10 +106,12 @@ action.openArtworkInBrowser: 앨범아트 브라우저에서 보기
 action.openInNewTab: 새 탭에서 열기
 action.openUrl: URL 열기
 action.paste: 붙여넣기
+action.pause: 일시정지
 action.pickTime: 시간 선택
 action.pin: 고정
 action.pinToHome: 홈에 고정
 action.pinToJumpList: 점프 목록에 고정
+action.play: 재생
 action.playLater: 맨 나중에 재생
 action.playNext: 바로 다음에 재생
 action.playTracksLater: ${app.selectedMediaItems.length} 맨 나중에 재생
@@ -345,6 +348,61 @@ general.closeToTray.description:
   issue: 30
 home.artistsFeed: 내 아티스트 피드
 home.artistsFeed.noArtist: 아티스트를 팔로우하면 최근 발매곡이 표시됩니다.
+home.bento.a11y.boardLabel: 홈 위젯
+home.bento.a11y.instructions: 위젯 보드입니다. Enter를 눌러 레이아웃을 편집하고, 방향키로 위젯을 이동하고, 대괄호 키로 크기를 조절하고, Delete 키로 삭제하세요.
+home.bento.addWidget: 위젯 추가
+home.bento.artistFeed.empty: 아티스트의 새로운 발매 음악이 없습니다.
+home.bento.backToClassic: 클래식 홈으로 돌아가기
+home.bento.classicHome: 클래식 홈
+home.bento.done: 편집 완료
+home.bento.editLayout: 레이아웃 편집
+home.bento.empty: 아직 위젯이 없습니다.
+home.bento.emptyGeneric: 아직 여기에 아무것도 없습니다.
+home.bento.friends.empty: 현재 친구 활동이 없습니다.
+home.bento.group.action: 그룹화
+home.bento.group.rename: 이름 바꾸기
+home.bento.group.select: 그룹화할 항목 선택
+home.bento.group.titlePlaceholder: 그룹
+home.bento.group.ungroup: 그룹 해제
+home.bento.group.untitled: 그룹
+home.bento.hideCards: 카드 배경 숨기기
+home.bento.hideGreeting: 인사말 숨기기
+home.bento.lastfm: Last.fm
+home.bento.lastfm.connect: 설정에서 Last.fm을 연결하여 스크로블을 확인해 보세요.
+home.bento.lastfm.empty: 이 기간 동안의 스크로블이 아직 없습니다.
+home.bento.lastfm.emptyRecent: 아직 스크로블이 없습니다.
+home.bento.lastfm.error: Last.fm 스크로블을 불러올 수 없습니다.
+home.bento.lastfm.recent: 최근 스크로블
+home.bento.lastfm.scrobbles: 스크로블
+home.bento.lastfm.since: 이후
+home.bento.lyrics.loading: 가사 불러오는 중…
+home.bento.lyrics.none: 이 곡의 가사가 없습니다.
+home.bento.madeForYou.empty: 아직 추천 음악이 없습니다.
+home.bento.nowPlaying.empty: 재생 중인 곡 없음
+home.bento.pinned.empty: 아직 고정된 항목이 없습니다.
+home.bento.quickActions: 빠른 동작
+home.bento.recentlyPlayed.empty: 최근에 재생한 항목이 없습니다.
+home.bento.removeWidget: 위젯 제거
+home.bento.replay: Replay
+home.bento.replay.empty: 아직 여기에 아무것도 없습니다.
+home.bento.replay.error: Replay 통계를 불러올 수 없습니다.
+home.bento.replay.listened: 감상 시간
+home.bento.replay.none: 아직 Apple Music Replay가 없습니다. 계속 음악을 감상해 보세요!
+home.bento.replay.topArtists: 가장 많이 들은 아티스트
+home.bento.reset: 보드 초기화
+home.bento.reset.confirm: 홈 섹션을 바탕으로 보드를 다시 구성하시겠습니까? 기존 위젯 배치가 초기화됩니다.
+home.bento.resize: 크기 조절
+home.bento.showCards: 카드 배경 표시
+home.bento.showGreeting: 인사말 표시
+home.bento.shuffleLibrary: 보관함 임의 재생
+home.bento.spotlight.choose: 스포트라이트에 표시할 항목 선택
+home.bento.spotlight.noCandidates: 선택할 항목이 없습니다. 음악을 고정하거나 재생해 보세요.
+home.bento.stubSub: 사용자 정의 위젯 보드가 준비 중입니다. 초기 레이아웃은 홈 섹션을 기반으로 구성되었습니다.
+home.bento.title: 홈
+home.bento.toggleCard: 카드 배경 전환
+home.bento.upNext: 대기 목록
+home.bento.upNext.empty: 대기 목록이 비어 있습니다.
+home.editName: 표시 이름 편집
 home.followedArtists: 팔로우한 아티스트
 home.friendsListeningTo: 친구들이 듣는
 home.greeting.afternoon: 안녕하세요, ${name}
@@ -369,6 +427,7 @@ home.settings.artwork.settings: 아트워크 설정
 home.settings.order.edit: 순서 바꾸기
 home.settings.order.edit.done: 수정 완료
 home.settings.sections.add: "섹션 추가 "
+home.settings.tryBento: Bento 보드 사용해 보기 (베타)
 home.syncFavorites: 즐겨찾기 동기화
 home.syncFavorites.gettingArtists: 좋아하는 가수를 불러오는 중...
 home.title: 홈
@@ -388,6 +447,10 @@ library.randomAlbums.noAlbumsFound: 최소 트랙 수를 만족하는 앨범을 
 library.randomAlbums.numAlbums: 앨범 수
 library.randomAlbums.resetGenres: 장르 재설정
 library.randomAlbums.unknownGenre: 알 수 없는 장르
+library.releaseType: 발매 유형
+library.releaseTypeAlbums: 앨범만
+library.releaseTypeAll: 모든 릴리즈
+library.releaseTypeSingles: 싱글 및 EP
 locale.lang.ar: 아랍어
 locale.lang.de: 독일어
 locale.lang.en: 영어
@@ -1906,6 +1969,8 @@ settings.option.visual.layoutType.montara: 몬타라
 settings.option.visual.layoutType.montara.description: 콘텐츠 영역 내부 상단에 플레이어가 있는 전체 높이 사이드바입니다.
 settings.option.visual.lcdChromaticAberration: LCD 색수차
 settings.option.visual.lcdChromaticAberration.description: RGB 프린지 효과가 있는 액체 유리 셰이더를 통해 현재 재생 중인 LCD 배경을 굴절시킵니다.
+settings.option.visual.liquidGlassPlayer: 리퀴드 글래스 플레이어 바
+settings.option.visual.liquidGlassPlayer.description: 지금 재생 중인 플레이어 바에 리퀴드 글래스 효과를 적용합니다. 이 옵션을 끄면 평평하고 단색인 패널로 표시되며 렌더링 부하가 줄어듭니다.
 settings.option.visual.mainMenuPosition: 메인 메뉴 위치
 settings.option.visual.mergeAppleMusicPlaylists: Apple Music 플레이리스트 병합
 settings.option.visual.mergeAppleMusicPlaylists.description: Apple Music 추천 플레이리스트를 별도의 그룹으로 표시하는 대신 메인 플레이리스트 섹션에 통합하여 표시합니다.
@@ -2581,7 +2646,7 @@ term.socials: 소셜
 term.socialTeam: 소셜 팀
 term.song: 노래
 term.song.link.generate: Getting {{kind}}.link share URL...
-term.songs: 노래
+term.songs: 트랙
 term.sortBy: 정렬 방식
 term.sortBy.album: 앨범
 term.sortBy.albumOrder: Album Order

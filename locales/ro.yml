@@ -32,6 +32,7 @@ action.cast.scan: Scanare
 action.cast.scanning: Scanare...
 action.cast.stop: Oprește redarea pe toate dispozitivele
 action.cast.todevices: Distribuie la dispozitive
+action.change: Modifică
 action.clear: Șterge
 action.close: Inchide
 action.connect: Conectează
@@ -89,10 +90,12 @@ action.openArtworkInBrowser: Deschide arta în browser
 action.openInNewTab: Deschide într-o filă nouă
 action.openUrl: Deschide URL-ul
 action.paste: Lipire
+action.pause: Pauză
 action.pickTime: Selectează ora
 action.pin: Fixează
 action.pinToHome: Fixează acasă
 action.pinToJumpList: Fixare în Jump List
+action.play: Redă
 action.playLater: Ascultă Mai Târziu
 action.playNext: Ascultă în Continuare
 action.playTracksLater: Redă ${app.selectedMediaItems.length} de melodii mai târziu
@@ -301,6 +304,61 @@ general.closeToTray: Închide în tray
 general.closeToTray.description: Butonul de închidere ar trebui să minimizeze fereastra Cider
 home.artistsFeed: Fluxul Artiștilor tăi
 home.artistsFeed.noArtist: Urmărește prima oară cațiva artiști și ultimele lor lansări vor apărea aici
+home.bento.a11y.boardLabel: Widgeturi Acasă
+home.bento.a11y.instructions: Panou de widgeturi. Apăsați Enter pentru a edita aspectul, apoi folosiți tastele săgeți pentru a muta un widget, parantezele pătrate pentru a redimensiona și Delete pentru a elimina.
+home.bento.addWidget: Adaugă widget
+home.bento.artistFeed.empty: Nicio lansare nouă de la artiștii tăi.
+home.bento.backToClassic: Înapoi la Acasă clasic
+home.bento.classicHome: Acasă clasic
+home.bento.done: Editare finalizată
+home.bento.editLayout: Editează aspectul
+home.bento.empty: Niciun widget momentan.
+home.bento.emptyGeneric: Nimic aici momentan.
+home.bento.friends.empty: Nicio activitate de la prieteni momentan.
+home.bento.group.action: Grupează
+home.bento.group.rename: Redenumește
+home.bento.group.select: Selectează pentru grupare
+home.bento.group.titlePlaceholder: Grup
+home.bento.group.ungroup: Degrupează
+home.bento.group.untitled: Grup
+home.bento.hideCards: Ascunde fundalurile cardurilor
+home.bento.hideGreeting: Ascunde salutul
+home.bento.lastfm: Last.fm
+home.bento.lastfm.connect: Conectează Last.fm în Configurări pentru a-ți vedea scrobble-urile.
+home.bento.lastfm.empty: Niciun scrobble în această perioadă.
+home.bento.lastfm.emptyRecent: Niciun scrobble momentan.
+home.bento.lastfm.error: Nu s-au putut încărca scrobble-urile Last.fm.
+home.bento.lastfm.recent: Scrobble-uri recente
+home.bento.lastfm.scrobbles: Scrobble-uri
+home.bento.lastfm.since: din
+home.bento.lyrics.loading: Se încarcă versurile…
+home.bento.lyrics.none: Nu există versuri pentru această piesă.
+home.bento.madeForYou.empty: Nicio recomandare momentan.
+home.bento.nowPlaying.empty: Nimic în redare
+home.bento.pinned.empty: Niciun element fixat momentan.
+home.bento.quickActions: Acțiuni rapide
+home.bento.recentlyPlayed.empty: Nimic redat recent.
+home.bento.removeWidget: Elimină widgetul
+home.bento.replay: Replay
+home.bento.replay.empty: Nimic aici momentan.
+home.bento.replay.error: Nu s-au putut încărca statisticile tale Replay.
+home.bento.replay.listened: Ascultat
+home.bento.replay.none: Niciun Apple Music Replay momentan — continuă să asculți!
+home.bento.replay.topArtists: Top artiști
+home.bento.reset: Resetează panoul
+home.bento.reset.confirm: Reconstruiești panoul din secțiunile tale de pe ecranul principal? Aranjamentul widgeturilor va fi pierdut.
+home.bento.resize: Redimensionează
+home.bento.showCards: Afișează fundalurile cardurilor
+home.bento.showGreeting: Afișează salutul
+home.bento.shuffleLibrary: Redare aleatorie bibliotecă
+home.bento.spotlight.choose: Alege un element de evidențiat
+home.bento.spotlight.noCandidates: Nimic de ales momentan — fixează sau redă niște muzică.
+home.bento.stubSub: Panoul personalizabil de widgeturi prinde contur. Aspectul inițial a fost generat din secțiunile tale de pe ecranul principal.
+home.bento.title: Acasă
+home.bento.toggleCard: Comută fundalul cardului
+home.bento.upNext: Urmează
+home.bento.upNext.empty: Nimic la „Urmează”.
+home.editName: Editează-ți numele afișat
 home.followedArtists: Artiști Urmăriți
 home.friendsListeningTo: Prietenii tăi ascultă
 home.greeting.afternoon: Bună ziua, ${name}
@@ -325,6 +383,7 @@ home.settings.artwork.settings: Setări artă
 home.settings.order.edit: Editare comandă
 home.settings.order.edit.done: Modificare finalizată
 home.settings.sections.add: Adaugă secțiune
+home.settings.tryBento: Încearcă panoul Bento (Beta)
 home.syncFavorites: Sincronizează Favoritele
 home.syncFavorites.gettingArtists: Se obțin Artiștii Favoriți...
 home.title: Acasă
@@ -344,6 +403,10 @@ library.randomAlbums.noAlbumsFound: Nu s-au găsit albume cu numărul minim de p
 library.randomAlbums.numAlbums: Număr de albume
 library.randomAlbums.resetGenres: Resetează genurile
 library.randomAlbums.unknownGenre: Gen necunoscut
+library.releaseType: Tipul lansării
+library.releaseTypeAlbums: Doar albume
+library.releaseTypeAll: Toate lansările
+library.releaseTypeSingles: Single-uri și EP-uri
 locale.lang.ar: Arabă
 locale.lang.de: Germană
 locale.lang.en: Engleză
@@ -1834,6 +1897,8 @@ settings.option.visual.layoutType.montara: Montara
 settings.option.visual.layoutType.montara.description: Bară laterală pe toată înălțimea, cu un player în partea de sus a zonei de conținut.
 settings.option.visual.lcdChromaticAberration: Aberație cromatică LCD
 settings.option.visual.lcdChromaticAberration.description: Refractă fundalul LCD al redării actuale prin shaderul de sticlă lichidă cu o franjă RGB.
+settings.option.visual.liquidGlassPlayer: Bară de redare Liquid Glass
+settings.option.visual.liquidGlassPlayer.description: Utilizează suprafața Liquid Glass pentru bara de redare curentă. Dezactivează pentru un panou plat, solid (de asemenea, mai ușor de randat).
 settings.option.visual.mainMenuPosition: Poziție meniu principal
 settings.option.visual.mergeAppleMusicPlaylists: Combină playlisturile Apple Music
 settings.option.visual.mergeAppleMusicPlaylists.description: Amestecă playlisturile selectate de Apple Music în secțiunea principală Playlisturi, în loc de a le afișa ca grup separat.
@@ -2481,7 +2546,7 @@ term.socials: Rețele Sociale
 term.socialTeam: Echipa de relații publice
 term.song: Cântec
 term.song.link.generate: Getting {{kind}}.link share URL...
-term.songs: Cântece
+term.songs: Piese
 term.sortBy: Sortare după
 term.sortBy.album: Album
 term.sortBy.albumOrder: Album Order

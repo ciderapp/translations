@@ -32,6 +32,7 @@ action.cast.scan: Escanear
 action.cast.scanning: Escaneando...
 action.cast.stop: Parar de transmitir para todos os dispositivos
 action.cast.todevices: Transmitir para Dispositivos
+action.change: Alterar
 action.clear: Limpar
 action.close: Fechar
 action.connect: Conectar
@@ -89,10 +90,12 @@ action.openArtworkInBrowser: Abrir capa no navegador
 action.openInNewTab: Abrir em Nova Aba
 action.openUrl: Abrir URL
 action.paste: Colar
+action.pause: Pausar
 action.pickTime: Escolher Horário
 action.pin: Fixar
 action.pinToHome: Fixar na Tela inicial
 action.pinToJumpList: Fixar na Lista de Atalhos
+action.play: Reproduzir
 action.playLater: Reproduzir por Último
 action.playNext: Reproduzir a Seguir
 action.playTracksLater: Reproduzir ${app.selectedMediaItems.length} por Último
@@ -301,6 +304,61 @@ general.closeToTray: Fechar para a Bandeja
 general.closeToTray.description: Botão Fechar deve minimizar a janela do Cidra
 home.artistsFeed: Seu Feed de Artistas
 home.artistsFeed.noArtist: Siga alguns artistas para ver os seus últimos lançamentos
+home.bento.a11y.boardLabel: Widgets do Início
+home.bento.a11y.instructions: Painel de widgets. Pressione Enter para editar o layout, use as setas do teclado para mover um widget, colchetes para redimensionar e Delete para remover.
+home.bento.addWidget: Adicionar Widget
+home.bento.artistFeed.empty: Nenhum lançamento novo dos seus artistas.
+home.bento.backToClassic: Voltar para o Início Clássico
+home.bento.classicHome: Início Clássico
+home.bento.done: Concluído
+home.bento.editLayout: Editar Layout
+home.bento.empty: Nenhum widget ainda.
+home.bento.emptyGeneric: Nada aqui ainda.
+home.bento.friends.empty: Nenhuma atividade de amigos no momento.
+home.bento.group.action: Agrupar
+home.bento.group.rename: Renomear
+home.bento.group.select: Selecionar para agrupar
+home.bento.group.titlePlaceholder: Grupo
+home.bento.group.ungroup: Desagrupar
+home.bento.group.untitled: Grupo
+home.bento.hideCards: Ocultar Fundos dos Cards
+home.bento.hideGreeting: Ocultar Saudação
+home.bento.lastfm: Last.fm
+home.bento.lastfm.connect: Conecte o Last.fm nos Ajustes para ver seus scrobbles.
+home.bento.lastfm.empty: Nenhum scrobble neste período ainda.
+home.bento.lastfm.emptyRecent: Nenhum scrobble ainda.
+home.bento.lastfm.error: Não foi possível carregar os scrobbles do Last.fm.
+home.bento.lastfm.recent: Scrobbles Recentes
+home.bento.lastfm.scrobbles: Scrobbles
+home.bento.lastfm.since: desde
+home.bento.lyrics.loading: Carregando letras…
+home.bento.lyrics.none: Nenhuma letra para esta faixa.
+home.bento.madeForYou.empty: Nenhuma recomendação ainda.
+home.bento.nowPlaying.empty: Nada tocando
+home.bento.pinned.empty: Nenhum item fixado ainda.
+home.bento.quickActions: Ações Rápidas
+home.bento.recentlyPlayed.empty: Nada reproduzido recentemente.
+home.bento.removeWidget: Remover widget
+home.bento.replay: Replay
+home.bento.replay.empty: Nada aqui ainda.
+home.bento.replay.error: Não foi possível carregar suas estatísticas do Replay.
+home.bento.replay.listened: Ouvido
+home.bento.replay.none: Nenhum Apple Music Replay ainda — continue ouvindo!
+home.bento.replay.topArtists: Principais Artistas
+home.bento.reset: Redefinir Painel
+home.bento.reset.confirm: Reconstruir o painel a partir das seções do seu início? A organização dos seus widgets será perdida.
+home.bento.resize: Redimensionar
+home.bento.showCards: Mostrar Fundos dos Cards
+home.bento.showGreeting: Mostrar Saudação
+home.bento.shuffleLibrary: Misturar Biblioteca
+home.bento.spotlight.choose: Escolha um item para destacar
+home.bento.spotlight.noCandidates: Nada para escolher ainda — fixe ou reproduza alguma música.
+home.bento.stubSub: O painel de widgets personalizável está tomando forma. Seu layout inicial foi gerado a partir das seções do seu início.
+home.bento.title: Início
+home.bento.toggleCard: Alternar fundo do card
+home.bento.upNext: A Seguir
+home.bento.upNext.empty: Nada a seguir.
+home.editName: Editar seu nome de exibição
 home.followedArtists: Artistas Seguidos
 home.friendsListeningTo: Seus Amigos Estão Escutando
 home.greeting.afternoon: Boa tarde, ${name}
@@ -325,6 +383,7 @@ home.settings.artwork.settings: Configurações de Artwork
 home.settings.order.edit: Editar pedido
 home.settings.order.edit.done: Edição concluída
 home.settings.sections.add: Adicionar seção
+home.settings.tryBento: Experimente o Painel Bento (Beta)
 home.syncFavorites: Sincronizar Favoritos
 home.syncFavorites.gettingArtists: Obtendo Artistas Favoritos...
 home.title: Início
@@ -344,6 +403,10 @@ library.randomAlbums.noAlbumsFound: Nenhum álbum encontrado com o número míni
 library.randomAlbums.numAlbums: Número de álbuns
 library.randomAlbums.resetGenres: Redefinir gêneros
 library.randomAlbums.unknownGenre: Gênero desconhecido
+library.releaseType: Tipo de Lançamento
+library.releaseTypeAlbums: Somente Álbuns
+library.releaseTypeAll: Todos os Lançamentos
+library.releaseTypeSingles: Singles e EPs
 locale.lang.ar: Árabe
 locale.lang.de: Alemão
 locale.lang.en: Inglês
@@ -1834,6 +1897,8 @@ settings.option.visual.layoutType.montara: Montara
 settings.option.visual.layoutType.montara.description: Barra lateral de altura total com um player superior dentro da área de conteúdo.
 settings.option.visual.lcdChromaticAberration: Aberração cromática do LCD
 settings.option.visual.lcdChromaticAberration.description: Refrata o fundo do LCD de reprodução atual através do shader de vidro líquido com uma franja RGB.
+settings.option.visual.liquidGlassPlayer: Barra de reprodução Liquid Glass
+settings.option.visual.liquidGlassPlayer.description: Use a superfície Liquid Glass para a barra de reprodução. Desative para um painel plano e sólido (também mais leve para renderizar).
 settings.option.visual.mainMenuPosition: Posição do menu principal
 settings.option.visual.mergeAppleMusicPlaylists: Mesclar playlists do Apple Music
 settings.option.visual.mergeAppleMusicPlaylists.description: Mistura as playlists com curadoria do Apple Music na seção principal de Playlists, em vez de exibi-las como um grupo separado.
@@ -2481,7 +2546,7 @@ term.socials: Sociais
 term.socialTeam: Time Social
 term.song: Música
 term.song.link.generate: Getting {{kind}}.link share URL...
-term.songs: Músicas
+term.songs: Faixas
 term.sortBy: Ordernar Por
 term.sortBy.album: Álbum
 term.sortBy.albumOrder: Album Order

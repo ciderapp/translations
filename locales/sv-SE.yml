@@ -32,6 +32,7 @@ action.cast.scan: Skanna
 action.cast.scanning: Skannar...
 action.cast.stop: Sluta sända till alla enheter
 action.cast.todevices: Casta till enheter
+action.change: Ändra
 action.clear: Rensa
 action.close: Stäng
 action.connect: Anslut
@@ -89,10 +90,12 @@ action.openArtworkInBrowser: Öppna tryckfil i webbläsaren
 action.openInNewTab: Öppna i ny flik
 action.openUrl: Öppna URL
 action.paste: Klistra in
+action.pause: Pausa
 action.pickTime: Välj tid
 action.pin: Fäst
 action.pinToHome: Fäst på hemmet
 action.pinToJumpList: Fäst i snabblistan
+action.play: Spela
 action.playLater: Spela upp sist
 action.playNext: Spela härnäst
 action.playTracksLater: Spela ${app.selectedMediaItems.length} låtar sist
@@ -301,6 +304,61 @@ general.closeToTray: Stäng till facket
 general.closeToTray.description: Stäng knappen bör minimera fönstret Cider
 home.artistsFeed: Ditt artistflöde
 home.artistsFeed.noArtist: När du följer artister visas deras senaste releaser här.
+home.bento.a11y.boardLabel: Hem-widgetar
+home.bento.a11y.instructions: Widgetpanel. Tryck på Retur för att redigera layouten, använd sedan piltangenterna för att flytta en widget, hakparenteser för att ändra storlek och Delete för att ta bort.
+home.bento.addWidget: Lägg till widget
+home.bento.artistFeed.empty: Inga nya släpp från dina artister.
+home.bento.backToClassic: Tillbaka till klassiskt hem
+home.bento.classicHome: Klassiskt hem
+home.bento.done: Klar med redigering
+home.bento.editLayout: Redigera layout
+home.bento.empty: Inga widgetar ännu.
+home.bento.emptyGeneric: Inget här ännu.
+home.bento.friends.empty: Ingen vänaktivitet just nu.
+home.bento.group.action: Gruppera
+home.bento.group.rename: Byt namn
+home.bento.group.select: Välj för gruppering
+home.bento.group.titlePlaceholder: Grupp
+home.bento.group.ungroup: Avgruppera
+home.bento.group.untitled: Grupp
+home.bento.hideCards: Dölj kortbakgrunder
+home.bento.hideGreeting: Dölj hälsning
+home.bento.lastfm: Last.fm
+home.bento.lastfm.connect: Anslut Last.fm i inställningarna för att se dina scrobblingar.
+home.bento.lastfm.empty: Inga scrobblingar under denna period ännu.
+home.bento.lastfm.emptyRecent: Inga scrobblingar ännu.
+home.bento.lastfm.error: Kunde inte läsa in scrobblingar från Last.fm.
+home.bento.lastfm.recent: Senaste scrobblingar
+home.bento.lastfm.scrobbles: Scrobblingar
+home.bento.lastfm.since: sedan
+home.bento.lyrics.loading: Läser in låttext…
+home.bento.lyrics.none: Ingen låttext för det här spåret.
+home.bento.madeForYou.empty: Inga rekommendationer ännu.
+home.bento.nowPlaying.empty: Inget spelas
+home.bento.pinned.empty: Inga fästa objekt ännu.
+home.bento.quickActions: Snabbåtgärder
+home.bento.recentlyPlayed.empty: Inget har spelats nyligen.
+home.bento.removeWidget: Ta bort widget
+home.bento.replay: Replay
+home.bento.replay.empty: Inget här ännu.
+home.bento.replay.error: Kunde inte läsa in din Replay-statistik.
+home.bento.replay.listened: Lyssnat
+home.bento.replay.none: Inget Apple Music Replay ännu – fortsätt lyssna!
+home.bento.replay.topArtists: Toppartister
+home.bento.reset: Återställ panel
+home.bento.reset.confirm: Vill du bygga om panelen från dina hem-sektioner? Din widgetlayout kommer att gå förlorad.
+home.bento.resize: Ändra storlek
+home.bento.showCards: Visa kortbakgrunder
+home.bento.showGreeting: Visa hälsning
+home.bento.shuffleLibrary: Blanda bibliotek
+home.bento.spotlight.choose: Välj ett objekt att lyfta fram
+home.bento.spotlight.noCandidates: Inget att välja ännu – fäst eller spela lite musik.
+home.bento.stubSub: Den anpassningsbara widgetpanelen börjar ta form. Din startlayout har skapats utifrån dina hem-sektioner.
+home.bento.title: Hem
+home.bento.toggleCard: Visa/dölj kortbakgrund
+home.bento.upNext: Näst på tur
+home.bento.upNext.empty: Inget näst på tur.
+home.editName: Redigera ditt visningsnamn
 home.followedArtists: Följda artister
 home.friendsListeningTo: Vänner lyssnar på
 home.greeting.afternoon: God eftermiddag, ${name}
@@ -325,6 +383,7 @@ home.settings.artwork.settings: Inställningar för tryckfil
 home.settings.order.edit: Redigera beställning
 home.settings.order.edit.done: Klar redigering
 home.settings.sections.add: Lägg till avsnitt
+home.settings.tryBento: Prova Bento-panelen (beta)
 home.syncFavorites: Synkronisera favoriter
 home.syncFavorites.gettingArtists: Hämtar favoritartister...
 home.title: Hem
@@ -344,6 +403,10 @@ library.randomAlbums.noAlbumsFound: Inga album hittades med det minsta antalet l
 library.randomAlbums.numAlbums: Antal album
 library.randomAlbums.resetGenres: Återställ genrer
 library.randomAlbums.unknownGenre: Okänd genre
+library.releaseType: Utgivningstyp
+library.releaseTypeAlbums: Endast album
+library.releaseTypeAll: Alla releaser
+library.releaseTypeSingles: Singlar & EP
 locale.lang.ar: Arabiska
 locale.lang.de: Tyska
 locale.lang.en: Engelska
@@ -1834,6 +1897,8 @@ settings.option.visual.layoutType.montara: Montara
 settings.option.visual.layoutType.montara.description: Sidofält i fullhöjd med en övre spelare inuti innehållsområdet.
 settings.option.visual.lcdChromaticAberration: Kromatisk aberration för LCD
 settings.option.visual.lcdChromaticAberration.description: Bryt bakgrunden för Nu spelas-LCD:n genom en flytande glas-shader med en RGB-kant.
+settings.option.visual.liquidGlassPlayer: Liquid Glass-spelarfält
+settings.option.visual.liquidGlassPlayer.description: Använd Liquid Glass-ytan för spelarfältet Nu spelas. Inaktivera för en platt, solid panel (vilket även är mer lättrenderat).
 settings.option.visual.mainMenuPosition: Huvudmenyns position
 settings.option.visual.mergeAppleMusicPlaylists: Slå ihop Apple Music-spellistor
 settings.option.visual.mergeAppleMusicPlaylists.description: Blanda Apple Music-redigerade spellistor i huvudsektionen för spellistor istället för att visa dem som en separat grupp.
@@ -2481,7 +2546,7 @@ term.socials: Sociala medier
 term.socialTeam: Sociala teamet
 term.song: Låt
 term.song.link.generate: Hämtar {{kind}}.link delnings länk...
-term.songs: Låtar
+term.songs: Spår
 term.sortBy: Sortera efter
 term.sortBy.album: Album
 term.sortBy.albumOrder: Album Order

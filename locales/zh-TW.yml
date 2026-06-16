@@ -52,6 +52,7 @@ action.cast.scan: 尋找
 action.cast.scanning: 尋找中...
 action.cast.stop: 停止投影到所有裝置
 action.cast.todevices: 投影到裝置
+action.change: 變更
 action.clear: 清除
 action.close: 取消
 action.connect: 連線
@@ -129,6 +130,7 @@ action.openArtworkInBrowser: 在瀏覽器中開啟專輯封面
 action.openInNewTab: 在新分頁中開啟
 action.openUrl: 打開連結
 action.paste: 貼上
+action.pause: 暫停
 action.pickTime: 選擇時間
 action.pin: 釘選
 action.pinToHome: 釘選至首頁
@@ -137,6 +139,7 @@ action.pinToJumpList:
   source: human
   by: "@jay900604"
   issue: 35
+action.play: 播放
 action.playLater: 待播
 action.playNext: 插播
 action.playTracksLater: 待播 ${app.selectedMediaItems.length} 首歌曲
@@ -428,6 +431,61 @@ general.closeToTray: 關閉時至系統匣
 general.closeToTray.description: 按下關閉按鈕時，會讓 Cider 隱藏至系統匣。
 home.artistsFeed: 藝人追蹤
 home.artistsFeed.noArtist: 追蹤你喜愛的藝人來取得他們的最新發行歌曲。
+home.bento.a11y.boardLabel: 首頁小工具
+home.bento.a11y.instructions: 小工具面板。按下 Enter 鍵以編輯版面配置，接著使用方向鍵移動小工具、中括號調整大小，並按下 Delete 鍵移除。
+home.bento.addWidget: 新增小工具
+home.bento.artistFeed.empty: 你關注的藝人目前沒有新發行。
+home.bento.backToClassic: 返回經典首頁
+home.bento.classicHome: 經典首頁
+home.bento.done: 完成編輯
+home.bento.editLayout: 編輯版面配置
+home.bento.empty: 目前沒有小工具。
+home.bento.emptyGeneric: 這裡目前沒有內容。
+home.bento.friends.empty: 目前沒有好友動態。
+home.bento.group.action: 群組
+home.bento.group.rename: 重新命名
+home.bento.group.select: 選取以進行群組
+home.bento.group.titlePlaceholder: 群組
+home.bento.group.ungroup: 取消群組
+home.bento.group.untitled: 群組
+home.bento.hideCards: 隱藏卡片背景
+home.bento.hideGreeting: 隱藏問候語
+home.bento.lastfm: Last.fm
+home.bento.lastfm.connect: 在「設定」中連結 Last.fm 以查看你的聽歌記錄。
+home.bento.lastfm.empty: 此期間內尚無聽歌記錄。
+home.bento.lastfm.emptyRecent: 尚無聽歌記錄。
+home.bento.lastfm.error: 無法載入 Last.fm 聽歌記錄。
+home.bento.lastfm.recent: 最近的聽歌記錄
+home.bento.lastfm.scrobbles: 聽歌記錄
+home.bento.lastfm.since: 自
+home.bento.lyrics.loading: 正在載入歌詞…
+home.bento.lyrics.none: 此歌曲沒有歌詞。
+home.bento.madeForYou.empty: 目前沒有推薦。
+home.bento.nowPlaying.empty: 未在播放
+home.bento.pinned.empty: 目前沒有釘選的項目。
+home.bento.quickActions: 快速動作
+home.bento.recentlyPlayed.empty: 最近沒有播放記錄。
+home.bento.removeWidget: 移除小工具
+home.bento.replay: 音樂回憶
+home.bento.replay.empty: 這裡目前沒有內容。
+home.bento.replay.error: 無法載入你的「音樂回憶」統計數據。
+home.bento.replay.listened: 已聆聽
+home.bento.replay.none: 尚無 Apple Music「音樂回憶」— 繼續聽歌吧！
+home.bento.replay.topArtists: 最常聆聽的藝人
+home.bento.reset: 重設面板
+home.bento.reset.confirm: 要從首頁區段重建面板嗎？你的小工具排列將會遺失。
+home.bento.resize: 調整大小
+home.bento.showCards: 顯示卡片背景
+home.bento.showGreeting: 顯示問候語
+home.bento.shuffleLibrary: 隨機播放資料庫
+home.bento.spotlight.choose: 選擇要精選的項目
+home.bento.spotlight.noCandidates: 目前沒有可選擇的項目 — 請釘選或播放一些音樂。
+home.bento.stubSub: 可自訂的小工具面板即將登場。已根據你的首頁區段為你建立初始版面配置。
+home.bento.title: 首頁
+home.bento.toggleCard: 切換卡片背景
+home.bento.upNext: 待播清單
+home.bento.upNext.empty: 待播清單中沒有內容。
+home.editName: 編輯你的顯示名稱
 home.followedArtists: 追蹤的藝人
 home.friendsListeningTo: 朋友正在聆聽
 home.greeting.afternoon: 午安，${name}
@@ -460,6 +518,7 @@ home.settings.artwork.settings: 藝人設定
 home.settings.order.edit: 編輯類別
 home.settings.order.edit.done: 完成編輯
 home.settings.sections.add: 新增區段
+home.settings.tryBento: 試用 Bento 面板 (Beta)
 home.syncFavorites: 同步追蹤
 home.syncFavorites.gettingArtists: "取得追蹤的藝人列表... "
 home.title: 首頁
@@ -479,6 +538,10 @@ library.randomAlbums.noAlbumsFound: 找不到符合最少曲目數的專輯
 library.randomAlbums.numAlbums: 專輯數量
 library.randomAlbums.resetGenres: 重設類型
 library.randomAlbums.unknownGenre: 未知類型
+library.releaseType: 發行類型
+library.releaseTypeAlbums: 僅限專輯
+library.releaseTypeAll: 所有發行作品
+library.releaseTypeSingles: 單曲與 EP
 locale.lang.ar: 阿拉伯文
 locale.lang.de: 德文
 locale.lang.en: 英文
@@ -2781,6 +2844,8 @@ settings.option.visual.layoutType.montara: Montara
 settings.option.visual.layoutType.montara.description: 滿高側邊欄，頂部播放器位於內容區域內。
 settings.option.visual.lcdChromaticAberration: LCD 色差效果
 settings.option.visual.lcdChromaticAberration.description: 透過液態玻璃著色器折射播放中的 LCD 背景，並帶有 RGB 邊緣。
+settings.option.visual.liquidGlassPlayer: 流體玻璃播放列
+settings.option.visual.liquidGlassPlayer.description: 為「播放中」播放列使用流體玻璃外觀。關閉此選項可切換為扁平的純色面板（轉譯負載較低）。
 settings.option.visual.mainMenuPosition: 主選單位置
 settings.option.visual.mergeAppleMusicPlaylists:
   value: 合併 Apple Music 播放列表

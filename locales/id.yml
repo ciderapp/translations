@@ -32,6 +32,7 @@ action.cast.scan: Pindai
 action.cast.scanning: Pindai...
 action.cast.stop: Stop transmisi ke semua perangkat
 action.cast.todevices: Transmisi ke Perangkat
+action.change: Ubah
 action.clear: Bersihkan
 action.close: Tutup
 action.connect: Hubungkan
@@ -89,10 +90,12 @@ action.openArtworkInBrowser: Buka artwork di browser
 action.openInNewTab: Buka di Tab Baru
 action.openUrl: Buka URL
 action.paste: Tempel
+action.pause: Jeda
 action.pickTime: Pilih Waktu
 action.pin: Sematkan
 action.pinToHome: Sematkan ke Beranda
 action.pinToJumpList: Sematkan ke Jump List
+action.play: Putar
 action.playLater: Mainkan Nanti
 action.playNext: Mainkan Selanjutnya
 action.playTracksLater: Mainkan ${app.selectedMediaItems.length} lagu nanti
@@ -301,6 +304,61 @@ general.closeToTray: Close to Tray
 general.closeToTray.description: Close button should minimize the Cider window
 home.artistsFeed: Feed Artis Anda
 home.artistsFeed.noArtist: Ikuti beberapa artis terlebih dahulu dan rilisan terbaru mereka akan ada di sini
+home.bento.a11y.boardLabel: Widget Beranda
+home.bento.a11y.instructions: Papan widget. Tekan Enter untuk mengedit tata letak, lalu gunakan tombol panah untuk memindahkan widget, kurung siku untuk mengubah ukuran, dan Delete untuk menghapus.
+home.bento.addWidget: Tambah Widget
+home.bento.artistFeed.empty: Tidak ada rilis baru dari artis Anda.
+home.bento.backToClassic: Kembali ke Beranda Klasik
+home.bento.classicHome: Beranda Klasik
+home.bento.done: Selesai Mengedit
+home.bento.editLayout: Edit Tata Letak
+home.bento.empty: Belum ada widget.
+home.bento.emptyGeneric: Belum ada apa-apa di sini.
+home.bento.friends.empty: Tidak ada aktivitas teman saat ini.
+home.bento.group.action: Grupkan
+home.bento.group.rename: Ubah Nama
+home.bento.group.select: Pilih untuk digrupkan
+home.bento.group.titlePlaceholder: Grup
+home.bento.group.ungroup: Pisahkan Grup
+home.bento.group.untitled: Grup
+home.bento.hideCards: Sembunyikan Latar Belakang Kartu
+home.bento.hideGreeting: Sembunyikan Salam
+home.bento.lastfm: Last.fm
+home.bento.lastfm.connect: Hubungkan Last.fm di Pengaturan untuk melihat scrobble Anda.
+home.bento.lastfm.empty: Belum ada scrobble pada periode ini.
+home.bento.lastfm.emptyRecent: Belum ada scrobble.
+home.bento.lastfm.error: Gagal memuat scrobble Last.fm.
+home.bento.lastfm.recent: Scrobble Terakhir
+home.bento.lastfm.scrobbles: Scrobble
+home.bento.lastfm.since: sejak
+home.bento.lyrics.loading: Memuat lirik…
+home.bento.lyrics.none: Tidak ada lirik untuk lagu ini.
+home.bento.madeForYou.empty: Belum ada rekomendasi.
+home.bento.nowPlaying.empty: Tidak ada yang diputar
+home.bento.pinned.empty: Belum ada item yang disematkan.
+home.bento.quickActions: Tindakan Cepat
+home.bento.recentlyPlayed.empty: Tidak ada yang diputar baru-baru ini.
+home.bento.removeWidget: Hapus widget
+home.bento.replay: Replay
+home.bento.replay.empty: Belum ada apa-apa di sini.
+home.bento.replay.error: Gagal memuat statistik Replay Anda.
+home.bento.replay.listened: Didengar
+home.bento.replay.none: Belum ada Apple Music Replay — teruslah mendengarkan!
+home.bento.replay.topArtists: Artis Teratas
+home.bento.reset: Atur Ulang Papan
+home.bento.reset.confirm: Bangun ulang papan dari bagian beranda Anda? Susunan widget Anda akan hilang.
+home.bento.resize: Ubah Ukuran
+home.bento.showCards: Tampilkan Latar Belakang Kartu
+home.bento.showGreeting: Tampilkan Salam
+home.bento.shuffleLibrary: Acak Perpustakaan
+home.bento.spotlight.choose: Pilih item untuk disorot
+home.bento.spotlight.noCandidates: Belum ada yang bisa dipilih — sematkan atau putar musik.
+home.bento.stubSub: Papan widget yang dapat disesuaikan sedang disiapkan. Tata letak awal Anda diambil dari bagian beranda Anda.
+home.bento.title: Beranda
+home.bento.toggleCard: Alihkan latar belakang kartu
+home.bento.upNext: Berikutnya
+home.bento.upNext.empty: Tidak ada antrean berikutnya.
+home.editName: Edit nama tampilan Anda
 home.followedArtists: Artis Diikuti
 home.friendsListeningTo: Teman Sedang Mendengarkan
 home.greeting.afternoon: Selamat siang, ${name}
@@ -325,6 +383,7 @@ home.settings.artwork.settings: Artwork Settings
 home.settings.order.edit: Edit Order
 home.settings.order.edit.done: Done Editing
 home.settings.sections.add: Add Section
+home.settings.tryBento: Coba Papan Bento (Beta)
 home.syncFavorites: Sinkronkan Favorit
 home.syncFavorites.gettingArtists: Mendapatkan artis favorit
 home.title: Beranda
@@ -344,6 +403,10 @@ library.randomAlbums.noAlbumsFound: Tidak ada album yang ditemukan dengan jumlah
 library.randomAlbums.numAlbums: Jumlah Album
 library.randomAlbums.resetGenres: Atur Ulang Genre
 library.randomAlbums.unknownGenre: Genre Tidak Diketahui
+library.releaseType: Jenis Rilis
+library.releaseTypeAlbums: Hanya Album
+library.releaseTypeAll: Semua Rilis
+library.releaseTypeSingles: Singel & EP
 locale.lang.ar: Arab
 locale.lang.de: Jerman
 locale.lang.en: Inggris
@@ -1834,6 +1897,8 @@ settings.option.visual.layoutType.montara: Montara
 settings.option.visual.layoutType.montara.description: Bilah sisi tinggi penuh dengan pemutar atas di dalam area konten.
 settings.option.visual.lcdChromaticAberration: Aberasi Kromatik LCD
 settings.option.visual.lcdChromaticAberration.description: Membias latar belakang LCD yang sedang diputar melalui shader kaca cair dengan tepian RGB.
+settings.option.visual.liquidGlassPlayer: Bilah Pemutar Liquid Glass
+settings.option.visual.liquidGlassPlayer.description: Gunakan permukaan liquid-glass untuk bilah pemutar yang sedang diputar. Nonaktifkan untuk panel datar yang solid (juga lebih ringan untuk dirender).
 settings.option.visual.mainMenuPosition: Posisi Menu Utama
 settings.option.visual.mergeAppleMusicPlaylists: Gabungkan Daftar Putar Apple Music
 settings.option.visual.mergeAppleMusicPlaylists.description: Campurkan daftar putar yang dikurasi Apple Music ke dalam bagian Daftar Putar utama alih-alih menampilkannya sebagai grup terpisah.
@@ -2481,7 +2546,7 @@ term.socials: Sosial
 term.socialTeam: Social Team
 term.song: Lagu
 term.song.link.generate: Getting {{kind}}.link share URL...
-term.songs: Lagu
+term.songs: Trek
 term.sortBy: Urutkan Berdasarkan
 term.sortBy.album: Album
 term.sortBy.albumOrder: Album Order

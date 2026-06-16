@@ -32,6 +32,7 @@ action.cast.scan: Escanear
 action.cast.scanning: Escaneando...
 action.cast.stop: Dejar de transmitir a todos los Dispositivos
 action.cast.todevices: Transmitir a los Dispositivos
+action.change: Cambiar
 action.clear: Borrar
 action.close: Cerrar
 action.connect: Conectar
@@ -96,10 +97,12 @@ action.openArtworkInBrowser: Abrir Ilustración en el Navegador
 action.openInNewTab: Abrir en una nueva pestaña
 action.openUrl: Abrir URL
 action.paste: Pegar
+action.pause: Pausar
 action.pickTime: Elegir hora
 action.pin: Fijar
 action.pinToHome: Anclar a Inicio
 action.pinToJumpList: Anclar a la Jump List
+action.play: Reproducir
 action.playLater: Reproducir Más Tarde
 action.playNext: Reproducir Siguiente
 action.playTracksLater: Reproducir ${app.selectedMediaItems.length} canciones más tarde
@@ -308,6 +311,61 @@ general.closeToTray: Minimizar a la bandeja
 general.closeToTray.description: El botón de cerrar debe minimizar la ventana de Cider
 home.artistsFeed: Tu Feed de artistas
 home.artistsFeed.noArtist: Sigue a algunos Artistas para ver sus Últimos Lanzamientos
+home.bento.a11y.boardLabel: Widgets de Inicio
+home.bento.a11y.instructions: Tablero de widgets. Presiona Enter para editar el diseño, luego usa las teclas de flecha para mover un widget, los corchetes para cambiar el tamaño y Suprimir para eliminar.
+home.bento.addWidget: Agregar widget
+home.bento.artistFeed.empty: No hay lanzamientos nuevos de tus artistas.
+home.bento.backToClassic: Volver al Inicio clásico
+home.bento.classicHome: Inicio clásico
+home.bento.done: Listo
+home.bento.editLayout: Editar diseño
+home.bento.empty: Aún no hay widgets.
+home.bento.emptyGeneric: Aún no hay nada aquí.
+home.bento.friends.empty: No hay actividad de amigos en este momento.
+home.bento.group.action: Agrupar
+home.bento.group.rename: Renombrar
+home.bento.group.select: Seleccionar para agrupar
+home.bento.group.titlePlaceholder: Grupo
+home.bento.group.ungroup: Desagrupar
+home.bento.group.untitled: Grupo
+home.bento.hideCards: Ocultar fondos de tarjetas
+home.bento.hideGreeting: Ocultar saludo
+home.bento.lastfm: Last.fm
+home.bento.lastfm.connect: Conecta Last.fm en Configuración para ver tus scrobbles.
+home.bento.lastfm.empty: Aún no hay scrobbles en este periodo.
+home.bento.lastfm.emptyRecent: Aún no hay scrobbles.
+home.bento.lastfm.error: No se pudieron cargar los scrobbles de Last.fm.
+home.bento.lastfm.recent: Scrobbles recientes
+home.bento.lastfm.scrobbles: Scrobbles
+home.bento.lastfm.since: desde
+home.bento.lyrics.loading: Cargando letra…
+home.bento.lyrics.none: No hay letra para esta canción.
+home.bento.madeForYou.empty: Aún no hay recomendaciones.
+home.bento.nowPlaying.empty: Nada en reproducción
+home.bento.pinned.empty: Aún no hay elementos fijados.
+home.bento.quickActions: Acciones rápidas
+home.bento.recentlyPlayed.empty: No hay reproducciones recientes.
+home.bento.removeWidget: Eliminar widget
+home.bento.replay: Replay
+home.bento.replay.empty: Aún no hay nada aquí.
+home.bento.replay.error: No se pudieron cargar tus estadísticas de Replay.
+home.bento.replay.listened: Escuchado
+home.bento.replay.none: Aún no hay Replay de Apple Music. ¡Sigue escuchando!
+home.bento.replay.topArtists: Artistas principales
+home.bento.reset: Restablecer tablero
+home.bento.reset.confirm: ¿Reconstruir el tablero a partir de tus secciones de inicio? Se perderá la distribución de tus widgets.
+home.bento.resize: Cambiar tamaño
+home.bento.showCards: Mostrar fondos de tarjetas
+home.bento.showGreeting: Mostrar saludo
+home.bento.shuffleLibrary: Reproducción aleatoria de la biblioteca
+home.bento.spotlight.choose: Elige un elemento para destacar
+home.bento.spotlight.noCandidates: "Aún no hay nada que elegir: fija o reproduce algo de música."
+home.bento.stubSub: El tablero de widgets personalizable se está armando. Tu diseño inicial se generó a partir de tus secciones de inicio.
+home.bento.title: Inicio
+home.bento.toggleCard: Alternar fondo de tarjeta
+home.bento.upNext: A continuación
+home.bento.upNext.empty: No hay nada a continuación.
+home.editName: Editar tu nombre para mostrar
 home.followedArtists: Artistas Seguidos
 home.friendsListeningTo: Amigos Escuchando
 home.greeting.afternoon: Buenas tardes, ${name}
@@ -332,6 +390,7 @@ home.settings.artwork.settings: Ajustes de ilustraciones
 home.settings.order.edit: Editar orden
 home.settings.order.edit.done: Edición finalizada
 home.settings.sections.add: Añadir sección
+home.settings.tryBento: Probar el tablero Bento (Beta)
 home.syncFavorites: Sincronizar Favoritos
 home.syncFavorites.gettingArtists: Obteniendo Artistas Favoritos...
 home.title: Inicio
@@ -351,6 +410,10 @@ library.randomAlbums.noAlbumsFound: No se encontraron álbumes con la cantidad m
 library.randomAlbums.numAlbums: Número de álbumes
 library.randomAlbums.resetGenres: Restablecer géneros
 library.randomAlbums.unknownGenre: Género desconocido
+library.releaseType: Tipo de lanzamiento
+library.releaseTypeAlbums: Solo álbumes
+library.releaseTypeAll: Todos los lanzamientos
+library.releaseTypeSingles: Sencillos y EPs
 locale.lang.ar: Árabe
 locale.lang.de: Alemán
 locale.lang.en: Inglés
@@ -1844,6 +1907,8 @@ settings.option.visual.layoutType.montara: Montara
 settings.option.visual.layoutType.montara.description: Barra lateral de altura completa con un reproductor superior dentro del área de contenido.
 settings.option.visual.lcdChromaticAberration: Aberración cromática de LCD
 settings.option.visual.lcdChromaticAberration.description: Refracta el fondo LCD de reproducción actual a través del sombreador de vidrio líquido con un borde RGB.
+settings.option.visual.liquidGlassPlayer: Barra del reproductor de vidrio líquido
+settings.option.visual.liquidGlassPlayer.description: Usa la superficie de vidrio líquido para la barra de reproducción actual. Desactívala para mostrar un panel plano y sólido (también es más ligero de renderizar).
 settings.option.visual.mainMenuPosition: Posición del menú principal
 settings.option.visual.mergeAppleMusicPlaylists: Combinar listas de reproducción de Apple Music
 settings.option.visual.mergeAppleMusicPlaylists.description: Combina las listas de reproducción seleccionadas por Apple Music en la sección principal de Listas de reproducción en lugar de mostrarlas como un grupo separado.
@@ -2494,7 +2559,7 @@ term.socials: Redes Sociales
 term.socialTeam: Equipo Social
 term.song: Canción
 term.song.link.generate: Obteniendo el enlace de compartir {{kind}}.link...
-term.songs: Canciones
+term.songs: Pistas
 term.sortBy: Ordenar por
 term.sortBy.album: Álbum
 term.sortBy.albumOrder: Album Order

@@ -34,6 +34,7 @@ action.cast.scan: Scannen
 action.cast.scanning: Scannen...
 action.cast.stop: Stop met casten naar alle apparaten
 action.cast.todevices: Casten naar apparaten
+action.change: Wijzig
 action.clear: Wissen
 action.close: Sluiten
 action.connect: Verbinden
@@ -91,10 +92,12 @@ action.openArtworkInBrowser: Illustratie openen in browser
 action.openInNewTab: Open in nieuw tabblad
 action.openUrl: URL openen
 action.paste: Plakken
+action.pause: Pauzeer
 action.pickTime: Kies tijd
 action.pin: Vastzetten
 action.pinToHome: Vastpinnen op Start
 action.pinToJumpList: Aan Jump List vastpinnen
+action.play: Speel af
 action.playLater: Speel als laatste af
 action.playNext: Speel hierna af
 action.playTracksLater: Speel ${app.selectedMediaItems.length} nummers later
@@ -299,6 +302,61 @@ general.closeToTray: Sluiten naar systeemvak
 general.closeToTray.description: Sluitknop moet het ider venster minimaliseren
 home.artistsFeed: Je artiesten overzicht
 home.artistsFeed.noArtist: Volg artiesten om hun nieuwste releases te zien
+home.bento.a11y.boardLabel: Home-widgets
+home.bento.a11y.instructions: Widgetbord. Druk op Enter om de lay-out te bewerken, gebruik vervolgens de pijltjestoetsen om een widget te verplaatsen, rechte haken om de grootte aan te passen en Delete om te verwijderen.
+home.bento.addWidget: Widget toevoegen
+home.bento.artistFeed.empty: Geen nieuwe releases van je artiesten.
+home.bento.backToClassic: Terug naar klassieke home
+home.bento.classicHome: Klassieke home
+home.bento.done: Klaar met bewerken
+home.bento.editLayout: Lay-out bewerken
+home.bento.empty: Nog geen widgets.
+home.bento.emptyGeneric: Nog niets hier.
+home.bento.friends.empty: Momenteel geen activiteit van vrienden.
+home.bento.group.action: Groeperen
+home.bento.group.rename: Naam wijzigen
+home.bento.group.select: Selecteer voor groeperen
+home.bento.group.titlePlaceholder: Groep
+home.bento.group.ungroup: Groepering opheffen
+home.bento.group.untitled: Groep
+home.bento.hideCards: Kaartachtergronden verbergen
+home.bento.hideGreeting: Begroeting verbergen
+home.bento.lastfm: Last.fm
+home.bento.lastfm.connect: Verbind Last.fm in de instellingen om je scrobbles te zien.
+home.bento.lastfm.empty: Nog geen scrobbles in deze periode.
+home.bento.lastfm.emptyRecent: Nog geen scrobbles.
+home.bento.lastfm.error: Kan Last.fm-scrobbles niet laden.
+home.bento.lastfm.recent: Recente scrobbles
+home.bento.lastfm.scrobbles: Scrobbles
+home.bento.lastfm.since: sinds
+home.bento.lyrics.loading: Songtekst laden…
+home.bento.lyrics.none: Geen songtekst voor dit nummer.
+home.bento.madeForYou.empty: Nog geen aanbevelingen.
+home.bento.nowPlaying.empty: Niets speelt af
+home.bento.pinned.empty: Nog geen vastgezette onderdelen.
+home.bento.quickActions: Snelle acties
+home.bento.recentlyPlayed.empty: Onlangs niets afgespeeld.
+home.bento.removeWidget: Widget verwijderen
+home.bento.replay: Replay
+home.bento.replay.empty: Nog niets hier.
+home.bento.replay.error: Kan je Replay-statistieken niet laden.
+home.bento.replay.listened: Geluisterd
+home.bento.replay.none: Nog geen Apple Music Replay — blijf luisteren!
+home.bento.replay.topArtists: Topartiesten
+home.bento.reset: Bord herstellen
+home.bento.reset.confirm: Het bord opnieuw opbouwen op basis van je home-secties? Je widgetindeling gaat verloren.
+home.bento.resize: Grootte aanpassen
+home.bento.showCards: Kaartachtergronden tonen
+home.bento.showGreeting: Begroeting tonen
+home.bento.shuffleLibrary: Bibliotheek shuffelen
+home.bento.spotlight.choose: Kies een item voor de spotlight
+home.bento.spotlight.noCandidates: Nog niets om te kiezen — zet muziek vast of speel wat af.
+home.bento.stubSub: Het aanpasbare widgetbord krijgt vorm. Je startlay-out is gebaseerd op je home-secties.
+home.bento.title: Home
+home.bento.toggleCard: Kaartachtergrond in-/uitschakelen
+home.bento.upNext: Hierna
+home.bento.upNext.empty: Niets in 'Hierna'.
+home.editName: Weergavenaam bewerken
 home.followedArtists: Gevolgde artiesten
 home.friendsListeningTo: Vrienden luisteren naar
 home.greeting.afternoon: Goedemiddag, ${name}
@@ -323,6 +381,7 @@ home.settings.artwork.settings: Artwork instellingen
 home.settings.order.edit: Volgorde bewerken
 home.settings.order.edit.done: Bewerken voltooid
 home.settings.sections.add: Sectie toevoegen
+home.settings.tryBento: Probeer Bento-bord (bèta)
 home.syncFavorites: Favorieten synchroniseren
 home.syncFavorites.gettingArtists: Favoriete artiesten ophalen...
 home.title: Home
@@ -342,6 +401,10 @@ library.randomAlbums.noAlbumsFound: Geen albums gevonden met het minimumaantal n
 library.randomAlbums.numAlbums: Aantal albums
 library.randomAlbums.resetGenres: Genres herstellen
 library.randomAlbums.unknownGenre: Onbekend genre
+library.releaseType: Releasetype
+library.releaseTypeAlbums: Alleen albums
+library.releaseTypeAll: Alle releases
+library.releaseTypeSingles: Singles en ep's
 locale.lang.ar: Arabisch
 locale.lang.de: Duits
 locale.lang.en: Engels
@@ -1832,6 +1895,8 @@ settings.option.visual.layoutType.montara: Montara
 settings.option.visual.layoutType.montara.description: Zijbalk over de volledige hoogte met een speler bovenaan in het inhoudsgebied.
 settings.option.visual.lcdChromaticAberration: Chromatische aberratie voor lcd
 settings.option.visual.lcdChromaticAberration.description: Breek de lcd-achtergrond van het huidige nummer via de vloeibaar-glasshader met een RGB-rand.
+settings.option.visual.liquidGlassPlayer: Liquid Glass-afspeelbalk
+settings.option.visual.liquidGlassPlayer.description: Gebruik het liquid-glass-oppervlak voor de afspeelbalk van het huidige nummer. Schakel dit uit voor een vlak, effen paneel (dit is ook lichter om te renderen).
 settings.option.visual.mainMenuPosition: Positie hoofdmenu
 settings.option.visual.mergeAppleMusicPlaylists: Apple Music-afspeellijsten samenvoegen
 settings.option.visual.mergeAppleMusicPlaylists.description: Voeg door Apple Music samengestelde afspeellijsten samen met de hoofdsectie Afspeellijsten, in plaats van ze als een aparte groep weer te geven.
