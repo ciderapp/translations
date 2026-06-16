@@ -32,6 +32,7 @@ action.cast.scan: Scan
 action.cast.scanning: Scanning...
 action.cast.stop: Stop casting to all devices
 action.cast.todevices: Cast to Devices
+action.change: Change
 action.clear: Clear
 action.close: Close
 action.connect: Connect
@@ -89,10 +90,12 @@ action.openArtworkInBrowser: Open artwork in browser
 action.openInNewTab: Open in New Tab
 action.openUrl: Open URL
 action.paste: Paste
+action.pause: Pause
 action.pickTime: Pick Time
 action.pin: Pin
 action.pinToHome: Pin to Home
 action.pinToJumpList: Pin to Jump List
+action.play: Play
 action.playLater: Play Later
 action.playNext: Play Next
 action.playTracksLater: Play ${app.selectedMediaItems.length} tracks later
@@ -300,6 +303,61 @@ general.closeToTray: Close to Tray
 general.closeToTray.description: Close button should minimize the Cider window
 home.artistsFeed: Your Artists Feed
 home.artistsFeed.noArtist: Follow some artists to see their latest releases
+home.bento.a11y.boardLabel: Home widgets
+home.bento.a11y.instructions: Widget board. Press Enter to edit the layout, then use arrow keys to move a widget, square brackets to resize, and Delete to remove.
+home.bento.addWidget: Add Widget
+home.bento.artistFeed.empty: No new releases from your artists.
+home.bento.backToClassic: Back to Classic Home
+home.bento.classicHome: Classic Home
+home.bento.done: Done Editing
+home.bento.editLayout: Edit Layout
+home.bento.empty: No widgets yet.
+home.bento.emptyGeneric: Nothing here yet.
+home.bento.friends.empty: No friend activity right now.
+home.bento.group.action: Group
+home.bento.group.rename: Rename
+home.bento.group.select: Select for grouping
+home.bento.group.titlePlaceholder: Group
+home.bento.group.ungroup: Ungroup
+home.bento.group.untitled: Group
+home.bento.hideCards: Hide Card Backgrounds
+home.bento.hideGreeting: Hide Greeting
+home.bento.lastfm: Last.fm
+home.bento.lastfm.connect: Connect Last.fm in Settings to see your scrobbles.
+home.bento.lastfm.empty: No scrobbles in this period yet.
+home.bento.lastfm.emptyRecent: No scrobbles yet.
+home.bento.lastfm.error: Couldn’t load Last.fm scrobbles.
+home.bento.lastfm.recent: Recent Scrobbles
+home.bento.lastfm.scrobbles: Scrobbles
+home.bento.lastfm.since: since
+home.bento.lyrics.loading: Loading lyrics…
+home.bento.lyrics.none: No lyrics for this track.
+home.bento.madeForYou.empty: No recommendations yet.
+home.bento.nowPlaying.empty: Nothing playing
+home.bento.pinned.empty: No pinned items yet.
+home.bento.quickActions: Quick Actions
+home.bento.recentlyPlayed.empty: Nothing played recently.
+home.bento.removeWidget: Remove widget
+home.bento.replay: Replay
+home.bento.replay.empty: Nothing here yet.
+home.bento.replay.error: Couldn’t load your Replay stats.
+home.bento.replay.listened: Listened
+home.bento.replay.none: No Apple Music Replay yet — keep listening!
+home.bento.replay.topArtists: Top Artists
+home.bento.reset: Reset Board
+home.bento.reset.confirm: Rebuild the board from your home sections? Your widget arrangement will be lost.
+home.bento.resize: Resize
+home.bento.showCards: Show Card Backgrounds
+home.bento.showGreeting: Show Greeting
+home.bento.shuffleLibrary: Shuffle Library
+home.bento.spotlight.choose: Choose an item to spotlight
+home.bento.spotlight.noCandidates: Nothing to pick yet — pin or play some music.
+home.bento.stubSub: The customizable widget board is coming together. Your starter layout was seeded from your home sections.
+home.bento.title: Home
+home.bento.toggleCard: Toggle card background
+home.bento.upNext: Up Next
+home.bento.upNext.empty: Nothing up next.
+home.editName: Edit your display name
 home.followedArtists: Followed Artists
 home.friendsListeningTo: Friends Listening To
 home.greeting.afternoon: Good afternoon, ${name}
@@ -324,6 +382,7 @@ home.settings.artwork.settings: Artwork Settings
 home.settings.order.edit: Edit Order
 home.settings.order.edit.done: Done Editing
 home.settings.sections.add: Add Section
+home.settings.tryBento: Try Bento Board (Beta)
 home.syncFavorites: Sync Favorites
 home.syncFavorites.gettingArtists: Getting Favorited Artists...
 home.title: Home
@@ -343,6 +402,10 @@ library.randomAlbums.noAlbumsFound: No albums found with the minimum track count
 library.randomAlbums.numAlbums: Number of Albums
 library.randomAlbums.resetGenres: Reset Genres
 library.randomAlbums.unknownGenre: Unknown Genre
+library.releaseType: Release Type
+library.releaseTypeAlbums: Albums Only
+library.releaseTypeAll: All Releases
+library.releaseTypeSingles: Singles & EPs
 locale.lang.ar: Arabic
 locale.lang.de: German
 locale.lang.en: English
@@ -1828,6 +1891,8 @@ settings.option.visual.layoutType.montara: Montara
 settings.option.visual.layoutType.montara.description: Full-height sidebar with a top player inside the content area.
 settings.option.visual.lcdChromaticAberration: LCD Chromatic Aberration
 settings.option.visual.lcdChromaticAberration.description: Refract the now-playing LCD background through the liquid-glass shader with an RGB fringe.
+settings.option.visual.liquidGlassPlayer: Liquid Glass Player Bar
+settings.option.visual.liquidGlassPlayer.description: Use the liquid-glass surface for the now-playing player bar. Turn off for a flat, solid panel (also lighter to render).
 settings.option.visual.mainMenuPosition: Main Menu Position
 settings.option.visual.mergeAppleMusicPlaylists: Merge Apple Music Playlists
 settings.option.visual.mergeAppleMusicPlaylists.description: Mix Apple Music–curated playlists into the main Playlists section instead of showing them as a separate group.
@@ -2468,7 +2533,7 @@ term.socials: Socials
 term.socialTeam: Social Team
 term.song: Song
 term.song.link.generate: Getting {{kind}}.link share URL...
-term.songs: Songs
+term.songs: Tracks
 term.sortBy: Sort By
 term.sortBy.album: Album
 term.sortBy.albumOrder: Album Order
