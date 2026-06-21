@@ -79,8 +79,8 @@ Every entry below came from a community member through a [translation issue](../
 | [@szymin22](https://github.com/szymin22) | Polish | 105 |
 | [@Vudgekek](https://github.com/Vudgekek) | Croatian | 103 |
 | [@lumaa-dev](https://github.com/lumaa-dev) | French | 68 |
+| [@nekocats](https://github.com/nekocats) | Estonian | 39 |
 | [@MP-K](https://github.com/MP-K) | Korean | 27 |
-| [@nekocats](https://github.com/nekocats) | Estonian | 22 |
 | [@ramuuflor](https://github.com/ramuuflor) | Japanese | 22 |
 | [@itsmeares](https://github.com/itsmeares) | Turkish | 17 |
 <!-- translators:end -->
