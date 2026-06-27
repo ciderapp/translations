@@ -83,6 +83,7 @@ Every entry below came from a community member through a [translation issue](../
 | [@MP-K](https://github.com/MP-K) | Korean | 27 |
 | [@ramuuflor](https://github.com/ramuuflor) | Japanese | 22 |
 | [@itsmeares](https://github.com/itsmeares) | Turkish | 17 |
+| [@UnoPanduo](https://github.com/UnoPanduo) | Dutch | 1 |
 <!-- translators:end -->
 
 ## License
