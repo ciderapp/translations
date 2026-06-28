@@ -421,6 +421,7 @@ action.newpreset:
   source: human
   by: "@Tesutarin"
   issue: 32
+action.next: 下一步
 action.ok:
   value: 好
   source: human
@@ -1044,6 +1045,57 @@ audiolab.waiting:
   source: human
   by: "@Tesutarin"
   issue: 7
+bugReport.addImage: 添加图片
+bugReport.areaOther: 其他
+bugReport.categoryLabel: 哪个区域受影响？
+bugReport.copyLink: 复制链接
+bugReport.descLabel: 发生了什么？
+bugReport.descPlaceholder: 描述该错误。您期望发生什么，而实际发生了什么？
+bugReport.diagLabel: 要包含的诊断信息
+bugReport.discardDraft: 放弃
+bugReport.doneSub: 保留此链接以跟踪您的报告。无需帐户。
+bugReport.doneTitle: 感谢！您的报告已提交。
+bugReport.draftRestored: 已恢复您未发送的草稿。
+bugReport.error.generic: 无法提交您的报告。请重试。
+bugReport.error.transport: 无法连接到报告服务。您可以改为在 GitHub 上创建 Issue。
+bugReport.githubFallback: 在 GitHub 上打开
+bugReport.hideData: 隐藏附加数据
+bugReport.included: 已包含
+bugReport.linkCopied: Issue 链接已复制
+bugReport.maxImages: 您最多可以添加 5 张图片。
+bugReport.off: 关闭
+bugReport.openIssue: 打开 Issue
+bugReport.pasteHint: 提示：截取屏幕截图 (Win+Shift+S) 并在此处粘贴。
+bugReport.pick: 选择一个组件
+bugReport.repick: 重新选择元素
+bugReport.retry: 重试
+bugReport.review: 检查
+bugReport.review.area: 区域
+bugReport.review.component: 组件
+bugReport.review.desc: 描述
+bugReport.review.device: 设备 ID
+bugReport.review.logs: 日志
+bugReport.review.settings: 设置
+bugReport.review.shots: 屏幕截图
+bugReport.review.system: 系统
+bugReport.reviewIntro: 这些是即将发送的内容。在您提交之前，不会上传任何内容。
+bugReport.screenshotsLabel: 屏幕截图（可选）
+bugReport.showData: 显示附加数据
+bugReport.stepsLabel: 复现步骤（可选）
+bugReport.stepsPlaceholder: |-
+  1. 打开...
+  2. 点击...
+  3. 看到...
+bugReport.submit: 提交报告
+bugReport.submitting: 正在提交报告…
+bugReport.subtitle: 向 Cider 团队发送详细报告
+bugReport.title: 报告错误
+bugReport.toggleConfig: 设置快照
+bugReport.toggleConfigDesc: 您当前的设置（已清除敏感信息），以帮助复现特定配置的错误。
+bugReport.toggleHwid: 匿名设备 ID
+bugReport.toggleHwidDesc: 哈希处理后的设备 ID，以便关联来自此设备的重复报告。
+bugReport.toggleLogs: 最近的应用日志
+bugReport.toggleLogsDesc: 最近的控制台输出（已脱敏敏感信息）。对修复问题最有用。
 catalog.new:
   value: 新发现
   source: human
@@ -8201,11 +8253,20 @@ settings.option.visual.animatedArtwork.warningDescription:
   source: human
   by: "@Tesutarin"
   issue: 10
+settings.option.visual.animatedArtworkEngine: 动态封面引擎
+settings.option.visual.animatedArtworkEngine.description: “原生”会下载一个循环片段并直接播放，无需切换画质。仅在遇到播放问题时才使用“传统”。
+settings.option.visual.animatedArtworkEngine.hls: 传统 (hls.js)
+settings.option.visual.animatedArtworkEngine.native: 原生（推荐）
 settings.option.visual.animatedArtworkQuality:
-  value: 动态封面品质等级
-  source: human
+  value: 动态封面画质
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-06-28
+settings.option.visual.animatedArtworkQuality.balanced: 平衡
+settings.option.visual.animatedArtworkQuality.description: 动态封面的清晰度。“自动”会根据屏幕上的显示大小匹配每个封面，适合大多数配置。
+settings.option.visual.animatedArtworkQuality.performance: 性能
+settings.option.visual.animatedArtworkQuality.quality: 质量
 settings.option.visual.animatedBackgroundFramerate:
   value: 动态背景帧率
   source: human
@@ -9601,19 +9662,22 @@ settings.updates.status.idle:
   by: "@Tesutarin"
   issue: 11
 settings.updates.status.success:
-  value: 重启以完成安装
-  source: human
+  value: 需要重新启动
+  source: ai
   by: "@Tesutarin"
   issue: 11
+  superseded_at: 2026-06-28
 settings.updates.status.working:
-  value: 正在安装更新…
-  source: human
+  value: 正在安装...
+  source: ai
   by: "@Tesutarin"
   issue: 11
+  superseded_at: 2026-06-28
 settings.visual.card.appBackground: 应用背景
 settings.visual.card.behaviorLyrics: 行为与歌词
 settings.visual.card.browse: 浏览
 settings.visual.card.contentFilter: 内容过滤
+settings.visual.card.experimental: 实验性
 settings.visual.card.fsrUpscaling: FSR 超分辨率
 settings.visual.card.moreAnimatedArtwork: 更多动态封面
 settings.visual.card.playerEffects: 播放器特效

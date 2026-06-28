@@ -105,6 +105,7 @@ action.moveToFolder: Przenieś do folderu
 action.moveToFolder.here: Przenieś „{{name}}” tutaj
 action.moveToTop: Przenieś na górę
 action.newpreset: Nowy preset...
+action.next: Dalej
 action.ok: OK
 action.open: Otwórz
 action.openArtworkInBrowser: Otwórz grafikę w przeglądarce
@@ -256,6 +257,57 @@ audio.device.default: Urządzenie domyślne
 audio.device.noneFound: Nie znaleziono urządzeń wyjściowych
 audio.device.placeholder: Urządzenie {{id}}
 audiolab.waiting: Oczekiwanie na dodanie Utworu do Kolejki
+bugReport.addImage: Dodaj obraz
+bugReport.areaOther: Coś innego
+bugReport.categoryLabel: Którego obszaru dotyczy problem?
+bugReport.copyLink: Skopiuj link
+bugReport.descLabel: Co się stało?
+bugReport.descPlaceholder: Opisz błąd. Czego oczekiwano, a co się stało?
+bugReport.diagLabel: Dane diagnostyczne do dołączenia
+bugReport.discardDraft: Odrzuć
+bugReport.doneSub: Zachowaj ten link, aby śledzić zgłoszenie. Konto nie jest wymagane.
+bugReport.doneTitle: Dziękujemy! Zgłoszenie zostało wysłane.
+bugReport.draftRestored: Przywrócono niewysłany szkic.
+bugReport.error.generic: Nie udało się wysłać zgłoszenia. Spróbuj ponownie.
+bugReport.error.transport: Nie udało się połączyć z usługą zgłaszania błędów. Możesz zamiast tego utworzyć zgłoszenie w serwisie GitHub.
+bugReport.githubFallback: Otwórz w serwisie GitHub
+bugReport.hideData: Ukryj dołączone dane
+bugReport.included: Dołączone
+bugReport.linkCopied: Skopiowano link do zgłoszenia
+bugReport.maxImages: Możesz dołączyć maksymalnie 5 obrazów.
+bugReport.off: Wyłączone
+bugReport.openIssue: Otwórz zgłoszenie
+bugReport.pasteHint: "Wskazówka: zrób zrzut ekranu (Win+Shift+S) i wklej go tutaj."
+bugReport.pick: Wskaż komponent
+bugReport.repick: Wybierz element ponownie
+bugReport.retry: Spróbuj ponownie
+bugReport.review: Przegląd
+bugReport.review.area: Obszar
+bugReport.review.component: Komponent
+bugReport.review.desc: Opis
+bugReport.review.device: Identyfikator urządzenia
+bugReport.review.logs: Logi
+bugReport.review.settings: Ustawienia
+bugReport.review.shots: Zrzuty ekranu
+bugReport.review.system: System
+bugReport.reviewIntro: Oto dokładnie to, co zostanie wysłane. Nic nie zostanie przesłane, dopóki nie zatwierdzisz zgłoszenia.
+bugReport.screenshotsLabel: Zrzuty ekranu (opcjonalnie)
+bugReport.showData: Pokaż dołączone dane
+bugReport.stepsLabel: Kroki do odtworzenia (opcjonalnie)
+bugReport.stepsPlaceholder: |-
+  1. Otwórz ...
+  2. Kliknij ...
+  3. Zobacz ...
+bugReport.submit: Wyślij zgłoszenie
+bugReport.submitting: Wysyłanie zgłoszenia…
+bugReport.subtitle: Wyślij szczegółowe zgłoszenie do zespołu Cider
+bugReport.title: Zgłoś błąd
+bugReport.toggleConfig: Migawka ustawień
+bugReport.toggleConfigDesc: Twoje aktualne ustawienia (bez poufnych danych), aby pomóc w odtworzeniu błędów specyficznych dla konfiguracji.
+bugReport.toggleHwid: Zanonimizowany identyfikator urządzenia
+bugReport.toggleHwidDesc: Zaszyfrowany skrótem identyfikator urządzenia, aby powiązać powtarzające się zgłoszenia z tego komputera.
+bugReport.toggleLogs: Ostatnie logi aplikacji
+bugReport.toggleLogsDesc: Ostatnie dane wyjściowe konsoli, z ukrytymi poufnymi informacjami. Najbardziej przydatne do naprawy błędów.
 catalog.new: Nowości
 ciderAudio.action.downloadAdditionalProfiles: Pobierz profile dodatkowe
 ciderAudio.marketplacePresetMigrationNotice:
@@ -2070,11 +2122,20 @@ settings.option.visual.animatedArtwork:
   issue: 34
 settings.option.visual.animatedArtwork.description: Włącz animowane okładki, wstrzymuj, gdy okno nie jest aktywne
 settings.option.visual.animatedArtwork.warningDescription: Pokazuj animowane okładki, gdy są dostępne. Może to powodować problemy z wydajnością na słabszych urządzeniach.
+settings.option.visual.animatedArtworkEngine: Silnik animowanych grafik
+settings.option.visual.animatedArtworkEngine.description: Tryb natywny pobiera jeden zapętlony klip i odtwarza go bez zmiany jakości. Używaj starszej wersji tylko w przypadku problemów z odtwarzaniem.
+settings.option.visual.animatedArtworkEngine.hls: Starsza wersja (hls.js)
+settings.option.visual.animatedArtworkEngine.native: Natywny (zalecane)
 settings.option.visual.animatedArtworkQuality:
-  value: Jakość animowanej okładki
-  source: human
+  value: Jakość animowanych grafik
+  source: ai
   by: "@szymin22"
   issue: 34
+  superseded_at: 2026-06-28
+settings.option.visual.animatedArtworkQuality.balanced: Zrównoważona
+settings.option.visual.animatedArtworkQuality.description: Określa ostrość animowanych grafik. Opcja Automatycznie dopasowuje każdą grafikę do jej rozmiaru na ekranie i jest odpowiednia dla większości konfiguracji.
+settings.option.visual.animatedArtworkQuality.performance: Wydajność
+settings.option.visual.animatedArtworkQuality.quality: Jakość
 settings.option.visual.animatedBackgroundFramerate: Klatki na sekundę animowanego tła
 settings.option.visual.animatedWindowBackground: Animowane tło okna
 settings.option.visual.artistHeaderAlignment: Układ nagłówka wykonawcy
@@ -2428,12 +2489,13 @@ settings.updates.status.available: Dostępna aktualizacja
 settings.updates.status.checking: Sprawdzanie aktualizacji...
 settings.updates.status.failed: Aktualizacja nie powiodła się
 settings.updates.status.idle: Cider jest aktualny
-settings.updates.status.success: Uruchom ponownie, aby dokończyć
-settings.updates.status.working: Instalowanie uaktualnienia...
+settings.updates.status.success: Wymagane ponowne uruchomienie
+settings.updates.status.working: Instalowanie...
 settings.visual.card.appBackground: Tło aplikacji
 settings.visual.card.behaviorLyrics: Zachowanie i teksty utworów
 settings.visual.card.browse: Przeglądaj
 settings.visual.card.contentFilter: Filtr zawartości
+settings.visual.card.experimental: Eksperymentalne
 settings.visual.card.fsrUpscaling: Skalowanie FSR
 settings.visual.card.moreAnimatedArtwork: Więcej animowanych okładek
 settings.visual.card.playerEffects: Efekty odtwarzacza

@@ -85,6 +85,7 @@ action.moveToFolder: Pindahkan ke Folder
 action.moveToFolder.here: Pindahkan "{{name}}" ke Sini
 action.moveToTop: Move to Top
 action.newpreset: Preset Baru...
+action.next: Berikutnya
 action.ok: OK
 action.open: Buka
 action.openArtworkInBrowser: Buka artwork di browser
@@ -212,6 +213,57 @@ audio.device.default: Perangkat Default
 audio.device.noneFound: Tidak ada perangkat output yang ditemukan
 audio.device.placeholder: Perangkat {{id}}
 audiolab.waiting: Waiting for a Song to be Queued
+bugReport.addImage: Tambah gambar
+bugReport.areaOther: Hal lainnya
+bugReport.categoryLabel: Bagian mana yang terpengaruh?
+bugReport.copyLink: Salin tautan
+bugReport.descLabel: Apa yang terjadi?
+bugReport.descPlaceholder: Jelaskan bug tersebut. Apa yang Anda harapkan, dan apa yang sebenarnya terjadi?
+bugReport.diagLabel: Diagnostik yang disertakan
+bugReport.discardDraft: Buang
+bugReport.doneSub: Simpan tautan ini untuk memantau laporan Anda. Tidak memerlukan akun.
+bugReport.doneTitle: Terima kasih! Laporan Anda telah dikirim.
+bugReport.draftRestored: Draf yang belum dikirim telah dipulihkan.
+bugReport.error.generic: Gagal mengirimkan laporan Anda. Silakan coba lagi.
+bugReport.error.transport: Tidak dapat terhubung ke layanan laporan. Sebagai gantinya, Anda dapat membuat issue di GitHub.
+bugReport.githubFallback: Buka di GitHub
+bugReport.hideData: Sembunyikan data terlampir
+bugReport.included: Disertakan
+bugReport.linkCopied: Tautan issue disalin
+bugReport.maxImages: Anda dapat melampirkan hingga 5 gambar.
+bugReport.off: Nonaktif
+bugReport.openIssue: Buka issue
+bugReport.pasteHint: "Tips: ambil tangkapan layar (Win+Shift+S) lalu tempel di sini."
+bugReport.pick: Arahkan ke komponen
+bugReport.repick: Pilih ulang elemen
+bugReport.retry: Coba lagi
+bugReport.review: Tinjau
+bugReport.review.area: Area
+bugReport.review.component: Komponen
+bugReport.review.desc: Deskripsi
+bugReport.review.device: ID Perangkat
+bugReport.review.logs: Log
+bugReport.review.settings: Pengaturan
+bugReport.review.shots: Tangkapan Layar
+bugReport.review.system: Sistem
+bugReport.reviewIntro: Ini adalah data yang akan dikirimkan. Tidak ada yang diunggah sebelum Anda mengirimkannya.
+bugReport.screenshotsLabel: Tangkapan layar (opsional)
+bugReport.showData: Tampilkan data terlampir
+bugReport.stepsLabel: Langkah untuk mereproduksi (opsional)
+bugReport.stepsPlaceholder: |-
+  1. Buka ...
+  2. Klik ...
+  3. Lihat ...
+bugReport.submit: Kirim laporan
+bugReport.submitting: Mengirimkan laporan Anda…
+bugReport.subtitle: Kirim laporan terperinci ke tim Cider
+bugReport.title: Laporkan Bug
+bugReport.toggleConfig: Snapshot pengaturan
+bugReport.toggleConfigDesc: Pengaturan Anda saat ini (informasi rahasia dihapus) untuk membantu mereproduksi bug spesifik konfigurasi.
+bugReport.toggleHwid: ID perangkat yang dianonimkan
+bugReport.toggleHwidDesc: ID perangkat yang di-hash agar laporan berulang dari mesin ini dapat dikorelasikan.
+bugReport.toggleLogs: Log aplikasi terbaru
+bugReport.toggleLogsDesc: Output konsol terbaru, dengan informasi rahasia yang disamarkan. Sangat berguna untuk perbaikan.
 catalog.new: New
 ciderAudio.action.downloadAdditionalProfiles: Download Additional Profiles
 ciderAudio.marketplacePresetMigrationNotice: "One or more Cider Audio labs presets you have configured have been removed from the app and are now available on the Cider Marketplace.\r
@@ -1776,7 +1828,15 @@ settings.option.visual.animateArtworkOnHover: Animasikan Sampul Media Item saat 
 settings.option.visual.animatedArtwork: Artwork Bergerak
 settings.option.visual.animatedArtwork.description: Aktifkan sampul animasi, jeda saat tidak fokus
 settings.option.visual.animatedArtwork.warningDescription: Tampilkan sampul animasi jika tersedia. Ini dapat menyebabkan masalah performa pada perangkat berspesifikasi rendah.
-settings.option.visual.animatedArtworkQuality: Kualitas Artwork Bergerak
+settings.option.visual.animatedArtworkEngine: Mesin Karya Seni Animasi
+settings.option.visual.animatedArtworkEngine.description: Native mengunduh satu klip berulang dan memutarnya tanpa peralihan kualitas. Gunakan Legacy hanya jika Anda mengalami masalah pemutaran.
+settings.option.visual.animatedArtworkEngine.hls: Legacy (hls.js)
+settings.option.visual.animatedArtworkEngine.native: Native (Direkomendasikan)
+settings.option.visual.animatedArtworkQuality: Kualitas Karya Seni Animasi
+settings.option.visual.animatedArtworkQuality.balanced: Seimbang
+settings.option.visual.animatedArtworkQuality.description: Tingkat ketajaman karya seni animasi. Otomatis menyesuaikan setiap karya seni dengan ukuran layarnya dan cocok untuk sebagian besar konfigurasi.
+settings.option.visual.animatedArtworkQuality.performance: Performa
+settings.option.visual.animatedArtworkQuality.quality: Kualitas
 settings.option.visual.animatedBackgroundFramerate: Animated Background Framerate
 settings.option.visual.animatedWindowBackground: Jendela Latar Belakang Bergerak
 settings.option.visual.artistHeaderAlignment: Tata Letak Header Artis
@@ -2102,12 +2162,13 @@ settings.updates.status.available: Pembaruan Tersedia
 settings.updates.status.checking: Memeriksa Pembaruan...
 settings.updates.status.failed: Pembaruan Gagal
 settings.updates.status.idle: Cider sudah versi terbaru
-settings.updates.status.success: Mulai ulang untuk menyelesaikan
-settings.updates.status.working: Menginstal pembaruan...
+settings.updates.status.success: Perlu Mulai Ulang
+settings.updates.status.working: Menginstal...
 settings.visual.card.appBackground: Latar Belakang Aplikasi
 settings.visual.card.behaviorLyrics: Perilaku & Lirik
 settings.visual.card.browse: Telusuri
 settings.visual.card.contentFilter: Penyaring Konten
+settings.visual.card.experimental: Eksperimental
 settings.visual.card.fsrUpscaling: Penskalaan FSR
 settings.visual.card.moreAnimatedArtwork: Lebih Banyak Sampul Album Animasi
 settings.visual.card.playerEffects: Efek Pemutar

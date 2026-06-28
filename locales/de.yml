@@ -85,6 +85,7 @@ action.moveToFolder: In Ordner verschieben
 action.moveToFolder.here: „{{name}}“ hierhin verschieben
 action.moveToTop: An den Anfang verschieben
 action.newpreset: Neues Preset...
+action.next: Weiter
 action.ok: OK
 action.open: Öffnen
 action.openArtworkInBrowser: Cover im Browser öffnen
@@ -212,6 +213,57 @@ audio.device.default: Standardgerät
 audio.device.noneFound: Keine Ausgabegeräte gefunden
 audio.device.placeholder: Gerät {{id}}
 audiolab.waiting: Warten auf einen Titel in der Warteliste
+bugReport.addImage: Bild hinzufügen
+bugReport.areaOther: Etwas anderes
+bugReport.categoryLabel: Welcher Bereich ist betroffen?
+bugReport.copyLink: Link kopieren
+bugReport.descLabel: Was ist passiert?
+bugReport.descPlaceholder: Beschreibe den Fehler. Was hast du erwartet und was ist stattdessen passiert?
+bugReport.diagLabel: Enthaltene Diagnosedaten
+bugReport.discardDraft: Verwerfen
+bugReport.doneSub: Behalte diesen Link, um deinen Bericht zu verfolgen. Kein Account erforderlich.
+bugReport.doneTitle: Danke! Dein Bericht wurde eingereicht.
+bugReport.draftRestored: Dein nicht gesendeter Entwurf wurde wiederhergestellt.
+bugReport.error.generic: Dein Bericht konnte nicht eingereicht werden. Bitte versuche es erneut.
+bugReport.error.transport: Der Berichtsdienst konnte nicht erreicht werden. Du kannst stattdessen ein GitHub-Issue öffnen.
+bugReport.githubFallback: Auf GitHub öffnen
+bugReport.hideData: Angehängte Daten ausblenden
+bugReport.included: Enthalten
+bugReport.linkCopied: Issue-Link kopiert
+bugReport.maxImages: Du kannst bis zu 5 Bilder anhängen.
+bugReport.off: Aus
+bugReport.openIssue: Issue öffnen
+bugReport.pasteHint: "Tipp: Erstelle einen Screenshot (Win+Shift+S) und füge ihn hier ein."
+bugReport.pick: Auf eine Komponente zeigen
+bugReport.repick: Element neu auswählen
+bugReport.retry: Erneut versuchen
+bugReport.review: Überprüfen
+bugReport.review.area: Bereich
+bugReport.review.component: Komponente
+bugReport.review.desc: Beschreibung
+bugReport.review.device: Geräte-ID
+bugReport.review.logs: Logs
+bugReport.review.settings: Einstellungen
+bugReport.review.shots: Screenshots
+bugReport.review.system: System
+bugReport.reviewIntro: Dies ist genau das, was gesendet wird. Es wird nichts hochgeladen, bis du den Bericht absendest.
+bugReport.screenshotsLabel: Screenshots (optional)
+bugReport.showData: Angehängte Daten anzeigen
+bugReport.stepsLabel: Schritte zur Reproduktion (optional)
+bugReport.stepsPlaceholder: |-
+  1. Öffnen ...
+  2. Klicken ...
+  3. Ergebnis ...
+bugReport.submit: Bericht senden
+bugReport.submitting: Bericht wird eingereicht…
+bugReport.subtitle: Sende einen detaillierten Bericht an das Cider-Team
+bugReport.title: Fehler melden
+bugReport.toggleConfig: Einstellungs-Snapshot
+bugReport.toggleConfigDesc: Deine aktuellen Einstellungen (ohne sensible Daten), um konfigurationsspezifische Fehler zu reproduzieren.
+bugReport.toggleHwid: Anonymisierte Geräte-ID
+bugReport.toggleHwidDesc: Eine gehashte Geräte-ID, damit wiederholte Berichte von diesem Gerät zugeordnet werden können.
+bugReport.toggleLogs: Kürzliche App-Logs
+bugReport.toggleLogsDesc: Kürzliche Konsolenausgaben, wobei sensible Daten unkenntlich gemacht wurden. Besonders hilfreich für die Fehlerbehebung.
 catalog.new: Neu
 ciderAudio.action.downloadAdditionalProfiles: Zusätzliche Profile herunterladen
 ciderAudio.marketplacePresetMigrationNotice: "Ein oder mehrere von dir konfigurierte Cider Audio Labs-Presets wurden aus der App entfernt und sind jetzt im Cider Marketplace verfügbar.\r
@@ -1776,7 +1828,15 @@ settings.option.visual.animateArtworkOnHover: Medienobjekt-Cover beim Zeigen mit
 settings.option.visual.animatedArtwork: Animiertes Cover
 settings.option.visual.animatedArtwork.description: Animierte Cover aktivieren, pausieren, wenn nicht im Fokus
 settings.option.visual.animatedArtwork.warningDescription: Animierte Cover anzeigen, wenn verfügbar. Dies kann auf leistungsschwächeren Geräten zu Performance-Problemen führen.
-settings.option.visual.animatedArtworkQuality: Qualitätsstufe für animierte Cover
+settings.option.visual.animatedArtworkEngine: Engine für animierte Cover
+settings.option.visual.animatedArtworkEngine.description: „Nativ“ lädt einen einzelnen, sich wiederholenden Clip herunter und spielt ihn ohne Qualitätswechsel ab. Verwende „Legacy“ nur, wenn Wiedergabeprobleme auftreten.
+settings.option.visual.animatedArtworkEngine.hls: Legacy (hls.js)
+settings.option.visual.animatedArtworkEngine.native: Nativ (empfohlen)
+settings.option.visual.animatedArtworkQuality: Qualität animierter Cover
+settings.option.visual.animatedArtworkQuality.balanced: Ausgewogen
+settings.option.visual.animatedArtworkQuality.description: Wie scharf animierte Cover dargestellt werden. „Automatisch“ passt jedes Cover an die Bildschirmgröße an und ist für die meisten Setups geeignet.
+settings.option.visual.animatedArtworkQuality.performance: Leistung
+settings.option.visual.animatedArtworkQuality.quality: Qualität
 settings.option.visual.animatedBackgroundFramerate: Bildrate für animierten Hintergrund
 settings.option.visual.animatedWindowBackground: Animierter Fensterhintergrund
 settings.option.visual.artistHeaderAlignment: Künstler-Header-Layout
@@ -2102,12 +2162,13 @@ settings.updates.status.available: Update verfügbar
 settings.updates.status.checking: Nach Updates suchen …
 settings.updates.status.failed: Update fehlgeschlagen
 settings.updates.status.idle: Cider ist auf dem neuesten Stand
-settings.updates.status.success: Neu starten, um abzuschließen
-settings.updates.status.working: Update wird installiert...
+settings.updates.status.success: Neustart erforderlich
+settings.updates.status.working: Wird installiert...
 settings.visual.card.appBackground: App-Hintergrund
 settings.visual.card.behaviorLyrics: Verhalten & Songtexte
 settings.visual.card.browse: Entdecken
 settings.visual.card.contentFilter: Inhaltsfilter
+settings.visual.card.experimental: Experimentell
 settings.visual.card.fsrUpscaling: FSR-Upscaling
 settings.visual.card.moreAnimatedArtwork: Mehr animierte Cover
 settings.visual.card.playerEffects: Player-Effekte

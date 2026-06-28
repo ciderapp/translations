@@ -93,6 +93,7 @@ action.moveToTop:
   by: "@itsmeares"
   issue: 2
 action.newpreset: Yeni Önayar...
+action.next: Sonraki
 action.ok: Tamam
 action.open: Aç
 action.openArtworkInBrowser: Eserleri tarayıcıda açma
@@ -248,6 +249,57 @@ audio.device.default: Varsayılan Cihaz
 audio.device.noneFound: Çıkış cihazı bulunamadı
 audio.device.placeholder: Aygıt {{id}}
 audiolab.waiting: Bir Şarkının Sıraya Alınması Bekleniyor
+bugReport.addImage: Görsel ekle
+bugReport.areaOther: Başka bir şey
+bugReport.categoryLabel: Hangi alan etkilendi?
+bugReport.copyLink: Bağlantıyı kopyala
+bugReport.descLabel: Ne oldu?
+bugReport.descPlaceholder: Hatayı açıklayın. Ne bekliyordunuz ve bunun yerine ne oldu?
+bugReport.diagLabel: Dahil edilecek tanılama verileri
+bugReport.discardDraft: Vazgeç
+bugReport.doneSub: Raporunuzu takip etmek için bu bağlantıyı saklayın. Hesap gerekmez.
+bugReport.doneTitle: Teşekkürler! Raporunuz gönderildi.
+bugReport.draftRestored: Gönderilmemiş taslağınız geri yüklendi.
+bugReport.error.generic: Raporunuzu gönderemedik. Lütfen tekrar deneyin.
+bugReport.error.transport: Raporlama servisine ulaşılamadı. Bunun yerine bir GitHub sorunu açabilirsiniz.
+bugReport.githubFallback: GitHub'da aç
+bugReport.hideData: Ekli verileri gizle
+bugReport.included: Dahil edildi
+bugReport.linkCopied: Sorun bağlantısı kopyalandı
+bugReport.maxImages: En fazla 5 görsel ekleyebilirsiniz.
+bugReport.off: Kapalı
+bugReport.openIssue: Sorun aç
+bugReport.pasteHint: "İpucu: Ekran görüntüsü alın (Win+Shift+S) ve buraya yapıştırın."
+bugReport.pick: Bir bileşeni işaret edin
+bugReport.repick: Ögeyi yeniden seç
+bugReport.retry: Tekrar dene
+bugReport.review: Gözden Geçir
+bugReport.review.area: Alan
+bugReport.review.component: Bileşen
+bugReport.review.desc: Açıklama
+bugReport.review.device: Cihaz Kimliği
+bugReport.review.logs: Günlükler
+bugReport.review.settings: Ayarlar
+bugReport.review.shots: Ekran Görüntüleri
+bugReport.review.system: Sistem
+bugReport.reviewIntro: Gönderilecek veriler tam olarak bunlardır. Siz göndermeden önce hiçbir şey yüklenmez.
+bugReport.screenshotsLabel: Ekran görüntüleri (isteğe bağlı)
+bugReport.showData: Ekli verileri göster
+bugReport.stepsLabel: Sorunu yeniden oluşturma adımları (isteğe bağlı)
+bugReport.stepsPlaceholder: |-
+  1. Şunu açın...
+  2. Şuna tıklayın...
+  3. Şunu görün...
+bugReport.submit: Raporu gönder
+bugReport.submitting: Raporunuz gönderiliyor…
+bugReport.subtitle: Cider ekibine ayrıntılı bir rapor gönderin
+bugReport.title: Hata Bildir
+bugReport.toggleConfig: Ayarlar anlık görüntüsü
+bugReport.toggleConfigDesc: Yapılandırmaya özel hataları yeniden oluşturmaya yardımcı olmak için mevcut ayarlarınız (gizli veriler hariç).
+bugReport.toggleHwid: Anonimleştirilmiş cihaz kimliği
+bugReport.toggleHwidDesc: Bu cihazdan gelen yinelenen raporları ilişkilendirmek için karma (hash) cihaz kimliği.
+bugReport.toggleLogs: Son uygulama günlükleri
+bugReport.toggleLogsDesc: Gizli verilerin gizlendiği son konsol çıktıları. Hataları düzeltmek için en yararlı olanıdır.
 catalog.new: Yeni
 ciderAudio.action.downloadAdditionalProfiles: Ek Profilleri İndir
 ciderAudio.marketplacePresetMigrationNotice: |-
@@ -1824,7 +1876,15 @@ settings.option.visual.animateArtworkOnHover: Üzerine Gelindiğinde Medya Öğe
 settings.option.visual.animatedArtwork: Hareketli Albüm Kapakları
 settings.option.visual.animatedArtwork.description: Hareketli kapak resimlerini etkinleştir, odak dışındayken duraklat
 settings.option.visual.animatedArtwork.warningDescription: Kullanılabilir olduğunda hareketli kapak resimlerini gösterir. Bu, düşük özellikli cihazlarda performans sorunlarına yol açabilir.
+settings.option.visual.animatedArtworkEngine: Hareketli Albüm Kapağı Motoru
+settings.option.visual.animatedArtworkEngine.description: Yerel seçenek, tek bir döngüsel klip indirir ve kalite geçişi olmadan oynatır. Eski seçeneğini yalnızca oynatma sorunlarıyla karşılaşırsanız kullanın.
+settings.option.visual.animatedArtworkEngine.hls: Eski (hls.js)
+settings.option.visual.animatedArtworkEngine.native: Yerel (Önerilen)
 settings.option.visual.animatedArtworkQuality: Hareketli Albüm Kapağı Kalitesi
+settings.option.visual.animatedArtworkQuality.balanced: Dengeli
+settings.option.visual.animatedArtworkQuality.description: Hareketli albüm kapağının ne kadar keskin olacağı. Otomatik seçeneği, her albüm kapağını ekrandaki boyutuna göre eşleştirir ve çoğu kurulum için uygundur.
+settings.option.visual.animatedArtworkQuality.performance: Performans
+settings.option.visual.animatedArtworkQuality.quality: Kalite
 settings.option.visual.animatedBackgroundFramerate: Animasyonlu Arka Plan Kare Hızı
 settings.option.visual.animatedWindowBackground: Hareketli Uygulama Arka Planı
 settings.option.visual.artistHeaderAlignment: Sanatçı Başlığı Düzeni
@@ -2150,12 +2210,13 @@ settings.updates.status.available: Güncelleme Mevcut
 settings.updates.status.checking: Güncellemeler Denetleniyor...
 settings.updates.status.failed: Güncelleme Başarısız
 settings.updates.status.idle: Cider güncel
-settings.updates.status.success: Tamamlamak için yeniden başlatın
-settings.updates.status.working: Güncelleme yükleniyor...
+settings.updates.status.success: Yeniden Başlatma Gerekli
+settings.updates.status.working: Yükleniyor...
 settings.visual.card.appBackground: Uygulama Arka Planı
 settings.visual.card.behaviorLyrics: Davranış ve Sözler
 settings.visual.card.browse: Göz At
 settings.visual.card.contentFilter: İçerik Filtresi
+settings.visual.card.experimental: Deneysel
 settings.visual.card.fsrUpscaling: FSR Ölçekleme
 settings.visual.card.moreAnimatedArtwork: Daha Fazla Hareketli Albüm Kapağı
 settings.visual.card.playerEffects: Oynatıcı Efektleri

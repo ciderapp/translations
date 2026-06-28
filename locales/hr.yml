@@ -417,6 +417,7 @@ action.newpreset:
   source: human
   by: "@Vudgekek"
   issue: 5
+action.next: Dalje
 action.ok:
   value: U redu
   source: human
@@ -624,6 +625,57 @@ audio.device.default: Zadani uređaj
 audio.device.noneFound: Nisu pronađeni izlazni uređaji
 audio.device.placeholder: Uređaj {{id}}
 audiolab.waiting: Čekanje na dodavanje pjesme u redoslijed
+bugReport.addImage: Dodaj sliku
+bugReport.areaOther: Nešto drugo
+bugReport.categoryLabel: Koje je područje pogođeno?
+bugReport.copyLink: Kopiraj poveznicu
+bugReport.descLabel: Što se dogodilo?
+bugReport.descPlaceholder: Opišite pogrešku. Što ste očekivali, a što se zapravo dogodilo?
+bugReport.diagLabel: Dijagnostika za uključivanje
+bugReport.discardDraft: Odbaci
+bugReport.doneSub: Sačuvajte ovu poveznicu kako biste pratili svoju prijavu. Račun nije potreban.
+bugReport.doneTitle: Hvala! Vaša prijava je poslana.
+bugReport.draftRestored: Obnovljen je vaš neposlani nacrt.
+bugReport.error.generic: Nismo uspjeli poslati vašu prijavu. Pokušajte ponovno.
+bugReport.error.transport: Nismo uspjeli kontaktirati servis za prijave. Umjesto toga možete otvoriti prijavu na GitHubu.
+bugReport.githubFallback: Otvori na GitHubu
+bugReport.hideData: Sakrij priložene podatke
+bugReport.included: Uključeno
+bugReport.linkCopied: Poveznica na prijavu je kopirana
+bugReport.maxImages: Možete priložiti do 5 slika.
+bugReport.off: Isključeno
+bugReport.openIssue: Otvori prijavu
+bugReport.pasteHint: "Savjet: snimite zaslon (Win+Shift+S) i zalijepite ga ovdje."
+bugReport.pick: Pokažite na komponentu
+bugReport.repick: Ponovno odaberite element
+bugReport.retry: Pokušaj ponovno
+bugReport.review: Pregled
+bugReport.review.area: Područje
+bugReport.review.component: Komponenta
+bugReport.review.desc: Opis
+bugReport.review.device: ID uređaja
+bugReport.review.logs: Zapisi
+bugReport.review.settings: Postavke
+bugReport.review.shots: Snimke zaslona
+bugReport.review.system: Sustav
+bugReport.reviewIntro: Ovo je točno ono što će biti poslano. Ništa se ne prenosi dok ne pošaljete.
+bugReport.screenshotsLabel: Snimke zaslona (neobavezno)
+bugReport.showData: Prikaži priložene podatke
+bugReport.stepsLabel: Koraci za reprodukciju (neobavezno)
+bugReport.stepsPlaceholder: |-
+  1. Otvorite ...
+  2. Kliknite ...
+  3. Pogledajte ...
+bugReport.submit: Pošalji prijavu
+bugReport.submitting: Slanje prijave…
+bugReport.subtitle: Pošaljite detaljnu prijavu Cider timu
+bugReport.title: Prijavi pogrešku
+bugReport.toggleConfig: Snimka postavki
+bugReport.toggleConfigDesc: Vaše trenutne postavke (bez povjerljivih podataka) radi lakše reprodukcije pogrešaka specifičnih za konfiguraciju.
+bugReport.toggleHwid: Anonimizirani ID uređaja
+bugReport.toggleHwidDesc: Sažeti ID uređaja kako bi se mogle povezati ponovljene prijave s ovog računala.
+bugReport.toggleLogs: Nedavni zapisi aplikacije
+bugReport.toggleLogsDesc: Nedavni izlaz konzole, s uklonjenim povjerljivim podacima. Najkorisnije za rješavanje problema.
 catalog.new: Novo
 ciderAudio.action.downloadAdditionalProfiles: Preuzmi dodatne profile
 ciderAudio.marketplacePresetMigrationNotice: "Jedan ili više konfiguriranih predložaka za Cider Audio labs uklonjeni su iz aplikacije i sada su dostupni na Cider Marketplaceu.\r
@@ -2188,7 +2240,15 @@ settings.option.visual.animateArtworkOnHover: Animiraj naslovnicu medijske stavk
 settings.option.visual.animatedArtwork: Animirane naslovnice
 settings.option.visual.animatedArtwork.description: Omogući animirane naslovnice, pauziraj kada nisu u fokusu
 settings.option.visual.animatedArtwork.warningDescription: Prikaži animirane naslovnice kada su dostupne. To može uzrokovati probleme s performansama na slabijim uređajima.
-settings.option.visual.animatedArtworkQuality: Razina kvalitete animiranih naslovnica
+settings.option.visual.animatedArtworkEngine: Pokretač animiranih omota
+settings.option.visual.animatedArtworkEngine.description: Izvorna opcija preuzima jedan isječak koji se ponavlja i reproducira ga bez promjene kvalitete. Koristite klasičnu opciju samo ako naiđete na probleme s reprodukcijom.
+settings.option.visual.animatedArtworkEngine.hls: Klasično (hls.js)
+settings.option.visual.animatedArtworkEngine.native: Izvorno (preporučeno)
+settings.option.visual.animatedArtworkQuality: Kvaliteta animiranih omota
+settings.option.visual.animatedArtworkQuality.balanced: Uravnoteženo
+settings.option.visual.animatedArtworkQuality.description: Oštrina animiranih omota. Automatska postavka prilagođava svaki omot veličini zaslona i odgovara većini konfiguracija.
+settings.option.visual.animatedArtworkQuality.performance: Performanse
+settings.option.visual.animatedArtworkQuality.quality: Kvaliteta
 settings.option.visual.animatedBackgroundFramerate: Broj sličica u sekundi animirane pozadine
 settings.option.visual.animatedWindowBackground: Animirana pozadina prozora
 settings.option.visual.artistHeaderAlignment: Izgled zaglavlja izvođača
@@ -2514,12 +2574,13 @@ settings.updates.status.available: Dostupno je ažuriranje
 settings.updates.status.checking: Provjera ažuriranja...
 settings.updates.status.failed: Ažuriranje nije uspjelo
 settings.updates.status.idle: Cider je ažuran
-settings.updates.status.success: Ponovno pokrenite za dovršetak
-settings.updates.status.working: Instaliranje ažuriranja...
+settings.updates.status.success: Potrebno je ponovno pokretanje
+settings.updates.status.working: Instaliranje...
 settings.visual.card.appBackground: Pozadina aplikacije
 settings.visual.card.behaviorLyrics: Ponašanje i tekstovi
 settings.visual.card.browse: Pregledaj
 settings.visual.card.contentFilter: Filtar sadržaja
+settings.visual.card.experimental: Eksperimentalno
 settings.visual.card.fsrUpscaling: FSR skaliranje
 settings.visual.card.moreAnimatedArtwork: Više animiranih naslovnica
 settings.visual.card.playerEffects: Efekti reproduktora

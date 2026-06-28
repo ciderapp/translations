@@ -85,6 +85,7 @@ action.moveToFolder: Mută în dosar
 action.moveToFolder.here: Mută "{{name}}" aici
 action.moveToTop: Mută sus
 action.newpreset: Presetare nouă...
+action.next: Înainte
 action.ok: OK
 action.open: Deschideți
 action.openArtworkInBrowser: Deschide arta în browser
@@ -212,6 +213,57 @@ audio.device.default: Dispozitiv implicit
 audio.device.noneFound: Nu s-au găsit dispozitive de ieșire
 audio.device.placeholder: Dispozitiv {{id}}
 audiolab.waiting: Se așteaptă ca un cântec să fie în așteptare
+bugReport.addImage: Adaugă imagine
+bugReport.areaOther: Altceva
+bugReport.categoryLabel: Ce zonă este afectată?
+bugReport.copyLink: Copiază linkul
+bugReport.descLabel: Ce s-a întâmplat?
+bugReport.descPlaceholder: Descrie eroarea. Ce te așteptai să se întâmple și ce s-a întâmplat în schimb?
+bugReport.diagLabel: Diagnostic de inclus
+bugReport.discardDraft: Renunță
+bugReport.doneSub: Păstrează acest link pentru a urmări raportul. Nu este necesar un cont.
+bugReport.doneTitle: Mulțumim! Raportul tău a fost trimis.
+bugReport.draftRestored: Schița netrimisă a fost restaurată.
+bugReport.error.generic: Nu am putut trimite raportul. Te rugăm să încerci din nou.
+bugReport.error.transport: Nu am putut contacta serviciul de raportare. Poți deschide o problemă pe GitHub în schimb.
+bugReport.githubFallback: Deschide pe GitHub
+bugReport.hideData: Ascunde datele atașate
+bugReport.included: Inclus
+bugReport.linkCopied: Linkul problemei a fost copiat
+bugReport.maxImages: Poți atașa până la 5 imagini.
+bugReport.off: Dezactivat
+bugReport.openIssue: Deschide problema
+bugReport.pasteHint: "Sfat: fă o captură de ecran (Win+Shift+S) și lipește-o aici."
+bugReport.pick: Indică o componentă
+bugReport.repick: Selectează din nou elementul
+bugReport.retry: Încearcă din nou
+bugReport.review: Revizuire
+bugReport.review.area: Zonă
+bugReport.review.component: Componentă
+bugReport.review.desc: Descriere
+bugReport.review.device: ID dispozitiv
+bugReport.review.logs: Jurnale
+bugReport.review.settings: Setări
+bugReport.review.shots: Capturi de ecran
+bugReport.review.system: Sistem
+bugReport.reviewIntro: Acestea sunt exact datele care vor fi trimise. Nimic nu este încărcat până când nu trimiți.
+bugReport.screenshotsLabel: Capturi de ecran (opțional)
+bugReport.showData: Afișează datele atașate
+bugReport.stepsLabel: Pași pentru reproducere (opțional)
+bugReport.stepsPlaceholder: |-
+  1. Deschide ...
+  2. Fă clic pe ...
+  3. Vezi ...
+bugReport.submit: Trimite raportul
+bugReport.submitting: Se trimite raportul…
+bugReport.subtitle: Trimite un raport detaliat echipei Cider
+bugReport.title: Raportează o eroare
+bugReport.toggleConfig: Instantaneu setări
+bugReport.toggleConfigDesc: Setările tale actuale (fără date confidențiale) pentru a ajuta la reproducerea erorilor specifice configurației.
+bugReport.toggleHwid: ID dispozitiv anonimizat
+bugReport.toggleHwidDesc: Un ID de dispozitiv criptat (hash), astfel încât rapoartele repetate de pe acest computer să poată fi corelate.
+bugReport.toggleLogs: Jurnale recente ale aplicației
+bugReport.toggleLogsDesc: Ieșirea recentă a consolei, cu datele confidențiale cenzurate. Foarte utilă pentru remediere.
 catalog.new: New
 ciderAudio.action.downloadAdditionalProfiles: Download Additional Profiles
 ciderAudio.marketplacePresetMigrationNotice: "One or more Cider Audio labs presets you have configured have been removed from the app and are now available on the Cider Marketplace.\r
@@ -1776,7 +1828,15 @@ settings.option.visual.animateArtworkOnHover: Animează coperta elementului medi
 settings.option.visual.animatedArtwork: Copertă Animată
 settings.option.visual.animatedArtwork.description: Activează copertele animate, întrerupe când fereastra nu este activă
 settings.option.visual.animatedArtwork.warningDescription: Afișează coperte animate când sunt disponibile. Acest lucru poate cauza probleme de performanță pe dispozitivele mai slabe.
-settings.option.visual.animatedArtworkQuality: Calitate Copertă Animată
+settings.option.visual.animatedArtworkEngine: Motor ilustrații animate
+settings.option.visual.animatedArtworkEngine.description: Opțiunea Nativ descarcă un singur clip în buclă și îl redă fără schimbarea calității. Folosește Moștenit doar dacă întâmpini probleme de redare.
+settings.option.visual.animatedArtworkEngine.hls: Moștenit (hls.js)
+settings.option.visual.animatedArtworkEngine.native: Nativ (Recomandat)
+settings.option.visual.animatedArtworkQuality: Calitate ilustrații animate
+settings.option.visual.animatedArtworkQuality.balanced: Echilibrat
+settings.option.visual.animatedArtworkQuality.description: Cât de clare sunt ilustrațiile animate. Opțiunea Automat adaptează fiecare ilustrație la dimensiunea sa de pe ecran și se potrivește majorității configurațiilor.
+settings.option.visual.animatedArtworkQuality.performance: Performanță
+settings.option.visual.animatedArtworkQuality.quality: Calitate
 settings.option.visual.animatedBackgroundFramerate: Framerat de Fundal Animat
 settings.option.visual.animatedWindowBackground: Fundal Fereastră Animat
 settings.option.visual.artistHeaderAlignment: Aspect antet artist
@@ -2102,12 +2162,13 @@ settings.updates.status.available: Actualizare disponibilă
 settings.updates.status.checking: Se caută actualizări...
 settings.updates.status.failed: Actualizare eșuată
 settings.updates.status.idle: Cider este la zi
-settings.updates.status.success: Reporniți pentru a finaliza
-settings.updates.status.working: Se instalează actualizarea...
+settings.updates.status.success: Repornire necesară
+settings.updates.status.working: Se instalează...
 settings.visual.card.appBackground: Fundal aplicație
 settings.visual.card.behaviorLyrics: Comportament și versuri
 settings.visual.card.browse: Explorare
 settings.visual.card.contentFilter: Filtrare conținut
+settings.visual.card.experimental: Experimental
 settings.visual.card.fsrUpscaling: Upscaling FSR
 settings.visual.card.moreAnimatedArtwork: Mai multe coperți animate
 settings.visual.card.playerEffects: Efecte player

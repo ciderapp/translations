@@ -85,6 +85,7 @@ action.moveToFolder: Presunúť do priečinka
 action.moveToFolder.here: Presunúť „{{name}}“ sem
 action.moveToTop: Presunúť navrch
 action.newpreset: Nová predvoľba...
+action.next: Ďalej
 action.ok: OK
 action.open: Otvoriť
 action.openArtworkInBrowser: Otvoriť grafiku v prehliadači
@@ -212,6 +213,57 @@ audio.device.default: Predvolené zariadenie
 audio.device.noneFound: Nenašli sa žiadne výstupné zariadenia
 audio.device.placeholder: Zariadenie {{id}}
 audiolab.waiting: Čaká sa na pridanie skladby do fronty
+bugReport.addImage: Pridať obrázok
+bugReport.areaOther: Niečo iné
+bugReport.categoryLabel: Ktorá oblasť je ovplyvnená?
+bugReport.copyLink: Kopírovať odkaz
+bugReport.descLabel: Čo sa stalo?
+bugReport.descPlaceholder: Popíšte chybu. Čo ste očakávali a čo sa namiesto toho stalo?
+bugReport.diagLabel: Diagnostika na zahrnutie
+bugReport.discardDraft: Zahodiť
+bugReport.doneSub: Uložte si tento odkaz na sledovanie nahlásenia. Nie je potrebný žiadny účet.
+bugReport.doneTitle: Ďakujeme! Vaše nahlásenie bolo odoslané.
+bugReport.draftRestored: Neodoslaný koncept bol obnovený.
+bugReport.error.generic: Nahlásenie sa nepodarilo odoslať. Skúste to znova.
+bugReport.error.transport: Nepodarilo sa spojiť so službou nahlásení. Namiesto toho môžete otvoriť problém na službe GitHub.
+bugReport.githubFallback: Otvoriť na službe GitHub
+bugReport.hideData: Skryť priložené dáta
+bugReport.included: Zahrnuté
+bugReport.linkCopied: Odkaz na problém bol skopírovaný
+bugReport.maxImages: Môžete priložiť až 5 obrázkov.
+bugReport.off: Vypnuté
+bugReport.openIssue: Otvoriť problém
+bugReport.pasteHint: "Tip: urobte snímku obrazovky (Win+Shift+S) a prilepte ju sem."
+bugReport.pick: Ukážte na komponent
+bugReport.repick: Znova vybrať prvok
+bugReport.retry: Skúsiť znova
+bugReport.review: Skontrolovať
+bugReport.review.area: Oblasť
+bugReport.review.component: Komponent
+bugReport.review.desc: Popis
+bugReport.review.device: ID zariadenia
+bugReport.review.logs: Záznamy
+bugReport.review.settings: Nastavenia
+bugReport.review.shots: Snímky obrazovky
+bugReport.review.system: Systém
+bugReport.reviewIntro: Toto je presne to, čo sa odošle. Pred odoslaním sa nič nenahráva.
+bugReport.screenshotsLabel: Snímky obrazovky (voliteľné)
+bugReport.showData: Zobraziť priložené dáta
+bugReport.stepsLabel: Kroky na reprodukovanie (voliteľné)
+bugReport.stepsPlaceholder: |-
+  1. Otvorte ...
+  2. Kliknite na ...
+  3. Zobrazí sa ...
+bugReport.submit: Odoslať nahlásenie
+bugReport.submitting: Odosiela sa nahlásenie…
+bugReport.subtitle: Pošlite podrobné nahlásenie tímu Cider
+bugReport.title: Nahlásiť chybu
+bugReport.toggleConfig: Snímka nastavení
+bugReport.toggleConfigDesc: Vaše aktuálne nastavenia (bez citlivých údajov), ktoré pomôžu reprodukovať chyby špecifické pre konfiguráciu.
+bugReport.toggleHwid: Anonymizované ID zariadenia
+bugReport.toggleHwidDesc: Hašované ID zariadenia, aby bolo možné prepojiť opakované nahlásenia z tohto počítača.
+bugReport.toggleLogs: Nedávne záznamy aplikácie
+bugReport.toggleLogsDesc: Nedávny výstup z konzoly s odstránenými citlivými údajmi. Najužitočnejšie pre opravu.
 catalog.new: New
 ciderAudio.action.downloadAdditionalProfiles: Download Additional Profiles
 ciderAudio.marketplacePresetMigrationNotice: "One or more Cider Audio labs presets you have configured have been removed from the app and are now available on the Cider Marketplace.\r
@@ -1777,7 +1829,15 @@ settings.option.visual.animateArtworkOnHover: Animovať obal mediálnej položky
 settings.option.visual.animatedArtwork: Animované Náhľadovky
 settings.option.visual.animatedArtwork.description: Povoliť animované obaly, pozastaviť, keď aplikácia nie je aktívna
 settings.option.visual.animatedArtwork.warningDescription: Zobraziť animované obaly, ak sú k dispozícii. Na menej výkonných zariadeniach to môže spôsobiť problémy s výkonom.
-settings.option.visual.animatedArtworkQuality: Kvalita Animovanej Náhľadovky
+settings.option.visual.animatedArtworkEngine: Engine animovaných obalov
+settings.option.visual.animatedArtworkEngine.description: Možnosť „Natívny“ stiahne jeden slučkový klip a prehrá ho bez prepínania kvality. Možnosť „Starší“ použite len v prípade problémov s prehrávaním.
+settings.option.visual.animatedArtworkEngine.hls: Starší (hls.js)
+settings.option.visual.animatedArtworkEngine.native: Natívny (odporúča sa)
+settings.option.visual.animatedArtworkQuality: Kvalita animovaných obalov
+settings.option.visual.animatedArtworkQuality.balanced: Vyvážená
+settings.option.visual.animatedArtworkQuality.description: Ostrosť animovaných obalov. Možnosť „Automaticky“ prispôsobí každý obal jeho veľkosti na obrazovke a vyhovuje väčšine konfigurácií.
+settings.option.visual.animatedArtworkQuality.performance: Výkon
+settings.option.visual.animatedArtworkQuality.quality: Kvalita
 settings.option.visual.animatedBackgroundFramerate: Snímkovacia frekvencia animovaného pozadia
 settings.option.visual.animatedWindowBackground: Pozadie Animováneho Okna
 settings.option.visual.artistHeaderAlignment: Rozloženie hlavičky interpreta
@@ -2103,12 +2163,13 @@ settings.updates.status.available: Dostupná aktualizácia
 settings.updates.status.checking: Vyhľadávajú sa aktualizácie...
 settings.updates.status.failed: Aktualizácia zlyhala
 settings.updates.status.idle: Cider je aktuálny
-settings.updates.status.success: Reštartujte na dokončenie
-settings.updates.status.working: Inštaluje sa aktualizácia...
+settings.updates.status.success: Vyžaduje sa reštart
+settings.updates.status.working: Inštaluje sa...
 settings.visual.card.appBackground: Pozadie aplikácie
 settings.visual.card.behaviorLyrics: Správanie a texty piesní
 settings.visual.card.browse: Prechádzať
 settings.visual.card.contentFilter: Filter obsahu
+settings.visual.card.experimental: Experimentálne
 settings.visual.card.fsrUpscaling: FSR upscaling
 settings.visual.card.moreAnimatedArtwork: Viac animovanej grafiky
 settings.visual.card.playerEffects: Efekty prehrávača

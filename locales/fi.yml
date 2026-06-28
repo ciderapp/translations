@@ -85,6 +85,7 @@ action.moveToFolder: Siirrä kansioon
 action.moveToFolder.here: Siirrä ”{{name}}” tähän
 action.moveToTop: Siirrä ylimmäksi
 action.newpreset: Uusi Esiasetus...
+action.next: Seuraava
 action.ok: OK
 action.open: Avaa
 action.openArtworkInBrowser: Avaa taideteos selaimessa
@@ -212,6 +213,57 @@ audio.device.default: Oletuslaite
 audio.device.noneFound: Ulostulolaitteita ei löytynyt
 audio.device.placeholder: Laite {{id}}
 audiolab.waiting: Odottaa kappaletta jonoon jonossa
+bugReport.addImage: Lisää kuva
+bugReport.areaOther: Jokin muu
+bugReport.categoryLabel: Mikä alue on kyseessä?
+bugReport.copyLink: Kopioi linkki
+bugReport.descLabel: Mitä tapahtui?
+bugReport.descPlaceholder: Kuvaile virhe. Mitä odotit tapahtuvan ja mitä tapahtui sen sijaan?
+bugReport.diagLabel: Sisällytettävät diagnostiikkatiedot
+bugReport.discardDraft: Hylkää
+bugReport.doneSub: Säilytä tämä linkki seurataksesi raporttiasi. Tiliä ei tarvita.
+bugReport.doneTitle: Kiitos! Raporttisi on lähetetty.
+bugReport.draftRestored: Lähettämätön luonnos palautettu.
+bugReport.error.generic: Raportin lähettäminen epäonnistui. Yritä uudelleen.
+bugReport.error.transport: Yhteyttä raportointipalveluun ei saatu. Voit luoda sen sijaan GitHub-ongelman.
+bugReport.githubFallback: Avaa GitHubissa
+bugReport.hideData: Piilota liitetyt tiedot
+bugReport.included: Mukana
+bugReport.linkCopied: Linkki kopioitu
+bugReport.maxImages: Voit liittää enintään 5 kuvaa.
+bugReport.off: Pois
+bugReport.openIssue: Avaa ilmoitus
+bugReport.pasteHint: "Vinkki: ota kuvakaappaus (Win+Shift+S) ja liitä se tähän."
+bugReport.pick: Osoita komponenttia
+bugReport.repick: Valitse elementti uudelleen
+bugReport.retry: Yritä uudelleen
+bugReport.review: Tarkista
+bugReport.review.area: Alue
+bugReport.review.component: Komponentti
+bugReport.review.desc: Kuvaus
+bugReport.review.device: Laitetunnus
+bugReport.review.logs: Lokit
+bugReport.review.settings: Asetukset
+bugReport.review.shots: Kuvakaappaukset
+bugReport.review.system: Järjestelmä
+bugReport.reviewIntro: Tämä on tarkka kuvaus lähetettävistä tiedoista. Mitään ei ladata palvelimelle ennen kuin lähetät raportin.
+bugReport.screenshotsLabel: Kuvakaappaukset (valinnainen)
+bugReport.showData: Näytä liitetyt tiedot
+bugReport.stepsLabel: Vaiheet virheen toistamiseksi (valinnainen)
+bugReport.stepsPlaceholder: |-
+  1. Avaa ...
+  2. Klikkaa ...
+  3. Huomaa ...
+bugReport.submit: Lähetä raportti
+bugReport.submitting: Lähetetään raporttia…
+bugReport.subtitle: Lähetä yksityiskohtainen raportti Cider-tiimille
+bugReport.title: Ilmoita virheestä
+bugReport.toggleConfig: Asetusten vedos
+bugReport.toggleConfigDesc: Nykyiset asetuksesi (salatut tiedot poistettuna) asetuskohtaisten virheiden toistamiseksi.
+bugReport.toggleHwid: Anonymisoitu laitetunnus
+bugReport.toggleHwidDesc: Hajautettu laitetunnus, jotta saman laitteen toistuvat raportit voidaan yhdistää.
+bugReport.toggleLogs: Sovelluksen viimeisimmät lokit
+bugReport.toggleLogsDesc: Viimeisin konsolituloste, josta salatut tiedot on poistettu. Erittäin hyödyllinen virheenkorjauksessa.
 catalog.new: New
 ciderAudio.action.downloadAdditionalProfiles: Download Additional Profiles
 ciderAudio.marketplacePresetMigrationNotice: "One or more Cider Audio labs presets you have configured have been removed from the app and are now available on the Cider Marketplace.\r
@@ -1776,7 +1828,15 @@ settings.option.visual.animateArtworkOnHover: Animoi kohteen kansikuva, kun hiir
 settings.option.visual.animatedArtwork: Animoitu taideteos
 settings.option.visual.animatedArtwork.description: Ota animoidut kansikuvat käyttöön, keskeytä kun sovellus ei ole aktiivisena
 settings.option.visual.animatedArtwork.warningDescription: Näytä animoidut kansikuvat, kun niitä on saatavilla. Tämä voi aiheuttaa suorituskykyongelmia heikkotehoisilla laitteilla.
-settings.option.visual.animatedArtworkQuality: Animoinnin laatu
+settings.option.visual.animatedArtworkEngine: Animoitujen kansikuvien moottori
+settings.option.visual.animatedArtworkEngine.description: Natiivi lataa yhden toistuvan videon ja toistaa sen ilman laadun vaihtamista. Käytä Legacy-vaihtoehtoa vain, jos kohtaat toisto-ongelmia.
+settings.option.visual.animatedArtworkEngine.hls: Legacy (hls.js)
+settings.option.visual.animatedArtworkEngine.native: Natiivi (Suositeltu)
+settings.option.visual.animatedArtworkQuality: Animoidun kansikuvan laatu
+settings.option.visual.animatedArtworkQuality.balanced: Tasapainoinen
+settings.option.visual.animatedArtworkQuality.description: Miten tarkka animoitu kansikuva on. Automaattinen sovittaa kansikuvan koon näytön koon mukaan ja sopii useimmille laitteistoille.
+settings.option.visual.animatedArtworkQuality.performance: Suorituskyky
+settings.option.visual.animatedArtworkQuality.quality: Laatu
 settings.option.visual.animatedBackgroundFramerate: Animoitu Tausta Framerate
 settings.option.visual.animatedWindowBackground: Animoitu tausta
 settings.option.visual.artistHeaderAlignment: Artistisivun yläosan asettelu
@@ -2102,12 +2162,13 @@ settings.updates.status.available: Päivitys saatavilla
 settings.updates.status.checking: Tarkistetaan päivityksiä...
 settings.updates.status.failed: Päivitys epäonnistui
 settings.updates.status.idle: Cider on ajan tasalla
-settings.updates.status.success: Käynnistä uudelleen viimeistelläksesi
-settings.updates.status.working: Asennetaan päivitystä...
+settings.updates.status.success: Vaatii uudelleenkäynnistyksen
+settings.updates.status.working: Asennetaan...
 settings.visual.card.appBackground: Sovelluksen tausta
 settings.visual.card.behaviorLyrics: Toiminta ja sanat
 settings.visual.card.browse: Selaa
 settings.visual.card.contentFilter: Sisällönsuodatus
+settings.visual.card.experimental: Kokeellinen
 settings.visual.card.fsrUpscaling: FSR-skaalaus
 settings.visual.card.moreAnimatedArtwork: Lisää animoituja kansikuvia
 settings.visual.card.playerEffects: Soitintehosteet

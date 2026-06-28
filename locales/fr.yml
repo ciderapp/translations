@@ -109,6 +109,7 @@ action.moveToTop:
   by: "@lumaa-dev"
   issue: 4
 action.newpreset: Nouveau préréglage...
+action.next: Suivant
 action.ok: OK
 action.open: Ouvrir
 action.openArtworkInBrowser:
@@ -272,6 +273,57 @@ audio.device.default: Appareil par défaut
 audio.device.noneFound: Aucun appareil de sortie trouvé
 audio.device.placeholder: Appareil {{id}}
 audiolab.waiting: En attente d'un morceau dans la file d'attente
+bugReport.addImage: Ajouter une image
+bugReport.areaOther: Autre chose
+bugReport.categoryLabel: Quelle zone est concernée ?
+bugReport.copyLink: Copier le lien
+bugReport.descLabel: Que s'est-il passé ?
+bugReport.descPlaceholder: Décrivez le bug. Qu'attendiez-vous et que s'est-il passé à la place ?
+bugReport.diagLabel: Diagnostics à inclure
+bugReport.discardDraft: Abandonner
+bugReport.doneSub: Conservez ce lien pour suivre votre rapport. Aucun compte requis.
+bugReport.doneTitle: Merci ! Votre rapport a été envoyé.
+bugReport.draftRestored: Brouillon non envoyé restauré.
+bugReport.error.generic: Impossible d'envoyer votre rapport. Veuillez réessayer.
+bugReport.error.transport: Impossible de contacter le service de rapport. Vous pouvez ouvrir un ticket GitHub à la place.
+bugReport.githubFallback: Ouvrir sur GitHub
+bugReport.hideData: Masquer les données jointes
+bugReport.included: Inclus
+bugReport.linkCopied: Lien du ticket copié
+bugReport.maxImages: Vous pouvez joindre jusqu'à 5 images.
+bugReport.off: Désactivé
+bugReport.openIssue: Ouvrir le ticket
+bugReport.pasteHint: "Astuce : prenez une capture d'écran (Win+Maj+S) et collez-la ici."
+bugReport.pick: Pointer un composant
+bugReport.repick: Sélectionner à nouveau l'élément
+bugReport.retry: Réessayer
+bugReport.review: Vérifier
+bugReport.review.area: Zone
+bugReport.review.component: Composant
+bugReport.review.desc: Description
+bugReport.review.device: Identifiant de l'appareil
+bugReport.review.logs: Logs
+bugReport.review.settings: Réglages
+bugReport.review.shots: Captures d'écran
+bugReport.review.system: Système
+bugReport.reviewIntro: Voici exactement ce qui sera envoyé. Rien n'est chargé tant que vous ne soumettez pas le rapport.
+bugReport.screenshotsLabel: Captures d'écran (facultatif)
+bugReport.showData: Afficher les données jointes
+bugReport.stepsLabel: Étapes pour reproduire (facultatif)
+bugReport.stepsPlaceholder: |-
+  1. Ouvrir ...
+  2. Cliquer sur ...
+  3. Constater ...
+bugReport.submit: Envoyer le rapport
+bugReport.submitting: Envoi du rapport en cours…
+bugReport.subtitle: Envoyez un rapport détaillé à l'équipe de Cider
+bugReport.title: Signaler un bug
+bugReport.toggleConfig: Aperçu des réglages
+bugReport.toggleConfigDesc: Vos réglages actuels (sans les données confidentielles) pour aider à reproduire les bugs liés à la configuration.
+bugReport.toggleHwid: Identifiant d'appareil anonymisé
+bugReport.toggleHwidDesc: Un identifiant d'appareil haché pour pouvoir associer les rapports successifs provenant de cette machine.
+bugReport.toggleLogs: Logs récents de l'application
+bugReport.toggleLogsDesc: Sortie console récente, avec masquage des données confidentielles. Très utile pour la correction.
 catalog.new: Nouveautés
 ciderAudio.action.downloadAdditionalProfiles: Télécharger des profils supplémentaires
 ciderAudio.marketplacePresetMigrationNotice: "Un ou plusieurs préréglages Cider Audio que vous avez configurés ont été supprimés de l'application et sont désormais disponibles sur le Cider Marketplace.\r
@@ -1988,11 +2040,20 @@ settings.option.visual.animatedArtwork.warningDescription:
   source: human
   by: "@lumaa-dev"
   issue: 4
+settings.option.visual.animatedArtworkEngine: Moteur d'illustrations animées
+settings.option.visual.animatedArtworkEngine.description: Le mode Natif télécharge un seul clip en boucle et le lit sans changement de qualité. N'utilisez le mode Hérité qu'en cas de problèmes de lecture.
+settings.option.visual.animatedArtworkEngine.hls: Hérité (hls.js)
+settings.option.visual.animatedArtworkEngine.native: Natif (recommandé)
 settings.option.visual.animatedArtworkQuality:
-  value: Qualité des covers animées
-  source: human
+  value: Qualité des illustrations animées
+  source: ai
   by: "@lumaa-dev"
   issue: 4
+  superseded_at: 2026-06-28
+settings.option.visual.animatedArtworkQuality.balanced: Équilibrée
+settings.option.visual.animatedArtworkQuality.description: Niveau de netteté des illustrations animées. Le mode Automatique adapte chaque illustration à sa taille à l'écran et convient à la plupart des configurations.
+settings.option.visual.animatedArtworkQuality.performance: Performances
+settings.option.visual.animatedArtworkQuality.quality: Qualité
 settings.option.visual.animatedBackgroundFramerate: Fréquence d'images de l'arrière-plan animé
 settings.option.visual.animatedWindowBackground: Arrière-plan de fenêtre animé
 settings.option.visual.artistHeaderAlignment: Disposition de l'en-tête d'artiste
@@ -2362,12 +2423,13 @@ settings.updates.status.available: Mise à jour disponible
 settings.updates.status.checking: Recherche de mises à jour...
 settings.updates.status.failed: Échec de la mise à jour
 settings.updates.status.idle: Cider est à jour
-settings.updates.status.success: Redémarrer pour terminer
-settings.updates.status.working: Installation de la mise à jour...
+settings.updates.status.success: Redémarrage requis
+settings.updates.status.working: Installation en cours...
 settings.visual.card.appBackground: Arrière-plan de l'application
 settings.visual.card.behaviorLyrics: Comportement et paroles
 settings.visual.card.browse: Explorer
 settings.visual.card.contentFilter: Filtre de contenu
+settings.visual.card.experimental: Expérimental
 settings.visual.card.fsrUpscaling: Mise à l'échelle FSR
 settings.visual.card.moreAnimatedArtwork: Plus d'illustrations animées
 settings.visual.card.playerEffects: Effets du lecteur

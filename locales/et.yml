@@ -89,6 +89,7 @@ action.moveToFolder: Teisalda kausta
 action.moveToFolder.here: Teisalda "{{name}}" siia
 action.moveToTop: Teisalda algusesse
 action.newpreset: Uus eelseadistus...
+action.next: Järgmine
 action.ok: OK
 action.open: Ava
 action.openArtworkInBrowser: Ava kaanepilt veebibrauseris
@@ -216,6 +217,57 @@ audio.device.default: Vaikeseade
 audio.device.noneFound: Väljundseadmeid ei leitud
 audio.device.placeholder: Seade {{id}}
 audiolab.waiting: Oodatakse laulu lisamist järjekorda
+bugReport.addImage: Lisa pilt
+bugReport.areaOther: Midagi muud
+bugReport.categoryLabel: Millist valdkonda see puudutab?
+bugReport.copyLink: Kopeeri link
+bugReport.descLabel: Mis juhtus?
+bugReport.descPlaceholder: Kirjelda viga. Mida sa ootasid ja mis selle asemel juhtus?
+bugReport.diagLabel: Kaasatav diagnostika
+bugReport.discardDraft: Hülga
+bugReport.doneSub: Hoia see link alles, et oma aruannet jälgida. Kontot pole vaja.
+bugReport.doneTitle: Aitäh! Sinu aruanne on edastatud.
+bugReport.draftRestored: Sinu saatmata mustand taastati.
+bugReport.error.generic: Me ei saanud sinu aruannet edastada. Palun proovi uuesti.
+bugReport.error.transport: Me ei saanud aruandlusteenusega ühendust. Selle asemel võid avada probleemi GitHubis.
+bugReport.githubFallback: Ava GitHubis
+bugReport.hideData: Peida kaasatud andmed
+bugReport.included: Kaasatud
+bugReport.linkCopied: Probleemi link kopeeritud
+bugReport.maxImages: Saad lisada kuni 5 pilti.
+bugReport.off: Väljas
+bugReport.openIssue: Ava probleem
+bugReport.pasteHint: "Vihje: tee ekraanipilt (Win+Shift+S) ja kleebi see siia."
+bugReport.pick: Vali komponent
+bugReport.repick: Vali element uuesti
+bugReport.retry: Proovi uuesti
+bugReport.review: Vaata üle
+bugReport.review.area: Valdkond
+bugReport.review.component: Komponent
+bugReport.review.desc: Kirjeldus
+bugReport.review.device: Seadme ID
+bugReport.review.logs: Logid
+bugReport.review.settings: Seaded
+bugReport.review.shots: Ekraanipildid
+bugReport.review.system: Süsteem
+bugReport.reviewIntro: Just see saadetaksegi teele. Enne aruande esitamist ei laadita midagi üles.
+bugReport.screenshotsLabel: Ekraanipildid (valikuline)
+bugReport.showData: Näita kaasatud andmeid
+bugReport.stepsLabel: Sammud vea taasesitamiseks (valikuline)
+bugReport.stepsPlaceholder: |-
+  1. Ava ...
+  2. Klõpsa ...
+  3. Vaata ...
+bugReport.submit: Saada aruanne
+bugReport.submitting: Aruande edastamine…
+bugReport.subtitle: Saada üksikasjalik aruanne Cideri tiimile
+bugReport.title: Teata veast
+bugReport.toggleConfig: Seadete tõmmis
+bugReport.toggleConfigDesc: Sinu praegused seaded (ilma tundlike andmeteta), mis aitavad taasesitada seadistusega seotud vigu.
+bugReport.toggleHwid: Anonümiseeritud seadme ID
+bugReport.toggleHwidDesc: Räsitud seadme ID, et seostada sellest masinast saadetud korduvaid aruandeid.
+bugReport.toggleLogs: Rakenduse viimased logid
+bugReport.toggleLogsDesc: Viimane konsooli väljund, millest on tundlikud andmed eemaldatud. Kõige kasulikum vigade parandamiseks.
 catalog.new: Uus
 ciderAudio.action.downloadAdditionalProfiles: Laadi alla täiendavad profiilid
 ciderAudio.marketplacePresetMigrationNotice: "Üks või mitu teie seadistatud Cider Audio labori eelseadistust on rakendusest eemaldatud ja on nüüd saadaval Cider Marketplace'is.\r
@@ -1879,7 +1931,15 @@ settings.option.visual.animateArtworkOnHover: Animeeri meediaüksuse kujundust k
 settings.option.visual.animatedArtwork: Animeeritud kujundus
 settings.option.visual.animatedArtwork.description: Luba animeeritud kujundus, peata kui aken pole fookuses
 settings.option.visual.animatedArtwork.warningDescription: Kuva animeeritud kujundust, kui see on saadaval. See võib põhjustada jõudlusprobleeme nõrgemates seadmetes.
-settings.option.visual.animatedArtworkQuality: Animeeritud kujunduse kvaliteeditase
+settings.option.visual.animatedArtworkEngine: Animeeritud kaanepildi mootor
+settings.option.visual.animatedArtworkEngine.description: Native laadib alla ühe korduva klipi ja mängib seda ilma kvaliteeti vahetamata. Kasuta Legacy režiimi ainult siis, kui esineb probleeme taasesitusega.
+settings.option.visual.animatedArtworkEngine.hls: Legacy (hls.js)
+settings.option.visual.animatedArtworkEngine.native: Native (soovitatav)
+settings.option.visual.animatedArtworkQuality: Animeeritud kaanepildi kvaliteet
+settings.option.visual.animatedArtworkQuality.balanced: Tasakaalustatud
+settings.option.visual.animatedArtworkQuality.description: Kui terav on animeeritud kaanepilt. Automaatne režiim kohandab iga kaanepildi vastavalt selle suurusele ekraanil ja sobib enamiku seadistuste jaoks.
+settings.option.visual.animatedArtworkQuality.performance: Jõudlus
+settings.option.visual.animatedArtworkQuality.quality: Kvaliteet
 settings.option.visual.animatedBackgroundFramerate: Animeeritud tausta kaadrisagedus
 settings.option.visual.animatedWindowBackground: Animeeritud akna taust
 settings.option.visual.artistHeaderAlignment: Esitaja päise paigutus
@@ -2237,12 +2297,13 @@ settings.updates.status.available: Värskendus on saadaval
 settings.updates.status.checking: Värskenduste otsimine...
 settings.updates.status.failed: Värskendamine ebaõnnestus
 settings.updates.status.idle: Cider on ajakohane
-settings.updates.status.success: Lõpetamiseks taaskäivita
-settings.updates.status.working: Värskenduse paigaldamine...
+settings.updates.status.success: Vajalik on taaskäivitus
+settings.updates.status.working: Paigaldamine...
 settings.visual.card.appBackground: Rakenduse taust
 settings.visual.card.behaviorLyrics: Käitumine ja laulusõnad
 settings.visual.card.browse: Sirvimine
 settings.visual.card.contentFilter: Sisufilter
+settings.visual.card.experimental: Eksperimentaalne
 settings.visual.card.fsrUpscaling: FSR-skaleerimine
 settings.visual.card.moreAnimatedArtwork: Rohkem animeeritud kaanepilte
 settings.visual.card.playerEffects: Mängija efektid
