@@ -20,6 +20,7 @@ action.addToQueue.error: Error Adding to Queue
 action.addToQueue.success: Added to Queue
 action.appleMusic.yourProfile: Your Profile
 action.apply: Apply
+action.approve: Approve
 action.autoplay.disable: Disable Autoplay
 action.autoplay.enable: Enable Autoplay
 action.back: Back
@@ -47,6 +48,7 @@ action.createNew: Create New
 action.createNewPlaylist: Create New Playlist
 action.createPlaylist: Create a New Playlist
 action.cut: Cut
+action.decline: Decline
 action.delete: Delete
 action.deleteFolder: Are you sure you want to delete the folder "{{folderName}}"?
 action.deleteFolder.message: All folders and playlists inside this folder will also be deleted.
@@ -461,6 +463,9 @@ library.releaseType: Release Type
 library.releaseTypeAlbums: Albums Only
 library.releaseTypeAll: All Releases
 library.releaseTypeSingles: Singles & EPs
+library.sync.indeterminate: Synchronizing {count} {items}…
+library.sync.indeterminateUnknown: Synchronizing your library…
+library.sync.progress: Synchronizing {count} {items}, {remaining} remaining
 locale.lang.ar: Arabic
 locale.lang.de: German
 locale.lang.en: English
@@ -773,6 +778,75 @@ oobe.welcome.selectLanguage: Select your preferred language
 oobe.window.subtitle: Choose how the app window integrates with your desktop environment
 oobe.window.title: Window Style
 oobe.yes: Yes
+party.blocked.subtitle: Only the party host can do that right now.
+party.blocked.title: Host controls playback
+party.dialog.auditedDesc: Guest additions wait for your approval.
+party.dialog.avatarPick: Choose a picture
+party.dialog.codeCopied: Invite code copied
+party.dialog.codeLabel: Invite code
+party.dialog.codePlaceholder: XXXX-XXXX
+party.dialog.copyCode: Copy code
+party.dialog.copyFailed: Copy failed
+party.dialog.copyLink: Copy link
+party.dialog.create: Start a party
+party.dialog.createConfirm: Start the party
+party.dialog.displayNameLabel: Your name
+party.dialog.displayNamePlaceholder: How others see you
+party.dialog.end: End party for everyone
+party.dialog.everyoneControls: Everyone controls playback
+party.dialog.everyoneDesc: Everyone in the party shares the controls.
+party.dialog.hostOnlyDesc: Only you can play, pause, seek and skip.
+party.dialog.hostTag: Host
+party.dialog.join: Join with a code
+party.dialog.joinConfirm: Join party
+party.dialog.kick: Kick
+party.dialog.leave: Leave party
+party.dialog.linkCopied: Invite link copied
+party.dialog.memberCount: "{{count}} in the party"
+party.dialog.memberMuted: Track unavailable in their region
+party.dialog.nameLabel: Party name (optional)
+party.dialog.namePlaceholder: Friday night vibes
+party.dialog.pendingTitle: Waiting for approval
+party.dialog.reconnecting: Reconnecting
+party.dialog.reviewAdditions: Review queue additions
+party.dialog.seedDesc: Bring your current queue into the party.
+party.dialog.seedQueue: Start with current queue
+party.dialog.settingsTitle: Party settings
+party.dialog.subtitle: Listen together in perfect sync with your friends on Cider.
+party.dialog.title: Listening Party
+party.ended.kicked.subtitle: The host removed you from the listening party.
+party.ended.kicked.title: Removed from party
+party.ended.subtitle: The listening party is over. Your queue stays put.
+party.ended.title: Party ended
+party.error.generic: Party sync issue
+party.host.youAreHost: You are now the host
+party.member.fallbackName: a member
+party.member.joined: "{{name}} joined the party"
+party.member.left: "{{name}} left the party"
+party.modeLocked.subtitle: Shuffle, repeat and autoplay are managed by the listening party.
+party.modeLocked.title: Unavailable in a party
+party.pending.incoming.title: Queue request from {{name}}
+party.pending.rejected.title: Request declined
+party.pending.sent.subtitle: The host will review your addition.
+party.pending.sent.title: Sent for approval
+party.queue.addedBy: Added by {{name}}
+party.queue.bannerListening: "{{count}} listening"
+party.queue.bannerSubtitle: Hosted by {{name}} · {{count}} listening
+party.queueFull.subtitle: "{{count}} track(s) were not added."
+party.queueFull.title: Party queue limit reached
+party.radioBlocked.subtitle: Live radio and podcasts cannot be synced in a listening party.
+party.resumed.title: Rejoined your listening party
+party.station.subtitle: New songs join the queue as the station plays.
+party.station.title: Station playing in the party
+party.trackRejected.subtitle: Only Apple Music catalog songs can be queued in a party - {{count}} item(s) were skipped.
+party.trackRejected.title: Not available for parties
+party.trackUnavailable.subtitle: This song is not available in your region. Playback resumes with the next track.
+party.trackUnavailable.title: Track unavailable
+playlist.collaborative.tooltip: This playlist is open to collaborators
+playlist.collaborators.andOthers: "{{name}} & {{count}} others"
+playlist.collaborators.count: "{{count}} contributors"
+playlist.collaborators.owner: Owner
+playlist.collaborators.pair: "{{a}} & {{b}}"
 playlist.description: Playlist Description
 playlist.error.locked.message: Cannot remove this track while sorting options are applied.
 playlist.error.locked.title: Playlist Locked
@@ -782,8 +856,10 @@ playlist.error.updating.title: Error updating playlist
 playlist.folderEmpty: No playlists in this folder
 playlist.folderRenameHint: Double-click to rename
 playlist.lastUpdated: Last Updated {{date}}
+playlist.madeByApple: Made by Apple
 playlist.nameEmpty: Playlist Name cannot be empty
 playlist.noTracks: No tracks
+playlist.personalMix: Personal Mix
 playlist.playlistName: Playlist Name
 playlist.publishOnProfileAndSearch: Publish on profile and in search
 playlist.refresh.message: This playlist has been updated by another device. The playlist is now being refreshed.
@@ -820,11 +896,15 @@ remote.web.title: Cider Remote
 replay.uniqueAlbums: Over {count} Unique Albums
 settings.about.assetLicenses: Asset Licenses
 settings.about.autoplaySongs: Autoplay Songs
+settings.about.branch: Branch
 settings.about.buildInfo: Build Info
+settings.about.built: Built
 settings.about.builtWith: Cider is built with these amazing technologies
 settings.about.collectiveIs: Cider Collective is
+settings.about.commit: Commit
 settings.about.copiedBuildInfo: Build info copied to clipboard
 settings.about.copyBuildInfo: Copy Build Info
+settings.about.framework: Framework
 settings.about.fullCredits: Full Credits
 settings.about.libraryLicenses: Library and Tool Licenses
 settings.about.playAtBeginning: Play at beginning
@@ -861,6 +941,42 @@ settings.audio.ciderAudio.description: Custom tuned and designed audio stack tha
 settings.audio.ciderAudio.enable: Enable Cider Audio
 settings.audio.ciderAudio.requiredHint: Required for Volume Normalization, and Equalizer
 settings.audio.crossfade: Crossfade
+settings.audio.hostCapture.apps: Trigger Apps
+settings.audio.hostCapture.apps.count: "{{ n }} apps will trigger capture."
+settings.audio.hostCapture.apps.countOne: 1 app will trigger capture.
+settings.audio.hostCapture.apps.emptyAvailable: No other open apps. Open one and hit Refresh.
+settings.audio.hostCapture.apps.emptyWatched: No triggers yet. Pick an app on the left.
+settings.audio.hostCapture.apps.help: Capture turns on while any app on the right is running, and off when they all close.
+settings.audio.hostCapture.apps.manage: Manage…
+settings.audio.hostCapture.apps.none: No apps chosen, capture stays off until you add one.
+settings.audio.hostCapture.apps.running: Running Apps
+settings.audio.hostCapture.apps.runningNow: Running
+settings.audio.hostCapture.apps.title: Auto-Capture Trigger Apps
+settings.audio.hostCapture.apps.triggers: Triggers
+settings.audio.hostCapture.auto: Auto-Enable With App
+settings.audio.hostCapture.autoHint: Turn capture on automatically while a chosen app is running, and off when it closes.
+settings.audio.hostCapture.autoNote: Auto-on while a chosen app is running.
+settings.audio.hostCapture.bit16: 16-bit
+settings.audio.hostCapture.bit24: 24-bit
+settings.audio.hostCapture.bit32: 32-bit float
+settings.audio.hostCapture.bitAuto: Auto (highest)
+settings.audio.hostCapture.bitDepth: Bit Depth
+settings.audio.hostCapture.bitDepthHint: Auto uses the highest depth your device supports.
+settings.audio.hostCapture.exclusiveNote: Exclusive output, bit-transparent, not capturable.
+settings.audio.hostCapture.gain: Output Level Trim
+settings.audio.hostCapture.gainHint: Match the captured loudness to the normal output.
+settings.audio.hostCapture.mode: Audio Output Mode
+settings.audio.hostCapture.modeCapture: Capture
+settings.audio.hostCapture.modeCaptureLong: Capturable (OBS, Discord)
+settings.audio.hostCapture.modeExclusive: Exclusive
+settings.audio.hostCapture.modeExclusiveLong: WASAPI Exclusive
+settings.audio.hostCapture.modeHintCapture: Plays audio from the Cider process so OBS, Discord, and other apps can capture it.
+settings.audio.hostCapture.modeHintExclusive: Bit-transparent output straight to your DAC, bypassing the Windows mixer. Not capturable.
+settings.audio.hostCapture.modeHintOff: "Off: audio plays normally from the WebView2 process. Not available during Atmos passthrough or music videos."
+settings.audio.hostCapture.outputShort: Audio Output
+settings.audio.hostCapture.rate: Sample Rate
+settings.audio.hostCapture.rateHint: Match source is bit-transparent; other rates are high-quality resampled.
+settings.audio.hostCapture.rateMatch: Match source (44.1 kHz)
 settings.audio.lab: Audio Lab
 settings.audio.lab.arProfile: Atmosphere Realizer
 settings.audio.lab.capProfile: CAP Profile
@@ -878,6 +994,7 @@ settings.audio.occlusion.passthroughNote: Not available while Dolby Atmos passth
 settings.audio.occlusion.passthroughNote.short: Not available while Atmos passthrough is active.
 settings.audio.outputDevice: Select Audio Output Device
 settings.audio.outputDeviceHint: Select the audio output device for playback.
+settings.audio.outputDeviceHintHost: Capturable audio is on, playback uses this Windows output device.
 settings.automix.allowTempoKeyShifts: Allow Tempo/Key Shifts
 settings.automix.allowTempoKeyShiftsHint: Allow small shifts to keep transitions energetic. (Temporarily disabled, being reworked.)
 settings.automix.description: Intelligently transition between tracks based on tempo and key.
@@ -926,8 +1043,8 @@ settings.client.genten.gtkVersion.desc: Which GTK version to use for the Electro
 settings.client.genten.hardwareAcceleration.desc: Toggle whether the app should use hardware acceleration
 settings.client.genten.macosVibrancy: macOS Vibrancy
 settings.client.genten.macosVibrancy.desc: Toggle whether the app should use the macOS vibrancy effect
-settings.client.genten.mpris: MPRIS Module (Deprecated)
-settings.client.genten.mpris.desc: The MPRIS module updates the MPRIS interface with the now playing information, providing a more consistent experience than standard Chromium MPRIS support.
+settings.client.genten.mpris: Use Cider's own media controls service (MPRIS)
+settings.client.genten.mpris.desc: Registers Cider on D-Bus as org.mpris.MediaPlayer2.cider for playerctl and desktop integration, taking over media keys from Chromium's built-in media session.
 settings.client.genten.proxyPac: Proxy PAC
 settings.client.genten.proxyPac.desc: The address of the proxy PAC file
 settings.client.genten.proxyPlaceholder: Leave blank for system proxy
@@ -1473,6 +1590,7 @@ settings.option.audio.enableAdvancedFunctionality.tunedAudioSpatialization.profi
 settings.option.audio.enableAdvancedFunctionality.tunedAudioSpatialization.profile.standard: Standard
 settings.option.audio.exponentialVolume: Exponential Volume Curve
 settings.option.audio.exponentialVolume.description: Follow a more gradual volume curve, allowing for more precise volume control at lower volumes.
+settings.option.audio.hostCapture: Capturable Audio (OBS / Discord)
 settings.option.audio.maxVolume: Max Volume
 settings.option.audio.mixing: Mixing
 settings.option.audio.normalization: Audio Normalization
@@ -1490,6 +1608,7 @@ settings.option.audio.seamlessAudioTransitions: Gapless Playback
 settings.option.audio.seamlessTransition: Seamless Audio Transition
 settings.option.audio.seamlessTransitions: Seamless Transitions
 settings.option.audio.showBitrate: Show Bitrate in Now Playing
+settings.option.audio.streaming: Streaming
 settings.option.audio.volume: Volume
 settings.option.audio.volumeScrollStep: Volume Scroll Step
 settings.option.audio.volumeScrollStep.description: How much the volume changes when you scroll up or down on the volume slider.
@@ -1573,6 +1692,17 @@ settings.option.connectivity.lastfmScrobble.manualToken: Enter Last.fm Token Man
 settings.option.connectivity.lastfmScrobble.manualToken.link: Click here to get a Last.fm token
 settings.option.connectivity.lastfmScrobble.nowPlaying: Enable Last.FM Now Playing
 settings.option.connectivity.lastfmScrobble.removeFeatured: Remove featuring artists from song title (Last.fm)
+settings.option.connectivity.parties: Listening Parties
+settings.option.connectivity.partiesEnabled: Enable Listening Parties
+settings.option.connectivity.partiesEnabled.description: Host or join synchronized listening sessions with other Cider users.
+settings.option.connectivity.partiesQueueDefault: Default Queue Mode
+settings.option.connectivity.partiesQueueDefault.audited: Host approves additions
+settings.option.connectivity.partiesQueueDefault.description: Whether guest additions need your approval in parties you host.
+settings.option.connectivity.partiesQueueDefault.open: Open
+settings.option.connectivity.partiesTransportDefault: Default Playback Control
+settings.option.connectivity.partiesTransportDefault.description: Who can play, pause, seek and skip in parties you host.
+settings.option.connectivity.partiesTransportDefault.everyone: Everyone
+settings.option.connectivity.partiesTransportDefault.host: Host only
 settings.option.connectivity.playbackNotifications: Playback Notifications
 settings.option.connectivity.playbackNotifications.description: Display a notification containing the new song whenever the current song changes.
 settings.option.connectivity.remoteConnection: Remote Connection
@@ -2033,6 +2163,11 @@ settings.option.visual.vibrancySettings: Vibrancy Settings
 settings.option.visual.windowBackgroundStyle: Window Background Style
 settings.option.visual.windowColor: Window Tint Color
 settings.option.visual.windowControlPosition: Window Control Position
+settings.option.visual.windowingMode: Scroll & Rendering Mode
+settings.option.visual.windowingMode.auto: Auto (touchpad-aware)
+settings.option.visual.windowingMode.description: Choose how the app renders and scrolls content. "Auto" is recommended for most users, on certain touchpad devices "Old" may be more responsive.
+settings.option.visual.windowingMode.glass: New
+settings.option.visual.windowingMode.performance: Old
 settings.option.visual.windowStyle: Window Style
 settings.option.visual.windowVibrancy: Window Vibrancy
 settings.option.window.close_button_hide: Close Button Should Hide the Application
@@ -2077,6 +2212,7 @@ settings.prompt.visual.plugin.github.success: Plugin installed successfully, Pre
 settings.prompt.visual.plugin.github.URL: Enter the URL of the plugin you want to install
 settings.prompt.visual.theme.github.URL: Enter the URL of the theme you want to install
 settings.prompt.visual.theme.uninstallTheme: Are you sure you want to uninstall {{theme}}?
+settings.requiresNewerClient: Requires a newer Cider client.
 settings.sleepTimer.endsIn: "Ends in: {{remainingTime}} ({{endTime}})"
 settings.sleepTimer.notSet: Timer is not set
 settings.sleepTimer.title: Set Sleep Timer
@@ -2107,6 +2243,8 @@ settings.takeout.reloadPrompt: Some settings only take effect after a reload. Re
 settings.takeout.selectAll: Select all
 settings.takeout.title: Settings Takeout
 settings.title: Settings
+settings.troubleshooting.bgDiagnostics: Background Playback Diagnostics
+settings.troubleshooting.bgDiagnostics.desc: Extra log breadcrumbs for diagnosing playback problems while the window is minimized or unfocused — who paused the player, timer starvation, and OS suspension episodes. Enable when reporting a background playback bug.
 settings.troubleshooting.desc: Log files and MKLite debug logging.
 settings.troubleshooting.logFile: Log File
 settings.troubleshooting.logFile.actions: Log File Actions
@@ -2378,6 +2516,7 @@ term.action: Action
 term.active: Active
 term.added: Added
 term.addedpreset: Added Preset
+term.album: Album
 term.albums: Albums
 term.all: All
 term.allPlaylists: All Playlists
@@ -2394,6 +2533,7 @@ term.appleMusic: Apple Music
 term.appleMusicPlaylists: Apple Music Playlists
 term.applePodcasts: Apple Podcasts
 term.appSettings: App Settings
+term.artist: Artist
 term.artistChips: Artist Chips
 term.artistList: Artist List
 term.artists: Artists
@@ -2409,6 +2549,7 @@ term.autoplay: AutoPlay
 term.autoplay.description: Similar music will continue playing.
 term.autoplay.unavailable: Autoplay recommendations aren't available for this song yet.
 term.behavior: Behavior
+term.beta: Beta
 term.both: Both
 term.browse: Browse
 term.browser: Browser
@@ -2422,6 +2563,7 @@ term.clearAll: Clear All
 term.clearQueue: Clear
 term.clipboard: Clipboard
 term.close: Close
+term.collaborative: Collaborative
 term.collapse: Collapse
 term.commandPalette: Command Palette
 term.compose: Compose with Saki AI
@@ -2563,6 +2705,7 @@ term.prerelease: Pre-release
 term.previous: Previous
 term.private: Private
 term.privateSession: Private Session
+term.profile: Profile
 term.public: Public
 term.queue: Queue
 term.queue.added: Added to queue
@@ -2586,6 +2729,7 @@ term.radio.failedToStart: Failed to start radio station
 term.radioShows: Radio Shows
 term.recentlyAdded: Recently Added
 term.recentlyPlayed: Recently Played
+term.recentlyViewed: Recently Viewed
 term.recentStations: Recent Stations
 term.recordLabel: Record Label
 term.recordLabels: Record Labels
