@@ -108,6 +108,7 @@ action.apply:
   source: human
   by: "@Vudgekek"
   issue: 5
+action.approve: Odobri
 action.autoplay.disable:
   value: Isključi automatsku reprodukciju
   source: human
@@ -239,6 +240,7 @@ action.cut:
   source: human
   by: "@Vudgekek"
   issue: 5
+action.decline: Odbij
 action.delete:
   value: Izbriši
   source: human
@@ -874,6 +876,9 @@ library.releaseType: Vrsta izdanja
 library.releaseTypeAlbums: Samo albumi
 library.releaseTypeAll: Sva izdanja
 library.releaseTypeSingles: Singlovi i EP-ovi
+library.sync.indeterminate: Sinkroniziranje {count} {items}…
+library.sync.indeterminateUnknown: Sinkroniziranje vaše medijateke…
+library.sync.progress: Sinkroniziranje {count} {items}, preostalo {remaining}
 locale.lang.ar: Arapski
 locale.lang.de: Njemački
 locale.lang.en: Engleski
@@ -1186,6 +1191,75 @@ oobe.welcome.selectLanguage: Odaberite željeni jezik
 oobe.window.subtitle: Odaberite kako se prozor aplikacije integrira s vašim radnim okruženjem
 oobe.window.title: Stil prozora
 oobe.yes: Da
+party.blocked.subtitle: To trenutačno može učiniti samo domaćin zabave.
+party.blocked.title: Domaćin upravlja reprodukcijom
+party.dialog.auditedDesc: Dodavanja gostiju čekaju vaše odobrenje.
+party.dialog.avatarPick: Odaberi sliku
+party.dialog.codeCopied: Pozivni kod kopiran
+party.dialog.codeLabel: Pozivni kod
+party.dialog.codePlaceholder: XXXX-XXXX
+party.dialog.copyCode: Kopiraj kod
+party.dialog.copyFailed: Kopiranje nije uspjelo
+party.dialog.copyLink: Kopiraj poveznicu
+party.dialog.create: Pokreni zabavu
+party.dialog.createConfirm: Pokreni zabavu
+party.dialog.displayNameLabel: Vaše ime
+party.dialog.displayNamePlaceholder: Kako vas drugi vide
+party.dialog.end: Završi zabavu za sve
+party.dialog.everyoneControls: Svi upravljaju reprodukcijom
+party.dialog.everyoneDesc: Svi na zabavi dijele kontrole.
+party.dialog.hostOnlyDesc: Samo vi možete reproducirati, pauzirati, premotavati i preskakati.
+party.dialog.hostTag: Domaćin
+party.dialog.join: Pridruži se pomoću koda
+party.dialog.joinConfirm: Pridruži se zabavi
+party.dialog.kick: Izbaci
+party.dialog.leave: Napusti zabavu
+party.dialog.linkCopied: Pozivna poveznica kopirana
+party.dialog.memberCount: "{{count}} na zabavi"
+party.dialog.memberMuted: Pjesma nije dostupna u njihovoj regiji
+party.dialog.nameLabel: Naziv zabave (neobavezno)
+party.dialog.namePlaceholder: Petak navečer
+party.dialog.pendingTitle: Čeka se odobrenje
+party.dialog.reconnecting: Ponovno povezivanje
+party.dialog.reviewAdditions: Pregledaj dodavanja u red čekanja
+party.dialog.seedDesc: Prenesite svoj trenutačni red čekanja na zabavu.
+party.dialog.seedQueue: Započni s trenutačnim redom čekanja
+party.dialog.settingsTitle: Postavke zabave
+party.dialog.subtitle: Slušajte zajedno u savršenoj sinkronizaciji s prijateljima na Cideru.
+party.dialog.title: Zabava slušanja
+party.ended.kicked.subtitle: Domaćin vas je uklonio sa zabave slušanja.
+party.ended.kicked.title: Uklonjeni ste sa zabave
+party.ended.subtitle: Zabava slušanja je završila. Vaš red čekanja ostaje nepromijenjen.
+party.ended.title: Zabava je završila
+party.error.generic: Problem sa sinkronizacijom zabave
+party.host.youAreHost: Sada ste vi domaćin
+party.member.fallbackName: član
+party.member.joined: "{{name}} se pridružio zabavi"
+party.member.left: "{{name}} je napustio zabavu"
+party.modeLocked.subtitle: Zabava slušanja upravlja nasumičnom reprodukcijom, ponavljanjem i automatskom reprodukcijom.
+party.modeLocked.title: Nedostupno tijekom zabave
+party.pending.incoming.title: Zahtjev za red čekanja od korisnika {{name}}
+party.pending.rejected.title: Zahtjev je odbijen
+party.pending.sent.subtitle: Domaćin će pregledati vaše dodavanje.
+party.pending.sent.title: Poslano na odobrenje
+party.queue.addedBy: "Dodao: {{name}}"
+party.queue.bannerListening: "{{count}} sluša"
+party.queue.bannerSubtitle: "Domaćin: {{name}} · {{count}} sluša"
+party.queueFull.subtitle: "{{count}} pjesama nije dodano."
+party.queueFull.title: Dosegnuto je ograničenje reda čekanja grupe
+party.radioBlocked.subtitle: Radio uživo i podcasti ne mogu se sinkronizirati u grupi za slušanje.
+party.resumed.title: Ponovno ste se pridružili grupi za slušanje
+party.station.subtitle: Nove pjesme dodaju se u red čekanja tijekom reprodukcije postaje.
+party.station.title: Postaja svira u grupi
+party.trackRejected.subtitle: Samo se pjesme iz Apple Music kataloga mogu dodati u red čekanja grupe – preskočeno je {{count}} stavki.
+party.trackRejected.title: Nije dostupno za grupe
+party.trackUnavailable.subtitle: Ova pjesma nije dostupna u vašoj regiji. Reprodukcija se nastavlja sljedećom pjesmom.
+party.trackUnavailable.title: Pjesma nedostupna
+playlist.collaborative.tooltip: Ovaj popis pjesama otvoren je za suradnike
+playlist.collaborators.andOthers: "{{name}} i još {{count}}"
+playlist.collaborators.count: "{{count}} suradnika"
+playlist.collaborators.owner: Vlasnik
+playlist.collaborators.pair: "{{a}} i {{b}}"
 playlist.description: Opis popisa pjesama
 playlist.error.locked.message: Nije moguće ukloniti ovu pjesmu dok su primijenjene opcije razvrstavanja.
 playlist.error.locked.title: Popis pjesama je zaključan
@@ -1195,8 +1269,10 @@ playlist.error.updating.title: Pogreška pri ažuriranju popisa pjesama
 playlist.folderEmpty: Nema popisa pjesama u ovoj mapi
 playlist.folderRenameHint: Dvaput kliknite za preimenovanje
 playlist.lastUpdated: Zadnje ažurirano {{date}}
+playlist.madeByApple: Kreirao Apple
 playlist.nameEmpty: Naziv popisa pjesama ne može biti prazan
 playlist.noTracks: Nema pjesama
+playlist.personalMix: Osobni miks
 playlist.playlistName: Naziv popisa pjesama
 playlist.publishOnProfileAndSearch: Objavi na profilu i u pretraživanju
 playlist.refresh.message: Ovaj popis pjesama ažuriran je na drugom uređaju. Popis se sada osvježava.
@@ -1233,11 +1309,15 @@ remote.web.title: Cider Remote
 replay.uniqueAlbums: Više od {count} jedinstvenih albuma
 settings.about.assetLicenses: Licence resursa
 settings.about.autoplaySongs: Automatska reprodukcija pjesama
+settings.about.branch: Grana
 settings.about.buildInfo: Informacije o verziji
+settings.about.built: Izrađeno
 settings.about.builtWith: Cider je izrađen pomoću ovih nevjerojatnih tehnologija
 settings.about.collectiveIs: Cider Collective je
+settings.about.commit: Commit
 settings.about.copiedBuildInfo: Informacije o verziji kopirane su u međuspremnik
 settings.about.copyBuildInfo: Kopiraj informacije o verziji
+settings.about.framework: Framework
 settings.about.fullCredits: Zasluge
 settings.about.libraryLicenses: Licence biblioteka i alata
 settings.about.playAtBeginning: Reproduciraj od početka
@@ -1274,6 +1354,42 @@ settings.audio.ciderAudio.description: Prilagođeno podešen i dizajniran audio 
 settings.audio.ciderAudio.enable: Omogući Cider Audio
 settings.audio.ciderAudio.requiredHint: Potrebno za normalizaciju glasnoće i ekvilajzer
 settings.audio.crossfade: Pretapanje
+settings.audio.hostCapture.apps: Aplikacije pokretači
+settings.audio.hostCapture.apps.count: "{{ n }} aplikacija pokrenut će snimanje."
+settings.audio.hostCapture.apps.countOne: 1 aplikacija pokrenut će snimanje.
+settings.audio.hostCapture.apps.emptyAvailable: Nema drugih otvorenih aplikacija. Otvorite jednu i kliknite Osvježi.
+settings.audio.hostCapture.apps.emptyWatched: Još nema pokretača. Odaberite aplikaciju s lijeve strane.
+settings.audio.hostCapture.apps.help: Snimanje se uključuje dok je bilo koja aplikacija s desne strane pokrenuta, a isključuje se kada se sve zatvore.
+settings.audio.hostCapture.apps.manage: Upravljanje…
+settings.audio.hostCapture.apps.none: Nijedna aplikacija nije odabrana, snimanje ostaje isključeno dok je ne dodate.
+settings.audio.hostCapture.apps.running: Pokrenute aplikacije
+settings.audio.hostCapture.apps.runningNow: Pokrenuto
+settings.audio.hostCapture.apps.title: Aplikacije za automatsko pokretanje snimanja
+settings.audio.hostCapture.apps.triggers: Pokretači
+settings.audio.hostCapture.auto: Automatski omogući s aplikacijom
+settings.audio.hostCapture.autoHint: Automatski uključi snimanje dok je odabrana aplikacija pokrenuta, a isključi ga kada se zatvori.
+settings.audio.hostCapture.autoNote: Automatski uključeno dok je odabrana aplikacija pokrenuta.
+settings.audio.hostCapture.bit16: 16-bitni
+settings.audio.hostCapture.bit24: 24-bitni
+settings.audio.hostCapture.bit32: 32-bitni float
+settings.audio.hostCapture.bitAuto: Automatski (najviše)
+settings.audio.hostCapture.bitDepth: Bitna dubina
+settings.audio.hostCapture.bitDepthHint: Automatska postavka koristi najveću dubinu koju vaš uređaj podržava.
+settings.audio.hostCapture.exclusiveNote: Ekskluzivni izlaz, bit-transparentan, ne može se snimati.
+settings.audio.hostCapture.gain: Prilagodba izlazne razine
+settings.audio.hostCapture.gainHint: Uskladite glasnoću snimljenog zvuka s normalnim izlazom.
+settings.audio.hostCapture.mode: Način izlaza zvuka
+settings.audio.hostCapture.modeCapture: Snimanje
+settings.audio.hostCapture.modeCaptureLong: Moguće snimati (OBS, Discord)
+settings.audio.hostCapture.modeExclusive: Ekskluzivno
+settings.audio.hostCapture.modeExclusiveLong: WASAPI ekskluzivno
+settings.audio.hostCapture.modeHintCapture: Reproducira zvuk iz procesa Cider kako bi ga OBS, Discord i druge aplikacije mogle snimiti.
+settings.audio.hostCapture.modeHintExclusive: Bit-transparentan izlaz izravno u vaš DAC, zaobilazeći mikser sustava Windows. Ne može se snimati.
+settings.audio.hostCapture.modeHintOff: "Isključeno: zvuk se reproducira normalno iz procesa WebView2. Nije dostupno tijekom prolaza za Dolby Atmos ili glazbenih videozapisa."
+settings.audio.hostCapture.outputShort: Izlaz zvuka
+settings.audio.hostCapture.rate: Frekvencija uzorkovanja
+settings.audio.hostCapture.rateHint: Usklađivanje s izvorom je bit-transparentno; ostale frekvencije se ponovno uzorkuju u visokoj kvaliteti.
+settings.audio.hostCapture.rateMatch: Uskladi s izvorom (44,1 kHz)
 settings.audio.lab: Audio Lab
 settings.audio.lab.arProfile: Atmosphere Realizer
 settings.audio.lab.capProfile: CAP profil
@@ -1291,6 +1407,7 @@ settings.audio.occlusion.passthroughNote: Nije dostupno dok je aktivna opcija Do
 settings.audio.occlusion.passthroughNote.short: Nije dostupno dok je aktivna opcija Atmos passthrough.
 settings.audio.outputDevice: Odaberite izlazni audio uređaj
 settings.audio.outputDeviceHint: Odaberite izlazni audio uređaj za reprodukciju.
+settings.audio.outputDeviceHintHost: Snimanje zvuka je uključeno, reprodukcija koristi ovaj izlazni uređaj sustava Windows.
 settings.automix.allowTempoKeyShifts: Dopusti promjene tempa/tonaliteta
 settings.automix.allowTempoKeyShiftsHint: Dopusti male promjene kako bi prijelazi ostali energični. (Privremeno onemogućeno, u tijeku je dorada.)
 settings.automix.description: Inteligentni prijelaz između pjesama na temelju tempa i tonaliteta.
@@ -1339,8 +1456,8 @@ settings.client.genten.gtkVersion.desc: Koju verziju GTK-a koristiti za Electron
 settings.client.genten.hardwareAcceleration.desc: Odredite hoće li aplikacija koristiti hardversko ubrzanje
 settings.client.genten.macosVibrancy: macOS Vibrancy
 settings.client.genten.macosVibrancy.desc: Odredite hoće li aplikacija koristiti macOS vibrancy efekt
-settings.client.genten.mpris: MPRIS modul (zastarjelo)
-settings.client.genten.mpris.desc: MPRIS modul ažurira MPRIS sučelje s informacijama o trenutačnoj reprodukciji, pružajući dosljednije iskustvo od standardne Chromium MPRIS podrške.
+settings.client.genten.mpris: Koristi vlastitu uslugu kontrola medija aplikacije Cider (MPRIS)
+settings.client.genten.mpris.desc: Registrira Cider na D-Bus kao org.mpris.MediaPlayer2.cider za integraciju s playerctl-om i radnom površinom, preuzimajući medijske tipke iz ugrađene medijske sesije Chromiuma.
 settings.client.genten.proxyPac: Proxy PAC
 settings.client.genten.proxyPac.desc: Adresa proxy PAC datoteke
 settings.client.genten.proxyPlaceholder: Ostavite prazno za sistemski proxy
@@ -1891,6 +2008,7 @@ settings.option.audio.enableAdvancedFunctionality.tunedAudioSpatialization.profi
 settings.option.audio.enableAdvancedFunctionality.tunedAudioSpatialization.profile.standard: Standardno
 settings.option.audio.exponentialVolume: Eksponencijalna krivulja glasnoće
 settings.option.audio.exponentialVolume.description: Prati postupniju krivulju glasnoće, omogućujući preciznije upravljanje glasnoćom pri nižim razinama.
+settings.option.audio.hostCapture: Zvuk pogodan za snimanje (OBS / Discord)
 settings.option.audio.maxVolume: Maksimalna glasnoća
 settings.option.audio.mixing: Miksanje
 settings.option.audio.normalization: Normalizacija zvuka
@@ -1908,6 +2026,7 @@ settings.option.audio.seamlessAudioTransitions: Reprodukcija bez prekida
 settings.option.audio.seamlessTransition: Besprijekoran prijelaz zvuka
 settings.option.audio.seamlessTransitions: Besprijekorni prijelazi
 settings.option.audio.showBitrate: Prikaži brzinu prijenosa u Trenutno svira
+settings.option.audio.streaming: Streaming
 settings.option.audio.volume: Glasnoća
 settings.option.audio.volumeScrollStep: Korak pomicanja glasnoće
 settings.option.audio.volumeScrollStep.description: Koliko se glasnoća mijenja kada pomičete kotačić miša gore ili dolje na klizaču glasnoće.
@@ -1991,6 +2110,17 @@ settings.option.connectivity.lastfmScrobble.manualToken: Ručno unesi Last.fm to
 settings.option.connectivity.lastfmScrobble.manualToken.link: Kliknite ovdje da biste dobili Last.fm token
 settings.option.connectivity.lastfmScrobble.nowPlaying: Omogući Last.FM Trenutačno svira
 settings.option.connectivity.lastfmScrobble.removeFeatured: Ukloni gostujuće izvođače iz naziva pjesme (Last.fm)
+settings.option.connectivity.parties: Zajedničko slušanje
+settings.option.connectivity.partiesEnabled: Omogući zajedničko slušanje
+settings.option.connectivity.partiesEnabled.description: Pokrenite ili se pridružite sinkroniziranim sesijama slušanja s drugim korisnicima aplikacije Cider.
+settings.option.connectivity.partiesQueueDefault: Zadani način reda reprodukcije
+settings.option.connectivity.partiesQueueDefault.audited: Domaćin odobrava dodavanja
+settings.option.connectivity.partiesQueueDefault.description: Trebaju li dodavanja gostiju vaše odobrenje u sesijama koje vi organizirate.
+settings.option.connectivity.partiesQueueDefault.open: Otvoreno
+settings.option.connectivity.partiesTransportDefault: Zadano upravljanje reprodukcijom
+settings.option.connectivity.partiesTransportDefault.description: Tko može reproducirati, pauzirati, premotavati i preskakati u sesijama koje vi organizirate.
+settings.option.connectivity.partiesTransportDefault.everyone: Svi
+settings.option.connectivity.partiesTransportDefault.host: Samo domaćin
 settings.option.connectivity.playbackNotifications: Obavijesti o reprodukciji
 settings.option.connectivity.playbackNotifications.description: Prikaži obavijest s novom pjesmom kad god se trenutačna pjesma promijeni.
 settings.option.connectivity.remoteConnection: Udaljena veza
@@ -2451,6 +2581,11 @@ settings.option.visual.vibrancySettings: Postavke efekta živosti
 settings.option.visual.windowBackgroundStyle: Stil pozadine prozora
 settings.option.visual.windowColor: Nijansa boje prozora
 settings.option.visual.windowControlPosition: Položaj kontrola prozora
+settings.option.visual.windowingMode: Način pomicanja i renderiranja
+settings.option.visual.windowingMode.auto: Automatski (prilagođeno dodirnoj površini)
+settings.option.visual.windowingMode.description: Odaberite kako aplikacija iscrtava i pomiče sadržaj. Opcija „Automatski” preporučuje se većini korisnika, dok na određenim uređajima s dodirnom površinom opcija „Staro” može biti responzivnija.
+settings.option.visual.windowingMode.glass: Novo
+settings.option.visual.windowingMode.performance: Staro
 settings.option.visual.windowStyle: Stil prozora
 settings.option.visual.windowVibrancy: Efekt živosti prozora
 settings.option.window.close_button_hide: Gumb za zatvaranje treba sakriti aplikaciju
@@ -2495,6 +2630,7 @@ settings.prompt.visual.plugin.github.success: Dodatak je uspješno instaliran. P
 settings.prompt.visual.plugin.github.URL: Unesite URL dodatka koji želite instalirati
 settings.prompt.visual.theme.github.URL: Unesite URL teme koju želite instalirati
 settings.prompt.visual.theme.uninstallTheme: Jeste li sigurni da želite deinstalirati {{theme}}?
+settings.requiresNewerClient: Zahtijeva noviju verziju klijenta Cider.
 settings.sleepTimer.endsIn: "Završava za: {{remainingTime}} ({{endTime}})"
 settings.sleepTimer.notSet: Mjerač vremena nije postavljen
 settings.sleepTimer.title: Postavi mjerač vremena spavanja
@@ -2525,6 +2661,8 @@ settings.takeout.reloadPrompt: Neke postavke stupaju na snagu tek nakon ponovnog
 settings.takeout.selectAll: Odaberi sve
 settings.takeout.title: Prijenos postavki
 settings.title: Postavke
+settings.troubleshooting.bgDiagnostics: Dijagnostika reprodukcije u pozadini
+settings.troubleshooting.bgDiagnostics.desc: Dodatni zapisi za dijagnosticiranje problema s reprodukcijom dok je prozor minimiziran ili izvan fokusa — tko je pauzirao reproduktor, izgladnjivanje tajmera i epizode obustave OS-a. Omogućite prilikom prijave pogreške s reprodukcijom u pozadini.
 settings.troubleshooting.desc: Datoteke zapisnika i MKLite zapisivanje za uklanjanje pogrešaka.
 settings.troubleshooting.hevcWorkaround: Zaobilazno rješenje za HEVC
 settings.troubleshooting.hevcWorkaround.desc: Zaobilazno rješenje za pogrešku u WebView2 s određenim grafičkim karticama koje imaju problema s reprodukcijom 10-bitnog SDR HEVC sadržaja primjenom filtra za kompenzaciju vizualnog pomaka.
@@ -2803,6 +2941,7 @@ term.action: Radnja
 term.active: Aktivno
 term.added: Dodano
 term.addedpreset: Dodan predložak
+term.album: Album
 term.albums: Albumi
 term.all: Sve
 term.allPlaylists: Svi popisi pjesama
@@ -2819,6 +2958,7 @@ term.appleMusic: Apple Music
 term.appleMusicPlaylists: Apple Music popisi pjesama
 term.applePodcasts: Apple Podcasts
 term.appSettings: Postavke aplikacije
+term.artist: Izvođač
 term.artistChips: Oznake izvođača
 term.artistList: Popis izvođača
 term.artists: Izvođači
@@ -2834,6 +2974,7 @@ term.autoplay: Automatska reprodukcija
 term.autoplay.description: Slična glazba nastavit će se reproducirati.
 term.autoplay.unavailable: Preporuke za automatsku reprodukciju još nisu dostupne za ovu pjesmu.
 term.behavior: Ponašanje
+term.beta: Beta
 term.both: Oboje
 term.browse: Pregledaj
 term.browser: Preglednik
@@ -2847,6 +2988,7 @@ term.clearAll: Očisti sve
 term.clearQueue: Očisti
 term.clipboard: Međuspremnik
 term.close: Zatvori
+term.collaborative: Zajednički
 term.collapse: Sažmi
 term.commandPalette: Paleta naredbi
 term.compose: Sastavi pomoću Saki AI
@@ -2988,6 +3130,7 @@ term.prerelease: Predizdanje
 term.previous: Prethodno
 term.private: Privatno
 term.privateSession: Privatna sesija
+term.profile: Profil
 term.public: Javno
 term.queue: Red čekanja
 term.queue.added: Dodano u red čekanja
@@ -3011,6 +3154,7 @@ term.radio.failedToStart: Pokretanje radio postaje nije uspjelo
 term.radioShows: Radio emisije
 term.recentlyAdded: Nedavno dodano
 term.recentlyPlayed: Nedavno reproducirano
+term.recentlyViewed: Nedavno pregledano
 term.recentStations: Nedavne postaje
 term.recordLabel: Diskografska kuća
 term.recordLabels: Diskografske kuće

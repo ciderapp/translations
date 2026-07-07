@@ -108,6 +108,7 @@ action.apply:
   source: human
   by: "@Tesutarin"
   issue: 7
+action.approve: 同意
 action.autoplay.disable:
   value: 关闭自动连播
   source: human
@@ -239,6 +240,7 @@ action.cut:
   source: human
   by: "@Tesutarin"
   issue: 7
+action.decline: 拒绝
 action.delete:
   value: 删除
   source: human
@@ -1790,6 +1792,9 @@ library.releaseType: 发行类型
 library.releaseTypeAlbums: 仅专辑
 library.releaseTypeAll: 所有发行
 library.releaseTypeSingles: 单曲与 EP
+library.sync.indeterminate: 正在同步 {count} 个{items}…
+library.sync.indeterminateUnknown: 正在同步您的资料库…
+library.sync.progress: 正在同步 {count} 个{items}，还剩 {remaining} 个
 locale.lang.ar:
   value: 阿拉伯语
   source: human
@@ -3082,6 +3087,75 @@ oobe.yes:
   source: human
   by: "@Tesutarin"
   issue: 7
+party.blocked.subtitle: 目前只有派对房主可以执行此操作。
+party.blocked.title: 房主控制播放
+party.dialog.auditedDesc: 访客添加的内容需要您的同意。
+party.dialog.avatarPick: 选择图片
+party.dialog.codeCopied: 邀请码已复制
+party.dialog.codeLabel: 邀请码
+party.dialog.codePlaceholder: XXXX-XXXX
+party.dialog.copyCode: 复制邀请码
+party.dialog.copyFailed: 复制失败
+party.dialog.copyLink: 复制链接
+party.dialog.create: 开启派对
+party.dialog.createConfirm: 开始派对
+party.dialog.displayNameLabel: 您的名字
+party.dialog.displayNamePlaceholder: 其他人看到的名字
+party.dialog.end: 为所有人结束派对
+party.dialog.everyoneControls: 所有人均可控制播放
+party.dialog.everyoneDesc: 派对中的每个人都可以控制播放。
+party.dialog.hostOnlyDesc: 只有您可以播放、暂停、调整进度和跳过。
+party.dialog.hostTag: 房主
+party.dialog.join: 使用邀请码加入
+party.dialog.joinConfirm: 加入派对
+party.dialog.kick: 移出
+party.dialog.leave: 退出派对
+party.dialog.linkCopied: 邀请链接已复制
+party.dialog.memberCount: 派对中已有 {{count}} 人
+party.dialog.memberMuted: 该单曲在其所在地区不可用
+party.dialog.nameLabel: 派对名称（选填）
+party.dialog.namePlaceholder: 周五晚上的氛围
+party.dialog.pendingTitle: 等待同意
+party.dialog.reconnecting: 正在重新连接
+party.dialog.reviewAdditions: 审核待播清单添加请求
+party.dialog.seedDesc: 将您当前的待播清单带入派对。
+party.dialog.seedQueue: 从当前待播清单开始
+party.dialog.settingsTitle: 派对设置
+party.dialog.subtitle: 在 Cider 上与好友完美同步，共同聆听。
+party.dialog.title: 音乐派对
+party.ended.kicked.subtitle: 房主已将您移出音乐派对。
+party.ended.kicked.title: 已被移出派对
+party.ended.subtitle: 音乐派对已结束。您的待播清单保持不变。
+party.ended.title: 派对已结束
+party.error.generic: 派对同步问题
+party.host.youAreHost: 您现在是房主
+party.member.fallbackName: 某位成员
+party.member.joined: "{{name}} 已加入派对"
+party.member.left: "{{name}} 已离开派对"
+party.modeLocked.subtitle: 随机播放、重复播放和自动播放由音乐派对统一管理。
+party.modeLocked.title: 在派对中不可用
+party.pending.incoming.title: 来自 {{name}} 的添加请求
+party.pending.rejected.title: 请求已被拒绝
+party.pending.sent.subtitle: 房主将审核您添加的内容。
+party.pending.sent.title: 已发送申请
+party.queue.addedBy: 由 {{name}} 添加
+party.queue.bannerListening: "{{count}} 人正在聆听"
+party.queue.bannerSubtitle: 房主：{{name}} · {{count}} 人正在聆听
+party.queueFull.subtitle: 有 {{count}} 首单曲未被添加。
+party.queueFull.title: 已达到派对队列上限
+party.radioBlocked.subtitle: 实时电台和播客无法在听歌派对中同步。
+party.resumed.title: 已重新加入你的听歌派对
+party.station.subtitle: 随着电台播放，新歌曲将自动加入队列。
+party.station.title: 派对中正在播放电台
+party.trackRejected.subtitle: 派对队列中仅支持 Apple Music 目录中的歌曲 — 已跳过 {{count}} 首。
+party.trackRejected.title: 不适用于派对
+party.trackUnavailable.subtitle: 此歌曲在您所在的地区不可用。将继续播放下一首。
+party.trackUnavailable.title: 歌曲不可用
+playlist.collaborative.tooltip: 此歌单已对协作者开放
+playlist.collaborators.andOthers: "{{name}} 及其他 {{count}} 人"
+playlist.collaborators.count: "{{count}} 位协作者"
+playlist.collaborators.owner: 创建者
+playlist.collaborators.pair: "{{a}} 和 {{b}}"
 playlist.description:
   value: 播放列表描述
   source: human
@@ -3127,6 +3201,7 @@ playlist.lastUpdated:
   source: human
   by: "@Tesutarin"
   issue: 7
+playlist.madeByApple: Apple 制作
 playlist.nameEmpty:
   value: 播放列表名称不能为空
   source: human
@@ -3137,6 +3212,7 @@ playlist.noTracks:
   source: human
   by: "@Tesutarin"
   issue: 7
+playlist.personalMix: 个人推荐
 playlist.playlistName:
   value: 播放列表名称
   source: human
@@ -3317,11 +3393,13 @@ settings.about.autoplaySongs:
   source: human
   by: "@Tesutarin"
   issue: 19
+settings.about.branch: 分支
 settings.about.buildInfo:
   value: 构建信息
   source: human
   by: "@Tesutarin"
   issue: 25
+settings.about.built: 构建时间
 settings.about.builtWith:
   value: Cider 由以下优秀技术构建
   source: human
@@ -3332,6 +3410,7 @@ settings.about.collectiveIs:
   source: human
   by: "@Tesutarin"
   issue: 25
+settings.about.commit: 提交
 settings.about.copiedBuildInfo:
   value: 构建信息已拷贝到剪贴板
   source: human
@@ -3342,6 +3421,7 @@ settings.about.copyBuildInfo:
   source: human
   by: "@Tesutarin"
   issue: 7
+settings.about.framework: 框架
 settings.about.fullCredits:
   value: 完整致谢
   source: human
@@ -3522,6 +3602,42 @@ settings.audio.crossfade:
   source: human
   by: "@Tesutarin"
   issue: 32
+settings.audio.hostCapture.apps: 触发应用
+settings.audio.hostCapture.apps.count: "{{ n }} 个应用将触发音频采集。"
+settings.audio.hostCapture.apps.countOne: 1 个应用将触发音频采集。
+settings.audio.hostCapture.apps.emptyAvailable: 没有其他已打开的应用。请打开一个应用并点击刷新。
+settings.audio.hostCapture.apps.emptyWatched: 暂无触发应用。请在左侧选择一个应用。
+settings.audio.hostCapture.apps.help: 当右侧的任何应用运行时，音频采集将开启；当它们全部关闭时，音频采集将关闭。
+settings.audio.hostCapture.apps.manage: 管理…
+settings.audio.hostCapture.apps.none: 未选择应用，在添加应用前音频采集将保持关闭。
+settings.audio.hostCapture.apps.running: 正在运行的应用
+settings.audio.hostCapture.apps.runningNow: 正在运行
+settings.audio.hostCapture.apps.title: 自动采集触发应用
+settings.audio.hostCapture.apps.triggers: 触发器
+settings.audio.hostCapture.auto: 随应用自动启用
+settings.audio.hostCapture.autoHint: 在所选应用运行时自动开启音频采集，并在其关闭时关闭。
+settings.audio.hostCapture.autoNote: 所选应用运行时自动开启。
+settings.audio.hostCapture.bit16: 16 位
+settings.audio.hostCapture.bit24: 24 位
+settings.audio.hostCapture.bit32: 32 位浮点
+settings.audio.hostCapture.bitAuto: 自动（最高）
+settings.audio.hostCapture.bitDepth: 位深
+settings.audio.hostCapture.bitDepthHint: “自动”将使用您设备支持的最高位深。
+settings.audio.hostCapture.exclusiveNote: 独占输出，源码输出（Bit-transparent），无法采集。
+settings.audio.hostCapture.gain: 输出电平微调
+settings.audio.hostCapture.gainHint: 使采集的音量与正常输出相匹配。
+settings.audio.hostCapture.mode: 音频输出模式
+settings.audio.hostCapture.modeCapture: 采集
+settings.audio.hostCapture.modeCaptureLong: 可采集 (OBS, Discord)
+settings.audio.hostCapture.modeExclusive: 独占
+settings.audio.hostCapture.modeExclusiveLong: WASAPI 独占
+settings.audio.hostCapture.modeHintCapture: 从 Cider 进程播放音频，以便 OBS、Discord 和其他应用进行采集。
+settings.audio.hostCapture.modeHintExclusive: 绕过 Windows 混音器，直接将源码输出（Bit-transparent）发送到您的 DAC。无法采集。
+settings.audio.hostCapture.modeHintOff: 关闭：音频从 WebView2 进程正常播放。在 Dolby Atmos 直通或播放音乐视频时不可用。
+settings.audio.hostCapture.outputShort: 音频输出
+settings.audio.hostCapture.rate: 采样率
+settings.audio.hostCapture.rateHint: “匹配源”为源码输出（Bit-transparent）；其他采样率将进行高质量重采样。
+settings.audio.hostCapture.rateMatch: 匹配源 (44.1 kHz)
 settings.audio.lab:
   value: 音频实验室
   source: human
@@ -3571,6 +3687,7 @@ settings.audio.outputDeviceHint:
   source: human
   by: "@Tesutarin"
   issue: 25
+settings.audio.outputDeviceHintHost: 可采集音频已开启，播放将使用此 Windows 输出设备。
 settings.automix.allowTempoKeyShifts:
   value: 允许变速/变调
   source: human
@@ -3812,15 +3929,17 @@ settings.client.genten.macosVibrancy.desc:
   by: "@Tesutarin"
   issue: 8
 settings.client.genten.mpris:
-  value: MPRIS 模块（已弃用）
-  source: human
+  value: 使用 Cider 自有的媒体控制服务 (MPRIS)
+  source: ai
   by: "@Tesutarin"
   issue: 25
+  superseded_at: 2026-07-07
 settings.client.genten.mpris.desc:
-  value: MPRIS 模块将正在播放的信息同步至系统的媒体控制接口，提供比标准 Chromium MPRIS 更一致的体验。
-  source: human
+  value: 在 D-Bus 上将 Cider 注册为 org.mpris.MediaPlayer2.cider，以便与 playerctl 和桌面集成，接管 Chromium 内置媒体会话的媒体键。
+  source: ai
   by: "@Tesutarin"
   issue: 25
+  superseded_at: 2026-07-07
 settings.client.genten.proxyPac:
   value: 代理 PAC
   source: human
@@ -6563,6 +6682,7 @@ settings.option.audio.exponentialVolume.description:
   source: human
   by: "@Tesutarin"
   issue: 8
+settings.option.audio.hostCapture: 可采集音频 (OBS / Discord)
 settings.option.audio.maxVolume:
   value: 最大音量
   source: human
@@ -6644,6 +6764,7 @@ settings.option.audio.showBitrate:
   source: human
   by: "@Tesutarin"
   issue: 10
+settings.option.audio.streaming: 流媒体
 settings.option.audio.volume:
   value: 音量
   source: human
@@ -7059,6 +7180,17 @@ settings.option.connectivity.lastfmScrobble.removeFeatured:
   source: human
   by: "@Tesutarin"
   issue: 10
+settings.option.connectivity.parties: 听歌派对
+settings.option.connectivity.partiesEnabled: 启用听歌派对
+settings.option.connectivity.partiesEnabled.description: 与其他 Cider 用户一起发起或加入同步听歌会。
+settings.option.connectivity.partiesQueueDefault: 默认待播清单模式
+settings.option.connectivity.partiesQueueDefault.audited: 主持人批准添加
+settings.option.connectivity.partiesQueueDefault.description: 在您主持的派对中，访客添加歌曲是否需要您的批准。
+settings.option.connectivity.partiesQueueDefault.open: 开放
+settings.option.connectivity.partiesTransportDefault: 默认播放控制
+settings.option.connectivity.partiesTransportDefault.description: 在您主持的派对中，谁可以进行播放、暂停、进度调整和跳过操作。
+settings.option.connectivity.partiesTransportDefault.everyone: 所有人
+settings.option.connectivity.partiesTransportDefault.host: 仅限主持人
 settings.option.connectivity.playbackNotifications:
   value: 播放通知
   source: human
@@ -9133,6 +9265,11 @@ settings.option.visual.windowControlPosition:
   source: human
   by: "@Tesutarin"
   issue: 10
+settings.option.visual.windowingMode: 滚动与渲染模式
+settings.option.visual.windowingMode.auto: 自动 (适配触控板)
+settings.option.visual.windowingMode.description: 选择应用的渲染和滚动方式。推荐大多数用户选择“自动”，在某些触控板设备上，选择“旧版”可能会获得更灵敏的响应。
+settings.option.visual.windowingMode.glass: 新版
+settings.option.visual.windowingMode.performance: 旧版
 settings.option.visual.windowStyle:
   value: 窗口样式
   source: human
@@ -9353,6 +9490,7 @@ settings.prompt.visual.theme.uninstallTheme:
   source: human
   by: "@Tesutarin"
   issue: 11
+settings.requiresNewerClient: 需要更高版本的 Cider 客户端。
 settings.sleepTimer.endsIn:
   value: 剩余时间：{{remainingTime}}（{{endTime}}）
   source: human
@@ -9403,6 +9541,8 @@ settings.title:
   source: human
   by: "@Tesutarin"
   issue: 11
+settings.troubleshooting.bgDiagnostics: 后台播放诊断
+settings.troubleshooting.bgDiagnostics.desc: 用于诊断窗口最小化或未聚焦时播放问题的额外日志记录（包括谁暂停了播放器、定时器匮乏以及系统挂起事件）。在报告后台播放问题时请启用此项。
 settings.troubleshooting.desc:
   value: 日志文件和 MKLite 调试日志。
   source: ai
@@ -10684,6 +10824,7 @@ term.addedpreset:
   source: human
   by: "@Tesutarin"
   issue: 11
+term.album: 专辑
 term.albums:
   value: 专辑
   source: human
@@ -10764,6 +10905,7 @@ term.appSettings:
   source: human
   by: "@Tesutarin"
   issue: 32
+term.artist: 艺人
 term.artistChips:
   value: 艺人标签
   source: human
@@ -10835,6 +10977,7 @@ term.behavior:
   source: human
   by: "@Tesutarin"
   issue: 11
+term.beta: Beta
 term.both:
   value: 两者
   source: human
@@ -10900,6 +11043,7 @@ term.close:
   source: human
   by: "@Tesutarin"
   issue: 11
+term.collaborative: 协作
 term.collapse:
   value: 折叠
   source: human
@@ -11607,6 +11751,7 @@ term.privateSession:
   source: human
   by: "@Tesutarin"
   issue: 11
+term.profile: 个人资料
 term.public:
   value: 公开
   source: human
@@ -11722,6 +11867,7 @@ term.recentlyPlayed:
   source: human
   by: "@Tesutarin"
   issue: 11
+term.recentlyViewed: 最近查看
 term.recentStations:
   value: 最近电台
   source: human

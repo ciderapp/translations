@@ -20,6 +20,7 @@ action.addToQueue.error: Erreur lors de l'ajout à suivants
 action.addToQueue.success: Ajouté à suivants
 action.appleMusic.yourProfile: Votre profil
 action.apply: Appliquer
+action.approve: Approuver
 action.autoplay.disable: Désactiver la lecture continue
 action.autoplay.enable: Activer la lecture continue
 action.back: Retour
@@ -47,6 +48,7 @@ action.createNew: Créer un nouveau
 action.createNewPlaylist: Créer une nouvelle liste de lecture
 action.createPlaylist: Créer une nouvelle playlist
 action.cut: Couper
+action.decline: Refuser
 action.delete: Supprimez
 action.deleteFolder: Are you sure you want to delete the folder "{{folderName}}"?
 action.deleteFolder.message: All folders and playlists inside this folder will also be deleted.
@@ -462,6 +464,9 @@ library.releaseType: Type de parution
 library.releaseTypeAlbums: Albums seulement
 library.releaseTypeAll: Toutes les parutions
 library.releaseTypeSingles: Singles et EP
+library.sync.indeterminate: Synchronisation de {count} {items}…
+library.sync.indeterminateUnknown: Synchronisation de votre bibliothèque…
+library.sync.progress: Synchronisation de {count} {items}, {remaining} restants
 locale.lang.ar: Arabe
 locale.lang.de: Allemand
 locale.lang.en: Anglais
@@ -774,6 +779,75 @@ oobe.welcome.selectLanguage: Sélectionnez votre langue préférée
 oobe.window.subtitle: Choisissez comment la fenêtre de l'application s'intègre à votre environnement de bureau
 oobe.window.title: Style de fenêtre
 oobe.yes: Oui
+party.blocked.subtitle: Seul l'hôte de la session peut faire cela pour le moment.
+party.blocked.title: L'hôte contrôle la lecture
+party.dialog.auditedDesc: Les ajouts des invités attendent votre approbation.
+party.dialog.avatarPick: Choisir une photo
+party.dialog.codeCopied: Code d'invitation copié
+party.dialog.codeLabel: Code d'invitation
+party.dialog.codePlaceholder: XXXX-XXXX
+party.dialog.copyCode: Copier le code
+party.dialog.copyFailed: Échec de la copie
+party.dialog.copyLink: Copier le lien
+party.dialog.create: Lancer une session
+party.dialog.createConfirm: Lancer la session
+party.dialog.displayNameLabel: Votre nom
+party.dialog.displayNamePlaceholder: Comment les autres vous voient
+party.dialog.end: Terminer la session pour tout le monde
+party.dialog.everyoneControls: Tout le monde contrôle la lecture
+party.dialog.everyoneDesc: Tous les participants de la session partagent le contrôle.
+party.dialog.hostOnlyDesc: Vous seul pouvez lancer la lecture, mettre en pause, naviguer et passer des morceaux.
+party.dialog.hostTag: Hôte
+party.dialog.join: Rejoindre avec un code
+party.dialog.joinConfirm: Rejoindre la session
+party.dialog.kick: Exclure
+party.dialog.leave: Quitter la session
+party.dialog.linkCopied: Lien d'invitation copié
+party.dialog.memberCount: "{{count}} dans la session"
+party.dialog.memberMuted: Morceau non disponible dans sa région
+party.dialog.nameLabel: Nom de la session (facultatif)
+party.dialog.namePlaceholder: Ambiance du vendredi soir
+party.dialog.pendingTitle: En attente d'approbation
+party.dialog.reconnecting: Reconnexion…
+party.dialog.reviewAdditions: Vérifier les ajouts à la file d'attente
+party.dialog.seedDesc: Importer votre file d'attente actuelle dans la session.
+party.dialog.seedQueue: Commencer avec la file d'attente actuelle
+party.dialog.settingsTitle: Réglages de la session
+party.dialog.subtitle: Écoutez de la musique en parfaite synchronisation avec vos amis sur Cider.
+party.dialog.title: Session d'écoute
+party.ended.kicked.subtitle: L'hôte vous a retiré de la session d'écoute.
+party.ended.kicked.title: Retiré de la session
+party.ended.subtitle: La session d'écoute est terminée. Votre file d'attente reste inchangée.
+party.ended.title: Session terminée
+party.error.generic: Problème de synchronisation de la session
+party.host.youAreHost: Vous êtes maintenant l'hôte
+party.member.fallbackName: un membre
+party.member.joined: "{{name}} a rejoint la session"
+party.member.left: "{{name}} a quitté la session"
+party.modeLocked.subtitle: La lecture aléatoire, la répétition et la lecture automatique sont gérées par la session d'écoute.
+party.modeLocked.title: Non disponible dans une session
+party.pending.incoming.title: Demande d'ajout à la file de {{name}}
+party.pending.rejected.title: Demande refusée
+party.pending.sent.subtitle: L'hôte va examiner votre ajout.
+party.pending.sent.title: Envoyé pour approbation
+party.queue.addedBy: Ajouté par {{name}}
+party.queue.bannerListening: "{{count}} à l'écoute"
+party.queue.bannerSubtitle: Organisé par {{name}} · {{count}} à l'écoute
+party.queueFull.subtitle: "{{count}} morceau(x) n'ont pas été ajouté(s)."
+party.queueFull.title: Limite de la file d'attente de la session atteinte
+party.radioBlocked.subtitle: La radio en direct et les balados ne peuvent pas être synchronisés dans une session d'écoute.
+party.resumed.title: Session d'écoute rejointe
+party.station.subtitle: De nouvelles chansons s'ajouteront à la file d'attente au fil de la lecture de la station.
+party.station.title: Station en cours de lecture dans la session
+party.trackRejected.subtitle: Seules les chansons du catalogue Apple Music peuvent être ajoutées à la file d'attente d'une session — {{count}} élément(s) ont été ignoré(s).
+party.trackRejected.title: Non disponible pour les sessions d'écoute
+party.trackUnavailable.subtitle: Cette chanson n'est pas disponible dans votre région. La lecture se poursuivra avec la piste suivante.
+party.trackUnavailable.title: Piste non disponible
+playlist.collaborative.tooltip: Cette liste de lecture est ouverte aux collaborateurs
+playlist.collaborators.andOthers: "{{name}} et {{count}} autres"
+playlist.collaborators.count: "{{count}} contributeurs"
+playlist.collaborators.owner: Propriétaire
+playlist.collaborators.pair: "{{a}} et {{b}}"
 playlist.description: Description de la liste de lecture
 playlist.error.locked.message: Impossible de supprimer cette piste lorsque des options de tri sont appliquées.
 playlist.error.locked.title: Liste de lecture verrouillée
@@ -783,8 +857,10 @@ playlist.error.updating.title: Erreur lors de la mise à jour de la liste de lec
 playlist.folderEmpty: Aucune liste de lecture dans ce dossier
 playlist.folderRenameHint: Double-cliquer pour renommer
 playlist.lastUpdated: Last Updated {{date}}
+playlist.madeByApple: Créée par Apple
 playlist.nameEmpty: Le nom de la liste de lecture ne peut pas être vide
 playlist.noTracks: Aucun morceau
+playlist.personalMix: Mix personnalisé
 playlist.playlistName: Nom de la liste de lecture
 playlist.publishOnProfileAndSearch: Publish on profile and in search
 playlist.refresh.message: Cette liste de lecture a été mise à jour par un autre appareil. Elle est en cours d'actualisation.
@@ -821,11 +897,15 @@ remote.web.title: Distance du cidre
 replay.uniqueAlbums: Plus de {count} albums uniques
 settings.about.assetLicenses: Licences des ressources
 settings.about.autoplaySongs: Lecture automatique
+settings.about.branch: Branche
 settings.about.buildInfo: Informations de build
+settings.about.built: Compilé
 settings.about.builtWith: Cider est conçu avec ces technologies exceptionnelles
 settings.about.collectiveIs: Le collectif Cider est
+settings.about.commit: Commit
 settings.about.copiedBuildInfo: Informations de build copiées dans le presse-papiers
 settings.about.copyBuildInfo: Copier les informations de build
+settings.about.framework: Framework
 settings.about.fullCredits: Crédits complets
 settings.about.libraryLicenses: Licences des bibliothèques et outils
 settings.about.playAtBeginning: Lire depuis le début
@@ -862,6 +942,42 @@ settings.audio.ciderAudio.description: Architecture audio personnalisée et opti
 settings.audio.ciderAudio.enable: Activer Cider Audio
 settings.audio.ciderAudio.requiredHint: Requis pour la normalisation du volume et l'égaliseur
 settings.audio.crossfade: Fondu enchaîné
+settings.audio.hostCapture.apps: Applications de déclenchement
+settings.audio.hostCapture.apps.count: "{{ n }} applications déclencheront la capture."
+settings.audio.hostCapture.apps.countOne: 1 application déclenchera la capture.
+settings.audio.hostCapture.apps.emptyAvailable: Aucune autre application ouverte. Ouvrez-en une et cliquez sur Actualiser.
+settings.audio.hostCapture.apps.emptyWatched: Aucun déclencheur pour l'instant. Choisissez une application à gauche.
+settings.audio.hostCapture.apps.help: La capture s'active lorsqu'une application à droite est en cours d'exécution, et se désactive lorsqu'elles sont toutes fermées.
+settings.audio.hostCapture.apps.manage: Gérer…
+settings.audio.hostCapture.apps.none: Aucune application choisie, la capture reste désactivée jusqu'à ce que vous en ajoutiez une.
+settings.audio.hostCapture.apps.running: Applications en cours d'exécution
+settings.audio.hostCapture.apps.runningNow: En cours d'exécution
+settings.audio.hostCapture.apps.title: Applications de déclenchement de capture automatique
+settings.audio.hostCapture.apps.triggers: Déclencheurs
+settings.audio.hostCapture.auto: Activation automatique avec l'application
+settings.audio.hostCapture.autoHint: Active automatiquement la capture lorsqu'une application sélectionnée est en cours d'exécution, et la désactive à sa fermeture.
+settings.audio.hostCapture.autoNote: Activation automatique lorsqu'une application sélectionnée est en cours d'exécution.
+settings.audio.hostCapture.bit16: 16 bits
+settings.audio.hostCapture.bit24: 24 bits
+settings.audio.hostCapture.bit32: 32 bits flottant
+settings.audio.hostCapture.bitAuto: Auto (le plus élevé)
+settings.audio.hostCapture.bitDepth: Profondeur de bits
+settings.audio.hostCapture.bitDepthHint: Le mode Auto utilise la profondeur la plus élevée prise en charge par votre appareil.
+settings.audio.hostCapture.exclusiveNote: Sortie exclusive, bit-transparent, non capturable.
+settings.audio.hostCapture.gain: Ajustement du niveau de sortie
+settings.audio.hostCapture.gainHint: Aligne le volume capturé sur la sortie normale.
+settings.audio.hostCapture.mode: Mode de sortie audio
+settings.audio.hostCapture.modeCapture: Capture
+settings.audio.hostCapture.modeCaptureLong: Capturable (OBS, Discord)
+settings.audio.hostCapture.modeExclusive: Exclusif
+settings.audio.hostCapture.modeExclusiveLong: WASAPI exclusif
+settings.audio.hostCapture.modeHintCapture: Diffuse l'audio depuis le processus Cider afin que OBS, Discord et d'autres applications puissent le capturer.
+settings.audio.hostCapture.modeHintExclusive: Sortie bit-transparent directement vers votre DAC, contournant le mélangeur Windows. Non capturable.
+settings.audio.hostCapture.modeHintOff: "Désactivé : l'audio est lu normalement depuis le processus WebView2. Non disponible lors du passthrough Atmos ou des vidéoclips."
+settings.audio.hostCapture.outputShort: Sortie audio
+settings.audio.hostCapture.rate: Taux d'échantillonnage
+settings.audio.hostCapture.rateHint: L'option « Correspondre à la source » est bit-transparent; les autres taux sont rééchantillonnés en haute qualité.
+settings.audio.hostCapture.rateMatch: Correspondre à la source (44,1 kHz)
 settings.audio.lab: Audio Lab
 settings.audio.lab.arProfile: Atmosphere Realizer
 settings.audio.lab.capProfile: Profil CAP
@@ -879,6 +995,7 @@ settings.audio.occlusion.passthroughNote: Non disponible lorsque le pass-through
 settings.audio.occlusion.passthroughNote.short: Non disponible lorsque le pass-through Atmos est actif.
 settings.audio.outputDevice: Sélectionner l'appareil de sortie audio
 settings.audio.outputDeviceHint: Sélectionnez le périphérique de sortie audio pour la lecture.
+settings.audio.outputDeviceHintHost: L'audio capturable est activé, la lecture utilise ce périphérique de sortie Windows.
 settings.automix.allowTempoKeyShifts: Autoriser les changements de tempo et de tonalité
 settings.automix.allowTempoKeyShiftsHint: Permettre de légers ajustements de tempo et de tonalité pour maintenir l'énergie des transitions. (Temporairement désactivé, en cours de révision.)
 settings.automix.description: Transition intelligente entre les morceaux en fonction du tempo et de la tonalité.
@@ -927,8 +1044,8 @@ settings.client.genten.gtkVersion.desc: La version de GTK à utiliser pour le mo
 settings.client.genten.hardwareAcceleration.desc: Activer ou désactiver l'accélération matérielle pour l'application
 settings.client.genten.macosVibrancy: Vibrance macOS
 settings.client.genten.macosVibrancy.desc: Activer ou désactiver l'effet de vibrance macOS pour l'application
-settings.client.genten.mpris: Module MPRIS (obsolète)
-settings.client.genten.mpris.desc: Le module MPRIS met à jour l'interface MPRIS avec les informations de lecture en cours, offrant une expérience plus cohérente que la prise en charge MPRIS standard de Chromium.
+settings.client.genten.mpris: Utiliser le service de contrôle multimédia propre à Cider (MPRIS)
+settings.client.genten.mpris.desc: Enregistre Cider sur D-Bus en tant que org.mpris.MediaPlayer2.cider pour l'intégration avec playerctl et le bureau, prenant le contrôle des touches multimédias de la session multimédia intégrée de Chromium.
 settings.client.genten.proxyPac: Proxy PAC
 settings.client.genten.proxyPac.desc: L'adresse du fichier PAC du proxy
 settings.client.genten.proxyPlaceholder: Laisser vide pour utiliser le proxy du système
@@ -1479,6 +1596,7 @@ settings.option.audio.enableAdvancedFunctionality.tunedAudioSpatialization.profi
 settings.option.audio.enableAdvancedFunctionality.tunedAudioSpatialization.profile.standard: Standard
 settings.option.audio.exponentialVolume: Courbe de volume exponentielle
 settings.option.audio.exponentialVolume.description: Suit une courbe de volume plus progressive, permettant un contrôle plus précis à bas volume.
+settings.option.audio.hostCapture: Audio capturable (OBS / Discord)
 settings.option.audio.maxVolume: Volume max
 settings.option.audio.mixing: Mixage
 settings.option.audio.normalization: Normalisation audio
@@ -1496,6 +1614,7 @@ settings.option.audio.seamlessAudioTransitions: Transitions audio sans soudure
 settings.option.audio.seamlessTransition: Transition audio fluide
 settings.option.audio.seamlessTransitions: Transitions fluides
 settings.option.audio.showBitrate: Afficher le débit binaire dans À l'écoute
+settings.option.audio.streaming: Diffusion continue
 settings.option.audio.volume: Volume
 settings.option.audio.volumeScrollStep: Étape de défilement du volume
 settings.option.audio.volumeScrollStep.description: Combien le volume change lorsque vous faites défiler vers le haut ou vers le bas sur le curseur de volume.
@@ -1579,6 +1698,17 @@ settings.option.connectivity.lastfmScrobble.manualToken: Entrez manuellement le 
 settings.option.connectivity.lastfmScrobble.manualToken.link: Cliquez ici pour obtenir un jeton Last.fm
 settings.option.connectivity.lastfmScrobble.nowPlaying: Activer LastFM en jouer maitenant
 settings.option.connectivity.lastfmScrobble.removeFeatured: Supprimer les artistes en vedette du titre de la chanson (LastFM)
+settings.option.connectivity.parties: Sessions d'écoute
+settings.option.connectivity.partiesEnabled: Activer les sessions d'écoute
+settings.option.connectivity.partiesEnabled.description: Héberger ou rejoindre des sessions d'écoute synchronisées avec d'autres utilisateurs de Cider.
+settings.option.connectivity.partiesQueueDefault: Mode de file d'attente par défaut
+settings.option.connectivity.partiesQueueDefault.audited: L'hôte approuve les ajouts
+settings.option.connectivity.partiesQueueDefault.description: Détermine si les ajouts des invités nécessitent votre approbation dans les sessions que vous hébergez.
+settings.option.connectivity.partiesQueueDefault.open: Ouvert
+settings.option.connectivity.partiesTransportDefault: Contrôle de lecture par défaut
+settings.option.connectivity.partiesTransportDefault.description: Détermine qui peut lancer la lecture, mettre en pause, naviguer et passer des pistes dans les sessions que vous hébergez.
+settings.option.connectivity.partiesTransportDefault.everyone: Tout le monde
+settings.option.connectivity.partiesTransportDefault.host: Hôte uniquement
 settings.option.connectivity.playbackNotifications: Notifications de lecture
 settings.option.connectivity.playbackNotifications.description: Afficher une notification contenant la nouvelle chanson chaque fois que la chanson en cours change,
 settings.option.connectivity.remoteConnection: Connexion à distance
@@ -2039,6 +2169,11 @@ settings.option.visual.vibrancySettings: Paramètres de vibrance
 settings.option.visual.windowBackgroundStyle: Style d'arrière-plan de la window
 settings.option.visual.windowColor: Couleur de la teinte de la fenêtre
 settings.option.visual.windowControlPosition: Position des commandes de la fenêtre
+settings.option.visual.windowingMode: Mode de défilement et de rendu
+settings.option.visual.windowingMode.auto: Auto (adapté au pavé tactile)
+settings.option.visual.windowingMode.description: Choisissez comment l'application affiche et fait défiler le contenu. « Auto » est recommandé pour la plupart des utilisateurs; sur certains pavés tactiles, le mode « Ancien » peut être plus réactif.
+settings.option.visual.windowingMode.glass: Nouveau
+settings.option.visual.windowingMode.performance: Ancien
 settings.option.visual.windowStyle: Style de fenêtre
 settings.option.visual.windowVibrancy: Vibrance de fenêtre
 settings.option.window.close_button_hide: Le bouton Fermer doit masquer l'application
@@ -2083,6 +2218,7 @@ settings.prompt.visual.plugin.github.success: Plugin installé avec succès, app
 settings.prompt.visual.plugin.github.URL: Entrez l'URL du plugin que vous souhaitez installer
 settings.prompt.visual.theme.github.URL: Entrez l'URL du thème que vous souhaitez installer
 settings.prompt.visual.theme.uninstallTheme: Êtes-vous sûr de vouloir désinstaller {{ theme }}?
+settings.requiresNewerClient: Requiert une version plus récente de Cider.
 settings.sleepTimer.endsIn: "Se termine dans : {{remainingTime}} ({{endTime}})"
 settings.sleepTimer.notSet: La minuterie n'est pas configurée
 settings.sleepTimer.title: Régler la minuterie de veille
@@ -2113,6 +2249,8 @@ settings.takeout.reloadPrompt: Certains réglages ne s’appliquent qu’après 
 settings.takeout.selectAll: Tout sélectionner
 settings.takeout.title: Exportation des réglages
 settings.title: Réglages
+settings.troubleshooting.bgDiagnostics: Diagnostics de lecture en arrière-plan
+settings.troubleshooting.bgDiagnostics.desc: Traces de journalisation supplémentaires pour diagnostiquer les problèmes de lecture lorsque la fenêtre est réduite ou inactive (qui a mis le lecteur en pause, épuisement du minuteur et suspensions du système d'exploitation). Activez cette option lors du signalement d'un bogue de lecture en arrière-plan.
 settings.troubleshooting.desc: Fichiers journaux et débogage de MKLite.
 settings.troubleshooting.hevcWorkaround: Contournement HEVC
 settings.troubleshooting.hevcWorkaround.desc: Solution de contournement pour un bogue dans WebView2 avec certains GPU qui éprouvent des difficultés avec la lecture HEVC SDR 10 bits, en appliquant un filtre pour compenser le décalage visuel.
@@ -2391,6 +2529,7 @@ term.action: Action
 term.active: Actif
 term.added: Ajouté
 term.addedpreset: Ajout du préréglage
+term.album: Album
 term.albums: Albums
 term.all: Tous
 term.allPlaylists: Toutes les playlists
@@ -2407,6 +2546,7 @@ term.appleMusic: Apple Music
 term.appleMusicPlaylists: Playlists Apple Music
 term.applePodcasts: Podcasts Apple
 term.appSettings: Paramètres de l'application
+term.artist: Artiste
 term.artistChips: Jetons d'artiste
 term.artistList: Liste des artistes
 term.artists: Artistes
@@ -2422,6 +2562,7 @@ term.autoplay: Lecture automatique
 term.autoplay.description: Une musique similaire continuera à jouer
 term.autoplay.unavailable: Les recommandations de lecture automatique ne sont pas encore disponibles pour cette chanson.
 term.behavior: Comportement
+term.beta: Bêta
 term.both: Les deux
 term.browse: Parcourir
 term.browser: Navigateur
@@ -2435,6 +2576,7 @@ term.clearAll: Tout effacer
 term.clearQueue: Nettoyer
 term.clipboard: Presse-papiers
 term.close: Fermer
+term.collaborative: Collaboratif
 term.collapse: Réduire
 term.commandPalette: Palette de commandes
 term.compose: Composer avec Saki AI
@@ -2576,6 +2718,7 @@ term.prerelease: Pre-release
 term.previous: Retour
 term.private: Privé
 term.privateSession: Session en privée
+term.profile: Profil
 term.public: Publique
 term.queue: Suivants
 term.queue.added: Ajouté à la file d’attente
@@ -2599,6 +2742,7 @@ term.radio.failedToStart: Impossible de lancer la station de radio
 term.radioShows: Séries radio
 term.recentlyAdded: Ajouté récemment
 term.recentlyPlayed: Écoutés récemment
+term.recentlyViewed: Consultés récemment
 term.recentStations: Stations récentes
 term.recordLabel: Maison de disques
 term.recordLabels: Étiquettes d'enregistrements

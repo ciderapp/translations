@@ -20,6 +20,7 @@ action.addToQueue.error: Eroare adăugare la Coadă
 action.addToQueue.success: Adăugat la Coadă
 action.appleMusic.yourProfile: Profilul tău
 action.apply: Aplică
+action.approve: Aprobă
 action.autoplay.disable: Dezactivează redarea automată
 action.autoplay.enable: Activează redarea automată
 action.back: Înapoi
@@ -47,6 +48,7 @@ action.createNew: Creează nou
 action.createNewPlaylist: Creează listă de redare nouă
 action.createPlaylist: Creează un nou Playlist
 action.cut: Decupare
+action.decline: Respinge
 action.delete: Ștergere
 action.deleteFolder: Are you sure you want to delete the folder "{{folderName}}"?
 action.deleteFolder.message: All folders and playlists inside this folder will also be deleted.
@@ -462,6 +464,9 @@ library.releaseType: Tipul lansării
 library.releaseTypeAlbums: Doar albume
 library.releaseTypeAll: Toate lansările
 library.releaseTypeSingles: Single-uri și EP-uri
+library.sync.indeterminate: Se sincronizează {count} {items}…
+library.sync.indeterminateUnknown: Se sincronizează biblioteca…
+library.sync.progress: Se sincronizează {count} {items}, {remaining} rămase
 locale.lang.ar: Arabă
 locale.lang.de: Germană
 locale.lang.en: Engleză
@@ -774,6 +779,75 @@ oobe.welcome.selectLanguage: Selectează limba preferată
 oobe.window.subtitle: Alege modul în care fereastra aplicației se integrează cu mediul tău desktop
 oobe.window.title: Stil fereastră
 oobe.yes: Da
+party.blocked.subtitle: Doar gazda grupului poate face asta acum.
+party.blocked.title: Gazda controlează redarea
+party.dialog.auditedDesc: Adăugările invitaților așteaptă aprobarea ta.
+party.dialog.avatarPick: Alege o imagine
+party.dialog.codeCopied: Codul de invitație a fost copiat
+party.dialog.codeLabel: Cod de invitație
+party.dialog.codePlaceholder: XXXX-XXXX
+party.dialog.copyCode: Copiază codul
+party.dialog.copyFailed: Copiere eșuată
+party.dialog.copyLink: Copiază linkul
+party.dialog.create: Creează un grup
+party.dialog.createConfirm: Pornește grupul
+party.dialog.displayNameLabel: Numele tău
+party.dialog.displayNamePlaceholder: Cum te văd ceilalți
+party.dialog.end: Încheie grupul pentru toți
+party.dialog.everyoneControls: Toată lumea controlează redarea
+party.dialog.everyoneDesc: Toți membrii grupului împart controlul redării.
+party.dialog.hostOnlyDesc: Doar tu poți reda, pune pe pauză, derula și omite.
+party.dialog.hostTag: Gazdă
+party.dialog.join: Alătură-te cu un cod
+party.dialog.joinConfirm: Alătură-te grupului
+party.dialog.kick: Elimină
+party.dialog.leave: Părăsește grupul
+party.dialog.linkCopied: Linkul de invitație a fost copiat
+party.dialog.memberCount: "{{count}} în grup"
+party.dialog.memberMuted: Piesa nu este disponibilă în regiunea lor
+party.dialog.nameLabel: Numele grupului (opțional)
+party.dialog.namePlaceholder: Atmosferă de vineri seară
+party.dialog.pendingTitle: Se așteaptă aprobarea
+party.dialog.reconnecting: Se reconectează
+party.dialog.reviewAdditions: Revizuiește adăugările în coadă
+party.dialog.seedDesc: Adaugă coada ta actuală în grup.
+party.dialog.seedQueue: Începe cu coada actuală
+party.dialog.settingsTitle: Setările grupului
+party.dialog.subtitle: Ascultă împreună cu prietenii tăi, în perfectă sincronizare, pe Cider.
+party.dialog.title: Grup de ascultare
+party.ended.kicked.subtitle: Gazda te-a eliminat din grupul de ascultare.
+party.ended.kicked.title: Eliminat din grup
+party.ended.subtitle: Grupul de ascultare s-a încheiat. Coada ta de redare rămâne neschimbată.
+party.ended.title: Grup încheiat
+party.error.generic: Problemă de sincronizare a grupului
+party.host.youAreHost: Acum ești gazda
+party.member.fallbackName: un membru
+party.member.joined: "{{name}} s-a alăturat grupului"
+party.member.left: "{{name}} a părăsit grupul"
+party.modeLocked.subtitle: Redarea aleatorie, repetarea și redarea automată sunt gestionate de grupul de ascultare.
+party.modeLocked.title: Indisponibil într-un grup
+party.pending.incoming.title: Solicitare de adăugare în coadă de la {{name}}
+party.pending.rejected.title: Solicitare respinsă
+party.pending.sent.subtitle: Gazda va revizui adăugarea ta.
+party.pending.sent.title: Trimis spre aprobare
+party.queue.addedBy: Adăugat de {{name}}
+party.queue.bannerListening: "{{count}} ascultă"
+party.queue.bannerSubtitle: Găzduit de {{name}} · {{count}} ascultă
+party.queueFull.subtitle: "{{count}} piese nu au fost adăugate."
+party.queueFull.title: Limita cozii pentru Party a fost atinsă
+party.radioBlocked.subtitle: Posturile de radio live și podcasturile nu pot fi sincronizate într-un Party.
+party.resumed.title: Te-ai realăturat la Party
+party.station.subtitle: Melodii noi sunt adăugate în coadă pe măsură ce postul rulează.
+party.station.title: Postul redă în Party
+party.trackRejected.subtitle: Doar melodiile din catalogul Apple Music pot fi adăugate în coadă într-un Party – {{count}} element(e) au fost omise.
+party.trackRejected.title: Indisponibil pentru Party
+party.trackUnavailable.subtitle: Acest cântec nu este disponibil în regiunea ta. Redarea va continua cu următoarea piesă.
+party.trackUnavailable.title: Piesă indisponibilă
+playlist.collaborative.tooltip: Această listă de redare este deschisă colaboratorilor
+playlist.collaborators.andOthers: "{{name}} și alți {{count}}"
+playlist.collaborators.count: "{{count}} colaboratori"
+playlist.collaborators.owner: Proprietar
+playlist.collaborators.pair: "{{a}} și {{b}}"
 playlist.description: Descriere listă de redare
 playlist.error.locked.message: Această piesă nu poate fi eliminată în timp ce sunt aplicate opțiuni de sortare.
 playlist.error.locked.title: Playlist blocat
@@ -783,8 +857,10 @@ playlist.error.updating.title: Eroare la actualizarea playlistului
 playlist.folderEmpty: Nicio listă de redare în acest dosar
 playlist.folderRenameHint: Dublu clic pentru a redenumi
 playlist.lastUpdated: Last Updated {{date}}
+playlist.madeByApple: Creat de Apple
 playlist.nameEmpty: Numele listei de redare nu poate fi gol
 playlist.noTracks: Fără piese
+playlist.personalMix: Mix personal
 playlist.playlistName: Nume listă de redare
 playlist.publishOnProfileAndSearch: Publish on profile and in search
 playlist.refresh.message: Acest playlist a fost actualizat de pe un alt dispozitiv. Playlistul se reîmprospătează acum.
@@ -821,11 +897,15 @@ remote.web.title: Telecomandă Cider
 replay.uniqueAlbums: Peste {count} albume unice
 settings.about.assetLicenses: Licențe resurse
 settings.about.autoplaySongs: Redare automată melodii
+settings.about.branch: Ramură
 settings.about.buildInfo: Informații versiune
+settings.about.built: Compilat
 settings.about.builtWith: Cider este creat cu aceste tehnologii uimitoare
 settings.about.collectiveIs: Cider Collective este
+settings.about.commit: Commit
 settings.about.copiedBuildInfo: Informațiile despre versiune au fost copiate în clipboard
 settings.about.copyBuildInfo: Copiază informațiile despre versiune
+settings.about.framework: Framework
 settings.about.fullCredits: Credite complete
 settings.about.libraryLicenses: Licențe biblioteci și instrumente
 settings.about.playAtBeginning: Redă de la început
@@ -862,6 +942,42 @@ settings.audio.ciderAudio.description: Stivă audio personalizată și optimizat
 settings.audio.ciderAudio.enable: Activează Cider Audio
 settings.audio.ciderAudio.requiredHint: Necesar pentru normalizarea volumului și egalizator
 settings.audio.crossfade: Crossfade
+settings.audio.hostCapture.apps: Aplicații declanșatoare
+settings.audio.hostCapture.apps.count: "{{ n }} aplicații vor declanșa captura."
+settings.audio.hostCapture.apps.countOne: O aplicație va declanșa captura.
+settings.audio.hostCapture.apps.emptyAvailable: Nu există alte aplicații deschise. Deschide una și apasă Reîmprospătare.
+settings.audio.hostCapture.apps.emptyWatched: Niciun declanșator încă. Alege o aplicație din stânga.
+settings.audio.hostCapture.apps.help: Captura pornește când rulează oricare dintre aplicațiile din dreapta și se oprește când se închid toate.
+settings.audio.hostCapture.apps.manage: Administrare…
+settings.audio.hostCapture.apps.none: Nicio aplicație selectată, captura rămâne oprită până când adaugi una.
+settings.audio.hostCapture.apps.running: Aplicații active
+settings.audio.hostCapture.apps.runningNow: Rulează
+settings.audio.hostCapture.apps.title: Aplicații de declanșare auto-captură
+settings.audio.hostCapture.apps.triggers: Declanșatoare
+settings.audio.hostCapture.auto: Activare automată cu aplicația
+settings.audio.hostCapture.autoHint: Activează captura automat când rulează o aplicație selectată și oprește-o când aceasta se închide.
+settings.audio.hostCapture.autoNote: Activare automată când rulează o aplicație selectată.
+settings.audio.hostCapture.bit16: 16 biți
+settings.audio.hostCapture.bit24: 24 biți
+settings.audio.hostCapture.bit32: 32 biți (float)
+settings.audio.hostCapture.bitAuto: Auto (cea mai mare)
+settings.audio.hostCapture.bitDepth: Profunzime de biți
+settings.audio.hostCapture.bitDepthHint: Opțiunea Auto folosește cea mai mare profunzime acceptată de dispozitivul tău.
+settings.audio.hostCapture.exclusiveNote: Ieșire exclusivă, bit-transparentă, nu poate fi capturată.
+settings.audio.hostCapture.gain: Ajustare nivel ieșire
+settings.audio.hostCapture.gainHint: Potrivește volumul capturat cu cel al ieșirii normale.
+settings.audio.hostCapture.mode: Mod ieșire audio
+settings.audio.hostCapture.modeCapture: Captură
+settings.audio.hostCapture.modeCaptureLong: Capturabil (OBS, Discord)
+settings.audio.hostCapture.modeExclusive: Exclusiv
+settings.audio.hostCapture.modeExclusiveLong: WASAPI Exclusiv
+settings.audio.hostCapture.modeHintCapture: Redă sunetul din procesul Cider, astfel încât OBS, Discord și alte aplicații să îl poată captura.
+settings.audio.hostCapture.modeHintExclusive: Ieșire bit-transparentă direct către DAC-ul tău, ocolind mixerul Windows. Nu poate fi capturată.
+settings.audio.hostCapture.modeHintOff: "Oprit: sunetul este redat normal din procesul WebView2. Indisponibil în timpul passthrough-ului Atmos sau al videoclipurilor muzicale."
+settings.audio.hostCapture.outputShort: Ieșire audio
+settings.audio.hostCapture.rate: Rată de eșantionare
+settings.audio.hostCapture.rateHint: Potrivirea cu sursa este bit-transparentă; alte rate sunt reeșantionate la calitate înaltă.
+settings.audio.hostCapture.rateMatch: Potrivire cu sursa (44.1 kHz)
 settings.audio.lab: Audio Lab
 settings.audio.lab.arProfile: Atmosphere Realizer
 settings.audio.lab.capProfile: CAP Profile
@@ -879,6 +995,7 @@ settings.audio.occlusion.passthroughNote: Indisponibil când passthrough Dolby A
 settings.audio.occlusion.passthroughNote.short: Indisponibil când passthrough Atmos este activ.
 settings.audio.outputDevice: Selectează dispozitivul de ieșire audio
 settings.audio.outputDeviceHint: Selectați dispozitivul de ieșire audio pentru redare.
+settings.audio.outputDeviceHintHost: Captura audio este activată, redarea folosește acest dispozitiv de ieșire Windows.
 settings.automix.allowTempoKeyShifts: Permite modificări de tempo/tonalitate
 settings.automix.allowTempoKeyShiftsHint: Permite mici modificări de tempo/tonalitate pentru a menține tranzițiile energice. (Dezactivat temporar, în curs de refacere.)
 settings.automix.description: Tranziție inteligentă între piese pe baza tempoului și a tonalității.
@@ -927,8 +1044,8 @@ settings.client.genten.gtkVersion.desc: Ce versiune GTK să fie utilizată pentr
 settings.client.genten.hardwareAcceleration.desc: Comută dacă aplicația ar trebui să utilizeze accelerarea hardware
 settings.client.genten.macosVibrancy: Vibranță macOS
 settings.client.genten.macosVibrancy.desc: Comută dacă aplicația ar trebui să utilizeze efectul de vibranță macOS
-settings.client.genten.mpris: Modul MPRIS (Învechit)
-settings.client.genten.mpris.desc: Modulul MPRIS actualizează interfața MPRIS cu informațiile despre redarea curentă, oferind o experiență mai consecventă decât suportul MPRIS standard din Chromium.
+settings.client.genten.mpris: Utilizează serviciul propriu de control media al Cider (MPRIS)
+settings.client.genten.mpris.desc: Înregistrează Cider pe D-Bus ca org.mpris.MediaPlayer2.cider pentru playerctl și integrarea cu desktopul, preluând tastele media de la sesiunea media integrată în Chromium.
 settings.client.genten.proxyPac: Proxy PAC
 settings.client.genten.proxyPac.desc: Adresa fișierului PAC proxy
 settings.client.genten.proxyPlaceholder: Lăsați gol pentru proxy-ul de sistem
@@ -1479,6 +1596,7 @@ settings.option.audio.enableAdvancedFunctionality.tunedAudioSpatialization.profi
 settings.option.audio.enableAdvancedFunctionality.tunedAudioSpatialization.profile.standard: Standard
 settings.option.audio.exponentialVolume: Curbă de volum exponențială
 settings.option.audio.exponentialVolume.description: Urmează o curbă de volum mai graduală, permițând un control mai precis al volumului la niveluri reduse.
+settings.option.audio.hostCapture: Audio capturabil (OBS / Discord)
 settings.option.audio.maxVolume: Volum maxim
 settings.option.audio.mixing: Mixare
 settings.option.audio.normalization: Normalizare audio
@@ -1496,6 +1614,7 @@ settings.option.audio.seamlessAudioTransitions: Tranziții audio fără întreru
 settings.option.audio.seamlessTransition: Tranziție Audio Neîntreruptă
 settings.option.audio.seamlessTransitions: Tranziții fără întreruperi
 settings.option.audio.showBitrate: Afișează rata de biți în „În redare”
+settings.option.audio.streaming: Streaming
 settings.option.audio.volume: Volum
 settings.option.audio.volumeScrollStep: Pasul de derulare a volumului
 settings.option.audio.volumeScrollStep.description: Cât se modifică volumul atunci când derulaţi în sus sau în jos pe cursorul de volum.
@@ -1579,6 +1698,17 @@ settings.option.connectivity.lastfmScrobble.manualToken: Introduceți manual Tok
 settings.option.connectivity.lastfmScrobble.manualToken.link: Faceți clic aici pentru a obține un token Last.fm
 settings.option.connectivity.lastfmScrobble.nowPlaying: Activează Last.fm Now Playing
 settings.option.connectivity.lastfmScrobble.removeFeatured: Ștergeți artiștii invitat din titlul melodiei (Last.fm)
+settings.option.connectivity.parties: Sesiuni de ascultare
+settings.option.connectivity.partiesEnabled: Activează sesiunile de ascultare
+settings.option.connectivity.partiesEnabled.description: Găzduiește sau participă la sesiuni de ascultare sincronizate cu alți utilizatori Cider.
+settings.option.connectivity.partiesQueueDefault: Mod implicit pentru coadă
+settings.option.connectivity.partiesQueueDefault.audited: Găzduitorul aprobă adăugările
+settings.option.connectivity.partiesQueueDefault.description: Dacă adăugările făcute de invitați necesită aprobarea ta în sesiunile pe care le găzduiești.
+settings.option.connectivity.partiesQueueDefault.open: Deschis
+settings.option.connectivity.partiesTransportDefault: Control redare implicit
+settings.option.connectivity.partiesTransportDefault.description: Cine poate reda, pune pe pauză, derula și sări peste melodii în sesiunile pe care le găzduiești.
+settings.option.connectivity.partiesTransportDefault.everyone: Toată lumea
+settings.option.connectivity.partiesTransportDefault.host: Doar găzduitorul
 settings.option.connectivity.playbackNotifications: Notificări Redare
 settings.option.connectivity.playbackNotifications.description: Afișează o notificare care conține melodia nouă ori de câte ori se schimbă melodia curentă.
 settings.option.connectivity.remoteConnection: Conexiune la distanță
@@ -2039,6 +2169,11 @@ settings.option.visual.vibrancySettings: Setări de vibranță
 settings.option.visual.windowBackgroundStyle: Stil Fundal Fereastră
 settings.option.visual.windowColor: Culoare nuanță fereastră
 settings.option.visual.windowControlPosition: Poziție controale fereastră
+settings.option.visual.windowingMode: Mod de derulare și randare
+settings.option.visual.windowingMode.auto: Auto (adaptat pentru touchpad)
+settings.option.visual.windowingMode.description: Alege modul în care aplicația randează și derulează conținutul. "Auto" este recomandat pentru majoritatea utilizatorilor; pe anumite dispozitive cu touchpad, "Vechi" poate fi mai receptiv.
+settings.option.visual.windowingMode.glass: Nou
+settings.option.visual.windowingMode.performance: Vechi
 settings.option.visual.windowStyle: Stil fereastră
 settings.option.visual.windowVibrancy: Fereastră vibrantă
 settings.option.window.close_button_hide: Butonul de închidere ar trebui să ascundă aplicația
@@ -2083,6 +2218,7 @@ settings.prompt.visual.plugin.github.success: Plugin instalat cu succes, apăsa�
 settings.prompt.visual.plugin.github.URL: Introduceți URL-ul plugin-ului pe care doriți să-l instalați
 settings.prompt.visual.theme.github.URL: Introduceți URL-ul temei pe care doriți să o instalați
 settings.prompt.visual.theme.uninstallTheme: Sunteți sigur că doriți să dezinstalați {{ theme }}?
+settings.requiresNewerClient: Necesită o versiune mai nouă de Cider.
 settings.sleepTimer.endsIn: "Se termină în: {{remainingTime}} ({{endTime}})"
 settings.sleepTimer.notSet: Temporizatorul nu este setat
 settings.sleepTimer.title: Setare temporizator oprire
@@ -2113,6 +2249,8 @@ settings.takeout.reloadPrompt: Unele setări se aplică doar după o reîncărca
 settings.takeout.selectAll: Selectați tot
 settings.takeout.title: Arhivă setări
 settings.title: Setări
+settings.troubleshooting.bgDiagnostics: Diagnosticare redare în fundal
+settings.troubleshooting.bgDiagnostics.desc: Informații suplimentare de jurnalizare pentru diagnosticarea problemelor de redare în timp ce fereastra este minimizată sau inactivă — cine a întrerupt redarea, epuizarea temporizatorului și episoadele de suspendare ale sistemului de operare. Activează când raportezi o eroare de redare în fundal.
 settings.troubleshooting.desc: Fișiere jurnal și jurnalizare pentru depanare MKLite.
 settings.troubleshooting.hevcWorkaround: Soluție alternativă HEVC
 settings.troubleshooting.hevcWorkaround.desc: Soluție de compromis pentru o eroare din WebView2 cu anumite plăci grafice care au probleme la redarea HEVC SDR pe 10 biți, prin aplicarea unui filtru pentru a compensa decalajul vizual.
@@ -2391,6 +2529,7 @@ term.action: Acțiune
 term.active: Activ
 term.added: Adăugat
 term.addedpreset: Presetare adăugată
+term.album: Album
 term.albums: Albume
 term.all: Toate
 term.allPlaylists: Toate Playlisturile
@@ -2407,6 +2546,7 @@ term.appleMusic: Muzică Apple
 term.appleMusicPlaylists: Liste muzicale Apple
 term.applePodcasts: Podcasturi Apple
 term.appSettings: Setări aplicație
+term.artist: Artist
 term.artistChips: Chipuri de Artist
 term.artistList: Listă Artist
 term.artists: Artiști
@@ -2422,6 +2562,7 @@ term.autoplay: Redare automată
 term.autoplay.description: Muzică similară va continua să cânte
 term.autoplay.unavailable: Recomandările de redare automată nu sunt disponibile încă pentru această melodie.
 term.behavior: Comportament
+term.beta: Beta
 term.both: Ambele
 term.browse: Navigați
 term.browser: Browser
@@ -2435,6 +2576,7 @@ term.clearAll: Ștergere toate
 term.clearQueue: Curăță
 term.clipboard: Clipboard
 term.close: Închide
+term.collaborative: Colaborativ
 term.collapse: Restrânge
 term.commandPalette: Paletă de comandă
 term.compose: Compune cu Saki AI
@@ -2576,6 +2718,7 @@ term.prerelease: Pre-release
 term.previous: Înapoi
 term.private: Privat
 term.privateSession: Sesiune Privată
+term.profile: Profil
 term.public: Publice
 term.queue: în Coadă
 term.queue.added: Adăugat în coadă
@@ -2599,6 +2742,7 @@ term.radio.failedToStart: Nu s-a putut porni postul de radio
 term.radioShows: Spectacole radio
 term.recentlyAdded: Recent Adăugate
 term.recentlyPlayed: Redate recent
+term.recentlyViewed: Vizualizate recent
 term.recentStations: Stații Recente
 term.recordLabel: Casă de discuri
 term.recordLabels: Înregistrare etichete

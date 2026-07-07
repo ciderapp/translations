@@ -20,6 +20,7 @@ action.addToQueue.error: Kunde inte lägga till i kön
 action.addToQueue.success: Tillagd i kön
 action.appleMusic.yourProfile: Din profil
 action.apply: Använd
+action.approve: Godkänn
 action.autoplay.disable: Inaktivera autouppspelning
 action.autoplay.enable: Aktivera autouppspelning
 action.back: Tillbaka
@@ -47,6 +48,7 @@ action.createNew: Skapa ny
 action.createNewPlaylist: Skapa ny spellista
 action.createPlaylist: Skapa ny spellista
 action.cut: Klipp
+action.decline: Avböj
 action.delete: Radera
 action.deleteFolder: Are you sure you want to delete the folder "{{folderName}}"?
 action.deleteFolder.message: All folders and playlists inside this folder will also be deleted.
@@ -462,6 +464,9 @@ library.releaseType: Utgivningstyp
 library.releaseTypeAlbums: Endast album
 library.releaseTypeAll: Alla releaser
 library.releaseTypeSingles: Singlar & EP
+library.sync.indeterminate: Synkroniserar {count} {items}…
+library.sync.indeterminateUnknown: Synkroniserar ditt bibliotek…
+library.sync.progress: Synkroniserar {count} {items}, {remaining} återstår
 locale.lang.ar: Arabiska
 locale.lang.de: Tyska
 locale.lang.en: Engelska
@@ -774,6 +779,75 @@ oobe.welcome.selectLanguage: Välj ditt föredragna språk
 oobe.window.subtitle: Välj hur appfönstret integreras med din skrivbordsmiljö
 oobe.window.title: Fönsterstil
 oobe.yes: Ja
+party.blocked.subtitle: Endast värden kan göra det just nu.
+party.blocked.title: Värden styr uppspelningen
+party.dialog.auditedDesc: Tillägg från gäster väntar på ditt godkännande.
+party.dialog.avatarPick: Välj en bild
+party.dialog.codeCopied: Inbjudningskoden kopierad
+party.dialog.codeLabel: Inbjudningskod
+party.dialog.codePlaceholder: XXXX-XXXX
+party.dialog.copyCode: Kopiera kod
+party.dialog.copyFailed: Kopieringen misslyckades
+party.dialog.copyLink: Kopiera länk
+party.dialog.create: Starta ett party
+party.dialog.createConfirm: Starta partyt
+party.dialog.displayNameLabel: Ditt namn
+party.dialog.displayNamePlaceholder: Hur andra ser dig
+party.dialog.end: Avsluta partyt för alla
+party.dialog.everyoneControls: Alla styr uppspelningen
+party.dialog.everyoneDesc: Alla i partyt delar på kontrollerna.
+party.dialog.hostOnlyDesc: Endast du kan spela, pausa, spola och hoppa över.
+party.dialog.hostTag: Värd
+party.dialog.join: Gå med med kod
+party.dialog.joinConfirm: Gå med i partyt
+party.dialog.kick: Kicka
+party.dialog.leave: Lämna partyt
+party.dialog.linkCopied: Inbjudningslänken kopierad
+party.dialog.memberCount: "{{count}} i partyt"
+party.dialog.memberMuted: Låten är inte tillgänglig i deras region
+party.dialog.nameLabel: Partynamn (valfritt)
+party.dialog.namePlaceholder: Fredagsvibbar
+party.dialog.pendingTitle: Väntar på godkännande
+party.dialog.reconnecting: Återansluter
+party.dialog.reviewAdditions: Granska tillägg i kön
+party.dialog.seedDesc: Ta med din nuvarande kö till partyt.
+party.dialog.seedQueue: Starta med nuvarande kö
+party.dialog.settingsTitle: Partyinställningar
+party.dialog.subtitle: Lyssna tillsammans i perfekt synk med dina vänner på Cider.
+party.dialog.title: Lyssningsparty
+party.ended.kicked.subtitle: Värden tog bort dig från lyssningspartyt.
+party.ended.kicked.title: Borttagen från partyt
+party.ended.subtitle: Lyssningspartyt har avslutats. Din kö behålls.
+party.ended.title: Partyt har avslutats
+party.error.generic: Problem med partysynkronisering
+party.host.youAreHost: Du är nu värd
+party.member.fallbackName: en medlem
+party.member.joined: "{{name}} gick med i partyt"
+party.member.left: "{{name}} lämnade partyt"
+party.modeLocked.subtitle: Blandning, upprepning och autouppspelning hanteras av lyssningspartyt.
+party.modeLocked.title: Inte tillgängligt i ett party
+party.pending.incoming.title: Köförfrågan från {{name}}
+party.pending.rejected.title: Förfrågan avböjd
+party.pending.sent.subtitle: Värden kommer att granska ditt tillägg.
+party.pending.sent.title: Skickat för godkännande
+party.queue.addedBy: Tillagd av {{name}}
+party.queue.bannerListening: "{{count}} lyssnar"
+party.queue.bannerSubtitle: "Värd: {{name}} · {{count}} lyssnar"
+party.queueFull.subtitle: "{{count}} låt(ar) lades inte till."
+party.queueFull.title: Partykön är full
+party.radioBlocked.subtitle: Liveradio och poddar kan inte synkroniseras i ett lyssningsparty.
+party.resumed.title: Återanslöt till ditt lyssningsparty
+party.station.subtitle: Nya låtar läggs till i kön medan stationen spelas.
+party.station.title: Station spelas i partyt
+party.trackRejected.subtitle: Endast låtar från Apple Music-katalogen kan läggas i kön i ett party – {{count}} objekt hoppades över.
+party.trackRejected.title: Inte tillgänglig för partyn
+party.trackUnavailable.subtitle: Den här låten är inte tillgänglig i din region. Uppspelningen fortsätter med nästa spår.
+party.trackUnavailable.title: Spåret är inte tillgängligt
+playlist.collaborative.tooltip: Den här spellistan är öppen för deltagare
+playlist.collaborators.andOthers: "{{name}} & {{count}} andra"
+playlist.collaborators.count: "{{count}} deltagare"
+playlist.collaborators.owner: Ägare
+playlist.collaborators.pair: "{{a}} & {{b}}"
 playlist.description: Beskrivning av spellista
 playlist.error.locked.message: Det går inte att ta bort det här spåret när sorteringsalternativ används.
 playlist.error.locked.title: Spellistan är låst
@@ -783,8 +857,10 @@ playlist.error.updating.title: Fel vid uppdatering av spellistan
 playlist.folderEmpty: Inga spellistor i den här mappen
 playlist.folderRenameHint: Dubbelklicka för att byta namn
 playlist.lastUpdated: Senast uppdaterad {{date}}
+playlist.madeByApple: Skapad av Apple
 playlist.nameEmpty: Spellistans namn kan inte vara tomt
 playlist.noTracks: Inga låtar
+playlist.personalMix: Personlig mix
 playlist.playlistName: Spellistans namn
 playlist.publishOnProfileAndSearch: Publish on profile and in search
 playlist.refresh.message: Den här spellistan har uppdaterats av en annan enhet. Spellistan uppdateras nu.
@@ -821,11 +897,15 @@ remote.web.title: Cider fjärrkontroll
 replay.uniqueAlbums: Över {count} unika album
 settings.about.assetLicenses: Resurslicenser
 settings.about.autoplaySongs: Spela automatiskt
+settings.about.branch: Branch
 settings.about.buildInfo: Bygginformation
+settings.about.built: Byggd
 settings.about.builtWith: Cider är byggt med dessa fantastiska teknologier
 settings.about.collectiveIs: Cider Collective är
+settings.about.commit: Commit
 settings.about.copiedBuildInfo: Bygginformation kopierad till urklipp
 settings.about.copyBuildInfo: Kopiera bygginformation
+settings.about.framework: Ramverk
 settings.about.fullCredits: Alla medverkande
 settings.about.libraryLicenses: Biblioteks- och verktygslicenser
 settings.about.playAtBeginning: Spela från början
@@ -862,6 +942,42 @@ settings.audio.ciderAudio.description: Specialanpassad och designad ljudstack so
 settings.audio.ciderAudio.enable: Aktivera Cider Audio
 settings.audio.ciderAudio.requiredHint: Krävs för volymutjämning och equalizer
 settings.audio.crossfade: Tonade övergångar
+settings.audio.hostCapture.apps: Utlösande appar
+settings.audio.hostCapture.apps.count: "{{ n }} appar kommer att utlösa ljudfångst."
+settings.audio.hostCapture.apps.countOne: 1 app kommer att utlösa ljudfångst.
+settings.audio.hostCapture.apps.emptyAvailable: Inga andra öppna appar. Öppna en och klicka på Uppdatera.
+settings.audio.hostCapture.apps.emptyWatched: Inga utlösare än. Välj en app till vänster.
+settings.audio.hostCapture.apps.help: Ljudfångst slås på när någon app till höger körs, och stängs av när alla stängs.
+settings.audio.hostCapture.apps.manage: Hantera…
+settings.audio.hostCapture.apps.none: Inga appar valda, ljudfångst förblir avstängd tills du lägger till en.
+settings.audio.hostCapture.apps.running: Appar som körs
+settings.audio.hostCapture.apps.runningNow: Körs
+settings.audio.hostCapture.apps.title: Appar för automatisk ljudfångst
+settings.audio.hostCapture.apps.triggers: Utlösare
+settings.audio.hostCapture.auto: Aktivera automatiskt med app
+settings.audio.hostCapture.autoHint: Slå på ljudfångst automatiskt när en vald app körs, och stäng av den när appen stängs.
+settings.audio.hostCapture.autoNote: Slås på automatiskt när en vald app körs.
+settings.audio.hostCapture.bit16: 16-bitars
+settings.audio.hostCapture.bit24: 24-bitars
+settings.audio.hostCapture.bit32: 32-bitars float
+settings.audio.hostCapture.bitAuto: Auto (högsta)
+settings.audio.hostCapture.bitDepth: Bitdjup
+settings.audio.hostCapture.bitDepthHint: Auto använder det högsta bitdjup som din enhet stöder.
+settings.audio.hostCapture.exclusiveNote: Exklusiv utmatning, bit-transparent, kan inte fångas.
+settings.audio.hostCapture.gain: Justering av utmatningsnivå
+settings.audio.hostCapture.gainHint: Matcha den fångade ljudstyrkan med den normala utmatningen.
+settings.audio.hostCapture.mode: Ljudutmatningsläge
+settings.audio.hostCapture.modeCapture: Ljudfångst
+settings.audio.hostCapture.modeCaptureLong: Kan fångas (OBS, Discord)
+settings.audio.hostCapture.modeExclusive: Exklusivt
+settings.audio.hostCapture.modeExclusiveLong: WASAPI Exklusivt
+settings.audio.hostCapture.modeHintCapture: Spelar upp ljud från Cider-processen så att OBS, Discord och andra appar kan fånga det.
+settings.audio.hostCapture.modeHintExclusive: Bit-transparent utmatning direkt till din DAC, vilket förbikopplar Windows-mixern. Kan inte fångas.
+settings.audio.hostCapture.modeHintOff: "Av: ljudet spelas upp som vanligt från WebView2-processen. Inte tillgängligt under Atmos-passthrough eller musikvideor."
+settings.audio.hostCapture.outputShort: Ljudutmatning
+settings.audio.hostCapture.rate: Samplingsfrekvens
+settings.audio.hostCapture.rateHint: Matcha källa är bit-transparent; andra frekvenser samplas om med hög kvalitet.
+settings.audio.hostCapture.rateMatch: Matcha källa (44,1 kHz)
 settings.audio.lab: Audio Lab
 settings.audio.lab.arProfile: Atmosphere Realizer
 settings.audio.lab.capProfile: CAP-profil
@@ -879,6 +995,7 @@ settings.audio.occlusion.passthroughNote: Inte tillgängligt när Dolby Atmos-pa
 settings.audio.occlusion.passthroughNote.short: Inte tillgängligt när Atmos-passthrough är aktivt.
 settings.audio.outputDevice: Välj ljudenhet för utmatning
 settings.audio.outputDeviceHint: Välj ljudenhet för uppspelning.
+settings.audio.outputDeviceHintHost: Ljudfångst är aktiverat, uppspelningen använder denna Windows-utmatningsenhet.
 settings.automix.allowTempoKeyShifts: Tillåt tempo-/tonartsändringar
 settings.automix.allowTempoKeyShiftsHint: Tillåt små förändringar för att hålla övergångarna energiska. (Tillfälligt inaktiverat, görs om.)
 settings.automix.description: Gör intelligenta övergångar mellan låtar baserat på tempo och tonart.
@@ -927,8 +1044,8 @@ settings.client.genten.gtkVersion.desc: Vilken GTK-version som ska användas fö
 settings.client.genten.hardwareAcceleration.desc: Välj om appen ska använda hårdvaruacceleration
 settings.client.genten.macosVibrancy: macOS Vibrancy
 settings.client.genten.macosVibrancy.desc: Välj om appen ska använda macOS vibrancy-effekt
-settings.client.genten.mpris: MPRIS-modul (föråldrad)
-settings.client.genten.mpris.desc: MPRIS-modulen uppdaterar MPRIS-gränssnittet med information om vad som spelas för tillfället, vilket ger en mer enhetlig upplevelse än standard MPRIS-stöd i Chromium.
+settings.client.genten.mpris: Använd Ciders egna mediekontrolltjänst (MPRIS)
+settings.client.genten.mpris.desc: Registrerar Cider på D-Bus som org.mpris.MediaPlayer2.cider för playerctl och skrivbordsintegration, och tar över medieknappar från Chromiums inbyggda mediesession.
 settings.client.genten.proxyPac: Proxy-PAC
 settings.client.genten.proxyPac.desc: Adressen till proxy-PAC-filen
 settings.client.genten.proxyPlaceholder: Lämna tomt för systemproxy
@@ -1479,6 +1596,7 @@ settings.option.audio.enableAdvancedFunctionality.tunedAudioSpatialization.profi
 settings.option.audio.enableAdvancedFunctionality.tunedAudioSpatialization.profile.standard: Standard
 settings.option.audio.exponentialVolume: Exponentiell volymkurva
 settings.option.audio.exponentialVolume.description: Följ en mer gradvis volymkurva, vilket möjliggör mer exakt volymkontroll vid lägre volymer.
+settings.option.audio.hostCapture: Fångbart ljud (OBS / Discord)
 settings.option.audio.maxVolume: Max volym
 settings.option.audio.mixing: Mixning
 settings.option.audio.normalization: Ljudnormalisering
@@ -1496,6 +1614,7 @@ settings.option.audio.seamlessAudioTransitions: Sömlösa ljudövergångar
 settings.option.audio.seamlessTransition: Sömlösa ljudövergångar
 settings.option.audio.seamlessTransitions: Sömlösa övergångar
 settings.option.audio.showBitrate: Visa bithastighet i Spelas nu
+settings.option.audio.streaming: Strömning
 settings.option.audio.volume: Volym
 settings.option.audio.volumeScrollStep: Steg för volymrullning
 settings.option.audio.volumeScrollStep.description: Hur mycket volymen ändras när du rullar upp eller ner på volymreglaget.
@@ -1579,6 +1698,17 @@ settings.option.connectivity.lastfmScrobble.manualToken: Ange Last.fm token manu
 settings.option.connectivity.lastfmScrobble.manualToken.link: Klicka här för att få en Last.fm token
 settings.option.connectivity.lastfmScrobble.nowPlaying: Visa vad som spelas nu i Last.fm
 settings.option.connectivity.lastfmScrobble.removeFeatured: Visa inte extraartister i Last.fm
+settings.option.connectivity.parties: Lyssningsfester
+settings.option.connectivity.partiesEnabled: Aktivera lyssningsfester
+settings.option.connectivity.partiesEnabled.description: Håll i eller gå med i synkroniserade lyssningssessioner med andra Cider-användare.
+settings.option.connectivity.partiesQueueDefault: Standardköläge
+settings.option.connectivity.partiesQueueDefault.audited: Värden godkänner tillägg
+settings.option.connectivity.partiesQueueDefault.description: Om gästers tillägg kräver ditt godkännande i fester du är värd för.
+settings.option.connectivity.partiesQueueDefault.open: Öppen
+settings.option.connectivity.partiesTransportDefault: Standard för uppspelningskontroll
+settings.option.connectivity.partiesTransportDefault.description: Vem som kan spela, pausa, spola och hoppa över i fester du är värd för.
+settings.option.connectivity.partiesTransportDefault.everyone: Alla
+settings.option.connectivity.partiesTransportDefault.host: Endast värden
 settings.option.connectivity.playbackNotifications: Uppspelningsnotiser
 settings.option.connectivity.playbackNotifications.description: Visa en notis som innehåller den nya låten när den aktuella låten ändras.
 settings.option.connectivity.remoteConnection: Fjärranslutning
@@ -2039,6 +2169,11 @@ settings.option.visual.vibrancySettings: Vibransinställningar
 settings.option.visual.windowBackgroundStyle: Stil för bakgrunden
 settings.option.visual.windowColor: Fönster färgton
 settings.option.visual.windowControlPosition: Position för fönsterkontroller
+settings.option.visual.windowingMode: Rullnings- och renderingsläge
+settings.option.visual.windowingMode.auto: Auto (styrplatteanpassat)
+settings.option.visual.windowingMode.description: Välj hur appen renderar och rullar innehåll. "Auto" rekommenderas för de flesta användare, på vissa styrplattor kan "Gammalt" vara mer responsivt.
+settings.option.visual.windowingMode.glass: Nytt
+settings.option.visual.windowingMode.performance: Gammalt
 settings.option.visual.windowStyle: Fönster stil
 settings.option.visual.windowVibrancy: Fönster vibrerande
 settings.option.window.close_button_hide: Stängknappen gömmer Cider istället
@@ -2083,6 +2218,7 @@ settings.prompt.visual.plugin.github.success: Plugin installerades framgångsrik
 settings.prompt.visual.plugin.github.URL: Ange URL:en till den plugin du vill installera
 settings.prompt.visual.theme.github.URL: Ange URL:en till det tema du vill installera
 settings.prompt.visual.theme.uninstallTheme: Är du säker du vill avinstallera {{ theme }}?
+settings.requiresNewerClient: Kräver en nyare Cider-klient.
 settings.sleepTimer.endsIn: "Slutar om: {{remainingTime}} ({{endTime}})"
 settings.sleepTimer.notSet: Timern är inte inställd
 settings.sleepTimer.title: Ställ in insomningstimer
@@ -2113,6 +2249,8 @@ settings.takeout.reloadPrompt: Vissa inställningar träder i kraft först efter
 settings.takeout.selectAll: Markera alla
 settings.takeout.title: Inställningsexport
 settings.title: Inställningar
+settings.troubleshooting.bgDiagnostics: Diagnostik för bakgrundsuppspelning
+settings.troubleshooting.bgDiagnostics.desc: Extra loggdetaljer för att diagnostisera uppspelningsproblem när fönstret är minimerat eller inte är i fokus — vem som pausade spelaren, timer-svält och OS-suspenderingsperioder. Aktivera när du rapporterar ett fel med bakgrundsuppspelning.
 settings.troubleshooting.desc: Loggfiler och MKLite-felsökningsloggning.
 settings.troubleshooting.hevcWorkaround: HEVC-lösning
 settings.troubleshooting.hevcWorkaround.desc: Lösning för en bugg i WebView2 med vissa GPU:er som har problem med 10-bitars SDR HEVC-uppspelning genom att tillämpa ett filter för att kompensera för den visuella förskjutningen.
@@ -2391,6 +2529,7 @@ term.action: Åtgärd
 term.active: Aktiv
 term.added: Tillagd
 term.addedpreset: Lade till förval
+term.album: Album
 term.albums: Album
 term.all: Alla
 term.allPlaylists: Alla spellistor
@@ -2407,6 +2546,7 @@ term.appleMusic: Apple Musik
 term.appleMusicPlaylists: Apple Music Spellistor
 term.applePodcasts: Apple poddsändningar
 term.appSettings: Appinställningar
+term.artist: Artist
 term.artistChips: Artist marker
 term.artistList: Lista över artister
 term.artists: Artister
@@ -2422,6 +2562,7 @@ term.autoplay: Autospela
 term.autoplay.description: Liknande musik kommer att fortsätta spela
 term.autoplay.unavailable: Autouppspelningsrekommendationer är inte tillgängliga för den här låten än.
 term.behavior: Beteende
+term.beta: Beta
 term.both: Båda
 term.browse: Bläddra
 term.browser: Webbläsare
@@ -2435,6 +2576,7 @@ term.clearAll: Rensa allt
 term.clearQueue: Rensa
 term.clipboard: Urklipp
 term.close: Stäng
+term.collaborative: Gemensam
 term.collapse: Komprimera
 term.commandPalette: Kommando palett
 term.compose: Komponera med Saki AI
@@ -2576,6 +2718,7 @@ term.prerelease: Försläpp
 term.previous: Föregående
 term.private: Privat
 term.privateSession: Privat läge
+term.profile: Profil
 term.public: Publik
 term.queue: Kö
 term.queue.added: Tillagd i kön
@@ -2599,6 +2742,7 @@ term.radio.failedToStart: Kunde inte starta radiostation
 term.radioShows: Radioserier
 term.recentlyAdded: Senast tillagda
 term.recentlyPlayed: Nyligen spelade
+term.recentlyViewed: Senast visade
 term.recentStations: Senaste stationerna
 term.recordLabel: Skivbolag
 term.recordLabels: Spela in etiketter
