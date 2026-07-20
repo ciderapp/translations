@@ -153,6 +153,7 @@ action.signIn: Masuk
 action.signOut: Keluar
 action.smartQueue.disable: Nonaktifkan Antrean Pintar
 action.smartQueue.enable: Aktifkan Antrean Pintar
+action.smartQueue.requiresAutomix: Smart Queue memerlukan Automix
 action.start: Mulai
 action.startOver: Mulai dari Awal
 action.startRadio: Mulai Radio
@@ -362,6 +363,12 @@ developer.tweaks.oscSpeed: OSC SPD
 developer.tweaks.saturate: Saturasi (%)
 developer.tweaks.stuff: hal-hal
 dialog.cancel: Batal
+dialog.intensiveDisabled.body: Pembaruan ini menonaktifkan beberapa fitur visual intensif performa yang dapat menyebabkan penggunaan CPU/GPU tinggi, panas, dan baterai boros. Anda dapat mengaktifkannya kembali di bawah ini, atau nanti di Pengaturan.
+dialog.intensiveDisabled.done: Selesai
+dialog.intensiveDisabled.openPower: Buka pengaturan Penggunaan Daya
+dialog.intensiveDisabled.reenable: Aktifkan kembali
+dialog.intensiveDisabled.reenabled: Aktif
+dialog.intensiveDisabled.title: Beberapa fitur visual dinonaktifkan
 dialog.ok: OK
 discord.widget.vanityStat: Replay {year}
 error.appleMusicSubRequired: Apple Music memerlukan langganan.
@@ -867,6 +874,12 @@ party.trackRejected.subtitle: Hanya lagu dari katalog Apple Music yang dapat dim
 party.trackRejected.title: Tidak tersedia untuk pesta
 party.trackUnavailable.subtitle: Lagu ini tidak tersedia di wilayah Anda. Pemutaran akan dilanjutkan dengan lagu berikutnya.
 party.trackUnavailable.title: Trek tidak tersedia
+playbackHealth.backgroundFreeze.body: Lingkungan desktop atau sistem operasi Anda menangguhkan Cider saat berada di latar belakang, yang menghentikan pemutaran selama sekitar {seconds} detik hingga jendela aktif kembali.
+playbackHealth.backgroundFreeze.dismiss: Tutup
+playbackHealth.backgroundFreeze.eyebrow: Pemberitahuan pemutaran
+playbackHealth.backgroundFreeze.hint: Aturan pengelola jendela atau pengaturan OS dapat menjaga Cider tetap berjalan saat tidak difokuskan. Pelajari selengkapnya menampilkan solusi yang diketahui untuk konfigurasi Anda.
+playbackHealth.backgroundFreeze.learnMore: Pelajari selengkapnya
+playbackHealth.backgroundFreeze.title: Sistem Anda menjeda Cider di latar belakang
 playlist.collaborative.tooltip: Daftar putar ini terbuka untuk kolaborator
 playlist.collaborators.andOthers: "{{name}} & {{count}} lainnya"
 playlist.collaborators.count: "{{count}} kontributor"
@@ -1356,6 +1369,26 @@ settings.immersive.focusMode.preset.fyre: Fyre
 settings.immersive.focusMode.preset.groovy: Groovy
 settings.immersive.focusMode.readVueDocs: Baca dokumentasi Vue <Transition>
 settings.immersive.focusMode.title: Pengaturan Mode Fokus
+settings.intensive.animateArtworkOnHover.description: Memulai animasi sampul album saat Anda mengarahkan kursor ke item media.
+settings.intensive.animatedArtwork.description: Memutar sampul album animasi jika tersedia.
+settings.intensive.animatedArtworkQuality.description: Kualitas lebih tinggi mendekode aliran video sampul animasi yang lebih besar.
+settings.intensive.catalogAnimatedArtwork.description: Memutar banyak sampul animasi sekaligus saat menjelajahi katalog.
+settings.intensive.characterFlow.description: Menganimasikan setiap karakter lirik secara individual, bukan per baris.
+settings.intensive.confirm.enable: Aktifkan
+settings.intensive.confirm.message: Fitur ini intensif performa dan dapat meningkatkan penggunaan CPU/GPU, panas, dan konsumsi baterai secara signifikan — terutama pada perangkat keras berspesifikasi rendah. Anda dapat meninjau fitur-fitur berat ini kapan saja melalui tombol bohlam di bagian atas Pengaturan.
+settings.intensive.emotionEngine.description: Menganalisis sampul album untuk menghasilkan palet warna.
+settings.intensive.fsrUpscale.description: Meningkatkan skala sampul album pada GPU dengan FidelityFX Super Resolution.
+settings.intensive.immersiveAnimatedArtwork.description: Memutar sampul animasi di dalam tampilan Imersif.
+settings.intensive.immersiveAnimatedBackground.description: Menganimasikan latar belakang tampilan Imersif.
+settings.intensive.immersiveBackground.description: Merender latar belakang yang terus dianimasikan di belakang seluruh aplikasi.
+settings.intensive.lcdChromaticAberration.description: Menambahkan efek aberasi kromatik RGB pada kaca LCD pemutar.
+settings.intensive.miniPlayerAnimatedArtwork.description: Menjaga sampul animasi tetap diputar di jendela Pemutar Mini.
+settings.intensive.playerMaterial.description: Liquid Glass membiaskan bilah pemutar melalui shader langsung.
+settings.intensive.realtimeVisualizer.description: Menganalisis audio secara real-time untuk menampilkan visualisator pada lagu yang sedang diputar.
+settings.intensive.singEngine.description: Legacy merender animasi Sing per bingkai pada CPU.
+settings.intensive.singLyricsEverywhere.description: Menjalankan animasi lirik Sing kata-per-kata di luar tampilan Imersif.
+settings.intensive.viewTransitions.description: Menganimasikan transisi saat beralih beberapa tampilan.
+settings.intensive.warning: Intensif performa — dapat menyebabkan penggunaan CPU/GPU yang tinggi.
 settings.keybindings.recordingHint: Merekam. Escape untuk membatalkan
 settings.lyrics.localeOverrides: Aturan Berbasis Lokal
 settings.lyrics.localeOverrides.add: Tambah Pengganti Lokal
@@ -1442,6 +1475,7 @@ settings.nav.group.library: Perpustakaan
 settings.nav.group.playback: Pemutaran
 settings.nav.lyrics: Lirik
 settings.nav.plugins: Plugin
+settings.nav.power: Penggunaan Daya
 settings.nav.privacy: Privasi
 settings.nav.profile: Profil
 settings.nav.search: Cari
@@ -1535,6 +1569,7 @@ settings.option.advanced.playback.allowPlaybackRateChangeEverywhere: Izinkan Men
 settings.option.advanced.playback.allowPlaybackRateChangeEverywhere.description: Diaktifkan secara default untuk podcast. Aktifkan untuk mengizinkan kontrol kecepatan pemutaran yang sama mudahnya ke semua media, termasuk lagu.
 settings.option.advanced.playlistTrackMapping: Pemetaan Trek Daftar Putar
 settings.option.advanced.playlistTrackMapping.description: Mengaktifkan pemindaian mendalam pada daftar putar untuk menentukan trek mana yang ada di daftar putar mana. Waktu pembuatan cache daftar putar dapat meningkat secara signifikan.
+settings.option.advanced.powerUsage.description: Dipindahkan — batas framerate, pilihan perender, dan fitur visual yang berat.
 settings.option.advanced.progressBar: Bilah Kemajuan
 settings.option.advanced.progressBar.useAccentColor: Gunakan Warna Aksen
 settings.option.advanced.resizableMiniplayer: Miniplayer yang Dapat Diubah Ukurannya
@@ -1852,7 +1887,7 @@ settings.option.general.translationFeedback: Umpan Balik Terjemahan
 settings.option.general.translators: Penerjemah
 settings.option.general.translators.description: Terima kasih kepada para kontributor yang telah membantu menerjemahkan Cider. Klik nama untuk membuka profil GitHub mereka.
 settings.option.general.useSmartQueueByDefault: Gunakan Antrean Pintar secara default
-settings.option.general.useSmartQueueByDefault.description: Terapkan urutan Antrean Pintar secara otomatis saat antrean dibuat.
+settings.option.general.useSmartQueueByDefault.description: Terapkan urutan Smart Queue secara otomatis saat antrean dibuat. Memerlukan Automix.
 settings.option.general.warnBeforeQueueOverride: Peringatkan sebelum menimpa antrean
 settings.option.hide: Sembunyikan
 settings.option.left: Kiri
@@ -2105,6 +2140,7 @@ settings.option.visual.immersive.startingTab.lyrics: Lirik
 settings.option.visual.immersive.startingTab.queue: Antrean
 settings.option.visual.immersive.useAnimatedArtwork: Gunakan Karya Seni Animasi
 settings.option.visual.immersive.useAnimatedArtwork.description: Tampilkan sampul animasi jika tersedia. Ini dapat menyebabkan masalah performa pada perangkat berspesifikasi rendah.
+settings.option.visual.immersive.useAnimatedBackground: Latar Belakang Animasi Imersif
 settings.option.visual.immersive.useBackgroundBpm: Kecepatan Latar Belakang Berdasarkan BPM
 settings.option.visual.immersiveBackground.blank: Kosong
 settings.option.visual.immersiveBackground.customImage: Gambar Kustom
@@ -2250,6 +2286,22 @@ settings.performance.saveSuccess: Pengaturan klien disimpan. Mulai ulang aplikas
 settings.performance.v8OptimizeSize: Optimalkan ukuran V8
 settings.performance.v8OptimizeSize.description1: Mengurangi Penggunaan Memori dengan memperkecil ukuran kode yang dihasilkan melalui
 settings.performance.v8OptimizeSize.description2: tidak disarankan untuk penggunaan sehari-hari jika Anda masih bisa mentoleransinya. Mulai ulang aplikasi setelah mengubah.
+settings.power.badge.high: Daya tinggi
+settings.power.badge.medium: Daya sedang
+settings.power.framerate: Framerate & perender
+settings.power.highImpact: Fitur berdampak tinggi
+settings.power.mediumImpact: Fitur berdampak sedang
+settings.power.profile: Profil daya
+settings.power.profile.balanced: Seimbang
+settings.power.profile.balanced.description: Beberapa fitur berdampak sedang aktif. Penggunaan daya sedang.
+settings.power.profile.demanding: Berat
+settings.power.profile.demanding.description: Fitur berdampak tinggi aktif dan dapat meningkatkan beban CPU/GPU, panas, serta menguras baterai.
+settings.power.profile.efficient: Efisien
+settings.power.profile.efficient.description: Sedikit atau tidak ada fitur berat yang aktif. Cider berjalan dengan sangat ringan.
+settings.power.savers: Penghemat daya
+settings.power.summary.count: "{{high}} fitur berdampak tinggi, {{medium}} fitur berdampak sedang aktif"
+settings.power.summary.high: Dampak tinggi
+settings.power.summary.medium: Dampak sedang
 settings.profile.crop.hint: Seret untuk memindahkan, gulir untuk memperbesar
 settings.profile.crop.title: Posisikan foto Anda
 settings.profile.defaultName: Pengguna Apple Music

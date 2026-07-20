@@ -153,6 +153,7 @@ action.signIn: Log in
 action.signOut: Log uit
 action.smartQueue.disable: Slimme wachtrij uitschakelen
 action.smartQueue.enable: Slimme wachtrij inschakelen
+action.smartQueue.requiresAutomix: Smart Queue vereist Automix
 action.start: Start
 action.startOver: Opnieuw beginnen
 action.startRadio: Start radio
@@ -362,6 +363,12 @@ developer.tweaks.oscSpeed: OSC-SNELH
 developer.tweaks.saturate: Verzadiging (%)
 developer.tweaks.stuff: dingen
 dialog.cancel: Annuleren
+dialog.intensiveDisabled.body: Deze update heeft een aantal prestatie-intensieve visuele functies uitgeschakeld die een hoog CPU/GPU-gebruik, warmte en batterijverbruik kunnen veroorzaken. Je kunt ze hieronder of later in de Instellingen weer inschakelen.
+dialog.intensiveDisabled.done: Gereed
+dialog.intensiveDisabled.openPower: Open instellingen voor energieverbruik
+dialog.intensiveDisabled.reenable: Weer inschakelen
+dialog.intensiveDisabled.reenabled: Aan
+dialog.intensiveDisabled.title: Sommige visuele functies zijn uitgeschakeld
 dialog.ok: OK
 discord.widget.vanityStat: Replay {year}
 error.appleMusicSubRequired: Apple Music vereist een abonnement.
@@ -867,6 +874,12 @@ party.trackRejected.subtitle: Alleen nummers uit de Apple Music-catalogus kunnen
 party.trackRejected.title: Niet beschikbaar voor luistersessies
 party.trackUnavailable.subtitle: Dit nummer is niet beschikbaar in jouw regio. Het afspelen wordt hervat met het volgende nummer.
 party.trackUnavailable.title: Nummer niet beschikbaar
+playbackHealth.backgroundFreeze.body: Je bureaubladomgeving of besturingssysteem heeft Cider onderbroken terwijl het op de achtergrond draaide, waardoor het afspelen ongeveer {seconds} seconden werd onderbroken totdat het venster weer actief werd.
+playbackHealth.backgroundFreeze.dismiss: Sluiten
+playbackHealth.backgroundFreeze.eyebrow: Afspeelmelding
+playbackHealth.backgroundFreeze.hint: Een regel van de windowmanager of een OS-instelling kan ervoor zorgen dat Cider blijft draaien wanneer het venster niet actief is. 'Meer informatie' toont bekende oplossingen voor jouw configuratie.
+playbackHealth.backgroundFreeze.learnMore: Meer informatie
+playbackHealth.backgroundFreeze.title: Je systeem heeft Cider gepauzeerd op de achtergrond
 playlist.collaborative.tooltip: Deze afspeellijst staat open voor medewerkers
 playlist.collaborators.andOthers: "{{name}} & {{count}} anderen"
 playlist.collaborators.count: "{{count}} medewerkers"
@@ -1356,6 +1369,26 @@ settings.immersive.focusMode.preset.fyre: Fyre
 settings.immersive.focusMode.preset.groovy: Groovy
 settings.immersive.focusMode.readVueDocs: Lees Vue <Transition>-documentatie
 settings.immersive.focusMode.title: Instellingen focusmodus
+settings.intensive.animateArtworkOnHover.description: Start de animatie van het artwork wanneer je de muisaanwijzer op een media-item plaatst.
+settings.intensive.animatedArtwork.description: Speelt geanimeerd album-artwork af wanneer beschikbaar.
+settings.intensive.animatedArtworkQuality.description: Hogere kwaliteit decodeert grotere videostreams van geanimeerd artwork.
+settings.intensive.catalogAnimatedArtwork.description: Speelt meerdere geanimeerde artworks tegelijk af tijdens het bladeren in de catalogus.
+settings.intensive.characterFlow.description: Animeert elk songtekstteken afzonderlijk in plaats van hele regels.
+settings.intensive.confirm.enable: Inschakelen
+settings.intensive.confirm.message: Deze functie is prestatie-intensief en kan het CPU/GPU-gebruik, de warmte en het batterijverbruik aanzienlijk verhogen — vooral op minder krachtige hardware. Je kunt veeleisende functies op elk gewenst moment bekijken via de lampknop bovenaan de Instellingen.
+settings.intensive.emotionEngine.description: Analyseert album-artwork om een kleurenpalet te bepalen.
+settings.intensive.fsrUpscale.description: Schaalt album-artwork op de GPU op met FidelityFX Super Resolution.
+settings.intensive.immersiveAnimatedArtwork.description: Speelt geanimeerd artwork af in de Immersive-weergave.
+settings.intensive.immersiveAnimatedBackground.description: Animeert de achtergrond van de Immersive-weergave.
+settings.intensive.immersiveBackground.description: Rendert een continu geanimeerde achtergrond achter de hele app.
+settings.intensive.lcdChromaticAberration.description: Voegt een RGB-kleurrandeffect toe aan het LCD-glas van het huidige nummer.
+settings.intensive.miniPlayerAnimatedArtwork.description: Blijft geanimeerd artwork afspelen in het MiniPlayer-venster.
+settings.intensive.playerMaterial.description: Liquid Glass breekt de spelerbalk via een live shader.
+settings.intensive.realtimeVisualizer.description: Analyseert audio in realtime om een visualisatie te tekenen op afspelende nummers.
+settings.intensive.singEngine.description: Legacy rendert de Sing-animatie per frame op de CPU.
+settings.intensive.singLyricsEverywhere.description: Voert de woord-voor-woord Sing-songtekstanimatie uit buiten de Immersive-weergave.
+settings.intensive.viewTransitions.description: Animeert overgangen bij het wisselen van bepaalde weergaven.
+settings.intensive.warning: Prestatie-intensief — kan leiden tot hoog CPU/GPU-gebruik.
 settings.keybindings.recordingHint: Opnemen. Escape om te annuleren
 settings.lyrics.localeOverrides: Regio-gebaseerde regels
 settings.lyrics.localeOverrides.add: Regio-overschrijving toevoegen
@@ -1442,6 +1475,7 @@ settings.nav.group.library: Bibliotheek
 settings.nav.group.playback: Afspelen
 settings.nav.lyrics: Songtekst
 settings.nav.plugins: Plug-ins
+settings.nav.power: Energieverbruik
 settings.nav.privacy: Privacy
 settings.nav.profile: Profiel
 settings.nav.search: Zoeken
@@ -1535,6 +1569,7 @@ settings.option.advanced.playback.allowPlaybackRateChangeEverywhere: Afspeelsnel
 settings.option.advanced.playback.allowPlaybackRateChangeEverywhere.description: Standaard ingeschakeld voor podcasts. Schakel dit in om dezelfde eenvoudige regeling van de afspeelsnelheid toe te staan voor alle media, inclusief nummers.
 settings.option.advanced.playlistTrackMapping: Trackmapping voor afspeellijsten
 settings.option.advanced.playlistTrackMapping.description: Schakelt diep scannen van afspeellijsten in om te bepalen welke nummers in welke afspeellijsten staan. De opbouwtijd van de afspeellijstcache kan aanzienlijk toenemen.
+settings.option.advanced.powerUsage.description: Verplaatst — frameratelimieten, rendererkeuze en veeleisende visuele functies.
 settings.option.advanced.progressBar: Voortgangsbalk
 settings.option.advanced.progressBar.useAccentColor: Accentkleur gebruiken
 settings.option.advanced.resizableMiniplayer: Aanpasbare miniplayer
@@ -1852,7 +1887,7 @@ settings.option.general.translationFeedback: Feedback over vertalingen
 settings.option.general.translators: Vertalers
 settings.option.general.translators.description: Met dank aan deze bijdragers voor hun hulp bij het vertalen van Cider. Klik op een naam om hun GitHub-profiel te openen.
 settings.option.general.useSmartQueueByDefault: Standaard slimme wachtrij gebruiken
-settings.option.general.useSmartQueueByDefault.description: Pas automatisch de volgorde van de slimme wachtrij toe wanneer de wachtrij wordt opgebouwd.
+settings.option.general.useSmartQueueByDefault.description: Pas automatisch de Smart Queue-volgorde toe wanneer de wachtrij wordt opgebouwd. Vereist Automix.
 settings.option.general.warnBeforeQueueOverride: Waarschuw voor het overschrijven van de wachtrij
 settings.option.hide: Verbergen
 settings.option.left: Links
@@ -2105,6 +2140,7 @@ settings.option.visual.immersive.startingTab.lyrics: Liedtekst
 settings.option.visual.immersive.startingTab.queue: Wachtrij
 settings.option.visual.immersive.useAnimatedArtwork: Geanimeerd artwork gebruiken
 settings.option.visual.immersive.useAnimatedArtwork.description: Toon bewegende albumillustraties indien beschikbaar. Dit kan prestatieproblemen veroorzaken op minder krachtige apparaten.
+settings.option.visual.immersive.useAnimatedBackground: Geanimeerde Immersive-achtergrond
 settings.option.visual.immersive.useBackgroundBpm: Achtergrondsnelheid gebaseerd op BPM
 settings.option.visual.immersiveBackground.blank: Leeg
 settings.option.visual.immersiveBackground.customImage: Aangepaste afbeelding
@@ -2250,6 +2286,22 @@ settings.performance.saveSuccess: Clientinstellingen opgeslagen. Start de app op
 settings.performance.v8OptimizeSize: V8 optimaliseren voor grootte
 settings.performance.v8OptimizeSize.description1: Verlaagt het geheugengebruik door de grootte van de gegenereerde code te verkleinen via
 settings.performance.v8OptimizeSize.description2: niet aanbevolen voor dagelijks gebruik als je het kunt vermijden. Start de app opnieuw op na het wijzigen.
+settings.power.badge.high: Hoog verbruik
+settings.power.badge.medium: Gemiddeld verbruik
+settings.power.framerate: Framerate & renderer
+settings.power.highImpact: Functies met grote impact
+settings.power.mediumImpact: Functies met gemiddelde impact
+settings.power.profile: Energieprofiel
+settings.power.profile.balanced: Gebalanceerd
+settings.power.profile.balanced.description: Verschillende functies met gemiddelde impact zijn ingeschakeld. Het energieverbruik is matig.
+settings.power.profile.demanding: Veeleisend
+settings.power.profile.demanding.description: Functies met grote impact zijn ingeschakeld en kunnen de CPU/GPU-belasting, warmte en batterijverbruik verhogen.
+settings.power.profile.efficient: Efficiënt
+settings.power.profile.efficient.description: Er zijn weinig tot geen veeleisende functies ingeschakeld. Cider draait zuinig.
+settings.power.savers: Energiebesparingen
+settings.power.summary.count: "{{high}} functies met grote impact, {{medium}} met gemiddelde impact ingeschakeld"
+settings.power.summary.high: Grote impact
+settings.power.summary.medium: Gemiddelde impact
 settings.profile.crop.hint: Sleep om te verplaatsen, scroll om te zoomen
 settings.profile.crop.title: Positioneer je foto
 settings.profile.defaultName: Apple Music-gebruiker

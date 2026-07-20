@@ -153,6 +153,7 @@ action.signIn: Logga in
 action.signOut: Logga ut
 action.smartQueue.disable: Inaktivera smart kö
 action.smartQueue.enable: Aktivera smart kö
+action.smartQueue.requiresAutomix: Smart kö kräver Automix
 action.start: Starta
 action.startOver: Börja om
 action.startRadio: Starta radio
@@ -362,6 +363,12 @@ developer.tweaks.oscSpeed: OSC HAST
 developer.tweaks.saturate: Mättnad (%)
 developer.tweaks.stuff: grejer
 dialog.cancel: Avbryt
+dialog.intensiveDisabled.body: Den här uppdateringen inaktiverade några prestandakrävande visuella funktioner som kan orsaka hög CPU-/GPU-användning, värme och batteridränering. Du kan aktivera dem igen nedan, eller senare i Inställningar.
+dialog.intensiveDisabled.done: Klar
+dialog.intensiveDisabled.openPower: Öppna inställningar för strömanvändning
+dialog.intensiveDisabled.reenable: Aktivera igen
+dialog.intensiveDisabled.reenabled: På
+dialog.intensiveDisabled.title: Vissa visuella funktioner har inaktiverats
 dialog.ok: OK
 discord.widget.vanityStat: Replay {year}
 error.appleMusicSubRequired: Apple Music kräver ett abonnemang.
@@ -867,6 +874,12 @@ party.trackRejected.subtitle: Endast låtar från Apple Music-katalogen kan läg
 party.trackRejected.title: Inte tillgänglig för partyn
 party.trackUnavailable.subtitle: Den här låten är inte tillgänglig i din region. Uppspelningen fortsätter med nästa spår.
 party.trackUnavailable.title: Spåret är inte tillgängligt
+playbackHealth.backgroundFreeze.body: Din skrivbordsmiljö eller ditt operativsystem försatte Cider i viloläge när appen var i bakgrunden, vilket avbröt uppspelningen i ungefär {seconds} sekunder tills fönstret aktiverades igen.
+playbackHealth.backgroundFreeze.dismiss: Avfärda
+playbackHealth.backgroundFreeze.eyebrow: Uppspelningsmeddelande
+playbackHealth.backgroundFreeze.hint: En regel i fönsterhanteraren eller en OS-inställning kan hålla Cider igång när fönstret inte är i fokus. ”Läs mer” visar kända lösningar för din konfiguration.
+playbackHealth.backgroundFreeze.learnMore: Läs mer
+playbackHealth.backgroundFreeze.title: Ditt system pausade Cider i bakgrunden
 playlist.collaborative.tooltip: Den här spellistan är öppen för deltagare
 playlist.collaborators.andOthers: "{{name}} & {{count}} andra"
 playlist.collaborators.count: "{{count}} deltagare"
@@ -1356,6 +1369,26 @@ settings.immersive.focusMode.preset.fyre: Fyre
 settings.immersive.focusMode.preset.groovy: Groovy
 settings.immersive.focusMode.readVueDocs: Läs dokumentationen för Vue <Transition>
 settings.immersive.focusMode.title: Inställningar för fokusläge
+settings.intensive.animateArtworkOnHover.description: Startar animering av albumomslag när du håller pekaren över ett medieobjekt.
+settings.intensive.animatedArtwork.description: Spelar upp animerade albumomslag när det är tillgängligt.
+settings.intensive.animatedArtworkQuality.description: Högre kvalitet avkodar större videoströmmar för animerade albumomslag.
+settings.intensive.catalogAnimatedArtwork.description: Spelar upp flera animerade albumomslag samtidigt när du bläddrar i katalogen.
+settings.intensive.characterFlow.description: Animerar varje texttecken individuellt istället för hela rader.
+settings.intensive.confirm.enable: Aktivera
+settings.intensive.confirm.message: Den här funktionen är prestandakrävande och kan avsevärt öka CPU-/GPU-användningen, värmen och batteridräneringen – särskilt på mindre kraftfull maskinvara. Du kan granska krävande funktioner när som helst via glödlampsknappen längst upp i Inställningar.
+settings.intensive.emotionEngine.description: Analyserar albumomslag för att ta fram en färgpalett.
+settings.intensive.fsrUpscale.description: Uppskalar albumomslag på GPU:n med FidelityFX Super Resolution.
+settings.intensive.immersiveAnimatedArtwork.description: Spelar upp animerade albumomslag i Immersive-vyn.
+settings.intensive.immersiveAnimatedBackground.description: Animerar bakgrunden i Immersive-vyn.
+settings.intensive.immersiveBackground.description: Renderar en kontinuerligt animerad bakgrund bakom hela appen.
+settings.intensive.lcdChromaticAberration.description: Lägger till en RGB-färgkantseffekt på LCD-glaset för Nu spelas.
+settings.intensive.miniPlayerAnimatedArtwork.description: Håller animerade albumomslag igång i minispelarfönstret.
+settings.intensive.playerMaterial.description: Liquid Glass bryter spelarfältet genom en live-shader.
+settings.intensive.realtimeVisualizer.description: Analyserar ljud i realtid för att rita en visualiserare på spår som spelas.
+settings.intensive.singEngine.description: Legacy-alternativet renderar Sing-animeringen per bildruta på CPU:n.
+settings.intensive.singLyricsEverywhere.description: Kör Sing-textanimeringen ord-för-ord utanför Immersive-vyn.
+settings.intensive.viewTransitions.description: Animerar övergångar när du växlar mellan vissa vyer.
+settings.intensive.warning: Prestandakrävande – kan orsaka hög CPU-/GPU-användning.
 settings.keybindings.recordingHint: Spelar in. Tryck på Escape för att avbryta
 settings.lyrics.localeOverrides: Språkbaserade regler
 settings.lyrics.localeOverrides.add: Lägg till språkspecifikt undantag
@@ -1442,6 +1475,7 @@ settings.nav.group.library: Bibliotek
 settings.nav.group.playback: Uppspelning
 settings.nav.lyrics: Låttexter
 settings.nav.plugins: Insticksprogram
+settings.nav.power: Strömanvändning
 settings.nav.privacy: Integritet
 settings.nav.profile: Profil
 settings.nav.search: Sök
@@ -1535,6 +1569,7 @@ settings.option.advanced.playback.allowPlaybackRateChangeEverywhere: Tillåt än
 settings.option.advanced.playback.allowPlaybackRateChangeEverywhere.description: Aktiverat som standard för poddar. Slå på för att tillåta samma enkla kontroll av uppspelningshastighet för alla medier, inklusive låtar.
 settings.option.advanced.playlistTrackMapping: Spåridentifiering för spellistor
 settings.option.advanced.playlistTrackMapping.description: Aktiverar djupskanning av spellistor för att avgöra vilka spår som finns i vilka spellistor. Tiden för att bygga upp spellistans cache kan öka avsevärt.
+settings.option.advanced.powerUsage.description: Flyttad – bildhastighetsgränser, val av renderare och krävande visuella funktioner.
 settings.option.advanced.progressBar: Förloppsindikator
 settings.option.advanced.progressBar.useAccentColor: Använd accentfärg
 settings.option.advanced.resizableMiniplayer: Minispelare med ändringsbar storlek
@@ -1852,7 +1887,7 @@ settings.option.general.translationFeedback: Feedback på översättning
 settings.option.general.translators: Översättare
 settings.option.general.translators.description: Ett stort tack till dessa bidragsgivare som har hjälpt till att översätta Cider. Klicka på ett namn för att öppna deras GitHub-profil.
 settings.option.general.useSmartQueueByDefault: Använd Smart Queue som standard
-settings.option.general.useSmartQueueByDefault.description: Tillämpa Smart Queue-sortering automatiskt när kön skapas.
+settings.option.general.useSmartQueueByDefault.description: Använd automatiskt Smart kö-sortering när kön skapas. Kräver Automix.
 settings.option.general.warnBeforeQueueOverride: Varna innan kön skrivs över
 settings.option.hide: Dölj
 settings.option.left: Vänster
@@ -2105,6 +2140,7 @@ settings.option.visual.immersive.startingTab.lyrics: Låttext
 settings.option.visual.immersive.startingTab.queue: Kö
 settings.option.visual.immersive.useAnimatedArtwork: Använd animerade omslag
 settings.option.visual.immersive.useAnimatedArtwork.description: Visa animerat omslag när det är tillgängligt. Detta kan orsaka prestandaproblem på enheter med lägre prestanda.
+settings.option.visual.immersive.useAnimatedBackground: Animerad bakgrund i Immersive-vyn
 settings.option.visual.immersive.useBackgroundBpm: Bakgrundshastighet baserad på BPM
 settings.option.visual.immersiveBackground.blank: Tom
 settings.option.visual.immersiveBackground.customImage: Anpassad bild
@@ -2250,6 +2286,22 @@ settings.performance.saveSuccess: Klientinställningarna har sparats. Starta om 
 settings.performance.v8OptimizeSize: V8-optimering för storlek
 settings.performance.v8OptimizeSize.description1: Sänker minnesanvändningen genom att minska storleken på den genererade koden via
 settings.performance.v8OptimizeSize.description2: rekommenderas inte för daglig användning om du kan undvika det. Starta om appen efter ändring.
+settings.power.badge.high: Hog strömförbrukning
+settings.power.badge.medium: Medelhög strömförbrukning
+settings.power.framerate: Bildhastighet och renderare
+settings.power.highImpact: Funktioner med hög påverkan
+settings.power.mediumImpact: Funktioner med medelhög påverkan
+settings.power.profile: Strömprofil
+settings.power.profile.balanced: Balanserad
+settings.power.profile.balanced.description: Flera funktioner med medelhög påverkan är aktiverade. Strömanvändningen är måttlig.
+settings.power.profile.demanding: Krävande
+settings.power.profile.demanding.description: Funktioner med hög påverkan är aktiverade och kan öka CPU-/GPU-belastningen, värmen och batteridräneringen.
+settings.power.profile.efficient: Energisnål
+settings.power.profile.efficient.description: Få eller inga krävande funktioner är aktiverade. Cider körs resurssnålt.
+settings.power.savers: Strömsparare
+settings.power.summary.count: "{{high}} med hög påverkan, {{medium}} med medelhög påverkan aktiverade"
+settings.power.summary.high: Hög påverkan
+settings.power.summary.medium: Medelhög påverkan
 settings.profile.crop.hint: Dra för att flytta, scrolla för att zooma
 settings.profile.crop.title: Placera ditt foto
 settings.profile.defaultName: Apple Music-användare

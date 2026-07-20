@@ -153,6 +153,7 @@ action.signIn: Sign In
 action.signOut: Sign Out
 action.smartQueue.disable: Disable Smart Queue
 action.smartQueue.enable: Enable Smart Queue
+action.smartQueue.requiresAutomix: Smart Queue requires Automix
 action.start: Start
 action.startOver: Start Over
 action.startRadio: Start Radio
@@ -362,6 +363,12 @@ developer.tweaks.oscSpeed: OSC SPD
 developer.tweaks.saturate: Saturate (%)
 developer.tweaks.stuff: stuff
 dialog.cancel: Cancel
+dialog.intensiveDisabled.body: This update turned off a few performance-intensive visual features that can cause high CPU/GPU usage, heat, and battery drain. You can turn any of them back on below, or later in Settings.
+dialog.intensiveDisabled.done: Done
+dialog.intensiveDisabled.openPower: Open Power Usage settings
+dialog.intensiveDisabled.reenable: Turn back on
+dialog.intensiveDisabled.reenabled: On
+dialog.intensiveDisabled.title: Some visual features were turned off
 dialog.ok: OK
 discord.widget.vanityStat: Replay {year}
 error.appleMusicSubRequired: Apple Music requires a subscription.
@@ -867,6 +874,12 @@ party.trackRejected.subtitle: Only Apple Music catalogue songs can be queued in 
 party.trackRejected.title: Not available for parties
 party.trackUnavailable.subtitle: This song is not available in your region. Playback resumes with the next track.
 party.trackUnavailable.title: Track unavailable
+playbackHealth.backgroundFreeze.body: Your desktop environment or operating system suspended Cider while it was in the background, which interrupted playback for about {seconds} seconds until the window woke up again.
+playbackHealth.backgroundFreeze.dismiss: Dismiss
+playbackHealth.backgroundFreeze.eyebrow: Playback notice
+playbackHealth.backgroundFreeze.hint: A window manager rule or OS setting can keep Cider running while it is unfocused. Learn more shows known workarounds for your setup.
+playbackHealth.backgroundFreeze.learnMore: Learn more
+playbackHealth.backgroundFreeze.title: Your system paused Cider in the background
 playlist.collaborative.tooltip: This playlist is open to collaborators
 playlist.collaborators.andOthers: "{{name}} & {{count}} others"
 playlist.collaborators.count: "{{count}} contributors"
@@ -1356,6 +1369,26 @@ settings.immersive.focusMode.preset.fyre: Fyre
 settings.immersive.focusMode.preset.groovy: Groovy
 settings.immersive.focusMode.readVueDocs: Read Vue <Transition> docs
 settings.immersive.focusMode.title: Focus Mode Settings
+settings.intensive.animateArtworkOnHover.description: Starts artwork animation whenever you hover a media item.
+settings.intensive.animatedArtwork.description: Plays animated album artwork when available.
+settings.intensive.animatedArtworkQuality.description: Higher quality decodes larger animated artwork video streams.
+settings.intensive.catalogAnimatedArtwork.description: Plays many animated artworks at once while browsing the catalogue.
+settings.intensive.characterFlow.description: Animates each lyric character individually instead of whole lines.
+settings.intensive.confirm.enable: Enable
+settings.intensive.confirm.message: This feature is performance intensive and can significantly increase CPU/GPU usage, heat, and battery drain — especially on lower-end hardware. You can review demanding features anytime via the bulb button at the top of Settings.
+settings.intensive.emotionEngine.description: Analyses album artwork to derive a colour palette.
+settings.intensive.fsrUpscale.description: Upscales album artwork on the GPU with FidelityFX Super Resolution.
+settings.intensive.immersiveAnimatedArtwork.description: Plays animated artwork inside Immersive view.
+settings.intensive.immersiveAnimatedBackground.description: Animates the background of Immersive view.
+settings.intensive.immersiveBackground.description: Renders a continuously animated background behind the whole app.
+settings.intensive.lcdChromaticAberration.description: Adds an RGB fringe pass to the now-playing LCD glass.
+settings.intensive.miniPlayerAnimatedArtwork.description: Keeps animated artwork playing in the Mini Player window.
+settings.intensive.playerMaterial.description: Liquid Glass refracts the player bar through a live shader.
+settings.intensive.realtimeVisualizer.description: Analyses audio in real-time to draw a visualiser on playing tracks.
+settings.intensive.singEngine.description: Legacy renders the Sing animation per frame on the CPU.
+settings.intensive.singLyricsEverywhere.description: Runs the word-by-word Sing lyric animation outside of Immersive view.
+settings.intensive.viewTransitions.description: Animates transitions when switching some views.
+settings.intensive.warning: Performance intensive — may cause high CPU/GPU usage.
 settings.keybindings.recordingHint: Recording. Escape to cancel
 settings.lyrics.localeOverrides: Locale-Based Rules
 settings.lyrics.localeOverrides.add: Add Locale Override
@@ -1442,6 +1475,7 @@ settings.nav.group.library: Library
 settings.nav.group.playback: Playback
 settings.nav.lyrics: Lyrics
 settings.nav.plugins: Plugins
+settings.nav.power: Power Usage
 settings.nav.privacy: Privacy
 settings.nav.profile: Profile
 settings.nav.search: Search
@@ -1535,6 +1569,7 @@ settings.option.advanced.playback.allowPlaybackRateChangeEverywhere: Allow Chang
 settings.option.advanced.playback.allowPlaybackRateChangeEverywhere.description: Enabled by default for podcasts. Turn on to allow the same easy playback rate control to all media, including songs.
 settings.option.advanced.playlistTrackMapping: Playlist Track Mapping
 settings.option.advanced.playlistTrackMapping.description: Enables deep scanning of playlists to determine which tracks are in which playlists. Playlist cache build times can increase significantly.
+settings.option.advanced.powerUsage.description: Moved — framerate limits, renderer choice, and demanding visual features.
 settings.option.advanced.progressBar: Progress Bar
 settings.option.advanced.progressBar.useAccentColor: Use Accent Colour
 settings.option.advanced.resizableMiniplayer: Resizable Miniplayer
@@ -1852,7 +1887,7 @@ settings.option.general.translationFeedback: Translation Feedback
 settings.option.general.translators: Translators
 settings.option.general.translators.description: Thanks to these contributors for helping translate Cider. Click a name to open their GitHub profile.
 settings.option.general.useSmartQueueByDefault: Use Smart Queue by default
-settings.option.general.useSmartQueueByDefault.description: Automatically apply Smart Queue ordering when the queue is built.
+settings.option.general.useSmartQueueByDefault.description: Automatically apply Smart Queue ordering when the queue is built. Requires Automix.
 settings.option.general.warnBeforeQueueOverride: Warn before overriding queue
 settings.option.hide: Hide
 settings.option.left: Left
@@ -2105,6 +2140,7 @@ settings.option.visual.immersive.startingTab.lyrics: Lyrics
 settings.option.visual.immersive.startingTab.queue: Queue
 settings.option.visual.immersive.useAnimatedArtwork: Use Animated Artwork
 settings.option.visual.immersive.useAnimatedArtwork.description: Show animated artwork when available. This may cause performance issues on low-end devices.
+settings.option.visual.immersive.useAnimatedBackground: Immersive Animated Background
 settings.option.visual.immersive.useBackgroundBpm: Background Speed Based On BPM
 settings.option.visual.immersiveBackground.blank: Blank
 settings.option.visual.immersiveBackground.customImage: Custom Image
@@ -2250,6 +2286,22 @@ settings.performance.saveSuccess: Client settings saved. Restart the app for hos
 settings.performance.v8OptimizeSize: V8 optimise for size
 settings.performance.v8OptimizeSize.description1: Lowers Memory Usage by reducing the size of the generated code via
 settings.performance.v8OptimizeSize.description2: not recommended for daily use if you can tolerate it. Restart the app after changing.
+settings.power.badge.high: High power
+settings.power.badge.medium: Medium power
+settings.power.framerate: Framerate & renderer
+settings.power.highImpact: High impact features
+settings.power.mediumImpact: Medium impact features
+settings.power.profile: Power profile
+settings.power.profile.balanced: Balanced
+settings.power.profile.balanced.description: Several medium impact features are on. Power use is moderate.
+settings.power.profile.demanding: Demanding
+settings.power.profile.demanding.description: High impact features are on and may increase CPU/GPU load, heat, and battery drain.
+settings.power.profile.efficient: Efficient
+settings.power.profile.efficient.description: Little to no demanding features are on. Cider is running lean.
+settings.power.savers: Power savers
+settings.power.summary.count: "{{high}} high impact, {{medium}} medium impact features on"
+settings.power.summary.high: High impact
+settings.power.summary.medium: Medium impact
 settings.profile.crop.hint: Drag to move, scroll to zoom
 settings.profile.crop.title: Position your photo
 settings.profile.defaultName: Apple Music User

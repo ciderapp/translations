@@ -153,6 +153,7 @@ action.signIn: Anmelden
 action.signOut: Abmelden
 action.smartQueue.disable: Smart Queue deaktivieren
 action.smartQueue.enable: Smart Queue aktivieren
+action.smartQueue.requiresAutomix: Smart Queue erfordert Automix
 action.start: Starten
 action.startOver: Von vorn beginnen
 action.startRadio: Sender starten
@@ -362,6 +363,12 @@ developer.tweaks.oscSpeed: OSC-Tempo
 developer.tweaks.saturate: Sättigung (%)
 developer.tweaks.stuff: Kram
 dialog.cancel: Abbrechen
+dialog.intensiveDisabled.body: Dieses Update hat einige rechenintensive visuelle Funktionen deaktiviert, die eine hohe CPU-/GPU-Auslastung, Hitzeentwicklung und Batterieverbrauch verursachen können. Du kannst sie unten oder später in den Einstellungen wieder aktivieren.
+dialog.intensiveDisabled.done: Fertig
+dialog.intensiveDisabled.openPower: Einstellungen für Energieverbrauch öffnen
+dialog.intensiveDisabled.reenable: Wieder aktivieren
+dialog.intensiveDisabled.reenabled: Ein
+dialog.intensiveDisabled.title: Einige visuelle Funktionen wurden deaktiviert
 dialog.ok: OK
 discord.widget.vanityStat: Replay {year}
 error.appleMusicSubRequired: Apple Music erfordert ein Abonnement.
@@ -867,6 +874,12 @@ party.trackRejected.subtitle: Nur Titel aus dem Apple Music-Katalog können in e
 party.trackRejected.title: Für Partys nicht verfügbar
 party.trackUnavailable.subtitle: Dieser Titel ist in deiner Region nicht verfügbar. Die Wiedergabe wird mit dem nächsten Titel fortgesetzt.
 party.trackUnavailable.title: Titel nicht verfügbar
+playbackHealth.backgroundFreeze.body: Deine Desktop-Umgebung oder dein Betriebssystem hat Cider im Hintergrund angehalten, was die Wiedergabe für etwa {seconds} Sekunden unterbrochen hat, bis das Fenster wieder aktiv wurde.
+playbackHealth.backgroundFreeze.dismiss: Schließen
+playbackHealth.backgroundFreeze.eyebrow: Wiedergabehinweis
+playbackHealth.backgroundFreeze.hint: Eine Window-Manager-Regel oder Betriebssystem-Einstellung kann dafür sorgen, dass Cider im Hintergrund weiterläuft. „Mehr erfahren“ zeigt bekannte Workarounds für dein Setup.
+playbackHealth.backgroundFreeze.learnMore: Mehr erfahren
+playbackHealth.backgroundFreeze.title: Dein System hat Cider im Hintergrund pausiert
 playlist.collaborative.tooltip: Diese Playlist ist offen für Mitwirkende
 playlist.collaborators.andOthers: "{{name}} & {{count}} andere"
 playlist.collaborators.count: "{{count}} Mitwirkende"
@@ -1356,6 +1369,26 @@ settings.immersive.focusMode.preset.fyre: Fyre
 settings.immersive.focusMode.preset.groovy: Groovy
 settings.immersive.focusMode.readVueDocs: Vue <Transition>-Dokumentation lesen
 settings.immersive.focusMode.title: Fokusmodus-Einstellungen
+settings.intensive.animateArtworkOnHover.description: Startet die Cover-Animation, wenn du den Mauszeiger über ein Medienelement bewegst.
+settings.intensive.animatedArtwork.description: Spielt animierte Album-Cover ab, sofern verfügbar.
+settings.intensive.animatedArtworkQuality.description: Höhere Qualität decodiert größere Videostreams für animierte Cover.
+settings.intensive.catalogAnimatedArtwork.description: Spielt beim Durchstöbern des Katalogs viele animierte Cover gleichzeitig ab.
+settings.intensive.characterFlow.description: Animates jedes Zeichen des Songtexts einzeln statt ganzer Zeilen.
+settings.intensive.confirm.enable: Aktivieren
+settings.intensive.confirm.message: Diese Funktion ist rechenintensiv und kann die CPU-/GPU-Auslastung, Hitzeentwicklung und den Batterieverbrauch erheblich erhöhen – insbesondere auf schwächerer Hardware. Du kannst anspruchsvolle Funktionen jederzeit über das Glühbirnen-Symbol oben in den Einstellungen überprüfen.
+settings.intensive.emotionEngine.description: Analysiert das Album-Cover, um eine Farbpalette abzuleiten.
+settings.intensive.fsrUpscale.description: Skaliert Album-Cover auf der GPU mit FidelityFX Super Resolution hoch.
+settings.intensive.immersiveAnimatedArtwork.description: Spielt animierte Cover in der immersiven Ansicht ab.
+settings.intensive.immersiveAnimatedBackground.description: Animiert den Hintergrund der immersiven Ansicht.
+settings.intensive.immersiveBackground.description: Renders einen kontinuierlich animierten Hintergrund hinter der gesamten App.
+settings.intensive.lcdChromaticAberration.description: Fügt dem LCD-Glas der aktuellen Wiedergabe einen RGB-Farbsaumeffekt hinzu.
+settings.intensive.miniPlayerAnimatedArtwork.description: Spielt animierte Cover auch im Mini-Player-Fenster ab.
+settings.intensive.playerMaterial.description: Liquid Glass bricht die Player-Leiste durch einen Live-Shader.
+settings.intensive.realtimeVisualizer.description: Analysiert Audio in Echtzeit, um einen Visualizer für abgespielte Titel anzuzeigen.
+settings.intensive.singEngine.description: Legacy rendert die Sing-Animation pro Frame auf der CPU.
+settings.intensive.singLyricsEverywhere.description: Führt die wortgenaue Sing-Songtext-Animation außerhalb der immersiven Ansicht aus.
+settings.intensive.viewTransitions.description: Animiert Übergänge beim Wechseln einiger Ansichten.
+settings.intensive.warning: Rechenintensiv – kann hohe CPU-/GPU-Auslastung verursachen.
 settings.keybindings.recordingHint: Aufnahme. Escape zum Abbrechen
 settings.lyrics.localeOverrides: Gebietsschema-basierte Regeln
 settings.lyrics.localeOverrides.add: Gebietsschema-Überschreibung hinzufügen
@@ -1442,6 +1475,7 @@ settings.nav.group.library: Mediathek
 settings.nav.group.playback: Wiedergabe
 settings.nav.lyrics: Songtexte
 settings.nav.plugins: Plugins
+settings.nav.power: Energieverbrauch
 settings.nav.privacy: Datenschutz
 settings.nav.profile: Profil
 settings.nav.search: Suchen
@@ -1535,6 +1569,7 @@ settings.option.advanced.playback.allowPlaybackRateChangeEverywhere: Änderung d
 settings.option.advanced.playback.allowPlaybackRateChangeEverywhere.description: Standardmäßig für Podcasts aktiviert. Einschalten, um dieselbe einfache Steuerung des Wiedergabetempos für alle Medien, einschließlich Titeln, zu ermöglichen.
 settings.option.advanced.playlistTrackMapping: Playlist-Titelzuordnung
 settings.option.advanced.playlistTrackMapping.description: Aktiviert das tiefe Scannen von Playlists, um festzustellen, welche Titel in welchen Playlists enthalten sind. Die Ladezeit des Playlist-Caches kann sich dadurch erheblich verlängern.
+settings.option.advanced.powerUsage.description: Verschoben – Bildratengrenzen, Renderer-Auswahl und anspruchsvolle visuelle Funktionen.
 settings.option.advanced.progressBar: Fortschrittsbalken
 settings.option.advanced.progressBar.useAccentColor: Akzentfarbe verwenden
 settings.option.advanced.resizableMiniplayer: Größenveränderbarer Miniplayer
@@ -1852,7 +1887,7 @@ settings.option.general.translationFeedback: Feedback zur Übersetzung
 settings.option.general.translators: Übersetzer
 settings.option.general.translators.description: Vielen Dank an diese Mitwirkenden, die bei der Übersetzung von Cider geholfen haben. Klicke auf einen Namen, um das entsprechende GitHub-Profil zu öffnen.
 settings.option.general.useSmartQueueByDefault: Smart Queue standardmäßig verwenden
-settings.option.general.useSmartQueueByDefault.description: Wendet die Smart Queue-Sortierung automatisch an, wenn die Warteschlange erstellt wird.
+settings.option.general.useSmartQueueByDefault.description: Smart Queue-Sortierung automatisch anwenden, wenn die Warteschlange erstellt wird. Erfordert Automix.
 settings.option.general.warnBeforeQueueOverride: Vor dem Überschreiben der Warteschlange warnen
 settings.option.hide: Ausblenden
 settings.option.left: Links
@@ -2105,6 +2140,7 @@ settings.option.visual.immersive.startingTab.lyrics: Songtexte
 settings.option.visual.immersive.startingTab.queue: Nächste Titel
 settings.option.visual.immersive.useAnimatedArtwork: Animierte Cover verwenden
 settings.option.visual.immersive.useAnimatedArtwork.description: Animierte Cover anzeigen, wenn verfügbar. Dies kann auf leistungsschwächeren Geräten zu Performance-Problemen führen.
+settings.option.visual.immersive.useAnimatedBackground: Immersiver animierter Hintergrund
 settings.option.visual.immersive.useBackgroundBpm: Hintergrundgeschwindigkeit basierend auf BPM
 settings.option.visual.immersiveBackground.blank: Leer
 settings.option.visual.immersiveBackground.customImage: Benutzerdefiniertes Bild
@@ -2250,6 +2286,22 @@ settings.performance.saveSuccess: Client-Einstellungen gespeichert. Starte die A
 settings.performance.v8OptimizeSize: V8 auf Größe optimieren
 settings.performance.v8OptimizeSize.description1: Senkt die Speichernutzung, indem die Größe des generierten Codes reduziert wird über
 settings.performance.v8OptimizeSize.description2: nicht für den täglichen Gebrauch empfohlen, falls vermeidbar. Starte die App nach der Änderung neu.
+settings.power.badge.high: Hoher Verbrauch
+settings.power.badge.medium: Mittlerer Verbrauch
+settings.power.framerate: Bildrate & Renderer
+settings.power.highImpact: Funktionen mit hoher Auswirkung
+settings.power.mediumImpact: Funktionen mit mittlerer Auswirkung
+settings.power.profile: Energieprofil
+settings.power.profile.balanced: Ausgewogen
+settings.power.profile.balanced.description: Einige Funktionen mit mittlerer Auswirkung sind aktiviert. Der Energieverbrauch ist moderat.
+settings.power.profile.demanding: Anspruchsvoll
+settings.power.profile.demanding.description: Funktionen mit hoher Auswirkung sind aktiviert und können die CPU-/GPU-Last, Hitzeentwicklung und den Batterieverbrauch erhöhen.
+settings.power.profile.efficient: Effizient
+settings.power.profile.efficient.description: Kaum oder keine anspruchsvollen Funktionen sind aktiviert. Cider läuft ressourcenschonend.
+settings.power.savers: Energiesparer
+settings.power.summary.count: "{{high}} mit hoher, {{medium}} mit mittlerer Auswirkung aktiv"
+settings.power.summary.high: Hohe Auswirkung
+settings.power.summary.medium: Mittlere Auswirkung
 settings.profile.crop.hint: Zum Bewegen ziehen, zum Zoomen scrollen
 settings.profile.crop.title: Foto positionieren
 settings.profile.defaultName: Apple Music-Benutzer

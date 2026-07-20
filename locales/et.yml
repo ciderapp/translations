@@ -157,6 +157,7 @@ action.signIn: Logi sisse
 action.signOut: Logi välja
 action.smartQueue.disable: Lülita nutikas järjekord välja
 action.smartQueue.enable: Lülita nutikas järjekord sisse
+action.smartQueue.requiresAutomix: Smart Queue nõuab funktsiooni Automix
 action.start: Alusta
 action.startOver: Alusta uuesti
 action.startRadio: Käivita raadio
@@ -387,6 +388,12 @@ developer.tweaks.oscSpeed:
 developer.tweaks.saturate: Küllastus (%)
 developer.tweaks.stuff: kraam
 dialog.cancel: Tühista
+dialog.intensiveDisabled.body: See värskendus lülitas välja mõned jõudlusnõudlikud visuaalsed funktsioonid, mis võivad põhjustada suurt protsessori/graafikakaardi (CPU/GPU) koormust, kuumenemist ja aku tühjenemist. Saate need allpool või hiljem seadetes uuesti sisse lülitada.
+dialog.intensiveDisabled.done: Valmis
+dialog.intensiveDisabled.openPower: Ava energiatarbe seaded
+dialog.intensiveDisabled.reenable: Lülita uuesti sisse
+dialog.intensiveDisabled.reenabled: Sees
+dialog.intensiveDisabled.title: Mõned visuaalsed funktsioonid lülitati välja
 dialog.ok: OK
 discord.widget.vanityStat: Replay {year}
 error.appleMusicSubRequired: Apple Music nõuab tellimust.
@@ -912,6 +919,12 @@ party.trackRejected.subtitle: Peo järjekorda saab lisada ainult Apple Music kat
 party.trackRejected.title: Pole pidude jaoks saadaval
 party.trackUnavailable.subtitle: See lugu pole sinu piirkonnas saadaval. Esitust jätkatakse järgmise looga.
 party.trackUnavailable.title: Lugu pole saadaval
+playbackHealth.backgroundFreeze.body: Teie töölauakeskkond või operatsioonisüsteem peatas Cideri töö taustal, mis katkestas taasesituse umbes {seconds} sekundiks, kuni aken uuesti ärkas.
+playbackHealth.backgroundFreeze.dismiss: Sule
+playbackHealth.backgroundFreeze.eyebrow: Taasesituse teavitus
+playbackHealth.backgroundFreeze.hint: Aknahalduri reegel või OS-i seade võib hoida Ciderit töötamas ka siis, kui see pole fookuses. „Lisateave“ näitab teie seadistuse jaoks teadaolevaid lahendusi.
+playbackHealth.backgroundFreeze.learnMore: Lisateave
+playbackHealth.backgroundFreeze.title: Teie süsteem peatas Cideri taustal
 playlist.collaborative.tooltip: See esitusloend on avatud kaasautoritele
 playlist.collaborators.andOthers: "{{name}} ja veel {{count}}"
 playlist.collaborators.count: "{{count}} kaasautorit"
@@ -1400,6 +1413,26 @@ settings.immersive.focusMode.preset.fyre: Fyre
 settings.immersive.focusMode.preset.groovy: Groovy
 settings.immersive.focusMode.readVueDocs: Loe Vue <Transition> dokumentatsiooni
 settings.immersive.focusMode.title: Fookusrežiimi seaded
+settings.intensive.animateArtworkOnHover.description: Käivitab kaanekujunduse animatsiooni, kui liigute kursoriga meediaüksuse kohale.
+settings.intensive.animatedArtwork.description: Esitab animeeritud albumikujundust, kui see on saadaval.
+settings.intensive.animatedArtworkQuality.description: Kõrgem kvaliteet dekodeerib suuremaid animeeritud kujunduse videovooge.
+settings.intensive.catalogAnimatedArtwork.description: Esitab kataloogi sirvimisel korraga mitut animeeritud kujundust.
+settings.intensive.characterFlow.description: Animeerib laulusõnade iga tähemärki eraldi, mitte terveid ridu.
+settings.intensive.confirm.enable: Luba
+settings.intensive.confirm.message: See funktsioon on jõudlusnõudlik ja võib märkimisväärselt suurendada protsessori/graafikakaardi (CPU/GPU) koormust, kuumenemist ja aku tühjenemist — eriti nõrgema riistvara puhul. Saate nõudlikud funktsioonid igal ajal üle vaadata seadete ülaosas asuva lambipirni nupu kaudu.
+settings.intensive.emotionEngine.description: Analüüsib albumikujundust värvipaleti tuletamiseks.
+settings.intensive.fsrUpscale.description: Suurendab albumikujunduse eraldusvõimet graafikakaardil (GPU) FidelityFX Super Resolution tehnoloogiaga.
+settings.intensive.immersiveAnimatedArtwork.description: Esitab animeeritud kujundust vaates Immersive.
+settings.intensive.immersiveAnimatedBackground.description: Animeerib vaate Immersive tausta.
+settings.intensive.immersiveBackground.description: Renderdab pidevalt animeeritud tausta kogu rakenduse taga.
+settings.intensive.lcdChromaticAberration.description: Lisab RGB-ääre efekti hetkel mängivale LCD-klaasile.
+settings.intensive.miniPlayerAnimatedArtwork.description: Hoiab animeeritud kujunduse esitamist Mini Playeri aknas.
+settings.intensive.playerMaterial.description: Liquid Glass murrab mängijariba reaalajas shaderi kaudu.
+settings.intensive.realtimeVisualizer.description: Analüüsib heli reaalajas, et joonistada esitatavatele lugudele visualiseerija.
+settings.intensive.singEngine.description: Legacy renderdab Sing-animatsiooni kaadri haaval protsessoril (CPU).
+settings.intensive.singLyricsEverywhere.description: Käivitab sõna-sõnalt Sing-laulusõnade animatsiooni väljaspool vaadet Immersive.
+settings.intensive.viewTransitions.description: Animeerib üleminekuid mõne vaate vahetamisel.
+settings.intensive.warning: Jõudlusnõudlik — võib põhjustada suurt protsessori/graafikakaardi (CPU/GPU) koormust.
 settings.keybindings.recordingHint: Salvestamine. Tühistamiseks vajuta Escape
 settings.lyrics.localeOverrides: Lokaadipõhised reeglid
 settings.lyrics.localeOverrides.add: Lisa lokaadi erand
@@ -1490,6 +1523,7 @@ settings.nav.group.library: Teek
 settings.nav.group.playback: Taasesitus
 settings.nav.lyrics: Sõnad
 settings.nav.plugins: Pluginad
+settings.nav.power: Energiatarve
 settings.nav.privacy: Privaatsus
 settings.nav.profile: Profiil
 settings.nav.search: Otsi
@@ -1595,6 +1629,7 @@ settings.option.advanced.playback.allowPlaybackRateChangeEverywhere: Luba laulud
 settings.option.advanced.playback.allowPlaybackRateChangeEverywhere.description: Vaikimisi lubatud taskuhäälingusaadete puhul. Lülita sisse, et lubada sama lihtne taasesituse kiiruse juhtimine kõigile meediumitele, sealhulgas lauludele.
 settings.option.advanced.playlistTrackMapping: Esitusloendi lugude vastendamine
 settings.option.advanced.playlistTrackMapping.description: Võimaldab esitusloendite süvaskannimist, et teha kindlaks, millised lood on millistes esitusloendites. Esitusloendite vahemälu loomise aeg võib märgatavalt pikeneda.
+settings.option.advanced.powerUsage.description: Teisaldatud — kaadrisageduse piirangud, renderdaja valik ja nõudlikud visuaalsed funktsioonid.
 settings.option.advanced.progressBar: Edenemisriba
 settings.option.advanced.progressBar.useAccentColor: Kasuta aktsentvärvi
 settings.option.advanced.resizableMiniplayer: Muudetava suurusega minimängija
@@ -1932,7 +1967,7 @@ settings.option.general.translationFeedback: Tagasiside tõlke kohta
 settings.option.general.translators: Tõlkijad
 settings.option.general.translators.description: Täname neid kaasautoreid, kes aitasid Ciderit tõlkida. Nende GitHubi profiili avamiseks klõpsake nimele.
 settings.option.general.useSmartQueueByDefault: Kasuta vaikimisi nutikat järjekorda
-settings.option.general.useSmartQueueByDefault.description: Rakenda järjekorra koostamisel automaatselt nutika järjekorra järjestust.
+settings.option.general.useSmartQueueByDefault.description: Rakenda järjekorra koostamisel automaatselt Smart Queue järjestust. Nõuab funktsiooni Automix.
 settings.option.general.warnBeforeQueueOverride: Hoiata enne järjekorra asendamist
 settings.option.hide: Peida
 settings.option.left: Vasak
@@ -2235,6 +2270,7 @@ settings.option.visual.immersive.startingTab.lyrics: Laulusõnad
 settings.option.visual.immersive.startingTab.queue: Järjekord
 settings.option.visual.immersive.useAnimatedArtwork: Kasuta animeeritud kaanepilte
 settings.option.visual.immersive.useAnimatedArtwork.description: Näita võimaluse korral animeeritud kaanepilte. See võib nõrgemates seadmetes põhjustada jõudlusprobleeme.
+settings.option.visual.immersive.useAnimatedBackground: Immersive-vaate animeeritud taust
 settings.option.visual.immersive.useBackgroundBpm: Tausta kiirus põhineb BPM-il
 settings.option.visual.immersiveBackground.blank: Tühi
 settings.option.visual.immersiveBackground.customImage: Kohandatud pilt
@@ -2400,6 +2436,22 @@ settings.performance.saveSuccess: Kliendi seaded salvestatud. Muudatuste rakenda
 settings.performance.v8OptimizeSize: V8 optimeerimine suuruse järgi
 settings.performance.v8OptimizeSize.description1: "Vähendab mälukasutust, piirates loodud koodi suurust järgmiselt:"
 settings.performance.v8OptimizeSize.description2: pole igapäevaseks kasutamiseks soovitatav, kui suudad seda taluda. Pärast muutmist taaskäivita rakendus.
+settings.power.badge.high: Suur energiatarve
+settings.power.badge.medium: Keskmine energiatarve
+settings.power.framerate: Kaadrisagedus ja renderdaja
+settings.power.highImpact: Suure mõjuga funktsioonid
+settings.power.mediumImpact: Keskmise mõjuga funktsioonid
+settings.power.profile: Energiaprofiil
+settings.power.profile.balanced: Tasakaalustatud
+settings.power.profile.balanced.description: Mitu keskmise mõjuga funktsiooni on sisse lülitatud. Energiatarve on mõõdukas.
+settings.power.profile.demanding: Nõudlik
+settings.power.profile.demanding.description: Suure mõjuga funktsioonid on sisse lülitatud ning võivad suurendada protsessori/graafikakaardi (CPU/GPU) koormust, kuumenemist ja aku tühjenemist.
+settings.power.profile.efficient: Säästlik
+settings.power.profile.efficient.description: Nõudlikud funktsioonid on peaaegu või täielikult välja lülitatud. Cider töötab säästlikult.
+settings.power.savers: Energiasäästjad
+settings.power.summary.count: "Sisse lülitatud: {{high}} suure mõjuga, {{medium}} keskmise mõjuga funktsiooni"
+settings.power.summary.high: Suur mõju
+settings.power.summary.medium: Keskmine mõju
 settings.profile.crop.hint: Lohista liigutamiseks, keri suumimiseks
 settings.profile.crop.title: Paiguta oma foto
 settings.profile.defaultName: Apple Music kasutaja

@@ -153,6 +153,7 @@ action.signIn: Autentificare
 action.signOut: Deconectare
 action.smartQueue.disable: Dezactivează coada inteligentă
 action.smartQueue.enable: Activează coada inteligentă
+action.smartQueue.requiresAutomix: Smart Queue necesită Automix
 action.start: Pornește
 action.startOver: Reia de la început
 action.startRadio: Porniți radioul
@@ -362,6 +363,12 @@ developer.tweaks.oscSpeed: VIT OSC
 developer.tweaks.saturate: Saturare (%)
 developer.tweaks.stuff: chestii
 dialog.cancel: Anulează
+dialog.intensiveDisabled.body: Această actualizare a dezactivat câteva funcții vizuale solicitante, care pot cauza utilizare intensă CPU/GPU, supraîncălzire și consumarea bateriei. Le poți reactiva mai jos sau ulterior în Configurări.
+dialog.intensiveDisabled.done: Gata
+dialog.intensiveDisabled.openPower: Deschide configurările Consum de energie
+dialog.intensiveDisabled.reenable: Reactivează
+dialog.intensiveDisabled.reenabled: Activat
+dialog.intensiveDisabled.title: Unele funcții vizuale au fost dezactivate
 dialog.ok: OK
 discord.widget.vanityStat: Replay {year}
 error.appleMusicSubRequired: Apple Music necesită un abonament.
@@ -867,6 +874,12 @@ party.trackRejected.subtitle: Doar melodiile din catalogul Apple Music pot fi ad
 party.trackRejected.title: Indisponibil pentru Party
 party.trackUnavailable.subtitle: Acest cântec nu este disponibil în regiunea ta. Redarea va continua cu următoarea piesă.
 party.trackUnavailable.title: Piesă indisponibilă
+playbackHealth.backgroundFreeze.body: Mediul desktop sau sistemul de operare a suspendat Cider în timp ce se afla în fundal, ceea ce a întrerupt redarea timp de aproximativ {seconds} secunde, până când fereastra a fost reactivată.
+playbackHealth.backgroundFreeze.dismiss: Închide
+playbackHealth.backgroundFreeze.eyebrow: Notificare redare
+playbackHealth.backgroundFreeze.hint: O regulă a managerului de ferestre sau o configurare a sistemului de operare poate menține Cider în funcțiune atunci când nu este în focar. „Află mai multe” prezintă soluții cunoscute pentru configurația ta.
+playbackHealth.backgroundFreeze.learnMore: Află mai multe
+playbackHealth.backgroundFreeze.title: Sistemul tău a pus Cider pe pauză în fundal
 playlist.collaborative.tooltip: Această listă de redare este deschisă colaboratorilor
 playlist.collaborators.andOthers: "{{name}} și alți {{count}}"
 playlist.collaborators.count: "{{count}} colaboratori"
@@ -1356,6 +1369,26 @@ settings.immersive.focusMode.preset.fyre: Fyre
 settings.immersive.focusMode.preset.groovy: Groovy
 settings.immersive.focusMode.readVueDocs: Citește documentația Vue <Transition>
 settings.immersive.focusMode.title: Configurări mod focalizare
+settings.intensive.animateArtworkOnHover.description: Pornește animația copertei când treci cu cursorul peste un element media.
+settings.intensive.animatedArtwork.description: Redă coperta animată a albumului atunci când este disponibilă.
+settings.intensive.animatedArtworkQuality.description: Calitatea mai ridicată decodifică fluxuri video mai mari pentru coperțile animate.
+settings.intensive.catalogAnimatedArtwork.description: Redă mai multe coperți animate simultan în timp ce răsfoiești catalogul.
+settings.intensive.characterFlow.description: Animează fiecare caracter al versurilor în mod individual, în loc de rânduri întregi.
+settings.intensive.confirm.enable: Activează
+settings.intensive.confirm.message: Această funcție este solicitantă și poate crește semnificativ utilizarea CPU/GPU, supraîncălzirea și consumul bateriei — în special pe hardware-ul mai vechi sau mai puțin performant. Poți examina funcțiile solicitante oricând folosind butonul cu bec din partea de sus a Configurărilor.
+settings.intensive.emotionEngine.description: Analizează coperta albumului pentru a genera o paletă de culori.
+settings.intensive.fsrUpscale.description: Upscalează coperta albumului pe GPU folosind FidelityFX Super Resolution.
+settings.intensive.immersiveAnimatedArtwork.description: Redă coperta animată în vizualizarea Imersivă.
+settings.intensive.immersiveAnimatedBackground.description: Animează fundalul vizualizării Imersive.
+settings.intensive.immersiveBackground.description: Redă un fundal animat continuu în spatele întregii aplicații.
+settings.intensive.lcdChromaticAberration.description: Adaugă un efect de aberație cromatică RGB pe ecranul LCD al redării în curs.
+settings.intensive.miniPlayerAnimatedArtwork.description: Menține redarea coperții animate în fereastra Mini Player.
+settings.intensive.playerMaterial.description: Liquid Glass refractă bara playerului printr-un shader live.
+settings.intensive.realtimeVisualizer.description: Analizează sunetul în timp real pentru a afișa un vizualizator pe piesele care rulează.
+settings.intensive.singEngine.description: Modul moștenit (Legacy) redă animația Sing cadru cu cadru pe CPU.
+settings.intensive.singLyricsEverywhere.description: Rulează animația versurilor Sing cuvânt cu cuvânt în afara vizualizării Imersive.
+settings.intensive.viewTransitions.description: Animează tranzițiile la comutarea anumitor vizualizări.
+settings.intensive.warning: Solicitant pentru performanță — poate cauza utilizare ridicată CPU/GPU.
 settings.keybindings.recordingHint: Se înregistrează. Apasă Escape pentru a anula
 settings.lyrics.localeOverrides: Reguli bazate pe limbă
 settings.lyrics.localeOverrides.add: Adaugă excepție de limbă
@@ -1442,6 +1475,7 @@ settings.nav.group.library: Bibliotecă
 settings.nav.group.playback: Redare
 settings.nav.lyrics: Versuri
 settings.nav.plugins: Plugin-uri
+settings.nav.power: Consum de energie
 settings.nav.privacy: Confidențialitate
 settings.nav.profile: Profil
 settings.nav.search: Căutare
@@ -1535,6 +1569,7 @@ settings.option.advanced.playback.allowPlaybackRateChangeEverywhere: Permite mod
 settings.option.advanced.playback.allowPlaybackRateChangeEverywhere.description: Activată implicit pentru podcasturi. Activează pentru a permite același control simplu al vitezei de redare pentru toate elementele media, inclusiv melodii.
 settings.option.advanced.playlistTrackMapping: Mapare piese din liste de redare
 settings.option.advanced.playlistTrackMapping.description: Activează scanarea profundă a listelor de redare pentru a determina ce piese se află în fiecare listă. Timpul de creare a cache-ului listelor de redare poate crește semnificativ.
+settings.option.advanced.powerUsage.description: Mutat — limite de cadre pe secundă, alegerea motorului de redare și funcții vizuale solicitante.
 settings.option.advanced.progressBar: Bară de progres
 settings.option.advanced.progressBar.useAccentColor: Utilizează culoarea de accent
 settings.option.advanced.resizableMiniplayer: Miniplayer redimensionabil
@@ -1852,7 +1887,7 @@ settings.option.general.translationFeedback: Feedback pentru traducere
 settings.option.general.translators: Traducători
 settings.option.general.translators.description: Mulțumim acestor colaboratori pentru ajutorul acordat la traducerea Cider. Fă clic pe un nume pentru a-i deschide profilul de GitHub.
 settings.option.general.useSmartQueueByDefault: Utilizează Coada inteligentă în mod implicit
-settings.option.general.useSmartQueueByDefault.description: Aplică automat ordonarea prin Coada inteligentă atunci când este creată coada de așteptare.
+settings.option.general.useSmartQueueByDefault.description: Aplică automat ordonarea Smart Queue la crearea cozii de așteptare. Necesită Automix.
 settings.option.general.warnBeforeQueueOverride: Avertizează înainte de a înlocui coada de așteptare
 settings.option.hide: Ascunde
 settings.option.left: Stânga
@@ -2105,6 +2140,7 @@ settings.option.visual.immersive.startingTab.lyrics: Versuri
 settings.option.visual.immersive.startingTab.queue: Coadă de așteptare
 settings.option.visual.immersive.useAnimatedArtwork: Utilizează coperți animate
 settings.option.visual.immersive.useAnimatedArtwork.description: Afișează ilustrațiile animate când sunt disponibile. Acest lucru poate cauza probleme de performanță pe dispozitivele mai puțin performante.
+settings.option.visual.immersive.useAnimatedBackground: Fundal animat imersiv
 settings.option.visual.immersive.useBackgroundBpm: Viteza fundalului în funcție de BPM
 settings.option.visual.immersiveBackground.blank: Gol
 settings.option.visual.immersiveBackground.customImage: Imagine personalizată
@@ -2250,6 +2286,22 @@ settings.performance.saveSuccess: Setările clientului au fost salvate. Reporni�
 settings.performance.v8OptimizeSize: Optimizare V8 pentru dimensiune
 settings.performance.v8OptimizeSize.description1: Reduce utilizarea memoriei prin micșorarea dimensiunii codului generat prin
 settings.performance.v8OptimizeSize.description2: nu este recomandat pentru utilizarea zilnică dacă o puteți tolera. Reporniți aplicația după modificare.
+settings.power.badge.high: Consum ridicat
+settings.power.badge.medium: Consum mediu
+settings.power.framerate: Rată de cadre și motor de redare
+settings.power.highImpact: Funcții cu impact ridicat
+settings.power.mediumImpact: Funcții cu impact mediu
+settings.power.profile: Profil de energie
+settings.power.profile.balanced: Echilibrat
+settings.power.profile.balanced.description: Câteva funcții cu impact mediu sunt activate. Consumul de energie este moderat.
+settings.power.profile.demanding: Solicitant
+settings.power.profile.demanding.description: Funcțiile cu impact ridicat sunt activate și pot crește încărcarea CPU/GPU, supraîncălzirea și consumul bateriei.
+settings.power.profile.efficient: Eficient
+settings.power.profile.efficient.description: Puține sau deloc funcții solicitante sunt activate. Cider rulează optimizat.
+settings.power.savers: Economisire energie
+settings.power.summary.count: "{{high}} funcții cu impact ridicat, {{medium}} cu impact mediu activate"
+settings.power.summary.high: Impact ridicat
+settings.power.summary.medium: Impact mediu
 settings.profile.crop.hint: Trage pentru a muta, derulează pentru a mări
 settings.profile.crop.title: Poziționează-ți fotografia
 settings.profile.defaultName: Utilizator Apple Music

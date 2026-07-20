@@ -625,6 +625,7 @@ action.signIn: Prijavi se
 action.signOut: Odjavi se
 action.smartQueue.disable: Onemogući pametni red
 action.smartQueue.enable: Omogući pametni red
+action.smartQueue.requiresAutomix: Smart Queue zahtijeva Automix
 action.start: Pokreni
 action.startOver: Kreni ispočetka
 action.startRadio: Pokreni radio
@@ -834,6 +835,12 @@ developer.tweaks.oscSpeed: OSC SPD
 developer.tweaks.saturate: Zasićenje (%)
 developer.tweaks.stuff: stvari
 dialog.cancel: Odustani
+dialog.intensiveDisabled.body: Ovo ažuriranje isključilo je nekoliko vizualnih značajki zahtjevnih za performanse koje mogu uzrokovati visoku potrošnju CPU-a/GPU-a, zagrijavanje i pražnjenje baterije. Možete ih ponovno uključiti u nastavku ili kasnije u Postavkama.
+dialog.intensiveDisabled.done: Gotovo
+dialog.intensiveDisabled.openPower: Otvori postavke potrošnje energije
+dialog.intensiveDisabled.reenable: Ponovno uključi
+dialog.intensiveDisabled.reenabled: Uključeno
+dialog.intensiveDisabled.title: Neke vizualne značajke su isključene
 dialog.ok: U redu
 discord.widget.vanityStat: Replay {year}
 error.appleMusicSubRequired: Apple Music zahtijeva pretplatu.
@@ -1339,6 +1346,12 @@ party.trackRejected.subtitle: Samo se pjesme iz Apple Music kataloga mogu dodati
 party.trackRejected.title: Nije dostupno za grupe
 party.trackUnavailable.subtitle: Ova pjesma nije dostupna u vašoj regiji. Reprodukcija se nastavlja sljedećom pjesmom.
 party.trackUnavailable.title: Pjesma nedostupna
+playbackHealth.backgroundFreeze.body: Vaše stolno okruženje ili operacijski sustav obustavio je Cider dok je bio u pozadini, što je prekinulo reprodukciju na otprilike {seconds} sekundi dok se prozor ponovno nije aktivirao.
+playbackHealth.backgroundFreeze.dismiss: Zatvori
+playbackHealth.backgroundFreeze.eyebrow: Obavijest o reprodukciji
+playbackHealth.backgroundFreeze.hint: Pravilo upravitelja prozora ili postavka operacijskog sustava može održati Cider aktivnim dok nije u fokusu. Opcija „Saznajte više” prikazuje poznata rješenja za vaš sustav.
+playbackHealth.backgroundFreeze.learnMore: Saznajte više
+playbackHealth.backgroundFreeze.title: Sustav je privremeno zaustavio Cider u pozadini
 playlist.collaborative.tooltip: Ovaj popis pjesama otvoren je za suradnike
 playlist.collaborators.andOthers: "{{name}} i još {{count}}"
 playlist.collaborators.count: "{{count}} suradnika"
@@ -1828,6 +1841,26 @@ settings.immersive.focusMode.preset.fyre: Fyre
 settings.immersive.focusMode.preset.groovy: Groovy
 settings.immersive.focusMode.readVueDocs: Pročitajte Vue <Transition> dokumentaciju
 settings.immersive.focusMode.title: Postavke načina fokusiranja
+settings.intensive.animateArtworkOnHover.description: Pokreće animaciju omota kada prijeđete pokazivačem preko medijske stavke.
+settings.intensive.animatedArtwork.description: Reproducira animirani omot albuma kada je dostupan.
+settings.intensive.animatedArtworkQuality.description: Viša kvaliteta dekodira veće videozapise animiranih omota.
+settings.intensive.catalogAnimatedArtwork.description: Reproducira više animiranih omota odjednom tijekom pregledavanja kataloga.
+settings.intensive.characterFlow.description: Animira svaki znak teksta pjesme pojedinačno umjesto cijelih redaka.
+settings.intensive.confirm.enable: Omogući
+settings.intensive.confirm.message: Ova je značajka zahtjevna za performanse i može značajno povećati potrošnju CPU-a/GPU-a, zagrijavanje i pražnjenje baterije — posebno na slabijem hardveru. Zahtjevne značajke možete pregledati u bilo kojem trenutku putem gumba sa žaruljom na vrhu Postavki.
+settings.intensive.emotionEngine.description: Analizira omot albuma radi dobivanja palete boja.
+settings.intensive.fsrUpscale.description: Povećava razlučivost omota albuma na grafičkoj kartici (GPU) pomoću tehnologije FidelityFX Super Resolution.
+settings.intensive.immersiveAnimatedArtwork.description: Reproducira animirani omot unutar prožimajućeg prikaza.
+settings.intensive.immersiveAnimatedBackground.description: Animira pozadinu prožimajućeg prikaza.
+settings.intensive.immersiveBackground.description: Iscrtava neprekidno animiranu pozadinu iza cijele aplikacije.
+settings.intensive.lcdChromaticAberration.description: Dodaje efekt RGB rubova na LCD staklo zaslona „Sada svira”.
+settings.intensive.miniPlayerAnimatedArtwork.description: Održava reprodukciju animiranog omota u prozoru Mini playera.
+settings.intensive.playerMaterial.description: Liquid Glass lomi traku playera putem sjenčanja u stvarnom vremenu.
+settings.intensive.realtimeVisualizer.description: Analizira zvuk u stvarnom vremenu za iscrtavanje vizualizatora na pjesmama koje se reproduciraju.
+settings.intensive.singEngine.description: Zastarjeli način iscrtava Sing animaciju po sličici na CPU-u.
+settings.intensive.singLyricsEverywhere.description: Pokreće Sing animaciju teksta pjesme riječ po riječ izvan prožimajućeg prikaza.
+settings.intensive.viewTransitions.description: Animira prijelaze pri promjeni određenih prikaza.
+settings.intensive.warning: Zahtjevno za performanse — može uzrokovati visoku potrošnju CPU-a/GPU-a.
 settings.keybindings.recordingHint: Snimanje. Escape za odustajanje
 settings.lyrics.localeOverrides: Pravila temeljena na lokalnim postavkama
 settings.lyrics.localeOverrides.add: Dodaj iznimku lokalnih postavki
@@ -1914,6 +1947,7 @@ settings.nav.group.library: Biblioteka
 settings.nav.group.playback: Reprodukcija
 settings.nav.lyrics: Tekstovi
 settings.nav.plugins: Dodaci
+settings.nav.power: Potrošnja energije
 settings.nav.privacy: Privatnost
 settings.nav.profile: Profil
 settings.nav.search: Pretraživanje
@@ -2007,6 +2041,7 @@ settings.option.advanced.playback.allowPlaybackRateChangeEverywhere: Dopusti pro
 settings.option.advanced.playback.allowPlaybackRateChangeEverywhere.description: Zadani način za podcaste. Uključite kako biste omogućili istu jednostavnu kontrolu brzine reprodukcije za sve medije, uključujući pjesme.
 settings.option.advanced.playlistTrackMapping: Mapiranje pjesama na popisima pjesama
 settings.option.advanced.playlistTrackMapping.description: Omogućuje dubinsko skeniranje popisa pjesama kako bi se utvrdilo koje se pjesme nalaze na kojim popisima. Vrijeme izgradnje predmemorije popisa pjesama može se znatno povećati.
+settings.option.advanced.powerUsage.description: Premješteno — ograničenja broja sličica u sekundi, odabir iscrtavača i zahtjevne vizualne značajke.
 settings.option.advanced.progressBar: Traka napretka
 settings.option.advanced.progressBar.useAccentColor: Koristi istaknutu boju
 settings.option.advanced.resizableMiniplayer: Mini-reproduktor s promjenjivom veličinom
@@ -2324,7 +2359,7 @@ settings.option.general.translationFeedback: Povratne informacije o prijevodu
 settings.option.general.translators: Prevoditelji
 settings.option.general.translators.description: Hvala ovim suradnicima na pomoći u prijevodu aplikacije Cider. Kliknite na ime kako biste otvorili njihov GitHub profil.
 settings.option.general.useSmartQueueByDefault: Zadano koristi pametni red čekanja
-settings.option.general.useSmartQueueByDefault.description: Automatski primijeni redoslijed pametnog reda čekanja prilikom stvaranja reda čekanja.
+settings.option.general.useSmartQueueByDefault.description: Automatski primijeni redoslijed Smart Queue kada se stvori red čekanja. Zahtijeva Automix.
 settings.option.general.warnBeforeQueueOverride: Upozori prije prepisivanja reda čekanja
 settings.option.hide: Sakrij
 settings.option.left: Lijevo
@@ -2577,6 +2612,7 @@ settings.option.visual.immersive.startingTab.lyrics: Tekst pjesme
 settings.option.visual.immersive.startingTab.queue: Red čekanja
 settings.option.visual.immersive.useAnimatedArtwork: Koristi animirane omote
 settings.option.visual.immersive.useAnimatedArtwork.description: Prikaži animirane omote kada su dostupni. To može uzrokovati probleme s performansama na slabijim uređajima.
+settings.option.visual.immersive.useAnimatedBackground: Prožimajuća animirana pozadina
 settings.option.visual.immersive.useBackgroundBpm: Brzina pozadine na temelju BPM-a
 settings.option.visual.immersiveBackground.blank: Prazno
 settings.option.visual.immersiveBackground.customImage: Prilagođena slika
@@ -2722,6 +2758,22 @@ settings.performance.saveSuccess: Postavke klijenta su spremljene. Ponovno pokre
 settings.performance.v8OptimizeSize: V8 optimizacija za veličinu
 settings.performance.v8OptimizeSize.description1: Smanjuje potrošnju memorije smanjenjem veličine generiranog koda putem
 settings.performance.v8OptimizeSize.description2: ne preporučuje se za svakodnevnu upotrebu ako je možete izbjeći. Ponovno pokrenite aplikaciju nakon promjene.
+settings.power.badge.high: Visoka potrošnja
+settings.power.badge.medium: Srednja potrošnja
+settings.power.framerate: Broj sličica i iscrtavač
+settings.power.highImpact: Značajke s visokim utjecajem
+settings.power.mediumImpact: Značajke sa srednjim utjecajem
+settings.power.profile: Profil potrošnje
+settings.power.profile.balanced: Uravnoteženo
+settings.power.profile.balanced.description: Uključeno je nekoliko značajki sa srednjim utjecajem. Potrošnja energije je umjerena.
+settings.power.profile.demanding: Zahtjevno
+settings.power.profile.demanding.description: Uključene su značajke s visokim utjecajem koje mogu povećati opterećenje CPU-a/GPU-a, zagrijavanje i pražnjenje baterije.
+settings.power.profile.efficient: Učinkovito
+settings.power.profile.efficient.description: Uključeno je vrlo malo ili nimalo zahtjevnih značajki. Cider radi s minimalnim opterećenjem.
+settings.power.savers: Štednja energije
+settings.power.summary.count: "Uključeno: {{high}} s visokim utjecajem, {{medium}} sa srednjim utjecajem"
+settings.power.summary.high: Visok utjecaj
+settings.power.summary.medium: Srednji utjecaj
 settings.profile.crop.hint: Povucite za pomicanje, skrolajte za zumiranje
 settings.profile.crop.title: Pozicionirajte svoju fotografiju
 settings.profile.defaultName: Korisnik Apple Music
