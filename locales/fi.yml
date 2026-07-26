@@ -165,6 +165,7 @@ action.tray.listento: "Kuuntele:"
 action.tray.minimize: Pienennä ilmoitusalueelle
 action.tray.minimize.description: Pienennetäänkö sovellus ilmoitusalueelle?
 action.tray.show: Näytä Cider
+action.tryAgain: Yritä uudelleen
 action.undo: Peruuta
 action.undoDislike: Peruuta tykkäämättömyys
 action.undoFavorite: Poista suosikeista
@@ -342,6 +343,16 @@ config.persist.error.title: Cider ei voi tallentaa asetuksiasi
 config.persist.fix.chownHint: "Suorita tämä komento päätteessä palauttaaksesi kirjoitusoikeudet ja yritä sitten muutosta uudelleen:"
 config.persist.fix.copied: Komento kopioitu leikepöydälle
 config.persist.fix.genericHint: Avaa datakansio ja varmista, että Cider voi kirjoittaa siihen, ja yritä sitten muutosta uudelleen.
+config.read.error.body: Tallennettuja asetuksiasi ei voitu lukea, joten Cider käyttää oletusasetuksia. Muutokset pysyvät toistaiseksi tällä laitteella, ja ne korvataan tallennetuilla asetuksillasi heti, kun Cider voi lukea ne uudelleen.
+config.read.error.title: Cider ei voinut ladata asetuksiasi
+config.read.recovered.body: Lataa Cider uudelleen ottaaksesi tallennetut asetuksesi käyttöön. Tämän istunnon aikana tekemäsi muutokset korvataan niillä.
+config.read.recovered.title: Asetuksesi voidaan ladata uudelleen
+config.read.retry.failed: Asetuksiasi ei edelleenkään voida lukea.
+config.restore.action: Palauta aiempi määritys
+config.restore.apply: Palauta
+config.restore.failed.body: Kyseistä määritystä ei voitu palauttaa.
+config.restore.failed.title: Palautus epäonnistui
+config.restore.hint: Valitse palautettava tallennettu määritys. Cider käynnistyy uudelleen, kun se on otettu käyttöön.
 connect.core.desc: Ota Cider Connect käyttöön saadaksesi pääsyn toimintoihin, kuten soittolistojen tuontiin, yhdessä kuunteluun, asetusten synkronointiin ja moneen muuhun.
 connect.instance.changeName: Muuta nimeä
 connect.instance.delete: Poista instanssi
@@ -1025,6 +1036,7 @@ settings.audio.lab: Audio Lab
 settings.audio.lab.arProfile: Atmosphere Realizer
 settings.audio.lab.capProfile: CAP-profiili
 settings.audio.lab.enableHint: Ota Cider Audio käyttöön päästäksesi Audio Lab -profiileihin.
+settings.audio.lab.passthroughNote: Audio Lab ohitetaan, kun Dolby Atmos -läpivienti on käytössä. Vaihda Atmos-tilaksi Vakio tai Binauraalinen kuullaksesi nämä asetukset.
 settings.audio.lab.spatialProfile: Optimoitu tilaääni
 settings.audio.moreSettings: Lisää ääniasetuksia…
 settings.audio.occlusion: Kuuntelutila
@@ -1203,6 +1215,12 @@ settings.client.windows.wpfRendering: WPF-renderöintitila
 settings.client.windows.wpfRendering.desc: Valitse WPF-renderöintitila. Jos olet epävarma, jätä valinnaksi ohjelmistopohjainen (software).
 settings.client.windows.wpfRendering.hardware: Laitteistopohjainen
 settings.client.windows.wpfRendering.software: Ohjelmistopohjainen
+settings.configBackups.confirm.body: Nykyiset asetuksesi korvataan {date} tallennetuilla asetuksilla, ja Cider käynnistyy uudelleen.
+settings.configBackups.confirm.title: Palautetaanko tämä määritys?
+settings.configBackups.empty: Varmuuskopioita ei ole vielä tallennettu.
+settings.configBackups.subtitle: Cider säilyttää kopion asetustiedostostasi ennen sen ylikirjoittamista. Palauta se, jos asetuksesi katosivat tai nollautuivat.
+settings.configBackups.unreachable: Cider ei juuri nyt saanut yhteyttä tallennettuihin varmuuskopioihisi, joten niitä ei voida näyttää. Yritä hetken kuluttua uudelleen.
+settings.configBackups.unsupported: Tämä asiakasohjelma ei säilytä määritysten varmuuskopioita.
 settings.connectivity.connectedDevices: Yhdistetyt laitteet
 settings.connectivity.connectedDevices.desc: Hallitse pariliitettyjä Cider Remote -laitteitasi
 settings.connectivity.connectNewDevice: Yhdistä uusi laite
@@ -1531,6 +1549,7 @@ settings.nav.accounts: Tilit
 settings.nav.advanced: Lisäasetukset
 settings.nav.audio: Ääni
 settings.nav.concerts: Konsertit
+settings.nav.config-backups: Määritysten varmuuskopiot
 settings.nav.connectivity: Yhteydet
 settings.nav.extensions: Laajennukset
 settings.nav.general: Yleiset
@@ -1592,6 +1611,7 @@ settings.option.advanced.clientSettings: Asiakasohjelman asetukset
 settings.option.advanced.clientSettings.description: Nykyiseen asiakasohjelmakehykseen liittyvät asetukset
 settings.option.advanced.compactSidebar: Kompakti sivupalkki
 settings.option.advanced.compactSidebar.size: Koko
+settings.option.advanced.configBackups.description: Palauta Ciderin tallentama kopio asetustiedostostasi siltä varalta, että asetuksesi katosivat tai nollautuivat.
 settings.option.advanced.experimentalFeatures: Kokeelliset ominaisuudet
 settings.option.advanced.experimentalFeatures.description: Keskeneräiset toiminnot ja kokeelliset asetukset.
 settings.option.advanced.floatingSearch: Kelluva haku
@@ -2536,6 +2556,7 @@ share.platform.twitter.tweet: |-
 
   #AppleMusic #Cider
 share.platform.whatsapp: WhatsApp
+shell3.panel.moveToCenter: Siirrä keskelle
 smartPlaylist.action.addRule: Lisää ehto
 smartPlaylist.action.convert: Lisää soittolistan säännöt…
 smartPlaylist.action.convertBack: Poista soittolistan säännöt
@@ -2550,6 +2571,9 @@ smartPlaylist.builder.advanced: Lisäasetukset
 smartPlaylist.builder.advancedHintLead: Edistynyt tila käytössä — merkkijonokentissä voidaan käyttää
 smartPlaylist.builder.advancedHintTail: kirjainkoosta riippumattomalla JS-regex-syntaksilla.
 smartPlaylist.builder.advancedTooltip: Ota käyttöön edistyneet operaattorit (regex jne.)
+smartPlaylist.builder.bpmIncomplete: Tempon tiedot ovat vielä puutteelliset, joten tämä määrä voi olla alhainen.
+smartPlaylist.builder.bpmLoading: Haetaan tempotietoja…
+smartPlaylist.builder.bpmUnavailable: "{n} kappaleella ei ole tempotietoja, eivätkä ne voi vastata BPM-sääntöä."
 smartPlaylist.builder.descriptionOptional: Kuvaus (valinnainen)
 smartPlaylist.builder.descriptionPlaceholder: Muistiinpanoja tästä soittolistasta…
 smartPlaylist.builder.empty: Ei vielä ehtoja — lisää ehto aloittaaksesi.
@@ -2573,6 +2597,7 @@ smartPlaylist.building.emptyTitle: Ei vastaavia kappaleita
 smartPlaylist.building.errorTitle: Soittolistaa ei voitu luoda
 smartPlaylist.building.evaluating: Arvioidaan sääntöjä {n} kappaleelle…
 smartPlaylist.building.fetching: Haetaan kirjastoasi…
+smartPlaylist.building.fetchingBpm: Haetaan tempotietoja ({done}/{total})…
 smartPlaylist.building.fetchingCatalog: Haetaan {n} katalogia…
 smartPlaylist.building.staleRetry: Soittolistan tiedot olivat vanhentuneet Apple Musicissa. Yritä tallentaa uudelleen.
 smartPlaylist.building.title: Luodaan soittolistaasi
@@ -2616,6 +2641,7 @@ smartPlaylist.mix.building.counter.artists: "{done} / {total} artistia"
 smartPlaylist.mix.building.counter.candidates: "{count} ehdokasta"
 smartPlaylist.mix.building.counter.matches: "{count} osumaa"
 smartPlaylist.mix.building.counter.tracks: "{done} / {total} kappaletta"
+smartPlaylist.mix.building.fetchingBpm: Haetaan tempotietoja
 smartPlaylist.mix.building.filteringCandidates: Suodatetaan {count} ehdokasta
 smartPlaylist.mix.building.loadingLibrary: Ladataan kirjastoasi…
 smartPlaylist.mix.building.phase.catalog: Luettelo
@@ -2702,6 +2728,15 @@ spotify.importPlaylist: Tuo Spotify-soittolista
 spotify.loadingPlaylist: Ladataan soittolistaa...
 spotify.openURL: Avaa Spotify-URL...
 spotify.saveToAppleMusic: Tallenna Apple Musiciin
+taproom.reauth.signIn: Kirjaudu sisään
+taproom.reauth.signInAgain: Kirjaudu uudelleen sisään
+taproom.reauth.success: Kirjauduttu Cider Taproomiin.
+taproom.reauth.successName: Onnistui! {name}
+taproom.reauth.unavailable.title: Kirjautuminen ei ole käytettävissä
+taproom.reauth.unavailable.updateRequired: Tämä Cider-versio ei voi kirjautua sisään Cider Taproomiin. Päivitä Cider uusimpaan versioon ja yritä uudelleen.
+taproom.reauth.unavailable.windowFailed: Cider ei voinut avata Cider Taproom -kirjautumisikkunaa. Yritä hetken kuluttua uudelleen.
+taproom.token.rejected: Cider ei voinut hyväksyä kyseistä tunnistetta. Tarkista se ja yritä uudelleen.
+taproom.token.useSignInWindow: Tämä Cider-versio ei voi vastaanottaa liitettyä tunnistetta. Käytä sen sijaan Kirjaudu sisään -vaihtoehtoa, niin Cider avaa oman kirjautumisikkunansa.
 term.about: Lisätietoja
 term.aboutArtist: Tietoja artistista {{artistName}}
 term.accountSettings: Tilin asetukset
@@ -2714,7 +2749,8 @@ term.albums: Albumit
 term.all: Kaikki
 term.allPlaylists: Kaikki soittolistat
 term.am.language: Apple Music Language
-term.am.language.description: Määrittää kielen, jolla Apple Music -elementit näytetään. Kauppa-alueen muuttaminen muuttaa saatavilla olevia kieliä; et välttämättä näe kaikkia kieliä tietyiltä Apple-tilisi määrittämiltä alueilta.
+term.am.language.auto: Automaattinen (vastaa sovelluksen kieltä)
+term.am.language.description: Määrittää kielen, jolla Apple Music -elementit näytetään. Automaattinen noudattaa sovelluksen kieltä, jos kauppa-alue tukee sitä. Kauppa-alueen vaihtaminen muuttaa käytettävissä olevia kieliä; et välttämättä näe kaikkia Apple-tilisi määrittämien tiettyjen alueiden kieliä.
 term.am.storefront: Apple Music Storefront
 term.am.storefront.description: Kauppa-alue eli alue, josta sisältö tarjotaan. Tämä vaikuttaa hakutuloksiin, Selaa-osioon, Kuuntele nyt -osioon ja Radioon. Tämän muuttamista ei suositella, sillä se voi aiheuttaa ongelmia käyttökokemuksessa.
 term.amLive: Apple Music Live
@@ -3068,8 +3104,15 @@ term.zoomin: Lähennä
 term.zoomout: Loitonna
 term.zoomreset: Nollaa zoomaus
 updates.lateststable.title: Uusin vakaa julkaisu
+updates.loadFailed.body: Tarkista yhteys ja yritä uudelleen.
+updates.loadFailed.title: Cider ei voinut ladata saatavilla olevia versioita
 updates.notifyForBranch.tooltip: Ilmoita tämän haaran päivityksistä
 updates.otherVersions.title: Muut versiot
 updates.ptb.name: Julkinen testaushaara
+updates.signedOut.body: Cider tarkistaa päivitykset Cider Taproom -tilisi avulla.
+updates.signedOut.expired.body: Kirjaudu uudelleen sisään tarkistaaksesi päivitykset.
+updates.signedOut.expired.bodyNamed: Kirjaudu uudelleen sisään käyttäjänä {name} tarkistaaksesi päivitykset.
+updates.signedOut.expired.title: Cider Taproom -istuntosi on vanhentunut
+updates.signedOut.title: Kirjaudu sisään tarkistaaksesi päivitykset
 updates.stable.name: Vakaa haara
 verb.installed: Asennettu

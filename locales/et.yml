@@ -169,6 +169,7 @@ action.tray.listento: "Kuula:"
 action.tray.minimize: Minimeeri süsteemisalve
 action.tray.minimize.description: Kas rakendus peaks minimeeruma süsteemisalve?
 action.tray.show: Kuva Cider
+action.tryAgain: Proovi uuesti
 action.undo: Võta tagasi
 action.undoDislike: Tühista „Ei meeldi“
 action.undoFavorite: Tühista lemmikuks märkimine
@@ -350,6 +351,16 @@ config.persist.error.title: Cider ei saa sinu seadeid salvestada
 config.persist.fix.chownHint: "Kirjutusõiguse taastamiseks käivita see terminalis, seejärel proovi muudatust uuesti:"
 config.persist.fix.copied: Käsk kopeeriti lõikelauale
 config.persist.fix.genericHint: Ava andmekaust ja veendu, et Cider saab sinna kirjutada, seejärel proovi muudatust uuesti.
+config.read.error.body: Sinu salvestatud seadeid ei saanud lugeda, seega töötab Cider vaikesätetega. Muudatused jäävad esialgu sellesse seadmesse ja asendatakse sinu salvestatud seadetega, kui Cider saab neid uuesti lugeda.
+config.read.error.title: Cider ei saanud sinu seadeid laadida
+config.read.recovered.body: Laadi Cider uuesti, et laadida oma salvestatud seaded. Selles seansis tehtud muudatused asendatakse nendega.
+config.read.recovered.title: Sinu seadeid saab uuesti laadida
+config.read.retry.failed: Sinu seadete lugemine ebaõnnestub endiselt.
+config.restore.action: Taasta eelmine konfiguratsioon
+config.restore.apply: Taasta
+config.restore.failed.body: Seda konfiguratsiooni ei saanud taastada.
+config.restore.failed.title: Taastamine ebaõnnestus
+config.restore.hint: Vali taastamiseks salvestatud konfiguratsioon. Cider käivitub pärast selle rakendamist uuesti.
 connect.core.desc:
   value: Luba Cider Connect, et saada juurdepääs sellistele funktsioonidele nagu esitusloendite importimine, koos kuulamine, seadete sünkroonimine ja palju muud.
   source: ai
@@ -1070,6 +1081,7 @@ settings.audio.lab: Audio Lab
 settings.audio.lab.arProfile: Atmosphere Realizer
 settings.audio.lab.capProfile: CAP-profiil
 settings.audio.lab.enableHint: Audio Labi profiilidele juurdepääsuks luba Cider Audio.
+settings.audio.lab.passthroughNote: Audio Lab on vahele jäetud, kui Dolby Atmos läbipääs on aktiivne. Nende sätete kuulamiseks lülita Atmos-režiim Standardseks või Binauraalseks.
 settings.audio.lab.spatialProfile: Häälestatud ruumiline heli
 settings.audio.moreSettings: Rohkem heliseadeid…
 settings.audio.occlusion: Kuulamisrežiim
@@ -1252,6 +1264,12 @@ settings.client.windows.wpfRendering: WPF-i renderdusrežiim
 settings.client.windows.wpfRendering.desc: Vali WPF-i renderdusrežiim. Kui sa pole kindel, vali tarkvaraline.
 settings.client.windows.wpfRendering.hardware: Riistvaraline
 settings.client.windows.wpfRendering.software: Tarkvaraline
+settings.configBackups.confirm.body: Sinu praegused seaded asendatakse kuupäeval {date} salvestatud seadetega ja Cider käivitub uuesti.
+settings.configBackups.confirm.title: Kas taastada see konfiguratsioon?
+settings.configBackups.empty: Varukoopiaid pole veel salvestatud.
+settings.configBackups.subtitle: Cider säilitab enne faili ülekirjutamist koopia sinu seadete failist. Taasta see, kui sinu seaded kadusid või lähtestati.
+settings.configBackups.unreachable: Cider ei saanud praegu sinu salvestatud varukoopiatele ligi, seega ei saa neid kuvada. Proovi hetke pärast uuesti.
+settings.configBackups.unsupported: See klient ei säilita konfiguratsiooni varukoopiaid.
 settings.connectivity.connectedDevices: Ühendatud seadmed
 settings.connectivity.connectedDevices.desc: Halda oma seotud Cider Remote'i seadmeid
 settings.connectivity.connectNewDevice: Ühenda uus seade
@@ -1579,6 +1597,7 @@ settings.nav.accounts: Kontod
 settings.nav.advanced: Täpsemalt
 settings.nav.audio: Heli
 settings.nav.concerts: Kontserdid
+settings.nav.config-backups: Konfiguratsiooni varukoopiad
 settings.nav.connectivity: Ühendused
 settings.nav.extensions: Laiendused
 settings.nav.general: Üldine
@@ -1640,6 +1659,7 @@ settings.option.advanced.clientSettings: Kliendi seaded
 settings.option.advanced.clientSettings.description: Praegusele kliendiraamistikule omased seaded
 settings.option.advanced.compactSidebar: Kompaktne külgriba
 settings.option.advanced.compactSidebar.size: Suurus
+settings.option.advanced.configBackups.description: Taasta Cideri salvestatud koopia oma seadete failist juhuks, kui sinu seaded kadusid või lähtestati.
 settings.option.advanced.experimentalFeatures: Eksperimentaalsed funktsioonid
 settings.option.advanced.experimentalFeatures.description: Arendusjärgus funktsioonid ja katsetused.
 settings.option.advanced.floatingSearch: Hõljuv otsing
@@ -2690,6 +2710,7 @@ share.platform.twitter.tweet: |-
 
   #AppleMusic #Cider
 share.platform.whatsapp: WhatsApp
+shell3.panel.moveToCenter: Teisalda keskele
 smartPlaylist.action.addRule: Lisa tingimus
 smartPlaylist.action.convert: Lisa esitusloendi reeglid…
 smartPlaylist.action.convertBack: Eemalda esitusloendi reeglid
@@ -2704,6 +2725,9 @@ smartPlaylist.builder.advanced: Täpsem
 smartPlaylist.builder.advancedHintLead: Täpsem režiim on sees — tekstiväljadel saab kasutada
 smartPlaylist.builder.advancedHintTail: tõstutundetu JS-i regulaaravaldise (regex) süntaksiga.
 smartPlaylist.builder.advancedTooltip: Lülita sisse/välja täpsemad operaatorid (regex jne)
+smartPlaylist.builder.bpmIncomplete: Tempo andmed on endiselt puudulikud, seega võib see arv olla väike.
+smartPlaylist.builder.bpmLoading: Tempo andmete otsimine…
+smartPlaylist.builder.bpmUnavailable: "{n} palal puuduvad tempo andmed ja need ei saa vastata BPM-reeglile."
 smartPlaylist.builder.descriptionOptional: Kirjeldus (valikuline)
 smartPlaylist.builder.descriptionPlaceholder: Märkmed selle esitusloendi kohta…
 smartPlaylist.builder.empty: Tingimusi pole veel — alustamiseks lisa üks.
@@ -2727,6 +2751,7 @@ smartPlaylist.building.emptyTitle: Vastavaid lugusid ei leitud
 smartPlaylist.building.errorTitle: Esitusloendi loomine ebaõnnestus
 smartPlaylist.building.evaluating: Reeglite hindamine {n} loo lõikes…
 smartPlaylist.building.fetching: Teegi hankimine…
+smartPlaylist.building.fetchingBpm: Tempo andmete otsimine ({done}/{total})…
 smartPlaylist.building.fetchingCatalog: "{n} kataloogi hankimine…"
 smartPlaylist.building.staleRetry: Esitusloendi andmed olid Apple Musicus aegunud. Proovi uuesti salvestada.
 smartPlaylist.building.title: Sinu esitusloendi loomine
@@ -2770,6 +2795,7 @@ smartPlaylist.mix.building.counter.artists: "{done} / {total} esitajat"
 smartPlaylist.mix.building.counter.candidates: "{count} kandidaati"
 smartPlaylist.mix.building.counter.matches: "{count} vastet"
 smartPlaylist.mix.building.counter.tracks: "{done} / {total} lugu"
+smartPlaylist.mix.building.fetchingBpm: Tempo andmete otsimine
 smartPlaylist.mix.building.filteringCandidates: "{count} kandidaadi filtreerimine"
 smartPlaylist.mix.building.loadingLibrary: Kogu laadimine…
 smartPlaylist.mix.building.phase.catalog: Kataloog
@@ -2856,6 +2882,15 @@ spotify.importPlaylist: Impordi Spotify esitusloend
 spotify.loadingPlaylist: Esitusloendi laadimine...
 spotify.openURL: Ava Spotify URL...
 spotify.saveToAppleMusic: Salvesta teenusesse Apple Music
+taproom.reauth.signIn: Logi sisse
+taproom.reauth.signInAgain: Logi uuesti sisse
+taproom.reauth.success: Sisse logitud teenusesse Cider Taproom.
+taproom.reauth.successName: Õnnestus! {name}
+taproom.reauth.unavailable.title: Sisselogimine pole saadaval
+taproom.reauth.unavailable.updateRequired: See Cideri versioon ei saa sind teenusesse Cider Taproom sisse logida. Värskenda Cider uusimale versioonile ja proovi uuesti.
+taproom.reauth.unavailable.windowFailed: Cider ei saanud avada teenuse Cider Taproom sisselogimisakent. Proovi hetke pärast uuesti.
+taproom.token.rejected: Cider ei saanud seda tokenit aktsepteerida. Kontrolli seda ja proovi uuesti.
+taproom.token.useSignInWindow: See Cideri versioon ei saa kopeeritud tokenit vastu võtta. Kasuta selle asemel nuppu Logi sisse ja Cider avab oma sisselogimisakna.
 term.about: Teave
 term.aboutArtist: Teave esitaja {{artistName}} kohta
 term.accountSettings: Konto seaded
@@ -2868,7 +2903,8 @@ term.albums: Albumid
 term.all: Kõik
 term.allPlaylists: Kõik esitusloendid
 term.am.language: Keel
-term.am.language.description: Määrab keele, milles Apple Music elemente kuvatakse. Regiooni muutmine muudab saadavalolevaid keeli; te ei pruugi näha kõiki keeli teatud piirkondadest, mis on määratud teie Apple'i kontoga.
+term.am.language.auto: Automaatne (ühti rakenduse keelega)
+term.am.language.description: Määrab keele, milles Apple Musicu elemente kuvatakse. Automaatne režiim järgib rakenduse keelt, kui pood seda toetab. Poe vahetamine muudab saadavalolevaid keeli; sul ei pruugi olla võimalik näha kõiki keeli teatud piirkondadest, mis on määratud sinu Apple'i kontoga.
 term.am.storefront: Veebipood
 term.am.storefront.description: Regioon ehk „pood“, kust sisu pakutakse. See hõlmab otsingutulemusi, jaotisi Sirvi, Kuula kohe ja Raadio. Selle muutmine pole soovitatav, kuna see võib põhjustada probleeme rakenduse töös.
 term.amLive: Apple Music Live
@@ -3235,8 +3271,15 @@ term.zoomin: Suurenda
 term.zoomout: Vähenda
 term.zoomreset: Lähtesta suum
 updates.lateststable.title: Viimane stabiilne versioon
+updates.loadFailed.body: Kontrolli ühendust ja proovi uuesti.
+updates.loadFailed.title: Cider ei saanud saadavalolevaid versioone laadida
 updates.notifyForBranch.tooltip: Teavita selle haru uuendustest
 updates.otherVersions.title: Muud versioonid
 updates.ptb.name: Avalik testimisharu
+updates.signedOut.body: Cider kontrollib värskendusi sinu Cider Taproomi kontoga.
+updates.signedOut.expired.body: Värskenduste kontrollimiseks logi uuesti sisse.
+updates.signedOut.expired.bodyNamed: Värskenduste kontrollimiseks logi uuesti sisse kasutajana {name}.
+updates.signedOut.expired.title: Sinu Cider Taproomi seanss on aegunud
+updates.signedOut.title: Värskenduste kontrollimiseks logi sisse
 updates.stable.name: Stabiilne haru
 verb.installed: Installitud

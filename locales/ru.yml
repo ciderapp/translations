@@ -305,6 +305,7 @@ action.tray.minimize.description:
   issue: 13
   superseded_at: 2026-07-08
 action.tray.show: Показать Cider
+action.tryAgain: Повторить попытку
 action.undo: Отменить
 action.undoDislike:
   value: Отменить «Не нравится»
@@ -543,6 +544,16 @@ config.persist.error.title: Cider не удается сохранить нас�
 config.persist.fix.chownHint: "Выполните эту команду в терминале, чтобы восстановить доступ на запись, а затем повторите попытку:"
 config.persist.fix.copied: Команда скопирована в буфер обмена
 config.persist.fix.genericHint: Откройте папку данных и убедитесь, что у Cider есть права на запись в нее, затем повторите попытку.
+config.read.error.body: Не удалось прочитать сохраненные настройки, поэтому Cider запущен с параметрами по умолчанию. Изменения пока останутся на этом устройстве и будут заменены вашими сохраненными настройками, как только Cider снова сможет их прочитать.
+config.read.error.title: Cider не удалось загрузить ваши настройки
+config.read.recovered.body: Перезапустите Cider, чтобы загрузить сохраненные настройки. Изменения, внесенные в этом сеансе, будут заменены ими.
+config.read.recovered.title: Ваши настройки снова могут быть загружены
+config.read.retry.failed: По-прежнему не удается прочитать ваши настройки.
+config.restore.action: Восстановить предыдущую конфигурацию
+config.restore.apply: Восстановить
+config.restore.failed.body: Не удалось восстановить эту конфигурацию.
+config.restore.failed.title: Сбой восстановления
+config.restore.hint: Выберите сохраненную конфигурацию для восстановления. Cider перезапустится после ее применения.
 connect.core.desc: Включите Cider Connect, чтобы получить доступ к таким функциям, как импорт плейлистов, совместное прослушивание, синхронизация настроек и многое другое.
 connect.instance.changeName: Изменить имя
 connect.instance.delete: Удалить экземпляр
@@ -1381,6 +1392,7 @@ settings.audio.lab: Audio Lab
 settings.audio.lab.arProfile: Atmosphere Realizer
 settings.audio.lab.capProfile: Профиль CAP
 settings.audio.lab.enableHint: Включите Cider Audio для доступа к профилям Audio Lab.
+settings.audio.lab.passthroughNote: Audio Lab не используется, пока активна сквозная передача Dolby Atmos. Переключите режим Atmos на «Стандартный» или «Бинауральный», чтобы услышать эти настройки.
 settings.audio.lab.spatialProfile: Настроенное пространственное звучание
 settings.audio.moreSettings: Другие настройки аудио…
 settings.audio.occlusion: Режим прослушивания
@@ -1559,6 +1571,12 @@ settings.client.windows.wpfRendering: Режим рендеринга WPF
 settings.client.windows.wpfRendering.desc: Выберите режим рендеринга для WPF. Если вы не уверены, оставьте программный.
 settings.client.windows.wpfRendering.hardware: Аппаратный
 settings.client.windows.wpfRendering.software: Программный
+settings.configBackups.confirm.body: Ваши текущие настройки будут заменены настройками, сохраненными {date}, и Cider перезапустится.
+settings.configBackups.confirm.title: Восстановить эту конфигурацию?
+settings.configBackups.empty: Резервные копии еще не сохранены.
+settings.configBackups.subtitle: Cider сохраняет копию файла настроек перед его перезаписью. Восстановите ее, если ваши настройки были утеряны или сброшены.
+settings.configBackups.unreachable: Cider не удалось получить доступ к сохраненным резервным копиям, поэтому они не могут быть показаны. Повторите попытку позже.
+settings.configBackups.unsupported: Этот клиент не сохраняет резервные копии конфигурации.
 settings.connectivity.connectedDevices: Подключенные устройства
 settings.connectivity.connectedDevices.desc: Управление сопряженными устройствами Cider Remote
 settings.connectivity.connectNewDevice: Подключить новое устройство
@@ -2002,6 +2020,7 @@ settings.nav.accounts: Учетные записи
 settings.nav.advanced: Дополнительно
 settings.nav.audio: Аудио
 settings.nav.concerts: Концерты
+settings.nav.config-backups: Резервные копии конфигурации
 settings.nav.connectivity: Подключения
 settings.nav.extensions: Расширения
 settings.nav.general: Основные
@@ -2078,6 +2097,7 @@ settings.option.advanced.clientSettings: Настройки клиента
 settings.option.advanced.clientSettings.description: Настройки, относящиеся к текущей платформе клиента
 settings.option.advanced.compactSidebar: Компактная боковая панель
 settings.option.advanced.compactSidebar.size: Размер
+settings.option.advanced.configBackups.description: Восстановите копию файла настроек, сохраненную Cider, на случай, если ваши настройки были утеряны или сброшены.
 settings.option.advanced.experimentalFeatures: Экспериментальные функции
 settings.option.advanced.experimentalFeatures.description: Функции в разработке и экспериментальные параметры.
 settings.option.advanced.floatingSearch: Плавающий поиск
@@ -3260,6 +3280,7 @@ share.platform.twitter.tweet: |-
 
   #AppleMusic #Cider
 share.platform.whatsapp: WhatsApp
+shell3.panel.moveToCenter: Переместить в центр
 smartPlaylist.action.addRule: Добавить условие
 smartPlaylist.action.convert: Добавить правила плейлиста…
 smartPlaylist.action.convertBack: Удалить правила плейлиста
@@ -3274,6 +3295,9 @@ smartPlaylist.builder.advanced: Дополнительно
 smartPlaylist.builder.advancedHintLead: Включен расширенный режим — в текстовых полях можно использовать
 smartPlaylist.builder.advancedHintTail: с синтаксисом регулярных выражений JS без учета регистра.
 smartPlaylist.builder.advancedTooltip: Переключить расширенные операторы (регулярные выражения и т. д.)
+smartPlaylist.builder.bpmIncomplete: Данные о темпе все еще неполные, поэтому это количество может быть заниженным.
+smartPlaylist.builder.bpmLoading: Поиск данных о темпе…
+smartPlaylist.builder.bpmUnavailable: Для {n} треков отсутствуют данные о темпе, они не могут соответствовать правилу BPM.
 smartPlaylist.builder.descriptionOptional: Описание (необязательно)
 smartPlaylist.builder.descriptionPlaceholder: Заметки об этом плейлисте…
 smartPlaylist.builder.empty: Условий пока нет — добавьте хотя бы одно, чтобы начать.
@@ -3297,6 +3321,7 @@ smartPlaylist.building.emptyTitle: Нет подходящих треков
 smartPlaylist.building.errorTitle: Не удалось создать плейлист
 smartPlaylist.building.evaluating: Проверка правил для {n} треков…
 smartPlaylist.building.fetching: Загрузка медиатеки…
+smartPlaylist.building.fetchingBpm: Поиск данных о темпе ({done}/{total})…
 smartPlaylist.building.fetchingCatalog:
   value: Загрузка {n} каталогов…
   source: human
@@ -3376,6 +3401,7 @@ smartPlaylist.mix.building.counter.artists:
 smartPlaylist.mix.building.counter.candidates: "{count} кандидатов"
 smartPlaylist.mix.building.counter.matches: "{count} совпадений"
 smartPlaylist.mix.building.counter.tracks: "{done} / {total} треков"
+smartPlaylist.mix.building.fetchingBpm: Поиск данных о темпе
 smartPlaylist.mix.building.filteringCandidates: Фильтрация {count} кандидатов
 smartPlaylist.mix.building.loadingLibrary: Загрузка медиатеки…
 smartPlaylist.mix.building.phase.catalog: Каталог
@@ -3499,6 +3525,15 @@ spotify.openURL:
   issue: 36
   superseded_at: 2026-07-08
 spotify.saveToAppleMusic: Сохранить в Apple Music
+taproom.reauth.signIn: Войти
+taproom.reauth.signInAgain: Войти снова
+taproom.reauth.success: Выполнен вход в Cider Taproom.
+taproom.reauth.successName: Успешно! {name}
+taproom.reauth.unavailable.title: Вход недоступен
+taproom.reauth.unavailable.updateRequired: Эта версия Cider не может выполнить вход в Cider Taproom. Обновите Cider до последней версии и повторите попытку.
+taproom.reauth.unavailable.windowFailed: Cider не удалось открыть окно входа Cider Taproom. Повторите попытку позже.
+taproom.token.rejected: Cider не удалось принять этот токен. Проверьте его и повторите попытку.
+taproom.token.useSignInWindow: Эта версия Cider не поддерживает вставку токена. Используйте кнопку «Войти», и Cider откроет собственное окно входа.
 term.about: О Cider
 term.aboutArtist: Об исполнителе {{artistName}}
 term.accountSettings: Настройки учетной записи
@@ -3511,7 +3546,8 @@ term.albums: Альбомы
 term.all: Все
 term.allPlaylists: Все плейлисты
 term.am.language: Язык Apple Music
-term.am.language.description: Определяет язык отображения элементов Apple Music. Изменение региона (витрины) изменит доступные языки; возможно, вы не сможете увидеть все языки для определенных регионов, установленных в вашей учетной записи Apple.
+term.am.language.auto: Авто (соответствует языку приложения)
+term.am.language.description: Определяет язык отображения элементов Apple Music. При выборе значения «Авто» используется язык приложения, если он поддерживается витриной. Смена витрины изменит доступные языки; возможно, вы не сможете увидеть все языки для определенных регионов, установленных в вашей учетной записи Apple.
 term.am.storefront:
   value: Регион Apple Music
   source: human
@@ -4029,8 +4065,15 @@ term.zoomin: Увеличить масштаб
 term.zoomout: Уменьшить масштаб
 term.zoomreset: Сбросить масштаб
 updates.lateststable.title: Последний стабильный релиз
+updates.loadFailed.body: Проверьте подключение к интернету и повторите попытку.
+updates.loadFailed.title: Cider не удалось загрузить доступные версии
 updates.notifyForBranch.tooltip: Уведомлять об этой ветке
 updates.otherVersions.title: Другие версии
 updates.ptb.name: Ветка публичного тестирования
+updates.signedOut.body: Cider проверяет наличие обновлений с помощью вашей учетной записи Cider Taproom.
+updates.signedOut.expired.body: Войдите снова, чтобы проверить наличие обновлений.
+updates.signedOut.expired.bodyNamed: Войдите снова как {name}, чтобы проверить наличие обновлений.
+updates.signedOut.expired.title: Сессия Cider Taproom истекла
+updates.signedOut.title: Войдите, чтобы проверить наличие обновлений
 updates.stable.name: Стабильная ветка
 verb.installed: Установлено

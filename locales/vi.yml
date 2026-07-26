@@ -165,6 +165,7 @@ action.tray.listento: "Nghe:"
 action.tray.minimize: Thu nhỏ xuống khay hệ thống
 action.tray.minimize.description: Thu nhỏ ứng dụng xuống khay hệ thống?
 action.tray.show: Hiển thị Cider
+action.tryAgain: Thử lại
 action.undo: Hoàn tác
 action.undoDislike: Hoàn tác không thích
 action.undoFavorite: Hủy yêu thích
@@ -342,6 +343,16 @@ config.persist.error.title: Cider không thể lưu cài đặt của bạn
 config.persist.fix.chownHint: "Chạy lệnh này trong terminal để khôi phục quyền ghi, sau đó thử lại thay đổi của bạn:"
 config.persist.fix.copied: Đã sao chép lệnh vào bộ nhớ tạm
 config.persist.fix.genericHint: Hãy mở thư mục dữ liệu và đảm bảo Cider có quyền ghi vào đó, sau đó thử lại thay đổi của bạn.
+config.read.error.body: Không thể đọc các cài đặt đã lưu của bạn, vì vậy Cider đang chạy với các thiết lập mặc định. Các thay đổi hiện tại sẽ chỉ lưu trên thiết bị này và sẽ được thay thế bằng các cài đặt đã lưu của bạn khi Cider có thể đọc lại chúng.
+config.read.error.title: Cider không thể tải cài đặt của bạn
+config.read.recovered.body: Khởi động lại Cider để tải các cài đặt đã lưu của bạn. Các thay đổi bạn đã thực hiện trong phiên này sẽ bị thay thế bởi chúng.
+config.read.recovered.title: Cài đặt của bạn đã có thể tải lại
+config.read.retry.failed: Vẫn không thể đọc cài đặt của bạn.
+config.restore.action: Khôi phục cấu hình trước đó
+config.restore.apply: Khôi phục
+config.restore.failed.body: Không thể khôi phục cấu hình đó.
+config.restore.failed.title: Khôi phục thất bại
+config.restore.hint: Chọn một cấu hình đã lưu để khôi phục. Cider sẽ khởi động lại sau khi áp dụng.
 connect.core.desc: Bật Cider Connect để truy cập các tính năng như nhập danh sách phát, cùng nghe, đồng bộ hóa cài đặt và nhiều tính năng khác.
 connect.instance.changeName: Đổi tên
 connect.instance.delete: Xóa phiên bản
@@ -1025,6 +1036,7 @@ settings.audio.lab: Audio Lab
 settings.audio.lab.arProfile: Atmosphere Realizer
 settings.audio.lab.capProfile: Cấu hình CAP
 settings.audio.lab.enableHint: Bật Cider Audio để truy cập các cấu hình Audio Lab.
+settings.audio.lab.passthroughNote: Audio Lab sẽ bị bỏ qua khi tính năng truyền tải Dolby Atmos đang hoạt động. Hãy chuyển chế độ Atmos sang Tiêu chuẩn hoặc Binaural để nghe các cài đặt này.
 settings.audio.lab.spatialProfile: Âm thanh không gian được tinh chỉnh
 settings.audio.moreSettings: Cài đặt âm thanh khác…
 settings.audio.occlusion: Chế độ nghe
@@ -1203,6 +1215,12 @@ settings.client.windows.wpfRendering: Chế độ dựng hình WPF
 settings.client.windows.wpfRendering.desc: Chọn chế độ dựng hình cho WPF. Nếu không chắc chắn, hãy để là phần mềm.
 settings.client.windows.wpfRendering.hardware: Phần cứng
 settings.client.windows.wpfRendering.software: Phần mềm
+settings.configBackups.confirm.body: Cài đặt hiện tại của bạn sẽ được thay thế bằng các cài đặt được lưu vào {date} và Cider sẽ khởi động lại.
+settings.configBackups.confirm.title: Khôi phục cấu hình này?
+settings.configBackups.empty: Chưa có bản sao lưu nào được lưu.
+settings.configBackups.subtitle: Cider giữ một bản sao của tệp cài đặt trước khi nó bị ghi đè. Hãy khôi phục một bản nếu cài đặt của bạn bị mất hoặc bị đặt lại.
+settings.configBackups.unreachable: Cider hiện không thể truy cập các bản sao lưu đã lưu của bạn, vì vậy không thể hiển thị danh sách. Vui lòng thử lại sau giây lát.
+settings.configBackups.unsupported: Ứng dụng này không lưu giữ các bản sao lưu cấu hình.
 settings.connectivity.connectedDevices: Thiết bị đã kết nối
 settings.connectivity.connectedDevices.desc: Quản lý các thiết bị Cider Remote đã ghép đôi
 settings.connectivity.connectNewDevice: Kết nối thiết bị mới
@@ -1531,6 +1549,7 @@ settings.nav.accounts: Tài khoản
 settings.nav.advanced: Nâng cao
 settings.nav.audio: Âm thanh
 settings.nav.concerts: Buổi hòa nhạc
+settings.nav.config-backups: Sao lưu cấu hình
 settings.nav.connectivity: Kết nối
 settings.nav.extensions: Tiện ích mở rộng
 settings.nav.general: Chung
@@ -1592,6 +1611,7 @@ settings.option.advanced.clientSettings: Cài đặt ứng dụng
 settings.option.advanced.clientSettings.description: Các cài đặt dành riêng cho khung ứng dụng hiện tại
 settings.option.advanced.compactSidebar: Thanh bên thu gọn
 settings.option.advanced.compactSidebar.size: Kích thước
+settings.option.advanced.configBackups.description: Khôi phục bản sao tệp cài đặt mà Cider đã lưu, trong trường hợp cài đặt của bạn bị mất hoặc bị đặt lại.
 settings.option.advanced.experimentalFeatures: Tính năng thử nghiệm
 settings.option.advanced.experimentalFeatures.description: Các tính năng đang phát triển và gắn cờ tính năng.
 settings.option.advanced.floatingSearch: Tìm kiếm nổi
@@ -2536,6 +2556,7 @@ share.platform.twitter.tweet: |-
 
   #AppleMusic #Cider
 share.platform.whatsapp: WhatsApp
+shell3.panel.moveToCenter: Di chuyển vào giữa
 smartPlaylist.action.addRule: Thêm điều kiện
 smartPlaylist.action.convert: Thêm quy tắc danh sách phát…
 smartPlaylist.action.convertBack: Xóa quy tắc danh sách phát
@@ -2550,6 +2571,9 @@ smartPlaylist.builder.advanced: Nâng cao
 smartPlaylist.builder.advancedHintLead: Chế độ nâng cao đang bật — các trường chuỗi có thể sử dụng
 smartPlaylist.builder.advancedHintTail: với cú pháp JS regex không phân biệt chữ hoa chữ thường.
 smartPlaylist.builder.advancedTooltip: Bật/tắt các toán tử nâng cao (regex, v.v.)
+smartPlaylist.builder.bpmIncomplete: Dữ liệu nhịp độ vẫn chưa đầy đủ, vì vậy số lượng này có thể thấp.
+smartPlaylist.builder.bpmLoading: Đang tra cứu dữ liệu nhịp độ…
+smartPlaylist.builder.bpmUnavailable: "{n} bài hát không có dữ liệu nhịp độ và không thể khớp với quy tắc BPM."
 smartPlaylist.builder.descriptionOptional: Mô tả (tùy chọn)
 smartPlaylist.builder.descriptionPlaceholder: Ghi chú về danh sách phát này…
 smartPlaylist.builder.empty: Chưa có điều kiện nào — hãy thêm một điều kiện để bắt đầu.
@@ -2573,6 +2597,7 @@ smartPlaylist.building.emptyTitle: Không có bài hát nào khớp
 smartPlaylist.building.errorTitle: Không thể tạo danh sách phát
 smartPlaylist.building.evaluating: Đang đánh giá các quy tắc trên {n} bài hát…
 smartPlaylist.building.fetching: Đang tải thư viện của bạn…
+smartPlaylist.building.fetchingBpm: Đang tra cứu dữ liệu nhịp độ ({done}/{total})…
 smartPlaylist.building.fetchingCatalog: Đang tải {n} danh mục…
 smartPlaylist.building.staleRetry: Dữ liệu danh sách phát trên Apple Music đã cũ. Hãy thử lưu lại.
 smartPlaylist.building.title: Đang tạo danh sách phát của bạn
@@ -2616,6 +2641,7 @@ smartPlaylist.mix.building.counter.artists: "{done} / {total} nghệ sĩ"
 smartPlaylist.mix.building.counter.candidates: "{count} ứng viên"
 smartPlaylist.mix.building.counter.matches: "{count} kết quả khớp"
 smartPlaylist.mix.building.counter.tracks: "{done} / {total} bài hát"
+smartPlaylist.mix.building.fetchingBpm: Đang tra cứu dữ liệu nhịp độ
 smartPlaylist.mix.building.filteringCandidates: Đang lọc {count} ứng viên
 smartPlaylist.mix.building.loadingLibrary: Đang tải thư viện của bạn…
 smartPlaylist.mix.building.phase.catalog: Danh mục
@@ -2702,6 +2728,15 @@ spotify.importPlaylist: Nhập danh sách phát Spotify
 spotify.loadingPlaylist: Đang tải danh sách phát...
 spotify.openURL: Mở URL Spotify...
 spotify.saveToAppleMusic: Lưu vào Apple Music
+taproom.reauth.signIn: Đăng nhập
+taproom.reauth.signInAgain: Đăng nhập lại
+taproom.reauth.success: Đã đăng nhập vào Cider Taproom.
+taproom.reauth.successName: Thành công! {name}
+taproom.reauth.unavailable.title: Đăng nhập hiện không khả dụng
+taproom.reauth.unavailable.updateRequired: Phiên bản Cider này không thể đăng nhập bạn vào Cider Taproom. Vui lòng cập nhật Cider lên phiên bản mới nhất rồi thử lại.
+taproom.reauth.unavailable.windowFailed: Cider không thể mở cửa sổ đăng nhập Cider Taproom. Vui lòng thử lại sau giây lát.
+taproom.token.rejected: Cider không thể chấp nhận mã token đó. Vui lòng kiểm tra lại và thử lại.
+taproom.token.useSignInWindow: Phiên bản Cider này không thể nhận mã token được dán. Thay vào đó, hãy sử dụng Đăng nhập và Cider sẽ mở cửa sổ đăng nhập riêng.
 term.about: Giới thiệu
 term.aboutArtist: Giới thiệu về {{artistName}}
 term.accountSettings: Cài đặt tài khoản
@@ -2714,7 +2749,8 @@ term.albums: Album
 term.all: Tất cả
 term.allPlaylists: Tất cả danh sách phát
 term.am.language: Ngôn ngữ Apple Music
-term.am.language.description: Xác định ngôn ngữ hiển thị của các thành phần Apple Music. Việc thay đổi cửa hàng khu vực sẽ thay đổi các ngôn ngữ khả dụng, bạn có thể không thấy được tất cả ngôn ngữ từ một số khu vực nhất định được thiết lập bởi tài khoản Apple của mình.
+term.am.language.auto: Tự động (Khớp với ngôn ngữ ứng dụng)
+term.am.language.description: Xác định ngôn ngữ hiển thị của các thành phần Apple Music. Tự động sẽ theo ngôn ngữ ứng dụng nếu cửa hàng khu vực hỗ trợ. Việc thay đổi cửa hàng khu vực sẽ thay đổi các ngôn ngữ khả dụng, bạn có thể không xem được tất cả các ngôn ngữ từ một số khu vực nhất định do tài khoản Apple của bạn thiết lập.
 term.am.storefront: Nguồn Apple Music
 term.am.storefront.description: "'Cửa hàng' hoặc khu vực cung cấp nội dung. Cửa hàng này bao gồm kết quả tìm kiếm, Khám phá, Nghe ngay và Radio. Không nên thay đổi cài đặt này vì có thể gây ra sự cố cho trải nghiệm của bạn."
 term.amLive: Apple Music Live
@@ -3068,8 +3104,15 @@ term.zoomin: Phóng to
 term.zoomout: Thu nhỏ
 term.zoomreset: Đặt lại thu phóng
 updates.lateststable.title: Bản phát hành ổn định mới nhất
+updates.loadFailed.body: Kiểm tra kết nối của bạn và thử lại.
+updates.loadFailed.title: Cider không thể tải các phiên bản khả dụng
 updates.notifyForBranch.tooltip: Thông báo cho nhánh này
 updates.otherVersions.title: Các phiên bản khác
 updates.ptb.name: Nhánh thử nghiệm công khai
+updates.signedOut.body: Cider kiểm tra các bản cập nhật bằng tài khoản Cider Taproom của bạn.
+updates.signedOut.expired.body: Đăng nhập lại để kiểm tra bản cập nhật.
+updates.signedOut.expired.bodyNamed: Đăng nhập lại dưới tên {name} để kiểm tra bản cập nhật.
+updates.signedOut.expired.title: Phiên làm việc Cider Taproom của bạn đã hết hạn
+updates.signedOut.title: Đăng nhập để kiểm tra bản cập nhật
 updates.stable.name: Nhánh ổn định
 verb.installed: Đã cài đặt

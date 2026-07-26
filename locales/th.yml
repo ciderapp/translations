@@ -165,6 +165,7 @@ action.tray.listento: "ฟัง:"
 action.tray.minimize: ย่อลงถาดระบบ
 action.tray.minimize.description: ต้องการให้แอปย่อลงถาดระบบหรือไม่
 action.tray.show: แสดง Cider
+action.tryAgain: ลองอีกครั้ง
 action.undo: เลิกทำ
 action.undoDislike: เลิกบอกว่าไม่ชอบ
 action.undoFavorite: เลิกเป็นรายการโปรด
@@ -342,6 +343,16 @@ config.persist.error.title: Cider ไม่สามารถบันทึก�
 config.persist.fix.chownHint: "รันคำสั่งนี้ในเทอร์มินัลเพื่อกู้คืนสิทธิ์การเขียน จากนั้นลองทำการเปลี่ยนแปลงอีกครั้ง:"
 config.persist.fix.copied: คัดลอกคำสั่งไปยังคลิปบอร์ดแล้ว
 config.persist.fix.genericHint: เปิดโฟลเดอร์ข้อมูลและตรวจสอบให้แน่ใจว่า Cider สามารถเขียนข้อมูลลงไปได้ จากนั้นลองทำการเปลี่ยนแปลงอีกครั้ง
+config.read.error.body: ไม่สามารถอ่านการตั้งค่าที่บันทึกไว้ของคุณได้ Cider จึงกำลังทำงานด้วยค่าเริ่มต้น การเปลี่ยนแปลงต่างๆ จะยังคงอยู่ในอุปกรณ์นี้ในขณะนี้ และจะถูกแทนที่ด้วยการตั้งค่าที่บันทึกไว้ของคุณเมื่อ Cider สามารถอ่านข้อมูลได้อีกครั้ง
+config.read.error.title: Cider ไม่สามารถโหลดการตั้งค่าของคุณได้
+config.read.recovered.body: โหลด Cider ใหม่เพื่อโหลดการตั้งค่าที่บันทึกไว้ของคุณ การเปลี่ยนแปลงที่คุณทำในเซสชันนี้จะถูกแทนที่ด้วยการตั้งค่าดังกล่าว
+config.read.recovered.title: สามารถโหลดการตั้งค่าของคุณได้อีกครั้งแล้ว
+config.read.retry.failed: ยังคงไม่สามารถอ่านการตั้งค่าของคุณได้
+config.restore.action: กู้คืนการกำหนดค่าก่อนหน้า
+config.restore.apply: กู้คืน
+config.restore.failed.body: ไม่สามารถกู้คืนการกำหนดค่านั้นได้
+config.restore.failed.title: การกู้คืนล้มเหลว
+config.restore.hint: เลือกการกำหนดค่าที่บันทึกไว้เพื่อกู้คืน Cider จะโหลดใหม่เมื่อนำไปใช้แล้ว
 connect.core.desc: เปิดใช้งาน Cider Connect เพื่อเข้าถึงฟีเจอร์ต่างๆ เช่น การนำเข้าเพลย์ลิสต์, ฟังด้วยกัน, การซิงค์ตั้งค่า และอื่นๆ อีกมากมาย
 connect.instance.changeName: เปลี่ยนชื่อ
 connect.instance.delete: ลบอินสแตนซ์
@@ -1025,6 +1036,7 @@ settings.audio.lab: Audio Lab
 settings.audio.lab.arProfile: Atmosphere Realizer
 settings.audio.lab.capProfile: CAP Profile
 settings.audio.lab.enableHint: เปิดใช้งาน Cider Audio เพื่อเข้าถึงโปรไฟล์ Audio Lab
+settings.audio.lab.passthroughNote: Audio Lab จะถูกข้ามไปในขณะที่การส่งผ่าน Dolby Atmos ทำงานอยู่ เปลี่ยนโหมด Atmos เป็น Standard หรือ Binaural เพื่อฟังการตั้งค่าเหล่านี้
 settings.audio.lab.spatialProfile: เสียงตามตำแหน่งที่ปรับแต่งแล้ว
 settings.audio.moreSettings: การตั้งค่าเสียงเพิ่มเติม…
 settings.audio.occlusion: โหมดการฟัง
@@ -1203,6 +1215,12 @@ settings.client.windows.wpfRendering: โหมดการเรนเดอร
 settings.client.windows.wpfRendering.desc: เลือกโหมดการเรนเดอร์สำหรับ WPF หากไม่แน่ใจ ให้ปล่อยไว้เป็นซอฟต์แวร์
 settings.client.windows.wpfRendering.hardware: ฮาร์ดแวร์
 settings.client.windows.wpfRendering.software: ซอฟต์แวร์
+settings.configBackups.confirm.body: การตั้งค่าปัจจุบันของคุณจะถูกแทนที่ด้วยการตั้งค่าที่บันทึกไว้เมื่อ {date} และ Cider จะโหลดใหม่
+settings.configBackups.confirm.title: กู้คืนการกำหนดค่านี้หรือไม่
+settings.configBackups.empty: ยังไม่มีการบันทึกข้อมูลสำรอง
+settings.configBackups.subtitle: Cider จะเก็บสำเนาไฟล์การตั้งค่าของคุณไว้ก่อนที่จะถูกเขียนทับ กู้คืนข้อมูลสำรองหากการตั้งค่าของคุณสูญหายหรือถูกรีเซ็ต
+settings.configBackups.unreachable: Cider ไม่สามารถเข้าถึงข้อมูลสำรองที่บันทึกไว้ของคุณได้ในขณะนี้ จึงไม่สามารถแสดงรายการได้ โปรดลองอีกครั้งในอีกสักครู่
+settings.configBackups.unsupported: ไคลเอนต์นี้ไม่รองรับการสำรองข้อมูลการกำหนดค่า
 settings.connectivity.connectedDevices: อุปกรณ์ที่เชื่อมต่อ
 settings.connectivity.connectedDevices.desc: จัดการอุปกรณ์ Cider Remote ที่จับคู่ไว้
 settings.connectivity.connectNewDevice: เชื่อมต่ออุปกรณ์ใหม่
@@ -1531,6 +1549,7 @@ settings.nav.accounts: บัญชี
 settings.nav.advanced: ขั้นสูง
 settings.nav.audio: เสียง
 settings.nav.concerts: คอนเสิร์ต
+settings.nav.config-backups: การสำรองข้อมูลการกำหนดค่า
 settings.nav.connectivity: การเชื่อมต่อ
 settings.nav.extensions: ส่วนขยาย
 settings.nav.general: ทั่วไป
@@ -1592,6 +1611,7 @@ settings.option.advanced.clientSettings: ตั้งค่าไคลเอน
 settings.option.advanced.clientSettings.description: การตั้งค่าเฉพาะสำหรับเฟรมเวิร์กไคลเอนต์ปัจจุบัน
 settings.option.advanced.compactSidebar: แถบด้านข้างแบบย่อ
 settings.option.advanced.compactSidebar.size: ขนาด
+settings.option.advanced.configBackups.description: กู้คืนสำเนาไฟล์การตั้งค่าที่ Cider บันทึกไว้ ในกรณีที่การตั้งค่าของคุณสูญหายหรือถูกรีเซ็ต
 settings.option.advanced.experimentalFeatures: ฟีเจอร์ทดลอง
 settings.option.advanced.experimentalFeatures.description: ความสามารถและฟีเจอร์ที่ยังอยู่ระหว่างการพัฒนา
 settings.option.advanced.floatingSearch: แถบค้นหาแบบลอย
@@ -2536,6 +2556,7 @@ share.platform.twitter.tweet: |-
 
   #AppleMusic #Cider
 share.platform.whatsapp: WhatsApp
+shell3.panel.moveToCenter: ย้ายไปตรงกลาง
 smartPlaylist.action.addRule: เพิ่มเงื่อนไข
 smartPlaylist.action.convert: เพิ่มกฎเพลย์ลิสต์…
 smartPlaylist.action.convertBack: ลบกฎเพลย์ลิสต์
@@ -2550,6 +2571,9 @@ smartPlaylist.builder.advanced: ขั้นสูง
 smartPlaylist.builder.advancedHintLead: เปิดโหมดขั้นสูงแล้ว — ฟิลด์ข้อความสามารถใช้
 smartPlaylist.builder.advancedHintTail: ด้วยไวยากรณ์ JS regex ที่ไม่ระบุตัวพิมพ์เล็ก-ใหญ่
 smartPlaylist.builder.advancedTooltip: เปิด/ปิดตัวดำเนินการขั้นสูง (regex และอื่นๆ)
+smartPlaylist.builder.bpmIncomplete: ข้อมูลความเร็วเพลง (BPM) ยังไม่สมบูรณ์ จำนวนนี้จึงอาจน้อยกว่าปกติ
+smartPlaylist.builder.bpmLoading: กำลังค้นหาข้อมูลความเร็วเพลง…
+smartPlaylist.builder.bpmUnavailable: ไม่มีข้อมูลความเร็วเพลงสำหรับ {n} เพลง และไม่สามารถจับคู่กับกฎ BPM ได้
 smartPlaylist.builder.descriptionOptional: คำอธิบาย (ไม่บังคับ)
 smartPlaylist.builder.descriptionPlaceholder: บันทึกย่อเกี่ยวกับเพลย์ลิสต์นี้…
 smartPlaylist.builder.empty: ยังไม่มีเงื่อนไข — เพิ่มเงื่อนไขเพื่อเริ่มต้น
@@ -2573,6 +2597,7 @@ smartPlaylist.building.emptyTitle: ไม่พบแทร็กที่ตร
 smartPlaylist.building.errorTitle: ไม่สามารถสร้างเพลย์ลิสต์ได้
 smartPlaylist.building.evaluating: กำลังประเมินกฎสำหรับ {n} แทร็ก…
 smartPlaylist.building.fetching: กำลังดึงข้อมูลคลังของคุณ…
+smartPlaylist.building.fetchingBpm: กำลังค้นหาข้อมูลความเร็วเพลง ({done}/{total})…
 smartPlaylist.building.fetchingCatalog: กำลังดึงข้อมูล {n} แค็ตตาล็อก…
 smartPlaylist.building.staleRetry: ข้อมูลเพลย์ลิสต์บน Apple Music ไม่เป็นปัจจุบัน ลองบันทึกใหม่อีกครั้ง
 smartPlaylist.building.title: กำลังสร้างเพลย์ลิสต์ของคุณ
@@ -2616,6 +2641,7 @@ smartPlaylist.mix.building.counter.artists: "{done} / {total} ศิลปิน
 smartPlaylist.mix.building.counter.candidates: "{count} ตัวเลือก"
 smartPlaylist.mix.building.counter.matches: ตรงกัน {count} รายการ
 smartPlaylist.mix.building.counter.tracks: "{done} / {total} เพลง"
+smartPlaylist.mix.building.fetchingBpm: กำลังค้นหาข้อมูลความเร็วเพลง
 smartPlaylist.mix.building.filteringCandidates: กำลังกรอง {count} ตัวเลือก
 smartPlaylist.mix.building.loadingLibrary: กำลังโหลดคลังของคุณ…
 smartPlaylist.mix.building.phase.catalog: แค็ตตาล็อก
@@ -2702,6 +2728,15 @@ spotify.importPlaylist: นำเข้าเพลย์ลิสต์ Spotify
 spotify.loadingPlaylist: กำลังโหลดเพลย์ลิสต์...
 spotify.openURL: เปิด URL ของ Spotify...
 spotify.saveToAppleMusic: บันทึกไปยัง Apple Music
+taproom.reauth.signIn: ลงชื่อเข้าใช้
+taproom.reauth.signInAgain: ลงชื่อเข้าใช้อีกครั้ง
+taproom.reauth.success: ลงชื่อเข้าใช้ Cider Taproom สำเร็จแล้ว
+taproom.reauth.successName: สำเร็จแล้ว! {name}
+taproom.reauth.unavailable.title: ไม่สามารถลงชื่อเข้าใช้ได้
+taproom.reauth.unavailable.updateRequired: Cider เวอร์ชันนี้ไม่สามารถลงชื่อเข้าใช้ Cider Taproom ได้ โปรดอัปเดต Cider เป็นเวอร์ชันล่าสุด แล้วลองอีกครั้ง
+taproom.reauth.unavailable.windowFailed: Cider ไม่สามารถเปิดหน้าต่างลงชื่อเข้าใช้ Cider Taproom ได้ โปรดลองอีกครั้งในอีกสักครู่
+taproom.token.rejected: Cider ไม่สามารถยอมรับโทเค็นนั้นได้ โปรดตรวจสอบและลองอีกครั้ง
+taproom.token.useSignInWindow: Cider เวอร์ชันนี้ไม่สามารถใช้โทเค็นที่คัดลอกมาวางได้ โปรดใช้การลงชื่อเข้าใช้แทน และ Cider จะเปิดหน้าต่างลงชื่อเข้าใช้ขึ้นมาเอง
 term.about: เกี่ยวกับ
 term.aboutArtist: เกี่ยวกับ {{artistName}}
 term.accountSettings: ตั้งค่าบัญชี
@@ -2714,7 +2749,8 @@ term.albums: อัลบั้ม
 term.all: ทั้งหมด
 term.allPlaylists: เพลย์ลิสต์ทั้งหมด
 term.am.language: ภาษาของ Apple Music
-term.am.language.description: กำหนดภาษาที่จะแสดงในองค์ประกอบต่างๆ ของ Apple Music การเปลี่ยนหน้าร้านค้าจะเปลี่ยนภาษาที่พร้อมใช้งาน คุณอาจไม่สามารถดูภาษาทั้งหมดจากบางภูมิภาคที่ตั้งค่าไว้โดยบัญชี Apple ของคุณได้
+term.am.language.auto: อัตโนมัติ (ตามภาษาของแอป)
+term.am.language.description: กำหนดภาษาที่จะแสดงในองค์ประกอบต่างๆ ของ Apple Music ตัวเลือกอัตโนมัติจะอิงตามภาษาของแอปในกรณีที่หน้าร้านค้ารองรับ การเปลี่ยนหน้าร้านค้าจะเปลี่ยนภาษาที่มีให้เลือก และคุณอาจไม่สามารถดูภาษาทั้งหมดจากบางภูมิภาคที่ตั้งค่าไว้ในบัญชี Apple ของคุณได้
 term.am.storefront: หน้าร้าน Apple Music
 term.am.storefront.description: "'หน้าร้านค้า' หรือภูมิภาคที่จะใช้ในการให้บริการเนื้อหา ซึ่งรวมถึงผลการค้นหา เลือกดู ฟังตอนนี้ และวิทยุ ไม่แนะนำให้เปลี่ยนการตั้งค่านี้เนื่องจากอาจทำให้เกิดปัญหากับประสบการณ์การใช้งานของคุณ"
 term.amLive: Apple Music Live
@@ -3068,8 +3104,15 @@ term.zoomin: ซูมเข้า
 term.zoomout: ซูมออก
 term.zoomreset: รีเซ็ตการซูม
 updates.lateststable.title: เวอร์ชันเสถียรล่าสุด
+updates.loadFailed.body: โปรดตรวจสอบการเชื่อมต่อของคุณแล้วลองอีกครั้ง
+updates.loadFailed.title: Cider ไม่สามารถโหลดเวอร์ชันที่พร้อมใช้งานได้
 updates.notifyForBranch.tooltip: แจ้งเตือนสำหรับสาขานี้
 updates.otherVersions.title: เวอร์ชันอื่นๆ
 updates.ptb.name: สาขาการทดสอบสาธารณะ
+updates.signedOut.body: Cider ตรวจสอบการอัปเดตด้วยบัญชี Cider Taproom ของคุณ
+updates.signedOut.expired.body: ลงชื่อเข้าใช้อีกครั้งเพื่อตรวจสอบการอัปเดต
+updates.signedOut.expired.bodyNamed: ลงชื่อเข้าใช้อีกครั้งในชื่อ {name} เพื่อตรวจสอบการอัปเดต
+updates.signedOut.expired.title: เซสชัน Cider Taproom ของคุณหมดอายุแล้ว
+updates.signedOut.title: ลงชื่อเข้าใช้เพื่อตรวจสอบการอัปเดต
 updates.stable.name: สาขาเวอร์ชันเสถียร
 verb.installed: ติดตั้งแล้ว

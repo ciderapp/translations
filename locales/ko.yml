@@ -189,6 +189,7 @@ action.tray.listento: "듣고 있는 곡:"
 action.tray.minimize: 트레이로 최소화
 action.tray.minimize.description: 앱을 트레이로 최소화할까요?
 action.tray.show: Cider 열기
+action.tryAgain: 다시 시도
 action.undo: 실행 취소
 action.undoDislike: 싫어요 취소
 action.undoFavorite: 선호함 취소
@@ -383,6 +384,16 @@ config.persist.error.title: Cider가 설정을 저장할 수 없습니다
 config.persist.fix.chownHint: "쓰기 권한을 복구하려면 터미널에서 이 명령을 실행한 다음 변경을 다시 시도하세요:"
 config.persist.fix.copied: 명령어가 클립보드에 복사되었습니다
 config.persist.fix.genericHint: 데이터 폴더를 열어 Cider에 쓰기 권한이 있는지 확인한 다음 변경을 다시 시도하세요.
+config.read.error.body: 저장된 설정을 읽을 수 없어 Cider가 기본값으로 실행됩니다. 변경 사항은 현재 이 기기에만 유지되며, Cider가 설정을 다시 읽을 수 있게 되면 저장된 설정으로 대체됩니다.
+config.read.error.title: Cider가 설정을 불러올 수 없습니다
+config.read.recovered.body: 저장된 설정을 불러오려면 Cider를 다시 로드하세요. 이번 세션에서 변경한 사항은 저장된 설정으로 대체됩니다.
+config.read.recovered.title: 설정을 다시 불러올 수 있습니다
+config.read.retry.failed: 여전히 설정을 읽을 수 없습니다.
+config.restore.action: 이전 구성 복원
+config.restore.apply: 복원
+config.restore.failed.body: 해당 구성을 복원할 수 없습니다.
+config.restore.failed.title: 복원 실패
+config.restore.hint: 복원할 저장된 구성을 선택하세요. 적용되면 Cider가 다시 로드됩니다.
 connect.core.desc: Cider Connect를 활성화하여 플레이리스트 가져오기, 함께 듣기, 설정 동기화 등 다양한 기능을 사용해 보세요.
 connect.instance.changeName: 이름 변경
 connect.instance.delete: 인스턴스 삭제
@@ -1085,6 +1096,7 @@ settings.audio.lab: Audio Lab
 settings.audio.lab.arProfile: Atmosphere Realizer
 settings.audio.lab.capProfile: CAP Profile
 settings.audio.lab.enableHint: Audio Lab 프로필을 사용하려면 Cider Audio를 활성화하세요.
+settings.audio.lab.passthroughNote: Dolby Atmos 패스스루가 활성화되어 있는 동안에는 Audio Lab이 우회됩니다. 이 설정을 들으려면 Atmos 모드를 표준 또는 바이노럴로 전환하세요.
 settings.audio.lab.spatialProfile: Tuned Spatialization
 settings.audio.moreSettings: 기타 오디오 설정…
 settings.audio.occlusion: 청취 모드
@@ -1263,6 +1275,12 @@ settings.client.windows.wpfRendering: WPF 렌더링 모드
 settings.client.windows.wpfRendering.desc: WPF의 렌더링 모드를 선택합니다. 잘 모르겠다면 소프트웨어로 두세요.
 settings.client.windows.wpfRendering.hardware: 하드웨어
 settings.client.windows.wpfRendering.software: 소프트웨어
+settings.configBackups.confirm.body: 현재 설정이 {date}에 저장된 설정으로 대체되며, Cider가 다시 로드됩니다.
+settings.configBackups.confirm.title: 이 구성을 복원하시겠습니까?
+settings.configBackups.empty: 아직 저장된 백업이 없습니다.
+settings.configBackups.subtitle: Cider는 설정 파일이 덮어쓰여지기 전에 복사본을 보관합니다. 설정을 분실하거나 초기화한 경우 복원하세요.
+settings.configBackups.unreachable: 지금은 Cider가 저장된 백업에 연결할 수 없어 목록을 표시할 수 없습니다. 잠시 후 다시 시도해 주세요.
+settings.configBackups.unsupported: 이 클라이언트는 구성 백업을 보관하지 않습니다.
 settings.connectivity.connectedDevices: 연결된 기기
 settings.connectivity.connectedDevices.desc: 페어링된 Cider Remote 기기를 관리합니다.
 settings.connectivity.connectNewDevice: 새 기기 연결
@@ -1591,6 +1609,7 @@ settings.nav.accounts: 계정
 settings.nav.advanced: 고급
 settings.nav.audio: 오디오
 settings.nav.concerts: 콘서트
+settings.nav.config-backups: 구성 백업
 settings.nav.connectivity: 연결
 settings.nav.extensions: 확장 기능
 settings.nav.general: 일반
@@ -1652,6 +1671,7 @@ settings.option.advanced.clientSettings: 클라이언트 설정
 settings.option.advanced.clientSettings.description: 현재 클라이언트 프레임워크에 특화된 설정입니다.
 settings.option.advanced.compactSidebar: 컴팩트 사이드바
 settings.option.advanced.compactSidebar.size: 크기
+settings.option.advanced.configBackups.description: 설정을 분실하거나 초기화한 경우에 대비하여, Cider가 저장해 둔 설정 파일의 복사본을 복원합니다.
 settings.option.advanced.experimentalFeatures: 실험적 기능
 settings.option.advanced.experimentalFeatures.description: 개발 중인 기능 및 기능 플래그입니다.
 settings.option.advanced.floatingSearch: 플로팅 검색
@@ -2635,6 +2655,7 @@ share.platform.twitter.tweet: |-
 
   #AppleMusic #Cider
 share.platform.whatsapp: WhatsApp
+shell3.panel.moveToCenter: 가운데로 이동
 smartPlaylist.action.addRule: 조건 추가
 smartPlaylist.action.convert: 플레이리스트 규칙 추가…
 smartPlaylist.action.convertBack: 플레이리스트 규칙 제거
@@ -2649,6 +2670,9 @@ smartPlaylist.builder.advanced: 고급
 smartPlaylist.builder.advancedHintLead: "고급 모드 켜짐 — 문자열 필드에서 다음을 사용할 수 있습니다:"
 smartPlaylist.builder.advancedHintTail: (대소문자를 구분하지 않는 JS 정규식 구문 사용)
 smartPlaylist.builder.advancedTooltip: 고급 연산자 토글 (정규식 등)
+smartPlaylist.builder.bpmIncomplete: 템포 데이터가 아직 불완전하여 이 수치가 낮을 수 있습니다.
+smartPlaylist.builder.bpmLoading: 템포 데이터 조회 중…
+smartPlaylist.builder.bpmUnavailable: "{n}개의 트랙에 템포 데이터가 없어 BPM 규칙과 일치시킬 수 없습니다."
 smartPlaylist.builder.descriptionOptional: 설명 (선택 사항)
 smartPlaylist.builder.descriptionPlaceholder: 이 플레이리스트에 대한 메모…
 smartPlaylist.builder.empty: 아직 조건이 없습니다. 시작하려면 조건을 추가하세요.
@@ -2672,6 +2696,7 @@ smartPlaylist.building.emptyTitle: 일치하는 트랙 없음
 smartPlaylist.building.errorTitle: 플레이리스트를 생성할 수 없음
 smartPlaylist.building.evaluating: "{n}개의 트랙에서 규칙 평가 중…"
 smartPlaylist.building.fetching: 보관함 가져오는 중…
+smartPlaylist.building.fetchingBpm: 템포 데이터 조회 중 ({done}/{total})…
 smartPlaylist.building.fetchingCatalog: "{n}개의 카탈로그 가져오는 중…"
 smartPlaylist.building.staleRetry: Apple Music의 플레이리스트 데이터가 만료되었습니다. 다시 저장을 시도해 주세요.
 smartPlaylist.building.title: 플레이리스트 생성 중
@@ -2715,6 +2740,7 @@ smartPlaylist.mix.building.counter.artists: "{done} / {total}명의 아티스트
 smartPlaylist.mix.building.counter.candidates: 후보 {count}개
 smartPlaylist.mix.building.counter.matches: 일치 항목 {count}개
 smartPlaylist.mix.building.counter.tracks: "{done} / {total}곡"
+smartPlaylist.mix.building.fetchingBpm: 템포 데이터 조회 중
 smartPlaylist.mix.building.filteringCandidates: 후보 {count}개 필터링 중
 smartPlaylist.mix.building.loadingLibrary: 보관함 불러오는 중…
 smartPlaylist.mix.building.phase.catalog: 카탈로그
@@ -2801,6 +2827,15 @@ spotify.importPlaylist: Spotify 플레이리스트 가져오기
 spotify.loadingPlaylist: 플레이리스트 불러오는 중...
 spotify.openURL: Spotify URL 열기...
 spotify.saveToAppleMusic: Apple Music에 저장
+taproom.reauth.signIn: 로그인
+taproom.reauth.signInAgain: 다시 로그인
+taproom.reauth.success: Cider Taproom에 로그인되었습니다.
+taproom.reauth.successName: 성공! {name}
+taproom.reauth.unavailable.title: 로그인 사용할 수 없음
+taproom.reauth.unavailable.updateRequired: 이 버전의 Cider에서는 Cider Taproom에 로그인할 수 없습니다. Cider를 최신 버전으로 업데이트한 후 다시 시도해 주세요.
+taproom.reauth.unavailable.windowFailed: Cider가 Cider Taproom 로그인 창을 열지 못했습니다. 잠시 후 다시 시도해 주세요.
+taproom.token.rejected: Cider가 해당 토큰을 수락할 수 없습니다. 토큰을 확인하고 다시 시도해 주세요.
+taproom.token.useSignInWindow: 이 버전의 Cider는 붙여넣은 토큰을 사용할 수 없습니다. 대신 '로그인'을 사용하면 Cider가 자체 로그인 창을 엽니다.
 term.about: 정보
 term.aboutArtist: "{{artistName}} 소개"
 term.accountSettings: 계정 설정
@@ -2817,8 +2852,9 @@ term.am.language:
   source: human
   by: "@MP-K"
   issue: 30
+term.am.language.auto: 자동 (앱 언어에 맞춤)
 term.am.language.description:
-  value: Apple Music 요소가 표시될 언어를 결정합니다. 스토어프론트를 변경하면 사용 가능한 언어가 변경되며, Apple 계정으로 설정된 특정 지역의 모든 언어를 보지 못할 수도 있습니다.
+  value: Apple Music 요소가 표시될 언어를 결정합니다. '자동'은 스토어프론트가 지원하는 경우 앱 언어를 따릅니다. 스토어프론트를 변경하면 사용 가능한 언어가 변경되며, Apple 계정으로 설정된 특정 지역의 모든 언어가 표시되지 않을 수 있습니다.
   source: ai
   by: "@MP-K"
   issue: 30
@@ -3195,8 +3231,15 @@ term.zoomin: 확대
 term.zoomout: 축소
 term.zoomreset: 확대/축소 초기화
 updates.lateststable.title: 최신 안정 버전
+updates.loadFailed.body: 연결 상태를 확인하고 다시 시도해 주세요.
+updates.loadFailed.title: Cider가 사용 가능한 버전을 불러올 수 없습니다
 updates.notifyForBranch.tooltip: 이 브랜치에 대한 알림 받기
 updates.otherVersions.title: 다른 버전
 updates.ptb.name: 공개 테스트 브랜치
+updates.signedOut.body: Cider는 Cider Taproom 계정으로 업데이트를 확인합니다.
+updates.signedOut.expired.body: 업데이트를 확인하려면 다시 로그인하세요.
+updates.signedOut.expired.bodyNamed: 업데이트를 확인하려면 {name}(으)로 다시 로그인하세요.
+updates.signedOut.expired.title: Your Cider Taproom session expired
+updates.signedOut.title: 업데이트를 확인하려면 로그인하세요
 updates.stable.name: 안정 브랜치
 verb.installed: 설치됨

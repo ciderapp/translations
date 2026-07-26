@@ -165,6 +165,7 @@ action.tray.listento: "Ascolta:"
 action.tray.minimize: Riduci nell'area di notifica
 action.tray.minimize.description: Vuoi ridurre l'app nell'area di notifica?
 action.tray.show: Mostra Cider
+action.tryAgain: Riprova
 action.undo: Annulla
 action.undoDislike: Annulla 'Non mi piace'
 action.undoFavorite: Rimuovi dai preferiti
@@ -342,6 +343,16 @@ config.persist.error.title: Cider non può salvare le impostazioni
 config.persist.fix.chownHint: "Esegui questo comando nel terminale per ripristinare l'accesso in scrittura, quindi riprova a salvare la modifica:"
 config.persist.fix.copied: Comando copiato negli appunti
 config.persist.fix.genericHint: Apri la cartella dei dati e assicurati che Cider possa scrivervi, quindi riprova a salvare la modifica.
+config.read.error.body: Impossibile leggere le impostazioni salvate, pertanto Cider è stato avviato con i valori predefiniti. Per ora le modifiche rimarranno su questo dispositivo e verranno sostituite dalle impostazioni salvate non appena Cider sarà nuovamente in grado di leggerle.
+config.read.error.title: Cider non ha potuto caricare le tue impostazioni
+config.read.recovered.body: Riavvia Cider per caricare le impostazioni salvate. Le modifiche apportate in questa sessione verranno sostituite.
+config.read.recovered.title: È possibile caricare nuovamente le tue impostazioni
+config.read.retry.failed: Ancora impossibile leggere le tue impostazioni.
+config.restore.action: Ripristina una configurazione precedente
+config.restore.apply: Ripristina
+config.restore.failed.body: Impossibile ripristinare questa configurazione.
+config.restore.failed.title: Ripristino non riuscito
+config.restore.hint: Scegli una configurazione salvata da ripristinare. Cider si riavvierà una volta applicata.
 connect.core.desc: Abilita Cider Connect per accedere a funzionalità come l'importazione di playlist, l'ascolto condiviso, la sincronizzazione delle impostazioni e molto altro.
 connect.instance.changeName: Modifica nome
 connect.instance.delete: Elimina istanza
@@ -1025,6 +1036,7 @@ settings.audio.lab: Audio Lab
 settings.audio.lab.arProfile: Atmosphere Realizer
 settings.audio.lab.capProfile: Profilo CAP
 settings.audio.lab.enableHint: Abilita Cider Audio per accedere ai profili di Audio Lab.
+settings.audio.lab.passthroughNote: Audio Lab viene ignorato quando il passthrough Dolby Atmos è attivo. Imposta la modalità Atmos su Standard o Binaurale per ascoltare queste impostazioni.
 settings.audio.lab.spatialProfile: Spazializzazione ottimizzata
 settings.audio.moreSettings: Altre impostazioni audio…
 settings.audio.occlusion: Modalità di ascolto
@@ -1203,6 +1215,12 @@ settings.client.windows.wpfRendering: Modalità di rendering WPF
 settings.client.windows.wpfRendering.desc: Scegli la modalità di rendering per WPF. In caso di dubbio, lascia su software.
 settings.client.windows.wpfRendering.hardware: Hardware
 settings.client.windows.wpfRendering.software: Software
+settings.configBackups.confirm.body: Le tue impostazioni attuali verranno sostituite con quelle salvate il {date} e Cider si riavvierà.
+settings.configBackups.confirm.title: Ripristinare questa configurazione?
+settings.configBackups.empty: Nessun backup ancora salvato.
+settings.configBackups.subtitle: Cider conserva una copia del file delle impostazioni prima che venga sovrascritto. Ripristinalo se le tue impostazioni sono andate perse o sono state reimpostate.
+settings.configBackups.unreachable: Al momento Cider non è riuscito a raggiungere i backup salvati, pertanto non è possibile elencarli. Riprova tra un momento.
+settings.configBackups.unsupported: Questo client non conserva copie di backup della configurazione.
 settings.connectivity.connectedDevices: Dispositivi connessi
 settings.connectivity.connectedDevices.desc: Gestisci i tuoi dispositivi Cider Remote associati
 settings.connectivity.connectNewDevice: Connetti nuovo dispositivo
@@ -1531,6 +1549,7 @@ settings.nav.accounts: Account
 settings.nav.advanced: Avanzate
 settings.nav.audio: Audio
 settings.nav.concerts: Concerti
+settings.nav.config-backups: Backup della configurazione
 settings.nav.connectivity: Connessioni
 settings.nav.extensions: Estensioni
 settings.nav.general: Generali
@@ -1592,6 +1611,7 @@ settings.option.advanced.clientSettings: Impostazioni client
 settings.option.advanced.clientSettings.description: Impostazioni specifiche per il framework del client corrente
 settings.option.advanced.compactSidebar: Barra laterale compatta
 settings.option.advanced.compactSidebar.size: Dimensioni
+settings.option.advanced.configBackups.description: Ripristina una copia del file delle impostazioni salvata da Cider, nel caso in cui le impostazioni siano andate perse o siano state reimpostate.
 settings.option.advanced.experimentalFeatures: Funzionalità sperimentali
 settings.option.advanced.experimentalFeatures.description: Funzionalità in fase di sviluppo e opzioni sperimentali.
 settings.option.advanced.floatingSearch: Ricerca fluttuante
@@ -2536,6 +2556,7 @@ share.platform.twitter.tweet: |-
 
   #AppleMusic #Cider
 share.platform.whatsapp: WhatsApp
+shell3.panel.moveToCenter: Sposta al centro
 smartPlaylist.action.addRule: Aggiungi condizione
 smartPlaylist.action.convert: Aggiungi regole playlist…
 smartPlaylist.action.convertBack: Rimuovi regole playlist
@@ -2550,6 +2571,9 @@ smartPlaylist.builder.advanced: Avanzate
 smartPlaylist.builder.advancedHintLead: Modalità avanzata attiva — i campi di testo possono utilizzare
 smartPlaylist.builder.advancedHintTail: con sintassi regex JS che non distingue tra maiuscole e minuscole.
 smartPlaylist.builder.advancedTooltip: Attiva/disattiva operatori avanzati (regex, ecc.)
+smartPlaylist.builder.bpmIncomplete: I dati sul tempo sono ancora incompleti, pertanto questo conteggio potrebbe essere basso.
+smartPlaylist.builder.bpmLoading: Ricerca dei dati sul tempo in corso…
+smartPlaylist.builder.bpmUnavailable: "{n} brani non hanno dati sul tempo e non possono soddisfare una regola BPM."
 smartPlaylist.builder.descriptionOptional: Descrizione (facoltativa)
 smartPlaylist.builder.descriptionPlaceholder: Note su questa playlist…
 smartPlaylist.builder.empty: Ancora nessuna condizione — aggiungine una per iniziare.
@@ -2573,6 +2597,7 @@ smartPlaylist.building.emptyTitle: Nessun brano corrispondente
 smartPlaylist.building.errorTitle: Impossibile creare la playlist
 smartPlaylist.building.evaluating: Valutazione delle regole su {n} brani…
 smartPlaylist.building.fetching: Recupero della tua libreria…
+smartPlaylist.building.fetchingBpm: Ricerca dei dati sul tempo in corso ({done}/{total})…
 smartPlaylist.building.fetchingCatalog: Recupero di {n} cataloghi…
 smartPlaylist.building.staleRetry: I dati della playlist su Apple Music non erano aggiornati. Riprova a salvare.
 smartPlaylist.building.title: Creazione della playlist in corso
@@ -2616,6 +2641,7 @@ smartPlaylist.mix.building.counter.artists: "{done} / {total} artisti"
 smartPlaylist.mix.building.counter.candidates: "{count} candidati"
 smartPlaylist.mix.building.counter.matches: "{count} corrispondenze"
 smartPlaylist.mix.building.counter.tracks: "{done} / {total} brani"
+smartPlaylist.mix.building.fetchingBpm: Ricerca dei dati sul tempo in corso
 smartPlaylist.mix.building.filteringCandidates: Filtraggio di {count} candidati
 smartPlaylist.mix.building.loadingLibrary: Caricamento della libreria…
 smartPlaylist.mix.building.phase.catalog: Catalogo
@@ -2702,6 +2728,15 @@ spotify.importPlaylist: Importa playlist Spotify
 spotify.loadingPlaylist: Caricamento playlist...
 spotify.openURL: Apri URL Spotify...
 spotify.saveToAppleMusic: Salva su Apple Music
+taproom.reauth.signIn: Accedi
+taproom.reauth.signInAgain: Accedi di nuovo
+taproom.reauth.success: Accesso effettuato a Cider Taproom.
+taproom.reauth.successName: Operazione riuscita! {name}
+taproom.reauth.unavailable.title: Accesso non disponibile
+taproom.reauth.unavailable.updateRequired: Questa versione di Cider non consente di accedere a Cider Taproom. Aggiorna Cider all'ultima versione e riprova.
+taproom.reauth.unavailable.windowFailed: Cider non ha potuto aprire la finestra di accesso a Cider Taproom. Riprova tra un momento.
+taproom.token.rejected: Cider non ha potuto accettare questo token. Verificalo e riprova.
+taproom.token.useSignInWindow: Questa versione di Cider non supporta l'inserimento di un token incollato. Usa invece "Accedi" e Cider aprirà la propria finestra di accesso.
 term.about: Informazioni
 term.aboutArtist: Informazioni su {{artistName}}
 term.accountSettings: Impostazioni account
@@ -2714,7 +2749,8 @@ term.albums: Album
 term.all: Tutti
 term.allPlaylists: Tutte le playlist
 term.am.language: Lingua di Apple Music
-term.am.language.description: Determina la lingua in cui verranno visualizzati gli elementi di Apple Music. Modificando il paese/regione cambieranno le lingue disponibili; potresti non essere in grado di visualizzare tutte le lingue di determinate aree geografiche impostate dal tuo account Apple.
+term.am.language.auto: Automatico (stessa lingua dell'app)
+term.am.language.description: Determina la lingua in cui verranno visualizzati gli elementi di Apple Music. L'opzione Automatico segue la lingua dell'app se supportata dal catalogo locale. La modifica del catalogo locale cambierà le lingue disponibili; potresti non essere in grado di visualizzare tutte le lingue di determinate aree geografiche impostate dal tuo account Apple.
 term.am.storefront: Catalogo di Apple Music
 term.am.storefront.description: Il 'paese/regione' da cui verranno forniti i contenuti. Questo include i risultati di ricerca, Scopri, Ascolta ora e Radio. Si sconsiglia di modificarlo in quanto potrebbe causare problemi con l'esperienza d'uso.
 term.amLive: Apple Music Live
@@ -3068,8 +3104,15 @@ term.zoomin: Ingrandisci
 term.zoomout: Rimpicciolisci
 term.zoomreset: Ripristina zoom
 updates.lateststable.title: Ultima versione stabile
+updates.loadFailed.body: Controlla la connessione e riprova.
+updates.loadFailed.title: Cider non ha potuto caricare le versioni disponibili
 updates.notifyForBranch.tooltip: Notifica per questo branch
 updates.otherVersions.title: Altre versioni
 updates.ptb.name: Branch di test pubblico
+updates.signedOut.body: Cider verifica la presenza di aggiornamenti tramite il tuo account Cider Taproom.
+updates.signedOut.expired.body: Accedi di nuovo per verificare la presenza di aggiornamenti.
+updates.signedOut.expired.bodyNamed: Accedi di nuovo come {name} per verificare la presenza di aggiornamenti.
+updates.signedOut.expired.title: La sessione di Cider Taproom è scaduta
+updates.signedOut.title: Accedi per verificare la presenza di aggiornamenti
 updates.stable.name: Branch stabile
 verb.installed: Installato

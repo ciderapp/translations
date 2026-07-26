@@ -165,6 +165,7 @@ action.tray.listento: "Počúvať:"
 action.tray.minimize: Minimalizovať do lišty
 action.tray.minimize.description: Má sa aplikácia minimalizovať do lišty?
 action.tray.show: Zobraziť Cider
+action.tryAgain: Skúsiť znova
 action.undo: Odvolať
 action.undoDislike: Zrušiť „Nepáči sa mi“
 action.undoFavorite: Odobrať z obľúbených
@@ -342,6 +343,16 @@ config.persist.error.title: Cider nemôže uložiť vaše nastavenia
 config.persist.fix.chownHint: "Spustite tento príkaz v termináli na obnovenie prístupu na zápis a potom zmenu zopakujte:"
 config.persist.fix.copied: Príkaz bol skopírovaný do schránky
 config.persist.fix.genericHint: Otvorte priečinok s dátami, uistite sa, že doň Cider môže zapisovať, a potom zmenu zopakujte.
+config.read.error.body: Vaše uložené nastavenia sa nepodarilo načítať, preto Cider beží s predvolenými hodnotami. Zmeny zatiaľ zostanú v tomto zariadení a po opätovnom načítaní nastavení aplikáciou Cider sa nahradia vašimi uloženými nastaveniami.
+config.read.error.title: Cider nemohol načítať vaše nastavenia
+config.read.recovered.body: Znova načítajte Cider, aby sa načítali vaše uložené nastavenia. Zmeny vykonané počas tejto relácie sa nimi nahradia.
+config.read.recovered.title: Vaše nastavenia je možné znova načítať
+config.read.retry.failed: Nastavenia sa stále nedarí načítať.
+config.restore.action: Obnoviť predchádzajúcu konfiguráciu
+config.restore.apply: Obnoviť
+config.restore.failed.body: Túto konfiguráciu sa nepodarilo obnoviť.
+config.restore.failed.title: Obnovenie zlyhalo
+config.restore.hint: Vyberte uloženú konfiguráciu, ktorú chcete obnoviť. Po jej použití sa Cider znova načíta.
 connect.core.desc: Povolením Cider Connect získate prístup k funkciám, ako je importovanie playlistov, spoločné počúvanie, synchronizácia nastavení a mnoho ďalšieho.
 connect.instance.changeName: Zmeniť názov
 connect.instance.delete: Odstrániť inštanciu
@@ -1025,6 +1036,7 @@ settings.audio.lab: Audio Lab
 settings.audio.lab.arProfile: Atmosphere Realizer
 settings.audio.lab.capProfile: CAP Profile
 settings.audio.lab.enableHint: Pre prístup k profilom Audio Lab povoľte Cider Audio.
+settings.audio.lab.passthroughNote: Audio Lab sa obchádza, kým je aktívny prechod Dolby Atmos. Ak chcete počuť tieto nastavenia, prepnite režim Atmos na Štandardný alebo Binaurálny.
 settings.audio.lab.spatialProfile: Tuned Spatialization
 settings.audio.moreSettings: Ďalšie nastavenia zvuku…
 settings.audio.occlusion: Režim počúvania
@@ -1203,6 +1215,12 @@ settings.client.windows.wpfRendering: Režim vykresľovania WPF
 settings.client.windows.wpfRendering.desc: Vyberte režim vykresľovania pre WPF. Ak si nie ste istí, ponechajte softvérové.
 settings.client.windows.wpfRendering.hardware: Hardvérové
 settings.client.windows.wpfRendering.software: Softvérové
+settings.configBackups.confirm.body: Vaše aktuálne nastavenia budú nahradené nastaveniami uloženými dňa {date} a Cider sa znova načíta.
+settings.configBackups.confirm.title: Obnoviť túto konfiguráciu?
+settings.configBackups.empty: Zatiaľ neboli uložené žiadne zálohy.
+settings.configBackups.subtitle: Cider uchováva kópiu súboru s nastaveniami pred jeho prepísaním. Ak sa vaše nastavenia stratili alebo resetovali, môžete ich obnoviť.
+settings.configBackups.unreachable: Cider sa momentálne nemohol spojiť s vašimi uloženými zálohami, preto ich nemožno zobraziť. Skúste to znova o chvíľu.
+settings.configBackups.unsupported: Tento klient neuchováva zálohy konfigurácie.
 settings.connectivity.connectedDevices: Pripojené zariadenia
 settings.connectivity.connectedDevices.desc: Spravujte svoje spárované zariadenia Cider Remote
 settings.connectivity.connectNewDevice: Pripojiť nové zariadenie
@@ -1531,6 +1549,7 @@ settings.nav.accounts: Účty
 settings.nav.advanced: Rozšírené
 settings.nav.audio: Zvuk
 settings.nav.concerts: Koncerty
+settings.nav.config-backups: Zálohy konfigurácie
 settings.nav.connectivity: Pripojenia
 settings.nav.extensions: Rozšírenia
 settings.nav.general: Všeobecné
@@ -1592,6 +1611,7 @@ settings.option.advanced.clientSettings: Nastavenia klienta
 settings.option.advanced.clientSettings.description: Nastavenia špecifické pre aktuálny framework klienta
 settings.option.advanced.compactSidebar: Kompaktný bočný panel
 settings.option.advanced.compactSidebar.size: Veľkosť
+settings.option.advanced.configBackups.description: Obnovte kópiu súboru s nastaveniami, ktorú Cider uložil pre prípad, že by sa vaše nastavenia stratili alebo resetovali.
 settings.option.advanced.experimentalFeatures: Experimentálne funkcie
 settings.option.advanced.experimentalFeatures.description: Rozpracované funkcie a experimentálne nastavenia.
 settings.option.advanced.floatingSearch: Plávajúce vyhľadávanie
@@ -2536,6 +2556,7 @@ share.platform.twitter.tweet: |-
 
   #AppleMusic #Cider
 share.platform.whatsapp: WhatsApp
+shell3.panel.moveToCenter: Presunúť do stredu
 smartPlaylist.action.addRule: Pridať podmienku
 smartPlaylist.action.convert: Pridať pravidlá playlistu…
 smartPlaylist.action.convertBack: Odstrániť pravidlá playlistu
@@ -2550,6 +2571,9 @@ smartPlaylist.builder.advanced: Rozšírené
 smartPlaylist.builder.advancedHintLead: Rozšírený režim zapnutý – textové polia môžu používať
 smartPlaylist.builder.advancedHintTail: s syntaxou regulárnych výrazov JS bez ohľadu na veľkosť písmen.
 smartPlaylist.builder.advancedTooltip: Prepnúť rozšírené operátory (regex atď.)
+smartPlaylist.builder.bpmIncomplete: Údaje o tempe sú stále neúplné, preto môže byť tento počet nízky.
+smartPlaylist.builder.bpmLoading: Vyhľadávajú sa údaje o tempe…
+smartPlaylist.builder.bpmUnavailable: "{n} skladieb nemá žiadne údaje o tempe a nemôžu vyhovovať pravidlu BPM."
 smartPlaylist.builder.descriptionOptional: Popis (voliteľné)
 smartPlaylist.builder.descriptionPlaceholder: Poznámky k tomuto playlistu…
 smartPlaylist.builder.empty: Zatiaľ žiadne podmienky – pridajte nejakú, aby ste mohli začať.
@@ -2573,6 +2597,7 @@ smartPlaylist.building.emptyTitle: Žiadne vyhovujúce skladby
 smartPlaylist.building.errorTitle: Playlist sa nepodarilo vytvoriť
 smartPlaylist.building.evaluating: Vyhodnocujú sa pravidlá pre {n} skladieb…
 smartPlaylist.building.fetching: Načítava sa vaša knižnica…
+smartPlaylist.building.fetchingBpm: Vyhľadávajú sa údaje o tempe ({done}/{total})…
 smartPlaylist.building.fetchingCatalog: Sťahujú sa katalógy ({n})…
 smartPlaylist.building.staleRetry: Dáta playlistu v Apple Music už neboli aktuálne. Skúste uloženie zopakovať.
 smartPlaylist.building.title: Vytvára sa váš playlist
@@ -2616,6 +2641,7 @@ smartPlaylist.mix.building.counter.artists: "{done} / {total} interpretov"
 smartPlaylist.mix.building.counter.candidates: "{count} kandidátov"
 smartPlaylist.mix.building.counter.matches: "{count} zhôd"
 smartPlaylist.mix.building.counter.tracks: "{done} / {total} skladieb"
+smartPlaylist.mix.building.fetchingBpm: Vyhľadávanie údajov o tempe
 smartPlaylist.mix.building.filteringCandidates: Filtruje sa {count} kandidátov
 smartPlaylist.mix.building.loadingLibrary: Načítava sa knižnica…
 smartPlaylist.mix.building.phase.catalog: Katalóg
@@ -2702,6 +2728,15 @@ spotify.importPlaylist: Importovať playlist zo Spotify
 spotify.loadingPlaylist: Načítava sa playlist...
 spotify.openURL: Otvoriť URL adresu Spotify...
 spotify.saveToAppleMusic: Uložiť do Apple Music
+taproom.reauth.signIn: Prihlásiť sa
+taproom.reauth.signInAgain: Znova sa prihlásiť
+taproom.reauth.success: Prihlásili ste sa do Cider Taproom.
+taproom.reauth.successName: Úspešne! {name}
+taproom.reauth.unavailable.title: Prihlásenie je nedostupné
+taproom.reauth.unavailable.updateRequired: Táto verzia aplikácie Cider vás nemôže prihlásiť do Cider Taproom. Aktualizujte Cider na najnovšiu verziu a skúste to znova.
+taproom.reauth.unavailable.windowFailed: Cider nemohol otvoriť prihlasovacie okno Cider Taproom. Skúste to znova o chvíľu.
+taproom.token.rejected: Cider nemohol prijať tento token. Skontrolujte ho a skúste to znova.
+taproom.token.useSignInWindow: Táto verzia aplikácie Cider nepodporuje prilepenie tokenu. Použite namiesto toho možnosť Prihlásiť sa a Cider otvorí vlastné prihlasovacie okno.
 term.about: O aplikácii
 term.aboutArtist: O {{artistName}}
 term.accountSettings: Nastavenia účtu
@@ -2714,7 +2749,8 @@ term.albums: Albumy
 term.all: Všetko
 term.allPlaylists: Všetky playlisty
 term.am.language: Apple Music Language
-term.am.language.description: Určuje jazyk, v ktorom sa budú zobrazovať prvky Apple Music. Zmena obchodu zmení dostupné jazyky, pričom sa vám nemusia zobraziť všetky jazyky pre určité regióny nastavené vo vašom Apple účte.
+term.am.language.auto: Automaticky (podľa jazyka aplikácie)
+term.am.language.description: Určuje jazyk, v ktorom sa budú zobrazovať prvky Apple Music. Možnosť Automaticky sa riadi jazykom aplikácie, ak ho daný obchod podporuje. Zmena obchodu zmení dostupné jazyky, pričom sa vám nemusia zobraziť všetky jazyky z určitých regiónov nastavených vo vašom Apple účte.
 term.am.storefront: Apple Music Storefront
 term.am.storefront.description: „Obchod“ alebo región, z ktorého sa bude poskytovať obsah. To zahŕňa výsledky vyhľadávania, sekcie Prechádzať, Pusťte si a Rádio. Zmena tohto nastavenia sa neodporúča, pretože môže spôsobiť problémy s fungovaním aplikácie.
 term.amLive: Apple Music Live
@@ -3068,8 +3104,15 @@ term.zoomin: Priblížiť
 term.zoomout: Oddialiť
 term.zoomreset: Obnoviť priblíženie
 updates.lateststable.title: Najnovšia stabilná verzia
+updates.loadFailed.body: Skontrolujte pripojenie a skúste to znova.
+updates.loadFailed.title: Cider nemohol načítať dostupné verzie
 updates.notifyForBranch.tooltip: Upozorniť na túto vetvu
 updates.otherVersions.title: Ostatné verzie
 updates.ptb.name: Verejná testovacia vetva
+updates.signedOut.body: Cider kontroluje aktualizácie prostredníctvom vášho účtu Cider Taproom.
+updates.signedOut.expired.body: Znova sa prihláste, aby ste mohli skontrolovať aktualizácie.
+updates.signedOut.expired.bodyNamed: Znova sa prihláste ako {name}, aby ste mohli skontrolovať aktualizácie.
+updates.signedOut.expired.title: Vaša relácia Cider Taproom vypršala
+updates.signedOut.title: Prihláste sa na kontrolu aktualizácií
 updates.stable.name: Stabilná vetva
 verb.installed: Nainštalované

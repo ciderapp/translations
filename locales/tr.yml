@@ -204,6 +204,7 @@ action.tray.listento: "Şunu Dinle:"
 action.tray.minimize: Sistem Tepsisine Küçült
 action.tray.minimize.description: Uygulama sistem tepsisine küçültülsün mü?
 action.tray.show: Cider'ı Göster
+action.tryAgain: Tekrar dene
 action.undo: Geri Al
 action.undoDislike: Beğenmemeyi Geri Al
 action.undoFavorite: Favoriyi Geri Al
@@ -385,6 +386,16 @@ config.persist.error.title: Cider ayarlarınızı kaydedemiyor
 config.persist.fix.chownHint: "Yazma erişimini geri yüklemek için bunu bir terminalde çalıştırın, ardından değişikliğinizi tekrar deneyin:"
 config.persist.fix.copied: Komut panoya kopyalandı
 config.persist.fix.genericHint: Veri klasörünü açın ve Cider'ın buraya yazabildiğinden emin olun, ardından değişikliğinizi tekrar deneyin.
+config.read.error.body: Kaydedilen ayarlarınız okunamadı, bu nedenle Cider varsayılan ayarlarla çalışıyor. Değişiklikler şimdilik bu cihazda kalacak ve Cider ayarlarınızı tekrar okuyabildiğinde kaydedilen ayarlarınızla değiştirilecek.
+config.read.error.title: Cider ayarlarınızı yükleyemedi
+config.read.recovered.body: Kaydedilen ayarlarınızı yüklemek için Cider'ı yeniden yükleyin. Bu oturumda yaptığınız değişiklikler onlarla değiştirilecektir.
+config.read.recovered.title: Ayarlarınız yeniden yüklenebilir
+config.read.retry.failed: Ayarlarınız hâlâ okunamıyor.
+config.restore.action: Önceki bir yapılandırmayı geri yükle
+config.restore.apply: Geri Yükle
+config.restore.failed.body: Bu yapılandırma geri yüklenemedi.
+config.restore.failed.title: Geri yükleme başarısız oldu
+config.restore.hint: Geri yüklemek için kaydedilmiş bir yapılandırma seçin. Uygulandığında Cider yeniden yüklenecektir.
 connect.core.desc: Çalma listesi içe aktarma, birlikte dinleme, ayar senkronizasyonu ve çok daha fazlası gibi özelliklere erişmek için Cider Connect'i etkinleştirin.
 connect.instance.changeName: Adı Değiştir
 connect.instance.delete: Örneği Sil
@@ -1088,6 +1099,7 @@ settings.audio.lab: Audio Lab
 settings.audio.lab.arProfile: Atmosphere Realizer
 settings.audio.lab.capProfile: CAP Profili
 settings.audio.lab.enableHint: Audio Lab profillerine erişmek için Cider Audio'yu etkinleştirin.
+settings.audio.lab.passthroughNote: Dolby Atmos doğrudan geçişi etkinken Audio Lab devre dışı bırakılır. Bu ayarları duymak için Atmos modunu Standart veya Binaural olarak değiştirin.
 settings.audio.lab.spatialProfile: Tuned Spatialization
 settings.audio.moreSettings: Daha fazla ses ayarı…
 settings.audio.occlusion: Dinleme Modu
@@ -1266,6 +1278,12 @@ settings.client.windows.wpfRendering: WPF Oluşturma Modu
 settings.client.windows.wpfRendering.desc: WPF için oluşturma modunu seçin. Emin değilseniz yazılım olarak bırakın.
 settings.client.windows.wpfRendering.hardware: Donanım
 settings.client.windows.wpfRendering.software: Yazılım
+settings.configBackups.confirm.body: Mevcut ayarlarınız {date} tarihinde kaydedilenlerle değiştirilecek ve Cider yeniden yüklenecek.
+settings.configBackups.confirm.title: Bu yapılandırma geri yüklensin mi?
+settings.configBackups.empty: Henüz hiçbir yedek kaydedilmedi.
+settings.configBackups.subtitle: Cider, üzerine yazılmadan önce ayarlar dosyanızın bir kopyasını saklar. Ayarlarınız kaybolursa veya sıfırlanırsa birini geri yükleyin.
+settings.configBackups.unreachable: Cider şu anda kaydedilmiş yedeklerinize erişemedi, bu nedenle listelenemiyorlar. Birazdan tekrar deneyin.
+settings.configBackups.unsupported: Bu istemci yapılandırma yedeklerini tutmuyor.
 settings.connectivity.connectedDevices: Bağlı Cihazlar
 settings.connectivity.connectedDevices.desc: Eşleştirilmiş Cider Remote cihazlarınızı yönetin
 settings.connectivity.connectNewDevice: Yeni Cihaz Bağla
@@ -1594,6 +1612,7 @@ settings.nav.accounts: Hesaplar
 settings.nav.advanced: Gelişmiş
 settings.nav.audio: Ses
 settings.nav.concerts: Konserler
+settings.nav.config-backups: Yapılandırma Yedekleri
 settings.nav.connectivity: Bağlantılar
 settings.nav.extensions: Eklentiler
 settings.nav.general: Genel
@@ -1655,6 +1674,7 @@ settings.option.advanced.clientSettings: İstemci Ayarları
 settings.option.advanced.clientSettings.description: Mevcut istemci çerçevesine özel ayarlar
 settings.option.advanced.compactSidebar: Kompakt Kenar Çubuğu
 settings.option.advanced.compactSidebar.size: Boyut
+settings.option.advanced.configBackups.description: Ayarlarınızın kaybolması veya sıfırlanması durumunda, Cider'ın ayarlar dosyanızdan kaydettiği bir kopyayı geri yükleyin.
 settings.option.advanced.experimentalFeatures: Deneysel Özellikler
 settings.option.advanced.experimentalFeatures.description: Geliştirilmekte olan özellikler ve özellik bayrakları.
 settings.option.advanced.floatingSearch: Yüzen Arama
@@ -2599,6 +2619,7 @@ share.platform.twitter.tweet: |-
 
   #AppleMusic #Cider
 share.platform.whatsapp: WhatsApp
+shell3.panel.moveToCenter: Merkeze Taşı
 smartPlaylist.action.addRule: Koşul Ekle
 smartPlaylist.action.convert: Çalma Listesi Kuralları Ekle…
 smartPlaylist.action.convertBack: Çalma Listesi Kurallarını Kaldır
@@ -2617,6 +2638,9 @@ smartPlaylist.builder.advanced: Gelişmiş
 smartPlaylist.builder.advancedHintLead: "Gelişmiş mod açık — metin alanları şunları kullanabilir:"
 smartPlaylist.builder.advancedHintTail: büyük/küçük harfe duyarsız JS regex sözdizimi ile.
 smartPlaylist.builder.advancedTooltip: Gelişmiş operatörleri aç/kapat (regex vb.)
+smartPlaylist.builder.bpmIncomplete: Tempo verileri henüz tamamlanmadı, bu nedenle bu sayı düşük olabilir.
+smartPlaylist.builder.bpmLoading: Tempo verileri aranıyor…
+smartPlaylist.builder.bpmUnavailable: "{n} parçanın tempo verisi yok ve bir BPM kuralıyla eşleşemiyor."
 smartPlaylist.builder.descriptionOptional: Açıklama (isteğe bağlı)
 smartPlaylist.builder.descriptionPlaceholder: Bu çalma listesi hakkında notlar…
 smartPlaylist.builder.empty: Henüz koşul yok — başlamak için bir tane ekleyin.
@@ -2640,6 +2664,7 @@ smartPlaylist.building.emptyTitle: Eşleşen Parça Yok
 smartPlaylist.building.errorTitle: Çalma Listesi Oluşturulamadı
 smartPlaylist.building.evaluating: "{n} parça üzerinde kurallar değerlendiriliyor…"
 smartPlaylist.building.fetching: Arşiviniz alınıyor…
+smartPlaylist.building.fetchingBpm: Tempo verileri aranıyor ({done}/{total})…
 smartPlaylist.building.fetchingCatalog: "{n} katalog çekiliyor…"
 smartPlaylist.building.staleRetry: Çalma listesi verileri Apple Music'te güncel değildi. Tekrar kaydetmeyi deneyin.
 smartPlaylist.building.title: Çalma Listeniz Oluşturuluyor
@@ -2683,6 +2708,7 @@ smartPlaylist.mix.building.counter.artists: "{done} / {total} sanatçı"
 smartPlaylist.mix.building.counter.candidates: "{count} aday"
 smartPlaylist.mix.building.counter.matches: "{count} eşleşme"
 smartPlaylist.mix.building.counter.tracks: "{done} / {total} parça"
+smartPlaylist.mix.building.fetchingBpm: Tempo verileri aranıyor
 smartPlaylist.mix.building.filteringCandidates: "{count} aday filtreleniyor"
 smartPlaylist.mix.building.loadingLibrary: Arşiviniz yükleniyor…
 smartPlaylist.mix.building.phase.catalog: Katalog
@@ -2769,6 +2795,15 @@ spotify.importPlaylist: Spotify Çalma Listesini İçe Aktar
 spotify.loadingPlaylist: Çalma Listesi Yükleniyor...
 spotify.openURL: Spotify URL'sini Aç...
 spotify.saveToAppleMusic: Apple Music'e Kaydet
+taproom.reauth.signIn: Giriş yap
+taproom.reauth.signInAgain: Tekrar giriş yap
+taproom.reauth.success: Cider Taproom'a giriş yapıldı.
+taproom.reauth.successName: Başarılı! {name}
+taproom.reauth.unavailable.title: Giriş yapılamıyor
+taproom.reauth.unavailable.updateRequired: Cider'ın bu sürümü Cider Taproom'a giriş yapmanızı sağlayamıyor. Cider'ı en son sürüme güncelleyin ve tekrar deneyin.
+taproom.reauth.unavailable.windowFailed: Cider, Cider Taproom giriş penceresini açamadı. Birazdan tekrar deneyin.
+taproom.token.rejected: Cider bu token'ı kabul edemedi. Kontrol edip tekrar deneyin.
+taproom.token.useSignInWindow: Cider'ın bu sürümü yapıştırılan bir token'ı kabul edemiyor. Bunun yerine Giriş Yap seçeneğini kullanın; Cider kendi giriş penceresini açacaktır.
 term.about: Hakkında
 term.aboutArtist: "{{artistName}} Hakkında"
 term.accountSettings: Hesap Ayarları
@@ -2786,7 +2821,8 @@ term.allPlaylists:
   issue: 2
   superseded_at: 2026-07-08
 term.am.language: Apple Müzik Dili
-term.am.language.description: Apple Music ögelerinin hangi dilde görüntüleneceğini belirler. Mağaza bölgesini değiştirmek kullanılabilir dilleri değiştirir; Apple hesabınız tarafından ayarlanan belirli bölgelerdeki tüm dilleri göremeyebilirsiniz.
+term.am.language.auto: Otomatik (Uygulama Dilini Eşle)
+term.am.language.description: Apple Music öğelerinin hangi dilde görüntüleneceğini belirler. Otomatik seçeneği, mağazanın desteklediği durumlarda uygulama dilini takip eder. Mağazayı değiştirmek kullanılabilir dilleri değiştirecektir; Apple hesabınız tarafından ayarlanan belirli bölgelerdeki tüm dilleri göremeyebilirsiniz.
 term.am.storefront: Apple Müzik Vitrini
 term.am.storefront.description: İçeriğin sunulacağı 'mağaza bölgesi' veya bölge. Buna arama sonuçları, Göz At, Şimdi Dinle ve Radyo dahildir. Deneyiminizi olumsuz etkileyebileceğinden bunu değiştirmeniz önerilmez.
 term.amLive: Apple Music Live
@@ -3150,8 +3186,15 @@ term.zoomin: Yakınlaştır
 term.zoomout: Uzaklaştır
 term.zoomreset: Yakınlaştırmayı Sıfırla
 updates.lateststable.title: En Son Kararlı Sürüm
+updates.loadFailed.body: Bağlantınızı kontrol edin ve tekrar deneyin.
+updates.loadFailed.title: Cider kullanılabilir sürümleri yükleyemedi
 updates.notifyForBranch.tooltip: Bu dal için bildirim al
 updates.otherVersions.title: Diğer Sürümler
 updates.ptb.name: Genel Test Dalı
+updates.signedOut.body: Cider, güncellemeleri Cider Taproom hesabınızla kontrol eder.
+updates.signedOut.expired.body: Güncellemeleri kontrol etmek için tekrar giriş yapın.
+updates.signedOut.expired.bodyNamed: Güncellemeleri kontrol etmek için {name} olarak tekrar giriş yapın.
+updates.signedOut.expired.title: Cider Taproom oturumunuzun süresi doldu
+updates.signedOut.title: Güncellemeleri kontrol etmek için giriş yapın
 updates.stable.name: Kararlı Dal
 verb.installed: Yüklendi

@@ -165,6 +165,7 @@ action.tray.listento: "Luisteren naar:"
 action.tray.minimize: Minimaliseren naar systeemvak
 action.tray.minimize.description: Moet de app minimaliseren naar het systeemvak?
 action.tray.show: Toon Cider
+action.tryAgain: Opnieuw proberen
 action.undo: Ongedaan maken
 action.undoDislike: Minder leuk ongedaan maken
 action.undoFavorite: Favoriet ongedaan maken
@@ -342,6 +343,16 @@ config.persist.error.title: Cider kan je instellingen niet bewaren
 config.persist.fix.chownHint: "Voer dit uit in een terminal om schrijftoegang te herstellen en probeer daarna je wijziging opnieuw:"
 config.persist.fix.copied: Opdracht gekopieerd naar klembord
 config.persist.fix.genericHint: Open de gegevensmap en zorg ervoor dat Cider hiernaartoe kan schrijven. Probeer daarna je wijziging opnieuw.
+config.read.error.body: Je opgeslagen instellingen konden niet worden gelezen, dus Cider gebruikt nu de standaardinstellingen. Wijzigingen blijven voorlopig op dit apparaat bewaard en worden vervangen door je opgeslagen instellingen zodra Cider deze weer kan lezen.
+config.read.error.title: Cider kon je instellingen niet laden
+config.read.recovered.body: Herstart Cider om je opgeslagen instellingen te laden. Wijzigingen die je tijdens deze sessie hebt gemaakt, worden hierdoor vervangen.
+config.read.recovered.title: Je instellingen kunnen weer worden geladen
+config.read.retry.failed: Nog steeds niet mogelijk om je instellingen te lezen.
+config.restore.action: Een eerdere configuratie herstellen
+config.restore.apply: Herstellen
+config.restore.failed.body: Die configuratie kon niet worden hersteld.
+config.restore.failed.title: Herstellen mislukt
+config.restore.hint: Kies een opgeslagen configuratie om te herstellen. Cider wordt opnieuw geladen zodra deze is toegepast.
 connect.core.desc: Schakel Cider Connect in om toegang te krijgen tot functies zoals het importeren van afspeellijsten, samen luisteren, synchronisatie van instellingen en nog veel meer.
 connect.instance.changeName: Naam wijzigen
 connect.instance.delete: Instantie verwijderen
@@ -1025,6 +1036,7 @@ settings.audio.lab: Audio Lab
 settings.audio.lab.arProfile: Atmosphere Realizer
 settings.audio.lab.capProfile: CAP-profiel
 settings.audio.lab.enableHint: Schakel Cider Audio in om toegang te krijgen tot Audio Lab-profielen.
+settings.audio.lab.passthroughNote: Audio Lab wordt omzeild wanneer Dolby Atmos-passthrough actief is. Schakel de Atmos-modus over naar Standaard of Binauraal om deze instellingen te horen.
 settings.audio.lab.spatialProfile: Afgestemde ruimtelijke audio
 settings.audio.moreSettings: Meer audio-instellingen…
 settings.audio.occlusion: Luistermodus
@@ -1203,6 +1215,12 @@ settings.client.windows.wpfRendering: WPF-rendermodus
 settings.client.windows.wpfRendering.desc: Kies de rendermodus voor WPF. Laat dit bij twijfel op software staan.
 settings.client.windows.wpfRendering.hardware: Hardware
 settings.client.windows.wpfRendering.software: Software
+settings.configBackups.confirm.body: Je huidige instellingen worden vervangen door de instellingen die zijn opgeslagen op {date}, en Cider wordt opnieuw geladen.
+settings.configBackups.confirm.title: Deze configuratie herstellen?
+settings.configBackups.empty: Er zijn nog geen reservekopieën opgeslagen.
+settings.configBackups.subtitle: Cider bewaart een kopie van je instellingenbestand voordat het wordt overschreven. Herstel er een als je instellingen verloren zijn gegaan of zijn gereset.
+settings.configBackups.unreachable: Cider kon je opgeslagen reservekopieën zojuist niet bereiken, waardoor ze niet kunnen worden weergegeven. Probeer het zo meteen opnieuw.
+settings.configBackups.unsupported: Dit programma bewaart geen reservekopieën van de configuratie.
 settings.connectivity.connectedDevices: Verbonden apparaten
 settings.connectivity.connectedDevices.desc: Beheer je gekoppelde Cider Remote-apparaten
 settings.connectivity.connectNewDevice: Nieuw apparaat verbinden
@@ -1531,6 +1549,7 @@ settings.nav.accounts: Accounts
 settings.nav.advanced: Geavanceerd
 settings.nav.audio: Audio
 settings.nav.concerts: Concerten
+settings.nav.config-backups: Reservekopieën van configuratie
 settings.nav.connectivity: Verbindingen
 settings.nav.extensions: Extensies
 settings.nav.general: Algemeen
@@ -1592,6 +1611,7 @@ settings.option.advanced.clientSettings: Clientinstellingen
 settings.option.advanced.clientSettings.description: Instellingen specifiek voor het huidige clientframework
 settings.option.advanced.compactSidebar: Compacte navigatiekolom
 settings.option.advanced.compactSidebar.size: Grootte
+settings.option.advanced.configBackups.description: Herstel een door Cider opgeslagen kopie van je instellingenbestand, voor het geval je instellingen verloren zijn gegaan of zijn gereset.
 settings.option.advanced.experimentalFeatures: Experimentele functies
 settings.option.advanced.experimentalFeatures.description: Functies in ontwikkeling en functie-vlaggen.
 settings.option.advanced.floatingSearch: Zwevend zoeken
@@ -2536,6 +2556,7 @@ share.platform.twitter.tweet: |-
 
   #AppleMusic #Cider
 share.platform.whatsapp: WhatsApp
+shell3.panel.moveToCenter: Naar het midden verplaatsen
 smartPlaylist.action.addRule: Voorwaarde toevoegen
 smartPlaylist.action.convert: Afspeellijstregels toevoegen…
 smartPlaylist.action.convertBack: Afspeellijstregels verwijderen
@@ -2550,6 +2571,9 @@ smartPlaylist.builder.advanced: Geavanceerd
 smartPlaylist.builder.advancedHintLead: Geavanceerde modus ingeschakeld — tekstvelden kunnen gebruikmaken van
 smartPlaylist.builder.advancedHintTail: met hoofdletterongevoelige JS-regex-syntaxis.
 smartPlaylist.builder.advancedTooltip: Geavanceerde operatoren in-/uitschakelen (regex, etc.)
+smartPlaylist.builder.bpmIncomplete: Tempogegevens zijn nog onvolledig, dus dit aantal kan laag uitvallen.
+smartPlaylist.builder.bpmLoading: Tempogegevens opzoeken…
+smartPlaylist.builder.bpmUnavailable: "{n} nummers hebben geen tempogegevens en kunnen niet overeenkomen met een BPM-regel."
 smartPlaylist.builder.descriptionOptional: Beschrijving (optioneel)
 smartPlaylist.builder.descriptionPlaceholder: Notities over deze afspeellijst…
 smartPlaylist.builder.empty: Nog geen voorwaarden — voeg er een toe om te beginnen.
@@ -2573,6 +2597,7 @@ smartPlaylist.building.emptyTitle: Geen overeenkomende nummers
 smartPlaylist.building.errorTitle: Kan afspeellijst niet maken
 smartPlaylist.building.evaluating: Regels toepassen op {n} nummers…
 smartPlaylist.building.fetching: Je bibliotheek ophalen…
+smartPlaylist.building.fetchingBpm: Tempogegevens opzoeken ({done}/{total})…
 smartPlaylist.building.fetchingCatalog: "{n} catalogi ophalen…"
 smartPlaylist.building.staleRetry: Afspeellijstgegevens op Apple Music waren verouderd. Probeer opnieuw op te slaan.
 smartPlaylist.building.title: Je afspeellijst maken…
@@ -2616,6 +2641,7 @@ smartPlaylist.mix.building.counter.artists: "{done} / {total} artiesten"
 smartPlaylist.mix.building.counter.candidates: "{count} kandidaten"
 smartPlaylist.mix.building.counter.matches: "{count} overeenkomsten"
 smartPlaylist.mix.building.counter.tracks: "{done} / {total} nummers"
+smartPlaylist.mix.building.fetchingBpm: Tempogegevens opzoeken
 smartPlaylist.mix.building.filteringCandidates: "{count} kandidaten filteren"
 smartPlaylist.mix.building.loadingLibrary: Je bibliotheek laden…
 smartPlaylist.mix.building.phase.catalog: Catalogus
@@ -2702,6 +2728,15 @@ spotify.importPlaylist: Spotify-afspeellijst importeren
 spotify.loadingPlaylist: Afspeellijst laden...
 spotify.openURL: Spotify-URL openen...
 spotify.saveToAppleMusic: Opslaan in Apple Music
+taproom.reauth.signIn: Log in
+taproom.reauth.signInAgain: Opnieuw inloggen
+taproom.reauth.success: Ingelogd bij Cider Taproom.
+taproom.reauth.successName: Gelukt! {name}
+taproom.reauth.unavailable.title: Inloggen niet beschikbaar
+taproom.reauth.unavailable.updateRequired: Deze versie van Cider kan je niet aanmelden bij Cider Taproom. Werk Cider bij naar de nieuwste versie en probeer het opnieuw.
+taproom.reauth.unavailable.windowFailed: Cider kon het inlogvenster van Cider Taproom niet openen. Probeer het zo meteen opnieuw.
+taproom.token.rejected: Cider kon dat token niet accepteren. Controleer het en probeer het opnieuw.
+taproom.token.useSignInWindow: Deze versie van Cider kan geen geplakt token accepteren. Gebruik in plaats daarvan 'Log in' en Cider zal zijn eigen inlogvenster openen.
 term.about: Over
 term.aboutArtist: Over {{artistName}}
 term.accountSettings: Accountinstellingen
@@ -2714,7 +2749,8 @@ term.albums: Albums
 term.all: Alle
 term.allPlaylists: Alle afspeellijsten
 term.am.language: Apple Music Language
-term.am.language.description: Bepaalt de taal waarin Apple Music-elementen worden weergegeven. Als je de storefront wijzigt, veranderen de beschikbare talen. Mogelijk kun je niet alle talen zien van bepaalde regio's die zijn ingesteld voor je Apple-account.
+term.am.language.auto: Automatisch (match app-taal)
+term.am.language.description: Bepaalt de taal waarin Apple Music-elementen worden weergegeven. 'Automatisch' volgt de app-taal als de storefront dit ondersteunt. Het wijzigen van de storefront verandert de beschikbare talen; mogelijk kun je niet alle talen zien van bepaalde regio's die zijn ingesteld door je Apple-account.
 term.am.storefront: Apple Music Storefront
 term.am.storefront.description: De 'storefront' of regio van waaruit inhoud wordt aangeboden. Dit omvat zoekresultaten, Ontdekken, Luister nu en Radio. Het wordt niet aanbevolen om dit te wijzigen, omdat dit problemen kan veroorzaken met je ervaring.
 term.amLive: Apple Music Live
@@ -3072,8 +3108,15 @@ term.zoomin: Inzoomen
 term.zoomout: Uitzoomen
 term.zoomreset: Zoom herstellen
 updates.lateststable.title: Nieuwste stabiele release
+updates.loadFailed.body: Controleer je verbinding en probeer het opnieuw.
+updates.loadFailed.title: Cider kon de beschikbare versies niet laden
 updates.notifyForBranch.tooltip: Meldingen ontvangen voor deze branch
 updates.otherVersions.title: Andere versies
 updates.ptb.name: Public Testing Branch
+updates.signedOut.body: Cider controleert op updates met je Cider Taproom-account.
+updates.signedOut.expired.body: Log opnieuw in om op updates te controleren.
+updates.signedOut.expired.bodyNamed: Log opnieuw in als {name} om op updates te controleren.
+updates.signedOut.expired.title: Je Cider Taproom-sessie is verlopen
+updates.signedOut.title: Log in om op updates te controleren
 updates.stable.name: Stabiele branch
 verb.installed: Geïnstalleerd

@@ -165,6 +165,7 @@ action.tray.listento: "Mendengarkan:"
 action.tray.minimize: Minimalkan ke Tray
 action.tray.minimize.description: Apakah aplikasi harus diminimalkan ke tray?
 action.tray.show: Tampilkan Cider
+action.tryAgain: Coba lagi
 action.undo: Urungkan
 action.undoDislike: Urungkan Tidak Suka
 action.undoFavorite: Urungkan Favorit
@@ -342,6 +343,16 @@ config.persist.error.title: Cider tidak dapat menyimpan pengaturan Anda
 config.persist.fix.chownHint: "Jalankan ini di terminal untuk memulihkan akses tulis, lalu coba lagi perubahan Anda:"
 config.persist.fix.copied: Perintah disalin ke papan klip
 config.persist.fix.genericHint: Buka folder data dan pastikan Cider dapat menulis ke dalamnya, lalu coba lagi perubahan Anda.
+config.read.error.body: Pengaturan tersimpan Anda tidak dapat dibaca, sehingga Cider berjalan dengan pengaturan default. Perubahan saat ini hanya disimpan di perangkat ini, dan akan digantikan oleh pengaturan tersimpan Anda setelah Cider dapat membacanya kembali.
+config.read.error.title: Cider tidak dapat memuat pengaturan Anda
+config.read.recovered.body: Muat ulang Cider untuk memuat pengaturan tersimpan Anda. Perubahan yang Anda buat pada sesi ini akan digantikan oleh pengaturan tersebut.
+config.read.recovered.title: Pengaturan Anda dapat dimuat kembali
+config.read.retry.failed: Masih tidak dapat membaca pengaturan Anda.
+config.restore.action: Pulihkan konfigurasi sebelumnya
+config.restore.apply: Pulihkan
+config.restore.failed.body: Konfigurasi tersebut tidak dapat dipulihkan.
+config.restore.failed.title: Pemulihan gagal
+config.restore.hint: Pilih konfigurasi tersimpan untuk dipulihkan. Cider akan memuat ulang setelah diterapkan.
 connect.core.desc: Aktifkan Cider Connect untuk mendapatkan akses ke fitur seperti impor daftar putar, mendengarkan bersama, sinkronisasi pengaturan, dan banyak lagi.
 connect.instance.changeName: Ubah Nama
 connect.instance.delete: Hapus Instans
@@ -1025,6 +1036,7 @@ settings.audio.lab: Audio Lab
 settings.audio.lab.arProfile: Atmosphere Realizer
 settings.audio.lab.capProfile: Profil CAP
 settings.audio.lab.enableHint: Aktifkan Cider Audio untuk mengakses profil Audio Lab.
+settings.audio.lab.passthroughNote: Audio Lab dilewati saat passthrough Dolby Atmos aktif. Ubah mode Atmos ke Standar atau Binaural untuk mendengarkan pengaturan ini.
 settings.audio.lab.spatialProfile: Spasialisasi Selaras
 settings.audio.moreSettings: Pengaturan audio lainnya…
 settings.audio.occlusion: Mode Mendengarkan
@@ -1203,6 +1215,12 @@ settings.client.windows.wpfRendering: Mode Rendering WPF
 settings.client.windows.wpfRendering.desc: Pilih mode rendering untuk WPF. Jika ragu, biarkan sebagai perangkat lunak.
 settings.client.windows.wpfRendering.hardware: Perangkat Keras
 settings.client.windows.wpfRendering.software: Perangkat Lunak
+settings.configBackups.confirm.body: Pengaturan Anda saat ini akan digantikan dengan yang disimpan pada {date}, dan Cider akan memuat ulang.
+settings.configBackups.confirm.title: Pulihkan konfigurasi ini?
+settings.configBackups.empty: Belum ada cadangan yang disimpan.
+settings.configBackups.subtitle: Cider menyimpan salinan file pengaturan Anda sebelum ditimpa. Pulihkan salah satunya jika pengaturan Anda hilang atau diatur ulang.
+settings.configBackups.unreachable: Cider tidak dapat menjangkau cadangan tersimpan Anda saat ini, sehingga tidak dapat ditampilkan. Coba lagi sesaat lagi.
+settings.configBackups.unsupported: Klien ini tidak menyimpan cadangan konfigurasi.
 settings.connectivity.connectedDevices: Perangkat Terhubung
 settings.connectivity.connectedDevices.desc: Kelola perangkat Cider Remote Anda yang dipasangkan
 settings.connectivity.connectNewDevice: Hubungkan Perangkat Baru
@@ -1531,6 +1549,7 @@ settings.nav.accounts: Akun
 settings.nav.advanced: Lanjutan
 settings.nav.audio: Audio
 settings.nav.concerts: Konser
+settings.nav.config-backups: Cadangan Konfigurasi
 settings.nav.connectivity: Koneksi
 settings.nav.extensions: Ekstensi
 settings.nav.general: Umum
@@ -1592,6 +1611,7 @@ settings.option.advanced.clientSettings: Pengaturan Klien
 settings.option.advanced.clientSettings.description: Pengaturan khusus untuk kerangka kerja klien saat ini
 settings.option.advanced.compactSidebar: Bilah Sisi Ringkas
 settings.option.advanced.compactSidebar.size: Ukuran
+settings.option.advanced.configBackups.description: Pulihkan salinan file pengaturan Anda yang disimpan oleh Cider, jika pengaturan Anda hilang atau diatur ulang.
 settings.option.advanced.experimentalFeatures: Fitur Eksperimental
 settings.option.advanced.experimentalFeatures.description: Kemampuan yang sedang dikembangkan dan bendera fitur.
 settings.option.advanced.floatingSearch: Pencarian Melayang
@@ -2536,6 +2556,7 @@ share.platform.twitter.tweet: |-
 
   #AppleMusic #Cider
 share.platform.whatsapp: WhatsApp
+shell3.panel.moveToCenter: Pindahkan ke Tengah
 smartPlaylist.action.addRule: Tambah Kondisi
 smartPlaylist.action.convert: Tambah Aturan Daftar Putar…
 smartPlaylist.action.convertBack: Hapus Aturan Daftar Putar
@@ -2550,6 +2571,9 @@ smartPlaylist.builder.advanced: Lanjutan
 smartPlaylist.builder.advancedHintLead: Mode lanjutan aktif — bidang teks dapat menggunakan
 smartPlaylist.builder.advancedHintTail: dengan sintaks regex JS yang tidak sensitif huruf besar-kecil.
 smartPlaylist.builder.advancedTooltip: Alihkan operator lanjutan (regex, dll.)
+smartPlaylist.builder.bpmIncomplete: Data tempo masih belum lengkap, sehingga jumlah ini mungkin rendah.
+smartPlaylist.builder.bpmLoading: Mencari data tempo…
+smartPlaylist.builder.bpmUnavailable: "{n} trek tidak memiliki data tempo dan tidak dapat cocok dengan aturan BPM."
 smartPlaylist.builder.descriptionOptional: Deskripsi (opsional)
 smartPlaylist.builder.descriptionPlaceholder: Catatan tentang daftar putar ini…
 smartPlaylist.builder.empty: Belum ada kondisi — tambah satu untuk memulai.
@@ -2573,6 +2597,7 @@ smartPlaylist.building.emptyTitle: Tidak Ada Lagu yang Cocok
 smartPlaylist.building.errorTitle: Gagal Membuat Daftar Putar
 smartPlaylist.building.evaluating: Mengevaluasi aturan pada {n} lagu…
 smartPlaylist.building.fetching: Mengambil perpustakaan Anda…
+smartPlaylist.building.fetchingBpm: Mencari data tempo ({done}/{total})…
 smartPlaylist.building.fetchingCatalog: Menarik {n} katalog…
 smartPlaylist.building.staleRetry: Data daftar putar di Apple Music sudah usang. Coba simpan lagi.
 smartPlaylist.building.title: Membuat Daftar Putar Anda
@@ -2616,6 +2641,7 @@ smartPlaylist.mix.building.counter.artists: "{done} / {total} artis"
 smartPlaylist.mix.building.counter.candidates: "{count} kandidat"
 smartPlaylist.mix.building.counter.matches: "{count} kecocokan"
 smartPlaylist.mix.building.counter.tracks: "{done} / {total} lagu"
+smartPlaylist.mix.building.fetchingBpm: Mencari data tempo
 smartPlaylist.mix.building.filteringCandidates: Menyaring {count} kandidat
 smartPlaylist.mix.building.loadingLibrary: Memuat perpustakaan Anda…
 smartPlaylist.mix.building.phase.catalog: Katalog
@@ -2702,6 +2728,15 @@ spotify.importPlaylist: Impor Daftar Putar Spotify
 spotify.loadingPlaylist: Memuat Daftar Putar...
 spotify.openURL: Buka URL Spotify...
 spotify.saveToAppleMusic: Simpan ke Apple Music
+taproom.reauth.signIn: Masuk
+taproom.reauth.signInAgain: Masuk lagi
+taproom.reauth.success: Berhasil masuk ke Cider Taproom.
+taproom.reauth.successName: Berhasil! {name}
+taproom.reauth.unavailable.title: Masuk tidak tersedia
+taproom.reauth.unavailable.updateRequired: Versi Cider ini tidak dapat memasukkan Anda ke Cider Taproom. Perbarui Cider ke versi terbaru, lalu coba lagi.
+taproom.reauth.unavailable.windowFailed: Cider tidak dapat membuka jendela masuk Cider Taproom. Coba lagi sesaat lagi.
+taproom.token.rejected: Cider tidak dapat menerima token tersebut. Periksa kembali dan coba lagi.
+taproom.token.useSignInWindow: Versi Cider ini tidak dapat menerima token yang ditempel. Gunakan Masuk sebagai gantinya dan Cider akan membuka jendela masuknya sendiri.
 term.about: Tentang
 term.aboutArtist: Tentang {{artistName}}
 term.accountSettings: Pengaturan Akun
@@ -2714,7 +2749,8 @@ term.albums: Album
 term.all: Semua
 term.allPlaylists: Semua Daftar Putar
 term.am.language: Apple Music Language
-term.am.language.description: Menentukan bahasa tampilan elemen Apple Music. Mengubah etalase akan mengubah bahasa yang tersedia, Anda mungkin tidak dapat melihat semua bahasa dari wilayah tertentu yang diatur oleh akun Apple Anda.
+term.am.language.auto: Otomatis (Sesuaikan Bahasa Aplikasi)
+term.am.language.description: Menentukan bahasa tampilan elemen Apple Music. Otomatis mengikuti bahasa aplikasi jika didukung oleh storefront. Mengubah storefront akan mengubah bahasa yang tersedia, Anda mungkin tidak dapat melihat semua bahasa dari wilayah tertentu yang diatur oleh akun Apple Anda.
 term.am.storefront: Apple Music Storefront
 term.am.storefront.description: "'Etalase' atau wilayah asal konten akan disajikan. Ini termasuk hasil pencarian, Telusuri, Dengarkan Sekarang, dan Radio. Mengubah ini tidak disarankan karena dapat menyebabkan masalah pada pengalaman Anda."
 term.amLive: Apple Music Live
@@ -3068,8 +3104,15 @@ term.zoomin: Perbesar
 term.zoomout: Perkecil
 term.zoomreset: Atur Ulang Zoom
 updates.lateststable.title: Rilis Stabil Terbaru
+updates.loadFailed.body: Periksa koneksi Anda dan coba lagi.
+updates.loadFailed.title: Cider tidak dapat memuat versi yang tersedia
 updates.notifyForBranch.tooltip: Beri tahu untuk cabang ini
 updates.otherVersions.title: Versi Lain
 updates.ptb.name: Cabang Pengujian Publik
+updates.signedOut.body: Cider memeriksa pembaruan menggunakan akun Cider Taproom Anda.
+updates.signedOut.expired.body: Masuk lagi untuk memeriksa pembaruan.
+updates.signedOut.expired.bodyNamed: Masuk lagi sebagai {name} untuk memeriksa pembaruan.
+updates.signedOut.expired.title: Sesi Cider Taproom Anda telah kedaluwarsa
+updates.signedOut.title: Masuk untuk memeriksa pembaruan
 updates.stable.name: Cabang Stabil
 verb.installed: Terinstal

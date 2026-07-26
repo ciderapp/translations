@@ -165,6 +165,7 @@ action.tray.listento: "Ascultați:"
 action.tray.minimize: Minimizați în bara de sistem
 action.tray.minimize.description: Aplicația ar trebui să se minimizeze în bara de sistem?
 action.tray.show: Afișați Cider
+action.tryAgain: Încearcă din nou
 action.undo: Anulează
 action.undoDislike: Anulați „Nu-mi place”
 action.undoFavorite: Elimină de la favorite
@@ -342,6 +343,16 @@ config.persist.error.title: Cider nu poate salva setările
 config.persist.fix.chownHint: "Rulează această comandă într-un terminal pentru a restabili accesul de scriere, apoi reîncearcă modificarea:"
 config.persist.fix.copied: Comandă copiată în clipboard
 config.persist.fix.genericHint: Deschide folderul de date și asigură-te că Cider poate scrie în el, apoi reîncearcă modificarea.
+config.read.error.body: Setările tale salvate nu au putut fi citite, așa că Cider rulează cu setările implicite. Modificările rămân deocamdată pe acest dispozitiv și vor fi înlocuite de setările tale salvate imediat ce Cider le va putea citi din nou.
+config.read.error.title: Cider nu a putut încărca setările tale
+config.read.recovered.body: Repornește Cider pentru a încărca setările salvate. Modificările efectuate în această sesiune vor fi înlocuite de acestea.
+config.read.recovered.title: Setările tale pot fi încărcate din nou
+config.read.retry.failed: În continuare nu se pot citi setările tale.
+config.restore.action: Restaurează o configurație anterioară
+config.restore.apply: Restaurează
+config.restore.failed.body: Acea configurație nu a putut fi restaurată.
+config.restore.failed.title: Restaurare eșuată
+config.restore.hint: Alege o configurație salvată pentru a o restaura. Cider se va reporni după aplicare.
 connect.core.desc: Activează Cider Connect pentru a obține acces la funcții precum importarea listelor de redare, ascultarea în grup, sincronizarea configurărilor și multe altele.
 connect.instance.changeName: Schimbă numele
 connect.instance.delete: Șterge instanța
@@ -1025,6 +1036,7 @@ settings.audio.lab: Audio Lab
 settings.audio.lab.arProfile: Atmosphere Realizer
 settings.audio.lab.capProfile: CAP Profile
 settings.audio.lab.enableHint: Activați Cider Audio pentru a accesa profilurile Audio Lab.
+settings.audio.lab.passthroughNote: Audio Lab este ocolit în timp ce passthrough Dolby Atmos este activ. Comută modul Atmos pe Standard sau Binaural pentru a auzi aceste setări.
 settings.audio.lab.spatialProfile: Tuned Spatialization
 settings.audio.moreSettings: Mai multe setări audio…
 settings.audio.occlusion: Mod de ascultare
@@ -1203,6 +1215,12 @@ settings.client.windows.wpfRendering: Mod de randare WPF
 settings.client.windows.wpfRendering.desc: Alegeți modul de randare pentru WPF. Dacă nu sunteți sigur, lăsați pe software.
 settings.client.windows.wpfRendering.hardware: Hardware
 settings.client.windows.wpfRendering.software: Software
+settings.configBackups.confirm.body: Setările tale actuale vor fi înlocuite cu cele salvate pe {date}, iar Cider se va reporni.
+settings.configBackups.confirm.title: Restaurezi această configurație?
+settings.configBackups.empty: Nu a fost salvată nicio copie de rezervă încă.
+settings.configBackups.subtitle: Cider păstrează o copie a fișierului tău de setări înainte ca acesta să fie suprascris. Restaurează una dacă setările tale au fost pierdute sau resetate.
+settings.configBackups.unreachable: Cider nu a putut accesa copiile de rezervă salvate în acest moment, așa că nu pot fi afișate. Încearcă din nou în câteva clipe.
+settings.configBackups.unsupported: Acest client nu păstrează copii de rezervă ale configurației.
 settings.connectivity.connectedDevices: Dispozitive conectate
 settings.connectivity.connectedDevices.desc: Gestionați dispozitivele Cider Remote asociate
 settings.connectivity.connectNewDevice: Conectează un dispozitiv nou
@@ -1531,6 +1549,7 @@ settings.nav.accounts: Conturi
 settings.nav.advanced: Avansat
 settings.nav.audio: Audio
 settings.nav.concerts: Concerte
+settings.nav.config-backups: Copii de rezervă ale configurației
 settings.nav.connectivity: Conexiuni
 settings.nav.extensions: Extensii
 settings.nav.general: General
@@ -1592,6 +1611,7 @@ settings.option.advanced.clientSettings: Setări client
 settings.option.advanced.clientSettings.description: Setări specifice cadrului de lucru al clientului curent
 settings.option.advanced.compactSidebar: Bară laterală compactă
 settings.option.advanced.compactSidebar.size: Dimensiune
+settings.option.advanced.configBackups.description: Restaurează o copie salvată de Cider a fișierului tău de setări, în cazul în care setările tale au fost pierdute sau resetate.
 settings.option.advanced.experimentalFeatures: Funcționalități experimentale
 settings.option.advanced.experimentalFeatures.description: Funcționalități în curs de dezvoltare și indicatori de caracteristici.
 settings.option.advanced.floatingSearch: Căutare plutitoare
@@ -2536,6 +2556,7 @@ share.platform.twitter.tweet: |-
 
   #AppleMusic #Cider
 share.platform.whatsapp: WhatsApp
+shell3.panel.moveToCenter: Mută în centru
 smartPlaylist.action.addRule: Adaugă condiție
 smartPlaylist.action.convert: Adaugă reguli pentru playlist…
 smartPlaylist.action.convertBack: Elimină regulile playlistului
@@ -2550,6 +2571,9 @@ smartPlaylist.builder.advanced: Avansat
 smartPlaylist.builder.advancedHintLead: Mod avansat activat — câmpurile de text pot folosi
 smartPlaylist.builder.advancedHintTail: cu sintaxă JS regex insensibilă la majuscule.
 smartPlaylist.builder.advancedTooltip: Comută operatorii avansați (regex etc.)
+smartPlaylist.builder.bpmIncomplete: Datele despre tempo sunt încă incomplete, așa că acest număr ar putea fi mic.
+smartPlaylist.builder.bpmLoading: Se caută datele despre tempo…
+smartPlaylist.builder.bpmUnavailable: "{n} piese nu au date despre tempo și nu se pot potrivi cu o regulă BPM."
 smartPlaylist.builder.descriptionOptional: Descriere (opțional)
 smartPlaylist.builder.descriptionPlaceholder: Note despre acest playlist…
 smartPlaylist.builder.empty: Nicio condiție adăugată — adaugă una pentru a începe.
@@ -2573,6 +2597,7 @@ smartPlaylist.building.emptyTitle: Nicio piesă potrivită
 smartPlaylist.building.errorTitle: Nu s-a putut crea playlistul
 smartPlaylist.building.evaluating: Se evaluează regulile pentru {n} piese…
 smartPlaylist.building.fetching: Se încarcă biblioteca ta…
+smartPlaylist.building.fetchingBpm: Se caută datele despre tempo ({done}/{total})…
 smartPlaylist.building.fetchingCatalog: Se preiau {n} cataloage…
 smartPlaylist.building.staleRetry: Datele playlistului erau învechite pe Apple Music. Încearcă să salvezi din nou.
 smartPlaylist.building.title: Se creează playlistul tău
@@ -2616,6 +2641,7 @@ smartPlaylist.mix.building.counter.artists: "{done} / {total} artiști"
 smartPlaylist.mix.building.counter.candidates: "{count} candidați"
 smartPlaylist.mix.building.counter.matches: "{count} potriviri"
 smartPlaylist.mix.building.counter.tracks: "{done} / {total} piese"
+smartPlaylist.mix.building.fetchingBpm: Se caută datele despre tempo
 smartPlaylist.mix.building.filteringCandidates: Se filtrează {count} candidați
 smartPlaylist.mix.building.loadingLibrary: Se încarcă biblioteca…
 smartPlaylist.mix.building.phase.catalog: Catalog
@@ -2702,6 +2728,15 @@ spotify.importPlaylist: Importă lista de redare Spotify
 spotify.loadingPlaylist: Se încarcă lista de redare...
 spotify.openURL: Deschide URL-ul Spotify...
 spotify.saveToAppleMusic: Salvează în Apple Music
+taproom.reauth.signIn: Conectare
+taproom.reauth.signInAgain: Conectează-te din nou
+taproom.reauth.success: Te-ai conectat la Cider Taproom.
+taproom.reauth.successName: Succes! {name}
+taproom.reauth.unavailable.title: Conectare indisponibilă
+taproom.reauth.unavailable.updateRequired: Această versiune de Cider nu te poate conecta la Cider Taproom. Actualizează Cider la cea mai recentă versiune, apoi încearcă din nou.
+taproom.reauth.unavailable.windowFailed: Cider nu a putut deschide fereastra de conectare Cider Taproom. Încearcă din nou în câteva clipe.
+taproom.token.rejected: Cider nu a putut accepta acel token. Verifică-l și încearcă din nou.
+taproom.token.useSignInWindow: Această versiune de Cider nu poate accepta un token lipit. Folosește în schimb „Conectare”, iar Cider va deschide propria fereastră de conectare.
 term.about: Despre
 term.aboutArtist: Despre {{artistName}}
 term.accountSettings: Setări cont
@@ -2714,7 +2749,8 @@ term.albums: Albume
 term.all: Toate
 term.allPlaylists: Toate listele de redare
 term.am.language: Apple Music Language
-term.am.language.description: Determină limba în care vor fi afișate elementele Apple Music. Schimbarea regiunii (storefront) va modifica limbile disponibile; este posibil să nu poți vedea toate limbile din anumite regiuni setate de contul tău Apple.
+term.am.language.auto: Automat (potrivește limba aplicației)
+term.am.language.description: Determină limba în care vor fi afișate elementele Apple Music. Opțiunea Automat preia limba aplicației acolo unde storefront-ul o acceptă. Schimbarea storefront-ului va modifica limbile disponibile; este posibil să nu poți vedea toate limbile din anumite regiuni setate de contul tău Apple.
 term.am.storefront: Apple Music Storefront
 term.am.storefront.description: „Storefront-ul” sau regiunea din care va fi furnizat conținutul. Aceasta include rezultatele căutării, secțiunile Explorează, Ascultă acum și Radio. Schimbarea acesteia nu este recomandată, deoarece poate cauza probleme de utilizare.
 term.amLive: Apple Music Live
@@ -3068,8 +3104,15 @@ term.zoomin: Mărește
 term.zoomout: Micșorează
 term.zoomreset: Resetează zoomul
 updates.lateststable.title: Cea mai recentă versiune stabilă
+updates.loadFailed.body: Verifică conexiunea și încearcă din nou.
+updates.loadFailed.title: Cider nu a putut încărca versiunile disponibile
 updates.notifyForBranch.tooltip: Notifică pentru această ramură
 updates.otherVersions.title: Alte versiuni
 updates.ptb.name: Ramură de testare publică
+updates.signedOut.body: Cider verifică actualizările folosind contul tău Cider Taproom.
+updates.signedOut.expired.body: Conectează-te din nou pentru a verifica dacă există actualizări.
+updates.signedOut.expired.bodyNamed: Conectează-te din nou ca {name} pentru a verifica dacă există actualizări.
+updates.signedOut.expired.title: Sesiunea ta Cider Taproom a expirat
+updates.signedOut.title: Conectează-te pentru a verifica dacă există actualizări
 updates.stable.name: Ramură stabilă
 verb.installed: Instalat

@@ -637,6 +637,7 @@ action.tray.listento: "Slušajte:"
 action.tray.minimize: Minimiziraj u traku sustava
 action.tray.minimize.description: Treba li se aplikacija minimizirati u traku sustava?
 action.tray.show: Prikaži Cider
+action.tryAgain: Pokušaj ponovno
 action.undo: Poništi
 action.undoDislike: Poništi 'Ne sviđa mi se'
 action.undoFavorite: Poništi 'Omiljeno'
@@ -814,6 +815,16 @@ config.persist.error.title: Cider ne može spremiti vaše postavke
 config.persist.fix.chownHint: "Pokrenite ovo u terminalu kako biste vratili pristup za pisanje, a zatim ponovite promjenu:"
 config.persist.fix.copied: Naredba je kopirana u međuspremnik
 config.persist.fix.genericHint: Otvorite mapu s podacima i provjerite može li Cider pisati u nju, a zatim ponovite promjenu.
+config.read.error.body: Nije bilo moguće pročitati vaše spremljene postavke, pa se Cider pokreće sa zadanim vrijednostima. Promjene za sada ostaju na ovom uređaju, a bit će zamijenjene vašim spremljenim postavkama čim ih Cider ponovno uspije pročitati.
+config.read.error.title: Cider nije uspio učitati vaše postavke
+config.read.recovered.body: Ponovno učitajte Cider kako biste učitali svoje spremljene postavke. Promjene koje ste napravili u ovoj sesiji bit će zamijenjene njima.
+config.read.recovered.title: Vaše se postavke mogu ponovno učitati
+config.read.retry.failed: I dalje nije moguće pročitati vaše postavke.
+config.restore.action: Vrati prethodnu konfiguraciju
+config.restore.apply: Vrati
+config.restore.failed.body: Nije bilo moguće vratiti tu konfiguraciju.
+config.restore.failed.title: Vraćanje nije uspjelo
+config.restore.hint: Odaberite spremljenu konfiguraciju za vraćanje. Cider će se ponovno učitati nakon što se primijeni.
 connect.core.desc: Omogućite Cider Connect kako biste dobili pristup značajkama kao što su uvoz popisa pjesama, zajedničko slušanje, sinkronizacija postavki i još mnogo toga.
 connect.instance.changeName: Promijeni naziv
 connect.instance.delete: Obriši instancu
@@ -1497,6 +1508,7 @@ settings.audio.lab: Audio Lab
 settings.audio.lab.arProfile: Atmosphere Realizer
 settings.audio.lab.capProfile: CAP profil
 settings.audio.lab.enableHint: Omogućite Cider Audio za pristup Audio Lab profilima.
+settings.audio.lab.passthroughNote: Audio Lab se zaobilazi dok je aktivno propuštanje za Dolby Atmos. Prebacite Atmos način na Standardni ili Binauralni kako biste čuli ove postavke.
 settings.audio.lab.spatialProfile: Podešeni prostorni zvuk
 settings.audio.moreSettings: Više audio postavki…
 settings.audio.occlusion: Način slušanja
@@ -1675,6 +1687,12 @@ settings.client.windows.wpfRendering: WPF način iscrtavanja
 settings.client.windows.wpfRendering.desc: Odaberite način iscrtavanja za WPF. Ako niste sigurni, ostavite na softverskom.
 settings.client.windows.wpfRendering.hardware: Hardverski
 settings.client.windows.wpfRendering.software: Softverski
+settings.configBackups.confirm.body: Vaše trenutne postavke bit će zamijenjene onima spremljenima {date} i Cider će se ponovno učitati.
+settings.configBackups.confirm.title: Vratiti ovu konfiguraciju?
+settings.configBackups.empty: Još nema spremljenih sigurnosnih kopija.
+settings.configBackups.subtitle: Cider čuva kopiju datoteke s vašim postavkama prije nego što se prepiše. Vratite jednu ako su vaše postavke izgubljene ili ponovno postavljene.
+settings.configBackups.unreachable: Cider trenutno nije mogao pristupiti vašim spremljenim sigurnosnim kopijama, pa se ne mogu prikazati. Pokušajte ponovno za trenutak.
+settings.configBackups.unsupported: Ovaj klijent ne čuva sigurnosne kopije konfiguracije.
 settings.connectivity.connectedDevices: Povezani uređaji
 settings.connectivity.connectedDevices.desc: Upravljajte svojim uparenim Cider Remote uređajima
 settings.connectivity.connectNewDevice: Poveži novi uređaj
@@ -2003,6 +2021,7 @@ settings.nav.accounts: Računi
 settings.nav.advanced: Napredno
 settings.nav.audio: Zvuk
 settings.nav.concerts: Koncerti
+settings.nav.config-backups: Sigurnosne kopije konfiguracije
 settings.nav.connectivity: Veze
 settings.nav.extensions: Proširenja
 settings.nav.general: Općenito
@@ -2064,6 +2083,7 @@ settings.option.advanced.clientSettings: Postavke klijenta
 settings.option.advanced.clientSettings.description: Postavke specifične za trenutni okvir klijenta
 settings.option.advanced.compactSidebar: Kompaktna bočna traka
 settings.option.advanced.compactSidebar.size: Veličina
+settings.option.advanced.configBackups.description: Vratite kopiju datoteke s postavkama koju je Cider spremio, u slučaju da su vaše postavke izgubljene ili ponovno postavljene.
 settings.option.advanced.experimentalFeatures: Eksperimentalne značajke
 settings.option.advanced.experimentalFeatures.description: Značajke u razvoju i eksperimentalne opcije.
 settings.option.advanced.floatingSearch: Plutajuće pretraživanje
@@ -3008,6 +3028,7 @@ share.platform.twitter.tweet: |-
 
   #AppleMusic #Cider
 share.platform.whatsapp: WhatsApp
+shell3.panel.moveToCenter: Premjesti u sredinu
 smartPlaylist.action.addRule: Dodaj uvjet
 smartPlaylist.action.convert: Dodaj pravila popisa pjesama…
 smartPlaylist.action.convertBack: Ukloni pravila popisa pjesama
@@ -3022,6 +3043,9 @@ smartPlaylist.builder.advanced: Napredno
 smartPlaylist.builder.advancedHintLead: Napredni način je uključen — tekstualna polja mogu koristiti
 smartPlaylist.builder.advancedHintTail: s JS regex sintaksom neosjetljivom na velika i mala slova.
 smartPlaylist.builder.advancedTooltip: Uključi/isključi napredne operatore (regex itd.)
+smartPlaylist.builder.bpmIncomplete: Podaci o tempu još su nepotpuni, pa bi ovaj broj mogao biti nizak.
+smartPlaylist.builder.bpmLoading: Traženje podataka o tempu…
+smartPlaylist.builder.bpmUnavailable: "{n} pjesama nema podatke o tempu i ne mogu se podudarati s BPM pravilom."
 smartPlaylist.builder.descriptionOptional: Opis (neobavezno)
 smartPlaylist.builder.descriptionPlaceholder: Bilješke o ovom popisu pjesama…
 smartPlaylist.builder.empty: Još nema uvjeta — dodajte jedan za početak.
@@ -3045,6 +3069,7 @@ smartPlaylist.building.emptyTitle: Nema podudarajućih pjesama
 smartPlaylist.building.errorTitle: Nije moguće stvoriti popis pjesama
 smartPlaylist.building.evaluating: Procjena pravila za {n} pjesama…
 smartPlaylist.building.fetching: Dohvaćanje vaše knjižnice…
+smartPlaylist.building.fetchingBpm: Traženje podataka o tempu ({done}/{total})…
 smartPlaylist.building.fetchingCatalog: Preuzimanje {n} kataloga…
 smartPlaylist.building.staleRetry: Podaci popisa pjesama na Apple Musicu nisu bili ažurni. Pokušajte ponovno spremiti.
 smartPlaylist.building.title: Izrada vaše liste pjesama
@@ -3088,6 +3113,7 @@ smartPlaylist.mix.building.counter.artists: "{done} / {total} izvođača"
 smartPlaylist.mix.building.counter.candidates: "{count} kandidata"
 smartPlaylist.mix.building.counter.matches: "{count} podudaranja"
 smartPlaylist.mix.building.counter.tracks: "{done} / {total} pjesama"
+smartPlaylist.mix.building.fetchingBpm: Traženje podataka o tempu
 smartPlaylist.mix.building.filteringCandidates: Filtriranje {count} kandidata
 smartPlaylist.mix.building.loadingLibrary: Učitavanje vaše knjižnice…
 smartPlaylist.mix.building.phase.catalog: Katalog
@@ -3174,6 +3200,15 @@ spotify.importPlaylist: Uvezi Spotify playlistu
 spotify.loadingPlaylist: Učitavanje playliste...
 spotify.openURL: Otvori Spotify URL...
 spotify.saveToAppleMusic: Spremi u Apple Music
+taproom.reauth.signIn: Prijavi se
+taproom.reauth.signInAgain: Prijavi se ponovno
+taproom.reauth.success: Prijavljeni ste na Cider Taproom.
+taproom.reauth.successName: Uspjeh! {name}
+taproom.reauth.unavailable.title: Prijava nije dostupna
+taproom.reauth.unavailable.updateRequired: Ova verzija Cidera ne može vas prijaviti na Cider Taproom. Ažurirajte Cider na najnoviju verziju, a zatim pokušajte ponovno.
+taproom.reauth.unavailable.windowFailed: Cider nije mogao otvoriti prozor za prijavu na Cider Taproom. Pokušajte ponovno za trenutak.
+taproom.token.rejected: Cider nije mogao prihvatiti taj token. Provjerite ga i pokušajte ponovno.
+taproom.token.useSignInWindow: Ova verzija Cidera ne može prihvatiti zalijepljeni token. Umjesto toga upotrijebite 'Prijavi se' i Cider će otvoriti vlastiti prozor za prijavu.
 term.about: O aplikaciji
 term.aboutArtist: O izvođaču {{artistName}}
 term.accountSettings: Postavke računa
@@ -3186,7 +3221,8 @@ term.albums: Albumi
 term.all: Sve
 term.allPlaylists: Sve playliste
 term.am.language: Jezik
-term.am.language.description: Određuje jezik na kojem će se prikazivati elementi usluge Apple Music. Promjena regionalne trgovine promijenit će dostupne jezike; možda nećete moći vidjeti sve jezike iz određenih regija postavljenih na vašem Apple računu.
+term.am.language.auto: Automatski (podudara se s jezikom aplikacije)
+term.am.language.description: Određuje jezik na kojem će se prikazivati elementi usluge Apple Music. Opcija 'Automatski' prati jezik aplikacije tamo gdje to trgovina podržava. Promjena trgovine promijenit će dostupne jezike; možda nećete moći vidjeti sve jezike iz određenih regija koje su postavljene na vašem Apple računu.
 term.am.storefront: Trgovina
 term.am.storefront.description: „Trgovina” ili regija iz koje će se posluživati sadržaj. To uključuje rezultate pretraživanja, Pregled, Slušajte odmah i Radio. Promjena se ne preporučuje jer može uzrokovati poteškoće u radu.
 term.amLive: Apple Music Live
@@ -3540,8 +3576,15 @@ term.zoomin: Povećaj
 term.zoomout: Smanji
 term.zoomreset: Vrati zadano zumiranje
 updates.lateststable.title: Najnovije stabilno izdanje
+updates.loadFailed.body: Provjerite vezu i pokušajte ponovno.
+updates.loadFailed.title: Cider nije mogao učitati dostupne verzije
 updates.notifyForBranch.tooltip: Obavijesti me o ovoj grani
 updates.otherVersions.title: Druge verzije
 updates.ptb.name: Javna testna grana
+updates.signedOut.body: Cider provjerava ažuriranja pomoću vašeg Cider Taproom računa.
+updates.signedOut.expired.body: Prijavite se ponovno kako biste provjerili ima li ažuriranja.
+updates.signedOut.expired.bodyNamed: Prijavite se ponovno kao {name} kako biste provjerili ima li ažuriranja.
+updates.signedOut.expired.title: Vaša sesija za Cider Taproom je istekla
+updates.signedOut.title: Prijavite se za provjeru ažuriranja
 updates.stable.name: Stabilna grana
 verb.installed: Instalirano

@@ -280,6 +280,7 @@ action.tray.listento: 正在聆聽：
 action.tray.minimize: 最小化至系統列
 action.tray.minimize.description: 是否將應用程式最小化至系統列？
 action.tray.show: 顯示 Cider
+action.tryAgain: 再試一次
 action.undo: 復原
 action.undoDislike: 取消「不喜歡」
 action.undoFavorite: 取消喜愛
@@ -540,6 +541,16 @@ config.persist.fix.genericHint:
   source: human
   by: "@jay900604"
   issue: 53
+config.read.error.body: 無法讀取您儲存的設定，因此 Cider 正以預設值執行。變更目前僅會保留在此裝置上，並在 Cider 能夠再次讀取時，替換為您儲存的設定。
+config.read.error.title: Cider 無法載入您的設定
+config.read.recovered.body: 重新載入 Cider 以載入您儲存的設定。您在此工作階段中所做的變更將會被其替換。
+config.read.recovered.title: 已可再次載入您的設定
+config.read.retry.failed: 仍無法讀取您的設定。
+config.restore.action: 還原先前的設定
+config.restore.apply: 還原
+config.restore.failed.body: 無法還原該設定。
+config.restore.failed.title: 還原失敗
+config.restore.hint: 選擇要還原的已儲存設定。套用後 Cider 將會重新載入。
 connect.core.desc: 啟用 Cider Connect 以使用匯入播放清單、一起聆聽、同步設定等功能。
 connect.instance.changeName: 變更名稱
 connect.instance.delete: 刪除實例
@@ -1593,6 +1604,7 @@ settings.audio.lab: Audio Lab
 settings.audio.lab.arProfile: 環境音效實現器
 settings.audio.lab.capProfile: CAP 設定檔
 settings.audio.lab.enableHint: 啟用 Cider Audio 以存取 Audio Lab 設定檔。
+settings.audio.lab.passthroughNote: 啟用 Dolby Atmos 穿透模式時會繞過 Audio Lab。請將 Atmos 模式切換為「標準」或「雙耳」以套用這些設定。
 settings.audio.lab.spatialProfile: 微調空間音訊
 settings.audio.moreSettings: 更多音訊設定…
 settings.audio.occlusion: 聆聽模式
@@ -1848,6 +1860,12 @@ settings.client.windows.wpfRendering: WPF 轉譯模式
 settings.client.windows.wpfRendering.desc: 選擇 WPF 的轉譯模式。如果不確定，請保留為軟體轉譯。
 settings.client.windows.wpfRendering.hardware: 硬體
 settings.client.windows.wpfRendering.software: 軟體
+settings.configBackups.confirm.body: 您目前的設定將會被替換為在 {date} 儲存的設定，且 Cider 將會重新載入。
+settings.configBackups.confirm.title: 要還原此設定嗎？
+settings.configBackups.empty: 尚未儲存任何備份。
+settings.configBackups.subtitle: Cider 會在覆寫設定檔前保留一份複本。如果您的設定遺失或被重設，可在此進行還原。
+settings.configBackups.unreachable: Cider 剛才無法取得您儲存的備份，因此無法列出。請稍後再試。
+settings.configBackups.unsupported: 此用戶端不保留設定備份。
 settings.connectivity.connectedDevices: 已連線的裝置
 settings.connectivity.connectedDevices.desc:
   value: 管理你已配對的 Cider Remote 裝置
@@ -2341,6 +2359,7 @@ settings.nav.accounts: 帳號
 settings.nav.advanced: 進階
 settings.nav.audio: 音訊
 settings.nav.concerts: 演唱會
+settings.nav.config-backups: 設定備份
 settings.nav.connectivity: 連線
 settings.nav.extensions:
   value: 延伸功能
@@ -2432,6 +2451,7 @@ settings.option.advanced.clientSettings.description:
   issue: 45
 settings.option.advanced.compactSidebar: 精簡側邊欄
 settings.option.advanced.compactSidebar.size: 大小
+settings.option.advanced.configBackups.description: 還原 Cider 儲存的設定檔複本，以防您的設定遺失或被重設。
 settings.option.advanced.experimentalFeatures: 實驗性功能
 settings.option.advanced.experimentalFeatures.description:
   value: 處於開發中的功能和特性旗標。
@@ -3876,6 +3896,7 @@ share.platform.twitter.tweet: |-
 
   #AppleMusic #Cider
 share.platform.whatsapp: WhatsApp
+shell3.panel.moveToCenter: 移至中央
 smartPlaylist.action.addRule: 新增條件
 smartPlaylist.action.convert:
   value: 新增播放列表規則…
@@ -3918,6 +3939,9 @@ smartPlaylist.builder.advancedTooltip:
   source: human
   by: "@jay900604"
   issue: 24
+smartPlaylist.builder.bpmIncomplete: 速度資料仍不完整，因此此計數可能會偏低。
+smartPlaylist.builder.bpmLoading: 正在尋找速度資料…
+smartPlaylist.builder.bpmUnavailable: "{n} 首曲目沒有速度資料，無法符合 BPM 規則。"
 smartPlaylist.builder.descriptionOptional:
   value: 描述（選填）
   source: human
@@ -3969,6 +3993,7 @@ smartPlaylist.building.fetching:
   source: human
   by: "@jay900604"
   issue: 24
+smartPlaylist.building.fetchingBpm: 正在尋找速度資料 ({done}/{total})…
 smartPlaylist.building.fetchingCatalog: 正在取得 {n} 個目錄…
 smartPlaylist.building.staleRetry: Apple Music 上的播放列表資料已過期。請嘗試重新儲存。
 smartPlaylist.building.title:
@@ -4028,6 +4053,7 @@ smartPlaylist.mix.building.counter.artists: "{done} / {total} 位藝人"
 smartPlaylist.mix.building.counter.candidates: "{count} 首候選歌曲"
 smartPlaylist.mix.building.counter.matches: "{count} 首符合"
 smartPlaylist.mix.building.counter.tracks: "{done} / {total} 首歌曲"
+smartPlaylist.mix.building.fetchingBpm: 正在尋找速度資料
 smartPlaylist.mix.building.filteringCandidates: 正在篩選 {count} 首候選歌曲
 smartPlaylist.mix.building.loadingLibrary:
   value: 正在載入你的資料庫…
@@ -4176,6 +4202,15 @@ spotify.openURL:
   issue: 16
   superseded_at: 2026-07-08
 spotify.saveToAppleMusic: 儲存至 Apple Music
+taproom.reauth.signIn: 登入
+taproom.reauth.signInAgain: 重新登入
+taproom.reauth.success: 已登入 Cider Taproom。
+taproom.reauth.successName: 成功！{name}
+taproom.reauth.unavailable.title: 無法登入
+taproom.reauth.unavailable.updateRequired: 此版本的 Cider 無法讓您登入 Cider Taproom。請將 Cider 更新至最新版本，然後再試一次。
+taproom.reauth.unavailable.windowFailed: Cider 無法開啟 Cider Taproom 登入視窗。請稍後再試。
+taproom.token.rejected: Cider 無法接受該權杖。請檢查後再試一次。
+taproom.token.useSignInWindow: 此版本的 Cider 無法接受貼上的權杖。請改用「登入」，Cider 將會開啟專屬的登入視窗。
 term.about: 關於
 term.aboutArtist: 關於 {{artistName}}
 term.accountSettings: 帳戶設定
@@ -4192,8 +4227,9 @@ term.allPlaylists:
   by: "@jay900604"
   issue: 53
 term.am.language: Apple Music 語言
+term.am.language.auto: 自動 (與 App 語言一致)
 term.am.language.description:
-  value: 決定 Apple Music 元素的顯示語言。變更店面將會改變可用的語言，您可能無法看到您 Apple 帳戶所設定之特定地區的所有語言。
+  value: 決定 Apple Music 元素的顯示語言。「自動」會在店面支援的情況下與 App 語言一致。變更店面將會改變可用的語言，您可能無法看到由您的 Apple 帳號所設定之特定地區的所有語言。
   source: ai
   by: "@jay900604"
   issue: 33
@@ -4739,8 +4775,15 @@ term.zoomin: 放大
 term.zoomout: 縮小
 term.zoomreset: 重設縮放
 updates.lateststable.title: 最新穩定版本
+updates.loadFailed.body: 請檢查您的連線並再試一次。
+updates.loadFailed.title: Cider 無法載入可用版本
 updates.notifyForBranch.tooltip: 訂閱此分支的通知
 updates.otherVersions.title: 其他版本
 updates.ptb.name: 公開測試分支
+updates.signedOut.body: Cider 會透過您的 Cider Taproom 帳號檢查更新。
+updates.signedOut.expired.body: 請重新登入以檢查更新。
+updates.signedOut.expired.bodyNamed: 請重新以 {name} 身份登入以檢查更新。
+updates.signedOut.expired.title: 您的 Cider Taproom 工作階段已過期
+updates.signedOut.title: 登入以檢查更新
 updates.stable.name: 穩定分支
 verb.installed: 已安裝

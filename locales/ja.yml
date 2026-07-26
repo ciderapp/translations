@@ -223,6 +223,7 @@ action.tray.listento: "再生中:"
 action.tray.minimize: トレイに最小化
 action.tray.minimize.description: アプリをシステムトレイに最小化しますか？
 action.tray.show: Ciderを表示
+action.tryAgain: もう一度試す
 action.undo: 元に戻す
 action.undoDislike: 「おすすめを減らす」を取り消す
 action.undoFavorite: お気に入りを解除
@@ -409,6 +410,16 @@ config.persist.error.title: Ciderは設定を保存できません
 config.persist.fix.chownHint: 書き込み権限を復元するには、ターミナルで以下を実行してから、もう一度変更を試してください：
 config.persist.fix.copied: コマンドをクリップボードにコピーしました
 config.persist.fix.genericHint: データフォルダーを開き、Ciderが書き込み可能であることを確認してから、もう一度変更を試してください。
+config.read.error.body: 保存された設定を読み込めなかったため、Ciderはデフォルト設定で動作しています。変更は一時的にこのデバイスに保存され、Ciderが設定を再度読み込めるようになった時点で、保存されていた設定に置き換えられます。
+config.read.error.title: Ciderで設定を読み込めませんでした
+config.read.recovered.body: 保存された設定を読み込むには、Ciderを再読み込みしてください。このセッションで行った変更は、保存されていた設定に置き換えられます。
+config.read.recovered.title: 設定を再度読み込めるようになりました
+config.read.retry.failed: 設定をまだ読み込むことができません。
+config.restore.action: 以前の設定を復元
+config.restore.apply: 復元
+config.restore.failed.body: その設定は復元できませんでした。
+config.restore.failed.title: 復元に失敗しました
+config.restore.hint: 復元する保存済みの設定を選択してください。適用されるとCiderが再読み込みされます。
 connect.core.desc: Cider Connectを有効にすると、プレイリストの読み込み、一緒に聴く機能、設定の同期などの機能を利用できるようになります。
 connect.instance.changeName: 名前を変更
 connect.instance.delete: インスタンスを削除
@@ -1097,6 +1108,7 @@ settings.audio.lab: Audio Lab
 settings.audio.lab.arProfile: Atmosphere Realizer
 settings.audio.lab.capProfile: CAP プロファイル
 settings.audio.lab.enableHint: Audio Lab プロファイルにアクセスするには Cider Audio を有効にしてください。
+settings.audio.lab.passthroughNote: Dolby Atmosのパススルーが有効な間は、Audio Labはバイパスされます。これらの設定を適用するには、Atmosモードを「標準」または「バイノーラル」に切り替えてください。
 settings.audio.lab.spatialProfile: Tuned Spatialization
 settings.audio.moreSettings: その他のオーディオ設定…
 settings.audio.occlusion: リスニングモード
@@ -1275,6 +1287,12 @@ settings.client.windows.wpfRendering: WPF レンダリングモード
 settings.client.windows.wpfRendering.desc: WPF のレンダリングモードを選択します。不明な場合は「ソフトウェア」のままにしてください。
 settings.client.windows.wpfRendering.hardware: ハードウェア
 settings.client.windows.wpfRendering.software: ソフトウェア
+settings.configBackups.confirm.body: 現在の設定は{date}に保存されたものに置き換えられ、Ciderが再読み込みされます。
+settings.configBackups.confirm.title: この設定を復元しますか？
+settings.configBackups.empty: バックアップはまだ保存されていません。
+settings.configBackups.subtitle: Ciderは設定ファイルが上書きされる前にコピーを保存します。設定が失われたりリセットされたりした場合は、いずれかを復元してください。
+settings.configBackups.unreachable: 保存されたバックアップに接続できなかったため、一覧を表示できません。しばらくしてからもう一度お試しください。
+settings.configBackups.unsupported: このクライアントは設定のバックアップを保持しません。
 settings.connectivity.connectedDevices: 接続済みのデバイス
 settings.connectivity.connectedDevices.desc: ペアリングされた Cider Remote デバイスを管理します
 settings.connectivity.connectNewDevice: 新しいデバイスを接続
@@ -1603,6 +1621,7 @@ settings.nav.accounts: アカウント
 settings.nav.advanced: 詳細設定
 settings.nav.audio: オーディオ
 settings.nav.concerts: コンサート
+settings.nav.config-backups: 設定のバックアップ
 settings.nav.connectivity: 接続
 settings.nav.extensions: 拡張機能
 settings.nav.general: 一般
@@ -1664,6 +1683,7 @@ settings.option.advanced.clientSettings: クライアント設定
 settings.option.advanced.clientSettings.description: 現在のクライアントフレームワークに特有の設定
 settings.option.advanced.compactSidebar: コンパクトなサイドバー
 settings.option.advanced.compactSidebar.size: サイズ
+settings.option.advanced.configBackups.description: 設定が失われたりリセットされたりした場合に備えて、Ciderが保存した設定ファイルのコピーを復元します。
 settings.option.advanced.experimentalFeatures: 実験的な機能
 settings.option.advanced.experimentalFeatures.description: 開発中の機能や機能フラグです。
 settings.option.advanced.floatingSearch: フローティング検索
@@ -2631,6 +2651,7 @@ share.platform.twitter.tweet: |-
 
   #AppleMusic #Cider
 share.platform.whatsapp: WhatsApp
+shell3.panel.moveToCenter: 中央に移動
 smartPlaylist.action.addRule: 条件を追加
 smartPlaylist.action.convert: プレイリストのルールを追加…
 smartPlaylist.action.convertBack: プレイリストのルールを削除
@@ -2645,6 +2666,9 @@ smartPlaylist.builder.advanced: 高度な設定
 smartPlaylist.builder.advancedHintLead: 高度なモードがオンです — 文字列フィールドで以下を使用できます：
 smartPlaylist.builder.advancedHintTail: （大文字と小文字を区別しないJSの正規表現構文を使用）
 smartPlaylist.builder.advancedTooltip: 高度な演算子（正規表現など）の切り替え
+smartPlaylist.builder.bpmIncomplete: テンポデータがまだ不完全なため、このカウントは少なく表示される場合があります。
+smartPlaylist.builder.bpmLoading: テンポデータを検索中…
+smartPlaylist.builder.bpmUnavailable: "{n}曲にテンポデータがないため、BPMルールに一致させることができません。"
 smartPlaylist.builder.descriptionOptional: 説明（オプション）
 smartPlaylist.builder.descriptionPlaceholder: このプレイリストに関するメモ…
 smartPlaylist.builder.empty: 条件がまだありません — 追加して開始してください。
@@ -2668,6 +2692,7 @@ smartPlaylist.building.emptyTitle: 一致する曲がありません
 smartPlaylist.building.errorTitle: プレイリストを作成できませんでした
 smartPlaylist.building.evaluating: "{n} 曲のルールを評価中…"
 smartPlaylist.building.fetching: ライブラリを取得中…
+smartPlaylist.building.fetchingBpm: テンポデータを検索中 ({done}/{total})…
 smartPlaylist.building.fetchingCatalog: "{n} 個のカタログを取得中…"
 smartPlaylist.building.staleRetry: Apple Music上のプレイリストデータが古くなっています。もう一度保存をお試しください。
 smartPlaylist.building.title: プレイリストを作成中
@@ -2711,6 +2736,7 @@ smartPlaylist.mix.building.counter.artists: "{done} / {total} アーティスト
 smartPlaylist.mix.building.counter.candidates: "{count} 件の候補"
 smartPlaylist.mix.building.counter.matches: "{count} 件の一致"
 smartPlaylist.mix.building.counter.tracks: "{done} / {total} 曲"
+smartPlaylist.mix.building.fetchingBpm: テンポデータを検索中
 smartPlaylist.mix.building.filteringCandidates: "{count} 件の候補をフィルタリング中"
 smartPlaylist.mix.building.loadingLibrary: ライブラリを読み込み中…
 smartPlaylist.mix.building.phase.catalog: カタログ
@@ -2797,6 +2823,15 @@ spotify.importPlaylist: Spotifyプレイリストをインポート
 spotify.loadingPlaylist: プレイリストを読み込み中...
 spotify.openURL: SpotifyのURLを開く...
 spotify.saveToAppleMusic: Apple Musicに保存
+taproom.reauth.signIn: サインイン
+taproom.reauth.signInAgain: もう一度サインイン
+taproom.reauth.success: Cider Taproomにサインインしました。
+taproom.reauth.successName: 成功しました！{name}
+taproom.reauth.unavailable.title: サインインを利用できません
+taproom.reauth.unavailable.updateRequired: このバージョンのCiderではCider Taproomにサインインできません。Ciderを最新バージョンにアップデートしてから、もう一度お試しください。
+taproom.reauth.unavailable.windowFailed: Cider Taproomのサインインウィンドウを開けませんでした。しばらくしてからもう一度お試しください。
+taproom.token.rejected: トークンを承認できませんでした。確認してもう一度お試しください。
+taproom.token.useSignInWindow: このバージョンのCiderでは、貼り付けられたトークンを使用できません。代わりに「サインイン」を使用すると、Cider独自のサインインウィンドウが開きます。
 term.about: Ciderについて
 term.aboutArtist: "{{artistName}}について"
 term.accountSettings: アカウント設定
@@ -2809,7 +2844,8 @@ term.albums: アルバム
 term.all: すべて
 term.allPlaylists: すべてのプレイリスト
 term.am.language: Apple Music の言語
-term.am.language.description: Apple Musicの要素が表示される言語を決定します。ストアフロントを変更すると、利用可能な言語が変更されます。Appleアカウントで設定されている特定の地域によっては、すべての言語が表示されない場合があります。
+term.am.language.auto: 自動（アプリの言語に合わせる）
+term.am.language.description: Apple Musicの要素を表示する言語を決定します。「自動」を選択すると、ストアフロントがサポートしている場合にアプリの言語に従います。ストアフロントを変更すると利用可能な言語も変更され、Appleアカウントで設定されている特定の地域のすべての言語が表示されない場合があります。
 term.am.storefront: Apple Music の地域
 term.am.storefront.description: コンテンツが提供される「ストアフロント」または地域です。これには検索結果、「見つける」、「今すぐ聴く」、および「ラジオ」が含まれます。体験に問題が生じる可能性があるため、これを変更することはお勧めしません。
 term.amLive: Apple Music Live
@@ -3173,8 +3209,15 @@ term.zoomin: 拡大
 term.zoomout: 縮小
 term.zoomreset: 拡大/縮小をリセット
 updates.lateststable.title: 最新の安定版リリース
+updates.loadFailed.body: 接続を確認して、もう一度お試しください。
+updates.loadFailed.title: 利用可能なバージョンを読み込めませんでした
 updates.notifyForBranch.tooltip: このブランチの通知を受け取る
 updates.otherVersions.title: その他のバージョン
 updates.ptb.name: パブリックテストブランチ
+updates.signedOut.body: CiderはCider Taproomアカウントを使用してアップデートを確認します。
+updates.signedOut.expired.body: アップデートを確認するには、もう一度サインインしてください。
+updates.signedOut.expired.bodyNamed: アップデートを確認するには、{name}としてもう一度サインインしてください。
+updates.signedOut.expired.title: Cider Taproomのセッションの有効期限が切れました
+updates.signedOut.title: サインインしてアップデートを確認
 updates.stable.name: 安定版ブランチ
 verb.installed: インストール済み

@@ -165,6 +165,7 @@ action.tray.listento: "Hallgatás:"
 action.tray.minimize: Kicsinyítés a tálcára
 action.tray.minimize.description: Kicsinyítse az alkalmazást a tálcára?
 action.tray.show: Cider megjelenítése
+action.tryAgain: Próbáld újra
 action.undo: Visszavonás
 action.undoDislike: Nem tetszik visszavonása
 action.undoFavorite: Kedvenc visszavonása
@@ -342,6 +343,16 @@ config.persist.error.title: A Cider nem tudja menteni a beállításaidat
 config.persist.fix.chownHint: "Futtasd ezt a terminálban az írási hozzáférés visszaállításához, majd próbáld újra a módosítást:"
 config.persist.fix.copied: Parancs másolva a vágólapra
 config.persist.fix.genericHint: Nyisd meg az adatmappát, és győződj meg róla, hogy a Cider tud írni bele, majd próbáld újra a módosítást.
+config.read.error.body: A mentett beállításaidat nem sikerült beolvasni, ezért a Cider az alapértelmezett beállításokkal fut. A módosítások egyelőre ezen az eszközön maradnak, és a mentett beállításaid felülírják őket, amint a Cider újra képes lesz beolvasni azokat.
+config.read.error.title: A Cider nem tudta betölteni a beállításaidat
+config.read.recovered.body: Indítsd újra a Cidert a mentett beállításaid betöltéséhez. Az ebben a munkamenetben végzett módosításokat felülírják.
+config.read.recovered.title: A beállításaid újra betölthetők
+config.read.retry.failed: Továbbra sem sikerült beolvasni a beállításaidat.
+config.restore.action: Korábbi konfiguráció visszaállítása
+config.restore.apply: Visszaállítás
+config.restore.failed.body: Ezt a konfigurációt nem sikerült visszaállítani.
+config.restore.failed.title: A visszaállítás sikertelen
+config.restore.hint: Válassz ki egy mentett konfigurációt a visszaállításhoz. A Cider újraindul az alkalmazása után.
 connect.core.desc: Engedélyezze a Cider Connect szolgáltatást olyan funkciók eléréséhez, mint a lejátszási listák importálása, a közös zenehallgatás, a beállítások szinkronizálása és még sok más.
 connect.instance.changeName: Név módosítása
 connect.instance.delete: Példány törlése
@@ -1025,6 +1036,7 @@ settings.audio.lab: Audio Lab
 settings.audio.lab.arProfile: Atmosphere Realizer
 settings.audio.lab.capProfile: CAP Profile
 settings.audio.lab.enableHint: Engedélyezd a Cider Audio szolgáltatást az Audio Lab profilok eléréséhez.
+settings.audio.lab.passthroughNote: Az Audio Lab megkerülésre kerül, amíg a Dolby Atmos passthrough aktív. Válts át az Atmos módra (Standard vagy Binaural) a beállítások meghallgatásához.
 settings.audio.lab.spatialProfile: Finomhangolt térbeli hangzás
 settings.audio.moreSettings: További hangbeállítások…
 settings.audio.occlusion: Hallgatási mód
@@ -1203,6 +1215,12 @@ settings.client.windows.wpfRendering: WPF-megjelenítési mód
 settings.client.windows.wpfRendering.desc: Válassza ki a WPF megjelenítési módját. Ha bizonytalan, hagyja szoftveresen.
 settings.client.windows.wpfRendering.hardware: Hardveres
 settings.client.windows.wpfRendering.software: Szoftveres
+settings.configBackups.confirm.body: A jelenlegi beállításaidat felváltják a {date} napon mentett beállítások, és a Cider újraindul.
+settings.configBackups.confirm.title: Visszaállítod ezt a konfigurációt?
+settings.configBackups.empty: Még nincsenek mentett biztonsági másolatok.
+settings.configBackups.subtitle: A Cider másolatot készít a beállításfájlról, mielőtt felülírná azt. Állíts vissza egyet, ha a beállításaid elvesztek vagy visszaálltak alaphelyzetbe.
+settings.configBackups.unreachable: A Cider jelenleg nem érte el a mentett biztonsági másolatokat, ezért nem tudja listázni őket. Próbáld újra egy pillanat múlva.
+settings.configBackups.unsupported: Ez a kliens nem készít biztonsági másolatot a konfigurációról.
 settings.connectivity.connectedDevices: Csatlakoztatott eszközök
 settings.connectivity.connectedDevices.desc: Párosított Cider Remote eszközök kezelése
 settings.connectivity.connectNewDevice: Új eszköz csatlakoztatása
@@ -1531,6 +1549,7 @@ settings.nav.accounts: Fiókok
 settings.nav.advanced: Haladó
 settings.nav.audio: Hang
 settings.nav.concerts: Koncertek
+settings.nav.config-backups: Konfigurációs biztonsági másolatok
 settings.nav.connectivity: Kapcsolatok
 settings.nav.extensions: Bővítmények
 settings.nav.general: Általános
@@ -1592,6 +1611,7 @@ settings.option.advanced.clientSettings: Kliensbeállítások
 settings.option.advanced.clientSettings.description: A jelenlegi kliens-keretrendszerre jellemző beállítások
 settings.option.advanced.compactSidebar: Kompakt oldalsáv
 settings.option.advanced.compactSidebar.size: Méret
+settings.option.advanced.configBackups.description: Állítsd vissza a Cider által mentett beállításfájl-másolatot, ha a beállításaid elvesztek vagy visszaálltak alaphelyzetbe.
 settings.option.advanced.experimentalFeatures: Kísérleti funkciók
 settings.option.advanced.experimentalFeatures.description: Fejlesztés alatt álló képességek és funkciójelzők.
 settings.option.advanced.floatingSearch: Lebegő kereső
@@ -2536,6 +2556,7 @@ share.platform.twitter.tweet: |-
 
   #AppleMusic #Cider
 share.platform.whatsapp: WhatsApp
+shell3.panel.moveToCenter: Mozgatás középre
 smartPlaylist.action.addRule: Feltétel hozzáadása
 smartPlaylist.action.convert: Lejátszási lista szabályainak hozzáadása…
 smartPlaylist.action.convertBack: Lejátszási lista szabályainak eltávolítása
@@ -2550,6 +2571,9 @@ smartPlaylist.builder.advanced: Haladó
 smartPlaylist.builder.advancedHintLead: Haladó mód bekapcsolva — a szöveges mezők használhatnak
 smartPlaylist.builder.advancedHintTail: kis- és nagybetűre nem érzékeny JS regex szintaxist.
 smartPlaylist.builder.advancedTooltip: Haladó operátorok ki-/bekapcsolása (regex stb.)
+smartPlaylist.builder.bpmIncomplete: A tempóadatok még hiányosak, így ez a szám alacsony lehet.
+smartPlaylist.builder.bpmLoading: Tempóadatok keresése…
+smartPlaylist.builder.bpmUnavailable: "{n} dal nem rendelkezik tempóadattal, így nem felelhet meg a BPM-szabálynak."
 smartPlaylist.builder.descriptionOptional: Leírás (opcionális)
 smartPlaylist.builder.descriptionPlaceholder: Megjegyzések ehhez a lejátszási listához…
 smartPlaylist.builder.empty: Még nincsenek feltételek — adjon hozzá egyet a kezdéshez.
@@ -2573,6 +2597,7 @@ smartPlaylist.building.emptyTitle: Nincs egyező dal
 smartPlaylist.building.errorTitle: Nem sikerült létrehozni a lejátszási listát
 smartPlaylist.building.evaluating: Szabályok kiértékelése {n} dalon…
 smartPlaylist.building.fetching: Könyvtár lekérése…
+smartPlaylist.building.fetchingBpm: Tempóadatok keresése ({done}/{total})…
 smartPlaylist.building.fetchingCatalog: "{n} katalógus lekérése…"
 smartPlaylist.building.staleRetry: A lejátszási lista adatai elavultak az Apple Music-on. Próbáld meg újra menteni.
 smartPlaylist.building.title: Lejátszási lista összeállítása
@@ -2616,6 +2641,7 @@ smartPlaylist.mix.building.counter.artists: "{done} / {total} előadó"
 smartPlaylist.mix.building.counter.candidates: "{count} jelölt"
 smartPlaylist.mix.building.counter.matches: "{count} egyezés"
 smartPlaylist.mix.building.counter.tracks: "{done} / {total} dal"
+smartPlaylist.mix.building.fetchingBpm: Tempóadatok keresése
 smartPlaylist.mix.building.filteringCandidates: "{count} jelölt szűrése"
 smartPlaylist.mix.building.loadingLibrary: Könyvtár betöltése…
 smartPlaylist.mix.building.phase.catalog: Katalógus
@@ -2702,6 +2728,15 @@ spotify.importPlaylist: Spotify lejátszási lista importálása
 spotify.loadingPlaylist: Lejátszási lista betöltése...
 spotify.openURL: Spotify URL megnyitása...
 spotify.saveToAppleMusic: Mentés az Apple Music-ba
+taproom.reauth.signIn: Bejelentkezés
+taproom.reauth.signInAgain: Bejelentkezés újra
+taproom.reauth.success: Sikeresen bejelentkeztél a Cider Taproom szolgáltatásba.
+taproom.reauth.successName: Sikerült! {name}
+taproom.reauth.unavailable.title: A bejelentkezés nem érhető el
+taproom.reauth.unavailable.updateRequired: A Cider ezen verziója nem tud bejelentkeztetni a Cider Taproom szolgáltatásba. Frissítsd a Cidert a legújabb verzióra, majd próbáld újra.
+taproom.reauth.unavailable.windowFailed: A Cider nem tudta megnyitni a Cider Taproom bejelentkezési ablakát. Próbáld újra egy pillanat múlva.
+taproom.token.rejected: A Cider nem tudta elfogadni ezt a tokent. Ellenőrizd, és próbáld újra.
+taproom.token.useSignInWindow: A Cider ezen verziója nem fogad el beillesztett tokent. Használd inkább a Bejelentkezést, és a Cider megnyitja a saját bejelentkezési ablakát.
 term.about: Névjegy
 term.aboutArtist: "{{artistName}} névjegye"
 term.accountSettings: Fiókbeállítások
@@ -2714,7 +2749,8 @@ term.albums: Albumok
 term.all: Összes
 term.allPlaylists: Összes lejátszási lista
 term.am.language: Apple music nyelve
-term.am.language.description: Meghatározza az Apple Music elemeinek megjelenítési nyelvét. Az áruház (storefront) módosítása megváltoztatja az elérhető nyelveket; előfordulhat, hogy az Apple-fiókja által beállított egyes régiók összes nyelve nem lesz látható.
+term.am.language.auto: Automatikus (alkalmazás nyelvével megegyező)
+term.am.language.description: Meghatározza az Apple Music elemeinek megjelenítési nyelvét. Az Automatikus beállítás követi az alkalmazás nyelvét, ha az áruház támogatja azt. Az áruház módosítása megváltoztatja az elérhető nyelveket; előfordulhat, hogy nem látod az Apple-fiókod által beállított egyes régiók összes nyelvét.
 term.am.storefront: Apple music régiója
 term.am.storefront.description: Az „áruház” (storefront) vagy régió, ahonnan a tartalom kiszolgálásra kerül. Ez magában foglalja a keresési eredményeket, a Böngészést, a Hallgatás most és a Rádió lapokat. Ennek megváltoztatása nem ajánlott, mert problémákat okozhat a felhasználói élményben.
 term.amLive: Apple Music Live
@@ -3068,8 +3104,15 @@ term.zoomin: Nagyítás
 term.zoomout: Kicsinyítés
 term.zoomreset: Nagyítás visszaállítása
 updates.lateststable.title: Legújabb stabil kiadás
+updates.loadFailed.body: Ellenőrizd a kapcsolatot, és próbáld újra.
+updates.loadFailed.title: A Cider nem tudta betölteni az elérhető verziókat
 updates.notifyForBranch.tooltip: Értesítés ehhez az ághoz
 updates.otherVersions.title: Egyéb verziók
 updates.ptb.name: Nyilvános tesztelési ág
+updates.signedOut.body: A Cider a Cider Taproom-fiókoddal ellenőrzi a frissítéseket.
+updates.signedOut.expired.body: Jelentkezz be újra a frissítések ellenőrzéséhez.
+updates.signedOut.expired.bodyNamed: Jelentkezz be újra mint {name} a frissítések ellenőrzéséhez.
+updates.signedOut.expired.title: A Cider Taproom-munkameneted lejárt
+updates.signedOut.title: Jelentkezz be a frissítések ellenőrzéséhez
 updates.stable.name: Stabil ág
 verb.installed: Telepítve
