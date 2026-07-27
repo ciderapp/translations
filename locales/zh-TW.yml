@@ -91,11 +91,10 @@ action.cut: 剪下
 action.decline: 拒絕
 action.delete: 刪除
 action.deleteFolder:
-  value: 確定要刪除資料夾「{{folderName}}」嗎？
-  source: ai
+  value: 確定要刪除檔案夾「{{folderName}}」嗎？
+  source: human
   by: "@jay900604"
-  issue: 24
-  superseded_at: 2026-07-08
+  issue: 58
 action.deleteFolder.message:
   value: 此資料夾內的所有資料夾和播放列表也將被刪除。
   source: human
@@ -418,38 +417,35 @@ bugReport.toggleLogsDesc: 近期的主控台輸出（已隱藏敏感資訊）。
 catalog.new: 新發現
 ciderAudio.action.downloadAdditionalProfiles: 下載其他設定檔
 ciderAudio.marketplacePresetMigrationNotice:
-  value: "您設定的一或多個 Cider Audio 實驗室預設集已從應用程式中移除，現在可在 Cider Marketplace 上取得。\r
+  value: "你設定的一或多個 Cider Audio 實驗室預設配置已從應用程式中移除，但現可在 Cider 市集取得。\r
 
     <br>\r
 
     <br>\r
 
-    您的 Cider Audio 預設集已重設為預設值。\r
+    你的 Cider Audio 預設集已重設為預設值。\r
 
     <br>\r
 
     <br>\r
 
-    從 Marketplace 安裝新的預設集將會還原您之前的設定。"
-  source: ai
+    從 Marketplace 安裝新的預設集將會還原你之前的設定。"
+  source: human
   by: "@jay900604"
-  issue: 23
-  superseded_at: 2026-07-08
+  issue: 58
 client.boot.cancel: 取消
 client.boot.failedDetailDefault:
-  value: 準備應用程式時發生錯誤。您可以再試一次，或使用下方的復原選項來恢復正常。
-  source: ai
+  value: 準備應用程式時發生錯誤。你可以再試一次，或使用下方的復原選項來恢復正常。
+  source: human
   by: "@jay900604"
-  issue: 33
-  superseded_at: 2026-07-08
+  issue: 58
 client.boot.failedTitle: 無法啟動 Cider
 client.boot.initializing: 正在初始化 Cider...
 client.boot.initializingComponents:
-  value: 正在初始化組件...
-  source: ai
+  value: 正在初始化套件...
+  source: human
   by: "@jay900604"
-  issue: 33
-  superseded_at: 2026-07-08
+  issue: 58
 client.boot.launching: 正在啟動 Cider...
 client.boot.loadingWindowConfig: 正在載入視窗設定...
 client.boot.noAppData: 沒有可重建的 AppData 資料夾。請按「重試」以啟動 Cider。
@@ -541,16 +537,40 @@ config.persist.fix.genericHint:
   source: human
   by: "@jay900604"
   issue: 53
-config.read.error.body: 無法讀取您儲存的設定，因此 Cider 正以預設值執行。變更目前僅會保留在此裝置上，並在 Cider 能夠再次讀取時，替換為您儲存的設定。
-config.read.error.title: Cider 無法載入您的設定
-config.read.recovered.body: 重新載入 Cider 以載入您儲存的設定。您在此工作階段中所做的變更將會被其替換。
-config.read.recovered.title: 已可再次載入您的設定
-config.read.retry.failed: 仍無法讀取您的設定。
+config.read.error.body:
+  value: 無法讀取你儲存的設定，因此 Cider 正以預設值執行。變更目前僅會保留在此裝置上，並在 Cider 能夠再次讀取時，替換為你儲存的設定。
+  source: human
+  by: "@jay900604"
+  issue: 58
+config.read.error.title:
+  value: Cider 無法載入你的設定
+  source: human
+  by: "@jay900604"
+  issue: 58
+config.read.recovered.body:
+  value: 重新載入 Cider 以載入你儲存的設定。你在此工作階段中所做的變更將會被其替換。
+  source: human
+  by: "@jay900604"
+  issue: 58
+config.read.recovered.title:
+  value: 已可再次載入你的設定
+  source: human
+  by: "@jay900604"
+  issue: 58
+config.read.retry.failed:
+  value: 仍無法讀取你的設定。
+  source: human
+  by: "@jay900604"
+  issue: 58
 config.restore.action: 還原先前的設定
 config.restore.apply: 還原
 config.restore.failed.body: 無法還原該設定。
 config.restore.failed.title: 還原失敗
-config.restore.hint: 選擇要還原的已儲存設定。套用後 Cider 將會重新載入。
+config.restore.hint:
+  value: 選擇要還原的已儲存設定。套用後 Cider 將會重新載入。
+  source: human
+  by: "@jay900604"
+  issue: 58
 connect.core.desc: 啟用 Cider Connect 以使用匯入播放清單、一起聆聽、同步設定等功能。
 connect.instance.changeName: 變更名稱
 connect.instance.delete: 刪除實例
@@ -1106,11 +1126,10 @@ nativeUi.unknownTitle: 未知標題
 notification.buildingPlaylistCache: 正在建立播放列表快取...
 notification.playlistRefresh: 正在重新整理播放列表...
 notification.restrictedStorefront:
-  value: 您目前商店的兒童不宜內容受限於 $POLICY。您可能無法檢視或播放兒童不宜內容。
-  source: ai
+  value: 目前商店的兒童不宜內容受限於 $POLICY。你可能無法瀏覽或播放兒童不宜內容。
+  source: human
   by: "@jay900604"
-  issue: 23
-  superseded_at: 2026-07-08
+  issue: 58
 notification.updatingLibraryAlbums: 正在更新資料庫專輯...
 notification.updatingLibraryArtists: 正在更新資料庫藝人...
 notification.updatingLibrarySongs: 正在更新資料庫歌曲...
@@ -1118,11 +1137,10 @@ oobe.amsignin.title: ""
 oobe.amupsell.amWebUrl: https://beta.music.apple.com/
 oobe.amupsell.explainBtn: 說明
 oobe.amupsell.promoExplained:
-  value: 部分促銷和非美國的 Apple Music 試用訂閱無法存取 Cider 運作所需的 Apple Music Web Player API。若要驗證您目前的試用是否適用於 Cider，請前往 <a href='{{ amWebUrl }}'>{{ amWebUrl }}</a> 登入並嘗試播放音樂。如果可以正常播放，那就太棒了！您已準備好使用 Cider。如果無法播放，請考慮在此處訂閱 Apple Music：<a href='{{ subscribeUrl }}'>{{ subscribeUrl }}</a>
-  source: ai
+  value: 部分促銷和非美國的 Apple Music 試用訂閱無法存取 Cider 運作所需的 Apple Music Web Player API。若要驗證你目前的試用是否適用於 Cider，請前往 <a href='{{ amWebUrl }}'>{{ amWebUrl }}</a> 登入並嘗試播放音樂。如果可以正常播放，那就太棒了！你已準備好使用 Cider。如果無法播放，請考慮在此處訂閱 Apple Music：<a href='{{ subscribeUrl }}'>
+  source: human
   by: "@jay900604"
-  issue: 33
-  superseded_at: 2026-07-08
+  issue: 58
 oobe.amupsell.subscribeBtn: 訂閱 Apple Music
 oobe.amupsell.subscribeUrl: https://apple.co/3MdqJVQ
 oobe.amupsell.text: |-
@@ -1205,11 +1223,10 @@ oobe.intro.personalizeYourExperience:
   superseded_at: 2026-07-08
 oobe.intro.subtitle: ""
 oobe.intro.text:
-  value: 讓我們進行一些設定，以便您以喜愛的方式使用 Cider。您隨時可以在稍後變更這些設定。
-  source: ai
+  value: 讓我們進行一些設定，以便你以喜愛的方式使用 Cider。你可以隨時在稍後變更這些設定。
+  source: human
   by: "@jay900604"
-  issue: 23
-  superseded_at: 2026-07-08
+  issue: 58
 oobe.intro.title: 歡迎使用 Cider
 oobe.layout.subtitle:
   value: 選擇適合你風格的版面配置
@@ -1265,24 +1282,22 @@ oobe.step.window: 視窗樣式
 oobe.visual.layout.text:
   value: |-
     Cider 提供兩種不同的視窗版面配置。
-    Maverick 是類似 iTunes 的版面配置，播放器位於視窗頂端。
+    Maverick 是類似 iTunes 的版面配置，播放器位於視窗標題列。
     Mojave 是由 Cider Collective 建立的全新設計。
 
-    您隨時可以在設定中變更版面配置。
-  source: ai
+    你可以隨時在設定中變更版面配置。
+  source: human
   by: "@jay900604"
-  issue: 23
-  superseded_at: 2026-07-08
+  issue: 58
 oobe.visual.subtitle: ""
 oobe.visual.text: ""
 oobe.visual.title: 視覺效果
 oobe.welcome.getStarted: 開始使用
 oobe.welcome.selectLanguage:
-  value: 選擇您的偏好語言
-  source: ai
+  value: 選取你的偏好語言
+  source: human
   by: "@jay900604"
-  issue: 45
-  superseded_at: 2026-07-08
+  issue: 58
 oobe.window.subtitle: 選擇 App 視窗與桌面環境的整合方式
 oobe.window.title: 視窗樣式
 oobe.yes: 是
@@ -1490,11 +1505,10 @@ properties.trait.lossless: 保真壓縮
 properties.trait.lossyStereo: AAC 立體聲
 properties.trait.spatial: 空間音訊
 remote.web.description:
-  value: 掃描 QR Code 以將您的手機與此 Cider 實例配對
-  source: ai
+  value: 掃描行動條碼以將你的手機與 Cider 進行配對
+  source: human
   by: "@jay900604"
-  issue: 14
-  superseded_at: 2026-07-08
+  issue: 58
 remote.web.title: Cider 遙控器
 replay.uniqueAlbums: 超過 {count} 張不同的專輯
 settings.about.assetLicenses: 素材授權
@@ -1860,12 +1874,28 @@ settings.client.windows.wpfRendering: WPF 轉譯模式
 settings.client.windows.wpfRendering.desc: 選擇 WPF 的轉譯模式。如果不確定，請保留為軟體轉譯。
 settings.client.windows.wpfRendering.hardware: 硬體
 settings.client.windows.wpfRendering.software: 軟體
-settings.configBackups.confirm.body: 您目前的設定將會被替換為在 {date} 儲存的設定，且 Cider 將會重新載入。
+settings.configBackups.confirm.body:
+  value: 目前你的設定將會被替換為在 {date} 儲存的設定，且 Cider 將會重新載入。
+  source: human
+  by: "@jay900604"
+  issue: 58
 settings.configBackups.confirm.title: 要還原此設定嗎？
 settings.configBackups.empty: 尚未儲存任何備份。
-settings.configBackups.subtitle: Cider 會在覆寫設定檔前保留一份複本。如果您的設定遺失或被重設，可在此進行還原。
-settings.configBackups.unreachable: Cider 剛才無法取得您儲存的備份，因此無法列出。請稍後再試。
-settings.configBackups.unsupported: 此用戶端不保留設定備份。
+settings.configBackups.subtitle:
+  value: Cider 會在覆寫設定檔前保留一份複本。如果你的設定遺失或被重設，可在此進行還原。
+  source: human
+  by: "@jay900604"
+  issue: 58
+settings.configBackups.unreachable:
+  value: Cider 剛才無法取得你儲存的備份，因此無法列出。請稍後再試。
+  source: human
+  by: "@jay900604"
+  issue: 58
+settings.configBackups.unsupported:
+  value: 此用戶端不保留設定備份。
+  source: human
+  by: "@jay900604"
+  issue: 58
 settings.connectivity.connectedDevices: 已連線的裝置
 settings.connectivity.connectedDevices.desc:
   value: 管理你已配對的 Cider Remote 裝置
@@ -2590,11 +2620,10 @@ settings.option.appleMusic.behavior.playButtonOnStop: 停止動作時的播放�
 settings.option.audio.advanced: 進階音量控制
 settings.option.audio.airplay: AirPlay 投放
 settings.option.audio.airplay.description:
-  value: 啟用實驗性的 AirPlay 2 投放選單
-  source: ai
+  value: 啟用實驗性的 AirPlay 2 投像選單
+  source: human
   by: "@jay900604"
-  issue: 22
-  superseded_at: 2026-07-08
+  issue: 58
 settings.option.audio.atmos: Dolby Atmos
 settings.option.audio.atmos.binaural: 雙耳
 settings.option.audio.atmos.standard: 標準
@@ -2804,11 +2833,10 @@ settings.option.connectivity.discordRPC.reload: 重新載入 DiscordRPC
 settings.option.connectivity.discordRPC.secondButton: 第二個活動按鈕
 settings.option.connectivity.discordRPC.showActivityButtons: 顯示活動按鈕
 settings.option.connectivity.discordRPC.showArtist:
-  value: 顯示藝人圖示
-  source: ai
+  value: 顯示藝人圖像
+  source: human
   by: "@jay900604"
-  issue: 16
-  superseded_at: 2026-07-08
+  issue: 58
 settings.option.connectivity.discordRPC.showArtist.description: 在 Discord Rich Presence 上將藝人圖示顯示為小圖片
 settings.option.connectivity.discordRPC.showSongLink: 在 Discord Rich Presence 上顯示 Song.link 按鈕而非 Apple Music 按鈕
 settings.option.connectivity.discordRPC.stateFormat: 狀態格式
@@ -2828,13 +2856,16 @@ settings.option.connectivity.lastfmScrobble.filterLoop: 過濾重複播放的曲
 settings.option.connectivity.lastfmScrobble.filterLoop.description: 防止重複播放的曲目被記錄或顯示在 Last.fm 的「播放中」清單。
 settings.option.connectivity.lastfmScrobble.filterTypes: 過濾媒體類型 (Last.fm)
 settings.option.connectivity.lastfmScrobble.filterTypes.description: 防止所選媒體類型的曲目被記錄或顯示在 Last.fm 的「播放中」清單。
-settings.option.connectivity.lastfmScrobble.manualToken: 手動輸入 Last.fm Token
-settings.option.connectivity.lastfmScrobble.manualToken.link:
-  value: 點擊此處取得 Last.fm token
-  source: ai
+settings.option.connectivity.lastfmScrobble.manualToken:
+  value: 手動輸入 Last.fm 權杖
+  source: human
   by: "@jay900604"
-  issue: 6
-  superseded_at: 2026-07-08
+  issue: 58
+settings.option.connectivity.lastfmScrobble.manualToken.link:
+  value: 點按此處取得 Last.fm 權杖
+  source: human
+  by: "@jay900604"
+  issue: 58
 settings.option.connectivity.lastfmScrobble.nowPlaying: 啟用 Last.FM 「播放中」狀態
 settings.option.connectivity.lastfmScrobble.removeFeatured: 從歌曲標題中移除客串藝人 (Last.fm)
 settings.option.connectivity.parties: 聆聽派對
@@ -2860,11 +2891,10 @@ settings.option.connectivity.webSocketsAPI: WebSockets API
 settings.option.connectivity.webSocketsAPI.description: 啟用被動式 WebSockets 發送器，以便外部應用程式監聽來自 Cider 的事件。
 settings.option.connectivity.webSocketsAPI.port: 連接埠
 settings.option.debug.copy_log:
-  value: 複製記錄至剪貼簿
-  source: ai
+  value: 拷貝記錄至剪貼簿
+  source: human
   by: "@jay900604"
-  issue: 6
-  superseded_at: 2026-07-08
+  issue: 58
 settings.option.debug.openAppData: 開啟 Cider 資料夾
 settings.option.default: 預設
 settings.option.experimental.compactUI: 緊湊版介面
@@ -2996,11 +3026,10 @@ settings.option.general.sleepTimerSettings: 睡眠計時器設定
 settings.option.general.startupPage: 啟動頁面
 settings.option.general.startupPage.blank: 空白頁面
 settings.option.general.startupPage.description:
-  value: 選擇開啟 Cider 時要顯示的頁面。
-  source: ai
+  value: 選取開啟 Cider 時要顯示的頁面。
+  source: human
   by: "@jay900604"
-  issue: 14
-  superseded_at: 2026-07-08
+  issue: 58
 settings.option.general.startupPage.newTab: 新分頁
 settings.option.general.startupPage.personalHome: 個人首頁
 settings.option.general.themeUpdateNotification: 自動檢查主題更新
@@ -3400,11 +3429,10 @@ settings.option.visual.largeHeaderTitles: 大型標題
 settings.option.visual.largeHeaderTitles.description: 放大專輯和播放列表頁面上的標題文字，使其外觀更醒目。
 settings.option.visual.layoutProfile: 版面配置設定檔類型
 settings.option.visual.layoutProfile.description:
-  value: 依您的偏好調整 App 的版面配置
-  source: ai
+  value: 依你的喜好調整應用程式的版面配置
+  source: human
   by: "@jay900604"
-  issue: 33
-  superseded_at: 2026-07-08
+  issue: 58
 settings.option.visual.layoutType: 視窗佈局風格
 settings.option.visual.layoutType.calico: Calico
 settings.option.visual.layoutType.calico.description: 滿高側邊欄，播放器位於內容區域內。
@@ -3518,11 +3546,10 @@ settings.option.visual.theme.github.download: 從 GitHub URL 安裝
 settings.option.visual.theme.github.explore: 探索 GitHub 主題
 settings.option.visual.theme.github.install.confirm: 確定要安裝 {{repo}} 嗎？
 settings.option.visual.theme.github.openfolder:
-  value: 開啟主題資料夾
-  source: ai
+  value: 打開主題檔案夾
+  source: human
   by: "@jay900604"
-  issue: 6
-  superseded_at: 2026-07-08
+  issue: 58
 settings.option.visual.theme.light: 淺色
 settings.option.visual.theme.manageStyles: 管理樣式
 settings.option.visual.theme.uninstall: 解除安裝
@@ -3663,13 +3690,20 @@ settings.prompt.general.keybindings.update.success:
   issue: 6
   superseded_at: 2026-07-08
 settings.prompt.visual.plugin.github.success:
-  value: 外掛安裝成功，請按「確定」以重新啟動 Cider
-  source: ai
+  value: 延伸功能安裝成功，請按「確定」以重新啟動 Cider
+  source: human
   by: "@jay900604"
-  issue: 16
-  superseded_at: 2026-07-08
-settings.prompt.visual.plugin.github.URL: 輸入您要安裝的外掛 URL
-settings.prompt.visual.theme.github.URL: 輸入您要安裝的主題 URL
+  issue: 58
+settings.prompt.visual.plugin.github.URL:
+  value: 輸入你要安裝的延伸功能 URL
+  source: human
+  by: "@jay900604"
+  issue: 58
+settings.prompt.visual.theme.github.URL:
+  value: 輸入你要安裝的主題 URL
+  source: human
+  by: "@jay900604"
+  issue: 58
 settings.prompt.visual.theme.uninstallTheme: 確定要解除安裝 {{theme}} 嗎？
 settings.requiresNewerClient: 需要較新版本的 Cider 用戶端。
 settings.sleepTimer.endsIn: 剩餘時間：{{remainingTime}} ({{endTime}})
@@ -3854,17 +3888,15 @@ settings.warn.audio.enableAdvancedFunctionality.ciderPPE.compatibility:
   issue: 16
   superseded_at: 2026-07-08
 settings.warn.audio.enableAdvancedFunctionality.lowcores:
-  value: Cider 偵測到您的電腦可能無法順暢執行這些功能。確定要繼續嗎？
-  source: ai
+  value: 偵測到你的電腦可能無法順暢執行這些 Cider 功能。確定要繼續嗎？
+  source: human
   by: "@jay900604"
-  issue: 22
-  superseded_at: 2026-07-08
+  issue: 58
 settings.warn.audioLab.withoutAF:
   value: 需要啟用 AudioContext (進階功能) 才能開啟 Cider Audio Laboratory。
-  source: ai
+  source: human
   by: "@jay900604"
-  issue: 16
-  superseded_at: 2026-07-08
+  issue: 58
 settings.warn.enableAdvancedFunctionality:
   value: 需要啟用 AudioContext (進階功能) 才能開啟此功能。
   source: ai
@@ -3872,21 +3904,19 @@ settings.warn.enableAdvancedFunctionality:
   issue: 16
   superseded_at: 2026-07-08
 share.platform.clipboard:
-  value: 複製連結
-  source: ai
+  value: 拷貝連結
+  source: human
   by: "@jay900604"
-  issue: 6
-  superseded_at: 2026-07-08
+  issue: 58
 share.platform.email: 電子郵件
 share.platform.facebook: Facebook
 share.platform.messenger: Messenger
 share.platform.reddit: Reddit
 share.platform.songLink:
-  value: 使用 song.link 複製
-  source: ai
+  value: 使用 song.link 拷貝
+  source: human
   by: "@jay900604"
-  issue: 6
-  superseded_at: 2026-07-08
+  issue: 58
 share.platform.telegram: Telegram
 share.platform.twitter: Twitter
 share.platform.twitter.tweet: |-
@@ -4170,11 +4200,10 @@ spatial.height: 高度
 spatial.left: 左
 spatial.listener: 聆聽者
 spatial.notTurnedOn:
-  value: 音訊空間化已停用。若要使用，請先將其啟用。
-  source: ai
+  value: 已停用音訊空間。若要使用，請先將其功能開啟。
+  source: human
   by: "@jay900604"
-  issue: 16
-  superseded_at: 2026-07-08
+  issue: 58
 spatial.right: 右
 spatial.roomDimensions: 房間尺寸
 spatial.roomMaterials: 房間材質
@@ -4196,11 +4225,10 @@ spotify.loadingPlaylist:
   by: "@jay900604"
   issue: 53
 spotify.openURL:
-  value: 開啟 Spotify 網址...
-  source: ai
+  value: 打開 Spotify 網址...
+  source: human
   by: "@jay900604"
-  issue: 16
-  superseded_at: 2026-07-08
+  issue: 58
 spotify.saveToAppleMusic: 儲存至 Apple Music
 taproom.reauth.signIn: 登入
 taproom.reauth.signInAgain: 重新登入
@@ -4229,11 +4257,10 @@ term.allPlaylists:
 term.am.language: Apple Music 語言
 term.am.language.auto: 自動 (與 App 語言一致)
 term.am.language.description:
-  value: 決定 Apple Music 元素的顯示語言。「自動」會在店面支援的情況下與 App 語言一致。變更店面將會改變可用的語言，您可能無法看到由您的 Apple 帳號所設定之特定地區的所有語言。
-  source: ai
+  value: 決定 Apple Music 元素的顯示語言。「自動」會在商店支援的情況下與應用程式語言一致。變更商店將會改變可用的語言，你可能無法看到由你的 Apple 帳號所設定之特定地區的所有語言。
+  source: human
   by: "@jay900604"
-  issue: 33
-  superseded_at: 2026-07-08
+  issue: 58
 term.am.storefront: Apple Music 國家或地區
 term.am.storefront.description:
   value: 提供內容的「店面」或地區。這包括搜尋結果、「瀏覽」、「立即聆聽」和「廣播」。不建議變更此設定，因為這可能會影響您的使用體驗。
@@ -4295,11 +4322,10 @@ term.compose: 使用 Saki AI 撰寫
 term.concerts: 演唱會
 term.confirm: 確認？
 term.confirmLogout:
-  value: 您確定要登出嗎？
-  source: ai
+  value: 你確定要登出嗎？
+  source: human
   by: "@jay900604"
-  issue: 33
-  superseded_at: 2026-07-08
+  issue: 58
 term.connect:
   value: 連線
   source: ai
@@ -4453,11 +4479,10 @@ term.menu: 選單
 term.miniplayer: MiniPlayer
 term.more: 更多
 term.musicVideos:
-  value: 音樂錄影帶
-  source: ai
+  value: 音樂影片
+  source: human
   by: "@jay900604"
-  issue: 17
-  superseded_at: 2026-07-08
+  issue: 58
 term.musixmatch: Musixmatch
 term.mute: 靜音
 term.name: 名稱
@@ -4529,11 +4554,10 @@ term.plays: 播放次數
 term.plugin: 外掛模組
 term.pluginMenu: 外掛模組選單
 term.pluginMenu.none:
-  value: 無互動式外掛模組
-  source: ai
+  value: 非互動式延伸功能模組
+  source: human
   by: "@jay900604"
-  issue: 16
-  superseded_at: 2026-07-08
+  issue: 58
 term.plugins: 延伸功能
 term.podcasts: Podcast
 term.prerelease: 預發行
@@ -4622,11 +4646,10 @@ term.seeAll: 顯示全部
 term.settings: 設定
 term.share: 分享
 term.share.success:
-  value: 已複製到剪貼簿
-  source: ai
+  value: 已拷貝至剪貼簿
+  source: human
   by: "@jay900604"
-  issue: 1
-  superseded_at: 2026-07-08
+  issue: 58
 term.sharedPlaylists: 共享的播放清單
 term.showLess: 顯示較少
 term.showMore: 顯示更多
@@ -4775,15 +4798,31 @@ term.zoomin: 放大
 term.zoomout: 縮小
 term.zoomreset: 重設縮放
 updates.lateststable.title: 最新穩定版本
-updates.loadFailed.body: 請檢查您的連線並再試一次。
+updates.loadFailed.body:
+  value: 請檢查你的連線並再試一次。
+  source: human
+  by: "@jay900604"
+  issue: 58
 updates.loadFailed.title: Cider 無法載入可用版本
 updates.notifyForBranch.tooltip: 訂閱此分支的通知
 updates.otherVersions.title: 其他版本
 updates.ptb.name: 公開測試分支
-updates.signedOut.body: Cider 會透過您的 Cider Taproom 帳號檢查更新。
+updates.signedOut.body:
+  value: Cider 會透過你的 Cider Taproom 帳號檢查更新。
+  source: human
+  by: "@jay900604"
+  issue: 58
 updates.signedOut.expired.body: 請重新登入以檢查更新。
-updates.signedOut.expired.bodyNamed: 請重新以 {name} 身份登入以檢查更新。
-updates.signedOut.expired.title: 您的 Cider Taproom 工作階段已過期
+updates.signedOut.expired.bodyNamed:
+  value: 請重新以 {name} 身分登入以檢查更新。
+  source: human
+  by: "@jay900604"
+  issue: 58
+updates.signedOut.expired.title:
+  value: 你的 Cider Taproom 工作階段已過期
+  source: human
+  by: "@jay900604"
+  issue: 58
 updates.signedOut.title: 登入以檢查更新
 updates.stable.name: 穩定分支
 verb.installed: 已安裝
