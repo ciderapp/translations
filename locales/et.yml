@@ -8,13 +8,36 @@ action.addToLibrary.success: Kogusse lisatud
 action.addToPlaylist: Lisa esitusloendisse
 action.addToPlaylist.addAll: Lisa kõik
 action.addToPlaylist.addAnyway: Lisa ikkagi
+action.addToPlaylist.addCount: Lisa ({count})
 action.addToPlaylist.added: Esitusloendisse {playlist} lisati {count} {tracks}
+action.addToPlaylist.addedMultiple: Lisatud {count} esitusloendisse
+action.addToPlaylist.addingMultiple: Lisamine esitusloenditesse...
 action.addToPlaylist.addNew: Lisa uus
+action.addToPlaylist.addToMultiple: Lisa mitmesse...
+action.addToPlaylist.alreadyIn: On juba esitusloendis
+action.addToPlaylist.checking: Kontrollimine…
+action.addToPlaylist.containsSome: Sisaldab {count} / {total}
 action.addToPlaylist.dontAdd: Ära lisa
 action.addToPlaylist.duplicate: "{count} {tracks} on juba esitusloendis '{playlist}'. Kas soovid need vahele jätta?"
+action.addToPlaylist.duplicateBreakdown: "{count} uut · {duplicateCount} juba lisatud"
+action.addToPlaylist.duplicateFromAlbum: "{count} {total}-st selle albumi loost on juba esitusloendis „{playlist}“."
+action.addToPlaylist.duplicateFromPlaylist: "{count} {total}-st selle esitusloendi loost on juba esitusloendis „{playlist}“."
+action.addToPlaylist.duplicateFromSelection: "{count} {total}-st valitud loost on juba esitusloendis „{playlist}“."
 action.addToPlaylist.duplicateOne: "'{songName}' on juba sinu esitusloendis '{playlist}'."
+action.addToPlaylist.duplicateOneShort: „{songName}“ on juba esitusloendis „{playlist}“.
 action.addToPlaylist.duplicateTitle: Korduvad laulud
+action.addToPlaylist.failed: Esitusloendisse lisamine ebaõnnestus
+action.addToPlaylist.folderCount: "{count} esitusloendit"
+action.addToPlaylist.multipleSubtitle: "{songName}"
+action.addToPlaylist.multipleSubtitleTracks: "{count} lugu"
+action.addToPlaylist.multipleTitle: Lisa mitmesse esitusloendisse
+action.addToPlaylist.noResults: Esitusloendeid ei leitud
+action.addToPlaylist.nothingNew: Pole midagi uut lisada
+action.addToPlaylist.recent: Hiljutised
 action.addToPlaylist.search: Otsi esitusloendeid
+action.addToPlaylist.skipDuplicates: Jäta duplikaadid vahele
+action.addToPlaylist.toggleFolder: Lülita kausta
+action.addToPlaylist.tracksCount: "{count} lugu"
 action.addToQueue: Lisa järjekorda
 action.addToQueue.error: Tõrge järjekorda lisamisel
 action.addToQueue.success: Järjekorda lisatud
@@ -157,6 +180,7 @@ action.sidebar.signIn: Logi sisse kontole {account}
 action.sidebar.signIn.with: Logi sisse kontoga {account}
 action.signIn: Logi sisse
 action.signOut: Logi välja
+action.skip: Jäta vahele
 action.smartQueue.disable: Lülita nutikas järjekord välja
 action.smartQueue.enable: Lülita nutikas järjekord sisse
 action.smartQueue.requiresAutomix: Smart Queue nõuab funktsiooni Automix
@@ -895,6 +919,7 @@ oobe.visual.subtitle: ""
 oobe.visual.text: ""
 oobe.visual.title: Visuaalne
 oobe.welcome.getStarted: Alusta
+oobe.welcome.importSettings: Impordi seaded…
 oobe.welcome.selectLanguage: Vali oma eelistatud keel
 oobe.window.subtitle: Vali, kuidas rakenduse aken sinu töölauakeskkonnaga integreerub
 oobe.window.title: Akna stiil
@@ -1791,6 +1816,8 @@ settings.option.advanced.playlistTrackMapping.description: Võimaldab esitusloen
 settings.option.advanced.powerUsage.description: Teisaldatud — kaadrisageduse piirangud, renderdaja valik ja nõudlikud visuaalsed funktsioonid.
 settings.option.advanced.progressBar: Edenemisriba
 settings.option.advanced.progressBar.useAccentColor: Kasuta aktsentvärvi
+settings.option.advanced.resetCider: Lähtesta Cider
+settings.option.advanced.resetCider.description: Lähtesta eelistused, vahemälud ja kohalikud andmed. Apple Music ja Taproom jäävad sisselogituks, kui sa ei vali teisiti.
 settings.option.advanced.resizableMiniplayer: Muudetava suurusega minimängija
 settings.option.advanced.richAlbumGrid: Rikkalik albumiruudustik
 settings.option.advanced.richAlbumGrid.alwaysNavigateToPage: Navigeeri alati lehele
@@ -2651,6 +2678,39 @@ settings.prompt.visual.plugin.github.URL: Sisesta installitava pistikprogrammi U
 settings.prompt.visual.theme.github.URL: Sisesta installitava teema URL
 settings.prompt.visual.theme.uninstallTheme: Kas oled kindel, et soovid teema {{theme}} eemaldada?
 settings.requiresNewerClient: Vajab uuemat Cideri klienti.
+settings.resetCider.category.appleMusic: Logi Apple Musicust välja
+settings.resetCider.category.appleMusic.desc: Eemalda Apple Musicu konto sellest seadmest
+settings.resetCider.category.caches: Vahemälud
+settings.resetCider.category.caches.desc: Kujundused, teek, avaleht ja muud võrguühenduseta vahemälud
+settings.resetCider.category.integrations: Integratsioonide sisselogimised
+settings.resetCider.category.integrations.desc: Last.fm, ListenBrainz ja muude skroblerite andmed
+settings.resetCider.category.localMusic: Kohaliku muusikateegi andmebaas
+settings.resetCider.category.localMusic.desc: Tühjendab Cideri kohaliku teegi indeksi, mitte sinu muusikafailid
+settings.resetCider.category.playback: Taasesitus ja järjekorra ajalugu
+settings.resetCider.category.playback.desc: Salvestatud järjekord, helitugevus ja taasesituse kaaslased
+settings.resetCider.category.rerunSetup: Käivita seadistusassistent uuesti
+settings.resetCider.category.rerunSetup.desc: Kuva pärast taaskäivitamist uuesti esmakordse seadistamise kuva
+settings.resetCider.category.settings: Rakenduse seaded ja eelistused
+settings.resetCider.category.settings.desc: Taasta Cideri eelistuste vaikesätted
+settings.resetCider.category.taproom: Logi Taproomist välja
+settings.resetCider.category.taproom.desc: Eemalda Cideri / Taproomi konto sellest seadmest
+settings.resetCider.category.themesPlugins: Installitud teemad ja pluginad
+settings.resetCider.category.themesPlugins.desc: Eemalda poest hankitud teemad, pluginad ja lubatud lisade nimekirjad
+settings.resetCider.category.windowClient: Akna asukoht ja kliendi valikud
+settings.resetCider.category.windowClient.desc: Akna suurus/asukoht ja kohaliku kliendi lipud
+settings.resetCider.confirm.ok: Lähtesta Cider
+settings.resetCider.confirm.title: Kas lähtestada Cider?
+settings.resetCider.confirm.warning: Seda toimingut ei saa tagasi võtta. Cider taaskäivitub pärast lähtestamist.
+settings.resetCider.confirm.willReset: Lähtestatakse
+settings.resetCider.error: Lähtestamisel läks midagi valesti.
+settings.resetCider.group.accounts: Kontod
+settings.resetCider.group.core: Lähtesta
+settings.resetCider.hostFallback: Eelistused ja vahemälud tühjendati. Mõned installitud failid võivad jääda alles kuni kliendi värskendamiseni.
+settings.resetCider.intro: Vali, mida lähtestada. Apple Music ja Taproom jäävad sisselogituks, kui sa sellest ei loobu. Kui soovid varukoopiat, ekspordi esmalt oma seaded.
+settings.resetCider.resetButton: Lähtesta Cider
+settings.resetCider.resetting: Lähtestamine…
+settings.resetCider.selectAll: Vali kõik
+settings.resetCider.title: Lähtesta Cider
 settings.sleepTimer.endsIn: "Lõpeb: {{remainingTime}} ({{endTime}})"
 settings.sleepTimer.notSet: Taimer pole määratud
 settings.sleepTimer.title: Määra unetaimer

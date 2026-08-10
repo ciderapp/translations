@@ -8,13 +8,36 @@ action.addToLibrary.success: Đã thêm vào Thư viện
 action.addToPlaylist: Thêm vào danh sách phát
 action.addToPlaylist.addAll: Thêm tất cả
 action.addToPlaylist.addAnyway: Vẫn thêm
+action.addToPlaylist.addCount: Thêm ({count})
 action.addToPlaylist.added: Đã thêm {count} {tracks} vào {playlist}
+action.addToPlaylist.addedMultiple: Đã thêm vào {count} danh sách phát
+action.addToPlaylist.addingMultiple: Đang thêm vào danh sách phát...
 action.addToPlaylist.addNew: Thêm mới
+action.addToPlaylist.addToMultiple: Thêm vào nhiều danh sách...
+action.addToPlaylist.alreadyIn: Đã có trong danh sách phát
+action.addToPlaylist.checking: Đang kiểm tra…
+action.addToPlaylist.containsSome: Chứa {count} trên {total}
 action.addToPlaylist.dontAdd: Không thêm
 action.addToPlaylist.duplicate: "{count} {tracks} đã tồn tại trong '{playlist}'. Bạn có muốn bỏ qua không?"
+action.addToPlaylist.duplicateBreakdown: "{count} mới · {duplicateCount} đã thêm"
+action.addToPlaylist.duplicateFromAlbum: '{count} trên {total} bài hát từ album này đã có trong "{playlist}".'
+action.addToPlaylist.duplicateFromPlaylist: '{count} trên {total} bài hát từ danh sách phát này đã có trong "{playlist}".'
+action.addToPlaylist.duplicateFromSelection: '{count} trên {total} bài hát được chọn đã có trong "{playlist}".'
 action.addToPlaylist.duplicateOne: "'{songName}' đã có trong danh sách phát '{playlist}' của bạn."
+action.addToPlaylist.duplicateOneShort: '"{songName}" đã có trong "{playlist}".'
 action.addToPlaylist.duplicateTitle: Bài hát bị trùng
+action.addToPlaylist.failed: Không thể thêm vào danh sách phát
+action.addToPlaylist.folderCount: "{count} danh sách phát"
+action.addToPlaylist.multipleSubtitle: "{songName}"
+action.addToPlaylist.multipleSubtitleTracks: "{count} bài hát"
+action.addToPlaylist.multipleTitle: Thêm vào nhiều danh sách phát
+action.addToPlaylist.noResults: Không tìm thấy danh sách phát
+action.addToPlaylist.nothingNew: Không có gì mới để thêm
+action.addToPlaylist.recent: Gần đây
 action.addToPlaylist.search: Tìm kiếm danh sách phát
+action.addToPlaylist.skipDuplicates: Bỏ qua bài trùng lặp
+action.addToPlaylist.toggleFolder: Đóng/Mở thư mục
+action.addToPlaylist.tracksCount: "{count} bài hát"
 action.addToQueue: Thêm vào hàng đợi
 action.addToQueue.error: Lỗi khi thêm vào Hàng chờ
 action.addToQueue.success: Đã thêm vào Hàng chờ
@@ -153,6 +176,7 @@ action.sidebar.signIn: Đăng nhập vào {account}
 action.sidebar.signIn.with: Đăng nhập bằng {account}
 action.signIn: Đăng nhập
 action.signOut: Đăng xuất
+action.skip: Bỏ qua
 action.smartQueue.disable: Tắt Hàng chờ thông minh
 action.smartQueue.enable: Bật Hàng chờ thông minh
 action.smartQueue.requiresAutomix: Smart Queue yêu cầu Automix
@@ -850,6 +874,7 @@ oobe.visual.subtitle: ""
 oobe.visual.text: ""
 oobe.visual.title: Giao diện
 oobe.welcome.getStarted: Bắt đầu
+oobe.welcome.importSettings: Nhập cài đặt…
 oobe.welcome.selectLanguage: Chọn ngôn ngữ ưu tiên của bạn
 oobe.window.subtitle: Chọn cách cửa sổ ứng dụng tích hợp với môi trường màn hình của bạn
 oobe.window.title: Kiểu cửa sổ
@@ -1731,6 +1756,8 @@ settings.option.advanced.playlistTrackMapping.description: Bật quét sâu danh
 settings.option.advanced.powerUsage.description: Đã di chuyển — giới hạn tốc độ khung hình, lựa chọn bộ dựng hình và các tính năng hình ảnh ngốn tài nguyên.
 settings.option.advanced.progressBar: Thanh tiến trình
 settings.option.advanced.progressBar.useAccentColor: Sử dụng màu nhấn
+settings.option.advanced.resetCider: Đặt lại Cider
+settings.option.advanced.resetCider.description: Đặt lại tùy chọn, bộ nhớ đệm và dữ liệu cục bộ. Apple Music và Taproom vẫn duy trì đăng nhập trừ khi bạn chọn khác.
 settings.option.advanced.resizableMiniplayer: Trình phát thu nhỏ có thể đổi kích thước
 settings.option.advanced.richAlbumGrid: Lưới album chi tiết
 settings.option.advanced.richAlbumGrid.alwaysNavigateToPage: Luôn chuyển hướng đến trang
@@ -2501,6 +2528,39 @@ settings.prompt.visual.plugin.github.URL: Nhập URL của plugin bạn muốn c
 settings.prompt.visual.theme.github.URL: Nhập URL của giao diện bạn muốn cài đặt
 settings.prompt.visual.theme.uninstallTheme: Bạn có chắc chắn muốn gỡ cài đặt {{theme}} không?
 settings.requiresNewerClient: Yêu cầu phiên bản Cider mới hơn.
+settings.resetCider.category.appleMusic: Đăng xuất khỏi Apple Music
+settings.resetCider.category.appleMusic.desc: Xóa tài khoản Apple Music khỏi thiết bị này
+settings.resetCider.category.caches: Bộ nhớ đệm
+settings.resetCider.category.caches.desc: Ảnh bìa, thư viện, trang chủ và các bộ nhớ đệm ngoại tuyến khác
+settings.resetCider.category.integrations: Đăng nhập tích hợp
+settings.resetCider.category.integrations.desc: Thông tin đăng nhập Last.fm, ListenBrainz và các trình scrobbler khác
+settings.resetCider.category.localMusic: Cơ sở dữ liệu thư viện nhạc cục bộ
+settings.resetCider.category.localMusic.desc: Xóa chỉ mục thư viện cục bộ của Cider, không xóa các tệp nhạc của bạn
+settings.resetCider.category.playback: Lịch sử phát & hàng chờ
+settings.resetCider.category.playback.desc: Hàng chờ đã lưu, âm lượng và các tiện ích phát nhạc
+settings.resetCider.category.rerunSetup: Chạy lại trình hỗ trợ thiết lập
+settings.resetCider.category.rerunSetup.desc: Hiển thị lại thiết lập lần đầu sau khi khởi động lại
+settings.resetCider.category.settings: Cài đặt & tùy chọn ứng dụng
+settings.resetCider.category.settings.desc: Khôi phục các tùy chọn của Cider về mặc định
+settings.resetCider.category.taproom: Đăng xuất khỏi Taproom
+settings.resetCider.category.taproom.desc: Xóa tài khoản Cider / Taproom khỏi thiết bị này
+settings.resetCider.category.themesPlugins: Giao diện & plugin đã cài đặt
+settings.resetCider.category.themesPlugins.desc: Xóa các giao diện, plugin từ cửa hàng và danh sách kích hoạt
+settings.resetCider.category.windowClient: Vị trí cửa sổ & tùy chọn ứng dụng khách
+settings.resetCider.category.windowClient.desc: Kích thước/vị trí cửa sổ và các cờ ứng dụng khách gốc
+settings.resetCider.confirm.ok: Đặt lại Cider
+settings.resetCider.confirm.title: Đặt lại Cider?
+settings.resetCider.confirm.warning: Hành động này không thể hoàn tác. Cider sẽ khởi động lại sau khi đặt lại.
+settings.resetCider.confirm.willReset: Sẽ đặt lại
+settings.resetCider.error: Đã xảy ra lỗi trong quá trình đặt lại.
+settings.resetCider.group.accounts: Tài khoản
+settings.resetCider.group.core: Đặt lại
+settings.resetCider.hostFallback: Các tùy chọn và bộ nhớ đệm đã được xóa. Một số tệp đã cài đặt có thể vẫn còn cho đến khi ứng dụng khách được cập nhật.
+settings.resetCider.intro: Chọn những gì cần đặt lại. Apple Music và Taproom vẫn duy trì đăng nhập trừ khi bạn chọn đăng xuất. Hãy xuất cài đặt của bạn trước nếu muốn sao lưu.
+settings.resetCider.resetButton: Đặt lại Cider
+settings.resetCider.resetting: Đang đặt lại…
+settings.resetCider.selectAll: Chọn tất cả
+settings.resetCider.title: Đặt lại Cider
 settings.sleepTimer.endsIn: "Kết thúc sau: {{remainingTime}} ({{endTime}})"
 settings.sleepTimer.notSet: Chưa hẹn giờ
 settings.sleepTimer.title: Hẹn giờ tắt

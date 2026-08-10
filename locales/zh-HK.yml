@@ -20,17 +20,40 @@ action.addToPlaylist:
   issue: 56
 action.addToPlaylist.addAll: 全部加入
 action.addToPlaylist.addAnyway: 仍然加入
+action.addToPlaylist.addCount: 加入 ({count})
 action.addToPlaylist.added:
   value: 已將 {count} 首 {tracks} 加至 {playlist}
   source: human
   by: "@jay900604"
   issue: 56
+action.addToPlaylist.addedMultiple: 已加入至 {count} 個播放清單
+action.addToPlaylist.addingMultiple: 正在加入至播放清單...
 action.addToPlaylist.addNew: 新增
+action.addToPlaylist.addToMultiple: 加入至多個...
+action.addToPlaylist.alreadyIn: 已在播放清單中
+action.addToPlaylist.checking: 正在檢查…
+action.addToPlaylist.containsSome: 包含 {total} 首中的 {count} 首
 action.addToPlaylist.dontAdd: 不要加入
 action.addToPlaylist.duplicate: "{count} 首 {tracks} 已存在於「{playlist}」中。你想跳過它們嗎？"
+action.addToPlaylist.duplicateBreakdown: "{count} 首新加入 · {duplicateCount} 首已存在"
+action.addToPlaylist.duplicateFromAlbum: 此專輯的 {total} 首歌曲中，有 {count} 首已存在於「{playlist}」中。
+action.addToPlaylist.duplicateFromPlaylist: 此播放清單的 {total} 首歌曲中，有 {count} 首已存在於「{playlist}」中。
+action.addToPlaylist.duplicateFromSelection: 已選取的 {total} 首歌曲中，有 {count} 首已存在於「{playlist}」中。
 action.addToPlaylist.duplicateOne: 「{songName}」已存在於你的「{playlist}」播放清單中。
+action.addToPlaylist.duplicateOneShort: 「{songName}」已存在於「{playlist}」中。
 action.addToPlaylist.duplicateTitle: 重複的歌曲
+action.addToPlaylist.failed: 無法加入至播放清單
+action.addToPlaylist.folderCount: "{count} 個播放清單"
+action.addToPlaylist.multipleSubtitle: "{songName}"
+action.addToPlaylist.multipleSubtitleTracks: "{count} 首歌曲"
+action.addToPlaylist.multipleTitle: 加入至多個播放清單
+action.addToPlaylist.noResults: 找不到播放清單
+action.addToPlaylist.nothingNew: 沒有新內容可加入
+action.addToPlaylist.recent: 最近使用
 action.addToPlaylist.search: 搜尋播放清單
+action.addToPlaylist.skipDuplicates: 略過重複項目
+action.addToPlaylist.toggleFolder: 切換資料夾
+action.addToPlaylist.tracksCount: "{count} 首歌曲"
 action.addToQueue: 加至待播清單
 action.addToQueue.error: 加入待播清單時發生錯誤
 action.addToQueue.success: 已加入待播清單
@@ -209,6 +232,7 @@ action.sidebar.signIn: 登入 {account}
 action.sidebar.signIn.with: 使用 {account} 登入
 action.signIn: 登入
 action.signOut: 登出
+action.skip: 略過
 action.smartQueue.disable: 停用智慧型佇列
 action.smartQueue.enable: 啟用智慧型佇列
 action.smartQueue.requiresAutomix: 「智能待播清單」需要 Automix
@@ -1050,6 +1074,7 @@ oobe.visual.subtitle: ""
 oobe.visual.text: ""
 oobe.visual.title: 視覺效果
 oobe.welcome.getStarted: 開始使用
+oobe.welcome.importSettings: 匯入設定…
 oobe.welcome.selectLanguage: 選擇你的偏好語言
 oobe.window.subtitle: 選擇應用程式視窗與桌面環境的整合方式
 oobe.window.title: 視窗樣式
@@ -2171,6 +2196,8 @@ settings.option.advanced.powerUsage.description:
   issue: 65
 settings.option.advanced.progressBar: 進度條
 settings.option.advanced.progressBar.useAccentColor: 使用強調色
+settings.option.advanced.resetCider: 重設 Cider
+settings.option.advanced.resetCider.description: 重設偏好設定、快取和本機資料。除非你另有選擇，否則 Apple Music 和 Taproom 將保持登入狀態。
 settings.option.advanced.resizableMiniplayer: 可調整大小的迷你播放器
 settings.option.advanced.richAlbumGrid: 豐富專輯網格
 settings.option.advanced.richAlbumGrid.alwaysNavigateToPage: 總是導覽至頁面
@@ -3141,6 +3168,39 @@ settings.requiresNewerClient:
   source: human
   by: "@jay900604"
   issue: 57
+settings.resetCider.category.appleMusic: 登出 Apple Music
+settings.resetCider.category.appleMusic.desc: 從此裝置移除 Apple Music 帳戶
+settings.resetCider.category.caches: 快取
+settings.resetCider.category.caches.desc: 專輯插圖、資料庫、首頁及其他離線快取
+settings.resetCider.category.integrations: 整合服務登入
+settings.resetCider.category.integrations.desc: Last.fm、ListenBrainz 及其他記錄服務的金鑰
+settings.resetCider.category.localMusic: 本機音樂資料庫
+settings.resetCider.category.localMusic.desc: 清除 Cider 的本機資料庫索引，而非你的音樂檔案
+settings.resetCider.category.playback: 播放與待播清單記錄
+settings.resetCider.category.playback.desc: 已儲存的待播清單、音量和播放小幫手
+settings.resetCider.category.rerunSetup: 重新執行設定助理
+settings.resetCider.category.rerunSetup.desc: 重新啟動後再次顯示首次執行設定
+settings.resetCider.category.settings: App 設定與偏好設定
+settings.resetCider.category.settings.desc: 將 Cider 偏好設定回復為預設值
+settings.resetCider.category.taproom: 登出 Taproom
+settings.resetCider.category.taproom.desc: 從此裝置移除 Cider / Taproom 帳戶
+settings.resetCider.category.themesPlugins: 已安裝的主題與外掛程式
+settings.resetCider.category.themesPlugins.desc: 移除商店主題、外掛程式和啟用清單
+settings.resetCider.category.windowClient: 視窗位置與用戶端選項
+settings.resetCider.category.windowClient.desc: 視窗大小/位置和原生用戶端標記
+settings.resetCider.confirm.ok: 重設 Cider
+settings.resetCider.confirm.title: 要重設 Cider 嗎？
+settings.resetCider.confirm.warning: 此操作無法還原。重設後 Cider 將會重新啟動。
+settings.resetCider.confirm.willReset: 將會重設
+settings.resetCider.error: 重設時發生錯誤。
+settings.resetCider.group.accounts: 帳戶
+settings.resetCider.group.core: 重設
+settings.resetCider.hostFallback: 偏好設定和快取已清除。部分已安裝的檔案可能會保留，直到用戶端更新為止。
+settings.resetCider.intro: 選擇要重設的項目。除非你選擇登出，否則 Apple Music 和 Taproom 將保持登入狀態。如需備份，請先匯出你的設定。
+settings.resetCider.resetButton: 重設 Cider
+settings.resetCider.resetting: 正在重設…
+settings.resetCider.selectAll: 全選
+settings.resetCider.title: 重設 Cider
 settings.sleepTimer.endsIn: 將於 {{remainingTime}} 後結束 ({{endTime}})
 settings.sleepTimer.notSet: 未設定計時器
 settings.sleepTimer.title: 設定睡眠計時器

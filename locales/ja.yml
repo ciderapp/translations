@@ -8,18 +8,41 @@ action.addToLibrary.success: ライブラリに追加しました
 action.addToPlaylist: プレイリストに追加
 action.addToPlaylist.addAll: すべて追加
 action.addToPlaylist.addAnyway: とにかく追加
+action.addToPlaylist.addCount: 追加 ({count})
 action.addToPlaylist.added: "{count}件の{tracks}を「{playlist}」に追加しました"
+action.addToPlaylist.addedMultiple: "{count}個のプレイリストに追加しました"
+action.addToPlaylist.addingMultiple: プレイリストに追加中…
 action.addToPlaylist.addNew: 新規追加
+action.addToPlaylist.addToMultiple: 複数のプレイリストに追加…
+action.addToPlaylist.alreadyIn: すでにプレイリストに存在します
+action.addToPlaylist.checking: 確認中…
+action.addToPlaylist.containsSome: "{total}曲中{count}曲が含まれています"
 action.addToPlaylist.dontAdd: 追加しない
 action.addToPlaylist.duplicate: "{count}件の{tracks}はすでに「{playlist}」に存在します。スキップしますか？"
+action.addToPlaylist.duplicateBreakdown: 新規 {count}曲 · 追加済み {duplicateCount}曲
+action.addToPlaylist.duplicateFromAlbum: このアルバムの{total}曲中{count}曲は、すでに「{playlist}」に存在します。
+action.addToPlaylist.duplicateFromPlaylist: このプレイリストの{total}曲中{count}曲は、すでに「{playlist}」に存在します。
+action.addToPlaylist.duplicateFromSelection: 選択した{total}曲中{count}曲は、すでに「{playlist}」に存在します。
 action.addToPlaylist.duplicateOne:
   value: 「{songName}」はすでにプレイリスト「{playlist}」に存在します。
   source: ai
   by: "@ramuuflor"
   issue: 20
   superseded_at: 2026-07-08
+action.addToPlaylist.duplicateOneShort: 「{songName}」はすでに「{playlist}」に存在します。
 action.addToPlaylist.duplicateTitle: 重複する曲
+action.addToPlaylist.failed: プレイリストへの追加に失敗しました
+action.addToPlaylist.folderCount: "{count}個のプレイリスト"
+action.addToPlaylist.multipleSubtitle: "{songName}"
+action.addToPlaylist.multipleSubtitleTracks: "{count}曲"
+action.addToPlaylist.multipleTitle: 複数のプレイリストに追加
+action.addToPlaylist.noResults: プレイリストが見つかりません
+action.addToPlaylist.nothingNew: 追加する新規項目はありません
+action.addToPlaylist.recent: 最近の項目
 action.addToPlaylist.search: プレイリストを検索
+action.addToPlaylist.skipDuplicates: 重複をスキップ
+action.addToPlaylist.toggleFolder: フォルダの開閉
+action.addToPlaylist.tracksCount: "{count}曲"
 action.addToQueue:
   value: 「次に再生」に項目を追加
   source: human
@@ -211,6 +234,7 @@ action.sidebar.signIn: "{account} にサインイン"
 action.sidebar.signIn.with: "{account} でサインイン"
 action.signIn: サインイン
 action.signOut: サインアウト
+action.skip: スキップ
 action.smartQueue.disable: スマートキューを無効にする
 action.smartQueue.enable: スマートキューを有効にする
 action.smartQueue.requiresAutomix: Smart QueueにはAutomixが必要です
@@ -922,6 +946,7 @@ oobe.visual.subtitle: ""
 oobe.visual.text: ""
 oobe.visual.title: ビジュアル
 oobe.welcome.getStarted: はじめる
+oobe.welcome.importSettings: 設定を読み込む…
 oobe.welcome.selectLanguage: 使用する言語を選択してください
 oobe.window.subtitle: アプリのウィンドウをデスクトップ環境にどのように統合するかを選択します
 oobe.window.title: ウィンドウスタイル
@@ -1803,6 +1828,8 @@ settings.option.advanced.playlistTrackMapping.description: どのトラックが
 settings.option.advanced.powerUsage.description: 移動しました — フレームレート制限、レンダラーの選択、および負荷の高いビジュアル機能。
 settings.option.advanced.progressBar: プログレスバー
 settings.option.advanced.progressBar.useAccentColor: アクセントカラーを使用
+settings.option.advanced.resetCider: Ciderをリセット
+settings.option.advanced.resetCider.description: 環境設定、キャッシュ、およびローカルデータをリセットします。特に選択しない限り、Apple MusicとTaproomはサインインしたままになります。
 settings.option.advanced.resizableMiniplayer: サイズ変更可能なミニプレーヤー
 settings.option.advanced.richAlbumGrid: リッチアルバムグリッド
 settings.option.advanced.richAlbumGrid.alwaysNavigateToPage: 常にページに移動
@@ -2596,6 +2623,39 @@ settings.prompt.visual.plugin.github.URL: インストールするプラグイ�
 settings.prompt.visual.theme.github.URL: インストールするテーマのURLを入力してください
 settings.prompt.visual.theme.uninstallTheme: 本当に {{theme}} をアンインストールしますか？
 settings.requiresNewerClient: より新しいバージョンの Cider クライアントが必要です。
+settings.resetCider.category.appleMusic: Apple Musicからサインアウト
+settings.resetCider.category.appleMusic.desc: このデバイスからApple Musicアカウントを削除します
+settings.resetCider.category.caches: キャッシュ
+settings.resetCider.category.caches.desc: アートワーク、ライブラリ、ホーム、その他のオフラインキャッシュ
+settings.resetCider.category.integrations: 外部サービス連携のログイン情報
+settings.resetCider.category.integrations.desc: Last.fm、ListenBrainz、その他のスクロブラーの認証情報
+settings.resetCider.category.localMusic: ローカルミュージックライブラリのデータベース
+settings.resetCider.category.localMusic.desc: Ciderのローカルライブラリのインデックスを消去します（音楽ファイル自体は削除されません）
+settings.resetCider.category.playback: 再生とキューの履歴
+settings.resetCider.category.playback.desc: 保存されたキュー、音量、および再生コンパニオン
+settings.resetCider.category.rerunSetup: セットアップアシスタントを再実行
+settings.resetCider.category.rerunSetup.desc: 再起動後に初回セットアップを再度表示します
+settings.resetCider.category.settings: アプリの設定と環境設定
+settings.resetCider.category.settings.desc: Ciderの環境設定をデフォルトに戻します
+settings.resetCider.category.taproom: Taproomからサインアウト
+settings.resetCider.category.taproom.desc: このデバイスからCider / Taproomアカウントを削除します
+settings.resetCider.category.themesPlugins: インストール済みのテーマとプラグイン
+settings.resetCider.category.themesPlugins.desc: マーケットプレイスのテーマ、プラグイン、および有効化リストを削除します
+settings.resetCider.category.windowClient: ウィンドウ位置とクライアントオプション
+settings.resetCider.category.windowClient.desc: ウィンドウのサイズ/位置、およびネイティブクライアントのフラグ
+settings.resetCider.confirm.ok: Ciderをリセット
+settings.resetCider.confirm.title: Ciderをリセットしますか？
+settings.resetCider.confirm.warning: この操作は取り消せません。リセット後、Ciderは再起動します。
+settings.resetCider.confirm.willReset: リセット対象
+settings.resetCider.error: リセット中にエラーが発生しました。
+settings.resetCider.group.accounts: アカウント
+settings.resetCider.group.core: リセット
+settings.resetCider.hostFallback: 環境設定とキャッシュが消去されました。一部のインストール済みファイルは、クライアントがアップデートされるまで残る場合があります。
+settings.resetCider.intro: リセットする項目を選択してください。除外しない限り、Apple MusicとTaproomはサインインしたままになります。バックアップが必要な場合は、事前に設定をエクスポートしてください。
+settings.resetCider.resetButton: Ciderをリセット
+settings.resetCider.resetting: リセット中…
+settings.resetCider.selectAll: すべて選択
+settings.resetCider.title: Ciderのリセット
 settings.sleepTimer.endsIn: "残り時間: {{remainingTime}} ({{endTime}})"
 settings.sleepTimer.notSet: タイマーは設定されていません
 settings.sleepTimer.title: スリープタイマーを設定

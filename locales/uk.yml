@@ -8,13 +8,36 @@ action.addToLibrary.success: Додано до медіатеки
 action.addToPlaylist: Додати до плейліста
 action.addToPlaylist.addAll: Додати всі
 action.addToPlaylist.addAnyway: Усе одно додати
+action.addToPlaylist.addCount: Додати ({count})
 action.addToPlaylist.added: Додано {count} {tracks} до {playlist}
+action.addToPlaylist.addedMultiple: Додано до {count} плейлістів
+action.addToPlaylist.addingMultiple: Додавання до плейлістів...
 action.addToPlaylist.addNew: Додати новий
+action.addToPlaylist.addToMultiple: Додати до кількох...
+action.addToPlaylist.alreadyIn: Вже у плейлісті
+action.addToPlaylist.checking: Перевірка…
+action.addToPlaylist.containsSome: Містить {count} з {total}
 action.addToPlaylist.dontAdd: Не додавати
 action.addToPlaylist.duplicate: "{count} {tracks} вже є у плейлісті '{playlist}'. Бажаєте пропустити їх?"
+action.addToPlaylist.duplicateBreakdown: "{count} нових · {duplicateCount} вже додано"
+action.addToPlaylist.duplicateFromAlbum: '{count} з {total} треків із цього альбому вже є у "{playlist}".'
+action.addToPlaylist.duplicateFromPlaylist: '{count} з {total} треків із цього плейліста вже є у "{playlist}".'
+action.addToPlaylist.duplicateFromSelection: '{count} з {total} вибраних треків вже є у "{playlist}".'
 action.addToPlaylist.duplicateOne: Пісня '{songName}' вже є у вашому плейлісті '{playlist}'.
+action.addToPlaylist.duplicateOneShort: '"{songName}" вже є у "{playlist}".'
 action.addToPlaylist.duplicateTitle: Дублікати пісень
+action.addToPlaylist.failed: Не вдалося додати до плейліста
+action.addToPlaylist.folderCount: "{count} плейлістів"
+action.addToPlaylist.multipleSubtitle: "{songName}"
+action.addToPlaylist.multipleSubtitleTracks: "{count} треків"
+action.addToPlaylist.multipleTitle: Додати до кількох плейлістів
+action.addToPlaylist.noResults: Плейлістів не знайдено
+action.addToPlaylist.nothingNew: Немає нових треків для додавання
+action.addToPlaylist.recent: Нещодавні
 action.addToPlaylist.search: Пошук плейлістів
+action.addToPlaylist.skipDuplicates: Пропустити дублікати
+action.addToPlaylist.toggleFolder: Згорнути/розгорнути папку
+action.addToPlaylist.tracksCount: "{count} треків"
 action.addToQueue: Додати в чергу
 action.addToQueue.error: Помилка додавання до черги
 action.addToQueue.success: Додано до черги
@@ -153,6 +176,7 @@ action.sidebar.signIn: Увійти в {account}
 action.sidebar.signIn.with: Увійти за допомогою {account}
 action.signIn: Увійти
 action.signOut: Вийти
+action.skip: Пропустити
 action.smartQueue.disable: Вимкнути розумну чергу
 action.smartQueue.enable: Увімкнути розумну чергу
 action.smartQueue.requiresAutomix: Для роботи Smart Queue потрібен Automix
@@ -850,6 +874,7 @@ oobe.visual.subtitle: ""
 oobe.visual.text: ""
 oobe.visual.title: Оформлення
 oobe.welcome.getStarted: Розпочати
+oobe.welcome.importSettings: Імпортувати параметри…
 oobe.welcome.selectLanguage: Виберіть бажану мову
 oobe.window.subtitle: Виберіть, як вікно додатка інтегрується з вашим робочим столом
 oobe.window.title: Стиль вікна
@@ -1731,6 +1756,8 @@ settings.option.advanced.playlistTrackMapping.description: Вмикає глиб
 settings.option.advanced.powerUsage.description: Перенесено — обмеження частоти кадрів, вибір рендерера та ресурсомісткі візуальні функції.
 settings.option.advanced.progressBar: Шкала поступу
 settings.option.advanced.progressBar.useAccentColor: Використовувати колір акценту
+settings.option.advanced.resetCider: Скинути Cider
+settings.option.advanced.resetCider.description: Скидання налаштувань, кешу та локальних даних. Вхід в Apple Music та Taproom буде збережено, якщо ви не виберете інше.
 settings.option.advanced.resizableMiniplayer: Мініплеєр зі змінним розміром
 settings.option.advanced.richAlbumGrid: Розширена сітка альбомів
 settings.option.advanced.richAlbumGrid.alwaysNavigateToPage: Завжди переходити на сторінку
@@ -2501,6 +2528,39 @@ settings.prompt.visual.plugin.github.URL: Введіть URL-адресу пла
 settings.prompt.visual.theme.github.URL: Введіть URL-адресу теми, яку ви хочете встановити
 settings.prompt.visual.theme.uninstallTheme: Ви впевнені, що хочете видалити {{theme}}?
 settings.requiresNewerClient: Потрібна новіша версія клієнта Cider.
+settings.resetCider.category.appleMusic: Вийти з Apple Music
+settings.resetCider.category.appleMusic.desc: Видалити обліковий запис Apple Music із цього пристрою
+settings.resetCider.category.caches: Кеш
+settings.resetCider.category.caches.desc: Обкладинки, медіатека, головна сторінка та інший офлайн-кеш
+settings.resetCider.category.integrations: Дані авторизації інтеграцій
+settings.resetCider.category.integrations.desc: Ключі Last.fm, ListenBrainz та інших скроблерів
+settings.resetCider.category.localMusic: База даних локальної медіатеки
+settings.resetCider.category.localMusic.desc: Очищає локальний індекс медіатеки Cider, а не ваші музичні файли
+settings.resetCider.category.playback: Відтворення та історія черги
+settings.resetCider.category.playback.desc: Збережена черга, гучність та супутні параметри відтворення
+settings.resetCider.category.rerunSetup: Запустити асистент налаштування знову
+settings.resetCider.category.rerunSetup.desc: Показати первинне налаштування знову після перезапуску
+settings.resetCider.category.settings: Налаштування та параметри програми
+settings.resetCider.category.settings.desc: Відновити стандартні налаштування Cider
+settings.resetCider.category.taproom: Вийти з Taproom
+settings.resetCider.category.taproom.desc: Видалити обліковий запис Cider / Taproom із цього пристрою
+settings.resetCider.category.themesPlugins: Встановлені теми та плагіни
+settings.resetCider.category.themesPlugins.desc: Видалити теми з магазину, плагіни та списки активації
+settings.resetCider.category.windowClient: Положення вікна та параметри клієнта
+settings.resetCider.category.windowClient.desc: Розмір/положення вікна та прапорці нативного клієнта
+settings.resetCider.confirm.ok: Скинути Cider
+settings.resetCider.confirm.title: Скинути Cider?
+settings.resetCider.confirm.warning: Цю дію не можна скасувати. Cider перезапуститься після скидання.
+settings.resetCider.confirm.willReset: Буде скинуто
+settings.resetCider.error: Під час скидання сталася помилка.
+settings.resetCider.group.accounts: Облікові записи
+settings.resetCider.group.core: Скинути
+settings.resetCider.hostFallback: Налаштування та кеш очищено. Деякі встановлені файли можуть залишатися до оновлення клієнта.
+settings.resetCider.intro: Виберіть, що саме скинути. Вхід в Apple Music та Taproom буде збережено, якщо ви не виберете інше. Якщо вам потрібна резервна копія, спочатку експортуйте свої налаштування.
+settings.resetCider.resetButton: Скинути Cider
+settings.resetCider.resetting: Скидання…
+settings.resetCider.selectAll: Виділити все
+settings.resetCider.title: Скинути Cider
 settings.sleepTimer.endsIn: "Завершується через: {{remainingTime}} ({{endTime}})"
 settings.sleepTimer.notSet: Таймер не встановлено
 settings.sleepTimer.title: Встановити таймер сну

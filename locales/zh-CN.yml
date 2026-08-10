@@ -56,18 +56,25 @@ action.addToPlaylist.addAnyway:
   by: "@Tesutarin"
   issue: 7
   superseded_at: 2026-07-08
+action.addToPlaylist.addCount: 添加 ({count})
 action.addToPlaylist.added:
   value: 已将 {count} 首{tracks}添加到 {playlist}
   source: ai
   by: "@Tesutarin"
   issue: 7
   superseded_at: 2026-07-08
+action.addToPlaylist.addedMultiple: 已添加到 {count} 个歌单
+action.addToPlaylist.addingMultiple: 正在添加到歌单...
 action.addToPlaylist.addNew:
   value: 新建
   source: ai
   by: "@Tesutarin"
   issue: 25
   superseded_at: 2026-07-08
+action.addToPlaylist.addToMultiple: 添加到多个歌单...
+action.addToPlaylist.alreadyIn: 已在歌单中
+action.addToPlaylist.checking: 正在检查…
+action.addToPlaylist.containsSome: 包含 {count} / {total} 首
 action.addToPlaylist.dontAdd:
   value: 不添加
   source: ai
@@ -80,24 +87,40 @@ action.addToPlaylist.duplicate:
   by: "@Tesutarin"
   issue: 7
   superseded_at: 2026-07-08
+action.addToPlaylist.duplicateBreakdown: "{count} 首新添加 · {duplicateCount} 首已存在"
+action.addToPlaylist.duplicateFromAlbum: 此专辑中的 {count} / {total} 首曲目已存在于“{playlist}”中。
+action.addToPlaylist.duplicateFromPlaylist: 此歌单中的 {count} / {total} 首曲目已存在于“{playlist}”中。
+action.addToPlaylist.duplicateFromSelection: 所选曲目中的 {count} / {total} 首已存在于“{playlist}”中。
 action.addToPlaylist.duplicateOne:
   value: “{songName}”已存在于您的“{playlist}”播放列表中。
   source: ai
   by: "@Tesutarin"
   issue: 7
   superseded_at: 2026-07-08
+action.addToPlaylist.duplicateOneShort: “{songName}”已存在于“{playlist}”中。
 action.addToPlaylist.duplicateTitle:
   value: 重复的歌曲
   source: ai
   by: "@Tesutarin"
   issue: 7
   superseded_at: 2026-07-08
+action.addToPlaylist.failed: 未能添加到歌单
+action.addToPlaylist.folderCount: "{count} 个歌单"
+action.addToPlaylist.multipleSubtitle: "{songName}"
+action.addToPlaylist.multipleSubtitleTracks: "{count} 首曲目"
+action.addToPlaylist.multipleTitle: 添加到多个歌单
+action.addToPlaylist.noResults: 未找到歌单
+action.addToPlaylist.nothingNew: 没有新内容可添加
+action.addToPlaylist.recent: 最近
 action.addToPlaylist.search:
   value: 搜索播放列表
   source: ai
   by: "@Tesutarin"
   issue: 7
   superseded_at: 2026-07-08
+action.addToPlaylist.skipDuplicates: 跳过重复项
+action.addToPlaylist.toggleFolder: 折叠/展开文件夹
+action.addToPlaylist.tracksCount: "{count} 首曲目"
 action.addToQueue:
   value: 添加到队列
   source: human
@@ -812,6 +835,7 @@ action.signOut:
   source: human
   by: "@Tesutarin"
   issue: 7
+action.skip: 跳过
 action.smartQueue.disable:
   value: 关闭智能队列
   source: human
@@ -3372,6 +3396,7 @@ oobe.visual.title:
   issue: 7
   superseded_at: 2026-07-08
 oobe.welcome.getStarted: 开始使用
+oobe.welcome.importSettings: 导入设置…
 oobe.welcome.selectLanguage: 选择您的首选语言
 oobe.window.subtitle: 选择应用窗口与桌面环境的融合方式
 oobe.window.title: 窗口样式
@@ -6748,6 +6773,8 @@ settings.option.advanced.progressBar.useAccentColor:
   source: human
   by: "@Tesutarin"
   issue: 8
+settings.option.advanced.resetCider: 重置 Cider
+settings.option.advanced.resetCider.description: 重置偏好设置、缓存和本地数据。除非您另有选择，否则 Apple Music 和 Taproom 将保持登录状态。
 settings.option.advanced.resizableMiniplayer:
   value: 可调整大小的迷你播放器
   source: human
@@ -10344,6 +10371,39 @@ settings.prompt.visual.theme.uninstallTheme:
   issue: 11
   superseded_at: 2026-07-08
 settings.requiresNewerClient: 需要更高版本的 Cider 客户端。
+settings.resetCider.category.appleMusic: 退出登录 Apple Music
+settings.resetCider.category.appleMusic.desc: 从此设备中移除 Apple Music 帐户
+settings.resetCider.category.caches: 缓存
+settings.resetCider.category.caches.desc: 插图、资料库、首页及其他离线缓存
+settings.resetCider.category.integrations: 集成服务登录
+settings.resetCider.category.integrations.desc: Last.fm、ListenBrainz 及其他记录服务的密钥
+settings.resetCider.category.localMusic: 本地音乐资料库数据库
+settings.resetCider.category.localMusic.desc: 清除 Cider 的本地资料库索引，不会删除您的音乐文件
+settings.resetCider.category.playback: 播放与待播清单历史
+settings.resetCider.category.playback.desc: 已保存的待播清单、音量和播放伴侣
+settings.resetCider.category.rerunSetup: 重新运行设置助理
+settings.resetCider.category.rerunSetup.desc: 重启后再次显示首次运行设置
+settings.resetCider.category.settings: 应用设置与偏好设置
+settings.resetCider.category.settings.desc: 将 Cider 偏好设置恢复为默认值
+settings.resetCider.category.taproom: 退出登录 Taproom
+settings.resetCider.category.taproom.desc: 从此设备中移除 Cider / Taproom 帐户
+settings.resetCider.category.themesPlugins: 已安装的主题与插件
+settings.resetCider.category.themesPlugins.desc: 移除应用市场主题、插件和启用列表
+settings.resetCider.category.windowClient: 窗口位置与客户端选项
+settings.resetCider.category.windowClient.desc: 窗口大小/位置和原生客户端标志
+settings.resetCider.confirm.ok: 重置 Cider
+settings.resetCider.confirm.title: 重置 Cider？
+settings.resetCider.confirm.warning: 此操作无法撤销。重置后 Cider 将重新启动。
+settings.resetCider.confirm.willReset: 将重置
+settings.resetCider.error: 重置过程中出错。
+settings.resetCider.group.accounts: 帐户
+settings.resetCider.group.core: 重置
+settings.resetCider.hostFallback: 偏好设置和缓存已清除。在客户端更新之前，某些已安装的文件可能会保留。
+settings.resetCider.intro: 选择要重置的内容。除非您选择退出，否则 Apple Music 和 Taproom 将保持登录状态。如果您需要备份，请先导出您的设置。
+settings.resetCider.resetButton: 重置 Cider
+settings.resetCider.resetting: 正在重置…
+settings.resetCider.selectAll: 全选
+settings.resetCider.title: 重置 Cider
 settings.sleepTimer.endsIn:
   value: 剩余时间：{{remainingTime}}（{{endTime}}）
   source: human

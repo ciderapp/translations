@@ -13,13 +13,36 @@ action.addToPlaylist:
   superseded_at: 2026-07-08
 action.addToPlaylist.addAll: Tümünü ekle
 action.addToPlaylist.addAnyway: Yine de ekle
+action.addToPlaylist.addCount: Ekle ({count})
 action.addToPlaylist.added: "{count} {tracks} {playlist} listesine eklendi"
+action.addToPlaylist.addedMultiple: "{count} çalma listesine eklendi"
+action.addToPlaylist.addingMultiple: Çalma listelerine ekleniyor...
 action.addToPlaylist.addNew: Yeni ekle
+action.addToPlaylist.addToMultiple: Birden Çok Listeye Ekle...
+action.addToPlaylist.alreadyIn: Zaten çalma listesinde
+action.addToPlaylist.checking: Denetleniyor…
+action.addToPlaylist.containsSome: "{total} parçadan {count} tanesini içeriyor"
 action.addToPlaylist.dontAdd: Ekleme
 action.addToPlaylist.duplicate: "{count} {tracks} zaten '{playlist}' içinde var. Bunları atlamak ister misiniz?"
+action.addToPlaylist.duplicateBreakdown: "{count} yeni · {duplicateCount} zaten eklenmiş"
+action.addToPlaylist.duplicateFromAlbum: Bu albümdeki {total} parçadan {count} tanesi "{playlist}" içinde zaten var.
+action.addToPlaylist.duplicateFromPlaylist: Bu çalma listesindeki {total} parçadan {count} tanesi "{playlist}" içinde zaten var.
+action.addToPlaylist.duplicateFromSelection: Seçilen {total} parçadan {count} tanesi "{playlist}" içinde zaten var.
 action.addToPlaylist.duplicateOne: "'{songName}' zaten '{playlist}' çalma listenizde var."
+action.addToPlaylist.duplicateOneShort: '"{songName}" zaten "{playlist}" içinde var.'
 action.addToPlaylist.duplicateTitle: Yinelenen Şarkılar
+action.addToPlaylist.failed: Çalma listesine eklenemedi
+action.addToPlaylist.folderCount: "{count} çalma listesi"
+action.addToPlaylist.multipleSubtitle: "{songName}"
+action.addToPlaylist.multipleSubtitleTracks: "{count} parça"
+action.addToPlaylist.multipleTitle: Birden Çok Çalma Listesine Ekle
+action.addToPlaylist.noResults: Çalma listesi bulunamadı
+action.addToPlaylist.nothingNew: Eklenecek yeni bir şey yok
+action.addToPlaylist.recent: Son Kullanılanlar
 action.addToPlaylist.search: Çalma Listelerinde Ara
+action.addToPlaylist.skipDuplicates: Yinelenenleri atla
+action.addToPlaylist.toggleFolder: Klasörü aç/kapat
+action.addToPlaylist.tracksCount: "{count} parça"
 action.addToQueue: Sıraya Ekle
 action.addToQueue.error: Sıraya Eklenirken Hata Oluştu
 action.addToQueue.success: Sıraya Eklendi
@@ -192,6 +215,7 @@ action.sidebar.signIn: "{account} hesabına giriş yap"
 action.sidebar.signIn.with: "{account} ile giriş yap"
 action.signIn: Giriş Yap
 action.signOut: Çıkış Yap
+action.skip: Atla
 action.smartQueue.disable: Akıllı Kuyruğu Kapat
 action.smartQueue.enable: Akıllı Kuyruğu Aç
 action.smartQueue.requiresAutomix: Akıllı Kuyruk, Automix gerektirir
@@ -913,6 +937,7 @@ oobe.visual.subtitle: ""
 oobe.visual.text: ""
 oobe.visual.title: Görsel
 oobe.welcome.getStarted: Başlayın
+oobe.welcome.importSettings: Ayarları içe aktar…
 oobe.welcome.selectLanguage: Tercih ettiğiniz dili seçin
 oobe.window.subtitle: Uygulama penceresinin masaüstü ortamınızla nasıl entegre olacağını seçin
 oobe.window.title: Pencere Stili
@@ -1794,6 +1819,8 @@ settings.option.advanced.playlistTrackMapping.description: Hangi parçaların ha
 settings.option.advanced.powerUsage.description: Taşındı — kare hızı sınırları, oluşturucu seçimi ve yüksek gereksinimli görsel özellikler.
 settings.option.advanced.progressBar: İlerleme Çubuğu
 settings.option.advanced.progressBar.useAccentColor: Vurgu Rengini Kullan
+settings.option.advanced.resetCider: Cider'ı Sıfırla
+settings.option.advanced.resetCider.description: Tercihleri, önbellekleri ve yerel verileri sıfırlayın. Siz aksini seçmedikçe Apple Music ve Taproom oturumları açık kalır.
 settings.option.advanced.resizableMiniplayer: Yeniden Boyutlandırılabilir Mini Çalar
 settings.option.advanced.richAlbumGrid: Zengin Albüm Izgarası
 settings.option.advanced.richAlbumGrid.alwaysNavigateToPage: Her Zaman Sayfaya Git
@@ -2564,6 +2591,39 @@ settings.prompt.visual.plugin.github.URL: Yüklemek istediğiniz eklentinin URL'
 settings.prompt.visual.theme.github.URL: Yüklemek istediğiniz temanın URL'sini girin
 settings.prompt.visual.theme.uninstallTheme: "{{theme}} temasını kaldırmak istediğinize emin misiniz?"
 settings.requiresNewerClient: Daha yeni bir Cider istemcisi gerektirir.
+settings.resetCider.category.appleMusic: Apple Music oturumunu kapat
+settings.resetCider.category.appleMusic.desc: Apple Music hesabını bu cihazdan kaldırır
+settings.resetCider.category.caches: Önbellekler
+settings.resetCider.category.caches.desc: Albüm resimleri, arşiv, ana sayfa ve diğer çevrimdışı önbellekler
+settings.resetCider.category.integrations: Entegrasyon girişleri
+settings.resetCider.category.integrations.desc: Last.fm, ListenBrainz ve diğer scrobbler bilgileri
+settings.resetCider.category.localMusic: Yerel Müzik arşivi veritabanı
+settings.resetCider.category.localMusic.desc: Müzik dosyalarınızı değil, Cider'ın yerel arşiv dizinini temizler
+settings.resetCider.category.playback: Çalma ve sıra geçmişi
+settings.resetCider.category.playback.desc: Kaydedilen sıra, ses düzeyi ve çalma yardımcıları
+settings.resetCider.category.rerunSetup: Kurulum yardımcısını yeniden çalıştır
+settings.resetCider.category.rerunSetup.desc: Yeniden başlatmanın ardından ilk çalıştırma kurulumunu tekrar gösterir
+settings.resetCider.category.settings: Uygulama ayarları ve tercihleri
+settings.resetCider.category.settings.desc: Cider tercihlerini varsayılanlara döndürür
+settings.resetCider.category.taproom: Taproom oturumunu kapat
+settings.resetCider.category.taproom.desc: Cider / Taproom hesabını bu cihazdan kaldırır
+settings.resetCider.category.themesPlugins: Yüklü temalar ve eklentiler
+settings.resetCider.category.themesPlugins.desc: Mağaza temalarını, eklentilerini ve etkinleştirme listelerini kaldırır
+settings.resetCider.category.windowClient: Pencere konumu ve istemci seçenekleri
+settings.resetCider.category.windowClient.desc: Pencere boyutu/konumu ve yerel istemci bayrakları
+settings.resetCider.confirm.ok: Cider'ı Sıfırla
+settings.resetCider.confirm.title: Cider sıfırlansın mı?
+settings.resetCider.confirm.warning: Bu işlem geri alınamaz. Sıfırlama işleminden sonra Cider yeniden başlatılacaktır.
+settings.resetCider.confirm.willReset: Sıfırlanacaklar
+settings.resetCider.error: Sıfırlama sırasında bir hata oluştu.
+settings.resetCider.group.accounts: Hesaplar
+settings.resetCider.group.core: Sıfırla
+settings.resetCider.hostFallback: Tercihler ve önbellekler temizlendi. Bazı yüklü dosyalar istemci güncellenene kadar kalabilir.
+settings.resetCider.intro: Nelerin sıfırlanacağını seçin. Siz çıkış yapmayı seçmedikçe Apple Music ve Taproom oturumları açık kalır. Yedek almak istiyorsanız önce ayarlarınızı dışa aktarın.
+settings.resetCider.resetButton: Cider'ı Sıfırla
+settings.resetCider.resetting: Sıfırlanıyor…
+settings.resetCider.selectAll: Tümünü seç
+settings.resetCider.title: Cider'ı Sıfırla
 settings.sleepTimer.endsIn: "Kalan süre: {{remainingTime}} ({{endTime}})"
 settings.sleepTimer.notSet: Zamanlayıcı ayarlanmadı
 settings.sleepTimer.title: Uyku Zamanlayıcısını Ayarla

@@ -8,13 +8,36 @@ action.addToLibrary.success: Přidáno do knihovny
 action.addToPlaylist: Přidat do playlistu
 action.addToPlaylist.addAll: Přidat vše
 action.addToPlaylist.addAnyway: Přesto přidat
+action.addToPlaylist.addCount: Přidat ({count})
 action.addToPlaylist.added: Přidáno {count} {tracks} do playlistu {playlist}
+action.addToPlaylist.addedMultiple: Přidáno do {count} playlistů
+action.addToPlaylist.addingMultiple: Přidávání do playlistů...
 action.addToPlaylist.addNew: Přidat nový
+action.addToPlaylist.addToMultiple: Přidat do více...
+action.addToPlaylist.alreadyIn: Již v playlistu
+action.addToPlaylist.checking: Kontrola…
+action.addToPlaylist.containsSome: Obsahuje {count} z {total}
 action.addToPlaylist.dontAdd: Nepřidávat
 action.addToPlaylist.duplicate: "{count} {tracks} již v playlistu '{playlist}' existuje. Chcete je přeskočit?"
+action.addToPlaylist.duplicateBreakdown: "{count} nových · {duplicateCount} již přidáno"
+action.addToPlaylist.duplicateFromAlbum: '{count} z {total} skladeb z tohoto alba již v "{playlist}" existuje.'
+action.addToPlaylist.duplicateFromPlaylist: '{count} z {total} skladeb z tohoto playlistu již v "{playlist}" existuje.'
+action.addToPlaylist.duplicateFromSelection: '{count} z {total} vybraných skladeb již v "{playlist}" existuje.'
 action.addToPlaylist.duplicateOne: Skladba '{songName}' již ve vašem playlistu '{playlist}' je.
+action.addToPlaylist.duplicateOneShort: '"{songName}" již v "{playlist}" existuje.'
 action.addToPlaylist.duplicateTitle: Duplicitní skladby
+action.addToPlaylist.failed: Nepodařilo se přidat do playlistu
+action.addToPlaylist.folderCount: "{count} playlistů"
+action.addToPlaylist.multipleSubtitle: "{songName}"
+action.addToPlaylist.multipleSubtitleTracks: "{count} skladeb"
+action.addToPlaylist.multipleTitle: Přidat do více playlistů
+action.addToPlaylist.noResults: Nebyly nalezeny žádné playlisty
+action.addToPlaylist.nothingNew: Nic nového k přidání
+action.addToPlaylist.recent: Nedávné
 action.addToPlaylist.search: Hledat v playlistech
+action.addToPlaylist.skipDuplicates: Přeskočit duplicity
+action.addToPlaylist.toggleFolder: Přepnout složku
+action.addToPlaylist.tracksCount: "{count} skladeb"
 action.addToQueue: Přidat do fronty
 action.addToQueue.error: Chyba při přidávání do fronty
 action.addToQueue.success: Přidáno do fronty
@@ -153,6 +176,7 @@ action.sidebar.signIn: Přihlásit se k {account}
 action.sidebar.signIn.with: Přihlásit se pomocí {account}
 action.signIn: Přihlásit se
 action.signOut: Odhlásit se
+action.skip: Přeskočit
 action.smartQueue.disable: Vypnout chytrou frontu
 action.smartQueue.enable: Zapnout chytrou frontu
 action.smartQueue.requiresAutomix: Smart Queue vyžaduje Automix
@@ -850,6 +874,7 @@ oobe.visual.subtitle: ""
 oobe.visual.text: ""
 oobe.visual.title: Vzhled
 oobe.welcome.getStarted: Začít
+oobe.welcome.importSettings: Importovat nastavení…
 oobe.welcome.selectLanguage: Vyberte preferovaný jazyk
 oobe.window.subtitle: Vyberte, jak se má okno aplikace integrovat do vašeho pracovního prostředí
 oobe.window.title: Styl okna
@@ -1731,6 +1756,8 @@ settings.option.advanced.playlistTrackMapping.description: Povolí hloubkové sk
 settings.option.advanced.powerUsage.description: Přesunuto – limity snímkové frekvence, volba vykreslovacího jádra a náročné vizuální funkce.
 settings.option.advanced.progressBar: Ukazatel průběhu
 settings.option.advanced.progressBar.useAccentColor: Použít akcentovou barvu
+settings.option.advanced.resetCider: Resetovat Cider
+settings.option.advanced.resetCider.description: Resetuje předvolby, mezipaměť a místní data. Přihlášení k Apple Music a Taproom zůstane zachováno, pokud nezvolíte jinak.
 settings.option.advanced.resizableMiniplayer: Minipřehrávač s měnitelnou velikostí
 settings.option.advanced.richAlbumGrid: Bohatá mřížka alb
 settings.option.advanced.richAlbumGrid.alwaysNavigateToPage: Vždy přejít na stránku
@@ -2501,6 +2528,39 @@ settings.prompt.visual.plugin.github.URL: Zadejte URL adresu pluginu, který chc
 settings.prompt.visual.theme.github.URL: Zadejte URL adresu motivu, který chcete nainstalovat
 settings.prompt.visual.theme.uninstallTheme: Opravdu chcete odinstalovat {{theme}}?
 settings.requiresNewerClient: Vyžaduje novější verzi aplikace Cider.
+settings.resetCider.category.appleMusic: Odhlásit se z Apple Music
+settings.resetCider.category.appleMusic.desc: Odebere účet Apple Music z tohoto zařízení
+settings.resetCider.category.caches: Mezipaměť
+settings.resetCider.category.caches.desc: Obrázky alb, knihovna, domovská obrazovka a další offline mezipaměť
+settings.resetCider.category.integrations: Přihlášení k integracím
+settings.resetCider.category.integrations.desc: Přihlašovací údaje pro Last.fm, ListenBrainz a další scrobblery
+settings.resetCider.category.localMusic: Databáze místní hudební knihovny
+settings.resetCider.category.localMusic.desc: Vymaže místní index knihovny Cider, nikoli vaše hudební soubory
+settings.resetCider.category.playback: Historie přehrávání a fronty
+settings.resetCider.category.playback.desc: Uložená fronta, hlasitost a doplňky přehrávání
+settings.resetCider.category.rerunSetup: Znovu spustit průvodce nastavením
+settings.resetCider.category.rerunSetup.desc: Po restartu znovu zobrazit průvodce prvním spuštěním
+settings.resetCider.category.settings: Nastavení a předvolby aplikace
+settings.resetCider.category.settings.desc: Obnoví předvolby Cider na výchozí hodnoty
+settings.resetCider.category.taproom: Odhlásit se z Taproom
+settings.resetCider.category.taproom.desc: Odebere účet Cider / Taproom z tohoto zařízení
+settings.resetCider.category.themesPlugins: Nainstalované motivy a doplňky
+settings.resetCider.category.themesPlugins.desc: Odebere motivy z obchodu, doplňky a seznamy aktivovaných položek
+settings.resetCider.category.windowClient: Pozice okna a možnosti klienta
+settings.resetCider.category.windowClient.desc: Velikost/pozice okna a příznaky nativního klienta
+settings.resetCider.confirm.ok: Resetovat Cider
+settings.resetCider.confirm.title: Resetovat Cider?
+settings.resetCider.confirm.warning: Tuto akci nelze vrátit zpět. Cider se po resetování restartuje.
+settings.resetCider.confirm.willReset: Bude resetováno
+settings.resetCider.error: Při resetování došlo k chybě.
+settings.resetCider.group.accounts: Účty
+settings.resetCider.group.core: Reset
+settings.resetCider.hostFallback: Předvolby a mezipaměť byly vymazány. Některé nainstalované soubory mohou zůstat až do aktualizace klienta.
+settings.resetCider.intro: Vyberte, co chcete resetovat. Přihlášení k Apple Music a Taproom zůstane zachováno, pokud se neodhlásíte. Pokud chcete zálohu, nejprve exportujte své nastavení.
+settings.resetCider.resetButton: Resetovat Cider
+settings.resetCider.resetting: Resetování…
+settings.resetCider.selectAll: Vybrat vše
+settings.resetCider.title: Resetovat Cider
 settings.sleepTimer.endsIn: "Končí za: {{remainingTime}} ({{endTime}})"
 settings.sleepTimer.notSet: Časovač není nastaven
 settings.sleepTimer.title: Nastavit časovač usnutí

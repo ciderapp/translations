@@ -8,13 +8,36 @@ action.addToLibrary.success: Lisätty kirjastoon
 action.addToPlaylist: Lisää soittolistaan
 action.addToPlaylist.addAll: Lisää kaikki
 action.addToPlaylist.addAnyway: Lisää silti
+action.addToPlaylist.addCount: Lisää ({count})
 action.addToPlaylist.added: Lisätty {count} {tracks} soittolistaan {playlist}
+action.addToPlaylist.addedMultiple: Lisätty {count} soittolistaan
+action.addToPlaylist.addingMultiple: Lisätään soittolistoihin...
 action.addToPlaylist.addNew: Lisää uusi
+action.addToPlaylist.addToMultiple: Lisää useaan...
+action.addToPlaylist.alreadyIn: On jo soittolistalla
+action.addToPlaylist.checking: Tarkistetaan…
+action.addToPlaylist.containsSome: Sisältää {count} / {total}
 action.addToPlaylist.dontAdd: Älä lisää
 action.addToPlaylist.duplicate: "{count} {tracks} on jo soittolistalla '{playlist}'. Haluatko ohittaa ne?"
+action.addToPlaylist.duplicateBreakdown: "{count} uutta · {duplicateCount} jo lisätty"
+action.addToPlaylist.duplicateFromAlbum: '{count}/{total} tämän albumin kappaleesta on jo soittolistalla "{playlist}".'
+action.addToPlaylist.duplicateFromPlaylist: '{count}/{total} tämän soittolistan kappaleesta on jo soittolistalla "{playlist}".'
+action.addToPlaylist.duplicateFromSelection: '{count}/{total} valitusta kappaleesta on jo soittolistalla "{playlist}".'
 action.addToPlaylist.duplicateOne: "'{songName}' on jo soittolistallasi '{playlist}'."
+action.addToPlaylist.duplicateOneShort: '"{songName}" on jo soittolistalla "{playlist}".'
 action.addToPlaylist.duplicateTitle: Kaksoiskappaleet
+action.addToPlaylist.failed: Lisääminen soittolistalle epäonnistui
+action.addToPlaylist.folderCount: "{count} soittolistaa"
+action.addToPlaylist.multipleSubtitle: "{songName}"
+action.addToPlaylist.multipleSubtitleTracks: "{count} kappaletta"
+action.addToPlaylist.multipleTitle: Lisää usealle soittolistalle
+action.addToPlaylist.noResults: Soittolistoja ei löytynyt
+action.addToPlaylist.nothingNew: Ei mitään uutta lisättävää
+action.addToPlaylist.recent: Viimeisimmät
 action.addToPlaylist.search: Etsi soittolistoja
+action.addToPlaylist.skipDuplicates: Ohita kaksoiskappaleet
+action.addToPlaylist.toggleFolder: Avaa/sulje kansio
+action.addToPlaylist.tracksCount: "{count} kappaletta"
 action.addToQueue: Lisää jonoon
 action.addToQueue.error: Virhe lisättäessä jonoon
 action.addToQueue.success: Lisätty jonoon
@@ -153,6 +176,7 @@ action.sidebar.signIn: Kirjaudu tiliin {account}
 action.sidebar.signIn.with: Kirjaudu sisään tilillä {account}
 action.signIn: Kirjaudu sisään
 action.signOut: Kirjaudu ulos
+action.skip: Ohita
 action.smartQueue.disable: Poista älykäs jono käytöstä
 action.smartQueue.enable: Ota älykäs jono käyttöön
 action.smartQueue.requiresAutomix: Smart Queue vaatii Automixin
@@ -850,6 +874,7 @@ oobe.visual.subtitle: ""
 oobe.visual.text: ""
 oobe.visual.title: Ulkoasu
 oobe.welcome.getStarted: Aloita
+oobe.welcome.importSettings: Tuo asetukset…
 oobe.welcome.selectLanguage: Valitse haluamasi kieli
 oobe.window.subtitle: Valitse, miten sovellusikkuna mukautuu työpöytäympäristöösi
 oobe.window.title: Ikkunan tyyli
@@ -1731,6 +1756,8 @@ settings.option.advanced.playlistTrackMapping.description: Ottaa käyttöön soi
 settings.option.advanced.powerUsage.description: Siirretty – kuvanopeusrajoitukset, renderöijän valinta ja vaativat visuaaliset ominaisuudet.
 settings.option.advanced.progressBar: Edistymispalkki
 settings.option.advanced.progressBar.useAccentColor: Käytä korostusväriä
+settings.option.advanced.resetCider: Nollaa Cider
+settings.option.advanced.resetCider.description: Nollaa asetukset, välimuistit ja paikalliset tiedot. Apple Music- ja Taproom-kirjautumiset säilyvät, ellet valitse toisin.
 settings.option.advanced.resizableMiniplayer: Kokoa muutettava minisoitin
 settings.option.advanced.richAlbumGrid: Monipuolinen albumiruudukko
 settings.option.advanced.richAlbumGrid.alwaysNavigateToPage: Siirry aina sivulle
@@ -2501,6 +2528,39 @@ settings.prompt.visual.plugin.github.URL: Anna asennettavan liitännäisen URL-o
 settings.prompt.visual.theme.github.URL: Anna asennettavan teeman URL-osoite
 settings.prompt.visual.theme.uninstallTheme: Haluatko varmasti poistaa teeman {{theme}}?
 settings.requiresNewerClient: Vaatii uudemman Cider-version.
+settings.resetCider.category.appleMusic: Kirjaudu ulos Apple Music -palvelusta
+settings.resetCider.category.appleMusic.desc: Poista Apple Music -tili tältä laitteelta
+settings.resetCider.category.caches: Välimuistit
+settings.resetCider.category.caches.desc: Kansikuvat, kirjasto, Koti-näkymä ja muut offline-välimuistit
+settings.resetCider.category.integrations: Integraatioiden kirjautumiset
+settings.resetCider.category.integrations.desc: Last.fm-, ListenBrainz- ja muiden scrobbler-palveluiden tunnistetiedot
+settings.resetCider.category.localMusic: Paikallisen musiikkikirjaston tietokanta
+settings.resetCider.category.localMusic.desc: Tyhjentää Ciderin paikallisen kirjastoindeksin, ei musiikkitiedostojasi
+settings.resetCider.category.playback: Toisto- ja jonohistoria
+settings.resetCider.category.playback.desc: Tallennettu jono, äänenvoimakkuus ja toistokumppanit
+settings.resetCider.category.rerunSetup: Suorita käyttöönottoapuri uudelleen
+settings.resetCider.category.rerunSetup.desc: Näytä ensimmäisen käyttökerran määritys uudelleen käynnistyksen jälkeen
+settings.resetCider.category.settings: Sovelluksen asetukset
+settings.resetCider.category.settings.desc: Palauta Ciderin asetukset oletusarvoihin
+settings.resetCider.category.taproom: Kirjaudu ulos Taproom-palvelusta
+settings.resetCider.category.taproom.desc: Poista Cider- / Taproom-tili tältä laitteelta
+settings.resetCider.category.themesPlugins: Asennetut teemat ja liitännäiset
+settings.resetCider.category.themesPlugins.desc: Poista kauppapaikan teemat, liitännäiset ja käytössäololistat
+settings.resetCider.category.windowClient: Ikkunan sijainti ja asiakasohjelman asetukset
+settings.resetCider.category.windowClient.desc: Ikkunan koko/sijainti ja natiivin asiakasohjelman liput
+settings.resetCider.confirm.ok: Nollaa Cider
+settings.resetCider.confirm.title: Nollataanko Cider?
+settings.resetCider.confirm.warning: Tätä toimintoa ei voi peruuttaa. Cider käynnistyy uudelleen nollauksen jälkeen.
+settings.resetCider.confirm.willReset: Nollataan
+settings.resetCider.error: Jotain meni vikaan nollauksen aikana.
+settings.resetCider.group.accounts: Tilit
+settings.resetCider.group.core: Nollaa
+settings.resetCider.hostFallback: Asetukset ja välimuistit tyhjennettiin. Jotkin asennetut tiedostot saattavat jäädä jäljelle, kunnes asiakasohjelma päivitetään.
+settings.resetCider.intro: Valitse nollattavat kohteet. Apple Music- ja Taproom-kirjautumiset säilyvät, ellet poista niitä. Vie asetuksesi ensin, jos haluat varmuuskopion.
+settings.resetCider.resetButton: Nollaa Cider
+settings.resetCider.resetting: Nollataan…
+settings.resetCider.selectAll: Valitse kaikki
+settings.resetCider.title: Nollaa Cider
 settings.sleepTimer.endsIn: "Päättyy: {{remainingTime}} ({{endTime}})"
 settings.sleepTimer.notSet: Ajastinta ei ole asetettu
 settings.sleepTimer.title: Aseta uniajastin

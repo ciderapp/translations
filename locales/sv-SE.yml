@@ -8,13 +8,36 @@ action.addToLibrary.success: Tillagd i biblioteket
 action.addToPlaylist: Lägg till i spellista
 action.addToPlaylist.addAll: Lägg till alla
 action.addToPlaylist.addAnyway: Lägg till ändå
+action.addToPlaylist.addCount: Lägg till ({count})
 action.addToPlaylist.added: Lade till {count} {tracks} i {playlist}
+action.addToPlaylist.addedMultiple: Tillagd i {count} spellistor
+action.addToPlaylist.addingMultiple: Lägger till i spellistor…
 action.addToPlaylist.addNew: Lägg till ny
+action.addToPlaylist.addToMultiple: Lägg till i flera…
+action.addToPlaylist.alreadyIn: Redan i spellistan
+action.addToPlaylist.checking: Kontrollerar…
+action.addToPlaylist.containsSome: Innehåller {count} av {total}
 action.addToPlaylist.dontAdd: Lägg inte till
 action.addToPlaylist.duplicate: "{count} {tracks} finns redan i '{playlist}'. Vill du hoppa över dem?"
+action.addToPlaylist.duplicateBreakdown: "{count} nya · {duplicateCount} redan tillagda"
+action.addToPlaylist.duplicateFromAlbum: '{count} av {total} låtar från det här albumet finns redan i "{playlist}".'
+action.addToPlaylist.duplicateFromPlaylist: '{count} av {total} låtar från den här spellistan finns redan i "{playlist}".'
+action.addToPlaylist.duplicateFromSelection: '{count} av {total} markerade låtar finns redan i "{playlist}".'
 action.addToPlaylist.duplicateOne: "'{songName}' finns redan i din spellista '{playlist}'."
+action.addToPlaylist.duplicateOneShort: '"{songName}" finns redan i "{playlist}".'
 action.addToPlaylist.duplicateTitle: Dubbletter
+action.addToPlaylist.failed: Kunde inte lägga till i spellistan
+action.addToPlaylist.folderCount: "{count} spellistor"
+action.addToPlaylist.multipleSubtitle: "{songName}"
+action.addToPlaylist.multipleSubtitleTracks: "{count} låtar"
+action.addToPlaylist.multipleTitle: Lägg till i flera spellistor
+action.addToPlaylist.noResults: Inga spellistor hittades
+action.addToPlaylist.nothingNew: Inget nytt att lägga till
+action.addToPlaylist.recent: Senaste
 action.addToPlaylist.search: Sök i spellistor
+action.addToPlaylist.skipDuplicates: Hoppa över dubbletter
+action.addToPlaylist.toggleFolder: Visa/dölj mapp
+action.addToPlaylist.tracksCount: "{count} låtar"
 action.addToQueue: Lägg till i kö
 action.addToQueue.error: Kunde inte lägga till i kön
 action.addToQueue.success: Tillagd i kön
@@ -153,6 +176,7 @@ action.sidebar.signIn: Logga in på {account}
 action.sidebar.signIn.with: Logga in med {account}
 action.signIn: Logga in
 action.signOut: Logga ut
+action.skip: Hoppa över
 action.smartQueue.disable: Inaktivera smart kö
 action.smartQueue.enable: Aktivera smart kö
 action.smartQueue.requiresAutomix: Smart kö kräver Automix
@@ -850,6 +874,7 @@ oobe.visual.subtitle: ""
 oobe.visual.text: ""
 oobe.visual.title: Utseende
 oobe.welcome.getStarted: Kom igång
+oobe.welcome.importSettings: Importera inställningar…
 oobe.welcome.selectLanguage: Välj ditt föredragna språk
 oobe.window.subtitle: Välj hur appfönstret integreras med din skrivbordsmiljö
 oobe.window.title: Fönsterstil
@@ -1731,6 +1756,8 @@ settings.option.advanced.playlistTrackMapping.description: Aktiverar djupskannin
 settings.option.advanced.powerUsage.description: Flyttad – bildhastighetsgränser, val av renderare och krävande visuella funktioner.
 settings.option.advanced.progressBar: Förloppsindikator
 settings.option.advanced.progressBar.useAccentColor: Använd accentfärg
+settings.option.advanced.resetCider: Återställ Cider
+settings.option.advanced.resetCider.description: Återställ inställningar, cachefiler och lokala data. Du förblir inloggad på Apple Music och Taproom om du inte väljer något annat.
 settings.option.advanced.resizableMiniplayer: Minispelare med ändringsbar storlek
 settings.option.advanced.richAlbumGrid: Detaljerat albumrutnät
 settings.option.advanced.richAlbumGrid.alwaysNavigateToPage: Navigera alltid till sida
@@ -2501,6 +2528,39 @@ settings.prompt.visual.plugin.github.URL: Ange URL:en för tillägget du vill in
 settings.prompt.visual.theme.github.URL: Ange URL:en för temat du vill installera
 settings.prompt.visual.theme.uninstallTheme: Är du säker på att du vill avinstallera {{theme}}?
 settings.requiresNewerClient: Kräver en nyare Cider-klient.
+settings.resetCider.category.appleMusic: Logga ut från Apple Music
+settings.resetCider.category.appleMusic.desc: Ta bort Apple Music-kontot från den här enheten
+settings.resetCider.category.caches: Cachefiler
+settings.resetCider.category.caches.desc: Omslagsbilder, bibliotek, hem och andra offline-cachefiler
+settings.resetCider.category.integrations: Integrationsinloggningar
+settings.resetCider.category.integrations.desc: Inloggningsuppgifter för Last.fm, ListenBrainz och andra scrobblers
+settings.resetCider.category.localMusic: Lokal musikbiblioteksdatabas
+settings.resetCider.category.localMusic.desc: Rensar Ciders lokala biblioteksindex, inte dina musikfiler
+settings.resetCider.category.playback: Uppspelnings- och köhistorik
+settings.resetCider.category.playback.desc: Sparad kö, volym och uppspelningsverktyg
+settings.resetCider.category.rerunSetup: Kör installationsassistenten igen
+settings.resetCider.category.rerunSetup.desc: Visa startguiden igen efter omstart
+settings.resetCider.category.settings: Appinställningar och preferenser
+settings.resetCider.category.settings.desc: Återställ Ciders inställningar till standardvärden
+settings.resetCider.category.taproom: Logga ut från Taproom
+settings.resetCider.category.taproom.desc: Ta bort Cider- / Taproom-kontot från den här enheten
+settings.resetCider.category.themesPlugins: Installerade teman och tillägg
+settings.resetCider.category.themesPlugins.desc: Ta bort teman, tillägg och aktiveringslistor från marknadsplatsen
+settings.resetCider.category.windowClient: Fönsterposition och klientalternativ
+settings.resetCider.category.windowClient.desc: Fönsterstorlek/-position och inbyggda klientflaggor
+settings.resetCider.confirm.ok: Återställ Cider
+settings.resetCider.confirm.title: Vill du återställa Cider?
+settings.resetCider.confirm.warning: Detta kan inte ångras. Cider kommer att startas om efter återställningen.
+settings.resetCider.confirm.willReset: Kommer att återställas
+settings.resetCider.error: Något gick fel under återställningen.
+settings.resetCider.group.accounts: Konton
+settings.resetCider.group.core: Återställ
+settings.resetCider.hostFallback: Inställningar och cachefiler har rensats. Vissa installerade filer kan finnas kvar tills klienten uppdateras.
+settings.resetCider.intro: Välj vad som ska återställas. Du förblir inloggad på Apple Music och Taproom om du inte väljer att logga ut. Exportera dina inställningar först om du vill ha en säkerhetskopia.
+settings.resetCider.resetButton: Återställ Cider
+settings.resetCider.resetting: Återställer…
+settings.resetCider.selectAll: Markera alla
+settings.resetCider.title: Återställ Cider
 settings.sleepTimer.endsIn: "Slutar om: {{remainingTime}} ({{endTime}})"
 settings.sleepTimer.notSet: Timern är inte inställd
 settings.sleepTimer.title: Ställ in insomningstimer

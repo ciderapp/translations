@@ -8,13 +8,36 @@ action.addToLibrary.success: Hozzáadva a könyvtárhoz
 action.addToPlaylist: Hozzáadás lejátszási listához
 action.addToPlaylist.addAll: Összes hozzáadása
 action.addToPlaylist.addAnyway: Hozzáadás mindenesetre
+action.addToPlaylist.addCount: Hozzáadás ({count})
 action.addToPlaylist.added: "{count} {tracks} hozzáadva a(z) {playlist} listához"
+action.addToPlaylist.addedMultiple: Hozzáadva {count} lejátszási listához
+action.addToPlaylist.addingMultiple: Hozzáadás a lejátszási listákhoz...
 action.addToPlaylist.addNew: Új hozzáadása
+action.addToPlaylist.addToMultiple: Hozzáadás többhöz...
+action.addToPlaylist.alreadyIn: Már szerepel a lejátszási listában
+action.addToPlaylist.checking: Ellenőrzés…
+action.addToPlaylist.containsSome: "{total} elemből {count}-et tartalmaz"
 action.addToPlaylist.dontAdd: Ne adja hozzá
 action.addToPlaylist.duplicate: "{count} {tracks} már szerepel a(z) '{playlist}' listában. Szeretné kihagyni őket?"
+action.addToPlaylist.duplicateBreakdown: "{count} új · {duplicateCount} már hozzáadva"
+action.addToPlaylist.duplicateFromAlbum: Az albumon található {total} dalból {count} már szerepel a(z) "{playlist}" listában.
+action.addToPlaylist.duplicateFromPlaylist: A lejátszási listában található {total} dalból {count} már szerepel a(z) "{playlist}" listában.
+action.addToPlaylist.duplicateFromSelection: A kijelölt {total} dalból {count} már szerepel a(z) "{playlist}" listában.
 action.addToPlaylist.duplicateOne: A(z) '{songName}' már szerepel a(z) '{playlist}' lejátszási listájában.
+action.addToPlaylist.duplicateOneShort: A(z) "{songName}" már szerepel a(z) "{playlist}" listában.
 action.addToPlaylist.duplicateTitle: Duplikált dalok
+action.addToPlaylist.failed: Nem sikerült hozzáadni a lejátszási listához
+action.addToPlaylist.folderCount: "{count} lejátszási lista"
+action.addToPlaylist.multipleSubtitle: "{songName}"
+action.addToPlaylist.multipleSubtitleTracks: "{count} dal"
+action.addToPlaylist.multipleTitle: Hozzáadás több lejátszási listához
+action.addToPlaylist.noResults: Nem találhatók lejátszási listák
+action.addToPlaylist.nothingNew: Nincs új hozzáadható elem
+action.addToPlaylist.recent: Legutóbbi
 action.addToPlaylist.search: Keresés a lejátszási listákban
+action.addToPlaylist.skipDuplicates: Duplikátumok kihagyása
+action.addToPlaylist.toggleFolder: Mappa váltása
+action.addToPlaylist.tracksCount: "{count} dal"
 action.addToQueue: Hozzáadás a várólistához
 action.addToQueue.error: Hiba a sorhoz adás közben
 action.addToQueue.success: Hozzáadva a sorhoz
@@ -153,6 +176,7 @@ action.sidebar.signIn: "Bejelentkezés ide: {account}"
 action.sidebar.signIn.with: "Bejelentkezés a következővel: {account}"
 action.signIn: Bejelentkezés
 action.signOut: Kijelentkezés
+action.skip: Kihagyás
 action.smartQueue.disable: Intelligens sor kikapcsolása
 action.smartQueue.enable: Intelligens sor bekapcsolása
 action.smartQueue.requiresAutomix: Az Okos sorhoz Automix szükséges
@@ -850,6 +874,7 @@ oobe.visual.subtitle: ""
 oobe.visual.text: ""
 oobe.visual.title: Megjelenítés
 oobe.welcome.getStarted: Kezdés
+oobe.welcome.importSettings: Beállítások importálása…
 oobe.welcome.selectLanguage: Válassza ki a kívánt nyelvet
 oobe.window.subtitle: Válaszd ki, hogyan illeszkedjen az alkalmazás ablaka az asztali környezetedhez
 oobe.window.title: Ablakstílus
@@ -1731,6 +1756,8 @@ settings.option.advanced.playlistTrackMapping.description: Engedélyezi a leját
 settings.option.advanced.powerUsage.description: Áthelyezve – képkockasebesség-korlátok, renderelő kiválasztása és erőforrás-igényes vizuális funkciók.
 settings.option.advanced.progressBar: Folyamatjelző
 settings.option.advanced.progressBar.useAccentColor: Kiemelőszín használata
+settings.option.advanced.resetCider: Cider alaphelyzetbe állítása
+settings.option.advanced.resetCider.description: Beállítások, gyorsítótárak és helyi adatok alaphelyzetbe állítása. Az Apple Music- és Taproom-bejelentkezések megmaradnak, hacsak másképp nem dönt.
 settings.option.advanced.resizableMiniplayer: Átméretezhető minilejátszó
 settings.option.advanced.richAlbumGrid: Részletes albumrács
 settings.option.advanced.richAlbumGrid.alwaysNavigateToPage: Mindig navigáljon az oldalra
@@ -2501,6 +2528,39 @@ settings.prompt.visual.plugin.github.URL: Adja meg a telepíteni kívánt bőví
 settings.prompt.visual.theme.github.URL: Adja meg a telepíteni kívánt téma URL-címét
 settings.prompt.visual.theme.uninstallTheme: "Biztosan el szeretné távolítani a következőt: {{theme}}?"
 settings.requiresNewerClient: Újabb Cider kliens szükséges.
+settings.resetCider.category.appleMusic: Kijelentkezés az Apple Music-ból
+settings.resetCider.category.appleMusic.desc: Az Apple Music-fiók eltávolítása erről az eszközről
+settings.resetCider.category.caches: Gyorsítótárak
+settings.resetCider.category.caches.desc: Albumborítók, könyvtár, főoldal és egyéb offline gyorsítótárak
+settings.resetCider.category.integrations: Integrációs bejelentkezések
+settings.resetCider.category.integrations.desc: Last.fm, ListenBrainz és egyéb scrobbler-kulcsok
+settings.resetCider.category.localMusic: Helyi zenei könyvtár adatbázisa
+settings.resetCider.category.localMusic.desc: Törli a Cider helyi könyvtárindexét, de a zenefájlokat nem
+settings.resetCider.category.playback: Lejátszási és sor-előzmények
+settings.resetCider.category.playback.desc: Mentett lejátszási sor, hangerő és lejátszási segédek
+settings.resetCider.category.rerunSetup: Beállítási asszisztens újbóli futtatása
+settings.resetCider.category.rerunSetup.desc: Az első indításkori beállítások megjelenítése újraindítás után
+settings.resetCider.category.settings: Alkalmazásbeállítások és testreszabás
+settings.resetCider.category.settings.desc: A Cider beállításainak visszaállítása az alapértelmezett értékekre
+settings.resetCider.category.taproom: Kijelentkezés a Taproom-ból
+settings.resetCider.category.taproom.desc: A Cider / Taproom fiók eltávolítása erről az eszközről
+settings.resetCider.category.themesPlugins: Telepített témák és bővítmények
+settings.resetCider.category.themesPlugins.desc: Piactéri témák, bővítmények és engedélyezési listák eltávolítása
+settings.resetCider.category.windowClient: Ablakpozíció és kliensbeállítások
+settings.resetCider.category.windowClient.desc: Ablakméret/-pozíció és natív kliensjelzők
+settings.resetCider.confirm.ok: Cider alaphelyzetbe állítása
+settings.resetCider.confirm.title: Alaphelyzetbe állítja a Cidert?
+settings.resetCider.confirm.warning: Ez a művelet nem vonható vissza. A Cider az alaphelyzetbe állítás után újraindul.
+settings.resetCider.confirm.willReset: Alaphelyzetbe állítandó
+settings.resetCider.error: Hiba történt az alaphelyzetbe állítás során.
+settings.resetCider.group.accounts: Fiókok
+settings.resetCider.group.core: Alaphelyzetbe állítás
+settings.resetCider.hostFallback: A beállítások és a gyorsítótárak törölve lettek. Néhány telepített fájl megmaradhat a kliens frissítéséig.
+settings.resetCider.intro: Válassza ki, mit szeretne alaphelyzetbe állítani. Az Apple Music- és Taproom-bejelentkezések megmaradnak, hacsak nem jelöli ki őket. Ha biztonsági mentést szeretne, először exportálja a beállításait.
+settings.resetCider.resetButton: Cider alaphelyzetbe állítása
+settings.resetCider.resetting: Alaphelyzetbe állítás…
+settings.resetCider.selectAll: Összes kijelölése
+settings.resetCider.title: Cider alaphelyzetbe állítása
 settings.sleepTimer.endsIn: "Hátralévő idő: {{remainingTime}} ({{endTime}})"
 settings.sleepTimer.notSet: Az időzítő nincs beállítva
 settings.sleepTimer.title: Elalváskapcsoló beállítása

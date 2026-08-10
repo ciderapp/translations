@@ -8,13 +8,36 @@ action.addToLibrary.success: Adăugat în bibliotecă
 action.addToPlaylist: Adaugă în lista de redare
 action.addToPlaylist.addAll: Adaugă-le pe toate
 action.addToPlaylist.addAnyway: Adaugă oricum
+action.addToPlaylist.addCount: Adaugă ({count})
 action.addToPlaylist.added: S-au adăugat {count} {tracks} în {playlist}
+action.addToPlaylist.addedMultiple: Adăugat în {count} liste de redare
+action.addToPlaylist.addingMultiple: Se adaugă în listele de redare...
 action.addToPlaylist.addNew: Adaugă una nouă
+action.addToPlaylist.addToMultiple: Adaugă în mai multe...
+action.addToPlaylist.alreadyIn: Deja în lista de redare
+action.addToPlaylist.checking: Se verifică…
+action.addToPlaylist.containsSome: Conține {count} din {total}
 action.addToPlaylist.dontAdd: Nu adăuga
 action.addToPlaylist.duplicate: "{count} {tracks} există deja în „{playlist}”. Dorești să le omiți?"
+action.addToPlaylist.duplicateBreakdown: "{count} noi · {duplicateCount} deja adăugate"
+action.addToPlaylist.duplicateFromAlbum: '{count} din {total} piese din acest album există deja în "{playlist}".'
+action.addToPlaylist.duplicateFromPlaylist: '{count} din {total} piese din această listă de redare există deja în "{playlist}".'
+action.addToPlaylist.duplicateFromSelection: '{count} din {total} piese selectate există deja în "{playlist}".'
 action.addToPlaylist.duplicateOne: „{songName}” se află deja în lista ta de redare „{playlist}”.
+action.addToPlaylist.duplicateOneShort: '"{songName}" este deja în "{playlist}".'
 action.addToPlaylist.duplicateTitle: Melodii duplicate
+action.addToPlaylist.failed: Eroare la adăugarea în lista de redare
+action.addToPlaylist.folderCount: "{count} liste de redare"
+action.addToPlaylist.multipleSubtitle: "{songName}"
+action.addToPlaylist.multipleSubtitleTracks: "{count} piese"
+action.addToPlaylist.multipleTitle: Adaugă în mai multe liste de redare
+action.addToPlaylist.noResults: Nu s-au găsit liste de redare
+action.addToPlaylist.nothingNew: Nimic nou de adăugat
+action.addToPlaylist.recent: Recente
 action.addToPlaylist.search: Caută în listele de redare
+action.addToPlaylist.skipDuplicates: Omite duplicatele
+action.addToPlaylist.toggleFolder: Comută dosarul
+action.addToPlaylist.tracksCount: "{count} piese"
 action.addToQueue: Adăugare la Coadă
 action.addToQueue.error: Eroare la adăugarea în coadă
 action.addToQueue.success: Adăugat în coadă
@@ -153,6 +176,7 @@ action.sidebar.signIn: Conectați-vă la {account}
 action.sidebar.signIn.with: Conectați-vă cu {account}
 action.signIn: Autentificare
 action.signOut: Deconectare
+action.skip: Omite
 action.smartQueue.disable: Dezactivează coada inteligentă
 action.smartQueue.enable: Activează coada inteligentă
 action.smartQueue.requiresAutomix: Smart Queue necesită Automix
@@ -850,6 +874,7 @@ oobe.visual.subtitle: ""
 oobe.visual.text: ""
 oobe.visual.title: Aspect
 oobe.welcome.getStarted: Să începem
+oobe.welcome.importSettings: Importă configurările…
 oobe.welcome.selectLanguage: Selectează limba preferată
 oobe.window.subtitle: Alege modul în care fereastra aplicației se integrează cu mediul tău desktop
 oobe.window.title: Stil fereastră
@@ -1731,6 +1756,8 @@ settings.option.advanced.playlistTrackMapping.description: Activează scanarea p
 settings.option.advanced.powerUsage.description: Mutat — limite de cadre pe secundă, alegerea motorului de redare și funcții vizuale solicitante.
 settings.option.advanced.progressBar: Bară de progres
 settings.option.advanced.progressBar.useAccentColor: Utilizează culoarea de accent
+settings.option.advanced.resetCider: Resetează Cider
+settings.option.advanced.resetCider.description: Resetează preferințele, cache-urile și datele locale. Conectarea la Apple Music și Taproom va fi menținută, cu excepția cazului în care alegi altfel.
 settings.option.advanced.resizableMiniplayer: Miniplayer redimensionabil
 settings.option.advanced.richAlbumGrid: Grilă de albume detaliată
 settings.option.advanced.richAlbumGrid.alwaysNavigateToPage: Navighează întotdeauna la pagină
@@ -2501,6 +2528,39 @@ settings.prompt.visual.plugin.github.URL: Introdu URL-ul pluginului pe care dore
 settings.prompt.visual.theme.github.URL: Introdu URL-ul temei pe care dorești să o instalezi
 settings.prompt.visual.theme.uninstallTheme: Sigur dorești să dezinstalezi {{theme}}?
 settings.requiresNewerClient: Necesită o versiune mai nouă de Cider.
+settings.resetCider.category.appleMusic: Deconectare de la Apple Music
+settings.resetCider.category.appleMusic.desc: Elimină contul Apple Music de pe acest dispozitiv
+settings.resetCider.category.caches: Cache-uri
+settings.resetCider.category.caches.desc: Copertă, bibliotecă, ecran principal și alte cache-uri offline
+settings.resetCider.category.integrations: Autentificări integrări
+settings.resetCider.category.integrations.desc: Date de autentificare Last.fm, ListenBrainz și alte servicii de scrobbling
+settings.resetCider.category.localMusic: Baza de date a bibliotecii muzicale locale
+settings.resetCider.category.localMusic.desc: Șterge indexul bibliotecii locale Cider, nu și fișierele muzicale
+settings.resetCider.category.playback: Redare și istoricul cozii
+settings.resetCider.category.playback.desc: Coada de redare salvată, volumul și asistenții de redare
+settings.resetCider.category.rerunSetup: Rereulează asistentul de configurare
+settings.resetCider.category.rerunSetup.desc: Afișează din nou configurarea inițială după repornire
+settings.resetCider.category.settings: Configurări și preferințe aplicație
+settings.resetCider.category.settings.desc: Restabilește preferințele Cider la valorile implicite
+settings.resetCider.category.taproom: Deconectare de la Taproom
+settings.resetCider.category.taproom.desc: Elimină contul Cider / Taproom de pe acest dispozitiv
+settings.resetCider.category.themesPlugins: Teme și module instalate
+settings.resetCider.category.themesPlugins.desc: Elimină temele, modulele din catalog și listele de activare
+settings.resetCider.category.windowClient: Poziția ferestrei și opțiunile clientului
+settings.resetCider.category.windowClient.desc: Dimensiunea/poziția ferestrei și indicatorii clientului nativ
+settings.resetCider.confirm.ok: Resetează Cider
+settings.resetCider.confirm.title: Resetezi Cider?
+settings.resetCider.confirm.warning: Această acțiune este ireversibilă. Cider se va reporni după resetare.
+settings.resetCider.confirm.willReset: Se va reseta
+settings.resetCider.error: A apărut o eroare în timpul resetării.
+settings.resetCider.group.accounts: Conturi
+settings.resetCider.group.core: Resetare
+settings.resetCider.hostFallback: Preferințele și cache-urile au fost șterse. Unele fișiere instalate pot rămâne până când clientul este actualizat.
+settings.resetCider.intro: Alege ce dorești să resetezi. Conectarea la Apple Music și Taproom va fi menținută, cu excepția cazului în care optezi altfel. Exportă configurările mai întâi dacă dorești o copie de rezervă.
+settings.resetCider.resetButton: Resetează Cider
+settings.resetCider.resetting: Se resetează…
+settings.resetCider.selectAll: Selectează tot
+settings.resetCider.title: Resetare Cider
 settings.sleepTimer.endsIn: "Se termină în: {{remainingTime}} ({{endTime}})"
 settings.sleepTimer.notSet: Temporizatorul nu este setat
 settings.sleepTimer.title: Setare temporizator oprire

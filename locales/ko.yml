@@ -8,13 +8,36 @@ action.addToLibrary.success: 보관함에 추가됨
 action.addToPlaylist: 재생목록에 추가
 action.addToPlaylist.addAll: 모두 추가
 action.addToPlaylist.addAnyway: 그래도 추가
+action.addToPlaylist.addCount: 추가 ({count})
 action.addToPlaylist.added: "{playlist}에 {count}개의 {tracks} 추가됨"
+action.addToPlaylist.addedMultiple: "{count}개의 플레이리스트에 추가됨"
+action.addToPlaylist.addingMultiple: 플레이리스트에 추가 중...
 action.addToPlaylist.addNew: 새로 추가
+action.addToPlaylist.addToMultiple: 여러 플레이리스트에 추가...
+action.addToPlaylist.alreadyIn: 이미 플레이리스트에 있음
+action.addToPlaylist.checking: 확인 중…
+action.addToPlaylist.containsSome: "{total}개 중 {count}개 포함됨"
 action.addToPlaylist.dontAdd: 추가 안 함
 action.addToPlaylist.duplicate: "'{playlist}'에 {count}개의 {tracks}이(가) 이미 존재합니다. 건너뛰시겠습니까?"
+action.addToPlaylist.duplicateBreakdown: 새로운 항목 {count}개 · 이미 추가됨 {duplicateCount}개
+action.addToPlaylist.duplicateFromAlbum: 이 앨범의 {total}개 트랙 중 {count}개가 이미 "{playlist}"에 존재합니다.
+action.addToPlaylist.duplicateFromPlaylist: 이 플레이리스트의 {total}개 트랙 중 {count}개가 이미 "{playlist}"에 존재합니다.
+action.addToPlaylist.duplicateFromSelection: 선택한 {total}개 트랙 중 {count}개가 이미 "{playlist}"에 존재합니다.
 action.addToPlaylist.duplicateOne: "'{songName}'이(가) '{playlist}' 재생목록에 이미 있습니다."
+action.addToPlaylist.duplicateOneShort: '"{songName}"이(가) 이미 "{playlist}"에 있습니다.'
 action.addToPlaylist.duplicateTitle: 중복된 곡
+action.addToPlaylist.failed: 플레이리스트 추가 실패
+action.addToPlaylist.folderCount: 플레이리스트 {count}개
+action.addToPlaylist.multipleSubtitle: "{songName}"
+action.addToPlaylist.multipleSubtitleTracks: "{count}개의 트랙"
+action.addToPlaylist.multipleTitle: 여러 플레이리스트에 추가
+action.addToPlaylist.noResults: 플레이리스트를 찾을 수 없음
+action.addToPlaylist.nothingNew: 새로 추가할 항목 없음
+action.addToPlaylist.recent: 최근 항목
 action.addToPlaylist.search: 재생목록 검색
+action.addToPlaylist.skipDuplicates: 중복 항목 건너뛰기
+action.addToPlaylist.toggleFolder: 폴더 열기/닫기
+action.addToPlaylist.tracksCount: "{count}개의 트랙"
 action.addToQueue: 대기열에 추가
 action.addToQueue.error: 대기열 추가 오류
 action.addToQueue.success: 대기열에 추가됨
@@ -177,6 +200,7 @@ action.sidebar.signIn: "{account} 로그인"
 action.sidebar.signIn.with: "{account}(으)로 로그인"
 action.signIn: 로그인
 action.signOut: 로그아웃
+action.skip: 건너뛰기
 action.smartQueue.disable: 스마트 대기열 끄기
 action.smartQueue.enable: 스마트 대기열 켜기
 action.smartQueue.requiresAutomix: Smart Queue를 사용하려면 Automix가 필요합니다
@@ -906,6 +930,7 @@ oobe.visual.subtitle: ""
 oobe.visual.text: ""
 oobe.visual.title: 비주얼
 oobe.welcome.getStarted: 시작하기
+oobe.welcome.importSettings: 설정 가져오기…
 oobe.welcome.selectLanguage: 선호하는 언어 선택
 oobe.window.subtitle: 앱 창이 데스크톱 환경과 통합되는 방식을 선택하세요
 oobe.window.title: 창 스타일
@@ -1791,6 +1816,8 @@ settings.option.advanced.playlistTrackMapping.description: 플레이리스트를
 settings.option.advanced.powerUsage.description: 이동됨 — 프레임 레이트 제한, 렌더러 선택 및 리소스 소모가 큰 시각 효과 기능.
 settings.option.advanced.progressBar: 진행 표시줄
 settings.option.advanced.progressBar.useAccentColor: 강조 색상 사용
+settings.option.advanced.resetCider: Cider 초기화
+settings.option.advanced.resetCider.description: 설정, 캐시 및 로컬 데이터를 초기화합니다. 별도로 선택하지 않는 한 Apple Music 및 Taproom 로그인 상태는 유지됩니다.
 settings.option.advanced.resizableMiniplayer: 크기 조절 가능한 미니 플레이어
 settings.option.advanced.richAlbumGrid: 리치 앨범 그리드
 settings.option.advanced.richAlbumGrid.alwaysNavigateToPage: 항상 페이지로 이동
@@ -2600,6 +2627,39 @@ settings.prompt.visual.plugin.github.URL: 설치할 플러그인의 URL을 입�
 settings.prompt.visual.theme.github.URL: 설치할 테마의 URL을 입력하세요.
 settings.prompt.visual.theme.uninstallTheme: "{{theme}}을(를) 제거하시겠습니까?"
 settings.requiresNewerClient: 더 새로운 버전의 Cider 클라이언트가 필요합니다.
+settings.resetCider.category.appleMusic: Apple Music 로그아웃
+settings.resetCider.category.appleMusic.desc: 이 기기에서 Apple Music 계정 제거
+settings.resetCider.category.caches: 캐시
+settings.resetCider.category.caches.desc: 아트워크, 보관함, 홈 및 기타 오프라인 캐시
+settings.resetCider.category.integrations: 연동 서비스 로그인
+settings.resetCider.category.integrations.desc: Last.fm, ListenBrainz 및 기타 스크로블러 보안 정보
+settings.resetCider.category.localMusic: 로컬 음악 보관함 데이터베이스
+settings.resetCider.category.localMusic.desc: 음악 파일은 그대로 두고 Cider의 로컬 보관함 인덱스만 지웁니다.
+settings.resetCider.category.playback: 재생 및 대기열 기록
+settings.resetCider.category.playback.desc: 저장된 대기열, 음량 및 재생 컴패니언
+settings.resetCider.category.rerunSetup: 설정 지원 다시 실행
+settings.resetCider.category.rerunSetup.desc: 재시작 후 초기 설정 화면을 다시 표시합니다.
+settings.resetCider.category.settings: 앱 설정 및 기본 설정
+settings.resetCider.category.settings.desc: Cider 기본 설정을 초기값으로 복원
+settings.resetCider.category.taproom: Taproom 로그아웃
+settings.resetCider.category.taproom.desc: 이 기기에서 Cider / Taproom 계정 제거
+settings.resetCider.category.themesPlugins: 설치된 테마 및 플러그인
+settings.resetCider.category.themesPlugins.desc: 마켓플레이스 테마, 플러그인 및 활성화 목록 제거
+settings.resetCider.category.windowClient: 창 위치 및 클라이언트 옵션
+settings.resetCider.category.windowClient.desc: 창 크기/위치 및 네이티브 클라이언트 플래그
+settings.resetCider.confirm.ok: Cider 초기화
+settings.resetCider.confirm.title: Cider를 초기화하시겠습니까?
+settings.resetCider.confirm.warning: 이 작업은 되돌릴 수 없습니다. 초기화 후 Cider가 재시작됩니다.
+settings.resetCider.confirm.willReset: 초기화 예정
+settings.resetCider.error: 초기화 중 오류가 발생했습니다.
+settings.resetCider.group.accounts: 계정
+settings.resetCider.group.core: 초기화
+settings.resetCider.hostFallback: 기본 설정과 캐시가 삭제되었습니다. 일부 설치된 파일은 클라이언트가 업데이트될 때까지 남아 있을 수 있습니다.
+settings.resetCider.intro: 초기화할 항목을 선택하세요. 별도로 선택하지 않는 한 Apple Music 및 Taproom 로그인 상태는 유지됩니다. 백업을 원하시면 먼저 설정을 내보내세요.
+settings.resetCider.resetButton: Cider 초기화
+settings.resetCider.resetting: 초기화 중…
+settings.resetCider.selectAll: 전체 선택
+settings.resetCider.title: Reset Cider
 settings.sleepTimer.endsIn: "종료까지: {{remainingTime}} ({{endTime}})"
 settings.sleepTimer.notSet: 타이머가 설정되지 않음
 settings.sleepTimer.title: 취침 타이머 설정

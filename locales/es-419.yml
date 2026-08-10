@@ -8,13 +8,36 @@ action.addToLibrary.success: Agregado a la biblioteca
 action.addToPlaylist: Agregar a una lista de reproducción
 action.addToPlaylist.addAll: Agregar todo
 action.addToPlaylist.addAnyway: Agregar de todos modos
+action.addToPlaylist.addCount: Agregar ({count})
 action.addToPlaylist.added: Se agregaron {count} {tracks} a {playlist}
+action.addToPlaylist.addedMultiple: Agregado a {count} listas de reproducción
+action.addToPlaylist.addingMultiple: Agregando a las listas de reproducción...
 action.addToPlaylist.addNew: Agregar nueva
+action.addToPlaylist.addToMultiple: Agregar a varias...
+action.addToPlaylist.alreadyIn: Ya está en la lista de reproducción
+action.addToPlaylist.checking: Verificando…
+action.addToPlaylist.containsSome: Contiene {count} de {total}
 action.addToPlaylist.dontAdd: No agregar
 action.addToPlaylist.duplicate: "{count} {tracks} ya existen en '{playlist}'. ¿Quieres omitirlos?"
+action.addToPlaylist.duplicateBreakdown: "{count} nuevas · {duplicateCount} ya agregadas"
+action.addToPlaylist.duplicateFromAlbum: '{count} de {total} pistas de este álbum ya existen en "{playlist}".'
+action.addToPlaylist.duplicateFromPlaylist: '{count} de {total} pistas de esta lista de reproducción ya existen en "{playlist}".'
+action.addToPlaylist.duplicateFromSelection: '{count} de {total} pistas seleccionadas ya existen en "{playlist}".'
 action.addToPlaylist.duplicateOne: "'{songName}' ya está en tu lista de reproducción '{playlist}'."
+action.addToPlaylist.duplicateOneShort: '"{songName}" ya está en "{playlist}".'
 action.addToPlaylist.duplicateTitle: Canciones duplicadas
+action.addToPlaylist.failed: Error al agregar a la lista de reproducción
+action.addToPlaylist.folderCount: "{count} listas de reproducción"
+action.addToPlaylist.multipleSubtitle: "{songName}"
+action.addToPlaylist.multipleSubtitleTracks: "{count} pistas"
+action.addToPlaylist.multipleTitle: Agregar a varias listas de reproducción
+action.addToPlaylist.noResults: No se encontraron listas de reproducción
+action.addToPlaylist.nothingNew: Nada nuevo que agregar
+action.addToPlaylist.recent: Recientes
 action.addToPlaylist.search: Buscar listas de reproducción
+action.addToPlaylist.skipDuplicates: Omitir duplicados
+action.addToPlaylist.toggleFolder: Alternar carpeta
+action.addToPlaylist.tracksCount: "{count} pistas"
 action.addToQueue: Añadir a la Cola
 action.addToQueue.error: Error al agregar a la fila
 action.addToQueue.success: Agregado a la fila
@@ -153,6 +176,7 @@ action.sidebar.signIn: Iniciar sesión en {account}
 action.sidebar.signIn.with: Iniciar sesión con {account}
 action.signIn: Iniciar sesión
 action.signOut: Cerrar sesión
+action.skip: Omitir
 action.smartQueue.disable: Desactivar fila inteligente
 action.smartQueue.enable: Activar fila inteligente
 action.smartQueue.requiresAutomix: La fila inteligente requiere Automix
@@ -850,6 +874,7 @@ oobe.visual.subtitle: ""
 oobe.visual.text: ""
 oobe.visual.title: Visual
 oobe.welcome.getStarted: Comenzar
+oobe.welcome.importSettings: Importar configuración…
 oobe.welcome.selectLanguage: Selecciona tu idioma preferido
 oobe.window.subtitle: Elige cómo se integra la ventana de la app con tu entorno de escritorio
 oobe.window.title: Estilo de ventana
@@ -1731,6 +1756,8 @@ settings.option.advanced.playlistTrackMapping.description: Permite un escaneo pr
 settings.option.advanced.powerUsage.description: "Se movió: límites de velocidad de fotogramas, elección de renderizador y funciones visuales exigentes."
 settings.option.advanced.progressBar: Barra de progreso
 settings.option.advanced.progressBar.useAccentColor: Usar color de acento
+settings.option.advanced.resetCider: Restablecer Cider
+settings.option.advanced.resetCider.description: Restablece las preferencias, la caché y los datos locales. Se mantendrá la sesión iniciada en Apple Music y Taproom a menos que elijas lo contrario.
 settings.option.advanced.resizableMiniplayer: Minirreproductor ajustable
 settings.option.advanced.richAlbumGrid: Cuadrícula de álbumes enriquecida
 settings.option.advanced.richAlbumGrid.alwaysNavigateToPage: Navegar siempre a la página
@@ -2503,6 +2530,39 @@ settings.prompt.visual.plugin.github.URL: Ingresa la URL del plugin que quieres 
 settings.prompt.visual.theme.github.URL: Ingresa la URL del tema que quieres instalar
 settings.prompt.visual.theme.uninstallTheme: ¿Estás seguro de que quieres desinstalar {{theme}}?
 settings.requiresNewerClient: Requiere una versión más reciente de Cider.
+settings.resetCider.category.appleMusic: Cerrar sesión en Apple Music
+settings.resetCider.category.appleMusic.desc: Elimina la cuenta de Apple Music de este dispositivo
+settings.resetCider.category.caches: Cachés
+settings.resetCider.category.caches.desc: Ilustraciones, biblioteca, inicio y otras cachés sin conexión
+settings.resetCider.category.integrations: Inicios de sesión de integración
+settings.resetCider.category.integrations.desc: Credenciales de Last.fm, ListenBrainz y otros scrobblers
+settings.resetCider.category.localMusic: Base de datos de la biblioteca de música local
+settings.resetCider.category.localMusic.desc: Borra el índice de la biblioteca local de Cider, no tus archivos de música
+settings.resetCider.category.playback: Historial de reproducción y cola
+settings.resetCider.category.playback.desc: Cola guardada, volumen y complementos de reproducción
+settings.resetCider.category.rerunSetup: Volver a ejecutar el asistente de configuración
+settings.resetCider.category.rerunSetup.desc: Muestra la configuración inicial de nuevo después de reiniciar
+settings.resetCider.category.settings: Configuración y preferencias de la aplicación
+settings.resetCider.category.settings.desc: Restablece las preferencias de Cider a los valores predeterminados
+settings.resetCider.category.taproom: Cerrar sesión en Taproom
+settings.resetCider.category.taproom.desc: Elimina la cuenta de Cider / Taproom de este dispositivo
+settings.resetCider.category.themesPlugins: Temas y complementos instalados
+settings.resetCider.category.themesPlugins.desc: Elimina los temas, complementos y listas de activación de la tienda
+settings.resetCider.category.windowClient: Posición de la ventana y opciones del cliente
+settings.resetCider.category.windowClient.desc: Tamaño/posición de la ventana y parámetros nativos del cliente
+settings.resetCider.confirm.ok: Restablecer Cider
+settings.resetCider.confirm.title: ¿Restablecer Cider?
+settings.resetCider.confirm.warning: Esta acción no se puede deshacer. Cider se reiniciará después del restablecimiento.
+settings.resetCider.confirm.willReset: Se restablecerá
+settings.resetCider.error: Ocurrió un error al restablecer.
+settings.resetCider.group.accounts: Cuentas
+settings.resetCider.group.core: Restablecer
+settings.resetCider.hostFallback: Se borraron las preferencias y las cachés. Es posible que algunos archivos instalados permanezcan hasta que se actualice el cliente.
+settings.resetCider.intro: Elige qué restablecer. Se mantendrá la sesión iniciada en Apple Music y Taproom a menos que decidas lo contrario. Exporta tu configuración primero si deseas una copia de seguridad.
+settings.resetCider.resetButton: Restablecer Cider
+settings.resetCider.resetting: Restableciendo…
+settings.resetCider.selectAll: Seleccionar todo
+settings.resetCider.title: Restablecer Cider
 settings.sleepTimer.endsIn: "Termina en: {{remainingTime}} ({{endTime}})"
 settings.sleepTimer.notSet: El temporizador no está configurado
 settings.sleepTimer.title: Configurar temporizador de reposo

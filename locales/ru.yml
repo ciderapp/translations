@@ -18,13 +18,20 @@ action.addToLibrary.success: Добавлено в медиатеку
 action.addToPlaylist: Добавить в плейлист
 action.addToPlaylist.addAll: Добавить все
 action.addToPlaylist.addAnyway: Всё равно добавить
+action.addToPlaylist.addCount: Добавить ({count})
 action.addToPlaylist.added:
   value: Добавлено {count} {tracks} в {playlist}
   source: ai
   by: "@kinlay0"
   issue: 13
   superseded_at: 2026-07-08
+action.addToPlaylist.addedMultiple: Добавлено в {count} плейлистов
+action.addToPlaylist.addingMultiple: Добавление в плейлисты...
 action.addToPlaylist.addNew: Создать новый
+action.addToPlaylist.addToMultiple: Добавить в несколько...
+action.addToPlaylist.alreadyIn: Уже в плейлисте
+action.addToPlaylist.checking: Проверка…
+action.addToPlaylist.containsSome: Содержит {count} из {total}
 action.addToPlaylist.dontAdd: Не добавлять
 action.addToPlaylist.duplicate:
   value: "{count} {tracks} уже есть в плейлисте «{playlist}». Хотите пропустить их?"
@@ -32,19 +39,35 @@ action.addToPlaylist.duplicate:
   by: "@kinlay0"
   issue: 36
   superseded_at: 2026-07-08
+action.addToPlaylist.duplicateBreakdown: "{count} новых · {duplicateCount} уже добавлено"
+action.addToPlaylist.duplicateFromAlbum: "{count} из {total} треков этого альбома уже есть в плейлисте «{playlist}»."
+action.addToPlaylist.duplicateFromPlaylist: "{count} из {total} треков этого плейлиста уже есть в плейлисте «{playlist}»."
+action.addToPlaylist.duplicateFromSelection: "{count} из {total} выбранных треков уже есть в плейлисте «{playlist}»."
 action.addToPlaylist.duplicateOne:
   value: Песня «{songName}» уже есть в вашем плейлисте «{playlist}».
   source: ai
   by: "@kinlay0"
   issue: 36
   superseded_at: 2026-07-08
+action.addToPlaylist.duplicateOneShort: «{songName}» уже есть в плейлисте «{playlist}».
 action.addToPlaylist.duplicateTitle:
   value: Дубликаты песен
   source: ai
   by: "@kinlay0"
   issue: 27
   superseded_at: 2026-07-08
+action.addToPlaylist.failed: Не удалось добавить в плейлист
+action.addToPlaylist.folderCount: "{count} плейлистов"
+action.addToPlaylist.multipleSubtitle: "{songName}"
+action.addToPlaylist.multipleSubtitleTracks: "{count} треков"
+action.addToPlaylist.multipleTitle: Добавить в несколько плейлистов
+action.addToPlaylist.noResults: Плейлисты не найдены
+action.addToPlaylist.nothingNew: Нет новых треков для добавления
+action.addToPlaylist.recent: Недавние
 action.addToPlaylist.search: Поиск плейлистов
+action.addToPlaylist.skipDuplicates: Пропустить дубликаты
+action.addToPlaylist.toggleFolder: Свернуть/развернуть папку
+action.addToPlaylist.tracksCount: "{count} треков"
 action.addToQueue:
   value: Добавить в очередь
   source: human
@@ -273,6 +296,7 @@ action.sidebar.signIn: Войти в {account}
 action.sidebar.signIn.with: Войти с помощью {account}
 action.signIn: Войти
 action.signOut: Выйти
+action.skip: Пропустить
 action.smartQueue.disable: Выключить смарт-очередь
 action.smartQueue.enable: Включить смарт-очередь
 action.smartQueue.requiresAutomix: Для умной очереди требуется Automix
@@ -1178,6 +1202,7 @@ oobe.visual.subtitle: ""
 oobe.visual.text: ""
 oobe.visual.title: Внешний вид
 oobe.welcome.getStarted: Начать
+oobe.welcome.importSettings: Импортировать настройки…
 oobe.welcome.selectLanguage: Выберите предпочитаемый язык
 oobe.window.subtitle: Выберите, как окно приложения интегрируется с вашим рабочим столом
 oobe.window.title: Стиль окна
@@ -2222,6 +2247,8 @@ settings.option.advanced.playlistTrackMapping.description: Включает гл
 settings.option.advanced.powerUsage.description: Перенесено — ограничения частоты кадров, выбор рендерера и ресурсоемкие визуальные эффекты.
 settings.option.advanced.progressBar: Шкала воспроизведения
 settings.option.advanced.progressBar.useAccentColor: Использовать акцентный цвет
+settings.option.advanced.resetCider: Сбросить Cider
+settings.option.advanced.resetCider.description: Сброс настроек, кэша и локальных данных. Выход из Apple Music и Taproom выполнен не будет, если вы не выберете обратное.
 settings.option.advanced.resizableMiniplayer: Мини-плеер с изменяемым размером
 settings.option.advanced.richAlbumGrid: Улучшенная сетка альбомов
 settings.option.advanced.richAlbumGrid.alwaysNavigateToPage: Всегда переходить на страницу
@@ -3194,6 +3221,39 @@ settings.prompt.visual.theme.uninstallTheme:
   issue: 15
   superseded_at: 2026-07-08
 settings.requiresNewerClient: Требуется более новая версия Cider.
+settings.resetCider.category.appleMusic: Выйти из Apple Music
+settings.resetCider.category.appleMusic.desc: Удалить учетную запись Apple Music с этого устройства
+settings.resetCider.category.caches: Кэш
+settings.resetCider.category.caches.desc: Обложки, медиатека, главная страница и другой офлайн-кэш
+settings.resetCider.category.integrations: Авторизация в интеграциях
+settings.resetCider.category.integrations.desc: Ключи авторизации Last.fm, ListenBrainz и других скробблеров
+settings.resetCider.category.localMusic: База данных локальной медиатеки
+settings.resetCider.category.localMusic.desc: Очищает локальный индекс медиатеки Cider, а не сами музыкальные файлы
+settings.resetCider.category.playback: Воспроизведение и история очереди
+settings.resetCider.category.playback.desc: Сохраненная очередь, громкость и сопутствующие параметры воспроизведения
+settings.resetCider.category.rerunSetup: Запустить ассистент настройки повторно
+settings.resetCider.category.rerunSetup.desc: Показать окно первоначальной настройки при следующем запуске
+settings.resetCider.category.settings: Настройки и параметры приложения
+settings.resetCider.category.settings.desc: Сбросить настройки Cider до значений по умолчанию
+settings.resetCider.category.taproom: Выйти из Taproom
+settings.resetCider.category.taproom.desc: Удалить учетную запись Cider / Taproom с этого устройства
+settings.resetCider.category.themesPlugins: Установленные темы и плагины
+settings.resetCider.category.themesPlugins.desc: Удалить темы и плагины из каталога, а также списки их активации
+settings.resetCider.category.windowClient: Положение окна и параметры клиента
+settings.resetCider.category.windowClient.desc: Размер/положение окна и флаги нативного клиента
+settings.resetCider.confirm.ok: Сбросить Cider
+settings.resetCider.confirm.title: Сбросить Cider?
+settings.resetCider.confirm.warning: Это действие нельзя отменить. После сброса Cider перезапустится.
+settings.resetCider.confirm.willReset: Будет сброшено
+settings.resetCider.error: Во время сброса произошла ошибка.
+settings.resetCider.group.accounts: Учетные записи
+settings.resetCider.group.core: Сброс
+settings.resetCider.hostFallback: Настройки и кэш очищены. Некоторые установленные файлы могут остаться до обновления клиента.
+settings.resetCider.intro: Выберите данные для сброса. Выход из Apple Music и Taproom выполнен не будет, если вы не выберете этот пункт. Если вам нужна резервная копия, сначала экспортируйте настройки.
+settings.resetCider.resetButton: Сбросить Cider
+settings.resetCider.resetting: Сброс…
+settings.resetCider.selectAll: Выбрать все
+settings.resetCider.title: Сброс Cider
 settings.sleepTimer.endsIn: "Осталось: {{remainingTime}} ({{endTime}})"
 settings.sleepTimer.notSet: Таймер не установлен
 settings.sleepTimer.title: Установить таймер сна

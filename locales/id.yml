@@ -8,13 +8,36 @@ action.addToLibrary.success: Ditambahkan ke Perpustakaan
 action.addToPlaylist: Tambah ke Daftar Putar
 action.addToPlaylist.addAll: Tambah semua
 action.addToPlaylist.addAnyway: Tetap tambahkan
+action.addToPlaylist.addCount: Tambah ({count})
 action.addToPlaylist.added: Menambahkan {count} {tracks} ke {playlist}
+action.addToPlaylist.addedMultiple: Ditambahkan ke {count} daftar putar
+action.addToPlaylist.addingMultiple: Menambahkan ke daftar putar...
 action.addToPlaylist.addNew: Tambah baru
+action.addToPlaylist.addToMultiple: Tambah ke Beberapa...
+action.addToPlaylist.alreadyIn: Sudah ada di daftar putar
+action.addToPlaylist.checking: Memeriksa…
+action.addToPlaylist.containsSome: Berisi {count} dari {total}
 action.addToPlaylist.dontAdd: Jangan tambahkan
 action.addToPlaylist.duplicate: "{count} {tracks} sudah ada di '{playlist}'. Apakah Anda ingin melewatinya?"
+action.addToPlaylist.duplicateBreakdown: "{count} baru · {duplicateCount} sudah ditambahkan"
+action.addToPlaylist.duplicateFromAlbum: '{count} dari {total} trek dari album ini sudah ada di "{playlist}".'
+action.addToPlaylist.duplicateFromPlaylist: '{count} dari {total} trek dari daftar putar ini sudah ada di "{playlist}".'
+action.addToPlaylist.duplicateFromSelection: '{count} dari {total} trek terpilih sudah ada di "{playlist}".'
 action.addToPlaylist.duplicateOne: "'{songName}' sudah ada di daftar putar '{playlist}' Anda."
+action.addToPlaylist.duplicateOneShort: '"{songName}" sudah ada di "{playlist}".'
 action.addToPlaylist.duplicateTitle: Lagu Duplikat
+action.addToPlaylist.failed: Gagal menambahkan ke daftar putar
+action.addToPlaylist.folderCount: "{count} daftar putar"
+action.addToPlaylist.multipleSubtitle: "{songName}"
+action.addToPlaylist.multipleSubtitleTracks: "{count} trek"
+action.addToPlaylist.multipleTitle: Tambah ke Beberapa Daftar Putar
+action.addToPlaylist.noResults: Daftar putar tidak ditemukan
+action.addToPlaylist.nothingNew: Tidak ada yang baru untuk ditambahkan
+action.addToPlaylist.recent: Terbaru
 action.addToPlaylist.search: Cari Daftar Putar
+action.addToPlaylist.skipDuplicates: Lewati duplikat
+action.addToPlaylist.toggleFolder: Alihkan folder
+action.addToPlaylist.tracksCount: "{count} trek"
 action.addToQueue: Tambahkan ke Antrian
 action.addToQueue.error: Gagal Menambahkan ke Antrean
 action.addToQueue.success: Ditambahkan ke Antrean
@@ -153,6 +176,7 @@ action.sidebar.signIn: Masuk ke {account}
 action.sidebar.signIn.with: Masuk dengan {account}
 action.signIn: Masuk
 action.signOut: Keluar
+action.skip: Lewati
 action.smartQueue.disable: Nonaktifkan Antrean Pintar
 action.smartQueue.enable: Aktifkan Antrean Pintar
 action.smartQueue.requiresAutomix: Smart Queue memerlukan Automix
@@ -850,6 +874,7 @@ oobe.visual.subtitle: ""
 oobe.visual.text: ""
 oobe.visual.title: Visual
 oobe.welcome.getStarted: Mulai
+oobe.welcome.importSettings: Impor pengaturan…
 oobe.welcome.selectLanguage: Pilih bahasa pilihan Anda
 oobe.window.subtitle: Pilih bagaimana jendela aplikasi berintegrasi dengan lingkungan desktop Anda
 oobe.window.title: Gaya Jendela
@@ -1731,6 +1756,8 @@ settings.option.advanced.playlistTrackMapping.description: Mengaktifkan pemindai
 settings.option.advanced.powerUsage.description: Dipindahkan — batas framerate, pilihan perender, dan fitur visual yang berat.
 settings.option.advanced.progressBar: Bilah Kemajuan
 settings.option.advanced.progressBar.useAccentColor: Gunakan Warna Aksen
+settings.option.advanced.resetCider: Atur Ulang Cider
+settings.option.advanced.resetCider.description: Atur ulang preferensi, cache, dan data lokal. Apple Music dan Taproom akan tetap masuk kecuali Anda memilih sebaliknya.
 settings.option.advanced.resizableMiniplayer: Miniplayer yang Dapat Diubah Ukurannya
 settings.option.advanced.richAlbumGrid: Kisi Album Kaya
 settings.option.advanced.richAlbumGrid.alwaysNavigateToPage: Selalu Navigasikan ke Halaman
@@ -2501,6 +2528,39 @@ settings.prompt.visual.plugin.github.URL: Masukkan URL plugin yang ingin Anda in
 settings.prompt.visual.theme.github.URL: Masukkan URL tema yang ingin Anda instal
 settings.prompt.visual.theme.uninstallTheme: Apakah Anda yakin ingin menghapus instalasi {{theme}}?
 settings.requiresNewerClient: Memerlukan klien Cider yang lebih baru.
+settings.resetCider.category.appleMusic: Keluar dari Apple Music
+settings.resetCider.category.appleMusic.desc: Hapus akun Apple Music dari perangkat ini
+settings.resetCider.category.caches: Cache
+settings.resetCider.category.caches.desc: Artwork, perpustakaan, beranda, dan cache luring lainnya
+settings.resetCider.category.integrations: Login integrasi
+settings.resetCider.category.integrations.desc: Last.fm, ListenBrainz, dan rahasia scrobbler lainnya
+settings.resetCider.category.localMusic: Database perpustakaan Musik Lokal
+settings.resetCider.category.localMusic.desc: Menghapus indeks perpustakaan lokal Cider, bukan file musik Anda
+settings.resetCider.category.playback: Riwayat pemutaran & antrean
+settings.resetCider.category.playback.desc: Antrean tersimpan, volume, dan pendamping pemutaran
+settings.resetCider.category.rerunSetup: Jalankan ulang asisten pengaturan
+settings.resetCider.category.rerunSetup.desc: Tampilkan pengaturan awal lagi setelah memulai ulang
+settings.resetCider.category.settings: Pengaturan & preferensi aplikasi
+settings.resetCider.category.settings.desc: Pulihkan preferensi Cider ke default
+settings.resetCider.category.taproom: Keluar dari Taproom
+settings.resetCider.category.taproom.desc: Hapus akun Cider / Taproom dari perangkat ini
+settings.resetCider.category.themesPlugins: Tema & plugin terinstal
+settings.resetCider.category.themesPlugins.desc: Hapus tema marketplace, plugin, dan daftar pengaktifan
+settings.resetCider.category.windowClient: Posisi jendela & opsi klien
+settings.resetCider.category.windowClient.desc: Ukuran/posisi jendela dan flag klien bawaan
+settings.resetCider.confirm.ok: Atur Ulang Cider
+settings.resetCider.confirm.title: Atur Ulang Cider?
+settings.resetCider.confirm.warning: Tindakan ini tidak dapat dibatalkan. Cider akan dimulai ulang setelah diatur ulang.
+settings.resetCider.confirm.willReset: Akan mengatur ulang
+settings.resetCider.error: Terjadi kesalahan saat mengatur ulang.
+settings.resetCider.group.accounts: Akun
+settings.resetCider.group.core: Atur Ulang
+settings.resetCider.hostFallback: Preferensi dan cache telah dihapus. Beberapa file terinstal mungkin tetap ada hingga klien diperbarui.
+settings.resetCider.intro: Pilih apa yang ingin diatur ulang. Apple Music dan Taproom akan tetap masuk kecuali Anda memilih keluar. Ekspor pengaturan Anda terlebih dahulu jika ingin membuat cadangan.
+settings.resetCider.resetButton: Atur Ulang Cider
+settings.resetCider.resetting: Mengatur ulang…
+settings.resetCider.selectAll: Pilih semua
+settings.resetCider.title: Atur Ulang Cider
 settings.sleepTimer.endsIn: "Berakhir dalam: {{remainingTime}} ({{endTime}})"
 settings.sleepTimer.notSet: Timer tidak diatur
 settings.sleepTimer.title: Atur Timer Tidur

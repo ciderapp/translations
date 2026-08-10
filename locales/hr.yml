@@ -56,18 +56,25 @@ action.addToPlaylist.addAnyway:
   by: "@Vudgekek"
   issue: 5
   superseded_at: 2026-07-08
+action.addToPlaylist.addCount: Dodaj ({count})
 action.addToPlaylist.added:
   value: Dodano {count} {tracks} u {playlist}
   source: ai
   by: "@Vudgekek"
   issue: 5
   superseded_at: 2026-07-08
+action.addToPlaylist.addedMultiple: Dodano u {count} popisa s pjesmama
+action.addToPlaylist.addingMultiple: Dodavanje u popise s pjesmama...
 action.addToPlaylist.addNew:
   value: Dodaj novi
   source: ai
   by: "@Vudgekek"
   issue: 5
   superseded_at: 2026-07-08
+action.addToPlaylist.addToMultiple: Dodaj u više popisa...
+action.addToPlaylist.alreadyIn: Već je na popisu s pjesmama
+action.addToPlaylist.checking: Provjera…
+action.addToPlaylist.containsSome: Sadrži {count} od {total}
 action.addToPlaylist.dontAdd:
   value: Nemoj dodati
   source: ai
@@ -80,24 +87,40 @@ action.addToPlaylist.duplicate:
   by: "@Vudgekek"
   issue: 5
   superseded_at: 2026-07-08
+action.addToPlaylist.duplicateBreakdown: "{count} novih · {duplicateCount} već dodano"
+action.addToPlaylist.duplicateFromAlbum: '{count} od {total} pjesama s ovog albuma već postoji u "{playlist}".'
+action.addToPlaylist.duplicateFromPlaylist: '{count} od {total} pjesama s ovog popisa već postoji u "{playlist}".'
+action.addToPlaylist.duplicateFromSelection: '{count} od {total} odabranih pjesama već postoji u "{playlist}".'
 action.addToPlaylist.duplicateOne:
   value: "'{songName}' već se nalazi u vašem popisu pjesama '{playlist}'."
   source: ai
   by: "@Vudgekek"
   issue: 5
   superseded_at: 2026-07-08
+action.addToPlaylist.duplicateOneShort: '"{songName}" već postoji u "{playlist}".'
 action.addToPlaylist.duplicateTitle:
   value: Duplicirane pjesme
   source: ai
   by: "@Vudgekek"
   issue: 5
   superseded_at: 2026-07-08
+action.addToPlaylist.failed: Dodavanje u popis s pjesmama nije uspjelo
+action.addToPlaylist.folderCount: "{count} popisa s pjesmama"
+action.addToPlaylist.multipleSubtitle: "{songName}"
+action.addToPlaylist.multipleSubtitleTracks: "{count} pjesama"
+action.addToPlaylist.multipleTitle: Dodaj u više popisa s pjesmama
+action.addToPlaylist.noResults: Nema pronađenih popisa s pjesmama
+action.addToPlaylist.nothingNew: Nema ništa novo za dodati
+action.addToPlaylist.recent: Nedavno
 action.addToPlaylist.search:
   value: Pretraži popise pjesama
   source: ai
   by: "@Vudgekek"
   issue: 5
   superseded_at: 2026-07-08
+action.addToPlaylist.skipDuplicates: Preskoči duplikate
+action.addToPlaylist.toggleFolder: Prikaži/sakrij mapu
+action.addToPlaylist.tracksCount: "{count} pjesama"
 action.addToQueue:
   value: Dodaj u red čekanja
   source: human
@@ -625,6 +648,7 @@ action.sidebar.signIn: Prijavi se u {account}
 action.sidebar.signIn.with: Prijavi se putem {account}
 action.signIn: Prijavi se
 action.signOut: Odjavi se
+action.skip: Preskoči
 action.smartQueue.disable: Onemogući pametni red
 action.smartQueue.enable: Omogući pametni red
 action.smartQueue.requiresAutomix: Smart Queue zahtijeva Automix
@@ -1322,6 +1346,7 @@ oobe.visual.subtitle: ""
 oobe.visual.text: ""
 oobe.visual.title: Izgled
 oobe.welcome.getStarted: Započnite
+oobe.welcome.importSettings: Uvezi postavke…
 oobe.welcome.selectLanguage: Odaberite željeni jezik
 oobe.window.subtitle: Odaberite kako se prozor aplikacije integrira s vašim radnim okruženjem
 oobe.window.title: Stil prozora
@@ -2203,6 +2228,8 @@ settings.option.advanced.playlistTrackMapping.description: Omogućuje dubinsko s
 settings.option.advanced.powerUsage.description: Premješteno — ograničenja broja sličica u sekundi, odabir iscrtavača i zahtjevne vizualne značajke.
 settings.option.advanced.progressBar: Traka napretka
 settings.option.advanced.progressBar.useAccentColor: Koristi istaknutu boju
+settings.option.advanced.resetCider: Ponovno postavi Cider
+settings.option.advanced.resetCider.description: Ponovno postavite postavke, predmemoriju i lokalne podatke. Apple Music i Taproom ostaju prijavljeni osim ako ne odaberete drugačije.
 settings.option.advanced.resizableMiniplayer: Mini-reproduktor s promjenjivom veličinom
 settings.option.advanced.richAlbumGrid: Bogata mreža albuma
 settings.option.advanced.richAlbumGrid.alwaysNavigateToPage: Uvijek navigiraj na stranicu
@@ -2973,6 +3000,39 @@ settings.prompt.visual.plugin.github.URL: Unesite URL dodatka koji želite insta
 settings.prompt.visual.theme.github.URL: Unesite URL teme koju želite instalirati
 settings.prompt.visual.theme.uninstallTheme: Sigurno želite deinstalirati {{theme}}?
 settings.requiresNewerClient: Zahtijeva noviju verziju klijenta Cider.
+settings.resetCider.category.appleMusic: Odjava iz usluge Apple Music
+settings.resetCider.category.appleMusic.desc: Uklonite Apple Music račun s ovog uređaja
+settings.resetCider.category.caches: Predmemorije
+settings.resetCider.category.caches.desc: Omoti, knjižnica, početna stranica i ostale izvanmrežne predmemorije
+settings.resetCider.category.integrations: Prijave za integracije
+settings.resetCider.category.integrations.desc: Last.fm, ListenBrainz i ostali podaci za scrobblere
+settings.resetCider.category.localMusic: Baza podataka lokalne glazbene knjižnice
+settings.resetCider.category.localMusic.desc: Briše lokalni indeks knjižnice aplikacije Cider, a ne vaše glazbene datoteke
+settings.resetCider.category.playback: Povijest reprodukcije i redoslijeda
+settings.resetCider.category.playback.desc: Spremljeni redoslijed, glasnoća i dodaci za reprodukciju
+settings.resetCider.category.rerunSetup: Ponovno pokreni pomoćnika za postavljanje
+settings.resetCider.category.rerunSetup.desc: Ponovno prikaži početno postavljanje nakon ponovnog pokretanja
+settings.resetCider.category.settings: Postavke i preferencije aplikacije
+settings.resetCider.category.settings.desc: Vratite postavke aplikacije Cider na zadane vrijednosti
+settings.resetCider.category.taproom: Odjava iz usluge Taproom
+settings.resetCider.category.taproom.desc: Uklonite Cider / Taproom račun s ovog uređaja
+settings.resetCider.category.themesPlugins: Instalirane teme i dodaci
+settings.resetCider.category.themesPlugins.desc: Uklonite teme iz trgovine, dodatke i popise omogućenih stavki
+settings.resetCider.category.windowClient: Položaj prozora i opcije klijenta
+settings.resetCider.category.windowClient.desc: Veličina/položaj prozora i nativne zastavice klijenta
+settings.resetCider.confirm.ok: Ponovno postavi Cider
+settings.resetCider.confirm.title: Ponovno postaviti Cider?
+settings.resetCider.confirm.warning: Ova se radnja ne može poništiti. Cider će se ponovno pokrenuti nakon ponovnog postavljanja.
+settings.resetCider.confirm.willReset: Bit će ponovno postavljeno
+settings.resetCider.error: Došlo je do pogreške tijekom ponovnog postavljanja.
+settings.resetCider.group.accounts: Računi
+settings.resetCider.group.core: Ponovno postavljanje
+settings.resetCider.hostFallback: Postavke i predmemorije su izbrisane. Neke instalirane datoteke mogu ostati dok se klijent ne ažurira.
+settings.resetCider.intro: Odaberite što želite ponovno postaviti. Apple Music i Taproom ostaju prijavljeni osim ako ne odaberete drugačije. Prvo izvezite svoje postavke ako želite sigurnosnu kopiju.
+settings.resetCider.resetButton: Ponovno postavi Cider
+settings.resetCider.resetting: Ponovno postavljanje…
+settings.resetCider.selectAll: Odaberi sve
+settings.resetCider.title: Ponovno postavljanje aplikacije Cider
 settings.sleepTimer.endsIn: "Završava za: {{remainingTime}} ({{endTime}})"
 settings.sleepTimer.notSet: Mjerač vremena nije postavljen
 settings.sleepTimer.title: Postavi mjerač vremena spavanja

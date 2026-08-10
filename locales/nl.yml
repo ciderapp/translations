@@ -8,13 +8,36 @@ action.addToLibrary.success: Toegevoegd aan bibliotheek
 action.addToPlaylist: Voeg toe aan afspeellijst
 action.addToPlaylist.addAll: Voeg alles toe
 action.addToPlaylist.addAnyway: Toch toevoegen
+action.addToPlaylist.addCount: Toevoegen ({count})
 action.addToPlaylist.added: "{count} {tracks} toegevoegd aan {playlist}"
+action.addToPlaylist.addedMultiple: Toegevoegd aan {count} afspeellijsten
+action.addToPlaylist.addingMultiple: Toevoegen aan afspeellijsten...
 action.addToPlaylist.addNew: Nieuwe toevoegen
+action.addToPlaylist.addToMultiple: Toevoegen aan meerdere...
+action.addToPlaylist.alreadyIn: Al in afspeellijst
+action.addToPlaylist.checking: Controleren…
+action.addToPlaylist.containsSome: Bevat {count} van {total}
 action.addToPlaylist.dontAdd: Niet toevoegen
 action.addToPlaylist.duplicate: "{count} {tracks} bestaan al in '{playlist}'. Wil je deze overslaan?"
+action.addToPlaylist.duplicateBreakdown: "{count} nieuw · {duplicateCount} al toegevoegd"
+action.addToPlaylist.duplicateFromAlbum: '{count} van de {total} nummers van dit album staan al in "{playlist}".'
+action.addToPlaylist.duplicateFromPlaylist: '{count} van de {total} nummers uit deze afspeellijst staan al in "{playlist}".'
+action.addToPlaylist.duplicateFromSelection: '{count} van de {total} geselecteerde nummers staan al in "{playlist}".'
 action.addToPlaylist.duplicateOne: "'{songName}' staat al in je afspeellijst '{playlist}'."
+action.addToPlaylist.duplicateOneShort: '"{songName}" staat al in "{playlist}".'
 action.addToPlaylist.duplicateTitle: Dubbele nummers
+action.addToPlaylist.failed: Toevoegen aan afspeellijst mislukt
+action.addToPlaylist.folderCount: "{count} afspeellijsten"
+action.addToPlaylist.multipleSubtitle: "{songName}"
+action.addToPlaylist.multipleSubtitleTracks: "{count} nummers"
+action.addToPlaylist.multipleTitle: Toevoegen aan meerdere afspeellijsten
+action.addToPlaylist.noResults: Geen afspeellijsten gevonden
+action.addToPlaylist.nothingNew: Niets nieuws toe te voegen
+action.addToPlaylist.recent: Recent
 action.addToPlaylist.search: Zoek in afspeellijsten
+action.addToPlaylist.skipDuplicates: Duplicaten overslaan
+action.addToPlaylist.toggleFolder: Map in-/uitvouwen
+action.addToPlaylist.tracksCount: "{count} nummers"
 action.addToQueue: Toevoegen aan wachtrij
 action.addToQueue.error: Fout bij toevoegen aan wachtrij
 action.addToQueue.success: Toegevoegd aan wachtrij
@@ -153,6 +176,7 @@ action.sidebar.signIn: Log in bij {account}
 action.sidebar.signIn.with: Log in met {account}
 action.signIn: Log in
 action.signOut: Log uit
+action.skip: Overslaan
 action.smartQueue.disable: Slimme wachtrij uitschakelen
 action.smartQueue.enable: Slimme wachtrij inschakelen
 action.smartQueue.requiresAutomix: Smart Queue vereist Automix
@@ -850,6 +874,7 @@ oobe.visual.subtitle: ""
 oobe.visual.text: ""
 oobe.visual.title: Visueel
 oobe.welcome.getStarted: Aan de slag
+oobe.welcome.importSettings: Instellingen importeren…
 oobe.welcome.selectLanguage: Selecteer je voorkeurstaal
 oobe.window.subtitle: Kies hoe het app-venster integreert met je bureaubladomgeving
 oobe.window.title: Vensterstijl
@@ -1731,6 +1756,8 @@ settings.option.advanced.playlistTrackMapping.description: Schakelt diep scannen
 settings.option.advanced.powerUsage.description: Verplaatst — frameratelimieten, rendererkeuze en veeleisende visuele functies.
 settings.option.advanced.progressBar: Voortgangsbalk
 settings.option.advanced.progressBar.useAccentColor: Accentkleur gebruiken
+settings.option.advanced.resetCider: Cider resetten
+settings.option.advanced.resetCider.description: Reset voorkeuren, caches en lokale gegevens. Je blijft aangemeld bij Apple Music en Taproom, tenzij je anders kiest.
 settings.option.advanced.resizableMiniplayer: Aanpasbare miniplayer
 settings.option.advanced.richAlbumGrid: Rijk albumraster
 settings.option.advanced.richAlbumGrid.alwaysNavigateToPage: Altijd naar pagina navigeren
@@ -2501,6 +2528,39 @@ settings.prompt.visual.plugin.github.URL: Voer de URL in van de plugin die je wi
 settings.prompt.visual.theme.github.URL: Voer de URL in van het thema dat je wilt installeren
 settings.prompt.visual.theme.uninstallTheme: Weet je zeker dat je {{theme}} wilt verwijderen?
 settings.requiresNewerClient: Vereist een nieuwere Cider-client.
+settings.resetCider.category.appleMusic: Meld af bij Apple Music
+settings.resetCider.category.appleMusic.desc: Verwijder het Apple Music-account van dit apparaat
+settings.resetCider.category.caches: Caches
+settings.resetCider.category.caches.desc: Coverafbeeldingen, bibliotheek, home en andere offline caches
+settings.resetCider.category.integrations: Inloggegevens voor integraties
+settings.resetCider.category.integrations.desc: Last.fm, ListenBrainz en andere scrobbler-tokens
+settings.resetCider.category.localMusic: Database van lokale muziekbibliotheek
+settings.resetCider.category.localMusic.desc: Wist de lokale bibliotheekindex van Cider, niet je muziekbestanden
+settings.resetCider.category.playback: Afspeel- en wachtrijgeschiedenis
+settings.resetCider.category.playback.desc: Opgeslagen wachtrij, volume en afspeeltools
+settings.resetCider.category.rerunSetup: Configuratie-assistent opnieuw uitvoeren
+settings.resetCider.category.rerunSetup.desc: Toon de eerste configuratie opnieuw na het herstarten
+settings.resetCider.category.settings: App-instellingen en voorkeuren
+settings.resetCider.category.settings.desc: Herstel de voorkeuren van Cider naar de standaardwaarden
+settings.resetCider.category.taproom: Meld af bij Taproom
+settings.resetCider.category.taproom.desc: Verwijder het Cider- / Taproom-account van dit apparaat
+settings.resetCider.category.themesPlugins: Geïnstalleerde thema's en plug-ins
+settings.resetCider.category.themesPlugins.desc: Verwijder marketplace-thema's, plug-ins en activeringslijsten
+settings.resetCider.category.windowClient: Vensterpositie en clientopties
+settings.resetCider.category.windowClient.desc: Venstergrootte/-positie en systeemeigen client-flags
+settings.resetCider.confirm.ok: Cider resetten
+settings.resetCider.confirm.title: Cider resetten?
+settings.resetCider.confirm.warning: Dit kan niet ongedaan worden gemaakt. Cider start opnieuw op na het resetten.
+settings.resetCider.confirm.willReset: Wordt gereset
+settings.resetCider.error: Er is iets misgegaan tijdens het resetten.
+settings.resetCider.group.accounts: Accounts
+settings.resetCider.group.core: Resetten
+settings.resetCider.hostFallback: Voorkeuren en caches zijn gewist. Sommige geïnstalleerde bestanden kunnen achterblijven totdat de client is bijgewerkt.
+settings.resetCider.intro: Kies wat je wilt resetten. Je blijft aangemeld bij Apple Music en Taproom, tenzij je je hiervoor afmeldt. Exporteer eerst je instellingen als je een back-up wilt maken.
+settings.resetCider.resetButton: Cider resetten
+settings.resetCider.resetting: Resetten…
+settings.resetCider.selectAll: Alles selecteren
+settings.resetCider.title: Cider resetten
 settings.sleepTimer.endsIn: "Eindigt over: {{remainingTime}} ({{endTime}})"
 settings.sleepTimer.notSet: Timer is niet ingesteld
 settings.sleepTimer.title: Sluimertimer instellen
