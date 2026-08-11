@@ -82,7 +82,8 @@ Every entry below came from a community member through a [translation issue](../
 | [@nekocats](https://github.com/nekocats) | Estonian | 42 |
 | [@MP-K](https://github.com/MP-K) | Korean | 27 |
 | [@ramuuflor](https://github.com/ramuuflor) | Japanese | 22 |
-| [@itsmeares](https://github.com/itsmeares) | Turkish | 17 |
+| [@itsmeares](https://github.com/itsmeares) | Turkish | 16 |
+| [@emirasaf](https://github.com/emirasaf) | Turkish | 11 |
 | [@UnoPanduo](https://github.com/UnoPanduo) | Dutch | 1 |
 <!-- translators:end -->
 
