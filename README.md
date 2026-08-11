@@ -73,8 +73,8 @@ Every entry below came from a community member through a [translation issue](../
 <!-- translators:start -->
 | Translator | Languages | Entries |
 | --- | --- | --- |
-| [@Tesutarin](https://github.com/Tesutarin) | Chinese (Simplified) | 2420 |
-| [@jay900604](https://github.com/jay900604) | Chinese (Hong Kong), Chinese (Simplified), Chinese (Traditional) | 824 |
+| [@Tesutarin](https://github.com/Tesutarin) | Chinese (Simplified) | 2367 |
+| [@jay900604](https://github.com/jay900604) | Chinese (Hong Kong), Chinese (Simplified), Chinese (Traditional) | 894 |
 | [@kinlay0](https://github.com/kinlay0) | Russian | 204 |
 | [@szymin22](https://github.com/szymin22) | Polish | 111 |
 | [@Vudgekek](https://github.com/Vudgekek) | Croatian | 103 |
