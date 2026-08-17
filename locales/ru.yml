@@ -20,12 +20,15 @@ action.addToPlaylist.addAll: Добавить все
 action.addToPlaylist.addAnyway: Всё равно добавить
 action.addToPlaylist.addCount: Добавить ({count})
 action.addToPlaylist.added:
-  value: Добавлено {count} {tracks} в {playlist}
-  source: ai
+  value: "В «{playlist}» добавлено треков: {count}"
+  source: human
   by: "@kinlay0"
-  issue: 13
-  superseded_at: 2026-07-08
-action.addToPlaylist.addedMultiple: Добавлено в {count} плейлистов
+  issue: 78
+action.addToPlaylist.addedMultiple:
+  value: Добавлено в плейлисты ({count})
+  source: human
+  by: "@kinlay0"
+  issue: 78
 action.addToPlaylist.addingMultiple: Добавление в плейлисты...
 action.addToPlaylist.addNew: Создать новый
 action.addToPlaylist.addToMultiple: Добавить в несколько...
@@ -57,9 +60,17 @@ action.addToPlaylist.duplicateTitle:
   issue: 27
   superseded_at: 2026-07-08
 action.addToPlaylist.failed: Не удалось добавить в плейлист
-action.addToPlaylist.folderCount: "{count} плейлистов"
+action.addToPlaylist.folderCount:
+  value: "Плейлистов: {count}"
+  source: human
+  by: "@kinlay0"
+  issue: 78
 action.addToPlaylist.multipleSubtitle: "{songName}"
-action.addToPlaylist.multipleSubtitleTracks: "{count} треков"
+action.addToPlaylist.multipleSubtitleTracks:
+  value: "Треков: {count}"
+  source: human
+  by: "@kinlay0"
+  issue: 78
 action.addToPlaylist.multipleTitle: Добавить в несколько плейлистов
 action.addToPlaylist.noResults: Плейлисты не найдены
 action.addToPlaylist.nothingNew: Нет новых треков для добавления
@@ -67,7 +78,11 @@ action.addToPlaylist.recent: Недавние
 action.addToPlaylist.search: Поиск плейлистов
 action.addToPlaylist.skipDuplicates: Пропустить дубликаты
 action.addToPlaylist.toggleFolder: Свернуть/развернуть папку
-action.addToPlaylist.tracksCount: "{count} треков"
+action.addToPlaylist.tracksCount:
+  value: "Треков: {count}"
+  source: human
+  by: "@kinlay0"
+  issue: 78
 action.addToQueue:
   value: Добавить в очередь
   source: human
@@ -814,9 +829,17 @@ library.releaseType: Тип релиза
 library.releaseTypeAlbums: Только альбомы
 library.releaseTypeAll: Все релизы
 library.releaseTypeSingles: Синглы и EP
-library.sync.indeterminate: Синхронизация {count} {items}…
+library.sync.indeterminate:
+  value: "Синхронизация объектов: {count}…"
+  source: human
+  by: "@kinlay0"
+  issue: 78
 library.sync.indeterminateUnknown: Синхронизация медиатеки…
-library.sync.progress: Синхронизация {count} {items}, осталось {remaining}
+library.sync.progress:
+  value: "Синхронизация объектов: {count}, осталось {remaining}"
+  source: human
+  by: "@kinlay0"
+  issue: 78
 locale.lang.ar: Арабский
 locale.lang.de: Немецкий
 locale.lang.en: Английский
@@ -1279,7 +1302,11 @@ playbackHealth.backgroundFreeze.learnMore: Подробнее
 playbackHealth.backgroundFreeze.title: Система приостановила работу Cider в фоновом режиме
 playlist.collaborative.tooltip: Этот плейлист открыт для соавторов
 playlist.collaborators.andOthers: "{{name}} и еще {{count}}"
-playlist.collaborators.count: "{{count}} соавторов"
+playlist.collaborators.count:
+  value: "Соавторов: {{count}}"
+  source: human
+  by: "@kinlay0"
+  issue: 78
 playlist.collaborators.owner: Владелец
 playlist.collaborators.pair: "{{a}} и {{b}}"
 playlist.description: Описание плейлиста
@@ -3545,11 +3572,23 @@ smartPlaylist.mix.building.counter.artists:
   source: human
   by: "@kinlay0"
   issue: 27
-smartPlaylist.mix.building.counter.candidates: "{count} кандидатов"
-smartPlaylist.mix.building.counter.matches: "{count} совпадений"
+smartPlaylist.mix.building.counter.candidates:
+  value: "Кандидатов: {count}"
+  source: human
+  by: "@kinlay0"
+  issue: 78
+smartPlaylist.mix.building.counter.matches:
+  value: "Совпадений: {count}"
+  source: human
+  by: "@kinlay0"
+  issue: 78
 smartPlaylist.mix.building.counter.tracks: "{done} / {total} треков"
 smartPlaylist.mix.building.fetchingBpm: Поиск данных о темпе
-smartPlaylist.mix.building.filteringCandidates: Фильтрация {count} кандидатов
+smartPlaylist.mix.building.filteringCandidates:
+  value: "Фильтрация кандидатов: {count}"
+  source: human
+  by: "@kinlay0"
+  issue: 78
 smartPlaylist.mix.building.loadingLibrary: Загрузка медиатеки…
 smartPlaylist.mix.building.phase.catalog: Каталог
 smartPlaylist.mix.building.phase.flow: Поток
@@ -3785,7 +3824,11 @@ term.credits: Авторы
 term.curators: Кураторы
 term.current: Текущий
 term.date: Дата
-term.days: дней
+term.days:
+  value: дн.
+  source: human
+  by: "@kinlay0"
+  issue: 78
 term.defaultPresets: Стандартные пресеты
 term.defaultView: Вид по умолчанию
 term.deletedpreset: Пресет удален
@@ -4141,13 +4184,37 @@ term.themeManager: Менеджер тем
 term.themes: Темы
 term.time: Время
 term.time.added: Добавлено
-term.time.day.one: день
-term.time.day.other: дней
-term.time.hour.one: час
-term.time.hour.other: часов
+term.time.day.one:
+  value: дн.
+  source: human
+  by: "@kinlay0"
+  issue: 78
+term.time.day.other:
+  value: дн.
+  source: human
+  by: "@kinlay0"
+  issue: 78
+term.time.hour.one:
+  value: ч
+  source: human
+  by: "@kinlay0"
+  issue: 78
+term.time.hour.other:
+  value: ч
+  source: human
+  by: "@kinlay0"
+  issue: 78
 term.time.hours: часов
-term.time.minute.one: минута
-term.time.minute.other: минут
+term.time.minute.one:
+  value: мин
+  source: human
+  by: "@kinlay0"
+  issue: 78
+term.time.minute.other:
+  value: мин
+  source: human
+  by: "@kinlay0"
+  issue: 78
 term.time.passed:
   value: "{{count}} {{days}} назад"
   source: ai
@@ -4183,7 +4250,11 @@ term.track.one: трек
 term.track.other: треков
 term.trackName: Название трека
 term.tracks: треки
-term.tracks.count.toast: "{{verb}} {{count}} треков"
+term.tracks.count.toast:
+  value: "{{verb}}. Треков: {{count}}"
+  source: human
+  by: "@kinlay0"
+  issue: 78
 term.true: истина
 term.unavailableTrack: Недоступно
 term.uniqueAlbums: Уникальные альбомы
