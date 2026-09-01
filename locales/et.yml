@@ -697,9 +697,12 @@ lyrics.contrib.notify.importFailed: Laulusõnade importimine ebaõnnestus.
 lyrics.contrib.notify.importNone: Selle loo jaoks pole imporditavaid laulusõnu saadaval.
 lyrics.contrib.notify.noCurrent: Hetkel ei esitata ühtegi lugu.
 lyrics.contrib.notify.notLoggedIn: Laulusõnade üleslaadimiseks pead sisse logima.
+lyrics.contrib.notify.profileRequired: Enne laulusõnade üleslaadimist loo kaasautori profiil.
 lyrics.contrib.notify.submitFailed: Laulusõnade esitamine ebaõnnestus.
 lyrics.contrib.notify.submitted: Laulusõnad on esitatud — aitäh panustamast!
 lyrics.contrib.preview.empty: Laulusõnade eelvaate kuvamiseks kleebi või impordi siia TTML.
+lyrics.contrib.profile.nameRules: Kasuta 3 kuni 24 tähte, numbrit, sidekriipsu või alakriipsu.
+lyrics.contrib.profile.signedOut: Pead olema sisse logitud.
 lyrics.contrib.signin.button: Logi sisse Cider Taproomi kaudu
 lyrics.contrib.signin.manual: Sisesta pääsutõend käsitsi
 lyrics.contrib.signin.sub: Ühenda oma Cider Taproomi konto, et laadida üles laulusõnu ja ilmuda edetabelisse.
@@ -751,6 +754,7 @@ lyrics.contrib.upload.noResults: Laule ei leitud.
 lyrics.contrib.upload.openWindow: Ava aknas
 lyrics.contrib.upload.preview: Eelvaade
 lyrics.contrib.upload.searchPlaceholder: Otsi Apple Music kataloogist…
+lyrics.contrib.upload.signedOut: Laulusõnade üleslaadimiseks logi sisse oma Cider Taproomi kontole.
 lyrics.contrib.upload.submit: Saada laulusõnad
 lyrics.contrib.upload.submitting: Saatmine…
 lyrics.contrib.upload.track: Lugu
@@ -1102,6 +1106,18 @@ settings.about.sponsors.opencollective: Open Collective
 settings.about.thirdPartyLicenses: Kolmandate osapoolte litsentsid
 settings.about.thirdPartyLicenses.desc: Need on kolmandate osapoolte varad, teegid ja tööriistad, mida Cider kasutab. Lisateabe saamiseks vaadake nende vastavaid litsentse.
 settings.about.viewLicense: Vaata litsentsi
+settings.accessibility.card.textSize: Tekst ja suurus
+settings.accessibility.card.visibility: Nähtavus
+settings.accessibility.section.display: Kuva
+settings.accessibility.section.display.description: Teksti paksus, liidese skaala, kontrast ja fookuse indikaatorid.
+settings.accessibility.section.motion: Liikumine
+settings.accessibility.section.motion.description: Kui palju animatsioone nupud, kaardid ja muud pinnad kasutavad.
+settings.accessibility.section.soundEffects: Heliefektid
+settings.accessibility.section.soundEffects.description: Liidese helid nuppude, lülitite ja liugurite jaoks ning nende helitugevus.
+settings.advanced.section.backups: Varukoopiad ja lähtestamine
+settings.advanced.section.backups.description: Salvesta oma seadete koopia, taasta Cideri salvestatud koopia või lähtesta kõik vaikeseadetele.
+settings.advanced.section.client: See klient
+settings.advanced.section.client.description: Jõudluse piirangud ja seaded, mis kuuluvad pigem Cideri rakendusele kui sinu kontole.
 settings.airplay.installed.message: AirPlay on installitud
 settings.airplay.installed.title: AirPlay on installitud
 settings.airplay.requiresCiderAudio: Nõuab, et CiderAudio oleks sisse lülitatud
@@ -1122,6 +1138,9 @@ settings.audio.atmosMode: Atmos-režiim
 settings.audio.atmosMode.switchFromPassthroughConfirm: Läbipääsurežiimilt ümberlülitumine nõuab rakenduse värskendamist. Kas jätkata?
 settings.audio.atmosMode.switchToPassthroughConfirm: Läbipääsurežiimile lülitumine nõuab rakenduse värskendamist. Kas jätkata?
 settings.audio.automix: Automix
+settings.audio.card.advancedVolume: Täpsem helitugevus
+settings.audio.card.badges: Märgid
+settings.audio.card.streaming: Voogedastus
 settings.audio.ciderAudio: Cider Audio
 settings.audio.ciderAudio.description: Eritellimusel häälestatud ja loodud helisüsteem, mis pakub rikkalikku ja kvaliteetset helikogemust. Soovitatav traditsioonilise ekvalaiseri asemel.
 settings.audio.ciderAudio.enable: Luba Cider Audio
@@ -1184,6 +1203,17 @@ settings.audio.occlusion.passthroughNote.short: Pole saadaval, kui Atmos otseeda
 settings.audio.outputDevice: Vali heliväljundseade
 settings.audio.outputDeviceHint: Vali taasesituseks heliväljundseade.
 settings.audio.outputDeviceHintHost: Hõivatav heli on sisse lülitatud, esituseks kasutatakse seda Windowsi väljundseadet.
+settings.audio.section.ciderAudio: Cider Audio ja indikaatorid
+settings.audio.section.ciderAudio.description: Cider Audio helitöötlus ja märgid, mida kuvatakse loo esitamise ajal.
+settings.audio.section.currentSignal: Praegune signaal
+settings.audio.section.mixing: Miksimine
+settings.audio.section.mixing.description: Kuidas üks lugu sulandub järgmisesse ja kas nendevaheline paus eemaldatakse.
+settings.audio.section.output: Väljund
+settings.audio.section.output.description: Seade, mille kaudu Cider heli esitab, ja kuidas heli selleni jõuab.
+settings.audio.section.playback: Taasesitus
+settings.audio.section.playback.description: Helikvaliteet, ruumiline heli, kuulamisrežiimid ja taskuhäälingusaadete esituskiirus.
+settings.audio.section.volume: Helitugevus
+settings.audio.section.volume.description: Helitugevuse ühtlustamine, kui palju kerimisratas taset muudab ja kuidas liugur seda kuvab.
 settings.automix.allowTempoKeyShifts: Luba tempo/helistiku muutused
 settings.automix.allowTempoKeyShiftsHint: Luba väikeseid nihkeid, et hoida üleminekud energilised. (Ajutiselt keelatud, töös.)
 settings.automix.description: Nutikas üleminek lugude vahel tempo ja helistiku põhjal.
@@ -1418,12 +1448,46 @@ settings.connectivity.scrobbler.rewrite.add: Lisa reegel
 settings.connectivity.scrobbler.rewrite.match: Vaste
 settings.connectivity.scrobbler.rewrite.regex: Regex
 settings.connectivity.scrobbler.rewrite.replace: Asenda väärtusega
+settings.connectivity.scrobbler.roster.desc.lastfm: Algupärane skroblimisteenus. Logi sisse oma veebibrauseri kaudu.
+settings.connectivity.scrobbler.roster.desc.librefm: Kogukonna hallatav ja avatud. Logi sisse oma veebibrauseri kaudu.
+settings.connectivity.scrobbler.roster.desc.listenbrainz: Avatud kuulamisajalugu. Vajab kasutaja tokenit.
+settings.connectivity.scrobbler.roster.desc.maloja: Sinu isiklik server. Vajab serveri aadressi ja API-võtit.
+settings.connectivity.scrobbler.roster.footer.many: Skroblitakse {count} kontole
+settings.connectivity.scrobbler.roster.footer.one: Skroblitakse 1 kontole
+settings.connectivity.scrobbler.roster.footer.scope: Lävend, metaandmete puhastamine ja mustad nimekirjad kehtivad kõigile siinsetele kontodele.
+settings.connectivity.scrobbler.roster.lb.rejected: ListenBrainz ei aktsepteerinud seda tokenit.
+settings.connectivity.scrobbler.roster.lb.token: Kasutaja token
+settings.connectivity.scrobbler.roster.lb.token.hint: Sinu profiililehelt aadressil
+settings.connectivity.scrobbler.roster.lede: Skrobli nii paljudesse teenustesse kui soovid. Iga sisselülitatud konto saab teabe iga esituse kohta.
+settings.connectivity.scrobbler.roster.maloja.key: API-võti
+settings.connectivity.scrobbler.roster.maloja.url: Serveri aadress
+settings.connectivity.scrobbler.roster.maloja.url.hint: Aadressi eesliide ja API tee lisatakse automaatselt.
+settings.connectivity.scrobbler.roster.paused: Peatatud
+settings.connectivity.scrobbler.roster.pausedAs: Peatatud · {account}
+settings.connectivity.scrobbler.roster.reconnect: Vajalik on uuesti ühendamine
+settings.connectivity.scrobbler.roster.reconnectAction: Ühenda uuesti
+settings.connectivity.scrobbler.roster.scrobbling: Skroblimine
+settings.connectivity.scrobbler.roster.scrobblingAs: Skroblitakse kasutajana {account}
+settings.connectivity.scrobbler.roster.scrobblingTo: Skroblitakse kontole {account}
+settings.connectivity.scrobbler.roster.signOut: Logi teenusest {service} välja
+settings.connectivity.scrobbler.roster.switchLabel: Skrobli teenusesse {service}
+settings.connectivity.scrobbler.roster.waiting: Oodatakse brauserit…
+settings.connectivity.scrobbler.toast.failed: Teenusesse {services} skroblimine ebaõnnestus
+settings.connectivity.scrobbler.toast.scrobbled: Skrobliti {track} esitajalt {artist}
 settings.connectivity.scrobbler.trigger: Skroblimise käivitaja
 settings.connectivity.scrobbler.trigger.absolute: Absoluutne aeg
 settings.connectivity.scrobbler.trigger.absolute.desc: Skrobleeri pärast seda, kui lugu on mänginud nii mitu sekundit.
+settings.connectivity.scrobbler.trigger.absoluteOpt: Absoluutne aeg
+settings.connectivity.scrobbler.trigger.either: Kumb tahes enne
 settings.connectivity.scrobbler.trigger.mode: Käivitusrežiim
 settings.connectivity.scrobbler.trigger.mode.desc: Millal skrobling edastada. "Kumb tahes enne" on klassikaline Last.fm reegel.
+settings.connectivity.scrobbler.trigger.percent: Protsent
 settings.connectivity.scrobbler.zeroOff: 0 lülitab selle filtri välja.
+settings.connectivity.section.communityRatings: Kogukonna hinnangud
+settings.connectivity.section.communityRatings.description: Teiste Cideri kuulajate Dolby Atmos mikside hinnangud albumilehtedel ja see, kas sinu omi jagatakse tagasi.
+settings.connectivity.section.discord.description: Mida Cider näitab sinu Discordi profiilil muusika mängimise ajal ja millise kliendi kaudu see ühendub.
+settings.connectivity.section.externalApplications.description: WebSocketsi port ja RPC-server, mida teised programmid kasutavad taasesituse lugemiseks ja Cideri juhtimiseks, ning millistel neist on juurdepääs lubatud.
+settings.connectivity.section.parties.description: Sünkroonis kuulamine teiste Cideri kasutajatega ja see, mida külalised saavad teha sinu korraldatud pidudel.
 settings.connectivity.tokenCopied: Märgis kopeeriti lõikelauale
 settings.connectivity.tokens: Märgised
 settings.contentFilter.description: Jaotised lehtedel Sirvi ja Kuula kohe, mille pealkirjad või sisu vastavad mõnele neist märksõnadest, peidetakse.
@@ -1533,6 +1597,22 @@ settings.fonts.primary: Põhifont
 settings.fonts.primary.description: Rakenduse põhilise teksti jaoks kasutatav font
 settings.fonts.title: Fondid
 settings.gapless.description: Võimaldab heliribade sujuvat esitust ilma märgatavate pausideta.
+settings.general.card.closing: Sulgemine
+settings.general.section.cache: Vahemälu
+settings.general.section.cache.description: Salvestatud kaanekujundused ja metaandmed, mida Cider hoiab kettal, et lehed laadiksid kiiremini.
+settings.general.section.desktop: Töölaud
+settings.general.section.desktop.description: Kiirklahvid, töölauateavitused ja Cideri käitumine tegumiribal ning sulgemisel.
+settings.general.section.language: Keel
+settings.general.section.language.description: Kasutajaliidese keel ning kuidas teatada tõlgetest või märkida nende autoreid.
+settings.general.section.playback: Taasesitus
+settings.general.section.playback.description: Mida teeb esitusnupp, kui midagi ei mängita.
+settings.general.section.privacy: Privaatsus
+settings.general.section.privacy.description: Nimi, millega Cider sind tervitab, ja kas see tohib kasutada sinu asukohta.
+settings.general.section.queue: Järjekord
+settings.general.section.queue.description: Kuidas järjekord luuakse, mis on sinna lubatud ja mis taastatakse Cideri taaskäivitamisel.
+settings.general.section.sleepTimer: Unetaimer
+settings.general.section.startup: Käivitamine
+settings.general.section.startup.description: Mis vaates Cider avaneb ja mida see sinu viimasest seansist taastab.
 settings.header.accounts: Kontod
 settings.header.advanced: Täpsemalt
 settings.header.audio: Heli
@@ -1617,13 +1697,15 @@ settings.intensive.singLyricsEverywhere.description: Käivitab sõna-sõnalt Sin
 settings.intensive.viewTransitions.description: Animeerib üleminekuid mõne vaate vahetamisel.
 settings.intensive.warning: Jõudlusnõudlik — võib põhjustada suurt protsessori/graafikakaardi (CPU/GPU) koormust.
 settings.keybindings.recordingHint: Salvestamine. Tühistamiseks vajuta Escape
+settings.lyrics.card.providers: Pakkujad
+settings.lyrics.card.songOverrides: Laulupõhised erandid
 settings.lyrics.localeOverrides: Lokaadipõhised reeglid
 settings.lyrics.localeOverrides.add: Lisa lokaadi erand
 settings.lyrics.localeOverrides.audioLocale: Heli lokaat
 settings.lyrics.localeOverrides.desc: Määra kohandatud pakkuja ja tõlkeeelistused konkreetsetes keeltes lauludele. Kui laulu heli lokaat vastab reeglile, tühistavad need seaded vaikimisi seaded.
 settings.lyrics.localeOverrides.dialogTitle.add: Lisa lokaadi erand
 settings.lyrics.localeOverrides.dialogTitle.edit: Muuda lokaadi erandit
-settings.lyrics.localeOverrides.empty: Lokaadi erandeid pole seadistatud. Lisamiseks klõpsa nuppu +.
+settings.lyrics.localeOverrides.empty: Reegleid veel pole. Lisa reegel nupuga +.
 settings.lyrics.localeOverrides.overrideTranslation: Asenda tõlge
 settings.lyrics.localeOverrides.preferredProvider: Eelistatud pakkuja
 settings.lyrics.localeOverrides.provider.apple: Apple Music
@@ -1671,9 +1753,17 @@ settings.lyrics.scroll.immersive:
   issue: 41
 settings.lyrics.scroll.presets: Eelseaded
 settings.lyrics.scroll.sidebar: Külgriba
+settings.lyrics.section.advanced: Täpsemalt
+settings.lyrics.section.advanced.description: Sünkroonimise nihe, animatsiooni kaadrisagedus ja käsitsi häälestatud kerimise ajastus.
+settings.lyrics.section.display: Kuva
+settings.lyrics.section.display.description: Milliseid laulusõnade ridu kuvatakse, kuidas need animeeritakse ja kursoriga peale liikudes näidatavad ajatemplid.
+settings.lyrics.section.sources: Allikad
+settings.lyrics.section.sources.description: Kust laulusõnad pärinevad ning keele- või loopõhised reeglid, mis on vaikimisi pakkujast ülimuslikud.
+settings.lyrics.section.translation: Tõlge
+settings.lyrics.section.translation.description: Tõlgitud laulusõnad, keel, milles neid kuvatakse, ja see, kas originaal jääb ekraanile.
 settings.lyrics.trackOverrides.clearAll: Tühjenda kõik asendused
 settings.lyrics.trackOverrides.desc: Siin loetletud lood kasutavad alati sinu lukustatud laulusõnade pakkujat või käsitsi määratud vokaali olekut Apple'i edastatu asemel. Neid erandeid saab seadistada laulusõnade menüüst ja loo paremklõpsu menüüst.
-settings.lyrics.trackOverrides.empty: Loo erandeid pole seadistatud. Lukusta pakkuja laulusõnade menüüst laulu vaatamise ajal või määra loo vokaali olek selle paremklõpsu menüüst.
+settings.lyrics.trackOverrides.empty: Erandid puuduvad. Kõik, mida nendest menüüdest lukustad, kuvatakse siin.
 settings.lyrics.trackOverrides.lyricsForced: Laulusõnad sunnitud
 settings.lyrics.trackOverrides.markedInstrumental: Märgitud instrumentaaliks
 settings.lyrics.trackOverrides.providerLabel: "Pakkuja:"
@@ -1757,23 +1847,28 @@ settings.option.accessibility.motionIntensity.reduced: Vähendatud
 settings.option.accessibility.playOnHover: Esita kursoriga peale liikudes
 settings.option.accessibility.playOnHover.description: Esitab ka õrna klõpsu, kui kursor liigub interaktiivsete elementide kohale.
 settings.option.accessibility.soundEffects: Heliefektid
+settings.option.accessibility.soundPreview: Heli eelkuulamine
+settings.option.accessibility.soundPreview.description: Mängib praegusel helitugevusel näidise kasutajaliidese helidest.
 settings.option.accessibility.text: Tekst
 settings.option.accessibility.uiScale: Kasutajaliidese skaala
 settings.option.accessibility.uiScale.description: Muudab teksti ja liidese-elementide suurust. Mõned paigutuselemendid on fikseeritud suurusega ega pruugi muutuda.
 settings.option.accessibility.visibility: Nähtavus
 settings.option.accessibility.volume: Helitugevus
+settings.option.accessibility.volume.description: Kui valjusti kasutajaliidese heliefekte mängitakse.
 settings.option.advanced.clientSettings: Kliendi seaded
 settings.option.advanced.clientSettings.description: Praegusele kliendiraamistikule omased seaded
 settings.option.advanced.compactSidebar: Kompaktne külgriba
+settings.option.advanced.compactSidebar.description: Rakendub siis, kui aken on külgriba kokkupanemiseks piisavalt kitsas.
 settings.option.advanced.compactSidebar.size: Suurus
 settings.option.advanced.configBackups.description: Taasta Cideri salvestatud koopia oma seadete failist juhuks, kui sinu seaded kadusid või lähtestati.
 settings.option.advanced.experimentalFeatures: Eksperimentaalsed funktsioonid
 settings.option.advanced.experimentalFeatures.description: Arendusjärgus funktsioonid ja katsetused.
-settings.option.advanced.floatingSearch: Hõljuv otsing
+settings.option.advanced.floatingSearch: Ujuv otsinguaken
 settings.option.advanced.floatingSearch.blurBackground: Hägusta taust
 settings.option.advanced.floatingSearch.blurBackground.description: Kui see on lubatud, hägustatakse taust, kui otsinguriba on fookuses.
 settings.option.advanced.floatingSearch.clearSearchOnClose: Tühjenda otsing sulgemisel
 settings.option.advanced.floatingSearch.clearSearchOnClose.description: Kui see on lubatud, tühjendatakse otsinguriba tekst selle sulgemisel.
+settings.option.advanced.floatingSearch.description: Lehe kohal avanev otsingupaneel.
 settings.option.advanced.floatingSearch.enterShowsResults: Enter kuvab tulemused
 settings.option.advanced.floatingSearch.enterShowsResults.description: Kui see on lubatud, viib otsinguriba Enter-klahvi vajutamisel otse otsingutulemuste lehele.
 settings.option.advanced.home: Avaleht
@@ -1782,16 +1877,19 @@ settings.option.advanced.home.buttonLocation.sidebar: Külgriba
 settings.option.advanced.home.buttonLocation.sidebar2023: Külgriba (2023)
 settings.option.advanced.home.buttonLocation.topBar: Ülariba
 settings.option.advanced.immersive:
-  value: Süüviv režiim
-  source: human
+  value: Imersiivne vaade
+  source: ai
   by: "@nekocats"
   issue: 41
+  superseded_at: 2026-09-01
 settings.option.advanced.immersive.artworkHighlight: Kujunduse esiletõstmine
 settings.option.advanced.immersive.controlsTimeout: Aktiivsete juhtnuppude aegumine (sekundites)
+settings.option.advanced.immersive.description: Imersiivne vaade ise. Selle paigutus valitakse jaotises Visuaal.
 settings.option.advanced.immersive.glowEffectOnActiveLyrics: Kumaefekt aktiivsetel laulusõnadel
-settings.option.advanced.lyrics: Laulusõnad
+settings.option.advanced.lyrics: Laulusõnade animatsioon
 settings.option.advanced.lyrics.characterFlow: Voolavad tähemärgid
 settings.option.advanced.lyrics.characterFlow.description: Üksikud tähemärgid voolavad ülespoole terve rea asemel. Nõuab rohkem ressursse.
+settings.option.advanced.lyrics.description: Kuidas laulusõnade read ja tähemärgid laulu mängimise ajal liiguvad.
 settings.option.advanced.lyrics.lineStaggering: Ridade nihutamine
 settings.option.advanced.lyrics.lineStaggering.description: Järgmistel laulusõnadel on väike viivitus, kui uus aktiivne rida on fookuses
 settings.option.advanced.lyrics.lineStaggeringImmersive:
@@ -1817,15 +1915,17 @@ settings.option.advanced.mavericksLcd: Mavericks LCD
 settings.option.advanced.mavericksLcd.style: Stiil
 settings.option.advanced.mavericksLcd.style.glass: Klaas
 settings.option.advanced.mediaArtwork: Meediumi kujundus
+settings.option.advanced.mediaArtwork.controls: Kaanekujunduse esiletõstmised ja kõrglahutusega pildid
+settings.option.advanced.mediaArtwork.description: Kaanekujundused ruudustikes, loendites ja ridades kogu rakenduses.
 settings.option.advanced.notificationStyle: Teavituse stiil
 settings.option.advanced.performance: Jõudlus
 settings.option.advanced.performance.description: Kaadrisageduse piirangud, renderdaja valik ja ressursside läved.
-settings.option.advanced.playback: Taasesitus
+settings.option.advanced.playback: Taasesituse kiirus
 settings.option.advanced.playback.allowPlaybackRateChangeEverywhere: Luba laulude taasesituse kiiruse muutmine
 settings.option.advanced.playback.allowPlaybackRateChangeEverywhere.description: Vaikimisi lubatud taskuhäälingusaadete puhul. Lülita sisse, et lubada sama lihtne taasesituse kiiruse juhtimine kõigile meediumitele, sealhulgas lauludele.
 settings.option.advanced.playlistTrackMapping: Esitusloendi lugude vastendamine
 settings.option.advanced.playlistTrackMapping.description: Võimaldab esitusloendite süvaskannimist, et teha kindlaks, millised lood on millistes esitusloendites. Esitusloendite vahemälu loomise aeg võib märgatavalt pikeneda.
-settings.option.advanced.powerUsage.description: Teisaldatud — kaadrisageduse piirangud, renderdaja valik ja nõudlikud visuaalsed funktsioonid.
+settings.option.advanced.powerUsage.description: Kaadrisageduse piirangud, renderdaja valik ja nõudlikud visuaalsed funktsioonid.
 settings.option.advanced.progressBar: Edenemisriba
 settings.option.advanced.progressBar.useAccentColor: Kasuta aktsentvärvi
 settings.option.advanced.resetCider: Lähtesta Cider
@@ -1837,25 +1937,28 @@ settings.option.advanced.richAlbumGrid.disableScrollAnimation: Keela kerimisanim
 settings.option.advanced.richAlbumGrid.scrollToPosition: Keri asukohta
 settings.option.advanced.richAlbumGrid.scrollToPosition.bottom: Alla
 settings.option.advanced.richAlbumGrid.scrollToPosition.top: Üles
-settings.option.advanced.searchBar: Otsinguriba
+settings.option.advanced.searchBar: Peamine otsinguriba
+settings.option.advanced.searchBar.description: Tiitliribal asuv otsinguväli.
 settings.option.advanced.searchBar.noRedirectOnSelect: Ära suuna fookustamisel maandumislehele
 settings.option.advanced.searchBar.noRedirectOnSelect.description: Kui see on lubatud, ei suuna otsinguriba valimisel maandumislehele. Maandumislehele pääsemiseks hoia otsinguriba valimisel all klahvi SHIFT.
 settings.option.advanced.settingsTakeout: Sätete eksport / import
 settings.option.advanced.settingsTakeout.description: Varunda oma eelistused faili või taasta need teises seadmes. Kontole sisselogimise andmeid ei kaasata kunagi.
 settings.option.advanced.simpleArtworkBg:
-  value: Lihtne kujunduse taust (Süüviv režiim)
-  source: human
+  value: Lihtne kaanekujunduse taust
+  source: ai
   by: "@nekocats"
   issue: 41
+  superseded_at: 2026-09-01
 settings.option.advanced.simpleArtworkBg.brightness: Heledus %
 settings.option.advanced.simpleArtworkBg.contrast: Kontrastsus %
-settings.option.advanced.simpleArtworkBg.saturate: "Küllastus "
+settings.option.advanced.simpleArtworkBg.saturate: Küllastus %
 settings.option.advanced.simpleArtworkBg.useMask: Kasuta alumist maski
 settings.option.advanced.sonoma:
-  value: Süüviv režiim (Sonoma)
-  source: human
+  value: Sonoma
+  source: ai
   by: "@nekocats"
   issue: 41
+  superseded_at: 2026-09-01
 settings.option.advanced.sonoma.lyricArc: Kaarjad laulusõnad
 settings.option.advanced.sonoma.lyricArc.description: Aktiivsed laulusõnade read kaarduvad ekraani keskosa poole, luues peene sügavusefekti.
 settings.option.advanced.sonoma.radialMask: Kasuta alternatiivset maski
@@ -1863,9 +1966,11 @@ settings.option.advanced.sonoma.radialMask.description: Kui see on lubatud, kasu
 settings.option.advanced.title: Täpsemalt
 settings.option.advanced.tweaks: Peenhäälestus
 settings.option.advanced.tweaks.description: Kohandatavad seaded, mis ei sobi kuhugi mujale
-settings.option.advanced.volumeSlider: Helitugevuse liugur
+settings.option.advanced.volumeSlider: Mängija helitugevuse liugur
 settings.option.advanced.volumeSlider.iOSStyle: iOS-i stiil
-settings.option.advanced.window: Aken
+settings.option.advanced.window: Akna käitumine
+settings.option.advanced.window.description: Taasesituse teavitused, minimängija suuruse muutmine ja kogu rakenduses kasutatav kerimisriba stiil. Akna juhtnupud ja vibrancy-efekt asuvad jaotises Visuaal.
+settings.option.advanced.window.scrollbarType: Kerimisriba tüüp
 settings.option.all: Kõik
 settings.option.alwaysShow: Näita alati
 settings.option.appleMusic.behavior.playButtonOnStop: Esitusnupp peatatud tegevuse korral
@@ -1950,6 +2055,7 @@ settings.option.audio.enableAdvancedFunctionality.tunedAudioSpatialization.profi
 settings.option.audio.exponentialVolume: Eksponentsiaalne helitugevuse kõver
 settings.option.audio.exponentialVolume.description: Järgib sujuvamat helitugevuse kõverat, võimaldades täpsemat helitugevuse reguleerimist madalatel helitugevustel.
 settings.option.audio.hostCapture: Hõivatav heli (OBS / Discord)
+settings.option.audio.hostCapture.description: Voogedastus- ja salvestusrakendused, nagu OBS või Discord, vajavad taasesituse suunamiseks Windowsi hosti.
 settings.option.audio.maxVolume: Maksimaalne helitugevus
 settings.option.audio.mixing: Miksimine
 settings.option.audio.normalization: Heli normaliseerimine
@@ -1995,10 +2101,12 @@ settings.option.concerts.sortBy.description: Kuidas kontserte nimekirjas sorteer
 settings.option.concerts.sortBy.distance: Kaugus
 settings.option.connect.link_account.description: Discordi konto linkimine teenusega Cider Connect võimaldab sul salvestada kasutajaandmeid, sealhulgas seadeid, ekvalaisereid ja tulevikus veelgi enam. (Arendusjärgus)
 settings.option.connectivity.atmosRatings: Kogukonna Atmos-hinnangud
+settings.option.connectivity.atmosRatings.description: Vaata ja jaga, millised albumid kõlavad suurepäraselt Dolby Atmos heliga.
 settings.option.connectivity.ciderConnect.description: Kuulake koos, ühised esitusloendid, rakenduse kaugjuhtimine ja palju muud!
 settings.option.connectivity.ciderRemote: Cider Remote
 settings.option.connectivity.discord: Discord
 settings.option.connectivity.discordRichPresence: Discord Rich Presence
+settings.option.connectivity.discordRichPresence.description: Sinu Discordi profiilil kuvatav olek ning selle kasutatav kliendi nimi ja nupud.
 settings.option.connectivity.discordRPC: Discord Rich Presence
 settings.option.connectivity.discordRPC.animatedArtwork: Animeeritud kaanepilt
 settings.option.connectivity.discordRPC.animatedArtwork.description: See valik võib mõjutada Rich Presence'i laadimisaegu, kui kaanepilt pole veel kasutamiseks saadaval.
@@ -2072,9 +2180,13 @@ settings.option.connectivity.partiesTransportDefault.host: Ainult võõrustaja
 settings.option.connectivity.playbackNotifications: Taasesituse teavitused
 settings.option.connectivity.playbackNotifications.description: Kuva uue looga teavitus alati, kui praegune lugu muutub.
 settings.option.connectivity.remoteConnection: Kaugühendus
+settings.option.connectivity.remoteConnection.description: Telefoni või tahvelarvuti sidumine ja taasesitust juhtivate seadmete lahtiühendamine.
 settings.option.connectivity.rpcServer: RPC-server
+settings.option.connectivity.rpcServer.description: Halda väliste rakenduste juurdepääsu Ciderile, kasutades RPC-serverit.
+settings.option.connectivity.rpcServer.manageAccess: Halda väliste rakenduste juurdepääsu Ciderile
 settings.option.connectivity.scrobbler: Skrobler
 settings.option.connectivity.scrobblerIntegration: Skrobleri integratsioon
+settings.option.connectivity.scrobblerIntegration.description: Last.fm, ListenBrainz, Libre.fm ja Maloja skroblimine kuulamisajaloo säilitamiseks.
 settings.option.connectivity.steam.clearOnPause: Tühjenda Rich Presence pausi ajal
 settings.option.connectivity.webSocketsApi: WebSockets API
 settings.option.connectivity.webSocketsAPI: WebSockets API
@@ -2096,6 +2208,7 @@ settings.option.experiments.chromecastLyrics.description: Kuva sünkroonitud lau
 settings.option.experiments.floatingSearch: Luba ujuv otsing
 settings.option.experiments.forceExplicit: Lülitu automaatselt albumi tsensureerimata versioonile
 settings.option.experiments.forceExplicit.description: Võib pikendada laadimisaega albumite tsensureerimata versioonide otsimisel.
+settings.option.experiments.legacyFetch: Pärand-andmehange
 settings.option.experiments.musicVideos: Luba teegi muusikavideod
 settings.option.experiments.title: Eksperimentaalsed funktsioonid
 settings.option.general.app: Rakendus
@@ -2216,6 +2329,8 @@ settings.option.lyrics.provider.netease: NetEase
 settings.option.lyrics.provider.user: Kasutaja esitatud
 settings.option.lyrics.providerPreferences: Pakkujate eelistused
 settings.option.lyrics.providerPreferences.description: Seadista, milliseid laulusõnade allikaid kasutada ja milline on nende prioriteet
+settings.option.lyrics.scrollTuning: Kerimise kestus ja sujuvus
+settings.option.lyrics.scrollTuning.description: Määra laulusõnade ridade kerimise kestus ja sujuvuskõver eraldi külgriba ja kaasahaarava mängija jaoks.
 settings.option.lyrics.showDualLanguage: Kuva kahes keeles
 settings.option.lyrics.showDualLanguage.description: Kuva korraga nii algupäraseid laulusõnu kui ka tõlget.
 settings.option.lyrics.showTimestamps: Kuva ajatemplid kursoriga peale liikudes
@@ -2554,6 +2669,12 @@ settings.option.visual.mojavePlayerType.compact.description: Sihvakas mängija k
 settings.option.visual.mojavePlayerType.compactInline: Kompaktne reasisene
 settings.option.visual.mojavePlayerType.compactInline.description: Üksik sihvakas rida, kus edenemine on LCD sees.
 settings.option.visual.moveUpLinks: Liiguta lingid „Veel vaatamist“ sirvimislehel üles
+settings.option.visual.musicVideoPinMaxResolution: Esita muusikavideoid alati maksimaalse eraldusvõimega
+settings.option.visual.musicVideoPinMaxResolution.description: Säilitab video pakutava kõrgeima kvaliteedi, selle asemel et alustada madalalt ja seda järk-järgult tõsta. Väikeses aknas või mahupiiranguga ühenduse puhul kasutab see märgatavalt rohkem andmemahtu.
+settings.option.visual.musicVideoPrefetchOnHover: Valmista muusikavideod ette kursoriga peale liikudes
+settings.option.visual.musicVideoPrefetchOnHover.description: Alustab video laadimist, kui kursor on märgise kohal, et see klõpsamisel kiiremini avaneks.
+settings.option.visual.musicVideoPrefetchSegmentsOnHover: Laadi esimene osa alla kursoriga peale liikudes
+settings.option.visual.musicVideoPrefetchSegmentsOnHover.description: Laadib enne klõpsamist alla ka video esimesed sekundid. See kulutab iga kursoriga peale liikumise korral mõne megabaidi, sealhulgas juhtudel, kui videot ei avatagi.
 settings.option.visual.pauseAnimatedOnBlur: Peata animeeritud kaanekujundus, kui aken pole fookuses
 settings.option.visual.playerMaterial: Mängija materjal
 settings.option.visual.playerMaterial.blur: Hägustus
@@ -2737,6 +2858,11 @@ settings.resetCider.title: Lähtesta Cider
 settings.sleepTimer.endsIn: "Lõpeb: {{remainingTime}} ({{endTime}})"
 settings.sleepTimer.notSet: Taimer pole määratud
 settings.sleepTimer.title: Määra unetaimer
+settings.smartPlaylists.card.automaticRefresh: Automaatne värskendamine
+settings.smartPlaylists.section.maintenance: Hooldus
+settings.smartPlaylists.section.maintenance.description: Käivita kõik reeglid kohe või kustuta oma teegi puhverdatud koopia.
+settings.smartPlaylists.section.rules: Reeglid
+settings.smartPlaylists.section.rules.description: Kas Cider rakendab sisseehitatud esitusloendite reegleid ja kui sageli neid uuesti hinnatakse.
 settings.sweetener.useSystemAccentColor: Kasuta süsteemi rõhuvärvi
 settings.takeout.chooseFile: Vali fail…
 settings.takeout.error.badVersion: Sellel failil puudub versiooniteave.
@@ -3462,16 +3588,20 @@ term.zoomin: Suurenda
 term.zoomout: Vähenda
 term.zoomreset: Lähtesta suum
 tooltips.watchMusicVideo: Vaata muusikavideot
+updates.installUnavailable.body: See versioon pole sinu kontoga allalaadimiseks saadaval.
 updates.lateststable.title: Viimane stabiilne versioon
 updates.loadFailed.body: Kontrolli ühendust ja proovi uuesti.
 updates.loadFailed.title: Cider ei saanud saadavalolevaid versioone laadida
 updates.notifyForBranch.tooltip: Teavita selle haru uuendustest
 updates.otherVersions.title: Muud versioonid
 updates.ptb.name: Avalik testimisharu
+updates.reloadFailed.body: Cider ei saanud saadavalolevaid versioone uuesti laadida. Kontrolli oma ühendust ja proovi uuesti.
 updates.signedOut.body: Cider kontrollib värskendusi sinu Cider Taproomi kontoga.
 updates.signedOut.expired.body: Värskenduste kontrollimiseks logi uuesti sisse.
 updates.signedOut.expired.bodyNamed: Värskenduste kontrollimiseks logi uuesti sisse kasutajana {name}.
 updates.signedOut.expired.title: Sinu Cider Taproomi seanss on aegunud
 updates.signedOut.title: Värskenduste kontrollimiseks logi sisse
+updates.signInToInstall.body: Logi sisse keskkonda Cider Taproom, et see värskendus alla laadida.
+updates.signInToInstall.title: Logi sisse selle värskenduse installimiseks
 updates.stable.name: Stabiilne haru
 verb.installed: Installitud

@@ -668,9 +668,12 @@ lyrics.contrib.notify.importFailed: Falha ao importar letras.
 lyrics.contrib.notify.importNone: Não existem letras disponíveis para importar para esta faixa.
 lyrics.contrib.notify.noCurrent: Não está a ser reproduzida nenhuma música de momento.
 lyrics.contrib.notify.notLoggedIn: Precisa de iniciar sessão para enviar letras.
+lyrics.contrib.notify.profileRequired: Configure um perfil de colaborador antes de enviar letras.
 lyrics.contrib.notify.submitFailed: Falha ao enviar letras.
 lyrics.contrib.notify.submitted: Letras enviadas — obrigado pela sua contribuição!
 lyrics.contrib.preview.empty: Cole ou importe TTML para pré-visualizar as letras aqui.
+lyrics.contrib.profile.nameRules: Use entre 3 e 24 letras, números, hífenes ou sublinhados.
+lyrics.contrib.profile.signedOut: Precisa de iniciar sessão.
 lyrics.contrib.signin.button: Iniciar sessão com o Cider Taproom
 lyrics.contrib.signin.manual: Introduzir token manualmente
 lyrics.contrib.signin.sub: Ligue a sua conta Cider Taproom para enviar letras e aparecer na tabela de classificação.
@@ -722,6 +725,7 @@ lyrics.contrib.upload.noResults: Nenhuma música encontrada.
 lyrics.contrib.upload.openWindow: Abrir numa janela
 lyrics.contrib.upload.preview: Pré-visualizar
 lyrics.contrib.upload.searchPlaceholder: Pesquisar no catálogo da Apple Music…
+lyrics.contrib.upload.signedOut: Inicie sessão na sua conta Cider Taproom para enviar letras.
 lyrics.contrib.upload.submit: Enviar letra
 lyrics.contrib.upload.submitting: A enviar…
 lyrics.contrib.upload.track: Faixa
@@ -1057,6 +1061,18 @@ settings.about.sponsors.opencollective: Open Collective
 settings.about.thirdPartyLicenses: Licenças de terceiros
 settings.about.thirdPartyLicenses.desc: Estes são os recursos, bibliotecas e ferramentas de terceiros que o Cider utiliza. Consulte as respetivas licenças para obter mais informações.
 settings.about.viewLicense: Ver licença
+settings.accessibility.card.textSize: Texto e tamanho
+settings.accessibility.card.visibility: Visibilidade
+settings.accessibility.section.display: Ecrã
+settings.accessibility.section.display.description: Espessura do texto, escala da interface, contraste e indicadores de foco.
+settings.accessibility.section.motion: Movimento
+settings.accessibility.section.motion.description: A quantidade de animação que os botões, cartões e outras superfícies utilizam.
+settings.accessibility.section.soundEffects: Efeitos sonoros
+settings.accessibility.section.soundEffects.description: Sons de interface para botões, interruptores e controlos de deslize, e o respetivo volume de reprodução.
+settings.advanced.section.backups: Cópias de segurança e reposição
+settings.advanced.section.backups.description: Grave uma cópia das suas definições, restaure uma que o Cider guardou para si ou reponha tudo para os valores predefinidos.
+settings.advanced.section.client: Este cliente
+settings.advanced.section.client.description: Limites de desempenho e definições que pertencem ao cliente onde o Cider está a ser executado, em vez de pertencerem à sua conta.
 settings.airplay.installed.message: O AirPlay foi instalado
 settings.airplay.installed.title: AirPlay instalado
 settings.airplay.requiresCiderAudio: Requer que o CiderAudio esteja ativado
@@ -1077,6 +1093,9 @@ settings.audio.atmosMode: Modo Atmos
 settings.audio.atmosMode.switchFromPassthroughConfirm: Mudar a partir do modo passthrough requer recarregar a aplicação. Continuar?
 settings.audio.atmosMode.switchToPassthroughConfirm: Mudar para o modo passthrough requer recarregar a aplicação. Continuar?
 settings.audio.automix: Automix
+settings.audio.card.advancedVolume: Volume avançado
+settings.audio.card.badges: Distintivos
+settings.audio.card.streaming: Streaming
 settings.audio.ciderAudio: Cider Audio
 settings.audio.ciderAudio.description: Arquitetura de áudio personalizada e concebida para proporcionar uma experiência de áudio rica e de alta qualidade. Recomendado em vez de um equalizador tradicional.
 settings.audio.ciderAudio.enable: Ativar Cider Audio
@@ -1139,6 +1158,17 @@ settings.audio.occlusion.passthroughNote.short: Não disponível com a passagem 
 settings.audio.outputDevice: Selecionar dispositivo de saída de áudio
 settings.audio.outputDeviceHint: Selecione o dispositivo de saída de áudio para a reprodução.
 settings.audio.outputDeviceHintHost: O áudio capturável está ativado, a reprodução utiliza este dispositivo de saída do Windows.
+settings.audio.section.ciderAudio: Cider Audio e indicadores
+settings.audio.section.ciderAudio.description: A pilha de processamento Cider Audio e os distintivos apresentados durante a reprodução de uma faixa.
+settings.audio.section.currentSignal: Sinal atual
+settings.audio.section.mixing: Mistura
+settings.audio.section.mixing.description: Como uma faixa transita para a seguinte e se o intervalo entre elas é removido.
+settings.audio.section.output: Saída
+settings.audio.section.output.description: O dispositivo através do qual o Cider reproduz som e como a reprodução chega até ele.
+settings.audio.section.playback: Reprodução
+settings.audio.section.playback.description: Qualidade de áudio, áudio espacial, modos de audição e velocidade de reprodução de podcasts.
+settings.audio.section.volume: Volume
+settings.audio.section.volume.description: Ajuste de volume, o quanto a roda de deslocamento altera o nível e a leitura do controlo de deslize.
 settings.automix.allowTempoKeyShifts: Permitir alterações de tempo/tom
 settings.automix.allowTempoKeyShiftsHint: Permitir pequenas alterações de tom/tempo para manter as transições dinâmicas. (Desativado temporariamente, em reformulação.)
 settings.automix.description: Transição inteligente entre faixas com base no tempo e no tom.
@@ -1369,12 +1399,46 @@ settings.connectivity.scrobbler.rewrite.add: Adicionar regra
 settings.connectivity.scrobbler.rewrite.match: Correspondência
 settings.connectivity.scrobbler.rewrite.regex: Regex
 settings.connectivity.scrobbler.rewrite.replace: Substituir por
+settings.connectivity.scrobbler.roster.desc.lastfm: O serviço de scrobbling original. Inicie sessão através do seu navegador.
+settings.connectivity.scrobbler.roster.desc.librefm: Gerido pela comunidade e aberto. Inicie sessão através do seu navegador.
+settings.connectivity.scrobbler.roster.desc.listenbrainz: Histórico de audição aberto. Requer um token de utilizador.
+settings.connectivity.scrobbler.roster.desc.maloja: O seu próprio servidor. Requer o respetivo endereço e uma chave de API.
+settings.connectivity.scrobbler.roster.footer.many: A fazer scrobbling para {count} contas
+settings.connectivity.scrobbler.roster.footer.one: A fazer scrobbling para 1 conta
+settings.connectivity.scrobbler.roster.footer.scope: O limite, a limpeza de metadados e as listas negras aplicam-se a todas as contas aqui presentes.
+settings.connectivity.scrobbler.roster.lb.rejected: O ListenBrainz não aceitou esse token.
+settings.connectivity.scrobbler.roster.lb.token: Token de utilizador
+settings.connectivity.scrobbler.roster.lb.token.hint: A partir da sua página de perfil em
+settings.connectivity.scrobbler.roster.lede: Faça scrobbling para quantos serviços desejar. Cada conta que ativar receberá todas as reproduções.
+settings.connectivity.scrobbler.roster.maloja.key: Chave de API
+settings.connectivity.scrobbler.roster.maloja.url: Endereço do servidor
+settings.connectivity.scrobbler.roster.maloja.url.hint: O prefixo do endereço e o caminho da API são adicionados automaticamente.
+settings.connectivity.scrobbler.roster.paused: Em pausa
+settings.connectivity.scrobbler.roster.pausedAs: Em pausa · {account}
+settings.connectivity.scrobbler.roster.reconnect: Necessário voltar a ligar
+settings.connectivity.scrobbler.roster.reconnectAction: Voltar a ligar
+settings.connectivity.scrobbler.roster.scrobbling: A fazer scrobbling
+settings.connectivity.scrobbler.roster.scrobblingAs: A fazer scrobbling como {account}
+settings.connectivity.scrobbler.roster.scrobblingTo: A fazer scrobbling para {account}
+settings.connectivity.scrobbler.roster.signOut: Terminar sessão no {service}
+settings.connectivity.scrobbler.roster.switchLabel: Fazer scrobbling para o {service}
+settings.connectivity.scrobbler.roster.waiting: A aguardar pelo navegador…
+settings.connectivity.scrobbler.toast.failed: Não foi possível fazer scrobbling para {services}
+settings.connectivity.scrobbler.toast.scrobbled: Scrobble de {track} de {artist} efetuado
 settings.connectivity.scrobbler.trigger: Ativador de scrobble
 settings.connectivity.scrobbler.trigger.absolute: Tempo absoluto
 settings.connectivity.scrobbler.trigger.absolute.desc: Efetua o scrobble após este número de segundos de reprodução.
+settings.connectivity.scrobbler.trigger.absoluteOpt: Tempo absoluto
+settings.connectivity.scrobbler.trigger.either: O que ocorrer primeiro
 settings.connectivity.scrobbler.trigger.mode: Modo de ativação
 settings.connectivity.scrobbler.trigger.mode.desc: Quando enviar um scrobble. "O que ocorrer primeiro" é a regra clássica do Last.fm.
+settings.connectivity.scrobbler.trigger.percent: Percentagem
 settings.connectivity.scrobbler.zeroOff: 0 desativa este filtro.
+settings.connectivity.section.communityRatings: Classificações da comunidade
+settings.connectivity.section.communityRatings.description: Classificações de misturas Dolby Atmos de outros ouvintes do Cider nas páginas de álbuns, e se as suas são partilhadas de volta.
+settings.connectivity.section.discord.description: O que o Cider mostra no seu perfil do Discord enquanto a música está a reproduzir, e através de que cliente se liga.
+settings.connectivity.section.externalApplications.description: A porta WebSockets e o servidor RPC que outros programas utilizam para ler a reprodução e controlar o Cider, e quais deles têm permissão de acesso.
+settings.connectivity.section.parties.description: Ouvir em sincronia com outros utilizadores do Cider, e o que os convidados podem fazer nas festas que organiza.
 settings.connectivity.tokenCopied: Token copiado para a área de transferência
 settings.connectivity.tokens: Tokens
 settings.contentFilter.description: As secções em Explorar e Ouvir Agora cujos títulos ou conteúdos correspondam a qualquer uma destas palavras-chave serão ocultadas.
@@ -1489,6 +1553,22 @@ settings.gapless.offset.default: predefinido
 settings.gapless.offset.description: Ajuste quando ocorrem as transições de faixa. Os valores positivos são ativados mais cedo, os valores negativos mais tarde.
 settings.gapless.offset.earlier: mais cedo
 settings.gapless.offset.later: mais tarde
+settings.general.card.closing: A fechar
+settings.general.section.cache: Cache
+settings.general.section.cache.description: Ilustrações e metadados guardados que o Cider mantém no disco para que as páginas carreguem mais rápido.
+settings.general.section.desktop: Ambiente de trabalho
+settings.general.section.desktop.description: Atalhos de teclado, notificações do ambiente de trabalho e como o Cider se comporta na barra de tarefas e ao fechar.
+settings.general.section.language: Idioma
+settings.general.section.language.description: O idioma da interface e como reportar ou atribuir créditos às suas traduções.
+settings.general.section.playback: Reprodução
+settings.general.section.playback.description: O que o botão de reprodução faz quando nada está a ser reproduzido.
+settings.general.section.privacy: Privacidade
+settings.general.section.privacy.description: O nome com que o Cider o saúda e se pode utilizar a sua localização.
+settings.general.section.queue: Fila
+settings.general.section.queue.description: Como a fila é criada, o que é permitido nela e o que é restaurado quando o Cider reinicia.
+settings.general.section.sleepTimer: Temporizador de suspensão
+settings.general.section.startup: Arranque
+settings.general.section.startup.description: O que o Cider abre ao iniciar e o que recupera da sua última sessão.
 settings.header.accounts: Contas
 settings.header.advanced: Avançado
 settings.header.audio: Áudio
@@ -1573,13 +1653,15 @@ settings.intensive.singLyricsEverywhere.description: Executa a animação de let
 settings.intensive.viewTransitions.description: Anima as transições ao alternar entre algumas vistas.
 settings.intensive.warning: Exigente em desempenho — pode causar um uso elevado de CPU/GPU.
 settings.keybindings.recordingHint: A gravar. Prima Escape para cancelar
+settings.lyrics.card.providers: Fornecedores
+settings.lyrics.card.songOverrides: Substituições de músicas
 settings.lyrics.localeOverrides: Regras baseadas no idioma
 settings.lyrics.localeOverrides.add: Adicionar exceção de idioma
 settings.lyrics.localeOverrides.audioLocale: Idioma do áudio
 settings.lyrics.localeOverrides.desc: Define preferências personalizadas de fornecedor e tradução para músicas em idiomas específicos. Quando o idioma do áudio de uma música corresponder a uma regra, estas definições irão sobrepor-se às predefinições.
 settings.lyrics.localeOverrides.dialogTitle.add: Adicionar exceção de idioma
 settings.lyrics.localeOverrides.dialogTitle.edit: Editar exceção de idioma
-settings.lyrics.localeOverrides.empty: Nenhuma exceção de idioma configurada. Clique no botão + para adicionar uma.
+settings.lyrics.localeOverrides.empty: Sem regras ainda. Utilize + para adicionar uma.
 settings.lyrics.localeOverrides.overrideTranslation: Substituir tradução
 settings.lyrics.localeOverrides.preferredProvider: Fornecedor preferido
 settings.lyrics.localeOverrides.provider.apple: Apple Music
@@ -1623,9 +1705,17 @@ settings.lyrics.scroll.easing.presetSpring: Animação de mola - (por SoNothing)
 settings.lyrics.scroll.immersive: Imersivo
 settings.lyrics.scroll.presets: Predefinições
 settings.lyrics.scroll.sidebar: Barra lateral
+settings.lyrics.section.advanced: Avançado
+settings.lyrics.section.advanced.description: Desvio de sincronização, taxa de fotogramas da animação e temporização de deslocamento ajustada manualmente.
+settings.lyrics.section.display: Visualização
+settings.lyrics.section.display.description: Que linhas de letra aparecem, como são animadas e as marcas temporais mostradas ao passar o cursor.
+settings.lyrics.section.sources: Fontes
+settings.lyrics.section.sources.description: De onde vêm as letras e as regras por idioma ou por faixa que se sobrepõem ao fornecedor predefinido.
+settings.lyrics.section.translation: Tradução
+settings.lyrics.section.translation.description: Letras traduzidas, o idioma de destino e se o original permanece no ecrã.
 settings.lyrics.trackOverrides.clearAll: Limpar todas as substituições
 settings.lyrics.trackOverrides.desc: As faixas listadas aqui utilizam sempre o fornecedor de letras que bloqueou, ou o estado vocal que definiu manualmente, em vez do comunicado pela Apple. Estas substituições são definidas a partir do menu de letras e do menu de clique direito da faixa.
-settings.lyrics.trackOverrides.empty: Nenhuma substituição de faixa configurada. Bloqueie um fornecedor a partir do menu de letras ao visualizar uma música, ou defina o estado vocal de uma faixa a partir do respetivo menu de clique direito.
+settings.lyrics.trackOverrides.empty: Ainda nada foi substituído. Tudo o que bloquear a partir desses menus será listado aqui.
 settings.lyrics.trackOverrides.lyricsForced: Letras forçadas
 settings.lyrics.trackOverrides.markedInstrumental: Marcada como instrumental
 settings.lyrics.trackOverrides.providerLabel: "Fornecedor:"
@@ -1709,23 +1799,28 @@ settings.option.accessibility.motionIntensity.reduced: Reduzido
 settings.option.accessibility.playOnHover: Reproduzir ao passar o cursor
 settings.option.accessibility.playOnHover.description: Também reproduz um clique subtil quando o ponteiro entra em elementos interativos.
 settings.option.accessibility.soundEffects: Efeitos sonoros
+settings.option.accessibility.soundPreview: Pré-escuta de som
+settings.option.accessibility.soundPreview.description: Reproduz uma amostra dos sons da interface no volume atual.
 settings.option.accessibility.text: Texto
 settings.option.accessibility.uiScale: Escala da interface
 settings.option.accessibility.uiScale.description: Redimensiona o texto e os elementos da interface. Alguns elementos do esquema usam tamanhos fixos e podem não ser redimensionados.
 settings.option.accessibility.visibility: Visibilidade
 settings.option.accessibility.volume: Volume
+settings.option.accessibility.volume.description: O volume com que os efeitos sonoros da interface são reproduzidos.
 settings.option.advanced.clientSettings: Definições do cliente
 settings.option.advanced.clientSettings.description: Definições específicas da estrutura do cliente atual
 settings.option.advanced.compactSidebar: Barra lateral compacta
+settings.option.advanced.compactSidebar.description: Aplica-se quando a janela é suficientemente estreita para a barra lateral recolher.
 settings.option.advanced.compactSidebar.size: Tamanho
 settings.option.advanced.configBackups.description: Restaure uma cópia que o Cider guardou do seu ficheiro de definições, caso as suas definições tenham sido perdidas ou repostas.
 settings.option.advanced.experimentalFeatures: Funcionalidades experimentais
 settings.option.advanced.experimentalFeatures.description: Funcionalidades em desenvolvimento e sinalizadores de funcionalidades.
-settings.option.advanced.floatingSearch: Pesquisa flutuante
+settings.option.advanced.floatingSearch: Sobreposição de pesquisa flutuante
 settings.option.advanced.floatingSearch.blurBackground: Desfocar fundo
 settings.option.advanced.floatingSearch.blurBackground.description: Quando ativado, o fundo será desfocado quando a barra de pesquisa estiver focada.
 settings.option.advanced.floatingSearch.clearSearchOnClose: Limpar pesquisa ao fechar
 settings.option.advanced.floatingSearch.clearSearchOnClose.description: Quando ativado, o texto da barra de pesquisa será limpo ao fechar a barra de pesquisa.
+settings.option.advanced.floatingSearch.description: O painel de pesquisa que se abre sobre a página.
 settings.option.advanced.floatingSearch.enterShowsResults: Enter mostra resultados
 settings.option.advanced.floatingSearch.enterShowsResults.description: Quando ativado, a barra de pesquisa irá diretamente para a página de resultados ao premir Enter.
 settings.option.advanced.home: Início
@@ -1733,13 +1828,15 @@ settings.option.advanced.home.buttonLocation: Localização do botão Início
 settings.option.advanced.home.buttonLocation.sidebar: Barra lateral
 settings.option.advanced.home.buttonLocation.sidebar2023: Barra lateral (2023)
 settings.option.advanced.home.buttonLocation.topBar: Barra superior
-settings.option.advanced.immersive: Imersivo
+settings.option.advanced.immersive: Visualização imersiva
 settings.option.advanced.immersive.artworkHighlight: Destaque da capa
 settings.option.advanced.immersive.controlsTimeout: Tempo limite dos controlos ativos (segundos)
+settings.option.advanced.immersive.description: A própria visualização imersiva. A disposição que utiliza é escolhida em Visual.
 settings.option.advanced.immersive.glowEffectOnActiveLyrics: Efeito de brilho nas letras ativas
-settings.option.advanced.lyrics: Letras
+settings.option.advanced.lyrics: Animação das letras
 settings.option.advanced.lyrics.characterFlow: Caracteres fluidos
 settings.option.advanced.lyrics.characterFlow.description: Os caracteres individuais fluirão para cima em vez de toda a linha. Consome mais recursos.
+settings.option.advanced.lyrics.description: Como as linhas e os caracteres das letras se movem enquanto uma música é reproduzida.
 settings.option.advanced.lyrics.lineStaggering: Desfasamento de linhas
 settings.option.advanced.lyrics.lineStaggering.description: As próximas letras terão um ligeiro atraso quando a letra ativa seguinte estiver em destaque.
 settings.option.advanced.lyrics.lineStaggeringImmersive: Desfasamento de linhas (Imersivo)
@@ -1757,15 +1854,17 @@ settings.option.advanced.mavericksLcd: LCD Mavericks
 settings.option.advanced.mavericksLcd.style: Estilo
 settings.option.advanced.mavericksLcd.style.glass: Vidro
 settings.option.advanced.mediaArtwork: Ilustração do elemento multimédia
+settings.option.advanced.mediaArtwork.controls: Destaques de ilustrações e imagens de alta resolução
+settings.option.advanced.mediaArtwork.description: Ilustrações em grelhas, listas e linhas em toda a aplicação.
 settings.option.advanced.notificationStyle: Estilo de notificação
 settings.option.advanced.performance: Desempenho
 settings.option.advanced.performance.description: Limites de taxa de fotogramas, escolha do renderizador e limites de recursos.
-settings.option.advanced.playback: Reprodução
+settings.option.advanced.playback: Velocidade de reprodução
 settings.option.advanced.playback.allowPlaybackRateChangeEverywhere: Permitir alterar a velocidade de reprodução de músicas
 settings.option.advanced.playback.allowPlaybackRateChangeEverywhere.description: Ativado por predefinição para podcasts. Ative para permitir o mesmo controlo fácil da velocidade de reprodução em todos os conteúdos multimédia, incluindo músicas.
 settings.option.advanced.playlistTrackMapping: Mapeamento de faixas da lista de reprodução
 settings.option.advanced.playlistTrackMapping.description: Ativa a análise profunda de listas de reprodução para determinar quais as faixas que estão em cada lista. O tempo de criação da cache das listas de reprodução pode aumentar significativamente.
-settings.option.advanced.powerUsage.description: Movido — limites de taxa de fotogramas, escolha de renderizador e funcionalidades visuais exigentes.
+settings.option.advanced.powerUsage.description: Limites de taxa de fotogramas, escolha do renderizador e funcionalidades visuais exigentes.
 settings.option.advanced.progressBar: Barra de progresso
 settings.option.advanced.progressBar.useAccentColor: Usar cor de destaque
 settings.option.advanced.resetCider: Repor o Cider
@@ -1777,17 +1876,18 @@ settings.option.advanced.richAlbumGrid.disableScrollAnimation: Desativar animaç
 settings.option.advanced.richAlbumGrid.scrollToPosition: Deslocar para a posição
 settings.option.advanced.richAlbumGrid.scrollToPosition.bottom: Fundo
 settings.option.advanced.richAlbumGrid.scrollToPosition.top: Topo
-settings.option.advanced.searchBar: Barra de pesquisa
+settings.option.advanced.searchBar: Barra de pesquisa principal
+settings.option.advanced.searchBar.description: O campo de pesquisa na barra de título.
 settings.option.advanced.searchBar.noRedirectOnSelect: Sem página de destino ao focar
 settings.option.advanced.searchBar.noRedirectOnSelect.description: Quando ativado, a barra de pesquisa não redirecionará para a página de destino ao ser selecionada. Para aceder à página de destino, prima SHIFT enquanto seleciona a barra de pesquisa.
 settings.option.advanced.settingsTakeout: Exportar/Importar definições
 settings.option.advanced.settingsTakeout.description: Crie uma cópia de segurança das suas preferências num ficheiro ou restaure-as noutro dispositivo. Os dados de início de sessão nunca são incluídos.
-settings.option.advanced.simpleArtworkBg: Fundo de ilustração simples (Imersivo)
+settings.option.advanced.simpleArtworkBg: Fundo de ilustração simples
 settings.option.advanced.simpleArtworkBg.brightness: Luminosidade %
 settings.option.advanced.simpleArtworkBg.contrast: Contraste %
-settings.option.advanced.simpleArtworkBg.saturate: "Saturação "
+settings.option.advanced.simpleArtworkBg.saturate: "% de saturação"
 settings.option.advanced.simpleArtworkBg.useMask: Usar máscara inferior
-settings.option.advanced.sonoma: Imersivo (Sonoma)
+settings.option.advanced.sonoma: Sonoma
 settings.option.advanced.sonoma.lyricArc: Letras em arco
 settings.option.advanced.sonoma.lyricArc.description: As linhas de letra ativas curvam-se em direção ao centro do ecrã com uma sensação subtil de profundidade.
 settings.option.advanced.sonoma.radialMask: Usar máscara alternativa
@@ -1795,9 +1895,11 @@ settings.option.advanced.sonoma.radialMask.description: Quando ativado, o Sonoma
 settings.option.advanced.title: Avançado
 settings.option.advanced.tweaks: Ajustes
 settings.option.advanced.tweaks.description: Definições ajustáveis que não pertencem a nenhuma outra categoria
-settings.option.advanced.volumeSlider: Controlo de volume
+settings.option.advanced.volumeSlider: Controlo de volume do leitor
 settings.option.advanced.volumeSlider.iOSStyle: Estilo iOS
-settings.option.advanced.window: Janela
+settings.option.advanced.window: Comportamento da janela
+settings.option.advanced.window.description: Notificações de reprodução, redimensionamento do mini-leitor e o estilo da barra de deslocamento utilizado na aplicação. Os controlos de janela e a vibração encontram-se em Visual.
+settings.option.advanced.window.scrollbarType: Tipo de barra de deslocamento
 settings.option.all: Tudo
 settings.option.alwaysShow: Mostrar sempre
 settings.option.appleMusic.behavior.playButtonOnStop: Botão Reproduzir na ação de paragem
@@ -1878,6 +1980,7 @@ settings.option.audio.enableAdvancedFunctionality.tunedAudioSpatialization.profi
 settings.option.audio.exponentialVolume: Curva de volume exponencial
 settings.option.audio.exponentialVolume.description: Segue uma curva de volume mais gradual, permitindo um controlo de volume mais preciso em volumes mais baixos.
 settings.option.audio.hostCapture: Áudio capturável (OBS / Discord)
+settings.option.audio.hostCapture.description: Aplicações de transmissão e captura como o OBS ou Discord necessitam do anfitrião Windows para encaminhar a reprodução.
 settings.option.audio.maxVolume: Volume Máximo
 settings.option.audio.mixing: Mistura
 settings.option.audio.normalization: Normalização de áudio
@@ -1919,10 +2022,12 @@ settings.option.concerts.sortBy.description: Como ordenar os concertos na lista
 settings.option.concerts.sortBy.distance: Distância
 settings.option.connect.link_account.description: Associar a sua conta do Discord ao Cider Connect permite-lhe guardar dados de utilizador, incluindo Definições, Equalizadores e, eventualmente, mais funcionalidades quando estiver concluído. (Trabalho em Curso)
 settings.option.connectivity.atmosRatings: Classificações Atmos da comunidade
+settings.option.connectivity.atmosRatings.description: Veja e partilhe quais os álbuns com excelente som em Dolby Atmos.
 settings.option.connectivity.ciderConnect.description: Ouvir em Conjunto, Listas de Reprodução Colaborativas, Controlo Remoto da Aplicação e muito mais!
 settings.option.connectivity.ciderRemote: Cider Remote
 settings.option.connectivity.discord: Discord
 settings.option.connectivity.discordRichPresence: Discord Rich Presence
+settings.option.connectivity.discordRichPresence.description: Estado apresentado no seu perfil do Discord, e o nome do cliente e botões que utiliza.
 settings.option.connectivity.discordRPC: Discord Rich Presence
 settings.option.connectivity.discordRPC.animatedArtwork: Ilustração Animada
 settings.option.connectivity.discordRPC.animatedArtwork.description: Esta opção pode afetar os tempos de carregamento no Rich Presence, se a ilustração ainda não estiver disponível para utilização.
@@ -1996,9 +2101,13 @@ settings.option.connectivity.partiesTransportDefault.host: Apenas o anfitrião
 settings.option.connectivity.playbackNotifications: Notificações de reprodução
 settings.option.connectivity.playbackNotifications.description: Apresentar uma notificação com a nova música sempre que a música atual mudar.
 settings.option.connectivity.remoteConnection: Ligação remota
+settings.option.connectivity.remoteConnection.description: Emparelhar um telemóvel ou tablet, e desemparelhar os dispositivos que controlam a reprodução.
 settings.option.connectivity.rpcServer: Servidor RPC
+settings.option.connectivity.rpcServer.description: Gerir o acesso ao Cider para aplicações externas que utilizam o servidor RPC.
+settings.option.connectivity.rpcServer.manageAccess: Gerir Acesso de Aplicações Externas ao Cider
 settings.option.connectivity.scrobbler: Scrobbler
 settings.option.connectivity.scrobblerIntegration: Integração com Scrobbler
+settings.option.connectivity.scrobblerIntegration.description: Scrobbling do Last.fm, ListenBrainz, Libre.fm e Maloja, para manter um histórico de reprodução.
 settings.option.connectivity.steam.clearOnPause: Limpar Rich Presence ao pausar
 settings.option.connectivity.webSocketsApi: API WebSockets
 settings.option.connectivity.webSocketsAPI: API WebSockets
@@ -2020,6 +2129,7 @@ settings.option.experiments.chromecastLyrics.description: Mostrar letras sincron
 settings.option.experiments.floatingSearch: Ativar pesquisa flutuante
 settings.option.experiments.forceExplicit: Mudar automaticamente para a versão explícita do álbum
 settings.option.experiments.forceExplicit.description: Pode aumentar o tempo de carregamento ao procurar versões explícitas de álbuns.
+settings.option.experiments.legacyFetch: Obtenção Legada
 settings.option.experiments.musicVideos: Ativar videoclipes da biblioteca
 settings.option.experiments.title: Funcionalidades experimentais
 settings.option.general.app: App
@@ -2136,6 +2246,8 @@ settings.option.lyrics.provider.netease: NetEase
 settings.option.lyrics.provider.user: Enviadas por utilizadores
 settings.option.lyrics.providerPreferences: Preferências do fornecedor
 settings.option.lyrics.providerPreferences.description: Configurar quais as fontes de letras a utilizar e a sua prioridade
+settings.option.lyrics.scrollTuning: Duração e Suavização do Deslocamento
+settings.option.lyrics.scrollTuning.description: Defina o tempo que as linhas da letra demoram a deslocar-se e a respetiva curva de suavização, separadamente para a barra lateral e o leitor imersivo.
 settings.option.lyrics.showDualLanguage: Mostrar dois idiomas
 settings.option.lyrics.showDualLanguage.description: Apresentar a letra original e a tradução em simultâneo.
 settings.option.lyrics.showTimestamps: Mostrar marcas de tempo ao passar o cursor
@@ -2404,6 +2516,12 @@ settings.option.visual.mojavePlayerType.compact.description: Um leitor fino com 
 settings.option.visual.mojavePlayerType.compactInline: Compacto em linha
 settings.option.visual.mojavePlayerType.compactInline.description: Uma única linha fina com o progresso dentro do LCD.
 settings.option.visual.moveUpLinks: Mover as hiperligações "Mais para ver" em Explorar para o topo
+settings.option.visual.musicVideoPinMaxResolution: Reproduzir Sempre Vídeos Musicais na Resolução Máxima
+settings.option.visual.musicVideoPinMaxResolution.description: Mantém a qualidade mais alta que o vídeo oferece, em vez de começar com uma qualidade inferior e ir aumentando. Numa janela pequena ou numa ligação com limite de dados, isto consome significativamente mais largura de banda.
+settings.option.visual.musicVideoPrefetchOnHover: Preparar Vídeos Musicais ao Passar o Cursor
+settings.option.visual.musicVideoPrefetchOnHover.description: Começa a carregar o vídeo enquanto o cursor repousa sobre o emblema, para que abra mais rapidamente ao clicar.
+settings.option.visual.musicVideoPrefetchSegmentsOnHover: Descarregar o Primeiro Segmento ao Passar o Cursor
+settings.option.visual.musicVideoPrefetchSegmentsOnHover.description: Também transfere os primeiros segundos de vídeo antes do clique. Consome alguns megabytes por cada passagem do cursor, incluindo as que nunca abrem um vídeo.
 settings.option.visual.pauseAnimatedOnBlur: Pausar capas animadas quando fora de foco
 settings.option.visual.playerMaterial: Material do leitor
 settings.option.visual.playerMaterial.blur: Desfocagem
@@ -2587,6 +2705,11 @@ settings.resetCider.title: Repor o Cider
 settings.sleepTimer.endsIn: "Termina em: {{remainingTime}} ({{endTime}})"
 settings.sleepTimer.notSet: O temporizador não está definido
 settings.sleepTimer.title: Definir temporizador de suspensão
+settings.smartPlaylists.card.automaticRefresh: Atualização Automática
+settings.smartPlaylists.section.maintenance: Manutenção
+settings.smartPlaylists.section.maintenance.description: Forçar a execução de todas as regras agora ou eliminar a cópia em cache da biblioteca.
+settings.smartPlaylists.section.rules: Regras
+settings.smartPlaylists.section.rules.description: Se o Cider aplica as regras de listas de reprodução incorporadas e com que frequência as reavalia.
 settings.sweetener.useSystemAccentColor: Usar a cor de destaque do sistema
 settings.takeout.chooseFile: Escolher ficheiro…
 settings.takeout.error.badVersion: Falta a informação de versão nesse ficheiro.
@@ -3295,16 +3418,20 @@ term.zoomin: Ampliar
 term.zoomout: Reduzir
 term.zoomreset: Repor zoom
 tooltips.watchMusicVideo: Ver videoclipe
+updates.installUnavailable.body: Esta versão não está disponível para descarregar na sua conta.
 updates.lateststable.title: Última versão estável
 updates.loadFailed.body: Verifique a sua ligação e tente novamente.
 updates.loadFailed.title: O Cider não conseguiu carregar as versões disponíveis
 updates.notifyForBranch.tooltip: Notificar para este ramo
 updates.otherVersions.title: Outras versões
 updates.ptb.name: Ramo de testes públicos
+updates.reloadFailed.body: O Cider não conseguiu recarregar as versões disponíveis. Verifique a sua ligação e tente novamente.
 updates.signedOut.body: O Cider procura atualizações com a sua conta do Cider Taproom.
 updates.signedOut.expired.body: Inicie sessão novamente para procurar atualizações.
 updates.signedOut.expired.bodyNamed: Inicie sessão novamente como {name} para procurar atualizações.
 updates.signedOut.expired.title: A sua sessão do Cider Taproom expirou
 updates.signedOut.title: Inicie sessão para procurar atualizações
+updates.signInToInstall.body: Inicie sessão no Cider Taproom para descarregar esta atualização.
+updates.signInToInstall.title: Iniciar sessão para instalar esta atualização
 updates.stable.name: Ramo estável
 verb.installed: Instalado

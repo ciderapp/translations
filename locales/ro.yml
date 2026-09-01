@@ -668,9 +668,12 @@ lyrics.contrib.notify.importFailed: Eroare la importarea versurilor.
 lyrics.contrib.notify.importNone: Nu există versuri disponibile pentru import la această piesă.
 lyrics.contrib.notify.noCurrent: Nu se redă nicio melodie în prezent.
 lyrics.contrib.notify.notLoggedIn: Trebuie să te autentifici pentru a încărca versuri.
+lyrics.contrib.notify.profileRequired: Configurează un profil de colaborator înainte de a încărca versuri.
 lyrics.contrib.notify.submitFailed: Eroare la trimiterea versurilor.
 lyrics.contrib.notify.submitted: Versurile au fost trimise — îți mulțumim pentru contribuție!
 lyrics.contrib.preview.empty: Lipește sau importă TTML pentru a previzualiza versurile aici.
+lyrics.contrib.profile.nameRules: Folosește între 3 și 24 de litere, cifre, cratime sau caractere de subliniere.
+lyrics.contrib.profile.signedOut: Trebuie să fii autentificat.
 lyrics.contrib.signin.button: Autentifică-te cu Cider Taproom
 lyrics.contrib.signin.manual: Introdu tokenul manual
 lyrics.contrib.signin.sub: Conectează-ți contul Cider Taproom pentru a încărca versuri și a apărea în clasament.
@@ -722,6 +725,7 @@ lyrics.contrib.upload.noResults: Nu s-au găsit piese.
 lyrics.contrib.upload.openWindow: Deschide în fereastră
 lyrics.contrib.upload.preview: Previzualizare
 lyrics.contrib.upload.searchPlaceholder: Caută în catalogul Apple Music…
+lyrics.contrib.upload.signedOut: Autentifică-te în contul tău Cider Taproom pentru a încărca versuri.
 lyrics.contrib.upload.submit: Trimite versurile
 lyrics.contrib.upload.submitting: Se trimite…
 lyrics.contrib.upload.track: Piesă
@@ -1057,6 +1061,18 @@ settings.about.sponsors.opencollective: Open Collective
 settings.about.thirdPartyLicenses: Licențe terțe
 settings.about.thirdPartyLicenses.desc: Acestea sunt resursele, bibliotecile și instrumentele terțe utilizate de Cider. Consultați licențele respective pentru mai multe informații.
 settings.about.viewLicense: Vizualizează licența
+settings.accessibility.card.textSize: Text și dimensiune
+settings.accessibility.card.visibility: Vizibilitate
+settings.accessibility.section.display: Afișaj
+settings.accessibility.section.display.description: Grosimea textului, scara interfeței, contrastul și indicatorii de focalizare.
+settings.accessibility.section.motion: Mișcare
+settings.accessibility.section.motion.description: Nivelul de animație folosit de butoane, carduri și alte suprafețe.
+settings.accessibility.section.soundEffects: Efecte sonore
+settings.accessibility.section.soundEffects.description: Sunetele interfeței pentru butoane, comutatoare și glisoare, precum și volumul acestora.
+settings.advanced.section.backups: Copii de rezervă și resetare
+settings.advanced.section.backups.description: Salvează o copie a configurărilor, restaurează una păstrată de Cider sau revino la valorile implicite.
+settings.advanced.section.client: Acest client
+settings.advanced.section.client.description: Limite de performanță și configurări specifice clientului în care rulează Cider, nu contului tău.
 settings.airplay.installed.message: AirPlay a fost instalat
 settings.airplay.installed.title: AirPlay instalat
 settings.airplay.requiresCiderAudio: Necesită activarea CiderAudio
@@ -1077,6 +1093,9 @@ settings.audio.atmosMode: Mod Atmos
 settings.audio.atmosMode.switchFromPassthroughConfirm: Comutarea din modul passthrough necesită reîncărcarea aplicației. Continuați?
 settings.audio.atmosMode.switchToPassthroughConfirm: Comutarea în modul passthrough necesită reîncărcarea aplicației. Continuați?
 settings.audio.automix: Automix
+settings.audio.card.advancedVolume: Volum avansat
+settings.audio.card.badges: Insigne
+settings.audio.card.streaming: Streaming
 settings.audio.ciderAudio: Cider Audio
 settings.audio.ciderAudio.description: Stivă audio personalizată și optimizată care oferă o experiență audio bogată și de înaltă calitate. Recomandată în locul unui egalizator tradițional.
 settings.audio.ciderAudio.enable: Activează Cider Audio
@@ -1139,6 +1158,17 @@ settings.audio.occlusion.passthroughNote.short: Indisponibil când passthrough A
 settings.audio.outputDevice: Selectează dispozitivul de ieșire audio
 settings.audio.outputDeviceHint: Selectați dispozitivul de ieșire audio pentru redare.
 settings.audio.outputDeviceHintHost: Captura audio este activată, redarea folosește acest dispozitiv de ieșire Windows.
+settings.audio.section.ciderAudio: Cider Audio și indicatori
+settings.audio.section.ciderAudio.description: Stiva de procesare Cider Audio și insignele afișate în timpul redării unei piese.
+settings.audio.section.currentSignal: Semnal curent
+settings.audio.section.mixing: Mixare
+settings.audio.section.mixing.description: Modul în care o piesă se îmbină cu următoarea și dacă pauza dintre ele este eliminată.
+settings.audio.section.output: Ieșire
+settings.audio.section.output.description: Dispozitivul prin care redă Cider și modul în care redarea ajunge la acesta.
+settings.audio.section.playback: Redare
+settings.audio.section.playback.description: Calitatea audio, audio spațial, modurile de ascultare și viteza de redare a podcasturilor.
+settings.audio.section.volume: Volum
+settings.audio.section.volume.description: Egalizarea volumului, cât de mult modifică nivelul rotița de derulare și modul de citire al glisorului.
 settings.automix.allowTempoKeyShifts: Permite modificări de tempo/tonalitate
 settings.automix.allowTempoKeyShiftsHint: Permite mici modificări de tempo/tonalitate pentru a menține tranzițiile energice. (Dezactivat temporar, în curs de refacere.)
 settings.automix.description: Tranziție inteligentă între piese pe baza tempoului și a tonalității.
@@ -1369,12 +1399,46 @@ settings.connectivity.scrobbler.rewrite.add: Adaugă regulă
 settings.connectivity.scrobbler.rewrite.match: Potrivire
 settings.connectivity.scrobbler.rewrite.regex: Regex
 settings.connectivity.scrobbler.rewrite.replace: Înlocuiește cu
+settings.connectivity.scrobbler.roster.desc.lastfm: Serviciul original de scrobbling. Autentifică-te prin browser.
+settings.connectivity.scrobbler.roster.desc.librefm: Administrat de comunitate și open-source. Autentifică-te prin browser.
+settings.connectivity.scrobbler.roster.desc.listenbrainz: Istoric de ascultare deschis. Necesită un token de utilizator.
+settings.connectivity.scrobbler.roster.desc.maloja: Propriul tău server. Necesită adresa acestuia și o cheie API.
+settings.connectivity.scrobbler.roster.footer.many: Scrobbling către {count} conturi
+settings.connectivity.scrobbler.roster.footer.one: Scrobbling către un cont
+settings.connectivity.scrobbler.roster.footer.scope: Pragul, curățarea metadatelor și listele negre se aplică fiecărui cont de aici.
+settings.connectivity.scrobbler.roster.lb.rejected: ListenBrainz nu a acceptat acel token.
+settings.connectivity.scrobbler.roster.lb.token: Token utilizator
+settings.connectivity.scrobbler.roster.lb.token.hint: De pe pagina profilului tău de pe
+settings.connectivity.scrobbler.roster.lede: Trimite scrobble-uri către oricâte servicii dorești. Fiecare cont activat va înregistra fiecare redare.
+settings.connectivity.scrobbler.roster.maloja.key: Cheie API
+settings.connectivity.scrobbler.roster.maloja.url: Adresă server
+settings.connectivity.scrobbler.roster.maloja.url.hint: Prefixul adresei și calea API sunt adăugate automat.
+settings.connectivity.scrobbler.roster.paused: În pauză
+settings.connectivity.scrobbler.roster.pausedAs: În pauză · {account}
+settings.connectivity.scrobbler.roster.reconnect: Necesită reconectare
+settings.connectivity.scrobbler.roster.reconnectAction: Reconectează
+settings.connectivity.scrobbler.roster.scrobbling: Scrobbling
+settings.connectivity.scrobbler.roster.scrobblingAs: Scrobbling ca {account}
+settings.connectivity.scrobbler.roster.scrobblingTo: Scrobbling către {account}
+settings.connectivity.scrobbler.roster.signOut: Deconectează-te de la {service}
+settings.connectivity.scrobbler.roster.switchLabel: Scrobble către {service}
+settings.connectivity.scrobbler.roster.waiting: Se așteaptă browserul…
+settings.connectivity.scrobbler.toast.failed: Nu s-a putut trimite scrobble către {services}
+settings.connectivity.scrobbler.toast.scrobbled: S-a trimis scrobble pentru {track} de {artist}
 settings.connectivity.scrobbler.trigger: Declanșator scrobble
 settings.connectivity.scrobbler.trigger.absolute: Timp absolut
 settings.connectivity.scrobbler.trigger.absolute.desc: Scrobblează după acest număr de secunde de redare.
+settings.connectivity.scrobbler.trigger.absoluteOpt: Timp absolut
+settings.connectivity.scrobbler.trigger.either: Oricare survine prima
 settings.connectivity.scrobbler.trigger.mode: Mod declanșare
 settings.connectivity.scrobbler.trigger.mode.desc: Când se trimite un scrobble. „Oricare primul” este regula clasică Last.fm.
+settings.connectivity.scrobbler.trigger.percent: Procentaj
 settings.connectivity.scrobbler.zeroOff: 0 dezactivează acest filtru.
+settings.connectivity.section.communityRatings: Evaluări ale comunității
+settings.connectivity.section.communityRatings.description: Evaluările mixajelor Dolby Atmos de la alți ascultători Cider pe paginile de albume și dacă ale tale sunt partajate.
+settings.connectivity.section.discord.description: Ce afișează Cider pe profilul tău de Discord în timp ce redai muzică și prin ce client se conectează.
+settings.connectivity.section.externalApplications.description: Portul WebSockets și serverul RPC pe care alte programe le folosesc pentru a citi redarea și a controla Cider, precum și care dintre acestea au acces permis.
+settings.connectivity.section.parties.description: Ascultarea în sincron cu alți utilizatori Cider și ce pot face invitații în petrecerile pe care le găzduiești.
 settings.connectivity.tokenCopied: Jeton copiat în clipboard
 settings.connectivity.tokens: Jetoane
 settings.contentFilter.description: Secțiunile din Explorare și Ascultă acum ale căror titluri sau conținut se potrivesc cu oricare dintre aceste cuvinte cheie vor fi ascunse.
@@ -1489,6 +1553,22 @@ settings.gapless.offset.default: implicit
 settings.gapless.offset.description: Ajustează momentul în care au loc tranzițiile melodiilor. Valorile pozitive le declanșează mai devreme, cele negative mai târziu.
 settings.gapless.offset.earlier: mai devreme
 settings.gapless.offset.later: mai târziu
+settings.general.card.closing: Închidere
+settings.general.section.cache: Cache
+settings.general.section.cache.description: Ilustrațiile de album și metadatele stocate pe care Cider le păstrează pe disc pentru ca paginile să se încarce mai rapid.
+settings.general.section.desktop: Desktop
+settings.general.section.desktop.description: Scurtăturile de tastatură, notificările pe desktop și comportamentul Cider în bara de activități și la închidere.
+settings.general.section.language: Limbă
+settings.general.section.language.description: Limba interfeței și cum să raportezi sau să oferi credite pentru traducerile acesteia.
+settings.general.section.playback: Redare
+settings.general.section.playback.description: Ce face butonul de redare atunci când nu este redat nimic.
+settings.general.section.privacy: Confidențialitate
+settings.general.section.privacy.description: Numele cu care te întâmpină Cider și dacă poate să îți folosească locația.
+settings.general.section.queue: Coadă de așteptare
+settings.general.section.queue.description: Cum este construită coada de așteptare, ce este permis în ea și ce se restabilește la repornirea Cider.
+settings.general.section.sleepTimer: Temporizator de oprire
+settings.general.section.startup: Pornire
+settings.general.section.startup.description: Ce deschide Cider la pornire și ce restabilește din ultima ta sesiune.
 settings.header.accounts: Conturi
 settings.header.advanced: Avansat
 settings.header.audio: Audio
@@ -1573,13 +1653,15 @@ settings.intensive.singLyricsEverywhere.description: Rulează animația versuril
 settings.intensive.viewTransitions.description: Animează tranzițiile la comutarea anumitor vizualizări.
 settings.intensive.warning: Solicitant pentru performanță — poate cauza utilizare ridicată CPU/GPU.
 settings.keybindings.recordingHint: Se înregistrează. Apasă Escape pentru a anula
+settings.lyrics.card.providers: Furnizori
+settings.lyrics.card.songOverrides: Excepții melodii
 settings.lyrics.localeOverrides: Reguli bazate pe limbă
 settings.lyrics.localeOverrides.add: Adaugă excepție de limbă
 settings.lyrics.localeOverrides.audioLocale: Limba audio
 settings.lyrics.localeOverrides.desc: Setează furnizorul personalizat și preferințele de traducere pentru cântece în limbi specifice. Când limba audio a unui cântec se potrivește cu o regulă, aceste setări le vor înlocui pe cele implicite.
 settings.lyrics.localeOverrides.dialogTitle.add: Adaugă excepție de limbă
 settings.lyrics.localeOverrides.dialogTitle.edit: Editează excepția de limbă
-settings.lyrics.localeOverrides.empty: Nu sunt configurate excepții de limbă. Fă clic pe butonul + pentru a adăuga una.
+settings.lyrics.localeOverrides.empty: Nu există reguli încă. Folosește + pentru a adăuga una.
 settings.lyrics.localeOverrides.overrideTranslation: Suprascrie traducerea
 settings.lyrics.localeOverrides.preferredProvider: Furnizor preferat
 settings.lyrics.localeOverrides.provider.apple: Apple Music
@@ -1623,9 +1705,17 @@ settings.lyrics.scroll.easing.presetSpring: Animație elastică - (de SoNothing)
 settings.lyrics.scroll.immersive: Imersiv
 settings.lyrics.scroll.presets: Presetări
 settings.lyrics.scroll.sidebar: Bară laterală
+settings.lyrics.section.advanced: Avansat
+settings.lyrics.section.advanced.description: Decalajul de sincronizare, rata de cadre a animației și sincronizarea manuală a derulării.
+settings.lyrics.section.display: Afișaj
+settings.lyrics.section.display.description: Ce versuri sunt afișate, cum sunt animate și marcajele temporale afișate la trecerea cursorului.
+settings.lyrics.section.sources: Surse
+settings.lyrics.section.sources.description: De unde provin versurile și regulile specifice pentru limbi sau piese care au prioritate față de furnizorul implicit.
+settings.lyrics.section.translation: Traducere
+settings.lyrics.section.translation.description: Versurile traduse, limba în care sunt afișate și dacă textul original rămâne pe ecran.
 settings.lyrics.trackOverrides.clearAll: Șterge toate suprascrierile
 settings.lyrics.trackOverrides.desc: Piesele listate aici folosesc întotdeauna furnizorul de versuri pe care l-ai blocat sau starea vocală setată manual, în locul celei raportate de Apple. Aceste suprascrieri sunt configurate din meniul de versuri și din meniul de clic dreapta al piesei.
-settings.lyrics.trackOverrides.empty: Nu sunt configurate suprascrieri pentru piese. Blochează un furnizor din meniul de versuri în timp ce vizualizezi o piesă sau setează starea vocală a unei piese din meniul de clic dreapta.
+settings.lyrics.trackOverrides.empty: Nimic nu este înlocuit încă. Tot ce blochezi din acele meniuri va fi listat aici.
 settings.lyrics.trackOverrides.lyricsForced: Versuri forțate
 settings.lyrics.trackOverrides.markedInstrumental: Marcat ca instrumental
 settings.lyrics.trackOverrides.providerLabel: "Furnizor:"
@@ -1709,23 +1799,28 @@ settings.option.accessibility.motionIntensity.reduced: Redusă
 settings.option.accessibility.playOnHover: Redă la trecerea cursorului
 settings.option.accessibility.playOnHover.description: Redă, de asemenea, un sunet subtil de tip clic când indicatorul intră pe elementele interactive.
 settings.option.accessibility.soundEffects: Efecte sonore
+settings.option.accessibility.soundPreview: Previzualizare sunet
+settings.option.accessibility.soundPreview.description: Redă o mostră a sunetelor interfeței la volumul curent.
 settings.option.accessibility.text: Text
 settings.option.accessibility.uiScale: Scalare interfață
 settings.option.accessibility.uiScale.description: Scalează textul și elementele de interfață. Unele elemente de aspect folosesc dimensiuni fixe și este posibil să nu se scaleze.
 settings.option.accessibility.visibility: Vizibilitate
 settings.option.accessibility.volume: Volum
+settings.option.accessibility.volume.description: Cât de tare sunt redate efectele sonore ale interfeței.
 settings.option.advanced.clientSettings: Setări client
 settings.option.advanced.clientSettings.description: Setări specifice cadrului de lucru al clientului curent
 settings.option.advanced.compactSidebar: Bară laterală compactă
+settings.option.advanced.compactSidebar.description: Se aplică atunci când fereastra este suficient de îngustă pentru ca bara laterală să se restrângă.
 settings.option.advanced.compactSidebar.size: Dimensiune
 settings.option.advanced.configBackups.description: Restaurează o copie salvată de Cider a fișierului tău de setări, în cazul în care setările tale au fost pierdute sau resetate.
 settings.option.advanced.experimentalFeatures: Funcționalități experimentale
 settings.option.advanced.experimentalFeatures.description: Funcționalități în curs de dezvoltare și indicatori de caracteristici.
-settings.option.advanced.floatingSearch: Căutare plutitoare
+settings.option.advanced.floatingSearch: Panou de căutare plutitor
 settings.option.advanced.floatingSearch.blurBackground: Estompare fundal
 settings.option.advanced.floatingSearch.blurBackground.description: Când este activată, fundalul va fi estompat atunci când bara de căutare este focalizată.
 settings.option.advanced.floatingSearch.clearSearchOnClose: Ștergere căutare la închidere
 settings.option.advanced.floatingSearch.clearSearchOnClose.description: Când este activată, textul din bara de căutare va fi șters la închiderea acesteia.
+settings.option.advanced.floatingSearch.description: Panoul de căutare care se deschide peste pagină.
 settings.option.advanced.floatingSearch.enterShowsResults: Afișare rezultate la apăsarea tastei Enter
 settings.option.advanced.floatingSearch.enterShowsResults.description: Când este activată, apăsarea tastei Enter va deschide direct pagina cu rezultatele căutării.
 settings.option.advanced.home: Acasă
@@ -1733,13 +1828,15 @@ settings.option.advanced.home.buttonLocation: Locație buton Acasă
 settings.option.advanced.home.buttonLocation.sidebar: Bară laterală
 settings.option.advanced.home.buttonLocation.sidebar2023: Bară laterală (2023)
 settings.option.advanced.home.buttonLocation.topBar: Bară superioară
-settings.option.advanced.immersive: Imersiv
+settings.option.advanced.immersive: Vizualizare imersivă
 settings.option.advanced.immersive.artworkHighlight: Evidențiere copertă
 settings.option.advanced.immersive.controlsTimeout: Temporizare comenzi active (secunde)
+settings.option.advanced.immersive.description: Vizualizarea imersivă în sine. Aspectul utilizat este ales la secțiunea Aspect vizual.
 settings.option.advanced.immersive.glowEffectOnActiveLyrics: Efect de strălucire pe versurile active
-settings.option.advanced.lyrics: Versuri
+settings.option.advanced.lyrics: Animație versuri
 settings.option.advanced.lyrics.characterFlow: Caractere fluide
 settings.option.advanced.lyrics.characterFlow.description: Caracterele individuale vor urca fluid în loc de întreaga linie. Consumă mai multe resurse.
+settings.option.advanced.lyrics.description: Cum se mișcă rândurile și caracterele versurilor în timpul redării unei melodii.
 settings.option.advanced.lyrics.lineStaggering: Decalare rânduri
 settings.option.advanced.lyrics.lineStaggering.description: Versurile următoare vor avea o ușoară întârziere când următorul vers activ este focalizat
 settings.option.advanced.lyrics.lineStaggeringImmersive: Decalare rânduri (Imersiv)
@@ -1757,15 +1854,17 @@ settings.option.advanced.mavericksLcd: LCD Mavericks
 settings.option.advanced.mavericksLcd.style: Stil
 settings.option.advanced.mavericksLcd.style.glass: Sticlă
 settings.option.advanced.mediaArtwork: Copertă element media
+settings.option.advanced.mediaArtwork.controls: Evidențieri ale ilustrațiilor și imagini de înaltă rezoluție
+settings.option.advanced.mediaArtwork.description: Ilustrațiile de album din grile, liste și rânduri în întreaga aplicație.
 settings.option.advanced.notificationStyle: Stil notificări
 settings.option.advanced.performance: Performanță
 settings.option.advanced.performance.description: Limite de cadre pe secundă, alegerea motorului de redare și praguri de resurse.
-settings.option.advanced.playback: Redare
+settings.option.advanced.playback: Viteză de redare
 settings.option.advanced.playback.allowPlaybackRateChangeEverywhere: Permite modificarea vitezei de redare pentru melodii
 settings.option.advanced.playback.allowPlaybackRateChangeEverywhere.description: Activată implicit pentru podcasturi. Activează pentru a permite același control simplu al vitezei de redare pentru toate elementele media, inclusiv melodii.
 settings.option.advanced.playlistTrackMapping: Mapare piese din liste de redare
 settings.option.advanced.playlistTrackMapping.description: Activează scanarea profundă a listelor de redare pentru a determina ce piese se află în fiecare listă. Timpul de creare a cache-ului listelor de redare poate crește semnificativ.
-settings.option.advanced.powerUsage.description: Mutat — limite de cadre pe secundă, alegerea motorului de redare și funcții vizuale solicitante.
+settings.option.advanced.powerUsage.description: Limitele ratei de cadre, alegerea motorului de redare și funcțiile vizuale solicitante.
 settings.option.advanced.progressBar: Bară de progres
 settings.option.advanced.progressBar.useAccentColor: Utilizează culoarea de accent
 settings.option.advanced.resetCider: Resetează Cider
@@ -1777,17 +1876,18 @@ settings.option.advanced.richAlbumGrid.disableScrollAnimation: Dezactivează ani
 settings.option.advanced.richAlbumGrid.scrollToPosition: Derulează la poziția
 settings.option.advanced.richAlbumGrid.scrollToPosition.bottom: Jos
 settings.option.advanced.richAlbumGrid.scrollToPosition.top: Sus
-settings.option.advanced.searchBar: Bară de căutare
+settings.option.advanced.searchBar: Bară de căutare principală
+settings.option.advanced.searchBar.description: Câmpul de căutare din bara de titlu.
 settings.option.advanced.searchBar.noRedirectOnSelect: Fără pagină de destinație la selectare
 settings.option.advanced.searchBar.noRedirectOnSelect.description: Când este activată, bara de căutare nu va redirecționa către pagina de destinație la selectare. Pentru a accesa pagina de destinație, țineți apăsată tasta SHIFT în timp ce selectați bara de căutare.
 settings.option.advanced.settingsTakeout: Export / Import setări
 settings.option.advanced.settingsTakeout.description: Creați o copie de rezervă a preferințelor într-un fișier sau restaurați-le pe un alt dispozitiv. Datele de autentificare nu sunt incluse niciodată.
-settings.option.advanced.simpleArtworkBg: Fundal simplu cu copertă (Imersiv)
+settings.option.advanced.simpleArtworkBg: Fundal simplu cu ilustrație
 settings.option.advanced.simpleArtworkBg.brightness: Luminozitate %
 settings.option.advanced.simpleArtworkBg.contrast: Contrast %
-settings.option.advanced.simpleArtworkBg.saturate: "Saturație "
+settings.option.advanced.simpleArtworkBg.saturate: Saturație %
 settings.option.advanced.simpleArtworkBg.useMask: Utilizează masca inferioară
-settings.option.advanced.sonoma: Imersiv (Sonoma)
+settings.option.advanced.sonoma: Sonoma
 settings.option.advanced.sonoma.lyricArc: Versuri curbate
 settings.option.advanced.sonoma.lyricArc.description: Liniile de versuri active se curbează spre centrul ecranului cu o subtilă senzație de profunzime.
 settings.option.advanced.sonoma.radialMask: Utilizează mască alternativă
@@ -1795,9 +1895,11 @@ settings.option.advanced.sonoma.radialMask.description: Când este activată, So
 settings.option.advanced.title: Avansat
 settings.option.advanced.tweaks: Ajustări
 settings.option.advanced.tweaks.description: Setări ajustabile care nu se potrivesc în altă parte
-settings.option.advanced.volumeSlider: Glisor volum
+settings.option.advanced.volumeSlider: Glisor volum player
 settings.option.advanced.volumeSlider.iOSStyle: Stil iOS
-settings.option.advanced.window: Fereastră
+settings.option.advanced.window: Comportament fereastră
+settings.option.advanced.window.description: Notificările de redare, redimensionarea miniplayerului și stilul barei de derulare utilizat în aplicație. Controlul ferestrelor și efectul de transparență se află la secțiunea Aspect vizual.
+settings.option.advanced.window.scrollbarType: Tip bară de derulare
 settings.option.all: Toate
 settings.option.alwaysShow: Afișează întotdeauna
 settings.option.appleMusic.behavior.playButtonOnStop: Butonul de redare la acțiunea de oprire
@@ -1878,6 +1980,7 @@ settings.option.audio.enableAdvancedFunctionality.tunedAudioSpatialization.profi
 settings.option.audio.exponentialVolume: Curbă de volum exponențială
 settings.option.audio.exponentialVolume.description: Urmează o curbă de volum mai graduală, permițând un control mai precis al volumului la niveluri reduse.
 settings.option.audio.hostCapture: Audio capturabil (OBS / Discord)
+settings.option.audio.hostCapture.description: Aplicațiile de streaming și captură precum OBS sau Discord au nevoie de gazda Windows pentru a direcționa redarea.
 settings.option.audio.maxVolume: Volum maxim
 settings.option.audio.mixing: Mixare
 settings.option.audio.normalization: Normalizare audio
@@ -1919,10 +2022,12 @@ settings.option.concerts.sortBy.description: Cum se sortează concertele în lis
 settings.option.concerts.sortBy.distance: Distanță
 settings.option.connect.link_account.description: Asocierea contului tău Discord cu Cider Connect îți permite să stochezi datele de utilizator, inclusiv setările, egalizatoarele și, în cele din urmă, mai multe funcții odată finalizate. (În lucru)
 settings.option.connectivity.atmosRatings: Evaluări Atmos din comunitate
+settings.option.connectivity.atmosRatings.description: Vezi și partajează ce albume sună excelent în Dolby Atmos.
 settings.option.connectivity.ciderConnect.description: Ascultă împreună, liste de redare colaborative, control de la distanță al aplicației și multe altele!
 settings.option.connectivity.ciderRemote: Cider Remote
 settings.option.connectivity.discord: Discord
 settings.option.connectivity.discordRichPresence: Discord Rich Presence
+settings.option.connectivity.discordRichPresence.description: Starea afișată pe profilul tău de Discord, precum și numele clientului și butoanele pe care le folosește.
 settings.option.connectivity.discordRPC: Discord Rich Presence
 settings.option.connectivity.discordRPC.animatedArtwork: Copertă animată
 settings.option.connectivity.discordRPC.animatedArtwork.description: Această opțiune poate afecta timpii de încărcare pentru Rich Presence, dacă coperta nu este deja disponibilă pentru utilizare.
@@ -1996,9 +2101,13 @@ settings.option.connectivity.partiesTransportDefault.host: Doar găzduitorul
 settings.option.connectivity.playbackNotifications: Notificări de redare
 settings.option.connectivity.playbackNotifications.description: Afișează o notificare cu noua piesă ori de câte ori se schimbă piesa curentă.
 settings.option.connectivity.remoteConnection: Conexiune la distanță
+settings.option.connectivity.remoteConnection.description: Asocierea unui telefon sau a unei tablete și dezasocierea dispozitivelor care controlează redarea.
 settings.option.connectivity.rpcServer: Server RPC
+settings.option.connectivity.rpcServer.description: Gestionează accesul la Cider pentru aplicațiile externe care utilizează serverul RPC.
+settings.option.connectivity.rpcServer.manageAccess: Gestionează accesul aplicațiilor externe la Cider
 settings.option.connectivity.scrobbler: Scrobbler
 settings.option.connectivity.scrobblerIntegration: Integrare Scrobbler
+settings.option.connectivity.scrobblerIntegration.description: Scrobbling prin Last.fm, ListenBrainz, Libre.fm și Maloja pentru a păstra un istoric al ascultărilor.
 settings.option.connectivity.steam.clearOnPause: Șterge Rich Presence la întrerupere
 settings.option.connectivity.webSocketsApi: API WebSockets
 settings.option.connectivity.webSocketsAPI: API WebSockets
@@ -2020,6 +2129,7 @@ settings.option.experiments.chromecastLyrics.description: Afișează versurile s
 settings.option.experiments.floatingSearch: Activează căutarea plutitoare
 settings.option.experiments.forceExplicit: Comutare automată la varianta explicită a albumului
 settings.option.experiments.forceExplicit.description: Poate crește timpii de încărcare în timpul căutării variantelor explicite ale albumelor.
+settings.option.experiments.legacyFetch: Preluare legacy
 settings.option.experiments.musicVideos: Activează videoclipurile muzicale din bibliotecă
 settings.option.experiments.title: Funcționalități experimentale
 settings.option.general.app: Aplicație
@@ -2136,6 +2246,8 @@ settings.option.lyrics.provider.netease: NetEase
 settings.option.lyrics.provider.user: Trimise de utilizatori
 settings.option.lyrics.providerPreferences: Preferințe furnizor
 settings.option.lyrics.providerPreferences.description: Configurează sursele de versuri de utilizat și prioritatea acestora
+settings.option.lyrics.scrollTuning: Durată și atenuare derulare
+settings.option.lyrics.scrollTuning.description: Setează durata de derulare a versurilor și curba de atenuare a acestora, separat pentru bara laterală și playerul imersiv.
 settings.option.lyrics.showDualLanguage: Afișează în două limbi
 settings.option.lyrics.showDualLanguage.description: Afișează simultan atât versurile originale, cât și traducerea.
 settings.option.lyrics.showTimestamps: Afișează marcajele temporale la trecerea cursorului
@@ -2404,6 +2516,12 @@ settings.option.visual.mojavePlayerType.compact.description: Un player subțire,
 settings.option.visual.mojavePlayerType.compactInline: Compact în linie
 settings.option.visual.mojavePlayerType.compactInline.description: Un singur rând subțire, cu progresul în interiorul ecranului LCD.
 settings.option.visual.moveUpLinks: Mută linkurile „Mai multe de văzut” din Explorare în partea de sus
+settings.option.visual.musicVideoPinMaxResolution: Redă întotdeauna videoclipurile muzicale la rezoluție maximă
+settings.option.visual.musicVideoPinMaxResolution.description: Menține cea mai înaltă calitate oferită de videoclip, în loc să înceapă de la o calitate scăzută și să crească treptat. Pe o fereastră mică sau o conexiune contorizată, acest lucru va consuma considerabil mai multă lățime de bandă.
+settings.option.visual.musicVideoPrefetchOnHover: Pregătește videoclipurile muzicale la trecerea cursorului
+settings.option.visual.musicVideoPrefetchOnHover.description: Începe încărcarea videoclipului în timp ce cursorul se află pe pictogramă, astfel încât să se deschidă mai rapid la clic.
+settings.option.visual.musicVideoPrefetchSegmentsOnHover: Descarcă primul segment la trecerea cursorului
+settings.option.visual.musicVideoPrefetchSegmentsOnHover.description: Descarcă, de asemenea, primele secunde ale videoclipului înainte de a face clic. Consumă câțiva megabiți la fiecare trecere a cursorului, inclusiv pentru cele care nu sunt deschise niciodată.
 settings.option.visual.pauseAnimatedOnBlur: Pune pe pauză ilustrațiile animate când nu sunt în focalizare
 settings.option.visual.playerMaterial: Material player
 settings.option.visual.playerMaterial.blur: Estompare
@@ -2587,6 +2705,11 @@ settings.resetCider.title: Resetare Cider
 settings.sleepTimer.endsIn: "Se termină în: {{remainingTime}} ({{endTime}})"
 settings.sleepTimer.notSet: Temporizatorul nu este setat
 settings.sleepTimer.title: Setare temporizator oprire
+settings.smartPlaylists.card.automaticRefresh: Reîmprospătare automată
+settings.smartPlaylists.section.maintenance: Întreținere
+settings.smartPlaylists.section.maintenance.description: Forțează rularea tuturor regulilor acum sau șterge copia cache a bibliotecii tale.
+settings.smartPlaylists.section.rules: Reguli
+settings.smartPlaylists.section.rules.description: Stabilește dacă Cider aplică regulile playlisturilor integrate și cât de des le reevaluează.
 settings.sweetener.useSystemAccentColor: Utilizează culoarea de accent a sistemului
 settings.takeout.chooseFile: Selectați fișierul…
 settings.takeout.error.badVersion: Fișierului respectiv îi lipsesc informațiile despre versiune.
@@ -3295,16 +3418,20 @@ term.zoomin: Mărește
 term.zoomout: Micșorează
 term.zoomreset: Resetează zoomul
 tooltips.watchMusicVideo: Vizionează videoclipul
+updates.installUnavailable.body: Această versiune nu este disponibilă pentru descărcare pe contul tău.
 updates.lateststable.title: Cea mai recentă versiune stabilă
 updates.loadFailed.body: Verifică conexiunea și încearcă din nou.
 updates.loadFailed.title: Cider nu a putut încărca versiunile disponibile
 updates.notifyForBranch.tooltip: Notifică pentru această ramură
 updates.otherVersions.title: Alte versiuni
 updates.ptb.name: Ramură de testare publică
+updates.reloadFailed.body: Cider nu a putut reîncărca versiunile disponibile. Verifică conexiunea și încearcă din nou.
 updates.signedOut.body: Cider verifică actualizările folosind contul tău Cider Taproom.
 updates.signedOut.expired.body: Conectează-te din nou pentru a verifica dacă există actualizări.
 updates.signedOut.expired.bodyNamed: Conectează-te din nou ca {name} pentru a verifica dacă există actualizări.
 updates.signedOut.expired.title: Sesiunea ta Cider Taproom a expirat
 updates.signedOut.title: Conectează-te pentru a verifica dacă există actualizări
+updates.signInToInstall.body: Conectează-te la Cider Taproom pentru a descărca această actualizare.
+updates.signInToInstall.title: Conectează-te pentru a instala această actualizare
 updates.stable.name: Ramură stabilă
 verb.installed: Instalat

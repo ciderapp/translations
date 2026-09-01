@@ -668,9 +668,12 @@ lyrics.contrib.notify.importFailed: Import textů se nezdařil.
 lyrics.contrib.notify.importNone: Pro tuto skladbu nejsou k dispozici žádné texty k importu.
 lyrics.contrib.notify.noCurrent: Momentálně se nepřehrává žádná skladba.
 lyrics.contrib.notify.notLoggedIn: Pro nahrávání textů musíte být přihlášeni.
+lyrics.contrib.notify.profileRequired: Před nahráním textů si nastavte profil přispěvatele.
 lyrics.contrib.notify.submitFailed: Odeslání textů se nezdařilo.
 lyrics.contrib.notify.submitted: Texty byly odeslány – děkujeme za příspěvek!
 lyrics.contrib.preview.empty: Vložte nebo importujte TTML pro náhled textu.
+lyrics.contrib.profile.nameRules: Použijte 3 až 24 písmen, čísel, pomlček nebo podtržítek.
+lyrics.contrib.profile.signedOut: Musíte být přihlášeni.
 lyrics.contrib.signin.button: Přihlásit se přes Cider Taproom
 lyrics.contrib.signin.manual: Zadat token ručně
 lyrics.contrib.signin.sub: Připojte svůj účet Cider Taproom, abyste mohli nahrávat texty a zobrazovat se v žebříčku.
@@ -722,6 +725,7 @@ lyrics.contrib.upload.noResults: Nebyly nalezeny žádné skladby.
 lyrics.contrib.upload.openWindow: Otevřít v okně
 lyrics.contrib.upload.preview: Náhled
 lyrics.contrib.upload.searchPlaceholder: Hledat v katalogu Apple Music…
+lyrics.contrib.upload.signedOut: Chcete-li nahrát texty, přihlaste se ke svému účtu Cider Taproom.
 lyrics.contrib.upload.submit: Odeslat text
 lyrics.contrib.upload.submitting: Odesílání…
 lyrics.contrib.upload.track: Skladba
@@ -1057,6 +1061,18 @@ settings.about.sponsors.opencollective: Open Collective
 settings.about.thirdPartyLicenses: Licence třetích stran
 settings.about.thirdPartyLicenses.desc: Toto jsou prostředky, knihovny a nástroje třetích stran, které Cider používá. Další informace naleznete v jejich příslušných licencích.
 settings.about.viewLicense: Zobrazit licenci
+settings.accessibility.card.textSize: Text a velikost
+settings.accessibility.card.visibility: Viditelnost
+settings.accessibility.section.display: Zobrazení
+settings.accessibility.section.display.description: Tučnost textu, měřítko rozhraní, kontrast a indikátory zaměření.
+settings.accessibility.section.motion: Pohyb
+settings.accessibility.section.motion.description: Množství animací používaných u tlačítek, karet a dalších prvků.
+settings.accessibility.section.soundEffects: Zvukové efekty
+settings.accessibility.section.soundEffects.description: Zvuky rozhraní pro tlačítka, přepínače a posuvníky a hlasitost jejich přehrávání.
+settings.advanced.section.backups: Zálohování a reset
+settings.advanced.section.backups.description: Uložte si kopii nastavení, obnovte zálohu, kterou pro vás Cider uchoval, nebo obnovte výchozí nastavení.
+settings.advanced.section.client: Tento klient
+settings.advanced.section.client.description: Limity výkonu a nastavení, která patří ke klientovi, ve kterém Cider běží, spíše než k vašemu účtu.
 settings.airplay.installed.message: Airplay byl nainstalován
 settings.airplay.installed.title: Airplay nainstalován
 settings.airplay.requiresCiderAudio: Vyžaduje zapnuté CiderAudio
@@ -1077,6 +1093,9 @@ settings.audio.atmosMode: Režim Atmos
 settings.audio.atmosMode.switchFromPassthroughConfirm: Přepnutí z režimu passthrough vyžaduje obnovení aplikace. Pokračovat?
 settings.audio.atmosMode.switchToPassthroughConfirm: Přepnutí do režimu passthrough vyžaduje obnovení aplikace. Pokračovat?
 settings.audio.automix: Automix
+settings.audio.card.advancedVolume: Pokročilá hlasitost
+settings.audio.card.badges: Odznaky
+settings.audio.card.streaming: Streamování
 settings.audio.ciderAudio: Cider Audio
 settings.audio.ciderAudio.description: Speciálně vyladěný a navržený zvukový systém, který poskytuje bohatý a vysoce kvalitní zvuk. Doporučeno namísto tradičního ekvalizéru.
 settings.audio.ciderAudio.enable: Zapnout Cider Audio
@@ -1139,6 +1158,17 @@ settings.audio.occlusion.passthroughNote.short: Není k dispozici při aktivním
 settings.audio.outputDevice: Vyberte výstupní zvukové zařízení
 settings.audio.outputDeviceHint: Vyberte výstupní zvukové zařízení pro přehrávání.
 settings.audio.outputDeviceHintHost: Zachytávání zvuku je zapnuté, přehrávání používá toto výstupní zařízení Windows.
+settings.audio.section.ciderAudio: Cider Audio a indikátory
+settings.audio.section.ciderAudio.description: Zpracování zvuku Cider Audio a odznaky zobrazované během přehrávání skladby.
+settings.audio.section.currentSignal: Aktuální signál
+settings.audio.section.mixing: Mixování
+settings.audio.section.mixing.description: Způsob prolínání skladeb a zda se má odstranit mezera mezi nimi.
+settings.audio.section.output: Výstup
+settings.audio.section.output.description: Zařízení, přes které Cider hraje, a způsob, jakým do něj zvuk putuje.
+settings.audio.section.playback: Přehrávání
+settings.audio.section.playback.description: Kvalita zvuku, prostorový zvuk, režimy poslechu a rychlost přehrávání podcastů.
+settings.audio.section.volume: Hlasitost
+settings.audio.section.volume.description: Vyrovnávání hlasitosti, o kolik kolečko myši mění úroveň a jak posuvník zobrazuje hodnoty.
 settings.automix.allowTempoKeyShifts: Povolit změny tempa/tóniny
 settings.automix.allowTempoKeyShiftsHint: Povolit malé posuny pro zachování energie v přechodech. (Dočasně vypnuto, přepracovává se.)
 settings.automix.description: Inteligentní přechody mezi skladbami na základě tempa a tóniny.
@@ -1369,12 +1399,46 @@ settings.connectivity.scrobbler.rewrite.add: Přidat pravidlo
 settings.connectivity.scrobbler.rewrite.match: Shoda
 settings.connectivity.scrobbler.rewrite.regex: Regex
 settings.connectivity.scrobbler.rewrite.replace: Nahradit za
+settings.connectivity.scrobbler.roster.desc.lastfm: Původní scrobblingová služba. Přihlaste se přes prohlížeč.
+settings.connectivity.scrobbler.roster.desc.librefm: Komunitní a otevřená služba. Přihlaste se přes prohlížeč.
+settings.connectivity.scrobbler.roster.desc.listenbrainz: Otevřená historie poslechu. Vyžaduje uživatelský token.
+settings.connectivity.scrobbler.roster.desc.maloja: Vlastní server. Vyžaduje adresu a klíč API.
+settings.connectivity.scrobbler.roster.footer.many: Scrobbling na {count} účtů
+settings.connectivity.scrobbler.roster.footer.one: Scrobbling na 1 účet
+settings.connectivity.scrobbler.roster.footer.scope: Práh, čištění metadat a černé listiny platí pro každý zdejší účet.
+settings.connectivity.scrobbler.roster.lb.rejected: Služba ListenBrainz tento token nepřijala.
+settings.connectivity.scrobbler.roster.lb.token: Uživatelský token
+settings.connectivity.scrobbler.roster.lb.token.hint: Z vaší profilové stránky na
+settings.connectivity.scrobbler.roster.lede: Scrobblujte do libovolného počtu služeb. Každý zapnutý účet zaznamená každé přehrání.
+settings.connectivity.scrobbler.roster.maloja.key: Klíč API
+settings.connectivity.scrobbler.roster.maloja.url: Adresa serveru
+settings.connectivity.scrobbler.roster.maloja.url.hint: Prefix adresy a cesta k API budou doplněny automaticky.
+settings.connectivity.scrobbler.roster.paused: Pozastaveno
+settings.connectivity.scrobbler.roster.pausedAs: Pozastaveno · {account}
+settings.connectivity.scrobbler.roster.reconnect: Je nutné se znovu připojit
+settings.connectivity.scrobbler.roster.reconnectAction: Znovu připojit
+settings.connectivity.scrobbler.roster.scrobbling: Scrobbling
+settings.connectivity.scrobbler.roster.scrobblingAs: Scrobbling jako {account}
+settings.connectivity.scrobbler.roster.scrobblingTo: Scrobbling na {account}
+settings.connectivity.scrobbler.roster.signOut: Odhlásit se ze služby {service}
+settings.connectivity.scrobbler.roster.switchLabel: Scrobbling na {service}
+settings.connectivity.scrobbler.roster.waiting: Čekání na prohlížeč…
+settings.connectivity.scrobbler.toast.failed: Nepodařilo se odeslat scrobble na {services}
+settings.connectivity.scrobbler.toast.scrobbled: "Zaznamenáno: {track} od {artist}"
 settings.connectivity.scrobbler.trigger: Spouštěč scrobblingu
 settings.connectivity.scrobbler.trigger.absolute: Absolutní čas
 settings.connectivity.scrobbler.trigger.absolute.desc: Scrobblovat po tolika sekundách přehrávání.
+settings.connectivity.scrobbler.trigger.absoluteOpt: Absolutní čas
+settings.connectivity.scrobbler.trigger.either: Podle toho, co nastane dříve
 settings.connectivity.scrobbler.trigger.mode: Režim spouštění
 settings.connectivity.scrobbler.trigger.mode.desc: Kdy odeslat scrobble. „Co nastane dříve“ je klasické pravidlo Last.fm.
+settings.connectivity.scrobbler.trigger.percent: Procento
 settings.connectivity.scrobbler.zeroOff: Hodnota 0 tento filtr vypne.
+settings.connectivity.section.communityRatings: Komunitní hodnocení
+settings.connectivity.section.communityRatings.description: Hodnocení mixů Dolby Atmos od ostatních posluchačů Cideru na stránkách alb a zda se sdílí i ta vaše.
+settings.connectivity.section.discord.description: Co Cider zobrazuje na vašem profilu Discord během přehrávání hudby a přes kterého klienta se připojuje.
+settings.connectivity.section.externalApplications.description: Port WebSockets a RPC server, které ostatní programy používají ke čtení přehrávání a ovládání Cideru, a které z nich mají povolený přístup.
+settings.connectivity.section.parties.description: Synchronizovaný poslech s ostatními uživateli Cideru a co mohou dělat hosté v párty, které pořádáte.
 settings.connectivity.tokenCopied: Token byl zkopírován do schránky
 settings.connectivity.tokens: Tokeny
 settings.contentFilter.description: Sekce v částech Prohlížení a Pusťte si, jejichž názvy nebo obsah odpovídají některému z těchto klíčových slov, budou skryty.
@@ -1489,6 +1553,22 @@ settings.gapless.offset.default: výchozí
 settings.gapless.offset.description: Upravte, kdy dochází k přechodům mezi skladbami. Kladné hodnoty spouštějí přechod dříve, záporné později.
 settings.gapless.offset.earlier: dříve
 settings.gapless.offset.later: později
+settings.general.card.closing: Zavírání
+settings.general.section.cache: Mezipaměť
+settings.general.section.cache.description: Uložené přebaly a metadata, které Cider uchovává na disku pro rychlejší načítání stránek.
+settings.general.section.desktop: Plocha
+settings.general.section.desktop.description: Klávesové zkratky, oznámení na ploše a jak se Cider chová na hlavním panelu a při zavření.
+settings.general.section.language: Jazyk
+settings.general.section.language.description: Jazyk rozhraní a jak nahlásit chyby v překladu nebo uvést autory překladů.
+settings.general.section.playback: Přehrávání
+settings.general.section.playback.description: Co dělá tlačítko přehrávání, když nic nehraje.
+settings.general.section.privacy: Soukromí
+settings.general.section.privacy.description: Jméno, kterým vás Cider oslovuje, a zda může používat vaši polohu.
+settings.general.section.queue: Fronta
+settings.general.section.queue.description: Jak se fronta sestavuje, co je do ní povoleno přidat a co se obnoví při restartu Cideru.
+settings.general.section.sleepTimer: Časovač vypnutí
+settings.general.section.startup: Spuštění
+settings.general.section.startup.description: Co Cider otevře po spuštění a co obnoví z vaší poslední relace.
 settings.header.accounts: Účty
 settings.header.advanced: Pokročilé
 settings.header.audio: Zvuk
@@ -1573,13 +1653,15 @@ settings.intensive.singLyricsEverywhere.description: Spouští animaci textu Sin
 settings.intensive.viewTransitions.description: Animuje přechody při přepínání některých zobrazení.
 settings.intensive.warning: Náročné na výkon – může způsobit vysoké vytížení procesoru/grafické karty.
 settings.keybindings.recordingHint: Nahrávání. Zrušíte stisknutím Escape
+settings.lyrics.card.providers: Poskytovatelé
+settings.lyrics.card.songOverrides: Výjimky pro skladby
 settings.lyrics.localeOverrides: Pravidla podle jazyka
 settings.lyrics.localeOverrides.add: Přidat přepsání podle jazyka
 settings.lyrics.localeOverrides.audioLocale: Jazyk zvuku
 settings.lyrics.localeOverrides.desc: Nastavte vlastní poskytovatele a předvolby překladu pro skladby v konkrétních jazycích. Pokud jazyk zvuku skladby odpovídá pravidlu, tato nastavení přepíší výchozí hodnoty.
 settings.lyrics.localeOverrides.dialogTitle.add: Přidat přepsání podle jazyka
 settings.lyrics.localeOverrides.dialogTitle.edit: Upravit přepsání podle jazyka
-settings.lyrics.localeOverrides.empty: Nejsou nakonfigurována žádná přepsání podle jazyka. Kliknutím na tlačítko + přidejte nové.
+settings.lyrics.localeOverrides.empty: Zatím žádná pravidla. Přidejte je pomocí +.
 settings.lyrics.localeOverrides.overrideTranslation: Přepsat překlad
 settings.lyrics.localeOverrides.preferredProvider: Preferovaný poskytovatel
 settings.lyrics.localeOverrides.provider.apple: Apple Music
@@ -1623,9 +1705,17 @@ settings.lyrics.scroll.easing.presetSpring: Pružná animace – (od SoNothing)
 settings.lyrics.scroll.immersive: Pohlcující
 settings.lyrics.scroll.presets: Předvolby
 settings.lyrics.scroll.sidebar: Boční panel
+settings.lyrics.section.advanced: Pokročilé
+settings.lyrics.section.advanced.description: Posun synchronizace, snímková frekvence animací a ručně vyladěné časování posuvu.
+settings.lyrics.section.display: Zobrazení
+settings.lyrics.section.display.description: Které řádky textu se zobrazují, jak se animují a časové značky zobrazené při najetí myší.
+settings.lyrics.section.sources: Zdroje
+settings.lyrics.section.sources.description: Odkud texty písní pocházejí a pravidla pro konkrétní jazyky nebo skladby, která mají přednost před výchozím poskytovatelem.
+settings.lyrics.section.translation: Překlad
+settings.lyrics.section.translation.description: Přeložené texty, cílový jazyk překladu a zda originál zůstane na obrazovce.
 settings.lyrics.trackOverrides.clearAll: Vymazat všechna přepsání
 settings.lyrics.trackOverrides.desc: Zde uvedené skladby budou vždy používat vámi uzamčeného poskytovatele textů nebo ručně nastavený stav vokálů namísto údajů od Apple. Tato přepsání se nastavují v nabídce textů a v kontextové nabídce skladby.
-settings.lyrics.trackOverrides.empty: Nejsou nakonfigurována žádná přepsání skladeb. Uzamkněte poskytovatele v nabídce textů při zobrazení skladby, nebo nastavte stav vokálů skladby z její kontextové nabídky.
+settings.lyrics.trackOverrides.empty: Zatím zde nejsou žádné výjimky. Vše, co v těchto nabídkách uzamknete, se zobrazí zde.
 settings.lyrics.trackOverrides.lyricsForced: Vynucené texty
 settings.lyrics.trackOverrides.markedInstrumental: Označeno jako instrumentální
 settings.lyrics.trackOverrides.providerLabel: "Poskytovatel:"
@@ -1709,23 +1799,28 @@ settings.option.accessibility.motionIntensity.reduced: Snížená
 settings.option.accessibility.playOnHover: Přehrát při najetí
 settings.option.accessibility.playOnHover.description: Při najetí ukazatele na interaktivní prvky přehraje také jemné kliknutí.
 settings.option.accessibility.soundEffects: Zvukové efekty
+settings.option.accessibility.soundPreview: Ukázka zvuku
+settings.option.accessibility.soundPreview.description: Přehraje ukázku zvuků rozhraní při aktuální hlasitosti.
 settings.option.accessibility.text: Text
 settings.option.accessibility.uiScale: Měřítko rozhraní
 settings.option.accessibility.uiScale.description: Změní velikost textu a prvků rozhraní. Některé prvky rozvržení mají pevnou velikost a nemusí se přizpůsobit.
 settings.option.accessibility.visibility: Viditelnost
 settings.option.accessibility.volume: Hlasitost
+settings.option.accessibility.volume.description: Jak hlasitě se přehrávají zvukové efekty rozhraní.
 settings.option.advanced.clientSettings: Nastavení klienta
 settings.option.advanced.clientSettings.description: Nastavení specifická pro aktuální framework klienta
 settings.option.advanced.compactSidebar: Kompaktní boční panel
+settings.option.advanced.compactSidebar.description: Použije se, když je okno dostatečně úzké na to, aby se boční panel sbalil.
 settings.option.advanced.compactSidebar.size: Velikost
 settings.option.advanced.configBackups.description: Obnovte kopii souboru s nastavením, kterou Cider uložil pro případ, že by se vaše nastavení ztratilo nebo resetovalo.
 settings.option.advanced.experimentalFeatures: Experimentální funkce
 settings.option.advanced.experimentalFeatures.description: Rozpracované funkce a experimentální nastavení.
-settings.option.advanced.floatingSearch: Plovoucí hledání
+settings.option.advanced.floatingSearch: Plovoucí panel vyhledávání
 settings.option.advanced.floatingSearch.blurBackground: Rozostřit pozadí
 settings.option.advanced.floatingSearch.blurBackground.description: Je-li tato možnost povolena, při aktivaci vyhledávacího pole se rozostří pozadí.
 settings.option.advanced.floatingSearch.clearSearchOnClose: Smazat hledání při zavření
 settings.option.advanced.floatingSearch.clearSearchOnClose.description: Je-li tato možnost povolena, text ve vyhledávacím poli se po jeho zavření vymaže.
+settings.option.advanced.floatingSearch.description: Panel vyhledávání, který se otevře nad stránkou.
 settings.option.advanced.floatingSearch.enterShowsResults: Klávesa Enter zobrazí výsledky
 settings.option.advanced.floatingSearch.enterShowsResults.description: Je-li tato možnost povolena, stisknutím klávesy Enter přejdete přímo na stránku s výsledky vyhledávání.
 settings.option.advanced.home: Domů
@@ -1733,13 +1828,15 @@ settings.option.advanced.home.buttonLocation: Umístění tlačítka Domů
 settings.option.advanced.home.buttonLocation.sidebar: Boční panel
 settings.option.advanced.home.buttonLocation.sidebar2023: Boční panel (2023)
 settings.option.advanced.home.buttonLocation.topBar: Horní panel
-settings.option.advanced.immersive: Pohlcující
+settings.option.advanced.immersive: Pohlcující zobrazení
 settings.option.advanced.immersive.artworkHighlight: Zvýraznění přebalu
 settings.option.advanced.immersive.controlsTimeout: Časový limit aktivních ovládacích prvků (sekundy)
+settings.option.advanced.immersive.description: Samotné pohlcující zobrazení. Rozvržení, které používá, se vybírá v sekci Vzhled.
 settings.option.advanced.immersive.glowEffectOnActiveLyrics: Efekt záře u aktivního textu
-settings.option.advanced.lyrics: Texty
+settings.option.advanced.lyrics: Animace textu
 settings.option.advanced.lyrics.characterFlow: Plynulé znaky
 settings.option.advanced.lyrics.characterFlow.description: Jednotlivé znaky budou stoupat nahoru namísto celého řádku. Náročnější na výkon.
+settings.option.advanced.lyrics.description: Jak se pohybují řádky a znaky textu během přehrávání skladby.
 settings.option.advanced.lyrics.lineStaggering: Postupné zobrazování řádků
 settings.option.advanced.lyrics.lineStaggering.description: Nadcházející texty budou mít mírné zpoždění, když se aktivuje další řádek.
 settings.option.advanced.lyrics.lineStaggeringImmersive: Postupné zobrazování řádků (pohlcující)
@@ -1757,15 +1854,17 @@ settings.option.advanced.mavericksLcd: Mavericks LCD
 settings.option.advanced.mavericksLcd.style: Styl
 settings.option.advanced.mavericksLcd.style.glass: Sklo
 settings.option.advanced.mediaArtwork: Obrázek položky
+settings.option.advanced.mediaArtwork.controls: Zvýraznění přebalů a obrázky ve vysokém rozlišení
+settings.option.advanced.mediaArtwork.description: Přebaly alb v mřížkách, seznamech a řádcích napříč aplikací.
 settings.option.advanced.notificationStyle: Styl oznámení
 settings.option.advanced.performance: Výkon
 settings.option.advanced.performance.description: Limity snímkové frekvence, volba rendereru a prahové hodnoty prostředků.
-settings.option.advanced.playback: Přehrávání
+settings.option.advanced.playback: Rychlost přehrávání
 settings.option.advanced.playback.allowPlaybackRateChangeEverywhere: Povolit změnu rychlosti přehrávání u skladeb
 settings.option.advanced.playback.allowPlaybackRateChangeEverywhere.description: Ve výchozím nastavení povoleno pro podcasty. Zapnutím povolíte stejné snadné ovládání rychlosti přehrávání pro všechna média, včetně skladeb.
 settings.option.advanced.playlistTrackMapping: Mapování skladeb v playlistu
 settings.option.advanced.playlistTrackMapping.description: Povolí hloubkové skenování playlistů pro určení, které skladby se v nich nacházejí. Doba vytváření mezipaměti playlistů se může výrazně prodloužit.
-settings.option.advanced.powerUsage.description: Přesunuto – limity snímkové frekvence, volba vykreslovacího jádra a náročné vizuální funkce.
+settings.option.advanced.powerUsage.description: Limity snímkové frekvence, volba vykreslovače a náročné vizuální funkce.
 settings.option.advanced.progressBar: Ukazatel průběhu
 settings.option.advanced.progressBar.useAccentColor: Použít akcentovou barvu
 settings.option.advanced.resetCider: Resetovat Cider
@@ -1777,17 +1876,18 @@ settings.option.advanced.richAlbumGrid.disableScrollAnimation: Vypnout animaci p
 settings.option.advanced.richAlbumGrid.scrollToPosition: Posunout na pozici
 settings.option.advanced.richAlbumGrid.scrollToPosition.bottom: Dolů
 settings.option.advanced.richAlbumGrid.scrollToPosition.top: Nahoru
-settings.option.advanced.searchBar: Hledací pole
+settings.option.advanced.searchBar: Hlavní vyhledávací panel
+settings.option.advanced.searchBar.description: Vyhledávací pole v záhlaví.
 settings.option.advanced.searchBar.noRedirectOnSelect: Nepřecházet na úvodní stránku při aktivaci
 settings.option.advanced.searchBar.noRedirectOnSelect.description: Pokud je tato možnost povolena, hledací pole vás při výběru nepřesměruje na úvodní stránku. Chcete-li přejít na úvodní stránku, podržte při výběru hledacího pole klávesu SHIFT.
 settings.option.advanced.settingsTakeout: Export a import nastavení
 settings.option.advanced.settingsTakeout.description: Zálohujte své předvolby do souboru nebo je obnovte na jiném zařízení. Přihlašovací údaje k účtu nejsou nikdy zahrnuty.
-settings.option.advanced.simpleArtworkBg: Jednoduché pozadí s obrázkem (pohlcující)
+settings.option.advanced.simpleArtworkBg: Jednoduché pozadí s přebalem alb
 settings.option.advanced.simpleArtworkBg.brightness: Jas %
 settings.option.advanced.simpleArtworkBg.contrast: Kontrast %
-settings.option.advanced.simpleArtworkBg.saturate: "Sytost "
+settings.option.advanced.simpleArtworkBg.saturate: Sytost v %
 settings.option.advanced.simpleArtworkBg.useMask: Použít dolní masku
-settings.option.advanced.sonoma: Pohlcující (Sonoma)
+settings.option.advanced.sonoma: Sonoma
 settings.option.advanced.sonoma.lyricArc: Zakřivený text
 settings.option.advanced.sonoma.lyricArc.description: Aktivní řádky textu se zakřivují směrem ke středu obrazovky s jemným pocitem hloubky.
 settings.option.advanced.sonoma.radialMask: Použít alternativní masku
@@ -1795,9 +1895,11 @@ settings.option.advanced.sonoma.radialMask.description: Pokud je tato možnost p
 settings.option.advanced.title: Pokročilé
 settings.option.advanced.tweaks: Drobné úpravy
 settings.option.advanced.tweaks.description: Nastavení pro drobné úpravy, která se nehodí nikam jinam
-settings.option.advanced.volumeSlider: Posuvník hlasitosti
+settings.option.advanced.volumeSlider: Posuvník hlasitosti přehrávače
 settings.option.advanced.volumeSlider.iOSStyle: Styl iOS
-settings.option.advanced.window: Okno
+settings.option.advanced.window: Chování okna
+settings.option.advanced.window.description: Oznámení o přehrávání, změna velikosti mini přehrávače a styl posuvníku používaný v celé aplikaci. Ovládací prvky okna a průhlednost jsou v sekci Vzhled.
+settings.option.advanced.window.scrollbarType: Typ posuvníku
 settings.option.all: Vše
 settings.option.alwaysShow: Vždy zobrazovat
 settings.option.appleMusic.behavior.playButtonOnStop: Akce tlačítka Přehrát při zastavení
@@ -1878,6 +1980,7 @@ settings.option.audio.enableAdvancedFunctionality.tunedAudioSpatialization.profi
 settings.option.audio.exponentialVolume: Exponenciální křivka hlasitosti
 settings.option.audio.exponentialVolume.description: Použije pozvolnější křivku hlasitosti, což umožňuje přesnější ovládání při nižších hlasitostech.
 settings.option.audio.hostCapture: Zachytávatelný zvuk (OBS / Discord)
+settings.option.audio.hostCapture.description: Streamovací a nahrávací aplikace jako OBS nebo Discord potřebují hostitele Windows ke směrování přehrávání.
 settings.option.audio.maxVolume: Maximální hlasitost
 settings.option.audio.mixing: Mixování
 settings.option.audio.normalization: Normalizace hlasitosti
@@ -1919,10 +2022,12 @@ settings.option.concerts.sortBy.description: Jak seřadit koncerty v seznamu
 settings.option.concerts.sortBy.distance: Vzdálenost
 settings.option.connect.link_account.description: Propojení účtu Discord se službou Cider Connect vám umožní ukládat uživatelská data včetně nastavení, ekvalizérů a časem i dalších funkcí. (Ve vývoji)
 settings.option.connectivity.atmosRatings: Komunitní hodnocení Atmos
+settings.option.connectivity.atmosRatings.description: Zobrazte a sdílejte, která alba znějí skvěle v Dolby Atmos.
 settings.option.connectivity.ciderConnect.description: Společný poslech, sdílené playlisty, vzdálené ovládání aplikace a další!
 settings.option.connectivity.ciderRemote: Cider Remote
 settings.option.connectivity.discord: Discord
 settings.option.connectivity.discordRichPresence: Discord Rich Presence
+settings.option.connectivity.discordRichPresence.description: Stav zobrazený na vašem profilu Discord a název klienta a tlačítka, která používá.
 settings.option.connectivity.discordRPC: Discord Rich Presence
 settings.option.connectivity.discordRPC.animatedArtwork: Animovaný přebal
 settings.option.connectivity.discordRPC.animatedArtwork.description: Tato možnost může ovlivnit dobu načítání stavu Rich Presence, pokud přebal ještě není k dispozici.
@@ -1996,9 +2101,13 @@ settings.option.connectivity.partiesTransportDefault.host: Pouze hostitel
 settings.option.connectivity.playbackNotifications: Oznámení o přehrávání
 settings.option.connectivity.playbackNotifications.description: Zobrazit oznámení s novou skladbou při každé změně přehrávané skladby.
 settings.option.connectivity.remoteConnection: Vzdálené připojení
+settings.option.connectivity.remoteConnection.description: Párování telefonu nebo tabletu a odpárování zařízení, která ovládají přehrávání.
 settings.option.connectivity.rpcServer: RPC server
+settings.option.connectivity.rpcServer.description: Správa přístupu k Cideru pro externí aplikace pomocí RPC serveru.
+settings.option.connectivity.rpcServer.manageAccess: Spravovat přístup externích aplikací k Cideru
 settings.option.connectivity.scrobbler: Scrobbler
 settings.option.connectivity.scrobblerIntegration: Integrace scrobbleru
+settings.option.connectivity.scrobblerIntegration.description: Scrobbling pro Last.fm, ListenBrainz, Libre.fm a Maloja k uchování historie poslechu.
 settings.option.connectivity.steam.clearOnPause: Vymazat Rich Presence při pozastavení
 settings.option.connectivity.webSocketsApi: WebSockets API
 settings.option.connectivity.webSocketsAPI: WebSockets API
@@ -2020,6 +2129,7 @@ settings.option.experiments.chromecastLyrics.description: Zobrazovat synchronizo
 settings.option.experiments.floatingSearch: Povolit plovoucí vyhledávání
 settings.option.experiments.forceExplicit: Automaticky přepínat na explicitní verzi alba
 settings.option.experiments.forceExplicit.description: Může prodloužit dobu načítání při vyhledávání explicitních verzí alb.
+settings.option.experiments.legacyFetch: Starší načítání
 settings.option.experiments.musicVideos: Povolit hudební videa v knihovně
 settings.option.experiments.title: Experimentální funkce
 settings.option.general.app: Aplikace
@@ -2136,6 +2246,8 @@ settings.option.lyrics.provider.netease: NetEase
 settings.option.lyrics.provider.user: Odeslané uživateli
 settings.option.lyrics.providerPreferences: Předvolby poskytovatelů
 settings.option.lyrics.providerPreferences.description: Nastavte, které zdroje textů se mají používat a jakou mají mít prioritu
+settings.option.lyrics.scrollTuning: Doba a průběh posouvání
+settings.option.lyrics.scrollTuning.description: Nastavte, jak dlouho trvá posunutí řádků textu a jakou křivku průběhu sledují, zvlášť pro boční panel a imerzivní přehrávač.
 settings.option.lyrics.showDualLanguage: Zobrazit dva jazyky
 settings.option.lyrics.showDualLanguage.description: Zobrazit původní text i překlad současně.
 settings.option.lyrics.showTimestamps: Zobrazit časové značky při najetí myší
@@ -2404,6 +2516,12 @@ settings.option.visual.mojavePlayerType.compact.description: Štíhlý přehráv
 settings.option.visual.mojavePlayerType.compactInline: Kompaktní řádkové
 settings.option.visual.mojavePlayerType.compactInline.description: Jeden štíhlý řádek s průběhem uvnitř LCD.
 settings.option.visual.moveUpLinks: Přesunout odkazy „Další k objevování“ v sekci Prohlížení nahoru
+settings.option.visual.musicVideoPinMaxResolution: Vždy přehrávat hudební videa v maximálním rozlišení
+settings.option.visual.musicVideoPinMaxResolution.description: Zachová nejvyšší kvalitu, kterou video nabízí, namísto spouštění v nízké kvalitě a jejího postupného zvyšování. V malém okně nebo při připojení s měřeným objemem dat to spotřebuje znatelně více dat.
+settings.option.visual.musicVideoPrefetchOnHover: Přednačítat hudební videa při najetí myší
+settings.option.visual.musicVideoPrefetchOnHover.description: Spustí načítání videa, když ukazatel spočívá na odznaku, takže se po kliknutí otevře rychleji.
+settings.option.visual.musicVideoPrefetchSegmentsOnHover: Stáhnout první část při najetí myší
+settings.option.visual.musicVideoPrefetchSegmentsOnHover.description: Stáhne také prvních několik sekund videa ještě před kliknutím. Každé najetí myší tak spotřebuje několik megabajtů, a to i v případech, kdy video vůbec neotevřete.
 settings.option.visual.pauseAnimatedOnBlur: Pozastavit animovaný obal, pokud aplikace není aktivní
 settings.option.visual.playerMaterial: Materiál přehrávače
 settings.option.visual.playerMaterial.blur: Rozostření
@@ -2587,6 +2705,11 @@ settings.resetCider.title: Resetovat Cider
 settings.sleepTimer.endsIn: "Končí za: {{remainingTime}} ({{endTime}})"
 settings.sleepTimer.notSet: Časovač není nastaven
 settings.sleepTimer.title: Nastavit časovač usnutí
+settings.smartPlaylists.card.automaticRefresh: Automatické obnovení
+settings.smartPlaylists.section.maintenance: Údržba
+settings.smartPlaylists.section.maintenance.description: Vynutit okamžité spuštění všech pravidel nebo smazat kopii knihovny v mezipaměti.
+settings.smartPlaylists.section.rules: Pravidla
+settings.smartPlaylists.section.rules.description: Určuje, zda Cider uplatňuje integrovaná pravidla playlistů a jak často je znovu vyhodnocuje.
 settings.sweetener.useSystemAccentColor: Použít systémovou barvu akcentu
 settings.takeout.chooseFile: Vybrat soubor…
 settings.takeout.error.badVersion: V tomto souboru chybí informace o verzi.
@@ -3295,16 +3418,20 @@ term.zoomin: Přiblížit
 term.zoomout: Oddálit
 term.zoomreset: Obnovit přiblížení
 tooltips.watchMusicVideo: Sledovat hudební video
+updates.installUnavailable.body: Tato verze není pro váš účet k dispozici ke stažení.
 updates.lateststable.title: Nejnovější stabilní verze
 updates.loadFailed.body: Zkontrolujte připojení a zkuste to znovu.
 updates.loadFailed.title: Cider nemohl načíst dostupné verze
 updates.notifyForBranch.tooltip: Upozorňovat na tuto větev
 updates.otherVersions.title: Ostatní verze
 updates.ptb.name: Veřejná testovací větev
+updates.reloadFailed.body: Cideru se nepodařilo znovu načíst dostupné verze. Zkontrolujte připojení a zkuste to znovu.
 updates.signedOut.body: Cider kontroluje aktualizace pomocí vašeho účtu Cider Taproom.
 updates.signedOut.expired.body: Chcete-li zkontrolovat aktualizace, znovu se přihlaste.
 updates.signedOut.expired.bodyNamed: Chcete-li zkontrolovat aktualizace, přihlaste se znovu jako {name}.
 updates.signedOut.expired.title: Vaše relace Cider Taproom vypršela
 updates.signedOut.title: Přihlaste se pro kontrolu aktualizací
+updates.signInToInstall.body: Chcete-li stáhnout tuto aktualizaci, přihlaste se k Cider Taproom.
+updates.signInToInstall.title: Pro instalaci této aktualizace se přihlaste
 updates.stable.name: Stabilní větev
 verb.installed: Nainstalováno

@@ -668,9 +668,12 @@ lyrics.contrib.notify.importFailed: Gagal mengimpor lirik.
 lyrics.contrib.notify.importNone: Tidak ada lirik yang tersedia untuk diimpor untuk lagu ini.
 lyrics.contrib.notify.noCurrent: Tidak ada lagu yang sedang diputar.
 lyrics.contrib.notify.notLoggedIn: Anda harus masuk untuk mengunggah lirik.
+lyrics.contrib.notify.profileRequired: Buat profil kontributor sebelum mengunggah lirik.
 lyrics.contrib.notify.submitFailed: Gagal mengirimkan lirik.
 lyrics.contrib.notify.submitted: Lirik berhasil dikirim — terima kasih atas kontribusi Anda!
 lyrics.contrib.preview.empty: Tempel atau impor TTML untuk melihat pratinjau lirik di sini.
+lyrics.contrib.profile.nameRules: Gunakan 3 hingga 24 huruf, angka, tanda hubung, atau garis bawah.
+lyrics.contrib.profile.signedOut: Anda harus masuk.
 lyrics.contrib.signin.button: Masuk dengan Cider Taproom
 lyrics.contrib.signin.manual: Masukkan token secara manual
 lyrics.contrib.signin.sub: Hubungkan akun Cider Taproom Anda untuk mengunggah lirik dan tampil di papan peringkat.
@@ -722,6 +725,7 @@ lyrics.contrib.upload.noResults: Lagu tidak ditemukan.
 lyrics.contrib.upload.openWindow: Buka di jendela
 lyrics.contrib.upload.preview: Pratinjau
 lyrics.contrib.upload.searchPlaceholder: Cari katalog Apple Music…
+lyrics.contrib.upload.signedOut: Masuk ke akun Cider Taproom Anda untuk mengunggah lirik.
 lyrics.contrib.upload.submit: Kirim lirik
 lyrics.contrib.upload.submitting: Mengirim…
 lyrics.contrib.upload.track: Lagu
@@ -1057,6 +1061,18 @@ settings.about.sponsors.opencollective: Open Collective
 settings.about.thirdPartyLicenses: Lisensi Pihak Ketiga
 settings.about.thirdPartyLicenses.desc: Ini adalah aset, pustaka, dan alat pihak ketiga yang digunakan Cider. Silakan merujuk ke lisensi masing-masing untuk informasi lebih lanjut.
 settings.about.viewLicense: Lihat Lisensi
+settings.accessibility.card.textSize: Teks & Ukuran
+settings.accessibility.card.visibility: Visibilitas
+settings.accessibility.section.display: Tampilan
+settings.accessibility.section.display.description: Ketebalan teks, skala antarmuka, kontras, dan indikator fokus.
+settings.accessibility.section.motion: Gerakan
+settings.accessibility.section.motion.description: Seberapa banyak animasi yang digunakan oleh tombol, kartu, dan permukaan lainnya.
+settings.accessibility.section.soundEffects: Efek Suara
+settings.accessibility.section.soundEffects.description: Suara antarmuka untuk tombol, sakelar, dan penggeser, serta seberapa keras suaranya diputar.
+settings.advanced.section.backups: Cadangan & Atur Ulang
+settings.advanced.section.backups.description: Simpan salinan pengaturan Anda, pulihkan cadangan yang disimpan oleh Cider, atau kembalikan semuanya ke default.
+settings.advanced.section.client: Klien Ini
+settings.advanced.section.client.description: Batas performa, dan pengaturan yang termasuk dalam klien tempat Cider berjalan, bukan pada akun Anda.
 settings.airplay.installed.message: Airplay telah diinstal
 settings.airplay.installed.title: Airplay Diinstal
 settings.airplay.requiresCiderAudio: Memerlukan CiderAudio untuk diaktifkan
@@ -1077,6 +1093,9 @@ settings.audio.atmosMode: Mode Atmos
 settings.audio.atmosMode.switchFromPassthroughConfirm: Beralih dari mode passthrough memerlukan penyegaran aplikasi. Lanjutkan?
 settings.audio.atmosMode.switchToPassthroughConfirm: Beralih ke mode passthrough memerlukan penyegaran aplikasi. Lanjutkan?
 settings.audio.automix: Automix
+settings.audio.card.advancedVolume: Volume Lanjutan
+settings.audio.card.badges: Lencana
+settings.audio.card.streaming: Streaming
 settings.audio.ciderAudio: Cider Audio
 settings.audio.ciderAudio.description: Tumpukan audio yang dirancang dan disetel khusus untuk menghadirkan pengalaman audio berkualitas tinggi yang kaya. Direkomendasikan daripada equalizer tradisional.
 settings.audio.ciderAudio.enable: Aktifkan Cider Audio
@@ -1139,6 +1158,17 @@ settings.audio.occlusion.passthroughNote.short: Tidak tersedia saat passthrough 
 settings.audio.outputDevice: Pilih Perangkat Output Audio
 settings.audio.outputDeviceHint: Pilih perangkat output audio untuk pemutaran.
 settings.audio.outputDeviceHintHost: Audio yang dapat ditangkap aktif, pemutaran menggunakan perangkat output Windows ini.
+settings.audio.section.ciderAudio: Cider Audio & Indikator
+settings.audio.section.ciderAudio.description: Tumpukan pemrosesan Cider Audio, dan lencana yang ditampilkan saat trek diputar.
+settings.audio.section.currentSignal: Sinyal Saat Ini
+settings.audio.section.mixing: Pencampuran
+settings.audio.section.mixing.description: Bagaimana satu trek bercampur ke trek berikutnya, dan apakah jeda di antara keduanya dihapus.
+settings.audio.section.output: Output
+settings.audio.section.output.description: Perangkat yang digunakan Cider untuk memutar, dan bagaimana pemutaran mencapainya.
+settings.audio.section.playback: Pemutaran
+settings.audio.section.playback.description: Kualitas audio, audio spasial, mode mendengarkan, dan seberapa cepat podcast diputar.
+settings.audio.section.volume: Volume
+settings.audio.section.volume.description: Penyesuaian kenyaringan, seberapa jauh roda gulir mengubah tingkat volume, dan pembacaan penggeser.
 settings.automix.allowTempoKeyShifts: Izinkan Perubahan Tempo/Nada
 settings.automix.allowTempoKeyShiftsHint: Izinkan sedikit perubahan tempo/nada untuk menjaga transisi tetap energik. (Dinonaktifkan sementara, sedang dikerjakan ulang.)
 settings.automix.description: Transisi cerdas antar-lagu berdasarkan tempo dan nada.
@@ -1369,12 +1399,46 @@ settings.connectivity.scrobbler.rewrite.add: Tambah aturan
 settings.connectivity.scrobbler.rewrite.match: Cocokkan
 settings.connectivity.scrobbler.rewrite.regex: Regex
 settings.connectivity.scrobbler.rewrite.replace: Ganti dengan
+settings.connectivity.scrobbler.roster.desc.lastfm: Layanan scrobbling orisinal. Masuk melalui browser Anda.
+settings.connectivity.scrobbler.roster.desc.librefm: Dijalankan oleh komunitas dan terbuka. Masuk melalui browser Anda.
+settings.connectivity.scrobbler.roster.desc.listenbrainz: Riwayat mendengarkan terbuka. Memerlukan token pengguna.
+settings.connectivity.scrobbler.roster.desc.maloja: Server Anda sendiri. Memerlukan alamat server dan kunci API.
+settings.connectivity.scrobbler.roster.footer.many: Melakukan scrobble ke {count} akun
+settings.connectivity.scrobbler.roster.footer.one: Melakukan scrobble ke 1 akun
+settings.connectivity.scrobbler.roster.footer.scope: Ambang batas, pembersihan metadata, dan daftar hitam berlaku untuk setiap akun di sini.
+settings.connectivity.scrobbler.roster.lb.rejected: ListenBrainz tidak menerima token tersebut.
+settings.connectivity.scrobbler.roster.lb.token: Token pengguna
+settings.connectivity.scrobbler.roster.lb.token.hint: Dari halaman profil Anda di
+settings.connectivity.scrobbler.roster.lede: Lakukan scrobble ke sebanyak mungkin layanan yang Anda inginkan. Setiap akun yang Anda aktifkan akan menerima setiap pemutaran.
+settings.connectivity.scrobbler.roster.maloja.key: Kunci API
+settings.connectivity.scrobbler.roster.maloja.url: Alamat server
+settings.connectivity.scrobbler.roster.maloja.url.hint: Awalan alamat dan jalur API ditambahkan secara otomatis untuk Anda.
+settings.connectivity.scrobbler.roster.paused: Dijeda
+settings.connectivity.scrobbler.roster.pausedAs: Dijeda · {account}
+settings.connectivity.scrobbler.roster.reconnect: Perlu menyambungkan ulang
+settings.connectivity.scrobbler.roster.reconnectAction: Sambungkan Ulang
+settings.connectivity.scrobbler.roster.scrobbling: Scrobbling
+settings.connectivity.scrobbler.roster.scrobblingAs: Scrobbling sebagai {account}
+settings.connectivity.scrobbler.roster.scrobblingTo: Scrobbling ke {account}
+settings.connectivity.scrobbler.roster.signOut: Keluar dari {service}
+settings.connectivity.scrobbler.roster.switchLabel: Scrobble ke {service}
+settings.connectivity.scrobbler.roster.waiting: Menunggu browser…
+settings.connectivity.scrobbler.toast.failed: Gagal melakukan scrobble ke {services}
+settings.connectivity.scrobbler.toast.scrobbled: Berhasil melakukan scrobble {track} oleh {artist}
 settings.connectivity.scrobbler.trigger: Pemicu scrobble
 settings.connectivity.scrobbler.trigger.absolute: Waktu absolut
 settings.connectivity.scrobbler.trigger.absolute.desc: Scrobble setelah sekian detik pemutaran.
+settings.connectivity.scrobbler.trigger.absoluteOpt: Waktu absolut
+settings.connectivity.scrobbler.trigger.either: Mana saja yang lebih dulu
 settings.connectivity.scrobbler.trigger.mode: Mode pemicu
 settings.connectivity.scrobbler.trigger.mode.desc: Kapan harus mengirimkan scrobble. "Mana saja yang lebih dulu" adalah aturan klasik Last.fm.
+settings.connectivity.scrobbler.trigger.percent: Persentase
 settings.connectivity.scrobbler.zeroOff: 0 menonaktifkan filter ini.
+settings.connectivity.section.communityRatings: Penilaian Komunitas
+settings.connectivity.section.communityRatings.description: Peringkat mix Dolby Atmos dari pendengar Cider lainnya di halaman album, dan apakah peringkat Anda dibagikan kembali.
+settings.connectivity.section.discord.description: Apa yang Cider tampilkan di profil Discord Anda saat musik diputar, dan klien mana yang digunakannya untuk terhubung.
+settings.connectivity.section.externalApplications.description: Port WebSockets dan server RPC yang digunakan program lain untuk membaca pemutaran dan mengontrol Cider, serta program mana saja yang diizinkan masuk.
+settings.connectivity.section.parties.description: Mendengarkan secara sinkron dengan pengguna Cider lainnya, dan apa yang dapat dilakukan tamu dalam pesta yang Anda selenggarakan.
 settings.connectivity.tokenCopied: Token disalin ke papan klip
 settings.connectivity.tokens: Token
 settings.contentFilter.description: Bagian di Cari dan Dengarkan Sekarang yang judul atau kontennya cocok dengan kata kunci ini akan disembunyikan.
@@ -1489,6 +1553,22 @@ settings.gapless.offset.default: bawaan
 settings.gapless.offset.description: Sesuaikan kapan transisi trek terjadi. Nilai positif memicu lebih awal, nilai negatif memicu lebih lambat.
 settings.gapless.offset.earlier: lebih awal
 settings.gapless.offset.later: lebih lambat
+settings.general.card.closing: Menutup
+settings.general.section.cache: Cache
+settings.general.section.cache.description: Karya seni dan metadata tersimpan yang disimpan Cider pada disk agar halaman dimuat lebih cepat.
+settings.general.section.desktop: Desktop
+settings.general.section.desktop.description: Pintasan papan ketik, notifikasi desktop, dan bagaimana perilaku Cider di bilah tugas dan saat ditutup.
+settings.general.section.language: Bahasa
+settings.general.section.language.description: Bahasa antarmuka, dan cara melaporkan atau memberikan kredit untuk terjemahannya.
+settings.general.section.playback: Pemutaran
+settings.general.section.playback.description: Apa yang dilakukan tombol putar saat tidak ada musik yang diputar.
+settings.general.section.privacy: Privasi
+settings.general.section.privacy.description: Nama yang digunakan Cider untuk menyapa Anda, dan apakah Cider boleh menggunakan lokasi Anda.
+settings.general.section.queue: Antrean
+settings.general.section.queue.description: Bagaimana antrean dibuat, apa saja yang diizinkan masuk ke dalamnya, dan apa yang dipulihkan saat Cider dimulai ulang.
+settings.general.section.sleepTimer: Timer Tidur
+settings.general.section.startup: Startup
+settings.general.section.startup.description: Halaman apa yang dibuka Cider saat mulai, dan apa yang dipulihkan dari sesi terakhir Anda.
 settings.header.accounts: Akun
 settings.header.advanced: Lanjutan
 settings.header.audio: Audio
@@ -1573,13 +1653,15 @@ settings.intensive.singLyricsEverywhere.description: Menjalankan animasi lirik S
 settings.intensive.viewTransitions.description: Menganimasikan transisi saat beralih beberapa tampilan.
 settings.intensive.warning: Intensif performa — dapat menyebabkan penggunaan CPU/GPU yang tinggi.
 settings.keybindings.recordingHint: Merekam. Escape untuk membatalkan
+settings.lyrics.card.providers: Penyedia
+settings.lyrics.card.songOverrides: Pengecualian Lagu
 settings.lyrics.localeOverrides: Aturan Berbasis Lokal
 settings.lyrics.localeOverrides.add: Tambah Pengganti Lokal
 settings.lyrics.localeOverrides.audioLocale: Lokal Audio
 settings.lyrics.localeOverrides.desc: Atur penyedia kustom dan preferensi terjemahan untuk lagu dalam bahasa tertentu. Ketika lokal audio lagu cocok dengan aturan, pengaturan ini akan menggantikan pengaturan default.
 settings.lyrics.localeOverrides.dialogTitle.add: Tambah Pengganti Lokal
 settings.lyrics.localeOverrides.dialogTitle.edit: Edit Pengganti Lokal
-settings.lyrics.localeOverrides.empty: Tidak ada pengganti lokal yang dikonfigurasi. Klik tombol + untuk menambahkan.
+settings.lyrics.localeOverrides.empty: Belum ada aturan. Gunakan + untuk menambahkan.
 settings.lyrics.localeOverrides.overrideTranslation: Gantikan Terjemahan
 settings.lyrics.localeOverrides.preferredProvider: Penyedia Pilihan
 settings.lyrics.localeOverrides.provider.apple: Apple Music
@@ -1623,9 +1705,17 @@ settings.lyrics.scroll.easing.presetSpring: Animasi pegas - (oleh SoNothing)
 settings.lyrics.scroll.immersive: Imersif
 settings.lyrics.scroll.presets: Preset
 settings.lyrics.scroll.sidebar: Bilah Sisi
+settings.lyrics.section.advanced: Lanjutan
+settings.lyrics.section.advanced.description: Ofset sinkronisasi, laju bingkai animasi, dan pengaturan waktu gulir manual.
+settings.lyrics.section.display: Tampilan
+settings.lyrics.section.display.description: Baris lirik mana yang muncul, bagaimana animasinya, dan stempel waktu yang ditampilkan saat kursor diarahkan.
+settings.lyrics.section.sources: Sumber
+settings.lyrics.section.sources.description: Dari mana lirik berasal, dan aturan per bahasa atau per trek yang mengesampingkan penyedia default.
+settings.lyrics.section.translation: Terjemahan
+settings.lyrics.section.translation.description: Lirik yang diterjemahkan, bahasa targetnya, dan apakah lirik asli tetap ditampilkan di layar.
 settings.lyrics.trackOverrides.clearAll: Hapus Semua Penimpaan
 settings.lyrics.trackOverrides.desc: Lagu yang terdaftar di sini selalu menggunakan penyedia lirik yang Anda kunci, atau status vokal yang Anda atur secara manual, alih-alih yang dilaporkan oleh Apple. Pengecualian ini diatur dari menu lirik dan menu klik kanan lagu.
-settings.lyrics.trackOverrides.empty: Tidak ada pengecualian lagu yang dikonfigurasi. Kunci penyedia dari menu lirik saat memutar lagu, atau atur status vokal lagu dari menu klik kanannya.
+settings.lyrics.trackOverrides.empty: Belum ada yang dikecualikan. Apa pun yang Anda kunci dari menu tersebut akan dicantumkan di sini.
 settings.lyrics.trackOverrides.lyricsForced: Lirik dipaksakan
 settings.lyrics.trackOverrides.markedInstrumental: Ditandai sebagai instrumental
 settings.lyrics.trackOverrides.providerLabel: "Penyedia:"
@@ -1709,23 +1799,28 @@ settings.option.accessibility.motionIntensity.reduced: Dikurangi
 settings.option.accessibility.playOnHover: Putar saat Diarahkan
 settings.option.accessibility.playOnHover.description: Juga putar suara klik halus saat penunjuk memasuki elemen interaktif.
 settings.option.accessibility.soundEffects: Efek Suara
+settings.option.accessibility.soundPreview: Pratinjau Suara
+settings.option.accessibility.soundPreview.description: Memutar sampel suara antarmuka pada volume saat ini.
 settings.option.accessibility.text: Teks
 settings.option.accessibility.uiScale: Skala UI
 settings.option.accessibility.uiScale.description: Mengubah skala teks dan elemen antarmuka. Beberapa elemen tata letak menggunakan ukuran tetap dan mungkin tidak berubah skala.
 settings.option.accessibility.visibility: Visibilitas
 settings.option.accessibility.volume: Volume
+settings.option.accessibility.volume.description: Seberapa keras efek suara antarmuka dimainkan.
 settings.option.advanced.clientSettings: Pengaturan Klien
 settings.option.advanced.clientSettings.description: Pengaturan khusus untuk kerangka kerja klien saat ini
 settings.option.advanced.compactSidebar: Bilah Sisi Ringkas
+settings.option.advanced.compactSidebar.description: Berlaku saat jendela cukup sempit hingga bilah samping menciut.
 settings.option.advanced.compactSidebar.size: Ukuran
 settings.option.advanced.configBackups.description: Pulihkan salinan file pengaturan Anda yang disimpan oleh Cider, jika pengaturan Anda hilang atau diatur ulang.
 settings.option.advanced.experimentalFeatures: Fitur Eksperimental
 settings.option.advanced.experimentalFeatures.description: Kemampuan yang sedang dikembangkan dan bendera fitur.
-settings.option.advanced.floatingSearch: Pencarian Melayang
+settings.option.advanced.floatingSearch: Hamparan Pencarian Melayang
 settings.option.advanced.floatingSearch.blurBackground: Buramkan Latar Belakang
 settings.option.advanced.floatingSearch.blurBackground.description: Jika diaktifkan, latar belakang akan diburamkan saat bilah pencarian difokuskan.
 settings.option.advanced.floatingSearch.clearSearchOnClose: Bersihkan Pencarian Saat Ditutup
 settings.option.advanced.floatingSearch.clearSearchOnClose.description: Jika diaktifkan, teks bilah pencarian akan dibersihkan saat bilah pencarian ditutup.
+settings.option.advanced.floatingSearch.description: Panel pencarian yang terbuka di atas halaman.
 settings.option.advanced.floatingSearch.enterShowsResults: Enter Menampilkan Hasil
 settings.option.advanced.floatingSearch.enterShowsResults.description: Jika diaktifkan, bilah pencarian akan langsung menuju ke halaman hasil pencarian saat Anda menekan enter.
 settings.option.advanced.home: Beranda
@@ -1733,13 +1828,15 @@ settings.option.advanced.home.buttonLocation: Lokasi Tombol Beranda
 settings.option.advanced.home.buttonLocation.sidebar: Bilah Sisi
 settings.option.advanced.home.buttonLocation.sidebar2023: Bilah Sisi (2023)
 settings.option.advanced.home.buttonLocation.topBar: Bilah Atas
-settings.option.advanced.immersive: Imersif
+settings.option.advanced.immersive: Tampilan Imersif
 settings.option.advanced.immersive.artworkHighlight: Sorotan Sampul Album
 settings.option.advanced.immersive.controlsTimeout: Batas Waktu Kontrol Aktif (Detik)
+settings.option.advanced.immersive.description: Tampilan imersif itu sendiri. Tata letak yang digunakannya dipilih di bawah Visual.
 settings.option.advanced.immersive.glowEffectOnActiveLyrics: Efek Cahaya pada Lirik Aktif
-settings.option.advanced.lyrics: Lirik
+settings.option.advanced.lyrics: Animasi Lirik
 settings.option.advanced.lyrics.characterFlow: Karakter Mengalir
 settings.option.advanced.lyrics.characterFlow.description: Karakter individual akan mengalir ke atas, bukan seluruh baris. Memerlukan lebih banyak sumber daya.
+settings.option.advanced.lyrics.description: Bagaimana baris dan karakter lirik bergerak saat lagu diputar.
 settings.option.advanced.lyrics.lineStaggering: Baris Bertahap
 settings.option.advanced.lyrics.lineStaggering.description: Lirik berikutnya akan mengalami sedikit jeda saat lirik aktif selanjutnya menjadi fokus
 settings.option.advanced.lyrics.lineStaggeringImmersive: Baris Bertahap (Imersif)
@@ -1757,15 +1854,17 @@ settings.option.advanced.mavericksLcd: LCD Mavericks
 settings.option.advanced.mavericksLcd.style: Gaya
 settings.option.advanced.mavericksLcd.style.glass: Kaca
 settings.option.advanced.mediaArtwork: Ilustrasi Item Media
+settings.option.advanced.mediaArtwork.controls: Sorotan Karya Seni dan Gambar Resolusi Tinggi
+settings.option.advanced.mediaArtwork.description: Karya seni pada kisi, daftar, dan baris di seluruh aplikasi.
 settings.option.advanced.notificationStyle: Gaya Pemberitahuan
 settings.option.advanced.performance: Performa
 settings.option.advanced.performance.description: Batas framerate, pilihan perender, dan ambang batas sumber daya.
-settings.option.advanced.playback: Pemutaran
+settings.option.advanced.playback: Kecepatan Pemutaran
 settings.option.advanced.playback.allowPlaybackRateChangeEverywhere: Izinkan Mengubah Kecepatan Pemutaran untuk Lagu
 settings.option.advanced.playback.allowPlaybackRateChangeEverywhere.description: Diaktifkan secara default untuk podcast. Aktifkan untuk mengizinkan kontrol kecepatan pemutaran yang sama mudahnya ke semua media, termasuk lagu.
 settings.option.advanced.playlistTrackMapping: Pemetaan Trek Daftar Putar
 settings.option.advanced.playlistTrackMapping.description: Mengaktifkan pemindaian mendalam pada daftar putar untuk menentukan trek mana yang ada di daftar putar mana. Waktu pembuatan cache daftar putar dapat meningkat secara signifikan.
-settings.option.advanced.powerUsage.description: Dipindahkan — batas framerate, pilihan perender, dan fitur visual yang berat.
+settings.option.advanced.powerUsage.description: Batas laju bingkai, pilihan perender, dan fitur visual yang menuntut performa tinggi.
 settings.option.advanced.progressBar: Bilah Kemajuan
 settings.option.advanced.progressBar.useAccentColor: Gunakan Warna Aksen
 settings.option.advanced.resetCider: Atur Ulang Cider
@@ -1777,17 +1876,18 @@ settings.option.advanced.richAlbumGrid.disableScrollAnimation: Nonaktifkan Anima
 settings.option.advanced.richAlbumGrid.scrollToPosition: Gulir ke Posisi
 settings.option.advanced.richAlbumGrid.scrollToPosition.bottom: Bawah
 settings.option.advanced.richAlbumGrid.scrollToPosition.top: Atas
-settings.option.advanced.searchBar: Bilah Pencarian
+settings.option.advanced.searchBar: Bilah Pencarian Utama
+settings.option.advanced.searchBar.description: Kolom pencarian di bilah judul.
 settings.option.advanced.searchBar.noRedirectOnSelect: Tanpa Halaman Landas Saat Fokus
 settings.option.advanced.searchBar.noRedirectOnSelect.description: Jika diaktifkan, bilah pencarian tidak akan mengalihkan ke halaman landas saat dipilih. Untuk membuka halaman landas, tahan SHIFT saat memilih bilah pencarian.
 settings.option.advanced.settingsTakeout: Ekspor / Impor Pengaturan
 settings.option.advanced.settingsTakeout.description: Cadangkan preferensi Anda ke file, atau pulihkan di perangkat lain. Login akun tidak pernah disertakan.
-settings.option.advanced.simpleArtworkBg: Latar Belakang Ilustrasi Sederhana (Imersif)
+settings.option.advanced.simpleArtworkBg: Latar Belakang Karya Seni Sederhana
 settings.option.advanced.simpleArtworkBg.brightness: Kecerahan %
 settings.option.advanced.simpleArtworkBg.contrast: Kontras %
-settings.option.advanced.simpleArtworkBg.saturate: "Saturasi "
+settings.option.advanced.simpleArtworkBg.saturate: "% Saturasi"
 settings.option.advanced.simpleArtworkBg.useMask: Gunakan Masker Bawah
-settings.option.advanced.sonoma: Imersif (Sonoma)
+settings.option.advanced.sonoma: Sonoma
 settings.option.advanced.sonoma.lyricArc: Lirik Melengkung
 settings.option.advanced.sonoma.lyricArc.description: Baris lirik yang aktif melengkung ke arah tengah layar dengan efek kedalaman yang halus.
 settings.option.advanced.sonoma.radialMask: Gunakan Masker Alternatif
@@ -1795,9 +1895,11 @@ settings.option.advanced.sonoma.radialMask.description: Jika diaktifkan, Sonoma 
 settings.option.advanced.title: Lanjutan
 settings.option.advanced.tweaks: Penyesuaian
 settings.option.advanced.tweaks.description: Pengaturan yang dapat disesuaikan yang tidak termasuk dalam kategori lain
-settings.option.advanced.volumeSlider: Penggeser Volume
+settings.option.advanced.volumeSlider: Penggeser Volume Pemutar
 settings.option.advanced.volumeSlider.iOSStyle: Gaya iOS
-settings.option.advanced.window: Jendela
+settings.option.advanced.window: Perilaku Jendela
+settings.option.advanced.window.description: Notifikasi pemutaran, pengubahan ukuran miniplayer, dan gaya bilah gulir yang digunakan di seluruh aplikasi. Kontrol jendela dan vibrancy berada di bawah Visual.
+settings.option.advanced.window.scrollbarType: Jenis Bilah Gulir
 settings.option.all: Semua
 settings.option.alwaysShow: Selalu Tampilkan
 settings.option.appleMusic.behavior.playButtonOnStop: Tombol Putar pada Tindakan Berhenti
@@ -1878,6 +1980,7 @@ settings.option.audio.enableAdvancedFunctionality.tunedAudioSpatialization.profi
 settings.option.audio.exponentialVolume: Kurva Volume Eksponensial
 settings.option.audio.exponentialVolume.description: Mengikuti kurva volume yang lebih bertahap, memungkinkan kontrol volume yang lebih presisi pada volume rendah.
 settings.option.audio.hostCapture: Audio yang Dapat Ditangkap (OBS / Discord)
+settings.option.audio.hostCapture.description: Aplikasi streaming dan perekaman seperti OBS atau Discord memerlukan host Windows untuk merutekan pemutaran.
 settings.option.audio.maxVolume: Volume Maksimum
 settings.option.audio.mixing: Pencampuran
 settings.option.audio.normalization: Normalisasi Audio
@@ -1919,10 +2022,12 @@ settings.option.concerts.sortBy.description: Cara mengurutkan konser dalam dafta
 settings.option.concerts.sortBy.distance: Jarak
 settings.option.connect.link_account.description: Menghubungkan akun Discord Anda dengan Cider Connect memungkinkan Anda menyimpan data pengguna termasuk Pengaturan, EQ, dan lainnya setelah selesai. (Sedang Berlangsung)
 settings.option.connectivity.atmosRatings: Peringkat Atmos Komunitas
+settings.option.connectivity.atmosRatings.description: Lihat dan bagikan album mana saja yang terdengar luar biasa dalam Dolby Atmos.
 settings.option.connectivity.ciderConnect.description: Dengarkan Bersama, Daftar Putar Kolaboratif, Kontrol Aplikasi Jarak Jauh, dan banyak lagi!
 settings.option.connectivity.ciderRemote: Cider Remote
 settings.option.connectivity.discord: Discord
 settings.option.connectivity.discordRichPresence: Discord Rich Presence
+settings.option.connectivity.discordRichPresence.description: Status yang ditampilkan di profil Discord Anda, serta nama klien dan tombol yang digunakannya.
 settings.option.connectivity.discordRPC: Discord Rich Presence
 settings.option.connectivity.discordRPC.animatedArtwork: Ilustrasi Animasi
 settings.option.connectivity.discordRPC.animatedArtwork.description: Opsi ini dapat memengaruhi waktu pemuatan pada Rich Presence, jika ilustrasi belum tersedia untuk digunakan.
@@ -1996,9 +2101,13 @@ settings.option.connectivity.partiesTransportDefault.host: Hanya Host
 settings.option.connectivity.playbackNotifications: Notifikasi Pemutaran
 settings.option.connectivity.playbackNotifications.description: Tampilkan notifikasi yang berisi lagu baru setiap kali lagu yang sedang diputar berubah.
 settings.option.connectivity.remoteConnection: Koneksi Jarak Jauh
+settings.option.connectivity.remoteConnection.description: Menyandingkan ponsel atau tablet, dan memutuskan penyandingan perangkat yang mengontrol pemutaran.
 settings.option.connectivity.rpcServer: Server RPC
+settings.option.connectivity.rpcServer.description: Kelola akses ke Cider untuk aplikasi eksternal menggunakan server RPC.
+settings.option.connectivity.rpcServer.manageAccess: Kelola Akses Aplikasi Eksternal ke Cider
 settings.option.connectivity.scrobbler: Scrobbler
 settings.option.connectivity.scrobblerIntegration: Integrasi Scrobbler
+settings.option.connectivity.scrobblerIntegration.description: Scrobbling Last.fm, ListenBrainz, Libre.fm, dan Maloja untuk menyimpan riwayat mendengarkan.
 settings.option.connectivity.steam.clearOnPause: Bersihkan Rich Presence saat Jeda
 settings.option.connectivity.webSocketsApi: API WebSockets
 settings.option.connectivity.webSocketsAPI: WebSockets API
@@ -2020,6 +2129,7 @@ settings.option.experiments.chromecastLyrics.description: Tampilkan lirik yang d
 settings.option.experiments.floatingSearch: Aktifkan Pencarian Melayang
 settings.option.experiments.forceExplicit: Beralih Otomatis ke Varian Album Eksplisit
 settings.option.experiments.forceExplicit.description: Dapat meningkatkan waktu pemuatan saat mencari varian album eksplisit.
+settings.option.experiments.legacyFetch: Pengambilan Legacy
 settings.option.experiments.musicVideos: Aktifkan Video Musik Perpustakaan
 settings.option.experiments.title: Fitur Eksperimental
 settings.option.general.app: Aplikasi
@@ -2136,6 +2246,8 @@ settings.option.lyrics.provider.netease: NetEase
 settings.option.lyrics.provider.user: Kiriman Pengguna
 settings.option.lyrics.providerPreferences: Preferensi Penyedia
 settings.option.lyrics.providerPreferences.description: Konfigurasikan sumber lirik mana yang akan digunakan dan prioritasnya
+settings.option.lyrics.scrollTuning: Durasi & Easing Gulir
+settings.option.lyrics.scrollTuning.description: Atur durasi gulir baris lirik dan kurva easing yang diikuti, secara terpisah untuk bilah samping dan pemutar imersif.
 settings.option.lyrics.showDualLanguage: Tampilkan Dua Bahasa
 settings.option.lyrics.showDualLanguage.description: Tampilkan lirik asli dan terjemahan secara bersamaan.
 settings.option.lyrics.showTimestamps: Tampilkan Penanda Waktu saat Diarahkan
@@ -2404,6 +2516,12 @@ settings.option.visual.mojavePlayerType.compact.description: Pemutar ramping den
 settings.option.visual.mojavePlayerType.compactInline: Ringkas Inline
 settings.option.visual.mojavePlayerType.compactInline.description: Satu baris ramping dengan kemajuan di dalam LCD.
 settings.option.visual.moveUpLinks: Pindahkan tautan "Lebih Banyak untuk Dilihat" di Telusuri ke atas
+settings.option.visual.musicVideoPinMaxResolution: Selalu Putar Video Musik pada Resolusi Maksimum
+settings.option.visual.musicVideoPinMaxResolution.description: Mempertahankan kualitas tertinggi yang ditawarkan video alih-alih memulai dari kualitas rendah lalu meningkat. Pada jendela kecil atau koneksi terbatas, ini akan menggunakan lebih banyak bandwidth secara signifikan.
+settings.option.visual.musicVideoPrefetchOnHover: Siapkan Video Musik saat Kursor Diarahkan
+settings.option.visual.musicVideoPrefetchOnHover.description: Mulai memuat video saat penunjuk berada di atas lencana, sehingga video terbuka lebih cepat saat Anda mengeklik.
+settings.option.visual.musicVideoPrefetchSegmentsOnHover: Unduh Bagian Pertama saat Kursor Diarahkan
+settings.option.visual.musicVideoPrefetchSegmentsOnHover.description: Juga mengunduh beberapa detik pertama video sebelum diklik. Memerlukan beberapa megabita untuk setiap sorotan kursor, termasuk yang tidak pernah membuka video.
 settings.option.visual.pauseAnimatedOnBlur: Jeda Sampul Animasi Saat Tidak Fokus
 settings.option.visual.playerMaterial: Material Pemutar
 settings.option.visual.playerMaterial.blur: Blur
@@ -2587,6 +2705,11 @@ settings.resetCider.title: Atur Ulang Cider
 settings.sleepTimer.endsIn: "Berakhir dalam: {{remainingTime}} ({{endTime}})"
 settings.sleepTimer.notSet: Timer tidak diatur
 settings.sleepTimer.title: Atur Timer Tidur
+settings.smartPlaylists.card.automaticRefresh: Penyegaran Otomatis
+settings.smartPlaylists.section.maintenance: Pemeliharaan
+settings.smartPlaylists.section.maintenance.description: Paksa setiap aturan untuk dijalankan sekarang, atau hapus salinan cache perpustakaan Anda.
+settings.smartPlaylists.section.rules: Aturan
+settings.smartPlaylists.section.rules.description: Menentukan apakah Cider menerapkan aturan daftar putar tersemat, dan seberapa sering aturan tersebut dievaluasi ulang.
 settings.sweetener.useSystemAccentColor: Gunakan Warna Aksen Sistem
 settings.takeout.chooseFile: Pilih file…
 settings.takeout.error.badVersion: File tersebut tidak memiliki informasi versi.
@@ -3295,16 +3418,20 @@ term.zoomin: Perbesar
 term.zoomout: Perkecil
 term.zoomreset: Atur Ulang Zoom
 tooltips.watchMusicVideo: Tonton Video Musik
+updates.installUnavailable.body: Versi ini tidak tersedia untuk diunduh di akun Anda.
 updates.lateststable.title: Rilis Stabil Terbaru
 updates.loadFailed.body: Periksa koneksi Anda dan coba lagi.
 updates.loadFailed.title: Cider tidak dapat memuat versi yang tersedia
 updates.notifyForBranch.tooltip: Beri tahu untuk cabang ini
 updates.otherVersions.title: Versi Lain
 updates.ptb.name: Cabang Pengujian Publik
+updates.reloadFailed.body: Cider tidak dapat memuat ulang versi yang tersedia. Periksa koneksi Anda dan coba lagi.
 updates.signedOut.body: Cider memeriksa pembaruan menggunakan akun Cider Taproom Anda.
 updates.signedOut.expired.body: Masuk lagi untuk memeriksa pembaruan.
 updates.signedOut.expired.bodyNamed: Masuk lagi sebagai {name} untuk memeriksa pembaruan.
 updates.signedOut.expired.title: Sesi Cider Taproom Anda telah kedaluwarsa
 updates.signedOut.title: Masuk untuk memeriksa pembaruan
+updates.signInToInstall.body: Masuk ke Cider Taproom untuk mengunduh pembaruan ini.
+updates.signInToInstall.title: Masuk untuk menginstal pembaruan ini
 updates.stable.name: Cabang Stabil
 verb.installed: Terinstal

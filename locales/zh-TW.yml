@@ -1128,6 +1128,7 @@ lyrics.contrib.notify.notLoggedIn:
   source: human
   by: "@jay900604"
   issue: 33
+lyrics.contrib.notify.profileRequired: 上傳歌詞前，請先設定貢獻者個人檔案。
 lyrics.contrib.notify.submitFailed:
   value: 發布歌詞失敗。
   source: human
@@ -1139,6 +1140,8 @@ lyrics.contrib.notify.submitted:
   by: "@jay900604"
   issue: 26
 lyrics.contrib.preview.empty: 在此貼上或匯入 TTML 以預覽歌詞。
+lyrics.contrib.profile.nameRules: 請使用 3 至 24 個字母、數字、連字號或底線。
+lyrics.contrib.profile.signedOut: 您必須先登入。
 lyrics.contrib.signin.button: 使用 Cider Taproom 登入
 lyrics.contrib.signin.manual: 手動輸入 Token
 lyrics.contrib.signin.sub:
@@ -1218,6 +1221,7 @@ lyrics.contrib.upload.noResults: 找不到歌曲。
 lyrics.contrib.upload.openWindow: 在視窗中開啟
 lyrics.contrib.upload.preview: 預覽
 lyrics.contrib.upload.searchPlaceholder: 搜尋 Apple Music 目錄…
+lyrics.contrib.upload.signedOut: 請登入您的 Cider Taproom 帳戶以上傳歌詞。
 lyrics.contrib.upload.submit:
   value: 發布歌詞
   source: human
@@ -1910,6 +1914,18 @@ settings.about.sponsors.opencollective: Open Collective
 settings.about.thirdPartyLicenses: 第三方授權
 settings.about.thirdPartyLicenses.desc: 這些是 Cider 使用的第三方素材、函式庫和工具。請參閱其各自的授權條款以取得更多資訊。
 settings.about.viewLicense: 檢視授權條款
+settings.accessibility.card.textSize: 文字與大小
+settings.accessibility.card.visibility: 可見度
+settings.accessibility.section.display: 顯示
+settings.accessibility.section.display.description: 文字粗細、介面縮放、對比度與焦點指示器。
+settings.accessibility.section.motion: 動態效果
+settings.accessibility.section.motion.description: 按鈕、卡片和其他介面所使用的動畫效果程度。
+settings.accessibility.section.soundEffects: 聲音效果
+settings.accessibility.section.soundEffects.description: 按鈕、開關和滑桿的介面音效，以及其播放音量。
+settings.advanced.section.backups: 備份與重設
+settings.advanced.section.backups.description: 儲存您的設定複本、還原 Cider 為您保留的設定，或將所有內容恢復為預設值。
+settings.advanced.section.client: 此用戶端
+settings.advanced.section.client.description: 效能限制，以及屬於 Cider 執行所在用戶端（而非您的帳戶）的設定。
 settings.airplay.installed.message: Airplay 已安裝
 settings.airplay.installed.title: 已安裝 Airplay
 settings.airplay.requiresCiderAudio: 需要啟用 CiderAudio
@@ -1954,6 +1970,9 @@ settings.audio.atmosMode: Atmos 模式
 settings.audio.atmosMode.switchFromPassthroughConfirm: 從直通模式切換需要重新整理應用程式。是否繼續？
 settings.audio.atmosMode.switchToPassthroughConfirm: 切換至直通模式需要重新整理應用程式。是否繼續？
 settings.audio.automix: 自動混音
+settings.audio.card.advancedVolume: 進階音量
+settings.audio.card.badges: 徽章
+settings.audio.card.streaming: 串流
 settings.audio.ciderAudio: Cider Audio
 settings.audio.ciderAudio.description: 經過自訂調校與設計的音訊架構，提供豐富且高品質的音訊體驗。比傳統等化器更值得推薦。
 settings.audio.ciderAudio.enable: 啟用 Cider Audio
@@ -2032,6 +2051,17 @@ settings.audio.occlusion.passthroughNote.short: 啟用 Atmos 傳遞時無法使�
 settings.audio.outputDevice: 選擇音訊輸出裝置
 settings.audio.outputDeviceHint: 選擇播放的音訊輸出裝置。
 settings.audio.outputDeviceHintHost: 已開啟可擷取音訊，播放將使用此 Windows 輸出裝置。
+settings.audio.section.ciderAudio: Cider Audio 與指示器
+settings.audio.section.ciderAudio.description: Cider Audio 音訊處理架構，以及播放曲目時顯示的徽章。
+settings.audio.section.currentSignal: 目前訊號
+settings.audio.section.mixing: 混音
+settings.audio.section.mixing.description: 歌曲之間的過渡融合方式，以及是否消除曲目間的間隔。
+settings.audio.section.output: 輸出
+settings.audio.section.output.description: Cider 播放音訊的裝置，以及音訊傳輸到該裝置的方式。
+settings.audio.section.playback: 播放
+settings.audio.section.playback.description: 音訊品質、空間音訊、聆聽模式，以及 Podcast 的播放速度。
+settings.audio.section.volume: 音量
+settings.audio.section.volume.description: 音量平衡、滾輪調整音量的幅度，以及音量滑桿的顯示方式。
 settings.automix.allowTempoKeyShifts:
   value: 允許音調/拍性轉換
   source: human
@@ -2403,12 +2433,46 @@ settings.connectivity.scrobbler.rewrite.add: 新增規則
 settings.connectivity.scrobbler.rewrite.match: 比對
 settings.connectivity.scrobbler.rewrite.regex: 正規表示式
 settings.connectivity.scrobbler.rewrite.replace: 替換為
+settings.connectivity.scrobbler.roster.desc.lastfm: 最經典的 Scrobble 服務。請透過瀏覽器登入。
+settings.connectivity.scrobbler.roster.desc.librefm: 社群營運且開放。請透過瀏覽器登入。
+settings.connectivity.scrobbler.roster.desc.listenbrainz: 開放的聆聽歷史記錄。需要使用者權杖。
+settings.connectivity.scrobbler.roster.desc.maloja: 您的專屬伺服器。需要伺服器位址與 API 金鑰。
+settings.connectivity.scrobbler.roster.footer.many: 正在 Scrobble 至 {count} 個帳戶
+settings.connectivity.scrobbler.roster.footer.one: 正在 Scrobble 至 1 個帳戶
+settings.connectivity.scrobbler.roster.footer.scope: 門檻、中介資料清理和黑名單適用於此處的每個帳戶。
+settings.connectivity.scrobbler.roster.lb.rejected: ListenBrainz 拒絕了該權杖。
+settings.connectivity.scrobbler.roster.lb.token: 使用者權杖
+settings.connectivity.scrobbler.roster.lb.token.hint: 來自您在該網站的個人檔案頁面：
+settings.connectivity.scrobbler.roster.lede: 隨心所欲 Scrobble 至多個服務。您啟用的每個帳戶都會接收每次的播放紀錄。
+settings.connectivity.scrobbler.roster.maloja.key: API 金鑰
+settings.connectivity.scrobbler.roster.maloja.url: 伺服器位址
+settings.connectivity.scrobbler.roster.maloja.url.hint: 系統會自動為您加入位址前綴與 API 路徑。
+settings.connectivity.scrobbler.roster.paused: 已暫停
+settings.connectivity.scrobbler.roster.pausedAs: 已暫停 · {account}
+settings.connectivity.scrobbler.roster.reconnect: 需要重新連線
+settings.connectivity.scrobbler.roster.reconnectAction: 重新連線
+settings.connectivity.scrobbler.roster.scrobbling: 正在 Scrobble
+settings.connectivity.scrobbler.roster.scrobblingAs: 正在以 {account} 身分 Scrobble
+settings.connectivity.scrobbler.roster.scrobblingTo: 正在 Scrobble 至 {account}
+settings.connectivity.scrobbler.roster.signOut: 登出 {service}
+settings.connectivity.scrobbler.roster.switchLabel: Scrobble 至 {service}
+settings.connectivity.scrobbler.roster.waiting: 正在等待瀏覽器…
+settings.connectivity.scrobbler.toast.failed: 無法 Scrobble 至 {services}
+settings.connectivity.scrobbler.toast.scrobbled: 已 Scrobble {artist} 的 {track}
 settings.connectivity.scrobbler.trigger: Scrobble 觸發條件
 settings.connectivity.scrobbler.trigger.absolute: 絕對時間
 settings.connectivity.scrobbler.trigger.absolute.desc: 播放達此秒數後進行 Scrobble。
+settings.connectivity.scrobbler.trigger.absoluteOpt: 絕對時間
+settings.connectivity.scrobbler.trigger.either: 以先達到者為準
 settings.connectivity.scrobbler.trigger.mode: 觸發模式
 settings.connectivity.scrobbler.trigger.mode.desc: 何時提交 Scrobble。「以先達標者為準」是經典的 Last.fm 規則。
+settings.connectivity.scrobbler.trigger.percent: 百分比
 settings.connectivity.scrobbler.zeroOff: 設為 0 可停用此篩選器。
+settings.connectivity.section.communityRatings: 社群評分
+settings.connectivity.section.communityRatings.description: 在專輯頁面上顯示其他 Cider 聽眾對 Dolby Atmos 混音的評分，以及是否分享您的評分。
+settings.connectivity.section.discord.description: 播放音樂時 Cider 在您的 Discord 個人檔案上顯示的內容，以及其連接的用戶端。
+settings.connectivity.section.externalApplications.description: 其他程式用來讀取播放狀態和控制 Cider 的 WebSockets 連接埠與 RPC 伺服器，以及允許哪些程式存取。
+settings.connectivity.section.parties.description: 與其他 Cider 使用者同步聆聽，以及訪客在您主持的派對中可以執行的操作。
 settings.connectivity.tokenCopied:
   value: 權杖已拷貝到剪貼簿
   source: human
@@ -2641,6 +2705,22 @@ settings.gapless.offset.default: 預設
 settings.gapless.offset.description: 調整曲目切換的時間點。正值會提早觸發，負值會延後觸發。
 settings.gapless.offset.earlier: 提早
 settings.gapless.offset.later: 延後
+settings.general.card.closing: 關閉
+settings.general.section.cache: 快取
+settings.general.section.cache.description: Cider 保存在磁碟上的已快取插圖和詮釋資料，以便加快頁面載入速度。
+settings.general.section.desktop: 桌面
+settings.general.section.desktop.description: 鍵盤快速鍵、桌面通知，以及 Cider 在工作列和關閉時的行為。
+settings.general.section.language: 語言
+settings.general.section.language.description: 介面語言，以及如何回報翻譯問題或查看翻譯貢獻者。
+settings.general.section.playback: 播放
+settings.general.section.playback.description: 未播放任何內容時，按下播放按鈕的執行動作。
+settings.general.section.privacy: 隱私權
+settings.general.section.privacy.description: Cider 稱呼您的名稱，以及是否允許其使用您的位置。
+settings.general.section.queue: 待播清單
+settings.general.section.queue.description: 待播清單的建立方式、允許加入的內容，以及 Cider 重新啟動時恢復的內容。
+settings.general.section.sleepTimer: 睡眠計時器
+settings.general.section.startup: 啟動
+settings.general.section.startup.description: Cider 啟動時開啟的頁面，以及從您上次工作階段中恢復的內容。
 settings.header.accounts: 帳戶
 settings.header.advanced: 進階
 settings.header.audio: 音訊
@@ -2755,13 +2835,15 @@ settings.keybindings.recordingHint:
   source: human
   by: "@jay900604"
   issue: 61
+settings.lyrics.card.providers: 提供者
+settings.lyrics.card.songOverrides: 歌曲覆寫
 settings.lyrics.localeOverrides: 語言地區規則
 settings.lyrics.localeOverrides.add: 新增語言地區覆寫
 settings.lyrics.localeOverrides.audioLocale: 音訊語言地區
 settings.lyrics.localeOverrides.desc: 為特定語言的歌曲設定自訂的提供者和翻譯偏好設定。當歌曲的音訊語言地區符合規則時，這些設定將會覆寫預設值。
 settings.lyrics.localeOverrides.dialogTitle.add: 新增語言地區覆寫
 settings.lyrics.localeOverrides.dialogTitle.edit: 編輯語言地區覆寫
-settings.lyrics.localeOverrides.empty: 未設定任何語言地區覆寫。按一下 + 按鈕來新增一個。
+settings.lyrics.localeOverrides.empty: 尚無規則。使用 + 新增一個。
 settings.lyrics.localeOverrides.overrideTranslation: 覆寫翻譯
 settings.lyrics.localeOverrides.preferredProvider: 偏好提供者
 settings.lyrics.localeOverrides.provider.apple: Apple Music
@@ -2809,6 +2891,14 @@ settings.lyrics.scroll.easing.presetSpring: 彈簧動畫 - (由 SoNothing 提供
 settings.lyrics.scroll.immersive: 沉浸式
 settings.lyrics.scroll.presets: 預設
 settings.lyrics.scroll.sidebar: 側邊欄
+settings.lyrics.section.advanced: 進階
+settings.lyrics.section.advanced.description: 同步位移、動畫影格率，以及手動微調的滾動時間。
+settings.lyrics.section.display: 顯示
+settings.lyrics.section.display.description: 顯示哪些歌詞行、其動畫效果，以及懸停時顯示的時間戳記。
+settings.lyrics.section.sources: 來源
+settings.lyrics.section.sources.description: 歌詞來源，以及優先於預設提供者的語言或單曲特定規則。
+settings.lyrics.section.translation: 翻譯
+settings.lyrics.section.translation.description: 翻譯歌詞、目標語言，以及是否在螢幕上保留原文。
 settings.lyrics.trackOverrides.clearAll: 清除所有覆蓋設定
 settings.lyrics.trackOverrides.desc:
   value: 此處列出的歌曲將一律使用你鎖定的歌詞提供者，或是你手動設定的人聲狀態，而非 Apple 回報的狀態。這些覆寫設定可在歌詞選單和歌曲的右鍵選單中進行設定。
@@ -2816,10 +2906,11 @@ settings.lyrics.trackOverrides.desc:
   by: "@jay900604"
   issue: 64
 settings.lyrics.trackOverrides.empty:
-  value: 尚未設定任何歌曲覆寫。你可以在播放歌曲時從歌詞選單鎖定提供者，或從歌曲的右鍵選單中設定人聲狀態。
-  source: human
+  value: 尚無覆寫內容。您在這些選單中鎖定的任何內容都會列在此處。
+  source: ai
   by: "@jay900604"
   issue: 64
+  superseded_at: 2026-09-01
 settings.lyrics.trackOverrides.lyricsForced: 已強制顯示歌詞
 settings.lyrics.trackOverrides.markedInstrumental: 已標記為純音樂
 settings.lyrics.trackOverrides.providerLabel: 提供者：
@@ -2933,6 +3024,8 @@ settings.option.accessibility.motionIntensity.reduced: 減少
 settings.option.accessibility.playOnHover: 懸停時播放
 settings.option.accessibility.playOnHover.description: 當指標進入互動式元素時，也播放細微的滴答聲。
 settings.option.accessibility.soundEffects: 音效
+settings.option.accessibility.soundPreview: 聲音預覽
+settings.option.accessibility.soundPreview.description: 以目前音量播放介面音效範例。
 settings.option.accessibility.text: 文字
 settings.option.accessibility.uiScale:
   value: 介面縮放
@@ -2942,6 +3035,7 @@ settings.option.accessibility.uiScale:
 settings.option.accessibility.uiScale.description: 縮放文字和介面元素。某些版面配置元素使用固定大小，可能無法縮放。
 settings.option.accessibility.visibility: 可見性
 settings.option.accessibility.volume: 音量
+settings.option.accessibility.volume.description: 介面音效播放的音量大小。
 settings.option.advanced.clientSettings: 用戶端設定
 settings.option.advanced.clientSettings.description:
   value: 特定於目前用戶端架構的相關設定。
@@ -2949,6 +3043,7 @@ settings.option.advanced.clientSettings.description:
   by: "@jay900604"
   issue: 45
 settings.option.advanced.compactSidebar: 精簡側邊欄
+settings.option.advanced.compactSidebar.description: 適用於視窗寬度窄到足以收合側邊欄時。
 settings.option.advanced.compactSidebar.size: 大小
 settings.option.advanced.configBackups.description:
   value: 還原 Cider 儲存的設定檔複本，以防你的設定遺失或被重設。
@@ -2961,11 +3056,12 @@ settings.option.advanced.experimentalFeatures.description:
   source: human
   by: "@jay900604"
   issue: 22
-settings.option.advanced.floatingSearch: 浮動搜尋
+settings.option.advanced.floatingSearch: 浮動搜尋面板
 settings.option.advanced.floatingSearch.blurBackground: 模糊背景
 settings.option.advanced.floatingSearch.blurBackground.description: 啟用時，當搜尋列獲得焦點時，背景將會模糊。
 settings.option.advanced.floatingSearch.clearSearchOnClose: 關閉時清除搜尋
 settings.option.advanced.floatingSearch.clearSearchOnClose.description: 啟用時，關閉搜尋列時將清除其中的文字。
+settings.option.advanced.floatingSearch.description: 在頁面上方開啟的搜尋面板。
 settings.option.advanced.floatingSearch.enterShowsResults: 按下 Enter 顯示結果
 settings.option.advanced.floatingSearch.enterShowsResults.description: 啟用時，按下 Enter 鍵將直接跳轉至搜尋結果頁面。
 settings.option.advanced.home: 首頁
@@ -2973,17 +3069,19 @@ settings.option.advanced.home.buttonLocation: 首頁按鈕位置
 settings.option.advanced.home.buttonLocation.sidebar: 側邊欄
 settings.option.advanced.home.buttonLocation.sidebar2023: 側邊欄 (2023)
 settings.option.advanced.home.buttonLocation.topBar: 頂部列
-settings.option.advanced.immersive: 沉浸式
+settings.option.advanced.immersive: 沉浸式檢視
 settings.option.advanced.immersive.artworkHighlight:
   value: 專輯插圖發光
   source: human
   by: "@jay900604"
   issue: 22
 settings.option.advanced.immersive.controlsTimeout: 控制項目作用逾時（秒）
+settings.option.advanced.immersive.description: 沉浸式檢視本身。其使用的版面配置可在「視覺」中選擇。
 settings.option.advanced.immersive.glowEffectOnActiveLyrics: 動態歌詞發光效果
-settings.option.advanced.lyrics: 歌詞
+settings.option.advanced.lyrics: 歌詞動畫
 settings.option.advanced.lyrics.characterFlow: 逐字流動效果
 settings.option.advanced.lyrics.characterFlow.description: 個別字元將向上流動，而非整行移動。較消耗系統資源。
+settings.option.advanced.lyrics.description: 播放歌曲時歌詞行和字元的移動方式。
 settings.option.advanced.lyrics.lineStaggering: 行交錯延遲
 settings.option.advanced.lyrics.lineStaggering.description: 當焦點移至下一句歌詞時，即將顯示的歌詞將有細微的延遲效果
 settings.option.advanced.lyrics.lineStaggeringImmersive:
@@ -3023,10 +3121,12 @@ settings.option.advanced.mavericksLcd: Mavericks LCD
 settings.option.advanced.mavericksLcd.style: 樣式
 settings.option.advanced.mavericksLcd.style.glass: 玻璃
 settings.option.advanced.mediaArtwork: 媒體項目插圖
+settings.option.advanced.mediaArtwork.controls: 插圖亮點與高解析度圖片
+settings.option.advanced.mediaArtwork.description: 整個 App 中網格、列表和橫列上的插圖。
 settings.option.advanced.notificationStyle: 通知樣式
 settings.option.advanced.performance: 效能
 settings.option.advanced.performance.description: 影格率限制、渲染器選擇和資源臨界值。
-settings.option.advanced.playback: 播放
+settings.option.advanced.playback: 播放速度
 settings.option.advanced.playback.allowPlaybackRateChangeEverywhere: 允許變更歌曲的播放速度
 settings.option.advanced.playback.allowPlaybackRateChangeEverywhere.description: Podcast 預設已啟用。開啟此功能可讓所有媒體（包括歌曲）皆能輕鬆控制播放速度。
 settings.option.advanced.playlistTrackMapping:
@@ -3039,7 +3139,7 @@ settings.option.advanced.playlistTrackMapping.description:
   source: human
   by: "@jay900604"
   issue: 53
-settings.option.advanced.powerUsage.description: 已移動 — 影格率限制、著色器選擇和高耗能視覺效果。
+settings.option.advanced.powerUsage.description: 影格率限制、轉譯器選擇，以及高負載的視覺功能。
 settings.option.advanced.progressBar: 進度條
 settings.option.advanced.progressBar.useAccentColor: 使用強調色
 settings.option.advanced.resetCider: 重設 Cider
@@ -3059,7 +3159,8 @@ settings.option.advanced.richAlbumGrid.disableScrollAnimation: 停用捲動動�
 settings.option.advanced.richAlbumGrid.scrollToPosition: 捲動至位置
 settings.option.advanced.richAlbumGrid.scrollToPosition.bottom: 底部
 settings.option.advanced.richAlbumGrid.scrollToPosition.top: 頂部
-settings.option.advanced.searchBar: 搜尋列
+settings.option.advanced.searchBar: 主搜尋列
+settings.option.advanced.searchBar.description: 標題列中的搜尋欄位。
 settings.option.advanced.searchBar.noRedirectOnSelect: 選取時不重新導向至主頁
 settings.option.advanced.searchBar.noRedirectOnSelect.description: 啟用時，選取搜尋列將不會重新導向至主頁。若要前往主頁，請在選取搜尋列時按住 SHIFT 鍵。
 settings.option.advanced.settingsTakeout: 匯出 / 匯入設定
@@ -3069,19 +3170,21 @@ settings.option.advanced.settingsTakeout.description:
   by: "@jay900604"
   issue: 46
 settings.option.advanced.simpleArtworkBg:
-  value: 簡易插圖背景（沉浸式）
-  source: human
+  value: 簡易插圖背景
+  source: ai
   by: "@jay900604"
   issue: 24
+  superseded_at: 2026-09-01
 settings.option.advanced.simpleArtworkBg.brightness: 亮度 %
 settings.option.advanced.simpleArtworkBg.contrast: 對比度 %
-settings.option.advanced.simpleArtworkBg.saturate: "飽和度 "
+settings.option.advanced.simpleArtworkBg.saturate: 飽和度 %
 settings.option.advanced.simpleArtworkBg.useMask: 使用下方遮罩
 settings.option.advanced.sonoma:
-  value: 沉浸式（Sonoma）
-  source: human
+  value: Sonoma
+  source: ai
   by: "@jay900604"
   issue: 24
+  superseded_at: 2026-09-01
 settings.option.advanced.sonoma.lyricArc: 弧形歌詞
 settings.option.advanced.sonoma.lyricArc.description: 播放中的歌詞行會向螢幕中央彎曲，呈現細微的景深感。
 settings.option.advanced.sonoma.radialMask: 使用替代遮罩
@@ -3093,9 +3196,11 @@ settings.option.advanced.tweaks.description:
   source: human
   by: "@jay900604"
   issue: 45
-settings.option.advanced.volumeSlider: 音量滑桿
+settings.option.advanced.volumeSlider: 播放器音量滑桿
 settings.option.advanced.volumeSlider.iOSStyle: iOS 樣式
-settings.option.advanced.window: 視窗
+settings.option.advanced.window: 視窗行為
+settings.option.advanced.window.description: 播放通知、迷你播放器大小調整，以及整個 App 使用的捲軸樣式。視窗控制項和半透明效果可在「視覺」中設定。
+settings.option.advanced.window.scrollbarType: 捲軸類型
 settings.option.all: 全部
 settings.option.alwaysShow: 總是顯示
 settings.option.appleMusic.behavior.playButtonOnStop: 停止動作時的播放按鈕行為
@@ -3229,6 +3334,7 @@ settings.option.audio.enableAdvancedFunctionality.tunedAudioSpatialization.profi
 settings.option.audio.exponentialVolume: 指數音量曲線
 settings.option.audio.exponentialVolume.description: 採用更漸進的音量曲線，以便在低音量時進行更精確的音量控制。
 settings.option.audio.hostCapture: 可擷取音訊 (OBS / Discord)
+settings.option.audio.hostCapture.description: 串流與擷取 App（如 OBS 或 Discord）需要 Windows 主機來路由播放音訊。
 settings.option.audio.maxVolume: 最大音量
 settings.option.audio.mixing: 混音
 settings.option.audio.normalization:
@@ -3308,6 +3414,7 @@ settings.option.concerts.sortBy.description: 如何排序列表中的演唱會
 settings.option.concerts.sortBy.distance: 距離
 settings.option.connect.link_account.description: 將你的 Discord 帳戶與 Cider Connect 連結，即可儲存使用者資料（包括設定、等化器等，未來將支援更多功能）。（開發中）
 settings.option.connectivity.atmosRatings: 社群 Atmos 評分
+settings.option.connectivity.atmosRatings.description: 查看並分享哪些專輯在 Dolby Atmos 中聽起來很棒。
 settings.option.connectivity.ciderConnect.description: 同步收聽、合作歌單、遠端 App 控制等更多功能！
 settings.option.connectivity.ciderRemote: Cider Remote
 settings.option.connectivity.discord: Discord
@@ -3316,6 +3423,7 @@ settings.option.connectivity.discordRichPresence:
   source: human
   by: "@jay900604"
   issue: 59
+settings.option.connectivity.discordRichPresence.description: 在您的 Discord 個人檔案上顯示的狀態，以及其使用的用戶端名稱和按鈕。
 settings.option.connectivity.discordRPC:
   value: Discord 活動狀態
   source: human
@@ -3439,9 +3547,13 @@ settings.option.connectivity.partiesTransportDefault.host: 僅限主辦者
 settings.option.connectivity.playbackNotifications: 播放通知
 settings.option.connectivity.playbackNotifications.description: 每當目前歌曲變更時，顯示包含新歌曲資訊的通知。
 settings.option.connectivity.remoteConnection: 遠端連線
+settings.option.connectivity.remoteConnection.description: 配對手機或平板電腦，以及取消配對控制播放的裝置。
 settings.option.connectivity.rpcServer: RPC 伺服器
+settings.option.connectivity.rpcServer.description: 使用 RPC 伺服器管理外部應用程式對 Cider 的存取權限。
+settings.option.connectivity.rpcServer.manageAccess: Manage External Application Access to Cider
 settings.option.connectivity.scrobbler: Scrobbler
 settings.option.connectivity.scrobblerIntegration: Scrobbler 整合
+settings.option.connectivity.scrobblerIntegration.description: Last.fm, ListenBrainz, Libre.fm 和 Maloja 記錄功能，以保留聆聽記錄。
 settings.option.connectivity.steam.clearOnPause: 暫停時清除 Rich Presence
 settings.option.connectivity.webSocketsApi: WebSockets API
 settings.option.connectivity.webSocketsAPI: WebSockets API
@@ -3475,6 +3587,7 @@ settings.option.experiments.chromecastLyrics.description: 在 Chromecast 螢幕�
 settings.option.experiments.floatingSearch: 啟用浮動搜尋
 settings.option.experiments.forceExplicit: 自動切換至限制級版本專輯
 settings.option.experiments.forceExplicit.description: 搜尋限制級版本的專輯時可能會增加載入時間。
+settings.option.experiments.legacyFetch: 傳統獲取
 settings.option.experiments.musicVideos:
   value: 啟用資料庫音樂影片
   source: human
@@ -3708,6 +3821,8 @@ settings.option.lyrics.provider.user:
   issue: 22
 settings.option.lyrics.providerPreferences: 來源偏好設定
 settings.option.lyrics.providerPreferences.description: 設定要使用的歌詞來源及其優先順序
+settings.option.lyrics.scrollTuning: 捲動持續時間與速度曲線
+settings.option.lyrics.scrollTuning.description: 分別為側邊欄和沉浸式播放器設定歌詞捲動所需的時間與速度曲線。
 settings.option.lyrics.showDualLanguage: 顯示雙語歌詞
 settings.option.lyrics.showDualLanguage.description: 同時顯示原文歌詞與翻譯。
 settings.option.lyrics.showTimestamps: 懸停時顯示時間戳記
@@ -4089,6 +4204,12 @@ settings.option.visual.mojavePlayerType.compact.description: 精簡播放器，�
 settings.option.visual.mojavePlayerType.compactInline: 緊湊內嵌
 settings.option.visual.mojavePlayerType.compactInline.description: 單一精簡列，進度顯示於 LCD 內。
 settings.option.visual.moveUpLinks: 將「瀏覽」中的「更多精彩內容」連結移至頂部
+settings.option.visual.musicVideoPinMaxResolution: 始終以最高解析度播放音樂錄影帶
+settings.option.visual.musicVideoPinMaxResolution.description: 直接鎖定影片提供的最高畫質，而非從低畫質逐漸提升。在小視窗或計量付費連線下，這會消耗明顯較多的頻寬。
+settings.option.visual.musicVideoPrefetchOnHover: 指標懸停時預載音樂錄影帶
+settings.option.visual.musicVideoPrefetchOnHover.description: 當指標停留在標記上時即開始載入影片，以便在您點擊時能更快開啟。
+settings.option.visual.musicVideoPrefetchSegmentsOnHover: 指標懸停時下載首個分段
+settings.option.visual.musicVideoPrefetchSegmentsOnHover.description: 在點擊前預先下載影片的前幾秒內容。每次懸停都會消耗幾 MB 的流量，即使您最後沒有開啟影片。
 settings.option.visual.pauseAnimatedOnBlur: 視窗失去焦點時暫停動態專輯插圖
 settings.option.visual.playerMaterial: 播放器材質
 settings.option.visual.playerMaterial.blur: 模糊
@@ -4423,6 +4544,11 @@ settings.resetCider.title: 重設 Cider
 settings.sleepTimer.endsIn: 剩餘時間：{{remainingTime}} ({{endTime}})
 settings.sleepTimer.notSet: 未設定計時器
 settings.sleepTimer.title: 設定睡眠計時器
+settings.smartPlaylists.card.automaticRefresh: 自動重新整理
+settings.smartPlaylists.section.maintenance: 維護
+settings.smartPlaylists.section.maintenance.description: 立即強制執行所有規則，或清除資料庫的快取複本。
+settings.smartPlaylists.section.rules: 規則
+settings.smartPlaylists.section.rules.description: Cider 是否套用內嵌的播放清單規則，以及重新評估這些規則的頻率。
 settings.sweetener.useSystemAccentColor: 使用系統強調色
 settings.takeout.chooseFile: 選擇檔案…
 settings.takeout.error.badVersion: 該檔案缺少版本資訊。
@@ -5646,6 +5772,7 @@ term.zoomin: 放大
 term.zoomout: 縮小
 term.zoomreset: 重設縮放
 tooltips.watchMusicVideo: 觀看音樂錄影帶
+updates.installUnavailable.body: 您的帳戶無法下載此版本。
 updates.lateststable.title: 最新穩定版本
 updates.loadFailed.body:
   value: 請檢查你的連線並再試一次。
@@ -5656,6 +5783,7 @@ updates.loadFailed.title: Cider 無法載入可用版本
 updates.notifyForBranch.tooltip: 訂閱此分支的通知
 updates.otherVersions.title: 其他版本
 updates.ptb.name: 公開測試分支
+updates.reloadFailed.body: Cider 無法重新載入可用版本。請檢查您的網路連線並再試一次。
 updates.signedOut.body:
   value: Cider 會透過你的 Cider Taproom 帳號檢查更新。
   source: human
@@ -5673,5 +5801,7 @@ updates.signedOut.expired.title:
   by: "@jay900604"
   issue: 58
 updates.signedOut.title: 登入以檢查更新
+updates.signInToInstall.body: 登入 Cider Taproom 以下載此更新。
+updates.signInToInstall.title: 登入以安裝此更新
 updates.stable.name: 穩定分支
 verb.installed: 已安裝

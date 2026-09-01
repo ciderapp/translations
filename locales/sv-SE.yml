@@ -668,9 +668,12 @@ lyrics.contrib.notify.importFailed: Det gick inte att importera låttexter.
 lyrics.contrib.notify.importNone: Det finns inga låttexter att importera för det här spåret.
 lyrics.contrib.notify.noCurrent: Ingen låt spelas för närvarande.
 lyrics.contrib.notify.notLoggedIn: Du måste vara inloggad för att ladda upp låttexter.
+lyrics.contrib.notify.profileRequired: Skapa en bidragsgivarprofil innan du laddar upp låttexter.
 lyrics.contrib.notify.submitFailed: Det gick inte att skicka in låttexter.
 lyrics.contrib.notify.submitted: Låttexterna har skickats in – tack för ditt bidrag!
 lyrics.contrib.preview.empty: Klistra in eller importera TTML för att förhandsgranska låttexten här.
+lyrics.contrib.profile.nameRules: Använd 3 till 24 bokstäver, siffror, bindestreck eller understreck.
+lyrics.contrib.profile.signedOut: Du måste vara inloggad.
 lyrics.contrib.signin.button: Logga in med Cider Taproom
 lyrics.contrib.signin.manual: Ange token manuellt
 lyrics.contrib.signin.sub: Anslut ditt Cider Taproom-konto för att ladda upp låttexter och synas på ledartavlan.
@@ -722,6 +725,7 @@ lyrics.contrib.upload.noResults: Inga låtar hittades.
 lyrics.contrib.upload.openWindow: Öppna i fönster
 lyrics.contrib.upload.preview: Förhandsgranska
 lyrics.contrib.upload.searchPlaceholder: Sök i Apple Music-katalogen…
+lyrics.contrib.upload.signedOut: Logga in på ditt Cider Taproom-konto för att ladda upp låttexter.
 lyrics.contrib.upload.submit: Skicka in låttext
 lyrics.contrib.upload.submitting: Skickar in…
 lyrics.contrib.upload.track: Låt
@@ -1057,6 +1061,18 @@ settings.about.sponsors.opencollective: Open Collective
 settings.about.thirdPartyLicenses: Tredjepartslicenser
 settings.about.thirdPartyLicenses.desc: Dessa är de tredjepartsresurser, bibliotek och verktyg som Cider använder. Se deras respektive licenser för mer information.
 settings.about.viewLicense: Visa licens
+settings.accessibility.card.textSize: Text och storlek
+settings.accessibility.card.visibility: Synlighet
+settings.accessibility.section.display: Visning
+settings.accessibility.section.display.description: Textfetma, gränssnittsskala, kontrast och fokusindikatorer.
+settings.accessibility.section.motion: Rörelse
+settings.accessibility.section.motion.description: Hur mycket animationer som används för knappar, kort och andra ytor.
+settings.accessibility.section.soundEffects: Ljudeffekter
+settings.accessibility.section.soundEffects.description: Gränssnittsljud för knappar, reglage och skjutreglage, samt deras volym.
+settings.advanced.section.backups: Säkerhetskopior och återställning
+settings.advanced.section.backups.description: Spara en kopia av dina inställningar, återställ en som Cider har sparat åt dig, eller återställ allt till standardinställningarna.
+settings.advanced.section.client: Denna klient
+settings.advanced.section.client.description: Prestandabegränsningar och inställningar som hör till klienten som Cider körs i, snarare än till ditt konto.
 settings.airplay.installed.message: Airplay har installerats
 settings.airplay.installed.title: Airplay installerat
 settings.airplay.requiresCiderAudio: Kräver att CiderAudio är aktiverat
@@ -1077,6 +1093,9 @@ settings.audio.atmosMode: Atmos-läge
 settings.audio.atmosMode.switchFromPassthroughConfirm: Att byta från passthrough-läge kräver att appen laddas om. Fortsätta?
 settings.audio.atmosMode.switchToPassthroughConfirm: Att byta till passthrough-läge kräver att appen laddas om. Fortsätta?
 settings.audio.automix: Automix
+settings.audio.card.advancedVolume: Avancerad volym
+settings.audio.card.badges: Märken
+settings.audio.card.streaming: Strömning
 settings.audio.ciderAudio: Cider Audio
 settings.audio.ciderAudio.description: Specialanpassad och designad ljudstack som levererar en fyllig ljudupplevelse av hög kvalitet. Rekommenderas framför en traditionell equalizer.
 settings.audio.ciderAudio.enable: Aktivera Cider Audio
@@ -1139,6 +1158,17 @@ settings.audio.occlusion.passthroughNote.short: Inte tillgängligt när Atmos-pa
 settings.audio.outputDevice: Välj ljudenhet för utmatning
 settings.audio.outputDeviceHint: Välj ljudenhet för uppspelning.
 settings.audio.outputDeviceHintHost: Ljudfångst är aktiverat, uppspelningen använder denna Windows-utmatningsenhet.
+settings.audio.section.ciderAudio: Cider Audio och indikatorer
+settings.audio.section.ciderAudio.description: Cider Audio-processorn och märkena som visas när ett spår spelas.
+settings.audio.section.currentSignal: Aktuell signal
+settings.audio.section.mixing: Mixning
+settings.audio.section.mixing.description: Hur ett spår tonas in i nästa, och om tystnaden mellan dem tas bort.
+settings.audio.section.output: Utmatning
+settings.audio.section.output.description: Enheten som Cider spelar upp genom, och hur uppspelningen når den.
+settings.audio.section.playback: Uppspelning
+settings.audio.section.playback.description: Ljudkvalitet, rumsligt ljud, lyssningslägen och hur snabbt poddar spelas upp.
+settings.audio.section.volume: Volym
+settings.audio.section.volume.description: Ljudutjämning, hur mycket rullhjulet ändrar volymnivån och hur skjutreglaget avläses.
 settings.automix.allowTempoKeyShifts: Tillåt tempo-/tonartsändringar
 settings.automix.allowTempoKeyShiftsHint: Tillåt små förändringar för att hålla övergångarna energiska. (Tillfälligt inaktiverat, görs om.)
 settings.automix.description: Gör intelligenta övergångar mellan låtar baserat på tempo och tonart.
@@ -1369,12 +1399,46 @@ settings.connectivity.scrobbler.rewrite.add: Lägg till regel
 settings.connectivity.scrobbler.rewrite.match: Matcha
 settings.connectivity.scrobbler.rewrite.regex: Regex
 settings.connectivity.scrobbler.rewrite.replace: Ersätt med
+settings.connectivity.scrobbler.roster.desc.lastfm: Den ursprungliga scrobbling-tjänsten. Logga in via din webbläsare.
+settings.connectivity.scrobbler.roster.desc.librefm: Community-driven och öppen. Logga in via din webbläsare.
+settings.connectivity.scrobbler.roster.desc.listenbrainz: Öppen lyssningshistorik. Kräver en användartoken.
+settings.connectivity.scrobbler.roster.desc.maloja: Din egen server. Kräver dess adress och en API-nyckel.
+settings.connectivity.scrobbler.roster.footer.many: Scrobblar till {count} konton
+settings.connectivity.scrobbler.roster.footer.one: Scrobblar till 1 konto
+settings.connectivity.scrobbler.roster.footer.scope: Tröskelvärde, metadatarensning och svartlistor gäller för alla konton här.
+settings.connectivity.scrobbler.roster.lb.rejected: ListenBrainz godkände inte den token.
+settings.connectivity.scrobbler.roster.lb.token: Användartoken
+settings.connectivity.scrobbler.roster.lb.token.hint: Från din profilsida på
+settings.connectivity.scrobbler.roster.lede: Scrobbla till så många tjänster du vill. Varje konto du aktiverar tar emot varje uppspelning.
+settings.connectivity.scrobbler.roster.maloja.key: API-nyckel
+settings.connectivity.scrobbler.roster.maloja.url: Serveradress
+settings.connectivity.scrobbler.roster.maloja.url.hint: Adressprefixet och API-sökvägen läggs till automatiskt.
+settings.connectivity.scrobbler.roster.paused: Pausad
+settings.connectivity.scrobbler.roster.pausedAs: Pausad · {account}
+settings.connectivity.scrobbler.roster.reconnect: Återanslutning krävs
+settings.connectivity.scrobbler.roster.reconnectAction: Återanslut
+settings.connectivity.scrobbler.roster.scrobbling: Scrobblar
+settings.connectivity.scrobbler.roster.scrobblingAs: Scrobblar som {account}
+settings.connectivity.scrobbler.roster.scrobblingTo: Scrobblar till {account}
+settings.connectivity.scrobbler.roster.signOut: Logga ut från {service}
+settings.connectivity.scrobbler.roster.switchLabel: Scrobbla till {service}
+settings.connectivity.scrobbler.roster.waiting: Väntar på webbläsare…
+settings.connectivity.scrobbler.toast.failed: Kunde inte scrobbla till {services}
+settings.connectivity.scrobbler.toast.scrobbled: Scrobblade {track} av {artist}
 settings.connectivity.scrobbler.trigger: Scrobbling-utlösare
 settings.connectivity.scrobbler.trigger.absolute: Absolut tid
 settings.connectivity.scrobbler.trigger.absolute.desc: Scrobbla efter så här många sekunders uppspelning.
+settings.connectivity.scrobbler.trigger.absoluteOpt: Absolut tid
+settings.connectivity.scrobbler.trigger.either: Det som sker först
 settings.connectivity.scrobbler.trigger.mode: Utlösarläge
 settings.connectivity.scrobbler.trigger.mode.desc: När en scrobbling ska skickas. "Vilket som än inträffar först" är den klassiska Last.fm-regeln.
+settings.connectivity.scrobbler.trigger.percent: Procentandel
 settings.connectivity.scrobbler.zeroOff: 0 inaktiverar detta filter.
+settings.connectivity.section.communityRatings: Gemenskapens betyg
+settings.connectivity.section.communityRatings.description: Dolby Atmos-mixbetyg från andra Cider-lyssnare på albumsidor, och om dina delas tillbaka.
+settings.connectivity.section.discord.description: Vad Cider visar på din Discord-profil när musik spelas, och vilken klient den ansluter genom.
+settings.connectivity.section.externalApplications.description: WebSockets-porten och RPC-servern som andra program använder för att läsa uppspelning och styra Cider, samt vilka av dem som tillåts.
+settings.connectivity.section.parties.description: Lyssna synkroniserat med andra Cider-användare, och vad gäster får göra i partyn du är värd för.
 settings.connectivity.tokenCopied: Token har kopierats till urklipp
 settings.connectivity.tokens: Tokens
 settings.contentFilter.description: Sektioner i Bläddra och Lyssna nu vars titlar eller innehåll matchar något av dessa sökord kommer att döljas.
@@ -1489,6 +1553,22 @@ settings.gapless.offset.default: standard
 settings.gapless.offset.description: Justera när låtövergångar sker. Positiva värden utlöser tidigare, negativa värden utlöser senare.
 settings.gapless.offset.earlier: tidigare
 settings.gapless.offset.later: senare
+settings.general.card.closing: Stängning
+settings.general.section.cache: Cache
+settings.general.section.cache.description: Sparade omslag och metadata som Cider sparar på disken så att sidor laddas snabbare.
+settings.general.section.desktop: Skrivbord
+settings.general.section.desktop.description: Kortkommandon, skrivbordsnotiser och hur Cider beter sig i aktivitetsfältet och vid stängning.
+settings.general.section.language: Språk
+settings.general.section.language.description: Gränssnittsspråk, och hur man rapporterar eller krediterar dess översättningar.
+settings.general.section.playback: Uppspelning
+settings.general.section.playback.description: Vad spela-knappen gör när ingenting spelas.
+settings.general.section.privacy: Integritet
+settings.general.section.privacy.description: Namnet som Cider hälsar dig med, och om det får använda din plats.
+settings.general.section.queue: Kö
+settings.general.section.queue.description: Hur kön byggs upp, vad som tillåts i den och vad som återställs när Cider startar om.
+settings.general.section.sleepTimer: Insomningstimer
+settings.general.section.startup: Start
+settings.general.section.startup.description: Vad Cider öppnas till, och vad som återställs från din senaste session.
 settings.header.accounts: Konton
 settings.header.advanced: Avancerat
 settings.header.audio: Ljud
@@ -1573,13 +1653,15 @@ settings.intensive.singLyricsEverywhere.description: Kör Sing-textanimeringen o
 settings.intensive.viewTransitions.description: Animerar övergångar när du växlar mellan vissa vyer.
 settings.intensive.warning: Prestandakrävande – kan orsaka hög CPU-/GPU-användning.
 settings.keybindings.recordingHint: Spelar in. Tryck på Escape för att avbryta
+settings.lyrics.card.providers: Leverantörer
+settings.lyrics.card.songOverrides: Låtundantag
 settings.lyrics.localeOverrides: Språkbaserade regler
 settings.lyrics.localeOverrides.add: Lägg till språkspecifikt undantag
 settings.lyrics.localeOverrides.audioLocale: Ljudspråk
 settings.lyrics.localeOverrides.desc: Ställ in anpassade leverantörs- och översättningsinställningar för låtar på specifika språk. När en låts ljudspråk matchar en regel kommer dessa inställningar att åsidosätta standardinställningarna.
 settings.lyrics.localeOverrides.dialogTitle.add: Lägg till språkspecifikt undantag
 settings.lyrics.localeOverrides.dialogTitle.edit: Redigera språkspecifikt undantag
-settings.lyrics.localeOverrides.empty: Inga språkspecifika undantag har konfigurerats. Klicka på +-knappen för att lägga till ett.
+settings.lyrics.localeOverrides.empty: Inga regler än. Använd + för att lägga till en.
 settings.lyrics.localeOverrides.overrideTranslation: Åsidosätt översättning
 settings.lyrics.localeOverrides.preferredProvider: Föredragen leverantör
 settings.lyrics.localeOverrides.provider.apple: Apple Music
@@ -1623,9 +1705,17 @@ settings.lyrics.scroll.easing.presetSpring: Fjäderanimering – (av SoNothing)
 settings.lyrics.scroll.immersive: Omslutande
 settings.lyrics.scroll.presets: Förinställningar
 settings.lyrics.scroll.sidebar: Sidofält
+settings.lyrics.section.advanced: Avancerat
+settings.lyrics.section.advanced.description: Synkförskjutning, bildhastighet för animationer och manuellt justerad rullningstid.
+settings.lyrics.section.display: Visning
+settings.lyrics.section.display.description: Vilka textrader som visas, hur de animeras och tidsstämplarna som visas vid hovring.
+settings.lyrics.section.sources: Källor
+settings.lyrics.section.sources.description: Var låttexter kommer ifrån, och reglerna per språk eller spår som åsidosätter standardleverantören.
+settings.lyrics.section.translation: Översättning
+settings.lyrics.section.translation.description: Översatta låttexter, språket de visas på och om originalet ligger kvar på skärmen.
 settings.lyrics.trackOverrides.clearAll: Rensa alla åsidosättanden
 settings.lyrics.trackOverrides.desc: Spår som listas här använder alltid den låttextleverantör du har låst, eller den sångstatus du har ställt in manuellt istället för den som Apple rapporterar. Dessa åsidosättningar ställs in från låttextmenyn och spårets högerklicksmeny.
-settings.lyrics.trackOverrides.empty: Inga åsidosättningar för spår har konfigurerats. Lås en leverantör från låttextmenyn när du visar en låt, eller ställ in ett spårs sångstatus från dess högerklicksmeny.
+settings.lyrics.trackOverrides.empty: Ingenting är åsidosatt än. Allt du låser från de menyerna listas här.
 settings.lyrics.trackOverrides.lyricsForced: Tvingad låttext
 settings.lyrics.trackOverrides.markedInstrumental: Markerad som instrumental
 settings.lyrics.trackOverrides.providerLabel: "Leverantör:"
@@ -1709,23 +1799,28 @@ settings.option.accessibility.motionIntensity.reduced: Reducerad
 settings.option.accessibility.playOnHover: Spela vid hovring
 settings.option.accessibility.playOnHover.description: Spela även upp ett subtilt klickljud när pekaren förs över interaktiva element.
 settings.option.accessibility.soundEffects: Ljudeffekter
+settings.option.accessibility.soundPreview: Ljudförhandsvisning
+settings.option.accessibility.soundPreview.description: Spelar upp ett prov på gränssnittsljuden med den aktuella volymen.
 settings.option.accessibility.text: Text
 settings.option.accessibility.uiScale: Gränssnittsskala
 settings.option.accessibility.uiScale.description: Skalar text och gränssnittselement. Vissa layoutelement har fasta storlekar och kanske inte skalas.
 settings.option.accessibility.visibility: Synlighet
 settings.option.accessibility.volume: Volym
+settings.option.accessibility.volume.description: Hur högt gränssnittets ljudeffekter spelas upp.
 settings.option.advanced.clientSettings: Klientinställningar
 settings.option.advanced.clientSettings.description: Inställningar specifika för det aktuella klientramverket
 settings.option.advanced.compactSidebar: Kompakt sidofält
+settings.option.advanced.compactSidebar.description: Gäller när fönstret är tillräckligt smalt för att sidofältet ska fällas ihop.
 settings.option.advanced.compactSidebar.size: Storlek
 settings.option.advanced.configBackups.description: Återställ en kopia av din inställningsfil som Cider har sparat, om dina inställningar skulle gå förlorade eller återställas.
 settings.option.advanced.experimentalFeatures: Experimentella funktioner
 settings.option.advanced.experimentalFeatures.description: Funktioner under utveckling och funktionsflaggor.
-settings.option.advanced.floatingSearch: Flytande sökfält
+settings.option.advanced.floatingSearch: Flytande sökpanel
 settings.option.advanced.floatingSearch.blurBackground: Gör bakgrunden oskarp
 settings.option.advanced.floatingSearch.blurBackground.description: När detta är aktiverat görs bakgrunden oskarp när sökfältet är i fokus.
 settings.option.advanced.floatingSearch.clearSearchOnClose: Rensa sökning vid stängning
 settings.option.advanced.floatingSearch.clearSearchOnClose.description: När detta är aktiverat rensas texten i sökfältet när sökfältet stängs.
+settings.option.advanced.floatingSearch.description: Sökpanelen som öppnas över sidan.
 settings.option.advanced.floatingSearch.enterShowsResults: Retur visar resultat
 settings.option.advanced.floatingSearch.enterShowsResults.description: När detta är aktiverat går sökfältet direkt till sökresultatsidan när du trycker på returtangenten.
 settings.option.advanced.home: Hem
@@ -1733,13 +1828,15 @@ settings.option.advanced.home.buttonLocation: Placering av hemknapp
 settings.option.advanced.home.buttonLocation.sidebar: Sidofält
 settings.option.advanced.home.buttonLocation.sidebar2023: Sidofält (2023)
 settings.option.advanced.home.buttonLocation.topBar: Övre fältet
-settings.option.advanced.immersive: Omslutande
+settings.option.advanced.immersive: Omslutande vy
 settings.option.advanced.immersive.artworkHighlight: Framhävning av albumomslag
 settings.option.advanced.immersive.controlsTimeout: Tidsgräns för aktiva reglage (sekunder)
+settings.option.advanced.immersive.description: Själva den omslutande vyn. Layouten den använder väljs under Visuellt.
 settings.option.advanced.immersive.glowEffectOnActiveLyrics: Glödeffekt på aktiv låttext
-settings.option.advanced.lyrics: Låttext
+settings.option.advanced.lyrics: Låttextanimation
 settings.option.advanced.lyrics.characterFlow: Flytande tecken
 settings.option.advanced.lyrics.characterFlow.description: Enskilda tecken flyter uppåt istället för hela raden. Mer resurskrävande.
+settings.option.advanced.lyrics.description: Hur textrader och tecken rör sig medan en låt spelas.
 settings.option.advanced.lyrics.lineStaggering: Radförskjutning
 settings.option.advanced.lyrics.lineStaggering.description: Kommande textrader får en subtil fördröjning när nästa aktiva rad är i fokus
 settings.option.advanced.lyrics.lineStaggeringImmersive: Radförskjutning (omslutande)
@@ -1757,15 +1854,17 @@ settings.option.advanced.mavericksLcd: Mavericks LCD
 settings.option.advanced.mavericksLcd.style: Stil
 settings.option.advanced.mavericksLcd.style.glass: Glas
 settings.option.advanced.mediaArtwork: Omslagsbild för medieobjekt
+settings.option.advanced.mediaArtwork.controls: Omslagsdetaljer och högupplösta bilder
+settings.option.advanced.mediaArtwork.description: Omslag på rutnät, listor och rader i hela appen.
 settings.option.advanced.notificationStyle: Notisstil
 settings.option.advanced.performance: Prestanda
 settings.option.advanced.performance.description: Bildfrekvensgränser, val av renderare och resursgränser.
-settings.option.advanced.playback: Uppspelning
+settings.option.advanced.playback: Uppspelningshastighet
 settings.option.advanced.playback.allowPlaybackRateChangeEverywhere: Tillåt ändring av uppspelningshastighet för låtar
 settings.option.advanced.playback.allowPlaybackRateChangeEverywhere.description: Aktiverat som standard för poddar. Slå på för att tillåta samma enkla kontroll av uppspelningshastighet för alla medier, inklusive låtar.
 settings.option.advanced.playlistTrackMapping: Spåridentifiering för spellistor
 settings.option.advanced.playlistTrackMapping.description: Aktiverar djupskanning av spellistor för att avgöra vilka spår som finns i vilka spellistor. Tiden för att bygga upp spellistans cache kan öka avsevärt.
-settings.option.advanced.powerUsage.description: Flyttad – bildhastighetsgränser, val av renderare och krävande visuella funktioner.
+settings.option.advanced.powerUsage.description: Bildhastighetsgränser, val av renderingsmotor och krävande visuella funktioner.
 settings.option.advanced.progressBar: Förloppsindikator
 settings.option.advanced.progressBar.useAccentColor: Använd accentfärg
 settings.option.advanced.resetCider: Återställ Cider
@@ -1777,17 +1876,18 @@ settings.option.advanced.richAlbumGrid.disableScrollAnimation: Inaktivera rullni
 settings.option.advanced.richAlbumGrid.scrollToPosition: Rulla till position
 settings.option.advanced.richAlbumGrid.scrollToPosition.bottom: Längst ned
 settings.option.advanced.richAlbumGrid.scrollToPosition.top: Längst upp
-settings.option.advanced.searchBar: Sökfält
+settings.option.advanced.searchBar: Huvudsökfält
+settings.option.advanced.searchBar.description: Sökfältet i namnlisten.
 settings.option.advanced.searchBar.noRedirectOnSelect: Ingen landningssida vid fokus
 settings.option.advanced.searchBar.noRedirectOnSelect.description: När detta är aktiverat kommer sökfältet inte att omdirigera till landningssidan när det markeras. För att gå till landningssidan, håll ned SKIFT medan du markerar sökfältet.
 settings.option.advanced.settingsTakeout: Exportera / importera inställningar
 settings.option.advanced.settingsTakeout.description: Säkerhetskopiera dina inställningar till en fil, eller återställ dem på en annan enhet. Kontoinloggningar inkluderas aldrig.
-settings.option.advanced.simpleArtworkBg: Enkel omslagsbakgrund (omslutande)
+settings.option.advanced.simpleArtworkBg: Enkel omslagsbakgrund
 settings.option.advanced.simpleArtworkBg.brightness: Ljusstyrka %
 settings.option.advanced.simpleArtworkBg.contrast: Kontrast %
-settings.option.advanced.simpleArtworkBg.saturate: "Mättnad "
+settings.option.advanced.simpleArtworkBg.saturate: Mättnad %
 settings.option.advanced.simpleArtworkBg.useMask: Använd nedre mask
-settings.option.advanced.sonoma: Omslutande (Sonoma)
+settings.option.advanced.sonoma: Sonoma
 settings.option.advanced.sonoma.lyricArc: Bågformad låttext
 settings.option.advanced.sonoma.lyricArc.description: Aktiva textrader böjer sig mot mitten av skärmen med en subtil känsla av djup.
 settings.option.advanced.sonoma.radialMask: Använd alternativ mask
@@ -1795,9 +1895,11 @@ settings.option.advanced.sonoma.radialMask.description: När detta är aktiverat
 settings.option.advanced.title: Avancerat
 settings.option.advanced.tweaks: Finjusteringar
 settings.option.advanced.tweaks.description: Finjusteringar som inte riktigt passar in någon annanstans
-settings.option.advanced.volumeSlider: Volymreglage
+settings.option.advanced.volumeSlider: Spelarens volymreglage
 settings.option.advanced.volumeSlider.iOSStyle: iOS-stil
-settings.option.advanced.window: Fönster
+settings.option.advanced.window: Fönsterbeteende
+settings.option.advanced.window.description: Uppspelningsnotiser, storleksändring av minispelaren och stilen på rullningslisten som används i appen. Fönsterkontroller och vibrans finns under Visuellt.
+settings.option.advanced.window.scrollbarType: Typ av rullningslist
 settings.option.all: Alla
 settings.option.alwaysShow: Visa alltid
 settings.option.appleMusic.behavior.playButtonOnStop: Spela-knapp vid stoppad åtgärd
@@ -1878,6 +1980,7 @@ settings.option.audio.enableAdvancedFunctionality.tunedAudioSpatialization.profi
 settings.option.audio.exponentialVolume: Exponentiell volymkurva
 settings.option.audio.exponentialVolume.description: Följ en mer gradvis volymkurva, vilket möjliggör mer exakt volymkontroll vid lägre volymer.
 settings.option.audio.hostCapture: Fångbart ljud (OBS / Discord)
+settings.option.audio.hostCapture.description: Strömnings- och inspelningsappar som OBS eller Discord behöver Windows-värden för att dirigera uppspelningen.
 settings.option.audio.maxVolume: Maxvolym
 settings.option.audio.mixing: Mixning
 settings.option.audio.normalization: Ljudnormalisering
@@ -1919,10 +2022,12 @@ settings.option.concerts.sortBy.description: Hur konserter ska sorteras i listan
 settings.option.concerts.sortBy.distance: Avstånd
 settings.option.connect.link_account.description: Att länka ditt Discord-konto med Cider Connect gör att du kan spara användardata inklusive inställningar, EQ:ar och så småningom mer när det är klart. (Under utveckling)
 settings.option.connectivity.atmosRatings: Atmos-betyg från communityn
+settings.option.connectivity.atmosRatings.description: Se och dela vilka album som låter fantastiskt i Dolby Atmos.
 settings.option.connectivity.ciderConnect.description: Lyssna tillsammans, gemensamma spellistor, fjärrstyrning av appen och mer!
 settings.option.connectivity.ciderRemote: Cider Remote
 settings.option.connectivity.discord: Discord
 settings.option.connectivity.discordRichPresence: Discord Rich Presence
+settings.option.connectivity.discordRichPresence.description: Status som visas på din Discord-profil, samt klientnamnet och knapparna den använder.
 settings.option.connectivity.discordRPC: Discord Rich Presence
 settings.option.connectivity.discordRPC.animatedArtwork: Animerat omslag
 settings.option.connectivity.discordRPC.animatedArtwork.description: Det här alternativet kan påverka laddningstiderna för Rich Presence om omslaget inte redan är tillgängligt.
@@ -1996,9 +2101,13 @@ settings.option.connectivity.partiesTransportDefault.host: Endast värden
 settings.option.connectivity.playbackNotifications: Uppspelningsnotiser
 settings.option.connectivity.playbackNotifications.description: Visa en notis med den nya låten närhelst den aktuella låten ändras.
 settings.option.connectivity.remoteConnection: Fjärranslutning
+settings.option.connectivity.remoteConnection.description: Parkoppla en telefon eller surfplatta, och ta bort parkopplingen för enheter som styr uppspelningen.
 settings.option.connectivity.rpcServer: RPC-server
+settings.option.connectivity.rpcServer.description: Hantera åtkomst till Cider för externa applikationer som använder RPC-servern.
+settings.option.connectivity.rpcServer.manageAccess: Hantera externa applikationers åtkomst till Cider
 settings.option.connectivity.scrobbler: Scrobbler
 settings.option.connectivity.scrobblerIntegration: Scrobbler-integrering
+settings.option.connectivity.scrobblerIntegration.description: Scrobbling för Last.fm, ListenBrainz, Libre.fm och Maloja för att spara en lyssningshistorik.
 settings.option.connectivity.steam.clearOnPause: Rensa Rich Presence vid paus
 settings.option.connectivity.webSocketsApi: WebSockets-API
 settings.option.connectivity.webSocketsAPI: WebSockets API
@@ -2020,6 +2129,7 @@ settings.option.experiments.chromecastLyrics.description: Visa synkroniserade l�
 settings.option.experiments.floatingSearch: Aktivera flytande sökfält
 settings.option.experiments.forceExplicit: Byt automatiskt till explicit albumversion
 settings.option.experiments.forceExplicit.description: Kan öka laddningstiderna vid sökning efter explicita versioner av album.
+settings.option.experiments.legacyFetch: Äldre hämtning
 settings.option.experiments.musicVideos: Aktivera musikvideor i biblioteket
 settings.option.experiments.title: Experimentella funktioner
 settings.option.general.app: App
@@ -2136,6 +2246,8 @@ settings.option.lyrics.provider.netease: NetEase
 settings.option.lyrics.provider.user: Användarinskickade
 settings.option.lyrics.providerPreferences: Leverantörsinställningar
 settings.option.lyrics.providerPreferences.description: Konfigurera vilka låttextkällor som ska användas och deras prioritet
+settings.option.lyrics.scrollTuning: Rullningstid och dämpning
+settings.option.lyrics.scrollTuning.description: Ställ in hur lång tid textraderna tar att rulla och vilken dämpningskurva de följer, separat för sidofältet och den fängslande spelaren.
 settings.option.lyrics.showDualLanguage: Visa dubbla språk
 settings.option.lyrics.showDualLanguage.description: Visa både originallåttexten och översättningen samtidigt.
 settings.option.lyrics.showTimestamps: Visa tidsstämplar när pekaren hålls över
@@ -2404,6 +2516,12 @@ settings.option.visual.mojavePlayerType.compact.description: En smal spelare med
 settings.option.visual.mojavePlayerType.compactInline: Kompakt inline
 settings.option.visual.mojavePlayerType.compactInline.description: En enda smal rad med förlopp inuti LCD-skärmen.
 settings.option.visual.moveUpLinks: Flytta länkarna ”Mer att se” i Bläddra till toppen
+settings.option.visual.musicVideoPinMaxResolution: Spela alltid upp musikvideor med maximal upplösning
+settings.option.visual.musicVideoPinMaxResolution.description: Behåller den högsta kvaliteten som videon erbjuder istället för att starta lågt och trappa upp. I ett litet fönster eller vid en anslutning med datatak använder detta märkbart mer bandbredd.
+settings.option.visual.musicVideoPrefetchOnHover: Förbered musikvideor när pekaren hålls över
+settings.option.visual.musicVideoPrefetchOnHover.description: Börjar ladda videon medan pekaren vilar på märket, så att den öppnas snabbare när du klickar.
+settings.option.visual.musicVideoPrefetchSegmentsOnHover: Ladda ner det första segmentet när pekaren hålls över
+settings.option.visual.musicVideoPrefetchSegmentsOnHover.description: Hämtar även de första sekunderna av videon innan du klickar. Det kostar några megabyte för varje gång pekaren hålls över, även för de videor som aldrig öppnas.
 settings.option.visual.pauseAnimatedOnBlur: Pausa animerade omslag när fönstret inte är i fokus
 settings.option.visual.playerMaterial: Spelarmaterial
 settings.option.visual.playerMaterial.blur: Oskärpa
@@ -2587,6 +2705,11 @@ settings.resetCider.title: Återställ Cider
 settings.sleepTimer.endsIn: "Slutar om: {{remainingTime}} ({{endTime}})"
 settings.sleepTimer.notSet: Timern är inte inställd
 settings.sleepTimer.title: Ställ in insomningstimer
+settings.smartPlaylists.card.automaticRefresh: Automatisk uppdatering
+settings.smartPlaylists.section.maintenance: Underhåll
+settings.smartPlaylists.section.maintenance.description: Tvinga alla regler att köras nu, eller rensa den cachelagrade kopian av ditt bibliotek.
+settings.smartPlaylists.section.rules: Regler
+settings.smartPlaylists.section.rules.description: Huruvida Cider tillämpar inbäddade spellisteregler och hur ofta de utvärderas på nytt.
 settings.sweetener.useSystemAccentColor: Använd systemets accentfärg
 settings.takeout.chooseFile: Välj fil…
 settings.takeout.error.badVersion: Filen saknar versionsinformation.
@@ -3295,16 +3418,20 @@ term.zoomin: Zooma in
 term.zoomout: Zooma ut
 term.zoomreset: Nollställ zoom
 tooltips.watchMusicVideo: Visa musikvideo
+updates.installUnavailable.body: Denna version är inte tillgänglig för nedladdning på ditt konto.
 updates.lateststable.title: Senaste stabila versionen
 updates.loadFailed.body: Kontrollera din anslutning och försök igen.
 updates.loadFailed.title: Cider kunde inte läsa in tillgängliga versioner
 updates.notifyForBranch.tooltip: Avisera för den här grenen
 updates.otherVersions.title: Andra versioner
 updates.ptb.name: Publik testgren
+updates.reloadFailed.body: Cider kunde inte läsa in tillgängliga versioner på nytt. Kontrollera din anslutning och försök igen.
 updates.signedOut.body: Cider söker efter uppdateringar med ditt Cider Taproom-konto.
 updates.signedOut.expired.body: Logga in igen för att söka efter uppdateringar.
 updates.signedOut.expired.bodyNamed: Logga in igen som {name} för att söka efter uppdateringar.
 updates.signedOut.expired.title: Din session för Cider Taproom har löpt ut
 updates.signedOut.title: Logga in för att söka efter uppdateringar
+updates.signInToInstall.body: Logga in på Cider Taproom för att ladda ner denna uppdatering.
+updates.signInToInstall.title: Logga in för att installera denna uppdatering
 updates.stable.name: Stabil gren
 verb.installed: Installerad
