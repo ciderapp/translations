@@ -378,6 +378,13 @@ commandCenter.hint.showArtist: Kuva esitaja
 commandCenter.hint.showPlaylist: Kuva esitusloend oma kogust
 commandCenter.moreResults: Rohkem tulemusi...
 commandCenter.playNext: '"{name}" esitatakse järgmisena'
+concerts.empty.noLocation.action: Määra asukoht
+concerts.empty.noLocation.body: Kontserdid kuvatakse asukoha põhjal. Vali asukoht, et näha, mis sinu lähedal toimub.
+concerts.empty.noLocation.title: Asukohta pole määratud
+concerts.empty.noResults.body: Neste filtritega ei leitud praegu ühtegi sündmust. Proovi teist kuupäevavahemikku, žanrit või asukohta.
+concerts.empty.noResults.title: Kontserte ei leitud
+concerts.empty.search.body: Otsingule {term} ei vasta ükski kontsert. Proovi teist esitajat, toimumiskohta või sündmuse nime.
+concerts.empty.search.title: Sobilikke kontserte ei leitud
 concerts.getTickets: Hangi piletid
 concerts.maps.apple: Apple Maps
 concerts.maps.google: Google Maps
@@ -834,6 +841,23 @@ notification.restrictedStorefront: Ebasünnis sisu on sinu praeguses poes piirat
 notification.updatingLibraryAlbums: Teegi albumite värskendamine...
 notification.updatingLibraryArtists: Teegi esitajate värskendamine...
 notification.updatingLibrarySongs: Teegi laulude värskendamine...
+notificationCenter.action.clearHistory: Kustuta ajalugu
+notificationCenter.action.dismiss: Sule
+notificationCenter.action.muteCategory: Vaigista {category}
+notificationCenter.action.muteSource: Vaigista see teavitus
+notificationCenter.action.options: Teavituste valikud
+notificationCenter.action.settings: Teavituste seaded
+notificationCenter.action.unmuteCategory: Tühista {category} vaigistus
+notificationCenter.action.unmuteSource: Tühista selle teavituse vaigistus
+notificationCenter.clearHistory.confirm: Kas kustutad teavituste ajaloo? Seda toimingut ei saa tagasi võtta.
+notificationCenter.empty: Oled kõigega kursis
+notificationCenter.empty.caption: Kõik teated, mida Cider soovib sulle edastada, ilmuvad siia.
+notificationCenter.mute.errors: Tõrkeid kuvatakse alati.
+notificationCenter.mute.essential: Seda kategooriat kuvatakse alati.
+notificationCenter.row.muted: Vaigistatud
+notificationCenter.section.active: Aktiivsed
+notificationCenter.section.history: Ajalugu
+notificationCenter.title: Teavitused
 notify.licenseRefusedSkip: '"{name}" ei saa praegu esitada, jäetakse vahele'
 notify.licenseRefusedStop: 'Taasesitus peatati: "{name}" ei saa esitada'
 nowPlaying.a11y.trackWaveform: Loo lainekuju, klõpsa kerimiseks
@@ -1008,6 +1032,7 @@ playbackHealth.backgroundFreeze.eyebrow: Taasesituse teavitus
 playbackHealth.backgroundFreeze.hint: Aknahalduri reegel või OS-i seade võib hoida Ciderit töötamas ka siis, kui see pole fookuses. „Lisateave“ näitab teie seadistuse jaoks teadaolevaid lahendusi.
 playbackHealth.backgroundFreeze.learnMore: Lisateave
 playbackHealth.backgroundFreeze.title: Teie süsteem peatas Cideri taustal
+playbackHealth.localIssue: Kohalik esitusprobleem
 playlist.collaborative.tooltip: See esitusloend on avatud kaasautoritele
 playlist.collaborators.andOthers: "{{name}} ja veel {{count}}"
 playlist.collaborators.count: "{{count}} kaasautorit"
@@ -1601,7 +1626,7 @@ settings.general.card.closing: Sulgemine
 settings.general.section.cache: Vahemälu
 settings.general.section.cache.description: Salvestatud kaanekujundused ja metaandmed, mida Cider hoiab kettal, et lehed laadiksid kiiremini.
 settings.general.section.desktop: Töölaud
-settings.general.section.desktop.description: Kiirklahvid, töölauateavitused ja Cideri käitumine tegumiribal ning sulgemisel.
+settings.general.section.desktop.description: Kiirklahvid ning Cideri käitumine tegumiribal ja sulgemisel.
 settings.general.section.language: Keel
 settings.general.section.language.description: Kasutajaliidese keel ning kuidas teatada tõlgetest või märkida nende autoreid.
 settings.general.section.playback: Taasesitus
@@ -1798,6 +1823,7 @@ settings.nav.group.integrations: Integratsioonid
 settings.nav.group.library: Teek
 settings.nav.group.playback: Taasesitus
 settings.nav.lyrics: Sõnad
+settings.nav.notifications: Teavitused
 settings.nav.plugins: Pluginad
 settings.nav.power: Energiatarve
 settings.nav.privacy: Privaatsus
@@ -1815,6 +1841,43 @@ settings.normalization.presets.loud: Vali
 settings.normalization.presets.maximum: Maksimaalne
 settings.normalization.target: Helitugevuse sihtväärtus
 settings.normalization.unit: LUFS
+settings.notifications.alwaysOn: Alati sees
+settings.notifications.alwaysOn.description: Need sisaldavad olulisi probleeme ja rakenduse olekut, mida pead nägema, mistõttu ei saa neid välja lülitada. Tõrked kuvatakse alati, olenemata nende kategooriast.
+settings.notifications.category.accountAuth: Konto ja sisselogimine
+settings.notifications.category.accountAuth.description: Sisse- ja väljalogimine, tellimuse olek ja ühendatud teenused.
+settings.notifications.category.castingAirplay: Voogedastus ja AirPlay
+settings.notifications.category.castingAirplay.description: Ühenduse loomine väliste esitusseadmetega ja nende lahutamine.
+settings.notifications.category.extensionsThemes: Laiendused ja teemad
+settings.notifications.category.extensionsThemes.description: Pluginate, teemade ja koodilõikude installimine, värskendamine ja eemaldamine.
+settings.notifications.category.general: Üldine
+settings.notifications.category.general.description: Kõik muu, millel puudub oma kategooria.
+settings.notifications.category.listeningTogether: Koos kuulamine
+settings.notifications.category.listeningTogether.description: Peokutsed, külaliste liitumine või lahkumine ja seansi olek.
+settings.notifications.category.lyrics: Laulusõnad
+settings.notifications.category.lyrics.description: Laulusõnade otsing, panustamine ja transliteratsioon.
+settings.notifications.category.playbackSystem: Esitus ja süsteem
+settings.notifications.category.playbackSystem.description: Esitusprobleemid ja rakenduse taseme olekud, mida pead nägema.
+settings.notifications.category.playlistsLibrary: Esitusloendid ja teek
+settings.notifications.category.playlistsLibrary.description: Teegi sisu lisamine, eemaldamine, muutmine ja sünkroonimine.
+settings.notifications.category.plugins: Pluginad
+settings.notifications.category.plugins.description: Sinu installitud pluginate endi saadetud teated, mitte Cideri edastatud teated.
+settings.notifications.category.queueUpNext: Järjekord ja Järgmisena
+settings.notifications.category.queueUpNext.description: Järgmisena esitatavad või järjekorra lõppu lisatud lood.
+settings.notifications.category.scrobbling: Skroblimine
+settings.notifications.category.scrobbling.description: Lugude skroblimise tulemused teenustest Last.fm, ListenBrainz ja muudest teenustest.
+settings.notifications.category.settingsBackups: Seaded ja varukoopiad
+settings.notifications.category.settingsBackups.description: Seadete import ja eksport ning konfiguratsiooni varukoopiad.
+settings.notifications.category.sharingClipboard: Jagamine ja lõikelaud
+settings.notifications.category.sharingClipboard.description: Jagamislinkide loomine ja kopeerimine.
+settings.notifications.muted.empty: Ükski teavitus pole eraldi vaigistatud. Kui vaigistad teavituste loendis mõne üksiku teavituse, lisatakse see siia, kus saad selle uuesti lubada.
+settings.notifications.section.categories: Kategooriad
+settings.notifications.section.history: Ajalugu
+settings.notifications.section.muted: Vaigistatud teavitused
+settings.notifications.section.system: Süsteemi teavitused
+settings.notifications.summary.categoriesOn: Kategooriad sisse lülitatud
+settings.notifications.summary.description: Vali, milliseid teavitusi Cider sulle kuvab. Kõik välja lülitatud teavitused salvestatakse ikkagi sinu teavituste loendisse, et saaksid neile hiljem pilgu peale heita.
+settings.notifications.unmute: Tühista vaigistus
+settings.notifications.unmuteAll: Tühista kõigi vaigistus
 settings.notyf.connectivity.lastfmScrobble.connectError: Last.fm-ühenduse aegumine
 settings.notyf.connectivity.lastfmScrobble.connecting: Ühenduse loomine teenusega Last.fm...
 settings.notyf.connectivity.lastfmScrobble.connectSuccess: Last.fm-ühendus õnnestus
@@ -1969,7 +2032,7 @@ settings.option.advanced.tweaks.description: Kohandatavad seaded, mis ei sobi ku
 settings.option.advanced.volumeSlider: Mängija helitugevuse liugur
 settings.option.advanced.volumeSlider.iOSStyle: iOS-i stiil
 settings.option.advanced.window: Akna käitumine
-settings.option.advanced.window.description: Taasesituse teavitused, minimängija suuruse muutmine ja kogu rakenduses kasutatav kerimisriba stiil. Akna juhtnupud ja vibrancy-efekt asuvad jaotises Visuaal.
+settings.option.advanced.window.description: Minimängija suuruse muutmine ja kogu rakenduses kasutatav kerimisriba stiil. Akna juhtnupud ja elavus on jaotises Visuaal.
 settings.option.advanced.window.scrollbarType: Kerimisriba tüüp
 settings.option.all: Kõik
 settings.option.alwaysShow: Näita alati
@@ -2359,6 +2422,10 @@ settings.option.medium: Keskmine
 settings.option.minimal: Minimaalne
 settings.option.native: Natiivne
 settings.option.none: Puudub
+settings.option.notifications.history.cap: Säilitatavate teavituste arv
+settings.option.notifications.history.cap.description: Mitu teavitust loendis säilitatakse, enne kui vanimad eemaldatakse.
+settings.option.notifications.history.persist: Säilita teavitused käivitamiste vahel
+settings.option.notifications.history.persist.description: Jäta teavituste loend meelde pärast Cideri sulgemist. Selle väljalülitamine tühjendab juba salvestatud loendi.
 settings.option.off: Väljas
 settings.option.on: Sees
 settings.option.performance.app: Rakendus
@@ -2389,6 +2456,10 @@ settings.option.performance.limitImmersiveBgFramerateOnBlur:
   by: "@nekocats"
   issue: 48
 settings.option.performance.motion: Liikumine
+settings.option.performance.preloadSidebarPages: Külgriba lehtede eellaadimine
+settings.option.performance.preloadSidebarPages.description: Laadib külgriba lehed enne nende avamist. Valik „Hõljutamisel“ alustab laadimist, kui kursor peatub külgriba üksusel. Valik „Tegevusetuse korral“ laadib pärast käivitamist ka jaotised „Kuula kohe“, „Sirvi“ ja „Raadio“ ning värskendab varem avatud kogude loendeid.
+settings.option.performance.preloadSidebarPages.idle: Tegevusetuse korral
+settings.option.performance.preloadSidebarPages.intent: Hõljutamisel
 settings.option.performance.renderer.auto: Automaatne (WebGPU, kui on toetatud)
 settings.option.performance.renderer.canvas: Canvas 2D
 settings.option.performance.renderer.webgpu: WebGPU

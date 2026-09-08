@@ -411,6 +411,13 @@ commandCenter.hint.showArtist: 아티스트 보기
 commandCenter.hint.showPlaylist: 보관함의 플레이리스트 보기
 commandCenter.moreResults: 결과 더 보기...
 commandCenter.playNext: '"{name}"이(가) 다음에 재생됩니다'
+concerts.empty.noLocation.action: 위치 설정
+concerts.empty.noLocation.body: 콘서트는 특정 지역 기준으로 표시됩니다. 주변에서 열리는 공연을 확인하려면 위치를 선택해 주세요.
+concerts.empty.noLocation.title: 설정된 위치 없음
+concerts.empty.noResults.body: 현재 이 필터에 해당하는 일정이 없습니다. 다른 날짜 범위, 장르 또는 위치를 시도해 보세요.
+concerts.empty.noResults.title: 검색된 콘서트 없음
+concerts.empty.search.body: "{term}와(과) 일치하는 콘서트가 없습니다. 다른 아티스트, 공연장 또는 이벤트 이름을 시도해 보세요."
+concerts.empty.search.title: 일치하는 콘서트 없음
 concerts.getTickets: 티켓 예매
 concerts.maps.apple: Apple 지도
 concerts.maps.google: Google 지도
@@ -857,6 +864,23 @@ notification.restrictedStorefront: 현재 스토어프론트의 무삭제판 콘
 notification.updatingLibraryAlbums: 보관함 앨범 업데이트 중...
 notification.updatingLibraryArtists: 보관함 아티스트 업데이트 중...
 notification.updatingLibrarySongs: 보관함 노래 업데이트 중...
+notificationCenter.action.clearHistory: 기록 지우기
+notificationCenter.action.dismiss: 닫기
+notificationCenter.action.muteCategory: "{category} 알림 끄기"
+notificationCenter.action.muteSource: 이 알림 끄기
+notificationCenter.action.options: 알림 옵션
+notificationCenter.action.settings: 알림 설정
+notificationCenter.action.unmuteCategory: "{category} 알림 켜기"
+notificationCenter.action.unmuteSource: 이 알림 켜기
+notificationCenter.clearHistory.confirm: 알림 기록을 지우시겠습니까? 이 작업은 취소할 수 없습니다.
+notificationCenter.empty: 새로운 알림이 없습니다
+notificationCenter.empty.caption: Cider에서 보내는 알림이 여기에 표시됩니다.
+notificationCenter.mute.errors: 오류는 항상 표시됩니다.
+notificationCenter.mute.essential: 이 카테고리는 항상 표시됩니다.
+notificationCenter.row.muted: 알림 꺼짐
+notificationCenter.section.active: 활성
+notificationCenter.section.history: 기록
+notificationCenter.title: 알림
 notify.licenseRefusedSkip: 지금은 "{name}"을(를) 재생할 수 없어 건너뜁니다.
 notify.licenseRefusedStop: '재생 중단됨: "{name}"을(를) 재생할 수 없습니다.'
 nowPlaying.a11y.trackWaveform: 트랙 파형, 클릭하여 이동
@@ -1019,6 +1043,7 @@ playbackHealth.backgroundFreeze.eyebrow: 재생 알림
 playbackHealth.backgroundFreeze.hint: 창 관리자 규칙이나 OS 설정을 통해 Cider가 포커스되지 않은 상태에서도 계속 실행되도록 유지할 수 있습니다. '더 알아보기'에서 현재 환경에 맞는 해결 방법을 확인해 보세요.
 playbackHealth.backgroundFreeze.learnMore: 더 알아보기
 playbackHealth.backgroundFreeze.title: 시스템이 백그라운드에서 Cider를 일시 중단했습니다
+playbackHealth.localIssue: 로컬 재생 문제
 playlist.collaborative.tooltip: 공동 작업자가 참여할 수 있는 플레이리스트입니다
 playlist.collaborators.andOthers: "{{name}} 외 {{count}}명"
 playlist.collaborators.count: 공동 작업자 {{count}}명
@@ -1617,7 +1642,7 @@ settings.general.card.closing: 창 닫기
 settings.general.section.cache: 캐시
 settings.general.section.cache.description: 페이지를 더 빠르게 로드하기 위해 Cider가 디스크에 저장하는 앨범 아트 및 메타데이터입니다.
 settings.general.section.desktop: 데스크톱
-settings.general.section.desktop.description: 키보드 단축키, 데스크톱 알림, 작업 표시줄 및 창을 닫을 때의 Cider 동작을 설정합니다.
+settings.general.section.desktop.description: 단축키 및 작업 표시줄에서의 Cider 동작, 창을 닫을 때의 동작을 설정합니다.
 settings.general.section.language: 언어
 settings.general.section.language.description: 인터페이스 언어와 번역 기여자를 확인하거나 번역 오류를 보고하는 방법을 설정합니다.
 settings.general.section.playback: 재생
@@ -1810,6 +1835,7 @@ settings.nav.group.integrations: 연동
 settings.nav.group.library: 보관함
 settings.nav.group.playback: 재생
 settings.nav.lyrics: 가사
+settings.nav.notifications: 알림
 settings.nav.plugins: 플러그인
 settings.nav.power: 전력 사용량
 settings.nav.privacy: 개인정보 보호
@@ -1827,6 +1853,43 @@ settings.normalization.presets.loud: 크게
 settings.normalization.presets.maximum: 최대
 settings.normalization.target: 목표 라우드니스
 settings.normalization.unit: LUFS
+settings.notifications.alwaysOn: 항상 켜짐
+settings.notifications.alwaysOn.description: 이 알림은 반드시 확인해야 하는 문제 및 앱 상태를 전달하므로 끌 수 없습니다. 오류 알림은 카테고리에 관계없이 항상 전송됩니다.
+settings.notifications.category.accountAuth: 계정 및 로그인
+settings.notifications.category.accountAuth.description: 로그인 및 로그아웃, 구독 상태 및 연결된 서비스 관련 알림입니다.
+settings.notifications.category.castingAirplay: 캐스팅 및 AirPlay
+settings.notifications.category.castingAirplay.description: 외부 재생 기기와의 연결 및 연결 해제 관련 알림입니다.
+settings.notifications.category.extensionsThemes: 확장 프로그램 및 테마
+settings.notifications.category.extensionsThemes.description: 플러그인, 테마 및 스니펫의 설치, 업데이트 및 제거 관련 알림입니다.
+settings.notifications.category.general: 일반
+settings.notifications.category.general.description: 별도의 카테고리가 없는 기타 알림입니다.
+settings.notifications.category.listeningTogether: 함께 듣기
+settings.notifications.category.listeningTogether.description: 파티 초대, 게스트 참여 및 퇴장, 세션 상태 관련 알림입니다.
+settings.notifications.category.lyrics: 가사
+settings.notifications.category.lyrics.description: 가사 검색, 기여 및 음역 관련 알림입니다.
+settings.notifications.category.playbackSystem: 재생 및 시스템
+settings.notifications.category.playbackSystem.description: 재생 문제 및 반드시 확인해야 하는 앱 수준의 상태 관련 알림입니다.
+settings.notifications.category.playlistsLibrary: 플레이리스트 및 보관함
+settings.notifications.category.playlistsLibrary.description: 보관함 콘텐츠의 추가, 삭제, 편집 및 동기화 관련 알림입니다.
+settings.notifications.category.plugins: 플러그인
+settings.notifications.category.plugins.description: Cider의 보고 대신 설치된 플러그인 자체에서 발생하는 메시지 관련 알림입니다.
+settings.notifications.category.queueUpNext: 대기열 및 다음에 재생할 곡
+settings.notifications.category.queueUpNext.description: 다음에 재생할 곡으로 대기열에 추가되거나 대기열 끝에 추가된 트랙 관련 알림입니다.
+settings.notifications.category.scrobbling: 스크로블
+settings.notifications.category.scrobbling.description: Last.fm, ListenBrainz 및 기타 서비스의 트랙별 스크로블 결과 관련 알림입니다.
+settings.notifications.category.settingsBackups: 설정 및 백업
+settings.notifications.category.settingsBackups.description: 설정 가져오기 및 내보내기, 구성 백업 관련 알림입니다.
+settings.notifications.category.sharingClipboard: 공유 및 클립보드
+settings.notifications.category.sharingClipboard.description: 공유 링크 생성 및 복사 관련 알림입니다.
+settings.notifications.muted.empty: 개별적으로 알림이 꺼진 항목이 없습니다. 알림 목록에서 특정 알림을 무음으로 설정하면 여기에 추가되며, 이곳에서 다시 알림을 켤 수 있습니다.
+settings.notifications.section.categories: 카테고리
+settings.notifications.section.history: 기록
+settings.notifications.section.muted: 꺼진 알림
+settings.notifications.section.system: 시스템 알림
+settings.notifications.summary.categoriesOn: 켜진 카테고리
+settings.notifications.summary.description: Cider에서 표시할 알림 유형을 선택합니다. 비활성화한 알림도 알림 목록에 계속 기록되므로 나중에 확인할 수 있습니다.
+settings.notifications.unmute: 음소거 해제
+settings.notifications.unmuteAll: 모두 음소거 해제
 settings.notyf.connectivity.lastfmScrobble.connectError: Last.fm 연결 시간 초과
 settings.notyf.connectivity.lastfmScrobble.connecting: Last.fm에 연결 중...
 settings.notyf.connectivity.lastfmScrobble.connectSuccess: Last.fm 연결 성공
@@ -1958,7 +2021,7 @@ settings.option.advanced.tweaks.description: 다른 카테고리에 속하지 �
 settings.option.advanced.volumeSlider: 플레이어 볼륨 슬라이더
 settings.option.advanced.volumeSlider.iOSStyle: iOS 스타일
 settings.option.advanced.window: 창 동작
-settings.option.advanced.window.description: 재생 알림, 미니플레이어 크기 조절, 앱 전반에 사용되는 스크롤바 스타일을 설정합니다. 창 제어 및 생동감 효과는 '비주얼'에서 설정할 수 있습니다.
+settings.option.advanced.window.description: 미니플레이어 크기 조절 및 앱 전체에 적용되는 스크롤바 스타일입니다. 창 제어 및 생동감 효과는 '시각 효과' 항목에 있습니다.
 settings.option.advanced.window.scrollbarType: 스크롤바 유형
 settings.option.all: 전체
 settings.option.alwaysShow: 항상 표시
@@ -2361,6 +2424,10 @@ settings.option.medium: 중간
 settings.option.minimal: 최소
 settings.option.native: 네이티브
 settings.option.none: 없음
+settings.option.notifications.history.cap: 보관할 알림 개수
+settings.option.notifications.history.cap.description: 가장 오래된 알림이 삭제되기 전에 목록에 보관할 알림의 최대 개수입니다.
+settings.option.notifications.history.persist: 앱 재실행 시에도 알림 유지
+settings.option.notifications.history.persist.description: Cider가 종료된 후에도 알림 목록을 유지합니다. 이 옵션을 끄면 이미 저장된 목록이 비워집니다.
 settings.option.off: 끔
 settings.option.on: 켬
 settings.option.performance.app: 앱
@@ -2383,6 +2450,10 @@ settings.option.performance.limitBlurMapFramerateOnBlur: 비활성 상태일 때
 settings.option.performance.limitBlurMapFramerateOnBlur.description: 창이 비활성 상태일 때 전력을 절약하기 위해 몰입형 애니메이션 배경의 프레임률을 낮춥니다. 항상 최대 속도로 실행하려면 이 옵션을 비활성화하십시오.
 settings.option.performance.limitImmersiveBgFramerateOnBlur: 포커스가 해제되었을 때 몰입형 배경 프레임레이트 제한
 settings.option.performance.motion: 동작
+settings.option.performance.preloadSidebarPages: 사이드바 페이지 미리 로드
+settings.option.performance.preloadSidebarPages.description: 사이드바 페이지를 열기 전에 미리 로드합니다. '마우스 올릴 때'는 포인터가 사이드바 항목에 머무를 때 로드를 시작합니다. '대기 상태일 때'는 시작 후 '지금 듣기', '둘러보기', '라디오'도 로드하며 이전에 열었던 보관함 목록을 새로 고칩니다.
+settings.option.performance.preloadSidebarPages.idle: 대기 상태일 때
+settings.option.performance.preloadSidebarPages.intent: 마우스 올릴 때
 settings.option.performance.renderer.auto: 자동 (지원되는 경우 WebGPU)
 settings.option.performance.renderer.canvas: Canvas 2D
 settings.option.performance.renderer.webgpu: WebGPU

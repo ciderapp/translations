@@ -370,6 +370,13 @@ commandCenter.hint.showArtist: Afișează un artist
 commandCenter.hint.showPlaylist: Afișează o listă de redare din biblioteca ta
 commandCenter.moreResults: Mai multe rezultate...
 commandCenter.playNext: '"{name}" va fi redat în continuare'
+concerts.empty.noLocation.action: Setează locația
+concerts.empty.noLocation.body: Concertele sunt afișate pentru o anumită locație. Alege una pentru a vedea ce urmează în apropiere.
+concerts.empty.noLocation.title: Nicio locație setată
+concerts.empty.noResults.body: Nu există evenimente programate pentru aceste filtre în acest moment. Încearcă un alt interval de timp, gen sau locație.
+concerts.empty.noResults.title: Nu s-au găsit concerte
+concerts.empty.search.body: Niciun concert nu corespunde căutării {term}. Încearcă un alt artist, o altă sală sau un alt nume de eveniment.
+concerts.empty.search.title: Niciun concert potrivit
 concerts.getTickets: Cumpără bilete
 concerts.maps.apple: Apple Maps
 concerts.maps.google: Google Maps
@@ -801,6 +808,23 @@ notification.restrictedStorefront: Conținutul explicit din magazinul tău actua
 notification.updatingLibraryAlbums: Se actualizează albumele din bibliotecă...
 notification.updatingLibraryArtists: Se actualizează artiștii din bibliotecă...
 notification.updatingLibrarySongs: Se actualizează melodiile din bibliotecă...
+notificationCenter.action.clearHistory: Șterge istoricul
+notificationCenter.action.dismiss: Închide
+notificationCenter.action.muteCategory: Silenționează {category}
+notificationCenter.action.muteSource: Silenționează această notificare
+notificationCenter.action.options: Opțiuni notificări
+notificationCenter.action.settings: Configurări notificări
+notificationCenter.action.unmuteCategory: Anulează silenționarea {category}
+notificationCenter.action.unmuteSource: Anulează silenționarea acestei notificări
+notificationCenter.clearHistory.confirm: Ștergi istoricul notificărilor? Această acțiune este ireversibilă.
+notificationCenter.empty: Ești la curent cu totul
+notificationCenter.empty.caption: Tot ce trebuie să îți comunice Cider va apărea aici.
+notificationCenter.mute.errors: Erorile sunt afișate întotdeauna.
+notificationCenter.mute.essential: Această categorie este afișată întotdeauna.
+notificationCenter.row.muted: Silenționat
+notificationCenter.section.active: Active
+notificationCenter.section.history: Istoric
+notificationCenter.title: Notificări
 notify.licenseRefusedSkip: '"{name}" nu poate fi redat acum, se trece peste'
 notify.licenseRefusedStop: 'Redare oprită: "{name}" nu poate fi redat'
 nowPlaying.a11y.trackWaveform: Formă de undă a piesei, fă clic pentru a naviga
@@ -963,6 +987,7 @@ playbackHealth.backgroundFreeze.eyebrow: Notificare redare
 playbackHealth.backgroundFreeze.hint: O regulă a managerului de ferestre sau o configurare a sistemului de operare poate menține Cider în funcțiune atunci când nu este în focar. „Află mai multe” prezintă soluții cunoscute pentru configurația ta.
 playbackHealth.backgroundFreeze.learnMore: Află mai multe
 playbackHealth.backgroundFreeze.title: Sistemul tău a pus Cider pe pauză în fundal
+playbackHealth.localIssue: Problemă de redare locală
 playlist.collaborative.tooltip: Această listă de redare este deschisă colaboratorilor
 playlist.collaborators.andOthers: "{{name}} și alți {{count}}"
 playlist.collaborators.count: "{{count}} colaboratori"
@@ -1557,7 +1582,7 @@ settings.general.card.closing: Închidere
 settings.general.section.cache: Cache
 settings.general.section.cache.description: Ilustrațiile de album și metadatele stocate pe care Cider le păstrează pe disc pentru ca paginile să se încarce mai rapid.
 settings.general.section.desktop: Desktop
-settings.general.section.desktop.description: Scurtăturile de tastatură, notificările pe desktop și comportamentul Cider în bara de activități și la închidere.
+settings.general.section.desktop.description: Scurtături de tastatură și comportamentul Cider în bara de activități și la închidere.
 settings.general.section.language: Limbă
 settings.general.section.language.description: Limba interfeței și cum să raportezi sau să oferi credite pentru traducerile acesteia.
 settings.general.section.playback: Redare
@@ -1750,6 +1775,7 @@ settings.nav.group.integrations: Integrări
 settings.nav.group.library: Bibliotecă
 settings.nav.group.playback: Redare
 settings.nav.lyrics: Versuri
+settings.nav.notifications: Notificări
 settings.nav.plugins: Plugin-uri
 settings.nav.power: Consum de energie
 settings.nav.privacy: Confidențialitate
@@ -1767,6 +1793,43 @@ settings.normalization.presets.loud: Puternic
 settings.normalization.presets.maximum: Maxim
 settings.normalization.target: Țintă intensitate sonoră
 settings.normalization.unit: LUFS
+settings.notifications.alwaysOn: Întotdeauna active
+settings.notifications.alwaysOn.description: Acestea transmit probleme și starea aplicației pe care trebuie să le vezi, așa că nu pot fi dezactivate. Erorile sunt trimise întotdeauna, indiferent de categoria din care fac parte.
+settings.notifications.category.accountAuth: Cont și autentificare
+settings.notifications.category.accountAuth.description: Autentificare și deconectare, starea abonamentului și serviciile conectate.
+settings.notifications.category.castingAirplay: Transmitere și AirPlay
+settings.notifications.category.castingAirplay.description: Conectarea și deconectarea de la dispozitive de redare externe.
+settings.notifications.category.extensionsThemes: Extensii și teme
+settings.notifications.category.extensionsThemes.description: Instalarea, actualizarea și eliminarea de pluginuri, teme și fragmente de cod.
+settings.notifications.category.general: Generale
+settings.notifications.category.general.description: Orice notificare fără o categorie proprie.
+settings.notifications.category.listeningTogether: Ascultare în grup
+settings.notifications.category.listeningTogether.description: Invitații la audiții, intrarea sau ieșirea invitaților și starea sesiunii.
+settings.notifications.category.lyrics: Versuri
+settings.notifications.category.lyrics.description: Căutări de versuri, contribuții și transliterație.
+settings.notifications.category.playbackSystem: Redare și sistem
+settings.notifications.category.playbackSystem.description: Probleme de redare și stări la nivel de aplicație pe care trebuie să le vezi.
+settings.notifications.category.playlistsLibrary: Liste de redare și bibliotecă
+settings.notifications.category.playlistsLibrary.description: Adăugarea, eliminarea, editarea și sincronizarea conținutului din bibliotecă.
+settings.notifications.category.plugins: Pluginuri
+settings.notifications.category.plugins.description: Mesaje generate direct de pluginurile instalate, în loc să fie raportate de Cider.
+settings.notifications.category.queueUpNext: Coadă și Urmează
+settings.notifications.category.queueUpNext.description: Piese adăugate în coada de redare pentru a fi redate în continuare sau la sfârșitul cozii.
+settings.notifications.category.scrobbling: Scrobbling
+settings.notifications.category.scrobbling.description: Rezultatele de scrobbling pentru fiecare piesă de pe Last.fm, ListenBrainz și alte servicii.
+settings.notifications.category.settingsBackups: Configurări și copii de rezervă
+settings.notifications.category.settingsBackups.description: Importuri și exporturi de configurări, precum și copii de rezervă ale configurației.
+settings.notifications.category.sharingClipboard: Partajare și clipboard
+settings.notifications.category.sharingClipboard.description: Generarea și copierea linkurilor de partajare.
+settings.notifications.muted.empty: Nimic nu este silenționat individual. Silenționarea unei singure notificări din lista de notificări o va adăuga aici, de unde o poți reactiva.
+settings.notifications.section.categories: Categorii
+settings.notifications.section.history: Istoric
+settings.notifications.section.muted: Notificări silențiate
+settings.notifications.section.system: Notificări de sistem
+settings.notifications.summary.categoriesOn: Categorii active
+settings.notifications.summary.description: Alege ce tipuri de notificări să îți afișeze Cider. Tot ce dezactivezi va fi înregistrat în continuare în lista de notificări, pentru a le putea consulta mai târziu.
+settings.notifications.unmute: Reactivează sunetul
+settings.notifications.unmuteAll: Reactivează toate sunetele
 settings.notyf.connectivity.lastfmScrobble.connectError: Conexiunea la Last.fm a expirat
 settings.notyf.connectivity.lastfmScrobble.connecting: Se conectează la Last.fm...
 settings.notyf.connectivity.lastfmScrobble.connectSuccess: Conectare reușită la Last.fm
@@ -1898,7 +1961,7 @@ settings.option.advanced.tweaks.description: Setări ajustabile care nu se potri
 settings.option.advanced.volumeSlider: Glisor volum player
 settings.option.advanced.volumeSlider.iOSStyle: Stil iOS
 settings.option.advanced.window: Comportament fereastră
-settings.option.advanced.window.description: Notificările de redare, redimensionarea miniplayerului și stilul barei de derulare utilizat în aplicație. Controlul ferestrelor și efectul de transparență se află la secțiunea Aspect vizual.
+settings.option.advanced.window.description: Redimensionarea miniplayerului și stilul barei de derulare utilizat în aplicație. Comenzile ferestrei și efectul de vibrație se află la secțiunea Vizual.
 settings.option.advanced.window.scrollbarType: Tip bară de derulare
 settings.option.all: Toate
 settings.option.alwaysShow: Afișează întotdeauna
@@ -2276,6 +2339,10 @@ settings.option.medium: Mediu
 settings.option.minimal: Minimal
 settings.option.native: Nativ
 settings.option.none: Niciunul
+settings.option.notifications.history.cap: Notificări de păstrat
+settings.option.notifications.history.cap.description: Câte notificări poate conține lista înainte ca cele mai vechi să fie șterse.
+settings.option.notifications.history.persist: Păstrează notificările între lansări
+settings.option.notifications.history.persist.description: Reține lista de notificări după închiderea Cider. Dezactivarea acestei opțiuni golește lista deja stocată.
 settings.option.off: Oprit
 settings.option.on: Pornit
 settings.option.performance.app: Aplicație
@@ -2298,6 +2365,10 @@ settings.option.performance.limitBlurMapFramerateOnBlur: Limitează rata de cadr
 settings.option.performance.limitBlurMapFramerateOnBlur.description: Reduce rata de cadre a fundalului animat imersiv atunci când fereastra nu este în prim-plan pentru a economisi energie. Dezactivați pentru a rula la viteză maximă.
 settings.option.performance.limitImmersiveBgFramerateOnBlur: Limitează rata de cadre a fundalului imersiv când fereastra nu este activă
 settings.option.performance.motion: Mișcare
+settings.option.performance.preloadSidebarPages: Preîncarcă paginile din bara laterală
+settings.option.performance.preloadSidebarPages.description: Încarcă paginile din bara laterală înainte de a le deschide. „La trecerea cu mouse-ul” pornește când cursorul se oprește pe un element din bara laterală. „În repaus” încarcă, de asemenea, secțiunile Ascultă acum, Explorează și Radio după pornire și reîmprospătează listele din bibliotecă deschise anterior.
+settings.option.performance.preloadSidebarPages.idle: În repaus
+settings.option.performance.preloadSidebarPages.intent: La trecerea cu mouse-ul
 settings.option.performance.renderer.auto: Automat (WebGPU când este acceptat)
 settings.option.performance.renderer.canvas: Canvas 2D
 settings.option.performance.renderer.webgpu: WebGPU

@@ -370,6 +370,13 @@ commandCenter.hint.showArtist: Näytä artisti
 commandCenter.hint.showPlaylist: Näytä soittolista kirjastostasi
 commandCenter.moreResults: Lisää tuloksia...
 commandCenter.playNext: ”{name}” toistetaan seuraavaksi
+concerts.empty.noLocation.action: Aseta sijainti
+concerts.empty.noLocation.body: Konsertit näytetään paikkakunnan mukaan. Valitse paikka nähdäksesi lähialueesi tulevat tapahtumat.
+concerts.empty.noLocation.title: Sijaintia ei ole asetettu
+concerts.empty.noResults.body: Näillä suodattimilla ei löytynyt tapahtumia. Kokeile toista ajanjaksoa, tyylilajia tai sijaintia.
+concerts.empty.noResults.title: Konsertteja ei löytynyt
+concerts.empty.search.body: Hakua {term} vastaavia konsertteja ei löytynyt. Kokeile toista artistia, tapahtumapaikkaa tai tapahtuman nimeä.
+concerts.empty.search.title: Ei vastaavia konsertteja
 concerts.getTickets: Hanki liput
 concerts.maps.apple: Apple Kartat
 concerts.maps.google: Google Maps
@@ -801,6 +808,23 @@ notification.restrictedStorefront: Säädyttömän sisällön toisto nykyisessä
 notification.updatingLibraryAlbums: Päivitetään kirjaston albumeita...
 notification.updatingLibraryArtists: Päivitetään kirjaston artisteja...
 notification.updatingLibrarySongs: Päivitetään kirjaston kappaleita...
+notificationCenter.action.clearHistory: Tyhjennä historia
+notificationCenter.action.dismiss: Hylkää
+notificationCenter.action.muteCategory: Mykistä {category}
+notificationCenter.action.muteSource: Mykistä tämä ilmoitus
+notificationCenter.action.options: Ilmoituksen valinnat
+notificationCenter.action.settings: Ilmoitusasetukset
+notificationCenter.action.unmuteCategory: Poista kohteen {category} mykistys
+notificationCenter.action.unmuteSource: Poista tämän ilmoituksen mykistys
+notificationCenter.clearHistory.confirm: Tyhjennetäänkö ilmoitushistoria? Tätä toimintoa ei voi peruuttaa.
+notificationCenter.empty: Olet ajan tasalla
+notificationCenter.empty.caption: Kaikki Ciderin ilmoitukset ilmestyvät tänne.
+notificationCenter.mute.errors: Virheet näytetään aina.
+notificationCenter.mute.essential: Tämä kategoria näytetään aina.
+notificationCenter.row.muted: Mykistetty
+notificationCenter.section.active: Aktiiviset
+notificationCenter.section.history: Historia
+notificationCenter.title: Ilmoitukset
 notify.licenseRefusedSkip: Kohdetta "{name}" ei voida toistaa juuri nyt, ohitetaan
 notify.licenseRefusedStop: 'Toisto pysäytetty: kohdetta "{name}" ei voida toistaa'
 nowPlaying.a11y.trackWaveform: Kappaleen aaltomuoto, klikkaa siirtyäksesi
@@ -963,6 +987,7 @@ playbackHealth.backgroundFreeze.eyebrow: Toistohuomautus
 playbackHealth.backgroundFreeze.hint: Ikkunanhallinnan sääntö tai käyttöjärjestelmän asetus voi pitää Ciderin käynnissä myös silloin, kun se ei ole aktiivisena. ”Lue lisää” näyttää tunnettuja ratkaisuja järjestelmällesi.
 playbackHealth.backgroundFreeze.learnMore: Lue lisää
 playbackHealth.backgroundFreeze.title: Järjestelmäsi keskeytti Ciderin taustalla
+playbackHealth.localIssue: Paikallinen toisto-ongelma
 playlist.collaborative.tooltip: Tämä soittolista on avoin yhteistyölle
 playlist.collaborators.andOthers: "{{name}} ja {{count}} muuta"
 playlist.collaborators.count: "{{count}} osallistujaa"
@@ -1557,7 +1582,7 @@ settings.general.card.closing: Sulkeminen
 settings.general.section.cache: Välimuisti
 settings.general.section.cache.description: Tallennettu kansitaide ja metadata, joita Cider säilyttää levyllä sivujen nopeampaa latautumista varten.
 settings.general.section.desktop: Työpöytä
-settings.general.section.desktop.description: Pikanäppäimet, työpöytäilmoitukset ja se, miten Cider toimii tehtäväpalkissa ja suljettaessa.
+settings.general.section.desktop.description: Pikanäppäimet sekä Ciderin toiminta tehtäväpalkissa ja suljettaessa.
 settings.general.section.language: Kieli
 settings.general.section.language.description: Käyttöliittymän kieli sekä se, miten käännöksistä voi ilmoittaa tai antaa niistä tunnustusta.
 settings.general.section.playback: Toisto
@@ -1750,6 +1775,7 @@ settings.nav.group.integrations: Integraatiot
 settings.nav.group.library: Kirjasto
 settings.nav.group.playback: Toisto
 settings.nav.lyrics: Sanat
+settings.nav.notifications: Ilmoitukset
 settings.nav.plugins: Lisäosat
 settings.nav.power: Virrankäyttö
 settings.nav.privacy: Tietosuoja
@@ -1767,6 +1793,43 @@ settings.normalization.presets.loud: Voimakas
 settings.normalization.presets.maximum: Maksimi
 settings.normalization.target: Tavoiteäänekkyys
 settings.normalization.unit: LUFS
+settings.notifications.alwaysOn: Aina käytössä
+settings.notifications.alwaysOn.description: Nämä sisältävät tärkeitä ongelmia ja sovelluksen tilatietoja, joten niitä ei voi poistaa käytöstä. Virheilmoitukset näytetään aina kategoriasta riippumatta.
+settings.notifications.category.accountAuth: Tili ja kirjautuminen
+settings.notifications.category.accountAuth.description: Kirjautuminen sisään ja ulos, tilauksen tila ja yhdistetyt palvelut.
+settings.notifications.category.castingAirplay: Striimaus ja AirPlay
+settings.notifications.category.castingAirplay.description: Yhteyden muodostaminen ulkoisiin toistolaitteisiin ja sen katkaiseminen.
+settings.notifications.category.extensionsThemes: Laajennukset ja teemat
+settings.notifications.category.extensionsThemes.description: Lisäosien, teemojen ja koodinpätkien asennus, päivitys ja poisto.
+settings.notifications.category.general: Yleiset
+settings.notifications.category.general.description: Kaikki ilmoitukset, joilla ei ole omaa kategoriaa.
+settings.notifications.category.listeningTogether: Yhdessä kuuntelu
+settings.notifications.category.listeningTogether.description: Kutsut kuunteluryhmiin, vieraiden liittyminen tai poistuminen sekä istunnon tila.
+settings.notifications.category.lyrics: Sanat
+settings.notifications.category.lyrics.description: Sanoitusten haku, muokkaukset ja translitterointi.
+settings.notifications.category.playbackSystem: Toisto ja järjestelmä
+settings.notifications.category.playbackSystem.description: Toisto-ongelmat ja tärkeät sovellustason tilatiedot.
+settings.notifications.category.playlistsLibrary: Soittolistat ja kirjasto
+settings.notifications.category.playlistsLibrary.description: Kirjaston sisällön lisääminen, poistaminen, muokkaaminen ja synkronointi.
+settings.notifications.category.plugins: Lisäosat
+settings.notifications.category.plugins.description: Asennettujen lisäosien omat ilmoitukset Ciderin raportoimien sijaan.
+settings.notifications.category.queueUpNext: Jono ja Seuraavaksi
+settings.notifications.category.queueUpNext.description: Seuraavaksi toistettavaksi tai jonon loppuun lisätyt kappaleet.
+settings.notifications.category.scrobbling: Scrobblaus
+settings.notifications.category.scrobbling.description: Kappalekohtaiset scrobblaustulokset Last.fm-, ListenBrainz- ja muista palveluista.
+settings.notifications.category.settingsBackups: Asetukset ja varmuuskopiot
+settings.notifications.category.settingsBackups.description: Asetusten tuonti ja vienti sekä määritysten varmuuskopiointi.
+settings.notifications.category.sharingClipboard: Jako ja leikepöytä
+settings.notifications.category.sharingClipboard.description: Jakolinkkien luominen ja kopioiminen.
+settings.notifications.muted.empty: Mitään ei ole erikseen mykistetty. Yksittäisen ilmoituksen hiljentäminen ilmoitusluettelosta lisää sen tänne, ja täältä voit palauttaa sen.
+settings.notifications.section.categories: Kategoriat
+settings.notifications.section.history: Historia
+settings.notifications.section.muted: Mykistetyt ilmoitukset
+settings.notifications.section.system: Järjestelmäilmoitukset
+settings.notifications.summary.categoriesOn: Kategoriat käytössä
+settings.notifications.summary.description: Valitse, millaisia ilmoituksia Cider näyttää sinulle. Vaikka poistat jonkin luokan käytöstä, sen ilmoitukset tallennetaan silti ilmoitusluetteloosi, jotta voit lukea ne myöhemmin.
+settings.notifications.unmute: Poista vaimennus
+settings.notifications.unmuteAll: Poista kaikkien vaimennus
 settings.notyf.connectivity.lastfmScrobble.connectError: Last.fm-yhteyden aikakatkaisu
 settings.notyf.connectivity.lastfmScrobble.connecting: Yhdistetään Last.fm-palveluun...
 settings.notyf.connectivity.lastfmScrobble.connectSuccess: Yhteys Last.fm-palveluun muodostettu
@@ -1898,7 +1961,7 @@ settings.option.advanced.tweaks.description: Hienosäädettävät asetukset, jot
 settings.option.advanced.volumeSlider: Soittimen äänenvoimakkuuden säädin
 settings.option.advanced.volumeSlider.iOSStyle: iOS-tyyli
 settings.option.advanced.window: Ikkunan toiminta
-settings.option.advanced.window.description: Toistoilmoitukset, minisoittimen koon muuttaminen ja sovelluksessa käytettävä vierityspalkin tyyli. Ikkunan säätimet ja kuultavuus ovat kohdassa Ulkoasu.
+settings.option.advanced.window.description: Minisoittimen koon muuttaminen ja sovelluksen vierityspalkin tyyli. Ikkunan painikkeet ja lasitehosteet löytyvät Visuaalinen-osiosta.
 settings.option.advanced.window.scrollbarType: Vierityspalkin tyyppi
 settings.option.all: Kaikki
 settings.option.alwaysShow: Näytä aina
@@ -2276,6 +2339,10 @@ settings.option.medium: Keskitaso
 settings.option.minimal: Minimaalinen
 settings.option.native: Natiivi
 settings.option.none: Ei mitään
+settings.option.notifications.history.cap: Säilytettävien ilmoitusten määrä
+settings.option.notifications.history.cap.description: Kuinka monta ilmoitusta luettelossa säilytetään ennen kuin vanhimmat poistetaan.
+settings.option.notifications.history.persist: Säilytä ilmoitukset käynnistysten välillä
+settings.option.notifications.history.persist.description: Muista ilmoitusluettelo, kun Cider suljetaan. Tämän poistaminen käytöstä tyhjentää jo tallennetun luettelon.
 settings.option.off: Pois päältä
 settings.option.on: Päällä
 settings.option.performance.app: Sovellus
@@ -2298,6 +2365,10 @@ settings.option.performance.limitBlurMapFramerateOnBlur: Rajoita animoidun taust
 settings.option.performance.limitBlurMapFramerateOnBlur.description: Laskee immersiivisen animoidun taustan kehysnopeutta, kun ikkuna ei ole aktiivinen, säästääkseen virtaa. Poista käytöstä, jos haluat sen toimivan täydellä nopeudella.
 settings.option.performance.limitImmersiveBgFramerateOnBlur: Rajoita immersiivisen taustan kuvanopeutta, kun sovellus ei ole aktiivisena
 settings.option.performance.motion: Liike
+settings.option.performance.preloadSidebarPages: Esilataa sivupalkin sivut
+settings.option.performance.preloadSidebarPages.description: Lataa sivupalkin sivut ennen niiden avaamista. ”Osoitettaessa” aloittaa latauksen, kun osoitin viedään sivupalkin kohteen päälle. ”Joutilaana” lataa käynnistyksen jälkeen myös Kuuntele nyt-, Selaa- ja Radio-osiot sekä päivittää aiemmin avatut kirjastoluettelot.
+settings.option.performance.preloadSidebarPages.idle: Joutilaana
+settings.option.performance.preloadSidebarPages.intent: Osoitettaessa
 settings.option.performance.renderer.auto: Automaattinen (WebGPU, jos tuettu)
 settings.option.performance.renderer.canvas: Canvas 2D
 settings.option.performance.renderer.webgpu: WebGPU

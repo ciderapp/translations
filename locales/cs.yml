@@ -370,6 +370,13 @@ commandCenter.hint.showArtist: Zobrazit umělce
 commandCenter.hint.showPlaylist: Zobrazit playlist z knihovny
 commandCenter.moreResults: Další výsledky...
 commandCenter.playNext: '"{name}" se přehraje jako další'
+concerts.empty.noLocation.action: Nastavit polohu
+concerts.empty.noLocation.body: Koncerty se zobrazují pro konkrétní místo. Vyberte si jedno, abyste viděli, co se chystá ve vašem okolí.
+concerts.empty.noLocation.title: Není nastavena žádná poloha
+concerts.empty.noResults.body: Pro tyto filtry není momentálně nic naplánováno. Zkuste jiné rozmezí dat, žánr nebo polohu.
+concerts.empty.noResults.title: Nebyly nalezeny žádné koncerty
+concerts.empty.search.body: Žádné koncerty neodpovídají {term}. Zkuste jiného interpreta, místo konání nebo název události.
+concerts.empty.search.title: Žádné odpovídající koncerty
 concerts.getTickets: Koupit vstupenky
 concerts.maps.apple: Apple Maps
 concerts.maps.google: Google Maps
@@ -801,6 +808,23 @@ notification.restrictedStorefront: Explicitní obsah je ve vašem aktuálním ob
 notification.updatingLibraryAlbums: Aktualizace alb v knihovně...
 notification.updatingLibraryArtists: Aktualizace umělců v knihovně...
 notification.updatingLibrarySongs: Aktualizace skladeb v knihovně...
+notificationCenter.action.clearHistory: Smazat historii
+notificationCenter.action.dismiss: Zavřít
+notificationCenter.action.muteCategory: Ztlumit kategorii {category}
+notificationCenter.action.muteSource: Ztlumit toto oznámení
+notificationCenter.action.options: Volby oznámení
+notificationCenter.action.settings: Nastavení oznámení
+notificationCenter.action.unmuteCategory: Zrušit ztlumení kategorie {category}
+notificationCenter.action.unmuteSource: Zrušit ztlumení tohoto oznámení
+notificationCenter.clearHistory.confirm: Smazat historii oznámení? Tuto akci nelze vrátit zpět.
+notificationCenter.empty: Jste v obraze
+notificationCenter.empty.caption: Vše, co vám Cider potřebuje sdělit, se zobrazí zde.
+notificationCenter.mute.errors: Chyby se zobrazují vždy.
+notificationCenter.mute.essential: Tato kategorie se zobrazuje vždy.
+notificationCenter.row.muted: Ztlumeno
+notificationCenter.section.active: Aktivní
+notificationCenter.section.history: Historie
+notificationCenter.title: Oznámení
 notify.licenseRefusedSkip: '"{name}" nelze nyní přehrát, přeskakuje se'
 notify.licenseRefusedStop: 'Přehrávání zastaveno: "{name}" nelze přehrát'
 nowPlaying.a11y.trackWaveform: Vlnový průběh skladby, kliknutím přejdete na pozici
@@ -963,6 +987,7 @@ playbackHealth.backgroundFreeze.eyebrow: Upozornění na přehrávání
 playbackHealth.backgroundFreeze.hint: Pravidlo správce oken nebo nastavení operačního systému může udržet Cider spuštěný, i když není aktivní. V sekci „Další informace“ najdete známá řešení pro váš systém.
 playbackHealth.backgroundFreeze.learnMore: Další informace
 playbackHealth.backgroundFreeze.title: Systém pozastavil Cider na pozadí
+playbackHealth.localIssue: Problém s místním přehráváním
 playlist.collaborative.tooltip: Tento playlist je otevřený pro spolupracovníky
 playlist.collaborators.andOthers: "{{name}} a {{count}} dalších"
 playlist.collaborators.count: "{{count}} spolupracovníků"
@@ -1557,7 +1582,7 @@ settings.general.card.closing: Zavírání
 settings.general.section.cache: Mezipaměť
 settings.general.section.cache.description: Uložené přebaly a metadata, které Cider uchovává na disku pro rychlejší načítání stránek.
 settings.general.section.desktop: Plocha
-settings.general.section.desktop.description: Klávesové zkratky, oznámení na ploše a jak se Cider chová na hlavním panelu a při zavření.
+settings.general.section.desktop.description: Klávesové zkratky a chování aplikace Cider na hlavním panelu a při zavření.
 settings.general.section.language: Jazyk
 settings.general.section.language.description: Jazyk rozhraní a jak nahlásit chyby v překladu nebo uvést autory překladů.
 settings.general.section.playback: Přehrávání
@@ -1750,6 +1775,7 @@ settings.nav.group.integrations: Integrace
 settings.nav.group.library: Knihovna
 settings.nav.group.playback: Přehrávání
 settings.nav.lyrics: Texty
+settings.nav.notifications: Oznámení
 settings.nav.plugins: Pluginy
 settings.nav.power: Spotřeba energie
 settings.nav.privacy: Soukromí
@@ -1767,6 +1793,43 @@ settings.normalization.presets.loud: Hlasitý
 settings.normalization.presets.maximum: Maximální
 settings.normalization.target: Cílová hlasitost
 settings.normalization.unit: LUFS
+settings.notifications.alwaysOn: Vždy zapnuto
+settings.notifications.alwaysOn.description: Tato oznámení obsahují důležité problémy a stav aplikace, které musíte vidět, proto je nelze vypnout. Chyby se zobrazí vždy, bez ohledu na kategorii.
+settings.notifications.category.accountAuth: Účet a přihlášení
+settings.notifications.category.accountAuth.description: Přihlašování a odhlašování, stav předplatného a připojené služby.
+settings.notifications.category.castingAirplay: Streamování a AirPlay
+settings.notifications.category.castingAirplay.description: Připojování k externím přehrávacím zařízením a odpojování od nich.
+settings.notifications.category.extensionsThemes: Rozšíření a motivy
+settings.notifications.category.extensionsThemes.description: Instalace, aktualizace a odebírání doplňků, motivů a fragmentů kódu.
+settings.notifications.category.general: Obecné
+settings.notifications.category.general.description: Vše, co nemá vlastní kategorii.
+settings.notifications.category.listeningTogether: Společný poslech
+settings.notifications.category.listeningTogether.description: Pozvánky do relace, připojení nebo odpojení hostů a stav relace.
+settings.notifications.category.lyrics: Texty skladeb
+settings.notifications.category.lyrics.description: Vyhledávání textů, příspěvky a transliterace.
+settings.notifications.category.playbackSystem: Přehrávání a systém
+settings.notifications.category.playbackSystem.description: Problémy s přehráváním a důležité systémové stavy aplikace.
+settings.notifications.category.playlistsLibrary: Playlisty a knihovna
+settings.notifications.category.playlistsLibrary.description: Přidávání, odebírání, úprava a synchronizace obsahu knihovny.
+settings.notifications.category.plugins: Doplňky
+settings.notifications.category.plugins.description: Zprávy generované přímo nainstalovanými doplňky, nikoli aplikací Cider.
+settings.notifications.category.queueUpNext: Fronta a Nadcházející
+settings.notifications.category.queueUpNext.description: Skladby přidané jako nadcházející nebo na konec fronty.
+settings.notifications.category.scrobbling: Scrobbling
+settings.notifications.category.scrobbling.description: Výsledky scrobblingu jednotlivých skladeb ze služeb Last.fm, ListenBrainz a dalších.
+settings.notifications.category.settingsBackups: Nastavení a zálohy
+settings.notifications.category.settingsBackups.description: Import a export nastavení a zálohování konfigurace.
+settings.notifications.category.sharingClipboard: Sdílení a schránka
+settings.notifications.category.sharingClipboard.description: Generování a kopírování odkazů pro sdílení.
+settings.notifications.muted.empty: Nic není samostatně ztlumeno. Pokud ztlumíte konkrétní oznámení ze seznamu, zobrazí se zde a odtud jej můžete opět aktivovat.
+settings.notifications.section.categories: Kategorie
+settings.notifications.section.history: Historie
+settings.notifications.section.muted: Ztlumená oznámení
+settings.notifications.section.system: Systémová oznámení
+settings.notifications.summary.categoriesOn: Zapnuté kategorie
+settings.notifications.summary.description: Vyberte, jaké druhy oznámení vám má Cider zobrazovat. Vypnutá oznámení se budou i nadále ukládat do historie oznámení, takže si je můžete přečíst později.
+settings.notifications.unmute: Zrušit ztlumení
+settings.notifications.unmuteAll: Zrušit ztlumení všech
 settings.notyf.connectivity.lastfmScrobble.connectError: Časový limit připojení k Last.fm vypršel
 settings.notyf.connectivity.lastfmScrobble.connecting: Připojování k Last.fm...
 settings.notyf.connectivity.lastfmScrobble.connectSuccess: Připojení k Last.fm bylo úspěšné
@@ -1898,7 +1961,7 @@ settings.option.advanced.tweaks.description: Nastavení pro drobné úpravy, kte
 settings.option.advanced.volumeSlider: Posuvník hlasitosti přehrávače
 settings.option.advanced.volumeSlider.iOSStyle: Styl iOS
 settings.option.advanced.window: Chování okna
-settings.option.advanced.window.description: Oznámení o přehrávání, změna velikosti mini přehrávače a styl posuvníku používaný v celé aplikaci. Ovládací prvky okna a průhlednost jsou v sekci Vzhled.
+settings.option.advanced.window.description: Změna velikosti Miniplayeru a styl posuvníku v celé aplikaci. Ovládací prvky okna a efekt průsvitnosti najdete v sekci Vizuální.
 settings.option.advanced.window.scrollbarType: Typ posuvníku
 settings.option.all: Vše
 settings.option.alwaysShow: Vždy zobrazovat
@@ -2276,6 +2339,10 @@ settings.option.medium: Střední
 settings.option.minimal: Minimální
 settings.option.native: Nativní
 settings.option.none: Žádný
+settings.option.notifications.history.cap: Počet uchovávaných oznámení
+settings.option.notifications.history.cap.description: Kolik oznámení může seznam obsahovat, než se začnou odstraňovat ta nejstarší.
+settings.option.notifications.history.persist: Uchovávat oznámení mezi spuštěními
+settings.option.notifications.history.persist.description: Ponechá seznam oznámení uložený i po zavření aplikace Cider. Vypnutím této funkce vymažete aktuálně uložený seznam.
 settings.option.off: Vypnuto
 settings.option.on: Zapnuto
 settings.option.performance.app: Aplikace
@@ -2298,6 +2365,10 @@ settings.option.performance.limitBlurMapFramerateOnBlur: Omezit snímkovou frekv
 settings.option.performance.limitBlurMapFramerateOnBlur.description: Snižuje snímkovou frekvenci pohlcujícího animovaného pozadí, když okno není aktivní, což šetří energii. Chcete-li zachovat plnou rychlost, tuto možnost vypněte.
 settings.option.performance.limitImmersiveBgFramerateOnBlur: Omezit snímkovou frekvenci imerzivního pozadí, když aplikace není aktivní
 settings.option.performance.motion: Pohyb
+settings.option.performance.preloadSidebarPages: Přednačítat stránky bočního panelu
+settings.option.performance.preloadSidebarPages.description: Načte stránky bočního panelu ještě před jejich otevřením. Možnost „Při najetí myší“ spustí načítání, když ukazatel spočine na položce bočního panelu. Možnost „Při nečinnosti“ navíc po spuštění načte sekce Pusťte si, Prohlížení a Rádio a aktualizuje dříve otevřené seznamy knihovny.
+settings.option.performance.preloadSidebarPages.idle: Při nečinnosti
+settings.option.performance.preloadSidebarPages.intent: Při najetí myší
 settings.option.performance.renderer.auto: Automaticky (WebGPU, je-li podporováno)
 settings.option.performance.renderer.canvas: Canvas 2D
 settings.option.performance.renderer.webgpu: WebGPU

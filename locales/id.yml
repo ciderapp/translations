@@ -370,6 +370,13 @@ commandCenter.hint.showArtist: Tampilkan artis
 commandCenter.hint.showPlaylist: Tampilkan daftar putar dari perpustakaan Anda
 commandCenter.moreResults: Hasil lainnya...
 commandCenter.playNext: '"{name}" akan diputar berikutnya'
+concerts.empty.noLocation.action: Atur lokasi
+concerts.empty.noLocation.body: Konser dicantumkan berdasarkan tempat. Pilih satu untuk melihat apa yang akan datang di dekat Anda.
+concerts.empty.noLocation.title: Lokasi belum diatur
+concerts.empty.noResults.body: Tidak ada jadwal untuk filter ini saat ini. Coba rentang tanggal, genre, atau lokasi yang berbeda.
+concerts.empty.noResults.title: Konser tidak ditemukan
+concerts.empty.search.body: Tidak ada konser yang cocok dengan {term}. Coba artis, tempat, atau nama acara lain.
+concerts.empty.search.title: Tidak ada konser yang cocok
 concerts.getTickets: Beli Tiket
 concerts.maps.apple: Apple Maps
 concerts.maps.google: Google Maps
@@ -801,6 +808,23 @@ notification.restrictedStorefront: Konten eksplisit di storefront Anda saat ini 
 notification.updatingLibraryAlbums: Memperbarui album perpustakaan...
 notification.updatingLibraryArtists: Memperbarui artis perpustakaan...
 notification.updatingLibrarySongs: Memperbarui lagu perpustakaan...
+notificationCenter.action.clearHistory: Bersihkan riwayat
+notificationCenter.action.dismiss: Tutup
+notificationCenter.action.muteCategory: Bisukan {category}
+notificationCenter.action.muteSource: Bisukan pemberitahuan ini
+notificationCenter.action.options: Opsi pemberitahuan
+notificationCenter.action.settings: Pengaturan pemberitahuan
+notificationCenter.action.unmuteCategory: Batal bisukan {category}
+notificationCenter.action.unmuteSource: Batal bisukan pemberitahuan ini
+notificationCenter.clearHistory.confirm: Bersihkan riwayat pemberitahuan? Tindakan ini tidak dapat dibatalkan.
+notificationCenter.empty: Semua sudah dibaca
+notificationCenter.empty.caption: Semua hal yang perlu Cider sampaikan akan muncul di sini.
+notificationCenter.mute.errors: Kesalahan selalu ditampilkan.
+notificationCenter.mute.essential: Kategori ini selalu ditampilkan.
+notificationCenter.row.muted: Dibisukan
+notificationCenter.section.active: Aktif
+notificationCenter.section.history: Riwayat
+notificationCenter.title: Pemberitahuan
 notify.licenseRefusedSkip: '"{name}" tidak dapat diputar saat ini, melewati'
 notify.licenseRefusedStop: 'Pemutaran dihentikan: "{name}" tidak dapat diputar'
 nowPlaying.a11y.trackWaveform: Bentuk gelombang trek, klik untuk mencari
@@ -963,6 +987,7 @@ playbackHealth.backgroundFreeze.eyebrow: Pemberitahuan pemutaran
 playbackHealth.backgroundFreeze.hint: Aturan pengelola jendela atau pengaturan OS dapat menjaga Cider tetap berjalan saat tidak difokuskan. Pelajari selengkapnya menampilkan solusi yang diketahui untuk konfigurasi Anda.
 playbackHealth.backgroundFreeze.learnMore: Pelajari selengkapnya
 playbackHealth.backgroundFreeze.title: Sistem Anda menjeda Cider di latar belakang
+playbackHealth.localIssue: Masalah pemutaran lokal
 playlist.collaborative.tooltip: Daftar putar ini terbuka untuk kolaborator
 playlist.collaborators.andOthers: "{{name}} & {{count}} lainnya"
 playlist.collaborators.count: "{{count}} kontributor"
@@ -1557,7 +1582,7 @@ settings.general.card.closing: Menutup
 settings.general.section.cache: Cache
 settings.general.section.cache.description: Karya seni dan metadata tersimpan yang disimpan Cider pada disk agar halaman dimuat lebih cepat.
 settings.general.section.desktop: Desktop
-settings.general.section.desktop.description: Pintasan papan ketik, notifikasi desktop, dan bagaimana perilaku Cider di bilah tugas dan saat ditutup.
+settings.general.section.desktop.description: Pintasan papan ketik, dan bagaimana Cider berperilaku di bilah tugas dan saat ditutup.
 settings.general.section.language: Bahasa
 settings.general.section.language.description: Bahasa antarmuka, dan cara melaporkan atau memberikan kredit untuk terjemahannya.
 settings.general.section.playback: Pemutaran
@@ -1750,6 +1775,7 @@ settings.nav.group.integrations: Integrasi
 settings.nav.group.library: Perpustakaan
 settings.nav.group.playback: Pemutaran
 settings.nav.lyrics: Lirik
+settings.nav.notifications: Pemberitahuan
 settings.nav.plugins: Plugin
 settings.nav.power: Penggunaan Daya
 settings.nav.privacy: Privasi
@@ -1767,6 +1793,43 @@ settings.normalization.presets.loud: Lantang
 settings.normalization.presets.maximum: Maksimum
 settings.normalization.target: Target Kelantangan
 settings.normalization.unit: LUFS
+settings.notifications.alwaysOn: Selalu aktif
+settings.notifications.alwaysOn.description: Ini berisi masalah dan status aplikasi yang perlu Anda lihat, sehingga tidak dapat dimatikan. Kesalahan akan selalu muncul, apa pun kategorinya.
+settings.notifications.category.accountAuth: Akun dan Masuk
+settings.notifications.category.accountAuth.description: Masuk dan keluar, status langganan, dan layanan yang terhubung.
+settings.notifications.category.castingAirplay: Transmisi dan AirPlay
+settings.notifications.category.castingAirplay.description: Menghubungkan ke dan memutuskan sambungan dari perangkat pemutaran eksternal.
+settings.notifications.category.extensionsThemes: Ekstensi dan Tema
+settings.notifications.category.extensionsThemes.description: Menginstal, memperbarui, dan menghapus plugin, tema, dan cuplikan.
+settings.notifications.category.general: Umum
+settings.notifications.category.general.description: Apa pun yang tidak memiliki kategorinya sendiri.
+settings.notifications.category.listeningTogether: Mendengarkan Bersama
+settings.notifications.category.listeningTogether.description: Undangan pesta, tamu yang bergabung atau keluar, dan status sesi.
+settings.notifications.category.lyrics: Lirik
+settings.notifications.category.lyrics.description: Pencarian lirik, kontribusi, dan transliterasi.
+settings.notifications.category.playbackSystem: Pemutaran dan Sistem
+settings.notifications.category.playbackSystem.description: Masalah pemutaran dan status tingkat aplikasi yang perlu Anda lihat.
+settings.notifications.category.playlistsLibrary: Daftar Putar dan Perpustakaan
+settings.notifications.category.playlistsLibrary.description: Menambah, menghapus, mengedit, dan menyelaraskan konten perpustakaan.
+settings.notifications.category.plugins: Plugin
+settings.notifications.category.plugins.description: Pesan yang dimunculkan sendiri oleh plugin yang Anda instal, bukan dilaporkan oleh Cider.
+settings.notifications.category.queueUpNext: Antrean dan Berikutnya
+settings.notifications.category.queueUpNext.description: Trek yang diantrekan untuk diputar berikutnya atau ditambahkan ke akhir antrean.
+settings.notifications.category.scrobbling: Scrobbling
+settings.notifications.category.scrobbling.description: Hasil scrobble per trek dari Last.fm, ListenBrainz, dan layanan lainnya.
+settings.notifications.category.settingsBackups: Pengaturan dan Cadangan
+settings.notifications.category.settingsBackups.description: Impor dan ekspor pengaturan, serta cadangan konfigurasi.
+settings.notifications.category.sharingClipboard: Berbagi dan Papan Klip
+settings.notifications.category.sharingClipboard.description: Tautan berbagi yang dibuat dan disalin.
+settings.notifications.muted.empty: Tidak ada yang dibisukan secara tersendiri. Membisukan satu pemberitahuan dari daftar pemberitahuan Anda akan menambahkannya di sini, dan di sinilah Anda dapat mengembalikannya.
+settings.notifications.section.categories: Kategori
+settings.notifications.section.history: Riwayat
+settings.notifications.section.muted: Pemberitahuan yang dibisukan
+settings.notifications.section.system: Pemberitahuan sistem
+settings.notifications.summary.categoriesOn: Kategori aktif
+settings.notifications.summary.description: Pilih jenis pemberitahuan yang ditampilkan Cider. Pemberitahuan yang dinonaktifkan akan tetap dicatat dalam daftar pemberitahuan agar Anda dapat melihatnya nanti.
+settings.notifications.unmute: Bunyikan
+settings.notifications.unmuteAll: Bunyikan semua
 settings.notyf.connectivity.lastfmScrobble.connectError: Waktu Koneksi Last.fm Habis
 settings.notyf.connectivity.lastfmScrobble.connecting: Menghubungkan ke Last.fm...
 settings.notyf.connectivity.lastfmScrobble.connectSuccess: Koneksi Last.fm Berhasil
@@ -1898,7 +1961,7 @@ settings.option.advanced.tweaks.description: Pengaturan yang dapat disesuaikan y
 settings.option.advanced.volumeSlider: Penggeser Volume Pemutar
 settings.option.advanced.volumeSlider.iOSStyle: Gaya iOS
 settings.option.advanced.window: Perilaku Jendela
-settings.option.advanced.window.description: Notifikasi pemutaran, pengubahan ukuran miniplayer, dan gaya bilah gulir yang digunakan di seluruh aplikasi. Kontrol jendela dan vibrancy berada di bawah Visual.
+settings.option.advanced.window.description: Pengubahan ukuran Miniplayer dan gaya bilah gulir yang digunakan di seluruh aplikasi. Kontrol jendela dan efek kecemerlangan berada di bawah Visual.
 settings.option.advanced.window.scrollbarType: Jenis Bilah Gulir
 settings.option.all: Semua
 settings.option.alwaysShow: Selalu Tampilkan
@@ -2276,6 +2339,10 @@ settings.option.medium: Sedang
 settings.option.minimal: Minimal
 settings.option.native: Natif
 settings.option.none: Tidak Ada
+settings.option.notifications.history.cap: Jumlah pemberitahuan yang disimpan
+settings.option.notifications.history.cap.description: Jumlah pemberitahuan yang disimpan dalam daftar sebelum pemberitahuan terlama dihapus.
+settings.option.notifications.history.persist: Simpan pemberitahuan antar sesi
+settings.option.notifications.history.persist.description: Ingat daftar pemberitahuan Anda setelah Cider ditutup. Menonaktifkan opsi ini akan mengosongkan daftar yang sudah disimpan.
 settings.option.off: Mati
 settings.option.on: Nyala
 settings.option.performance.app: Aplikasi
@@ -2298,6 +2365,10 @@ settings.option.performance.limitBlurMapFramerateOnBlur: Batasi frame rate latar
 settings.option.performance.limitBlurMapFramerateOnBlur.description: Menurunkan frame rate latar belakang animasi yang imersif saat jendela tidak fokus untuk menghemat daya. Nonaktifkan untuk tetap menjalankannya dengan kecepatan penuh.
 settings.option.performance.limitImmersiveBgFramerateOnBlur: Batasi framerate latar belakang Imersif saat tidak fokus
 settings.option.performance.motion: Gerakan
+settings.option.performance.preloadSidebarPages: Pramuat halaman bilah samping
+settings.option.performance.preloadSidebarPages.description: Memuat halaman bilah samping sebelum Anda membukanya. 'Saat diarahkan' dimulai ketika penunjuk berada di atas item bilah samping. 'Saat tidak aktif' juga memuat Dengar Sekarang, Telusuri, dan Radio setelah aplikasi dimulai, serta menyegarkan daftar perpustakaan yang telah Anda buka sebelumnya.
+settings.option.performance.preloadSidebarPages.idle: Saat tidak aktif
+settings.option.performance.preloadSidebarPages.intent: Saat diarahkan
 settings.option.performance.renderer.auto: Otomatis (WebGPU jika didukung)
 settings.option.performance.renderer.canvas: Canvas 2D
 settings.option.performance.renderer.webgpu: WebGPU

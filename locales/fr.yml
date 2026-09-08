@@ -439,6 +439,13 @@ commandCenter.hint.showArtist: Afficher un artiste
 commandCenter.hint.showPlaylist: Afficher une playlist de votre bibliothèque
 commandCenter.moreResults: Plus de résultats...
 commandCenter.playNext: '"{name}" sera lu ensuite'
+concerts.empty.noLocation.action: Définir le lieu
+concerts.empty.noLocation.body: Les concerts sont répertoriés par lieu. Choisissez-en un pour voir les événements à venir près de chez vous.
+concerts.empty.noLocation.title: Aucun lieu défini
+concerts.empty.noResults.body: Rien n'est programmé avec ces filtres pour le moment. Essayez une autre période, un autre genre ou un autre lieu.
+concerts.empty.noResults.title: Aucun concert trouvé
+concerts.empty.search.body: Aucun concert ne correspond à {term}. Essayez un autre artiste, une autre salle ou un autre nom d'événement.
+concerts.empty.search.title: Aucun concert correspondant
 concerts.getTickets: Obtenir des billets
 concerts.maps.apple: Apple Maps
 concerts.maps.google: Google Maps
@@ -905,6 +912,23 @@ notification.restrictedStorefront: Le contenu explicite sur votre Store actuel e
 notification.updatingLibraryAlbums: Mise à jour des albums de la bibliothèque...
 notification.updatingLibraryArtists: Mise à jour des artistes de la bibliothèque...
 notification.updatingLibrarySongs: Mise à jour des morceaux de la bibliothèque...
+notificationCenter.action.clearHistory: Effacer l'historique
+notificationCenter.action.dismiss: Ignorer
+notificationCenter.action.muteCategory: Masquer {category}
+notificationCenter.action.muteSource: Masquer cette notification
+notificationCenter.action.options: Options de notification
+notificationCenter.action.settings: Réglages des notifications
+notificationCenter.action.unmuteCategory: Réactiver {category}
+notificationCenter.action.unmuteSource: Réactiver cette notification
+notificationCenter.clearHistory.confirm: Effacer l'historique des notifications ? Cette action est irréversible.
+notificationCenter.empty: Vous êtes à jour
+notificationCenter.empty.caption: Tout ce que Cider doit vous communiquer s'affichera ici.
+notificationCenter.mute.errors: Les erreurs sont toujours affichées.
+notificationCenter.mute.essential: Cette catégorie est toujours affichée.
+notificationCenter.row.muted: Masqué
+notificationCenter.section.active: Actives
+notificationCenter.section.history: Historique
+notificationCenter.title: Notifications
 notify.licenseRefusedSkip: Impossible de lire "{name}" pour le moment, passage au suivant
 notify.licenseRefusedStop: 'Lecture arrêtée : impossible de lire "{name}"'
 nowPlaying.a11y.trackWaveform: Forme d'onde du morceau, cliquer pour naviguer
@@ -1072,6 +1096,7 @@ playbackHealth.backgroundFreeze.eyebrow: Notification de lecture
 playbackHealth.backgroundFreeze.hint: Une règle du gestionnaire de fenêtres ou un réglage du système d'exploitation peut maintenir Cider actif lorsqu'il n'est pas au premier plan. « En savoir plus » présente des solutions de contournement connues pour votre configuration.
 playbackHealth.backgroundFreeze.learnMore: En savoir plus
 playbackHealth.backgroundFreeze.title: Votre système a mis Cider en pause en arrière-plan
+playbackHealth.localIssue: Problème de lecture locale
 playlist.collaborative.tooltip: Cette playlist est ouverte aux collaborateurs
 playlist.collaborators.andOthers: "{{name}} et {{count}} autres"
 playlist.collaborators.count: "{{count}} contributeurs"
@@ -1714,7 +1739,7 @@ settings.general.card.closing: Fermeture
 settings.general.section.cache: Cache
 settings.general.section.cache.description: Les illustrations et métadonnées stockées par Cider sur le disque pour que les pages se chargent plus rapidement.
 settings.general.section.desktop: Bureau
-settings.general.section.desktop.description: Raccourcis clavier, notifications de bureau et comportement de Cider dans la barre des tâches et lors de la fermeture.
+settings.general.section.desktop.description: Raccourcis clavier et comportement de Cider dans la barre des tâches et à la fermeture.
 settings.general.section.language: Langue
 settings.general.section.language.description: La langue de l'interface, et comment signaler ou créditer ses traductions.
 settings.general.section.playback: Lecture
@@ -1912,6 +1937,7 @@ settings.nav.group.integrations: Intégrations
 settings.nav.group.library: Bibliothèque
 settings.nav.group.playback: Lecture
 settings.nav.lyrics: Paroles
+settings.nav.notifications: Notifications
 settings.nav.plugins: Plugins
 settings.nav.power: Consommation d'énergie
 settings.nav.privacy: Confidentialité
@@ -1929,6 +1955,43 @@ settings.normalization.presets.loud: Fort
 settings.normalization.presets.maximum: Maximum
 settings.normalization.target: Cible de sonie
 settings.normalization.unit: LUFS
+settings.notifications.alwaysOn: Toujours activé
+settings.notifications.alwaysOn.description: Ces notifications signalent des problèmes et l'état de l'application que vous devez voir, elles ne peuvent donc pas être désactivées. Les erreurs s'affichent toujours, quelle que soit leur catégorie.
+settings.notifications.category.accountAuth: Compte et connexion
+settings.notifications.category.accountAuth.description: Connexion et déconnexion, état de l'abonnement et services connectés.
+settings.notifications.category.castingAirplay: Diffusion et AirPlay
+settings.notifications.category.castingAirplay.description: Connexion et déconnexion d'appareils de lecture externes.
+settings.notifications.category.extensionsThemes: Extensions et thèmes
+settings.notifications.category.extensionsThemes.description: Installation, mise à jour et suppression de plug-ins, thèmes et extraits de code.
+settings.notifications.category.general: Général
+settings.notifications.category.general.description: Tout ce qui n'appartient à aucune autre catégorie.
+settings.notifications.category.listeningTogether: Écoute collective
+settings.notifications.category.listeningTogether.description: Invitations à une session, arrivée ou départ d'invités et état de la session.
+settings.notifications.category.lyrics: Paroles
+settings.notifications.category.lyrics.description: Recherche de paroles, contributions et translittération.
+settings.notifications.category.playbackSystem: Lecture et système
+settings.notifications.category.playbackSystem.description: Problèmes de lecture et état général de l'application que vous devez voir.
+settings.notifications.category.playlistsLibrary: Playlists et bibliothèque
+settings.notifications.category.playlistsLibrary.description: Ajout, suppression, modification et synchronisation du contenu de la bibliothèque.
+settings.notifications.category.plugins: Plug-ins
+settings.notifications.category.plugins.description: Messages générés directement par les plug-ins installés, plutôt que signalés par Cider.
+settings.notifications.category.queueUpNext: File d'attente et À suivre
+settings.notifications.category.queueUpNext.description: Morceaux ajoutés à la file d'attente pour une lecture immédiate ou à la fin.
+settings.notifications.category.scrobbling: Scrobbling
+settings.notifications.category.scrobbling.description: Résultats de scrobble par morceau pour Last.fm, ListenBrainz et d'autres services.
+settings.notifications.category.settingsBackups: Réglages et sauvegardes
+settings.notifications.category.settingsBackups.description: Importations et exportations de réglages, et sauvegardes de configuration.
+settings.notifications.category.sharingClipboard: Partage et presse-papiers
+settings.notifications.category.sharingClipboard.description: Génération et copie de liens de partage.
+settings.notifications.muted.empty: Aucune notification n'est masquée individuellement. Si vous masquez une notification depuis votre liste, elle apparaîtra ici, et c'est également ici que vous pourrez la réactiver.
+settings.notifications.section.categories: Catégories
+settings.notifications.section.history: Historique
+settings.notifications.section.muted: Notifications masquées
+settings.notifications.section.system: Notifications système
+settings.notifications.summary.categoriesOn: Catégories activées
+settings.notifications.summary.description: Choisissez les types de notifications que Cider affiche. Celles que vous désactivez seront tout de même enregistrées dans votre historique de notifications pour que vous puissiez les consulter plus tard.
+settings.notifications.unmute: Réactiver le son
+settings.notifications.unmuteAll: Tout réactiver
 settings.notyf.connectivity.lastfmScrobble.connectError: Délai de connexion à Last.fm dépassé
 settings.notyf.connectivity.lastfmScrobble.connecting: Connexion à Last.fm...
 settings.notyf.connectivity.lastfmScrobble.connectSuccess: Connexion à Last.fm réussie
@@ -2077,7 +2140,7 @@ settings.option.advanced.tweaks.description: Paramètres ajustables qui n'ont pa
 settings.option.advanced.volumeSlider: Curseur de volume du lecteur
 settings.option.advanced.volumeSlider.iOSStyle: Style iOS
 settings.option.advanced.window: Comportement de la fenêtre
-settings.option.advanced.window.description: Notifications de lecture, redimensionnement du mini-lecteur et style de barre de défilement utilisé dans l'application. Les commandes de fenêtre et la vibrance se trouvent sous Visuel.
+settings.option.advanced.window.description: Le redimensionnement du Mini-lecteur et le style de la barre de défilement utilisés dans l'application. Les commandes de fenêtre et la vibrance se trouvent sous Visuel.
 settings.option.advanced.window.scrollbarType: Type de barre de défilement
 settings.option.all: Tout
 settings.option.alwaysShow: Toujours afficher
@@ -2480,6 +2543,10 @@ settings.option.medium: Moyen
 settings.option.minimal: Minimal
 settings.option.native: Natif
 settings.option.none: Aucun
+settings.option.notifications.history.cap: Notifications à conserver
+settings.option.notifications.history.cap.description: Nombre maximal de notifications conservées dans la liste avant que les plus anciennes ne soient supprimées.
+settings.option.notifications.history.persist: Conserver les notifications entre les lancements
+settings.option.notifications.history.persist.description: Conserver votre historique de notifications après la fermeture de Cider. Désactiver cette option videra la liste actuellement enregistrée.
 settings.option.off: Désactivé
 settings.option.on: Activé
 settings.option.performance.app: App
@@ -2502,6 +2569,10 @@ settings.option.performance.limitBlurMapFramerateOnBlur: Limiter la fréquence d
 settings.option.performance.limitBlurMapFramerateOnBlur.description: Réduit la fréquence d'images de l'arrière-plan animé immersif lorsque la fenêtre est inactive pour économiser de l'énergie. Désactivez cette option pour le maintenir à pleine vitesse.
 settings.option.performance.limitImmersiveBgFramerateOnBlur: Limiter la fréquence d'images de l'arrière-plan immersif hors focus
 settings.option.performance.motion: Animations
+settings.option.performance.preloadSidebarPages: Précharger les pages de la barre latérale
+settings.option.performance.preloadSidebarPages.description: Charge les pages de la barre latérale avant que vous ne les ouvriez. « Au survol » commence lorsque le pointeur s'arrête sur un élément de la barre latérale. « En cas d'inactivité » charge également Écouter, Explorer et Radio après le démarrage, et actualise les listes de la bibliothèque que vous avez déjà ouvertes.
+settings.option.performance.preloadSidebarPages.idle: En cas d'inactivité
+settings.option.performance.preloadSidebarPages.intent: Au survol
 settings.option.performance.renderer.auto: Automatique (WebGPU si pris en charge)
 settings.option.performance.renderer.canvas: Canvas 2D
 settings.option.performance.renderer.webgpu: WebGPU

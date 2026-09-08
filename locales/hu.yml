@@ -370,6 +370,13 @@ commandCenter.hint.showArtist: Előadó megjelenítése
 commandCenter.hint.showPlaylist: Lejátszási lista megjelenítése a könyvtárból
 commandCenter.moreResults: További találatok...
 commandCenter.playNext: A(z) "{name}" lesz a következő
+concerts.empty.noLocation.action: Helyszín beállítása
+concerts.empty.noLocation.body: A koncertek helyszín szerint jelennek meg. Válassz egyet, hogy lásd a közeledben lévő eseményeket.
+concerts.empty.noLocation.title: Nincs beállítva helyszín
+concerts.empty.noResults.body: Jelenleg nincsenek események ezekkel a szűrőkkel. Próbálj meg másik időszakot, műfajt vagy helyszínt választani.
+concerts.empty.noResults.title: Nem találhatók koncertek
+concerts.empty.search.body: Nincs a(z) {term} kifejezésnek megfelelő koncert. Próbálj meg másik előadót, helyszínt vagy eseménynevet keresni.
+concerts.empty.search.title: Nincs egyező koncert
 concerts.getTickets: Jegyvásárlás
 concerts.maps.apple: Apple Térképek
 concerts.maps.google: Google Térkép
@@ -801,6 +808,23 @@ notification.restrictedStorefront: "A szókimondó tartalom a jelenlegi áruház
 notification.updatingLibraryAlbums: Könyvtári albumok frissítése...
 notification.updatingLibraryArtists: Könyvtári előadók frissítése...
 notification.updatingLibrarySongs: Könyvtári dalok frissítése...
+notificationCenter.action.clearHistory: Előzmények törlése
+notificationCenter.action.dismiss: Elvetés
+notificationCenter.action.muteCategory: "{category} némítása"
+notificationCenter.action.muteSource: Értesítés némítása
+notificationCenter.action.options: Értesítési opciók
+notificationCenter.action.settings: Értesítési beállítások
+notificationCenter.action.unmuteCategory: "{category} némításának feloldása"
+notificationCenter.action.unmuteSource: Értesítés némításának feloldása
+notificationCenter.clearHistory.confirm: Törli az értesítési előzményeket? Ez a művelet nem vonható vissza.
+notificationCenter.empty: Naprakész vagy
+notificationCenter.empty.caption: Minden, amiről a Cider értesíteni szeretne, itt fog megjelenni.
+notificationCenter.mute.errors: A hibák mindig megjelennek.
+notificationCenter.mute.essential: Ez a kategória mindig megjelenik.
+notificationCenter.row.muted: Némítva
+notificationCenter.section.active: Aktív
+notificationCenter.section.history: Előzmények
+notificationCenter.title: Értesítések
 notify.licenseRefusedSkip: A(z) "{name}" jelenleg nem játszható le, kihagyás
 notify.licenseRefusedStop: 'Lejátszás leállítva: a(z) "{name}" nem játszható le'
 nowPlaying.a11y.trackWaveform: Zeneszám hullámformája, kattintson a tekeréshez
@@ -963,6 +987,7 @@ playbackHealth.backgroundFreeze.eyebrow: Lejátszási értesítés
 playbackHealth.backgroundFreeze.hint: Egy ablakkezelő szabály vagy operációsrendszer-beállítás lehetővé teheti, hogy a Cider akkor is fusson, ha nincs fókuszban. A „További információ” gombra kattintva megtekintheti a rendszeréhez javasolt megoldásokat.
 playbackHealth.backgroundFreeze.learnMore: További információ
 playbackHealth.backgroundFreeze.title: A rendszer szüneteltette a Cider futását a háttérben
+playbackHealth.localIssue: Helyi lejátszási hiba
 playlist.collaborative.tooltip: Ez a lejátszási lista nyitott a közreműködők számára
 playlist.collaborators.andOthers: "{{name}} és még {{count}}"
 playlist.collaborators.count: "{{count}} közreműködő"
@@ -1557,7 +1582,7 @@ settings.general.card.closing: Bezárás
 settings.general.section.cache: Gyorsítótár
 settings.general.section.cache.description: A Cider által a lemezen tárolt borítóképek és metaadatok az oldalak gyorsabb betöltése érdekében.
 settings.general.section.desktop: Asztal
-settings.general.section.desktop.description: Billentyűparancsok, asztali értesítések, valamint a Cider viselkedése a tálcán és bezáráskor.
+settings.general.section.desktop.description: Billentyűparancsok, valamint a Cider viselkedése a tálcán és bezáráskor.
 settings.general.section.language: Nyelv
 settings.general.section.language.description: A felület nyelve, valamint a fordítások bejelentése és a közreműködők elismerése.
 settings.general.section.playback: Lejátszás
@@ -1750,6 +1775,7 @@ settings.nav.group.integrations: Integrációk
 settings.nav.group.library: Könyvtár
 settings.nav.group.playback: Lejátszás
 settings.nav.lyrics: Dalszöveg
+settings.nav.notifications: Értesítések
 settings.nav.plugins: Bővítmények
 settings.nav.power: Energiahasználat
 settings.nav.privacy: Adatvédelem
@@ -1767,6 +1793,43 @@ settings.normalization.presets.loud: Hangos
 settings.normalization.presets.maximum: Maximum
 settings.normalization.target: Hangerő-célérték
 settings.normalization.unit: LUFS
+settings.notifications.alwaysOn: Mindig bekapcsolva
+settings.notifications.alwaysOn.description: Ezek a fontos problémákról és az alkalmazás állapotáról tájékoztatnak, ezért nem kapcsolhatók ki. A hibákról szóló értesítések kategóriától függetlenül mindig megjelennek.
+settings.notifications.category.accountAuth: Fiók és bejelentkezés
+settings.notifications.category.accountAuth.description: Be- és kijelentkezés, előfizetés állapota és csatlakoztatott szolgáltatások.
+settings.notifications.category.castingAirplay: Közvetítés és AirPlay
+settings.notifications.category.castingAirplay.description: Külső lejátszóeszközökhöz való csatlakozás és leválasztás.
+settings.notifications.category.extensionsThemes: Bővítmények és témák
+settings.notifications.category.extensionsThemes.description: Bővítmények, témák és kódrészletek telepítése, frissítése és eltávolítása.
+settings.notifications.category.general: Általános
+settings.notifications.category.general.description: Minden egyéb, saját kategóriával nem rendelkező értesítés.
+settings.notifications.category.listeningTogether: Közös zenehallgatás
+settings.notifications.category.listeningTogether.description: Meghívók, vendégek csatlakozása vagy távozása, valamint a munkamenet állapota.
+settings.notifications.category.lyrics: Dalszövegek
+settings.notifications.category.lyrics.description: Dalszövegek keresése, beküldése és átírása.
+settings.notifications.category.playbackSystem: Lejátszás és rendszer
+settings.notifications.category.playbackSystem.description: Lejátszási problémák és fontos alkalmazásszintű állapotok.
+settings.notifications.category.playlistsLibrary: Lejátszási listák és könyvtár
+settings.notifications.category.playlistsLibrary.description: Könyvtári tartalom hozzáadása, eltávolítása, szerkesztése és szinkronizálása.
+settings.notifications.category.plugins: Beépülők
+settings.notifications.category.plugins.description: A telepített beépülők által küldött saját üzenetek, nem pedig a Cider által jelentett értesítések.
+settings.notifications.category.queueUpNext: Sor és Következők
+settings.notifications.category.queueUpNext.description: A következőként lejátszandó vagy a sor végéhez hozzáadott számok.
+settings.notifications.category.scrobbling: Scrobbling
+settings.notifications.category.scrobbling.description: Számonkénti scrobble-eredmények a Last.fm, ListenBrainz és egyéb szolgáltatásokból.
+settings.notifications.category.settingsBackups: Beállítások és biztonsági mentések
+settings.notifications.category.settingsBackups.description: Beállítások importálása és exportálása, valamint konfigurációs biztonsági mentések.
+settings.notifications.category.sharingClipboard: Megosztás és vágólap
+settings.notifications.category.sharingClipboard.description: Megosztási linkek létrehozása és másolása.
+settings.notifications.muted.empty: Nincs egyénileg némított értesítés. Ha elnémítasz egy értesítést az értesítési listádból, az ide kerül, és itt tudod visszakapcsolni.
+settings.notifications.section.categories: Kategóriák
+settings.notifications.section.history: Előzmények
+settings.notifications.section.muted: Némított értesítések
+settings.notifications.section.system: Rendszerértesítések
+settings.notifications.summary.categoriesOn: Bekapcsolt kategóriák
+settings.notifications.summary.description: Válaszd ki, milyen típusú értesítéseket jelenítsen meg a Cider. Amit kikapcsolsz, az is bekerül az értesítési listába, így később is megtekintheted.
+settings.notifications.unmute: Némítás feloldása
+settings.notifications.unmuteAll: Összes némításának feloldása
 settings.notyf.connectivity.lastfmScrobble.connectError: A Last.fm-kapcsolat időtúllépés miatt megszakadt
 settings.notyf.connectivity.lastfmScrobble.connecting: Kapcsolódás a Last.fm-hez...
 settings.notyf.connectivity.lastfmScrobble.connectSuccess: Sikeres kapcsolódás a Last.fm-hez
@@ -1898,7 +1961,7 @@ settings.option.advanced.tweaks.description: Finomhangolható beállítások, am
 settings.option.advanced.volumeSlider: Lejátszó hangerőcsúszkája
 settings.option.advanced.volumeSlider.iOSStyle: iOS-stílus
 settings.option.advanced.window: Ablak viselkedése
-settings.option.advanced.window.description: Lejátszási értesítések, a mini lejátszó átméretezése és az alkalmazásban használt görgetősáv stílusa. Az ablakvezérlők és a vibrálás a Vizuális menüpontban találhatók.
+settings.option.advanced.window.description: A Miniplayer átméretezése és az alkalmazásban használt görgetősáv stílusa. Az ablakvezérlők és az áttetszőség a Vizuális menüpontban találhatók.
 settings.option.advanced.window.scrollbarType: Görgetősáv típusa
 settings.option.all: Összes
 settings.option.alwaysShow: Mindig mutassa
@@ -2276,6 +2339,10 @@ settings.option.medium: Közepes
 settings.option.minimal: Minimális
 settings.option.native: Natív
 settings.option.none: Nincs
+settings.option.notifications.history.cap: Megőrzendő értesítések száma
+settings.option.notifications.history.cap.description: Hány értesítést tároljon a lista, mielőtt a legrégebbiek törlődnek.
+settings.option.notifications.history.persist: Értesítések megőrzése az indítások között
+settings.option.notifications.history.persist.description: Az értesítési lista megjegyzése a Cider bezárása után. Ha kikapcsolod, a már tárolt lista kiürül.
 settings.option.off: Ki
 settings.option.on: Be
 settings.option.performance.app: Alkalmazás
@@ -2298,6 +2365,10 @@ settings.option.performance.limitBlurMapFramerateOnBlur: Animált háttér képk
 settings.option.performance.limitBlurMapFramerateOnBlur.description: Energiatakarékossági okokból csökkenti a magával ragadó animált háttér képkockasebességét, amikor az ablak nincs fókuszban. Kapcsolja ki, ha azt szeretné, hogy folyamatosan maximális sebességgel fusson.
 settings.option.performance.limitImmersiveBgFramerateOnBlur: Immerzív háttér képkockasebességének korlátozása, ha nincs fókuszban
 settings.option.performance.motion: Mozgás
+settings.option.performance.preloadSidebarPages: Oldalsáv-oldalak előtöltése
+settings.option.performance.preloadSidebarPages.description: Betölti az oldalsáv oldalait, mielőtt megnyitnád őket. A „Rámutatáskor” opció akkor indul el, amikor a kurzor az oldalsáv egyik elemén áll. Az „Inaktív állapotban” opció indítás után betölti a Hallgass most, Böngészés és Rádió lapokat is, valamint frissíti a korábban megnyitott könyvtárlistákat.
+settings.option.performance.preloadSidebarPages.idle: Inaktív állapotban
+settings.option.performance.preloadSidebarPages.intent: Rámutatáskor
 settings.option.performance.renderer.auto: Automatikus (WebGPU, ha támogatott)
 settings.option.performance.renderer.canvas: Canvas 2D
 settings.option.performance.renderer.webgpu: WebGPU

@@ -1462,6 +1462,13 @@ commandCenter.playNext:
   source: human
   by: "@Tesutarin"
   issue: 7
+concerts.empty.noLocation.action: 设置位置
+concerts.empty.noLocation.body: 音乐会将按地点列出。选择一个地点以查看您附近即将举行的活动。
+concerts.empty.noLocation.title: 未设置位置
+concerts.empty.noResults.body: 当前筛选条件下没有计划的活动。请尝试不同的日期范围、流派或位置。
+concerts.empty.noResults.title: 未找到音乐会
+concerts.empty.search.body: 没有与“{term}”匹配的音乐会。请尝试其他艺人、场地或活动名称。
+concerts.empty.search.title: 无匹配的音乐会
 concerts.getTickets:
   value: 获取票务
   source: human
@@ -3222,6 +3229,23 @@ notification.updatingLibrarySongs:
   by: "@Tesutarin"
   issue: 7
   superseded_at: 2026-07-08
+notificationCenter.action.clearHistory: 清除历史记录
+notificationCenter.action.dismiss: 忽略
+notificationCenter.action.muteCategory: 静音“{category}”
+notificationCenter.action.muteSource: 静音此通知
+notificationCenter.action.options: 通知选项
+notificationCenter.action.settings: 通知设置
+notificationCenter.action.unmuteCategory: 取消静音“{category}”
+notificationCenter.action.unmuteSource: 取消静音此通知
+notificationCenter.clearHistory.confirm: 确定要清除通知历史记录吗？此操作无法撤销。
+notificationCenter.empty: 已处理完所有通知
+notificationCenter.empty.caption: Cider 的所有通知都将显示在这里。
+notificationCenter.mute.errors: 错误始终会显示。
+notificationCenter.mute.essential: 此类别始终会显示。
+notificationCenter.row.muted: 已静音
+notificationCenter.section.active: 当前
+notificationCenter.section.history: 历史记录
+notificationCenter.title: 通知
 notify.licenseRefusedSkip: 暂无法播放“{name}”，正在跳过
 notify.licenseRefusedStop: 播放已停止：暂无法播放“{name}”
 nowPlaying.a11y.trackWaveform: 歌曲波形，点击以跳转进度
@@ -3487,6 +3511,7 @@ playbackHealth.backgroundFreeze.eyebrow: 播放提示
 playbackHealth.backgroundFreeze.hint: 窗口管理器规则或操作系统设置可以让 Cider 在未聚焦时保持运行。点击“了解更多”查看适用于您配置的已知解决方案。
 playbackHealth.backgroundFreeze.learnMore: 了解更多
 playbackHealth.backgroundFreeze.title: 系统在后台暂停了 Cider
+playbackHealth.localIssue: 本地播放问题
 playlist.collaborative.tooltip: 此歌单已对协作者开放
 playlist.collaborators.andOthers: "{{name}} 及其他 {{count}} 人"
 playlist.collaborators.count: "{{count}} 位协作者"
@@ -5533,7 +5558,7 @@ settings.general.card.closing: 正在关闭
 settings.general.section.cache: 缓存
 settings.general.section.cache.description: Cider 保存在磁盘上的插图和元数据，以便页面加载更快。
 settings.general.section.desktop: 桌面
-settings.general.section.desktop.description: 键盘快捷键、桌面通知，以及 Cider 在任务栏中和关闭时的行为。
+settings.general.section.desktop.description: 键盘快捷键，以及 Cider 在任务栏中和关闭时的行为。
 settings.general.section.language: 语言
 settings.general.section.language.description: 界面语言，以及如何反馈翻译问题或查看翻译贡献者。
 settings.general.section.playback: 播放
@@ -6411,6 +6436,7 @@ settings.nav.lyrics:
   source: human
   by: "@Tesutarin"
   issue: 8
+settings.nav.notifications: 通知
 settings.nav.plugins:
   value: 插件
   source: human
@@ -6460,6 +6486,43 @@ settings.normalization.presets.loud: 响亮
 settings.normalization.presets.maximum: 最大
 settings.normalization.target: 响度目标
 settings.normalization.unit: LUFS
+settings.notifications.alwaysOn: 始终开启
+settings.notifications.alwaysOn.description: 这些通知包含您需要了解的问题和应用状态，因此无法关闭。无论属于哪个类别，错误通知始终会发送。
+settings.notifications.category.accountAuth: 账户与登录
+settings.notifications.category.accountAuth.description: 登录和登出、订阅状态以及已连接的服务。
+settings.notifications.category.castingAirplay: 投送与 AirPlay
+settings.notifications.category.castingAirplay.description: 连接和断开外部播放设备。
+settings.notifications.category.extensionsThemes: 扩展与主题
+settings.notifications.category.extensionsThemes.description: 安装、更新和移除插件、主题及代码片段。
+settings.notifications.category.general: 通用
+settings.notifications.category.general.description: 所有未归类的通知。
+settings.notifications.category.listeningTogether: 同乐旁听
+settings.notifications.category.listeningTogether.description: 派对邀请、嘉宾加入或离开以及会话状态。
+settings.notifications.category.lyrics: 歌词
+settings.notifications.category.lyrics.description: 歌词查询、贡献和音译。
+settings.notifications.category.playbackSystem: 播放与系统
+settings.notifications.category.playbackSystem.description: 播放问题和您需要了解的应用级状态。
+settings.notifications.category.playlistsLibrary: 歌单与资料库
+settings.notifications.category.playlistsLibrary.description: 添加、移除、编辑和同步资料库内容。
+settings.notifications.category.plugins: 插件
+settings.notifications.category.plugins.description: 由您安装的插件自身发出的消息，而非由 Cider 报告的消息。
+settings.notifications.category.queueUpNext: 队列与待播清单
+settings.notifications.category.queueUpNext.description: 已设为稍后播放或添加到队列末尾的单曲。
+settings.notifications.category.scrobbling: Scrobbling 记录
+settings.notifications.category.scrobbling.description: 来自 Last.fm、ListenBrainz 及其他服务的单曲 Scrobbling 记录结果。
+settings.notifications.category.settingsBackups: 设置与备份
+settings.notifications.category.settingsBackups.description: 设置导入与导出，以及配置备份。
+settings.notifications.category.sharingClipboard: 分享与剪贴板
+settings.notifications.category.sharingClipboard.description: 分享链接的生成与复制。
+settings.notifications.muted.empty: 没有单独静音的内容。从通知列表中静音单个通知会将其添加到此处，您也可以在此处恢复它。
+settings.notifications.section.categories: 类别
+settings.notifications.section.history: 历史记录
+settings.notifications.section.muted: 已静音的通知
+settings.notifications.section.system: 系统通知
+settings.notifications.summary.categoriesOn: 已启用的类别
+settings.notifications.summary.description: 选择 Cider 向您显示的通知类型。即使关闭某类通知，它们仍会记录在通知列表中，方便您稍后查看。
+settings.notifications.unmute: 取消静音
+settings.notifications.unmuteAll: 全部取消静音
 settings.notyf.connectivity.lastfmScrobble.connectError:
   value: Last.fm 连接超时
   source: ai
@@ -7065,7 +7128,7 @@ settings.option.advanced.window:
   by: "@Tesutarin"
   issue: 8
   superseded_at: 2026-09-01
-settings.option.advanced.window.description: 播放通知、迷你播放器大小调整以及整个应用中使用的滚动条样式。窗口控制和毛玻璃效果位于“视觉”下。
+settings.option.advanced.window.description: 迷你播放器大小调整以及应用内使用的滚动条样式。窗口控制和半透明效果位于“视觉”设置中。
 settings.option.advanced.window.scrollbarType: 滚动条类型
 settings.option.all: 全部
 settings.option.alwaysShow:
@@ -8938,6 +9001,10 @@ settings.option.native:
   by: "@Tesutarin"
   issue: 10
 settings.option.none: 无
+settings.option.notifications.history.cap: 保留的通知数量
+settings.option.notifications.history.cap.description: 在清除最早的通知前，列表中保留的通知数量上限。
+settings.option.notifications.history.persist: 在重新启动时保留通知
+settings.option.notifications.history.persist.description: 在 Cider 关闭后保留您的通知列表。关闭此选项将清空已存储的列表。
 settings.option.off:
   value: 关闭
   source: ai
@@ -9041,6 +9108,10 @@ settings.option.performance.motion:
   source: human
   by: "@Tesutarin"
   issue: 10
+settings.option.performance.preloadSidebarPages: 预加载侧边栏页面
+settings.option.performance.preloadSidebarPages.description: 在您打开侧边栏页面之前进行加载。“悬停时”会在光标停留在侧边栏项目上时开始加载。“空闲时”还会在启动后加载“现在就听”、“浏览”和“广播”，并刷新您之前打开过的资料库列表。
+settings.option.performance.preloadSidebarPages.idle: 空闲时
+settings.option.performance.preloadSidebarPages.intent: 悬停时
 settings.option.performance.renderer.auto:
   value: 自动（支持时使用 WebGPU）
   source: human

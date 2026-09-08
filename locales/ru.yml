@@ -586,6 +586,13 @@ commandCenter.hint.showArtist:
 commandCenter.hint.showPlaylist: Показать плейлист из медиатеки
 commandCenter.moreResults: Ещё результаты...
 commandCenter.playNext: '"{name}" будет воспроизводиться следующим'
+concerts.empty.noLocation.action: Указать местоположение
+concerts.empty.noLocation.body: Концерты привязаны к месту проведения. Выберите город или регион, чтобы узнать о предстоящих событиях поблизости.
+concerts.empty.noLocation.title: Местоположение не указано
+concerts.empty.noResults.body: Для выбранных фильтров ничего не запланировано. Попробуйте изменить диапазон дат, жанр или местоположение.
+concerts.empty.noResults.title: Концерты не найдены
+concerts.empty.search.body: По запросу «{term}» ничего не найдено. Попробуйте ввести имя другого исполнителя, название площадки или события.
+concerts.empty.search.title: Нет подходящих концертов
 concerts.getTickets: Купить билеты
 concerts.maps.apple: Карты Apple
 concerts.maps.google: Google Карты
@@ -1127,6 +1134,23 @@ notification.updatingLibraryArtists:
   issue: 27
   superseded_at: 2026-07-08
 notification.updatingLibrarySongs: Обновление песен медиатеки...
+notificationCenter.action.clearHistory: Очистить историю
+notificationCenter.action.dismiss: Закрыть
+notificationCenter.action.muteCategory: "Выключить уведомления: {category}"
+notificationCenter.action.muteSource: Скрыть это уведомление
+notificationCenter.action.options: Параметры уведомлений
+notificationCenter.action.settings: Настройки уведомлений
+notificationCenter.action.unmuteCategory: "Включить уведомления: {category}"
+notificationCenter.action.unmuteSource: Включить это уведомление
+notificationCenter.clearHistory.confirm: Очистить историю уведомлений? Это действие нельзя отменить.
+notificationCenter.empty: Нет новых уведомлений
+notificationCenter.empty.caption: Здесь будут появляться важные сообщения от Cider.
+notificationCenter.mute.errors: Ошибки показываются всегда.
+notificationCenter.mute.essential: Эта категория показывается всегда.
+notificationCenter.row.muted: Выключено
+notificationCenter.section.active: Активные
+notificationCenter.section.history: История
+notificationCenter.title: Уведомления
 notify.licenseRefusedSkip: Не удается воспроизвести "{name}", пропускаем
 notify.licenseRefusedStop: 'Воспроизведение остановлено: не удается воспроизвести "{name}"'
 nowPlaying.a11y.trackWaveform: Волновой график трека, нажмите для перемотки
@@ -1314,6 +1338,7 @@ playbackHealth.backgroundFreeze.eyebrow: Уведомление о воспро�
 playbackHealth.backgroundFreeze.hint: Правило оконного менеджера или настройка ОС могут позволить Cider работать в фоновом режиме. Нажмите «Подробнее», чтобы узнать о возможных решениях для вашей системы.
 playbackHealth.backgroundFreeze.learnMore: Подробнее
 playbackHealth.backgroundFreeze.title: Система приостановила работу Cider в фоновом режиме
+playbackHealth.localIssue: Проблема с локальным воспроизведением
 playlist.collaborative.tooltip: Этот плейлист открыт для соавторов
 playlist.collaborators.andOthers: "{{name}} и еще {{count}}"
 playlist.collaborators.count:
@@ -2016,7 +2041,7 @@ settings.general.card.closing: Закрытие
 settings.general.section.cache: Кэш
 settings.general.section.cache.description: Сохраненные обложки и метаданные, которые Cider хранит на диске для более быстрой загрузки страниц.
 settings.general.section.desktop: Рабочий стол
-settings.general.section.desktop.description: Сочетания клавиш, уведомления на рабочем столе, а также поведение Cider в панели задач и при закрытии.
+settings.general.section.desktop.description: Сочетания клавиш, а также поведение Cider на панели задач и при закрытии.
 settings.general.section.language: Язык
 settings.general.section.language.description: Язык интерфейса, а также информация о переводчиках и отправка отчетов об ошибках перевода.
 settings.general.section.playback: Воспроизведение
@@ -2248,6 +2273,7 @@ settings.nav.group.integrations: Интеграции
 settings.nav.group.library: Медиатека
 settings.nav.group.playback: Воспроизведение
 settings.nav.lyrics: Тексты песен
+settings.nav.notifications: Уведомления
 settings.nav.plugins: Плагины
 settings.nav.power: Энергопотребление
 settings.nav.privacy: Конфиденциальность
@@ -2265,6 +2291,43 @@ settings.normalization.presets.loud: Громкий
 settings.normalization.presets.maximum: Максимальный
 settings.normalization.target: Целевая громкость
 settings.normalization.unit: LUFS
+settings.notifications.alwaysOn: Всегда включено
+settings.notifications.alwaysOn.description: Эти уведомления содержат важные сведения о проблемах и состоянии приложения, поэтому их нельзя отключить. Ошибки отображаются всегда, независимо от категории.
+settings.notifications.category.accountAuth: Учетная запись и вход
+settings.notifications.category.accountAuth.description: Вход и выход из системы, статус подписки и подключенные службы.
+settings.notifications.category.castingAirplay: Трансляция и AirPlay
+settings.notifications.category.castingAirplay.description: Подключение и отключение внешних устройств воспроизведения.
+settings.notifications.category.extensionsThemes: Расширения и темы
+settings.notifications.category.extensionsThemes.description: Установка, обновление и удаление плагинов, тем и сниппетов.
+settings.notifications.category.general: Основные
+settings.notifications.category.general.description: Все уведомления, не вошедшие в другие категории.
+settings.notifications.category.listeningTogether: Совместное прослушивание
+settings.notifications.category.listeningTogether.description: Приглашения в лобби, подключение и отключение гостей, а также статус сеанса.
+settings.notifications.category.lyrics: Текст песен
+settings.notifications.category.lyrics.description: Поиск текстов песен, добавление новых текстов и транслитерация.
+settings.notifications.category.playbackSystem: Воспроизведение и система
+settings.notifications.category.playbackSystem.description: Проблемы с воспроизведением и важные системные уведомления приложения.
+settings.notifications.category.playlistsLibrary: Плейлисты и медиатека
+settings.notifications.category.playlistsLibrary.description: Добавление, удаление, редактирование и синхронизация контента медиатеки.
+settings.notifications.category.plugins: Плагины
+settings.notifications.category.plugins.description: Сообщения, отправляемые установленными плагинами напрямую, а не через Cider.
+settings.notifications.category.queueUpNext: Очередь и «Далее»
+settings.notifications.category.queueUpNext.description: Треки, добавленные в начало или конец очереди воспроизведения.
+settings.notifications.category.scrobbling: Скробблинг
+settings.notifications.category.scrobbling.description: Результаты скробблинга треков в Last.fm, ListenBrainz и другие сервисы.
+settings.notifications.category.settingsBackups: Настройки и резервные копии
+settings.notifications.category.settingsBackups.description: Импорт, экспорт настроек и резервное копирование конфигурации.
+settings.notifications.category.sharingClipboard: Поделиться и буфер обмена
+settings.notifications.category.sharingClipboard.description: Создание и копирование ссылок для отправки.
+settings.notifications.muted.empty: Список пуст. Если вы отключите отдельное уведомление в списке, оно появится здесь, и вы сможете включить его снова.
+settings.notifications.section.categories: Категории
+settings.notifications.section.history: История
+settings.notifications.section.muted: Отключенные уведомления
+settings.notifications.section.system: Системные уведомления
+settings.notifications.summary.categoriesOn: Включенные категории
+settings.notifications.summary.description: Выберите типы уведомлений, которые будет показывать Cider. Отключенные уведомления все равно будут записываться в список, чтобы вы могли просмотреть их позже.
+settings.notifications.unmute: Включить звук
+settings.notifications.unmuteAll: Включить звук для всех
 settings.notyf.connectivity.lastfmScrobble.connectError:
   value: Истекло время ожидания подключения к Last.fm
   source: ai
@@ -2416,7 +2479,7 @@ settings.option.advanced.tweaks.description: Параметры тонкой н�
 settings.option.advanced.volumeSlider: Ползунок громкости плеера
 settings.option.advanced.volumeSlider.iOSStyle: В стиле iOS
 settings.option.advanced.window: Поведение окна
-settings.option.advanced.window.description: Уведомления о воспроизведении, изменение размера миниплеера и стиль полосы прокрутки в приложении. Управление окнами и эффект размытия настраиваются в разделе «Внешний вид».
+settings.option.advanced.window.description: Изменение размера миниплеера и стиль полосы прокрутки в приложении. Управление окнами и эффект размытия находятся в разделе «Визуальное оформление».
 settings.option.advanced.window.scrollbarType: Тип полосы прокрутки
 settings.option.all: Все
 settings.option.alwaysShow: Показывать всегда
@@ -2899,6 +2962,10 @@ settings.option.medium: Средний
 settings.option.minimal: Минимальный
 settings.option.native: Нативный
 settings.option.none: Нет
+settings.option.notifications.history.cap: Количество сохраняемых уведомлений
+settings.option.notifications.history.cap.description: Максимальное количество уведомлений в списке. При превышении лимита самые старые уведомления будут удалены.
+settings.option.notifications.history.persist: Сохранять уведомления между запусками
+settings.option.notifications.history.persist.description: Сохранять список уведомлений после закрытия Cider. Если отключить эту функцию, текущий список будет очищен.
 settings.option.off: Выкл.
 settings.option.on: Вкл.
 settings.option.performance.app: Приложение
@@ -2921,6 +2988,10 @@ settings.option.performance.limitBlurMapFramerateOnBlur: Ограничиват�
 settings.option.performance.limitBlurMapFramerateOnBlur.description: Снижает частоту кадров иммерсивного анимированного фона, когда окно не в фокусе, для экономии энергии. Отключите, чтобы он работал на максимальной скорости.
 settings.option.performance.limitImmersiveBgFramerateOnBlur: Ограничивать частоту кадров иммерсивного фона, когда окно не в фокусе
 settings.option.performance.motion: Движение
+settings.option.performance.preloadSidebarPages: Предзагрузка страниц боковой панели
+settings.option.performance.preloadSidebarPages.description: Загружает страницы боковой панели до того, как вы их откроете. Вариант «При наведении» запускает загрузку, когда курсор задерживается на элементе боковой панели. Вариант «При простое» также загружает разделы «Слушать сейчас», «Обзор» и «Радио» после запуска приложения и обновляет ранее открытые списки медиатеки.
+settings.option.performance.preloadSidebarPages.idle: При простое
+settings.option.performance.preloadSidebarPages.intent: При наведении
 settings.option.performance.renderer.auto: Автоматически (WebGPU, если поддерживается)
 settings.option.performance.renderer.canvas: Canvas 2D
 settings.option.performance.renderer.webgpu: WebGPU

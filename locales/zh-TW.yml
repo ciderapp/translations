@@ -672,6 +672,13 @@ commandCenter.hint.showPlaylist:
   issue: 6
 commandCenter.moreResults: 更多結果...
 commandCenter.playNext: 下一首播放：「{name}」
+concerts.empty.noLocation.action: 設定位置
+concerts.empty.noLocation.body: 演唱會是依據地點列出的。選擇一個地點以查看您附近即將舉辦的活動。
+concerts.empty.noLocation.title: 未設定位置
+concerts.empty.noResults.body: 目前沒有符合這些篩選條件的活動。請嘗試不同的日期範圍、類型或位置。
+concerts.empty.noResults.title: 找不到任何演唱會
+concerts.empty.search.body: 沒有與「{term}」相符的演唱會。請嘗試搜尋其他藝人、場地或活動名稱。
+concerts.empty.search.title: 沒有相符的演唱會
 concerts.getTickets: 取得門票
 concerts.maps.apple: Apple 地圖
 concerts.maps.google: Google 地圖
@@ -1386,6 +1393,23 @@ notification.restrictedStorefront:
 notification.updatingLibraryAlbums: 正在更新資料庫專輯...
 notification.updatingLibraryArtists: 正在更新資料庫藝人...
 notification.updatingLibrarySongs: 正在更新資料庫歌曲...
+notificationCenter.action.clearHistory: 清除歷史紀錄
+notificationCenter.action.dismiss: 關閉
+notificationCenter.action.muteCategory: 靜音 {category}
+notificationCenter.action.muteSource: 靜音此通知
+notificationCenter.action.options: 通知選項
+notificationCenter.action.settings: 通知設定
+notificationCenter.action.unmuteCategory: 取消靜音 {category}
+notificationCenter.action.unmuteSource: 取消靜音此通知
+notificationCenter.clearHistory.confirm: 確定要清除通知歷史紀錄嗎？此操作無法復原。
+notificationCenter.empty: 已閱讀所有通知
+notificationCenter.empty.caption: Cider 需要通知您的任何訊息都會顯示在這裡。
+notificationCenter.mute.errors: 錯誤一律會顯示。
+notificationCenter.mute.essential: 此類別一律會顯示。
+notificationCenter.row.muted: 已靜音
+notificationCenter.section.active: 作用中
+notificationCenter.section.history: 歷史紀錄
+notificationCenter.title: 通知
 notify.licenseRefusedSkip: 「{name}」目前無法播放，已跳過
 notify.licenseRefusedStop: 播放已停止：無法播放「{name}」
 nowPlaying.a11y.trackWaveform:
@@ -1740,6 +1764,7 @@ playbackHealth.backgroundFreeze.title:
   source: human
   by: "@jay900604"
   issue: 59
+playbackHealth.localIssue: 本地播放問題
 playlist.collaborative.tooltip:
   value: 此播放列表已開放合作者加入
   source: human
@@ -2769,7 +2794,7 @@ settings.general.section.cache.description:
   by: "@jay900604"
   issue: 82
 settings.general.section.desktop: 桌面
-settings.general.section.desktop.description: 鍵盤快速鍵、桌面通知，以及 Cider 在工作列和關閉時的行為。
+settings.general.section.desktop.description: 鍵盤快速鍵，以及 Cider 在工作列和關閉時的行為。
 settings.general.section.language: 語言
 settings.general.section.language.description: 介面語言，以及如何回報翻譯問題或查看翻譯貢獻者。
 settings.general.section.playback: 播放
@@ -3016,6 +3041,7 @@ settings.nav.group.integrations: 整合
 settings.nav.group.library: 資料庫
 settings.nav.group.playback: 播放
 settings.nav.lyrics: 歌詞
+settings.nav.notifications: 通知
 settings.nav.plugins:
   value: 延伸功能
   source: human
@@ -3037,6 +3063,43 @@ settings.normalization.presets.loud: 響亮
 settings.normalization.presets.maximum: 最大
 settings.normalization.target: 目標響度
 settings.normalization.unit: LUFS
+settings.notifications.alwaysOn: 總是開啟
+settings.notifications.alwaysOn.description: 這些通知包含您需要查看的問題和應用程式狀態，因此無法關閉。無論屬於哪個類別，錯誤通知一律會傳送。
+settings.notifications.category.accountAuth: 帳號與登入
+settings.notifications.category.accountAuth.description: 登入與登出、訂閱狀態及已連線的服務。
+settings.notifications.category.castingAirplay: 投放與 AirPlay
+settings.notifications.category.castingAirplay.description: 連線與中斷連線至外部播放裝置。
+settings.notifications.category.extensionsThemes: 擴充功能與主題
+settings.notifications.category.extensionsThemes.description: 安裝、更新和移除外掛程式、主題與程式碼片段。
+settings.notifications.category.general: 一般
+settings.notifications.category.general.description: 任何未歸類的內容。
+settings.notifications.category.listeningTogether: 共同聆聽
+settings.notifications.category.listeningTogether.description: 派對邀請、賓客加入或離開，以及階段作業狀態。
+settings.notifications.category.lyrics: 歌詞
+settings.notifications.category.lyrics.description: 歌詞查詢、貢獻與拼音。
+settings.notifications.category.playbackSystem: 播放與系統
+settings.notifications.category.playbackSystem.description: 您需要查看的播放問題和應用程式層級狀態。
+settings.notifications.category.playlistsLibrary: 播放清單與資料庫
+settings.notifications.category.playlistsLibrary.description: 新增、移除、編輯和同步資料庫內容。
+settings.notifications.category.plugins: 外掛程式
+settings.notifications.category.plugins.description: 由您安裝的外掛程式本身產生的訊息，而非由 Cider 報告的訊息。
+settings.notifications.category.queueUpNext: 佇列與待播清單
+settings.notifications.category.queueUpNext.description: 排定為下一首播放或新增至佇列末尾的歌曲。
+settings.notifications.category.scrobbling: Scrobble 記錄
+settings.notifications.category.scrobbling.description: 來自 Last.fm、ListenBrainz 和其他服務的單曲 Scrobble 記錄結果。
+settings.notifications.category.settingsBackups: 設定與備份
+settings.notifications.category.settingsBackups.description: 設定的匯入與匯出，以及組態備份。
+settings.notifications.category.sharingClipboard: 分享與剪貼簿
+settings.notifications.category.sharingClipboard.description: 分享連結的產生與複製。
+settings.notifications.muted.empty: 目前沒有單獨靜音的項目。從通知列表中將單一通知設為靜音後，該通知會顯示在此處，您也可以在此處將其恢復。
+settings.notifications.section.categories: 類別
+settings.notifications.section.history: 歷史紀錄
+settings.notifications.section.muted: 已靜音的通知
+settings.notifications.section.system: 系統通知
+settings.notifications.summary.categoriesOn: 已啟用的類別
+settings.notifications.summary.description: 選擇 Cider 要向您顯示的通知類型。即使關閉特定通知，系統仍會將其記錄在通知清單中，方便您稍後查看。
+settings.notifications.unmute: 取消靜音
+settings.notifications.unmuteAll: 全部取消靜音
 settings.notyf.connectivity.lastfmScrobble.connectError:
   value: Last.fm 連線逾時
   source: ai
@@ -3270,7 +3333,7 @@ settings.option.advanced.tweaks.description:
 settings.option.advanced.volumeSlider: 播放器音量滑桿
 settings.option.advanced.volumeSlider.iOSStyle: iOS 樣式
 settings.option.advanced.window: 視窗行為
-settings.option.advanced.window.description: 播放通知、迷你播放器大小調整，以及整個 App 使用的捲軸樣式。視窗控制項和半透明效果可在「視覺」中設定。
+settings.option.advanced.window.description: 調整迷你播放器大小以及在整個 App 中使用的捲動軸樣式。視窗控制項目和毛玻璃效果位於「視覺效果」中。
 settings.option.advanced.window.scrollbarType: 捲軸類型
 settings.option.all: 全部
 settings.option.alwaysShow: 總是顯示
@@ -3946,6 +4009,10 @@ settings.option.medium: 中
 settings.option.minimal: 極簡
 settings.option.native: 原生
 settings.option.none: 無
+settings.option.notifications.history.cap: 保留的通知數量
+settings.option.notifications.history.cap.description: 在捨棄最舊的通知之前，通知清單可保留的通知數量。
+settings.option.notifications.history.persist: 在每次啟動間保留通知
+settings.option.notifications.history.persist.description: 在 Cider 關閉後記住您的通知清單。關閉此選項將會清空已儲存的清單。
 settings.option.off: 關閉
 settings.option.on: 開啟
 settings.option.performance.app: 應用程式
@@ -3976,6 +4043,10 @@ settings.option.performance.limitBlurMapFramerateOnBlur: 視窗未處於焦點�
 settings.option.performance.limitBlurMapFramerateOnBlur.description: 當視窗未處於焦點時，降低沉浸式動態背景的影格率以節省電力。關閉此選項可使其保持全速運作。
 settings.option.performance.limitImmersiveBgFramerateOnBlur: 未聚焦時限制沉浸式背景畫面播放速率
 settings.option.performance.motion: 動態效果
+settings.option.performance.preloadSidebarPages: 預載側邊欄頁面
+settings.option.performance.preloadSidebarPages.description: 在您開啟側邊欄頁面之前先進行載入。「指標懸停」會在游標停在側邊欄項目上時開始載入。「系統閒置」則會在啟動後載入「立即聆聽」、「瀏覽」和「廣播」，並重新整理您之前開啟過的資料庫清單。
+settings.option.performance.preloadSidebarPages.idle: 系統閒置時
+settings.option.performance.preloadSidebarPages.intent: 指標懸停時
 settings.option.performance.renderer.auto: 自動（支援時使用 WebGPU）
 settings.option.performance.renderer.canvas: Canvas 2D
 settings.option.performance.renderer.webgpu: WebGPU

@@ -370,6 +370,13 @@ commandCenter.hint.showArtist: Künstler:in anzeigen
 commandCenter.hint.showPlaylist: Eine Playlist aus deiner Mediathek anzeigen
 commandCenter.moreResults: Mehr Ergebnisse …
 commandCenter.playNext: „{name}“ wird als Nächstes gespielt
+concerts.empty.noLocation.action: Standort festlegen
+concerts.empty.noLocation.body: Konzerte werden für einen bestimmten Ort angezeigt. Wähle einen aus, um zu sehen, was in deiner Nähe ansteht.
+concerts.empty.noLocation.title: Kein Standort festgelegt
+concerts.empty.noResults.body: Für diese Filter sind derzeit keine Termine geplant. Versuche es mit einem anderen Zeitraum, Genre oder Standort.
+concerts.empty.noResults.title: Keine Konzerte gefunden
+concerts.empty.search.body: Keine Konzerte entsprechen {term}. Versuche es mit einem anderen Künstler, Veranstaltungsort oder Eventnamen.
+concerts.empty.search.title: Keine passenden Konzerte
 concerts.getTickets: Tickets sichern
 concerts.maps.apple: Apple Maps
 concerts.maps.google: Google Maps
@@ -801,6 +808,23 @@ notification.restrictedStorefront: Anstößige Inhalte sind in deinem aktuellen 
 notification.updatingLibraryAlbums: Mediathek-Alben werden aktualisiert...
 notification.updatingLibraryArtists: Mediathek-Künstler werden aktualisiert...
 notification.updatingLibrarySongs: Mediathek-Titel werden aktualisiert...
+notificationCenter.action.clearHistory: Verlauf löschen
+notificationCenter.action.dismiss: Verwerfen
+notificationCenter.action.muteCategory: "{category} stummschalten"
+notificationCenter.action.muteSource: Diese Benachrichtigung stummschalten
+notificationCenter.action.options: Benachrichtigungsoptionen
+notificationCenter.action.settings: Benachrichtigungseinstellungen
+notificationCenter.action.unmuteCategory: Stummschaltung für {category} aufheben
+notificationCenter.action.unmuteSource: Stummschaltung für diese Benachrichtigung aufheben
+notificationCenter.clearHistory.confirm: Möchtest du den Benachrichtigungsverlauf löschen? Dies kann nicht rückgängig gemacht werden.
+notificationCenter.empty: Du bist auf dem neuesten Stand
+notificationCenter.empty.caption: Alles, was Cider dir mitteilen möchte, landet hier.
+notificationCenter.mute.errors: Fehler werden immer angezeigt.
+notificationCenter.mute.essential: Diese Kategorie wird immer angezeigt.
+notificationCenter.row.muted: Stummgeschaltet
+notificationCenter.section.active: Aktiv
+notificationCenter.section.history: Verlauf
+notificationCenter.title: Benachrichtigungen
 notify.licenseRefusedSkip: '"{name}" kann gerade nicht abgespielt werden, wird übersprungen'
 notify.licenseRefusedStop: 'Wiedergabe gestoppt: "{name}" kann nicht abgespielt werden'
 nowPlaying.a11y.trackWaveform: Titel-Wellenform, zum Springen klicken
@@ -963,6 +987,7 @@ playbackHealth.backgroundFreeze.eyebrow: Wiedergabehinweis
 playbackHealth.backgroundFreeze.hint: Eine Window-Manager-Regel oder Betriebssystem-Einstellung kann dafür sorgen, dass Cider im Hintergrund weiterläuft. „Mehr erfahren“ zeigt bekannte Workarounds für dein Setup.
 playbackHealth.backgroundFreeze.learnMore: Mehr erfahren
 playbackHealth.backgroundFreeze.title: Dein System hat Cider im Hintergrund pausiert
+playbackHealth.localIssue: Lokales Wiedergabeproblem
 playlist.collaborative.tooltip: Diese Playlist ist offen für Mitwirkende
 playlist.collaborators.andOthers: "{{name}} & {{count}} andere"
 playlist.collaborators.count: "{{count}} Mitwirkende"
@@ -1557,7 +1582,7 @@ settings.general.card.closing: Schließen
 settings.general.section.cache: Cache
 settings.general.section.cache.description: Gespeicherte Cover und Metadaten, die Cider auf dem Datenträger behält, damit Seiten schneller geladen werden.
 settings.general.section.desktop: Desktop
-settings.general.section.desktop.description: Tastaturkurzbefehle, Desktop-Mitteilungen und wie sich Cider in der Taskleiste und beim Schließen verhält.
+settings.general.section.desktop.description: Tastaturkurzbefehle und wie sich Cider in der Taskleiste und beim Schließen verhält.
 settings.general.section.language: Sprache
 settings.general.section.language.description: Die Benutzeroberflächen-Sprache und wie Übersetzungen gemeldet oder gewürdigt werden können.
 settings.general.section.playback: Wiedergabe
@@ -1750,6 +1775,7 @@ settings.nav.group.integrations: Integrationen
 settings.nav.group.library: Mediathek
 settings.nav.group.playback: Wiedergabe
 settings.nav.lyrics: Songtexte
+settings.nav.notifications: Benachrichtigungen
 settings.nav.plugins: Plugins
 settings.nav.power: Energieverbrauch
 settings.nav.privacy: Datenschutz
@@ -1767,6 +1793,43 @@ settings.normalization.presets.loud: Laut
 settings.normalization.presets.maximum: Maximum
 settings.normalization.target: Ziel-Lautheit
 settings.normalization.unit: LUFS
+settings.notifications.alwaysOn: Immer aktiv
+settings.notifications.alwaysOn.description: Diese enthalten wichtige Probleme und den App-Status, die du sehen musst, und können daher nicht deaktiviert werden. Fehler werden immer gemeldet, unabhängig von ihrer Kategorie.
+settings.notifications.category.accountAuth: Account und Anmeldung
+settings.notifications.category.accountAuth.description: An- und Abmelden, Abonnementstatus und verbundene Dienste.
+settings.notifications.category.castingAirplay: Streaming und AirPlay
+settings.notifications.category.castingAirplay.description: Verbinden mit und Trennen von externen Wiedergabegeräten.
+settings.notifications.category.extensionsThemes: Erweiterungen und Themes
+settings.notifications.category.extensionsThemes.description: Installieren, Aktualisieren und Entfernen von Plugins, Themes und Snippets.
+settings.notifications.category.general: Allgemein
+settings.notifications.category.general.description: Alles, was keine eigene Kategorie hat.
+settings.notifications.category.listeningTogether: Gemeinsam hören
+settings.notifications.category.listeningTogether.description: Party-Einladungen, Beitritt oder Verlassen von Gästen und Sitzungsstatus.
+settings.notifications.category.lyrics: Songtexte
+settings.notifications.category.lyrics.description: Songtext-Suche, Beiträge und Transliteration.
+settings.notifications.category.playbackSystem: Wiedergabe und System
+settings.notifications.category.playbackSystem.description: Wiedergabeprobleme und App-Statusmeldungen, die du sehen musst.
+settings.notifications.category.playlistsLibrary: Playlists und Mediathek
+settings.notifications.category.playlistsLibrary.description: Hinzufügen, Entfernen, Bearbeiten und Synchronisieren von Mediatheksinhalten.
+settings.notifications.category.plugins: Plugins
+settings.notifications.category.plugins.description: Meldungen, die von deinen installierten Plugins selbst ausgegeben werden, anstatt dass Cider darüber berichtet.
+settings.notifications.category.queueUpNext: Warteliste und Nächste Titel
+settings.notifications.category.queueUpNext.description: Titel, die als Nächstes abgespielt oder am Ende der Warteliste hinzugefügt werden.
+settings.notifications.category.scrobbling: Scrobbling
+settings.notifications.category.scrobbling.description: Scrobble-Ergebnisse pro Titel von Last.fm, ListenBrainz und anderen Diensten.
+settings.notifications.category.settingsBackups: Einstellungen und Backups
+settings.notifications.category.settingsBackups.description: Importieren und Exportieren von Einstellungen sowie Konfigurations-Backups.
+settings.notifications.category.sharingClipboard: Teilen und Zwischenablage
+settings.notifications.category.sharingClipboard.description: Erstellung und Kopieren von Freigabelinks.
+settings.notifications.muted.empty: Es ist nichts einzeln stummgeschaltet. Wenn du eine einzelne Benachrichtigung aus deiner Benachrichtigungsliste stummschaltest, wird sie hier hinzugefügt, und hier kannst du sie auch wieder aktivieren.
+settings.notifications.section.categories: Kategorien
+settings.notifications.section.history: Verlauf
+settings.notifications.section.muted: Stummgeschaltete Benachrichtigungen
+settings.notifications.section.system: Systembenachrichtigungen
+settings.notifications.summary.categoriesOn: Kategorien aktiviert
+settings.notifications.summary.description: Wähle aus, welche Arten von Mitteilungen Cider dir anzeigt. Deaktivierte Mitteilungen werden weiterhin in deiner Mitteilungsliste erfasst, damit du sie später ansehen kannst.
+settings.notifications.unmute: Stummschaltung aufheben
+settings.notifications.unmuteAll: Stummschaltung für alle aufheben
 settings.notyf.connectivity.lastfmScrobble.connectError: Verbindung mit Last.fm fehlgeschlagen (Zeitüberschreitung)
 settings.notyf.connectivity.lastfmScrobble.connecting: Verbindung mit Last.fm wird hergestellt...
 settings.notyf.connectivity.lastfmScrobble.connectSuccess: Verbindung mit Last.fm erfolgreich
@@ -1898,7 +1961,7 @@ settings.option.advanced.tweaks.description: Feineinstellungen, die sonst nirgen
 settings.option.advanced.volumeSlider: Player-Lautstärkeregler
 settings.option.advanced.volumeSlider.iOSStyle: iOS-Stil
 settings.option.advanced.window: Fensterverhalten
-settings.option.advanced.window.description: Wiedergabemitteilungen, Größenänderung des Miniplayers und der in der App verwendete Scrollbalken-Stil. Fenstersteuerungen und Effekte befinden sich unter „Visuell“.
+settings.option.advanced.window.description: Größenänderung des Miniplayers und der in der App verwendete Scrollbalken-Stil. Fenstersteuerung und Vibrancy befinden sich unter „Visuell“.
 settings.option.advanced.window.scrollbarType: Scrollbalken-Typ
 settings.option.all: Alle
 settings.option.alwaysShow: Immer anzeigen
@@ -2276,6 +2339,10 @@ settings.option.medium: Mittel
 settings.option.minimal: Minimal
 settings.option.native: Nativ
 settings.option.none: Keine
+settings.option.notifications.history.cap: Zu behaltende Mitteilungen
+settings.option.notifications.history.cap.description: Wie viele Mitteilungen die Liste enthält, bevor die ältesten gelöscht werden.
+settings.option.notifications.history.persist: Mitteilungen zwischen App-Starts behalten
+settings.option.notifications.history.persist.description: Speichert deine Mitteilungsliste, nachdem Cider geschlossen wurde. Wenn du dies deaktivierst, wird die bereits gespeicherte Liste geleert.
 settings.option.off: Aus
 settings.option.on: Ein
 settings.option.performance.app: App
@@ -2298,6 +2365,10 @@ settings.option.performance.limitBlurMapFramerateOnBlur: Bildrate des animierten
 settings.option.performance.limitBlurMapFramerateOnBlur.description: Reduziert die Bildrate des immersiven animierten Hintergrunds, wenn das Fenster nicht im Fokus ist, um Strom zu sparen. Deaktiviere diese Option, um ihn mit voller Geschwindigkeit laufen zu lassen.
 settings.option.performance.limitImmersiveBgFramerateOnBlur: Bildrate des immersiven Hintergrunds begrenzen, wenn nicht im Fokus
 settings.option.performance.motion: Bewegung
+settings.option.performance.preloadSidebarPages: Seiten der Seitenleiste vorab laden
+settings.option.performance.preloadSidebarPages.description: Lädt Seiten der Seitenleiste, bevor du sie öffnest. „Beim Zeigen“ startet, wenn der Mauszeiger auf einem Element der Seitenleiste ruht. „Im Leerlauf“ lädt nach dem Start auch „Jetzt hören“, „Entdecken“ und „Radio“ und aktualisiert zuvor geöffnete Mediathekslisten.
+settings.option.performance.preloadSidebarPages.idle: Im Leerlauf
+settings.option.performance.preloadSidebarPages.intent: Beim Zeigen
 settings.option.performance.renderer.auto: Automatisch (WebGPU, wenn unterstützt)
 settings.option.performance.renderer.canvas: Canvas 2D
 settings.option.performance.renderer.webgpu: WebGPU

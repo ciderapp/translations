@@ -437,6 +437,13 @@ commandCenter.hint.showArtist: アーティストを表示
 commandCenter.hint.showPlaylist: ライブラリからプレイリストを表示
 commandCenter.moreResults: さらに表示...
 commandCenter.playNext: 次に「{name}」を再生します
+concerts.empty.noLocation.action: 位置情報を設定
+concerts.empty.noLocation.body: コンサートは場所ごとに表示されます。地域を選択して、近くで開催予定のイベントを確認しましょう。
+concerts.empty.noLocation.title: 位置情報が設定されていません
+concerts.empty.noResults.body: 現在、これらのフィルターに一致する予定はありません。別の期間、ジャンル、または地域をお試しください。
+concerts.empty.noResults.title: コンサートが見つかりません
+concerts.empty.search.body: 「{term}」に一致するコンサートはありません。別のアーティスト、会場、またはイベント名をお試しください。
+concerts.empty.search.title: 一致するコンサートがありません
 concerts.getTickets: チケットを入手
 concerts.maps.apple: Appleマップ
 concerts.maps.google: Googleマップ
@@ -873,6 +880,23 @@ notification.restrictedStorefront: 現在のアカウントのストアフロン
 notification.updatingLibraryAlbums: ライブラリのアルバムを更新中...
 notification.updatingLibraryArtists: ライブラリのアーティストを更新中...
 notification.updatingLibrarySongs: ライブラリの曲を更新中...
+notificationCenter.action.clearHistory: 履歴を消去
+notificationCenter.action.dismiss: 閉じる
+notificationCenter.action.muteCategory: "{category}をミュート"
+notificationCenter.action.muteSource: この通知をミュート
+notificationCenter.action.options: 通知オプション
+notificationCenter.action.settings: 通知設定
+notificationCenter.action.unmuteCategory: "{category}のミュートを解除"
+notificationCenter.action.unmuteSource: この通知のミュートを解除
+notificationCenter.clearHistory.confirm: 通知履歴を消去しますか？この操作は取り消せません。
+notificationCenter.empty: 新しい通知はありません
+notificationCenter.empty.caption: Ciderからの通知はここに表示されます。
+notificationCenter.mute.errors: エラーは常に表示されます。
+notificationCenter.mute.essential: このカテゴリは常に表示されます。
+notificationCenter.row.muted: ミュート中
+notificationCenter.section.active: アクティブ
+notificationCenter.section.history: 履歴
+notificationCenter.title: 通知
 notify.licenseRefusedSkip: 「{name}」は現在再生できないため、スキップします
 notify.licenseRefusedStop: 「{name}」を再生できないため、再生を停止しました
 nowPlaying.a11y.trackWaveform: トラックの波形。クリックしてシーク
@@ -1035,6 +1059,7 @@ playbackHealth.backgroundFreeze.eyebrow: 再生に関するお知らせ
 playbackHealth.backgroundFreeze.hint: ウィンドウマネージャーのルールまたはOSの設定により、フォーカスが外れている間もCiderを実行し続けることができます。「詳細情報」で、お使いの環境における既知の回避策を確認できます。
 playbackHealth.backgroundFreeze.learnMore: 詳細情報
 playbackHealth.backgroundFreeze.title: システムがバックグラウンドでCiderを一時停止しました
+playbackHealth.localIssue: ローカル再生の問題
 playlist.collaborative.tooltip: このプレイリストはコラボレーターに公開されています
 playlist.collaborators.andOthers: "{{name}} ＆ ほか {{count}} 人"
 playlist.collaborators.count: "{{count}}人の共同作業者"
@@ -1629,7 +1654,7 @@ settings.general.card.closing: 終了時
 settings.general.section.cache: キャッシュ
 settings.general.section.cache.description: ページの読み込みを高速化するために、Ciderがディスクに保存するアートワークとメタデータ。
 settings.general.section.desktop: デスクトップ
-settings.general.section.desktop.description: キーボードショートカット、デスクトップ通知、およびタスクバーや終了時におけるCiderの動作を設定します。
+settings.general.section.desktop.description: キーボードショートカット、およびタスクバーでの動作や終了時のCiderの挙動を設定します。
 settings.general.section.language: 言語
 settings.general.section.language.description: インターフェースの言語、および翻訳の報告やクレジットに関する設定。
 settings.general.section.playback: 再生
@@ -1822,6 +1847,7 @@ settings.nav.group.integrations: 連携
 settings.nav.group.library: ライブラリ
 settings.nav.group.playback: 再生
 settings.nav.lyrics: 歌詞
+settings.nav.notifications: 通知
 settings.nav.plugins: プラグイン
 settings.nav.power: 電力使用量
 settings.nav.privacy: プライバシー
@@ -1839,6 +1865,43 @@ settings.normalization.presets.loud: ラウド
 settings.normalization.presets.maximum: 最大
 settings.normalization.target: ラウドネスターゲット
 settings.normalization.unit: LUFS
+settings.notifications.alwaysOn: 常にオン
+settings.notifications.alwaysOn.description: これらは確認が必要な問題やアプリのステータスを通知するため、オフにすることはできません。エラーは、どのカテゴリに属しているかに関わらず常に通知されます。
+settings.notifications.category.accountAuth: アカウントとサインイン
+settings.notifications.category.accountAuth.description: サインインとサインアウト、サブスクリプションの状態、および接続されているサービス。
+settings.notifications.category.castingAirplay: キャストとAirPlay
+settings.notifications.category.castingAirplay.description: 外部再生デバイスへの接続および切断。
+settings.notifications.category.extensionsThemes: 拡張機能とテーマ
+settings.notifications.category.extensionsThemes.description: プラグイン、テーマ、スニペットのインストール、アップデート、削除。
+settings.notifications.category.general: 一般
+settings.notifications.category.general.description: 独自のカテゴリを持たないすべての通知。
+settings.notifications.category.listeningTogether: Listening Together
+settings.notifications.category.listeningTogether.description: パーティーへの招待、ゲストの参加や退出、およびセッションのステータス。
+settings.notifications.category.lyrics: 歌詞
+settings.notifications.category.lyrics.description: 歌詞の検索、貢献、および音訳。
+settings.notifications.category.playbackSystem: 再生とシステム
+settings.notifications.category.playbackSystem.description: 再生の問題や、確認が必要なアプリレベルのステータス。
+settings.notifications.category.playlistsLibrary: プレイリストとライブラリ
+settings.notifications.category.playlistsLibrary.description: ライブラリコンテンツの追加、削除、編集、および同期。
+settings.notifications.category.plugins: プラグイン
+settings.notifications.category.plugins.description: Ciderが報告するものではなく、インストールされているプラグイン自体が発生させるメッセージ。
+settings.notifications.category.queueUpNext: キューと次に再生
+settings.notifications.category.queueUpNext.description: 次に再生する曲としてキューに追加されたトラック、またはキューの最後に追加されたトラック。
+settings.notifications.category.scrobbling: スクロブリング
+settings.notifications.category.scrobbling.description: Last.fm、ListenBrainz、その他のサービスからのトラックごとのスクロブル結果。
+settings.notifications.category.settingsBackups: 設定とバックアップ
+settings.notifications.category.settingsBackups.description: 設定のインポートとエクスポート、および構成のバックアップ。
+settings.notifications.category.sharingClipboard: 共有とクリップボード
+settings.notifications.category.sharingClipboard.description: 共有リンクの生成とコピー。
+settings.notifications.muted.empty: 個別にミュートされているものはありません。通知リストから特定の通知を消音するとここに追加され、ここで元に戻すことができます。
+settings.notifications.section.categories: カテゴリ
+settings.notifications.section.history: 履歴
+settings.notifications.section.muted: ミュート済みの通知
+settings.notifications.section.system: システム通知
+settings.notifications.summary.categoriesOn: オンのカテゴリ
+settings.notifications.summary.description: Ciderが表示する通知の種類を選択します。オフにした通知も通知リストに記録されるため、後から確認することができます。
+settings.notifications.unmute: ミュート解除
+settings.notifications.unmuteAll: すべてのミュートを解除
 settings.notyf.connectivity.lastfmScrobble.connectError: Last.fm への接続がタイムアウトしました
 settings.notyf.connectivity.lastfmScrobble.connecting: Last.fm に接続中...
 settings.notyf.connectivity.lastfmScrobble.connectSuccess: Last.fm への接続に成功しました
@@ -1970,7 +2033,7 @@ settings.option.advanced.tweaks.description: 他のカテゴリに分類され�
 settings.option.advanced.volumeSlider: プレイヤーの音量スライダー
 settings.option.advanced.volumeSlider.iOSStyle: iOSスタイル
 settings.option.advanced.window: ウィンドウの動作
-settings.option.advanced.window.description: 再生通知、ミニプレイヤーのサイズ変更、およびアプリ全体で使用されるスクロールバーのスタイル。ウィンドウコントロールとバイブランシーは「ビジュアル」で設定します。
+settings.option.advanced.window.description: ミニプレーヤーのサイズ変更と、アプリ全体で使用されるスクロールバーのスタイル。ウィンドウコントロールとバイブランシーは「ビジュアル」にあります。
 settings.option.advanced.window.scrollbarType: スクロールバーの種類
 settings.option.all: すべて
 settings.option.alwaysShow: 常に表示
@@ -2352,6 +2415,10 @@ settings.option.medium:
 settings.option.minimal: ミニマル
 settings.option.native: ネイティブ
 settings.option.none: なし
+settings.option.notifications.history.cap: 通知の保存件数
+settings.option.notifications.history.cap.description: 古い通知から削除されるまでに、リストに保持する通知の件数。
+settings.option.notifications.history.persist: 起動後も通知を保持
+settings.option.notifications.history.persist.description: Ciderを閉じた後も通知リストを保持します。これをオフにすると、すでに保存されているリストが消去されます。
 settings.option.off:
   value: オフ
   source: ai
@@ -2379,6 +2446,10 @@ settings.option.performance.limitBlurMapFramerateOnBlur: 非フォーカス時�
 settings.option.performance.limitBlurMapFramerateOnBlur.description: ウィンドウが非フォーカス状態のときに、イマーシブなアニメーション背景のフレームレートを下げて消費電力を抑えます。常にフルスピードで動作させるには、この設定をオフにしてください。
 settings.option.performance.limitImmersiveBgFramerateOnBlur: フォーカスが外れている時にイマーシブ背景のフレームレートを制限する
 settings.option.performance.motion: モーション
+settings.option.performance.preloadSidebarPages: サイドバーのページをプリロード
+settings.option.performance.preloadSidebarPages.description: 開く前にサイドバーのページを読み込みます。「ホバー時」は、ポインタがサイドバーの項目上にあるときに開始されます。「アイドル時」は、起動後に「今すぐ聴く」、「見つける」、「ラジオ」も読み込み、以前に開いたライブラリリストを更新します。
+settings.option.performance.preloadSidebarPages.idle: アイドル時
+settings.option.performance.preloadSidebarPages.intent: ホバー時
 settings.option.performance.renderer.auto: 自動（対応している場合はWebGPU）
 settings.option.performance.renderer.canvas: Canvas 2D
 settings.option.performance.renderer.webgpu: WebGPU

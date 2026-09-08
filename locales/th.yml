@@ -370,6 +370,13 @@ commandCenter.hint.showArtist: แสดงศิลปิน
 commandCenter.hint.showPlaylist: แสดงเพลย์ลิสต์จากคลังของคุณ
 commandCenter.moreResults: ผลลัพธ์เพิ่มเติม...
 commandCenter.playNext: '"{name}" จะเล่นเป็นเพลงถัดไป'
+concerts.empty.noLocation.action: ตั้งค่าตำแหน่งที่ตั้ง
+concerts.empty.noLocation.body: คอนเสิร์ตจะแสดงตามสถานที่ เลือกสถานที่เพื่อดูว่ามีงานอะไรกำลังจะจัดขึ้นใกล้คุณบ้าง
+concerts.empty.noLocation.title: ไม่ได้ตั้งค่าตำแหน่งที่ตั้ง
+concerts.empty.noResults.body: ไม่มีกำหนดการสำหรับตัวกรองเหล่านี้ในขณะนี้ ลองเปลี่ยนช่วงวันที่ แนวเพลง หรือตำแหน่งที่ตั้ง
+concerts.empty.noResults.title: ไม่พบคอนเสิร์ต
+concerts.empty.search.body: ไม่มีคอนเสิร์ตที่ตรงกับ {term} ลองค้นหาด้วยชื่อศิลปิน สถานที่จัดงาน หรือชื่องานอื่น
+concerts.empty.search.title: ไม่พบคอนเสิร์ตที่ตรงกัน
 concerts.getTickets: ซื้อบัตร
 concerts.maps.apple: Apple Maps
 concerts.maps.google: Google Maps
@@ -801,6 +808,23 @@ notification.restrictedStorefront: เนื้อหาที่ไม่เห
 notification.updatingLibraryAlbums: กำลังอัปเดตอัลบั้มในคลัง...
 notification.updatingLibraryArtists: กำลังอัปเดตศิลปินในคลัง...
 notification.updatingLibrarySongs: กำลังอัปเดตเพลงในคลัง...
+notificationCenter.action.clearHistory: ล้างประวัติ
+notificationCenter.action.dismiss: ปิด
+notificationCenter.action.muteCategory: ปิดการแจ้งเตือน {category}
+notificationCenter.action.muteSource: ปิดการแจ้งเตือนนี้
+notificationCenter.action.options: ตัวเลือกการแจ้งเตือน
+notificationCenter.action.settings: การตั้งค่าการแจ้งเตือน
+notificationCenter.action.unmuteCategory: เปิดการแจ้งเตือน {category}
+notificationCenter.action.unmuteSource: เปิดการแจ้งเตือนนี้
+notificationCenter.clearHistory.confirm: ล้างประวัติการแจ้งเตือนหรือไม่? การดำเนินการนี้ไม่สามารถย้อนกลับได้
+notificationCenter.empty: คุณอ่านครบหมดแล้ว
+notificationCenter.empty.caption: ทุกสิ่งที่ Cider ต้องการแจ้งให้คุณทราบจะแสดงที่นี่
+notificationCenter.mute.errors: ข้อผิดพลาดจะแสดงเสมอ
+notificationCenter.mute.essential: หมวดหมู่นี้จะแสดงเสมอ
+notificationCenter.row.muted: ปิดการแจ้งเตือนแล้ว
+notificationCenter.section.active: ใช้งานอยู่
+notificationCenter.section.history: ประวัติ
+notificationCenter.title: การแจ้งเตือน
 notify.licenseRefusedSkip: ไม่สามารถเล่น "{name}" ได้ในขณะนี้ กำลังข้าม
 notify.licenseRefusedStop: 'หยุดเล่นแล้ว: ไม่สามารถเล่น "{name}" ได้'
 nowPlaying.a11y.trackWaveform: รูปคลื่นเสียงของเพลง คลิกเพื่อข้ามไปยังตำแหน่งที่ต้องการ
@@ -963,6 +987,7 @@ playbackHealth.backgroundFreeze.eyebrow: การแจ้งเตือนก
 playbackHealth.backgroundFreeze.hint: กฎของตัวจัดการหน้าต่างหรือการตั้งค่าระบบปฏิบัติการสามารถช่วยให้ Cider ทำงานต่อไปได้แม้ไม่ได้โฟกัสหน้าต่าง เลือก 'ดูข้อมูลเพิ่มเติม' เพื่อดูวิธีแก้ไขปัญหาเบื้องต้นสำหรับระบบของคุณ
 playbackHealth.backgroundFreeze.learnMore: ดูข้อมูลเพิ่มเติม
 playbackHealth.backgroundFreeze.title: ระบบของคุณหยุดการทำงานของ Cider ชั่วคราวในเบื้องหลัง
+playbackHealth.localIssue: ปัญหาการเล่นในเครื่อง
 playlist.collaborative.tooltip: เพลย์ลิสต์นี้เปิดให้ผู้ร่วมจัดทำ
 playlist.collaborators.andOthers: "{{name}} และอีก {{count}} คน"
 playlist.collaborators.count: ผู้ร่วมจัดทำ {{count}} คน
@@ -1557,7 +1582,7 @@ settings.general.card.closing: การปิด
 settings.general.section.cache: แคช
 settings.general.section.cache.description: ภาพหน้าปกและข้อมูลเมตาที่ Cider บันทึกไว้ในดิสก์เพื่อให้โหลดหน้าเว็บได้เร็วขึ้น
 settings.general.section.desktop: เดสก์ท็อป
-settings.general.section.desktop.description: ทางลัดแป้นพิมพ์ การแจ้งเตือนบนเดสก์ท็อป และการทำงานของ Cider บนแถบงานและเมื่อปิดแอป
+settings.general.section.desktop.description: ปุ่มลัดแป้นพิมพ์ และลักษณะการทำงานของ Cider ในแถบงานและเมื่อปิดโปรแกรม
 settings.general.section.language: ภาษา
 settings.general.section.language.description: ภาษาของอินเทอร์เฟซ และวิธีรายงานหรือให้เครดิตผู้แปล
 settings.general.section.playback: การเล่น
@@ -1750,6 +1775,7 @@ settings.nav.group.integrations: การเชื่อมต่อ
 settings.nav.group.library: คลัง
 settings.nav.group.playback: การเล่น
 settings.nav.lyrics: เนื้อเพลง
+settings.nav.notifications: การแจ้งเตือน
 settings.nav.plugins: ปลั๊กอิน
 settings.nav.power: การใช้พลังงาน
 settings.nav.privacy: ความเป็นส่วนตัว
@@ -1767,6 +1793,43 @@ settings.normalization.presets.loud: ดัง
 settings.normalization.presets.maximum: สูงสุด
 settings.normalization.target: ระดับความดังเป้าหมาย
 settings.normalization.unit: LUFS
+settings.notifications.alwaysOn: เปิดเสมอ
+settings.notifications.alwaysOn.description: การแจ้งเตือนเหล่านี้จะแสดงปัญหาและสถานะของแอปที่คุณจำเป็นต้องทราบ จึงไม่สามารถปิดได้ ข้อผิดพลาดจะแสดงเสมอไม่ว่าจะอยู่ในหมวดหมู่ใดก็ตาม
+settings.notifications.category.accountAuth: บัญชีและการลงชื่อเข้าใช้
+settings.notifications.category.accountAuth.description: การลงชื่อเข้าใช้และออกจากระบบ สถานะการสมัครรับข้อมูล และบริการที่เชื่อมต่อ
+settings.notifications.category.castingAirplay: การแคสต์และ AirPlay
+settings.notifications.category.castingAirplay.description: การเชื่อมต่อและตัดการเชื่อมต่อกับอุปกรณ์เล่นภายนอก
+settings.notifications.category.extensionsThemes: ส่วนขยายและธีม
+settings.notifications.category.extensionsThemes.description: การติดตั้ง อัปเดต และลบปลั๊กอิน ธีม และชิ้นส่วนโค้ด
+settings.notifications.category.general: ทั่วไป
+settings.notifications.category.general.description: สิ่งอื่น ๆ ที่ไม่มีหมวดหมู่เฉพาะ
+settings.notifications.category.listeningTogether: ฟังด้วยกัน
+settings.notifications.category.listeningTogether.description: คำเชิญเข้าร่วมปาร์ตี้ แขกที่เข้าร่วมหรือออกจากเซสชัน และสถานะเซสชัน
+settings.notifications.category.lyrics: เนื้อเพลง
+settings.notifications.category.lyrics.description: การค้นหาเนื้อเพลง การมีส่วนร่วม และการถอดเสียงอ่าน
+settings.notifications.category.playbackSystem: การเล่นและระบบ
+settings.notifications.category.playbackSystem.description: ปัญหาการเล่นและสถานะระดับแอปที่คุณจำเป็นต้องทราบ
+settings.notifications.category.playlistsLibrary: เพลย์ลิสต์และคลัง
+settings.notifications.category.playlistsLibrary.description: การเพิ่ม ลบ แก้ไข และซิงค์เนื้อหาในคลัง
+settings.notifications.category.plugins: ปลั๊กอิน
+settings.notifications.category.plugins.description: ข้อความที่ปลั๊กอินที่คุณติดตั้งแจ้งเตือนขึ้นมาเอง แทนที่จะเป็นการรายงานจาก Cider
+settings.notifications.category.queueUpNext: คิวและรายการถัดไป
+settings.notifications.category.queueUpNext.description: แทร็กที่จัดคิวไว้สำหรับเล่นถัดไปหรือเพิ่มไว้ที่ท้ายคิว
+settings.notifications.category.scrobbling: การสคร็อบเบิล
+settings.notifications.category.scrobbling.description: ผลลัพธ์การสคร็อบเบิลรายแทร็กจาก Last.fm, ListenBrainz และบริการอื่น ๆ
+settings.notifications.category.settingsBackups: การตั้งค่าและการสำรองข้อมูล
+settings.notifications.category.settingsBackups.description: การนำเข้าและส่งออกการตั้งค่า และการสำรองข้อมูลการกำหนดค่า
+settings.notifications.category.sharingClipboard: การแชร์และคลิปบอร์ด
+settings.notifications.category.sharingClipboard.description: การสร้างและคัดลอกลิงก์แชร์
+settings.notifications.muted.empty: ไม่มีรายการใดที่ถูกปิดการแจ้งเตือนไว้ การปิดการแจ้งเตือนรายการใดรายการหนึ่งจากรายการแจ้งเตือนของคุณจะเพิ่มรายการนั้นมาที่นี่ และคุณสามารถเปิดการแจ้งเตือนอีกครั้งได้จากที่นี่
+settings.notifications.section.categories: หมวดหมู่
+settings.notifications.section.history: ประวัติ
+settings.notifications.section.muted: การแจ้งเตือนที่ปิดไว้
+settings.notifications.section.system: การแจ้งเตือนระบบ
+settings.notifications.summary.categoriesOn: หมวดหมู่ที่เปิดอยู่
+settings.notifications.summary.description: เลือกประเภทการแจ้งเตือนที่ต้องการให้ Cider แสดง การแจ้งเตือนที่คุณปิดจะยังคงบันทึกอยู่ในรายการแจ้งเตือนของคุณ เพื่อให้คุณสามารถกลับมาดูย้อนหลังได้
+settings.notifications.unmute: เปิดเสียง
+settings.notifications.unmuteAll: เปิดเสียงทั้งหมด
 settings.notyf.connectivity.lastfmScrobble.connectError: หมดเวลาเชื่อมต่อ Last.fm
 settings.notyf.connectivity.lastfmScrobble.connecting: กำลังเชื่อมต่อกับ Last.fm...
 settings.notyf.connectivity.lastfmScrobble.connectSuccess: เชื่อมต่อ Last.fm สำเร็จ
@@ -1898,7 +1961,7 @@ settings.option.advanced.tweaks.description: การตั้งค่าท�
 settings.option.advanced.volumeSlider: แถบเลื่อนระดับเสียงของเครื่องเล่น
 settings.option.advanced.volumeSlider.iOSStyle: สไตล์ iOS
 settings.option.advanced.window: พฤติกรรมของหน้าต่าง
-settings.option.advanced.window.description: การแจ้งเตือนการเล่น การปรับขนาดเครื่องเล่นขนาดเล็ก และรูปแบบแถบเลื่อนที่ใช้ทั่วทั้งแอป ส่วนการควบคุมหน้าต่างและความโปร่งแสงจะอยู่ในส่วนรูปลักษณ์
+settings.option.advanced.window.description: การปรับขนาดเครื่องเล่นขนาดเล็กและรูปแบบแถบเลื่อนที่ใช้ทั่วทั้งแอป ปุ่มควบคุมหน้าต่างและเอฟเฟกต์ความโปร่งแสงจะอยู่ในหัวข้อรูปลักษณ์
 settings.option.advanced.window.scrollbarType: ประเภทแถบเลื่อน
 settings.option.all: ทั้งหมด
 settings.option.alwaysShow: แสดงเสมอ
@@ -2276,6 +2339,10 @@ settings.option.medium: ปานกลาง
 settings.option.minimal: เรียบง่าย
 settings.option.native: เนทีฟ
 settings.option.none: ไม่มี
+settings.option.notifications.history.cap: จำนวนการแจ้งเตือนที่จะเก็บไว้
+settings.option.notifications.history.cap.description: จำนวนการแจ้งเตือนสูงสุดที่รายการจะบันทึกไว้ ก่อนที่การแจ้งเตือนที่เก่าที่สุดจะถูกลบออก
+settings.option.notifications.history.persist: เก็บประวัติการแจ้งเตือนไว้เมื่อเปิดแอปใหม่
+settings.option.notifications.history.persist.description: จดจำรายการแจ้งเตือนของคุณหลังจากปิด Cider การปิดใช้งานตัวเลือกนี้จะล้างรายการที่บันทึกไว้ทั้งหมด
 settings.option.off: ปิด
 settings.option.on: เปิด
 settings.option.performance.app: แอป
@@ -2298,6 +2365,10 @@ settings.option.performance.limitBlurMapFramerateOnBlur: จำกัดอั�
 settings.option.performance.limitBlurMapFramerateOnBlur.description: ลดอัตราเฟรมของพื้นหลังแบบเคลื่อนไหวที่สมจริงในขณะที่ไม่ได้โฟกัสหน้าต่างเพื่อประหยัดพลังงาน ปิดตัวเลือกนี้เพื่อให้ทำงานด้วยความเร็วสูงสุดต่อไป
 settings.option.performance.limitImmersiveBgFramerateOnBlur: จำกัดอัตราเฟรมของพื้นหลังแบบสมจริงเมื่อไม่ได้โฟกัส
 settings.option.performance.motion: การเคลื่อนไหว
+settings.option.performance.preloadSidebarPages: โหลดหน้าแถบข้างล่วงหน้า
+settings.option.performance.preloadSidebarPages.description: โหลดหน้าแถบข้างล่วงหน้าก่อนที่คุณจะเปิด ตัวเลือก 'เมื่อชี้' จะเริ่มทำงานเมื่อวางตัวชี้เมาส์ไว้บนรายการแถบข้าง ตัวเลือก 'เมื่อไม่ได้ใช้งาน' จะโหลดหน้า 'ฟังตอนนี้' 'เลือกดู' และ 'วิทยุ' หลังจากเปิดแอป และจะรีเฟรชรายการคลังที่คุณเคยเปิดไว้ก่อนหน้านี้
+settings.option.performance.preloadSidebarPages.idle: เมื่อไม่ได้ใช้งาน
+settings.option.performance.preloadSidebarPages.intent: เมื่อชี้
 settings.option.performance.renderer.auto: อัตโนมัติ (WebGPU เมื่อรองรับ)
 settings.option.performance.renderer.canvas: Canvas 2D
 settings.option.performance.renderer.webgpu: WebGPU

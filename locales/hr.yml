@@ -842,6 +842,13 @@ commandCenter.hint.showArtist: Prikaži izvođača
 commandCenter.hint.showPlaylist: Prikaži popis pjesama iz vaše knjižnice
 commandCenter.moreResults: Više rezultata...
 commandCenter.playNext: '"{name}" reproducira se sljedeće'
+concerts.empty.noLocation.action: Postavi lokaciju
+concerts.empty.noLocation.body: Koncerti se prikazuju za određeno mjesto. Odaberite jedno kako biste vidjeli što se sprema u vašoj blizini.
+concerts.empty.noLocation.title: Lokacija nije postavljena
+concerts.empty.noResults.body: Trenutačno nema zakazanih događaja za ove filtre. Pokušajte s drugim rasponom datuma, žanrom ili lokacijom.
+concerts.empty.noResults.title: Nema pronađenih koncerata
+concerts.empty.search.body: Nema koncerata koji odgovaraju pojmu {term}. Pokušajte s drugim izvođačem, dvoranom ili nazivom događaja.
+concerts.empty.search.title: Nema podudarnih koncerata
 concerts.getTickets: Kupi ulaznice
 concerts.maps.apple: Apple Maps
 concerts.maps.google: Google Maps
@@ -1273,6 +1280,23 @@ notification.restrictedStorefront: Eksplicitan sadržaj u vašoj trenutačnoj tr
 notification.updatingLibraryAlbums: Ažuriranje albuma u knjižnici...
 notification.updatingLibraryArtists: Ažuriranje izvođača u knjižnici...
 notification.updatingLibrarySongs: Ažuriranje pjesama u knjižnici...
+notificationCenter.action.clearHistory: Očisti povijest
+notificationCenter.action.dismiss: Odbaci
+notificationCenter.action.muteCategory: Utišaj {category}
+notificationCenter.action.muteSource: Utišaj ovu obavijest
+notificationCenter.action.options: Opcije obavijesti
+notificationCenter.action.settings: Postavke obavijesti
+notificationCenter.action.unmuteCategory: Poništi utišavanje za {category}
+notificationCenter.action.unmuteSource: Poništi utišavanje ove obavijesti
+notificationCenter.clearHistory.confirm: Želite li očistiti povijest obavijesti? Ova se radnja ne može poništiti.
+notificationCenter.empty: Sve ste pročitali
+notificationCenter.empty.caption: Sve što vam Cider treba javiti pojavit će se ovdje.
+notificationCenter.mute.errors: Pogreške se uvijek prikazuju.
+notificationCenter.mute.essential: Ova se kategorija uvijek prikazuje.
+notificationCenter.row.muted: Utišano
+notificationCenter.section.active: Aktivno
+notificationCenter.section.history: Povijest
+notificationCenter.title: Obavijesti
 notify.licenseRefusedSkip: '"{name}" se ne može trenutačno reproducirati, preskače se'
 notify.licenseRefusedStop: 'Reprodukcija je zaustavljena: "{name}" se ne može reproducirati'
 nowPlaying.a11y.trackWaveform: Valni oblik pjesme, kliknite za pomicanje
@@ -1435,6 +1459,7 @@ playbackHealth.backgroundFreeze.eyebrow: Obavijest o reprodukciji
 playbackHealth.backgroundFreeze.hint: Pravilo upravitelja prozora ili postavka operacijskog sustava može održati Cider aktivnim dok nije u fokusu. Opcija „Saznajte više” prikazuje poznata rješenja za vaš sustav.
 playbackHealth.backgroundFreeze.learnMore: Saznajte više
 playbackHealth.backgroundFreeze.title: Sustav je privremeno zaustavio Cider u pozadini
+playbackHealth.localIssue: Lokalni problem s reprodukcijom
 playlist.collaborative.tooltip: Ovaj popis pjesama otvoren je za suradnike
 playlist.collaborators.andOthers: "{{name}} i još {{count}}"
 playlist.collaborators.count: "{{count}} suradnika"
@@ -2029,7 +2054,7 @@ settings.general.card.closing: Zatvaranje
 settings.general.section.cache: Predmemorija
 settings.general.section.cache.description: Spremljene naslovnice i metapodaci koje Cider čuva na disku radi bržeg učitavanja stranica.
 settings.general.section.desktop: Radna površina
-settings.general.section.desktop.description: Prečaci na tipkovnici, obavijesti radne površine te ponašanje Cidera na traci zadataka i prilikom zatvaranja.
+settings.general.section.desktop.description: Prečaci na tipkovnici te ponašanje aplikacije Cider na traci zadataka i prilikom zatvaranja.
 settings.general.section.language: Jezik
 settings.general.section.language.description: Jezik sučelja te kako prijaviti pogreške ili navesti zasluge za prijevode.
 settings.general.section.playback: Reprodukcija
@@ -2222,6 +2247,7 @@ settings.nav.group.integrations: Integracije
 settings.nav.group.library: Biblioteka
 settings.nav.group.playback: Reprodukcija
 settings.nav.lyrics: Tekstovi
+settings.nav.notifications: Obavijesti
 settings.nav.plugins: Dodaci
 settings.nav.power: Potrošnja energije
 settings.nav.privacy: Privatnost
@@ -2239,6 +2265,43 @@ settings.normalization.presets.loud: Glasno
 settings.normalization.presets.maximum: Maksimalno
 settings.normalization.target: Ciljna glasnoća
 settings.normalization.unit: LUFS
+settings.notifications.alwaysOn: Uvijek uključeno
+settings.notifications.alwaysOn.description: Ove obavijesti sadrže probleme i status aplikacije koje morate vidjeti, stoga se ne mogu isključiti. Pogreške se uvijek prikazuju, bez obzira na to kojoj kategoriji pripadaju.
+settings.notifications.category.accountAuth: Račun i prijava
+settings.notifications.category.accountAuth.description: Prijava i odjava, status pretplate i povezani servisi.
+settings.notifications.category.castingAirplay: Streaming i AirPlay
+settings.notifications.category.castingAirplay.description: Povezivanje s vanjskim uređajima za reprodukciju i prekidanje veze s njima.
+settings.notifications.category.extensionsThemes: Proširenja i teme
+settings.notifications.category.extensionsThemes.description: Instaliranje, ažuriranje i uklanjanje priključaka, tema i isječaka koda.
+settings.notifications.category.general: Općenito
+settings.notifications.category.general.description: Sve što nema vlastitu kategoriju.
+settings.notifications.category.listeningTogether: Zajedničko slušanje
+settings.notifications.category.listeningTogether.description: Pozivnice za grupu, pridruživanje ili odlazak gostiju te status sesije.
+settings.notifications.category.lyrics: Tekstovi pjesama
+settings.notifications.category.lyrics.description: Pretraživanje, doprinosi i transliteracija tekstova pjesama.
+settings.notifications.category.playbackSystem: Reprodukcija i sustav
+settings.notifications.category.playbackSystem.description: Problemi s reprodukcijom i status na razini aplikacije koje morate vidjeti.
+settings.notifications.category.playlistsLibrary: Popisi pjesama i biblioteka
+settings.notifications.category.playlistsLibrary.description: Dodavanje, uklanjanje, uređivanje i sinkronizacija sadržaja biblioteke.
+settings.notifications.category.plugins: Priključci
+settings.notifications.category.plugins.description: Poruke koje šalju sami instalirani priključci, umjesto da o njima izvještava Cider.
+settings.notifications.category.queueUpNext: Red čekanja i Sljedeće
+settings.notifications.category.queueUpNext.description: Pjesme dodane u red čekanja za sljedeću reprodukciju ili na kraj reda čekanja.
+settings.notifications.category.scrobbling: Scrobblanje
+settings.notifications.category.scrobbling.description: Rezultati scrobblanja pojedinačnih pjesama s usluga Last.fm, ListenBrainz i drugih servisa.
+settings.notifications.category.settingsBackups: Postavke i sigurnosne kopije
+settings.notifications.category.settingsBackups.description: Uvoz i izvoz postavki te sigurnosne kopije konfiguracije.
+settings.notifications.category.sharingClipboard: Dijeljenje i međuspremnik
+settings.notifications.category.sharingClipboard.description: Generiranje i kopiranje poveznica za dijeljenje.
+settings.notifications.muted.empty: Ništa nije zasebno utišano. Utišavanje pojedinačne obavijesti s popisa obavijesti dodaje je ovdje, a odavde je možete i vratiti.
+settings.notifications.section.categories: Kategorije
+settings.notifications.section.history: Povijest
+settings.notifications.section.muted: Utišane obavijesti
+settings.notifications.section.system: Sustavne obavijesti
+settings.notifications.summary.categoriesOn: Uključene kategorije
+settings.notifications.summary.description: Odaberite koje vam vrste obavijesti Cider prikazuje. Sve što isključite i dalje se bilježi na vašem popisu obavijesti, pa to možete nadoknaditi kasnije.
+settings.notifications.unmute: Uključi zvuk
+settings.notifications.unmuteAll: Uključi zvuk za sve
 settings.notyf.connectivity.lastfmScrobble.connectError: Veza s Last.fm je istekla
 settings.notyf.connectivity.lastfmScrobble.connecting: Povezivanje s Last.fm...
 settings.notyf.connectivity.lastfmScrobble.connectSuccess: Uspješno povezivanje s Last.fm
@@ -2370,7 +2433,7 @@ settings.option.advanced.tweaks.description: Postavke za prilagodbu koje zapravo
 settings.option.advanced.volumeSlider: Klizač glasnoće reproduktora
 settings.option.advanced.volumeSlider.iOSStyle: iOS stil
 settings.option.advanced.window: Ponašanje prozora
-settings.option.advanced.window.description: Obavijesti o reprodukciji, promjena veličine mini-playera i stil trake za pomicanje u cijeloj aplikaciji. Kontrole prozora i živost nalaze se pod Vizualno.
+settings.option.advanced.window.description: Promjena veličine Miniplayera i stil klizača koji se koristi u cijeloj aplikaciji. Kontrole prozora i živost nalaze se pod Vizualno.
 settings.option.advanced.window.scrollbarType: Vrsta trake za pomicanje
 settings.option.all: Sve
 settings.option.alwaysShow: Uvijek prikaži
@@ -2748,6 +2811,10 @@ settings.option.medium: Srednje
 settings.option.minimal: Minimalno
 settings.option.native: Izvorno
 settings.option.none: Nijedno
+settings.option.notifications.history.cap: Broj obavijesti za zadržavanje
+settings.option.notifications.history.cap.description: Koliko obavijesti popis može sadržavati prije nego što se najstarije uklone.
+settings.option.notifications.history.persist: Zadrži obavijesti između pokretanja
+settings.option.notifications.history.persist.description: Pamti popis obavijesti nakon zatvaranja Cidera. Isključivanjem ove opcije prazni se već pohranjeni popis.
 settings.option.off: Isključeno
 settings.option.on: Uključeno
 settings.option.performance.app: Aplikacija
@@ -2770,6 +2837,10 @@ settings.option.performance.limitBlurMapFramerateOnBlur: Ograniči broj sličica
 settings.option.performance.limitBlurMapFramerateOnBlur.description: Smanjuje broj sličica u sekundi imerzivne animirane pozadine dok prozor nije u fokusu radi uštede energije. Isključite ovu opciju ako želite da radi punom brzinom.
 settings.option.performance.limitImmersiveBgFramerateOnBlur: Ograniči broj sličica u sekundi imerzivne pozadine kada nije u fokusu
 settings.option.performance.motion: Pokret
+settings.option.performance.preloadSidebarPages: Unaprijed učitaj stranice bočne trake
+settings.option.performance.preloadSidebarPages.description: Učitava stranice bočne trake prije nego što ih otvorite. Opcija „Pri prijelazu pokazivača” započinje kada se pokazivač zadrži na stavci bočne trake. Opcija „Tijekom neaktivnosti” također učitava Slušajte odmah, Pregledaj i Radio nakon pokretanja te osvježava popise medijateke koje ste prethodno otvorili.
+settings.option.performance.preloadSidebarPages.idle: Tijekom neaktivnosti
+settings.option.performance.preloadSidebarPages.intent: Pri prijelazu pokazivača
 settings.option.performance.renderer.auto: Automatski (WebGPU kada je podržan)
 settings.option.performance.renderer.canvas: Canvas 2D
 settings.option.performance.renderer.webgpu: WebGPU

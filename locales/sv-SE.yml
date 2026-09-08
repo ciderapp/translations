@@ -370,6 +370,13 @@ commandCenter.hint.showArtist: Visa en artist
 commandCenter.hint.showPlaylist: Visa en spellista från ditt bibliotek
 commandCenter.moreResults: Fler resultat...
 commandCenter.playNext: '"{name}" spelas härnäst'
+concerts.empty.noLocation.action: Ange plats
+concerts.empty.noLocation.body: Konserter visas för en specifik plats. Välj en för att se vad som händer nära dig.
+concerts.empty.noLocation.title: Ingen plats angiven
+concerts.empty.noResults.body: Inget är schemalagt för dessa filter just nu. Försök med ett annat datumintervall, genre eller plats.
+concerts.empty.noResults.title: Inga konserter hittades
+concerts.empty.search.body: Inga konserter matchar {term}. Försök med en annan artist, spelplats eller evenemangsnamn.
+concerts.empty.search.title: Inga matchande konserter
 concerts.getTickets: Köp biljetter
 concerts.maps.apple: Apple Maps
 concerts.maps.google: Google Maps
@@ -801,6 +808,23 @@ notification.restrictedStorefront: Explicit innehåll i din nuvarande butik är 
 notification.updatingLibraryAlbums: Uppdaterar biblioteksalbum...
 notification.updatingLibraryArtists: Uppdaterar biblioteksartister...
 notification.updatingLibrarySongs: Uppdaterar bibliotekslåtar...
+notificationCenter.action.clearHistory: Rensa historik
+notificationCenter.action.dismiss: Avfärda
+notificationCenter.action.muteCategory: Tysta {category}
+notificationCenter.action.muteSource: Tysta denna notis
+notificationCenter.action.options: Notisalternativ
+notificationCenter.action.settings: Notisinställningar
+notificationCenter.action.unmuteCategory: Sluta tysta {category}
+notificationCenter.action.unmuteSource: Sluta tysta denna notis
+notificationCenter.clearHistory.confirm: Vill du rensa notishistoriken? Detta kan inte ångras.
+notificationCenter.empty: Du är helt uppdaterad
+notificationCenter.empty.caption: Allt som Cider behöver berätta för dig hamnar här.
+notificationCenter.mute.errors: Fel visas alltid.
+notificationCenter.mute.essential: Denna kategori visas alltid.
+notificationCenter.row.muted: Tystad
+notificationCenter.section.active: Aktiva
+notificationCenter.section.history: Historik
+notificationCenter.title: Notiser
 notify.licenseRefusedSkip: '"{name}" kan inte spelas just nu, hoppar över'
 notify.licenseRefusedStop: 'Uppspelningen stoppades: "{name}" kan inte spelas'
 nowPlaying.a11y.trackWaveform: Låtens vågform, klicka för att spola
@@ -963,6 +987,7 @@ playbackHealth.backgroundFreeze.eyebrow: Uppspelningsmeddelande
 playbackHealth.backgroundFreeze.hint: En regel i fönsterhanteraren eller en OS-inställning kan hålla Cider igång när fönstret inte är i fokus. ”Läs mer” visar kända lösningar för din konfiguration.
 playbackHealth.backgroundFreeze.learnMore: Läs mer
 playbackHealth.backgroundFreeze.title: Ditt system pausade Cider i bakgrunden
+playbackHealth.localIssue: Lokalt uppspelningsproblem
 playlist.collaborative.tooltip: Den här spellistan är öppen för deltagare
 playlist.collaborators.andOthers: "{{name}} & {{count}} andra"
 playlist.collaborators.count: "{{count}} deltagare"
@@ -1557,7 +1582,7 @@ settings.general.card.closing: Stängning
 settings.general.section.cache: Cache
 settings.general.section.cache.description: Sparade omslag och metadata som Cider sparar på disken så att sidor laddas snabbare.
 settings.general.section.desktop: Skrivbord
-settings.general.section.desktop.description: Kortkommandon, skrivbordsnotiser och hur Cider beter sig i aktivitetsfältet och vid stängning.
+settings.general.section.desktop.description: Kortkommandon och hur Cider beter sig i aktivitetsfältet och vid stängning.
 settings.general.section.language: Språk
 settings.general.section.language.description: Gränssnittsspråk, och hur man rapporterar eller krediterar dess översättningar.
 settings.general.section.playback: Uppspelning
@@ -1750,6 +1775,7 @@ settings.nav.group.integrations: Integreringar
 settings.nav.group.library: Bibliotek
 settings.nav.group.playback: Uppspelning
 settings.nav.lyrics: Låttexter
+settings.nav.notifications: Notiser
 settings.nav.plugins: Insticksprogram
 settings.nav.power: Strömanvändning
 settings.nav.privacy: Integritet
@@ -1767,6 +1793,43 @@ settings.normalization.presets.loud: Hög
 settings.normalization.presets.maximum: Maximal
 settings.normalization.target: Målvärde för ljudstyrka
 settings.normalization.unit: LUFS
+settings.notifications.alwaysOn: Alltid på
+settings.notifications.alwaysOn.description: Dessa innehåller problem och appstatus som du behöver se, så de kan inte stängas av. Fel visas alltid, oavsett vilken kategori de tillhör.
+settings.notifications.category.accountAuth: Konto och inloggning
+settings.notifications.category.accountAuth.description: In- och utloggning, prenumerationsstatus och anslutna tjänster.
+settings.notifications.category.castingAirplay: Casting och AirPlay
+settings.notifications.category.castingAirplay.description: Anslutning till och frånkoppling från externa uppspelningsenheter.
+settings.notifications.category.extensionsThemes: Tillägg och teman
+settings.notifications.category.extensionsThemes.description: Installation, uppdatering och borttagning av insticksprogram, teman och kodsnuttar.
+settings.notifications.category.general: Allmänt
+settings.notifications.category.general.description: Allt som saknar en egen kategori.
+settings.notifications.category.listeningTogether: Lyssna tillsammans
+settings.notifications.category.listeningTogether.description: Inbjudningar, gäster som ansluter eller lämnar, samt sessionsstatus.
+settings.notifications.category.lyrics: Låttexter
+settings.notifications.category.lyrics.description: Sökning av låttexter, bidrag och translitterering.
+settings.notifications.category.playbackSystem: Uppspelning och system
+settings.notifications.category.playbackSystem.description: Uppspelningsproblem och status på appnivå som du behöver se.
+settings.notifications.category.playlistsLibrary: Spellistor och bibliotek
+settings.notifications.category.playlistsLibrary.description: Lägga till, ta bort, redigera och synkronisera biblioteksinnehåll.
+settings.notifications.category.plugins: Insticksprogram
+settings.notifications.category.plugins.description: Meddelanden som dina installerade insticksprogram skapar själva, snarare än att Cider rapporterar om dem.
+settings.notifications.category.queueUpNext: Kö och Nästa
+settings.notifications.category.queueUpNext.description: Låtar i kön för att spelas härnäst eller som lagts till i slutet av kön.
+settings.notifications.category.scrobbling: Scrobbling
+settings.notifications.category.scrobbling.description: Scrobblingsresultat per låt från Last.fm, ListenBrainz och andra tjänster.
+settings.notifications.category.settingsBackups: Inställningar och säkerhetskopior
+settings.notifications.category.settingsBackups.description: Import och export av inställningar samt säkerhetskopior av konfigurationen.
+settings.notifications.category.sharingClipboard: Delning och urklipp
+settings.notifications.category.sharingClipboard.description: Delningslänkar som skapas och kopieras.
+settings.notifications.muted.empty: Inget är tystat separat. Om du tystar en enskild notis från din notislista läggs den till här, och det är här du återaktiverar den.
+settings.notifications.section.categories: Kategorier
+settings.notifications.section.history: Historik
+settings.notifications.section.muted: Tystade notiser
+settings.notifications.section.system: Systemnotiser
+settings.notifications.summary.categoriesOn: Kategorier på
+settings.notifications.summary.description: Välj vilka typer av notiser Cider visar dig. Allt du stänger av sparas fortfarande i din notislista, så att du kan läsa dem senare.
+settings.notifications.unmute: Slå på ljudet
+settings.notifications.unmuteAll: Slå på ljudet för alla
 settings.notyf.connectivity.lastfmScrobble.connectError: Anslutningen till Last.fm tog för lång tid
 settings.notyf.connectivity.lastfmScrobble.connecting: Ansluter till Last.fm...
 settings.notyf.connectivity.lastfmScrobble.connectSuccess: Anslutningen till Last.fm lyckades
@@ -1898,7 +1961,7 @@ settings.option.advanced.tweaks.description: Finjusteringar som inte riktigt pas
 settings.option.advanced.volumeSlider: Spelarens volymreglage
 settings.option.advanced.volumeSlider.iOSStyle: iOS-stil
 settings.option.advanced.window: Fönsterbeteende
-settings.option.advanced.window.description: Uppspelningsnotiser, storleksändring av minispelaren och stilen på rullningslisten som används i appen. Fönsterkontroller och vibrans finns under Visuellt.
+settings.option.advanced.window.description: Storleksändring av Minispelaren och stilen på rullningslisten som används i appen. Fönsterreglage och vibrans finns under Visuellt.
 settings.option.advanced.window.scrollbarType: Typ av rullningslist
 settings.option.all: Alla
 settings.option.alwaysShow: Visa alltid
@@ -2276,6 +2339,10 @@ settings.option.medium: Mellan
 settings.option.minimal: Minimal
 settings.option.native: Nativ
 settings.option.none: Ingen
+settings.option.notifications.history.cap: Antal notiser att behålla
+settings.option.notifications.history.cap.description: Hur många notiser listan sparar innan de äldsta tas bort.
+settings.option.notifications.history.persist: Spara notiser mellan starter
+settings.option.notifications.history.persist.description: Kom ihåg din notislista efter att Cider stängs. Om du inaktiverar detta rensas listan som redan har sparats.
 settings.option.off: Av
 settings.option.on: På
 settings.option.performance.app: App
@@ -2298,6 +2365,10 @@ settings.option.performance.limitBlurMapFramerateOnBlur: Begränsa bildfrekvens 
 settings.option.performance.limitBlurMapFramerateOnBlur.description: Sänker bildfrekvensen för den omslutande animerade bakgrunden när fönstret inte är i fokus för att spara ström. Inaktivera för att fortsätta köra med full hastighet.
 settings.option.performance.limitImmersiveBgFramerateOnBlur: Begränsa bildhastigheten för omslutande bakgrund när fönstret inte är i fokus
 settings.option.performance.motion: Rörelse
+settings.option.performance.preloadSidebarPages: Läs in sidofältssidor i förväg
+settings.option.performance.preloadSidebarPages.description: Läser in sidofältssidor innan du öppnar dem. "Vid hovring" startar när pekaren vilar på ett objekt i sidofältet. "Vid inaktivitet" läser även in Lyssna nu, Bläddra och Radio efter uppstart samt uppdaterar bibliotekslistor som du har öppnat tidigare.
+settings.option.performance.preloadSidebarPages.idle: Vid inaktivitet
+settings.option.performance.preloadSidebarPages.intent: Vid hovring
 settings.option.performance.renderer.auto: Automatisk (WebGPU när det stöds)
 settings.option.performance.renderer.canvas: Canvas 2D
 settings.option.performance.renderer.webgpu: WebGPU
