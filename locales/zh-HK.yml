@@ -1833,6 +1833,7 @@ settings.connectivity.section.communityRatings.description: 在專輯頁面上�
 settings.connectivity.section.discord.description: 播放音樂時 Cider 在你的 Discord 個人檔案上顯示的內容，以及其連接的用戶端。
 settings.connectivity.section.externalApplications.description: 其他程式用於讀取播放資訊和控制 Cider 的 WebSockets 連接埠和 RPC 伺服器，以及允許哪些程式存取。
 settings.connectivity.section.parties.description: 與其他 Cider 用戶同步聆聽，以及訪客在你主持的派對中可以執行的操作。
+settings.connectivity.section.vrOverlay.description: 在 SteamVR 和 VDXR 上顯示 Cider 播放器及可固定面板，並透過 RPC 與此應用程式通訊。
 settings.connectivity.tokenCopied:
   value: Token 已拷貝至剪貼簿
   source: human
@@ -2722,6 +2723,24 @@ settings.option.connectivity.scrobbler: Scrobbler
 settings.option.connectivity.scrobblerIntegration: Scrobbler 整合
 settings.option.connectivity.scrobblerIntegration.description: Last.fm、ListenBrainz、Libre.fm 和 Maloja 記錄功能，用作保留收聽歷史。
 settings.option.connectivity.steam.clearOnPause: 暫停時清除 Rich Presence
+settings.option.connectivity.vrOverlay: VR 覆蓋
+settings.option.connectivity.vrOverlay.backend: VR 執行環境
+settings.option.connectivity.vrOverlay.backend.auto: 自動
+settings.option.connectivity.vrOverlay.backend.description: 「自動」會在 SteamVR 進行合成時使用 SteamVR 覆蓋，並在 VDXR 上使用 OpenXR 圖層。僅在偵測錯誤時才手動覆寫。
+settings.option.connectivity.vrOverlay.backend.steamvr: SteamVR
+settings.option.connectivity.vrOverlay.backend.vdxr: VDXR
+settings.option.connectivity.vrOverlay.enabled: 啟用 VR 覆蓋
+settings.option.connectivity.vrOverlay.enabled.description: 當偵測到 VR 執行環境時，產生第一方憑證並啟動覆蓋附屬程式。覆蓋畫面本身不會播放音訊。
+settings.option.connectivity.vrOverlay.resetPanels: 重設面板位置
+settings.option.connectivity.vrOverlay.resetPanels.description: 清除已儲存的覆蓋位置，並在下次啟動時將面板回復至預設的喚出位置。
+settings.option.connectivity.vrOverlay.summon: 播放器位置
+settings.option.connectivity.vrOverlay.summon.description: 喚出播放器控制器時其顯示的位置。其他面板仍可固定在虛擬世界中。
+settings.option.connectivity.vrOverlay.summon.head: 在你面前
+settings.option.connectivity.vrOverlay.summon.wrist: 在你的手腕上
+settings.option.connectivity.vrOverlay.wrist: 手腕
+settings.option.connectivity.vrOverlay.wrist.description: 選擇手腕喚出時，播放器要鎖定至哪一個控制器。
+settings.option.connectivity.vrOverlay.wrist.left: 左
+settings.option.connectivity.vrOverlay.wrist.right: 右
 settings.option.connectivity.webSocketsApi: WebSockets API
 settings.option.connectivity.webSocketsAPI: WebSockets API
 settings.option.connectivity.webSocketsAPI.description: 啟用被動式 WebSockets 發射器，以便外部應用程式監聽來自 Cider 的事件。
@@ -2971,6 +2990,8 @@ settings.option.performance.limitBlurMapFramerateOnBlur: 當視窗非作用中�
 settings.option.performance.limitBlurMapFramerateOnBlur.description: 當視窗非作用中時，降低沉浸式動態背景的格率以節省電力。關閉此選項以維持全速運行。
 settings.option.performance.limitImmersiveBgFramerateOnBlur: 未聚焦時限制沉浸式背景的影格率
 settings.option.performance.motion: 動態效果
+settings.option.performance.powerSaverOnBattery: 使用電池時省電
+settings.option.performance.powerSaverOnBattery.description: 當裝置使用電池供電時，沉浸式背景的渲染格率最高為 30 fps，而歌詞動畫的格率上限為 60 fps。
 settings.option.performance.preloadSidebarPages: 預載側邊欄頁面
 settings.option.performance.preloadSidebarPages.description: 在你開啟側邊欄頁面之前預先載入。「暫留時」會在游標停留在側邊欄項目上時開始載入。「閒置時」則會在啟動後載入「立即聆聽」、「瀏覽」和「廣播」，並重新整理你之前開啟過的資料庫清單。
 settings.option.performance.preloadSidebarPages.idle: 閒置時
@@ -4490,6 +4511,7 @@ term.warning: 警告
 term.webremote: 網頁遙控
 term.whatsNew: 最新功能
 term.widget: 小工具
+term.windows: Windows
 term.yes: 是
 term.yesterday: 昨天
 term.zoom: 縮放

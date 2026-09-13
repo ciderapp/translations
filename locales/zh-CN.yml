@@ -5040,6 +5040,7 @@ settings.connectivity.section.communityRatings.description: 专辑页面上来�
 settings.connectivity.section.discord.description: 播放音乐时 Cider 在您的 Discord 个人资料中显示的内容，以及它通过哪个客户端进行连接。
 settings.connectivity.section.externalApplications.description: 其他程序用于读取播放状态和控制 Cider 的 WebSockets 端口和 RPC 服务器，以及允许其中哪些程序访问。
 settings.connectivity.section.parties.description: 与其他 Cider 用户同步聆听，以及访客在您主持的派对中可以执行的操作。
+settings.connectivity.section.vrOverlay.description: 运行于 SteamVR 和 VDXR 之上的 Cider 播放器及可固定面板，通过 RPC 与此应用进行通信。
 settings.connectivity.tokenCopied:
   value: Token 已拷贝到剪贴板
   source: human
@@ -8181,6 +8182,24 @@ settings.option.connectivity.steam.clearOnPause:
   by: "@Tesutarin"
   issue: 28
   superseded_at: 2026-07-08
+settings.option.connectivity.vrOverlay: VR 覆层
+settings.option.connectivity.vrOverlay.backend: VR 运行时
+settings.option.connectivity.vrOverlay.backend.auto: 自动
+settings.option.connectivity.vrOverlay.backend.description: “自动”模式将在 SteamVR 进行合成时使用 SteamVR 覆层，在 VDXR 上使用 OpenXR 图层。仅在检测错误时才进行手动覆盖。
+settings.option.connectivity.vrOverlay.backend.steamvr: SteamVR
+settings.option.connectivity.vrOverlay.backend.vdxr: VDXR
+settings.option.connectivity.vrOverlay.enabled: 启用 VR 覆层
+settings.option.connectivity.vrOverlay.enabled.description: 检测到 VR 运行时，将生成第一方令牌并启动覆层伴随程序。覆层本身不播放音频。
+settings.option.connectivity.vrOverlay.resetPanels: 重置面板位置
+settings.option.connectivity.vrOverlay.resetPanels.description: 清除已保存的覆层位置，并在下次启动时将面板恢复到默认呼出位置。
+settings.option.connectivity.vrOverlay.summon: 播放器位置
+settings.option.connectivity.vrOverlay.summon.description: 呼出播放器控制器时其显示的位置。其他面板仍可固定在空间中。
+settings.option.connectivity.vrOverlay.summon.head: 正前方
+settings.option.connectivity.vrOverlay.summon.wrist: 手腕上
+settings.option.connectivity.vrOverlay.wrist: 手腕
+settings.option.connectivity.vrOverlay.wrist.description: 选择手腕呼出时，播放器所绑定的控制器。
+settings.option.connectivity.vrOverlay.wrist.left: 左
+settings.option.connectivity.vrOverlay.wrist.right: 右
 settings.option.connectivity.webSocketsApi:
   value: WebSockets API
   source: human
@@ -9121,6 +9140,8 @@ settings.option.performance.motion:
   source: human
   by: "@Tesutarin"
   issue: 10
+settings.option.performance.powerSaverOnBattery: 使用电池时节省电量
+settings.option.performance.powerSaverOnBattery.description: 当设备使用电池供电时，沉浸式背景的渲染帧率最高限制为 30 帧/秒，歌词动画限制为 60 帧/秒。
 settings.option.performance.preloadSidebarPages: 预加载侧边栏页面
 settings.option.performance.preloadSidebarPages.description: 在您打开侧边栏页面之前进行加载。“悬停时”会在光标停留在侧边栏项目上时开始加载。“空闲时”还会在启动后加载“现在就听”、“浏览”和“广播”，并刷新您之前打开过的资料库列表。
 settings.option.performance.preloadSidebarPages.idle: 空闲时
@@ -14052,6 +14073,7 @@ term.widget:
   by: "@Tesutarin"
   issue: 12
   superseded_at: 2026-07-08
+term.windows: Windows
 term.yes:
   value: 是
   source: human

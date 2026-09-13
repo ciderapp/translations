@@ -1549,6 +1549,7 @@ settings.connectivity.section.communityRatings.description: アルバムペー�
 settings.connectivity.section.discord.description: 音楽の再生中にCiderがDiscordのプロフィールに表示する内容、および接続に使用するクライアントを設定します。
 settings.connectivity.section.externalApplications.description: 他のプログラムが再生情報の読み取りやCiderの制御に使用するWebSocketsポートとRPCサーバー、およびそれらのアクセス許可を設定します。
 settings.connectivity.section.parties.description: 他のCiderユーザーと同期して音楽を聴く機能、およびあなたがホストするパーティーでゲストが実行できる操作を設定します。
+settings.connectivity.section.vrOverlay.description: SteamVRおよびVDXR上にピン留め可能なパネルとCiderプレイヤーを表示し、RPC経由でこのアプリと通信します。
 settings.connectivity.tokenCopied: トークンをクリップボードにコピーしました
 settings.connectivity.tokens: トークン
 settings.contentFilter.description: 「見つける」や「今すぐ聴く」で、タイトルまたはコンテンツがこれらのキーワードに一致するセクションが非表示になります。
@@ -2257,6 +2258,24 @@ settings.option.connectivity.scrobbler: スクロブラー
 settings.option.connectivity.scrobblerIntegration: スクロブラー連携
 settings.option.connectivity.scrobblerIntegration.description: 再生履歴を保存するための、Last.fm、ListenBrainz、Libre.fm、Malojaへのスクロブル。
 settings.option.connectivity.steam.clearOnPause: 一時停止時にRich Presenceをクリア
+settings.option.connectivity.vrOverlay: VRオーバーレイ
+settings.option.connectivity.vrOverlay.backend: VRランタイム
+settings.option.connectivity.vrOverlay.backend.auto: 自動
+settings.option.connectivity.vrOverlay.backend.description: 「自動」に設定すると、SteamVRのコンポジット中はSteamVRオーバーレイを使用し、VDXRではOpenXRレイヤーを使用します。検出が正しくない場合のみ手動で変更してください。
+settings.option.connectivity.vrOverlay.backend.steamvr: SteamVR
+settings.option.connectivity.vrOverlay.backend.vdxr: VDXR
+settings.option.connectivity.vrOverlay.enabled: VRオーバーレイを有効にする
+settings.option.connectivity.vrOverlay.enabled.description: VRランタイムが検出されたときに、ファーストパーティトークンを発行してオーバーレイサイドカーを起動します。オーバーレイ自体からオーディオは再生されません。
+settings.option.connectivity.vrOverlay.resetPanels: パネルの位置をリセット
+settings.option.connectivity.vrOverlay.resetPanels.description: 保存されたオーバーレイの位置をリセットし、次回起動時にパネルをデフォルトの表示位置に戻します。
+settings.option.connectivity.vrOverlay.summon: プレイヤーの表示位置
+settings.option.connectivity.vrOverlay.summon.description: プレイヤーコントローラーを呼び出したときに配置される位置。追加のパネルは空間内にピン留めすることもできます。
+settings.option.connectivity.vrOverlay.summon.head: 目の前
+settings.option.connectivity.vrOverlay.summon.wrist: 手首
+settings.option.connectivity.vrOverlay.wrist: 手首
+settings.option.connectivity.vrOverlay.wrist.description: 手首での呼び出しが選択されている場合に、プレイヤーを固定するコントローラー。
+settings.option.connectivity.vrOverlay.wrist.left: 左
+settings.option.connectivity.vrOverlay.wrist.right: 右
 settings.option.connectivity.webSocketsApi: WebSockets API
 settings.option.connectivity.webSocketsAPI: WebSockets API
 settings.option.connectivity.webSocketsAPI.description: 外部アプリケーションがCiderからのイベントを受信できるように、パッシブWebSocketsエミッターを有効にします。
@@ -2459,6 +2478,8 @@ settings.option.performance.limitBlurMapFramerateOnBlur: 非フォーカス時�
 settings.option.performance.limitBlurMapFramerateOnBlur.description: ウィンドウが非フォーカス状態のときに、イマーシブなアニメーション背景のフレームレートを下げて消費電力を抑えます。常にフルスピードで動作させるには、この設定をオフにしてください。
 settings.option.performance.limitImmersiveBgFramerateOnBlur: フォーカスが外れている時にイマーシブ背景のフレームレートを制限する
 settings.option.performance.motion: モーション
+settings.option.performance.powerSaverOnBattery: バッテリー駆動時に電力を節約
+settings.option.performance.powerSaverOnBattery.description: デバイスがバッテリー駆動中の場合、イマーシブ背景のレンダリングは最大30 fpsに、歌詞のアニメーションは最大60 fpsに制限されます。
 settings.option.performance.preloadSidebarPages: サイドバーのページをプリロード
 settings.option.performance.preloadSidebarPages.description: 開く前にサイドバーのページを読み込みます。「ホバー時」は、ポインタがサイドバーの項目上にあるときに開始されます。「アイドル時」は、起動後に「今すぐ聴く」、「見つける」、「ラジオ」も読み込み、以前に開いたライブラリリストを更新します。
 settings.option.performance.preloadSidebarPages.idle: アイドル時
@@ -3610,6 +3631,7 @@ term.warning: 警告
 term.webremote: Webリモート
 term.whatsNew: 新機能
 term.widget: ウィジェット
+term.windows: Windows
 term.yes: はい
 term.yesterday: 昨日
 term.zoom: ズーム

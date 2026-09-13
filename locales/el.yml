@@ -1477,6 +1477,7 @@ settings.connectivity.section.communityRatings.description: Αξιολογήσε
 settings.connectivity.section.discord.description: Τι εμφανίζει το Cider στο προφίλ σας στο Discord κατά την αναπαραγωγή μουσικής, και μέσω ποιου client συνδέεται.
 settings.connectivity.section.externalApplications.description: Η θύρα WebSockets και ο διακομιστής RPC που χρησιμοποιούν άλλα προγράμματα για την ανάγνωση της αναπαραγωγής και τον έλεγχο του Cider, καθώς και ποια από αυτά επιτρέπονται.
 settings.connectivity.section.parties.description: Συγχρονισμένη ακρόαση με άλλους χρήστες του Cider, και τι επιτρέπεται να κάνουν οι καλεσμένοι στα πάρτι που φιλοξενείτε.
+settings.connectivity.section.vrOverlay.description: Ένα πρόγραμμα αναπαραγωγής Cider και καρφιτσώσιμοι πίνακες πάνω από το SteamVR και το VDXR, που επικοινωνούν με αυτήν την εφαρμογή μέσω RPC.
 settings.connectivity.tokenCopied: Το διακριτικό αντιγράφηκε στο πρόχειρο
 settings.connectivity.tokens: Διακριτικά
 settings.contentFilter.description: Οι ενότητες στην «Περιήγηση» και στο «Ακούστε τώρα» των οποίων οι τίτλοι ή το περιεχόμενο ταιριάζουν με οποιαδήποτε από αυτές τις λέξεις-κλειδιά θα αποκρύπτονται.
@@ -2185,6 +2186,24 @@ settings.option.connectivity.scrobbler: Scrobbler
 settings.option.connectivity.scrobblerIntegration: Ενσωμάτωση Scrobbler
 settings.option.connectivity.scrobblerIntegration.description: Scrobbling για Last.fm, ListenBrainz, Libre.fm και Maloja, για τη διατήρηση ιστορικού ακρόασης.
 settings.option.connectivity.steam.clearOnPause: Εκκαθάριση Rich Presence κατά την παύση
+settings.option.connectivity.vrOverlay: Επικάλυψη VR
+settings.option.connectivity.vrOverlay.backend: VR Runtime
+settings.option.connectivity.vrOverlay.backend.auto: Αυτόματο
+settings.option.connectivity.vrOverlay.backend.description: Η αυτόματη επιλογή χρησιμοποιεί επικαλύψεις SteamVR κατά τη σύνθεση του SteamVR, και το επίπεδο OpenXR στο VDXR. Παρακάμψτε το μόνο εάν ο εντοπισμός είναι εσφαλμένος.
+settings.option.connectivity.vrOverlay.backend.steamvr: SteamVR
+settings.option.connectivity.vrOverlay.backend.vdxr: VDXR
+settings.option.connectivity.vrOverlay.enabled: Ενεργοποίηση επικάλυψης VR
+settings.option.connectivity.vrOverlay.enabled.description: Έκδοση ενός token πρώτου μέρους και εκκίνηση του sidecar επικάλυψης όταν υπάρχει ένα VR runtime. Η επικάλυψη δεν αναπαράγει ήχο από μόνη της.
+settings.option.connectivity.vrOverlay.resetPanels: Επαναφορά θέσεων πινάκων
+settings.option.connectivity.vrOverlay.resetPanels.description: Κατάργηση των αποθηκευμένων θέσεων επικάλυψης και επαναφορά των πινάκων στις προεπιλεγμένες θέσεις εμφάνισής τους στην επόμενη περίοδο λειτουργίας.
+settings.option.connectivity.vrOverlay.summon: Θέση προγράμματος αναπαραγωγής
+settings.option.connectivity.vrOverlay.summon.description: Πού τοποθετείται το χειριστήριο αναπαραγωγής όταν το καλείτε. Οι επιπλέον πίνακες μπορούν ακόμα να καρφιτσωθούν στον κόσμο.
+settings.option.connectivity.vrOverlay.summon.head: Μπροστά σας
+settings.option.connectivity.vrOverlay.summon.wrist: Στον καρπό σας
+settings.option.connectivity.vrOverlay.wrist: Καρπός
+settings.option.connectivity.vrOverlay.wrist.description: Σε ποιο χειριστήριο κλειδώνει το πρόγραμμα αναπαραγωγής όταν είναι επιλεγμένη η εμφάνιση στον καρπό.
+settings.option.connectivity.vrOverlay.wrist.left: Αριστερό
+settings.option.connectivity.vrOverlay.wrist.right: Δεξί
 settings.option.connectivity.webSocketsApi: WebSockets API
 settings.option.connectivity.webSocketsAPI: WebSockets API
 settings.option.connectivity.webSocketsAPI.description: Ενεργοποιεί έναν παθητικό πομπό WebSockets για την ακρόαση συμβάντων από το Cider από εξωτερικές εφαρμογές.
@@ -2378,6 +2397,8 @@ settings.option.performance.limitBlurMapFramerateOnBlur: Περιορισμός 
 settings.option.performance.limitBlurMapFramerateOnBlur.description: Μειώνει τον ρυθμό καρέ του καθηλωτικού κινούμενου φόντου όταν το παράθυρο δεν είναι εστιασμένο για εξοικονόμηση ενέργειας. Απενεργοποιήστε το για να συνεχίσει να λειτουργεί με πλήρη ταχύτητα.
 settings.option.performance.limitImmersiveBgFramerateOnBlur: Περιορισμός ρυθμού καρέ καθηλωτικού φόντου όταν δεν είναι εστιασμένο
 settings.option.performance.motion: Κίνηση
+settings.option.performance.powerSaverOnBattery: Εξοικονόμηση ενέργειας στη μπαταρία
+settings.option.performance.powerSaverOnBattery.description: Όταν η συσκευή λειτουργεί με μπαταρία, το καθηλωτικό φόντο αποδίδεται το πολύ στα 30 καρέ ανά δευτερόλεπτο και οι κινούμενες εικόνες των στίχων περιορίζονται στα 60 καρέ ανά δευτερόλεπτο.
 settings.option.performance.preloadSidebarPages: Προφόρτωση σελίδων πλευρικής στήλης
 settings.option.performance.preloadSidebarPages.description: Φορτώνει τις σελίδες της πλευρικής στήλης προτού τις ανοίξετε. Η επιλογή «Κατά την κατάδειξη» ξεκινά όταν ο δείκτης παραμένει πάνω σε ένα στοιχείο της πλευρικής στήλης. Η επιλογή «Σε αδράνεια» φορτώνει επίσης τα «Ακούστε τώρα», «Περιήγηση» και «Ραδιόφωνο» μετά την εκκίνηση και ανανεώνει τις λίστες βιβλιοθήκης που έχετε ανοίξει προηγουμένως.
 settings.option.performance.preloadSidebarPages.idle: Σε αδράνεια
@@ -3501,6 +3522,7 @@ term.warning: Προειδοποίηση
 term.webremote: Web Remote
 term.whatsNew: Τι νέο υπάρχει
 term.widget: Widget
+term.windows: Windows
 term.yes: Ναι
 term.yesterday: Χθες
 term.zoom: Μεγέθυνση

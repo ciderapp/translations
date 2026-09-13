@@ -1926,6 +1926,7 @@ settings.connectivity.section.communityRatings.description: Оценки мик�
 settings.connectivity.section.discord.description: Что Cider показывает в вашем профиле Discord во время воспроизведения музыки и через какой клиент он подключается.
 settings.connectivity.section.externalApplications.description: Порт WebSockets и RPC-сервер, используемые другими программами для чтения данных воспроизведения и управления Cider, а также список разрешенных приложений.
 settings.connectivity.section.parties.description: Синхронное прослушивание с другими пользователями Cider и права гостей в создаваемых вами совместных сессиях.
+settings.connectivity.section.vrOverlay.description: Плеер Cider и закрепляемые панели поверх SteamVR и VDXR, взаимодействующие с этим приложением по RPC.
 settings.connectivity.tokenCopied: Токен скопирован в буфер обмена
 settings.connectivity.tokens: Токены
 settings.contentFilter.description: Разделы во вкладках «Обзор» и «Слушать», чьи названия или содержимое соответствуют этим ключевым словам, будут скрыты.
@@ -2772,6 +2773,24 @@ settings.option.connectivity.scrobbler: Скробблер
 settings.option.connectivity.scrobblerIntegration: Интеграция со скробблером
 settings.option.connectivity.scrobblerIntegration.description: Скробблинг в Last.fm, ListenBrainz, Libre.fm и Maloja для сохранения истории прослушивания.
 settings.option.connectivity.steam.clearOnPause: Очищать Rich Presence при паузе
+settings.option.connectivity.vrOverlay: VR-оверлей
+settings.option.connectivity.vrOverlay.backend: Среда выполнения VR
+settings.option.connectivity.vrOverlay.backend.auto: Автоматически
+settings.option.connectivity.vrOverlay.backend.description: В автоматическом режиме используются оверлеи SteamVR при композитинге SteamVR и слой OpenXR на VDXR. Переопределяйте только в случае неверного определения.
+settings.option.connectivity.vrOverlay.backend.steamvr: SteamVR
+settings.option.connectivity.vrOverlay.backend.vdxr: VDXR
+settings.option.connectivity.vrOverlay.enabled: Включить VR-оверлей
+settings.option.connectivity.vrOverlay.enabled.description: Создать собственный токен и запустить вспомогательный процесс оверлея при наличии среды выполнения VR. Оверлей сам по себе не воспроизводит аудио.
+settings.option.connectivity.vrOverlay.resetPanels: Сбросить положение панелей
+settings.option.connectivity.vrOverlay.resetPanels.description: Забыть сохраненные положения оверлея и вернуть панели в исходное положение при следующем запуске.
+settings.option.connectivity.vrOverlay.summon: Положение плеера
+settings.option.connectivity.vrOverlay.summon.description: Где располагается контроллер плеера при его вызове. Дополнительные панели по-прежнему можно закрепить в пространстве.
+settings.option.connectivity.vrOverlay.summon.head: Перед вами
+settings.option.connectivity.vrOverlay.summon.wrist: На запястье
+settings.option.connectivity.vrOverlay.wrist: Запястье
+settings.option.connectivity.vrOverlay.wrist.description: К какому контроллеру привязывается плеер при выборе вызова на запястье.
+settings.option.connectivity.vrOverlay.wrist.left: Левый
+settings.option.connectivity.vrOverlay.wrist.right: Правый
 settings.option.connectivity.webSocketsApi: WebSockets API
 settings.option.connectivity.webSocketsAPI: WebSockets API
 settings.option.connectivity.webSocketsAPI.description: Включает пассивный эмиттер WebSockets для прослушивания событий Cider внешними приложениями.
@@ -3001,6 +3020,8 @@ settings.option.performance.limitBlurMapFramerateOnBlur: Ограничиват�
 settings.option.performance.limitBlurMapFramerateOnBlur.description: Снижает частоту кадров иммерсивного анимированного фона, когда окно не в фокусе, для экономии энергии. Отключите, чтобы он работал на максимальной скорости.
 settings.option.performance.limitImmersiveBgFramerateOnBlur: Ограничивать частоту кадров иммерсивного фона, когда окно не в фокусе
 settings.option.performance.motion: Движение
+settings.option.performance.powerSaverOnBattery: Энергосбережение при работе от батареи
+settings.option.performance.powerSaverOnBattery.description: При работе устройства от батареи частота кадров иммерсивного фона ограничивается 30 кадр/с, а анимация текста песен — 60 кадр/с.
 settings.option.performance.preloadSidebarPages: Предзагрузка страниц боковой панели
 settings.option.performance.preloadSidebarPages.description: Загружает страницы боковой панели до того, как вы их откроете. Вариант «При наведении» запускает загрузку, когда курсор задерживается на элементе боковой панели. Вариант «При простое» также загружает разделы «Слушать сейчас», «Обзор» и «Радио» после запуска приложения и обновляет ранее открытые списки медиатеки.
 settings.option.performance.preloadSidebarPages.idle: При простое
@@ -4534,6 +4555,7 @@ term.warning: Предупреждение
 term.webremote: Веб-управление
 term.whatsNew: Что нового
 term.widget: Виджет
+term.windows: Windows
 term.yes: Да
 term.yesterday: Вчера
 term.zoom: Масштаб

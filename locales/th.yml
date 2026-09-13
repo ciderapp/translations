@@ -1477,6 +1477,7 @@ settings.connectivity.section.communityRatings.description: คะแนนม�
 settings.connectivity.section.discord.description: สิ่งที่ Cider แสดงบนโปรไฟล์ Discord ของคุณขณะเล่นเพลง และไคลเอนต์ที่ใช้เชื่อมต่อ
 settings.connectivity.section.externalApplications.description: พอร์ต WebSockets และเซิร์ฟเวอร์ RPC ที่โปรแกรมอื่นใช้เพื่ออ่านข้อมูลการเล่นและควบคุม Cider รวมถึงโปรแกรมใดบ้างที่ได้รับอนุญาตให้เข้าถึง
 settings.connectivity.section.parties.description: ฟังเพลงไปพร้อมกับผู้ใช้ Cider คนอื่นๆ และสิ่งที่คุณอนุญาตให้ผู้เข้าร่วมทำได้ในปาร์ตี้ที่คุณเป็นโฮสต์
+settings.connectivity.section.vrOverlay.description: เครื่องเล่น Cider และแผงควบคุมแบบปักหมุดได้บน SteamVR และ VDXR ซึ่งสื่อสารกับแอปนี้ผ่าน RPC
 settings.connectivity.tokenCopied: คัดลอกโทเคนไปยังคลิปบอร์ดแล้ว
 settings.connectivity.tokens: โทเคน
 settings.contentFilter.description: ส่วนต่างๆ ในหน้า 'เลือกดู' และ 'ฟังตอนนี้' ที่มีชื่อหรือเนื้อหาตรงกับคำหลักเหล่านี้จะถูกซ่อน
@@ -2185,6 +2186,24 @@ settings.option.connectivity.scrobbler: Scrobbler
 settings.option.connectivity.scrobblerIntegration: การเชื่อมต่อ Scrobbler
 settings.option.connectivity.scrobblerIntegration.description: การส่งประวัติการฟัง (Scrobble) ไปยัง Last.fm, ListenBrainz, Libre.fm และ Maloja เพื่อบันทึกประวัติการฟังของคุณ
 settings.option.connectivity.steam.clearOnPause: ล้าง Rich Presence เมื่อหยุดชั่วคราว
+settings.option.connectivity.vrOverlay: โอเวอร์เลย์ VR
+settings.option.connectivity.vrOverlay.backend: VR Runtime
+settings.option.connectivity.vrOverlay.backend.auto: อัตโนมัติ
+settings.option.connectivity.vrOverlay.backend.description: โหมดอัตโนมัติจะใช้โอเวอร์เลย์ SteamVR เมื่อ SteamVR กำลังประมวลผลภาพ และใช้เลเยอร์ OpenXR บน VDXR เปลี่ยนแปลงค่านี้เฉพาะเมื่อตรวจจับผิดพลาดเท่านั้น
+settings.option.connectivity.vrOverlay.backend.steamvr: SteamVR
+settings.option.connectivity.vrOverlay.backend.vdxr: VDXR
+settings.option.connectivity.vrOverlay.enabled: เปิดใช้งานโอเวอร์เลย์ VR
+settings.option.connectivity.vrOverlay.enabled.description: สร้างโทเค็นบุคคลที่หนึ่งและเริ่มการทำงานของโอเวอร์เลย์ไซด์คาร์เมื่อตรวจพบ VR Runtime ทั้งนี้โอเวอร์เลย์จะไม่เล่นเสียงด้วยตัวเอง
+settings.option.connectivity.vrOverlay.resetPanels: รีเซ็ตตำแหน่งแผงควบคุม
+settings.option.connectivity.vrOverlay.resetPanels.description: ล้างตำแหน่งโอเวอร์เลย์ที่บันทึกไว้ และคืนค่าแผงควบคุมกลับสู่ตำแหน่งเริ่มต้นในการใช้งานครั้งถัดไป
+settings.option.connectivity.vrOverlay.summon: ตำแหน่งเครื่องเล่น
+settings.option.connectivity.vrOverlay.summon.description: ตำแหน่งที่ตัวควบคุมเครื่องเล่นจะปรากฏขึ้นเมื่อคุณเรียกใช้งาน คุณยังคงสามารถปักหมุดแผงควบคุมเพิ่มเติมในพื้นที่เสมือนได้
+settings.option.connectivity.vrOverlay.summon.head: ตรงหน้าคุณ
+settings.option.connectivity.vrOverlay.summon.wrist: บนข้อมือของคุณ
+settings.option.connectivity.vrOverlay.wrist: ข้อมือ
+settings.option.connectivity.vrOverlay.wrist.description: ตัวควบคุมที่เครื่องเล่นจะล็อกไว้เมื่อเลือกการเรียกใช้งานบนข้อมือ
+settings.option.connectivity.vrOverlay.wrist.left: ซ้าย
+settings.option.connectivity.vrOverlay.wrist.right: ขวา
 settings.option.connectivity.webSocketsApi: WebSockets API
 settings.option.connectivity.webSocketsAPI: WebSockets API
 settings.option.connectivity.webSocketsAPI.description: เปิดใช้งานตัวส่งสัญญาณ WebSockets แบบพาสซีฟเพื่อให้แอปพลิเคชันภายนอกสามารถรับฟังเหตุการณ์จาก Cider ได้
@@ -2378,6 +2397,8 @@ settings.option.performance.limitBlurMapFramerateOnBlur: จำกัดอั�
 settings.option.performance.limitBlurMapFramerateOnBlur.description: ลดอัตราเฟรมของพื้นหลังแบบเคลื่อนไหวที่สมจริงในขณะที่ไม่ได้โฟกัสหน้าต่างเพื่อประหยัดพลังงาน ปิดตัวเลือกนี้เพื่อให้ทำงานด้วยความเร็วสูงสุดต่อไป
 settings.option.performance.limitImmersiveBgFramerateOnBlur: จำกัดอัตราเฟรมของพื้นหลังแบบสมจริงเมื่อไม่ได้โฟกัส
 settings.option.performance.motion: การเคลื่อนไหว
+settings.option.performance.powerSaverOnBattery: ประหยัดพลังงานเมื่อใช้แบตเตอรี่
+settings.option.performance.powerSaverOnBattery.description: ขณะที่อุปกรณ์ใช้พลังงานจากแบตเตอรี่ พื้นหลังแบบสมจริงจะเรนเดอร์ที่ความเร็วสูงสุด 30 เฟรมต่อวินาที และภาพเคลื่อนไหวของเนื้อเพลงจะถูกจำกัดไว้ที่ 60 เฟรมต่อวินาที
 settings.option.performance.preloadSidebarPages: โหลดหน้าแถบข้างล่วงหน้า
 settings.option.performance.preloadSidebarPages.description: โหลดหน้าแถบข้างล่วงหน้าก่อนที่คุณจะเปิด ตัวเลือก 'เมื่อชี้' จะเริ่มทำงานเมื่อวางตัวชี้เมาส์ไว้บนรายการแถบข้าง ตัวเลือก 'เมื่อไม่ได้ใช้งาน' จะโหลดหน้า 'ฟังตอนนี้' 'เลือกดู' และ 'วิทยุ' หลังจากเปิดแอป และจะรีเฟรชรายการคลังที่คุณเคยเปิดไว้ก่อนหน้านี้
 settings.option.performance.preloadSidebarPages.idle: เมื่อไม่ได้ใช้งาน
@@ -3501,6 +3522,7 @@ term.warning: คำเตือน
 term.webremote: Web Remote
 term.whatsNew: มีอะไรใหม่
 term.widget: วิดเจ็ต
+term.windows: Windows
 term.yes: ใช่
 term.yesterday: เมื่อวาน
 term.zoom: ซูม

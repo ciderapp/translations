@@ -1537,6 +1537,7 @@ settings.connectivity.section.communityRatings.description: 앨범 페이지에�
 settings.connectivity.section.discord.description: 음악이 재생되는 동안 Discord 프로필에 표시할 Cider 정보 및 연결할 클라이언트를 설정합니다.
 settings.connectivity.section.externalApplications.description: 다른 프로그램이 재생 정보를 읽고 Cider를 제어하는 데 사용하는 WebSockets 포트 및 RPC 서버와 허용할 프로그램을 설정합니다.
 settings.connectivity.section.parties.description: 다른 Cider 사용자와 함께 음악을 동시 감상하고, 내가 호스트하는 파티에서 게스트가 수행할 수 있는 작업을 설정합니다.
+settings.connectivity.section.vrOverlay.description: RPC를 통해 이 앱과 통신하며, SteamVR 및 VDXR 위에 Cider 플레이어와 고정 가능한 패널을 표시합니다.
 settings.connectivity.tokenCopied: 토큰이 클립보드에 복사되었습니다.
 settings.connectivity.tokens: 토큰
 settings.contentFilter.description: "'둘러보기' 및 '지금 듣기'에서 제목이나 콘텐츠가 이 키워드와 일치하는 섹션이 숨겨집니다."
@@ -2270,6 +2271,24 @@ settings.option.connectivity.scrobbler: 스크로블러
 settings.option.connectivity.scrobblerIntegration: 스크로블러 연동
 settings.option.connectivity.scrobblerIntegration.description: 감상 기록을 유지하기 위한 Last.fm, ListenBrainz, Libre.fm 및 Maloja 스크로블링 기능입니다.
 settings.option.connectivity.steam.clearOnPause: 일시 정지 시 Rich Presence 지우기
+settings.option.connectivity.vrOverlay: VR 오버레이
+settings.option.connectivity.vrOverlay.backend: VR 런타임
+settings.option.connectivity.vrOverlay.backend.auto: 자동
+settings.option.connectivity.vrOverlay.backend.description: "'자동' 설정 시 SteamVR이 합성 중일 때는 SteamVR 오버레이를 사용하고, VDXR에서는 OpenXR 레이어를 사용합니다. 감지가 잘못된 경우에만 설정을 변경하십시오."
+settings.option.connectivity.vrOverlay.backend.steamvr: SteamVR
+settings.option.connectivity.vrOverlay.backend.vdxr: VDXR
+settings.option.connectivity.vrOverlay.enabled: VR 오버레이 활성화
+settings.option.connectivity.vrOverlay.enabled.description: VR 런타임이 감지되면 퍼스트 파티 토큰을 생성하고 오버레이 사이드카를 시작합니다. 오버레이 자체에서는 오디오가 재생되지 않습니다.
+settings.option.connectivity.vrOverlay.resetPanels: 패널 위치 초기화
+settings.option.connectivity.vrOverlay.resetPanels.description: 저장된 오버레이 위치를 초기화하고 다음 세션에서 패널을 기본 호출 위치로 되돌립니다.
+settings.option.connectivity.vrOverlay.summon: 플레이어 위치
+settings.option.connectivity.vrOverlay.summon.description: 플레이어 컨트롤러를 호출할 때 표시될 위치입니다. 추가 패널은 가상 공간에 고정해 둘 수 있습니다.
+settings.option.connectivity.vrOverlay.summon.head: 사용자 정면
+settings.option.connectivity.vrOverlay.summon.wrist: 손목 위
+settings.option.connectivity.vrOverlay.wrist: 손목
+settings.option.connectivity.vrOverlay.wrist.description: 손목 호출을 선택했을 때 플레이어가 고정될 컨트롤러를 선택합니다.
+settings.option.connectivity.vrOverlay.wrist.left: 왼쪽
+settings.option.connectivity.vrOverlay.wrist.right: 오른쪽
 settings.option.connectivity.webSocketsApi: WebSockets API
 settings.option.connectivity.webSocketsAPI: WebSockets API
 settings.option.connectivity.webSocketsAPI.description: 외부 애플리케이션이 Cider의 이벤트를 수신할 수 있도록 수동 WebSockets 이미터를 활성화합니다.
@@ -2463,6 +2482,8 @@ settings.option.performance.limitBlurMapFramerateOnBlur: 비활성 상태일 때
 settings.option.performance.limitBlurMapFramerateOnBlur.description: 창이 비활성 상태일 때 전력을 절약하기 위해 몰입형 애니메이션 배경의 프레임률을 낮춥니다. 항상 최대 속도로 실행하려면 이 옵션을 비활성화하십시오.
 settings.option.performance.limitImmersiveBgFramerateOnBlur: 포커스가 해제되었을 때 몰입형 배경 프레임레이트 제한
 settings.option.performance.motion: 동작
+settings.option.performance.powerSaverOnBattery: 배터리 사용 시 전력 절약
+settings.option.performance.powerSaverOnBattery.description: 기기가 배터리로 작동하는 동안 몰입형 배경은 최대 초당 30프레임으로 렌더링되며, 가사 애니메이션은 초당 60프레임으로 제한됩니다.
 settings.option.performance.preloadSidebarPages: 사이드바 페이지 미리 로드
 settings.option.performance.preloadSidebarPages.description: 사이드바 페이지를 열기 전에 미리 로드합니다. '마우스 올릴 때'는 포인터가 사이드바 항목에 머무를 때 로드를 시작합니다. '대기 상태일 때'는 시작 후 '지금 듣기', '둘러보기', '라디오'도 로드하며 이전에 열었던 보관함 목록을 새로 고칩니다.
 settings.option.performance.preloadSidebarPages.idle: 대기 상태일 때
@@ -3628,6 +3649,7 @@ term.warning: 경고
 term.webremote: 웹 리모컨
 term.whatsNew: 새로운 기능
 term.widget: 위젯
+term.windows: Windows
 term.yes: 예
 term.yesterday: 어제
 term.zoom: 확대/축소
