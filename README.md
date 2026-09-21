@@ -84,6 +84,7 @@ Every entry below came from a community member through a [translation issue](../
 | [@ramuuflor](https://github.com/ramuuflor) | Japanese | 22 |
 | [@itsmeares](https://github.com/itsmeares) | Turkish | 16 |
 | [@emirasaf](https://github.com/emirasaf) | Turkish | 11 |
+| [@felipecadal](https://github.com/felipecadal) | Portuguese (Brazil) | 1 |
 | [@UnoPanduo](https://github.com/UnoPanduo) | Dutch | 1 |
 | [@yako0755](https://github.com/yako0755) | Japanese | 1 |
 <!-- translators:end -->
