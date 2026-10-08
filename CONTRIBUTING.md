@@ -21,6 +21,7 @@ If the bot reports a validation error, edit the issue body and the check re-runs
 - Every key you reference is in `locales/en-US.yml`.
 - Placeholders are preserved exactly. If the English is `Loading {n} tracks…`, your translation must contain `{n}`. Recognised forms: `{n}`, `{0}`, `${variable}`, `$VARIABLE`, `{{ variable }}`, `{{variable}}`.
 - Proper nouns aren't translated: Cider, Apple Music, AirPlay, Dolby Atmos, Chromecast, AudioLab, ListenBrainz, Last.fm, Maloja, Discord.
+- Keys starting with `mobile.` (Cider for Android) are ICU MessageFormat. Your translation has to parse: keep the braces and `{argument}` names exactly, translate only the text inside plural branches, and use the typographic apostrophe (`’`) next to a placeholder, never a straight one. Leaving out an argument on purpose is fine; renaming one isn't.
 
 ## Tone
 
@@ -50,7 +51,7 @@ A maintainer adds it on the Cider side. The next sync pushes the new language he
 ## What lives where
 
 - This repo: every locale file, the language list, the AI translator, the issue bot.
-- The Cider source repo: the English string keys (extracted automatically) and the runtime that consumes translations.
+- The Cider source repos (desktop and Android): the English string keys (extracted automatically) and the runtimes that consume translations.
 - You don't need access to the Cider repo to contribute translations.
 
 ## Conduct

@@ -1,24 +1,41 @@
 #############################################################################################
 # AI translation fill
 #
-# Purpose: When locales/en-US.yml changes (because Citadel just synced it),
-#          run Claude Haiku 5.5 to fill new and changed strings into every
-#          other locale.
+# Purpose: When locales/en-US.yml changes (because Citadel or Cider-Android
+#          just synced its slice of it), run Claude Haiku 5.5 to fill new and
+#          changed strings into every other locale.
+#
+# Shape: a `plan` job lists the locales with work to do (no API calls), then
+# one `fill` job per locale translates and pushes that locale on its own, and
+# a final `credits` job refreshes the README table and badges.
+#   - One job per locale keeps every job short. Android's first fill is about
+#     2,000 strings into each of 32 locales; done one after another in a
+#     single job, that would outlast the 6-hour job limit.
+#   - Each locale is committed as soon as it's done, so a failed or timed-out
+#     job loses only its own locale, and the next run picks up exactly what
+#     is still stale (i18n/fill-state/, see scripts/lib/fill-state.mjs).
+#   - The fill jobs push to main at the same time as each other and as issue
+#     applies. scripts/ci/push-with-remerge.sh re-merges a rejected push key
+#     by key instead of rebasing, so they never conflict.
 #
 # Token handling, learned the expensive way:
-#   - The Claude pass can run well over an hour. A GitHub App installation
-#     token only lives 1 hour, so it is minted AFTER translation, immediately
-#     before the push, never at job start.
+#   - A GitHub App installation token only lives 1 hour, so it is minted
+#     AFTER translation, immediately before the push, never at job start.
 #   - The push authenticates with that token explicitly in the remote URL. It
 #     does not rely on actions/checkout credential persistence (checkout runs
 #     with persist-credentials: false).
-#   - Pushing via the App token (not GITHUB_TOKEN) is also what lets the push
-#     trigger notify-citadel.yml; GITHUB_TOKEN pushes do not trigger workflows.
-#   - The translated files are uploaded as an artifact before the push, so a
-#     run's Anthropic spend is recoverable even if the push somehow fails.
+#   - Each locale is uploaded as an artifact before the push, so a run's
+#     Anthropic spend is recoverable even if the push somehow fails.
+#
+# History: checkout uses fetch-depth: 0. A locale without a fill-state file is
+# seeded from en-US.yml as of the last fill commit, which needs the history.
 #
 # No recursion: this workflow triggers only on en-US.yml / languages.yml, and
-# the files it commits are the *other* locales.
+# the files it commits are the *other* locales and i18n/fill-state/.
+#
+# The daily schedule is a catch-up: it retries batches that failed and ICU
+# answers that were rejected, and does nothing (one short plan job) when
+# every locale is current.
 #
 # Required secrets (org-level):
 #   ANTHROPIC_API_KEY          - Anthropic API key with Messages API access
@@ -34,6 +51,8 @@ on:
     paths:
       - "locales/en-US.yml"
       - "locales/languages.yml"
+  schedule:
+    - cron: "17 6 * * *"
   workflow_dispatch:
     inputs:
       force:
@@ -45,7 +64,7 @@ on:
         type: string
         default: ""
 
-# The job authenticates with the App token; the default GITHUB_TOKEN is unused.
+# The jobs authenticate with the App token; the default GITHUB_TOKEN is unused.
 permissions: {}
 
 concurrency:
@@ -53,16 +72,18 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  fill:
-    name: Translate delta with Claude Haiku 5.5
+  plan:
+    name: Find locales with work to do
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      langs: ${{ steps.pending.outputs.langs }}
     steps:
       - uses: actions/checkout@v4
         with:
-          # fetch-depth 2 lets the translator inspect the prior en-US.yml.
-          # persist-credentials: false: the push at the end authenticates
-          # explicitly with a freshly-minted App token, not a stored one.
-          fetch-depth: 2
+          ref: main
+          fetch-depth: 0
           persist-credentials: false
 
       - uses: actions/setup-node@v4
@@ -71,39 +92,75 @@ jobs:
 
       - run: npm install --no-package-lock
 
-      - name: Translate delta
+      - name: List pending locales
+        id: pending
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           FORCE_FLAG: ${{ inputs.force }}
           LANG_FILTER: ${{ inputs.lang }}
         run: |
           set -euo pipefail
           args=()
-          if [ "${FORCE_FLAG}" = "true" ]; then args+=(--force); fi
+          if [ "${FORCE_FLAG:-false}" = "true" ]; then args+=(--force); fi
           if [ -n "${LANG_FILTER:-}" ]; then args+=(--lang "${LANG_FILTER}"); fi
+          langs=$(node scripts/i18n-translate.mjs --list-pending --json "${args[@]}")
+          echo "langs=${langs}" >> "$GITHUB_OUTPUT"
+          echo "Pending: ${langs}"
+
+  fill:
+    name: Translate ${{ matrix.lang }}
+    needs: plan
+    if: needs.plan.outputs.langs != '[]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      # Concurrent Anthropic streams. Each job is sequential inside; raise this
+      # if the API tier allows, lower it if runs start hitting 429s.
+      max-parallel: 8
+      matrix:
+        lang: ${{ fromJSON(needs.plan.outputs.langs) }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # main, not the triggering commit: start from everything that has
+          # landed, so a run never redoes a locale another run just filled.
+          ref: main
+          fetch-depth: 0
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - run: npm install --no-package-lock
+
+      - name: Translate ${{ matrix.lang }}
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          FORCE_FLAG: ${{ inputs.force }}
+          LANG_CODE: ${{ matrix.lang }}
+        run: |
+          set -euo pipefail
+          args=(--lang "${LANG_CODE}")
+          if [ "${FORCE_FLAG:-false}" = "true" ]; then args+=(--force); fi
           node scripts/i18n-translate.mjs "${args[@]}"
 
       # Recovery net: upload the translated files before the push is attempted.
       # If the push fails for any reason, the run's Claude output is still
       # downloadable from the run's Artifacts, so the spend is never lost.
-      - name: Upload translated locales (recovery artifact)
+      - name: Upload translated locale (recovery artifact)
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: locales
-          path: locales/
+          name: locale-${{ matrix.lang }}
+          path: |
+            locales/${{ matrix.lang }}.yml
+            i18n/fill-state/${{ matrix.lang }}.yml
           retention-days: 7
           if-no-files-found: warn
 
-      # Refresh credit badges + README table. Mostly a no-op here (AI fills
-      # don't add translators), but this is the workflow that fires when
-      # languages.yml changes, so it's what keeps the Languages badge honest.
-      - name: Update credits and badges
-        run: node scripts/update-credits.mjs
-
-      # Minted HERE, not at job start: a full fill can outlast the 1-hour
-      # installation-token lifetime. Minting right before the push keeps the
-      # token fresh when it is actually used.
+      # Minted HERE, not at job start: a long fill can outlast the 1-hour
+      # installation-token lifetime.
       - name: 🪪 Mint App installation token
         id: app-token
         uses: actions/create-github-app-token@v1
@@ -112,45 +169,53 @@ jobs:
           private-key: ${{ secrets.CIDER_I18N_BOT_PRIVATE_KEY }}
           permission-contents: write
 
-      - name: Commit and push translations
+      - name: Commit and push ${{ matrix.lang }}
         env:
-          APP_TOKEN: ${{ steps.app-token.outputs.token }}
+          REMOTE: https://x-access-token:${{ steps.app-token.outputs.token }}@github.com/${{ github.repository }}.git
+          LANG_CODE: ${{ matrix.lang }}
         run: |
           set -euo pipefail
-          # Stage first, then diff the index. `git diff` alone ignores
-          # untracked files, so a first-ever fill (all-new locale files)
-          # would look like "no changes" and never commit.
-          git add locales/ .github/badges/ README.md
-          if git diff --cached --quiet; then
-            echo "No locale changes after translation pass."
-            exit 0
-          fi
           git config user.name  'saki-yuzishima[bot]'
           git config user.email '286499753+saki-yuzishima[bot]@users.noreply.github.com'
-          git commit -m "chore(i18n): AI fill"
+          bash scripts/ci/push-with-remerge.sh "chore(i18n): AI fill (${LANG_CODE})" \
+            "locales/${LANG_CODE}.yml" "i18n/fill-state/${LANG_CODE}.yml"
 
-          # Push with rebase-retry. Cross-workflow pushes (apply commits from
-          # translation-issue, en-US mirror from Citadel) can land between
-          # checkout and push and cause a non-fast-forward rejection. Rebase
-          # our commit onto the new remote tip and retry; the AI fill's diff
-          # only touches missing keys, so rebasing across an unrelated commit
-          # is a clean replay in practice. Token explicit in the URL — does
-          # not depend on stored credentials. GITHUB_REPOSITORY is owner/repo;
-          # the App token is auto-masked in logs.
-          REMOTE="https://x-access-token:${APP_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-          for attempt in 1 2 3 4 5; do
-            if git push "$REMOTE" HEAD:main; then
-              echo "push succeeded (attempt $attempt)"
-              exit 0
-            fi
-            echo "::warning::push attempt $attempt rejected (likely concurrent push). Rebasing onto origin/main..."
-            git fetch "$REMOTE" main
-            if ! git rebase FETCH_HEAD; then
-              echo "::error::rebase conflicts the bot can't resolve. Translated locales are uploaded as an artifact on this run — re-run the workflow or apply manually from the artifact."
-              git rebase --abort || true
-              exit 1
-            fi
-            sleep $((attempt + RANDOM % 3))
-          done
-          echo "::error::push failed after 5 attempts; the remote ref keeps moving."
-          exit 1
+  # Refresh credit badges + README table. Mostly a no-op here (AI fills
+  # don't add translators), but this is the workflow that fires when
+  # languages.yml changes, so it's what keeps the Languages badge honest.
+  credits:
+    name: Update credits and badges
+    needs: [plan, fill]
+    if: always() && needs.plan.result == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - run: npm install --no-package-lock
+
+      - name: Update credits and badges
+        run: node scripts/update-credits.mjs
+
+      - name: 🪪 Mint App installation token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.CIDER_I18N_BOT_APP_ID }}
+          private-key: ${{ secrets.CIDER_I18N_BOT_PRIVATE_KEY }}
+          permission-contents: write
+
+      - name: Commit and push
+        env:
+          REMOTE: https://x-access-token:${{ steps.app-token.outputs.token }}@github.com/${{ github.repository }}.git
+        run: |
+          set -euo pipefail
+          git config user.name  'saki-yuzishima[bot]'
+          git config user.email '286499753+saki-yuzishima[bot]@users.noreply.github.com'
+          bash scripts/ci/push-with-remerge.sh "chore(i18n): update credits" README.md .github/badges/

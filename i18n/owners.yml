@@ -1,0 +1,37 @@
+# i18n/owners.yml
+#
+# Who writes which keys of locales/en-US.yml. Each owner's sync
+# (scripts/i18n-sync-source.mjs) replaces the keys it owns and leaves
+# everyone else's alone, so the Citadel and Cider-Android mirrors can land in
+# either order without deleting each other's strings.
+#
+# A key belongs to the owner whose prefix it starts with, or to the default
+# owner when no prefix matches. Prefixes must not overlap.
+#
+# Lives outside locales/ on purpose: every reader of locales/*.yml (the
+# credits script, Citadel's fetch, spa-builder, locales-redist, the boot
+# strings) treats any file there as a language.
+
+owners:
+  android:
+    repo: ciderapp/Cider-Android
+    platform: android
+    prefixes: [mobile.]
+    # Android turns a key into a resource name by swapping '.' for '_', which
+    # is only reversible when every segment is plain letters and digits.
+    keyPattern: '^mobile(?:\.[a-zA-Z][a-zA-Z0-9]*)+$'
+    # Values are ICU MessageFormat: {name} arguments, plural and select.
+    icu: true
+    # Android's extraction sees every string, so a key gone from its source
+    # is gone for good: the fill removes its AI translations.
+    prune: true
+    # A mobile string whose English matches a desktop string takes the
+    # desktop translation instead of a new one.
+    reuseFrom: citadel
+
+  citadel:
+    repo: ciderapp/Citadel
+    platform: desktop
+    default: true
+    # Citadel curates locales/languages.yml; its sync copies it here.
+    languages: true

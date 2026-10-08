@@ -38,6 +38,8 @@ body:
         **Placeholders must be preserved exactly.** If the English string is `Loading {n} tracks…`, your translation must include `{n}`. The bot will flag missing placeholders.
 
         **Proper nouns stay in English:** Cider, Apple Music, AirPlay, Dolby Atmos, Chromecast, AudioLab, ListenBrainz, Last.fm, Maloja, Discord.
+
+        **Keys starting with `mobile.` are the Android app** and use ICU plurals, e.g. `{count, plural, one {# song} other {# songs}}`. Keep the braces and names, translate the text in each branch, add the plural forms your language needs, and write `l’{playlist}` (typographic apostrophe), not `l'{playlist}`.
       placeholder: |
         action.apply: Aplicar
         action.back: Atrás
