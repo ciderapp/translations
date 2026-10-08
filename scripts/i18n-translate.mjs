@@ -368,10 +368,15 @@ export function planLocale({ sourceStrings, existing, state, owners, isIcuKey, f
 
   // Prune: an owner with complete extraction (Android) deleted the key, so
   // its AI translations go too. Human ones stay, as on desktop, so a renamed
-  // key's community translation can still be recovered by hand.
+  // key's community translation can still be recovered by hand. An owner
+  // with no keys left at all is an accident (a sync that overwrote en-US.yml
+  // wholesale), not a deletion, so nothing of theirs is pruned until their
+  // keys come back.
+  const ownersPresent = new Set(Object.keys(sourceStrings).map(k => ownerOf(k, owners).name));
   for (const [key, entry] of Object.entries(existing)) {
     if (Object.hasOwn(sourceStrings, key)) continue;
-    if (!ownerOf(key, owners).prune) continue;
+    const owner = ownerOf(key, owners);
+    if (!owner.prune || !ownersPresent.has(owner.name)) continue;
     if (isHumanEntry(entry)) continue;
     delete locale[key];
     pruned.push(key);
