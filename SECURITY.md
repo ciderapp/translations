@@ -30,13 +30,13 @@ We aim to acknowledge within a week and coordinate the fix and disclosure window
 ### Out of scope
 
 - The Cider desktop client itself. This repo only hosts translation data; the client lives in a separate, closed-source repo.
-- Third-party services (Google Gemini, GitHub Actions infrastructure).
+- Third-party services (Anthropic Claude, GitHub Actions infrastructure).
 - Social-engineering attacks against maintainers.
 - Denial of service via flooding (GitHub rate limits and maintainer triage are the mitigation).
 
 ## What we'd particularly like to know
 
-- Anything that could leak a repository secret (`GEMINI_API_KEY`, the GitHub App's `CIDER_I18N_BOT_PRIVATE_KEY`, or `GITHUB_TOKEN`).
+- Anything that could leak a repository secret (`ANTHROPIC_API_KEY`, the GitHub App's `CIDER_I18N_BOT_PRIVATE_KEY`, or `GITHUB_TOKEN`).
 - Token-leak paths via workflow logs, error messages, or bot-posted comments.
 - Bypasses of the `author_association` gate on the `apply` job (e.g. a way for a non-maintainer to get the bot to commit on their behalf).
 - Code execution in any workflow triggered by `pull_request` from a fork.
