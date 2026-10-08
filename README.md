@@ -21,25 +21,29 @@ Community translation files for [Cider](https://cider.sh)
 
 ---
 
-This repository holds every locale Cider ships. **The English source (`locales/en-US.yml`) is generated automatically** from the Cider codebase; you can read it but please don't edit it here. Every other locale is fair game.
+This repository holds every locale Cider ships, on desktop and on Android. **The English source (`locales/en-US.yml`) is generated automatically** from the two codebases; you can read it but please don't edit it here. Every other locale is fair game.
 
 ## How translations work
 
 Three things keep this repo healthy:
 
-1. **Citadel mirrors `en-US.yml` here.** Whenever Cider's source code adds or changes a translatable string, a sync workflow pushes the updated `en-US.yml` into this repo.
-2. **AI fills new strings.** When `en-US.yml` changes, [`.github/workflows/ai-fill.yml`](.github/workflows/ai-fill.yml) runs Anthropic Claude (specifically Haiku 5.5, model id `claude-haiku-5-5`) against the delta and commits translations for every supported language.
+1. **The apps mirror their English here.** Whenever Cider's desktop code (Citadel) or Cider for Android adds or changes a translatable string, its sync workflow updates its own keys in `en-US.yml` (see [Two apps, one file](#two-apps-one-file)).
+2. **AI fills new strings.** When `en-US.yml` changes, [`.github/workflows/ai-fill.yml`](.github/workflows/ai-fill.yml) runs Anthropic Claude (specifically Haiku 5.5, model id `claude-haiku-5-5`) against the delta, one job per language, and commits each language as soon as it's done.
 3. **Humans correct what the AI gets wrong.** Open a [translation issue](../../issues/new?template=translation.yml) with the corrections, a maintainer labels it `approved`, and a bot applies the change with full credit attached.
 
 ## Where to look
 
 | File / directory | What it is |
 | --- | --- |
-| [`locales/en-US.yml`](locales/en-US.yml) | English source. **Read-only here**; edits get overwritten by the Citadel sync. |
+| [`locales/en-US.yml`](locales/en-US.yml) | English source. **Read-only here**; edits get overwritten by the app syncs. |
 | `locales/<code>.yml` | One file per target language. This is where translations live. |
 | [`locales/languages.yml`](locales/languages.yml) | Locked list of supported languages with display names. |
 | [`scripts/i18n-translate.mjs`](scripts/i18n-translate.mjs) | The AI translator (Anthropic Claude Haiku 5.5). Runs in CI; you generally won't run it locally. Needs `ANTHROPIC_API_KEY`. |
 | [`.github/ISSUE_TEMPLATE/translation.yml`](.github/ISSUE_TEMPLATE/translation.yml) | The contribution form. |
+| [`i18n/owners.yml`](i18n/owners.yml) | Which app owns which keys of `en-US.yml`. |
+| `i18n/fill-state/<code>.yml` | Bookkeeping for the AI fill: which English each translation was made from. Written by the bots. |
+| `i18n/consumers/<app>.yml` | Desktop keys the Android app also reads. Written by the Android sync. |
+| [`scripts/i18n-sync-source.mjs`](scripts/i18n-sync-source.mjs) | What each app's sync runs to update its own keys in `en-US.yml`. |
 
 ## File format
 
@@ -60,6 +64,21 @@ action.back:
 The runtime reads `value` (or the scalar). The extra fields are credit metadata.
 
 When an AI re-translation overwrites a human entry (because the English source changed), the map is preserved with `source: ai` and a `superseded_at` date, so credit isn't lost. The original contributor is notified on the issue thread.
+
+## Two apps, one file
+
+Cider for desktop and Cider for Android share these locale files. Keys starting with `mobile.` belong to the Android app; every other key belongs to desktop ([`i18n/owners.yml`](i18n/owners.yml)). Each app's sync replaces only its own keys in `en-US.yml`, so neither can delete the other's strings, and they can land in either order.
+
+Android's strings use [ICU MessageFormat](https://unicode-org.github.io/icu/userguide/format_parse/messages/), which handles plurals properly:
+
+```yaml
+mobile.library.songCount: "{count, plural, one {# song} other {# songs}}"
+mobile.playlist.addedTo: Added to {playlist}
+```
+
+When translating them, keep every `{argument}` name as it is, translate only the text inside each plural branch, and add the plural forms your language needs (`few`, `many`). A straight apostrophe right before `{` hides the placeholder (`l'{playlist}` prints `{playlist}`), so use the typographic one (`l’{playlist}`). The bot checks all of this.
+
+An Android string with the same English as a desktop string reuses the desktop translation, so a correction to one helps both.
 
 ## Contributing
 

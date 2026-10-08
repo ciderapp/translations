@@ -15,11 +15,24 @@
  *     by: '@username'                    # original contributor (preserved)
  *     issue: 1234                        # original issue number
  *
- * Staleness is detected by diffing locales/en-US.yml against the
- * previous commit's version via `git show`. A key whose English
- * value changed is re-translated for every target locale, overriding
- * `source: human` (the human value is for the old English text).
- * The map shape is preserved with `source: ai` so credit isn't lost.
+ * Staleness is tracked per key and locale in i18n/fill-state/<lang>.yml
+ * (see scripts/lib/fill-state.mjs): each key is stamped with a hash of
+ * the English its value was made from. A key whose English changed since
+ * is re-translated for that locale, overriding `source: human` (the
+ * human value is for the old English text). The map shape is preserved
+ * with `source: ai` so credit isn't lost. A locale without a state file
+ * is seeded from en-US.yml as of the last fill commit, so this needs
+ * full git history (ai-fill.yml checks out with fetch-depth: 0).
+ *
+ * Two owners write en-US.yml (i18n/owners.yml): Citadel (desktop) and
+ * Cider-Android (`mobile.*`). Batches never mix owners, so each gets a
+ * prompt for its platform. Android's strings are ICU MessageFormat: their
+ * batches get ICU rules, and an answer that doesn't parse or changes the
+ * arguments is dropped (the app shows English; the next run retries).
+ * The same check covers desktop keys Android borrows (i18n/consumers/).
+ * A `mobile.*` string with the same English as a desktop string copies
+ * that string's translation instead of asking Claude, and a `mobile.*`
+ * key gone from en-US.yml loses its AI translations.
  *
  * Usage:
  *   ANTHROPIC_API_KEY=<key> node scripts/i18n-translate.mjs [options]
@@ -28,19 +41,28 @@
  *   --source <path>      Source English YAML (default: locales/en-US.yml)
  *   --out <dir>          Output directory (default: locales)
  *   --languages <path>   Languages file (default: locales/languages.yml)
+ *   --owners <path>      Ownership file (default: i18n/owners.yml)
+ *   --state <dir>        Fill-state directory (default: i18n/fill-state)
  *   --lang <codes>       Comma-separated language codes to process
  *                        (default: all from languages.yml, excluding source)
+ *   --list-langs         Print the target language codes, one per line, and exit
+ *   --list-pending       Print only the codes with work to do (no API calls), and exit
+ *   --json               With --list-pending: print one JSON array instead of lines
  *   --model <id>         Anthropic model ID (default: claude-haiku-5-5)
  *   --batch-size <n>     Strings per API request (default: 60)
  *   --force              Re-translate every key, ignoring existing files
  *   --dry-run            Preview what would be translated without calling the API
  */
 
-import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
+import { readFileSync, writeFileSync, existsSync, mkdirSync, appendFileSync } from 'fs';
 import { join, dirname, relative } from 'path';
 import { fileURLToPath, pathToFileURL } from 'url';
-import { execSync } from 'child_process';
 import { parse as parseYaml, stringify as stringifyYaml } from 'yaml';
+import { loadOwners, ownerOf, loadConsumers } from './lib/owners.mjs';
+import { compareIcu, acceptableIcu, pluralCategories, makeIcuCheck } from './lib/icu.mjs';
+import {
+  englishHash, isStale, loadState, saveState, seedState, englishAtLastFill,
+} from './lib/fill-state.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT      = join(__dirname, '..');
@@ -62,7 +84,13 @@ const flag = (f) => args.includes(f);
 const SOURCE_FILE    = arg('--source',    join(ROOT, 'locales/en-US.yml'));
 const OUT_DIR        = arg('--out',       join(ROOT, 'locales'));
 const LANGUAGES_FILE = arg('--languages', join(ROOT, 'locales/languages.yml'));
+const OWNERS_FILE    = arg('--owners',    join(ROOT, 'i18n/owners.yml'));
+const STATE_DIR      = arg('--state',     join(ROOT, 'i18n/fill-state'));
+const CONSUMERS_DIR  = join(dirname(OWNERS_FILE), 'consumers');
 const LANG_OVERRIDE  = arg('--lang',      null);
+const LIST_LANGS     = flag('--list-langs');
+const LIST_PENDING   = flag('--list-pending');
+const JSON_OUT       = flag('--json');
 const ANTHROPIC_MODEL = arg('--model',    DEFAULT_MODEL);
 const BATCH_SIZE     = parseInt(arg('--batch-size', '60'), 10);
 const FORCE          = flag('--force');
@@ -107,10 +135,17 @@ function localFilePath(lang) {
   return join(OUT_DIR, `${lang}.yml`);
 }
 
+// A locale that fails to parse is an error, not an empty file: treating it as
+// empty would mark every key missing, re-translate the lot and then overwrite
+// the file, human contributions included.
 function loadLocalTranslation(lang) {
   const p = localFilePath(lang);
   if (!existsSync(p)) return {};
-  try { return parseYaml(readFileSync(p, 'utf8')) ?? {}; } catch { return {}; }
+  try {
+    return parseYaml(readFileSync(p, 'utf8')) ?? {};
+  } catch (e) {
+    throw new Error(`${relative(ROOT, p)} does not parse; refusing to touch it (${e.message})`);
+  }
 }
 
 function saveTranslation(lang, entries) {
@@ -121,46 +156,8 @@ function saveTranslation(lang, entries) {
   writeFileSync(localFilePath(lang), out, 'utf8');
 }
 
-// ── Source snapshotting (git-backed staleness detection) ─────────────────────
-// changedSourceKeys = keys whose English text differs from the previous
-// en-US.yml state. `sourceStrings` (read in main) is always the working tree;
-// this returns the "before" snapshot to diff it against:
-//   - en-US.yml has uncommitted edits → the latest change is local, so
-//     "before" is HEAD (covers a dev running the extractor, then this script).
-//   - en-US.yml is clean → the latest change IS the HEAD commit (the normal
-//     CI case: en-US.yml arrived already committed), so "before" is HEAD~1.
-// A missing ref or path (first commit, fresh clone, non-git) falls back to {},
-// so every key counts as new.
-function loadPreviousSource() {
-  const relPath = relative(ROOT, SOURCE_FILE).replace(/\\/g, '/');
-
-  const showAtRef = (ref) => {
-    try {
-      const out = execSync(`git show ${ref}:${relPath}`, {
-        cwd: ROOT,
-        encoding: 'utf8',
-        stdio: ['ignore', 'pipe', 'ignore'],
-      });
-      return parseYaml(out) ?? {};
-    } catch {
-      return null;
-    }
-  };
-
-  let workingTreeDirty = false;
-  try {
-    execSync(`git diff --quiet HEAD -- ${relPath}`, { cwd: ROOT, stdio: 'ignore' });
-  } catch {
-    // Non-zero exit: en-US.yml differs from HEAD (or there is no HEAD).
-    workingTreeDirty = true;
-  }
-
-  const before = workingTreeDirty ? showAtRef('HEAD') : showAtRef('HEAD~1');
-  return before ?? {};
-}
-
 // ── Anthropic Messages API ────────────────────────────────────────────────────
-// Plain HTTP (no SDK) to keep dependencies at just `yaml`. Official request shape:
+// Plain HTTP (no SDK) to keep dependencies small. Official request shape:
 // https://platform.claude.com/docs/en/build-with-claude/working-with-messages
 //
 // Haiku 5.5 notes from Anthropic's overview / migration guide:
@@ -181,6 +178,38 @@ Rules:
 - Match Apple Music's tone: clean, professional, and friendly
 - Return ONLY a valid JSON object with identical keys and translated string values
 - Do not include markdown code fences, explanations, or any text outside the JSON object`;
+
+const DESKTOP_INTRO = 'Cider, a premium Apple Music desktop client';
+const ANDROID_INTRO = 'Cider for Android, a premium Apple Music app for phones';
+
+export const ANDROID_RULES = `\
+- These strings appear on a phone: in the app, in its notifications, and on Android Auto car screens. Keep them short`;
+
+/**
+ * Rules for strings formatted with ICU MessageFormat (Cider for Android).
+ * `categories` are the CLDR plural categories the target language uses.
+ */
+export function icuRules(categories) {
+  return `\
+- These strings use ICU MessageFormat. Keep every {argument} name exactly as written; never translate or rename it
+- In {name, plural, ...} and {name, select, ...}, translate only the text inside each branch's braces. Keep the keywords (plural, select, one, few, many, other, =0) untranslated. # stands for the number
+- Give every plural the categories this language uses (${categories.join(', ')}), and always include other
+- Never put a straight apostrophe (') right before { or after }: ICU treats it as a quote. Use the typographic apostrophe (’) in translated text instead`;
+}
+
+/**
+ * The system prompt for one batch. Desktop batches get SYSTEM_PROMPT
+ * unchanged; Android and ICU batches add their rules to it.
+ */
+export function buildSystemPrompt({ platform = 'desktop', icu = false, lang = 'en' } = {}) {
+  let prompt = SYSTEM_PROMPT;
+  if (platform === 'android') prompt = prompt.replace(DESKTOP_INTRO, ANDROID_INTRO);
+  const extra = [];
+  if (platform === 'android') extra.push(ANDROID_RULES);
+  if (icu) extra.push(icuRules(pluralCategories(lang)));
+  if (extra.length === 0) return prompt;
+  return prompt.replace('\n\nRules:\n', `\n\nRules:\n${extra.join('\n')}\n`);
+}
 
 export function buildUserPrompt(strings, targetLang, targetLangName) {
   const sourceJson = JSON.stringify(strings, null, 2);
@@ -232,6 +261,7 @@ export async function callAnthropic(userPrompt, {
   apiKey = ANTHROPIC_API_KEY,
   model = ANTHROPIC_MODEL,
   maxTokens = DEFAULT_MAX_TOKENS,
+  system = SYSTEM_PROMPT,
   fetchImpl = globalThis.fetch,
   sleepFn = sleep,
 } = {}) {
@@ -240,7 +270,7 @@ export async function callAnthropic(userPrompt, {
   const body = buildMessagesRequest({
     model,
     maxTokens,
-    system: SYSTEM_PROMPT,
+    system,
     user: userPrompt,
   });
 
@@ -305,7 +335,129 @@ async function translateBatch(strings, targetLang, targetLangName, apiOptions) {
     log.warn(`  ${missing.length}/${inputKeys.length} keys missing from translation response`);
   }
 
-  return parsed;
+  // Only the keys that were asked for, and only strings: a key the model
+  // invents must never reach the locale file.
+  const out = {};
+  for (const k of inputKeys) if (typeof parsed[k] === 'string') out[k] = parsed[k];
+  return out;
+}
+
+// ── Planning (pure; covered by test/fill-plan.test.mjs) ─────────────────────
+export { makeIcuCheck };
+const entryValue = (e) =>
+  typeof e === 'string' ? e :
+  (e && typeof e === 'object' && typeof e.value === 'string' ? e.value : undefined);
+const isHumanEntry = (e) => !!e && typeof e === 'object' && e.source === 'human';
+
+/**
+ * Decide what one locale needs this run.
+ *
+ * Returns:
+ *   toTranslate  key -> English, for keys that are missing or stale
+ *   changed      keys whose existing value was made from other English
+ *                (feeds mergeTranslations: a human entry there is superseded)
+ *   copies       key -> value copied from a same-English desktop translation
+ *   pruned       keys removed (AI translations of an owner's deleted keys)
+ *   locale       the locale after pruning
+ *   state        the state after pruning
+ */
+export function planLocale({ sourceStrings, existing, state, owners, isIcuKey, force = false }) {
+  const locale = { ...existing };
+  const nextState = { ...state };
+  const pruned = [];
+
+  // Prune: an owner with complete extraction (Android) deleted the key, so
+  // its AI translations go too. Human ones stay, as on desktop, so a renamed
+  // key's community translation can still be recovered by hand.
+  for (const [key, entry] of Object.entries(existing)) {
+    if (Object.hasOwn(sourceStrings, key)) continue;
+    if (!ownerOf(key, owners).prune) continue;
+    if (isHumanEntry(entry)) continue;
+    delete locale[key];
+    pruned.push(key);
+  }
+  for (const key of Object.keys(nextState)) {
+    if (!Object.hasOwn(sourceStrings, key) || !Object.hasOwn(locale, key)) delete nextState[key];
+  }
+
+  const toTranslate = {};
+  const changed = new Set();
+  for (const [key, english] of Object.entries(sourceStrings)) {
+    if (typeof english !== 'string' || !english.trim()) continue;
+    if (force) { toTranslate[key] = english; changed.add(key); continue; }
+    if (!isStale(key, english, locale, nextState)) continue;
+    toTranslate[key] = english;
+    if (Object.hasOwn(locale, key)) changed.add(key);
+  }
+
+  // Reuse: a string whose English matches a string of the owner it reuses
+  // from (Android from desktop) takes that translation, if it's current
+  // (stamped with this English) and, for ICU keys, valid ICU.
+  const copies = {};
+  if (!force) {
+    const byEnglish = new Map();
+    for (const [key, english] of Object.entries(sourceStrings)) {
+      if (!byEnglish.has(english)) byEnglish.set(english, []);
+      byEnglish.get(english).push(key);
+    }
+    for (const [key, english] of Object.entries(toTranslate)) {
+      const from = ownerOf(key, owners).reuseFrom;
+      if (!from) continue;
+      const candidates = (byEnglish.get(english) ?? [])
+        .filter(k => k !== key && ownerOf(k, owners).name === from)
+        .filter(k => Object.hasOwn(locale, k) && !isStale(k, english, locale, nextState))
+        .map(k => ({ key: k, entry: locale[k] }))
+        .filter(c => typeof entryValue(c.entry) === 'string')
+        .filter(c => !isIcuKey(key) || acceptableIcu(english, entryValue(c.entry)))
+        .sort((a, b) => Number(isHumanEntry(b.entry)) - Number(isHumanEntry(a.entry)) || a.key.localeCompare(b.key));
+      if (candidates.length === 0) continue;
+      copies[key] = entryValue(candidates[0].entry);
+      delete toTranslate[key];
+    }
+  }
+
+  return { toTranslate, changed, copies, pruned, locale, state: nextState };
+}
+
+/**
+ * Split model answers into accepted and rejected. An ICU key's answer must
+ * parse and keep exactly the English's arguments: an invented argument would
+ * print literally on the phone, and a dropped one in an AI answer is almost
+ * always an apostrophe that quoted it away. (Humans may drop arguments on
+ * purpose; the issue linter only warns about that.)
+ */
+export function acceptTranslations({ translated, sourceStrings, isIcuKey }) {
+  const accepted = {};
+  const rejected = [];
+  for (const [key, value] of Object.entries(translated)) {
+    if (!isIcuKey(key)) { accepted[key] = value; continue; }
+    const r = compareIcu(sourceStrings[key], value);
+    if (r.error) rejected.push({ key, value, reason: r.error });
+    else if (r.unknown.length) rejected.push({ key, value, reason: `unknown argument(s): ${r.unknown.join(', ')}` });
+    else if (r.dropped.length) rejected.push({ key, value, reason: `dropped argument(s): ${r.dropped.join(', ')}` });
+    else accepted[key] = value;
+  }
+  return { accepted, rejected };
+}
+
+/**
+ * Group keys into batches that share a prompt: same owner platform, ICU or
+ * not. Returns [{ platform, icu, entries: [[key, english], ...] }].
+ */
+export function groupBatches(toTranslate, { owners, isIcuKey, batchSize }) {
+  const groups = new Map();
+  for (const [key, english] of Object.entries(toTranslate)) {
+    const platform = ownerOf(key, owners).platform;
+    const icu = isIcuKey(key);
+    const id = `${platform}|${icu}`;
+    if (!groups.has(id)) groups.set(id, { platform, icu, entries: [] });
+    groups.get(id).entries.push([key, english]);
+  }
+  const batches = [];
+  for (const g of groups.values()) {
+    for (const entries of chunk(g.entries, batchSize)) batches.push({ platform: g.platform, icu: g.icu, entries });
+  }
+  return batches;
 }
 
 // ── Utilities ─────────────────────────────────────────────────────────────────
@@ -352,7 +504,46 @@ export function mergeTranslations(existing, translations, changedSourceKeys) {
 }
 
 // ── Main ──────────────────────────────────────────────────────────────────────
+function targetLanguages(languageRegistry) {
+  if (LANG_OVERRIDE) return LANG_OVERRIDE.split(',').map(l => l.trim()).filter(Boolean);
+  return Object.keys(languageRegistry).filter(
+    code => code !== 'en-US' && code !== 'en' && !languageRegistry[code]?.source,
+  );
+}
+
+function writeStepSummary(lines) {
+  const path = process.env.GITHUB_STEP_SUMMARY;
+  if (!path || lines.length === 0) return;
+  try { appendFileSync(path, lines.join('\n') + '\n', 'utf8'); } catch { /* best-effort */ }
+}
+
 async function main() {
+  if (LIST_LANGS) {
+    for (const code of targetLanguages(loadLanguagesFile())) console.log(code);
+    return;
+  }
+
+  if (LIST_PENDING) {
+    // The locales with work to do, for ai-fill.yml's matrix. No API calls.
+    const sourceStrings = parseYaml(readFileSync(SOURCE_FILE, 'utf8')) ?? {};
+    const owners = loadOwners(OWNERS_FILE);
+    const isIcuKey = makeIcuCheck({ sourceStrings, owners, consumers: loadConsumers(CONSUMERS_DIR) });
+    const pending = [];
+    for (const lang of targetLanguages(loadLanguagesFile())) {
+      const existing = loadLocalTranslation(lang);
+      const state = loadState(STATE_DIR, lang);
+      // A locale whose state has never been written needs a run to seed it.
+      if (state === null && Object.keys(existing).length) { pending.push(lang); continue; }
+      const plan = planLocale({ sourceStrings, existing, state: state ?? {}, owners, isIcuKey, force: FORCE });
+      if (Object.keys(plan.toTranslate).length || Object.keys(plan.copies).length || plan.pruned.length) {
+        pending.push(lang);
+      }
+    }
+    // --json is what the workflow reads: an empty list is exactly "[]".
+    console.log(JSON_OUT ? JSON.stringify(pending) : pending.join('\n'));
+    return;
+  }
+
   console.log(`\n${c.bold}Cider i18n Translator${c.reset} ${c.dim}(Anthropic Claude Haiku 5.5)${c.reset}\n`);
 
   if (!ANTHROPIC_API_KEY && !DRY_RUN) {
@@ -381,38 +572,41 @@ async function main() {
   const sourceCount   = Object.keys(sourceStrings).length;
   log.info(`Loaded ${sourceCount} source strings from ${relative(ROOT, SOURCE_FILE)}`);
 
-  // Diff against the previous committed source to detect changed keys.
-  const previousSource = FORCE ? {} : loadPreviousSource();
-  const changedSourceKeys = new Set();
-  for (const [key, value] of Object.entries(sourceStrings)) {
-    if (previousSource[key] !== value) changedSourceKeys.add(key);
-  }
-  if (FORCE) {
-    log.warn('--force: every key will be re-translated');
-  } else if (changedSourceKeys.size > 0) {
-    log.info(`Changed English keys to re-translate: ${changedSourceKeys.size}`);
-  } else {
-    log.info('No English changes detected. Only filling missing entries.');
-  }
+  const owners    = loadOwners(OWNERS_FILE);
+  const consumers = loadConsumers(CONSUMERS_DIR);
+  const isIcuKey  = makeIcuCheck({ sourceStrings, owners, consumers });
+  log.info(`Owners: ${owners.map(o => o.name).join(', ')}`);
+  if (FORCE) log.warn('--force: every key will be re-translated');
 
   // Resolve target languages from locales/languages.yml.
   const languageRegistry = loadLanguagesFile();
-  let languages;
-  if (LANG_OVERRIDE) {
-    languages = LANG_OVERRIDE.split(',').map(l => l.trim()).filter(Boolean);
-    log.info(`Languages (--lang): ${languages.join(', ')}`);
-  } else {
-    languages = Object.keys(languageRegistry).filter(
-      code => code !== 'en-US' && code !== 'en' && !languageRegistry[code]?.source,
-    );
-    log.success(`Found ${languages.length} target languages in ${relative(ROOT, LANGUAGES_FILE)}`);
-  }
+  const languages = targetLanguages(languageRegistry);
+  if (LANG_OVERRIDE) log.info(`Languages (--lang): ${languages.join(', ')}`);
+  else log.success(`Found ${languages.length} target languages in ${relative(ROOT, LANGUAGES_FILE)}`);
 
   mkdirSync(OUT_DIR, { recursive: true });
 
+  // en-US.yml as of the last fill: what every existing translation was made
+  // from, for seeding a locale that has no state file yet. Only read once,
+  // and only if some locale needs it.
+  let seedSource;
+  const getSeedSource = () => {
+    if (seedSource === undefined) {
+      seedSource = englishAtLastFill(ROOT);
+      if (seedSource === null) {
+        log.warn('No AI fill commit in reach (shallow clone?). Seeding from the current en-US.yml, ' +
+          'so English changes made since the last fill will not be re-translated.');
+        seedSource = sourceStrings;
+      }
+    }
+    return seedSource;
+  };
+
   let totalTranslated = 0;
+  let totalReused     = 0;
   let totalSkipped    = 0;
   let totalErrors     = 0;
+  const rejectedAll   = [];
 
   for (const lang of languages) {
     if (lang === 'en-US' || lang === 'en') continue;
@@ -421,52 +615,51 @@ async function main() {
     console.log(`\n${c.bold}[${lang}]${c.reset} ${c.dim}${name}${c.reset}`);
 
     const existing = loadLocalTranslation(lang);
-    const existingCount = Object.keys(existing).length;
-
-    // Determine which strings need translation:
-    //  - missing entirely, or
-    //  - English source changed since the last commit, or
-    //  - --force
-    const toTranslate = {};
-    for (const [key, value] of Object.entries(sourceStrings)) {
-      if (FORCE) { toTranslate[key] = value; continue; }
-      if (!(key in existing)) { toTranslate[key] = value; continue; }
-      if (changedSourceKeys.has(key)) { toTranslate[key] = value; continue; }
+    let state = loadState(STATE_DIR, lang);
+    if (state === null) {
+      state = Object.keys(existing).length ? seedState(existing, getSeedSource()) : {};
+      if (Object.keys(state).length) log.info(`Seeded fill state for ${Object.keys(state).length} keys`);
     }
 
-    const toTranslateCount = Object.keys(toTranslate).length;
-    log.info(`Existing: ${existingCount}  ·  To translate: ${toTranslateCount}`);
-
-    if (toTranslateCount === 0) {
-      log.success('All strings already translated');
-      totalSkipped++;
-      continue;
-    }
+    const plan = planLocale({ sourceStrings, existing, state, owners, isIcuKey, force: FORCE });
+    const toTranslateCount = Object.keys(plan.toTranslate).length;
+    const reuseCount = Object.keys(plan.copies).length;
+    log.info(`Existing: ${Object.keys(existing).length}  ·  To translate: ${toTranslateCount}` +
+      `  ·  Reused: ${reuseCount}  ·  Pruned: ${plan.pruned.length}`);
 
     if (DRY_RUN) {
-      const preview = Object.entries(toTranslate).slice(0, 5);
+      const preview = Object.entries(plan.toTranslate).slice(0, 5);
       preview.forEach(([k, v]) => log.dim(`${k}: "${v}"`));
       if (toTranslateCount > 5) log.dim(`… and ${toTranslateCount - 5} more`);
       continue;
     }
 
-    // Translate in batches.
-    const batches = chunk(Object.entries(toTranslate), BATCH_SIZE);
-    log.step(`Translating ${toTranslateCount} strings in ${batches.length} batch(es)…`);
+    const translations = { ...plan.copies };
+    totalReused += reuseCount;
 
-    const translations = {};
+    const batches = groupBatches(plan.toTranslate, { owners, isIcuKey, batchSize: BATCH_SIZE });
+    if (batches.length) log.step(`Translating ${toTranslateCount} strings in ${batches.length} batch(es)…`);
+    else if (!reuseCount && !plan.pruned.length) { log.success('All strings already translated'); totalSkipped++; }
+
     let batchErrors = 0;
-
     for (let i = 0; i < batches.length; i++) {
-      const batchObj = Object.fromEntries(batches[i]);
-      process.stdout.write(`  Batch ${i + 1}/${batches.length}… `);
+      const { platform, icu, entries } = batches[i];
+      const batchObj = Object.fromEntries(entries);
+      process.stdout.write(`  Batch ${i + 1}/${batches.length} (${platform}${icu ? ', ICU' : ''})… `);
 
       try {
-        const translated = await translateBatch(batchObj, lang, name);
-        const count = Object.keys(translated).length;
-        Object.assign(translations, translated);
-        console.log(`${c.green}✓${c.reset} (${count} strings)`);
+        const translated = await translateBatch(batchObj, lang, name, {
+          system: buildSystemPrompt({ platform, icu, lang }),
+        });
+        const { accepted, rejected } = acceptTranslations({ translated, sourceStrings, isIcuKey });
+        Object.assign(translations, accepted);
+        const count = Object.keys(accepted).length;
+        console.log(`${c.green}✓${c.reset} (${count} strings${rejected.length ? `, ${rejected.length} rejected` : ''})`);
         totalTranslated += count;
+        for (const r of rejected) {
+          log.dim(`rejected ${r.key}: ${r.reason}`);
+          rejectedAll.push({ lang, ...r });
+        }
       } catch (e) {
         console.log(`${c.red}✗${c.reset}`);
         log.error(`  Batch ${i + 1} failed: ${e.message}`);
@@ -477,9 +670,16 @@ async function main() {
       if (i < batches.length - 1) await sleep(400);
     }
 
-    const merged = mergeTranslations(existing, translations, changedSourceKeys);
-    saveTranslation(lang, merged);
-    log.success(`Saved → locales/${lang}.yml`);
+    // Stamp exactly the keys written this run; a key whose batch failed keeps
+    // its old stamp and stays stale for the next run.
+    const nextState = { ...plan.state };
+    for (const key of Object.keys(translations)) nextState[key] = englishHash(sourceStrings[key]);
+
+    if (Object.keys(translations).length || plan.pruned.length) {
+      saveTranslation(lang, mergeTranslations(plan.locale, translations, plan.changed));
+      log.success(`Saved → locales/${lang}.yml`);
+    }
+    saveState(STATE_DIR, lang, nextState);
     if (batchErrors > 0) log.warn(`${batchErrors} batch(es) failed and were skipped`);
   }
 
@@ -488,10 +688,25 @@ async function main() {
   log.success(`Processed ${languages.length} language(s)`);
   if (!DRY_RUN) {
     if (totalTranslated > 0) log.success(`Translated  ${totalTranslated} string(s)`);
-    if (totalSkipped > 0)   log.dim(`Skipped     ${totalSkipped} language(s) (already complete)`);
-    if (totalErrors > 0)    log.warn(`Errors      ${totalErrors} batch(es) failed`);
+    if (totalReused > 0)     log.success(`Reused      ${totalReused} desktop translation(s)`);
+    if (totalSkipped > 0)    log.dim(`Skipped     ${totalSkipped} language(s) (already complete)`);
+    if (totalErrors > 0)     log.warn(`Errors      ${totalErrors} batch(es) failed`);
+    if (rejectedAll.length)  log.warn(`Rejected    ${rejectedAll.length} ICU answer(s); English shows until a later run succeeds`);
   }
   console.log('');
+
+  if (rejectedAll.length) {
+    const cell = (s) => String(s).replace(/\|/g, '\\|').replace(/\r?\n/g, ' ');
+    writeStepSummary([
+      `### Rejected ICU translations (${rejectedAll.length})`,
+      '',
+      'Dropped this run; the app shows English and the next fill retries them.',
+      '',
+      '| Locale | Key | Reason | Answer |',
+      '|---|---|---|---|',
+      ...rejectedAll.slice(0, 200).map(r => `| ${r.lang} | \`${r.key}\` | ${cell(r.reason)} | ${cell(r.value)} |`),
+    ]);
+  }
 }
 
 // Only run main() when invoked directly as a script. When this file is

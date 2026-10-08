@@ -21,8 +21,16 @@
  */
 
 import { readFileSync, writeFileSync, existsSync } from 'fs';
+import { join, dirname } from 'path';
 import { fileURLToPath, pathToFileURL } from 'url';
 import { parse as parseYaml, stringify as stringifyYaml } from 'yaml';
+import { loadOwners, loadConsumers } from './lib/owners.mjs';
+import { compareIcu, makeIcuCheck } from './lib/icu.mjs';
+import {
+  englishHash, loadState, saveState, seedState, englishAtLastFill, englishAt,
+} from './lib/fill-state.mjs';
+
+const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 
 const REPO         = process.env.GITHUB_REPOSITORY;
 const TOKEN        = process.env.GITHUB_TOKEN;
@@ -33,6 +41,36 @@ const MODE         = process.env.MODE ?? 'validate';
 // 'opened' on the first submission, 'edited' on later body changes, 'labeled'
 // in the apply path. Drives both the comment wording and the upsert behaviour.
 const ISSUE_ACTION = process.env.ISSUE_ACTION ?? 'opened';
+// When the issue was opened (github.event.issue.created_at): the English the
+// contributor was translating is en-US.yml as of then.
+const ISSUE_CREATED_AT = process.env.ISSUE_CREATED_AT ?? '';
+const STATE_DIR = join(ROOT, 'i18n/fill-state');
+
+/**
+ * The fill state after an apply (see scripts/lib/fill-state.mjs).
+ *
+ * A locale with no state yet is seeded first, the way the fill seeds it.
+ * Otherwise the fill would find every other key unstamped and re-translate
+ * the whole locale.
+ *
+ * Applied keys are stamped with their English as of the issue's creation,
+ * which is what the contributor translated. If the English has moved since,
+ * the next fill re-translates the key (keeping the credit) instead of leaving
+ * a translation of old text in place. If it hasn't, the fill leaves the
+ * human translation alone however other locales fare.
+ */
+export function stampApplied({
+  state, existingLocale, keys, sourceStrings,
+  seedSource = () => englishAtLastFill(ROOT) ?? sourceStrings,
+  englishThen = () => englishAt(ROOT, ISSUE_CREATED_AT) ?? sourceStrings,
+}) {
+  const next = state ? { ...state } : seedState(existingLocale, seedSource());
+  const then = englishThen();
+  for (const key of keys) {
+    next[key] = englishHash(Object.hasOwn(then, key) ? then[key] : sourceStrings[key]);
+  }
+  return next;
+}
 
 export const PROPER_NOUNS = [
   'Cider', 'Apple Music', 'AirPlay', 'Dolby Atmos', 'Chromecast',
@@ -130,7 +168,30 @@ export function extractPlaceholders(s) {
   return found;
 }
 
-export function validateTranslations(translations, sourceStrings) {
+// Keys Cider for Android formats with ICU MessageFormat (its own `mobile.*`
+// keys, and desktop keys it borrows). A translation there has to parse, or the
+// phone shows the raw pattern or throws; the regex placeholder check below
+// can't tell.
+function validateIcu(key, english, value, errors, warnings) {
+  const r = compareIcu(english, value);
+  if (r.error) {
+    errors.push(`\`${key}\`: not valid ICU MessageFormat (${r.error}). Keep the braces and plural/select structure of the English: \`${english}\`.`);
+    return;
+  }
+  if (r.unknown.length) {
+    errors.push(`\`${key}\`: uses ${r.unknown.map(a => `\`{${a}}\``).join(', ')}, which the English doesn't have. Argument names must stay exactly as in \`${english}\`.`);
+  }
+  for (const a of r.dropped) {
+    const quoted = new RegExp(`'\\{${a}\\b|\\b${a}\\}'`).test(value);
+    if (quoted) {
+      errors.push(`\`${key}\`: a straight apostrophe next to \`{${a}}\` makes the app print it literally. Use the typographic apostrophe (’) instead, e.g. \`l’{${a}}\`.`);
+    } else {
+      warnings.push(`\`${key}\`: translation drops the \`{${a}}\` placeholder from the English source (\`${english}\`). Fine if intentional (rephrased), worth a double-check otherwise.`);
+    }
+  }
+}
+
+export function validateTranslations(translations, sourceStrings, { isIcuKey = () => false } = {}) {
   const errors = [];
   const warnings = [];
 
@@ -172,15 +233,19 @@ export function validateTranslations(translations, sourceStrings) {
     }
 
     const english = sourceStrings[key];
-    const expected = extractPlaceholders(english);
-    const actual = extractPlaceholders(value);
-    for (const ph of expected) {
-      if (!actual.has(ph)) {
-        // Heads-up, not an error. Translators legitimately drop placeholders
-        // when rephrasing (e.g. Chinese "這首歌" / "this song" replacing
-        // `{songName}`). Hard-failing on this blocks valid contributions, so
-        // surface it for the maintainer to eyeball instead.
-        warnings.push(`\`${key}\`: translation drops the \`${ph}\` placeholder from the English source (\`${english}\`). Fine if intentional (rephrased), worth a double-check otherwise.`);
+    if (isIcuKey(key)) {
+      validateIcu(key, english, value, errors, warnings);
+    } else {
+      const expected = extractPlaceholders(english);
+      const actual = extractPlaceholders(value);
+      for (const ph of expected) {
+        if (!actual.has(ph)) {
+          // Heads-up, not an error. Translators legitimately drop placeholders
+          // when rephrasing (e.g. Chinese "這首歌" / "this song" replacing
+          // `{songName}`). Hard-failing on this blocks valid contributions, so
+          // surface it for the maintainer to eyeball instead.
+          warnings.push(`\`${key}\`: translation drops the \`${ph}\` placeholder from the English source (\`${english}\`). Fine if intentional (rephrased), worth a double-check otherwise.`);
+        }
       }
     }
 
@@ -464,9 +529,12 @@ async function main() {
     errors.push(translations.__error);
   }
 
+  const owners = loadOwners(join(ROOT, 'i18n/owners.yml'));
+  const isIcuKey = makeIcuCheck({ sourceStrings, owners, consumers: loadConsumers(join(ROOT, 'i18n/consumers')) });
+
   let warnings = [];
   if (!errors.length && language && !translations.__error) {
-    const result = validateTranslations(translations, sourceStrings);
+    const result = validateTranslations(translations, sourceStrings, { isIcuKey });
     errors.push(...result.errors);
     warnings = result.warnings;
   }
@@ -530,6 +598,12 @@ async function main() {
     };
   }
   saveLocale(language, updated);
+  saveState(STATE_DIR, language, stampApplied({
+    state: loadState(STATE_DIR, language),
+    existingLocale,
+    keys: Object.keys(translations).filter(k => KEY_RE.test(k)),
+    sourceStrings,
+  }));
 
   await postComment(appliedComment(
     language,
