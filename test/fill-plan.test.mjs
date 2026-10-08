@@ -92,20 +92,32 @@ describe('planLocale', () => {
 
   test("Android's deleted keys lose their AI translations; human ones and desktop orphans stay", () => {
     const plan = planLocale({
-      sourceStrings: { 'action.play': 'Play' },
+      sourceStrings: { 'action.play': 'Play', 'mobile.queue.playNext': 'Play next' },
       existing: {
         'action.play': 'Abspielen',
         'action.legacy': 'Alt',
+        'mobile.queue.playNext': 'Als Nächstes',
         'mobile.old.ai': 'Alt',
         'mobile.old.human': human('Alt'),
       },
-      state: stamp({ 'action.play': 'Play', 'mobile.old.ai': 'Old' }),
+      state: stamp({ 'action.play': 'Play', 'mobile.queue.playNext': 'Play next', 'mobile.old.ai': 'Old' }),
       owners, isIcuKey: () => false,
     });
     assert.deepEqual(plan.pruned, ['mobile.old.ai']);
     assert.ok('action.legacy' in plan.locale);
     assert.ok('mobile.old.human' in plan.locale);
-    assert.deepEqual(Object.keys(plan.state), ['action.play']);
+    assert.deepEqual(Object.keys(plan.state).sort(), ['action.play', 'mobile.queue.playNext']);
+  });
+
+  test("an owner whose keys all vanished at once is not pruned (a wholesale overwrite, not a deletion)", () => {
+    const plan = planLocale({
+      sourceStrings: { 'action.play': 'Play' },
+      existing: { 'action.play': 'Abspielen', 'mobile.queue.playNext': 'Als Nächstes', 'mobile.queue.clear': 'Leeren' },
+      state: stamp({ 'action.play': 'Play', 'mobile.queue.playNext': 'Play next', 'mobile.queue.clear': 'Clear' }),
+      owners, isIcuKey: () => false,
+    });
+    assert.deepEqual(plan.pruned, []);
+    assert.ok('mobile.queue.playNext' in plan.locale);
   });
 
   test('--force re-translates everything and reuses nothing', () => {

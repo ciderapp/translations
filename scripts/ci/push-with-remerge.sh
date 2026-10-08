@@ -12,7 +12,8 @@
 # same time. On a rejected push this fetches main, merges the locale and
 # fill-state maps key by key (scripts/i18n-remerge.mjs), regenerates README
 # and badges, and tries again. Nothing replays a textual diff, so two writers
-# on neighbouring lines of a sorted locale file can't conflict.
+# on neighbouring lines of a sorted locale file can't conflict. Node runs
+# without REMOTE in its environment, since REMOTE carries the push token.
 set -euo pipefail
 
 msg="$1"; shift
@@ -41,11 +42,11 @@ for attempt in $(seq 1 10); do
   git fetch -q "$REMOTE" main
   theirs=$(git rev-parse FETCH_HEAD)
   out=$(mktemp -d)
-  node scripts/i18n-remerge.mjs --base "$base" --ours HEAD --theirs "$theirs" --out "$out"
+  env -u REMOTE node scripts/i18n-remerge.mjs --base "$base" --ours HEAD --theirs "$theirs" --out "$out"
   git reset -q --hard "$theirs"
   cp -R "$out"/. .
   rm -rf "$out"
-  node scripts/update-credits.mjs > /dev/null
+  env -u REMOTE node scripts/update-credits.mjs > /dev/null
   base="$theirs"
   git add -A -- "${paths[@]}"
   if git diff --cached --quiet; then
