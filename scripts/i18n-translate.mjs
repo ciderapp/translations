@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 /**
- * i18n Translator for Cider (powered by Google Gemini)
+ * i18n Translator for Cider (powered by Anthropic Claude)
  *
- * Reads locales/en-US.yml as source and uses Gemini to translate
+ * Reads locales/en-US.yml as source and uses Claude Haiku 5.5 to translate
  * new or changed strings into every language listed in
  * locales/languages.yml. Existing target locale files are loaded
  * first so only the delta is sent to the model.
@@ -22,7 +22,7 @@
  * The map shape is preserved with `source: ai` so credit isn't lost.
  *
  * Usage:
- *   GEMINI_API_KEY=<key> node scripts/i18n-translate.mjs [options]
+ *   ANTHROPIC_API_KEY=<key> node scripts/i18n-translate.mjs [options]
  *
  * Options:
  *   --source <path>      Source English YAML (default: locales/en-US.yml)
@@ -30,7 +30,7 @@
  *   --languages <path>   Languages file (default: locales/languages.yml)
  *   --lang <codes>       Comma-separated language codes to process
  *                        (default: all from languages.yml, excluding source)
- *   --model <id>         Gemini model ID (default: gemini-3.5-flash)
+ *   --model <id>         Anthropic model ID (default: claude-haiku-5-5)
  *   --batch-size <n>     Strings per API request (default: 60)
  *   --force              Re-translate every key, ignoring existing files
  *   --dry-run            Preview what would be translated without calling the API
@@ -38,12 +38,21 @@
 
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
 import { join, dirname, relative } from 'path';
-import { fileURLToPath } from 'url';
+import { fileURLToPath, pathToFileURL } from 'url';
 import { execSync } from 'child_process';
 import { parse as parseYaml, stringify as stringifyYaml } from 'yaml';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT      = join(__dirname, '..');
+
+// Official Claude API model ID for Claude Haiku 5.5.
+// https://platform.claude.com/docs/en/models/haiku-5-5/overview
+export const DEFAULT_MODEL = 'claude-haiku-5-5';
+export const ANTHROPIC_MESSAGES_URL = 'https://api.anthropic.com/v1/messages';
+export const ANTHROPIC_VERSION = '2023-06-01';
+// Required by the Messages API. Sized for a 60-string JSON batch plus
+// adaptive-thinking tokens (they count toward max_tokens on Haiku 5.5).
+export const DEFAULT_MAX_TOKENS = 16384;
 
 // ── CLI args ──────────────────────────────────────────────────────────────────
 const args = process.argv.slice(2);
@@ -54,12 +63,12 @@ const SOURCE_FILE    = arg('--source',    join(ROOT, 'locales/en-US.yml'));
 const OUT_DIR        = arg('--out',       join(ROOT, 'locales'));
 const LANGUAGES_FILE = arg('--languages', join(ROOT, 'locales/languages.yml'));
 const LANG_OVERRIDE  = arg('--lang',      null);
-const GEMINI_MODEL   = arg('--model',     'gemini-3.5-flash');
+const ANTHROPIC_MODEL = arg('--model',    DEFAULT_MODEL);
 const BATCH_SIZE     = parseInt(arg('--batch-size', '60'), 10);
 const FORCE          = flag('--force');
 const DRY_RUN        = flag('--dry-run');
 
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
 
 // ── ANSI colours ──────────────────────────────────────────────────────────────
 const c = {
@@ -150,35 +159,108 @@ function loadPreviousSource() {
   return before ?? {};
 }
 
-// ── Gemini API ────────────────────────────────────────────────────────────────
-async function callGemini(prompt, retries = 3) {
-  if (!GEMINI_API_KEY) throw new Error('GEMINI_API_KEY is not set');
+// ── Anthropic Messages API ────────────────────────────────────────────────────
+// Plain HTTP (no SDK) to keep dependencies at just `yaml`. Official request shape:
+// https://platform.claude.com/docs/en/build-with-claude/working-with-messages
+//
+// Haiku 5.5 notes from Anthropic's overview / migration guide:
+//   - max_tokens is required
+//   - system prompt is the top-level `system` field, not a messages role
+//   - omit temperature / top_p / top_k (non-default values return 400)
+//   - adaptive thinking is on by default; effort:low keeps it cheap for
+//     high-volume JSON translation. Select content blocks by `type`, not index.
+//   - 429 responses may include Retry-After; 529 is overloaded_error.
 
-  // Key goes in a header, NOT the URL query string. Putting it in `?key=...`
-  // would expose it via any error path that includes the URL (Node's fetch
-  // can attach the URL to error.cause), and via secret scanners watching
-  // workflow logs.
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
-  const body = {
-    contents: [{ parts: [{ text: prompt }] }],
-    generationConfig: { temperature: 0.1, candidateCount: 1 },
+export const SYSTEM_PROMPT = `\
+You are a professional translator localizing Cider, a premium Apple Music desktop client.
+
+Rules:
+- Preserve all placeholders exactly: \${variable}, $VARIABLE, {{ variable }}, {{variable}}
+- Do NOT translate proper nouns: Cider, Apple Music, AirPlay, Dolby Atmos, Chromecast, AudioLab
+- Keep strings concise. These are UI labels, buttons, notifications, and menu items
+- Match Apple Music's tone: clean, professional, and friendly
+- Return ONLY a valid JSON object with identical keys and translated string values
+- Do not include markdown code fences, explanations, or any text outside the JSON object`;
+
+export function buildUserPrompt(strings, targetLang, targetLangName) {
+  const sourceJson = JSON.stringify(strings, null, 2);
+  return `Translate the following UI strings from English to ${targetLangName} (locale: ${targetLang}).
+
+English strings:
+${sourceJson}`;
+}
+
+export function buildMessagesRequest({ model, maxTokens, system, user }) {
+  return {
+    model,
+    max_tokens: maxTokens,
+    system,
+    output_config: { effort: 'low' },
+    messages: [{ role: 'user', content: user }],
   };
+}
+
+export function extractTextFromMessage(data) {
+  const blocks = Array.isArray(data?.content) ? data.content : [];
+  return blocks
+    .filter((block) => block?.type === 'text' && typeof block.text === 'string')
+    .map((block) => block.text)
+    .join('');
+}
+
+export function parseTranslationJson(response) {
+  const jsonMatch = response.match(/\{[\s\S]*\}/);
+  if (!jsonMatch) throw new Error('No JSON object found in Claude response');
+  return JSON.parse(jsonMatch[0]);
+}
+
+export function retryWaitMs(res, attempt) {
+  const header = res?.headers?.get?.('retry-after');
+  if (header) {
+    const seconds = Number(header);
+    if (Number.isFinite(seconds) && seconds >= 0) {
+      return Math.max(seconds * 1000, 1000);
+    }
+    const date = Date.parse(header);
+    if (!Number.isNaN(date)) return Math.max(date - Date.now(), 1000);
+  }
+  return 2000 * attempt;
+}
+
+export async function callAnthropic(userPrompt, {
+  retries = 3,
+  apiKey = ANTHROPIC_API_KEY,
+  model = ANTHROPIC_MODEL,
+  maxTokens = DEFAULT_MAX_TOKENS,
+  fetchImpl = globalThis.fetch,
+  sleepFn = sleep,
+} = {}) {
+  if (!apiKey) throw new Error('ANTHROPIC_API_KEY is not set');
+
+  const body = buildMessagesRequest({
+    model,
+    maxTokens,
+    system: SYSTEM_PROMPT,
+    user: userPrompt,
+  });
 
   for (let attempt = 1; attempt <= retries; attempt++) {
     try {
-      const res = await fetch(url, {
+      const res = await fetchImpl(ANTHROPIC_MESSAGES_URL, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
-          'x-goog-api-key': GEMINI_API_KEY,
+          'content-type': 'application/json',
+          'x-api-key': apiKey,
+          'anthropic-version': ANTHROPIC_VERSION,
         },
         body: JSON.stringify(body),
       });
 
-      if (res.status === 429) {
-        const wait = 2000 * attempt;
-        log.warn(`Rate limited; waiting ${wait / 1000}s before retry ${attempt}/${retries}`);
-        await sleep(wait);
+      // 429 rate_limit_error (honor Retry-After) and 529 overloaded_error.
+      if (res.status === 429 || res.status === 529) {
+        const wait = retryWaitMs(res, attempt);
+        log.warn(`Rate limited (${res.status}); waiting ${wait / 1000}s before retry ${attempt}/${retries}`);
+        await sleepFn(wait);
         continue;
       }
 
@@ -188,45 +270,33 @@ async function callGemini(prompt, retries = 3) {
       }
 
       const data = await res.json();
-      const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
-      if (!text) throw new Error('Empty response from Gemini');
+      if (data.stop_reason === 'refusal') {
+        throw new Error('Claude refused to translate this batch');
+      }
+      if (data.stop_reason === 'max_tokens') {
+        throw new Error('Claude response truncated (max_tokens reached)');
+      }
+
+      const text = extractTextFromMessage(data);
+      if (!text) throw new Error('Empty response from Claude');
       return text;
     } catch (e) {
       if (attempt < retries) {
         log.warn(`  Attempt ${attempt} failed: ${e.message}; retrying…`);
-        await sleep(1000 * attempt);
+        await sleepFn(1000 * attempt);
       } else {
         throw e;
       }
     }
   }
+
+  throw new Error(`Rate limited after ${retries} retries`);
 }
 
-async function translateBatch(strings, targetLang, targetLangName) {
-  const sourceJson = JSON.stringify(strings, null, 2);
-
-  const prompt = `\
-You are a professional translator localizing Cider, a premium Apple Music desktop client.
-Translate the following UI strings from English to ${targetLangName} (locale: ${targetLang}).
-
-Rules:
-- Preserve all placeholders exactly: \${variable}, $VARIABLE, {{ variable }}, {{variable}}
-- Do NOT translate proper nouns: Cider, Apple Music, AirPlay, Dolby Atmos, Chromecast, AudioLab
-- Keep strings concise. These are UI labels, buttons, notifications, and menu items
-- Match Apple Music's tone: clean, professional, and friendly
-- Return ONLY a valid JSON object with identical keys and translated string values
-- Do not include markdown code fences, explanations, or any text outside the JSON object
-
-English strings:
-${sourceJson}`;
-
-  const response = await callGemini(prompt);
-
-  // Strip potential markdown fences
-  const jsonMatch = response.match(/\{[\s\S]*\}/);
-  if (!jsonMatch) throw new Error('No JSON object found in Gemini response');
-
-  const parsed = JSON.parse(jsonMatch[0]);
+async function translateBatch(strings, targetLang, targetLangName, apiOptions) {
+  const userPrompt = buildUserPrompt(strings, targetLang, targetLangName);
+  const response = await callAnthropic(userPrompt, apiOptions);
+  const parsed = parseTranslationJson(response);
 
   // Sanity check: warn if more than 10% of keys are missing
   const inputKeys  = Object.keys(strings);
@@ -251,7 +321,7 @@ function chunk(entries, size) {
 // Apply translated strings into the existing locale map, preserving the
 // map shape (and original attribution) when a human-contributed entry is
 // being overwritten because its English source changed.
-function mergeTranslations(existing, translations, changedSourceKeys) {
+export function mergeTranslations(existing, translations, changedSourceKeys) {
   const today = new Date().toISOString().slice(0, 10);
   const out = { ...existing };
 
@@ -283,19 +353,19 @@ function mergeTranslations(existing, translations, changedSourceKeys) {
 
 // ── Main ──────────────────────────────────────────────────────────────────────
 async function main() {
-  console.log(`\n${c.bold}Cider i18n Translator${c.reset} ${c.dim}(Google Gemini)${c.reset}\n`);
+  console.log(`\n${c.bold}Cider i18n Translator${c.reset} ${c.dim}(Anthropic Claude Haiku 5.5)${c.reset}\n`);
 
-  if (!GEMINI_API_KEY && !DRY_RUN) {
-    log.error('GEMINI_API_KEY environment variable is required');
-    log.dim('Set it with:  export GEMINI_API_KEY=your_key_here');
+  if (!ANTHROPIC_API_KEY && !DRY_RUN) {
+    log.error('ANTHROPIC_API_KEY environment variable is required');
+    log.dim('Set it with:  export ANTHROPIC_API_KEY=your_key_here');
     process.exit(1);
   }
 
   // Belt-and-braces: tell GitHub Actions to redact the key from any log
   // output. The runner replaces every occurrence with ***. No-op when run
   // locally (the magic string is just text outside Actions).
-  if (process.env.GITHUB_ACTIONS && GEMINI_API_KEY) {
-    console.log(`::add-mask::${GEMINI_API_KEY}`);
+  if (process.env.GITHUB_ACTIONS && ANTHROPIC_API_KEY) {
+    console.log(`::add-mask::${ANTHROPIC_API_KEY}`);
   }
 
   if (DRY_RUN) log.warn('DRY RUN: no files will be written, no API calls will be made');
@@ -424,7 +494,14 @@ async function main() {
   console.log('');
 }
 
-main().catch(e => {
-  log.error(e.message);
-  process.exit(1);
-});
+// Only run main() when invoked directly as a script. When this file is
+// imported (e.g. by the test suite), the runtime side stays dormant.
+const isEntrypoint = process.argv[1]
+  && import.meta.url === pathToFileURL(process.argv[1]).href;
+
+if (isEntrypoint) {
+  main().catch(e => {
+    log.error(e.message);
+    process.exit(1);
+  });
+}

@@ -2,27 +2,28 @@
 # AI translation fill
 #
 # Purpose: When locales/en-US.yml changes (because Citadel just synced it),
-#          run Gemini to fill new and changed strings into every other locale.
+#          run Claude Haiku 5.5 to fill new and changed strings into every
+#          other locale.
 #
 # Token handling, learned the expensive way:
-#   - The Gemini pass can run well over an hour. A GitHub App installation
+#   - The Claude pass can run well over an hour. A GitHub App installation
 #     token only lives 1 hour, so it is minted AFTER translation, immediately
-#     before the push — never at job start.
+#     before the push, never at job start.
 #   - The push authenticates with that token explicitly in the remote URL. It
 #     does not rely on actions/checkout credential persistence (checkout runs
 #     with persist-credentials: false).
 #   - Pushing via the App token (not GITHUB_TOKEN) is also what lets the push
 #     trigger notify-citadel.yml; GITHUB_TOKEN pushes do not trigger workflows.
 #   - The translated files are uploaded as an artifact before the push, so a
-#     run's Gemini spend is recoverable even if the push somehow fails.
+#     run's Anthropic spend is recoverable even if the push somehow fails.
 #
 # No recursion: this workflow triggers only on en-US.yml / languages.yml, and
 # the files it commits are the *other* locales.
 #
 # Required secrets (org-level):
-#   GEMINI_API_KEY             — Google Gemini API key with generateContent access
-#   CIDER_I18N_BOT_APP_ID      — Saki-Yuzishima App identifier
-#   CIDER_I18N_BOT_PRIVATE_KEY — PEM contents of the App's private key
+#   ANTHROPIC_API_KEY          - Anthropic API key with Messages API access
+#   CIDER_I18N_BOT_APP_ID      - Saki-Yuzishima App identifier
+#   CIDER_I18N_BOT_PRIVATE_KEY - PEM contents of the App's private key
 #############################################################################################
 
 name: AI fill
@@ -53,13 +54,13 @@ concurrency:
 
 jobs:
   fill:
-    name: Translate delta with Gemini
+    name: Translate delta with Claude Haiku 5.5
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
           # fetch-depth 2 lets the translator inspect the prior en-US.yml.
-          # persist-credentials: false — the push at the end authenticates
+          # persist-credentials: false: the push at the end authenticates
           # explicitly with a freshly-minted App token, not a stored one.
           fetch-depth: 2
           persist-credentials: false
@@ -72,7 +73,7 @@ jobs:
 
       - name: Translate delta
         env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           FORCE_FLAG: ${{ inputs.force }}
           LANG_FILTER: ${{ inputs.lang }}
         run: |
@@ -83,7 +84,7 @@ jobs:
           node scripts/i18n-translate.mjs "${args[@]}"
 
       # Recovery net: upload the translated files before the push is attempted.
-      # If the push fails for any reason, the run's Gemini output is still
+      # If the push fails for any reason, the run's Claude output is still
       # downloadable from the run's Artifacts, so the spend is never lost.
       - name: Upload translated locales (recovery artifact)
         if: always()
