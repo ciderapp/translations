@@ -101,6 +101,7 @@ Every entry below came from a community member through a [translation issue](../
 | [@nekocats](https://github.com/nekocats) | Estonian | 42 |
 | [@MP-K](https://github.com/MP-K) | Korean | 27 |
 | [@ramuuflor](https://github.com/ramuuflor) | Japanese | 22 |
+| [@sh-ayu](https://github.com/sh-ayu) | Japanese | 18 |
 | [@itsmeares](https://github.com/itsmeares) | Turkish | 16 |
 | [@emirasaf](https://github.com/emirasaf) | Turkish | 11 |
 | [@felipecadal](https://github.com/felipecadal) | Portuguese (Brazil) | 1 |
