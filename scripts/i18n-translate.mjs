@@ -75,6 +75,10 @@ export const ANTHROPIC_VERSION = '2023-06-01';
 // Required by the Messages API. Sized for a 60-string JSON batch plus
 // adaptive-thinking tokens (they count toward max_tokens on Haiku 5.5).
 export const DEFAULT_MAX_TOKENS = 16384;
+// Official Claude API minimum for Haiku 5.5 prompt caching (not Haiku 4.5's 4096).
+// https://platform.claude.com/docs/en/build-with-claude/prompt-caching#cache-limitations
+export const HAIKU_MIN_CACHE_TOKENS = 512;
+export const CACHE_CONTROL = { type: 'ephemeral', ttl: '5m' };
 
 // ── CLI args ──────────────────────────────────────────────────────────────────
 const args = process.argv.slice(2);
@@ -179,6 +183,78 @@ Rules:
 - Return ONLY a valid JSON object with identical keys and translated string values
 - Do not include markdown code fences, explanations, or any text outside the JSON object`;
 
+// Shared across every batch (desktop/Android, every locale). Cached with an
+// explicit breakpoint so later requests read it. Per-batch English JSON stays
+// in the user message and is never marked cache_control.
+//
+// The raw SYSTEM_PROMPT is well under 512 tokens. Anthropic will silently
+// skip caching a shorter prefix, so this restates the standing rules in
+// enough detail to clear the Haiku 5.5 floor. It does not add new rules.
+export const SHARED_CACHE_PREFIX = `\
+The following instructions are the stable prefix for every Cider UI translation batch. They are identical on every request. Only the user message (the English strings for this batch) changes.
+
+Placeholder preservation. Copy every placeholder into the translation with the same spelling, braces, dollar signs, and spacing. Recognised forms include \${variable}, $VARIABLE, {{ variable }}, and {{variable}}. Do not translate the name inside a placeholder. Do not add placeholders the English did not have. Do not drop placeholders the English did have. If the English has two placeholders, the translation has those same two, written the same way.
+
+Proper nouns stay in English exactly as written: Cider, Apple Music, AirPlay, Dolby Atmos, Chromecast, AudioLab. Do not localize those product names, even when the rest of the sentence is translated. Do not invent extra brand names.
+
+Tone. These are UI labels, buttons, notifications, and menu items. Keep them short. Match Apple Music: clean, professional, and friendly. Do not add marketing copy, emoji, or explanations. Do not wrap the answer in prose.
+
+Output format. Return only a JSON object. Keys must match the input keys exactly. Values are the translated strings. No markdown fences, no preamble, no trailing commentary. If a value needs a quote or a line break, escape it as JSON requires. Do not invent keys. Do not omit keys that were in the input.
+
+Examples of correct behaviour (do not echo these examples in the output; they only illustrate the rules above):
+- English {"action.apply":"Apply"} becomes Spanish {"action.apply":"Aplicar"}
+- English {"status.loading":"Loading \${count} tracks"} keeps \${count} unchanged
+- English {"cast.airplay":"Use AirPlay"} keeps the word AirPlay untranslated
+- English {"action.addToLastPlaylist":"Add to Last Playlist, $PLAYLIST"} keeps $PLAYLIST
+- English {"hint":"Tap {{ variable }} to continue"} keeps {{ variable }} including the spaces
+- English {"hint2":"Open {{variable}}"} keeps {{variable}} with no added spaces
+- A response that adds a sentence of explanation around the JSON is wrong
+- A response wrapped in triple backticks is wrong
+- A response that translates Chromecast as a local word is wrong
+
+This prefix exists so the request meets Claude Haiku 5.5's 512-token cache minimum on the Claude API. Cache writes use a 5-minute ephemeral TTL and refresh on each hit, which covers sequential batches in one fill job. Per-batch strings are not part of this prefix and must not be cached.
+
+Rules (same as every batch):
+- Preserve all placeholders exactly: \${variable}, $VARIABLE, {{ variable }}, {{variable}}
+- Do NOT translate proper nouns: Cider, Apple Music, AirPlay, Dolby Atmos, Chromecast, AudioLab
+- Keep strings concise. These are UI labels, buttons, notifications, and menu items
+- Match Apple Music's tone: clean, professional, and friendly
+- Return ONLY a valid JSON object with identical keys and translated string values
+- Do not include markdown code fences, explanations, or any text outside the JSON object`;
+
+/** Lower-bound token estimate (older ~4 chars/token). Haiku 5.5 counts more. */
+export function estimateTokensLowerBound(text) {
+  return Math.floor(String(text).length / 4);
+}
+
+export function extractCacheUsage(data) {
+  const usage = data?.usage ?? {};
+  return {
+    cacheCreation: Number(usage.cache_creation_input_tokens) || 0,
+    cacheRead: Number(usage.cache_read_input_tokens) || 0,
+    input: Number(usage.input_tokens) || 0,
+  };
+}
+
+export function emptyCacheTotals() {
+  return { created: 0, read: 0, requests: 0 };
+}
+
+export function addCacheUsage(totals, usage) {
+  totals.created += usage.cacheCreation;
+  totals.read += usage.cacheRead;
+  totals.requests += 1;
+  return totals;
+}
+
+export function formatCacheUsage(usage) {
+  return `cache write ${usage.cacheCreation} · cache read ${usage.cacheRead}`;
+}
+
+export function formatCacheTotals(totals) {
+  return `Prompt cache totals: write ${totals.created} tokens, read ${totals.read} tokens, ${totals.requests} request(s)`;
+}
+
 const DESKTOP_INTRO = 'Cider, a premium Apple Music desktop client';
 const ANDROID_INTRO = 'Cider for Android, a premium Apple Music app for phones';
 
@@ -219,11 +295,32 @@ English strings:
 ${sourceJson}`;
 }
 
+/**
+ * Explicit cache breakpoint on the shared prefix only.
+ * Automatic top-level cache_control would mark the last block (the
+ * per-batch user message) and never hit. See Anthropic's "Common mistake:
+ * Breakpoint on content that changes every request".
+ */
+export function buildSystemBlocks(systemPrompt) {
+  return [
+    {
+      type: 'text',
+      text: SHARED_CACHE_PREFIX,
+      cache_control: { ...CACHE_CONTROL },
+    },
+    {
+      type: 'text',
+      text: systemPrompt,
+    },
+  ];
+}
+
 export function buildMessagesRequest({ model, maxTokens, system, user }) {
+  const systemBlocks = Array.isArray(system) ? system : buildSystemBlocks(system);
   return {
     model,
     max_tokens: maxTokens,
-    system,
+    system: systemBlocks,
     output_config: { effort: 'low' },
     messages: [{ role: 'user', content: user }],
   };
@@ -264,6 +361,7 @@ export async function callAnthropic(userPrompt, {
   system = SYSTEM_PROMPT,
   fetchImpl = globalThis.fetch,
   sleepFn = sleep,
+  onUsage,
 } = {}) {
   if (!apiKey) throw new Error('ANTHROPIC_API_KEY is not set');
 
@@ -309,6 +407,8 @@ export async function callAnthropic(userPrompt, {
 
       const text = extractTextFromMessage(data);
       if (!text) throw new Error('Empty response from Claude');
+      const usage = extractCacheUsage(data);
+      if (typeof onUsage === 'function') onUsage(usage);
       return text;
     } catch (e) {
       if (attempt < retries) {
@@ -612,6 +712,12 @@ async function main() {
   let totalSkipped    = 0;
   let totalErrors     = 0;
   const rejectedAll   = [];
+  const cacheTotals   = emptyCacheTotals();
+  const cacheEst      = estimateTokensLowerBound(SHARED_CACHE_PREFIX);
+  log.info(`Prompt cache: shared rules prefix, est. ≥${cacheEst} tokens (Haiku 5.5 minimum is ${HAIKU_MIN_CACHE_TOKENS}). Per-batch strings are not cached.`);
+  if (cacheEst < HAIKU_MIN_CACHE_TOKENS) {
+    log.warn(`Shared prefix is below ${HAIKU_MIN_CACHE_TOKENS} tokens; Anthropic will process it without caching and return 0 for both cache usage fields.`);
+  }
 
   for (const lang of languages) {
     if (lang === 'en-US' || lang === 'en') continue;
@@ -653,13 +759,19 @@ async function main() {
       process.stdout.write(`  Batch ${i + 1}/${batches.length} (${platform}${icu ? ', ICU' : ''})… `);
 
       try {
+        let usage;
         const translated = await translateBatch(batchObj, lang, name, {
           system: buildSystemPrompt({ platform, icu, lang }),
+          onUsage: (u) => { usage = u; },
         });
         const { accepted, rejected } = acceptTranslations({ translated, sourceStrings, isIcuKey });
         Object.assign(translations, accepted);
         const count = Object.keys(accepted).length;
         console.log(`${c.green}✓${c.reset} (${count} strings${rejected.length ? `, ${rejected.length} rejected` : ''})`);
+        if (usage) {
+          addCacheUsage(cacheTotals, usage);
+          log.dim(`${formatCacheUsage(usage)}  (run write ${cacheTotals.created} / read ${cacheTotals.read})`);
+        }
         totalTranslated += count;
         for (const r of rejected) {
           log.dim(`rejected ${r.key}: ${r.reason}`);
@@ -697,8 +809,24 @@ async function main() {
     if (totalSkipped > 0)    log.dim(`Skipped     ${totalSkipped} language(s) (already complete)`);
     if (totalErrors > 0)     log.warn(`Errors      ${totalErrors} batch(es) failed`);
     if (rejectedAll.length)  log.warn(`Rejected    ${rejectedAll.length} ICU answer(s); English shows until a later run succeeds`);
+    if (cacheTotals.requests > 0) {
+      log.info(formatCacheTotals(cacheTotals));
+      if (cacheTotals.created === 0 && cacheTotals.read === 0) {
+        log.warn('Prompt cache usage was 0/0. The prefix was probably below the 512-token Haiku 5.5 minimum.');
+      }
+    }
   }
   console.log('');
+
+  if (cacheTotals.requests > 0) {
+    writeStepSummary([
+      `### Prompt cache`,
+      '',
+      formatCacheTotals(cacheTotals),
+      '',
+      `Shared prefix (rules and glossary) is marked with cache_control ttl=5m. Per-batch English strings are not cached.`,
+    ]);
+  }
 
   if (rejectedAll.length) {
     const cell = (s) => String(s).replace(/\|/g, '\\|').replace(/\r?\n/g, ' ');
