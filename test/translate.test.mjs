@@ -13,14 +13,24 @@ import {
   ANTHROPIC_MESSAGES_URL,
   ANTHROPIC_VERSION,
   DEFAULT_MAX_TOKENS,
+  HAIKU_MIN_CACHE_TOKENS,
+  CACHE_CONTROL,
   SYSTEM_PROMPT,
+  SHARED_CACHE_PREFIX,
   buildUserPrompt,
   buildMessagesRequest,
+  buildSystemBlocks,
   extractTextFromMessage,
   parseTranslationJson,
   retryWaitMs,
   callAnthropic,
   mergeTranslations,
+  estimateTokensLowerBound,
+  extractCacheUsage,
+  emptyCacheTotals,
+  addCacheUsage,
+  formatCacheUsage,
+  formatCacheTotals,
 } from '../scripts/i18n-translate.mjs';
 
 function jsonResponse(body, { status = 200, headers = {} } = {}) {
@@ -44,7 +54,7 @@ describe('request shape', () => {
     });
     assert.equal(req.model, 'claude-haiku-5-5');
     assert.equal(req.max_tokens, DEFAULT_MAX_TOKENS);
-    assert.equal(req.system, SYSTEM_PROMPT);
+    assert.deepEqual(req.system, buildSystemBlocks(SYSTEM_PROMPT));
     assert.deepEqual(req.messages, [{ role: 'user', content: 'hello' }]);
     assert.equal(req.output_config.effort, 'low');
     assert.equal('temperature' in req, false);
@@ -159,7 +169,7 @@ describe('callAnthropic', () => {
     assert.equal(body.model, DEFAULT_MODEL);
     assert.equal(typeof body.max_tokens, 'number');
     assert.ok(body.max_tokens > 0);
-    assert.equal(typeof body.system, 'string');
+    assert.equal(Array.isArray(body.system), true);
     assert.equal('temperature' in body, false);
   });
 
@@ -238,6 +248,88 @@ describe('callAnthropic', () => {
       () => callAnthropic('user', { apiKey: 'sk-ant-test', fetchImpl, sleepFn, retries: 1 }),
       /truncated/,
     );
+  });
+});
+
+describe('prompt cache', () => {
+  test('Haiku 5.5 minimum cacheable length is 512 tokens', () => {
+    assert.equal(HAIKU_MIN_CACHE_TOKENS, 512);
+  });
+
+  test('shared prefix meets the Haiku 5.5 minimum (lower-bound estimate)', () => {
+    const est = estimateTokensLowerBound(SHARED_CACHE_PREFIX);
+    assert.ok(est >= HAIKU_MIN_CACHE_TOKENS, `estimated ${est} tokens, need ${HAIKU_MIN_CACHE_TOKENS}`);
+  });
+
+  test('places cache_control on the shared system block, not the user message', () => {
+    const req = buildMessagesRequest({
+      model: DEFAULT_MODEL,
+      maxTokens: DEFAULT_MAX_TOKENS,
+      system: SYSTEM_PROMPT,
+      user: '{"action.apply":"Apply"}',
+    });
+    assert.equal(req.system[0].type, 'text');
+    assert.equal(req.system[0].text, SHARED_CACHE_PREFIX);
+    assert.deepEqual(req.system[0].cache_control, CACHE_CONTROL);
+    assert.equal(CACHE_CONTROL.type, 'ephemeral');
+    assert.equal(CACHE_CONTROL.ttl, '5m');
+    assert.equal(req.system[1].text, SYSTEM_PROMPT);
+    assert.equal('cache_control' in req.system[1], false);
+    assert.equal(req.messages[0].role, 'user');
+    assert.equal(req.messages[0].content, '{"action.apply":"Apply"}');
+    assert.equal('cache_control' in req.messages[0], false);
+    assert.equal('cache_control' in req, false);
+  });
+
+  test('keeps an explicit system array as-is', () => {
+    const system = buildSystemBlocks('variant');
+    const req = buildMessagesRequest({
+      model: DEFAULT_MODEL,
+      maxTokens: 16,
+      system,
+      user: 'x',
+    });
+    assert.equal(req.system, system);
+  });
+
+  test('extractCacheUsage reads cache_creation_input_tokens and cache_read_input_tokens', () => {
+    assert.deepEqual(extractCacheUsage({
+      usage: {
+        input_tokens: 12,
+        cache_creation_input_tokens: 640,
+        cache_read_input_tokens: 80,
+      },
+    }), { cacheCreation: 640, cacheRead: 80, input: 12 });
+    assert.deepEqual(extractCacheUsage({}), { cacheCreation: 0, cacheRead: 0, input: 0 });
+  });
+
+  test('usage helpers format per-request and run totals', () => {
+    const totals = emptyCacheTotals();
+    addCacheUsage(totals, { cacheCreation: 640, cacheRead: 0, input: 10 });
+    addCacheUsage(totals, { cacheCreation: 0, cacheRead: 640, input: 10 });
+    assert.equal(formatCacheUsage({ cacheCreation: 0, cacheRead: 640 }), 'cache write 0 · cache read 640');
+    assert.equal(formatCacheTotals(totals), 'Prompt cache totals: write 640 tokens, read 640 tokens, 2 request(s)');
+  });
+
+  test('callAnthropic reports usage through onUsage', async () => {
+    const seen = [];
+    const fetchImpl = async () => jsonResponse({
+      content: [{ type: 'text', text: '{"k":"v"}' }],
+      stop_reason: 'end_turn',
+      usage: {
+        input_tokens: 9,
+        cache_creation_input_tokens: 700,
+        cache_read_input_tokens: 0,
+      },
+    });
+    const text = await callAnthropic('user', {
+      apiKey: 'sk-ant-test',
+      fetchImpl,
+      sleepFn: async () => {},
+      onUsage: (u) => seen.push(u),
+    });
+    assert.equal(text, '{"k":"v"}');
+    assert.deepEqual(seen, [{ cacheCreation: 700, cacheRead: 0, input: 9 }]);
   });
 });
 

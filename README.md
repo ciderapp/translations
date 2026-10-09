@@ -28,7 +28,7 @@ This repository holds every locale Cider ships, on desktop and on Android. **The
 Three things keep this repo healthy:
 
 1. **The apps mirror their English here.** Whenever Cider's desktop code (Citadel) or Cider for Android adds or changes a translatable string, its sync workflow updates its own keys in `en-US.yml` (see [Two apps, one file](#two-apps-one-file)).
-2. **AI fills new strings.** When `en-US.yml` changes, [`.github/workflows/ai-fill.yml`](.github/workflows/ai-fill.yml) runs Anthropic Claude (specifically Haiku 5.5, model id `claude-haiku-5-5`) against the delta, one job per language, and commits each language as soon as it's done.
+2. **AI fills new strings.** When `en-US.yml` changes, [`.github/workflows/ai-fill.yml`](.github/workflows/ai-fill.yml) runs Anthropic Claude (specifically Haiku 5.5, model id `claude-haiku-5-5`) against the delta, one job per language, and commits each language as soon as it's done. The shared system prompt (rules and glossary) is sent with Anthropic prompt caching so later batches in the same job read that prefix from cache. Per-batch English strings are not cached. Each request logs `cache_creation_input_tokens` and `cache_read_input_tokens`.
 3. **Humans correct what the AI gets wrong.** Open a [translation issue](../../issues/new?template=translation.yml) with the corrections, a maintainer labels it `approved`, and a bot applies the change with full credit attached.
 
 ## Where to look
@@ -38,7 +38,7 @@ Three things keep this repo healthy:
 | [`locales/en-US.yml`](locales/en-US.yml) | English source. **Read-only here**; edits get overwritten by the app syncs. |
 | `locales/<code>.yml` | One file per target language. This is where translations live. |
 | [`locales/languages.yml`](locales/languages.yml) | Locked list of supported languages with display names. |
-| [`scripts/i18n-translate.mjs`](scripts/i18n-translate.mjs) | The AI translator (Anthropic Claude Haiku 5.5). Runs in CI; you generally won't run it locally. Needs `ANTHROPIC_API_KEY`. |
+| [`scripts/i18n-translate.mjs`](scripts/i18n-translate.mjs) | The AI translator (Anthropic Claude Haiku 5.5, with prompt caching on the shared rules prefix). Runs in CI; you generally won't run it locally. Needs `ANTHROPIC_API_KEY`. |
 | [`.github/ISSUE_TEMPLATE/translation.yml`](.github/ISSUE_TEMPLATE/translation.yml) | The contribution form. |
 | [`i18n/owners.yml`](i18n/owners.yml) | Which app owns which keys of `en-US.yml`. |
 | `i18n/fill-state/<code>.yml` | Bookkeeping for the AI fill: which English each translation was made from. Written by the bots. |

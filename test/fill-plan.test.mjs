@@ -259,8 +259,13 @@ describe('end to end (mocked Anthropic)', () => {
 
       const prompts = readFileSync(log, 'utf8').trim().split('\n').map(l => JSON.parse(l));
       assert.equal(prompts.length, 1);   // one Android ICU batch; the copy needed no call
-      assert.match(prompts[0], /Cider for Android/);
-      assert.match(prompts[0], /ICU MessageFormat/);
+      const systemText = Array.isArray(prompts[0])
+        ? prompts[0].map(b => b.text).join('\n')
+        : prompts[0];
+      assert.match(systemText, /Cider for Android/);
+      assert.match(systemText, /ICU MessageFormat/);
+      assert.equal(prompts[0][0].cache_control.type, 'ephemeral');
+      assert.equal('cache_control' in prompts[0][1], false);
     } finally {
       rmSync(dir, { recursive: true, force: true });
     }
