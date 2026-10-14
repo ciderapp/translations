@@ -76,6 +76,8 @@ action.addToQueue.success:
   by: "@ramuuflor"
   issue: 20
   superseded_at: 2026-07-08
+action.appleMusic.enterUrl: Apple Music URLを入力
+action.appleMusic.invalidUrl: 有効なApple Music URLではありません
 action.appleMusic.yourProfile: プロフィール
 action.apply: 適用
 action.approve: 承認
@@ -167,6 +169,7 @@ action.later: 後で
 action.love: ラブ
 action.manage: 管理
 action.minimize: 最小化
+action.minimizeVideo: ビデオを最小化
 action.moveToFolder: フォルダに移動
 action.moveToFolder.here: 「{{name}}」をここに移動
 action.moveToTop: 一番上に移動
@@ -178,6 +181,7 @@ action.openArtworkInBrowser: ブラウザでアートワークを開く
 action.openInNewTab: 新しいタブで開く
 action.openNewTab: 新しいタブ
 action.openUrl: URLを開く
+action.openVideo: ビデオを開く
 action.paste: 貼り付け
 action.pause: 一時停止
 action.pickTime: 時間を選択
@@ -326,6 +330,472 @@ album.upcoming.badge: リリース予定
 app.name: Cider
 app.unsupportedClient.message: このクライアントはサポートされていません。最新バージョンのCiderを使用していることを確認してください。
 app.unsupportedClient.title: サポートされていないクライアント
+assistant.sid.agent.added: "{count}曲を追加しました"
+assistant.sid.agent.addedOne: 曲を追加しました
+assistant.sid.agent.askingPicks: Apple Musicにおすすめを問い合わせ中
+assistant.sid.agent.averageBpm: 平均{bpm} BPM
+assistant.sid.agent.builtGeneric: そのためのプレイリストができました。
+assistant.sid.agent.builtHigh: 終盤に向けて盛り上がるように、エネルギーを高く保ちました。
+assistant.sid.agent.builtLow: エネルギーを低めに保ち、最後は穏やかに落ち着くようにしました。
+assistant.sid.agent.checked: テンポとエネルギーを確認しました
+assistant.sid.agent.checkedLibrary: ライブラリを確認しました
+assistant.sid.agent.checking: テンポとエネルギーを確認中
+assistant.sid.agent.deduped: 重複を削除しました
+assistant.sid.agent.foundCatalog: Apple Musicで{songs}を見つけました
+assistant.sid.agent.foundLibrary: ライブラリで{songs}を見つけました
+assistant.sid.agent.foundPlaylists: 似たプレイリストを見つけました
+assistant.sid.agent.fromApplePlaylists: Apple Musicの{playlists}
+assistant.sid.agent.fromArtists: "{artists}の曲と、そのようなアーティストの曲"
+assistant.sid.agent.fromLibrary: ライブラリ
+assistant.sid.agent.keptTempo: "{range}の曲を残しました"
+assistant.sid.agent.libraryFit: "{songs}が一致"
+assistant.sid.agent.lookedAt: "{artists}を確認しました"
+assistant.sid.agent.lookingCatalog: Apple Musicを検索中
+assistant.sid.agent.moved: 曲を移動しました
+assistant.sid.agent.movedTo: "{row}番目へ"
+assistant.sid.agent.noChange: 確認しましたが、変更する必要はないと思います。
+assistant.sid.agent.nothingFound: 該当する曲が見つかりませんでした。別の言い方で試してください。
+assistant.sid.agent.orderEnergyDown: エネルギー順、盛り上がる曲から
+assistant.sid.agent.orderEnergyUp: エネルギー順、落ち着いた曲から
+assistant.sid.agent.orderKey: キー
+assistant.sid.agent.orderTempoDown: テンポ順、速い曲から
+assistant.sid.agent.orderTempoUp: テンポ順、遅い曲から
+assistant.sid.agent.picked: "{songs}を選びました"
+assistant.sid.agent.pulledFrom: "{sources}から選びました。"
+assistant.sid.agent.rangeAny: テンポは問わず
+assistant.sid.agent.rangeAtLeast: "{low} BPM以上"
+assistant.sid.agent.rangeAtMost: "{high} BPM以下"
+assistant.sid.agent.rangeBetween: "{low}～{high} BPM"
+assistant.sid.agent.read: "{playlist}の{songs}を確認しました"
+assistant.sid.agent.searchingCatalog: Apple Musicを検索中
+assistant.sid.agent.searchingLibrary: ライブラリを検索中
+assistant.sid.agent.sorted: "{order}で並べ替えました"
+assistant.sid.agent.stuck: この件でつまずいてしまいました。別の聞き方を試してください。
+assistant.sid.agent.suggested: Apple Musicが{songs}を提案しました
+assistant.sid.agent.summary: "{changes}しました。"
+assistant.sid.agent.summaryAdded: "{songs}を追加"
+assistant.sid.agent.summaryMoved: "{songs}を移動"
+assistant.sid.agent.summaryTookOut: "{songs}を取り除き"
+assistant.sid.agent.thinking: 考え中
+assistant.sid.agent.thinkingOver: 検討中
+assistant.sid.agent.thoughtOver: 検討しました
+assistant.sid.agent.tooBig: このプレイリストはSidが一度に読み取るには大きすぎます。
+assistant.sid.agent.tookOut: "{count}曲を取り除きました"
+assistant.sid.agent.tookOutOne: 曲を1つ取り除きました
+assistant.sid.agent.tookOutSongs: "{songs}を取り除きました"
+assistant.sid.agent.trimmed: "{minutes}分に短縮しました"
+assistant.sid.agent.unsure: 確かではありません。
+assistant.sid.agent.working: プレイリストを作成中
+assistant.sid.answer.dropSlowest: 最も遅い曲を削除
+assistant.sid.applied.made: Sid が {count} 件の変更を加えました
+assistant.sid.applied.madeOne: Sid が 1 件の変更を加えました
+assistant.sid.applied.markAdded: Sid が追加
+assistant.sid.applied.marked: リストに印が付いています。
+assistant.sid.applied.markMoved: Sid が移動
+assistant.sid.applied.undo: 取り消す
+assistant.sid.applied.undoChanged: Sid による編集のあと {playlist} が変更されたため、取り消すとその変更が失われます。取り消しは行われませんでした。
+assistant.sid.applied.undoFailed: Sid はこの操作を取り消せませんでした。しばらくしてからもう一度お試しください。
+assistant.sid.applied.undoHistory: プレイリストの履歴から以前のバージョンを復元することもできます。
+assistant.sid.applied.undone: Sid が {playlist} を元の状態に戻しました。
+assistant.sid.arc.coolDown: クールダウン
+assistant.sid.arc.peak: ピーク
+assistant.sid.arc.steady: 安定
+assistant.sid.arc.warmUp: ウォームアップ
+assistant.sid.ask.addFive: 似た曲を 5 曲追加
+assistant.sid.ask.calmToLively: 落ち着いた曲から盛り上がる曲へ
+assistant.sid.ask.dedupe: 重複を削除
+assistant.sid.ask.greetBuild: こんにちは！このプレイリストはどんな内容にしますか？
+assistant.sid.ask.greetBuildDetail: ムード、シーン、またはアーティストをいくつか入力してください。プレイリストを作成します。
+assistant.sid.ask.greetEdit: こんにちは！{playlist} をどうしますか？
+assistant.sid.ask.greetEditDetail: 曲の追加、削除、並べ替えができます。雰囲気の説明もできます。
+assistant.sid.ask.lateDrive: 深夜のドライブ
+assistant.sid.ask.morningRun: 朝のランニング
+assistant.sid.ask.onDevice: Sid はこのコンピューター上で処理します。Apple Music に送信されるのは音楽の検索のみです。
+assistant.sid.ask.rainyFocus: 雨の日の集中
+assistant.sid.ask.send: Sid に送信
+assistant.sid.ask.sundayCooking: 日曜日の料理
+assistant.sid.ask.trim45: 45 分に調整
+assistant.sid.ask.whatsItLike: どんな感じ？
+assistant.sid.brief.highEnergy: エネルギッシュ
+assistant.sid.brief.like: "{artists} のような"
+assistant.sid.brief.lookingFor: "{search} を検索中"
+assistant.sid.brief.lowEnergy: 落ち着いた
+assistant.sid.bubble.arrow: →
+assistant.sid.bubble.open: Sid のセットを開く
+assistant.sid.bubble.replay: Sid のメッセージを表示
+assistant.sid.card.add: "{count} 曲を追加"
+assistant.sid.card.added: "{playlist} に追加しました"
+assistant.sid.card.addedToQueue: キューに追加しました
+assistant.sid.card.addOne: 1 曲を追加
+assistant.sid.card.addTitle: "{playlist} に追加"
+assistant.sid.card.afterSet: Sid のセットで並べられた曲の後に。
+assistant.sid.card.alreadyIn: これらの曲は {playlist} にすでに入っています。
+assistant.sid.card.clear: "{count} 曲を削除"
+assistant.sid.card.cleared: 削除しました
+assistant.sid.card.clearOne: 1 曲を削除
+assistant.sid.card.clearTitle: 次に再生する曲を削除しますか？
+assistant.sid.card.created: "{name} を作成しました"
+assistant.sid.card.failed: 完了できませんでした。しばらくしてからもう一度お試しください。
+assistant.sid.card.guest: リスニングパーティーに参加中のため、キューはホストが管理します。
+assistant.sid.card.inLibrary: ライブラリに保存済み
+assistant.sid.card.leftOut: 再生できない曲、または「提案を減らす」に設定した曲 {count} 曲を除外しました。
+assistant.sid.card.leftOutOne: 再生できない曲、または「提案を減らす」に設定した曲 1 曲を除外しました。
+assistant.sid.card.librarySongs: "{count} 曲"
+assistant.sid.card.mostPlayed: "{year} 年に最も再生した曲"
+assistant.sid.card.noQueue: まだ再生中の曲がありません。何かを再生すると、Sid がその後に曲を追加できます。
+assistant.sid.card.notApplied: 未適用
+assistant.sid.card.notNow: 今はしない
+assistant.sid.card.open: "{name} を開く"
+assistant.sid.card.playing: 再生中
+assistant.sid.card.playLast: キューに追加
+assistant.sid.card.playLastTitle: あとで
+assistant.sid.card.playlistChanged: Sidが読み取った後にこのプレイリストが変更されました。もう一度依頼して、やり直してください。
+assistant.sid.card.playNext: 次に再生
+assistant.sid.card.playNextTitle: 次に再生
+assistant.sid.card.playNow: 今すぐ再生
+assistant.sid.card.playNowTitle: 再生準備完了
+assistant.sid.card.plays: "{count}回再生"
+assistant.sid.card.playsOne: 1回再生
+assistant.sid.card.queueApplied: キューを更新しました
+assistant.sid.card.queueChanged: Sidが確認した後にキューが変わりました。もう一度依頼して、やり直してください。
+assistant.sid.card.queued: キュー済み
+assistant.sid.card.queueUnavailable: このビルドではSidはまだキューを変更できません。
+assistant.sid.card.redo: もう一度依頼
+assistant.sid.card.refining: Sidがこのプランを更新しています。
+assistant.sid.card.retry: 再試行
+assistant.sid.card.saved: "{playlist}に保存しました"
+assistant.sid.card.showAll: すべて表示（{count}）
+assistant.sid.card.songsChange: "{before} → {after}曲"
+assistant.sid.card.superseded: より新しいプランに置き換えられました
+assistant.sid.card.topArtists: "{year}年のトップアーティスト"
+assistant.sid.card.unplayable: これらの曲は現在再生できません。
+assistant.sid.card.waitLocked: 次の曲がまもなく始まります。少し待ってから適用してください。
+assistant.sid.chat.appleOnly: SidはApple Musicで動作します。Sidと話すには切り替えてください。
+assistant.sid.chat.dropWaiting: 適用待ちの変更は破棄されます。
+assistant.sid.chat.e2bLimited: Sidへの入力には詳細モデルが必要です。候補を選ぶか、Sidの設定で切り替えてください。
+assistant.sid.chat.endConfirmOk: 終了
+assistant.sid.chat.endConfirmTitle: この会話を終了しますか？
+assistant.sid.chat.findingPlaylist: プレイリストを検索中
+assistant.sid.chat.foundPlaylist: "{playlist}が見つかりました"
+assistant.sid.chat.foundPlaylists: "{count}件のプレイリストが見つかりました"
+assistant.sid.chat.fromQueue: キューから{songs}を選びました
+assistant.sid.chat.greet: こんにちは！何を聴きますか？
+assistant.sid.chat.greetDetail: 音楽の検索と再生、キューの整理、プレイリストの作成、再生内容についてのご案内ができます。
+assistant.sid.chat.greetDetailNoQueue: 音楽の検索とキューへの追加、プレイリストの作成、再生内容についてのご案内ができます。
+assistant.sid.chat.jumpLatest: 最新へ移動
+assistant.sid.chat.loading: Sidを準備中
+assistant.sid.chat.newConfirmTitle: 新しい会話を始めますか？
+assistant.sid.chat.newConversation: 新しい会話
+assistant.sid.chat.placeholder: 音楽についてSidに質問
+assistant.sid.chat.placeholderFocus: "{playlist}についてSidに質問"
+assistant.sid.chat.playlistUnread: Sidは{playlist}を読み取れませんでした。しばらくしてから再試行してください。
+assistant.sid.chat.queueDetail: 次に{songs}
+assistant.sid.chat.readingListening: 再生内容を確認中
+assistant.sid.chat.readingPlaylist: "{playlist}を読み取り中"
+assistant.sid.chat.readingQueue: キューを確認中
+assistant.sid.chat.readListening: 再生内容を確認しました
+assistant.sid.chat.readQueue: キューを確認しました
+assistant.sid.chat.steps: "{count}ステップ"
+assistant.sid.chat.stepsOne: 1ステップ
+assistant.sid.chat.stopped: 停止しました。
+assistant.sid.chat.suggestLikeThis: これに似た曲を再生
+assistant.sid.chat.suggestMostPlayed: よく聴いている曲は？
+assistant.sid.chat.suggestNowPlaying: 今何が再生中？
+assistant.sid.chat.suggestQueuePlaylist: キューからプレイリストを作成
+assistant.sid.chat.suggestTidyQueue: キューを整理
+assistant.sid.chat.tooBig: 一度に読み取るには量が多すぎます。もう少し短いリクエストをお試しください。
+assistant.sid.chat.workingQueue: キューを処理中
+assistant.sid.entry.edit: Sidで編集
+assistant.sid.entry.editDetail: 変更内容を入力して、先に確認
+assistant.sid.entry.start: Sidで始める
+assistant.sid.entry.startDetail: プレイリストを説明すると、Sidが曲を選びます
+assistant.sid.entry.startMenu: Sidで始める…
+assistant.sid.failure.belowFloor: このコンピュータではGemmaの動作が遅すぎます。
+assistant.sid.failure.busy: Gemmaがファイルを処理中です。しばらくしてからもう一度お試しください。
+assistant.sid.failure.counterMismatch: 安全確認に失敗したため、Sidが停止しました。
+assistant.sid.failure.crashed: Gemmaが予期せず停止しました。もう一度お試しください。
+assistant.sid.failure.deviceLost: Sidの処理中にグラフィックスカードがリセットされました。もう一度お試しください。
+assistant.sid.failure.modelCorrupt: Gemmaのダウンロードが破損しています。再度ダウンロードして続けてください。
+assistant.sid.failure.modelMissing: Gemmaのファイルが見つかりません。再度取得して続けてください。
+assistant.sid.failure.network: ダウンロードが中断されました。接続を確認してもう一度お試しください。
+assistant.sid.failure.notReady: Gemmaはまだ準備できていません。
+assistant.sid.failure.outOfMemory: コンピュータの応答性を保つため、Sidは Gemma を停止しました。必要なグラフィックスメモリが不足していました。
+assistant.sid.failure.storageFull: ダウンロードを完了するための空き容量が足りません。
+assistant.sid.failure.timeout: Gemmaの応答に時間がかかりすぎました。もう一度お試しください。
+assistant.sid.failure.tryAgain: 再試行
+assistant.sid.failure.watchLost: グラフィックスメモリの管理を見失ったため、Sidが停止しました。もう一度お試しください。
+assistant.sid.gate.description: まだ開発中のSidをお試しいただけます。一部の機能はまだ動作しません。
+assistant.sid.gate.name: Sid、プレイリストアシスタント
+assistant.sid.hello: こんにちは、Sidです
+assistant.sid.home.ask: 音楽についてSidに質問
+assistant.sid.home.continueChat: 会話を続ける
+assistant.sid.home.editHint: プレイリストを編集するには、開いて「Sidで編集」を選択してください。
+assistant.sid.home.settings: Sidの設定
+assistant.sid.insights.average: 平均 {bpm} BPM
+assistant.sid.insights.first: 1曲目
+assistant.sid.insights.genres: 上位のジャンル
+assistant.sid.insights.keys: キー
+assistant.sid.insights.last: "{count}曲目"
+assistant.sid.insights.length: 長さ
+assistant.sid.insights.minutes: "{minutes}分"
+assistant.sid.insights.mostly: 主に {keys}
+assistant.sid.insights.tempo: テンポ（曲ごと）
+assistant.sid.insights.tempoAria: 各曲のテンポ、{low}から{high} BPM
+assistant.sid.insights.tempoAriaAverage: 各曲のテンポ、{low}から{high} BPM、平均 {bpm}
+assistant.sid.listAnd: "{items}、{last}"
+assistant.sid.model.e2b: Gemma 4 E2B
+assistant.sid.model.e4b: Gemma 4 E4B
+assistant.sid.model.quick: 高速
+assistant.sid.model.thorough: 高精度
+assistant.sid.move.blend: ブレンド
+assistant.sid.move.cut: カット
+assistant.sid.move.lift: リフト
+assistant.sid.name: Sid
+assistant.sid.oneSong: 1曲
+assistant.sid.panel.back: Sidに戻る
+assistant.sid.panel.close: この会話を閉じる
+assistant.sid.panel.replaceOk: 最初からやり直す
+assistant.sid.panel.resize: ドラッグでサイズ変更、右クリックでリセット
+assistant.sid.planner.bringsDown: テンポを下げる
+assistant.sid.planner.closeSecond: 次点に近い候補
+assistant.sid.planner.differentStyle: 別のスタイル
+assistant.sid.planner.faster: より速い
+assistant.sid.planner.fromLibrary: ライブラリから
+assistant.sid.planner.harderKey: 転調の難しいキー変更
+assistant.sid.planner.keyClashes: キーの衝突
+assistant.sid.planner.lifts: エネルギーを高める
+assistant.sid.planner.littleFaster: 少し速い
+assistant.sid.planner.moreGenre: より多くの{genre}
+assistant.sid.planner.neighborKey: 隣接するキー
+assistant.sid.planner.newToYou: あなたにとって新しい曲
+assistant.sid.planner.noTempo: 次につなげられるテンポがない
+assistant.sid.planner.sameArtist: 同じアーティストが再び
+assistant.sid.planner.sameKey: 同じキー
+assistant.sid.planner.sameTempo: 同じテンポ
+assistant.sid.planner.slower: より遅く
+assistant.sid.planner.tooBigDrop: 下がりすぎ
+assistant.sid.planner.tooBigLift: 上がりすぎ
+assistant.sid.planner.tooFastNow: 今は速すぎる
+assistant.sid.planner.tooFastToMix: つなぐには速すぎる
+assistant.sid.planner.tooSlowNow: 今は遅すぎる
+assistant.sid.planner.tooSlowToMix: つなぐには遅すぎる
+assistant.sid.planner.touchSlower: 少しだけ遅く
+assistant.sid.queue.looking: 次の曲を探しています
+assistant.sid.queue.picked: Sidのおすすめ
+assistant.sid.queue.pickLine: Sidのおすすめ · {reason}
+assistant.sid.queue.thought: 「{thought}」
+assistant.sid.ready.checking: このコンピュータを確認中
+assistant.sid.ready.checkNow: 今すぐ確認
+assistant.sid.ready.downloadDetail: Gemmaはこのコンピュータ上で動作します。ダウンロードサイズは{size}です。
+assistant.sid.ready.downloading: Gemmaを取得中
+assistant.sid.ready.finishSetup: Gemmaの準備がほぼ完了です。セットアップを完了してください。
+assistant.sid.ready.finishSetupAction: セットアップを完了
+assistant.sid.ready.get: Gemmaを取得 ({size})
+assistant.sid.ready.needsDownload: Sidには一度だけのダウンロードが必要です
+assistant.sid.ready.preparing: Gemmaを準備中
+assistant.sid.ready.progress: "{total}件中{done}件"
+assistant.sid.ready.ready: 準備完了
+assistant.sid.ready.retry: 再試行 ({size})
+assistant.sid.ready.seeWhy: 理由を見る
+assistant.sid.ready.setStillWorks: Sidのセットは、ここでも引き続き利用できます。
+assistant.sid.ready.stop: 停止
+assistant.sid.ready.unavailable: このコンピュータではSidが考えられません
+assistant.sid.requestTooLong: リクエストが長すぎます。{max}文字以内にしてお試しください。
+assistant.sid.review.actionAdd: 追加
+assistant.sid.review.actionCut: 削除
+assistant.sid.review.actionMove: 移動
+assistant.sid.review.adding: "{count}曲を追加中"
+assistant.sid.review.apply: "{count}件の変更を適用"
+assistant.sid.review.applyOne: 1件の変更を適用
+assistant.sid.review.applyUnavailable: この版ではSidの変更を保存する機能はまだ利用できません。
+assistant.sid.review.bpm: "{bpm} BPM"
+assistant.sid.review.change: "{before} → {after}"
+assistant.sid.review.changed: Sidが読み込んだ後に{playlist}が変更されたため、何も保存されませんでした。もう一度開いて最初からやり直してください。
+assistant.sid.review.create: プレイリストを作成
+assistant.sid.review.createFailed: Sidはプレイリストを作成できませんでした。しばらくしてから再試行してください。
+assistant.sid.review.cutting: "{count}曲を削除中"
+assistant.sid.review.description: 説明（任意）
+assistant.sid.review.empty: Sidはプレイリストを空にできません。少なくとも1曲は残してください。
+assistant.sid.review.footnoteBuild: 通常のApple Musicプレイリストとして保存されます。カバーはApple Musicが作成します。
+assistant.sid.review.footnoteImport: SidがApple Musicから追加した曲は、ライブラリにも追加されます。
+assistant.sid.review.gone: "{playlist}はもうライブラリにないため、何も保存されませんでした。"
+assistant.sid.review.hideWhole: プレイリスト全体を非表示
+assistant.sid.review.incomplete: Sidはプレイリスト全体を取得できなかったため、何も保存されませんでした。読み込みが完了してから開き直してください。
+assistant.sid.review.lineAdded: "{artist} · {source}"
+assistant.sid.review.lineMoved: "{artist} · {from}から{to}へ"
+assistant.sid.review.moving: "{count}曲を移動中"
+assistant.sid.review.name: 名前
+assistant.sid.review.noChange: "{playlist}はすでにこの状態のため、保存する変更はありません。"
+assistant.sid.review.notEditable: Apple Music では {playlist} を Sid が変更することはできません。
+assistant.sid.review.pageStale: このページを開いてから {playlist} が変更されました。ページを更新してから、もう一度「Sid で編集」を選んでください。
+assistant.sid.review.removedRow: 削除済み
+assistant.sid.review.saveFailed: Sid は変更を保存できませんでした。しばらくしてからもう一度お試しください。
+assistant.sid.review.showWhole: プレイリスト全体を表示
+assistant.sid.review.skipped: スキップ済み
+assistant.sid.review.snapshotFailed: Sid は先に復元ポイントを作成できなかったため、何も保存されませんでした。しばらくしてからもう一度お試しください。
+assistant.sid.review.songs: 曲
+assistant.sid.review.tileBpm: 平均 BPM
+assistant.sid.review.tileMinutes: 分
+assistant.sid.review.tileSongs: 曲
+assistant.sid.review.titleBuild: 最初の案です
+assistant.sid.review.titleEdit: 変更プラン
+assistant.sid.review.unwritable: "{playlist} の一部の曲は書き戻せないため、Sid は何も保存しませんでした。"
+assistant.sid.says.hereComes: "{name} の登場です！"
+assistant.sid.says.intro: Sid のセット · {direction}
+assistant.sid.says.looking: 次の曲を探しています
+assistant.sid.says.mixingInto: "{name} へ、次のミックスまで"
+assistant.sid.says.move: "{move} · {bars} 小節"
+assistant.sid.says.moveOneBar: "{move} · 1 小節"
+assistant.sid.says.next: 次は {name} です。
+assistant.sid.says.nextBecause: 次は {name} です：{reason}。
+assistant.sid.says.paused: 一時停止中です。ここで待っています。
+assistant.sid.says.picking: 次に流す曲を選んでいます。
+assistant.sid.says.steady: "{bpm} BPM で安定しています"
+assistant.sid.says.tempo: "{from} → {to} BPM"
+assistant.sid.says.upWhenBack: 戻ってきたら {name} が流れます。
+assistant.sid.session.failed: Sid はその処理を完了できませんでした。
+assistant.sid.session.failedRetry: Sid はその処理を完了できませんでした。しばらくしてからもう一度お試しください。
+assistant.sid.session.naming: 名前を付けています
+assistant.sid.session.newPlaylist: 新規プレイリスト
+assistant.sid.set.askEmpty: どんな曲を聴きたいですか？
+assistant.sid.set.fromIdea: "{artist} の曲、Sid のおすすめ"
+assistant.sid.set.fromLibrary: ライブラリ
+assistant.sid.set.fromRequest: リクエスト
+assistant.sid.set.fromStation: セットから作ったステーション
+assistant.sid.set.notFound: 「{search}」が見つかりませんでした。別の方法で探しますか？
+assistant.sid.set.nothingPlaying: 先に何か再生してから、お声がけください。
+assistant.sid.set.notQueued: その曲をキューに追加できませんでした。
+assistant.sid.set.queued: "{artist} の {title} は{where}に入ります。{reason}。"
+assistant.sid.set.request: リクエスト曲
+assistant.sid.set.whereAfterNext: 次の次
+assistant.sid.set.whereNext: 次
+assistant.sid.settings.addMore: さらに追加
+assistant.sid.settings.addMoreDetail: ライブラリまたは Apple Music 全体から、合う曲を探します
+assistant.sid.settings.bottom: 下部
+assistant.sid.settings.byPlayer: プレイヤーの横
+assistant.sid.settings.byPlayerDetail: プレイヤーのアートワークの横に Sid を表示します
+assistant.sid.settings.canRun: Gemma を実行できます
+assistant.sid.settings.check: ファイルを確認
+assistant.sid.settings.checkDamaged: Gemma のファイルの一部が破損しています。もう一度ダウンロードしてください。
+assistant.sid.settings.checkGood: Gemma のファイルは正常です
+assistant.sid.settings.downloadAgain: 再ダウンロード
+assistant.sid.settings.downloadedSize: ダウンロード済み · {size}
+assistant.sid.settings.duringSet: セット再生中
+assistant.sid.settings.found: Sid が見つけた曲
+assistant.sid.settings.fresh: 新規作成
+assistant.sid.settings.freshDetail: ムード、シーン、または数名のアーティストから、プレイリスト全体を作成します
+assistant.sid.settings.gemmaHere: Gemma の場所
+assistant.sid.settings.gpu: グラフィックスカード
+assistant.sid.settings.group: アシスタント
+assistant.sid.settings.inEdit: プレイリストを編集するとき
+assistant.sid.settings.inEditDetail: プレイリストのヘッダーにある「Sidで編集」から編集します
+assistant.sid.settings.inImmersive: イマーシブ表示
+assistant.sid.settings.inImmersiveDetail: イマーシブレイアウトでのSidのタブとバブル
+assistant.sid.settings.inNewPlaylist: 新しいプレイリストを作るとき
+assistant.sid.settings.inNewPlaylistDetail: 新規プレイリストのダイアログでSidと始めます
+assistant.sid.settings.inPlayer: 音楽の再生中
+assistant.sid.settings.inPlayerDetail: キューとプレイヤーのメニューにあるSidのセット
+assistant.sid.settings.intro: Sidは、このコンピュータ上でプレイリストづくりを手伝います。
+assistant.sid.settings.inUse: 使用中 · {size}
+assistant.sid.settings.machine: このコンピュータ
+assistant.sid.settings.modelOptions: "{model}のオプション"
+assistant.sid.settings.modelRow: "{style} · {name}"
+assistant.sid.settings.nav: Sid
+assistant.sid.settings.needsGemma: Gemmaが必要
+assistant.sid.settings.nods: ビートに合わせてうなずく
+assistant.sid.settings.nodsDetail: Sidが曲の each ビートに合わせてうなずきます
+assistant.sid.settings.notDownloadedSize: 未ダウンロード · {size}
+assistant.sid.settings.nothingYet: まだありません
+assistant.sid.settings.nothingYetDetail: プレイリストを開き、「Sidで編集」を選んでください。
+assistant.sid.settings.notMeasured: まだ測定されていません。ダウンロード後にSidが測定します。
+assistant.sid.settings.notMeasuredReady: まだ測定されていません。次のリクエストの前にSidが測定します。
+assistant.sid.settings.partlySize: 一部ダウンロード済み · {size}
+assistant.sid.settings.position: 位置
+assistant.sid.settings.positionDetail: Sidがアートワーク上で表示される位置
+assistant.sid.settings.privacyChat: 入力した内容はこのコンピュータに残ります。Sidはここでgemmaを使って考えます。音楽を探すために、Sidは検索語をApple Musicに送信し、お願いされた場合はApple Musicアカウントからプレイリスト、最近の再生履歴、Apple Music Replayを読み取ります。「適用」を押すまで何も変わりません。
+assistant.sid.settings.reads: プレイリスト全体の読み取りに {seconds} 秒かかります（{floor} 秒未満が必要）
+assistant.sid.settings.regular: 標準
+assistant.sid.settings.remove: 削除
+assistant.sid.settings.removeMenu: 削除…
+assistant.sid.settings.removeMessage: Sidがプレイリストを編集するために必要で、再び入手するには {size} のダウンロードが必要です。
+assistant.sid.settings.removeTitle: "{model}を削除しますか？"
+assistant.sid.settings.reshape: 並べ替え
+assistant.sid.settings.reshapeDetail: 落ち着いた曲から活発な曲へ、テンポ順、またはキーが滑らかにつながるように並べます
+assistant.sid.settings.runSet: セットを再生
+assistant.sid.settings.runSetDetail: キーとテンポをもとに次に流す曲を選び、リクエストも受け付けます
+assistant.sid.settings.shaped: Sidが整えたプレイリスト
+assistant.sid.settings.shapedOne: Sidが整えたプレイリスト
+assistant.sid.settings.size: サイズ
+assistant.sid.settings.sizeDetail: 「小」にするとSidが小さくなり、バブルも細くなります
+assistant.sid.settings.skills: Sidにできること
+assistant.sid.settings.skillsHere: このアプリでSidにできること
+assistant.sid.settings.small: 小
+assistant.sid.settings.speed: 速度
+assistant.sid.settings.storage: ストレージ
+assistant.sid.settings.storageLine: Gemmaには {size} 必要で、このコンピュータには {free} の空き容量があります
+assistant.sid.settings.takeTime: Sidに時間をかけてもらいますか？
+assistant.sid.settings.takeTimeDetail: 「すばやく」はすぐに回答します。「じっくり」は少し時間がかかりますが、大きなプレイリストをより適切に扱えます。
+assistant.sid.settings.tell: 説明を表示
+assistant.sid.settings.tellDetail: テンポ、キー、ジャンルをひと目で確認
+assistant.sid.settings.thinking: Sidの思考方法
+assistant.sid.settings.tidy: 整理
+assistant.sid.settings.tidyDetail: 重複を取り除く、長さに合わせて調整する、またはテンポをそろえます
+assistant.sid.settings.together: これまでの合計
+assistant.sid.settings.top: 上
+assistant.sid.settings.unavailableNote: Sidでプレイリストを編集・作成するには、実行できるコンピュータでGemmaが必要です。Sidのセットはここでも引き続き使えます。
+assistant.sid.settings.unknownGpu: 不明なグラフィックカード
+assistant.sid.settings.where: Sidの場所
+assistant.sid.settings.withoutGemma: Gemmaがなくても、Sidはテンポ、キー、エネルギーで曲を選び、入力されたリクエストをそのままApple Musicで検索します。
+assistant.sid.settings.writes: 1秒あたり{rate}トークンを書き込み（最低{floor}が必要）
+assistant.sid.setView.confirmMany: Sidは、この曲の後に予約されている{count}曲を消去し、次に再生する曲を選びます。
+assistant.sid.setView.confirmOk: セットを開始
+assistant.sid.setView.confirmOne: Sidは、この曲の後に予約されている曲を消去し、次に再生する曲を選びます。
+assistant.sid.setView.confirmTitle: Sidのセットを開始しますか？
+assistant.sid.setView.direction: エナジー
+assistant.sid.setView.end: 終了
+assistant.sid.setView.endSet: Sidのセットを終了
+assistant.sid.setView.known: 知っている曲
+assistant.sid.setView.liveRadio: Sidのセットはライブラジオには対応していません。
+assistant.sid.setView.new: あなたにとって新しい曲
+assistant.sid.setView.nothingPlaying: 曲を再生してセットを開始します。
+assistant.sid.setView.requestPlaceholder: Sidに曲をリクエス
+assistant.sid.setView.start: 開始
+assistant.sid.setView.startSet: Sidのセットを開始
+assistant.sid.setView.stayInKey: キーを維持
+assistant.sid.setView.stayInKeyDetail: 互換性のあるキー同士でのみミックスします
+assistant.sid.setView.subtitleActive: Sidが次に再生する曲を選んでいます
+assistant.sid.setView.subtitleIdle: Sidが次に再生する曲を選びます
+assistant.sid.setView.title: Sidのセット
+assistant.sid.size.gb: "{size} GB"
+assistant.sid.size.mb: "{size} MB"
+assistant.sid.songCount: "{count}曲"
+assistant.sid.source.applePick: Apple Musicのおすすめ
+assistant.sid.source.applePlaylist: Apple Musicのプレイリスト
+assistant.sid.source.artist: アーティストのトップソング
+assistant.sid.source.catalog: Apple Music
+assistant.sid.source.library: ライブラリ
+assistant.sid.source.playlist: プレイリスト内
+assistant.sid.unavailable.belowFloor: このコンピュータではGemmaの処理速度が遅すぎるため、Sidは使用できません。
+assistant.sid.unavailable.counterMismatch: 安全確認に失敗したため、SidはGemmaをオフにしました。Ciderまたはグラフィックスドライバーの更新後に再試行します。
+assistant.sid.unavailable.gpuLimits: このグラフィックカードには、Gemmaに必要な容量がありません。
+assistant.sid.unavailable.gpuUnstable: グラフィックカードが2回応答しなくなったため、Ciderを再起動するまでSidは停止します。
+assistant.sid.unavailable.modelCorrupt: Gemmaのダウンロードが2回破損したため、Sidは提供を停止しました。
+assistant.sid.unavailable.noAdapter: Gemmaを実行するためのグラフィックカードが見つかりませんでした。
+assistant.sid.unavailable.noGpuWatch: このコンピュータではCiderがグラフィックメモリを監視できないため、SidはGemmaを実行しません。
+assistant.sid.unavailable.noStorage: CiderはこのコンピュータにGemmaのファイルを保存できません。
+assistant.sid.unavailable.noWebgpu: GemmaにはWebGPUが必要ですが、このコンピュータでは利用できません。
+assistant.sid.unavailable.outOfMemory: Gemmaには、このコンピュータが割り当てられる以上のグラフィックメモリが必要でした。
+assistant.sid.unavailable.probeFailed: Sidがこのコンピュータを確認できませんでした。後で再試行します。
+assistant.sid.unavailable.softwareGpu: このコンピュータはグラフィックカードを使わずに描画しています。Gemmaにはグラフィックカードが必要です。
+assistant.sid.unavailable.storage: このコンピュータにはGemma用の空き容量が不足しています。
+assistant.sid.why.cameClose: 次点
+assistant.sid.why.linedUp: 待機中だった曲
+assistant.sid.why.open: Sidが{title}を選んだ理由
+assistant.sid.why.weighed: Sidは{places}から{count}曲を比較しました。
+assistant.sid.working.starting: 開始中
+assistant.sid.working.stop: 停止
+assistant.sid.working.titleBuild: プレイリストを作成中
+assistant.sid.working.titleEdit: "{playlist}を編集中"
 audio.device.default: デフォルトのデバイス
 audio.device.noneFound: 出力デバイスが見つかりません
 audio.device.placeholder: デバイス {{id}}
@@ -643,6 +1113,8 @@ home.settings.tryBento: Bentoボードを試す（ベータ）
 home.syncFavorites: お気に入りを同期
 home.syncFavorites.gettingArtists: お気に入りのアーティストを取得中...
 home.title: ホーム
+hostReinstall.drm.body: 必要なDRMアップデートの前にこのバージョンのCiderがインストールされたため、Apple Musicは再生を拒否しています。アプリ内アップデートでは提供できないため、Cider Taproomから Cider を再度ダウンロードして再インストールしてください。OKを選択するとCider Taproomが開きます。
+hostReinstall.drm.title: 再生を復元するためCiderを再インストール
 i18n.authors: CiderCollective
 i18n.category: main
 i18n.languageName: 日本語
@@ -650,6 +1122,7 @@ i18n.languageNameEnglish: Japanese
 library.albumVersions.clean: クリーン
 library.albumVersions.explicit: エクスプリシット
 library.albumVersions.label: バージョン
+library.artists.empty: アーティストを選択
 library.columnBrowser: カラムブラウザ
 library.favoritesOnly: お気に入りのみ
 library.genres.counts: "{albums}枚のアルバム、{songs}曲"
@@ -2448,8 +2921,13 @@ notificationCenter.row.muted: ミュート中
 notificationCenter.section.active: アクティブ
 notificationCenter.section.history: 履歴
 notificationCenter.title: 通知
+notify.explicitRestrictedSkip: '"{name}"をスキップします：Apple Accountで露骨な表現のコンテンツが制限されています'
+notify.explicitRestrictedStop: 再生を停止しました："{name}"は露骨な表現を含み、Apple Accountで露骨な表現のコンテンツが制限されています
 notify.licenseRefusedSkip: 「{name}」は現在再生できないため、スキップします
 notify.licenseRefusedStop: 「{name}」を再生できないため、再生を停止しました
+notify.multipleTracksUnavailable: 複数のトラックを利用できません。別のトラックまたはアルバムをお試しください。
+notify.trackUnavailableSkip: '"{name}"は利用できないため、スキップします'
+notify.trackUnavailableStop: 再生を停止しました："{name}"は利用できません
 nowPlaying.a11y.trackWaveform: トラックの波形。クリックしてシーク
 nowPlaying.a11y.waveform: 再生中の曲の波形
 oobe.amsignin.title: ""
@@ -2612,27 +3090,37 @@ playbackHealth.backgroundFreeze.eyebrow: 再生に関するお知らせ
 playbackHealth.backgroundFreeze.hint: ウィンドウマネージャーのルールまたはOSの設定により、フォーカスが外れている間もCiderを実行し続けることができます。「詳細情報」で、お使いの環境における既知の回避策を確認できます。
 playbackHealth.backgroundFreeze.learnMore: 詳細情報
 playbackHealth.backgroundFreeze.title: システムがバックグラウンドでCiderを一時停止しました
+playbackHealth.hostReinstall.label: Ciderの再インストールが必要です
+playbackHealth.hostReinstall.message: Apple Musicがこのインストールを拒否しています。Cider Taproomから Cider を再インストールしてください。
 playbackHealth.localIssue: ローカル再生の問題
 playlist.collaborative.tooltip: このプレイリストはコラボレーターに公開されています
 playlist.collaborators.andOthers: "{{name}} ＆ ほか {{count}} 人"
 playlist.collaborators.count: "{{count}}人の共同作業者"
 playlist.collaborators.owner: オーナー
 playlist.collaborators.pair: "{{a}} ＆ {{b}}"
+playlist.createFailed: プレイリストを作成できませんでした。しばらくしてから再度お試しください。
 playlist.description: プレイリストの説明
 playlist.error.changedElsewhere.message: このプレイリストは別のデバイスで変更されました。再読み込みしてもう一度お試しください。
 playlist.error.changedElsewhere.title: プレイリストが別のデバイスで変更されました
 playlist.error.locked.message: 並べ替えオプションが適用されている間は、このトラックを削除できません。
 playlist.error.locked.title: プレイリストがロックされています
 playlist.error.locked.tooltip: 並べ替えオプションが適用されている間は、このプレイリストの順序を変更できません。
+playlist.error.notEditable: このプレイリストは編集できません。
+playlist.error.queueRemoveConflict: キューを作成した後にこのプレイリストが変更されました。曲を削除するには、プレイリストを開いてください。
 playlist.error.save.message: プレイリストの保存中にエラーが発生しました。もう一度お試しください。
 playlist.error.save.title: プレイリストを保存できませんでした
+playlist.error.smartNotEditable: スマートプレイリストはルールに従うため、手動で曲を削除することはできません。
 playlist.error.updating.message: プレイリストの更新中にエラーが発生しました。もう一度お試しください。
 playlist.error.updating.title: プレイリストの更新エラー
 playlist.folderEmpty: このフォルダにプレイリストはありません
+playlist.folderMoveFailed: フォルダを移動できませんでした。しばらくしてから再度お試しください。
 playlist.folderRenameHint: ダブルクリックして名前を変更
 playlist.lastUpdated: "最終更新日: {{date}}"
 playlist.madeByApple: Apple作成
+playlist.moveFailed: プレイリストを移動できませんでした。しばらくしてから再度お試しください。
 playlist.nameEmpty: プレイリスト名は空にできません
+playlist.newFolderNotMoved: フォルダは作成されましたが、選択したフォルダへ移動できませんでした。フォルダはフォルダの外にあります。
+playlist.newPlaylistNotMoved: プレイリストは作成されましたが、選択したフォルダへ移動できませんでした。プレイリストはフォルダの外にあります。
 playlist.noTracks: 曲はありません
 playlist.personalMix: パーソナルミックス
 playlist.playlistName: プレイリスト名
@@ -2643,6 +3131,8 @@ playlist.publishOnProfileAndSearch:
   issue: 91
 playlist.refresh.message: このプレイリストは別のデバイスで更新されました。プレイリストを更新しています。
 playlist.refresh.title: プレイリストの更新が必要です
+playlist.suggestions.subtitle: プレビューしてプレイリストに追加
+playlist.suggestions.title: おすすめの曲
 playlist.untitled: 名称未設定
 podcast.comingSoon.description: Ciderの再生処理に関する大幅な変更に伴い、ポッドキャスト機能の再構築を行っています。今後のアップデートで再び利用可能になる予定です。
 podcast.comingSoon.hide: サイドバーから非表示にする
@@ -2745,6 +3235,7 @@ settings.artwork.hiresImages.warning: 読み込み時間が長くなり、パフ
 settings.audio.atmos: Dolby Atmos
 settings.audio.atmos.binaural.desc: CiderAudioを介してバイノーラルステレオとしてレンダリングされたAtmos。クロスフェード、オートミックス、シームレス移行は通常通り機能します。
 settings.audio.atmos.description: 現在の出力デバイスのAtmos再生を設定します。
+settings.audio.atmos.normalizationHint: Dolby Atmos のミックスはステレオマスターより音量が小さくなっています。音量を揃えるには、オーディオの正規化をオンにしてください。
 settings.audio.atmos.off.desc: Atmosは無効です。すべてのコンテンツは標準のステレオで再生されます。
 settings.audio.atmos.passthrough: パススルー
 settings.audio.atmos.passthrough.desc: すべてのオーディオ処理をバイパスします。マルチチャンネルAtmosがデバイスに直接送信されます。AVレシーバーに最適です。
@@ -2896,6 +3387,7 @@ settings.client.genten.proxyServer: プロキシサーバー
 settings.client.genten.proxyServer.desc: プロキシサーバーのアドレス
 settings.client.genten.restartNotice: 変更を適用するには、アプリケーションを再起動する必要があります。
 settings.client.genten.saveError: 設定の保存中にエラーが発生しました
+settings.client.genten.saveFailed: 設定を保存できませんでした。もう一度お試しください。
 settings.client.genten.saveSuccess: 設定を保存しました
 settings.client.genten.smoothScrolling: スムーズスクロール
 settings.client.genten.smoothScrolling.desc: スムーズスクロールを有効にするかどうかを切り替えます
@@ -2994,6 +3486,7 @@ settings.client.windows.proxyServer: プロキシサーバー
 settings.client.windows.proxyServer.desc: プロキシサーバーのアドレス
 settings.client.windows.restartNotice: 変更を適用するには、アプリケーションを再起動する必要があります。
 settings.client.windows.saveError: 設定の保存中にエラーが発生しました
+settings.client.windows.saveFailed: 設定を保存できませんでした。もう一度お試しください。
 settings.client.windows.saveSuccess: 設定を保存しました
 settings.client.windows.taskbarProgress: タスクバーに再生状況を表示
 settings.client.windows.taskbarProgress.desc: タスクバーのアイコンに再生状況を表示します
@@ -3172,6 +3665,7 @@ settings.equalizer.warning: 耳やスピーカーへのいかなる損害につ�
 settings.extensions.addBuiltInSnippet: 組み込みスニペットを追加
 settings.extensions.browsePluginMarket: プラグインマーケットプレイスを閲覧
 settings.extensions.browseThemeMarket: テーママーケットプレイスを閲覧
+settings.extensions.byAuthor: "作成者: {author}"
 settings.extensions.checkUpdates: 起動時に拡張機能のアップデートを確認する
 settings.extensions.checkUpdates.desc: Ciderの起動時に、テーマ、スニペット、プラグインのアップデートを確認します。
 settings.extensions.createPlugin: プラグインを作成
@@ -3182,13 +3676,24 @@ settings.extensions.fileWatcher: テーマファイルの監視を有効にす�
 settings.extensions.fileWatcher.desc: ディスク上のファイルが変更されたときに、テーマのスタイルシートを自動的に再読み込みします。
 settings.extensions.importFromFile: ファイルからインポート
 settings.extensions.maintenance: メンテナンス
+settings.extensions.marketplaceId: "ID: {id}"
 settings.extensions.newThemeDialog.identifier: 識別子
 settings.extensions.newThemeDialog.name: テーマ名
 settings.extensions.newThemeDialog.title: 新規テーマ
 settings.extensions.openAppData: AppDataフォルダーを開く
 settings.extensions.openAppData.desc: Ciderが拡張機能を読み込むフォルダーを表示します。
+settings.extensions.plugins.directory: ディレクトリ
 settings.extensions.plugins.empty: プラグインがインストールされていません。
+settings.extensions.plugins.getMore: プラグインを探す
+settings.extensions.plugins.identifier: 識別子
+settings.extensions.plugins.loadFailed.error: "このプラグインは起動できませんでした: {{ error }}"
+settings.extensions.plugins.loadFailed.incompatible: このプラグインは古いバージョンの Cider 向けに作られているため、実行できません。マーケットプレイスで更新を確認してください。
+settings.extensions.plugins.loadFailed.invalid: これは有効な Cider プラグインではないため、実行できません。
+settings.extensions.plugins.refreshList: プラグイン一覧を更新
 settings.extensions.plugins.running: 実行中
+settings.extensions.plugins.uninstall: アンインストール
+settings.extensions.plugins.uninstallConfirm: '"{name}" をアンインストールしますか?'
+settings.extensions.plugins.uninstallTitle: プラグインをアンインストール
 settings.extensions.refresh: 拡張機能を更新
 settings.extensions.refresh.desc: ディスクからテーマ、スニペット、プラグインを再スキャンします。
 settings.extensions.refreshed: テーマ、スニペット、プラグインを更新しました
@@ -3209,6 +3714,7 @@ settings.extensions.themes.activeCount: "{{ count }}件有効"
 settings.extensions.themes.empty: インストールされているテーマはありません。
 settings.extensions.themes.stylesheetMany: "{{ count }}件のスタイルシート"
 settings.extensions.themes.stylesheetOne: 1件のスタイルシート
+settings.extensions.viewOnMarketplace: マーケットプレイスで見る
 settings.fonts.description: アプリで使用するフォントを変更します
 settings.fonts.lyrics: 歌詞のフォント
 settings.fonts.lyrics.description: 歌詞に使用されるフォント
@@ -3989,6 +4495,7 @@ settings.option.lyrics.thirdPartySources: サードパーティのソースを�
 settings.option.lyrics.thirdPartySources.description: Apple Musicの歌詞が利用できない場合に、MusixmatchやNetEaseから歌詞を取得できるようにします。品質は異なる場合があり、頻繁に使用すると利用制限がかかる可能性があります。
 settings.option.lyrics.timeOffset: 歌詞のタイミングオフセット（秒）
 settings.option.lyrics.timeOffset.description: 歌詞が表示されるタイミングを調整します。正の値にすると歌詞が早く表示され、負の値にすると遅く表示されます。オーディオの同期ズレを補正するのに便利です。
+settings.option.lyrics.timeOffset.descriptionV2: 歌詞の表示タイミングを調整します。正の値では歌詞が遅く、負の値では早く表示されます。音声がずれている環境の補正に役立ちます。
 settings.option.lyrics.timestampStyle: タイムスタンプのスタイル
 settings.option.lyrics.timestampStyle.both: 両方
 settings.option.lyrics.timestampStyle.chip: チップ
@@ -4470,6 +4977,7 @@ settings.resetCider.category.appleMusic: Apple Musicからサインアウト
 settings.resetCider.category.appleMusic.desc: このデバイスからApple Musicアカウントを削除します
 settings.resetCider.category.caches: キャッシュ
 settings.resetCider.category.caches.desc: アートワーク、ライブラリ、ホーム、その他のオフラインキャッシュ
+settings.resetCider.category.caches.descModels: アートワーク、ライブラリ、ホームなどのオフラインキャッシュと、Gemma などのダウンロード済みモデル
 settings.resetCider.category.integrations: 外部サービス連携のログイン情報
 settings.resetCider.category.integrations.desc: Last.fm、ListenBrainz、その他のスクロブラーの認証情報
 settings.resetCider.category.localMusic: ローカルミュージックライブラリのデータベース
