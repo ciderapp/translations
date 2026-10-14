@@ -57,6 +57,8 @@ action.addToPlaylist.tracksCount: "{count} 首歌曲"
 action.addToQueue: 加至待播清單
 action.addToQueue.error: 加入待播清單時發生錯誤
 action.addToQueue.success: 已加入待播清單
+action.appleMusic.enterUrl: 輸入 Apple Music 網址
+action.appleMusic.invalidUrl: 無效的 Apple Music 網址
 action.appleMusic.yourProfile: 你的個人檔案
 action.apply: 套用
 action.approve: 批准
@@ -148,6 +150,7 @@ action.later: 稍後
 action.love: 喜愛
 action.manage: 管理
 action.minimize: 最小化
+action.minimizeVideo: 最小化影片
 action.moveToFolder: 移動至資料夾
 action.moveToFolder.here: 將「{{name}}」移動至此
 action.moveToTop: 移至頂部
@@ -171,6 +174,7 @@ action.openUrl:
   source: human
   by: "@jay900604"
   issue: 65
+action.openVideo: 開啟影片
 action.paste: 貼上
 action.pause: 暫停
 action.pickTime: 選擇時間
@@ -348,6 +352,472 @@ app.unsupportedClient.title:
   source: human
   by: "@jay900604"
   issue: 57
+assistant.sid.agent.added: 已加入 {count} 首歌曲
+assistant.sid.agent.addedOne: 已加入一首歌曲
+assistant.sid.agent.askingPicks: 正在向 Apple Music 索取推薦
+assistant.sid.agent.averageBpm: 平均 {bpm} BPM
+assistant.sid.agent.builtGeneric: 以下是為你製作的播放清單。
+assistant.sid.agent.builtHigh: 我保持了較高的能量，並在接近結尾時達到高峰。
+assistant.sid.agent.builtLow: 我保持了較低的能量，並在結尾時逐漸放緩。
+assistant.sid.agent.checked: 已檢查節奏和能量
+assistant.sid.agent.checkedLibrary: 已檢查你的資料庫
+assistant.sid.agent.checking: 正在檢查節奏和能量
+assistant.sid.agent.deduped: 已移除重複項目
+assistant.sid.agent.foundCatalog: 在 Apple Music 找到 {songs}
+assistant.sid.agent.foundLibrary: 在你的資料庫找到 {songs}
+assistant.sid.agent.foundPlaylists: 找到類似的播放清單
+assistant.sid.agent.fromApplePlaylists: Apple Music 的 {playlists}
+assistant.sid.agent.fromArtists: "{artists} 的歌曲及類似的歌手"
+assistant.sid.agent.fromLibrary: 你的資料庫
+assistant.sid.agent.keptTempo: 保留 {range} 的歌曲
+assistant.sid.agent.libraryFit: "{songs} 符合條件"
+assistant.sid.agent.lookedAt: 已查看 {artists}
+assistant.sid.agent.lookingCatalog: 正在瀏覽 Apple Music
+assistant.sid.agent.moved: 已移動一首歌曲
+assistant.sid.agent.movedTo: 移至第 {row} 首
+assistant.sid.agent.noChange: 我看過了，不會更改任何內容。
+assistant.sid.agent.nothingFound: 找不到符合的歌曲。請嘗試以其他方式描述。
+assistant.sid.agent.orderEnergyDown: 能量，最熱鬧的排前面
+assistant.sid.agent.orderEnergyUp: 能量，最平靜的排前面
+assistant.sid.agent.orderKey: 調性
+assistant.sid.agent.orderTempoDown: 節奏，最快的排前面
+assistant.sid.agent.orderTempoUp: 節奏，最慢的排前面
+assistant.sid.agent.picked: 已選出 {songs}
+assistant.sid.agent.pulledFrom: 我從 {sources} 中挑選。
+assistant.sid.agent.rangeAny: 任何節奏
+assistant.sid.agent.rangeAtLeast: "{low} BPM 或以上"
+assistant.sid.agent.rangeAtMost: "{high} BPM 或以下"
+assistant.sid.agent.rangeBetween: 介乎 {low} 至 {high} BPM 之間
+assistant.sid.agent.read: 已讀取 {playlist} 中的 {songs}
+assistant.sid.agent.searchingCatalog: 正在搜尋 Apple Music
+assistant.sid.agent.searchingLibrary: 正在瀏覽你的資料庫
+assistant.sid.agent.sorted: 已按 {order} 排序
+assistant.sid.agent.stuck: 這個問題我處理不了。請換個方式提問。
+assistant.sid.agent.suggested: Apple Music 建議了 {songs}
+assistant.sid.agent.summary: 我{changes}。
+assistant.sid.agent.summaryAdded: 加入了 {songs}
+assistant.sid.agent.summaryMoved: 移動了 {songs}
+assistant.sid.agent.summaryTookOut: 移除了 {songs}
+assistant.sid.agent.thinking: 思考中
+assistant.sid.agent.thinkingOver: 正在考慮
+assistant.sid.agent.thoughtOver: 已考慮完畢
+assistant.sid.agent.tooBig: 這個播放清單太大，Sid 無法一次讀取。
+assistant.sid.agent.tookOut: 已移除 {count} 首歌曲
+assistant.sid.agent.tookOutOne: 已移除一首歌曲
+assistant.sid.agent.tookOutSongs: 已移除 {songs}
+assistant.sid.agent.trimmed: 已修剪至 {minutes} 分鐘
+assistant.sid.agent.unsure: 我不確定。
+assistant.sid.agent.working: 正在處理播放清單
+assistant.sid.answer.dropSlowest: 移除最慢的歌曲
+assistant.sid.applied.made: Sid 已作出 {count} 項更改
+assistant.sid.applied.madeOne: Sid 已作出 1 項更改
+assistant.sid.applied.markAdded: 由 Sid 加入
+assistant.sid.applied.marked: 列表中已標示這些歌曲。
+assistant.sid.applied.markMoved: 由 Sid 移動
+assistant.sid.applied.undo: 復原
+assistant.sid.applied.undoChanged: "{playlist} 在 Sid 編輯後已有變動，復原會令該變動遺失。未有復原任何更改。"
+assistant.sid.applied.undoFailed: Sid 無法復原。請稍後再試。
+assistant.sid.applied.undoHistory: 你仍可從播放清單的歷史記錄中還原較早的版本。
+assistant.sid.applied.undone: Sid 已將 {playlist} 還原至原來的樣子。
+assistant.sid.arc.coolDown: 放緩
+assistant.sid.arc.peak: 高潮
+assistant.sid.arc.steady: 平穩
+assistant.sid.arc.warmUp: 漸入
+assistant.sid.ask.addFive: 加入五首類似的歌曲
+assistant.sid.ask.calmToLively: 由平靜到活潑
+assistant.sid.ask.dedupe: 移除重複歌曲
+assistant.sid.ask.greetBuild: 你好！這個播放清單應該是怎樣的？
+assistant.sid.ask.greetBuildDetail: 描述一種氛圍、一個情境或幾位歌手，我會為你填滿播放清單。
+assistant.sid.ask.greetEdit: 你好！我們要對 {playlist} 做什麼？
+assistant.sid.ask.greetEditDetail: 我可以加入、刪減及重新排列歌曲，或告訴你它的風格。
+assistant.sid.ask.lateDrive: 深夜駕車
+assistant.sid.ask.morningRun: 晨跑
+assistant.sid.ask.onDevice: Sid 在這部電腦上進行思考，只有音樂查詢會傳送至 Apple Music。
+assistant.sid.ask.rainyFocus: 雨天專注
+assistant.sid.ask.send: 傳送給 Sid
+assistant.sid.ask.sundayCooking: 週日烹飪
+assistant.sid.ask.trim45: 縮減至 45 分鐘
+assistant.sid.ask.whatsItLike: 它是什麼風格？
+assistant.sid.brief.highEnergy: 高能量
+assistant.sid.brief.like: 類似 {artists}
+assistant.sid.brief.lookingFor: 正在尋找 {search}
+assistant.sid.brief.lowEnergy: 低能量
+assistant.sid.bubble.arrow: 至
+assistant.sid.bubble.open: 開啟 Sid 的選曲
+assistant.sid.bubble.replay: 顯示 Sid 的訊息
+assistant.sid.card.add: 加入 {count} 首歌曲
+assistant.sid.card.added: 已加入 {playlist}
+assistant.sid.card.addedToQueue: 已加入播放佇列
+assistant.sid.card.addOne: 加入 1 首歌曲
+assistant.sid.card.addTitle: 加入至 {playlist}
+assistant.sid.card.afterSet: 放在 Sid 選曲已排好的歌曲之後。
+assistant.sid.card.alreadyIn: 這些歌曲已在 {playlist} 中。
+assistant.sid.card.clear: 清除 {count} 首歌曲
+assistant.sid.card.cleared: 已清除
+assistant.sid.card.clearOne: 清除 1 首歌曲
+assistant.sid.card.clearTitle: 清除待播歌曲？
+assistant.sid.card.created: 已建立 {name}
+assistant.sid.card.failed: 操作未能完成。請稍後再試。
+assistant.sid.card.guest: 你是聆聽派對的賓客，因此由主持人控制播放佇列。
+assistant.sid.card.inLibrary: 已在你的資料庫中
+assistant.sid.card.leftOut: 已略過 {count} 首無法播放或你已標示為「少推薦」的歌曲。
+assistant.sid.card.leftOutOne: 已略過 1 首無法播放或你已標示為「少推薦」的歌曲。
+assistant.sid.card.librarySongs: "{count} 首歌曲"
+assistant.sid.card.mostPlayed: "{year} 年播放最多"
+assistant.sid.card.noQueue: 目前沒有播放中的歌曲。請先播放一首歌，Sid 才能將歌曲加入其後。
+assistant.sid.card.notApplied: 未套用
+assistant.sid.card.notNow: 暫不需要
+assistant.sid.card.open: 開啟 {name}
+assistant.sid.card.playing: 播放中
+assistant.sid.card.playLast: 加入播放佇列
+assistant.sid.card.playLastTitle: 稍後播放
+assistant.sid.card.playlistChanged: 自 Sid 讀取後，此播放清單已有變動。請再次提問以重新處理。
+assistant.sid.card.playNext: 下一首播放
+assistant.sid.card.playNextTitle: 接下來
+assistant.sid.card.playNow: 立即播放
+assistant.sid.card.playNowTitle: 準備播放
+assistant.sid.card.plays: 播放 {count} 次
+assistant.sid.card.playsOne: 播放 1 次
+assistant.sid.card.queueApplied: 你的播放佇列已更新
+assistant.sid.card.queueChanged: 自 Sid 查看後，你的播放佇列已有變動。請再次提問以重新處理。
+assistant.sid.card.queued: 已加入佇列
+assistant.sid.card.queueUnavailable: Sid 目前無法在此版本更改播放佇列。
+assistant.sid.card.redo: 再次提問
+assistant.sid.card.refining: Sid 正在更新此計劃。
+assistant.sid.card.retry: 再試一次
+assistant.sid.card.saved: 已儲存至 {playlist}
+assistant.sid.card.showAll: 顯示全部 {count} 項
+assistant.sid.card.songsChange: "{before} → {after} 首歌曲"
+assistant.sid.card.superseded: 已由較新的計劃取代
+assistant.sid.card.topArtists: "{year} 年熱門藝人"
+assistant.sid.card.unplayable: 這些歌曲目前無法播放。
+assistant.sid.card.waitLocked: 下一首歌曲即將開始。請稍後再套用。
+assistant.sid.chat.appleOnly: Sid 與 Apple Music 配合使用。請切換回去以與 Sid 對話。
+assistant.sid.chat.dropWaiting: 等待套用的更改將被捨棄。
+assistant.sid.chat.e2bLimited: 與 Sid 輸入對話需要完整模型。請選擇一項建議，或在 Sid 設定中切換。
+assistant.sid.chat.endConfirmOk: 結束
+assistant.sid.chat.endConfirmTitle: 結束此對話？
+assistant.sid.chat.findingPlaylist: 正在尋找你的播放清單
+assistant.sid.chat.foundPlaylist: 已找到 {playlist}
+assistant.sid.chat.foundPlaylists: 已找到 {count} 個播放清單
+assistant.sid.chat.fromQueue: 已從你的播放佇列挑選 {songs}
+assistant.sid.chat.greet: 你好！我們來聽點什麼？
+assistant.sid.chat.greetDetail: 我可以尋找並播放音樂、整理你的播放佇列、編排播放清單，或介紹你常聽的內容。
+assistant.sid.chat.greetDetailNoQueue: 我可以尋找並加入音樂至佇列、編排播放清單，或介紹你常聽的內容。
+assistant.sid.chat.jumpLatest: 跳至最新
+assistant.sid.chat.loading: 正在準備 Sid
+assistant.sid.chat.newConfirmTitle: 開始新對話？
+assistant.sid.chat.newConversation: 新對話
+assistant.sid.chat.placeholder: 向 Sid 詢問你的音樂
+assistant.sid.chat.placeholderFocus: 向 Sid 詢問 {playlist}
+assistant.sid.chat.playlistUnread: Sid 無法讀取 {playlist}。請稍後再試。
+assistant.sid.chat.queueDetail: 接下來 {songs}
+assistant.sid.chat.readingListening: 正在查看你的收聽內容
+assistant.sid.chat.readingPlaylist: 正在讀取 {playlist}
+assistant.sid.chat.readingQueue: 正在查看你的播放佇列
+assistant.sid.chat.readListening: 已查看你的收聽記錄
+assistant.sid.chat.readQueue: 已讀取你的播放佇列
+assistant.sid.chat.steps: "{count} 個步驟"
+assistant.sid.chat.stepsOne: 1 個步驟
+assistant.sid.chat.stopped: 你已停止此操作。
+assistant.sid.chat.suggestLikeThis: 播放類似的歌曲
+assistant.sid.chat.suggestMostPlayed: 我最常聽什麼？
+assistant.sid.chat.suggestNowPlaying: 正在播放什麼？
+assistant.sid.chat.suggestQueuePlaylist: 用我的播放佇列建立播放清單
+assistant.sid.chat.suggestTidyQueue: 整理我的播放佇列
+assistant.sid.chat.tooBig: 內容太多，我無法一次讀取。請嘗試較短的要求。
+assistant.sid.chat.workingQueue: 正在處理你的播放佇列
+assistant.sid.entry.edit: 與 Sid 一起編輯
+assistant.sid.entry.editDetail: 描述更改，並先檢視
+assistant.sid.entry.start: 與 Sid 開始
+assistant.sid.entry.startDetail: 描述播放清單，Sid 會挑選歌曲
+assistant.sid.entry.startMenu: 與 Sid 開始…
+assistant.sid.failure.belowFloor: Gemma 在這部電腦上運行太慢。
+assistant.sid.failure.busy: Gemma 正在處理其檔案。請稍後再試。
+assistant.sid.failure.counterMismatch: 安全檢查失敗，Sid 已停止。
+assistant.sid.failure.crashed: Gemma 意外停止。請再試一次。
+assistant.sid.failure.deviceLost: Sid 思考時顯示卡重設。請再試一次。
+assistant.sid.failure.modelCorrupt: Gemma 的下載檔案已損壞。請重新下載以繼續。
+assistant.sid.failure.modelMissing: Gemma 的檔案遺失。請重新下載以繼續。
+assistant.sid.failure.network: 下載已停止。請檢查連線並再試一次。
+assistant.sid.failure.notReady: Gemma 尚未準備好。
+assistant.sid.failure.outOfMemory: 為了保持電腦回應流暢，Sid 已停止 Gemma。它需要的顯示記憶體超出可用量。
+assistant.sid.failure.storageFull: 可用空間不足，無法完成下載。
+assistant.sid.failure.timeout: Gemma 回應時間過長。請再試一次。
+assistant.sid.failure.tryAgain: 再試一次
+assistant.sid.failure.watchLost: Sid 因失去顯示記憶體的追蹤而停止。請再試一次。
+assistant.sid.gate.description: 搶先試用尚未完成的 Sid。部分功能暫時無法使用。
+assistant.sid.gate.name: Sid，播放清單助手
+assistant.sid.hello: 你好，我是 Sid
+assistant.sid.home.ask: 向 Sid 查詢你的音樂
+assistant.sid.home.continueChat: 繼續對話
+assistant.sid.home.editHint: 如要編輯播放清單，請開啟它並選擇「與 Sid 編輯」。
+assistant.sid.home.settings: Sid 設定
+assistant.sid.insights.average: 平均 {bpm} BPM
+assistant.sid.insights.first: 第 1 首歌
+assistant.sid.insights.genres: 主要類型
+assistant.sid.insights.keys: 調性
+assistant.sid.insights.last: 第 {count} 首歌
+assistant.sid.insights.length: 長度
+assistant.sid.insights.minutes: "{minutes} 分鐘"
+assistant.sid.insights.mostly: 大多為 {keys}
+assistant.sid.insights.tempo: 逐首歌曲的速度
+assistant.sid.insights.tempoAria: 每首歌曲的速度，從 {low} 至 {high} BPM
+assistant.sid.insights.tempoAriaAverage: 每首歌曲的速度，從 {low} 至 {high} BPM，平均 {bpm}
+assistant.sid.listAnd: "{items} 和 {last}"
+assistant.sid.model.e2b: Gemma 4 E2B
+assistant.sid.model.e4b: Gemma 4 E4B
+assistant.sid.model.quick: 快速
+assistant.sid.model.thorough: 細緻
+assistant.sid.move.blend: 混合
+assistant.sid.move.cut: 剪切
+assistant.sid.move.lift: 提升
+assistant.sid.name: Sid
+assistant.sid.oneSong: 1 首歌
+assistant.sid.panel.back: 返回 Sid
+assistant.sid.panel.close: 關閉此對話
+assistant.sid.panel.replaceOk: 重新開始
+assistant.sid.panel.resize: 拖曳以調整大小，按右鍵重設
+assistant.sid.planner.bringsDown: 把它拉低
+assistant.sid.planner.closeSecond: 非常接近的選擇
+assistant.sid.planner.differentStyle: 不同風格
+assistant.sid.planner.faster: 更快
+assistant.sid.planner.fromLibrary: 來自你的資料庫
+assistant.sid.planner.harderKey: 較難轉換的調性
+assistant.sid.planner.keyClashes: 調性衝突
+assistant.sid.planner.lifts: 提升能量
+assistant.sid.planner.littleFaster: 稍快一點
+assistant.sid.planner.moreGenre: 更多{genre}
+assistant.sid.planner.neighborKey: 相鄰調性
+assistant.sid.planner.newToYou: 你未聽過的新歌
+assistant.sid.planner.noTempo: 之後沒有合適的節奏可接
+assistant.sid.planner.sameArtist: 又是同一位歌手
+assistant.sid.planner.sameKey: 同一調性
+assistant.sid.planner.sameTempo: 相同節奏
+assistant.sid.planner.slower: 較慢
+assistant.sid.planner.tooBigDrop: 節奏落差太大
+assistant.sid.planner.tooBigLift: 節奏跳升太大
+assistant.sid.planner.tooFastNow: 現時太快
+assistant.sid.planner.tooFastToMix: 太快，難以銜接
+assistant.sid.planner.tooSlowNow: 現時太慢
+assistant.sid.planner.tooSlowToMix: 太慢，難以銜接
+assistant.sid.planner.touchSlower: 稍慢一點
+assistant.sid.queue.looking: 正在尋找下一首歌
+assistant.sid.queue.picked: 由 Sid 挑選
+assistant.sid.queue.pickLine: 由 Sid 挑選 · {reason}
+assistant.sid.queue.thought: 「{thought}」
+assistant.sid.ready.checking: 正在檢查這部電腦
+assistant.sid.ready.checkNow: 立即檢查
+assistant.sid.ready.downloadDetail: Gemma 會直接在這部電腦上運行。下載大小為 {size}。
+assistant.sid.ready.downloading: 正在取得 Gemma
+assistant.sid.ready.finishSetup: Gemma 差不多準備好了，請完成設定。
+assistant.sid.ready.finishSetupAction: 完成設定
+assistant.sid.ready.get: 取得 Gemma（{size}）
+assistant.sid.ready.needsDownload: Sid 需要下載一次
+assistant.sid.ready.preparing: 正在準備 Gemma
+assistant.sid.ready.progress: "{done}／{total}"
+assistant.sid.ready.ready: 已就緒
+assistant.sid.ready.retry: 重試（{size}）
+assistant.sid.ready.seeWhy: 查看原因
+assistant.sid.ready.setStillWorks: Sid 的歌單在這裡仍可使用。
+assistant.sid.ready.stop: 停止
+assistant.sid.ready.unavailable: Sid 無法在這部電腦上運作
+assistant.sid.requestTooLong: 要求太長。請將內容縮短至最多 {max} 個字元。
+assistant.sid.review.actionAdd: 加入
+assistant.sid.review.actionCut: 移除
+assistant.sid.review.actionMove: 移動
+assistant.sid.review.adding: 正在加入 {count}
+assistant.sid.review.apply: 套用 {count} 項更改
+assistant.sid.review.applyOne: 套用 1 項更改
+assistant.sid.review.applyUnavailable: 此版本暫不支援儲存 Sid 的更改。
+assistant.sid.review.bpm: "{bpm} BPM"
+assistant.sid.review.change: "{before} → {after}"
+assistant.sid.review.changed: Sid 讀取後，{playlist} 已有變動，因此未有儲存任何內容。請重新開啟以再試一次。
+assistant.sid.review.create: 建立播放列表
+assistant.sid.review.createFailed: Sid 無法建立播放列表，請稍後再試。
+assistant.sid.review.cutting: 正在移除 {count}
+assistant.sid.review.description: 描述（選填）
+assistant.sid.review.empty: Sid 不會清空播放列表，請至少保留一首歌。
+assistant.sid.review.footnoteBuild: 會儲存為一般 Apple Music 播放列表，封面由 Apple Music 自動產生。
+assistant.sid.review.footnoteImport: Sid 從 Apple Music 加入的歌曲，也會加入你的資料庫。
+assistant.sid.review.gone: "{playlist} 已不在你的資料庫中，因此未有儲存任何內容。"
+assistant.sid.review.hideWhole: 隱藏整個播放列表
+assistant.sid.review.incomplete: Sid 未能取得整個播放列表，因此未有儲存任何內容。請待載入完成後再重新開啟。
+assistant.sid.review.lineAdded: "{artist} · {source}"
+assistant.sid.review.lineMoved: "{artist} · 從 {from} 移至 {to}"
+assistant.sid.review.moving: 正在移動 {count}
+assistant.sid.review.name: 名稱
+assistant.sid.review.noChange: "{playlist} 目前已是這個狀態，因此無需儲存。"
+assistant.sid.review.notEditable: Apple Music 不允許 Sid 修改 {playlist}。
+assistant.sid.review.pageStale: 自此頁面載入後，{playlist} 已有變動。請待頁面重新整理後，再次選擇「與 Sid 編輯」。
+assistant.sid.review.removedRow: 已移除
+assistant.sid.review.saveFailed: Sid 無法儲存變更。請稍後再試。
+assistant.sid.review.showWhole: 查看整個播放列表
+assistant.sid.review.skipped: 已略過
+assistant.sid.review.snapshotFailed: Sid 無法先建立還原點，因此未儲存任何內容。請稍後再試。
+assistant.sid.review.songs: 歌曲
+assistant.sid.review.tileBpm: 平均 BPM
+assistant.sid.review.tileMinutes: 分鐘
+assistant.sid.review.tileSongs: 首歌曲
+assistant.sid.review.titleBuild: 這是初步版本
+assistant.sid.review.titleEdit: 這是計劃
+assistant.sid.review.unwritable: "{playlist} 中有部分歌曲無法寫回，因此 Sid 未儲存任何內容。"
+assistant.sid.says.hereComes: "{name} 來了！"
+assistant.sid.says.intro: Sid 的選曲 · {direction}
+assistant.sid.says.looking: 正在尋找下一首
+assistant.sid.says.mixingInto: 將於以下時間混入 {name}：
+assistant.sid.says.move: "{move} · {bars} 小節"
+assistant.sid.says.moveOneBar: "{move} · 1 小節"
+assistant.sid.says.next: 下一首是 {name}。
+assistant.sid.says.nextBecause: 下一首是 {name}：{reason}。
+assistant.sid.says.paused: 已暫停，我會在這裡。
+assistant.sid.says.picking: 正在挑選下一首播放的歌曲。
+assistant.sid.says.steady: 穩定於 {bpm} BPM
+assistant.sid.says.tempo: "{from} → {to} BPM"
+assistant.sid.says.upWhenBack: 你回來時會播放 {name}。
+assistant.sid.session.failed: Sid 無法完成該操作。
+assistant.sid.session.failedRetry: Sid 無法完成該操作。請稍後再試。
+assistant.sid.session.naming: 正在命名
+assistant.sid.session.newPlaylist: 新播放列表
+assistant.sid.set.askEmpty: 你想聽什麼？
+assistant.sid.set.fromIdea: "{artist} 的歌曲，Sid 的建議"
+assistant.sid.set.fromLibrary: 你的資料庫
+assistant.sid.set.fromRequest: 你的要求
+assistant.sid.set.fromStation: 根據選曲建立的電台
+assistant.sid.set.notFound: 找不到「{search}」。要不要換個方式再試？
+assistant.sid.set.nothingPlaying: 請先播放一首歌，然後再問我。
+assistant.sid.set.notQueued: 無法將該歌曲加入佇列。
+assistant.sid.set.queued: "{artist} 的《{title}》將{where}播放。{reason}。"
+assistant.sid.set.request: 你的要求
+assistant.sid.set.whereAfterNext: 緊接下一首之後
+assistant.sid.set.whereNext: 下一首
+assistant.sid.settings.addMore: 新增更多
+assistant.sid.settings.addMoreDetail: 從你的資料庫或整個 Apple Music 中找出合適的歌曲
+assistant.sid.settings.bottom: 底部
+assistant.sid.settings.byPlayer: 跟隨播放器
+assistant.sid.settings.byPlayerDetail: Sid 顯示在播放器專輯封面旁
+assistant.sid.settings.canRun: 可執行 Gemma
+assistant.sid.settings.check: 檢查檔案
+assistant.sid.settings.checkDamaged: 部分 Gemma 檔案已損壞。請重新下載。
+assistant.sid.settings.checkGood: Gemma 檔案狀態良好
+assistant.sid.settings.downloadAgain: 重新下載
+assistant.sid.settings.downloadedSize: 已下載 · {size}
+assistant.sid.settings.duringSet: 選曲期間
+assistant.sid.settings.found: Sid 為你找到的歌曲
+assistant.sid.settings.fresh: 從頭開始
+assistant.sid.settings.freshDetail: 根據心情、場景或幾位歌手建立整個播放列表
+assistant.sid.settings.gemmaHere: Gemma 所在位置
+assistant.sid.settings.gpu: 顯示卡
+assistant.sid.settings.group: 助手
+assistant.sid.settings.inEdit: 編輯播放清單時
+assistant.sid.settings.inEditDetail: 在播放清單標題列中使用 Sid 編輯
+assistant.sid.settings.inImmersive: 沉浸模式
+assistant.sid.settings.inImmersiveDetail: 沉浸版面中的 Sid 分頁及氣泡
+assistant.sid.settings.inNewPlaylist: 建立新播放清單時
+assistant.sid.settings.inNewPlaylistDetail: 在新播放清單對話框中由 Sid 開始
+assistant.sid.settings.inPlayer: 播放音樂時
+assistant.sid.settings.inPlayerDetail: Sid 在播放佇列及播放器選單中的設定
+assistant.sid.settings.intro: Sid 協助你編排播放清單，就在這部電腦上運作。
+assistant.sid.settings.inUse: 使用中 · {size}
+assistant.sid.settings.machine: 此電腦
+assistant.sid.settings.modelOptions: "{model} 選項"
+assistant.sid.settings.modelRow: "{style} · {name}"
+assistant.sid.settings.nav: Sid
+assistant.sid.settings.needsGemma: 需要 Gemma
+assistant.sid.settings.nods: 隨節拍點頭
+assistant.sid.settings.nodsDetail: Sid 會隨歌曲的每個節拍點頭
+assistant.sid.settings.notDownloadedSize: 未下載 · {size}
+assistant.sid.settings.nothingYet: 暫無內容
+assistant.sid.settings.nothingYetDetail: 開啟播放清單，然後選擇「使用 Sid 編輯」。
+assistant.sid.settings.notMeasured: 尚未測量。Sid 會在下載後進行測量。
+assistant.sid.settings.notMeasuredReady: 尚未測量。Sid 會在下一次請求前進行測量。
+assistant.sid.settings.partlySize: 部分已下載 · {size}
+assistant.sid.settings.position: 位置
+assistant.sid.settings.positionDetail: Sid 在專輯封面上的位置
+assistant.sid.settings.privacyChat: 你輸入的內容會保留在這部電腦上：Sid 會在此使用 Gemma 進行思考。為了尋找音樂，Sid 會將搜尋字詞傳送至 Apple Music；當你提出要求時，還會從你的 Apple Music 帳戶讀取你的播放清單、最近播放記錄及 Apple Music Replay。在你按下「套用」之前，不會有任何改變。
+assistant.sid.settings.reads: 讀取完整播放清單需 {seconds} 秒（須少於 {floor} 秒）
+assistant.sid.settings.regular: 一般
+assistant.sid.settings.remove: 移除
+assistant.sid.settings.removeMenu: 移除…
+assistant.sid.settings.removeMessage: Sid 需要它來編輯播放清單，重新下載需要 {size}。
+assistant.sid.settings.removeTitle: 移除 {model}？
+assistant.sid.settings.reshape: 重塑
+assistant.sid.settings.reshapeDetail: 按由靜至動、按節拍或讓調性流暢銜接來排序
+assistant.sid.settings.runSet: 執行選曲
+assistant.sid.settings.runSetDetail: 按調性和節拍選出接下來播放的歌曲，並接受你的點播要求
+assistant.sid.settings.shaped: Sid 編排的播放清單
+assistant.sid.settings.shapedOne: Sid 編排的播放清單
+assistant.sid.settings.size: 大小
+assistant.sid.settings.sizeDetail: 選擇「小」會令 Sid 變細，氣泡也會較窄
+assistant.sid.settings.skills: Sid 能做什麼
+assistant.sid.settings.skillsHere: Sid 在這裡能做什麼
+assistant.sid.settings.small: 小
+assistant.sid.settings.speed: 速度
+assistant.sid.settings.storage: 儲存空間
+assistant.sid.settings.storageLine: Gemma 需要 {size}，此電腦可用空間為 {free}
+assistant.sid.settings.takeTime: 讓 Sid 慢慢處理？
+assistant.sid.settings.takeTimeDetail: 快速回應即時完成。深入處理需要多一點時間，但更能應付大型播放清單。
+assistant.sid.settings.tell: 告訴你相關資訊
+assistant.sid.settings.tellDetail: 一目了然顯示節拍、調性及風格
+assistant.sid.settings.thinking: Sid 的思考方式
+assistant.sid.settings.tidy: 整理
+assistant.sid.settings.tidyDetail: 移除重複歌曲、修剪至指定長度，或維持在某個節拍
+assistant.sid.settings.together: 至今合共
+assistant.sid.settings.top: 頂部
+assistant.sid.settings.unavailableNote: 要使用 Sid 編輯及建立播放清單，需要在能夠執行 Gemma 的電腦上運行。Sid 的選曲功能在此仍可使用。
+assistant.sid.settings.unknownGpu: 未知的顯示卡
+assistant.sid.settings.where: 在哪裡找到 Sid
+assistant.sid.settings.withoutGemma: 在沒有 Gemma 的情況下，Sid 會按歌曲的節拍、調性及能量選歌，並按你輸入的文字在 Apple Music 中搜尋你的要求。
+assistant.sid.settings.writes: 每秒寫入 {rate} 個 token（需要 {floor}）
+assistant.sid.setView.confirmMany: Sid 會清除之後排隊的 {count} 首歌，並決定接下來播放什麼。
+assistant.sid.setView.confirmOk: 開始合輯
+assistant.sid.setView.confirmOne: Sid 會清除之後排隊的一首歌，並決定接下來播放什麼。
+assistant.sid.setView.confirmTitle: 開始 Sid 的合輯？
+assistant.sid.setView.direction: 能量
+assistant.sid.setView.end: 結束
+assistant.sid.setView.endSet: 結束 Sid 的合輯
+assistant.sid.setView.known: 你熟悉的歌曲
+assistant.sid.setView.liveRadio: Sid 的合輯無法跟隨直播電台。
+assistant.sid.setView.new: 你未聽過的
+assistant.sid.setView.nothingPlaying: 播放一首歌以開始合輯。
+assistant.sid.setView.requestPlaceholder: 向 Sid 點播歌曲
+assistant.sid.setView.start: 開始
+assistant.sid.setView.startSet: 開始 Sid 的合輯
+assistant.sid.setView.stayInKey: 保持同調
+assistant.sid.setView.stayInKeyDetail: 只在相容的調性之間混音
+assistant.sid.setView.subtitleActive: Sid 正在決定接下來播放什麼
+assistant.sid.setView.subtitleIdle: Sid 決定接下來播放什麼
+assistant.sid.setView.title: Sid 的合輯
+assistant.sid.size.gb: "{size} GB"
+assistant.sid.size.mb: "{size} MB"
+assistant.sid.songCount: "{count} 首歌"
+assistant.sid.source.applePick: Apple Music 精選
+assistant.sid.source.applePlaylist: 一個 Apple Music 播放清單
+assistant.sid.source.artist: 某位藝人的熱門歌曲
+assistant.sid.source.catalog: Apple Music
+assistant.sid.source.library: 你的資料庫
+assistant.sid.source.playlist: 播放清單中
+assistant.sid.unavailable.belowFloor: Gemma 在這部電腦上運行太慢，Sid 無法使用。
+assistant.sid.unavailable.counterMismatch: 安全檢查失敗後，Sid 已關閉 Gemma。待 Cider 或你的顯示卡驅動程式更新後，它會再次嘗試。
+assistant.sid.unavailable.gpuLimits: 這張顯示卡的記憶體不足以供 Gemma 使用。
+assistant.sid.unavailable.gpuUnstable: 顯示卡兩次停止回應，因此 Sid 會暫停運作，直到 Cider 重新啟動。
+assistant.sid.unavailable.modelCorrupt: Gemma 的下載檔案兩次損壞，因此 Sid 已停止提供它。
+assistant.sid.unavailable.noAdapter: Sid 找不到可用來運行 Gemma 的顯示卡。
+assistant.sid.unavailable.noGpuWatch: Cider 無法在此監察顯示記憶體，因此 Sid 不會在這部電腦上運行 Gemma。
+assistant.sid.unavailable.noStorage: Cider 無法在這部電腦上儲存 Gemma 的檔案。
+assistant.sid.unavailable.noWebgpu: Gemma 需要 WebGPU，而這部電腦無法使用。
+assistant.sid.unavailable.outOfMemory: Gemma 需要的顯示記憶體超出這部電腦可以提供的量。
+assistant.sid.unavailable.probeFailed: Sid 無法檢查這部電腦，稍後會再次嘗試。
+assistant.sid.unavailable.softwareGpu: 這部電腦在沒有顯示卡的情況下繪製圖形，而 Gemma 需要顯示卡。
+assistant.sid.unavailable.storage: 這部電腦的可用空間不足，無法安裝 Gemma。
+assistant.sid.why.cameClose: 差一點入選
+assistant.sid.why.linedUp: 原本排好的歌曲
+assistant.sid.why.open: Sid 為何選擇 {title}
+assistant.sid.why.weighed: Sid 從{places}中權衡了 {count} 首歌。
+assistant.sid.working.starting: 正在開始
+assistant.sid.working.stop: 停止
+assistant.sid.working.titleBuild: 正在製作你的播放清單
+assistant.sid.working.titleEdit: 正在處理 {playlist}
 audio.device.default: 預設裝置
 audio.device.noneFound: 找不到輸出裝置
 audio.device.placeholder: 裝置 {{id}}
@@ -731,6 +1201,8 @@ home.settings.tryBento: 試用 Bento 面板 (Beta)
 home.syncFavorites: 同步最愛
 home.syncFavorites.gettingArtists: 正在獲取最愛的藝人...
 home.title: 首頁
+hostReinstall.drm.body: 由於此 Cider 版本是在必要的 DRM 更新之前安裝的，Apple Music 拒絕播放。應用程式內更新無法提供該更新，因此請從 Cider Taproom 重新下載並安裝 Cider。選擇「確定」以開啟 Cider Taproom。
+hostReinstall.drm.title: 重新安裝 Cider 以恢復播放
 i18n.authors: CiderCollective
 i18n.category: main
 i18n.languageName: 繁體中文 (香港)
@@ -738,6 +1210,7 @@ i18n.languageNameEnglish: Chinese (Hong Kong)
 library.albumVersions.clean: 非不雅版本
 library.albumVersions.explicit: 不雅版本
 library.albumVersions.label: 版本
+library.artists.empty: 選擇一位藝人
 library.columnBrowser: 欄位瀏覽器
 library.favoritesOnly: 僅限最愛
 library.genres.counts: "{albums} 張專輯、{songs} 首歌曲"
@@ -2548,8 +3021,13 @@ notificationCenter.row.muted: 已靜音
 notificationCenter.section.active: 作用中
 notificationCenter.section.history: 記錄
 notificationCenter.title: 通知
+notify.explicitRestrictedSkip: 正在跳過「{name}」：你的 Apple 帳戶已限制露骨內容
+notify.explicitRestrictedStop: 播放已停止：「{name}」含有露骨內容，而你的 Apple 帳戶已限制露骨內容
 notify.licenseRefusedSkip: 「{name}」目前無法播放，正在跳過
 notify.licenseRefusedStop: 已停止播放：「{name}」無法播放
+notify.multipleTracksUnavailable: 多首歌曲無法使用。請嘗試其他歌曲或專輯。
+notify.trackUnavailableSkip: 「{name}」無法使用，正在跳過
+notify.trackUnavailableStop: 播放已停止：「{name}」無法使用
 nowPlaying.a11y.trackWaveform: 音軌波形，點按以跳轉
 nowPlaying.a11y.waveform: 正在播放曲目的波形
 oobe.amsignin.title: ""
@@ -2744,6 +3222,8 @@ playbackHealth.backgroundFreeze.eyebrow:
 playbackHealth.backgroundFreeze.hint: 視窗管理員規則或作業系統設定可以讓 Cider 在未聚焦時保持執行。點按「了解更多」以查看適用於你系統的解決方案。
 playbackHealth.backgroundFreeze.learnMore: 了解更多
 playbackHealth.backgroundFreeze.title: 系統在背景暫停了 Cider
+playbackHealth.hostReinstall.label: Cider 需要重新安裝
+playbackHealth.hostReinstall.message: Apple Music 拒絕此安裝版本。請從 Cider Taproom 重新安裝 Cider。
 playbackHealth.localIssue: 本機播放問題
 playlist.collaborative.tooltip:
   value: 此播放清單已開放給共同編輯者
@@ -2754,21 +3234,29 @@ playlist.collaborators.andOthers: "{{name}} 及其他 {{count}} 人"
 playlist.collaborators.count: "{{count}} 位協作者"
 playlist.collaborators.owner: 擁有者
 playlist.collaborators.pair: "{{a}} 及 {{b}}"
+playlist.createFailed: 無法建立播放清單，請稍後再試。
 playlist.description: 播放清單描述
 playlist.error.changedElsewhere.message: 此播放清單已在其他裝置上變更。請重新載入並再試一次。
 playlist.error.changedElsewhere.title: 播放清單已在其他裝置上變更
 playlist.error.locked.message: 套用排序選項時，無法移除此曲目。
 playlist.error.locked.title: 播放清單已鎖定
 playlist.error.locked.tooltip: 套用排序選項時，無法重新排列此播放清單。
+playlist.error.notEditable: 此播放清單無法編輯。
+playlist.error.queueRemoveConflict: 自建立播放佇列後，此播放清單已有變動。請開啟播放清單以移除該歌曲。
 playlist.error.save.message: 儲存播放清單時發生錯誤。請再試一次。
 playlist.error.save.title: 無法儲存播放清單
+playlist.error.smartNotEditable: 智能播放清單會按照其規則自動更新，因此無法手動移除歌曲。
 playlist.error.updating.message: 更新播放清單時發生錯誤。請再試一次。
 playlist.error.updating.title: 更新播放清單時發生錯誤
 playlist.folderEmpty: 此資料夾內無播放清單
+playlist.folderMoveFailed: 無法移動資料夾，請稍後再試。
 playlist.folderRenameHint: 連按兩下以重新命名
 playlist.lastUpdated: 上次更新於 {{date}}
 playlist.madeByApple: Apple 製作
+playlist.moveFailed: 無法移動播放清單，請稍後再試。
 playlist.nameEmpty: 播放清單名稱不能為空
+playlist.newFolderNotMoved: 資料夾已建立，但無法移入你所選的資料夾。它會位於任何資料夾之外。
+playlist.newPlaylistNotMoved: 播放清單已建立，但無法移入你所選的資料夾。它會位於任何資料夾之外。
 playlist.noTracks: 沒有歌曲
 playlist.personalMix: 個人精選
 playlist.playlistName: 播放清單名稱
@@ -2779,6 +3267,8 @@ playlist.publishOnProfileAndSearch:
   issue: 73
 playlist.refresh.message: 此播放清單已在其他裝置上更新。正在重新整理播放清單。
 playlist.refresh.title: 播放清單需要重新整理
+playlist.suggestions.subtitle: 預覽並加入播放清單
+playlist.suggestions.title: 推薦歌曲
 playlist.untitled: 未命名
 podcast.comingSoon.description: 由於 Cider 的播放處理機制進行了重大調整，Podcast 支援功能目前正在重構中，並將於未來的更新中回歸。
 podcast.comingSoon.hide: 從側邊欄隱藏
@@ -2893,6 +3383,7 @@ settings.audio.atmos.binaural.desc:
   by: "@jay900604"
   issue: 65
 settings.audio.atmos.description: 為你目前的輸出裝置設定 Atmos 播放。
+settings.audio.atmos.normalizationHint: Dolby Atmos 混音的音量比立體聲母帶低。請開啟音量標準化以使兩者音量一致。
 settings.audio.atmos.off.desc: 已停用 Atmos。所有內容將以標準立體聲播放。
 settings.audio.atmos.passthrough: 直通
 settings.audio.atmos.passthrough.desc: 繞過所有音訊處理。多聲道 Atmos 會直接傳送到裝置。最適合 AV 擴音機。
@@ -3080,6 +3571,7 @@ settings.client.genten.proxyServer: 代理伺服器
 settings.client.genten.proxyServer.desc: 代理伺服器的位址
 settings.client.genten.restartNotice: 你需要重新啟動應用程式以套用變更。
 settings.client.genten.saveError: 儲存設定時發生錯誤
+settings.client.genten.saveFailed: 無法儲存你的設定，請再試一次。
 settings.client.genten.saveSuccess: 設定已儲存
 settings.client.genten.smoothScrolling: 平滑捲動
 settings.client.genten.smoothScrolling.desc: 切換是否啟用平滑捲動
@@ -3238,6 +3730,7 @@ settings.client.windows.proxyServer: 代理伺服器
 settings.client.windows.proxyServer.desc: 代理伺服器的位址
 settings.client.windows.restartNotice: 你需要重新啟動應用程式以套用變更。
 settings.client.windows.saveError: 儲存設定時發生錯誤
+settings.client.windows.saveFailed: 無法儲存你的設定，請再試一次。
 settings.client.windows.saveSuccess: 設定已儲存
 settings.client.windows.taskbarProgress: 在工作列顯示播放進度
 settings.client.windows.taskbarProgress.desc: 在工作列圖示中顯示播放進度
@@ -3456,6 +3949,7 @@ settings.extensions.browseThemeMarket:
   source: human
   by: "@jay900604"
   issue: 62
+settings.extensions.byAuthor: 作者：{author}
 settings.extensions.checkUpdates:
   value: 啟動時檢查延伸功能更新
   source: human
@@ -3478,6 +3972,7 @@ settings.extensions.fileWatcher: 啟用主題檔案監控
 settings.extensions.fileWatcher.desc: 當磁碟上的檔案變更時，自動重新載入主題樣式表。
 settings.extensions.importFromFile: 從檔案匯入
 settings.extensions.maintenance: 維護
+settings.extensions.marketplaceId: ID：{id}
 settings.extensions.newThemeDialog.identifier: 識別碼
 settings.extensions.newThemeDialog.name: 主題名稱
 settings.extensions.newThemeDialog.title: 新主題
@@ -3491,16 +3986,26 @@ settings.extensions.openAppData.desc:
   source: human
   by: "@jay900604"
   issue: 65
+settings.extensions.plugins.directory: 目錄
 settings.extensions.plugins.empty:
   value: 未安裝任何延伸功能。
   source: human
   by: "@jay900604"
   issue: 62
+settings.extensions.plugins.getMore: 取得更多外掛程式
+settings.extensions.plugins.identifier: 識別碼
+settings.extensions.plugins.loadFailed.error: 此外掛程式無法啟動：{{ error }}
+settings.extensions.plugins.loadFailed.incompatible: 此外掛程式是為較舊版本的 Cider 而建，因此無法執行。請前往市集檢查是否有更新。
+settings.extensions.plugins.loadFailed.invalid: 這不是有效的 Cider 外掛程式，因此無法執行。
+settings.extensions.plugins.refreshList: 重新整理外掛程式清單
 settings.extensions.plugins.running:
   value: 執行中
   source: human
   by: "@jay900604"
   issue: 62
+settings.extensions.plugins.uninstall: 解除安裝
+settings.extensions.plugins.uninstallConfirm: 要解除安裝「{name}」嗎？
+settings.extensions.plugins.uninstallTitle: 解除安裝外掛程式
 settings.extensions.refresh:
   value: 重新整理延伸功能
   source: human
@@ -3533,6 +4038,7 @@ settings.extensions.themes.activeCount: "{{ count }} 個已啟用"
 settings.extensions.themes.empty: 未安裝任何主題。
 settings.extensions.themes.stylesheetMany: "{{ count }} 個樣式表"
 settings.extensions.themes.stylesheetOne: 1 個樣式表
+settings.extensions.viewOnMarketplace: 在市集中查看
 settings.fonts.description: 變更應用程式中使用的字型
 settings.fonts.lyrics: 歌詞字型
 settings.fonts.lyrics.description: 用於歌詞的字型
@@ -4562,6 +5068,7 @@ settings.option.lyrics.thirdPartySources: 啟用第三方來源
 settings.option.lyrics.thirdPartySources.description: 當 Apple Music 歌詞不可用時，允許從 Musixmatch 和 NetEase 獲取歌詞。歌詞品質可能有所不同，且持續使用可能會導致頻率限制。
 settings.option.lyrics.timeOffset: 歌詞時間偏移 (秒)
 settings.option.lyrics.timeOffset.description: 調整歌詞顯示的時間。正值會提早顯示歌詞，負值則會延遲顯示。適用於修正音訊不同步的情況。
+settings.option.lyrics.timeOffset.descriptionV2: 調整歌詞顯示的時間。正值會延後顯示歌詞，負值則提早顯示。適用於校正音訊不同步的情況。
 settings.option.lyrics.timestampStyle: 時間戳記樣式
 settings.option.lyrics.timestampStyle.both: 兩者
 settings.option.lyrics.timestampStyle.chip: 膠囊形
@@ -5168,6 +5675,7 @@ settings.resetCider.category.appleMusic: 登出 Apple Music
 settings.resetCider.category.appleMusic.desc: 從此裝置移除 Apple Music 帳戶
 settings.resetCider.category.caches: 快取
 settings.resetCider.category.caches.desc: 專輯插圖、資料庫、首頁及其他離線快取
+settings.resetCider.category.caches.descModels: 封面、資料庫、主頁及其他離線快取，以及已下載的模型（例如 Gemma）
 settings.resetCider.category.integrations: 整合服務登入
 settings.resetCider.category.integrations.desc: Last.fm、ListenBrainz 及其他記錄服務的金鑰
 settings.resetCider.category.localMusic: 本機音樂資料庫
