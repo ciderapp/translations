@@ -41,6 +41,8 @@ action.addToPlaylist.tracksCount: "{count} Titel"
 action.addToQueue: Zur Warteschlange hinzufügen
 action.addToQueue.error: Fehler beim Hinzufügen zur Warteschlange
 action.addToQueue.success: Zur Warteschlange hinzugefügt
+action.appleMusic.enterUrl: Apple-Music-URL eingeben
+action.appleMusic.invalidUrl: Keine gültige Apple-Music-URL
 action.appleMusic.yourProfile: Dein Profil
 action.apply: Anwenden
 action.approve: Genehmigen
@@ -108,6 +110,7 @@ action.later: Später
 action.love: Gefällt mir
 action.manage: Verwalten
 action.minimize: Minimieren
+action.minimizeVideo: Video minimieren
 action.moveToFolder: In Ordner verschieben
 action.moveToFolder.here: „{{name}}“ hierhin verschieben
 action.moveToTop: Nach ganz oben verschieben
@@ -119,6 +122,7 @@ action.openArtworkInBrowser: Cover im Browser öffnen
 action.openInNewTab: In neuem Tab öffnen
 action.openNewTab: Neuer Tab
 action.openUrl: URL öffnen
+action.openVideo: Video öffnen
 action.paste: Einsetzen
 action.pause: Pause
 action.pickTime: Zeit auswählen
@@ -250,16 +254,491 @@ album.track.unavailable.unreleased: Dieser Titel wurde noch nicht veröffentlich
 album.track.unavailable.zeroDuration: Die Titeldauer beträgt 0 Sekunden, wahrscheinlich noch nicht veröffentlicht.
 album.upcoming.badge: Bevorstehendes Album
 app.name: Cider
+app.ptbDisclaimer.confirm: Ich verstehe
+app.ptbDisclaimer.message: Dies ist ein Build des Public Testing Branch. Die Stabilität dieses Builds ist nicht garantiert, und er kann Fehler enthalten. Melde in diesem Build keine gefundenen Fehler oder Probleme. Falls du auf Probleme stößt, wechsle bitte zum stabilen Build, bevor du sie meldest.
+app.ptbDisclaimer.title: Hinweis zum Public Testing Branch
 app.unsupportedClient.message: Dieser Client wird nicht unterstützt. Bitte stelle sicher, dass du die neueste Version von Cider verwendest.
 app.unsupportedClient.title: Nicht unterstützter Client
+assistant.sid.agent.added: "{count} Songs hinzugefügt"
+assistant.sid.agent.addedOne: Einen Song hinzugefügt
+assistant.sid.agent.askingPicks: Apple Music nach Vorschlägen fragen
+assistant.sid.agent.averageBpm: Durchschnitt {bpm} BPM
+assistant.sid.agent.builtGeneric: Hier ist eine Playlist dafür.
+assistant.sid.agent.builtHigh: Ich habe die Energie hochgehalten, mit einem Höhepunkt gegen Ende.
+assistant.sid.agent.builtLow: Ich habe die Energie niedrig gehalten und sie zum Schluss abklingen lassen.
+assistant.sid.agent.checked: Tempo und Energie geprüft
+assistant.sid.agent.checkedLibrary: Deine Mediathek geprüft
+assistant.sid.agent.checking: Tempo und Energie werden geprüft
+assistant.sid.agent.deduped: Wiederholungen entfernt
+assistant.sid.agent.foundCatalog: "{songs} auf Apple Music gefunden"
+assistant.sid.agent.foundLibrary: "{songs} in deiner Mediathek gefunden"
+assistant.sid.agent.foundPlaylists: Ähnliche Playlists gefunden
+assistant.sid.agent.fromApplePlaylists: "Apple Music: {playlists}"
+assistant.sid.agent.fromArtists: Songs von {artists} und ähnlichen Künstlern
+assistant.sid.agent.fromLibrary: deiner Mediathek
+assistant.sid.agent.keptTempo: Songs {range} behalten
+assistant.sid.agent.libraryFit: "{songs} passen"
+assistant.sid.agent.lookedAt: "{artists} angesehen"
+assistant.sid.agent.lookingCatalog: Apple Music wird durchsucht
+assistant.sid.agent.moved: Einen Song verschoben
+assistant.sid.agent.movedTo: Auf Position {row}
+assistant.sid.agent.noChange: Ich habe es mir angesehen und würde nichts ändern.
+assistant.sid.agent.nothingFound: Dafür habe ich keine Songs gefunden. Versuche, es anders zu beschreiben.
+assistant.sid.agent.orderEnergyDown: Energie, lebhafteste zuerst
+assistant.sid.agent.orderEnergyUp: Energie, ruhigste zuerst
+assistant.sid.agent.orderKey: Tonart
+assistant.sid.agent.orderTempoDown: Tempo, schnellste zuerst
+assistant.sid.agent.orderTempoUp: Tempo, langsamste zuerst
+assistant.sid.agent.picked: "{songs} ausgewählt"
+assistant.sid.agent.pulledFrom: Ich habe aus {sources} geschöpft.
+assistant.sid.agent.rangeAny: in beliebigem Tempo
+assistant.sid.agent.rangeAtLeast: bei {low} BPM oder schneller
+assistant.sid.agent.rangeAtMost: bei {high} BPM oder langsamer
+assistant.sid.agent.rangeBetween: zwischen {low} und {high} BPM
+assistant.sid.agent.read: "{songs} in {playlist} gelesen"
+assistant.sid.agent.searchingCatalog: Apple Music wird durchsucht
+assistant.sid.agent.searchingLibrary: Deine Mediathek wird durchsucht
+assistant.sid.agent.sorted: Sortiert nach {order}
+assistant.sid.agent.stuck: Bei dieser Anfrage bin ich hängen geblieben. Versuche, anders zu fragen.
+assistant.sid.agent.suggested: Apple Music hat {songs} vorgeschlagen
+assistant.sid.agent.summary: Ich habe {changes}.
+assistant.sid.agent.summaryAdded: "{songs} hinzugefügt"
+assistant.sid.agent.summaryMoved: "{songs} verschoben"
+assistant.sid.agent.summaryTookOut: "{songs} entfernt"
+assistant.sid.agent.thinking: Denke nach
+assistant.sid.agent.thinkingOver: Wird überlegt
+assistant.sid.agent.thoughtOver: Überlegt
+assistant.sid.agent.tooBig: Diese Playlist ist zu groß, als dass Sid sie auf einmal lesen könnte.
+assistant.sid.agent.tookOut: "{count} Songs entfernt"
+assistant.sid.agent.tookOutOne: Einen Song entfernt
+assistant.sid.agent.tookOutSongs: "{songs} entfernt"
+assistant.sid.agent.trimmed: Auf {minutes} Minuten gekürzt
+assistant.sid.agent.unsure: Ich bin mir nicht sicher.
+assistant.sid.agent.working: Playlist wird bearbeitet
+assistant.sid.answer.dropSlowest: Langsamste entfernen
+assistant.sid.applied.made: Sid hat {count} Änderungen vorgenommen
+assistant.sid.applied.madeOne: Sid hat 1 Änderung vorgenommen
+assistant.sid.applied.markAdded: Von Sid hinzugefügt
+assistant.sid.applied.marked: Sie sind in der Liste markiert.
+assistant.sid.applied.markMoved: Von Sid verschoben
+assistant.sid.applied.undo: Rückgängig
+assistant.sid.applied.undoChanged: "{playlist} wurde nach Sids Bearbeitung geändert. Rückgängig machen würde diese Änderung verwerfen. Es wurde nichts rückgängig gemacht."
+assistant.sid.applied.undoFailed: Sid konnte das nicht rückgängig machen. Versuche es gleich noch einmal.
+assistant.sid.applied.undoHistory: Du kannst eine frühere Version über den Verlauf der Playlist wiederherstellen.
+assistant.sid.applied.undone: Sid hat {playlist} wieder in den ursprünglichen Zustand versetzt.
+assistant.sid.arc.coolDown: Ausklingen
+assistant.sid.arc.peak: Höhepunkt
+assistant.sid.arc.steady: Gleichmäßig
+assistant.sid.arc.warmUp: Einstieg
+assistant.sid.ask.addFive: Fünf ähnliche hinzufügen
+assistant.sid.ask.calmToLively: Von ruhig zu lebhaft
+assistant.sid.ask.dedupe: Duplikate entfernen
+assistant.sid.ask.greetBuild: Hallo! Was soll diese Playlist sein?
+assistant.sid.ask.greetBuildDetail: Beschreibe eine Stimmung, einen Moment oder ein paar Künstler, und ich fülle die Playlist.
+assistant.sid.ask.greetEdit: Hallo! Was sollen wir mit {playlist} machen?
+assistant.sid.ask.greetEditDetail: Ich kann Songs hinzufügen, entfernen und neu anordnen oder dir sagen, wie die Playlist klingt.
+assistant.sid.ask.lateDrive: Nachtfahrt
+assistant.sid.ask.morningRun: Morgenlauf
+assistant.sid.ask.onDevice: Sid denkt auf diesem Computer. Nur Musiksuchen werden an Apple Music gesendet.
+assistant.sid.ask.rainyFocus: Konzentration an Regentagen
+assistant.sid.ask.send: An Sid senden
+assistant.sid.ask.sundayCooking: Sonntagskochen
+assistant.sid.ask.trim45: Auf 45 Minuten kürzen
+assistant.sid.ask.whatsItLike: Wie klingt das?
+assistant.sid.brief.highEnergy: viel Energie
+assistant.sid.brief.like: wie {artists}
+assistant.sid.brief.lookingFor: Sucht nach {search}
+assistant.sid.brief.lowEnergy: wenig Energie
+assistant.sid.bubble.arrow: bis
+assistant.sid.bubble.open: Sids Auswahl öffnen
+assistant.sid.bubble.replay: Anzeigen, was Sid sagt
+assistant.sid.card.add: "{count} Songs hinzufügen"
+assistant.sid.card.added: Zu {playlist} hinzugefügt
+assistant.sid.card.addedToQueue: Zur Warteschlange hinzugefügt
+assistant.sid.card.addOne: 1 Song hinzufügen
+assistant.sid.card.addTitle: Zu {playlist} hinzufügen
+assistant.sid.card.afterSet: Nach den Songs, die Sids Auswahl eingeplant hat.
+assistant.sid.card.alreadyIn: Diese Songs sind bereits in {playlist}.
+assistant.sid.card.clear: "{count} Songs entfernen"
+assistant.sid.card.cleared: Geleert
+assistant.sid.card.clearOne: 1 Song entfernen
+assistant.sid.card.clearTitle: Als Nächstes Warteschlange leeren?
+assistant.sid.card.created: "{name} erstellt"
+assistant.sid.card.failed: Das hat nicht funktioniert. Versuche es gleich noch einmal.
+assistant.sid.card.guest: Du bist in einer gemeinsamen Hörsitzung zu Gast, daher steuert der Gastgeber die Warteschlange.
+assistant.sid.card.inLibrary: In deiner Mediathek
+assistant.sid.card.leftOut: "{count} Songs wurden ausgelassen, da sie nicht abspielbar sind oder du sie als „Weniger vorschlagen“ markiert hast."
+assistant.sid.card.leftOutOne: 1 Song wurde ausgelassen, da er nicht abspielbar ist oder du ihn als „Weniger vorschlagen“ markiert hast.
+assistant.sid.card.librarySongs: "{count} Songs"
+assistant.sid.card.mostPlayed: Am meisten gespielt in {year}
+assistant.sid.card.noQueue: Noch wird nichts abgespielt. Spiele zuerst etwas ab, dann kann Sid danach Songs in die Warteschlange einreihen.
+assistant.sid.card.notApplied: Nicht angewendet
+assistant.sid.card.notNow: Nicht jetzt
+assistant.sid.card.open: "{name} öffnen"
+assistant.sid.card.playing: Wird abgespielt
+assistant.sid.card.playLast: Zur Warteschlange hinzufügen
+assistant.sid.card.playLastTitle: Für später
+assistant.sid.card.playlistChanged: Diese Playlist wurde geändert, seit Sid sie gelesen hat. Frag erneut, um sie neu zu erstellen.
+assistant.sid.card.playNext: Als Nächstes abspielen
+assistant.sid.card.playNextTitle: Als Nächstes
+assistant.sid.card.playNow: Jetzt abspielen
+assistant.sid.card.playNowTitle: Bereit zum Abspielen
+assistant.sid.card.plays: "{count} Wiedergaben"
+assistant.sid.card.playsOne: 1 Wiedergabe
+assistant.sid.card.queueApplied: Deine Warteschlange wurde aktualisiert
+assistant.sid.card.queueChanged: Deine Warteschlange hat sich geändert, seit Sid sie angesehen hat. Frag erneut, um sie neu zu erstellen.
+assistant.sid.card.queued: In der Warteschlange
+assistant.sid.card.queueUnavailable: Sid kann die Warteschlange in dieser Version noch nicht ändern.
+assistant.sid.card.redo: Erneut fragen
+assistant.sid.card.refining: Sid aktualisiert diesen Plan.
+assistant.sid.card.retry: Erneut versuchen
+assistant.sid.card.saved: In {playlist} gespeichert
+assistant.sid.card.showAll: Alle {count} anzeigen
+assistant.sid.card.songsChange: "{before} → {after} Songs"
+assistant.sid.card.superseded: Durch einen neueren Plan ersetzt
+assistant.sid.card.topArtists: Top-Künstler:innen {year}
+assistant.sid.card.unplayable: Diese Songs können gerade nicht abgespielt werden.
+assistant.sid.card.waitLocked: Der nächste Song startet gleich. Wende es in einem Moment an.
+assistant.sid.chat.appleOnly: Sid funktioniert mit Apple Music. Wechsle zurück, um mit Sid zu sprechen.
+assistant.sid.chat.dropWaiting: Änderungen, die auf Anwenden warten, werden verworfen.
+assistant.sid.chat.e2bLimited: Für Nachrichten an Sid wird das gründliche Modell benötigt. Wähle einen Vorschlag oder wechsle in den Sid-Einstellungen.
+assistant.sid.chat.endConfirmOk: Beenden
+assistant.sid.chat.endConfirmTitle: Diese Unterhaltung beenden?
+assistant.sid.chat.findingPlaylist: Deine Playlist wird gesucht
+assistant.sid.chat.foundPlaylist: "{playlist} gefunden"
+assistant.sid.chat.foundPlaylists: "{count} Playlists gefunden"
+assistant.sid.chat.fromQueue: "{songs} aus deiner Warteschlange ausgewählt"
+assistant.sid.chat.greet: Hi! Was hören wir uns an?
+assistant.sid.chat.greetDetail: Ich kann Musik finden und abspielen, deine Warteschlange aufräumen, Playlists gestalten oder dir erzählen, was du hörst.
+assistant.sid.chat.greetDetailNoQueue: Ich kann Musik finden und in die Warteschlange stellen, Playlists gestalten oder dir erzählen, was du hörst.
+assistant.sid.chat.jumpLatest: Zum Neuesten springen
+assistant.sid.chat.loading: Sid wird vorbereitet
+assistant.sid.chat.newConfirmTitle: Neue Unterhaltung beginnen?
+assistant.sid.chat.newConversation: Neue Unterhaltung
+assistant.sid.chat.placeholder: Frag Sid nach deiner Musik
+assistant.sid.chat.placeholderFocus: Frag Sid nach {playlist}
+assistant.sid.chat.playlistUnread: Sid konnte {playlist} nicht lesen. Versuch es gleich noch einmal.
+assistant.sid.chat.queueDetail: "{songs} als Nächstes"
+assistant.sid.chat.readingListening: Was du hörst, wird angesehen
+assistant.sid.chat.readingPlaylist: "{playlist} wird gelesen"
+assistant.sid.chat.readingQueue: Deine Warteschlange wird angesehen
+assistant.sid.chat.readListening: Dein Hörverlauf wurde geprüft
+assistant.sid.chat.readQueue: Warteschlange gelesen
+assistant.sid.chat.steps: "{count} Schritte"
+assistant.sid.chat.stepsOne: 1 Schritt
+assistant.sid.chat.stopped: Du hast dies abgebrochen.
+assistant.sid.chat.suggestLikeThis: Etwas Ähnliches abspielen
+assistant.sid.chat.suggestMostPlayed: Was höre ich am meisten?
+assistant.sid.chat.suggestNowPlaying: Was läuft gerade?
+assistant.sid.chat.suggestQueuePlaylist: Aus meiner Warteschlange eine Playlist erstellen
+assistant.sid.chat.suggestTidyQueue: Meine Warteschlange aufräumen
+assistant.sid.chat.tooBig: Das ist zu viel, als dass ich es auf einmal lesen könnte. Versuche es mit einer kürzeren Anfrage.
+assistant.sid.chat.workingQueue: Ich arbeite an deiner Warteschlange
+assistant.sid.entry.edit: Mit Sid bearbeiten
+assistant.sid.entry.editDetail: Beschreibe eine Änderung und prüfe sie zuerst
+assistant.sid.entry.start: Mit Sid starten
+assistant.sid.entry.startDetail: Beschreibe eine Playlist, und Sid wählt die Songs aus
+assistant.sid.entry.startMenu: Mit Sid starten…
+assistant.sid.failure.belowFloor: Gemma läuft auf diesem Computer zu langsam.
+assistant.sid.failure.busy: Gemma ist mit seinen Dateien beschäftigt. Versuche es gleich noch einmal.
+assistant.sid.failure.counterMismatch: Sid wurde beendet, weil eine Sicherheitsprüfung fehlgeschlagen ist.
+assistant.sid.failure.crashed: Gemma wurde unerwartet beendet. Versuche es erneut.
+assistant.sid.failure.deviceLost: Die Grafikkarte wurde zurückgesetzt, während Sid nachdachte. Versuche es erneut.
+assistant.sid.failure.modelCorrupt: Gemmas Download war beschädigt. Lade ihn erneut herunter, um weiterzumachen.
+assistant.sid.failure.modelMissing: Gemmas Dateien fehlen. Lade sie erneut herunter, um weiterzumachen.
+assistant.sid.failure.network: Der Download wurde unterbrochen. Prüfe deine Verbindung und versuche es erneut.
+assistant.sid.failure.notReady: Gemma ist noch nicht bereit.
+assistant.sid.failure.outOfMemory: Sid hat Gemma beendet, damit dein Computer reagiert. Es wurde mehr Grafikspeicher benötigt, als verfügbar war.
+assistant.sid.failure.storageFull: Es ist nicht genug freier Speicherplatz vorhanden, um den Download abzuschließen.
+assistant.sid.failure.timeout: Gemma hat zu lange für eine Antwort gebraucht. Versuche es erneut.
+assistant.sid.failure.tryAgain: Erneut versuchen
+assistant.sid.failure.watchLost: Sid wurde beendet, weil der Grafikspeicher nicht mehr erfasst werden konnte. Versuche es erneut.
+assistant.sid.gate.description: Probiere Sid aus, bevor es fertig ist. Einige Funktionen funktionieren noch nicht.
+assistant.sid.gate.name: Sid, der Playlist-Helfer
+assistant.sid.hello: Hallo, ich bin Sid
+assistant.sid.home.ask: Frag Sid nach deiner Musik
+assistant.sid.home.continueChat: Unterhaltung fortsetzen
+assistant.sid.home.editHint: Um eine Playlist zu bearbeiten, öffne sie und wähle „Mit Sid bearbeiten“.
+assistant.sid.home.settings: Sid-Einstellungen
+assistant.sid.insights.average: Ø {bpm} BPM
+assistant.sid.insights.first: Song 1
+assistant.sid.insights.genres: Top-Genres
+assistant.sid.insights.keys: Tonarten
+assistant.sid.insights.last: Song {count}
+assistant.sid.insights.length: Länge
+assistant.sid.insights.minutes: "{minutes} Min."
+assistant.sid.insights.mostly: Größtenteils {keys}
+assistant.sid.insights.tempo: Tempo, Song für Song
+assistant.sid.insights.tempoAria: Tempo jedes Songs, von {low} bis {high} BPM
+assistant.sid.insights.tempoAriaAverage: Tempo jedes Songs, von {low} bis {high} BPM, im Durchschnitt {bpm}
+assistant.sid.listAnd: "{items} und {last}"
+assistant.sid.model.e2b: Gemma 4 E2B
+assistant.sid.model.e4b: Gemma 4 E4B
+assistant.sid.model.quick: Schnell
+assistant.sid.model.thorough: Gründlich
+assistant.sid.move.blend: Überblenden
+assistant.sid.move.cut: Schneiden
+assistant.sid.move.lift: Anheben
+assistant.sid.name: Sid
+assistant.sid.oneSong: 1 Song
+assistant.sid.panel.back: Zurück zu Sid
+assistant.sid.panel.close: Diese Unterhaltung schließen
+assistant.sid.panel.replaceOk: Neu beginnen
+assistant.sid.panel.resize: Ziehen zum Ändern der Größe, Rechtsklick zum Zurücksetzen
+assistant.sid.planner.bringsDown: bringt das Tempo runter
+assistant.sid.planner.closeSecond: ein knapper Zweiter
+assistant.sid.planner.differentStyle: ein anderer Stil
+assistant.sid.planner.faster: schneller
+assistant.sid.planner.fromLibrary: aus deiner Mediathek
+assistant.sid.planner.harderKey: ein weniger einfacher Tonartwechsel
+assistant.sid.planner.keyClashes: Tonarten-Konflikte
+assistant.sid.planner.lifts: hebt die Energie
+assistant.sid.planner.littleFaster: etwas schneller
+assistant.sid.planner.moreGenre: mehr {genre}
+assistant.sid.planner.neighborKey: eine benachbarte Tonart
+assistant.sid.planner.newToYou: neu für dich
+assistant.sid.planner.noTempo: kein passendes Tempo zum Anschluss
+assistant.sid.planner.sameArtist: wieder derselbe Künstler
+assistant.sid.planner.sameKey: gleiche Tonart
+assistant.sid.planner.sameTempo: gleiches Tempo
+assistant.sid.planner.slower: langsamer
+assistant.sid.planner.tooBigDrop: zu großer Einbruch
+assistant.sid.planner.tooBigLift: zu großer Sprung nach oben
+assistant.sid.planner.tooFastNow: im Moment zu schnell
+assistant.sid.planner.tooFastToMix: zu schnell zum Einmischen
+assistant.sid.planner.tooSlowNow: im Moment zu langsam
+assistant.sid.planner.tooSlowToMix: zu langsam zum Einmischen
+assistant.sid.planner.touchSlower: ein wenig langsamer
+assistant.sid.queue.looking: Suche nach dem nächsten Song
+assistant.sid.queue.picked: Von Sid ausgewählt
+assistant.sid.queue.pickLine: Von Sid ausgewählt · {reason}
+assistant.sid.queue.thought: „{thought}“
+assistant.sid.ready.checking: Dieser Computer wird geprüft
+assistant.sid.ready.checkNow: Jetzt prüfen
+assistant.sid.ready.downloadDetail: Gemma läuft direkt auf diesem Computer. Der Download ist {size} groß.
+assistant.sid.ready.downloading: Gemma wird geladen
+assistant.sid.ready.finishSetup: Gemma ist fast bereit. Schließe die Einrichtung ab.
+assistant.sid.ready.finishSetupAction: Einrichtung abschließen
+assistant.sid.ready.get: Gemma laden ({size})
+assistant.sid.ready.needsDownload: Sid benötigt einen einmaligen Download
+assistant.sid.ready.preparing: Gemma wird vorbereitet
+assistant.sid.ready.progress: "{done} von {total}"
+assistant.sid.ready.ready: Bereit
+assistant.sid.ready.retry: Erneut versuchen ({size})
+assistant.sid.ready.seeWhy: Details anzeigen
+assistant.sid.ready.setStillWorks: Sids Auswahl funktioniert hier weiterhin.
+assistant.sid.ready.stop: Stopp
+assistant.sid.ready.unavailable: Sid kann auf diesem Computer nicht arbeiten
+assistant.sid.requestTooLong: Diese Anfrage ist zu lang. Versuche es mit höchstens {max} Zeichen.
+assistant.sid.review.actionAdd: Hinzufügen
+assistant.sid.review.actionCut: Entfernen
+assistant.sid.review.actionMove: Verschieben
+assistant.sid.review.adding: "Wird hinzugefügt: {count}"
+assistant.sid.review.apply: "{count} Änderungen anwenden"
+assistant.sid.review.applyOne: 1 Änderung anwenden
+assistant.sid.review.applyUnavailable: Das Speichern von Sids Änderungen ist in dieser Version noch nicht verfügbar.
+assistant.sid.review.bpm: "{bpm} BPM"
+assistant.sid.review.change: "{before} → {after}"
+assistant.sid.review.changed: "{playlist} wurde geändert, seit Sid sie gelesen hat, daher wurde nichts gespeichert. Öffne sie erneut, um von vorne zu beginnen."
+assistant.sid.review.create: Playlist erstellen
+assistant.sid.review.createFailed: Sid konnte die Playlist nicht erstellen. Versuche es gleich noch einmal.
+assistant.sid.review.cutting: "Wird entfernt: {count}"
+assistant.sid.review.description: Beschreibung (optional)
+assistant.sid.review.empty: Sid leert keine Playlist. Behalte mindestens einen Song.
+assistant.sid.review.footnoteBuild: Wird als normale Apple Music Playlist gespeichert. Apple Music erstellt das Cover.
+assistant.sid.review.footnoteImport: Songs, die Sid aus Apple Music hinzufügt, werden auch zu deiner Mediathek hinzugefügt.
+assistant.sid.review.gone: "{playlist} ist nicht mehr in deiner Mediathek, daher wurde nichts gespeichert."
+assistant.sid.review.hideWhole: Gesamte Playlist ausblenden
+assistant.sid.review.incomplete: Sid hat nicht die gesamte Playlist erhalten, daher wurde nichts gespeichert. Öffne sie erneut, sobald sie vollständig geladen ist.
+assistant.sid.review.lineAdded: "{artist} · {source}"
+assistant.sid.review.lineMoved: "{artist} · von {from} nach {to}"
+assistant.sid.review.moving: Verschieben {count}
+assistant.sid.review.name: Name
+assistant.sid.review.noChange: "{playlist} sieht bereits so aus, daher gab es nichts zu speichern."
+assistant.sid.review.notEditable: Apple Music erlaubt Sid nicht, {playlist} zu ändern.
+assistant.sid.review.pageStale: "{playlist} wurde geändert, seit diese Seite geladen wurde. Wähle „Mit Sid bearbeiten“ erneut, sobald die Seite aktualisiert wurde."
+assistant.sid.review.removedRow: Entfernt
+assistant.sid.review.saveFailed: Sid konnte die Änderungen nicht speichern. Versuche es gleich noch einmal.
+assistant.sid.review.showWhole: Gesamte Playlist anzeigen
+assistant.sid.review.skipped: Übersprungen
+assistant.sid.review.snapshotFailed: Sid konnte zuerst keinen Wiederherstellungspunkt erstellen, daher wurde nichts gespeichert. Versuche es gleich noch einmal.
+assistant.sid.review.songs: Songs
+assistant.sid.review.tileBpm: Ø BPM
+assistant.sid.review.tileMinutes: Minuten
+assistant.sid.review.tileSongs: Songs
+assistant.sid.review.titleBuild: Hier ist ein erster Entwurf
+assistant.sid.review.titleEdit: Hier ist der Plan
+assistant.sid.review.unwritable: Einige Songs in {playlist} können nicht zurückgeschrieben werden, daher hat Sid nichts gespeichert.
+assistant.sid.says.hereComes: Hier kommt {name}!
+assistant.sid.says.intro: Sids Set · {direction}
+assistant.sid.says.looking: Suche nach dem Nächsten
+assistant.sid.says.mixingInto: Überblendung zu {name} in
+assistant.sid.says.move: "{move} · {bars} Takte"
+assistant.sid.says.moveOneBar: "{move} · 1 Takt"
+assistant.sid.says.next: Als Nächstes kommt {name}.
+assistant.sid.says.nextBecause: "Als Nächstes kommt {name}: {reason}."
+assistant.sid.says.paused: Pausiert. Ich bin hier.
+assistant.sid.says.picking: Ich wähle den nächsten Song aus.
+assistant.sid.says.steady: Konstant bei {bpm} BPM
+assistant.sid.says.tempo: "{from} → {to} BPM"
+assistant.sid.says.upWhenBack: "{name} kommt, wenn du zurück bist."
+assistant.sid.session.failed: Sid konnte das nicht abschließen.
+assistant.sid.session.failedRetry: Sid konnte das nicht abschließen. Versuche es gleich noch einmal.
+assistant.sid.session.naming: Name wird vergeben
+assistant.sid.session.newPlaylist: Neue Playlist
+assistant.sid.set.askEmpty: Was möchtest du hören?
+assistant.sid.set.fromIdea: Songs von {artist}, Sids Idee
+assistant.sid.set.fromLibrary: deine Mediathek
+assistant.sid.set.fromRequest: deine Anfrage
+assistant.sid.set.fromStation: ein Station aus dem Set
+assistant.sid.set.notFound: Ich konnte „{search}“ nicht finden. Soll ich es anders versuchen?
+assistant.sid.set.nothingPlaying: Spiele zuerst etwas ab, dann frag mich.
+assistant.sid.set.notQueued: Ich konnte das nicht zur Warteschlange hinzufügen.
+assistant.sid.set.queued: "{title} von {artist} ist {where}. {reason}."
+assistant.sid.set.request: Deine Anfrage
+assistant.sid.set.whereAfterNext: direkt nach dem nächsten Song
+assistant.sid.set.whereNext: als Nächstes
+assistant.sid.settings.addMore: Mehr hinzufügen
+assistant.sid.settings.addMoreDetail: Finde passende Songs in deiner Mediathek oder in ganz Apple Music
+assistant.sid.settings.bottom: Unten
+assistant.sid.settings.byPlayer: Neben dem Player
+assistant.sid.settings.byPlayerDetail: Sid neben dem Cover des Players
+assistant.sid.settings.canRun: Kann Gemma ausführen
+assistant.sid.settings.check: Dateien prüfen
+assistant.sid.settings.checkDamaged: Einige von Gemmas Dateien sind beschädigt. Lade sie erneut herunter.
+assistant.sid.settings.checkGood: Gemmas Dateien sehen gut aus
+assistant.sid.settings.downloadAgain: Erneut herunterladen
+assistant.sid.settings.downloadedSize: Heruntergeladen · {size}
+assistant.sid.settings.duringSet: Während eines Sets
+assistant.sid.settings.found: Songs, die Sid für dich gefunden hat
+assistant.sid.settings.fresh: Neu starten
+assistant.sid.settings.freshDetail: Eine ganze Playlist aus einer Stimmung, einem Moment oder ein paar Künstlern erstellen
+assistant.sid.settings.gemmaHere: Gemma hier
+assistant.sid.settings.gpu: Grafikkarte
+assistant.sid.settings.group: Assistent
+assistant.sid.settings.inEdit: Beim Bearbeiten einer Playlist
+assistant.sid.settings.inEditDetail: Bearbeite mit Sid im Kopfbereich der Playlist
+assistant.sid.settings.inImmersive: Im Immersiv-Modus
+assistant.sid.settings.inImmersiveDetail: Sids Tab und Bubble in Immersiv-Layouts
+assistant.sid.settings.inNewPlaylist: Beim Erstellen einer neuen Playlist
+assistant.sid.settings.inNewPlaylistDetail: Mit Sid im Dialog für neue Playlists beginnen
+assistant.sid.settings.inPlayer: Während Musik läuft
+assistant.sid.settings.inPlayerDetail: Sids Set in der Warteschlange und im Player-Menü
+assistant.sid.settings.intro: Sid hilft dir, Playlists zu gestalten, direkt auf diesem Computer.
+assistant.sid.settings.inUse: In Verwendung · {size}
+assistant.sid.settings.machine: Dieser Computer
+assistant.sid.settings.modelOptions: Optionen für {model}
+assistant.sid.settings.modelRow: "{style} · {name}"
+assistant.sid.settings.nav: Sid
+assistant.sid.settings.needsGemma: Benötigt Gemma
+assistant.sid.settings.nods: Im Takt nicken
+assistant.sid.settings.nodsDetail: Sid nickt bei jedem Beat des Songs mit
+assistant.sid.settings.notDownloadedSize: Nicht heruntergeladen · {size}
+assistant.sid.settings.nothingYet: Noch nichts
+assistant.sid.settings.nothingYetDetail: Öffne eine Playlist und wähle „Mit Sid bearbeiten“.
+assistant.sid.settings.notMeasured: Noch nicht gemessen. Sid misst nach dem Download.
+assistant.sid.settings.notMeasuredReady: Noch nicht gemessen. Sid misst vor der nächsten Anfrage.
+assistant.sid.settings.partlySize: Teilweise heruntergeladen · {size}
+assistant.sid.settings.position: Position
+assistant.sid.settings.positionDetail: Wo Sid auf dem Cover sitzt
+assistant.sid.settings.privacyChat: "Was du eingibst, bleibt auf diesem Computer: Sid denkt hier mit Gemma. Um Musik zu finden, sendet Sid Suchbegriffe an Apple Music und liest auf Wunsch deine Playlists, deine letzten Wiedergaben und dein Apple Music Replay aus deinem Apple-Music-Konto. Nichts ändert sich, bis du auf „Anwenden“ drückst."
+assistant.sid.settings.reads: Liest eine vollständige Playlist in {seconds} s (benötigt unter {floor} s)
+assistant.sid.settings.regular: Normal
+assistant.sid.settings.remove: Entfernen
+assistant.sid.settings.removeMenu: Entfernen…
+assistant.sid.settings.removeMessage: Sid braucht es zum Bearbeiten von Playlists, und ein erneuter Download benötigt {size}.
+assistant.sid.settings.removeTitle: "{model} entfernen?"
+assistant.sid.settings.reshape: Umgestalten
+assistant.sid.settings.reshapeDetail: Von ruhig zu lebendig sortieren, nach Tempo oder so, dass die Tonarten fließen
+assistant.sid.settings.runSet: Set abspielen
+assistant.sid.settings.runSetDetail: Wähle nach Tonart und Tempo, was als Nächstes läuft, und nimm deine Wünsche auf
+assistant.sid.settings.shaped: Von Sid gestaltete Playlists
+assistant.sid.settings.shapedOne: Von Sid gestaltete Playlist
+assistant.sid.settings.size: Größe
+assistant.sid.settings.sizeDetail: Klein macht Sid kleiner, mit einer schmaleren Bubble
+assistant.sid.settings.skills: Was Sid kann
+assistant.sid.settings.skillsHere: Was Sid hier kann
+assistant.sid.settings.small: Klein
+assistant.sid.settings.speed: Tempo
+assistant.sid.settings.storage: Speicher
+assistant.sid.settings.storageLine: Gemma benötigt {size}, und dieser Computer hat {free} frei
+assistant.sid.settings.takeTime: Sid Zeit lassen?
+assistant.sid.settings.takeTimeDetail: Schnelle Antworten sofort. Gründlich dauert etwas länger und kommt mit großen Playlists besser zurecht.
+assistant.sid.settings.tell: Davon erzählen
+assistant.sid.settings.tellDetail: Tempo, Tonarten und Genres auf einen Blick
+assistant.sid.settings.thinking: Wie Sid denkt
+assistant.sid.settings.tidy: Aufräumen
+assistant.sid.settings.tidyDetail: Wiederholungen entfernen, auf eine Länge kürzen oder ein Tempo beibehalten
+assistant.sid.settings.together: Bisher insgesamt
+assistant.sid.settings.top: Oben
+assistant.sid.settings.unavailableNote: Playlists mit Sid bearbeiten und erstellen benötigt Gemma auf einem Computer, der es ausführen kann. Sids Set funktioniert hier weiterhin.
+assistant.sid.settings.unknownGpu: Unbekannte Grafikkarte
+assistant.sid.settings.where: Wo Sid zu finden ist
+assistant.sid.settings.withoutGemma: Ohne Gemma wählt Sid Songs anhand ihres Tempos, ihrer Tonart und Energie aus und sucht Apple Music nach deinen Wünschen genau so, wie du sie eingibst.
+assistant.sid.settings.writes: Schreibt {rate} Token pro Sekunde (benötigt {floor})
+assistant.sid.setView.confirmMany: Sid entfernt die {count} Songs, die nach diesem in der Warteschlange stehen, und wählt aus, was als Nächstes gespielt wird.
+assistant.sid.setView.confirmOk: Set starten
+assistant.sid.setView.confirmOne: Sid entfernt den Song, der nach diesem in der Warteschlange steht, und wählt aus, was als Nächstes gespielt wird.
+assistant.sid.setView.confirmTitle: Sids Set starten?
+assistant.sid.setView.direction: Energie
+assistant.sid.setView.end: Ende
+assistant.sid.setView.endSet: Sids Set beenden
+assistant.sid.setView.known: Bekannte Songs
+assistant.sid.setView.liveRadio: Sids Set kann dem Live-Radio nicht folgen.
+assistant.sid.setView.new: Neu für dich
+assistant.sid.setView.nothingPlaying: Spiele einen Song ab, um ein Set zu starten.
+assistant.sid.setView.requestPlaceholder: Sid nach einem Song fragen
+assistant.sid.setView.start: Start
+assistant.sid.setView.startSet: Sids Set starten
+assistant.sid.setView.stayInKey: In der Tonart bleiben
+assistant.sid.setView.stayInKeyDetail: Nur zwischen kompatiblen Tonarten wechseln
+assistant.sid.setView.subtitleActive: Sid wählt aus, was als Nächstes gespielt wird
+assistant.sid.setView.subtitleIdle: Sid wählt aus, was als Nächstes gespielt wird
+assistant.sid.setView.title: Sids Set
+assistant.sid.size.gb: "{size} GB"
+assistant.sid.size.mb: "{size} MB"
+assistant.sid.songCount: "{count} Songs"
+assistant.sid.source.applePick: Apple-Music-Auswahl
+assistant.sid.source.applePlaylist: einer Apple-Music-Playlist
+assistant.sid.source.artist: den Top-Songs eines Künstlers
+assistant.sid.source.catalog: Apple Music
+assistant.sid.source.library: deiner Mediathek
+assistant.sid.source.playlist: in der Playlist
+assistant.sid.unavailable.belowFloor: Gemma lief auf diesem Computer zu langsam, als dass Sid es nutzen könnte.
+assistant.sid.unavailable.counterMismatch: Sid hat Gemma ausgeschaltet, nachdem eine Sicherheitsprüfung fehlgeschlagen ist. Der nächste Versuch erfolgt nach einem Update von Cider oder deines Grafiktreibers.
+assistant.sid.unavailable.gpuLimits: Diese Grafikkarte hat nicht genug Kapazität für Gemma.
+assistant.sid.unavailable.gpuUnstable: Die Grafikkarte hat zweimal nicht reagiert, deshalb pausiert Sid, bis Cider neu gestartet wird.
+assistant.sid.unavailable.modelCorrupt: Gemmas Download war zweimal beschädigt, daher bietet Sid es nicht mehr an.
+assistant.sid.unavailable.noAdapter: Sid konnte keine Grafikkarte finden, auf der Gemma laufen kann.
+assistant.sid.unavailable.noGpuWatch: Cider kann hier den Grafikspeicher nicht überwachen, daher führt Sid Gemma auf diesem Computer nicht aus.
+assistant.sid.unavailable.noStorage: Cider kann Gemmas Dateien auf diesem Computer nicht speichern.
+assistant.sid.unavailable.noWebgpu: Gemma benötigt WebGPU, das auf diesem Computer nicht verfügbar ist.
+assistant.sid.unavailable.outOfMemory: Gemma benötigte mehr Grafikspeicher, als dieser Computer bereitstellen kann.
+assistant.sid.unavailable.probeFailed: Sid konnte diesen Computer nicht prüfen. Der nächste Versuch erfolgt später.
+assistant.sid.unavailable.softwareGpu: Dieser Computer zeichnet Grafiken ohne Grafikkarte, Gemma benötigt aber eine.
+assistant.sid.unavailable.storage: Auf diesem Computer ist nicht genug freier Speicher für Gemma vorhanden.
+assistant.sid.why.cameClose: Knapp dran
+assistant.sid.why.linedUp: was in der Warteschlange stand
+assistant.sid.why.open: Warum Sid {title} ausgewählt hat
+assistant.sid.why.weighed: Sid hat {count} Songs aus {places} abgewogen.
+assistant.sid.working.starting: Wird gestartet
+assistant.sid.working.stop: Stoppen
+assistant.sid.working.titleBuild: Playlist wird erstellt
+assistant.sid.working.titleEdit: Arbeitet an {playlist}
 audio.device.default: Standardgerät
 audio.device.noneFound: Keine Ausgabegeräte gefunden
 audio.device.placeholder: Gerät {{id}}
 audiolab.waiting: Warten auf einen Titel in der Warteliste
+auth.error.devToken: Apple Music konnte nicht erreicht werden
+auth.error.generic: Die Anmeldung konnte nicht abgeschlossen werden. Prüfe deine Verbindung und versuche es erneut.
+auth.error.invalidToken: Ungültiges Token empfangen
 auth.error.popupBlocked: Pop-up wurde blockiert
+auth.error.timeout: Zeitüberschreitung bei der Anmeldung
+auth.error.unavailable: Diese Apple-ID kann Apple Music in Cider nicht verwenden. Cider benötigt ein aktives, kostenpflichtiges Apple-Music-Abo.
 auth.error.windowFailed: Anmeldefenster konnte nicht geöffnet werden
 auth.mutExpired.confirm: Anmelden
 auth.mutExpired.message: Deine Apple Music-Sitzung ist abgelaufen. Melde dich erneut an, um fortzufahren.
+auth.signedIn: Angemeldet
 auth.signInRetry.confirm: Erneut versuchen
 auth.signInRetry.message: Das Anmeldefenster konnte nicht geöffnet werden. Erneut versuchen?
 bugReport.addImage: Bild hinzufügen
@@ -551,6 +1030,8 @@ home.settings.tryBento: Bento-Board ausprobieren (Beta)
 home.syncFavorites: Favoriten synchronisieren
 home.syncFavorites.gettingArtists: Favorisierte Künstler werden geladen...
 home.title: Startseite
+hostReinstall.drm.body: Apple Music verweigert die Wiedergabe, weil diese Cider-Installation vor einem erforderlichen DRM-Update installiert wurde. In-App-Updates können es nicht bereitstellen. Lade Cider deshalb erneut von Cider Taproom herunter und installiere es neu. Wähle OK, um Cider Taproom zu öffnen.
+hostReinstall.drm.title: Cider neu installieren, um die Wiedergabe wiederherzustellen
 i18n.authors: CiderCollective
 i18n.category: main
 i18n.languageName: Deutsch
@@ -558,6 +1039,7 @@ i18n.languageNameEnglish: German
 library.albumVersions.clean: Clean
 library.albumVersions.explicit: Explizit
 library.albumVersions.label: Versionen
+library.artists.empty: Wähle einen Künstler aus
 library.columnBrowser: Spaltenbrowser
 library.favoritesOnly: Nur Favoriten
 library.genres.counts: "{albums} Alben, {songs} Titel"
@@ -2348,8 +2830,13 @@ notificationCenter.row.muted: Stummgeschaltet
 notificationCenter.section.active: Aktiv
 notificationCenter.section.history: Verlauf
 notificationCenter.title: Benachrichtigungen
+notify.explicitRestrictedSkip: "„{name}“ wird übersprungen: Explizite Inhalte sind in deinem Apple-Account eingeschränkt"
+notify.explicitRestrictedStop: "Wiedergabe gestoppt: „{name}“ ist explizit, und explizite Inhalte sind in deinem Apple-Account eingeschränkt"
 notify.licenseRefusedSkip: '"{name}" kann gerade nicht abgespielt werden, wird übersprungen'
 notify.licenseRefusedStop: 'Wiedergabe gestoppt: "{name}" kann nicht abgespielt werden'
+notify.multipleTracksUnavailable: Mehrere Titel sind nicht verfügbar. Versuche einen anderen Titel oder ein anderes Album.
+notify.trackUnavailableSkip: „{name}“ ist nicht verfügbar, wird übersprungen
+notify.trackUnavailableStop: "Wiedergabe gestoppt: „{name}“ ist nicht verfügbar"
 nowPlaying.a11y.trackWaveform: Titel-Wellenform, zum Springen klicken
 nowPlaying.a11y.waveform: Wellenform für den aktuell wiedergegebenen Titel
 oobe.amsignin.title: ""
@@ -2365,6 +2852,7 @@ oobe.amupsell.title: Bevor wir beginnen
 oobe.appearance.accentHint: Wird für Tasten, Hervorhebungen und den Fortschritt in der App verwendet. Probiere eine aus – die Vorschau wird live aktualisiert.
 oobe.appearance.subtitle: Wähle ein Farbschema und eine Akzentfarbe. Du kannst diese jederzeit unter Einstellungen → Visuell ändern.
 oobe.appearance.title: Mach Cider zu deinem eigenen
+oobe.appleNotice: "Hinweis: Apple Music ist eine Marke der Apple Inc. Cider ist ein Drittanbieter-Client für Apple Music und steht in keiner Verbindung zur Apple Inc."
 oobe.audio.advancedFunctionality: ""
 oobe.audio.subtitle: ""
 oobe.audio.text: |-
@@ -2403,19 +2891,31 @@ oobe.intro.subtitle: ""
 oobe.intro.text: Richten wir ein paar Dinge ein, damit du Cider ganz nach deinen Wünschen nutzen kannst. Du kannst diese Einstellungen später jederzeit ändern.
 oobe.intro.title: Willkommen bei Cider
 oobe.layout.subtitle: Wähle ein Layout, das zu deinem Stil passt
+oobe.login.alreadySignedIn: Du bist bereits angemeldet
 oobe.login.skip: Jetzt überspringen
 oobe.login.skipTooltip: Du kannst die App dann nur im Vorschaumodus nutzen
 oobe.login.subtitle: Melde dich mit deinem Apple Music-Account an, um deine Musik zu genießen
+oobe.login.terms: Mit dem Fortfahren stimmst du den Nutzungsbedingungen und der Datenschutzerklärung zu
 oobe.login.title: Ein letzter Schritt
 oobe.login.userToken: Mit einem Benutzer-Token anmelden
+oobe.music.mute: Einrichtungsmusik stummschalten
+oobe.music.unmute: Einrichtungsmusik aktivieren
 oobe.next: Weiter
 oobe.no: Nein
+oobe.performance.full.descriptionV2: Visuelle Effekte bleiben aktiv. Cider reduziert sie nur dann selbst, wenn dein Computer sie nicht darstellen kann.
+oobe.performance.fullV2: Volle Qualität
 oobe.performance.hint: Der Leistungsmodus reduziert visuelle Effekte und spart CPU. Auf Systemen wie deinem standardmäßig deaktiviert, aber du kannst ihn jederzeit aktivieren.
 oobe.performance.lowEndHint: Wir haben eine CPU mit weniger Threads erkannt. Wir empfehlen den Leistungsmodus für eine flüssigere Wiedergabe und geringere CPU-Auslastung.
+oobe.performance.mode.description: Schaltet aufwendige visuelle Effekte wie große Weichzeichner und animierte Hintergründe aus. Gut für ältere Computer.
+oobe.performance.modeV2: Leistungsmodus
+oobe.performance.subtitleV3: Der Leistungsmodus schaltet die aufwendigsten visuellen Effekte aus. Volle Qualität behält sie bei, sofern dein Computer sie darstellen kann.
 oobe.performance.title: Leistung
+oobe.performance.whereToChangeV3: In den Einstellungen findest du diese Auswahl unter {page} als Option {setting}. Wähle {on} für den Leistungsmodus oder {automatic} für volle Qualität. Du kannst sie dort jederzeit ändern.
 oobe.player.subtitle: Die Leiste für die aktuelle Wiedergabe am Fensterrand. Wähle die Kompaktheit, die zu dir passt.
 oobe.player.title: Wähle deinen Player
 oobe.previous: Zurück
+oobe.progress: "Schritt {current} von {total}: {title}"
+oobe.progress.label: Fortschritt der Einrichtung
 oobe.step.appearance: Erscheinungsbild
 oobe.step.connections: Verbindungen
 oobe.step.features: Sound
@@ -2425,6 +2925,7 @@ oobe.step.performance: Leistung
 oobe.step.player: Player
 oobe.step.welcome: Willkommen
 oobe.step.window: Fensterstil
+oobe.subscriptionNote: Cider benötigt ein aktives, kostenpflichtiges Apple-Music-Abo. Apple Music Voice und einige Probemonate werden nicht unterstützt.
 oobe.visual.layout.text: |-
   Cider bietet zwei verschiedene Fenster-Layouts.
   Maverick ist ein iTunes-ähnliches Layout, bei dem sich der Player am oberen Rand des Fensters befindet.
@@ -2437,6 +2938,10 @@ oobe.visual.title: Erscheinungsbild
 oobe.welcome.getStarted: Loslegen
 oobe.welcome.importSettings: Einstellungen importieren…
 oobe.welcome.selectLanguage: Wähle deine bevorzugte Sprache
+oobe.window.native: Native Fensterleiste
+oobe.window.native.description: Verwendet die Titelleiste und Rahmen deiner Desktopumgebung.
+oobe.window.styled: Gestaltete Steuerelemente
+oobe.window.styled.description: Benutzerdefinierte Titelleiste in der App mit integrierten Fenstersteuerungen.
 oobe.window.subtitle: Wähle, wie sich das App-Fenster in deine Desktop-Umgebung integriert
 oobe.window.title: Fensterstil
 oobe.yes: Ja
@@ -2512,33 +3017,47 @@ playbackHealth.backgroundFreeze.eyebrow: Wiedergabehinweis
 playbackHealth.backgroundFreeze.hint: Eine Window-Manager-Regel oder Betriebssystem-Einstellung kann dafür sorgen, dass Cider im Hintergrund weiterläuft. „Mehr erfahren“ zeigt bekannte Workarounds für dein Setup.
 playbackHealth.backgroundFreeze.learnMore: Mehr erfahren
 playbackHealth.backgroundFreeze.title: Dein System hat Cider im Hintergrund pausiert
+playbackHealth.hostReinstall.label: Cider muss neu installiert werden
+playbackHealth.hostReinstall.message: Apple Music akzeptiert diese Installation nicht. Installiere Cider über Cider Taproom neu.
 playbackHealth.localIssue: Lokales Wiedergabeproblem
 playlist.collaborative.tooltip: Diese Playlist ist offen für Mitwirkende
 playlist.collaborators.andOthers: "{{name}} & {{count}} andere"
 playlist.collaborators.count: "{{count}} Mitwirkende"
 playlist.collaborators.owner: Eigentümer
 playlist.collaborators.pair: "{{a}} & {{b}}"
+playlist.createFailed: Die Playlist konnte nicht erstellt werden. Versuche es gleich noch einmal.
 playlist.description: Playlist-Beschreibung
 playlist.error.changedElsewhere.message: Diese Playlist wurde auf einem anderen Gerät geändert. Lade sie neu und versuche es erneut.
 playlist.error.changedElsewhere.title: Playlist auf anderem Gerät geändert
 playlist.error.locked.message: Dieser Titel kann nicht entfernt werden, während Sortieroptionen angewendet werden.
 playlist.error.locked.title: Playlist gesperrt
 playlist.error.locked.tooltip: Diese Playlist kann nicht neu sortiert werden, während Sortieroptionen angewendet werden.
+playlist.error.notEditable: Diese Playlist kann nicht bearbeitet werden.
+playlist.error.queueRemoveConflict: Diese Playlist wurde geändert, seit die Warteschlange erstellt wurde. Öffne die Playlist, um den Titel zu entfernen.
 playlist.error.save.message: Beim Speichern der Playlist ist ein Fehler aufgetreten. Bitte versuche es erneut.
 playlist.error.save.title: Playlist konnte nicht gespeichert werden
+playlist.error.smartNotEditable: Smart-Playlists folgen ihren Regeln, daher können Titel nicht manuell daraus entfernt werden.
 playlist.error.updating.message: Beim Aktualisieren der Playlist ist ein Fehler aufgetreten. Bitte versuche es erneut.
 playlist.error.updating.title: Fehler beim Aktualisieren der Playlist
 playlist.folderEmpty: Keine Playlists in diesem Ordner
+playlist.folderMoveFailed: Der Ordner konnte nicht verschoben werden. Versuche es gleich noch einmal.
 playlist.folderRenameHint: Doppelklicken zum Umbenennen
+playlist.history: Playlist-Verlauf
+playlist.history.withCount: Playlist-Verlauf ({count})
 playlist.lastUpdated: "Zuletzt aktualisiert: {{date}}"
 playlist.madeByApple: Von Apple
+playlist.moveFailed: Die Playlist konnte nicht verschoben werden. Versuche es gleich noch einmal.
 playlist.nameEmpty: Playlist-Name darf nicht leer sein
+playlist.newFolderNotMoved: Der Ordner wurde erstellt, konnte aber nicht in den gewählten Ordner verschoben werden. Du findest ihn außerhalb aller Ordner.
+playlist.newPlaylistNotMoved: Die Playlist wurde erstellt, konnte aber nicht in den gewählten Ordner verschoben werden. Du findest sie außerhalb aller Ordner.
 playlist.noTracks: Keine Titel
 playlist.personalMix: Persönlicher Mix
 playlist.playlistName: Playlist-Name
 playlist.publishOnProfileAndSearch: Im Profil und in der Suche veröffentlichen
 playlist.refresh.message: Diese Playlist wurde von einem anderen Gerät aktualisiert. Die Playlist wird jetzt aktualisiert.
 playlist.refresh.title: Playlist muss aktualisiert werden
+playlist.suggestions.subtitle: Vorschau anzeigen und zur Playlist hinzufügen
+playlist.suggestions.title: Vorgeschlagene Songs
 playlist.untitled: Ohne Titel
 podcast.comingSoon.description: Die Podcast-Unterstützung wird nach grundlegenden Änderungen an der Wiedergabe von Cider neu aufgebaut. Sie wird in einem zukünftigen Update zurückkehren.
 podcast.comingSoon.hide: In der Seitenleiste ausblenden
@@ -2641,9 +3160,11 @@ settings.artwork.hiresImages.warning: Kann die Ladezeiten verlängern und die Le
 settings.audio.atmos: Dolby Atmos
 settings.audio.atmos.binaural.desc: Atmos wird über CiderAudio als binaurales Stereo gerendert. Crossfade, Automix und nahtlose Übergänge funktionieren weiterhin wie gewohnt.
 settings.audio.atmos.description: Konfiguriere die Atmos-Wiedergabe für dein aktuelles Ausgabegerät.
+settings.audio.atmos.normalizationHint: Dolby-Atmos-Mixe sind leiser als Stereo-Master. Aktiviere die Audionormalisierung, um die Lautstärke anzugleichen.
 settings.audio.atmos.off.desc: Atmos deaktiviert. Alle Inhalte werden in Standard-Stereo wiedergegeben.
 settings.audio.atmos.passthrough: Passthrough
 settings.audio.atmos.passthrough.desc: Umgeht jegliche Audioverarbeitung. Mehrkanal-Atmos wird direkt an das Gerät gesendet. Ideal für AV-Receiver.
+settings.audio.atmos.passthrough.descV2: Sendet Mehrkanal-Atmos direkt an das Gerät, z. B. für AV-Receiver. Audio Lab, der Equalizer und der Hörmodus werden umgangen.
 settings.audio.atmos.passthroughActive: Passthrough aktiv — in den vollständigen Einstellungen ändern.
 settings.audio.atmos.standard.desc: Mehrkanal-Atmos mit CiderAudio-Verarbeitung. Crossfade, Automix und nahtlose Übergänge funktionieren weiterhin wie gewohnt.
 settings.audio.atmosMode: Atmos-Modus
@@ -2746,6 +3267,7 @@ settings.automix.normalizeDuration: Dauer normalisieren
 settings.automix.normalizeDurationHint: Überblendzeit für Lautstärkeanpassung ({ms} ms)
 settings.automix.spectralSeparation: Spektraltrennung
 settings.automix.spectralSeparationHint: Wie weit die beiden Titel während eines Übergangs frequenzmäßig voneinander getrennt werden.
+settings.automix.spectralSeparationHintV2: Wie stark die beiden Titel während eines Übergangs frequenzmäßig voneinander getrennt werden ({value}).
 settings.automix.speedSettle: Geschwindigkeits-Rückkehrzeit
 settings.automix.speedSettleHint: Wie lange es dauert, bis die Wiedergabegeschwindigkeit nach einem tempogemischten Übergang wieder normal ist ({ms} ms)
 settings.automix.tempoAlign: Beat-Matching
@@ -2792,6 +3314,7 @@ settings.client.genten.proxyServer: Proxy-Server
 settings.client.genten.proxyServer.desc: Die Adresse des Proxy-Servers
 settings.client.genten.restartNotice: Die Anwendung muss neu gestartet werden, damit die Änderungen wirksam werden.
 settings.client.genten.saveError: Fehler beim Speichern der Einstellungen
+settings.client.genten.saveFailed: Deine Einstellungen konnten nicht gespeichert werden. Versuche es erneut.
 settings.client.genten.saveSuccess: Einstellungen gespeichert
 settings.client.genten.smoothScrolling: Sanftes Scrollen
 settings.client.genten.smoothScrolling.desc: Legt fest, ob sanftes Scrollen aktiviert ist
@@ -2886,6 +3409,7 @@ settings.client.windows.proxyServer: Proxy-Server
 settings.client.windows.proxyServer.desc: Die Adresse des Proxy-Servers
 settings.client.windows.restartNotice: Die Anwendung muss neu gestartet werden, damit die Änderungen wirksam werden.
 settings.client.windows.saveError: Fehler beim Speichern der Einstellungen
+settings.client.windows.saveFailed: Deine Einstellungen konnten nicht gespeichert werden. Versuche es erneut.
 settings.client.windows.saveSuccess: Einstellungen gespeichert
 settings.client.windows.taskbarProgress: Wiedergabefortschritt in der Taskleiste anzeigen
 settings.client.windows.taskbarProgress.desc: Den Wiedergabefortschritt im Taskleistensymbol anzeigen
@@ -2897,6 +3421,7 @@ settings.client.windows.v8OptimizeSize.adds: Fügt hinzu
 settings.client.windows.v8OptimizeSize.to: zu WebView2
 settings.client.windows.wpfRendering: WPF-Rendering-Modus
 settings.client.windows.wpfRendering.desc: Wähle den Rendering-Modus für WPF. Wenn du unsicher bist, belasse es bei Software.
+settings.client.windows.wpfRendering.descV2: Lege fest, wie das Fenster gezeichnet wird. Wenn du dir unsicher bist, lass die Option auf Hardware.
 settings.client.windows.wpfRendering.hardware: Hardware
 settings.client.windows.wpfRendering.software: Software
 settings.configBackups.confirm.body: Deine aktuellen Einstellungen werden durch die am {date} gespeicherten ersetzt und Cider wird neu geladen.
@@ -3006,6 +3531,7 @@ settings.contentFilter.empty: Noch keine Schlüsselwörter hinzugefügt.
 settings.contentFilter.inputPlaceholder: Schlüsselwort hinzufügen...
 settings.contentFilter.title: Schlüsselwortfilter
 settings.crossfade.advanced: Erweiterte Überblendungseinstellungen
+settings.crossfade.automixStillBlends: Automix ist aktiv, daher können Songs weiterhin ineinander übergehen. Deaktiviere Automix unten, um alle Übergänge zu stoppen.
 settings.crossfade.description: Blende den aktuellen Titel sanft aus, während der nächste eingeblendet wird.
 settings.crossfade.disableFor: Überblenden deaktivieren für...
 settings.crossfade.duration: Dauer
@@ -3064,6 +3590,7 @@ settings.equalizer.warning: Wir übernehmen keine Haftung für Schäden an deine
 settings.extensions.addBuiltInSnippet: Integriertes Snippet hinzufügen
 settings.extensions.browsePluginMarket: Plugin-Marktplatz durchsuchen
 settings.extensions.browseThemeMarket: Theme-Marktplatz durchsuchen
+settings.extensions.byAuthor: von {author}
 settings.extensions.checkUpdates: Beim Start nach Erweiterungs-Updates suchen
 settings.extensions.checkUpdates.desc: Bei jedem Start von Cider nach Updates für Themes, Snippets und Plugins suchen.
 settings.extensions.createPlugin: Plugin erstellen
@@ -3074,13 +3601,24 @@ settings.extensions.fileWatcher: Theme-Dateiüberwachung aktivieren
 settings.extensions.fileWatcher.desc: Theme-Stylesheets automatisch neu laden, wenn ihre Dateien auf dem Datenträger geändert werden.
 settings.extensions.importFromFile: Aus Datei importieren
 settings.extensions.maintenance: Wartung
+settings.extensions.marketplaceId: "ID: {id}"
 settings.extensions.newThemeDialog.identifier: Kennung
 settings.extensions.newThemeDialog.name: Theme-Name
 settings.extensions.newThemeDialog.title: Neues Theme
 settings.extensions.openAppData: AppData-Ordner öffnen
 settings.extensions.openAppData.desc: Den Ordner anzeigen, aus dem Cider Erweiterungen liest.
+settings.extensions.plugins.directory: Verzeichnis
 settings.extensions.plugins.empty: Keine Plugins installiert.
+settings.extensions.plugins.getMore: Weitere Plugins finden
+settings.extensions.plugins.identifier: Kennung
+settings.extensions.plugins.loadFailed.error: "Dieses Plugin konnte nicht gestartet werden: {{ error }}"
+settings.extensions.plugins.loadFailed.incompatible: Dieses Plugin wurde für eine ältere Version von Cider entwickelt und kann nicht ausgeführt werden. Suche im Marketplace nach einem Update.
+settings.extensions.plugins.loadFailed.invalid: Dies ist kein gültiges Cider-Plugin und kann daher nicht ausgeführt werden.
+settings.extensions.plugins.refreshList: Plugin-Liste aktualisieren
 settings.extensions.plugins.running: Aktiv
+settings.extensions.plugins.uninstall: Deinstallieren
+settings.extensions.plugins.uninstallConfirm: „{name}“ deinstallieren?
+settings.extensions.plugins.uninstallTitle: Plugin deinstallieren
 settings.extensions.refresh: Erweiterungen aktualisieren
 settings.extensions.refresh.desc: Themes, Snippets und Plugins vom Datenträger neu einlesen.
 settings.extensions.refreshed: Themes, Snippets und Plugins aktualisiert
@@ -3101,6 +3639,7 @@ settings.extensions.themes.activeCount: "{{ count }} aktiv"
 settings.extensions.themes.empty: Keine Themes installiert.
 settings.extensions.themes.stylesheetMany: "{{ count }} Stylesheets"
 settings.extensions.themes.stylesheetOne: 1 Stylesheet
+settings.extensions.viewOnMarketplace: Im Marketplace anzeigen
 settings.fonts.description: Die in der App verwendete Schriftart ändern
 settings.fonts.lyrics: Songtext-Schriftart
 settings.fonts.lyrics.description: Die für Songtexte verwendete Schriftart
@@ -3118,6 +3657,7 @@ settings.general.section.cache: Cache
 settings.general.section.cache.description: Gespeicherte Cover und Metadaten, die Cider auf dem Datenträger behält, damit Seiten schneller geladen werden.
 settings.general.section.desktop: Desktop
 settings.general.section.desktop.description: Tastaturkurzbefehle und wie sich Cider in der Taskleiste und beim Schließen verhält.
+settings.general.section.desktop.descriptionV2: Tastenkombinationen, Wachhalten des Computers während der Wiedergabe sowie das Verhalten von Cider in der Taskleiste und beim Schließen.
 settings.general.section.language: Sprache
 settings.general.section.language.description: Die Benutzeroberflächen-Sprache und wie Übersetzungen gemeldet oder gewürdigt werden können.
 settings.general.section.playback: Wiedergabe
@@ -3454,6 +3994,7 @@ settings.option.advanced.mavericksLcd.style: Stil
 settings.option.advanced.mavericksLcd.style.glass: Glas
 settings.option.advanced.mediaArtwork: Medien-Cover
 settings.option.advanced.mediaArtwork.controls: Cover-Highlights und hochauflösende Bilder
+settings.option.advanced.mediaArtwork.controlsV2: Hervorhebung und Einblendung des Covers
 settings.option.advanced.mediaArtwork.description: Cover in Gittern, Listen und Zeilen in der gesamten App.
 settings.option.advanced.notificationStyle: Mitteilungsstil
 settings.option.advanced.performance: Leistung
@@ -3483,8 +4024,11 @@ settings.option.advanced.settingsTakeout: Einstellungen exportieren / importiere
 settings.option.advanced.settingsTakeout.description: Sichere deine Einstellungen in einer Datei oder stelle sie auf einem anderen Gerät wieder her. Account-Anmeldedaten werden niemals einbezogen.
 settings.option.advanced.simpleArtworkBg: Einfacher Cover-Hintergrund
 settings.option.advanced.simpleArtworkBg.brightness: Helligkeit %
+settings.option.advanced.simpleArtworkBg.brightnessV2: Helligkeit
 settings.option.advanced.simpleArtworkBg.contrast: Kontrast %
+settings.option.advanced.simpleArtworkBg.contrastV2: Kontrast
 settings.option.advanced.simpleArtworkBg.saturate: Sättigung %
+settings.option.advanced.simpleArtworkBg.saturateV2: Sättigung
 settings.option.advanced.simpleArtworkBg.useMask: Untere Maske verwenden
 settings.option.advanced.sonoma: Sonoma
 settings.option.advanced.sonoma.lyricArc: Bogen-Songtexte
@@ -3790,6 +4334,8 @@ settings.option.general.onStartup: Beim Start
 settings.option.general.onStartup.openStartup: Startseite öffnen
 settings.option.general.onStartup.resume: Letzte Sitzung fortsetzen
 settings.option.general.pagination: Einträge pro Seite
+settings.option.general.preventDisplaySleep: Bildschirm während der Wiedergabe eingeschaltet lassen
+settings.option.general.preventSystemSleep: Computer während der Wiedergabe wach halten
 settings.option.general.privacy: Datenschutz
 settings.option.general.promptOnClose: Beim Schließen fragen, wenn Musik abgespielt wird
 settings.option.general.queue: Warteschlange
@@ -3816,6 +4362,7 @@ settings.option.general.sleepTimerSettings: Sleep-Timer-Einstellungen
 settings.option.general.startupPage: Startseite
 settings.option.general.startupPage.blank: Leere Seite
 settings.option.general.startupPage.description: Wähle die Seite aus, die beim Öffnen von Cider angezeigt werden soll.
+settings.option.general.startupPage.descriptionV2: Die Seite, die Cider in neuen Tabs öffnet und beim Start, wenn unter „Beim Start“ die Option „Startseite öffnen“ ausgewählt ist.
 settings.option.general.startupPage.newTab: Neuer Tab
 settings.option.general.startupPage.personalHome: Persönliche Startseite
 settings.option.general.themeUpdateNotification: Automatisch nach Theme-Updates suchen
@@ -3825,6 +4372,7 @@ settings.option.general.translators: Übersetzer
 settings.option.general.translators.description: Vielen Dank an diese Mitwirkenden, die bei der Übersetzung von Cider geholfen haben. Klicke auf einen Namen, um das entsprechende GitHub-Profil zu öffnen.
 settings.option.general.useSmartQueueByDefault: Smart Queue standardmäßig verwenden
 settings.option.general.useSmartQueueByDefault.description: Smart Queue-Sortierung automatisch anwenden, wenn die Warteschlange erstellt wird. Erfordert Automix.
+settings.option.general.useSmartQueueByDefault.needsAutomix: Automix ist unter Audio deaktiviert, daher ordnet die Smart-Warteschlange nichts neu an.
 settings.option.general.warnBeforeQueueOverride: Vor dem Überschreiben der Warteschlange warnen
 settings.option.hide: Ausblenden
 settings.option.left: Links
@@ -3873,6 +4421,7 @@ settings.option.lyrics.thirdPartySources: Drittanbieter-Quellen aktivieren
 settings.option.lyrics.thirdPartySources.description: Ermöglicht das Abrufen von Songtexten von Musixmatch und NetEase, wenn keine Apple Music-Songtexte verfügbar sind. Die Qualität kann variieren und eine dauerhafte Nutzung kann zu Ratenbegrenzungen führen.
 settings.option.lyrics.timeOffset: Songtext-Zeitversatz (Sekunden)
 settings.option.lyrics.timeOffset.description: Passe das Timing der Songtext-Anzeige an. Positive Werte zeigen den Songtext früher an, negative Werte später. Nützlich zur Korrektur von asynchronen Audio-Setups.
+settings.option.lyrics.timeOffset.descriptionV2: Passt das Timing der Textanzeige an. Positive Werte zeigen Songtexte später an, negative Werte früher. Nützlich, um nicht synchronisierte Audio-Setups zu korrigieren.
 settings.option.lyrics.timestampStyle: Zeitstempel-Stil
 settings.option.lyrics.timestampStyle.both: Beide
 settings.option.lyrics.timestampStyle.chip: Chip
@@ -3910,6 +4459,9 @@ settings.option.performance.enableMediaItemInspect.description: Kann die Leistun
 settings.option.performance.gameMode: Spielmodus
 settings.option.performance.gameMode.description: Reduziert visuelle Effekte und kann den Windows-Effizienzmodus für eine geringere CPU-Auslastung aktivieren.
 settings.option.performance.gameMode.disable: Spielmodus deaktivieren
+settings.option.performance.graphicsAcceleration: Grafikbeschleunigung
+settings.option.performance.graphicsAcceleration.autoOff: Deaktiviert, da dieser PC Grafiken per Software darstellt.
+settings.option.performance.graphicsAcceleration.description: Die Automatik schaltet sie in einer virtuellen Maschine aus, die Grafiken per Software darstellt. Änderungen werden beim nächsten Start von Cider übernommen.
 settings.option.performance.host: Host
 settings.option.performance.immersiveRenderer: Immersiver Renderer
 settings.option.performance.immersiveRenderer.description: Verwende Canvas 2D anstelle von WebGPU, wenn der animierte Hintergrund fehlerhaft dargestellt wird oder zu viel GPU verbraucht.
@@ -3925,6 +4477,8 @@ settings.option.performance.preloadSidebarPages: Seiten der Seitenleiste vorab l
 settings.option.performance.preloadSidebarPages.description: Lädt Seiten der Seitenleiste, bevor du sie öffnest. „Beim Zeigen“ startet, wenn der Mauszeiger auf einem Element der Seitenleiste ruht. „Im Leerlauf“ lädt nach dem Start auch „Jetzt hören“, „Entdecken“ und „Radio“ und aktualisiert zuvor geöffnete Mediathekslisten.
 settings.option.performance.preloadSidebarPages.idle: Im Leerlauf
 settings.option.performance.preloadSidebarPages.intent: Beim Zeigen
+settings.option.performance.reduceEffects: Visuelle Effekte reduzieren
+settings.option.performance.reduceEffects.description: Schaltet Unschärfe, Glas-, Leuchteffekte und animierte Hintergründe aus, damit die App weniger zeichnen muss. Die Automatik aktiviert dies, wenn keine funktionierende Grafikkarte vorhanden ist oder Ihr System weniger Transparenz anfordert.
 settings.option.performance.renderer.auto: Automatisch (WebGPU, wenn unterstützt)
 settings.option.performance.renderer.canvas: Canvas 2D
 settings.option.performance.renderer.webgpu: WebGPU
@@ -4144,7 +4698,10 @@ settings.option.visual.liquidGlassPlayer: Liquid-Glass-Player-Leiste
 settings.option.visual.liquidGlassPlayer.description: Verwende die Liquid-Glass-Oberfläche für die „Jetzt läuft“-Player-Leiste. Deaktiviere dies für eine flache, solide Leiste (auch ressourcenschonender beim Rendern).
 settings.option.visual.liquidGlassScrollPerf: Leichtes Glas beim Scrollen
 settings.option.visual.liquidGlassScrollPerf.description: Vereinfacht die Liquid-Glass-Lichtbrechung beim Scrollen zu einer einfachen Unschärfe und blendet sie beim Anhalten wieder sanft ein. Reduziert Ruckeln beim Scrollen auf anspruchsvollen Systemen ohne Änderungen im Stillstand. Im Spielmodus immer aktiv.
+settings.option.visual.liquidGlassScrollPerf.descriptionV2: Vereinfacht die Liquid-Glass-Brechung beim Scrollen zu einer einfachen Unschärfe und blendet sie nach dem Stoppen wieder ein. Verringert Ruckeln beim Scrollen auf leistungsschwachen Systemen, ohne die Darstellung im Ruhezustand zu verändern.
 settings.option.visual.mainMenuPosition: Position des Hauptmenüs
+settings.option.visual.matchPageToArtwork: Seite an Cover anpassen
+settings.option.visual.matchPageToArtwork.description: Färbt Album- und Playlist-Seiten in den Farben ihres Covers, im hellen und dunklen Modus.
 settings.option.visual.mergeAppleMusicPlaylists: Apple Music-Playlists zusammenführen
 settings.option.visual.mergeAppleMusicPlaylists.description: Mische von Apple Music kuratierte Playlists in den Hauptbereich „Playlists“, anstatt sie als separate Gruppe anzuzeigen.
 settings.option.visual.miniplayerSkin: Miniplayer-Layout
@@ -4322,11 +4879,13 @@ settings.prompt.visual.plugin.github.success: Plugin erfolgreich installiert. Kl
 settings.prompt.visual.plugin.github.URL: Gib die URL des Plugins ein, das du installieren möchtest
 settings.prompt.visual.theme.github.URL: Gib die URL des Themes ein, das du installieren möchtest
 settings.prompt.visual.theme.uninstallTheme: Möchtest du {{theme}} wirklich deinstallieren?
+settings.reloadPrompt.message: Zum Übernehmen der Änderungen ist ein Neuladen der App erforderlich. Möchten Sie fortfahren?
 settings.requiresNewerClient: Erfordert einen neueren Cider-Client.
 settings.resetCider.category.appleMusic: Von Apple Music abmelden
 settings.resetCider.category.appleMusic.desc: Das Apple Music-Konto von diesem Gerät entfernen
 settings.resetCider.category.caches: Caches
 settings.resetCider.category.caches.desc: Cover, Mediathek, Startseite und andere Offline-Caches
+settings.resetCider.category.caches.descModels: Cover, Bibliothek, Startseite und andere Offline-Caches sowie heruntergeladene Modelle wie Gemma
 settings.resetCider.category.integrations: Integrations-Logins
 settings.resetCider.category.integrations.desc: Last.fm, ListenBrainz und andere Scrobbler-Anmeldedaten
 settings.resetCider.category.localMusic: Lokale Musikmediathek-Datenbank
@@ -4364,6 +4923,7 @@ settings.smartPlaylists.section.maintenance: Wartung
 settings.smartPlaylists.section.maintenance.description: Erzwinge die sofortige Ausführung aller Regeln oder verwirf die zwischengespeicherte Kopie deiner Mediathek.
 settings.smartPlaylists.section.rules: Regeln
 settings.smartPlaylists.section.rules.description: Ob Cider eingebettete Playlist-Regeln anwendet und wie oft sie neu bewertet werden.
+settings.smartPlaylists.section.rules.descriptionV2: Legt fest, ob Cider eingebettete Playlist-Regeln anwendet. Sie werden mit der Zeit für Hintergrundaktualisierung unter Energieverbrauch erneut ausgeführt.
 settings.sweetener.useSystemAccentColor: System-Akzentfarbe verwenden
 settings.takeout.chooseFile: Datei auswählen…
 settings.takeout.error.badVersion: In dieser Datei fehlen die Versionsinformationen.
@@ -4394,6 +4954,7 @@ settings.title: Einstellungen
 settings.troubleshooting.bgDiagnostics: Hintergrund-Wiedergabediagnose
 settings.troubleshooting.bgDiagnostics.desc: Zusätzliche Log-Einträge zur Diagnose von Wiedergabeproblemen, während das Fenster minimiert oder nicht im Fokus ist – z. B. wer den Player pausiert hat, Timer-Engpässe und OS-Sperrzeiten. Aktiviere dies, wenn du einen Fehler bei der Hintergrundwiedergabe meldest.
 settings.troubleshooting.desc: Protokolldateien und MKLite-Debug-Protokollierung.
+settings.troubleshooting.descV2: Protokollierung für MKLite und die Wiedergabe im Hintergrund.
 settings.troubleshooting.hevcWorkaround: HEVC-Workaround
 settings.troubleshooting.hevcWorkaround.desc: Workaround für einen Fehler in WebView2 bei einigen GPUs, die Probleme mit der 10-Bit-SDR-HEVC-Wiedergabe haben, indem ein Filter angewendet wird, um die visuelle Verschiebung auszugleichen.
 settings.troubleshooting.impressionReporting: PlayActivity-Impression-Berichterstattung
@@ -4417,6 +4978,8 @@ settings.updates.action.check: Nach Updates suchen
 settings.updates.action.install: Update installieren
 settings.updates.action.restart: Cider neu starten
 settings.updates.action.retry: Erneut versuchen
+settings.updates.autoCheck: Automatisch nach Updates suchen
+settings.updates.autoCheck.description: Wenn deaktiviert, sucht Cider nur, wenn Sie diese Seite öffnen.
 settings.updates.build: Build
 settings.updates.channel: Kanal
 settings.updates.codename: Codename
@@ -5081,6 +5644,8 @@ updates.installUnavailable.body: Diese Version steht für deinen Account nicht z
 updates.lateststable.title: Neueste stabile Version
 updates.loadFailed.body: Überprüfe deine Verbindung und versuche es erneut.
 updates.loadFailed.title: Cider konnte die verfügbaren Versionen nicht laden
+updates.newVersion.body: Eine neue Version von Cider ist verfügbar. Zu Updates wechseln, um sie herunterzuladen?
+updates.newVersion.title: Neue Version verfügbar
 updates.notifyForBranch.tooltip: Für diesen Branch benachrichtigen
 updates.otherVersions.title: Weitere Versionen
 updates.ptb.name: Public Testing Branch
