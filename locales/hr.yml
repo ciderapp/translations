@@ -726,6 +726,9 @@ album.track.unavailable.unreleased: Ova stavka još nije objavljena.
 album.track.unavailable.zeroDuration: Trajanje stavke je 0 sekundi, vjerojatno još nije objavljena.
 album.upcoming.badge: Nadolazeći album
 app.name: Cider
+app.ptbDisclaimer.confirm: Razumijem
+app.ptbDisclaimer.message: Ovo je verzija za javno testiranje (Public Testing Branch). Stabilnost ove verzije nije zajamčena i može sadržavati greške. Ne prijavljujte greške ni probleme pronađene u ovoj verziji. Ako naiđete na probleme, prije prijave prebacite se na stabilnu verziju.
+app.ptbDisclaimer.title: Obavijest o verziji za javno testiranje
 app.unsupportedClient.message: Ovaj klijent nije podržan. Provjerite koristite li najnoviju verziju aplikacije Cider.
 app.unsupportedClient.title: Nepodržani klijent
 assistant.sid.agent.added: "Dodano pjesama: {count}"
@@ -1198,10 +1201,16 @@ audio.device.default: Zadani uređaj
 audio.device.noneFound: Nisu pronađeni izlazni uređaji
 audio.device.placeholder: Uređaj {{id}}
 audiolab.waiting: Čekanje na dodavanje pjesme u redoslijed
+auth.error.devToken: Nije moguće uspostaviti vezu s Apple Musicom
+auth.error.generic: Prijava nije dovršena. Provjerite vezu i pokušajte ponovno.
+auth.error.invalidToken: Primljen je neispravan token
 auth.error.popupBlocked: Skočni prozor je blokiran
+auth.error.timeout: Vrijeme za prijavu je isteklo
+auth.error.unavailable: Ovaj Apple ID ne može koristiti Apple Music u Cideru. Cider zahtijeva aktivnu, plaćenu pretplatu na Apple Music.
 auth.error.windowFailed: Prozor za prijavu nije se uspio otvoriti
 auth.mutExpired.confirm: Prijavi se
 auth.mutExpired.message: Vaša Apple Music sesija je istekla. Prijavite se ponovno za nastavak.
+auth.signedIn: Prijavljeni ste
 auth.signInRetry.confirm: Pokušaj ponovno
 auth.signInRetry.message: Prozor za prijavu nije se mogao otvoriti. Pokušati ponovno?
 bugReport.addImage: Dodaj sliku
@@ -3315,6 +3324,7 @@ oobe.amupsell.title: Prije nego što počnemo
 oobe.appearance.accentHint: Koristi se za gumbe, isticanja i napredak u cijeloj aplikaciji. Isprobajte neku, prikazat će se uživo.
 oobe.appearance.subtitle: Odaberite shemu boja i naglašenu boju. Možete ih promijeniti bilo kada u Postavke → Vizualno.
 oobe.appearance.title: Prilagodite Cider sebi
+oobe.appleNotice: "Napomena: Apple Music je zaštitni znak tvrtke Apple Inc. Cider je klijent treće strane za Apple Music i nije povezan s tvrtkom Apple Inc."
 oobe.audio.advancedFunctionality: ""
 oobe.audio.subtitle: ""
 oobe.audio.text: |-
@@ -3353,19 +3363,31 @@ oobe.intro.subtitle: ""
 oobe.intro.text: Postavimo nekoliko stvari kako biste mogli koristiti Cider onako kako želite. Ove postavke uvijek možete promijeniti kasnije.
 oobe.intro.title: Dobrodošli u Cider
 oobe.layout.subtitle: Odaberite raspored koji odgovara vašem stilu
+oobe.login.alreadySignedIn: Već ste prijavljeni
 oobe.login.skip: Preskoči za sada
 oobe.login.skipTooltip: Aplikaciju ćete moći koristiti samo u načinu pregleda
 oobe.login.subtitle: Prijavite se sa svojim Apple Music računom kako biste počeli uživati u glazbi
+oobe.login.terms: Nastavkom prihvaćate Uvjete korištenja i Politiku privatnosti
 oobe.login.title: Još jedan korak
 oobe.login.userToken: Prijavite se pomoću korisničkog tokena
+oobe.music.mute: Isključi glazbu postavljanja
+oobe.music.unmute: Uključi glazbu postavljanja
 oobe.next: Dalje
 oobe.no: Ne
+oobe.performance.full.descriptionV2: Vizualni efekti ostaju uključeni. Cider ih sam isključuje samo kada vaše računalo ne može ih prikazati.
+oobe.performance.fullV2: Puna kvaliteta
 oobe.performance.hint: Način rada za performanse smanjuje vizualne efekte i štedi procesor. Prema zadanim postavkama isključen je na sustavima poput vašeg, ali ga možete omogućiti bilo kada.
 oobe.performance.lowEndHint: Otkrili smo procesor s manje niti. Preporučujemo Način rada za performanse za glatkiju reprodukciju i manju potrošnju procesora.
+oobe.performance.mode.description: Isključuje zahtjevne vizualne efekte, kao što su velika zamućenja i animirane pozadine. Dobro za starija računala.
+oobe.performance.modeV2: Način rada za performanse
+oobe.performance.subtitleV3: Način rada za performanse isključuje najzahtjevnije vizualne efekte. Puna kvaliteta ih zadržava uključene, osim ako ih vaše računalo ne može prikazati.
 oobe.performance.title: Performanse
+oobe.performance.whereToChangeV3: U postavkama je ovaj izbor opcija {setting} na stranici {page}. Odaberite {on} za način rada za performanse ili {automatic} za punu kvalitetu. Možete ga promijeniti u bilo kojem trenutku.
 oobe.player.subtitle: Traka reprodukcije koja se nalazi na rubu prozora. Odaberite gustoću koja vam odgovara.
 oobe.player.title: Odaberite svoj reproduktor
 oobe.previous: Prethodno
+oobe.progress: "Korak {current} od {total}: {title}"
+oobe.progress.label: Napredak postavljanja
 oobe.step.appearance: Izgled
 oobe.step.connections: Veze
 oobe.step.features: Zvuk
@@ -3375,6 +3397,7 @@ oobe.step.performance: Performanse
 oobe.step.player: Reproduktor
 oobe.step.welcome: Dobrodošli
 oobe.step.window: Stil prozora
+oobe.subscriptionNote: Cider zahtijeva aktivnu, plaćenu pretplatu na Apple Music. Glasovni Apple Music i neke promotivne probne verzije nisu podržani.
 oobe.visual.layout.text: |-
   Cider nudi dva različita izgleda prozora.
   Maverick je izgled sličan iTunesu s reproduktorom na vrhu prozora.
@@ -3387,6 +3410,10 @@ oobe.visual.title: Izgled
 oobe.welcome.getStarted: Započnite
 oobe.welcome.importSettings: Uvezi postavke…
 oobe.welcome.selectLanguage: Odaberite željeni jezik
+oobe.window.native: Izvorni prozor
+oobe.window.native.description: Koristi naslovnu traku i rubove vašeg radnog okruženja.
+oobe.window.styled: Prilagođeni kontrolni elementi
+oobe.window.styled.description: Prilagođena naslovna traka unutar aplikacije s ugrađenim kontrolama prozora.
 oobe.window.subtitle: Odaberite kako se prozor aplikacije integrira s vašim radnim okruženjem
 oobe.window.title: Stil prozora
 oobe.yes: Da
@@ -3487,6 +3514,8 @@ playlist.error.updating.title: Pogreška pri ažuriranju popisa pjesama
 playlist.folderEmpty: Nema popisa pjesama u ovoj mapi
 playlist.folderMoveFailed: Mapa nije mogla biti premještena. Pokušajte ponovo za trenutak.
 playlist.folderRenameHint: Dvaput kliknite za preimenovanje
+playlist.history: Povijest popisa
+playlist.history.withCount: Povijest popisa ({count})
 playlist.lastUpdated: Zadnje ažurirano {{date}}
 playlist.madeByApple: Kreirao Apple
 playlist.moveFailed: Playlista nije mogla biti premještena. Pokušajte ponovo za trenutak.
@@ -3607,6 +3636,7 @@ settings.audio.atmos.normalizationHint: Dolby Atmos miksevi su tiši od stereo m
 settings.audio.atmos.off.desc: Atmos je onemogućen. Sav se sadržaj reproducira kao standardni stereo.
 settings.audio.atmos.passthrough: Passthrough
 settings.audio.atmos.passthrough.desc: Zaobilazi svu obradu zvuka. Višekanalni Atmos šalje se izravno na uređaj. Idealno za AV prijemnike.
+settings.audio.atmos.passthrough.descV2: Šalje višekanalni Atmos izravno uređaju, za AV prijemnike. Audio Lab, ekvilizator i Listening Mode su zaobiđeni.
 settings.audio.atmos.passthroughActive: Passthrough je aktivan — promijenite u potpunim postavkama.
 settings.audio.atmos.standard.desc: Višekanalni Atmos s CiderAudio obradom, Pretapanje, Automix i Neprimjetni prijelazi nastavljaju raditi kako je očekivano.
 settings.audio.atmosMode: Atmos način rada
@@ -3709,6 +3739,7 @@ settings.automix.normalizeDuration: Normaliziraj trajanje
 settings.automix.normalizeDurationHint: Vrijeme stapanja za usklađivanje glasnoće ({ms} ms)
 settings.automix.spectralSeparation: Spektralno razdvajanje
 settings.automix.spectralSeparationHint: Koliko su dvije pjesme frekvencijski razmaknute tijekom prijelaza.
+settings.automix.spectralSeparationHintV2: Koliko su dvije pjesme razdvojene po frekvenciji tijekom prijelaza ({value}).
 settings.automix.speedSettle: Vrijeme stabilizacije brzine
 settings.automix.speedSettleHint: Koliko je vremena potrebno da se brzina reprodukcije vrati na normalnu nakon miksa s usklađenim tempom ({ms}ms)
 settings.automix.tempoAlign: Usklađivanje ritma
@@ -3862,6 +3893,7 @@ settings.client.windows.v8OptimizeSize.adds: Dodaje
 settings.client.windows.v8OptimizeSize.to: u WebView2
 settings.client.windows.wpfRendering: WPF način iscrtavanja
 settings.client.windows.wpfRendering.desc: Odaberite način iscrtavanja za WPF. Ako niste sigurni, ostavite na softverskom.
+settings.client.windows.wpfRendering.descV2: Odaberite način iscrtavanja prozora. Ako niste sigurni, ostavite Hardware uključeno.
 settings.client.windows.wpfRendering.hardware: Hardverski
 settings.client.windows.wpfRendering.software: Softverski
 settings.configBackups.confirm.body: Vaše trenutne postavke bit će zamijenjene onima spremljenima {date} i Cider će se ponovno učitati.
@@ -3971,6 +4003,7 @@ settings.contentFilter.empty: Još nema dodanih ključnih riječi.
 settings.contentFilter.inputPlaceholder: Dodaj ključnu riječ...
 settings.contentFilter.title: Ključne riječi filtra
 settings.crossfade.advanced: Napredne postavke pretapanja
+settings.crossfade.automixStillBlends: Automix je uključen, pa se pjesme i dalje mogu stapati jedna s drugom. Isključite Automix below da zaustavite sve stapanje.
 settings.crossfade.description: Glatko stišava trenutnu pjesmu dok istovremeno pojačava sljedeću.
 settings.crossfade.disableFor: Onemogući pretapanje za...
 settings.crossfade.duration: Trajanje
@@ -4096,6 +4129,7 @@ settings.general.section.cache: Predmemorija
 settings.general.section.cache.description: Spremljene naslovnice i metapodaci koje Cider čuva na disku radi bržeg učitavanja stranica.
 settings.general.section.desktop: Radna površina
 settings.general.section.desktop.description: Prečaci na tipkovnici te ponašanje aplikacije Cider na traci zadataka i prilikom zatvaranja.
+settings.general.section.desktop.descriptionV2: Tipkovnički prečaci, sprječavanje uspavljivanja računala tijekom reprodukcije te ponašanje Ciderа na traci zadataka i pri zatvaranju.
 settings.general.section.language: Jezik
 settings.general.section.language.description: Jezik sučelja te kako prijaviti pogreške ili navesti zasluge za prijevode.
 settings.general.section.playback: Reprodukcija
@@ -4432,6 +4466,7 @@ settings.option.advanced.mavericksLcd.style: Stil
 settings.option.advanced.mavericksLcd.style.glass: Staklo
 settings.option.advanced.mediaArtwork: Naslovnica medijskog sadržaja
 settings.option.advanced.mediaArtwork.controls: Istaknute naslovnice i slike visoke razlučivosti
+settings.option.advanced.mediaArtwork.controlsV2: Isticanje i postupno pojavljivanje omota
 settings.option.advanced.mediaArtwork.description: Naslovnice na mrežama, popisima i redcima u cijeloj aplikaciji.
 settings.option.advanced.notificationStyle: Stil obavijesti
 settings.option.advanced.performance: Performanse
@@ -4461,8 +4496,11 @@ settings.option.advanced.settingsTakeout: Izvoz / uvoz postavki
 settings.option.advanced.settingsTakeout.description: Izradite sigurnosnu kopiju svojih postavki u datoteku ili ih obnovite na drugom uređaju. Podaci za prijavu na račun nikada nisu uključeni.
 settings.option.advanced.simpleArtworkBg: Jednostavna pozadina s naslovnicom
 settings.option.advanced.simpleArtworkBg.brightness: Svjetlina %
+settings.option.advanced.simpleArtworkBg.brightnessV2: Svjetlina
 settings.option.advanced.simpleArtworkBg.contrast: Kontrast %
+settings.option.advanced.simpleArtworkBg.contrastV2: Kontrast
 settings.option.advanced.simpleArtworkBg.saturate: Zasićenost %
+settings.option.advanced.simpleArtworkBg.saturateV2: Zasićenost
 settings.option.advanced.simpleArtworkBg.useMask: Koristi donju masku
 settings.option.advanced.sonoma: Sonoma
 settings.option.advanced.sonoma.lyricArc: Lučni tekst
@@ -4768,6 +4806,8 @@ settings.option.general.onStartup: Pri pokretanju
 settings.option.general.onStartup.openStartup: Otvori stranicu pri pokretanju
 settings.option.general.onStartup.resume: Nastavi zadnju sesiju
 settings.option.general.pagination: Broj stavki po stranici
+settings.option.general.preventDisplaySleep: Zadrži zaslon uključenim tijekom reprodukcije
+settings.option.general.preventSystemSleep: Zadrži računalo budnim tijekom reprodukcije
 settings.option.general.privacy: Privatnost
 settings.option.general.promptOnClose: Pitaj prije zatvaranja dok svira glazba
 settings.option.general.queue: Red čekanja
@@ -4794,6 +4834,7 @@ settings.option.general.sleepTimerSettings: Postavke tajmera za spavanje
 settings.option.general.startupPage: Početna stranica
 settings.option.general.startupPage.blank: Prazna stranica
 settings.option.general.startupPage.description: Odaberite stranicu koja će se prikazati kada otvorite Cider.
+settings.option.general.startupPage.descriptionV2: Stranica koju Cider otvara u novim karticama i pri pokretanju kada je Pri pokretanju postavljeno na Otvori početnu stranicu.
 settings.option.general.startupPage.newTab: Stranica nove kartice
 settings.option.general.startupPage.personalHome: Osobna početna stranica
 settings.option.general.themeUpdateNotification: Automatski provjeri ažuriranja tema
@@ -4803,6 +4844,7 @@ settings.option.general.translators: Prevoditelji
 settings.option.general.translators.description: Hvala ovim suradnicima na pomoći u prijevodu aplikacije Cider. Kliknite na ime kako biste otvorili njihov GitHub profil.
 settings.option.general.useSmartQueueByDefault: Zadano koristi pametni red čekanja
 settings.option.general.useSmartQueueByDefault.description: Automatski primijeni redoslijed Smart Queue kada se stvori red čekanja. Zahtijeva Automix.
+settings.option.general.useSmartQueueByDefault.needsAutomix: Automix je isključen u Audiju, pa Smart Queue ništa neće preraspodijeliti.
 settings.option.general.warnBeforeQueueOverride: Upozori prije prepisivanja reda čekanja
 settings.option.hide: Sakrij
 settings.option.left: Lijevo
@@ -4889,6 +4931,9 @@ settings.option.performance.enableMediaItemInspect.description: Može blago utje
 settings.option.performance.gameMode: Način rada za igre
 settings.option.performance.gameMode.description: Smanjuje vizualne efekte i može omogućiti Windows način učinkovitosti za manju potrošnju procesora.
 settings.option.performance.gameMode.disable: Onemogući Način rada za igre
+settings.option.performance.graphicsAcceleration: Ubrzanje grafike
+settings.option.performance.graphicsAcceleration.autoOff: Isključeno jer ovo računalo iscrtava grafiku softverski.
+settings.option.performance.graphicsAcceleration.description: Automatski način isključuje ubrzanje u virtualnom stroju koji iscrtava grafiku softverski. Promjene se primjenjuju pri sljedećem pokretanju Ciderа.
 settings.option.performance.host: Host
 settings.option.performance.immersiveRenderer: Imerzivni renderer
 settings.option.performance.immersiveRenderer.description: Koristite Canvas 2D umjesto WebGPU ako se animirana pozadina ne ponaša ispravno ili koristi previše grafičkog procesora (GPU).
@@ -4904,6 +4949,8 @@ settings.option.performance.preloadSidebarPages: Unaprijed učitaj stranice boč
 settings.option.performance.preloadSidebarPages.description: Učitava stranice bočne trake prije nego što ih otvorite. Opcija „Pri prijelazu pokazivača” započinje kada se pokazivač zadrži na stavci bočne trake. Opcija „Tijekom neaktivnosti” također učitava Slušajte odmah, Pregledaj i Radio nakon pokretanja te osvježava popise medijateke koje ste prethodno otvorili.
 settings.option.performance.preloadSidebarPages.idle: Tijekom neaktivnosti
 settings.option.performance.preloadSidebarPages.intent: Pri prijelazu pokazivača
+settings.option.performance.reduceEffects: Smanji vizualne efekte
+settings.option.performance.reduceEffects.description: Isključuje zamućenje, staklene efekte, sjaj i animirane pozadine kako bi aplikacija manje iscrtavala. Automatski način ih uključuje kada nema radne grafičke kartice ili kada sustav traži manje prozirnosti.
 settings.option.performance.renderer.auto: Automatski (WebGPU kada je podržan)
 settings.option.performance.renderer.canvas: Canvas 2D
 settings.option.performance.renderer.webgpu: WebGPU
@@ -5123,7 +5170,10 @@ settings.option.visual.liquidGlassPlayer: Traka reproduktora s efektom tekućeg 
 settings.option.visual.liquidGlassPlayer.description: Koristite površinu s efektom tekućeg stakla za traku reproduktora koji trenutno svira. Isključite za ravan, čvrst panel (također lakši za prikazivanje).
 settings.option.visual.liquidGlassScrollPerf: Lagano staklo tijekom pomicanja
 settings.option.visual.liquidGlassScrollPerf.description: Pojednostavljuje refrakciju tekućeg stakla na obično zamućenje tijekom pomicanja, a zatim je postupno vraća kada se zaustavite. Smanjuje trzanje pri pomicanju na zahtjevnim sustavima, bez promjena u stanju mirovanja. Uvijek uključeno u načinu rada Game Mode.
+settings.option.visual.liquidGlassScrollPerf.descriptionV2: Pojednostavljuje lomljenje svjetla tekućeg stakla u jednostavno zamućenje tijekom pomicanja, a zatim ga postupno vraća kada prestanete. Smanjuje trzanje pri pomicanju na zahtjevnim sustavima bez promjene u mirovanju.
 settings.option.visual.mainMenuPosition: Položaj glavnog izbornika
+settings.option.visual.matchPageToArtwork: Prilagodi stranicu omotu
+settings.option.visual.matchPageToArtwork.description: Boji stranice albuma i popisa u bojama njihovih omota, u svjetlom i tamnom načinu rada.
 settings.option.visual.mergeAppleMusicPlaylists: Spoji Apple Music popise pjesama
 settings.option.visual.mergeAppleMusicPlaylists.description: Pomiješajte popise pjesama koje je uredio Apple Music u glavni odjeljak Popisi pjesama umjesto da ih prikazujete kao zasebnu grupu.
 settings.option.visual.miniplayerSkin: Izgled mini-reproduktora
@@ -5301,6 +5351,7 @@ settings.prompt.visual.plugin.github.success: Dodatak je uspješno instaliran. P
 settings.prompt.visual.plugin.github.URL: Unesite URL dodatka koji želite instalirati
 settings.prompt.visual.theme.github.URL: Unesite URL teme koju želite instalirati
 settings.prompt.visual.theme.uninstallTheme: Sigurno želite deinstalirati {{theme}}?
+settings.reloadPrompt.message: Za primjenu promjena potrebno je osvježiti aplikaciju. Želite li nastaviti?
 settings.requiresNewerClient: Zahtijeva noviju verziju klijenta Cider.
 settings.resetCider.category.appleMusic: Odjava iz usluge Apple Music
 settings.resetCider.category.appleMusic.desc: Uklonite Apple Music račun s ovog uređaja
@@ -5344,6 +5395,7 @@ settings.smartPlaylists.section.maintenance: Održavanje
 settings.smartPlaylists.section.maintenance.description: Prisilno pokrenite sva pravila sada ili odbacite predmemoriranu kopiju svoje medijateke.
 settings.smartPlaylists.section.rules: Pravila
 settings.smartPlaylists.section.rules.description: Određuje primjenjuje li Cider ugrađena pravila popisa pjesama i koliko ih često ponovno procjenjuje.
+settings.smartPlaylists.section.rules.descriptionV2: Određuje primjenjuje li Cider ugrađena pravila popisa. Ona se ponovno pokreću uz Vrijeme osvježavanja u pozadini u Potrošnji energije.
 settings.sweetener.useSystemAccentColor: Koristi istaknutu boju sustava
 settings.takeout.chooseFile: Odaberi datoteku…
 settings.takeout.error.badVersion: U toj datoteci nedostaju informacije o verziji.
@@ -5374,6 +5426,7 @@ settings.title: Postavke
 settings.troubleshooting.bgDiagnostics: Dijagnostika reprodukcije u pozadini
 settings.troubleshooting.bgDiagnostics.desc: Dodatni zapisi za dijagnosticiranje problema s reprodukcijom dok je prozor minimiziran ili izvan fokusa — tko je pauzirao reproduktor, izgladnjivanje tajmera i epizode obustave OS-a. Omogućite prilikom prijave pogreške s reprodukcijom u pozadini.
 settings.troubleshooting.desc: Datoteke zapisnika i MKLite zapisivanje za uklanjanje pogrešaka.
+settings.troubleshooting.descV2: Zapisivanje MKLite i reprodukcije u pozadini.
 settings.troubleshooting.hevcWorkaround: Zaobilazno rješenje za HEVC
 settings.troubleshooting.hevcWorkaround.desc: Zaobilazno rješenje za pogrešku u WebView2 s određenim grafičkim karticama koje imaju problema s reprodukcijom 10-bitnog SDR HEVC sadržaja primjenom filtra za kompenzaciju vizualnog pomaka.
 settings.troubleshooting.impressionReporting: Izvješćivanje o prikazima PlayActivity
@@ -5397,6 +5450,8 @@ settings.updates.action.check: Provjeri ažuriranja
 settings.updates.action.install: Instaliraj ažuriranje
 settings.updates.action.restart: Ponovno pokreni Cider
 settings.updates.action.retry: Pokušaj ponovno
+settings.updates.autoCheck: Automatski provjeri ažuriranja
+settings.updates.autoCheck.description: Kada je isključeno, Cider provjerava samo kada otvorite ovu stranicu.
 settings.updates.build: Sastav
 settings.updates.channel: Kanal
 settings.updates.codename: Kodno ime
@@ -6061,6 +6116,8 @@ updates.installUnavailable.body: Ova verzija nije dostupna za preuzimanje na va�
 updates.lateststable.title: Najnovije stabilno izdanje
 updates.loadFailed.body: Provjerite vezu i pokušajte ponovno.
 updates.loadFailed.title: Cider nije mogao učitati dostupne verzije
+updates.newVersion.body: Dostupna je nova verzija Ciderа. Želite li je preuzeti u odjeljku Ažuriranja?
+updates.newVersion.title: Dostupna nova verzija
 updates.notifyForBranch.tooltip: Obavijesti me o ovoj grani
 updates.otherVersions.title: Druge verzije
 updates.ptb.name: Javna testna grana
