@@ -310,6 +310,9 @@ album.track.unavailable.unreleased: Ten utwór nie został jeszcze wydany.
 album.track.unavailable.zeroDuration: Czas trwania elementu wynosi 0 sekund, prawdopodobnie nie został jeszcze wydany.
 album.upcoming.badge: Nadchodzący album
 app.name: Cider
+app.ptbDisclaimer.confirm: Rozumiem
+app.ptbDisclaimer.message: To jest kompilacja Public Testing Branch. Nie gwarantujemy, że ta kompilacja jest stabilna, i może zawierać błędy. Nie zgłaszaj błędów ani problemów znalezionych w tej kompilacji. Jeśli napotkasz problemy, przed zgłoszeniem przełącz się na stabilną kompilację.
+app.ptbDisclaimer.title: Zastrzeżenie dotyczące Public Testing Branch
 app.unsupportedClient.message: Ten klient nie jest obsługiwany. Upewnij się, że używasz najnowszej wersji Cider.
 app.unsupportedClient.title: Nieobsługiwany klient
 assistant.sid.agent.added: "Dodano utwory: {count}"
@@ -782,10 +785,16 @@ audio.device.default: Urządzenie domyślne
 audio.device.noneFound: Nie znaleziono urządzeń wyjściowych
 audio.device.placeholder: Urządzenie {{id}}
 audiolab.waiting: Oczekiwanie na dodanie utworu do kolejki
+auth.error.devToken: Nie można połączyć się z Apple Music
+auth.error.generic: Nie udało się zakończyć logowania. Sprawdź połączenie i spróbuj ponownie.
+auth.error.invalidToken: Otrzymano nieprawidłowy token
 auth.error.popupBlocked: Zablokowano wyskakujące okno
+auth.error.timeout: Upłynął limit czasu logowania
+auth.error.unavailable: Ten Apple ID nie może korzystać z Apple Music w Cider. Cider wymaga aktywnej, płatnej subskrypcji Apple Music.
 auth.error.windowFailed: Nie udało się otworzyć okna logowania
 auth.mutExpired.confirm: Zaloguj się
 auth.mutExpired.message: Twoja sesja Apple Music wygasła. Zaloguj się ponownie, aby kontynuować.
+auth.signedIn: Zalogowano
 auth.signInRetry.confirm: Spróbuj ponownie
 auth.signInRetry.message: Nie udało się otworzyć okna logowania. Spróbować ponownie?
 bugReport.addImage: Dodaj obraz
@@ -2999,6 +3008,7 @@ oobe.amupsell.title: Zanim zaczniemy
 oobe.appearance.accentHint: Używany do przycisków, wyróżnień i paska postępu w aplikacji. Wybierz jeden, aby zobaczyć podgląd na żywo.
 oobe.appearance.subtitle: Wybierz schemat kolorów i kolor akcentu. Możesz je zmienić w dowolnym momencie w Ustawienia → Wygląd.
 oobe.appearance.title: Dostosuj Cider do siebie
+oobe.appleNotice: "Uwaga: Apple Music jest znakiem towarowym Apple Inc. Cider jest klientem Apple Music firmy zewnętrznej i nie jest powiązany z Apple Inc."
 oobe.audio.advancedFunctionality: ""
 oobe.audio.subtitle: ""
 oobe.audio.text: |-
@@ -3037,19 +3047,31 @@ oobe.intro.subtitle: ""
 oobe.intro.text: Skonfigurujmy kilka rzeczy, aby dostosować Cider do Twoich upodobań. Zawsze możesz zmienić te ustawienia później.
 oobe.intro.title: Witaj w Cider
 oobe.layout.subtitle: Wybierz układ, który pasuje do Twojego stylu
+oobe.login.alreadySignedIn: Jesteś już zalogowany
 oobe.login.skip: Pomiń na razie
 oobe.login.skipTooltip: Będziesz mieć możliwość korzystania z aplikacji tylko w trybie podglądu
 oobe.login.subtitle: Zaloguj się na swoje konto Apple Music, aby zacząć słuchać muzyki
+oobe.login.terms: Kontynuując, akceptujesz Warunki korzystania z usługi oraz Politykę prywatności
 oobe.login.title: Ostatni krok
 oobe.login.userToken: Zaloguj się za pomocą tokenu użytkownika
+oobe.music.mute: Wycisz muzykę konfiguracji
+oobe.music.unmute: Włącz muzykę konfiguracji
 oobe.next: Dalej
 oobe.no: Nie
+oobe.performance.full.descriptionV2: Efekty wizualne pozostają włączone. Cider sam je ogranicza tylko wtedy, gdy komputer nie może ich wyświetlić.
+oobe.performance.fullV2: Pełna jakość
 oobe.performance.hint: Tryb wydajności ogranicza efekty wizualne i oszczędza procesor. Domyślnie wyłączony na systemach takich jak Twój, ale możesz go włączyć w każdej chwili.
 oobe.performance.lowEndHint: Wykryliśmy procesor o mniejszej liczbie wątków. Zalecamy Tryb wydajności w celu płynniejszego odtwarzania i mniejszego zużycia procesora.
+oobe.performance.mode.description: Wyłącza najbardziej obciążające efekty wizualne, takie jak duże rozmycia i animowane tła. Dobre dla starszych komputerów.
+oobe.performance.modeV2: Tryb wydajności
+oobe.performance.subtitleV3: Tryb wydajności wyłącza najbardziej obciążające efekty wizualne. Pełna jakość zachowuje je, chyba że komputer nie może ich wyświetlić.
 oobe.performance.title: Wydajność
+oobe.performance.whereToChangeV3: W Ustawieniach ten wybór znajduje się w opcji {setting} na stronie {page}. Wybierz {on}, aby używać trybu wydajności, lub {automatic}, aby używać pełnej jakości. Możesz to zmienić w dowolnym momencie.
 oobe.player.subtitle: Pasek odtwarzania znajdujący się przy krawędzi okna. Wybierz stopień zagęszczenia elementów, który Ci odpowiada.
 oobe.player.title: Wybierz odtwarzacz
 oobe.previous: Wstecz
+oobe.progress: "Krok {current} z {total}: {title}"
+oobe.progress.label: Postęp konfiguracji
 oobe.step.appearance: Wygląd
 oobe.step.connections: Połączenia
 oobe.step.features: Dźwięk
@@ -3059,6 +3081,7 @@ oobe.step.performance: Wydajność
 oobe.step.player: Odtwarzacz
 oobe.step.welcome: Witaj
 oobe.step.window: Styl okna
+oobe.subscriptionNote: Cider wymaga aktywnej, płatnej subskrypcji Apple Music. Apple Music Voice oraz niektóre promocyjne okresy próbne nie są obsługiwane.
 oobe.visual.layout.text: |-
   Cider oferuje dwa różne układy okna.
   Maverick to układ przypominający iTunes, z odtwarzaczem na górze okna.
@@ -3071,6 +3094,10 @@ oobe.visual.title: Wygląd
 oobe.welcome.getStarted: Rozpocznij
 oobe.welcome.importSettings: Importuj ustawienia…
 oobe.welcome.selectLanguage: Wybierz preferowany język
+oobe.window.native: Natywne okno
+oobe.window.native.description: Używa paska tytułu i obramowania środowiska pulpitu.
+oobe.window.styled: Stylizowane elementy sterowania
+oobe.window.styled.description: Niestandardowy pasek tytułu w aplikacji z wbudowanymi przyciskami okna.
 oobe.window.subtitle: Wybierz, jak okno aplikacji ma integrować się z Twoim środowiskiem pulpitu
 oobe.window.title: Styl okna
 oobe.yes: Tak
@@ -3171,6 +3198,8 @@ playlist.error.updating.title: Błąd uaktualniania playlisty
 playlist.folderEmpty: Brak playlist w tym folderze
 playlist.folderMoveFailed: Nie udało się przenieść folderu. Spróbuj ponownie za chwilę.
 playlist.folderRenameHint: Kliknij dwukrotnie, aby zmienić nazwę
+playlist.history: Historia playlisty
+playlist.history.withCount: Historia playlisty ({count})
 playlist.lastUpdated: "Ostatnia aktualizacja: {{date}}"
 playlist.madeByApple: Utworzone przez Apple
 playlist.moveFailed: Nie udało się przenieść playlisty. Spróbuj ponownie za chwilę.
@@ -3291,6 +3320,7 @@ settings.audio.atmos.normalizationHint: Miksy Dolby Atmos są cichsze niż maste
 settings.audio.atmos.off.desc: Dźwięk Atmos wyłączony. Cała zawartość jest odtwarzana jako standardowe stereo.
 settings.audio.atmos.passthrough: Passthrough
 settings.audio.atmos.passthrough.desc: Omija wszelkie przetwarzanie dźwięku. Wielokanałowy dźwięk Atmos jest wysyłany bezpośrednio do urządzenia. Idealne dla amplitunerów AV.
+settings.audio.atmos.passthrough.descV2: Wysyła wielokanałowy Atmos bezpośrednio do urządzenia, np. do amplitunerów AV. Audio Lab, korektor i tryb słuchania są pomijane.
 settings.audio.atmos.passthroughActive: Tryb passthrough aktywny — zmień w pełnych ustawieniach.
 settings.audio.atmos.standard.desc: Wielokanałowy dźwięk Atmos z przetwarzaniem CiderAudio. Przenikanie, Automix oraz płynne przejścia nadal działają zgodnie z oczekiwaniami.
 settings.audio.atmosMode: Tryb Atmos
@@ -3393,6 +3423,7 @@ settings.automix.normalizeDuration: Normalizuj czas trwania
 settings.automix.normalizeDurationHint: Czas przenikania dla dopasowania głośności ({ms} ms)
 settings.automix.spectralSeparation: Separacja widmowa
 settings.automix.spectralSeparationHint: Określa, jak bardzo oba utwory są rozdzielane w częstotliwości podczas przejścia.
+settings.automix.spectralSeparationHintV2: Jak bardzo dwa utwory są rozsunięte w częstotliwości podczas przejścia ({value}).
 settings.automix.speedSettle: Czas stabilizacji prędkości
 settings.automix.speedSettleHint: Czas potrzebny na powrót prędkości odtwarzania do normy po miksie z dopasowanym tempem ({ms} ms)
 settings.automix.tempoAlign: Dopasowywanie bitu
@@ -3546,6 +3577,7 @@ settings.client.windows.v8OptimizeSize.adds: Dodaje
 settings.client.windows.v8OptimizeSize.to: do WebView2
 settings.client.windows.wpfRendering: Tryb renderowania WPF
 settings.client.windows.wpfRendering.desc: Wybierz tryb renderowania dla WPF. W razie wątpliwości pozostaw opcję programową.
+settings.client.windows.wpfRendering.descV2: Wybierz sposób rysowania okna. Jeśli nie masz pewności, pozostaw opcję Sprzęt.
 settings.client.windows.wpfRendering.hardware: Sprzętowe
 settings.client.windows.wpfRendering.software: Programowe
 settings.configBackups.confirm.body: Twoje obecne ustawienia zostaną zastąpione ustawieniami zapisanymi w dniu {date}, a Cider uruchomi się ponownie.
@@ -3695,6 +3727,7 @@ settings.contentFilter.empty: Nie dodano jeszcze żadnych słów kluczowych.
 settings.contentFilter.inputPlaceholder: Dodaj słowo kluczowe...
 settings.contentFilter.title: Filtruj słowa kluczowe
 settings.crossfade.advanced: Zaawansowane ustawienia płynnego przejścia
+settings.crossfade.automixStillBlends: Automix jest włączony, więc utwory nadal mogą płynnie przechodzić jeden w drugi. Wyłącz Automix poniżej, aby zatrzymać wszystkie przejścia.
 settings.crossfade.description: Płynnie wycisza aktualny utwór, jednocześnie podgłaśniając następny.
 settings.crossfade.disableFor: Wyłącz płynne przejście dla...
 settings.crossfade.duration: Czas trwania
@@ -3829,6 +3862,7 @@ settings.general.section.cache: Pamięć podręczna
 settings.general.section.cache.description: Zapisane okładki i metadane, które Cider przechowuje na dysku, aby strony ładowały się szybciej.
 settings.general.section.desktop: Pulpit
 settings.general.section.desktop.description: Skróty klawiszowe oraz zachowanie Cider na pasku zadań i podczas zamykania.
+settings.general.section.desktop.descriptionV2: Skróty klawiszowe, utrzymywanie komputera w stanie czuwania podczas odtwarzania oraz zachowanie Cider na pasku zadań i przy zamykaniu.
 settings.general.section.language: Język
 settings.general.section.language.description: Język interfejsu oraz sposób zgłaszania lub przypisywania autorstwa tłumaczeń.
 settings.general.section.playback: Odtwarzanie
@@ -4183,6 +4217,7 @@ settings.option.advanced.mavericksLcd.style: Styl
 settings.option.advanced.mavericksLcd.style.glass: Szkło
 settings.option.advanced.mediaArtwork: Okładka multimediów
 settings.option.advanced.mediaArtwork.controls: Wyróżnienia okładek i obrazy w wysokiej rozdzielczości
+settings.option.advanced.mediaArtwork.controlsV2: Podświetlanie i wygaszanie okładki
 settings.option.advanced.mediaArtwork.description: Okładki na siatkach, listach i wierszach w całej aplikacji.
 settings.option.advanced.notificationStyle: Styl powiadomień
 settings.option.advanced.performance: Wydajność
@@ -4212,8 +4247,11 @@ settings.option.advanced.settingsTakeout: Eksport i import ustawień
 settings.option.advanced.settingsTakeout.description: Utwórz kopię zapasową swoich preferencji w pliku lub przywróć je na innym urządzeniu. Dane logowania do konta nigdy nie są dołączane.
 settings.option.advanced.simpleArtworkBg: Proste tło z okładki
 settings.option.advanced.simpleArtworkBg.brightness: Jasność %
+settings.option.advanced.simpleArtworkBg.brightnessV2: Jasność
 settings.option.advanced.simpleArtworkBg.contrast: Kontrast %
+settings.option.advanced.simpleArtworkBg.contrastV2: Kontrast
 settings.option.advanced.simpleArtworkBg.saturate: Nasycenie %
+settings.option.advanced.simpleArtworkBg.saturateV2: Nasycenie
 settings.option.advanced.simpleArtworkBg.useMask: Użyj dolnej maski
 settings.option.advanced.sonoma: Sonoma
 settings.option.advanced.sonoma.lyricArc: Zakrzywiony tekst
@@ -4573,6 +4611,8 @@ settings.option.general.onStartup: Przy uruchomieniu
 settings.option.general.onStartup.openStartup: Otwórz stronę startową
 settings.option.general.onStartup.resume: Wznów ostatnią sesję
 settings.option.general.pagination: Liczba elementów na stronie
+settings.option.general.preventDisplaySleep: Utrzymuj włączony ekran podczas odtwarzania
+settings.option.general.preventSystemSleep: Utrzymuj komputer w stanie czuwania podczas odtwarzania
 settings.option.general.privacy: Prywatność
 settings.option.general.promptOnClose: Potwierdzaj zamknięcie podczas odtwarzania muzyki
 settings.option.general.queue: Kolejka
@@ -4609,6 +4649,7 @@ settings.option.general.sleepTimerSettings: Ustawienia wyłącznika czasowego
 settings.option.general.startupPage: Strona startowa
 settings.option.general.startupPage.blank: Pusta strona
 settings.option.general.startupPage.description: Wybierz stronę, która będzie wyświetlana po otwarciu Cider.
+settings.option.general.startupPage.descriptionV2: Strona, którą Cider otwiera w nowych kartach oraz po uruchomieniu, gdy opcja Przy uruchomieniu ma ustawienie Otwórz stronę startową.
 settings.option.general.startupPage.newTab: Strona nowej karty
 settings.option.general.startupPage.personalHome: Osobista strona główna
 settings.option.general.themeUpdateNotification: Automatycznie sprawdzaj aktualizacje motywów
@@ -4618,6 +4659,7 @@ settings.option.general.translators: Tłumacze
 settings.option.general.translators.description: Dziękujemy tym współtwórcom za pomoc w tłumaczeniu Cider. Kliknij nazwę, aby otworzyć profil w serwisie GitHub.
 settings.option.general.useSmartQueueByDefault: Domyślnie używaj inteligentnej kolejki
 settings.option.general.useSmartQueueByDefault.description: Automatycznie stosuj kolejność Inteligentnej kolejki po utworzeniu kolejki. Wymaga funkcji Automix.
+settings.option.general.useSmartQueueByDefault.needsAutomix: Automix jest wyłączony w sekcji Audio, więc Inteligentna kolejka nic nie przestawi.
 settings.option.general.warnBeforeQueueOverride: Ostrzegaj przed zastąpieniem kolejki
 settings.option.hide: Ukryj
 settings.option.left: Po lewej
@@ -4714,6 +4756,9 @@ settings.option.performance.enableMediaItemInspect.description: Może nieznaczni
 settings.option.performance.gameMode: Tryb gry
 settings.option.performance.gameMode.description: Ogranicza efekty wizualne i może włączyć tryb wydajności systemu Windows w celu zmniejszenia zużycia procesora.
 settings.option.performance.gameMode.disable: Wyłącz tryb gry
+settings.option.performance.graphicsAcceleration: Akceleracja grafiki
+settings.option.performance.graphicsAcceleration.autoOff: Wyłączona, ponieważ ten komputer rysuje grafikę programowo.
+settings.option.performance.graphicsAcceleration.description: Opcja Automatycznie wyłącza ją w maszynie wirtualnej, która rysuje grafikę programowo. Zmiany zostaną zastosowane po następnym uruchomieniu Cider.
 settings.option.performance.host: Host
 settings.option.performance.immersiveRenderer: Renderowanie immersyjne
 settings.option.performance.immersiveRenderer.description: Użyj Canvas 2D zamiast WebGPU, jeśli animowane tło działa nieprawidłowo lub zużywa zbyt dużo zasobów karty graficznej.
@@ -4729,6 +4774,8 @@ settings.option.performance.preloadSidebarPages: Wstępne ładowanie stron paska
 settings.option.performance.preloadSidebarPages.description: Wczytuje strony paska bocznego, zanim je otworzysz. Opcja „Po najechaniu” uruchamia ładowanie, gdy kursor zatrzyma się na elemencie paska bocznego. Opcja „Podczas bezczynności” dodatkowo wczytuje sekcje Słuchaj teraz, Przeglądaj i Radio po uruchomieniu oraz odświeża wcześniej otwierane listy biblioteki.
 settings.option.performance.preloadSidebarPages.idle: Podczas bezczynności
 settings.option.performance.preloadSidebarPages.intent: Po najechaniu
+settings.option.performance.reduceEffects: Ogranicz efekty wizualne
+settings.option.performance.reduceEffects.description: Wyłącza rozmycia, efekt szkła, poświaty i animowane tła, dzięki czemu aplikacja rysuje mniej. Opcja Automatycznie włącza je, gdy nie ma działającej karty graficznej lub gdy system prosi o mniejszą przezroczystość.
 settings.option.performance.renderer.auto: Automatycznie (WebGPU, jeśli jest obsługiwane)
 settings.option.performance.renderer.canvas: Canvas 2D
 settings.option.performance.renderer.webgpu: WebGPU
@@ -5014,6 +5061,7 @@ settings.option.visual.liquidGlassPlayer: Pasek odtwarzacza Liquid Glass
 settings.option.visual.liquidGlassPlayer.description: Użyj powierzchni płynnego szkła (liquid-glass) dla paska odtwarzania. Wyłącz, aby uzyskać płaski, jednolity panel (lżejszy do wyrenderowania).
 settings.option.visual.liquidGlassScrollPerf: Lekki efekt szkła podczas przewijania
 settings.option.visual.liquidGlassScrollPerf.description: Upraszcza refrakcję płynnego szkła do zwykłego rozmycia podczas przewijania, a następnie płynnie ją przywraca po zatrzymaniu. Zmniejsza zacinanie się przewijania na wymagających systemach, bez zmian w stanie spoczynku. Zawsze włączone w trybie gry.
+settings.option.visual.liquidGlassScrollPerf.descriptionV2: Podczas przewijania upraszcza załamanie światła w efekcie liquid glass do zwykłego rozmycia, a po zatrzymaniu płynnie przywraca efekt. Ogranicza przycinanie podczas przewijania na wymagających systemach bez zmian w spoczynku.
 settings.option.visual.mainMenuPosition: Pozycja menu głównego
 settings.option.visual.matchPageToArtwork: Dopasuj stronę do okładki
 settings.option.visual.matchPageToArtwork.description: Koloruje strony albumów i playlist barwami ich okładek, w trybie jasnym i ciemnym.
@@ -5223,6 +5271,7 @@ settings.prompt.visual.plugin.github.URL:
   superseded_at: 2026-07-08
 settings.prompt.visual.theme.github.URL: Wprowadź adres URL motywu, który chcesz zainstalować
 settings.prompt.visual.theme.uninstallTheme: Czy na pewno chcesz odinstalować {{theme}}?
+settings.reloadPrompt.message: Aby zastosować zmiany, wymagane jest odświeżenie aplikacji. Czy chcesz kontynuować?
 settings.requiresNewerClient: Wymaga nowszej wersji aplikacji Cider.
 settings.resetCider.category.appleMusic: Wyloguj z Apple Music
 settings.resetCider.category.appleMusic.desc: Usuń konto Apple Music z tego urządzenia
@@ -5266,6 +5315,7 @@ settings.smartPlaylists.section.maintenance: Konserwacja
 settings.smartPlaylists.section.maintenance.description: Wymuś natychmiastowe wykonanie wszystkich reguł lub usuń pamięć podręczną biblioteki.
 settings.smartPlaylists.section.rules: Reguły
 settings.smartPlaylists.section.rules.description: Określa, czy Cider stosuje wbudowane reguły playlist i jak często je aktualizuje.
+settings.smartPlaylists.section.rules.descriptionV2: Określa, czy Cider stosuje reguły playlist zapisane w playliście. Są one ponownie uruchamiane z Czasem odświeżania w tle w sekcji Zużycie energii.
 settings.sweetener.useSystemAccentColor: Użyj systemowego koloru akcentu
 settings.takeout.chooseFile: Wybierz plik…
 settings.takeout.error.badVersion: Ten plik nie zawiera informacji o wersji.
@@ -5296,6 +5346,7 @@ settings.title: Ustawienia
 settings.troubleshooting.bgDiagnostics: Diagnostyka odtwarzania w tle
 settings.troubleshooting.bgDiagnostics.desc: Dodatkowe ślady w logach ułatwiające diagnozowanie problemów z odtwarzaniem, gdy okno jest zminimalizowane lub nieaktywne — np. kto wstrzymał odtwarzacz, dławienie timera i wstrzymanie przez system operacyjny. Włącz tę opcję podczas zgłaszania błędu odtwarzania w tle.
 settings.troubleshooting.desc: Pliki dziennika i debugowanie MKLite.
+settings.troubleshooting.descV2: Rejestrowanie MKLite i odtwarzania w tle.
 settings.troubleshooting.hevcWorkaround: Obejście problemu z HEVC
 settings.troubleshooting.hevcWorkaround.desc: Obejście błędu w WebView2 występującego na niektórych procesorach graficznych mających problemy z odtwarzaniem 10-bitowego wideo SDR HEVC, polegające na zastosowaniu filtra kompensującego przesunięcie wizualne.
 settings.troubleshooting.impressionReporting: Raportowanie wyświetleń PlayActivity
@@ -5319,6 +5370,8 @@ settings.updates.action.check: Sprawdź aktualizacje
 settings.updates.action.install: Zainstaluj aktualizację
 settings.updates.action.restart: Uruchom ponownie Cider
 settings.updates.action.retry: Spróbuj ponownie
+settings.updates.autoCheck: Automatycznie sprawdzaj aktualizacje
+settings.updates.autoCheck.description: Gdy opcja jest wyłączona, Cider sprawdza aktualizacje tylko po otwarciu tej strony.
 settings.updates.build: Kompilacja
 settings.updates.channel: Kanał
 settings.updates.codename: Nazwa kodowa
@@ -6121,6 +6174,8 @@ updates.installUnavailable.body: Ta wersja nie jest dostępna do pobrania na Two
 updates.lateststable.title: Najnowsza wersja stabilna
 updates.loadFailed.body: Sprawdź połączenie i spróbuj ponownie.
 updates.loadFailed.title: Cider nie mógł wczytać dostępnych wersji
+updates.newVersion.body: Dostępna jest nowa wersja Cider. Przejść do sekcji Aktualizacje, aby ją pobrać?
+updates.newVersion.title: Dostępna nowa wersja
 updates.notifyForBranch.tooltip: Powiadamiaj o aktualizacjach w tej gałęzi
 updates.otherVersions.title: Inne wersje
 updates.ptb.name: Publiczna gałąź testowa
