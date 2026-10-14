@@ -254,6 +254,9 @@ album.track.unavailable.unreleased: Цей елемент ще не випуще
 album.track.unavailable.zeroDuration: Тривалість елемента становить 0 секунд, ймовірно, він ще не вийшов.
 album.upcoming.badge: Очікуваний альбом
 app.name: Cider
+app.ptbDisclaimer.confirm: Зрозуміло
+app.ptbDisclaimer.message: Це збірка Public Testing Branch. Стабільність цієї збірки не гарантується, і в ній можуть бути помилки. Не повідомляйте про помилки та проблеми, виявлені в цій збірці. Якщо ви зіткнулися з проблемами, перейдіть на стабільну збірку, перш ніж повідомляти про них.
+app.ptbDisclaimer.title: Застереження щодо Public Testing Branch
 app.unsupportedClient.message: Цей клієнт не підтримується. Переконайтеся, що ви використовуєте останню версію Cider.
 app.unsupportedClient.title: Непідтримуваний клієнт
 assistant.sid.agent.added: "Додано пісень: {count}"
@@ -726,10 +729,16 @@ audio.device.default: Пристрій за замовчуванням
 audio.device.noneFound: Пристроїв виведення не знайдено
 audio.device.placeholder: Пристрій {{id}}
 audiolab.waiting: Очікування додавання пісні до черги
+auth.error.devToken: Не вдалося під'єднатися до Apple Music
+auth.error.generic: Не вдалося завершити вхід. Перевірте з'єднання та спробуйте ще раз.
+auth.error.invalidToken: Отримано недійсний токен
 auth.error.popupBlocked: Спливаюче вікно заблоковано
+auth.error.timeout: Час очікування входу минув
+auth.error.unavailable: Цей Apple ID не може використовувати Apple Music у Cider. Для Cider потрібна активна платна підписка на Apple Music.
 auth.error.windowFailed: Не вдалося відкрити вікно входу
 auth.mutExpired.confirm: Увійти
 auth.mutExpired.message: Термін дії вашого сеансу Apple Music закінчився. Увійдіть знову, щоб продовжити.
+auth.signedIn: Виконано вхід
 auth.signInRetry.confirm: Спробувати знову
 auth.signInRetry.message: Не вдалося відкрити вікно входу. Спробувати знову?
 bugReport.addImage: Додати зображення
@@ -2843,6 +2852,7 @@ oobe.amupsell.title: Перш ніж почати
 oobe.appearance.accentHint: Використовується для кнопок, виділень та індикаторів виконання в додатку. Спробуйте один, щоб переглянути наживо.
 oobe.appearance.subtitle: Виберіть колірну схему та акцентний колір. Ви можете змінити їх у будь-який момент у меню Параметри → Вигляд.
 oobe.appearance.title: Зробіть Cider своїм
+oobe.appleNotice: "Зверніть увагу: Apple Music є торговельною маркою Apple Inc. Cider є клієнтом Apple Music сторонньої розробки і не пов'язаний з Apple Inc."
 oobe.audio.advancedFunctionality: ""
 oobe.audio.subtitle: ""
 oobe.audio.text: |-
@@ -2881,19 +2891,31 @@ oobe.intro.subtitle: ""
 oobe.intro.text: Давайте налаштуємо кілька параметрів, щоб ви могли користуватися Cider так, як вам зручно. Ви завжди зможете змінити ці налаштування пізніше.
 oobe.intro.title: Ласкаво просимо до Cider
 oobe.layout.subtitle: Виберіть макет, який відповідає вашому стилю
+oobe.login.alreadySignedIn: Ви вже увійшли в систему
 oobe.login.skip: Пропустити поки що
 oobe.login.skipTooltip: Ви зможете використовувати додаток лише в режимі попереднього перегляду
 oobe.login.subtitle: Увійдіть за допомогою свого облікового запису Apple Music, щоб почати слухати музику
+oobe.login.terms: Продовжуючи, ви погоджуєтеся з Умовами надання послуг та Політикою конфіденційності
 oobe.login.title: Останній крок
 oobe.login.userToken: Увійти за допомогою токена користувача
+oobe.music.mute: Вимкнути звук музики налаштування
+oobe.music.unmute: Увімкнути звук музики налаштування
 oobe.next: Далі
 oobe.no: Ні
+oobe.performance.full.descriptionV2: Залишає візуальні ефекти увімкненими. Cider вимикає їх самостійно, лише якщо комп'ютер не може їх відтворити.
+oobe.performance.fullV2: Повна якість
 oobe.performance.hint: Режим продуктивності зменшує візуальні ефекти та заощаджує ресурси процесора. Вимкнено за замовчуванням на таких системах, як ваша, але ви можете ввімкнути його будь-коли.
 oobe.performance.lowEndHint: Виявлено процесор із низькою кількістю потоків. Рекомендуємо ввімкнути режим продуктивності для плавнішого відтворення та меншого навантаження на процесор.
+oobe.performance.mode.description: Вимикає ресурсоємні візуальні ефекти, як-от великі розмиття та анімовані фони. Підходить для старіших комп'ютерів.
+oobe.performance.modeV2: Режим продуктивності
+oobe.performance.subtitleV3: Режим продуктивності вимикає найресурсоємніші візуальні ефекти. Повна якість залишає їх увімкненими, якщо комп'ютер може їх відтворити.
 oobe.performance.title: Продуктивність
+oobe.performance.whereToChangeV3: У налаштуваннях цей вибір є параметром {setting} на сторінці {page}. Виберіть {on} для режиму продуктивності або {automatic} для повної якості. Змінити його можна будь-коли.
 oobe.player.subtitle: Панель відтворення, розташована на краю вікна. Виберіть зручну для вас компактність.
 oobe.player.title: Виберіть плеєр
 oobe.previous: Назад
+oobe.progress: "Крок {current} із {total}: {title}"
+oobe.progress.label: Хід налаштування
 oobe.step.appearance: Вигляд
 oobe.step.connections: Підключення
 oobe.step.features: Звук
@@ -2903,6 +2925,7 @@ oobe.step.performance: Продуктивність
 oobe.step.player: Плеєр
 oobe.step.welcome: Ласкаво просимо
 oobe.step.window: Стиль вікна
+oobe.subscriptionNote: Для Cider потрібна активна платна підписка на Apple Music. Apple Music Voice і деякі рекламні пробні періоди не підтримуються.
 oobe.visual.layout.text: |-
   Cider має два різні макети вікна.
   Maverick — це макет у стилі iTunes із плеєром у верхній частині вікна.
@@ -2915,6 +2938,10 @@ oobe.visual.title: Оформлення
 oobe.welcome.getStarted: Розпочати
 oobe.welcome.importSettings: Імпортувати параметри…
 oobe.welcome.selectLanguage: Виберіть бажану мову
+oobe.window.native: Нативне вікно
+oobe.window.native.description: Використовує рядок заголовка та рамки вашого робочого середовища.
+oobe.window.styled: Стилізовані елементи керування
+oobe.window.styled.description: Власний рядок заголовка в застосунку з вбудованими кнопками керування вікном.
 oobe.window.subtitle: Виберіть, як вікно додатка інтегрується з вашим робочим столом
 oobe.window.title: Стиль вікна
 oobe.yes: Так
@@ -3015,6 +3042,8 @@ playlist.error.updating.title: Помилка оновлення плейліс�
 playlist.folderEmpty: У цій папці немає плейлістів
 playlist.folderMoveFailed: Не вдалося перемістити папку. Спробуйте ще раз трохи пізніше.
 playlist.folderRenameHint: Двічі клацніть, щоб перейменувати
+playlist.history: Історія плейлистів
+playlist.history.withCount: Історія плейлистів ({count})
 playlist.lastUpdated: "Останнє оновлення: {{date}}"
 playlist.madeByApple: Створено Apple
 playlist.moveFailed: Не вдалося перемістити плейлист. Спробуйте ще раз трохи пізніше.
@@ -3135,6 +3164,7 @@ settings.audio.atmos.normalizationHint: Мікси Dolby Atmos звучать т
 settings.audio.atmos.off.desc: Atmos вимкнено. Весь вміст відтворюється як стандартне стерео.
 settings.audio.atmos.passthrough: Наскрізне передавання
 settings.audio.atmos.passthrough.desc: Обходить будь-яку обробку звуку. Багатоканальний Atmos надсилається безпосередньо на пристрій. Ідеально для AV-ресиверів.
+settings.audio.atmos.passthrough.descV2: Надсилає багатоканальний Atmos безпосередньо на пристрій, для AV-ресиверів. Audio Lab, еквалайзер і Listening Mode вимкнено.
 settings.audio.atmos.passthroughActive: Наскрізне відтворення активне — змініть у повних параметрах.
 settings.audio.atmos.standard.desc: Багатоканальний Atmos з обробкою CiderAudio. Перехресне згасання, Automix та безшовні переходи працюватимуть як зазвичай.
 settings.audio.atmosMode: Режим Atmos
@@ -3237,6 +3267,7 @@ settings.automix.normalizeDuration: Нормалізувати триваліс�
 settings.automix.normalizeDurationHint: Час змішування для вирівнювання гучності ({ms} мс)
 settings.automix.spectralSeparation: Спектральне розділення
 settings.automix.spectralSeparationHint: Наскільки сильно частоти двох треків розділяються під час переходу.
+settings.automix.spectralSeparationHintV2: Наскільки далеко дві доріжки розводяться за частотою під час переходу ({value}).
 settings.automix.speedSettle: Час стабілізації швидкості
 settings.automix.speedSettleHint: Час, необхідний для повернення швидкості відтворення до норми після зведення з вирівнюванням темпу ({ms} мс)
 settings.automix.tempoAlign: Синхронізація бітів
@@ -3390,6 +3421,7 @@ settings.client.windows.v8OptimizeSize.adds: Додає
 settings.client.windows.v8OptimizeSize.to: до WebView2
 settings.client.windows.wpfRendering: Режим рендерингу WPF
 settings.client.windows.wpfRendering.desc: Виберіть режим рендерингу для WPF. Якщо не впевнені, залиште програмний.
+settings.client.windows.wpfRendering.descV2: Виберіть, як малювати вікно. Якщо не впевнені, залиште «Апаратне».
 settings.client.windows.wpfRendering.hardware: Апаратний
 settings.client.windows.wpfRendering.software: Програмний
 settings.configBackups.confirm.body: Ваші поточні налаштування будуть замінені збереженими від {date}, і Cider перезапуститься.
@@ -3499,6 +3531,7 @@ settings.contentFilter.empty: Ще не додано жодного ключов
 settings.contentFilter.inputPlaceholder: Додати ключове слово...
 settings.contentFilter.title: Фільтр ключових слів
 settings.crossfade.advanced: Додаткові параметри перехресного згасання
+settings.crossfade.automixStillBlends: Automix увімкнено, тож пісні все ще можуть плавно переходити одна в одну. Вимкніть Automix нижче, щоб зупинити всі переходи.
 settings.crossfade.description: Плавне згасання поточної пісні під час поступового збільшення гучності наступної.
 settings.crossfade.disableFor: Вимкнути перехресне згасання для...
 settings.crossfade.duration: Тривалість
@@ -3624,6 +3657,7 @@ settings.general.section.cache: Кеш
 settings.general.section.cache.description: Збережені обкладинки та метадані, які Cider зберігає на диску для швидшого завантаження сторінок.
 settings.general.section.desktop: Робочий стіл
 settings.general.section.desktop.description: Клавіатурні скорочення, а також поведінка Cider на панелі завдань та під час закриття.
+settings.general.section.desktop.descriptionV2: Клавіатурні скорочення, підтримка активного стану комп'ютера під час відтворення та поведінка Cider на панелі завдань і під час закриття.
 settings.general.section.language: Мова
 settings.general.section.language.description: Мова інтерфейсу, а також способи повідомити про помилку або вказати авторів перекладу.
 settings.general.section.playback: Відтворення
@@ -3960,6 +3994,7 @@ settings.option.advanced.mavericksLcd.style: Стиль
 settings.option.advanced.mavericksLcd.style.glass: Скло
 settings.option.advanced.mediaArtwork: Обкладинка медіафайлу
 settings.option.advanced.mediaArtwork.controls: Ефекти обкладинок та зображення високої роздільної здатності
+settings.option.advanced.mediaArtwork.controlsV2: Підсвічування обкладинки та плавна поява
 settings.option.advanced.mediaArtwork.description: Обкладинки в сітках, списках і рядках по всій програмі.
 settings.option.advanced.notificationStyle: Стиль сповіщень
 settings.option.advanced.performance: Продуктивність
@@ -3989,8 +4024,11 @@ settings.option.advanced.settingsTakeout: Експорт / імпорт нала
 settings.option.advanced.settingsTakeout.description: Створюйте резервні копії своїх налаштувань у файл або відновлюйте їх на іншому пристрої. Дані для входу в обліковий запис ніколи не додаються.
 settings.option.advanced.simpleArtworkBg: Спрощений фон з обкладинкою
 settings.option.advanced.simpleArtworkBg.brightness: Яскравість %
+settings.option.advanced.simpleArtworkBg.brightnessV2: Яскравість
 settings.option.advanced.simpleArtworkBg.contrast: Контрастність %
+settings.option.advanced.simpleArtworkBg.contrastV2: Контраст
 settings.option.advanced.simpleArtworkBg.saturate: Насиченість, %
+settings.option.advanced.simpleArtworkBg.saturateV2: Насиченість
 settings.option.advanced.simpleArtworkBg.useMask: Використовувати нижню маску
 settings.option.advanced.sonoma: Sonoma
 settings.option.advanced.sonoma.lyricArc: Вигнутий текст пісень
@@ -4296,6 +4334,8 @@ settings.option.general.onStartup: Під час запуску
 settings.option.general.onStartup.openStartup: Відкривати початкову сторінку
 settings.option.general.onStartup.resume: Відновлювати останній сеанс
 settings.option.general.pagination: Кількість елементів на сторінці
+settings.option.general.preventDisplaySleep: Не вимикати дисплей під час відтворення
+settings.option.general.preventSystemSleep: Не переводити комп'ютер у сон під час відтворення
 settings.option.general.privacy: Приватність
 settings.option.general.promptOnClose: Запитувати перед закриттям під час відтворення
 settings.option.general.queue: Черга
@@ -4322,6 +4362,7 @@ settings.option.general.sleepTimerSettings: Параметри таймера с
 settings.option.general.startupPage: Стартова сторінка
 settings.option.general.startupPage.blank: Порожня сторінка
 settings.option.general.startupPage.description: Виберіть сторінку, яка відображатиметься під час відкриття Cider.
+settings.option.general.startupPage.descriptionV2: Сторінка, яку Cider відкриває в нових вкладках і під час запуску, якщо для параметра «При запуску» вибрано «Відкрити сторінку запуску».
 settings.option.general.startupPage.newTab: Сторінка нової вкладки
 settings.option.general.startupPage.personalHome: Персональна головна сторінка
 settings.option.general.themeUpdateNotification: Автоматично перевіряти наявність оновлень тем
@@ -4331,6 +4372,7 @@ settings.option.general.translators: Перекладачі
 settings.option.general.translators.description: Дякуємо цим учасникам за допомогу в перекладі Cider. Натисніть на ім’я, щоб відкрити профіль GitHub.
 settings.option.general.useSmartQueueByDefault: Використовувати розумну чергу за замовчуванням
 settings.option.general.useSmartQueueByDefault.description: Автоматично застосовувати порядок Smart Queue під час створення черги. Потребує Automix.
+settings.option.general.useSmartQueueByDefault.needsAutomix: Automix вимкнено в розділі «Аудіо», тому Smart Queue нічого не переупорядковуватиме.
 settings.option.general.warnBeforeQueueOverride: Попереджати перед заміною черги
 settings.option.hide: Приховати
 settings.option.left: Ліворуч
@@ -4417,6 +4459,9 @@ settings.option.performance.enableMediaItemInspect.description: Може нез�
 settings.option.performance.gameMode: Ігровий режим
 settings.option.performance.gameMode.description: Зменшує візуальні ефекти та може вмикати режим ефективності Windows для зниження навантаження на процесор.
 settings.option.performance.gameMode.disable: Вимкнути ігровий режим
+settings.option.performance.graphicsAcceleration: Прискорення графіки
+settings.option.performance.graphicsAcceleration.autoOff: Вимкнено, оскільки цей ПК малює графіку програмно.
+settings.option.performance.graphicsAcceleration.description: Автоматичний режим вимикає його у віртуальній машині, яка малює графіку програмно. Зміни застосовуються під час наступного запуску Cider.
 settings.option.performance.host: Хост
 settings.option.performance.immersiveRenderer: Імерсивний рендерер
 settings.option.performance.immersiveRenderer.description: Використовуйте Canvas 2D замість WebGPU, якщо анімоване тло відображається некоректно або споживає забагато ресурсів графічного процесора.
@@ -4432,6 +4477,8 @@ settings.option.performance.preloadSidebarPages: Попереднє завант
 settings.option.performance.preloadSidebarPages.description: Завантажує сторінки бічної панелі до того, як ви їх відкриєте. Варіант «При наведенні» запускає завантаження, коли вказівник зупиняється на елементі бічної панелі. Варіант «Під час простою» також завантажує розділи «Слухати зараз», «Огляд» і «Радіо» після запуску та оновлює раніше відкриті списки медіатеки.
 settings.option.performance.preloadSidebarPages.idle: Під час простою
 settings.option.performance.preloadSidebarPages.intent: При наведенні
+settings.option.performance.reduceEffects: Зменшити візуальні ефекти
+settings.option.performance.reduceEffects.description: Вимикає розмиття, скло, світіння та анімовані фони, щоб застосунок менше навантажував систему. Автоматичний режим вмикає їх, якщо немає працюючої відеокарти або якщо система запитує меншу прозорість.
 settings.option.performance.renderer.auto: Автоматично (WebGPU, якщо підтримується)
 settings.option.performance.renderer.canvas: Canvas 2D
 settings.option.performance.renderer.webgpu: WebGPU
@@ -4651,6 +4698,7 @@ settings.option.visual.liquidGlassPlayer: Панель плеєра Liquid Glass
 settings.option.visual.liquidGlassPlayer.description: Використовувати ефект рідкого скла для панелі відтворення. Вимкніть для плоскої суцільної панелі (яка також легша для рендерингу).
 settings.option.visual.liquidGlassScrollPerf: Полегшене скло під час прокручування
 settings.option.visual.liquidGlassScrollPerf.description: Спрощує заломлення рідкого скла до звичайного розмиття під час прокручування, плавно повертаючи ефект після зупинки. Зменшує посмикування при прокручуванні на вимогливих системах без змін у стані спокою. Завжди ввімкнено в ігровому режимі.
+settings.option.visual.liquidGlassScrollPerf.descriptionV2: Під час прокручування спрощує заломлення рідкого скла до простого розмиття, а після зупинки плавно повертає його. Зменшує ривки прокручування на потужних системах і не змінює вигляд у спокої.
 settings.option.visual.mainMenuPosition: Позиція головного меню
 settings.option.visual.matchPageToArtwork: Узгодити сторінку з обкладинкою
 settings.option.visual.matchPageToArtwork.description: Фарбує сторінки альбомів і плейлистів у кольори їхніх обкладинок у світлому та темному режимах.
@@ -4831,6 +4879,7 @@ settings.prompt.visual.plugin.github.success: Плагін успішно вст
 settings.prompt.visual.plugin.github.URL: Введіть URL-адресу плагіна, який ви хочете встановити
 settings.prompt.visual.theme.github.URL: Введіть URL-адресу теми, яку ви хочете встановити
 settings.prompt.visual.theme.uninstallTheme: Ви впевнені, що хочете видалити {{theme}}?
+settings.reloadPrompt.message: Для застосування змін потрібно оновити застосунок. Продовжити?
 settings.requiresNewerClient: Потрібна новіша версія клієнта Cider.
 settings.resetCider.category.appleMusic: Вийти з Apple Music
 settings.resetCider.category.appleMusic.desc: Видалити обліковий запис Apple Music із цього пристрою
@@ -4874,6 +4923,7 @@ settings.smartPlaylists.section.maintenance: Обслуговування
 settings.smartPlaylists.section.maintenance.description: Примусово виконати всі правила зараз або видалити кешовану копію медіатеки.
 settings.smartPlaylists.section.rules: Правила
 settings.smartPlaylists.section.rules.description: Чи застосовує Cider вбудовані правила плейлістів і як часто їх перевіряє.
+settings.smartPlaylists.section.rules.descriptionV2: Чи застосовує Cider вбудовані правила плейлистів. Вони повторно виконуються з часом фонового оновлення в розділі «Споживання енергії».
 settings.sweetener.useSystemAccentColor: Використовувати системний акцентний колір
 settings.takeout.chooseFile: Вибрати файл…
 settings.takeout.error.badVersion: У цьому файлі відсутня інформація про версію.
@@ -4904,6 +4954,7 @@ settings.title: Параметри
 settings.troubleshooting.bgDiagnostics: Діагностика фонового відтворення
 settings.troubleshooting.bgDiagnostics.desc: "Додаткові записи в журналі для діагностики проблем із відтворенням, коли вікно згорнуто або не у фокусі: хто призупинив програвач, затримки таймера та випадки призупинення ОС. Увімкніть у разі повідомлення про помилку фонового відтворення."
 settings.troubleshooting.desc: Файли журналів та налагодження MKLite.
+settings.troubleshooting.descV2: Ведення журналу MKLite та фонового відтворення.
 settings.troubleshooting.hevcWorkaround: Обхідний шлях для HEVC
 settings.troubleshooting.hevcWorkaround.desc: Обхідний шлях для виправлення помилки у WebView2 на деяких графічних процесорах, які мають проблеми з відтворенням 10-бітного SDR HEVC, шляхом застосування фільтра для компенсації візуального зсуву.
 settings.troubleshooting.impressionReporting: Звітування про покази PlayActivity
@@ -4927,6 +4978,8 @@ settings.updates.action.check: Перевірити наявність онов�
 settings.updates.action.install: Встановити оновлення
 settings.updates.action.restart: Перезапустити Cider
 settings.updates.action.retry: Спробувати знову
+settings.updates.autoCheck: Автоматично перевіряти оновлення
+settings.updates.autoCheck.description: Якщо вимкнено, Cider перевіряє оновлення лише під час відкриття цієї сторінки.
 settings.updates.build: Збірка
 settings.updates.channel: Канал
 settings.updates.codename: Кодова назва
@@ -5591,6 +5644,8 @@ updates.installUnavailable.body: Ця версія недоступна для �
 updates.lateststable.title: Остання стабільна версія
 updates.loadFailed.body: Перевірте підключення та спробуйте знову.
 updates.loadFailed.title: Cider не вдалося завантажити доступні версії
+updates.newVersion.body: Доступна нова версія Cider. Перейти до оновлень, щоб завантажити її?
+updates.newVersion.title: Доступна нова версія
 updates.notifyForBranch.tooltip: Сповіщати про оновлення цієї гілки
 updates.otherVersions.title: Інші версії
 updates.ptb.name: Гілка публічного тестування
