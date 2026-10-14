@@ -90,6 +90,8 @@ action.addToQueue:
   issue: 27
 action.addToQueue.error: Ошибка добавления в очередь
 action.addToQueue.success: Добавлено в очередь
+action.appleMusic.enterUrl: Введите URL Apple Music
+action.appleMusic.invalidUrl: Некорректный URL Apple Music
 action.appleMusic.yourProfile: Ваш профиль
 action.apply: Применить
 action.approve: Одобрить
@@ -200,6 +202,7 @@ action.later: Позже
 action.love: Нравится
 action.manage: Управлять
 action.minimize: Свернуть
+action.minimizeVideo: Свернуть видео
 action.moveToFolder: Переместить в папку
 action.moveToFolder.here: Переместить "{{name}}" сюда
 action.moveToTop: Переместить наверх
@@ -211,6 +214,7 @@ action.openArtworkInBrowser: Открыть обложку в браузере
 action.openInNewTab: Открыть в новой вкладке
 action.openNewTab: Новая вкладка
 action.openUrl: Открыть URL
+action.openVideo: Открыть видео
 action.paste: Вставить
 action.pause: Пауза
 action.pickTime: Выбрать время
@@ -437,6 +441,472 @@ album.upcoming.badge: Предстоящий альбом
 app.name: Cider
 app.unsupportedClient.message: Этот клиент не поддерживается. Убедитесь, что вы используете последнюю версию Cider.
 app.unsupportedClient.title: Неподдерживаемый клиент
+assistant.sid.agent.added: "Добавлено песен: {count}"
+assistant.sid.agent.addedOne: Добавлена песня
+assistant.sid.agent.askingPicks: Запрашиваю рекомендации у Apple Music
+assistant.sid.agent.averageBpm: "Средний темп: {bpm} BPM"
+assistant.sid.agent.builtGeneric: Вот плейлист под этот запрос.
+assistant.sid.agent.builtHigh: Я поддерживал высокую энергию, с пиком ближе к концу.
+assistant.sid.agent.builtLow: Я поддерживал низкую энергию и постепенно снижал её к концу.
+assistant.sid.agent.checked: Проверил темп и энергию
+assistant.sid.agent.checkedLibrary: Проверил вашу медиатеку
+assistant.sid.agent.checking: Проверяю темп и энергию
+assistant.sid.agent.deduped: Удалил повторы
+assistant.sid.agent.foundCatalog: Нашёл {songs} в Apple Music
+assistant.sid.agent.foundLibrary: Нашёл {songs} в вашей медиатеке
+assistant.sid.agent.foundPlaylists: Нашёл похожие плейлисты
+assistant.sid.agent.fromApplePlaylists: "Плейлисты Apple Music: {playlists}"
+assistant.sid.agent.fromArtists: песни {artists} и похожих исполнителей
+assistant.sid.agent.fromLibrary: вашей медиатеки
+assistant.sid.agent.keptTempo: Оставил песни {range}
+assistant.sid.agent.libraryFit: "{songs} подходят"
+assistant.sid.agent.lookedAt: Просмотрел {artists}
+assistant.sid.agent.lookingCatalog: Просматриваю Apple Music
+assistant.sid.agent.moved: Переместил песню
+assistant.sid.agent.movedTo: На позицию {row}
+assistant.sid.agent.noChange: Я проверил и ничего бы не менял.
+assistant.sid.agent.nothingFound: Не нашёл песен по этому запросу. Попробуйте описать иначе.
+assistant.sid.agent.orderEnergyDown: энергия, сначала самые живые
+assistant.sid.agent.orderEnergyUp: энергия, сначала самые спокойные
+assistant.sid.agent.orderKey: тональность
+assistant.sid.agent.orderTempoDown: темп, сначала самые быстрые
+assistant.sid.agent.orderTempoUp: темп, сначала самые медленные
+assistant.sid.agent.picked: Выбрал {songs}
+assistant.sid.agent.pulledFrom: "Я взял материал из: {sources}."
+assistant.sid.agent.rangeAny: в любом темпе
+assistant.sid.agent.rangeAtLeast: от {low} BPM и быстрее
+assistant.sid.agent.rangeAtMost: до {high} BPM и медленнее
+assistant.sid.agent.rangeBetween: от {low} до {high} BPM
+assistant.sid.agent.read: Просмотрел {songs} в плейлисте {playlist}
+assistant.sid.agent.searchingCatalog: Ищу в Apple Music
+assistant.sid.agent.searchingLibrary: Просматриваю вашу медиатеку
+assistant.sid.agent.sorted: "Отсортировано: {order}"
+assistant.sid.agent.stuck: Не получилось с этим запросом. Попробуйте сформулировать иначе.
+assistant.sid.agent.suggested: Apple Music предложил {songs}
+assistant.sid.agent.summary: Я {changes}.
+assistant.sid.agent.summaryAdded: добавил {songs}
+assistant.sid.agent.summaryMoved: переместил {songs}
+assistant.sid.agent.summaryTookOut: убрал {songs}
+assistant.sid.agent.thinking: Думаю
+assistant.sid.agent.thinkingOver: Обдумываю
+assistant.sid.agent.thoughtOver: Обдумал
+assistant.sid.agent.tooBig: Этот плейлист слишком большой, чтобы Sid прочитал его за раз.
+assistant.sid.agent.tookOut: "Убрано песен: {count}"
+assistant.sid.agent.tookOutOne: Убрана песня
+assistant.sid.agent.tookOutSongs: "Убрано: {songs}"
+assistant.sid.agent.trimmed: Обрезано до {minutes} мин.
+assistant.sid.agent.unsure: Не уверен.
+assistant.sid.agent.working: Работаю над плейлистом
+assistant.sid.answer.dropSlowest: Убрать самые медленные
+assistant.sid.applied.made: "Sid внёс изменения: {count}"
+assistant.sid.applied.madeOne: Sid внёс 1 изменение
+assistant.sid.applied.markAdded: Добавлено Sid
+assistant.sid.applied.marked: Они отмечены в списке.
+assistant.sid.applied.markMoved: Перемещено Sid
+assistant.sid.applied.undo: Отменить
+assistant.sid.applied.undoChanged: "{playlist} изменился после правки Sid, поэтому отмена потеряла бы это изменение. Ничего не отменено."
+assistant.sid.applied.undoFailed: Sid не смог отменить это. Попробуйте ещё раз немного позже.
+assistant.sid.applied.undoHistory: Вернуть более раннюю версию можно в истории плейлиста.
+assistant.sid.applied.undone: Sid вернул {playlist} в прежний вид.
+assistant.sid.arc.coolDown: Спад
+assistant.sid.arc.peak: Пик
+assistant.sid.arc.steady: Ровно
+assistant.sid.arc.warmUp: Разгон
+assistant.sid.ask.addFive: Добавить пять похожих
+assistant.sid.ask.calmToLively: От спокойного к бодрому
+assistant.sid.ask.dedupe: Удалить дубликаты
+assistant.sid.ask.greetBuild: Привет! Каким должен быть этот плейлист?
+assistant.sid.ask.greetBuildDetail: Опишите настроение, момент или несколько исполнителей, и я его заполню.
+assistant.sid.ask.greetEdit: Привет! Что сделаем с {playlist}?
+assistant.sid.ask.greetEditDetail: Могу добавлять, убирать и переставлять песни или рассказать, каков плейлист на слух.
+assistant.sid.ask.lateDrive: Ночная поездка
+assistant.sid.ask.morningRun: Утренняя пробежка
+assistant.sid.ask.onDevice: Sid думает на этом компьютере. В Apple Music отправляются только поиски музыки.
+assistant.sid.ask.rainyFocus: Фокус в дождливый день
+assistant.sid.ask.send: Отправить Sid
+assistant.sid.ask.sundayCooking: Воскресная готовка
+assistant.sid.ask.trim45: Сократить до 45 минут
+assistant.sid.ask.whatsItLike: Каков он на слух?
+assistant.sid.brief.highEnergy: высокая энергия
+assistant.sid.brief.like: как {artists}
+assistant.sid.brief.lookingFor: Ищу {search}
+assistant.sid.brief.lowEnergy: низкая энергия
+assistant.sid.bubble.arrow: в
+assistant.sid.bubble.open: Открыть подборку Sid
+assistant.sid.bubble.replay: Показать, что говорит Sid
+assistant.sid.card.add: "Добавить песен: {count}"
+assistant.sid.card.added: Добавлено в {playlist}
+assistant.sid.card.addedToQueue: Добавлено в очередь
+assistant.sid.card.addOne: Добавить 1 песню
+assistant.sid.card.addTitle: Добавить в {playlist}
+assistant.sid.card.afterSet: После песен, которые подобрал Sid.
+assistant.sid.card.alreadyIn: Эти песни уже есть в {playlist}.
+assistant.sid.card.clear: "Очистить песен: {count}"
+assistant.sid.card.cleared: Очищено
+assistant.sid.card.clearOne: Очистить 1 песню
+assistant.sid.card.clearTitle: Очистить очередь «Далее»?
+assistant.sid.card.created: "Создано: {name}"
+assistant.sid.card.failed: Не получилось. Попробуйте ещё раз немного позже.
+assistant.sid.card.guest: Вы гость в совместном прослушивании, поэтому очередью управляет хост.
+assistant.sid.card.inLibrary: В вашей медиатеке
+assistant.sid.card.leftOut: "Пропущено песен: {count}. Они не воспроизводятся или вы отметили их «Предлагать реже»."
+assistant.sid.card.leftOutOne: Пропущена 1 песня. Она не воспроизводится или вы отметили её «Предлагать реже».
+assistant.sid.card.librarySongs: "Песен: {count}"
+assistant.sid.card.mostPlayed: Чаще всего за {year}
+assistant.sid.card.noQueue: Ничего не играет. Сначала включите что-нибудь, и Sid сможет добавить песни в очередь после него.
+assistant.sid.card.notApplied: Не применено
+assistant.sid.card.notNow: Не сейчас
+assistant.sid.card.open: Открыть {name}
+assistant.sid.card.playing: Воспроизводится
+assistant.sid.card.playLast: Добавить в очередь
+assistant.sid.card.playLastTitle: Потом
+assistant.sid.card.playlistChanged: Этот плейлист изменился после того, как Sid его прочитал. Попросите снова, чтобы повторить.
+assistant.sid.card.playNext: Играть следующим
+assistant.sid.card.playNextTitle: Далее
+assistant.sid.card.playNow: Играть сейчас
+assistant.sid.card.playNowTitle: Готово к воспроизведению
+assistant.sid.card.plays: "Прослушиваний: {count}"
+assistant.sid.card.playsOne: 1 прослушивание
+assistant.sid.card.queueApplied: Очередь обновлена
+assistant.sid.card.queueChanged: Ваша очередь изменилась после того, как Sid её посмотрел. Попросите снова, чтобы повторить.
+assistant.sid.card.queued: В очереди
+assistant.sid.card.queueUnavailable: Sid пока не может изменять очередь в этой сборке.
+assistant.sid.card.redo: Попросить снова
+assistant.sid.card.refining: Sid обновляет этот план.
+assistant.sid.card.retry: Повторить
+assistant.sid.card.saved: Сохранено в {playlist}
+assistant.sid.card.showAll: Показать все ({count})
+assistant.sid.card.songsChange: "{before} → {after} песен"
+assistant.sid.card.superseded: Заменено более новым планом
+assistant.sid.card.topArtists: Топ исполнителей за {year}
+assistant.sid.card.unplayable: Эти песни сейчас нельзя воспроизвести.
+assistant.sid.card.waitLocked: Следующая песня скоро начнётся. Примените чуть позже.
+assistant.sid.chat.appleOnly: Sid работает с Apple Music. Переключитесь обратно, чтобы общаться с Sid.
+assistant.sid.chat.dropWaiting: Изменения, ожидающие применения, будут отменены.
+assistant.sid.chat.e2bLimited: Для переписки с Sid нужна расширенная модель. Выберите подсказку или переключите модель в настройках Sid.
+assistant.sid.chat.endConfirmOk: Завершить
+assistant.sid.chat.endConfirmTitle: Завершить этот разговор?
+assistant.sid.chat.findingPlaylist: Ищем ваш плейлист
+assistant.sid.chat.foundPlaylist: Найден {playlist}
+assistant.sid.chat.foundPlaylists: "Найдено плейлистов: {count}"
+assistant.sid.chat.fromQueue: "Выбрано из очереди: {songs}"
+assistant.sid.chat.greet: Привет! Что будем слушать?
+assistant.sid.chat.greetDetail: Я могу найти и включить музыку, навести порядок в очереди, составить плейлисты или рассказать о том, что вы слушаете.
+assistant.sid.chat.greetDetailNoQueue: Я могу найти и добавить музыку в очередь, составить плейлисты или рассказать о том, что вы слушаете.
+assistant.sid.chat.jumpLatest: К последнему сообщению
+assistant.sid.chat.loading: Готовим Sid
+assistant.sid.chat.newConfirmTitle: Начать новый разговор?
+assistant.sid.chat.newConversation: Новый разговор
+assistant.sid.chat.placeholder: Спросите Sid о вашей музыке
+assistant.sid.chat.placeholderFocus: Спросите Sid о плейлисте {playlist}
+assistant.sid.chat.playlistUnread: Sid не смог прочитать {playlist}. Попробуйте чуть позже.
+assistant.sid.chat.queueDetail: "Далее: {songs}"
+assistant.sid.chat.readingListening: Смотрим, что вы слушаете
+assistant.sid.chat.readingPlaylist: Читаем {playlist}
+assistant.sid.chat.readingQueue: Смотрим вашу очередь
+assistant.sid.chat.readListening: Проверили ваше прослушивание
+assistant.sid.chat.readQueue: Прочитали вашу очередь
+assistant.sid.chat.steps: "Шагов: {count}"
+assistant.sid.chat.stepsOne: 1 шаг
+assistant.sid.chat.stopped: Вы остановили этот запрос.
+assistant.sid.chat.suggestLikeThis: Включить что-то похожее
+assistant.sid.chat.suggestMostPlayed: Что я слушаю чаще всего?
+assistant.sid.chat.suggestNowPlaying: Что сейчас играет?
+assistant.sid.chat.suggestQueuePlaylist: Создать плейлист из очереди
+assistant.sid.chat.suggestTidyQueue: Навести порядок в очереди
+assistant.sid.chat.tooBig: Это слишком много для одного раза. Попробуйте запрос покороче.
+assistant.sid.chat.workingQueue: Работаем с вашей очередью
+assistant.sid.entry.edit: Изменить с Sid
+assistant.sid.entry.editDetail: Опишите изменение и сначала проверьте его
+assistant.sid.entry.start: Начать с Sid
+assistant.sid.entry.startDetail: Опишите плейлист, и Sid подберёт песни
+assistant.sid.entry.startMenu: Начать с Sid…
+assistant.sid.failure.belowFloor: Gemma работает слишком медленно на этом компьютере.
+assistant.sid.failure.busy: Gemma занята своими файлами. Повторите попытку через некоторое время.
+assistant.sid.failure.counterMismatch: Sid остановился после того, как не прошла проверка безопасности.
+assistant.sid.failure.crashed: Gemma неожиданно остановилась. Попробуйте ещё раз.
+assistant.sid.failure.deviceLost: Видеокарта перезагрузилась, пока Sid думал. Попробуйте ещё раз.
+assistant.sid.failure.modelCorrupt: Загрузка Gemma повреждена. Загрузите её снова, чтобы продолжить.
+assistant.sid.failure.modelMissing: Файлы Gemma отсутствуют. Загрузите их снова, чтобы продолжить.
+assistant.sid.failure.network: Загрузка прервалась. Проверьте подключение и попробуйте ещё раз.
+assistant.sid.failure.notReady: Gemma пока не готова.
+assistant.sid.failure.outOfMemory: Sid остановил Gemma, чтобы компьютер продолжал отвечать. Ей требовалось больше видеопамяти, чем можно было выделить.
+assistant.sid.failure.storageFull: Недостаточно свободного места для завершения загрузки.
+assistant.sid.failure.timeout: Gemma отвечала слишком долго. Попробуйте ещё раз.
+assistant.sid.failure.tryAgain: Повторить
+assistant.sid.failure.watchLost: Sid остановился, потому что потерял отслеживание видеопамяти. Попробуйте ещё раз.
+assistant.sid.gate.description: Попробуйте Sid до завершения разработки. Некоторые функции пока не работают.
+assistant.sid.gate.name: Sid, помощник по плейлистам
+assistant.sid.hello: Привет, я Sid
+assistant.sid.home.ask: Спросите Sid о вашей музыке
+assistant.sid.home.continueChat: Продолжить разговор
+assistant.sid.home.editHint: Чтобы изменить плейлист, откройте его и выберите «Изменить с Sid».
+assistant.sid.home.settings: Настройки Sid
+assistant.sid.insights.average: в среднем {bpm} BPM
+assistant.sid.insights.first: Песня 1
+assistant.sid.insights.genres: Главные жанры
+assistant.sid.insights.keys: Тональности
+assistant.sid.insights.last: Песня {count}
+assistant.sid.insights.length: Длительность
+assistant.sid.insights.minutes: "{minutes} мин"
+assistant.sid.insights.mostly: В основном {keys}
+assistant.sid.insights.tempo: Темп по песням
+assistant.sid.insights.tempoAria: Темп каждой песни, от {low} до {high} BPM
+assistant.sid.insights.tempoAriaAverage: Темп каждой песни, от {low} до {high} BPM, в среднем {bpm}
+assistant.sid.listAnd: "{items} и {last}"
+assistant.sid.model.e2b: Gemma 4 E2B
+assistant.sid.model.e4b: Gemma 4 E4B
+assistant.sid.model.quick: Быстрая
+assistant.sid.model.thorough: Тщательная
+assistant.sid.move.blend: Смешать
+assistant.sid.move.cut: Вырезать
+assistant.sid.move.lift: Поднять
+assistant.sid.name: Sid
+assistant.sid.oneSong: 1 песня
+assistant.sid.panel.back: Назад к Sid
+assistant.sid.panel.close: Закрыть этот разговор
+assistant.sid.panel.replaceOk: Начать заново
+assistant.sid.panel.resize: Перетащите, чтобы изменить размер, щёлкните правой кнопкой, чтобы сбросить
+assistant.sid.planner.bringsDown: снижает его
+assistant.sid.planner.closeSecond: почти так же хорошо
+assistant.sid.planner.differentStyle: в другом стиле
+assistant.sid.planner.faster: быстрее
+assistant.sid.planner.fromLibrary: из вашей медиатеки
+assistant.sid.planner.harderKey: смена тональности посложнее
+assistant.sid.planner.keyClashes: тональности не сочетаются
+assistant.sid.planner.lifts: поднимает энергию
+assistant.sid.planner.littleFaster: немного быстрее
+assistant.sid.planner.moreGenre: "больше: {genre}"
+assistant.sid.planner.neighborKey: соседняя тональность
+assistant.sid.planner.newToYou: для вас новое
+assistant.sid.planner.noTempo: некуда продолжать по темпу
+assistant.sid.planner.sameArtist: снова тот же исполнитель
+assistant.sid.planner.sameKey: та же тональность
+assistant.sid.planner.sameTempo: тот же темп
+assistant.sid.planner.slower: медленнее
+assistant.sid.planner.tooBigDrop: слишком резкий спад
+assistant.sid.planner.tooBigLift: слишком резкий подъём
+assistant.sid.planner.tooFastNow: пока слишком быстро
+assistant.sid.planner.tooFastToMix: слишком быстро для микширования
+assistant.sid.planner.tooSlowNow: пока слишком медленно
+assistant.sid.planner.tooSlowToMix: слишком медленно для микширования
+assistant.sid.planner.touchSlower: чуть медленнее
+assistant.sid.queue.looking: Ищем следующую песню
+assistant.sid.queue.picked: Выбрано Sid
+assistant.sid.queue.pickLine: Выбрано Sid · {reason}
+assistant.sid.queue.thought: «{thought}»
+assistant.sid.ready.checking: Проверка этого компьютера
+assistant.sid.ready.checkNow: Проверить сейчас
+assistant.sid.ready.downloadDetail: Gemma работает прямо на этом компьютере. Загрузка занимает {size}.
+assistant.sid.ready.downloading: Загрузка Gemma
+assistant.sid.ready.finishSetup: Gemma почти готова. Завершите настройку.
+assistant.sid.ready.finishSetupAction: Завершить настройку
+assistant.sid.ready.get: Загрузить Gemma ({size})
+assistant.sid.ready.needsDownload: Sid нужна загрузка один раз
+assistant.sid.ready.preparing: Подготовка Gemma
+assistant.sid.ready.progress: "{done} из {total}"
+assistant.sid.ready.ready: Готово
+assistant.sid.ready.retry: Повторить ({size})
+assistant.sid.ready.seeWhy: Почему
+assistant.sid.ready.setStillWorks: Подборка Sid здесь всё равно работает.
+assistant.sid.ready.stop: Остановить
+assistant.sid.ready.unavailable: Sid не может работать на этом компьютере
+assistant.sid.requestTooLong: Запрос слишком длинный. Сократите его до {max} символов.
+assistant.sid.review.actionAdd: Добавить
+assistant.sid.review.actionCut: Удалить
+assistant.sid.review.actionMove: Переместить
+assistant.sid.review.adding: "Добавление: {count}"
+assistant.sid.review.apply: "Применить изменения: {count}"
+assistant.sid.review.applyOne: Применить 1 изменение
+assistant.sid.review.applyUnavailable: Сохранение изменений Sid пока недоступно в этой сборке.
+assistant.sid.review.bpm: "{bpm} BPM"
+assistant.sid.review.change: "{before} → {after}"
+assistant.sid.review.changed: "{playlist} изменился после того, как Sid его прочитал, поэтому ничего не сохранено. Откройте его снова, чтобы начать заново."
+assistant.sid.review.create: Создать плейлист
+assistant.sid.review.createFailed: Sid не смог создать плейлист. Попробуйте ещё раз немного позже.
+assistant.sid.review.cutting: "Удаление: {count}"
+assistant.sid.review.description: Описание (необязательно)
+assistant.sid.review.empty: Sid не может очистить плейлист. Оставьте хотя бы одну песню.
+assistant.sid.review.footnoteBuild: Сохраняется как обычный плейлист Apple Music. Обложку создаёт Apple Music.
+assistant.sid.review.footnoteImport: Песни, которые Sid добавляет из Apple Music, также добавляются в вашу медиатеку.
+assistant.sid.review.gone: "{playlist} больше нет в вашей медиатеке, поэтому ничего не сохранено."
+assistant.sid.review.hideWhole: Скрыть весь плейлист
+assistant.sid.review.incomplete: Sid не получил весь плейлист, поэтому ничего не сохранено. Откройте его снова, когда загрузка завершится.
+assistant.sid.review.lineAdded: "{artist} · {source}"
+assistant.sid.review.lineMoved: "{artist} · с позиции {from} на {to}"
+assistant.sid.review.moving: "Перемещение: {count}"
+assistant.sid.review.name: Название
+assistant.sid.review.noChange: "{playlist} уже выглядит именно так, поэтому сохранять было нечего."
+assistant.sid.review.notEditable: Apple Music не позволяет Sid изменять {playlist}.
+assistant.sid.review.pageStale: "{playlist} изменился после загрузки страницы. Нажмите «Изменить с Sid» еще раз, когда страница обновится."
+assistant.sid.review.removedRow: Удалено
+assistant.sid.review.saveFailed: Sid не удалось сохранить изменения. Попробуйте еще раз немного позже.
+assistant.sid.review.showWhole: Показать весь плейлист
+assistant.sid.review.skipped: Пропущено
+assistant.sid.review.snapshotFailed: Sid не удалось сначала создать точку восстановления, поэтому ничего не сохранено. Попробуйте еще раз немного позже.
+assistant.sid.review.songs: Песни
+assistant.sid.review.tileBpm: ср. BPM
+assistant.sid.review.tileMinutes: минут
+assistant.sid.review.tileSongs: песен
+assistant.sid.review.titleBuild: Вот первый вариант
+assistant.sid.review.titleEdit: Вот план
+assistant.sid.review.unwritable: Некоторые песни в {playlist} нельзя записать обратно, поэтому Sid ничего не сохранил.
+assistant.sid.says.hereComes: Сейчас будет {name}!
+assistant.sid.says.intro: Сет Sid · {direction}
+assistant.sid.says.looking: Ищем, что дальше
+assistant.sid.says.mixingInto: Переход к {name} через
+assistant.sid.says.move: "{move} · {bars} тактов"
+assistant.sid.says.moveOneBar: "{move} · 1 такт"
+assistant.sid.says.next: Следующая — {name}.
+assistant.sid.says.nextBecause: "Следующая — {name}: {reason}."
+assistant.sid.says.paused: Пауза. Я здесь.
+assistant.sid.says.picking: Выбираем, что будет дальше.
+assistant.sid.says.steady: Стабильно {bpm} BPM
+assistant.sid.says.tempo: "{from} → {to} BPM"
+assistant.sid.says.upWhenBack: "{name} будет, когда вы вернетесь."
+assistant.sid.session.failed: Sid не смог это выполнить.
+assistant.sid.session.failedRetry: Sid не смог это выполнить. Попробуйте еще раз немного позже.
+assistant.sid.session.naming: Придумываем название
+assistant.sid.session.newPlaylist: Новый плейлист
+assistant.sid.set.askEmpty: Что бы вы хотели послушать?
+assistant.sid.set.fromIdea: песни исполнителя {artist}, идея Sid
+assistant.sid.set.fromLibrary: из вашей медиатеки
+assistant.sid.set.fromRequest: по вашему запросу
+assistant.sid.set.fromStation: станция, созданная из сета
+assistant.sid.set.notFound: Не нашёл «{search}». Попробуем иначе?
+assistant.sid.set.nothingPlaying: Сначала включите что-нибудь, потом спросите меня.
+assistant.sid.set.notQueued: Не удалось добавить это в очередь.
+assistant.sid.set.queued: "{title} — {artist} {where}. {reason}."
+assistant.sid.set.request: Ваш запрос
+assistant.sid.set.whereAfterNext: сразу после следующей
+assistant.sid.set.whereNext: следующей
+assistant.sid.settings.addMore: Добавить еще
+assistant.sid.settings.addMoreDetail: Найдите подходящие песни в медиатеке или во всей Apple Music
+assistant.sid.settings.bottom: Внизу
+assistant.sid.settings.byPlayer: Рядом с плеером
+assistant.sid.settings.byPlayerDetail: Sid рядом с обложкой плеера
+assistant.sid.settings.canRun: Может запустить Gemma
+assistant.sid.settings.check: Проверить файлы
+assistant.sid.settings.checkDamaged: Некоторые файлы Gemma повреждены. Скачайте их снова.
+assistant.sid.settings.checkGood: Файлы Gemma в порядке
+assistant.sid.settings.downloadAgain: Скачать снова
+assistant.sid.settings.downloadedSize: Загружено · {size}
+assistant.sid.settings.duringSet: Во время сета
+assistant.sid.settings.found: Песни, которые Sid подобрал для вас
+assistant.sid.settings.fresh: Начать заново
+assistant.sid.settings.freshDetail: Создайте плейлист по настроению, моменту или нескольким исполнителям
+assistant.sid.settings.gemmaHere: Gemma здесь
+assistant.sid.settings.gpu: Видеокарта
+assistant.sid.settings.group: Ассистент
+assistant.sid.settings.inEdit: При редактировании плейлиста
+assistant.sid.settings.inEditDetail: Редактируйте с Sid в заголовке плейлиста
+assistant.sid.settings.inImmersive: В иммерсивном режиме
+assistant.sid.settings.inImmersiveDetail: Вкладка и пузырёк Sid в иммерсивных макетах
+assistant.sid.settings.inNewPlaylist: При создании нового плейлиста
+assistant.sid.settings.inNewPlaylistDetail: Начните с Sid в диалоге нового плейлиста
+assistant.sid.settings.inPlayer: Во время воспроизведения
+assistant.sid.settings.inPlayerDetail: Набор Sid в очереди и меню плеера
+assistant.sid.settings.intro: Sid помогает составлять плейлисты прямо здесь, на этом компьютере.
+assistant.sid.settings.inUse: Используется · {size}
+assistant.sid.settings.machine: Этот компьютер
+assistant.sid.settings.modelOptions: "Параметры: {model}"
+assistant.sid.settings.modelRow: "{style} · {name}"
+assistant.sid.settings.nav: Sid
+assistant.sid.settings.needsGemma: Требуется Gemma
+assistant.sid.settings.nods: Кивать в такт
+assistant.sid.settings.nodsDetail: Sid кивает на каждом ударе песни
+assistant.sid.settings.notDownloadedSize: Не загружено · {size}
+assistant.sid.settings.nothingYet: Пока пусто
+assistant.sid.settings.nothingYetDetail: Откройте плейлист и выберите «Редактировать с Sid».
+assistant.sid.settings.notMeasured: Ещё не измерено. Sid измерит после загрузки.
+assistant.sid.settings.notMeasuredReady: Ещё не измерено. Sid измерит перед следующим запросом.
+assistant.sid.settings.partlySize: Загружено частично · {size}
+assistant.sid.settings.position: Положение
+assistant.sid.settings.positionDetail: Где Sid находится на обложке
+assistant.sid.settings.privacyChat: "То, что вы вводите, остаётся на этом компьютере: Sid думает с помощью Gemma прямо здесь. Чтобы найти музыку, Sid отправляет поисковые слова в Apple Music, а по вашему запросу читает ваши плейлисты, недавние прослушивания и Apple Music Replay из вашей учётной записи Apple Music. Ничего не меняется, пока вы не нажмёте «Применить»."
+assistant.sid.settings.reads: Читает полный плейлист за {seconds} с (нужно менее {floor} с)
+assistant.sid.settings.regular: Обычный
+assistant.sid.settings.remove: Удалить
+assistant.sid.settings.removeMenu: Удалить…
+assistant.sid.settings.removeMessage: Sid нужна для редактирования плейлистов, а повторная загрузка займёт {size}.
+assistant.sid.settings.removeTitle: Удалить {model}?
+assistant.sid.settings.reshape: Перестроить
+assistant.sid.settings.reshapeDetail: Сортировка от спокойного к энергичному, по темпу или так, чтобы тональности переходили плавно
+assistant.sid.settings.runSet: Запустить сет
+assistant.sid.settings.runSetDetail: Выбирайте, что играет дальше, по тональности и темпу, и принимайте ваши запросы
+assistant.sid.settings.shaped: Плейлисты, которые сформировал Sid
+assistant.sid.settings.shapedOne: Плейлист, который сформировал Sid
+assistant.sid.settings.size: Размер
+assistant.sid.settings.sizeDetail: Маленький размер делает Sid компактнее, с более узким пузырьком
+assistant.sid.settings.skills: Что умеет Sid
+assistant.sid.settings.skillsHere: Что умеет Sid здесь
+assistant.sid.settings.small: Маленький
+assistant.sid.settings.speed: Скорость
+assistant.sid.settings.storage: Хранилище
+assistant.sid.settings.storageLine: Gemma требует {size}, на этом компьютере свободно {free}
+assistant.sid.settings.takeTime: Дать Sid больше времени?
+assistant.sid.settings.takeTimeDetail: Быстрые ответы появятся почти сразу. Тщательный режим занимает немного дольше и лучше справляется с большими плейлистами.
+assistant.sid.settings.tell: Рассказывать об этом
+assistant.sid.settings.tellDetail: Темп, тональности и жанры на виду
+assistant.sid.settings.thinking: Как думает Sid
+assistant.sid.settings.tidy: Навести порядок
+assistant.sid.settings.tidyDetail: Убрать повторы, обрезать до нужной длины или держать один темп
+assistant.sid.settings.together: Вместе на данный момент
+assistant.sid.settings.top: Сверху
+assistant.sid.settings.unavailableNote: Для редактирования и создания плейлистов с Sid нужна Gemma на компьютере, который её поддерживает. Сет Sid здесь по-прежнему работает.
+assistant.sid.settings.unknownGpu: Неизвестная видеокарта
+assistant.sid.settings.where: Где найти Sid
+assistant.sid.settings.withoutGemma: Без Gemma Sid подбирает песни по темпу, тональности и энергии и ищет в Apple Music ваши запросы именно так, как вы их ввели.
+assistant.sid.settings.writes: Записывает {rate} токенов в секунду (нужно {floor})
+assistant.sid.setView.confirmMany: Sid очистит {count} песен в очереди после этой и выберет, что играть дальше.
+assistant.sid.setView.confirmOk: Начать подборку
+assistant.sid.setView.confirmOne: Sid очистит песню в очереди после этой и выберет, что играть дальше.
+assistant.sid.setView.confirmTitle: Начать подборку Sid?
+assistant.sid.setView.direction: Энергия
+assistant.sid.setView.end: Завершить
+assistant.sid.setView.endSet: Завершить подборку Sid
+assistant.sid.setView.known: Знакомые песни
+assistant.sid.setView.liveRadio: Подборка Sid не может работать с прямым эфиром радио.
+assistant.sid.setView.new: Новое для вас
+assistant.sid.setView.nothingPlaying: Включите песню, чтобы начать подборку.
+assistant.sid.setView.requestPlaceholder: Попросите Sid найти песню
+assistant.sid.setView.start: Начать
+assistant.sid.setView.startSet: Начать подборку Sid
+assistant.sid.setView.stayInKey: Оставаться в тональности
+assistant.sid.setView.stayInKeyDetail: Переходить только между совместимыми тональностями
+assistant.sid.setView.subtitleActive: Sid выбирает, что играть дальше
+assistant.sid.setView.subtitleIdle: Sid выбирает, что играть дальше
+assistant.sid.setView.title: Подборка Sid
+assistant.sid.size.gb: "{size} ГБ"
+assistant.sid.size.mb: "{size} МБ"
+assistant.sid.songCount: "Песен: {count}"
+assistant.sid.source.applePick: Подборка Apple Music
+assistant.sid.source.applePlaylist: плейлист Apple Music
+assistant.sid.source.artist: топ-песни исполнителя
+assistant.sid.source.catalog: Apple Music
+assistant.sid.source.library: вашей медиатеки
+assistant.sid.source.playlist: в плейлисте
+assistant.sid.unavailable.belowFloor: Gemma работала на этом компьютере слишком медленно, поэтому Sid не может её использовать.
+assistant.sid.unavailable.counterMismatch: Sid отключил Gemma после неудачной проверки безопасности. Он повторит попытку после обновления Cider или драйвера видеокарты.
+assistant.sid.unavailable.gpuLimits: Этой видеокарте не хватает памяти для работы Gemma.
+assistant.sid.unavailable.gpuUnstable: Видеокарта дважды перестала отвечать, поэтому Sid приостановлен до перезапуска Cider.
+assistant.sid.unavailable.modelCorrupt: Загрузка Gemma дважды повредилась, поэтому Sid перестал её предлагать.
+assistant.sid.unavailable.noAdapter: Sid не смог найти видеокарту для работы Gemma.
+assistant.sid.unavailable.noGpuWatch: Cider не может отслеживать видеопамять на этом компьютере, поэтому Sid не будет запускать Gemma здесь.
+assistant.sid.unavailable.noStorage: Cider не может сохранить файлы Gemma на этом компьютере.
+assistant.sid.unavailable.noWebgpu: Для Gemma нужен WebGPU, который недоступен на этом компьютере.
+assistant.sid.unavailable.outOfMemory: Gemma потребовалось больше видеопамяти, чем может выделить этот компьютер.
+assistant.sid.unavailable.probeFailed: Sid не смог проверить этот компьютер. Он повторит попытку позже.
+assistant.sid.unavailable.softwareGpu: Графика на этом компьютере выводится без видеокарты, а Gemma её требует.
+assistant.sid.unavailable.storage: На этом компьютере недостаточно свободного места для Gemma.
+assistant.sid.why.cameClose: Почти подошла
+assistant.sid.why.linedUp: что было в очереди
+assistant.sid.why.open: Почему Sid выбрал «{title}»
+assistant.sid.why.weighed: "Sid оценил {count} песен из: {places}."
+assistant.sid.working.starting: Запуск
+assistant.sid.working.stop: Остановить
+assistant.sid.working.titleBuild: Создание плейлиста
+assistant.sid.working.titleEdit: Работа над «{playlist}»
 audio.device.default: Устройство по умолчанию
 audio.device.noneFound: Выходные устройства не найдены
 audio.device.placeholder: Устройство {{id}}
@@ -827,6 +1297,8 @@ home.syncFavorites.gettingArtists:
   issue: 27
   superseded_at: 2026-07-08
 home.title: Главная
+hostReinstall.drm.body: Apple Music отказывается воспроизводить музыку, потому что эта копия Cider была установлена до обязательного обновления DRM. Обновления внутри приложения не могут его доставить, поэтому скачайте Cider заново в Cider Taproom и переустановите его. Нажмите OK, чтобы открыть Cider Taproom.
+hostReinstall.drm.title: Переустановите Cider, чтобы восстановить воспроизведение
 i18n.authors: CiderCollective
 i18n.category: main
 i18n.languageName: Русский
@@ -834,6 +1306,7 @@ i18n.languageNameEnglish: Russian
 library.albumVersions.clean: Чистая
 library.albumVersions.explicit: Нецензурная
 library.albumVersions.label: Версии
+library.artists.empty: Выберите исполнителя
 library.columnBrowser: Просмотр колонками
 library.favoritesOnly: Только избранное
 library.genres.counts: "{albums} альбомов, {songs} песен"
@@ -2674,8 +3147,13 @@ notificationCenter.row.muted: Выключено
 notificationCenter.section.active: Активные
 notificationCenter.section.history: История
 notificationCenter.title: Уведомления
+notify.explicitRestrictedSkip: "Пропуск «{name}»: нnon-explicit контент ограничен в вашем Apple Account"
+notify.explicitRestrictedStop: "Воспроизведение остановлено: «{name}» содержит нецензурную лексику, а такой контент ограничен в вашем Apple Account"
 notify.licenseRefusedSkip: Не удается воспроизвести "{name}", пропускаем
 notify.licenseRefusedStop: 'Воспроизведение остановлено: не удается воспроизвести "{name}"'
+notify.multipleTracksUnavailable: Несколько треков недоступны. Попробуйте другой трек или альбом.
+notify.trackUnavailableSkip: «{name}» недоступен, пропускаем
+notify.trackUnavailableStop: "Воспроизведение остановлено: «{name}» недоступен"
 nowPlaying.a11y.trackWaveform: Волновой график трека, нажмите для перемотки
 nowPlaying.a11y.waveform: Форма волны текущего трека
 oobe.amsignin.title: ""
@@ -2863,6 +3341,8 @@ playbackHealth.backgroundFreeze.eyebrow: Уведомление о воспро�
 playbackHealth.backgroundFreeze.hint: Правило оконного менеджера или настройка ОС могут позволить Cider работать в фоновом режиме. Нажмите «Подробнее», чтобы узнать о возможных решениях для вашей системы.
 playbackHealth.backgroundFreeze.learnMore: Подробнее
 playbackHealth.backgroundFreeze.title: Система приостановила работу Cider в фоновом режиме
+playbackHealth.hostReinstall.label: Нужно переустановить Cider
+playbackHealth.hostReinstall.message: Apple Music не принимает эту установку. Переустановите Cider из Cider Taproom.
 playbackHealth.localIssue: Проблема с локальным воспроизведением
 playlist.collaborative.tooltip: Этот плейлист открыт для соавторов
 playlist.collaborators.andOthers: "{{name}} и еще {{count}}"
@@ -2873,17 +3353,22 @@ playlist.collaborators.count:
   issue: 78
 playlist.collaborators.owner: Владелец
 playlist.collaborators.pair: "{{a}} и {{b}}"
+playlist.createFailed: Не удалось создать плейлист. Повторите попытку немного позже.
 playlist.description: Описание плейлиста
 playlist.error.changedElsewhere.message: Этот плейлист был изменен на другом устройстве. Обновите его и повторите попытку.
 playlist.error.changedElsewhere.title: Плейлист изменен на другом устройстве
 playlist.error.locked.message: Не удается удалить этот трек, пока применены параметры сортировки.
 playlist.error.locked.title: Плейлист заблокирован
 playlist.error.locked.tooltip: Порядок треков в этом плейлисте нельзя изменить, пока применены параметры сортировки.
+playlist.error.notEditable: Этот плейлист нельзя редактировать.
+playlist.error.queueRemoveConflict: Этот плейлист изменился после создания очереди. Откройте плейлист, чтобы удалить песню.
 playlist.error.save.message: При сохранении плейлиста произошла ошибка. Повторите попытку.
 playlist.error.save.title: Не удалось сохранить плейлист
+playlist.error.smartNotEditable: Смарт-плейлисты подчиняются своим правилам, поэтому песни из них нельзя удалить вручную.
 playlist.error.updating.message: Произошла ошибка при обновлении плейлиста. Пожалуйста, попробуйте еще раз.
 playlist.error.updating.title: Ошибка обновления плейлиста
 playlist.folderEmpty: В этой папке нет плейлистов
+playlist.folderMoveFailed: Не удалось переместить папку. Повторите попытку немного позже.
 playlist.folderRenameHint:
   value: Нажмите дважды, чтобы переименовать
   source: human
@@ -2891,7 +3376,10 @@ playlist.folderRenameHint:
   issue: 36
 playlist.lastUpdated: "Обновлено: {{date}}"
 playlist.madeByApple: Создано Apple
+playlist.moveFailed: Не удалось переместить плейлист. Повторите попытку немного позже.
 playlist.nameEmpty: Название плейлиста не может быть пустым
+playlist.newFolderNotMoved: Папка создана, но не удалось переместить её в выбранную папку. Она будет находиться вне папок.
+playlist.newPlaylistNotMoved: Плейлист создан, но не удалось переместить его в выбранную папку. Он будет находиться вне папок.
 playlist.noTracks: Нет треков
 playlist.personalMix: Персональный микс
 playlist.playlistName: Название плейлиста
@@ -2902,6 +3390,8 @@ playlist.publishOnProfileAndSearch:
   issue: 36
 playlist.refresh.message: Этот плейлист был обновлен на другом устройстве. Плейлист обновляется.
 playlist.refresh.title: Требуется обновление плейлиста
+playlist.suggestions.subtitle: Просмотр и добавление в плейлист
+playlist.suggestions.title: Рекомендуемые песни
 playlist.untitled: Без названия
 podcast.comingSoon.description: Поддержка подкастов перерабатывается из-за крупных изменений в механизме воспроизведения Cider. Она вернется в одном из будущих обновлений.
 podcast.comingSoon.hide: Скрыть из боковой панели
@@ -3024,6 +3514,7 @@ settings.artwork.hiresImages.warning: Это может увеличить вр�
 settings.audio.atmos: Dolby Atmos
 settings.audio.atmos.binaural.desc: Atmos воспроизводится как бинауральное стерео через CiderAudio. Перекрестное затухание, Автомикс и Плавные переходы продолжают работать как обычно.
 settings.audio.atmos.description: Настройка воспроизведения Atmos для текущего устройства вывода.
+settings.audio.atmos.normalizationHint: Миксы Dolby Atmos звучат тише стерео-мастеров. Включите нормализацию звука, чтобы выровнять громкость.
 settings.audio.atmos.off.desc: Atmos выключен. Весь контент воспроизводится в стандартном стерео.
 settings.audio.atmos.passthrough: Сквозной режим
 settings.audio.atmos.passthrough.desc: Обход всей обработки звука. Многоканальный Atmos передается напрямую на устройство. Идеально для AV-ресиверов.
@@ -3175,6 +3666,7 @@ settings.client.genten.proxyServer: Прокси-сервер
 settings.client.genten.proxyServer.desc: Адрес прокси-сервера
 settings.client.genten.restartNotice: Для применения изменений необходимо перезапустить приложение.
 settings.client.genten.saveError: Ошибка сохранения настроек
+settings.client.genten.saveFailed: Не удалось сохранить настройки. Попробуйте ещё раз.
 settings.client.genten.saveSuccess: Настройки сохранены
 settings.client.genten.smoothScrolling: Плавная прокрутка
 settings.client.genten.smoothScrolling.desc: Включение или выключение плавной прокрутки
@@ -3269,6 +3761,7 @@ settings.client.windows.proxyServer: Прокси-сервер
 settings.client.windows.proxyServer.desc: Адрес прокси-сервера
 settings.client.windows.restartNotice: Для применения изменений необходимо перезапустить приложение.
 settings.client.windows.saveError: Ошибка сохранения настроек
+settings.client.windows.saveFailed: Не удалось сохранить настройки. Попробуйте ещё раз.
 settings.client.windows.saveSuccess: Настройки сохранены
 settings.client.windows.taskbarProgress: Прогресс воспроизведения на панели задач
 settings.client.windows.taskbarProgress.desc: Отображать прогресс воспроизведения на значке панели задач
@@ -3523,6 +4016,7 @@ settings.equalizer.warning: Мы не несем ответственности 
 settings.extensions.addBuiltInSnippet: Добавить встроенный сниппет
 settings.extensions.browsePluginMarket: Обзор магазина плагинов
 settings.extensions.browseThemeMarket: Обзор магазина тем
+settings.extensions.byAuthor: "автор: {author}"
 settings.extensions.checkUpdates: Проверять обновления расширений при запуске
 settings.extensions.checkUpdates.desc: Проверять наличие обновлений для тем, сниппетов и плагинов при каждом запуске Cider.
 settings.extensions.createPlugin: Создать плагин
@@ -3533,13 +4027,24 @@ settings.extensions.fileWatcher: Включить отслеживание фа�
 settings.extensions.fileWatcher.desc: Автоматически перезагружать таблицы стилей тем при изменении их файлов на диске.
 settings.extensions.importFromFile: Импортировать из файла
 settings.extensions.maintenance: Обслуживание
+settings.extensions.marketplaceId: "ID: {id}"
 settings.extensions.newThemeDialog.identifier: Идентификатор
 settings.extensions.newThemeDialog.name: Название темы
 settings.extensions.newThemeDialog.title: Новая тема
 settings.extensions.openAppData: Открыть папку AppData
 settings.extensions.openAppData.desc: Показать папку, из которой Cider считывает расширения.
+settings.extensions.plugins.directory: Каталог
 settings.extensions.plugins.empty: Нет установленных плагинов.
+settings.extensions.plugins.getMore: Другие плагины
+settings.extensions.plugins.identifier: Идентификатор
+settings.extensions.plugins.loadFailed.error: "Не удалось запустить этот плагин: {{ error }}"
+settings.extensions.plugins.loadFailed.incompatible: Этот плагин создан для более старой версии Cider и не может работать. Проверьте обновление в маркетплейсе.
+settings.extensions.plugins.loadFailed.invalid: Это некорректный плагин Cider, поэтому он не может работать.
+settings.extensions.plugins.refreshList: Обновить список плагинов
 settings.extensions.plugins.running: Работает
+settings.extensions.plugins.uninstall: Удалить
+settings.extensions.plugins.uninstallConfirm: Удалить «{name}»?
+settings.extensions.plugins.uninstallTitle: Удаление плагина
 settings.extensions.refresh: Обновить расширения
 settings.extensions.refresh.desc: Повторно сканировать темы, сниппеты и плагины на диске.
 settings.extensions.refreshed: Темы, сниппеты и плагины обновлены
@@ -3560,6 +4065,7 @@ settings.extensions.themes.activeCount: "Активно: {{ count }}"
 settings.extensions.themes.empty: Нет установленных тем.
 settings.extensions.themes.stylesheetMany: "{{ count }} таблиц стилей"
 settings.extensions.themes.stylesheetOne: 1 таблица стилей
+settings.extensions.viewOnMarketplace: Открыть в маркетплейсе
 settings.fonts.description: Изменение шрифта приложения
 settings.fonts.lyrics: Шрифт текста песен
 settings.fonts.lyrics.description: Шрифт, используемый для отображения текста песен
@@ -4496,6 +5002,7 @@ settings.option.lyrics.thirdPartySources: Включить сторонние и
 settings.option.lyrics.thirdPartySources.description: Разрешить загрузку текстов из Musixmatch и NetEase, если они недоступны в Apple Music. Качество может отличаться, а частое использование может привести к ограничениям частоты запросов.
 settings.option.lyrics.timeOffset: Смещение синхронизации текста (сек.)
 settings.option.lyrics.timeOffset.description: Настройка времени отображения текста. Положительные значения показывают текст раньше, отрицательные — позже. Полезно для исправления рассинхронизации звука.
+settings.option.lyrics.timeOffset.descriptionV2: Настройка времени отображения текста песни. Положительные значения показывают текст позже, отрицательные — раньше. Полезно для исправления рассинхронизации звука.
 settings.option.lyrics.timestampStyle: Стиль временных меток
 settings.option.lyrics.timestampStyle.both: Оба
 settings.option.lyrics.timestampStyle.chip: Плашка
@@ -5047,6 +5554,7 @@ settings.resetCider.category.appleMusic: Выйти из Apple Music
 settings.resetCider.category.appleMusic.desc: Удалить учетную запись Apple Music с этого устройства
 settings.resetCider.category.caches: Кэш
 settings.resetCider.category.caches.desc: Обложки, медиатека, главная страница и другой офлайн-кэш
+settings.resetCider.category.caches.descModels: Кэш обложек, медиатеки, главной страницы и других данных для офлайн-работы, а также загруженные модели, например Gemma
 settings.resetCider.category.integrations: Авторизация в интеграциях
 settings.resetCider.category.integrations.desc: Ключи авторизации Last.fm, ListenBrainz и других скробблеров
 settings.resetCider.category.localMusic: База данных локальной медиатеки
