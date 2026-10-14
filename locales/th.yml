@@ -41,6 +41,8 @@ action.addToPlaylist.tracksCount: "{count} เพลง"
 action.addToQueue: เพิ่มไปยังคิว
 action.addToQueue.error: เกิดข้อผิดพลาดในการเพิ่มไปยังคิว
 action.addToQueue.success: เพิ่มไปยังคิวแล้ว
+action.appleMusic.enterUrl: ป้อน URL ของ Apple Music
+action.appleMusic.invalidUrl: ไม่ใช่ URL ของ Apple Music ที่ถูกต้อง
 action.appleMusic.yourProfile: โปรไฟล์ของคุณ
 action.apply: นำไปใช้
 action.approve: อนุมัติ
@@ -108,6 +110,7 @@ action.later: ภายหลัง
 action.love: ชอบ
 action.manage: จัดการ
 action.minimize: ย่อ
+action.minimizeVideo: ย่อวิดีโอ
 action.moveToFolder: ย้ายไปที่โฟลเดอร์
 action.moveToFolder.here: ย้าย "{{name}}" มาที่นี่
 action.moveToTop: ย้ายไปไว้บนสุด
@@ -119,6 +122,7 @@ action.openArtworkInBrowser: เปิดภาพหน้าปกในเบ
 action.openInNewTab: เปิดในแท็บใหม่
 action.openNewTab: แท็บใหม่
 action.openUrl: เปิด URL
+action.openVideo: เปิดวิดีโอ
 action.paste: วาง
 action.pause: หยุดชั่วคราว
 action.pickTime: เลือกเวลา
@@ -252,6 +256,472 @@ album.upcoming.badge: อัลบั้มเร็วๆ นี้
 app.name: Cider
 app.unsupportedClient.message: ไม่รองรับไคลเอนต์นี้ โปรดตรวจสอบให้แน่ใจว่าคุณกำลังใช้ Cider เวอร์ชันล่าสุด
 app.unsupportedClient.title: ไม่รองรับไคลเอนต์
+assistant.sid.agent.added: เพิ่ม {count} เพลงแล้ว
+assistant.sid.agent.addedOne: เพิ่มหนึ่งเพลงแล้ว
+assistant.sid.agent.askingPicks: กำลังขอเพลงแนะนำจาก Apple Music
+assistant.sid.agent.averageBpm: เฉลี่ย {bpm} BPM
+assistant.sid.agent.builtGeneric: นี่คือเพลย์ลิสต์สำหรับสิ่งนั้น
+assistant.sid.agent.builtHigh: ฉันคงพลังงานให้สูงไว้ โดยถึงจุดสูงสุดใกล้ตอนท้าย
+assistant.sid.agent.builtLow: ฉันคงพลังงานให้ต่ำ และค่อย ๆ ลดลงในตอนท้าย
+assistant.sid.agent.checked: ตรวจสอบจังหวะและพลังงานแล้ว
+assistant.sid.agent.checkedLibrary: ตรวจสอบคลังเพลงของคุณแล้ว
+assistant.sid.agent.checking: กำลังตรวจสอบจังหวะและพลังงาน
+assistant.sid.agent.deduped: ลบเพลงที่ซ้ำออกแล้ว
+assistant.sid.agent.foundCatalog: พบ {songs} ใน Apple Music
+assistant.sid.agent.foundLibrary: พบ {songs} ในคลังเพลงของคุณ
+assistant.sid.agent.foundPlaylists: พบเพลย์ลิสต์ที่คล้ายกัน
+assistant.sid.agent.fromApplePlaylists: เพลย์ลิสต์ {playlists} ของ Apple Music
+assistant.sid.agent.fromArtists: เพลงของ {artists} และศิลปินที่คล้ายกัน
+assistant.sid.agent.fromLibrary: คลังเพลงของคุณ
+assistant.sid.agent.keptTempo: เก็บเพลงที่ {range}
+assistant.sid.agent.libraryFit: "{songs} ที่เข้ากัน"
+assistant.sid.agent.lookedAt: ดูศิลปิน {artists} แล้ว
+assistant.sid.agent.lookingCatalog: กำลังค้นหาใน Apple Music
+assistant.sid.agent.moved: ย้ายเพลงแล้ว
+assistant.sid.agent.movedTo: ไปที่ลำดับที่ {row}
+assistant.sid.agent.noChange: ฉันดูแล้ว และไม่คิดว่าควรเปลี่ยนอะไร
+assistant.sid.agent.nothingFound: ฉันหาเพลงสำหรับเรื่องนั้นไม่พบ ลองอธิบายด้วยวิธีอื่น
+assistant.sid.agent.orderEnergyDown: พลังงาน เร้าใจที่สุดก่อน
+assistant.sid.agent.orderEnergyUp: พลังงาน สงบที่สุดก่อน
+assistant.sid.agent.orderKey: คีย์
+assistant.sid.agent.orderTempoDown: จังหวะ เร็วที่สุดก่อน
+assistant.sid.agent.orderTempoUp: จังหวะ ช้าที่สุดก่อน
+assistant.sid.agent.picked: เลือก {songs} แล้ว
+assistant.sid.agent.pulledFrom: ฉันดึงมาจาก {sources}
+assistant.sid.agent.rangeAny: ที่จังหวะใดก็ได้
+assistant.sid.agent.rangeAtLeast: ที่ {low} BPM ขึ้นไป
+assistant.sid.agent.rangeAtMost: ที่ {high} BPM หรือต่ำกว่า
+assistant.sid.agent.rangeBetween: ระหว่าง {low} ถึง {high} BPM
+assistant.sid.agent.read: อ่าน {songs} ใน {playlist} แล้ว
+assistant.sid.agent.searchingCatalog: กำลังค้นหาใน Apple Music
+assistant.sid.agent.searchingLibrary: กำลังค้นหาในคลังเพลงของคุณ
+assistant.sid.agent.sorted: เรียงตาม {order}
+assistant.sid.agent.stuck: ฉันติดขัดกับเรื่องนี้ ลองถามด้วยวิธีอื่น
+assistant.sid.agent.suggested: Apple Music แนะนำ {songs}
+assistant.sid.agent.summary: ฉัน{changes}
+assistant.sid.agent.summaryAdded: เพิ่ม {songs}
+assistant.sid.agent.summaryMoved: ย้าย {songs}
+assistant.sid.agent.summaryTookOut: นำ {songs} ออก
+assistant.sid.agent.thinking: กำลังคิด
+assistant.sid.agent.thinkingOver: กำลังพิจารณา
+assistant.sid.agent.thoughtOver: พิจารณาแล้ว
+assistant.sid.agent.tooBig: เพลย์ลิสต์นี้ใหญ่เกินไปที่ Sid จะอ่านทีเดียว
+assistant.sid.agent.tookOut: นำ {count} เพลงออกแล้ว
+assistant.sid.agent.tookOutOne: นำหนึ่งเพลงออกแล้ว
+assistant.sid.agent.tookOutSongs: นำ {songs} ออกแล้ว
+assistant.sid.agent.trimmed: ตัดให้เหลือ {minutes} นาที
+assistant.sid.agent.unsure: ฉันไม่แน่ใจ
+assistant.sid.agent.working: กำลังทำเพลย์ลิสต์
+assistant.sid.answer.dropSlowest: ตัดเพลงที่ช้าที่สุดออก
+assistant.sid.applied.made: Sid ทำการเปลี่ยนแปลง {count} รายการ
+assistant.sid.applied.madeOne: Sid ทำการเปลี่ยนแปลง 1 รายการ
+assistant.sid.applied.markAdded: เพิ่มโดย Sid
+assistant.sid.applied.marked: มีการทำเครื่องหมายไว้ในรายการ
+assistant.sid.applied.markMoved: ย้ายโดย Sid
+assistant.sid.applied.undo: เลิกทำ
+assistant.sid.applied.undoChanged: "{playlist} มีการเปลี่ยนแปลงหลังจาก Sid แก้ไข การเลิกทำจะทำให้การเปลี่ยนแปลงนั้นหายไป จึงยังไม่ได้เลิกทำ"
+assistant.sid.applied.undoFailed: Sid ไม่สามารถเลิกทำได้ กรุณาลองอีกครั้งในอีกสักครู่
+assistant.sid.applied.undoHistory: คุณยังสามารถกู้คืนเวอร์ชันก่อนหน้าจากประวัติของเพลย์ลิสต์ได้
+assistant.sid.applied.undone: Sid คืนค่า {playlist} ให้เหมือนเดิมแล้ว
+assistant.sid.arc.coolDown: ค่อย ๆ ลดระดับ
+assistant.sid.arc.peak: จุดสูงสุด
+assistant.sid.arc.steady: คงที่
+assistant.sid.arc.warmUp: เริ่มอุ่นเครื่อง
+assistant.sid.ask.addFive: เพิ่มห้าเพลงที่คล้ายกัน
+assistant.sid.ask.calmToLively: จากผ่อนคลายสู่สนุกสนาน
+assistant.sid.ask.dedupe: ลบรายการซ้ำ
+assistant.sid.ask.greetBuild: สวัสดี! เพลย์ลิสต์นี้ควรเป็นแบบไหน
+assistant.sid.ask.greetBuildDetail: บอกอารมณ์ ช่วงเวลา หรือศิลปินไม่กี่คน แล้วฉันจะเติมเพลงให้
+assistant.sid.ask.greetEdit: สวัสดี! จะให้ทำอะไรกับ {playlist} ดี
+assistant.sid.ask.greetEditDetail: ฉันเพิ่ม ตัด และจัดลำดับเพลงได้ หรือจะบอกว่าเพลย์ลิสต์นี้เป็นแบบไหนก็ได้
+assistant.sid.ask.lateDrive: ขับรถตอนดึก
+assistant.sid.ask.morningRun: วิ่งยามเช้า
+assistant.sid.ask.onDevice: Sid คิดประมวลผลบนคอมพิวเตอร์เครื่องนี้ มีเพียงการค้นหาเพลงเท่านั้นที่ส่งไปยัง Apple Music
+assistant.sid.ask.rainyFocus: สมาธิในวันฝนตก
+assistant.sid.ask.send: ส่งให้ Sid
+assistant.sid.ask.sundayCooking: ทำอาหารวันอาทิตย์
+assistant.sid.ask.trim45: ตัดให้เหลือ 45 นาที
+assistant.sid.ask.whatsItLike: เป็นแบบไหน
+assistant.sid.brief.highEnergy: พลังงานสูง
+assistant.sid.brief.like: คล้าย {artists}
+assistant.sid.brief.lookingFor: กำลังค้นหา {search}
+assistant.sid.brief.lowEnergy: พลังงานต่ำ
+assistant.sid.bubble.arrow: ถึง
+assistant.sid.bubble.open: เปิดชุดเพลงของ Sid
+assistant.sid.bubble.replay: แสดงสิ่งที่ Sid กำลังพูด
+assistant.sid.card.add: เพิ่มเพลง {count} เพลง
+assistant.sid.card.added: เพิ่มลงใน {playlist} แล้ว
+assistant.sid.card.addedToQueue: เพิ่มลงในคิวแล้ว
+assistant.sid.card.addOne: เพิ่มเพลง 1 เพลง
+assistant.sid.card.addTitle: เพิ่มลงใน {playlist}
+assistant.sid.card.afterSet: หลังจากเพลงที่ชุดเพลงของ Sid จัดเรียงไว้
+assistant.sid.card.alreadyIn: เพลงเหล่านั้นมีอยู่ใน {playlist} แล้ว
+assistant.sid.card.clear: ล้างเพลง {count} เพลง
+assistant.sid.card.cleared: ล้างแล้ว
+assistant.sid.card.clearOne: ล้างเพลง 1 เพลง
+assistant.sid.card.clearTitle: ล้างเพลงที่กำลังจะเล่นต่อไหม
+assistant.sid.card.created: สร้าง {name} แล้ว
+assistant.sid.card.failed: ดำเนินการไม่สำเร็จ กรุณาลองอีกครั้งในอีกสักครู่
+assistant.sid.card.guest: คุณเป็นแขกในปาร์ตี้ฟังเพลง จึงให้โฮสต์เป็นผู้ควบคุมคิว
+assistant.sid.card.inLibrary: อยู่ในคลังของคุณ
+assistant.sid.card.leftOut: ไม่ได้เพิ่ม {count} เพลง เพราะเล่นไม่ได้หรือคุณทำเครื่องหมายให้แนะนำน้อยลง
+assistant.sid.card.leftOutOne: ไม่ได้เพิ่ม 1 เพลง เพราะเล่นไม่ได้หรือคุณทำเครื่องหมายให้แนะนำน้อยลง
+assistant.sid.card.librarySongs: "{count} เพลง"
+assistant.sid.card.mostPlayed: เล่นมากที่สุดในปี {year}
+assistant.sid.card.noQueue: ยังไม่มีเพลงที่กำลังเล่น เริ่มเล่นเพลงก่อน แล้ว Sid จะเพิ่มเพลงต่อจากนั้นในคิวได้
+assistant.sid.card.notApplied: ยังไม่ได้นำไปใช้
+assistant.sid.card.notNow: ไว้ทีหลัง
+assistant.sid.card.open: เปิด {name}
+assistant.sid.card.playing: กำลังเล่น
+assistant.sid.card.playLast: เพิ่มในคิว
+assistant.sid.card.playLastTitle: ไว้ฟังทีหลัง
+assistant.sid.card.playlistChanged: เพลย์ลิสต์นี้มีการเปลี่ยนแปลงตั้งแต่ Sid อ่านล่าสุด ลองถามอีกครั้งเพื่อทำใหม่
+assistant.sid.card.playNext: เล่นถัดไป
+assistant.sid.card.playNextTitle: เล่นต่อไป
+assistant.sid.card.playNow: เล่นเลย
+assistant.sid.card.playNowTitle: พร้อมเล่น
+assistant.sid.card.plays: "{count} ครั้ง"
+assistant.sid.card.playsOne: 1 ครั้ง
+assistant.sid.card.queueApplied: อัปเดตคิวของคุณแล้ว
+assistant.sid.card.queueChanged: คิวของคุณมีการเปลี่ยนแปลงตั้งแต่ Sid ดูล่าสุด ลองถามอีกครั้งเพื่อทำใหม่
+assistant.sid.card.queued: อยู่ในคิว
+assistant.sid.card.queueUnavailable: Sid ยังไม่สามารถเปลี่ยนคิวในเวอร์ชันนี้ได้
+assistant.sid.card.redo: ถามอีกครั้ง
+assistant.sid.card.refining: Sid กำลังอัปเดตแผนนี้
+assistant.sid.card.retry: ลองอีกครั้ง
+assistant.sid.card.saved: บันทึกไปยัง {playlist} แล้ว
+assistant.sid.card.showAll: แสดงทั้งหมด {count} รายการ
+assistant.sid.card.songsChange: "{before} → {after} เพลง"
+assistant.sid.card.superseded: ถูกแทนที่ด้วยแผนใหม่กว่า
+assistant.sid.card.topArtists: ศิลปินยอดนิยมในปี {year}
+assistant.sid.card.unplayable: เพลงเหล่านี้เล่นไม่ได้ในขณะนี้
+assistant.sid.card.waitLocked: เพลงถัดไปกำลังจะเริ่ม ลองใช้อีกครั้งในอีกสักครู่
+assistant.sid.chat.appleOnly: Sid ทำงานกับ Apple Music เปลี่ยนกลับเพื่อพูดคุยกับ Sid
+assistant.sid.chat.dropWaiting: การเปลี่ยนแปลงที่รอการใช้งานจะถูกยกเลิก
+assistant.sid.chat.e2bLimited: การพิมพ์ถึง Sid ต้องใช้โมเดลแบบละเอียด เลือกคำแนะนำ หรือเปลี่ยนในการตั้งค่า Sid
+assistant.sid.chat.endConfirmOk: สิ้นสุด
+assistant.sid.chat.endConfirmTitle: จบการสนทนานี้ใช่หรือไม่
+assistant.sid.chat.findingPlaylist: กำลังค้นหาเพลย์ลิสต์ของคุณ
+assistant.sid.chat.foundPlaylist: พบ {playlist}
+assistant.sid.chat.foundPlaylists: พบ {count} เพลย์ลิสต์
+assistant.sid.chat.fromQueue: เลือก {songs} จากคิวของคุณ
+assistant.sid.chat.greet: สวัสดี! วันนี้อยากฟังอะไรดี
+assistant.sid.chat.greetDetail: ฉันค้นหาและเล่นเพลง จัดระเบียบคิว สร้างเพลย์ลิสต์ หรือบอกเกี่ยวกับเพลงที่คุณฟังได้
+assistant.sid.chat.greetDetailNoQueue: ฉันค้นหาและเพิ่มเพลงเข้าคิว สร้างเพลย์ลิสต์ หรือบอกเกี่ยวกับเพลงที่คุณฟังได้
+assistant.sid.chat.jumpLatest: ไปยังข้อความล่าสุด
+assistant.sid.chat.loading: กำลังเตรียม Sid
+assistant.sid.chat.newConfirmTitle: เริ่มการสนทนาใหม่ใช่หรือไม่
+assistant.sid.chat.newConversation: การสนทนาใหม่
+assistant.sid.chat.placeholder: ถาม Sid เกี่ยวกับเพลงของคุณ
+assistant.sid.chat.placeholderFocus: ถาม Sid เกี่ยวกับ {playlist}
+assistant.sid.chat.playlistUnread: Sid อ่าน {playlist} ไม่ได้ ลองอีกครั้งในอีกสักครู่
+assistant.sid.chat.queueDetail: "{songs} จะเล่นถัดไป"
+assistant.sid.chat.readingListening: กำลังดูเพลงที่คุณฟัง
+assistant.sid.chat.readingPlaylist: กำลังอ่าน {playlist}
+assistant.sid.chat.readingQueue: กำลังดูคิวของคุณ
+assistant.sid.chat.readListening: ตรวจสอบการฟังของคุณแล้ว
+assistant.sid.chat.readQueue: อ่านคิวของคุณแล้ว
+assistant.sid.chat.steps: "{count} ขั้นตอน"
+assistant.sid.chat.stepsOne: 1 ขั้นตอน
+assistant.sid.chat.stopped: คุณหยุดการทำงานนี้แล้ว
+assistant.sid.chat.suggestLikeThis: เล่นเพลงแนวนี้
+assistant.sid.chat.suggestMostPlayed: ฉันฟังเพลงอะไรมากที่สุด
+assistant.sid.chat.suggestNowPlaying: กำลังเล่นอะไรอยู่
+assistant.sid.chat.suggestQueuePlaylist: สร้างเพลย์ลิสต์จากคิวของฉัน
+assistant.sid.chat.suggestTidyQueue: จัดระเบียบคิวของฉัน
+assistant.sid.chat.tooBig: ข้อความนี้ยาวเกินไปที่ฉันจะอ่านได้ในครั้งเดียว ลองส่งคำขอที่สั้นลง
+assistant.sid.chat.workingQueue: กำลังจัดการคิวของคุณ
+assistant.sid.entry.edit: แก้ไขกับ Sid
+assistant.sid.entry.editDetail: อธิบายการเปลี่ยนแปลงแล้วตรวจสอบก่อน
+assistant.sid.entry.start: เริ่มกับ Sid
+assistant.sid.entry.startDetail: อธิบายเพลย์ลิสต์แล้ว Sid จะเลือกเพลงให้
+assistant.sid.entry.startMenu: เริ่มกับ Sid…
+assistant.sid.failure.belowFloor: Gemma ทำงานช้าเกินไปบนคอมพิวเตอร์เครื่องนี้
+assistant.sid.failure.busy: Gemma กำลังยุ่งกับไฟล์ของตัวเอง ลองอีกครั้งในอีกสักครู่
+assistant.sid.failure.counterMismatch: Sid หยุดทำงานหลังการตรวจสอบความปลอดภัยไม่ผ่าน
+assistant.sid.failure.crashed: Gemma หยุดทำงานโดยไม่คาดคิด ลองอีกครั้ง
+assistant.sid.failure.deviceLost: การ์ดจอรีเซ็ตขณะที่ Sid กำลังประมวลผล ลองอีกครั้ง
+assistant.sid.failure.modelCorrupt: ไฟล์ดาวน์โหลดของ Gemma เสียหาย ดาวน์โหลดใหม่เพื่อดำเนินการต่อ
+assistant.sid.failure.modelMissing: ไม่พบไฟล์ของ Gemma ดาวน์โหลดใหม่เพื่อดำเนินการต่อ
+assistant.sid.failure.network: การดาวน์โหลดหยุดลง ตรวจสอบการเชื่อมต่อแล้วลองอีกครั้ง
+assistant.sid.failure.notReady: Gemma ยังไม่พร้อมใช้งาน
+assistant.sid.failure.outOfMemory: Sid หยุด Gemma เพื่อให้คอมพิวเตอร์ของคุณตอบสนองได้ตามปกติ เนื่องจากต้องใช้หน่วยความจำกราฟิกมากกว่าที่มีให้
+assistant.sid.failure.storageFull: พื้นที่ว่างไม่เพียงพอสำหรับดาวน์โหลดให้เสร็จ
+assistant.sid.failure.timeout: Gemma ใช้เวลาตอบนานเกินไป ลองอีกครั้ง
+assistant.sid.failure.tryAgain: ลองอีกครั้ง
+assistant.sid.failure.watchLost: Sid หยุดทำงานเพราะสูญเสียการติดตามหน่วยความจำกราฟิก ลองอีกครั้ง
+assistant.sid.gate.description: ลองใช้ Sid ก่อนพัฒนาเสร็จ บางส่วนยังใช้งานไม่ได้
+assistant.sid.gate.name: Sid ผู้ช่วยจัดเพลย์ลิสต์
+assistant.sid.hello: สวัสดี ฉันคือ Sid
+assistant.sid.home.ask: ถาม Sid เกี่ยวกับเพลงของคุณ
+assistant.sid.home.continueChat: ดำเนินการสนทนาต่อ
+assistant.sid.home.editHint: หากต้องการแก้ไขเพลย์ลิสต์ ให้เปิดและเลือกแก้ไขด้วย Sid
+assistant.sid.home.settings: การตั้งค่า Sid
+assistant.sid.insights.average: เฉลี่ย {bpm} BPM
+assistant.sid.insights.first: เพลงที่ 1
+assistant.sid.insights.genres: แนวเพลงยอดนิยม
+assistant.sid.insights.keys: คีย์
+assistant.sid.insights.last: เพลงที่ {count}
+assistant.sid.insights.length: ความยาว
+assistant.sid.insights.minutes: "{minutes} นาที"
+assistant.sid.insights.mostly: ส่วนใหญ่ {keys}
+assistant.sid.insights.tempo: จังหวะ เพลงต่อเพลง
+assistant.sid.insights.tempoAria: จังหวะของแต่ละเพลง ตั้งแต่ {low} ถึง {high} BPM
+assistant.sid.insights.tempoAriaAverage: จังหวะของแต่ละเพลง ตั้งแต่ {low} ถึง {high} BPM เฉลี่ย {bpm}
+assistant.sid.listAnd: "{items} และ {last}"
+assistant.sid.model.e2b: Gemma 4 E2B
+assistant.sid.model.e4b: Gemma 4 E4B
+assistant.sid.model.quick: รวดเร็ว
+assistant.sid.model.thorough: ละเอียด
+assistant.sid.move.blend: ผสม
+assistant.sid.move.cut: ตัดออก
+assistant.sid.move.lift: ยกระดับ
+assistant.sid.name: Sid
+assistant.sid.oneSong: 1 เพลง
+assistant.sid.panel.back: กลับไปที่ Sid
+assistant.sid.panel.close: ปิดการสนทนานี้
+assistant.sid.panel.replaceOk: เริ่มใหม่
+assistant.sid.panel.resize: ลากเพื่อปรับขนาด คลิกขวาเพื่อรีเซ็ต
+assistant.sid.planner.bringsDown: ลดระดับลง
+assistant.sid.planner.closeSecond: ใกล้เคียงที่สุด
+assistant.sid.planner.differentStyle: สไตล์ที่แตกต่าง
+assistant.sid.planner.faster: เร็วขึ้น
+assistant.sid.planner.fromLibrary: จากคลังเพลงของคุณ
+assistant.sid.planner.harderKey: การเปลี่ยนคีย์ที่ยากขึ้นเล็กน้อย
+assistant.sid.planner.keyClashes: คีย์ที่ขัดกัน
+assistant.sid.planner.lifts: เพิ่มพลังงาน
+assistant.sid.planner.littleFaster: เร็วขึ้นเล็กน้อย
+assistant.sid.planner.moreGenre: "{genre} มากขึ้น"
+assistant.sid.planner.neighborKey: คีย์ที่ใกล้เคียง
+assistant.sid.planner.newToYou: ยังไม่เคยฟังเพลงนี้
+assistant.sid.planner.noTempo: ไม่มีจังหวะที่จะต่อได้
+assistant.sid.planner.sameArtist: ศิลปินเดิมอีกครั้ง
+assistant.sid.planner.sameKey: คีย์เดียวกัน
+assistant.sid.planner.sameTempo: จังหวะเดียวกัน
+assistant.sid.planner.slower: ช้าลง
+assistant.sid.planner.tooBigDrop: ลดจังหวะมากเกินไป
+assistant.sid.planner.tooBigLift: เพิ่มจังหวะมากเกินไป
+assistant.sid.planner.tooFastNow: เร็วเกินไปในตอนนี้
+assistant.sid.planner.tooFastToMix: เร็วเกินไปที่จะมิกซ์
+assistant.sid.planner.tooSlowNow: ช้าเกินไปในตอนนี้
+assistant.sid.planner.tooSlowToMix: ช้าเกินไปที่จะมิกซ์
+assistant.sid.planner.touchSlower: ช้าลงเล็กน้อย
+assistant.sid.queue.looking: กำลังหาเพลงถัดไป
+assistant.sid.queue.picked: เลือกโดย Sid
+assistant.sid.queue.pickLine: เลือกโดย Sid · {reason}
+assistant.sid.queue.thought: “{thought}”
+assistant.sid.ready.checking: กำลังตรวจสอบคอมพิวเตอร์เครื่องนี้
+assistant.sid.ready.checkNow: ตรวจสอบตอนนี้
+assistant.sid.ready.downloadDetail: Gemma ทำงานบนคอมพิวเตอร์เครื่องนี้โดยตรง ขนาดดาวน์โหลด {size}
+assistant.sid.ready.downloading: กำลังดาวน์โหลด Gemma
+assistant.sid.ready.finishSetup: Gemma เกือบพร้อมแล้ว ดำเนินการตั้งค่าให้เสร็จ
+assistant.sid.ready.finishSetupAction: ตั้งค่าให้เสร็จ
+assistant.sid.ready.get: รับ Gemma ({size})
+assistant.sid.ready.needsDownload: Sid ต้องดาวน์โหลดเพียงครั้งเดียว
+assistant.sid.ready.preparing: กำลังเตรียม Gemma
+assistant.sid.ready.progress: "{done} จาก {total}"
+assistant.sid.ready.ready: พร้อมแล้ว
+assistant.sid.ready.retry: ลองอีกครั้ง ({size})
+assistant.sid.ready.seeWhy: ดูสาเหตุ
+assistant.sid.ready.setStillWorks: ชุดเพลงของ Sid ยังใช้งานได้ที่นี่
+assistant.sid.ready.stop: หยุด
+assistant.sid.ready.unavailable: Sid ประมวลผลบนคอมพิวเตอร์เครื่องนี้ไม่ได้
+assistant.sid.requestTooLong: คำขอนี้ยาวเกินไป ลองใช้ไม่เกิน {max} ตัวอักษร
+assistant.sid.review.actionAdd: เพิ่ม
+assistant.sid.review.actionCut: ตัดออก
+assistant.sid.review.actionMove: ย้าย
+assistant.sid.review.adding: กำลังเพิ่ม {count}
+assistant.sid.review.apply: นำการเปลี่ยนแปลง {count} รายการไปใช้
+assistant.sid.review.applyOne: นำการเปลี่ยนแปลง 1 รายการไปใช้
+assistant.sid.review.applyUnavailable: ยังไม่รองรับการบันทึกการเปลี่ยนแปลงของ Sid ในเวอร์ชันนี้
+assistant.sid.review.bpm: "{bpm} BPM"
+assistant.sid.review.change: "{before} → {after}"
+assistant.sid.review.changed: "{playlist} มีการเปลี่ยนแปลงตั้งแต่ที่ Sid อ่านไป จึงยังไม่ได้บันทึก เปิดอีกครั้งเพื่อเริ่มใหม่"
+assistant.sid.review.create: สร้างเพลย์ลิสต์
+assistant.sid.review.createFailed: Sid สร้างเพลย์ลิสต์ไม่สำเร็จ ลองอีกครั้งในอีกสักครู่
+assistant.sid.review.cutting: กำลังตัดออก {count}
+assistant.sid.review.description: คำอธิบาย (ไม่บังคับ)
+assistant.sid.review.empty: Sid จะไม่ลบเพลงทั้งหมดออกจากเพลย์ลิสต์ โปรดเก็บไว้อย่างน้อยหนึ่งเพลง
+assistant.sid.review.footnoteBuild: บันทึกเป็นเพลย์ลิสต์ Apple Music ปกติ Apple Music จะสร้างภาพปกให้
+assistant.sid.review.footnoteImport: เพลงที่ Sid เพิ่มจาก Apple Music จะถูกเพิ่มไปยังคลังเพลงของคุณด้วย
+assistant.sid.review.gone: "{playlist} ไม่อยู่ในคลังเพลงของคุณแล้ว จึงยังไม่ได้บันทึก"
+assistant.sid.review.hideWhole: ซ่อนเพลย์ลิสต์ทั้งหมด
+assistant.sid.review.incomplete: Sid ไม่ได้รับเพลย์ลิสต์ทั้งหมด จึงยังไม่ได้บันทึก เปิดอีกครั้งเมื่อโหลดเสร็จแล้ว
+assistant.sid.review.lineAdded: "{artist} · {source}"
+assistant.sid.review.lineMoved: "{artist} · จาก {from} ไปยัง {to}"
+assistant.sid.review.moving: กำลังย้าย {count}
+assistant.sid.review.name: ชื่อ
+assistant.sid.review.noChange: "{playlist} เป็นแบบนี้อยู่แล้ว จึงไม่มีอะไรให้บันทึก"
+assistant.sid.review.notEditable: Apple Music ไม่อนุญาตให้ Sid เปลี่ยน {playlist}
+assistant.sid.review.pageStale: "{playlist} มีการเปลี่ยนแปลงหลังจากหน้านี้โหลดแล้ว เลือก Edit with Sid อีกครั้งเมื่อรีเฟรชแล้ว"
+assistant.sid.review.removedRow: นำออกแล้ว
+assistant.sid.review.saveFailed: Sid ไม่สามารถบันทึกการเปลี่ยนแปลงได้ ลองอีกครั้งในอีกสักครู่
+assistant.sid.review.showWhole: ดูเพลย์ลิสต์ทั้งหมด
+assistant.sid.review.skipped: ข้ามแล้ว
+assistant.sid.review.snapshotFailed: Sid ไม่สามารถสร้างจุดกู้คืนก่อนได้ จึงยังไม่ได้บันทึกอะไร ลองอีกครั้งในอีกสักครู่
+assistant.sid.review.songs: เพลง
+assistant.sid.review.tileBpm: BPM เฉลี่ย
+assistant.sid.review.tileMinutes: นาที
+assistant.sid.review.tileSongs: เพลง
+assistant.sid.review.titleBuild: นี่คือฉบับร่างแรก
+assistant.sid.review.titleEdit: นี่คือแผน
+assistant.sid.review.unwritable: บางเพลงใน {playlist} ไม่สามารถเขียนกลับได้ Sid จึงยังไม่ได้บันทึกอะไร
+assistant.sid.says.hereComes: มา {name} แล้ว!
+assistant.sid.says.intro: เซ็ตของ Sid · {direction}
+assistant.sid.says.looking: กำลังหาเพลงถัดไป
+assistant.sid.says.mixingInto: กำลังมิกซ์เข้าสู่ {name} ใน
+assistant.sid.says.move: "{move} · {bars} ห้อง"
+assistant.sid.says.moveOneBar: "{move} · 1 ห้อง"
+assistant.sid.says.next: "{name} มาเป็นเพลงถัดไป"
+assistant.sid.says.nextBecause: "{name} มาเป็นเพลงถัดไป: {reason}"
+assistant.sid.says.paused: หยุดชั่วคราว ฉันจะรออยู่ตรงนี้
+assistant.sid.says.picking: กำลังเลือกเพลงที่จะเล่นต่อไป
+assistant.sid.says.steady: คงที่ที่ {bpm} BPM
+assistant.sid.says.tempo: "{from} → {to} BPM"
+assistant.sid.says.upWhenBack: "{name} จะขึ้นเล่นเมื่อคุณกลับมา"
+assistant.sid.session.failed: Sid ไม่สามารถทำสิ่งนั้นให้สำเร็จได้
+assistant.sid.session.failedRetry: Sid ไม่สามารถทำสิ่งนั้นให้สำเร็จได้ ลองอีกครั้งในอีกสักครู่
+assistant.sid.session.naming: กำลังตั้งชื่อ
+assistant.sid.session.newPlaylist: เพลย์ลิสต์ใหม่
+assistant.sid.set.askEmpty: คุณอยากฟังอะไร
+assistant.sid.set.fromIdea: เพลงของ {artist} ตามไอเดียของ Sid
+assistant.sid.set.fromLibrary: จากคลังเพลงของคุณ
+assistant.sid.set.fromRequest: จากคำขอของคุณ
+assistant.sid.set.fromStation: สถานีที่สร้างจากเซ็ต
+assistant.sid.set.notFound: ฉันหา “{search}” ไม่พบ ลองค้นหาด้วยวิธีอื่นไหม
+assistant.sid.set.nothingPlaying: เล่นอะไรสักอย่างก่อน แล้วค่อยถามฉัน
+assistant.sid.set.notQueued: ฉันไม่สามารถเพิ่มสิ่งนั้นลงในคิวได้
+assistant.sid.set.queued: "{title} โดย {artist} อยู่{where} {reason}"
+assistant.sid.set.request: คำขอของคุณ
+assistant.sid.set.whereAfterNext: ถัดจากเพลงถัดไปทันที
+assistant.sid.set.whereNext: ถัดไป
+assistant.sid.settings.addMore: เพิ่มเติม
+assistant.sid.settings.addMoreDetail: ค้นหาเพลงที่เข้ากัน จากคลังเพลงของคุณหรือ Apple Music ทั้งหมด
+assistant.sid.settings.bottom: ด้านล่าง
+assistant.sid.settings.byPlayer: ข้างตัวเล่น
+assistant.sid.settings.byPlayerDetail: Sid อยู่ข้างภาพปกของตัวเล่น
+assistant.sid.settings.canRun: รัน Gemma ได้
+assistant.sid.settings.check: ตรวจสอบไฟล์
+assistant.sid.settings.checkDamaged: ไฟล์บางส่วนของ Gemma เสียหาย โปรดดาวน์โหลดอีกครั้ง
+assistant.sid.settings.checkGood: ไฟล์ของ Gemma อยู่ในสภาพดี
+assistant.sid.settings.downloadAgain: ดาวน์โหลดอีกครั้ง
+assistant.sid.settings.downloadedSize: ดาวน์โหลดแล้ว · {size}
+assistant.sid.settings.duringSet: ระหว่างเซ็ต
+assistant.sid.settings.found: เพลงที่ Sid หาให้คุณ
+assistant.sid.settings.fresh: เริ่มใหม่
+assistant.sid.settings.freshDetail: สร้างเพลย์ลิสต์ทั้งชุดจากอารมณ์ ช่วงเวลา หรือศิลปินไม่กี่คน
+assistant.sid.settings.gemmaHere: Gemma อยู่ที่นี่
+assistant.sid.settings.gpu: การ์ดจอ
+assistant.sid.settings.group: ผู้ช่วย
+assistant.sid.settings.inEdit: เมื่อคุณแก้ไขเพลย์ลิสต์
+assistant.sid.settings.inEditDetail: แก้ไขกับ Sid ที่ส่วนหัวของเพลย์ลิสต์
+assistant.sid.settings.inImmersive: ในโหมดดื่มด่ำ
+assistant.sid.settings.inImmersiveDetail: แท็บและบับเบิลของ Sid ในเลย์เอาต์แบบดื่มด่ำ
+assistant.sid.settings.inNewPlaylist: เมื่อคุณสร้างเพลย์ลิสต์ใหม่
+assistant.sid.settings.inNewPlaylistDetail: เริ่มกับ Sid ในกล่องโต้ตอบเพลย์ลิสต์ใหม่
+assistant.sid.settings.inPlayer: ขณะเล่นเพลง
+assistant.sid.settings.inPlayerDetail: ชุดของ Sid ในคิวและเมนูของเครื่องเล่น
+assistant.sid.settings.intro: Sid ช่วยคุณจัดเพลย์ลิสต์ ที่นี่บนคอมพิวเตอร์เครื่องนี้
+assistant.sid.settings.inUse: กำลังใช้งาน · {size}
+assistant.sid.settings.machine: คอมพิวเตอร์เครื่องนี้
+assistant.sid.settings.modelOptions: ตัวเลือก {model}
+assistant.sid.settings.modelRow: "{style} · {name}"
+assistant.sid.settings.nav: Sid
+assistant.sid.settings.needsGemma: ต้องใช้ Gemma
+assistant.sid.settings.nods: พยักหน้าตามจังหวะ
+assistant.sid.settings.nodsDetail: Sid พยักหน้าตามทุกจังหวะของเพลง
+assistant.sid.settings.notDownloadedSize: ยังไม่ได้ดาวน์โหลด · {size}
+assistant.sid.settings.nothingYet: ยังไม่มีอะไร
+assistant.sid.settings.nothingYetDetail: เปิดเพลย์ลิสต์แล้วเลือกแก้ไขกับ Sid
+assistant.sid.settings.notMeasured: ยังไม่ได้วัด Sid จะวัดหลังการดาวน์โหลด
+assistant.sid.settings.notMeasuredReady: ยังไม่ได้วัด Sid จะวัดก่อนคำขอถัดไป
+assistant.sid.settings.partlySize: ดาวน์โหลดไปบางส่วน · {size}
+assistant.sid.settings.position: ตำแหน่ง
+assistant.sid.settings.positionDetail: Sid อยู่ตรงไหนบนปกเพลง
+assistant.sid.settings.privacyChat: "สิ่งที่คุณพิมพ์จะอยู่บนคอมพิวเตอร์เครื่องนี้: Sid คิดด้วย Gemma ที่นี่เอง เพื่อค้นหาเพลง Sid จะส่งคำค้นไปยัง Apple Music และเมื่อคุณขอ Sid จะอ่านเพลย์ลิสต์ การเล่นล่าสุด และ Apple Music Replay ของคุณจากบัญชี Apple Music ไม่มีการเปลี่ยนแปลงใดจนกว่าคุณจะกดใช้งาน"
+assistant.sid.settings.reads: อ่านเพลย์ลิสต์ทั้งหมดใน {seconds} วินาที (ต้องไม่เกิน {floor} วินาที)
+assistant.sid.settings.regular: ปกติ
+assistant.sid.settings.remove: ลบ
+assistant.sid.settings.removeMenu: ลบ…
+assistant.sid.settings.removeMessage: Sid ต้องใช้เพื่อแก้ไขเพลย์ลิสต์ และการดาวน์โหลดกลับมาใช้ {size}
+assistant.sid.settings.removeTitle: ลบ {model} ใช่ไหม
+assistant.sid.settings.reshape: จัดรูปใหม่
+assistant.sid.settings.reshapeDetail: เรียงจากสงบไปถึงมีชีวิตชีวา ตามจังหวะ หรือให้คีย์ไหลลื่น
+assistant.sid.settings.runSet: เล่นชุด
+assistant.sid.settings.runSetDetail: เลือกเพลงถัดไปตามคีย์และจังหวะ และรับคำขอของคุณ
+assistant.sid.settings.shaped: เพลย์ลิสต์ที่ Sid จัดรูป
+assistant.sid.settings.shapedOne: เพลย์ลิสต์ที่ Sid จัดรูป
+assistant.sid.settings.size: ขนาด
+assistant.sid.settings.sizeDetail: ขนาดเล็กทำให้ Sid เล็กลง พร้อมบับเบิลที่แคบลง
+assistant.sid.settings.skills: Sid ทำอะไรได้บ้าง
+assistant.sid.settings.skillsHere: Sid ทำอะไรได้บ้างที่นี่
+assistant.sid.settings.small: เล็ก
+assistant.sid.settings.speed: ความเร็ว
+assistant.sid.settings.storage: พื้นที่จัดเก็บ
+assistant.sid.settings.storageLine: Gemma ต้องใช้ {size} และคอมพิวเตอร์เครื่องนี้มีพื้นที่ว่าง {free}
+assistant.sid.settings.takeTime: ให้ Sid ใช้เวลาคิดนานขึ้นไหม
+assistant.sid.settings.takeTimeDetail: คำตอบเร็วในไม่กี่วินาที โหมดละเอียดใช้เวลานานขึ้นเล็กน้อยและจัดการเพลย์ลิสต์ขนาดใหญ่ได้ดีกว่า
+assistant.sid.settings.tell: แจ้งให้ทราบ
+assistant.sid.settings.tellDetail: จังหวะ คีย์ และแนวเพลงในภาพรวม
+assistant.sid.settings.thinking: วิธีที่ Sid คิด
+assistant.sid.settings.tidy: จัดระเบียบ
+assistant.sid.settings.tidyDetail: นำเพลงซ้ำออก ตัดให้ได้ความยาวที่กำหนด หรือคงจังหวะไว้
+assistant.sid.settings.together: รวมกันจนถึงตอนนี้
+assistant.sid.settings.top: บน
+assistant.sid.settings.unavailableNote: การแก้ไขและสร้างเพลย์ลิสต์กับ Sid ต้องใช้ Gemma บนคอมพิวเตอร์ที่รองรับ ชุดของ Sid ยังใช้งานได้ที่นี่
+assistant.sid.settings.unknownGpu: การ์ดจอที่ไม่ทราบรุ่น
+assistant.sid.settings.where: ค้นหา Sid ได้ที่ไหน
+assistant.sid.settings.withoutGemma: หากไม่มี Gemma Sid จะเลือกเพลงตามจังหวะ คีย์ และพลังงาน และค้นหาคำขอของคุณใน Apple Music ตามที่พิมพ์
+assistant.sid.settings.writes: เขียน {rate} โทเคนต่อวินาที (ต้องการอย่างน้อย {floor})
+assistant.sid.setView.confirmMany: Sid จะล้างเพลง {count} เพลงที่อยู่ในคิวหลังเพลงนี้ และเลือกเพลงถัดไปที่จะเล่น
+assistant.sid.setView.confirmOk: เริ่มเซ็ต
+assistant.sid.setView.confirmOne: Sid จะล้างเพลงที่อยู่ในคิวหลังเพลงนี้ และเลือกเพลงถัดไปที่จะเล่น
+assistant.sid.setView.confirmTitle: เริ่มเซ็ตของ Sid หรือไม่
+assistant.sid.setView.direction: พลังงาน
+assistant.sid.setView.end: สิ้นสุด
+assistant.sid.setView.endSet: จบเซ็ตของ Sid
+assistant.sid.setView.known: เพลงที่คุณรู้จัก
+assistant.sid.setView.liveRadio: เซ็ตของ Sid ไม่สามารถทำงานกับวิทยุสดได้
+assistant.sid.setView.new: เพลงใหม่สำหรับคุณ
+assistant.sid.setView.nothingPlaying: เล่นเพลงเพื่อเริ่มเซ็ต
+assistant.sid.setView.requestPlaceholder: ขอเพลงจาก Sid
+assistant.sid.setView.start: เริ่ม
+assistant.sid.setView.startSet: เริ่มเซ็ตของ Sid
+assistant.sid.setView.stayInKey: คงคีย์เดิม
+assistant.sid.setView.stayInKeyDetail: มิกซ์เฉพาะระหว่างคีย์ที่เข้ากันได้
+assistant.sid.setView.subtitleActive: Sid กำลังเลือกเพลงถัดไปที่จะเล่น
+assistant.sid.setView.subtitleIdle: Sid เลือกเพลงถัดไปที่จะเล่น
+assistant.sid.setView.title: เซ็ตของ Sid
+assistant.sid.size.gb: "{size} GB"
+assistant.sid.size.mb: "{size} MB"
+assistant.sid.songCount: "{count} เพลง"
+assistant.sid.source.applePick: ที่ Apple Music เลือก
+assistant.sid.source.applePlaylist: เพลย์ลิสต์ของ Apple Music
+assistant.sid.source.artist: เพลงยอดนิยมของศิลปิน
+assistant.sid.source.catalog: Apple Music
+assistant.sid.source.library: คลังเพลงของคุณ
+assistant.sid.source.playlist: ในเพลย์ลิสต์
+assistant.sid.unavailable.belowFloor: Gemma ทำงานช้าเกินไปบนคอมพิวเตอร์เครื่องนี้สำหรับ Sid
+assistant.sid.unavailable.counterMismatch: Sid ปิด Gemma หลังจากการตรวจสอบความปลอดภัยไม่ผ่าน จะลองใหม่หลังจาก Cider หรือไดรเวอร์กราฟิกอัปเดต
+assistant.sid.unavailable.gpuLimits: การ์ดแสดงผลนี้มีหน่วยความจำไม่เพียงพอสำหรับ Gemma
+assistant.sid.unavailable.gpuUnstable: การ์ดแสดงผลหยุดตอบสนองสองครั้ง Sid จึงพักการทำงานจนกว่า Cider จะเริ่มต้นใหม่
+assistant.sid.unavailable.modelCorrupt: ไฟล์ Gemma ที่ดาวน์โหลดเสียหายสองครั้ง Sid จึงหยุดเสนอให้ใช้
+assistant.sid.unavailable.noAdapter: Sid ไม่พบการ์ดแสดงผลสำหรับรัน Gemma
+assistant.sid.unavailable.noGpuWatch: Cider ไม่สามารถตรวจสอบหน่วยความจำกราฟิกบนเครื่องนี้ได้ Sid จึงจะไม่รัน Gemma บนคอมพิวเตอร์เครื่องนี้
+assistant.sid.unavailable.noStorage: Cider ไม่สามารถจัดเก็บไฟล์ของ Gemma บนคอมพิวเตอร์เครื่องนี้ได้
+assistant.sid.unavailable.noWebgpu: Gemma ต้องใช้ WebGPU ซึ่งไม่พร้อมใช้งานบนคอมพิวเตอร์เครื่องนี้
+assistant.sid.unavailable.outOfMemory: Gemma ต้องการหน่วยความจำกราฟิกมากกว่าที่คอมพิวเตอร์เครื่องนี้มีให้
+assistant.sid.unavailable.probeFailed: Sid ไม่สามารถตรวจสอบคอมพิวเตอร์เครื่องนี้ได้ จะลองอีกครั้งในภายหลัง
+assistant.sid.unavailable.softwareGpu: คอมพิวเตอร์เครื่องนี้แสดงผลกราฟิกโดยไม่มีการ์ดแสดงผล ขณะที่ Gemma ต้องการการ์ดแสดงผล
+assistant.sid.unavailable.storage: พื้นที่ว่างบนคอมพิวเตอร์เครื่องนี้ไม่เพียงพอสำหรับ Gemma
+assistant.sid.why.cameClose: ใกล้เคียง
+assistant.sid.why.linedUp: เพลงที่อยู่ในคิว
+assistant.sid.why.open: ทำไม Sid เลือก {title}
+assistant.sid.why.weighed: Sid พิจารณา {count} เพลงจาก {places}
+assistant.sid.working.starting: กำลังเริ่ม
+assistant.sid.working.stop: หยุด
+assistant.sid.working.titleBuild: กำลังสร้างเพลย์ลิสต์ของคุณ
+assistant.sid.working.titleEdit: กำลังทำงานกับ {playlist}
 audio.device.default: อุปกรณ์เริ่มต้น
 audio.device.noneFound: ไม่พบอุปกรณ์เอาต์พุต
 audio.device.placeholder: อุปกรณ์ {{id}}
@@ -551,6 +1021,8 @@ home.settings.tryBento: ลองใช้ Bento Board (เบต้า)
 home.syncFavorites: ซิงค์รายการโปรด
 home.syncFavorites.gettingArtists: กำลังดึงข้อมูลศิลปินคนโปรด...
 home.title: หน้าแรก
+hostReinstall.drm.body: Apple Music ปฏิเสธการเล่นเนื่องจากสำเนา Cider นี้ถูกติดตั้งก่อนการอัปเดต DRM ที่จำเป็น การอัปเดตในแอปไม่สามารถติดตั้งได้ ดังนั้นโปรดดาวน์โหลด Cider อีกครั้งจาก Cider Taproom และติดตั้งใหม่ เลือก OK เพื่อเปิด Cider Taproom
+hostReinstall.drm.title: ติดตั้ง Cider ใหม่เพื่อกู้คืนการเล่น
 i18n.authors: CiderCollective
 i18n.category: main
 i18n.languageName: ไทย
@@ -558,6 +1030,7 @@ i18n.languageNameEnglish: Thai
 library.albumVersions.clean: คลีน
 library.albumVersions.explicit: โจ่งแจ้ง
 library.albumVersions.label: เวอร์ชัน
+library.artists.empty: เลือกศิลปิน
 library.columnBrowser: เบราว์เซอร์แบบคอลัมน์
 library.favoritesOnly: เฉพาะรายการโปรด
 library.genres.counts: "{albums} อัลบั้ม, {songs} เพลง"
@@ -2348,8 +2821,13 @@ notificationCenter.row.muted: ปิดการแจ้งเตือนแ�
 notificationCenter.section.active: ใช้งานอยู่
 notificationCenter.section.history: ประวัติ
 notificationCenter.title: การแจ้งเตือน
+notify.explicitRestrictedSkip: 'กำลังข้าม "{name}": เนื้อหาที่ชัดเจนถูกจำกัดในบัญชี Apple ของคุณ'
+notify.explicitRestrictedStop: 'หยุดการเล่น: "{name}" มีเนื้อหาที่ชัดเจน และเนื้อหาที่ชัดเจนถูกจำกัดในบัญชี Apple ของคุณ'
 notify.licenseRefusedSkip: ไม่สามารถเล่น "{name}" ได้ในขณะนี้ กำลังข้าม
 notify.licenseRefusedStop: 'หยุดเล่นแล้ว: ไม่สามารถเล่น "{name}" ได้'
+notify.multipleTracksUnavailable: เพลงหลายเพลงใช้งานไม่ได้ ลองเพลงหรืออัลบั้มอื่น
+notify.trackUnavailableSkip: '"{name}" ใช้งานไม่ได้ กำลังข้าม'
+notify.trackUnavailableStop: 'หยุดการเล่น: "{name}" ใช้งานไม่ได้'
 nowPlaying.a11y.trackWaveform: รูปคลื่นเสียงของเพลง คลิกเพื่อข้ามไปยังตำแหน่งที่ต้องการ
 nowPlaying.a11y.waveform: รูปคลื่นของเพลงที่กำลังเล่นอยู่
 oobe.amsignin.title: ""
@@ -2512,33 +2990,45 @@ playbackHealth.backgroundFreeze.eyebrow: การแจ้งเตือนก
 playbackHealth.backgroundFreeze.hint: กฎของตัวจัดการหน้าต่างหรือการตั้งค่าระบบปฏิบัติการสามารถช่วยให้ Cider ทำงานต่อไปได้แม้ไม่ได้โฟกัสหน้าต่าง เลือก 'ดูข้อมูลเพิ่มเติม' เพื่อดูวิธีแก้ไขปัญหาเบื้องต้นสำหรับระบบของคุณ
 playbackHealth.backgroundFreeze.learnMore: ดูข้อมูลเพิ่มเติม
 playbackHealth.backgroundFreeze.title: ระบบของคุณหยุดการทำงานของ Cider ชั่วคราวในเบื้องหลัง
+playbackHealth.hostReinstall.label: ต้องติดตั้ง Cider ใหม่
+playbackHealth.hostReinstall.message: Apple Music ไม่ยอมรับการติดตั้งนี้ โปรดติดตั้ง Cider ใหม่จาก Cider Taproom
 playbackHealth.localIssue: ปัญหาการเล่นในเครื่อง
 playlist.collaborative.tooltip: เพลย์ลิสต์นี้เปิดให้ผู้ร่วมจัดทำ
 playlist.collaborators.andOthers: "{{name}} และอีก {{count}} คน"
 playlist.collaborators.count: ผู้ร่วมจัดทำ {{count}} คน
 playlist.collaborators.owner: เจ้าของ
 playlist.collaborators.pair: "{{a}} และ {{b}}"
+playlist.createFailed: ไม่สามารถสร้างเพลย์ลิสต์ได้ โปรดลองอีกครั้งในอีกสักครู่
 playlist.description: คำอธิบายเพลย์ลิสต์
 playlist.error.changedElsewhere.message: เพลย์ลิสต์นี้ถูกแก้ไขบนอุปกรณ์อื่น โปรดโหลดใหม่แล้วลองอีกครั้ง
 playlist.error.changedElsewhere.title: เพลย์ลิสต์ถูกแก้ไขจากที่อื่น
 playlist.error.locked.message: ไม่สามารถเอาเพลงนี้ออกได้ในขณะที่ใช้ตัวเลือกการจัดเรียงอยู่
 playlist.error.locked.title: เพลย์ลิสต์ถูกล็อก
 playlist.error.locked.tooltip: ไม่สามารถจัดเรียงเพลย์ลิสต์นี้ใหม่ได้ในขณะที่ใช้ตัวเลือกการจัดเรียงอยู่
+playlist.error.notEditable: ไม่สามารถแก้ไขเพลย์ลิสต์นี้ได้
+playlist.error.queueRemoveConflict: เพลย์ลิสต์นี้มีการเปลี่ยนแปลงหลังจากสร้างคิวเพลงแล้ว โปรดเปิดเพลย์ลิสต์เพื่อลบเพลงนี้
 playlist.error.save.message: เกิดข้อผิดพลาดขณะบันทึกเพลย์ลิสต์ โปรดลองอีกครั้ง
 playlist.error.save.title: บันทึกเพลย์ลิสต์ไม่สำเร็จ
+playlist.error.smartNotEditable: เพลย์ลิสต์อัจฉริยะทำงานตามเงื่อนไขที่กำหนดไว้ จึงไม่สามารถลบเพลงออกด้วยตนเองได้
 playlist.error.updating.message: เกิดข้อผิดพลาดขณะอัปเดตเพลย์ลิสต์ โปรดลองอีกครั้ง
 playlist.error.updating.title: เกิดข้อผิดพลาดในการอัปเดตเพลย์ลิสต์
 playlist.folderEmpty: ไม่มีเพลย์ลิสต์ในโฟลเดอร์นี้
+playlist.folderMoveFailed: ไม่สามารถย้ายโฟลเดอร์ได้ โปรดลองอีกครั้งในอีกสักครู่
 playlist.folderRenameHint: ดับเบิลคลิกเพื่อเปลี่ยนชื่อ
 playlist.lastUpdated: อัปเดตล่าสุดเมื่อ {{date}}
 playlist.madeByApple: สร้างโดย Apple
+playlist.moveFailed: ไม่สามารถย้ายเพลย์ลิสต์ได้ โปรดลองอีกครั้งในอีกสักครู่
 playlist.nameEmpty: ชื่อเพลย์ลิสต์ต้องไม่ว่างเปล่า
+playlist.newFolderNotMoved: สร้างโฟลเดอร์แล้ว แต่ไม่สามารถย้ายไปยังโฟลเดอร์ที่เลือกได้ โฟลเดอร์จะอยู่นอกโฟลเดอร์ใด ๆ
+playlist.newPlaylistNotMoved: สร้างเพลย์ลิสต์แล้ว แต่ไม่สามารถย้ายไปยังโฟลเดอร์ที่เลือกได้ เพลย์ลิสต์จะอยู่นอกโฟลเดอร์ใด ๆ
 playlist.noTracks: ไม่มีเพลง
 playlist.personalMix: มิกซ์ส่วนตัว
 playlist.playlistName: ชื่อเพลย์ลิสต์
 playlist.publishOnProfileAndSearch: แสดงบนโปรไฟล์และช่องค้นหา
 playlist.refresh.message: เพลย์ลิสต์นี้ได้รับการอัปเดตโดยอุปกรณ์อื่น ระบบกำลังรีเฟรชเพลย์ลิสต์
 playlist.refresh.title: จำเป็นต้องรีเฟรชเพลย์ลิสต์
+playlist.suggestions.subtitle: ดูตัวอย่างและเพิ่มในเพลย์ลิสต์
+playlist.suggestions.title: เพลงที่แนะนำ
 playlist.untitled: ไม่มีชื่อ
 podcast.comingSoon.description: ระบบรองรับพอดคาสต์กำลังอยู่ระหว่างการปรับปรุงใหม่หลังจากการเปลี่ยนแปลงครั้งใหญ่ในระบบการเล่นของ Cider และจะกลับมาให้ใช้งานอีกครั้งในการอัปเดตในอนาคต
 podcast.comingSoon.hide: ซ่อนจากแถบด้านข้าง
@@ -2641,6 +3131,7 @@ settings.artwork.hiresImages.warning: อาจเพิ่มเวลาใน
 settings.audio.atmos: Dolby Atmos
 settings.audio.atmos.binaural.desc: เรนเดอร์ Atmos เป็นสเตอริโอแบบไบนอรัลผ่าน CiderAudio โดยที่การเล่นเพลงแบบประสาน (Crossfade), Automix และการเปลี่ยนเพลงแบบไร้รอยต่อยังคงทำงานได้ตามปกติ
 settings.audio.atmos.description: กำหนดค่าการเล่นเสียง Atmos สำหรับอุปกรณ์เอาต์พุตปัจจุบันของคุณ
+settings.audio.atmos.normalizationHint: มิกซ์ Dolby Atmos มีระดับเสียงเบากว่าสเตอริโอมาสเตอร์ เปิดการปรับระดับเสียงอัตโนมัติเพื่อปรับให้เท่ากัน
 settings.audio.atmos.off.desc: ปิดใช้งาน Atmos คอนเทนต์ทั้งหมดจะเล่นเป็นเสียงสเตอริโอมาตรฐาน
 settings.audio.atmos.passthrough: Passthrough
 settings.audio.atmos.passthrough.desc: ข้ามการประมวลผลเสียงทั้งหมด โดยจะส่งสัญญาณ Atmos แบบหลายช่องสัญญาณไปยังอุปกรณ์โดยตรง เหมาะสำหรับเครื่องรับ AV
@@ -2792,6 +3283,7 @@ settings.client.genten.proxyServer: พร็อกซีเซิร์ฟเ�
 settings.client.genten.proxyServer.desc: ที่อยู่ของพร็อกซีเซิร์ฟเวอร์
 settings.client.genten.restartNotice: คุณต้องเริ่มการทำงานของแอปพลิเคชันใหม่เพื่อให้การเปลี่ยนแปลงมีผล
 settings.client.genten.saveError: เกิดข้อผิดพลาดในการบันทึกการตั้งค่า
+settings.client.genten.saveFailed: ไม่สามารถบันทึกการตั้งค่าได้ โปรดลองอีกครั้ง
 settings.client.genten.saveSuccess: บันทึกการตั้งค่าแล้ว
 settings.client.genten.smoothScrolling: การเลื่อนหน้าจอแบบลื่นไหล
 settings.client.genten.smoothScrolling.desc: เปิดหรือปิดการเลื่อนหน้าจอแบบลื่นไหล
@@ -2886,6 +3378,7 @@ settings.client.windows.proxyServer: พร็อกซีเซิร์ฟเ�
 settings.client.windows.proxyServer.desc: ที่อยู่ของพร็อกซีเซิร์ฟเวอร์
 settings.client.windows.restartNotice: คุณต้องเริ่มการทำงานของแอปพลิเคชันใหม่เพื่อให้การเปลี่ยนแปลงมีผล
 settings.client.windows.saveError: เกิดข้อผิดพลาดในการบันทึกการตั้งค่า
+settings.client.windows.saveFailed: ไม่สามารถบันทึกการตั้งค่าได้ โปรดลองอีกครั้ง
 settings.client.windows.saveSuccess: บันทึกการตั้งค่าแล้ว
 settings.client.windows.taskbarProgress: แสดงความคืบหน้าการเล่นบนแถบงาน
 settings.client.windows.taskbarProgress.desc: แสดงความคืบหน้าการเล่นบนไอคอนแถบงาน
@@ -3064,6 +3557,7 @@ settings.equalizer.warning: เราจะไม่รับผิดชอบ�
 settings.extensions.addBuiltInSnippet: เพิ่มสนิปเป็ตในตัว
 settings.extensions.browsePluginMarket: เลือกดูตลาดปลั๊กอิน
 settings.extensions.browseThemeMarket: เลือกดูตลาดธีม
+settings.extensions.byAuthor: โดย {author}
 settings.extensions.checkUpdates: ตรวจสอบการอัปเดตส่วนขยายเมื่อเริ่มต้นระบบ
 settings.extensions.checkUpdates.desc: ค้นหาการอัปเดตธีม สนิปเป็ต และปลั๊กอินทุกครั้งที่เปิด Cider
 settings.extensions.createPlugin: สร้างปลั๊กอิน
@@ -3074,13 +3568,24 @@ settings.extensions.fileWatcher: เปิดใช้งานการตร�
 settings.extensions.fileWatcher.desc: โหลดสไตล์ชีทของธีมใหม่โดยอัตโนมัติเมื่อไฟล์ในดิสก์มีการเปลี่ยนแปลง
 settings.extensions.importFromFile: นำเข้าจากไฟล์
 settings.extensions.maintenance: การบำรุงรักษา
+settings.extensions.marketplaceId: "ID: {id}"
 settings.extensions.newThemeDialog.identifier: ตัวระบุ
 settings.extensions.newThemeDialog.name: ชื่อธีม
 settings.extensions.newThemeDialog.title: ธีมใหม่
 settings.extensions.openAppData: เปิดโฟลเดอร์ AppData
 settings.extensions.openAppData.desc: แสดงโฟลเดอร์ที่ Cider ใช้สำหรับอ่านส่วนขยาย
+settings.extensions.plugins.directory: ไดเรกทอรี
 settings.extensions.plugins.empty: ไม่ได้ติดตั้งปลั๊กอินไว้
+settings.extensions.plugins.getMore: รับปลั๊กอินเพิ่มเติม
+settings.extensions.plugins.identifier: ตัวระบุ
+settings.extensions.plugins.loadFailed.error: "ปลั๊กอินนี้เริ่มทำงานไม่สำเร็จ: {{ error }}"
+settings.extensions.plugins.loadFailed.incompatible: ปลั๊กอินนี้สร้างขึ้นสำหรับ Cider เวอร์ชันเก่า จึงไม่สามารถทำงานได้ โปรดตรวจสอบการอัปเดตในมาร์เก็ตเพลส
+settings.extensions.plugins.loadFailed.invalid: นี่ไม่ใช่ปลั๊กอิน Cider ที่ถูกต้อง จึงไม่สามารถทำงานได้
+settings.extensions.plugins.refreshList: รีเฟรชรายการปลั๊กอิน
 settings.extensions.plugins.running: กำลังทำงาน
+settings.extensions.plugins.uninstall: ถอนการติดตั้ง
+settings.extensions.plugins.uninstallConfirm: ถอนการติดตั้ง "{name}" หรือไม่?
+settings.extensions.plugins.uninstallTitle: ถอนการติดตั้งปลั๊กอิน
 settings.extensions.refresh: รีเฟรชส่วนขยาย
 settings.extensions.refresh.desc: สแกนธีม สนิปเป็ต และปลั๊กอินจากดิสก์อีกครั้ง
 settings.extensions.refreshed: รีเฟรชธีม สนิปเป็ต และปลั๊กอินแล้ว
@@ -3101,6 +3606,7 @@ settings.extensions.themes.activeCount: เปิดใช้งานอยู�
 settings.extensions.themes.empty: ไม่มีธีมที่ติดตั้งไว้
 settings.extensions.themes.stylesheetMany: "{{ count }} สไตล์ชีต"
 settings.extensions.themes.stylesheetOne: 1 สไตล์ชีต
+settings.extensions.viewOnMarketplace: ดูใน Marketplace
 settings.fonts.description: เปลี่ยนแบบอักษรที่ใช้ในแอป
 settings.fonts.lyrics: แบบอักษรเนื้อเพลง
 settings.fonts.lyrics.description: แบบอักษรที่ใช้สำหรับเนื้อเพลง
@@ -3873,6 +4379,7 @@ settings.option.lyrics.thirdPartySources: เปิดใช้งานแห�
 settings.option.lyrics.thirdPartySources.description: อนุญาตให้ดึงเนื้อเพลงจาก Musixmatch และ NetEase เมื่อไม่มีเนื้อเพลงของ Apple Music คุณภาพอาจแตกต่างกันไป และการใช้งานอย่างต่อเนื่องอาจส่งผลให้เกิดการจำกัดอัตราการส่งข้อมูล
 settings.option.lyrics.timeOffset: การชดเชยเวลาเนื้อเพลง (วินาที)
 settings.option.lyrics.timeOffset.description: ปรับเวลาการแสดงผลเนื้อเพลง ค่าบวกจะแสดงเนื้อเพลงเร็วขึ้น ค่าลบจะแสดงช้าลง มีประโยชน์สำหรับการแก้ไขปัญหาเสียงไม่ตรงกับเนื้อเพลง
+settings.option.lyrics.timeOffset.descriptionV2: ปรับจังหวะการแสดงเนื้อเพลง ค่าบวกจะแสดงเนื้อเพลงช้าลง ค่าลบจะแสดงเร็วขึ้น มีประโยชน์สำหรับการแก้ไขระบบเสียงที่ไม่ซิงค์
 settings.option.lyrics.timestampStyle: รูปแบบการประทับเวลา
 settings.option.lyrics.timestampStyle.both: ทั้งคู่
 settings.option.lyrics.timestampStyle.chip: ชิป
@@ -4327,6 +4834,7 @@ settings.resetCider.category.appleMusic: ลงชื่อออกจาก Ap
 settings.resetCider.category.appleMusic.desc: ลบบัญชี Apple Music ออกจากอุปกรณ์นี้
 settings.resetCider.category.caches: แคช
 settings.resetCider.category.caches.desc: ภาพหน้าปก คลัง หน้าแรก และแคชออฟไลน์อื่นๆ
+settings.resetCider.category.caches.descModels: แคชงานศิลป์ คลังเพลง หน้าแรก และแคชออฟไลน์อื่น ๆ รวมถึงโมเดลที่ดาวน์โหลดไว้ เช่น Gemma
 settings.resetCider.category.integrations: การเข้าสู่ระบบบริการภายนอก
 settings.resetCider.category.integrations.desc: ข้อมูลลับของ Last.fm, ListenBrainz และบริการ Scrobbler อื่นๆ
 settings.resetCider.category.localMusic: ฐานข้อมูลคลังเพลงในเครื่อง
