@@ -254,6 +254,9 @@ album.track.unavailable.unreleased: This item has not been released yet.
 album.track.unavailable.zeroDuration: Item duration is 0 seconds, likely unreleased.
 album.upcoming.badge: Upcoming Album
 app.name: Cider
+app.ptbDisclaimer.confirm: I understand
+app.ptbDisclaimer.message: This is a Public Testing Branch build. This build is not guaranteed to be stable and may contain bugs. Do not report bugs / issues found in this build. If you encounter any issues, please switch to the stable build before reporting them.
+app.ptbDisclaimer.title: Public Testing Branch disclaimer
 app.unsupportedClient.message: This client is not supported. Please ensure you are using the latest version of Cider.
 app.unsupportedClient.title: Unsupported Client
 assistant.sid.agent.added: Added {count} songs
@@ -726,10 +729,16 @@ audio.device.default: Default Device
 audio.device.noneFound: No output devices found
 audio.device.placeholder: Device {{id}}
 audiolab.waiting: Waiting for a Song to be Queued
+auth.error.devToken: Could not reach Apple Music
+auth.error.generic: Couldn't finish signing in. Check your connection and try again.
+auth.error.invalidToken: Received an invalid token
 auth.error.popupBlocked: Pop-up was blocked
+auth.error.timeout: Sign-in timed out
+auth.error.unavailable: This Apple ID can't use Apple Music in Cider. Cider needs an active, paid Apple Music subscription.
 auth.error.windowFailed: Sign-in window failed to open
 auth.mutExpired.confirm: Sign in
 auth.mutExpired.message: Your Apple Music session has expired. Sign in again to continue.
+auth.signedIn: Signed in
 auth.signInRetry.confirm: Try again
 auth.signInRetry.message: The sign-in window couldn't open. Try again?
 bugReport.addImage: Add image
@@ -2843,6 +2852,7 @@ oobe.amupsell.title: Before we start
 oobe.appearance.accentHint: Used for buttons, highlights, and progress across the app. Try one, it previews live.
 oobe.appearance.subtitle: Pick a colour scheme and an accent colour. You can change these anytime in Settings → Visual.
 oobe.appearance.title: Make Cider yours
+oobe.appleNotice: "Please note: Apple Music is a trademark of Apple Inc. Cider is a third-party client for Apple Music and is not affiliated with Apple Inc."
 oobe.audio.advancedFunctionality: ""
 oobe.audio.subtitle: ""
 oobe.audio.text: |-
@@ -2881,19 +2891,31 @@ oobe.intro.subtitle: ""
 oobe.intro.text: Let's get a few things set up so you can use Cider how you'd like. You can always change these settings later.
 oobe.intro.title: Welcome to Cider
 oobe.layout.subtitle: Choose a layout that suits your style
+oobe.login.alreadySignedIn: You are already signed in
 oobe.login.skip: Skip for now
 oobe.login.skipTooltip: You will only be able to use the app in preview mode
 oobe.login.subtitle: Sign in with your Apple Music account to start enjoying your music
+oobe.login.terms: By continuing, you agree to the Terms of Service and Privacy Policy
 oobe.login.title: One Last Step
 oobe.login.userToken: Sign in with a user token
+oobe.music.mute: Mute setup music
+oobe.music.unmute: Unmute setup music
 oobe.next: Next
 oobe.no: No
+oobe.performance.full.descriptionV2: Keeps visual effects on. Cider only turns them down on its own when your computer cannot draw them.
+oobe.performance.fullV2: Full quality
 oobe.performance.hint: Performance Mode reduces visual effects and saves CPU. Off by default on systems like yours, but you can enable it anytime.
 oobe.performance.lowEndHint: We detected a lower-thread CPU. We recommend Performance Mode for smoother playback and lower CPU use.
+oobe.performance.mode.description: Turns off heavy visual effects such as large blurs and animated backgrounds. Good for older computers.
+oobe.performance.modeV2: Performance mode
+oobe.performance.subtitleV3: Performance mode turns off the heaviest visual effects. Full quality keeps them on unless your computer cannot draw them.
 oobe.performance.title: Performance
+oobe.performance.whereToChangeV3: In Settings, this choice is the {setting} option under {page}. Choose {on} for Performance mode or {automatic} for Full quality. You can change it there anytime.
 oobe.player.subtitle: The now-playing bar that lives at the edge of the window. Pick the density that fits you.
 oobe.player.title: Choose your player
 oobe.previous: Previous
+oobe.progress: "Step {current} of {total}: {title}"
+oobe.progress.label: Setup progress
 oobe.step.appearance: Appearance
 oobe.step.connections: Connections
 oobe.step.features: Sound
@@ -2903,6 +2925,7 @@ oobe.step.performance: Performance
 oobe.step.player: Player
 oobe.step.welcome: Welcome
 oobe.step.window: Window Style
+oobe.subscriptionNote: Cider needs an active, paid Apple Music subscription. Apple Music Voice and some promotional trials are not supported.
 oobe.visual.layout.text: |-
   Cider features two different window layouts.
   Maverick is an iTunes-like layout with the player at the top of the window.
@@ -2915,6 +2938,10 @@ oobe.visual.title: Visual
 oobe.welcome.getStarted: Get Started
 oobe.welcome.importSettings: Import settings…
 oobe.welcome.selectLanguage: Select your preferred language
+oobe.window.native: Native window
+oobe.window.native.description: Uses your desktop environment's titlebar and borders.
+oobe.window.styled: Styled controls
+oobe.window.styled.description: Custom in-app titlebar with embedded window controls.
 oobe.window.subtitle: Choose how the app window integrates with your desktop environment
 oobe.window.title: Window Style
 oobe.yes: Yes
@@ -3015,6 +3042,8 @@ playlist.error.updating.title: Error updating playlist
 playlist.folderEmpty: No playlists in this folder
 playlist.folderMoveFailed: The folder couldn't be moved. Try again in a moment.
 playlist.folderRenameHint: Double-click to rename
+playlist.history: Playlist history
+playlist.history.withCount: Playlist history ({count})
 playlist.lastUpdated: Last Updated {{date}}
 playlist.madeByApple: Made by Apple
 playlist.moveFailed: The playlist couldn't be moved. Try again in a moment.
@@ -3135,6 +3164,7 @@ settings.audio.atmos.normalizationHint: Dolby Atmos mixes are quieter than stere
 settings.audio.atmos.off.desc: Atmos disabled. All content plays as standard stereo.
 settings.audio.atmos.passthrough: Passthrough
 settings.audio.atmos.passthrough.desc: Bypasses all audio processing. Multichannel Atmos is sent directly to the device. Ideal for AV receivers.
+settings.audio.atmos.passthrough.descV2: Sends multichannel Atmos straight to the device, for AV receivers. Audio Lab, the equaliser and Listening Mode are bypassed.
 settings.audio.atmos.passthroughActive: Passthrough active — change in full settings.
 settings.audio.atmos.standard.desc: Multichannel Atmos with CiderAudio processing, Crossfade, Automix, Seamless Transitions continue to work as expected.
 settings.audio.atmosMode: Atmos Mode
@@ -3237,6 +3267,7 @@ settings.automix.normalizeDuration: Normalise Duration
 settings.automix.normalizeDurationHint: Blend time for loudness matching ({ms}ms)
 settings.automix.spectralSeparation: Spectral Separation
 settings.automix.spectralSeparationHint: How far the two tracks are pulled apart in frequency across a transition.
+settings.automix.spectralSeparationHintV2: How far the two tracks are pulled apart in frequency across a transition ({value}).
 settings.automix.speedSettle: Speed Settle Time
 settings.automix.speedSettleHint: How long playback speed takes to return to normal after a tempo-matched mix ({ms}ms)
 settings.automix.tempoAlign: Beat Matching
@@ -3390,6 +3421,7 @@ settings.client.windows.v8OptimizeSize.adds: Adds
 settings.client.windows.v8OptimizeSize.to: to WebView2
 settings.client.windows.wpfRendering: WPF Rendering Mode
 settings.client.windows.wpfRendering.desc: Choose the rendering mode for WPF. If unsure, leave as software.
+settings.client.windows.wpfRendering.descV2: Choose how the window is drawn. If unsure, leave this on Hardware.
 settings.client.windows.wpfRendering.hardware: Hardware
 settings.client.windows.wpfRendering.software: Software
 settings.configBackups.confirm.body: Your current settings will be replaced by the ones saved on {date}, and Cider will reload.
@@ -3499,6 +3531,7 @@ settings.contentFilter.empty: No keywords added yet.
 settings.contentFilter.inputPlaceholder: Add a keyword...
 settings.contentFilter.title: Filter Keywords
 settings.crossfade.advanced: Advanced Crossfade Settings
+settings.crossfade.automixStillBlends: Automix is on, so songs can still blend into each other. Turn off Automix below to stop all blending.
 settings.crossfade.description: Smoothly fade out the current track while fading in the next.
 settings.crossfade.disableFor: Disable Crossfade For...
 settings.crossfade.duration: Duration
@@ -3624,6 +3657,7 @@ settings.general.section.cache: Cache
 settings.general.section.cache.description: Stored artwork and metadata Cider keeps on disk so pages load faster.
 settings.general.section.desktop: Desktop
 settings.general.section.desktop.description: Keyboard shortcuts, and how Cider behaves in the taskbar and on close.
+settings.general.section.desktop.descriptionV2: Keyboard shortcuts, keeping the computer awake while playing, and how Cider behaves in the taskbar and on close.
 settings.general.section.language: Language
 settings.general.section.language.description: The interface language, and how to report or credit its translations.
 settings.general.section.playback: Playback
@@ -3960,6 +3994,7 @@ settings.option.advanced.mavericksLcd.style: Style
 settings.option.advanced.mavericksLcd.style.glass: Glass
 settings.option.advanced.mediaArtwork: Media Item Artwork
 settings.option.advanced.mediaArtwork.controls: Artwork Highlights and Hi-res Images
+settings.option.advanced.mediaArtwork.controlsV2: Artwork Highlighting and Fade-In
 settings.option.advanced.mediaArtwork.description: Artwork on grids, lists and rows throughout the app.
 settings.option.advanced.notificationStyle: Notification Style
 settings.option.advanced.performance: Performance
@@ -3989,8 +4024,11 @@ settings.option.advanced.settingsTakeout: Export / Import Settings
 settings.option.advanced.settingsTakeout.description: Back up your preferences to a file, or restore them on another device. Account logins are never included.
 settings.option.advanced.simpleArtworkBg: Simple Artwork Background
 settings.option.advanced.simpleArtworkBg.brightness: Brightness %
+settings.option.advanced.simpleArtworkBg.brightnessV2: Brightness
 settings.option.advanced.simpleArtworkBg.contrast: Contrast %
+settings.option.advanced.simpleArtworkBg.contrastV2: Contrast
 settings.option.advanced.simpleArtworkBg.saturate: Saturation %
+settings.option.advanced.simpleArtworkBg.saturateV2: Saturation
 settings.option.advanced.simpleArtworkBg.useMask: Use Lower Mask
 settings.option.advanced.sonoma: Sonoma
 settings.option.advanced.sonoma.lyricArc: Arc Lyrics
@@ -4296,6 +4334,8 @@ settings.option.general.onStartup: On Startup
 settings.option.general.onStartup.openStartup: Open Startup Page
 settings.option.general.onStartup.resume: Resume Last Session
 settings.option.general.pagination: Items to show per page
+settings.option.general.preventDisplaySleep: Keep the display on while playing
+settings.option.general.preventSystemSleep: Keep the computer awake while playing
 settings.option.general.privacy: Privacy
 settings.option.general.promptOnClose: Prompt on close when music is playing
 settings.option.general.queue: Queue
@@ -4322,6 +4362,7 @@ settings.option.general.sleepTimerSettings: Sleep Timer Settings
 settings.option.general.startupPage: Startup Page
 settings.option.general.startupPage.blank: Blank Page
 settings.option.general.startupPage.description: Choose the page that will be displayed when you open Cider.
+settings.option.general.startupPage.descriptionV2: The page Cider opens in new tabs, and at launch when On Startup is set to Open Startup Page.
 settings.option.general.startupPage.newTab: New Tab Page
 settings.option.general.startupPage.personalHome: Personal Home Page
 settings.option.general.themeUpdateNotification: Automatically check for theme updates
@@ -4331,6 +4372,7 @@ settings.option.general.translators: Translators
 settings.option.general.translators.description: Thanks to these contributors for helping translate Cider. Click a name to open their GitHub profile.
 settings.option.general.useSmartQueueByDefault: Use Smart Queue by default
 settings.option.general.useSmartQueueByDefault.description: Automatically apply Smart Queue ordering when the queue is built. Requires Automix.
+settings.option.general.useSmartQueueByDefault.needsAutomix: Automix is off in Audio, so Smart Queue won't reorder anything.
 settings.option.general.warnBeforeQueueOverride: Warn before overriding queue
 settings.option.hide: Hide
 settings.option.left: Left
@@ -4417,6 +4459,9 @@ settings.option.performance.enableMediaItemInspect.description: Can slightly aff
 settings.option.performance.gameMode: Game Mode
 settings.option.performance.gameMode.description: Reduces visual effects and can enable Windows efficiency mode for lower CPU use.
 settings.option.performance.gameMode.disable: Disable Game Mode
+settings.option.performance.graphicsAcceleration: Graphics acceleration
+settings.option.performance.graphicsAcceleration.autoOff: Off because this PC draws graphics in software.
+settings.option.performance.graphicsAcceleration.description: Automatic turns it off in a virtual machine that draws graphics in software. Changes apply the next time Cider starts.
 settings.option.performance.host: Host
 settings.option.performance.immersiveRenderer: Immersive Renderer
 settings.option.performance.immersiveRenderer.description: Use Canvas 2D instead of WebGPU if the animated background misbehaves or uses too much GPU.
@@ -4432,6 +4477,8 @@ settings.option.performance.preloadSidebarPages: Preload sidebar pages
 settings.option.performance.preloadSidebarPages.description: Loads sidebar pages before you open them. On hover starts when the pointer rests on a sidebar item. When idle also loads Listen Now, Browse and Radio after startup and refreshes library lists you have opened before.
 settings.option.performance.preloadSidebarPages.idle: When idle
 settings.option.performance.preloadSidebarPages.intent: On hover
+settings.option.performance.reduceEffects: Reduce visual effects
+settings.option.performance.reduceEffects.description: Turns off blur, glass, glow and animated backgrounds so the app draws less. Automatic turns it on when there is no working graphics card, or when your system asks for less transparency.
 settings.option.performance.renderer.auto: Automatic (WebGPU when supported)
 settings.option.performance.renderer.canvas: Canvas 2D
 settings.option.performance.renderer.webgpu: WebGPU
@@ -4651,7 +4698,10 @@ settings.option.visual.liquidGlassPlayer: Liquid Glass Player Bar
 settings.option.visual.liquidGlassPlayer.description: Use the liquid-glass surface for the now-playing player bar. Turn off for a flat, solid panel (also lighter to render).
 settings.option.visual.liquidGlassScrollPerf: Lightweight Glass While Scrolling
 settings.option.visual.liquidGlassScrollPerf.description: Simplify the liquid-glass refraction to a plain blur while scrolling, then ease it back in when you stop. Reduces scroll stutter on demanding systems with no change at rest. Always on in Game Mode.
+settings.option.visual.liquidGlassScrollPerf.descriptionV2: Simplify the liquid-glass refraction to a plain blur while scrolling, then ease it back in when you stop. Reduces scroll stutter on demanding systems with no change at rest.
 settings.option.visual.mainMenuPosition: Main Menu Position
+settings.option.visual.matchPageToArtwork: Match page to artwork
+settings.option.visual.matchPageToArtwork.description: Paints album and playlist pages in the colours of their artwork, in light and dark mode.
 settings.option.visual.mergeAppleMusicPlaylists: Merge Apple Music Playlists
 settings.option.visual.mergeAppleMusicPlaylists.description: Mix Apple Music–curated playlists into the main Playlists section instead of showing them as a separate group.
 settings.option.visual.miniplayerSkin: Mini Player Layout
@@ -4829,6 +4879,7 @@ settings.prompt.visual.plugin.github.success: Plugin installed successfully, Pre
 settings.prompt.visual.plugin.github.URL: Enter the URL of the plugin you want to install
 settings.prompt.visual.theme.github.URL: Enter the URL of the theme you want to install
 settings.prompt.visual.theme.uninstallTheme: Are you sure you want to uninstall {{theme}}?
+settings.reloadPrompt.message: An app refresh is required to apply changes. Do you want to continue?
 settings.requiresNewerClient: Requires a newer Cider client.
 settings.resetCider.category.appleMusic: Sign out of Apple Music
 settings.resetCider.category.appleMusic.desc: Remove the Apple Music account from this device
@@ -4872,6 +4923,7 @@ settings.smartPlaylists.section.maintenance: Maintenance
 settings.smartPlaylists.section.maintenance.description: Force every rule to run now, or drop the cached copy of your library.
 settings.smartPlaylists.section.rules: Rules
 settings.smartPlaylists.section.rules.description: Whether Cider applies embedded playlist rules, and how often it re-evaluates them.
+settings.smartPlaylists.section.rules.descriptionV2: Whether Cider applies embedded playlist rules. They re-run with Background Refresh Time in Power Usage.
 settings.sweetener.useSystemAccentColor: Use System Accent Colour
 settings.takeout.chooseFile: Choose file…
 settings.takeout.error.badVersion: That file is missing version information.
@@ -4902,6 +4954,7 @@ settings.title: Settings
 settings.troubleshooting.bgDiagnostics: Background Playback Diagnostics
 settings.troubleshooting.bgDiagnostics.desc: Extra log breadcrumbs for diagnosing playback problems while the window is minimised or unfocused — who paused the player, timer starvation, and OS suspension episodes. Enable when reporting a background playback bug.
 settings.troubleshooting.desc: Log files and MKLite debug logging.
+settings.troubleshooting.descV2: MKLite and background playback logging.
 settings.troubleshooting.hevcWorkaround: HEVC Workaround
 settings.troubleshooting.hevcWorkaround.desc: Workaround for a bug in WebView2 with some GPUs that have issues with 10-bit SDR HEVC playback by applying a filter to compensate for the visual shift.
 settings.troubleshooting.impressionReporting: PlayActivity Impression Reporting
@@ -4925,6 +4978,8 @@ settings.updates.action.check: Check for Updates
 settings.updates.action.install: Install Update
 settings.updates.action.restart: Restart Cider
 settings.updates.action.retry: Try Again
+settings.updates.autoCheck: Check for updates automatically
+settings.updates.autoCheck.description: When off, Cider checks only when you open this page.
 settings.updates.build: Build
 settings.updates.channel: Channel
 settings.updates.codename: Codename
@@ -5589,6 +5644,8 @@ updates.installUnavailable.body: This version is not available to download on yo
 updates.lateststable.title: Latest Stable Release
 updates.loadFailed.body: Check your connection and try again.
 updates.loadFailed.title: Cider could not load the available versions
+updates.newVersion.body: A new version of Cider is available. Go to Updates to download it?
+updates.newVersion.title: New version available
 updates.notifyForBranch.tooltip: Notify for this branch
 updates.otherVersions.title: Other Versions
 updates.ptb.name: Public Testing Branch
