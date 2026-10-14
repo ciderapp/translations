@@ -328,6 +328,9 @@ album.track.unavailable.unreleased: このアイテムはまだ配信されて�
 album.track.unavailable.zeroDuration: 項目の再生時間が0秒です。未リリースの可能性があります。
 album.upcoming.badge: リリース予定
 app.name: Cider
+app.ptbDisclaimer.confirm: 理解しました
+app.ptbDisclaimer.message: これはPublic Testing Branchのビルドです。このビルドの安定性は保証されず、バグが含まれている可能性があります。このビルドで見つかったバグや問題は報告しないでください。問題が発生した場合は、報告する前に安定版ビルドに切り替えてください。
+app.ptbDisclaimer.title: Public Testing Branchの免責事項
 app.unsupportedClient.message: このクライアントはサポートされていません。最新バージョンのCiderを使用していることを確認してください。
 app.unsupportedClient.title: サポートされていないクライアント
 assistant.sid.agent.added: "{count}曲を追加しました"
@@ -800,10 +803,16 @@ audio.device.default: デフォルトのデバイス
 audio.device.noneFound: 出力デバイスが見つかりません
 audio.device.placeholder: デバイス {{id}}
 audiolab.waiting: 曲がキューに追加されるのを待機中
+auth.error.devToken: Apple Musicに接続できませんでした
+auth.error.generic: サインインを完了できませんでした。接続を確認して、もう一度お試しください。
+auth.error.invalidToken: 無効なトークンを受信しました
 auth.error.popupBlocked: ポップアップがブロックされました
+auth.error.timeout: サインインがタイムアウトしました
+auth.error.unavailable: このApple IDではCiderでApple Musicを利用できません。Ciderには有効な有料のApple Musicサブスクリプションが必要です。
 auth.error.windowFailed: サインインウィンドウを開けませんでした
 auth.mutExpired.confirm: サインイン
 auth.mutExpired.message: Apple Musicのセッションの期限が切れました。続行するにはもう一度サインインしてください。
+auth.signedIn: サインインしました
 auth.signInRetry.confirm: 再試行
 auth.signInRetry.message: サインインウィンドウを開けませんでした。もう一度試しますか？
 bugReport.addImage: 画像を追加
@@ -2943,6 +2952,7 @@ oobe.amupsell.title: 開始する前に
 oobe.appearance.accentHint: アプリ全体のボタン、ハイライト、進行状況に使用されます。選択するとリアルタイムでプレビューされます。
 oobe.appearance.subtitle: カラースキームとアクセントカラーを選択します。これらはいつでも「設定 → ビジュアル」で変更できます。
 oobe.appearance.title: Ciderをあなた好みに
+oobe.appleNotice: ご注意ください：Apple Musicは Apple Inc. の商標です。Ciderは Apple Music のサードパーティ製クライアントであり、Apple Inc. とは提携していません。
 oobe.audio.advancedFunctionality: ""
 oobe.audio.subtitle: ""
 oobe.audio.text: |-
@@ -2981,19 +2991,31 @@ oobe.intro.subtitle: ""
 oobe.intro.text: Cider をお好みの方法で使用できるように、いくつかの設定を行いましょう。これらの設定は後からいつでも変更できます。
 oobe.intro.title: Cider へようこそ
 oobe.layout.subtitle: あなたのスタイルに合ったレイアウトを選択
+oobe.login.alreadySignedIn: すでにサインインしています
 oobe.login.skip: 今はスキップ
 oobe.login.skipTooltip: プレビューモードでのみアプリを利用できます
 oobe.login.subtitle: Apple Musicアカウントでサインインして、音楽を楽しみましょう。
+oobe.login.terms: 続行することで、利用規約とプライバシーポリシーに同意したものとみなされます
 oobe.login.title: あと一歩です
 oobe.login.userToken: ユーザートークンでサインイン
+oobe.music.mute: セットアップの音楽をミュート
+oobe.music.unmute: セットアップの音楽のミュートを解除
 oobe.next: 次へ
 oobe.no: いいえ
+oobe.performance.full.descriptionV2: 視覚効果をオンのままにします。コンピューターで描画できない場合にのみ、Ciderが自動的に効果を下げます。
+oobe.performance.fullV2: フル画質
 oobe.performance.hint: パフォーマンスモードは視覚効果を抑え、CPU使用率を削減します。お使いのシステムではデフォルトでオフになっていますが、いつでも有効にできます。
 oobe.performance.lowEndHint: スレッド数の少ないCPUが検出されました。よりスムーズな再生とCPU使用率の削減のため、パフォーマンスモードを推奨します。
+oobe.performance.mode.description: 大きなぼかしやアニメーション背景など、負荷の高い視覚効果をオフにします。古いコンピューターに適しています。
+oobe.performance.modeV2: パフォーマンスモード
+oobe.performance.subtitleV3: パフォーマンスモードでは、最も負荷の高い視覚効果をオフにします。フル画質では、コンピューターで描画できない場合を除き、効果をオンのままにします。
 oobe.performance.title: パフォーマンス
+oobe.performance.whereToChangeV3: 設定では、この選択は{page}の下の{setting}オプションです。パフォーマンスモードには{on}、フル画質には{automatic}を選択してください。いつでもそこで変更できます。
 oobe.player.subtitle: ウィンドウの端に表示される再生中バーです。あなたに合った表示密度を選択してください。
 oobe.player.title: プレイヤーを選択する
 oobe.previous: 戻る
+oobe.progress: ステップ {current}/{total}：{title}
+oobe.progress.label: セットアップの進行状況
 oobe.step.appearance: 外観
 oobe.step.connections: 接続
 oobe.step.features: サウンド
@@ -3003,6 +3025,7 @@ oobe.step.performance: パフォーマンス
 oobe.step.player: プレイヤー
 oobe.step.welcome: ようこそ
 oobe.step.window: ウィンドウスタイル
+oobe.subscriptionNote: Ciderには有効な有料のApple Musicサブスクリプションが必要です。Apple Music Voiceおよび一部のプロモーショナルトライアルはサポートされていません。
 oobe.visual.layout.text: |-
   Cider には2つの異なるウィンドウレイアウトがあります。
   Maverick は、ウィンドウの上部にプレイヤーが配置された iTunes 風のレイアウトです。
@@ -3015,6 +3038,10 @@ oobe.visual.title: ビジュアル
 oobe.welcome.getStarted: はじめる
 oobe.welcome.importSettings: 設定を読み込む…
 oobe.welcome.selectLanguage: 使用する言語を選択してください
+oobe.window.native: ネイティブウィンドウ
+oobe.window.native.description: デスクトップ環境のタイトルバーと枠線を使用します。
+oobe.window.styled: スタイル付きコントロール
+oobe.window.styled.description: アプリ内のカスタムタイトルバーと、埋め込みのウィンドウコントロール。
 oobe.window.subtitle: アプリのウィンドウをデスクトップ環境にどのように統合するかを選択します
 oobe.window.title: ウィンドウスタイル
 oobe.yes: はい
@@ -3115,6 +3142,8 @@ playlist.error.updating.title: プレイリストの更新エラー
 playlist.folderEmpty: このフォルダにプレイリストはありません
 playlist.folderMoveFailed: フォルダを移動できませんでした。しばらくしてから再度お試しください。
 playlist.folderRenameHint: ダブルクリックして名前を変更
+playlist.history: プレイリストの履歴
+playlist.history.withCount: プレイリストの履歴 ({count})
 playlist.lastUpdated: "最終更新日: {{date}}"
 playlist.madeByApple: Apple作成
 playlist.moveFailed: プレイリストを移動できませんでした。しばらくしてから再度お試しください。
@@ -3239,6 +3268,7 @@ settings.audio.atmos.normalizationHint: Dolby Atmos のミックスはステレ�
 settings.audio.atmos.off.desc: Atmosは無効です。すべてのコンテンツは標準のステレオで再生されます。
 settings.audio.atmos.passthrough: パススルー
 settings.audio.atmos.passthrough.desc: すべてのオーディオ処理をバイパスします。マルチチャンネルAtmosがデバイスに直接送信されます。AVレシーバーに最適です。
+settings.audio.atmos.passthrough.descV2: AVレシーバー向けに、マルチチャンネルのAtmosをデバイスへそのまま送信します。Audio Lab、イコライザー、リスニングモードはバイパスされます。
 settings.audio.atmos.passthroughActive: パススルーが有効です — 詳細設定で変更してください。
 settings.audio.atmos.standard.desc: CiderAudio処理によるマルチチャンネルAtmos。クロスフェード、オートミックス、シームレス移行は通常通り機能します。
 settings.audio.atmosMode: Atmos モード
@@ -3341,6 +3371,7 @@ settings.automix.normalizeDuration: デュレーションをノーマライズ
 settings.automix.normalizeDurationHint: 音量マッチングのブレンド時間（{ms}ms）
 settings.automix.spectralSeparation: スペクトル分離
 settings.automix.spectralSeparationHint: トランジション時に2つのトラックの周波数をどの程度引き離すかを設定します。
+settings.automix.spectralSeparationHintV2: トランジション中に2曲が周波数上でどれだけ離れるか（{value}）。
 settings.automix.speedSettle: 速度復帰時間
 settings.automix.speedSettleHint: テンポを合わせたミックスの後、再生速度が通常に戻るまでの時間（{ms}ミリ秒）
 settings.automix.tempoAlign: ビートマッチング
@@ -3498,6 +3529,7 @@ settings.client.windows.v8OptimizeSize.adds: 追加
 settings.client.windows.v8OptimizeSize.to: WebView2 に
 settings.client.windows.wpfRendering: WPF レンダリングモード
 settings.client.windows.wpfRendering.desc: WPF のレンダリングモードを選択します。不明な場合は「ソフトウェア」のままにしてください。
+settings.client.windows.wpfRendering.descV2: ウィンドウの描画方法を選択します。わからない場合は、ハードウェアのままにしてください。
 settings.client.windows.wpfRendering.hardware: ハードウェア
 settings.client.windows.wpfRendering.software: ソフトウェア
 settings.configBackups.confirm.body: 現在の設定は{date}に保存されたものに置き換えられ、Ciderが再読み込みされます。
@@ -3607,6 +3639,7 @@ settings.contentFilter.empty: キーワードはまだ追加されていませ�
 settings.contentFilter.inputPlaceholder: キーワードを追加...
 settings.contentFilter.title: フィルターキーワード
 settings.crossfade.advanced: クロスフェードの詳細設定
+settings.crossfade.automixStillBlends: Automixがオンのため、曲同士が重なり合うことがあります。下のAutomixをオフにすると、すべてのブレンドが停止します。
 settings.crossfade.description: 現在の曲をスムーズにフェードアウトしながら、次の曲をフェードインします。
 settings.crossfade.disableFor: クロスフェードを無効にする対象...
 settings.crossfade.duration: 時間
@@ -3732,6 +3765,7 @@ settings.general.section.cache: キャッシュ
 settings.general.section.cache.description: ページの読み込みを高速化するために、Ciderがディスクに保存するアートワークとメタデータ。
 settings.general.section.desktop: デスクトップ
 settings.general.section.desktop.description: キーボードショートカット、およびタスクバーでの動作や終了時のCiderの挙動を設定します。
+settings.general.section.desktop.descriptionV2: キーボードショートカット、再生中にコンピューターをスリープさせない設定、タスクバーや終了時のCiderの動作。
 settings.general.section.language: 言語
 settings.general.section.language.description: インターフェースの言語、および翻訳の報告やクレジットに関する設定。
 settings.general.section.playback: 再生
@@ -4072,6 +4106,7 @@ settings.option.advanced.mavericksLcd.style: スタイル
 settings.option.advanced.mavericksLcd.style.glass: ガラス
 settings.option.advanced.mediaArtwork: メディア項目のアートワーク
 settings.option.advanced.mediaArtwork.controls: アートワークのハイライトと高解像度画像
+settings.option.advanced.mediaArtwork.controlsV2: アートワークのハイライトとフェードイン
 settings.option.advanced.mediaArtwork.description: アプリ全体のグリッド、リスト、行に表示されるアートワーク。
 settings.option.advanced.notificationStyle: 通知スタイル
 settings.option.advanced.performance: パフォーマンス
@@ -4101,8 +4136,11 @@ settings.option.advanced.settingsTakeout: 設定のエクスポート / イン�
 settings.option.advanced.settingsTakeout.description: 設定をファイルにバックアップしたり、別のデバイスで復元したりできます。アカウントのログイン情報は含まれません。
 settings.option.advanced.simpleArtworkBg: シンプルなアートワーク背景
 settings.option.advanced.simpleArtworkBg.brightness: 明るさ %
+settings.option.advanced.simpleArtworkBg.brightnessV2: 明るさ
 settings.option.advanced.simpleArtworkBg.contrast: コントラスト %
+settings.option.advanced.simpleArtworkBg.contrastV2: コントラスト
 settings.option.advanced.simpleArtworkBg.saturate: 彩度（%）
+settings.option.advanced.simpleArtworkBg.saturateV2: 彩度
 settings.option.advanced.simpleArtworkBg.useMask: 下部マスクを使用
 settings.option.advanced.sonoma: Sonoma
 settings.option.advanced.sonoma.lyricArc: アーク歌詞
@@ -4412,6 +4450,8 @@ settings.option.general.onStartup: 起動時
 settings.option.general.onStartup.openStartup: スタートアップページを開く
 settings.option.general.onStartup.resume: 前回のセッションを再開
 settings.option.general.pagination: 1ページあたりの表示件数
+settings.option.general.preventDisplaySleep: 再生中はディスプレイをオンのままにする
+settings.option.general.preventSystemSleep: 再生中はコンピューターをスリープさせない
 settings.option.general.privacy: プライバシー
 settings.option.general.promptOnClose: 音楽の再生中に閉じる際に確認する
 settings.option.general.queue: キュー
@@ -4438,6 +4478,7 @@ settings.option.general.sleepTimerSettings: スリープタイマー設定
 settings.option.general.startupPage: スタートアップページ
 settings.option.general.startupPage.blank: 空白ページ
 settings.option.general.startupPage.description: Ciderを開いたときに表示するページを選択します。
+settings.option.general.startupPage.descriptionV2: Ciderが新しいタブで開くページ、および「起動時」が「起動ページを開く」に設定されている場合に起動時に開くページです。
 settings.option.general.startupPage.newTab: 新規タブページ
 settings.option.general.startupPage.personalHome: 個人用ホームページ
 settings.option.general.themeUpdateNotification: テーマのアップデートを自動的に確認する
@@ -4447,6 +4488,7 @@ settings.option.general.translators: 翻訳者
 settings.option.general.translators.description: Ciderの翻訳に協力してくれたコントリビューターの皆様に感謝いたします。名前をクリックすると、GitHubのプロフィールが開きます。
 settings.option.general.useSmartQueueByDefault: デフォルトでスマートキューを使用する
 settings.option.general.useSmartQueueByDefault.description: キューの作成時にSmart Queueの順序を自動的に適用します。Automixが必要です。
+settings.option.general.useSmartQueueByDefault.needsAutomix: オーディオのAutomixがオフのため、スマートキューは並べ替えを行いません。
 settings.option.general.warnBeforeQueueOverride: キューを上書きする前に警告する
 settings.option.hide: 非表示
 settings.option.left: 左
@@ -4542,6 +4584,9 @@ settings.option.performance.enableMediaItemInspect.description: パフォーマ�
 settings.option.performance.gameMode: ゲームモード
 settings.option.performance.gameMode.description: 視覚効果を抑え、Windowsの効率モードを有効にしてCPU使用率を低減します。
 settings.option.performance.gameMode.disable: ゲームモードを無効化
+settings.option.performance.graphicsAcceleration: グラフィックアクセラレーション
+settings.option.performance.graphicsAcceleration.autoOff: このPCはソフトウェアでグラフィックを描画するため、オフになっています。
+settings.option.performance.graphicsAcceleration.description: 自動では、ソフトウェアでグラフィックを描画する仮想マシンでオフになります。変更は次回Ciderの起動時に適用されます。
 settings.option.performance.host: ホスト
 settings.option.performance.immersiveRenderer: イマーシブレンダラー
 settings.option.performance.immersiveRenderer.description: アニメーション背景の動作が不安定な場合や、GPU使用率が高すぎる場合は、WebGPUの代わりにCanvas 2Dを使用します。
@@ -4557,6 +4602,8 @@ settings.option.performance.preloadSidebarPages: サイドバーのページを�
 settings.option.performance.preloadSidebarPages.description: 開く前にサイドバーのページを読み込みます。「ホバー時」は、ポインタがサイドバーの項目上にあるときに開始されます。「アイドル時」は、起動後に「今すぐ聴く」、「見つける」、「ラジオ」も読み込み、以前に開いたライブラリリストを更新します。
 settings.option.performance.preloadSidebarPages.idle: アイドル時
 settings.option.performance.preloadSidebarPages.intent: ホバー時
+settings.option.performance.reduceEffects: 視覚効果を減らす
+settings.option.performance.reduceEffects.description: アプリの描画負荷を下げるため、ぼかし、ガラス効果、グロー、アニメーション背景をオフにします。自動では、使用可能なグラフィックカードがない場合、またはシステムが透明度の低減を要求している場合にオンになります。
 settings.option.performance.renderer.auto: 自動（対応している場合はWebGPU）
 settings.option.performance.renderer.canvas: Canvas 2D
 settings.option.performance.renderer.webgpu: WebGPU
@@ -4789,6 +4836,7 @@ settings.option.visual.liquidGlassPlayer: リキッドガラス・プレイヤ�
 settings.option.visual.liquidGlassPlayer.description: 再生中プレイヤーバーにリキッドガラスの質感を使用します。オフにすると、フラットでソリッドなパネルになります（描画負荷も軽くなります）。
 settings.option.visual.liquidGlassScrollPerf: スクロール時のグラス効果を軽量化
 settings.option.visual.liquidGlassScrollPerf.description: スクロール中はリキッドグラスの屈折をシンプルなぼかしに簡略化し、停止時に滑らかに元に戻します。静止時の表示品質を維持しながら、負荷の高いシステムでのスクロールの引っかかりを軽減します。ゲームモードでは常に有効になります。
+settings.option.visual.liquidGlassScrollPerf.descriptionV2: スクロール中はリキッドガラスの屈折を単純なぼかしに変更し、停止すると元に戻します。負荷の高いシステムでのスクロールのカクつきを減らします。静止時の見た目は変わりません。
 settings.option.visual.mainMenuPosition: メインメニューの位置
 settings.option.visual.matchPageToArtwork: アートワークに合わせてページの色を変更
 settings.option.visual.matchPageToArtwork.description: ライトモードとダークモードの両方で、アルバムとプレイリストのページをアートワークの色で彩ります。
@@ -4974,6 +5022,7 @@ settings.prompt.visual.plugin.github.success: プラグインが正常にイン�
 settings.prompt.visual.plugin.github.URL: インストールするプラグインのURLを入力してください
 settings.prompt.visual.theme.github.URL: インストールするテーマのURLを入力してください
 settings.prompt.visual.theme.uninstallTheme: 本当に {{theme}} をアンインストールしますか？
+settings.reloadPrompt.message: 変更を適用するにはアプリの再読み込みが必要です。続行しますか？
 settings.requiresNewerClient: より新しいバージョンの Cider クライアントが必要です。
 settings.resetCider.category.appleMusic: Apple Musicからサインアウト
 settings.resetCider.category.appleMusic.desc: このデバイスからApple Musicアカウントを削除します
@@ -5017,6 +5066,7 @@ settings.smartPlaylists.section.maintenance: メンテナンス
 settings.smartPlaylists.section.maintenance.description: すべてのルールを今すぐ強制的に実行するか、ライブラリのキャッシュを削除します。
 settings.smartPlaylists.section.rules: ルール
 settings.smartPlaylists.section.rules.description: Ciderが埋め込まれたプレイリストルールを適用するかどうか、およびその再評価の頻度を設定します。
+settings.smartPlaylists.section.rules.descriptionV2: Ciderが埋め込みのプレイリストルールを適用するかどうか。ルールは、電源の使用量にあるバックグラウンド更新時間に合わせて再実行されます。
 settings.sweetener.useSystemAccentColor: システムのアクセントカラーを使用する
 settings.takeout.chooseFile: ファイルを選択…
 settings.takeout.error.badVersion: そのファイルにはバージョン情報が含まれていません。
@@ -5047,6 +5097,7 @@ settings.title: 設定
 settings.troubleshooting.bgDiagnostics: バックグラウンド再生の診断
 settings.troubleshooting.bgDiagnostics.desc: ウィンドウが最小化されている、またはフォーカスが外れているときの再生問題を診断するための追加のログ（誰がプレイヤーを一時停止したか、タイマーの枯渇、OSのサスペンドなど）を記録します。バックグラウンド再生の不具合を報告する際に有効にしてください。
 settings.troubleshooting.desc: ログファイルと MKLite デバッグログ。
+settings.troubleshooting.descV2: MKLiteとバックグラウンド再生のログ記録。
 settings.troubleshooting.hevcWorkaround: HEVCの回避策
 settings.troubleshooting.hevcWorkaround.desc: 10ビットSDR HEVC再生に問題がある一部のGPUにおけるWebView2のバグに対し、視覚的なズレを補正するフィルターを適用する回避策です。
 settings.troubleshooting.impressionReporting: PlayActivityインプレッションレポート
@@ -5070,6 +5121,8 @@ settings.updates.action.check: アップデートを確認
 settings.updates.action.install: アップデートをインストール
 settings.updates.action.restart: Ciderを再起動
 settings.updates.action.retry: 再試行
+settings.updates.autoCheck: アップデートを自動的に確認
+settings.updates.autoCheck.description: オフの場合、Ciderはこのページを開いたときにのみ確認します。
 settings.updates.build: ビルド
 settings.updates.channel: チャンネル
 settings.updates.codename: コードネーム
@@ -5772,6 +5825,8 @@ updates.installUnavailable.body: このバージョンはお使いのアカウ�
 updates.lateststable.title: 最新の安定版リリース
 updates.loadFailed.body: 接続を確認して、もう一度お試しください。
 updates.loadFailed.title: 利用可能なバージョンを読み込めませんでした
+updates.newVersion.body: 新しいバージョンのCiderが利用可能です。アップデートページでダウンロードしますか？
+updates.newVersion.title: 新しいバージョンがあります
 updates.notifyForBranch.tooltip: このブランチの通知を受け取る
 updates.otherVersions.title: その他のバージョン
 updates.ptb.name: パブリックテストブランチ
