@@ -254,6 +254,9 @@ album.track.unavailable.unreleased: Acest element nu a fost lansat încă.
 album.track.unavailable.zeroDuration: Durata elementului este de 0 secunde, probabil este nelansat.
 album.upcoming.badge: Album viitor
 app.name: Cider
+app.ptbDisclaimer.confirm: Am înțeles
+app.ptbDisclaimer.message: Aceasta este o versiune Public Testing Branch. Această versiune nu este garantat stabilă și poate conține erori. Nu raportați erorile sau problemele găsite în această versiune. Dacă întâmpinați probleme, treceți la versiunea stabilă înainte de a le raporta.
+app.ptbDisclaimer.title: Declinare de responsabilitate Public Testing Branch
 app.unsupportedClient.message: Acest client nu este acceptat. Te rugăm să te asiguri că folosești cea mai recentă versiune de Cider.
 app.unsupportedClient.title: Client neacceptat
 assistant.sid.agent.added: Am adăugat {count} melodii
@@ -726,10 +729,16 @@ audio.device.default: Dispozitiv implicit
 audio.device.noneFound: Nu s-au găsit dispozitive de ieșire
 audio.device.placeholder: Dispozitiv {{id}}
 audiolab.waiting: Se așteaptă adăugarea unei melodii în coadă
+auth.error.devToken: Nu s-a putut stabili conexiunea cu Apple Music
+auth.error.generic: Nu s-a putut finaliza autentificarea. Verificați conexiunea și încercați din nou.
+auth.error.invalidToken: A fost primit un token nevalid
 auth.error.popupBlocked: Fereastra pop-up a fost blocată
+auth.error.timeout: Autentificarea a expirat
+auth.error.unavailable: Acest Apple ID nu poate folosi Apple Music în Cider. Cider necesită un abonament Apple Music activ și plătit.
 auth.error.windowFailed: Fereastra de conectare nu s-a putut deschide
 auth.mutExpired.confirm: Conectează-te
 auth.mutExpired.message: Sesiunea ta Apple Music a expirat. Conectează-te din nou pentru a continua.
+auth.signedIn: Autentificat
 auth.signInRetry.confirm: Încercați din nou
 auth.signInRetry.message: Fereastra de conectare nu s-a putut deschide. Încercați din nou?
 bugReport.addImage: Adaugă imagine
@@ -2843,6 +2852,7 @@ oobe.amupsell.title: Înainte de a începe
 oobe.appearance.accentHint: Folosită pentru butoane, evidențieri și progres în aplicație. Încearcă una pentru o previzualizare în timp real.
 oobe.appearance.subtitle: Alege o schemă de culori și o culoare de accent. Le poți schimba oricând în Configurări → Aspect vizual.
 oobe.appearance.title: Personalizează Cider
+oobe.appleNotice: "Vă rugăm să rețineți: Apple Music este o marcă înregistrată a Apple Inc. Cider este un client terț pentru Apple Music și nu este afiliat cu Apple Inc."
 oobe.audio.advancedFunctionality: ""
 oobe.audio.subtitle: ""
 oobe.audio.text: |-
@@ -2881,19 +2891,31 @@ oobe.intro.subtitle: ""
 oobe.intro.text: Să configurăm câteva lucruri pentru a putea folosi Cider așa cum dorești. Poți modifica oricând aceste setări mai târziu.
 oobe.intro.title: Bun venit în Cider
 oobe.layout.subtitle: Alege un aspect care se potrivește stilului tău
+oobe.login.alreadySignedIn: Sunteți deja autentificat
 oobe.login.skip: Omite momentan
 oobe.login.skipTooltip: Vei putea folosi aplicația doar în modul de previzualizare
 oobe.login.subtitle: Autentifică-te cu contul tău Apple Music pentru a începe să te bucuri de muzică
+oobe.login.terms: Prin continuare, acceptați Termenii și condițiile de utilizare și Politica de confidențialitate
 oobe.login.title: Un ultim pas
 oobe.login.userToken: Autentificare cu token de utilizator
+oobe.music.mute: Dezactivează muzica de configurare
+oobe.music.unmute: Activează muzica de configurare
 oobe.next: Înainte
 oobe.no: Nu
+oobe.performance.full.descriptionV2: Păstrează efectele vizuale active. Cider le reduce singur doar atunci când computerul nu le poate afișa.
+oobe.performance.fullV2: Calitate completă
 oobe.performance.hint: Modul Performanță reduce efectele vizuale și economisește resursele CPU. Este dezactivat implicit pe sisteme ca al tău, dar îl poți activa oricând.
 oobe.performance.lowEndHint: Am detectat un procesor cu mai puține fire de execuție. Recomandăm Modul Performanță pentru o redare mai fluidă și un consum redus de CPU.
+oobe.performance.mode.description: Dezactivează efectele vizuale intensive, cum ar fi estompările mari și fundalurile animate. Potrivit pentru computerele mai vechi.
+oobe.performance.modeV2: Mod performanță
+oobe.performance.subtitleV3: Modul performanță dezactivează cele mai intensive efecte vizuale. Calitatea completă le păstrează active, cu excepția cazului în care computerul nu le poate afișa.
 oobe.performance.title: Performanță
+oobe.performance.whereToChangeV3: În Setări, această alegere este opțiunea {setting} din pagina {page}. Alegeți {on} pentru Mod performanță sau {automatic} pentru Calitate completă. O puteți modifica oricând acolo.
 oobe.player.subtitle: Bara de redare în curs aflată la marginea ferestrei. Alege densitatea care ți se potrivește.
 oobe.player.title: Alege-ți playerul
 oobe.previous: Înapoi
+oobe.progress: "Pasul {current} din {total}: {title}"
+oobe.progress.label: Progresul configurării
 oobe.step.appearance: Aspect
 oobe.step.connections: Conexiuni
 oobe.step.features: Sunet
@@ -2903,6 +2925,7 @@ oobe.step.performance: Performanță
 oobe.step.player: Player
 oobe.step.welcome: Bun venit
 oobe.step.window: Stil fereastră
+oobe.subscriptionNote: Cider necesită un abonament Apple Music activ și plătit. Apple Music Voice și unele perioade de probă promoționale nu sunt acceptate.
 oobe.visual.layout.text: |-
   Cider oferă două aspecte diferite pentru fereastră.
   Maverick este un aspect similar cu iTunes, cu playerul în partea de sus a ferestrei.
@@ -2915,6 +2938,10 @@ oobe.visual.title: Aspect
 oobe.welcome.getStarted: Să începem
 oobe.welcome.importSettings: Importă configurările…
 oobe.welcome.selectLanguage: Selectează limba preferată
+oobe.window.native: Fereastră nativă
+oobe.window.native.description: Folosește bara de titlu și marginile mediului dvs. desktop.
+oobe.window.styled: Comenzi personalizate
+oobe.window.styled.description: Bară de titlu personalizată în aplicație, cu comenzi de fereastră integrate.
 oobe.window.subtitle: Alege modul în care fereastra aplicației se integrează cu mediul tău desktop
 oobe.window.title: Stil fereastră
 oobe.yes: Da
@@ -3015,6 +3042,8 @@ playlist.error.updating.title: Eroare la actualizarea playlistului
 playlist.folderEmpty: Nicio listă de redare în acest dosar
 playlist.folderMoveFailed: Dosarul nu a putut fi mutat. Încearcă din nou peste câteva momente.
 playlist.folderRenameHint: Dublu clic pentru a redenumi
+playlist.history: Istoric liste de redare
+playlist.history.withCount: Istoric liste de redare ({count})
 playlist.lastUpdated: "Ultima actualizare: {{date}}"
 playlist.madeByApple: Creat de Apple
 playlist.moveFailed: Playlistul nu a putut fi mutat. Încearcă din nou peste câteva momente.
@@ -3135,6 +3164,7 @@ settings.audio.atmos.normalizationHint: Mixurile Dolby Atmos sunt mai slabe dec�
 settings.audio.atmos.off.desc: Atmos dezactivat. Tot conținutul este redat ca stereo standard.
 settings.audio.atmos.passthrough: Passthrough
 settings.audio.atmos.passthrough.desc: Ocolește orice procesare audio. Atmos multicanal este trimis direct către dispozitiv. Ideal pentru receivere AV.
+settings.audio.atmos.passthrough.descV2: Trimite Atmos multicanal direct către dispozitiv, pentru receptoare AV. Audio Lab, egalizatorul și Modul de ascultare sunt ocolite.
 settings.audio.atmos.passthroughActive: Passthrough activ — modificați în setările complete.
 settings.audio.atmos.standard.desc: Atmos multicanal cu procesare CiderAudio. Crossfade, Automix și Tranzițiile fără întreruperi continuă să funcționeze normal.
 settings.audio.atmosMode: Mod Atmos
@@ -3237,6 +3267,7 @@ settings.automix.normalizeDuration: Normalizează durata
 settings.automix.normalizeDurationHint: Timp de îmbinare pentru potrivirea volumului ({ms}ms)
 settings.automix.spectralSeparation: Separare spectrală
 settings.automix.spectralSeparationHint: Cât de mult sunt separate în frecvență cele două piese în timpul unei tranziții.
+settings.automix.spectralSeparationHintV2: Cât de mult sunt separate cele două piese în frecvență în timpul tranziției ({value}).
 settings.automix.speedSettle: Timp de stabilizare a vitezei
 settings.automix.speedSettleHint: Cât timp îi ia vitezei de redare să revină la normal după un mixaj cu tempo sincronizat ({ms}ms)
 settings.automix.tempoAlign: Sincronizare beat-uri
@@ -3390,6 +3421,7 @@ settings.client.windows.v8OptimizeSize.adds: Adaugă
 settings.client.windows.v8OptimizeSize.to: la WebView2
 settings.client.windows.wpfRendering: Mod de randare WPF
 settings.client.windows.wpfRendering.desc: Alegeți modul de randare pentru WPF. Dacă nu sunteți sigur, lăsați pe software.
+settings.client.windows.wpfRendering.descV2: Alegeți modul în care este desenată fereastra. Dacă nu sunteți sigur, lăsați opțiunea Hardware activată.
 settings.client.windows.wpfRendering.hardware: Hardware
 settings.client.windows.wpfRendering.software: Software
 settings.configBackups.confirm.body: Setările tale actuale vor fi înlocuite cu cele salvate pe {date}, iar Cider se va reporni.
@@ -3499,6 +3531,7 @@ settings.contentFilter.empty: Nu a fost adăugat niciun cuvânt cheie încă.
 settings.contentFilter.inputPlaceholder: Adaugă un cuvânt cheie...
 settings.contentFilter.title: Cuvinte cheie pentru filtrare
 settings.crossfade.advanced: Setări avansate pentru crossfade
+settings.crossfade.automixStillBlends: Automix este activat, astfel încât piesele pot în continuare să se îmbine între ele. Dezactivați Automix mai jos pentru a opri toate îmbinările.
 settings.crossfade.description: Atenuează treptat piesa curentă în timp ce redă progresiv următoarea piesă.
 settings.crossfade.disableFor: Dezactivează crossfade pentru...
 settings.crossfade.duration: Durată
@@ -3624,6 +3657,7 @@ settings.general.section.cache: Cache
 settings.general.section.cache.description: Ilustrațiile de album și metadatele stocate pe care Cider le păstrează pe disc pentru ca paginile să se încarce mai rapid.
 settings.general.section.desktop: Desktop
 settings.general.section.desktop.description: Scurtături de tastatură și comportamentul Cider în bara de activități și la închidere.
+settings.general.section.desktop.descriptionV2: Comenzi rapide de la tastatură, menținerea computerului activ în timpul redării și comportamentul Cider în bara de sarcini și la închidere.
 settings.general.section.language: Limbă
 settings.general.section.language.description: Limba interfeței și cum să raportezi sau să oferi credite pentru traducerile acesteia.
 settings.general.section.playback: Redare
@@ -3960,6 +3994,7 @@ settings.option.advanced.mavericksLcd.style: Stil
 settings.option.advanced.mavericksLcd.style.glass: Sticlă
 settings.option.advanced.mediaArtwork: Copertă element media
 settings.option.advanced.mediaArtwork.controls: Evidențieri ale ilustrațiilor și imagini de înaltă rezoluție
+settings.option.advanced.mediaArtwork.controlsV2: Evidențierea și estomparea în fade-in ale copertei
 settings.option.advanced.mediaArtwork.description: Ilustrațiile de album din grile, liste și rânduri în întreaga aplicație.
 settings.option.advanced.notificationStyle: Stil notificări
 settings.option.advanced.performance: Performanță
@@ -3989,8 +4024,11 @@ settings.option.advanced.settingsTakeout: Export / Import setări
 settings.option.advanced.settingsTakeout.description: Creați o copie de rezervă a preferințelor într-un fișier sau restaurați-le pe un alt dispozitiv. Datele de autentificare nu sunt incluse niciodată.
 settings.option.advanced.simpleArtworkBg: Fundal simplu cu ilustrație
 settings.option.advanced.simpleArtworkBg.brightness: Luminozitate %
+settings.option.advanced.simpleArtworkBg.brightnessV2: Luminozitate
 settings.option.advanced.simpleArtworkBg.contrast: Contrast %
+settings.option.advanced.simpleArtworkBg.contrastV2: Contrast
 settings.option.advanced.simpleArtworkBg.saturate: Saturație %
+settings.option.advanced.simpleArtworkBg.saturateV2: Saturație
 settings.option.advanced.simpleArtworkBg.useMask: Utilizează masca inferioară
 settings.option.advanced.sonoma: Sonoma
 settings.option.advanced.sonoma.lyricArc: Versuri curbate
@@ -4296,6 +4334,8 @@ settings.option.general.onStartup: La pornire
 settings.option.general.onStartup.openStartup: Deschide pagina de pornire
 settings.option.general.onStartup.resume: Reia ultima sesiune
 settings.option.general.pagination: Elemente de afișat pe pagină
+settings.option.general.preventDisplaySleep: Menține ecranul aprins în timpul redării
+settings.option.general.preventSystemSleep: Menține computerul activ în timpul redării
 settings.option.general.privacy: Confidențialitate
 settings.option.general.promptOnClose: Confirmă închiderea în timpul redării muzicii
 settings.option.general.queue: Coadă de așteptare
@@ -4322,6 +4362,7 @@ settings.option.general.sleepTimerSettings: Setări temporizator de oprire
 settings.option.general.startupPage: Pagină de pornire
 settings.option.general.startupPage.blank: Pagină goală
 settings.option.general.startupPage.description: Alege pagina care va fi afișată la deschiderea Cider.
+settings.option.general.startupPage.descriptionV2: Pagina în care Cider se deschide în filele noi și la pornire, când La pornire este setat pe Deschide pagina de pornire.
 settings.option.general.startupPage.newTab: Pagină filă nouă
 settings.option.general.startupPage.personalHome: Pagină principală personală
 settings.option.general.themeUpdateNotification: Caută automat actualizări pentru teme
@@ -4331,6 +4372,7 @@ settings.option.general.translators: Traducători
 settings.option.general.translators.description: Mulțumim acestor colaboratori pentru ajutorul acordat la traducerea Cider. Fă clic pe un nume pentru a-i deschide profilul de GitHub.
 settings.option.general.useSmartQueueByDefault: Utilizează Coada inteligentă în mod implicit
 settings.option.general.useSmartQueueByDefault.description: Aplică automat ordonarea Smart Queue la crearea cozii de așteptare. Necesită Automix.
+settings.option.general.useSmartQueueByDefault.needsAutomix: Automix este dezactivat în Audio, deci Coada inteligentă nu va reordona nimic.
 settings.option.general.warnBeforeQueueOverride: Avertizează înainte de a înlocui coada de așteptare
 settings.option.hide: Ascunde
 settings.option.left: Stânga
@@ -4417,6 +4459,9 @@ settings.option.performance.enableMediaItemInspect.description: Poate afecta uș
 settings.option.performance.gameMode: Mod Joc
 settings.option.performance.gameMode.description: Reduce efectele vizuale și poate activa modul de eficiență Windows pentru un consum redus de CPU.
 settings.option.performance.gameMode.disable: Dezactivează Modul Joc
+settings.option.performance.graphicsAcceleration: Accelerare grafică
+settings.option.performance.graphicsAcceleration.autoOff: Dezactivată, deoarece acest PC randează grafica prin software.
+settings.option.performance.graphicsAcceleration.description: Automat o dezactivează într-o mașină virtuală care randează grafica prin software. Modificările se aplică la următoarea pornire a Cider.
 settings.option.performance.host: Gazdă
 settings.option.performance.immersiveRenderer: Randare imersivă
 settings.option.performance.immersiveRenderer.description: Utilizează Canvas 2D în loc de WebGPU dacă fundalul animat nu funcționează corect sau consumă prea multe resurse GPU.
@@ -4432,6 +4477,8 @@ settings.option.performance.preloadSidebarPages: Preîncarcă paginile din bara 
 settings.option.performance.preloadSidebarPages.description: Încarcă paginile din bara laterală înainte de a le deschide. „La trecerea cu mouse-ul” pornește când cursorul se oprește pe un element din bara laterală. „În repaus” încarcă, de asemenea, secțiunile Ascultă acum, Explorează și Radio după pornire și reîmprospătează listele din bibliotecă deschise anterior.
 settings.option.performance.preloadSidebarPages.idle: În repaus
 settings.option.performance.preloadSidebarPages.intent: La trecerea cu mouse-ul
+settings.option.performance.reduceEffects: Reduce efectele vizuale
+settings.option.performance.reduceEffects.description: Dezactivează estomparea, efectul de sticlă, strălucirea și fundalurile animate, astfel încât aplicația să deseneze mai puțin. Automat o activează când nu există o placă grafică funcțională sau când sistemul solicită mai puțină transparență.
 settings.option.performance.renderer.auto: Automat (WebGPU când este acceptat)
 settings.option.performance.renderer.canvas: Canvas 2D
 settings.option.performance.renderer.webgpu: WebGPU
@@ -4651,6 +4698,7 @@ settings.option.visual.liquidGlassPlayer: Bară de redare Liquid Glass
 settings.option.visual.liquidGlassPlayer.description: Utilizează suprafața de tip sticlă lichidă pentru bara de redare curentă. Dezactivează pentru un panou plat, solid (de asemenea, mai ușor de randat).
 settings.option.visual.liquidGlassScrollPerf: Efect de sticlă simplificat la derulare
 settings.option.visual.liquidGlassScrollPerf.description: Simplifică refracția de tip „sticlă fluidă” la o simplă estompare în timpul derulării, apoi o reintroduce treptat la oprire. Reduce sacadarea derulării pe sistemele solicitate, fără modificări în stare de repaus. Întotdeauna activat în Modul Joc.
+settings.option.visual.liquidGlassScrollPerf.descriptionV2: Simplifică refracția liquid-glass la o estompare simplă în timpul derulării, apoi o readuce treptat când vă opriți. Reduce sacadările la derulare pe sisteme solicitante, fără nicio modificare în repaus.
 settings.option.visual.mainMenuPosition: Poziție meniu principal
 settings.option.visual.matchPageToArtwork: Potrivește pagina cu copertele
 settings.option.visual.matchPageToArtwork.description: Colorează paginile albumelor și ale listelor de redare cu culorile copertelor, în modurile luminos și întunecat.
@@ -4831,6 +4879,7 @@ settings.prompt.visual.plugin.github.success: Pluginul a fost instalat cu succes
 settings.prompt.visual.plugin.github.URL: Introdu URL-ul pluginului pe care dorești să îl instalezi
 settings.prompt.visual.theme.github.URL: Introdu URL-ul temei pe care dorești să o instalezi
 settings.prompt.visual.theme.uninstallTheme: Sigur dorești să dezinstalezi {{theme}}?
+settings.reloadPrompt.message: Este necesară o reîmprospătare a aplicației pentru a aplica modificările. Doriți să continuați?
 settings.requiresNewerClient: Necesită o versiune mai nouă de Cider.
 settings.resetCider.category.appleMusic: Deconectare de la Apple Music
 settings.resetCider.category.appleMusic.desc: Elimină contul Apple Music de pe acest dispozitiv
@@ -4874,6 +4923,7 @@ settings.smartPlaylists.section.maintenance: Întreținere
 settings.smartPlaylists.section.maintenance.description: Forțează rularea tuturor regulilor acum sau șterge copia cache a bibliotecii tale.
 settings.smartPlaylists.section.rules: Reguli
 settings.smartPlaylists.section.rules.description: Stabilește dacă Cider aplică regulile playlisturilor integrate și cât de des le reevaluează.
+settings.smartPlaylists.section.rules.descriptionV2: Dacă Cider aplică regulile încorporate ale listelor de redare. Acestea se rulează din nou cu Ora reîmprospătării în fundal din Utilizarea energiei.
 settings.sweetener.useSystemAccentColor: Utilizează culoarea de accent a sistemului
 settings.takeout.chooseFile: Selectați fișierul…
 settings.takeout.error.badVersion: Fișierului respectiv îi lipsesc informațiile despre versiune.
@@ -4904,6 +4954,7 @@ settings.title: Setări
 settings.troubleshooting.bgDiagnostics: Diagnosticare redare în fundal
 settings.troubleshooting.bgDiagnostics.desc: Informații suplimentare de jurnalizare pentru diagnosticarea problemelor de redare în timp ce fereastra este minimizată sau inactivă — cine a întrerupt redarea, epuizarea temporizatorului și episoadele de suspendare ale sistemului de operare. Activează când raportezi o eroare de redare în fundal.
 settings.troubleshooting.desc: Fișiere jurnal și jurnalizare pentru depanare MKLite.
+settings.troubleshooting.descV2: Înregistrarea MKLite și a redării în fundal.
 settings.troubleshooting.hevcWorkaround: Soluție alternativă HEVC
 settings.troubleshooting.hevcWorkaround.desc: Soluție de compromis pentru o eroare din WebView2 cu anumite plăci grafice care au probleme la redarea HEVC SDR pe 10 biți, prin aplicarea unui filtru pentru a compensa decalajul vizual.
 settings.troubleshooting.impressionReporting: Raportare impresii PlayActivity
@@ -4927,6 +4978,8 @@ settings.updates.action.check: Caută actualizări
 settings.updates.action.install: Instalează actualizarea
 settings.updates.action.restart: Repornește Cider
 settings.updates.action.retry: Încearcă din nou
+settings.updates.autoCheck: Verifică automat actualizările
+settings.updates.autoCheck.description: Când este dezactivat, Cider verifică doar când deschideți această pagină.
 settings.updates.build: Build
 settings.updates.channel: Canal
 settings.updates.codename: Nume de cod
@@ -5591,6 +5644,8 @@ updates.installUnavailable.body: Această versiune nu este disponibilă pentru d
 updates.lateststable.title: Cea mai recentă versiune stabilă
 updates.loadFailed.body: Verifică conexiunea și încearcă din nou.
 updates.loadFailed.title: Cider nu a putut încărca versiunile disponibile
+updates.newVersion.body: Este disponibilă o versiune nouă a Cider. Doriți să accesați Actualizări pentru a o descărca?
+updates.newVersion.title: Versiune nouă disponibilă
 updates.notifyForBranch.tooltip: Notifică pentru această ramură
 updates.otherVersions.title: Alte versiuni
 updates.ptb.name: Ramură de testare publică
