@@ -254,6 +254,9 @@ album.track.unavailable.unreleased: Αυτό το στοιχείο δεν έχε
 album.track.unavailable.zeroDuration: Η διάρκεια του στοιχείου είναι 0 δευτερόλεπτα, πιθανώς δεν έχει κυκλοφορήσει ακόμα.
 album.upcoming.badge: Επερχόμενο άλμπουμ
 app.name: Cider
+app.ptbDisclaimer.confirm: Το κατάλαβα
+app.ptbDisclaimer.message: Αυτή είναι μια έκδοση Public Testing Branch. Η σταθερότητα αυτής της έκδοσης δεν είναι εγγυημένη και ενδέχεται να περιέχει σφάλματα. Μην αναφέρετε σφάλματα ή προβλήματα που εντοπίζετε σε αυτήν την έκδοση. Αν αντιμετωπίσετε προβλήματα, μεταβείτε στη σταθερή έκδοση πριν τα αναφέρετε.
+app.ptbDisclaimer.title: Αποποίηση ευθυνών για το Public Testing Branch
 app.unsupportedClient.message: Αυτό το πρόγραμμα-πελάτης δεν υποστηρίζεται. Βεβαιωθείτε ότι χρησιμοποιείτε την τελευταία έκδοση του Cider.
 app.unsupportedClient.title: Μη υποστηριζόμενο πρόγραμμα-πελάτης
 assistant.sid.agent.added: Προστέθηκαν {count} τραγούδια
@@ -726,10 +729,16 @@ audio.device.default: Προεπιλεγμένη συσκευή
 audio.device.noneFound: Δεν βρέθηκαν συσκευές εξόδου
 audio.device.placeholder: Συσκευή {{id}}
 audiolab.waiting: Αναμονή για προσθήκη τραγουδιού στην ουρά
+auth.error.devToken: Δεν ήταν δυνατή η σύνδεση με το Apple Music
+auth.error.generic: Δεν ήταν δυνατή η ολοκλήρωση της σύνδεσης. Ελέγξτε τη σύνδεσή σας και δοκιμάστε ξανά.
+auth.error.invalidToken: Ελήφθη μη έγκυρο διακριτικό
 auth.error.popupBlocked: Το αναδυόμενο παράθυρο αποκλείστηκε
+auth.error.timeout: Έληξε ο χρόνος σύνδεσης
+auth.error.unavailable: Αυτό το Apple ID δεν μπορεί να χρησιμοποιήσει το Apple Music στο Cider. Το Cider απαιτεί ενεργή, επί πληρωμή συνδρομή Apple Music.
 auth.error.windowFailed: Το παράθυρο σύνδεσης απέτυχε να ανοίξει
 auth.mutExpired.confirm: Σύνδεση
 auth.mutExpired.message: Η περίοδος σύνδεσής σας στο Apple Music έχει λήξει. Συνδεθείτε ξανά για να συνεχίσετε.
+auth.signedIn: Συνδέθηκες
 auth.signInRetry.confirm: Δοκιμάστε ξανά
 auth.signInRetry.message: Το παράθυρο σύνδεσης δεν μπόρεσε να ανοίξει. Δοκιμάστε ξανά;
 bugReport.addImage: Προσθήκη εικόνας
@@ -2843,6 +2852,7 @@ oobe.amupsell.title: Πριν ξεκινήσουμε
 oobe.appearance.accentHint: Χρησιμοποιείται για κουμπιά, επισημάνσεις και την πρόοδο στην εφαρμογή. Δοκιμάστε ένα, η προεπισκόπηση είναι ζωντανή.
 oobe.appearance.subtitle: Επιλέξτε έναν συνδυασμό χρωμάτων και ένα χρώμα έμφασης. Μπορείτε να τα αλλάξετε ανά πάσα στιγμή στις Ρυθμίσεις → Οπτικά.
 oobe.appearance.title: Κάντε το Cider δικό σας
+oobe.appleNotice: "Σημείωση: Το Apple Music είναι εμπορικό σήμα της Apple Inc. Το Cider είναι εξωτερικό πρόγραμμα-πελάτης για το Apple Music και δεν συνδέεται με την Apple Inc."
 oobe.audio.advancedFunctionality: ""
 oobe.audio.subtitle: ""
 oobe.audio.text: |-
@@ -2881,19 +2891,31 @@ oobe.intro.subtitle: ""
 oobe.intro.text: Ας ρυθμίσουμε μερικά πράγματα ώστε να χρησιμοποιείτε το Cider όπως εσείς θέλετε. Μπορείτε πάντα να αλλάξετε αυτές τις ρυθμίσεις αργότερα.
 oobe.intro.title: Καλώς ορίσατε στο Cider
 oobe.layout.subtitle: Επιλέξτε μια διάταξη που ταιριάζει στο στυλ σας
+oobe.login.alreadySignedIn: Έχετε ήδη συνδεθεί
 oobe.login.skip: Παράλειψη προς το παρόν
 oobe.login.skipTooltip: Θα μπορείτε να χρησιμοποιήσετε την εφαρμογή μόνο σε λειτουργία προεπισκόπησης
 oobe.login.subtitle: Συνδεθείτε με τον λογαριασμό σας Apple Music για να αρχίσετε να απολαμβάνετε τη μουσική σας
+oobe.login.terms: Με τη συνέχεια, αποδέχεστε τους Όρους Χρήσης και την Πολιτική Απορρήτου
 oobe.login.title: Ένα τελευταίο βήμα
 oobe.login.userToken: Σύνδεση με διακριτικό χρήστη
+oobe.music.mute: Σίγαση μουσικής ρύθμισης
+oobe.music.unmute: Κατάργηση σίγασης μουσικής ρύθμισης
 oobe.next: Επόμενο
 oobe.no: Όχι
+oobe.performance.full.descriptionV2: Διατηρεί τα οπτικά εφέ ενεργά. Το Cider τα μειώνει μόνο αυτόματα όταν ο υπολογιστής σας δεν μπορεί να τα εμφανίσει.
+oobe.performance.fullV2: Πλήρης ποιότητα
 oobe.performance.hint: Η Λειτουργία Απόδοσης μειώνει τα οπτικά εφέ και εξοικονομεί CPU. Είναι απενεργοποιημένη από προεπιλογή σε συστήματα σαν το δικό σας, αλλά μπορείτε να την ενεργοποιήσετε ανά πάσα στιγμή.
 oobe.performance.lowEndHint: Εντοπίσαμε έναν επεξεργαστή με λιγότερα νήματα. Συνιστούμε τη Λειτουργία Απόδοσης για πιο ομαλή αναπαραγωγή και χαμηλότερη χρήση CPU.
+oobe.performance.mode.description: Απενεργοποιεί τα βαριά οπτικά εφέ, όπως τα μεγάλα θολώματα και τα κινούμενα φόντα. Ιδανικό για παλαιότερους υπολογιστές.
+oobe.performance.modeV2: Λειτουργία απόδοσης
+oobe.performance.subtitleV3: Η λειτουργία απόδοσης απενεργοποιεί τα πιο βαριά οπτικά εφέ. Η πλήρης ποιότητα τα διατηρεί ενεργά, εκτός αν ο υπολογιστής σας δεν μπορεί να τα εμφανίσει.
 oobe.performance.title: Απόδοση
+oobe.performance.whereToChangeV3: Στις Ρυθμίσεις, αυτή η επιλογή είναι η ρύθμιση {setting} στη σελίδα {page}. Επιλέξτε {on} για Λειτουργία απόδοσης ή {automatic} για Πλήρη ποιότητα. Μπορείτε να την αλλάξετε εκεί ανά πάσα στιγμή.
 oobe.player.subtitle: Η γραμμή αναπαραγωγής που βρίσκεται στην άκρη του παραθύρου. Επιλέξτε την πυκνότητα που σας ταιριάζει.
 oobe.player.title: Επιλέξτε πρόγραμμα αναπαραγωγής
 oobe.previous: Προηγούμενο
+oobe.progress: "Βήμα {current} από {total}: {title}"
+oobe.progress.label: Πρόοδος ρύθμισης
 oobe.step.appearance: Εμφάνιση
 oobe.step.connections: Συνδέσεις
 oobe.step.features: Ήχος
@@ -2903,6 +2925,7 @@ oobe.step.performance: Απόδοση
 oobe.step.player: Πρόγραμμα αναπαραγωγής
 oobe.step.welcome: Καλώς ορίσατε
 oobe.step.window: Στυλ παραθύρου
+oobe.subscriptionNote: Το Cider απαιτεί ενεργή, επί πληρωμή συνδρομή Apple Music. Το Apple Music Voice και ορισμένες προωθητικές δοκιμές δεν υποστηρίζονται.
 oobe.visual.layout.text: |-
   Το Cider διαθέτει δύο διαφορετικές διατάξεις παραθύρου.
   Η Maverick είναι μια διάταξη παρόμοια με το iTunes, με το πρόγραμμα αναπαραγωγής στο επάνω μέρος του παραθύρου.
@@ -2915,6 +2938,10 @@ oobe.visual.title: Εμφάνιση
 oobe.welcome.getStarted: Ξεκινήστε
 oobe.welcome.importSettings: Εισαγωγή ρυθμίσεων…
 oobe.welcome.selectLanguage: Επιλέξτε τη γλώσσα της προτίμησής σας
+oobe.window.native: Εγγενές παράθυρο
+oobe.window.native.description: Χρησιμοποιεί τη γραμμή τίτλου και τα περιγράμματα του περιβάλλοντος εργασίας σας.
+oobe.window.styled: Προσαρμοσμένα στοιχεία ελέγχου
+oobe.window.styled.description: Προσαρμοσμένη γραμμή τίτλου εντός εφαρμογής με ενσωματωμένα στοιχεία ελέγχου παραθύρου.
 oobe.window.subtitle: Επιλέξτε πώς θα ενσωματώνεται το παράθυρο της εφαρμογής στο περιβάλλον εργασίας σας
 oobe.window.title: Στυλ παραθύρου
 oobe.yes: Ναι
@@ -3015,6 +3042,8 @@ playlist.error.updating.title: Σφάλμα ενημέρωσης λίστας α
 playlist.folderEmpty: Δεν υπάρχουν λίστες αναπαραγωγής σε αυτόν τον φάκελο
 playlist.folderMoveFailed: Ο φάκελος δεν μπόρεσε να μετακινηθεί. Δοκιμάστε ξανά σε λίγο.
 playlist.folderRenameHint: Διπλό κλικ για μετονομασία
+playlist.history: Ιστορικό λιστών αναπαραγωγής
+playlist.history.withCount: Ιστορικό λιστών αναπαραγωγής ({count})
 playlist.lastUpdated: Τελευταία ενημέρωση {{date}}
 playlist.madeByApple: Από την Apple
 playlist.moveFailed: Η λίστα αναπαραγωγής δεν μπόρεσε να μετακινηθεί. Δοκιμάστε ξανά σε λίγο.
@@ -3135,6 +3164,7 @@ settings.audio.atmos.normalizationHint: Τα μείγματα Dolby Atmos είν
 settings.audio.atmos.off.desc: Το Atmos είναι απενεργοποιημένο. Όλο το περιεχόμενο αναπαράγεται ως τυπικό στερεοφωνικό.
 settings.audio.atmos.passthrough: Passthrough
 settings.audio.atmos.passthrough.desc: Παρακάμπτει κάθε επεξεργασία ήχου. Το πολυκάναλο Atmos στέλνεται απευθείας στη συσκευή. Ιδανικό για δέκτες AV.
+settings.audio.atmos.passthrough.descV2: Στέλνει το πολυκαναλικό Atmos απευθείας στη συσκευή, για δέκτες AV. Το Audio Lab, το ισοσταθμιστή και η Λειτουργία ακρόασης παρακάμπτονται.
 settings.audio.atmos.passthroughActive: Το Passthrough είναι ενεργό — αλλάξτε το στις πλήρεις ρυθμίσεις.
 settings.audio.atmos.standard.desc: Πολυκάναλο Atmos με επεξεργασία CiderAudio. Τα Crossfade, Automix και οι Απρόσκοπτες μεταβάσεις συνεχίζουν να λειτουργούν κανονικά.
 settings.audio.atmosMode: Λειτουργία Atmos
@@ -3237,6 +3267,7 @@ settings.automix.normalizeDuration: Κανονικοποίηση διάρκει�
 settings.automix.normalizeDurationHint: Χρόνος μίξης για εξισορρόπηση έντασης ({ms}ms)
 settings.automix.spectralSeparation: Φασματικός διαχωρισμός
 settings.automix.spectralSeparationHint: Πόσο πολύ διαχωρίζονται οι συχνότητες των δύο κομματιών κατά τη διάρκεια μιας μετάβασης.
+settings.automix.spectralSeparationHintV2: Πόσο απομακρύνονται τα δύο κομμάτια σε συχνότητα κατά τη μετάβαση ({value}).
 settings.automix.speedSettle: Χρόνος σταθεροποίησης ταχύτητας
 settings.automix.speedSettleHint: Πόσος χρόνος απαιτείται για να επανέλθει η ταχύτητα αναπαραγωγής στο κανονικό μετά από μια μίξη με συγχρονισμένο tempo ({ms}ms)
 settings.automix.tempoAlign: Ταίριασμα ρυθμού
@@ -3390,6 +3421,7 @@ settings.client.windows.v8OptimizeSize.adds: Προσθέτει
 settings.client.windows.v8OptimizeSize.to: στο WebView2
 settings.client.windows.wpfRendering: Λειτουργία απόδοσης WPF
 settings.client.windows.wpfRendering.desc: Επιλέξτε τη λειτουργία απόδοσης για το WPF. Αν δεν είστε σίγουροι, αφήστε την επιλογή λογισμικού.
+settings.client.windows.wpfRendering.descV2: Επιλέξτε τον τρόπο σχεδίασης του παραθύρου. Αν δεν είστε σίγουροι, αφήστε το στο Hardware.
 settings.client.windows.wpfRendering.hardware: Υλικό
 settings.client.windows.wpfRendering.software: Λογισμικό
 settings.configBackups.confirm.body: Οι τρέχουσες ρυθμίσεις σας θα αντικατασταθούν από εκείνες που αποθηκεύτηκαν στις {date} και το Cider θα επαναφορτωθεί.
@@ -3499,6 +3531,7 @@ settings.contentFilter.empty: Δεν έχουν προστεθεί λέξεις-
 settings.contentFilter.inputPlaceholder: Προσθήκη λέξης-κλειδιού...
 settings.contentFilter.title: Φιλτράρισμα λέξεων-κλειδιών
 settings.crossfade.advanced: Προηγμένες ρυθμίσεις Crossfade
+settings.crossfade.automixStillBlends: Το Automix είναι ενεργό, οπότε τα τραγούδια μπορεί ακόμα να μπλέκονται μεταξύ τους. Απενεργοποιήστε το Automix παρακάτω για να σταματήσει κάθε μπλέξιμο.
 settings.crossfade.description: Ομαλή εξασθένηση του τρέχοντος κομματιού κατά την εισαγωγή του επόμενου.
 settings.crossfade.disableFor: Απενεργοποίηση Crossfade για...
 settings.crossfade.duration: Διάρκεια
@@ -3624,6 +3657,7 @@ settings.general.section.cache: Προσωρινή μνήμη
 settings.general.section.cache.description: Αποθηκευμένα εξώφυλλα και μεταδεδομένα που διατηρεί το Cider στον δίσκο για ταχύτερη φόρτωση των σελίδων.
 settings.general.section.desktop: Επιφάνεια εργασίας
 settings.general.section.desktop.description: Συντομεύσεις πληκτρολογίου και η συμπεριφορά του Cider στη γραμμή εργασιών και κατά το κλείσιμο.
+settings.general.section.desktop.descriptionV2: Συντομεύσεις πληκτρολογίου, διατήρηση του υπολογιστή ξύπνιου κατά την αναπαραγωγή και η συμπεριφορά του Cider στη γραμμή εργασιών και κατά το κλείσιμο.
 settings.general.section.language: Γλώσσα
 settings.general.section.language.description: Η γλώσσα της διεπαφής, και πώς να αναφέρετε ή να δώσετε τα εύσημα για τις μεταφράσεις της.
 settings.general.section.playback: Αναπαραγωγή
@@ -3960,6 +3994,7 @@ settings.option.advanced.mavericksLcd.style: Στυλ
 settings.option.advanced.mavericksLcd.style.glass: Γυαλί
 settings.option.advanced.mediaArtwork: Εξώφυλλο στοιχείου πολυμέσων
 settings.option.advanced.mediaArtwork.controls: Επισημάνσεις εξωφύλλων και εικόνες υψηλής ανάλυσης
+settings.option.advanced.mediaArtwork.controlsV2: Επισήμανση και εμφάνιση εξωφύλλου
 settings.option.advanced.mediaArtwork.description: Εξώφυλλα σε πλέγματα, λίστες και σειρές σε όλη την εφαρμογή.
 settings.option.advanced.notificationStyle: Στυλ ειδοποιήσεων
 settings.option.advanced.performance: Επιδόσεις
@@ -3989,8 +4024,11 @@ settings.option.advanced.settingsTakeout: Εξαγωγή / Εισαγωγή ρυ
 settings.option.advanced.settingsTakeout.description: Δημιουργήστε αντίγραφα ασφαλείας των προτιμήσεών σας σε ένα αρχείο ή επαναφέρετέ τις σε άλλη συσκευή. Τα στοιχεία σύνδεσης λογαριασμού δεν περιλαμβάνονται ποτέ.
 settings.option.advanced.simpleArtworkBg: Απλό φόντο εξωφύλλου
 settings.option.advanced.simpleArtworkBg.brightness: Φωτεινότητα %
+settings.option.advanced.simpleArtworkBg.brightnessV2: Φωτεινότητα
 settings.option.advanced.simpleArtworkBg.contrast: Αντίθεση %
+settings.option.advanced.simpleArtworkBg.contrastV2: Αντίθεση
 settings.option.advanced.simpleArtworkBg.saturate: Κορεσμός %
+settings.option.advanced.simpleArtworkBg.saturateV2: Κορεσμός
 settings.option.advanced.simpleArtworkBg.useMask: Χρήση κάτω μάσκας
 settings.option.advanced.sonoma: Sonoma
 settings.option.advanced.sonoma.lyricArc: Καμπυλωτοί στίχοι
@@ -4296,6 +4334,8 @@ settings.option.general.onStartup: Κατά την εκκίνηση
 settings.option.general.onStartup.openStartup: Άνοιγμα σελίδας εκκίνησης
 settings.option.general.onStartup.resume: Συνέχιση προηγούμενης περιόδου λειτουργίας
 settings.option.general.pagination: Στοιχεία προς εμφάνιση ανά σελίδα
+settings.option.general.preventDisplaySleep: Διατήρηση ενεργής οθόνης κατά την αναπαραγωγή
+settings.option.general.preventSystemSleep: Διατήρηση του υπολογιστή ξύπνιου κατά την αναπαραγωγή
 settings.option.general.privacy: Ιδιωτικότητα
 settings.option.general.promptOnClose: Επιβεβαίωση κατά το κλείσιμο όταν αναπαράγεται μουσική
 settings.option.general.queue: Ουρά
@@ -4322,6 +4362,7 @@ settings.option.general.sleepTimerSettings: Ρυθμίσεις χρονοδια�
 settings.option.general.startupPage: Σελίδα εκκίνησης
 settings.option.general.startupPage.blank: Κενή σελίδα
 settings.option.general.startupPage.description: Επιλέξτε τη σελίδα που θα εμφανίζεται όταν ανοίγετε το Cider.
+settings.option.general.startupPage.descriptionV2: Η σελίδα που ανοίγει το Cider σε νέες καρτέλες και κατά την εκκίνηση, όταν το Κατά την εκκίνηση είναι ρυθμισμένο σε Άνοιγμα σελίδας εκκίνησης.
 settings.option.general.startupPage.newTab: Σελίδα νέας καρτέλας
 settings.option.general.startupPage.personalHome: Προσωπική αρχική σελίδα
 settings.option.general.themeUpdateNotification: Αυτόματος έλεγχος για ενημερώσεις θεμάτων
@@ -4331,6 +4372,7 @@ settings.option.general.translators: Μεταφραστές
 settings.option.general.translators.description: Ευχαριστούμε αυτούς τους συνεισφέροντες για τη βοήθειά τους στη μετάφραση του Cider. Κάντε κλικ σε ένα όνομα για να ανοίξετε το προφίλ τους στο GitHub.
 settings.option.general.useSmartQueueByDefault: Χρήση Έξυπνης ουράς από προεπιλογή
 settings.option.general.useSmartQueueByDefault.description: Αυτόματη εφαρμογή της σειράς της Έξυπνης ουράς κατά τη δημιουργία της ουράς αναπαραγωγής. Απαιτεί Automix.
+settings.option.general.useSmartQueueByDefault.needsAutomix: Το Automix είναι απενεργοποιημένο στον Ήχο, οπότε το Smart Queue δεν θα αναδιατάξει τίποτα.
 settings.option.general.warnBeforeQueueOverride: Προειδοποίηση πριν από την αντικατάσταση της ουράς
 settings.option.hide: Απόκρυψη
 settings.option.left: Αριστερά
@@ -4417,6 +4459,9 @@ settings.option.performance.enableMediaItemInspect.description: Ενδέχετα
 settings.option.performance.gameMode: Λειτουργία παιχνιδιού
 settings.option.performance.gameMode.description: Μειώνει τα οπτικά εφέ και μπορεί να ενεργοποιήσει τη λειτουργία αποδοτικότητας των Windows για χαμηλότερη χρήση CPU.
 settings.option.performance.gameMode.disable: Απενεργοποίηση λειτουργίας παιχνιδιού
+settings.option.performance.graphicsAcceleration: Επιτάχυνση γραφικών
+settings.option.performance.graphicsAcceleration.autoOff: Απενεργοποιημένη επειδή αυτός ο υπολογιστής σχεδιάζει γραφικά με λογισμικό.
+settings.option.performance.graphicsAcceleration.description: Το Αυτόματο την απενεργοποιεί σε εικονική μηχανή που σχεδιάζει γραφικά με λογισμικό. Οι αλλαγές ισχύουν την επόμενη φορά που θα ξεκινήσει το Cider.
 settings.option.performance.host: Host
 settings.option.performance.immersiveRenderer: Καθηλωτικός renderer
 settings.option.performance.immersiveRenderer.description: Χρήση του Canvas 2D αντί για το WebGPU εάν το κινούμενο φόντο δεν λειτουργεί σωστά ή χρησιμοποιεί υπερβολική GPU.
@@ -4432,6 +4477,8 @@ settings.option.performance.preloadSidebarPages: Προφόρτωση σελίδ
 settings.option.performance.preloadSidebarPages.description: Φορτώνει τις σελίδες της πλευρικής στήλης προτού τις ανοίξετε. Η επιλογή «Κατά την κατάδειξη» ξεκινά όταν ο δείκτης παραμένει πάνω σε ένα στοιχείο της πλευρικής στήλης. Η επιλογή «Σε αδράνεια» φορτώνει επίσης τα «Ακούστε τώρα», «Περιήγηση» και «Ραδιόφωνο» μετά την εκκίνηση και ανανεώνει τις λίστες βιβλιοθήκης που έχετε ανοίξει προηγουμένως.
 settings.option.performance.preloadSidebarPages.idle: Σε αδράνεια
 settings.option.performance.preloadSidebarPages.intent: Κατά την κατάδειξη
+settings.option.performance.reduceEffects: Μείωση οπτικών εφέ
+settings.option.performance.reduceEffects.description: Απενεργοποιεί το θόλωμα, το γυαλί, τη λάμψη και τα κινούμενα φόντα, ώστε η εφαρμογή να σχεδιάζει λιγότερα. Το Αυτόματο το ενεργοποιεί όταν δεν υπάρχει λειτουργική κάρτα γραφικών ή όταν το σύστημα ζητά λιγότερη διαφάνεια.
 settings.option.performance.renderer.auto: Αυτόματα (WebGPU όταν υποστηρίζεται)
 settings.option.performance.renderer.canvas: Canvas 2D
 settings.option.performance.renderer.webgpu: WebGPU
@@ -4651,6 +4698,7 @@ settings.option.visual.liquidGlassPlayer: Γραμμή αναπαραγωγής 
 settings.option.visual.liquidGlassPlayer.description: Χρήση της επιφάνειας liquid-glass για τη γραμμή αναπαραγωγής. Απενεργοποιήστε το για ένα επίπεδο, συμπαγές πλαίσιο (επίσης ελαφρύτερο στην απόδοση).
 settings.option.visual.liquidGlassScrollPerf: Ελαφρύ γυαλί κατά την κύλιση
 settings.option.visual.liquidGlassScrollPerf.description: Απλοποιεί τη διάθλαση υγρού γυαλιού σε ένα απλό θόλωμα κατά την κύλιση και την επαναφέρει ομαλά όταν σταματάτε. Μειώνει τα κολλήματα κύλισης σε απαιτητικά συστήματα, χωρίς καμία αλλαγή σε κατάσταση ηρεμίας. Πάντα ενεργό στη Λειτουργία παιχνιδιού.
+settings.option.visual.liquidGlassScrollPerf.descriptionV2: Απλοποιεί τη διάθλαση του liquid glass σε απλό θόλωμα κατά το scroll και την επαναφέρει όταν σταματήσετε. Μειώνει τα κολλήματα κατά την κύλιση σε απαιτητικά συστήματα, χωρίς αλλαγή όταν δεν γίνεται κύλιση.
 settings.option.visual.mainMenuPosition: Θέση κύριου μενού
 settings.option.visual.matchPageToArtwork: Αντιστοίχιση σελίδας με το εξώφυλλο
 settings.option.visual.matchPageToArtwork.description: Βάφει τις σελίδες άλμπουμ και λιστών αναπαραγωγής με τα χρώματα του εξωφύλλου τους, σε λειτουργία φωτεινού και σκοτεινού θέματος.
@@ -4831,6 +4879,7 @@ settings.prompt.visual.plugin.github.success: Το πρόσθετο εγκατα
 settings.prompt.visual.plugin.github.URL: Εισαγάγετε το URL του πρόσθετου που θέλετε να εγκαταστήσετε
 settings.prompt.visual.theme.github.URL: Εισαγάγετε το URL του θέματος που θέλετε να εγκαταστήσετε
 settings.prompt.visual.theme.uninstallTheme: Είστε βέβαιοι ότι θέλετε να απεγκαταστήσετε το {{theme}};
+settings.reloadPrompt.message: Απαιτείται ανανέωση της εφαρμογής για να εφαρμοστούν οι αλλαγές. Θέλετε να συνεχίσετε;
 settings.requiresNewerClient: Απαιτείται νεότερη έκδοση του Cider.
 settings.resetCider.category.appleMusic: Αποσύνδεση από το Apple Music
 settings.resetCider.category.appleMusic.desc: Κατάργηση του λογαριασμού Apple Music από αυτήν τη συσκευή
@@ -4874,6 +4923,7 @@ settings.smartPlaylists.section.maintenance: Συντήρηση
 settings.smartPlaylists.section.maintenance.description: Αναγκαστική εκτέλεση όλων των κανόνων τώρα ή απόρριψη του προσωρινά αποθηκευμένου αντιγράφου της βιβλιοθήκης σας.
 settings.smartPlaylists.section.rules: Κανόνες
 settings.smartPlaylists.section.rules.description: Εάν το Cider εφαρμόζει ενσωματωμένους κανόνες λιστών αναπαραγωγής και πόσο συχνά τους επαναξιολογεί.
+settings.smartPlaylists.section.rules.descriptionV2: Αν το Cider εφαρμόζει ενσωματωμένους κανόνες λιστών αναπαραγωγής. Εκτελούνται ξανά με τον Χρόνο ανανέωσης στο παρασκήνιο στη Χρήση ενέργειας.
 settings.sweetener.useSystemAccentColor: Χρήση χρώματος έμφασης συστήματος
 settings.takeout.chooseFile: Επιλογή αρχείου…
 settings.takeout.error.badVersion: Αυτό το αρχείο δεν περιέχει πληροφορίες έκδοσης.
@@ -4904,6 +4954,7 @@ settings.title: Ρυθμίσεις
 settings.troubleshooting.bgDiagnostics: Διαγνωστικά αναπαραγωγής στο παρασκήνιο
 settings.troubleshooting.bgDiagnostics.desc: Επιπλέον ίχνη καταγραφής (breadcrumbs) για τη διάγνωση προβλημάτων αναπαραγωγής όταν το παράθυρο είναι ελαχιστοποιημένο ή εκτός εστίασης — ποιος έκανε παύση, καθυστερήσεις χρονοδιακόπτη και περιστατικά αναστολής λειτουργίας από το λειτουργικό σύστημα. Ενεργοποιήστε το κατά την αναφορά σφάλματος αναπαραγωγής στο παρασκήνιο.
 settings.troubleshooting.desc: Αρχεία καταγραφής και καταγραφή σφαλμάτων MKLite.
+settings.troubleshooting.descV2: Καταγραφή MKLite και αναπαραγωγής στο παρασκήνιο.
 settings.troubleshooting.hevcWorkaround: Παράκαμψη HEVC
 settings.troubleshooting.hevcWorkaround.desc: Παράκαμψη για ένα σφάλμα στο WebView2 με ορισμένες κάρτες γραφικών (GPU) που αντιμετωπίζουν προβλήματα με την αναπαραγωγή 10-bit SDR HEVC, εφαρμόζοντας ένα φίλτρο για την αντιστάθμιση της οπτικής μετατόπισης.
 settings.troubleshooting.impressionReporting: Αναφορά εμφανίσεων PlayActivity
@@ -4927,6 +4978,8 @@ settings.updates.action.check: Έλεγχος για ενημερώσεις
 settings.updates.action.install: Εγκατάσταση ενημέρωσης
 settings.updates.action.restart: Επανεκκίνηση του Cider
 settings.updates.action.retry: Δοκιμάστε ξανά
+settings.updates.autoCheck: Αυτόματος έλεγχος για ενημερώσεις
+settings.updates.autoCheck.description: Όταν είναι απενεργοποιημένο, το Cider ελέγχει μόνο όταν ανοίγετε αυτή τη σελίδα.
 settings.updates.build: Build
 settings.updates.channel: Κανάλι
 settings.updates.codename: Κωδικό όνομα
@@ -5591,6 +5644,8 @@ updates.installUnavailable.body: Αυτή η έκδοση δεν είναι δι
 updates.lateststable.title: Τελευταία σταθερή έκδοση
 updates.loadFailed.body: Ελέγξτε τη σύνδεσή σας και δοκιμάστε ξανά.
 updates.loadFailed.title: Το Cider δεν μπόρεσε να φορτώσει τις διαθέσιμες εκδόσεις
+updates.newVersion.body: Υπάρχει νέα έκδοση του Cider. Θέλετε να μεταβείτε στις Ενημερώσεις για λήψη;
+updates.newVersion.title: Διαθέσιμη νέα έκδοση
 updates.notifyForBranch.tooltip: Ειδοποίηση για αυτόν τον κλάδο
 updates.otherVersions.title: Άλλες εκδόσεις
 updates.ptb.name: Κλάδος δημόσιων δοκιμών
