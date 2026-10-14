@@ -254,6 +254,9 @@ album.track.unavailable.unreleased: รายการนี้ยังไม�
 album.track.unavailable.zeroDuration: ความยาวของรายการคือ 0 วินาที อาจจะยังไม่ปล่อยให้ฟัง
 album.upcoming.badge: อัลบั้มเร็วๆ นี้
 app.name: Cider
+app.ptbDisclaimer.confirm: ฉันเข้าใจแล้ว
+app.ptbDisclaimer.message: นี่คือบิลด์ Public Testing Branch บิลด์นี้ไม่รับประกันความเสถียรและอาจมีข้อบกพร่อง อย่ารายงานบั๊กหรือปัญหาที่พบในบิลด์นี้ หากพบปัญหาใดๆ โปรดเปลี่ยนไปใช้บิลด์เสถียรก่อนแจ้งรายงาน
+app.ptbDisclaimer.title: ข้อจำกัดความรับผิดชอบของ Public Testing Branch
 app.unsupportedClient.message: ไม่รองรับไคลเอนต์นี้ โปรดตรวจสอบให้แน่ใจว่าคุณกำลังใช้ Cider เวอร์ชันล่าสุด
 app.unsupportedClient.title: ไม่รองรับไคลเอนต์
 assistant.sid.agent.added: เพิ่ม {count} เพลงแล้ว
@@ -726,10 +729,16 @@ audio.device.default: อุปกรณ์เริ่มต้น
 audio.device.noneFound: ไม่พบอุปกรณ์เอาต์พุต
 audio.device.placeholder: อุปกรณ์ {{id}}
 audiolab.waiting: กำลังรอการเพิ่มเพลงลงในคิว
+auth.error.devToken: ไม่สามารถเชื่อมต่อกับ Apple Music ได้
+auth.error.generic: ไม่สามารถลงชื่อเข้าใช้ให้เสร็จสิ้นได้ โปรดตรวจสอบการเชื่อมต่อแล้วลองอีกครั้ง
+auth.error.invalidToken: ได้รับโทเค็นที่ไม่ถูกต้อง
 auth.error.popupBlocked: ป๊อปอัปถูกบล็อก
+auth.error.timeout: การลงชื่อเข้าใช้หมดเวลา
+auth.error.unavailable: Apple ID นี้ไม่สามารถใช้ Apple Music ใน Cider ได้ Cider ต้องใช้การสมัครสมาชิก Apple Music แบบชำระเงินที่ใช้งานอยู่
 auth.error.windowFailed: ไม่สามารถเปิดหน้าต่างลงชื่อเข้าใช้ได้
 auth.mutExpired.confirm: ลงชื่อเข้าใช้
 auth.mutExpired.message: เซสชั่น Apple Music ของคุณหมดอายุแล้ว ลงชื่อเข้าใช้อีกครั้งเพื่อดำเนินการต่อ
+auth.signedIn: ลงชื่อเข้าใช้แล้ว
 auth.signInRetry.confirm: ลองอีกครั้ง
 auth.signInRetry.message: ไม่สามารถเปิดหน้าต่างลงชื่อเข้าใช้ได้ ลองอีกครั้งไหม
 bugReport.addImage: เพิ่มรูปภาพ
@@ -2843,6 +2852,7 @@ oobe.amupsell.title: ก่อนที่เราจะเริ่ม
 oobe.appearance.accentHint: ใช้สำหรับปุ่ม ไฮไลต์ และแถบความคืบหน้าทั่วทั้งแอป ลองเลือกสักสีเพื่อดูตัวอย่างแบบเรียลไทม์
 oobe.appearance.subtitle: เลือกโทนสีและสีเน้น คุณสามารถเปลี่ยนสีเหล่านี้ได้ตลอดเวลาใน การตั้งค่า → รูปลักษณ์
 oobe.appearance.title: ปรับแต่ง Cider ในแบบของคุณ
+oobe.appleNotice: "โปรดทราบ: Apple Music เป็นเครื่องหมายการค้าของ Apple Inc. Cider เป็นไคลเอนต์ของบุคคลที่สามสำหรับ Apple Music และไม่ได้เกี่ยวข้องกับ Apple Inc."
 oobe.audio.advancedFunctionality: ""
 oobe.audio.subtitle: ""
 oobe.audio.text: |-
@@ -2881,19 +2891,31 @@ oobe.intro.subtitle: ""
 oobe.intro.text: มาตั้งค่าบางอย่างเพื่อให้คุณสามารถใช้งาน Cider ในแบบที่คุณต้องการ คุณสามารถเปลี่ยนการตั้งค่าเหล่านี้ได้ตลอดเวลาในภายหลัง
 oobe.intro.title: ยินดีต้อนรับสู่ Cider
 oobe.layout.subtitle: เลือกเลย์เอาต์ที่เหมาะกับสไตล์ของคุณ
+oobe.login.alreadySignedIn: คุณลงชื่อเข้าใช้อยู่แล้ว
 oobe.login.skip: ข้ามไปก่อน
 oobe.login.skipTooltip: คุณจะสามารถใช้งานแอปได้ในโหมดทดลองใช้เท่านั้น
 oobe.login.subtitle: ลงชื่อเข้าใช้ด้วยบัญชี Apple Music ของคุณเพื่อเริ่มเพลิดเพลินกับเสียงเพลง
+oobe.login.terms: เมื่อดำเนินการต่อ แสดงว่าคุณยอมรับข้อกำหนดในการให้บริการและนโยบายความเป็นส่วนตัว
 oobe.login.title: ขั้นตอนสุดท้าย
 oobe.login.userToken: ลงชื่อเข้าใช้ด้วยโทเค็นผู้ใช้
+oobe.music.mute: ปิดเสียงเพลงตั้งค่า
+oobe.music.unmute: เปิดเสียงเพลงตั้งค่า
 oobe.next: ถัดไป
 oobe.no: ไม่
+oobe.performance.full.descriptionV2: เปิดเอฟเฟกต์ภาพไว้ Cider จะลดเอฟเฟกต์ลงเองเฉพาะเมื่อคอมพิวเตอร์ของคุณแสดงผลไม่ได้
+oobe.performance.fullV2: คุณภาพเต็ม
 oobe.performance.hint: โหมดประสิทธิภาพจะลดเอฟเฟกต์ภาพและประหยัดการทำงานของ CPU โดยจะปิดไว้เป็นค่าเริ่มต้นสำหรับระบบของคุณ แต่คุณสามารถเปิดใช้งานได้ตลอดเวลา
 oobe.performance.lowEndHint: เราตรวจพบ CPU ที่มีจำนวนเธรดต่ำ ขอแนะนำให้ใช้โหมดประสิทธิภาพเพื่อการเล่นเพลงที่ราบรื่นยิ่งขึ้นและลดการใช้งาน CPU
+oobe.performance.mode.description: ปิดเอฟเฟกต์ภาพที่หนัก เช่น การเบลอขนาดใหญ่และพื้นหลังแบบเคลื่อนไหว เหมาะสำหรับคอมพิวเตอร์รุ่นเก่า
+oobe.performance.modeV2: โหมดประสิทธิภาพ
+oobe.performance.subtitleV3: โหมดประสิทธิภาพจะปิดเอฟเฟกต์ภาพที่หนักที่สุด คุณภาพเต็มจะเปิดเอฟเฟกต์ไว้ เว้นแต่คอมพิวเตอร์ของคุณแสดงผลไม่ได้
 oobe.performance.title: ประสิทธิภาพ
+oobe.performance.whereToChangeV3: ในการตั้งค่า ตัวเลือกนี้คือ {setting} ภายใต้ {page} เลือก {on} สำหรับโหมดประสิทธิภาพ หรือ {automatic} สำหรับคุณภาพเต็ม คุณเปลี่ยนได้ทุกเมื่อ
 oobe.player.subtitle: แถบกำลังเล่นอยู่ที่ขอบหน้าต่าง เลือกความหนาแน่นที่เหมาะกับคุณ
 oobe.player.title: เลือกเครื่องเล่นของคุณ
 oobe.previous: ก่อนหน้า
+oobe.progress: "ขั้นตอนที่ {current} จาก {total}: {title}"
+oobe.progress.label: ความคืบหน้าการตั้งค่า
 oobe.step.appearance: รูปลักษณ์
 oobe.step.connections: การเชื่อมต่อ
 oobe.step.features: เสียง
@@ -2903,6 +2925,7 @@ oobe.step.performance: ประสิทธิภาพ
 oobe.step.player: เครื่องเล่น
 oobe.step.welcome: ยินดีต้อนรับ
 oobe.step.window: สไตล์หน้าต่าง
+oobe.subscriptionNote: Cider ต้องใช้การสมัครสมาชิก Apple Music แบบชำระเงินที่ใช้งานอยู่ ไม่รองรับ Apple Music Voice และโปรโมชันทดลองบางรายการ
 oobe.visual.layout.text: |-
   Cider มีเลย์เอาต์หน้าต่างที่แตกต่างกันสองแบบ
   Maverick คือเลย์เอาต์ที่คล้ายกับ iTunes โดยมีเครื่องเล่นอยู่ด้านบนสุดของหน้าต่าง
@@ -2915,6 +2938,10 @@ oobe.visual.title: รูปลักษณ์
 oobe.welcome.getStarted: เริ่มต้นใช้งาน
 oobe.welcome.importSettings: นำเข้าการตั้งค่า…
 oobe.welcome.selectLanguage: เลือกภาษาที่คุณต้องการ
+oobe.window.native: หน้าต่างแบบเนทิฟ
+oobe.window.native.description: ใช้แถบชื่อและขอบหน้าต่างของสภาพแวดล้อมเดสก์ท็อปของคุณ
+oobe.window.styled: ปุ่มควบคุมแบบกำหนดเอง
+oobe.window.styled.description: แถบชื่อกำหนดเองในแอป พร้อมปุ่มควบคุมหน้าต่างในตัว
 oobe.window.subtitle: เลือกวิธีที่หน้าต่างแอปจะผสานรวมกับสภาพแวดล้อมเดสก์ท็อปของคุณ
 oobe.window.title: สไตล์หน้าต่าง
 oobe.yes: ใช่
@@ -3015,6 +3042,8 @@ playlist.error.updating.title: เกิดข้อผิดพลาดใน�
 playlist.folderEmpty: ไม่มีเพลย์ลิสต์ในโฟลเดอร์นี้
 playlist.folderMoveFailed: ไม่สามารถย้ายโฟลเดอร์ได้ โปรดลองอีกครั้งในอีกสักครู่
 playlist.folderRenameHint: ดับเบิลคลิกเพื่อเปลี่ยนชื่อ
+playlist.history: ประวัติเพลย์ลิสต์
+playlist.history.withCount: ประวัติเพลย์ลิสต์ ({count})
 playlist.lastUpdated: อัปเดตล่าสุดเมื่อ {{date}}
 playlist.madeByApple: สร้างโดย Apple
 playlist.moveFailed: ไม่สามารถย้ายเพลย์ลิสต์ได้ โปรดลองอีกครั้งในอีกสักครู่
@@ -3135,6 +3164,7 @@ settings.audio.atmos.normalizationHint: มิกซ์ Dolby Atmos มีระ
 settings.audio.atmos.off.desc: ปิดใช้งาน Atmos คอนเทนต์ทั้งหมดจะเล่นเป็นเสียงสเตอริโอมาตรฐาน
 settings.audio.atmos.passthrough: Passthrough
 settings.audio.atmos.passthrough.desc: ข้ามการประมวลผลเสียงทั้งหมด โดยจะส่งสัญญาณ Atmos แบบหลายช่องสัญญาณไปยังอุปกรณ์โดยตรง เหมาะสำหรับเครื่องรับ AV
+settings.audio.atmos.passthrough.descV2: ส่ง Atmos หลายช่องสัญญาณตรงไปยังอุปกรณ์ สำหรับเครื่องรับ AV Audio Lab ตัวปรับสมดุล และโหมดการฟังถูกข้าม
 settings.audio.atmos.passthroughActive: เปิดใช้งาน Passthrough แล้ว — เปลี่ยนแปลงได้ในการตั้งค่าทั้งหมด
 settings.audio.atmos.standard.desc: Atmos แบบหลายช่องสัญญาณพร้อมการประมวลผล CiderAudio โดยที่การเล่นเพลงแบบประสาน (Crossfade), Automix และการเปลี่ยนเพลงแบบไร้รอยต่อยังคงทำงานได้ตามปกติ
 settings.audio.atmosMode: โหมด Atmos
@@ -3237,6 +3267,7 @@ settings.automix.normalizeDuration: ปรับระยะเวลาให�
 settings.automix.normalizeDurationHint: เวลาในการผสมผสานสำหรับการจับคู่ความดัง ({ms}ms)
 settings.automix.spectralSeparation: การแยกสเปกตรัม
 settings.automix.spectralSeparationHint: ระยะห่างของความถี่ที่ถูกแยกออกจากกันระหว่างสองเพลงในช่วงเปลี่ยนผ่าน
+settings.automix.spectralSeparationHintV2: ระยะที่แยกแทร็กทั้งสองออกจากกันในความถี่ระหว่างการเปลี่ยนเพลง ({value})
 settings.automix.speedSettle: เวลาคืนค่าความเร็ว
 settings.automix.speedSettleHint: ระยะเวลาที่ความเร็วในการเล่นใช้เพื่อกลับสู่ระดับปกติหลังจากผสมผสานเพลงแบบจับคู่เทมโป ({ms}ms)
 settings.automix.tempoAlign: การจับคู่บีต
@@ -3390,6 +3421,7 @@ settings.client.windows.v8OptimizeSize.adds: เพิ่ม
 settings.client.windows.v8OptimizeSize.to: ไปยัง WebView2
 settings.client.windows.wpfRendering: โหมดการเรนเดอร์ WPF
 settings.client.windows.wpfRendering.desc: เลือกโหมดการเรนเดอร์สำหรับ WPF หากไม่แน่ใจ ให้ปล่อยไว้เป็นซอฟต์แวร์
+settings.client.windows.wpfRendering.descV2: เลือกวิธีการวาดหน้าต่าง หากไม่แน่ใจ ให้เปิดไว้ที่ฮาร์ดแวร์
 settings.client.windows.wpfRendering.hardware: ฮาร์ดแวร์
 settings.client.windows.wpfRendering.software: ซอฟต์แวร์
 settings.configBackups.confirm.body: การตั้งค่าปัจจุบันของคุณจะถูกแทนที่ด้วยการตั้งค่าที่บันทึกไว้เมื่อ {date} และ Cider จะโหลดใหม่
@@ -3499,6 +3531,7 @@ settings.contentFilter.empty: ยังไม่มีการเพิ่ม�
 settings.contentFilter.inputPlaceholder: เพิ่มคำหลัก...
 settings.contentFilter.title: ตัวกรองคำหลัก
 settings.crossfade.advanced: การตั้งค่าการเล่นเพลงต่อเนื่องขั้นสูง
+settings.crossfade.automixStillBlends: Automix เปิดอยู่ เพลงจึงยังผสานเข้าหากันได้ ปิด Automix ด้านล่างเพื่อหยุดการผสานทั้งหมด
 settings.crossfade.description: ค่อยๆ หรี่เสียงเพลงปัจจุบันลงพร้อมกับค่อยๆ เพิ่มเสียงเพลงถัดไปขึ้นอย่างราบรื่น
 settings.crossfade.disableFor: ปิดใช้งานการเล่นเพลงต่อเนื่องสำหรับ...
 settings.crossfade.duration: ระยะเวลา
@@ -3624,6 +3657,7 @@ settings.general.section.cache: แคช
 settings.general.section.cache.description: ภาพหน้าปกและข้อมูลเมตาที่ Cider บันทึกไว้ในดิสก์เพื่อให้โหลดหน้าเว็บได้เร็วขึ้น
 settings.general.section.desktop: เดสก์ท็อป
 settings.general.section.desktop.description: ปุ่มลัดแป้นพิมพ์ และลักษณะการทำงานของ Cider ในแถบงานและเมื่อปิดโปรแกรม
+settings.general.section.desktop.descriptionV2: ปุ่มลัดแป้นพิมพ์ การคงคอมพิวเตอร์ให้ตื่นขณะเล่นเพลง และการทำงานของ Cider ในแถบงานและเมื่อปิด
 settings.general.section.language: ภาษา
 settings.general.section.language.description: ภาษาของอินเทอร์เฟซ และวิธีรายงานหรือให้เครดิตผู้แปล
 settings.general.section.playback: การเล่น
@@ -3960,6 +3994,7 @@ settings.option.advanced.mavericksLcd.style: สไตล์
 settings.option.advanced.mavericksLcd.style.glass: กระจก
 settings.option.advanced.mediaArtwork: ภาพหน้าปกสื่อ
 settings.option.advanced.mediaArtwork.controls: ไฮไลท์ภาพหน้าปกและรูปภาพความละเอียดสูง
+settings.option.advanced.mediaArtwork.controlsV2: การเน้นและค่อยๆ ปรากฏของภาพปก
 settings.option.advanced.mediaArtwork.description: ภาพหน้าปกบนตาราง รายการ และแถวต่างๆ ทั่วทั้งแอป
 settings.option.advanced.notificationStyle: รูปแบบการแจ้งเตือน
 settings.option.advanced.performance: ประสิทธิภาพ
@@ -3989,8 +4024,11 @@ settings.option.advanced.settingsTakeout: ส่งออก / นำเข้�
 settings.option.advanced.settingsTakeout.description: สำรองข้อมูลการตั้งค่าของคุณไปยังไฟล์ หรือกู้คืนบนอุปกรณ์อื่น ข้อมูลการเข้าสู่ระบบบัญชีจะไม่ถูกรวมอยู่ด้วย
 settings.option.advanced.simpleArtworkBg: พื้นหลังภาพหน้าปกแบบเรียบง่าย
 settings.option.advanced.simpleArtworkBg.brightness: ความสว่าง %
+settings.option.advanced.simpleArtworkBg.brightnessV2: ความสว่าง
 settings.option.advanced.simpleArtworkBg.contrast: คอนทราสต์ %
+settings.option.advanced.simpleArtworkBg.contrastV2: คอนทราสต์
 settings.option.advanced.simpleArtworkBg.saturate: "% ความอิ่มตัวของสี"
+settings.option.advanced.simpleArtworkBg.saturateV2: ความอิ่มสี
 settings.option.advanced.simpleArtworkBg.useMask: ใช้มาสก์ด้านล่าง
 settings.option.advanced.sonoma: Sonoma
 settings.option.advanced.sonoma.lyricArc: เนื้อเพลงแบบโค้ง
@@ -4296,6 +4334,8 @@ settings.option.general.onStartup: เมื่อเปิดแอป
 settings.option.general.onStartup.openStartup: เปิดหน้าเริ่มต้น
 settings.option.general.onStartup.resume: เล่นต่อจากเซสชันล่าสุด
 settings.option.general.pagination: จำนวนรายการที่จะแสดงต่อหน้า
+settings.option.general.preventDisplaySleep: เปิดหน้าจอค้างไว้ขณะเล่นเพลง
+settings.option.general.preventSystemSleep: คงคอมพิวเตอร์ให้ตื่นขณะเล่นเพลง
 settings.option.general.privacy: ส่วนตัว
 settings.option.general.promptOnClose: ถามก่อนปิดเมื่อกำลังเล่นเพลง
 settings.option.general.queue: คิว
@@ -4322,6 +4362,7 @@ settings.option.general.sleepTimerSettings: ตั้งค่าตัวตั
 settings.option.general.startupPage: หน้าเริ่มต้น
 settings.option.general.startupPage.blank: หน้าว่าง
 settings.option.general.startupPage.description: เลือกหน้าที่จะแสดงเมื่อคุณเปิด Cider
+settings.option.general.startupPage.descriptionV2: หน้าที่ Cider เปิดในแท็บใหม่ และตอนเปิดแอปเมื่อ เมื่อเริ่มต้นระบบ ถูกตั้งเป็น เปิดหน้าเริ่มต้น
 settings.option.general.startupPage.newTab: หน้าแท็บใหม่
 settings.option.general.startupPage.personalHome: หน้าแรกส่วนตัว
 settings.option.general.themeUpdateNotification: ตรวจสอบการอัปเดตธีมโดยอัตโนมัติ
@@ -4331,6 +4372,7 @@ settings.option.general.translators: ผู้แปล
 settings.option.general.translators.description: ขอขอบคุณผู้มีส่วนร่วมเหล่านี้ที่ช่วยแปล Cider คลิกที่ชื่อเพื่อเปิดโปรไฟล์ GitHub
 settings.option.general.useSmartQueueByDefault: ใช้คิวอัจฉริยะเป็นค่าเริ่มต้น
 settings.option.general.useSmartQueueByDefault.description: จัดลำดับคิวโดยอัตโนมัติด้วย Smart Queue เมื่อสร้างคิว จำเป็นต้องใช้ Automix
+settings.option.general.useSmartQueueByDefault.needsAutomix: Automix ปิดอยู่ในส่วนเสียง Smart Queue จึงจะไม่จัดลำดับใหม่
 settings.option.general.warnBeforeQueueOverride: เตือนก่อนเขียนทับคิว
 settings.option.hide: ซ่อน
 settings.option.left: ซ้าย
@@ -4417,6 +4459,9 @@ settings.option.performance.enableMediaItemInspect.description: อาจส่�
 settings.option.performance.gameMode: โหมดเกม
 settings.option.performance.gameMode.description: ลดเอฟเฟกต์ภาพและสามารถเปิดใช้งานโหมดประสิทธิภาพของ Windows เพื่อลดการใช้งาน CPU
 settings.option.performance.gameMode.disable: ปิดใช้งานโหมดเกม
+settings.option.performance.graphicsAcceleration: การเร่งความเร็วกราฟิก
+settings.option.performance.graphicsAcceleration.autoOff: ปิดอยู่เพราะพีซีเครื่องนี้วาดกราฟิกด้วยซอฟต์แวร์
+settings.option.performance.graphicsAcceleration.description: แบบอัตโนมัติจะปิดการทำงานนี้ในเครื่องเสมือนที่วาดกราฟิกด้วยซอฟต์แวร์ การเปลี่ยนแปลงจะมีผลเมื่อเปิด Cider ครั้งถัดไป
 settings.option.performance.host: โฮสต์
 settings.option.performance.immersiveRenderer: ตัวเรนเดอร์แบบสมจริง
 settings.option.performance.immersiveRenderer.description: ใช้ Canvas 2D แทน WebGPU หากพื้นหลังเคลื่อนไหวทำงานผิดปกติหรือใช้ GPU มากเกินไป
@@ -4432,6 +4477,8 @@ settings.option.performance.preloadSidebarPages: โหลดหน้าแถ�
 settings.option.performance.preloadSidebarPages.description: โหลดหน้าแถบข้างล่วงหน้าก่อนที่คุณจะเปิด ตัวเลือก 'เมื่อชี้' จะเริ่มทำงานเมื่อวางตัวชี้เมาส์ไว้บนรายการแถบข้าง ตัวเลือก 'เมื่อไม่ได้ใช้งาน' จะโหลดหน้า 'ฟังตอนนี้' 'เลือกดู' และ 'วิทยุ' หลังจากเปิดแอป และจะรีเฟรชรายการคลังที่คุณเคยเปิดไว้ก่อนหน้านี้
 settings.option.performance.preloadSidebarPages.idle: เมื่อไม่ได้ใช้งาน
 settings.option.performance.preloadSidebarPages.intent: เมื่อชี้
+settings.option.performance.reduceEffects: ลดเอฟเฟกต์ภาพ
+settings.option.performance.reduceEffects.description: ปิดการเบลอ กระจก เรืองแสง และพื้นหลังแบบเคลื่อนไหว เพื่อให้แอปวาดภาพน้อยลง แบบอัตโนมัติจะเปิดเมื่อไม่มีการ์ดจอที่ใช้งานได้ หรือเมื่อระบบขอให้ลดความโปร่งใส
 settings.option.performance.renderer.auto: อัตโนมัติ (WebGPU เมื่อรองรับ)
 settings.option.performance.renderer.canvas: Canvas 2D
 settings.option.performance.renderer.webgpu: WebGPU
@@ -4651,6 +4698,7 @@ settings.option.visual.liquidGlassPlayer: แถบเครื่องเล�
 settings.option.visual.liquidGlassPlayer.description: ใช้พื้นผิวแบบ liquid-glass สำหรับแถบเครื่องเล่นที่กำลังเล่นอยู่ ปิดใช้งานเพื่อใช้แผงแบบเรียบและทึบ (ซึ่งช่วยลดภาระการประมวลผลด้วย)
 settings.option.visual.liquidGlassScrollPerf: เอฟเฟกต์กระจกแบบลดรูปขณะเลื่อน
 settings.option.visual.liquidGlassScrollPerf.description: ลดทอนการหักเหแสงของเอฟเฟกต์กระจกเหลวให้เป็นเพียงการเบลอธรรมดาขณะเลื่อน และจะค่อยๆ กลับคืนสู่สภาพเดิมเมื่อหยุดเลื่อน ช่วยลดอาการกระตุกขณะเลื่อนบนระบบที่ใช้ทรัพยากรสูง โดยไม่มีการเปลี่ยนแปลงใดๆ เมื่อหยุดนิ่ง เปิดใช้งานตลอดเวลาในโหมดเกม
+settings.option.visual.liquidGlassScrollPerf.descriptionV2: ขณะเลื่อน ลดการหักเหของแก้วเหลวให้เหลือเพียงการเบลอธรรมดา แล้วค่อยๆ กลับมาเมื่อหยุดเลื่อน ช่วยลดอาการกระตุกขณะเลื่อนบนระบบที่ต้องใช้ทรัพยากรสูง โดยไม่เปลี่ยนแปลงตอนอยู่นิ่ง
 settings.option.visual.mainMenuPosition: ตำแหน่งเมนูหลัก
 settings.option.visual.matchPageToArtwork: จับคู่หน้ากับภาพปก
 settings.option.visual.matchPageToArtwork.description: ทาสีหน้าอัลบั้มและเพลย์ลิสต์ด้วยสีของภาพปก ทั้งในโหมดสว่างและโหมดมืด
@@ -4831,6 +4879,7 @@ settings.prompt.visual.plugin.github.success: ติดตั้งปลั๊�
 settings.prompt.visual.plugin.github.URL: ป้อน URL ของปลั๊กอินที่คุณต้องการติดตั้ง
 settings.prompt.visual.theme.github.URL: ป้อน URL ของธีมที่คุณต้องการติดตั้ง
 settings.prompt.visual.theme.uninstallTheme: คุณแน่ใจหรือไม่ว่าต้องการถอนการติดตั้ง {{theme}}?
+settings.reloadPrompt.message: ต้องรีเฟรชแอปเพื่อใช้การเปลี่ยนแปลง คุณต้องการดำเนินการต่อหรือไม่
 settings.requiresNewerClient: ต้องใช้แอป Cider เวอร์ชันที่ใหม่กว่า
 settings.resetCider.category.appleMusic: ลงชื่อออกจาก Apple Music
 settings.resetCider.category.appleMusic.desc: ลบบัญชี Apple Music ออกจากอุปกรณ์นี้
@@ -4874,6 +4923,7 @@ settings.smartPlaylists.section.maintenance: การดูแลรักษ�
 settings.smartPlaylists.section.maintenance.description: บังคับใช้กฎทั้งหมดทันที หรือล้างข้อมูลแคชของคลังเพลงของคุณ
 settings.smartPlaylists.section.rules: กฎเกณฑ์
 settings.smartPlaylists.section.rules.description: กำหนดว่าต้องการให้ Cider ใช้กฎเกณฑ์ของเพลย์ลิสต์ที่ฝังอยู่หรือไม่ และความถี่ในการตรวจสอบกฎเกณฑ์เหล่านั้นใหม่
+settings.smartPlaylists.section.rules.descriptionV2: Cider จะใช้กฎเพลย์ลิสต์ที่ฝังไว้หรือไม่ กฎจะทำงานซ้ำตามเวลารีเฟรชเบื้องหลังในการใช้พลังงาน
 settings.sweetener.useSystemAccentColor: ใช้สีเน้นของระบบ
 settings.takeout.chooseFile: เลือกไฟล์…
 settings.takeout.error.badVersion: ไฟล์ดังกล่าวไม่มีข้อมูลเวอร์ชัน
@@ -4904,6 +4954,7 @@ settings.title: การตั้งค่า
 settings.troubleshooting.bgDiagnostics: การวินิจฉัยการเล่นเบื้องหลัง
 settings.troubleshooting.bgDiagnostics.desc: บันทึกประวัติเพิ่มเติมเพื่อวินิจฉัยปัญหาการเล่นในขณะที่หน้าต่างถูกย่อหรือไม่ได้โฟกัส เช่น ใครเป็นผู้หยุดเล่นชั่วคราว ปัญหาการจัดสรรเวลา (timer starvation) และการหยุดทำงานชั่วคราวโดยระบบปฏิบัติการ เปิดใช้งานเมื่อต้องการรายงานข้อผิดพลาดในการเล่นเบื้องหลัง
 settings.troubleshooting.desc: ไฟล์บันทึกและการบันทึกการดีบัก MKLite
+settings.troubleshooting.descV2: การบันทึกข้อมูล MKLite และการเล่นเบื้องหลัง
 settings.troubleshooting.hevcWorkaround: การแก้ไขปัญหา HEVC ชั่วคราว
 settings.troubleshooting.hevcWorkaround.desc: การแก้ไขปัญหาชั่วคราวสำหรับข้อผิดพลาดใน WebView2 กับ GPU บางรุ่นที่มีปัญหากับการเล่นไฟล์ 10-bit SDR HEVC โดยการใช้ฟิลเตอร์เพื่อชดเชยการเปลี่ยนแปลงของภาพ
 settings.troubleshooting.impressionReporting: การรายงานการแสดงผล PlayActivity
@@ -4927,6 +4978,8 @@ settings.updates.action.check: ตรวจสอบการอัปเดต
 settings.updates.action.install: ติดตั้งการอัปเดต
 settings.updates.action.restart: เริ่มการทำงาน Cider ใหม่
 settings.updates.action.retry: ลองอีกครั้ง
+settings.updates.autoCheck: ตรวจสอบการอัปเดตโดยอัตโนมัติ
+settings.updates.autoCheck.description: เมื่อปิด Cider จะตรวจสอบเฉพาะเมื่อคุณเปิดหน้านี้
 settings.updates.build: บิลด์
 settings.updates.channel: แชนเนล
 settings.updates.codename: โค้ดเนม
@@ -5591,6 +5644,8 @@ updates.installUnavailable.body: บัญชีของคุณไม่ส�
 updates.lateststable.title: เวอร์ชันเสถียรล่าสุด
 updates.loadFailed.body: โปรดตรวจสอบการเชื่อมต่อของคุณแล้วลองอีกครั้ง
 updates.loadFailed.title: Cider ไม่สามารถโหลดเวอร์ชันที่พร้อมใช้งานได้
+updates.newVersion.body: มี Cider เวอร์ชันใหม่ให้ใช้งาน ไปที่การอัปเดตเพื่อดาวน์โหลดหรือไม่
+updates.newVersion.title: มีเวอร์ชันใหม่
 updates.notifyForBranch.tooltip: แจ้งเตือนสำหรับสาขานี้
 updates.otherVersions.title: เวอร์ชันอื่นๆ
 updates.ptb.name: สาขาการทดสอบสาธารณะ
