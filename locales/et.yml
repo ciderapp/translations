@@ -258,6 +258,9 @@ album.track.unavailable.unreleased: Seda üksust pole veel avaldatud.
 album.track.unavailable.zeroDuration: Üksuse kestus on 0 sekundit, tõenäoliselt avaldamata.
 album.upcoming.badge: Tulevane album
 app.name: Cider
+app.ptbDisclaimer.confirm: Mul on selge
+app.ptbDisclaimer.message: See on Public Testing Branch'i versioon. Selle versiooni stabiilsust ei ole tagatud ning see võib sisaldada vigu. Ärge teatage selles versioonis leitud vigadest ega probleemidest. Kui tekib probleeme, lülituge enne teatamist stabiilsele versioonile.
+app.ptbDisclaimer.title: Avaliku testimise haru hoiatus
 app.unsupportedClient.message: Seda klienti ei toetata. Veenduge, et kasutate Cideri uusimat versiooni.
 app.unsupportedClient.title: Toetamata klient
 assistant.sid.agent.added: Lisatud {count} laulu
@@ -730,10 +733,16 @@ audio.device.default: Vaikeseade
 audio.device.noneFound: Väljundseadmeid ei leitud
 audio.device.placeholder: Seade {{id}}
 audiolab.waiting: Oodatakse laulu lisamist järjekorda
+auth.error.devToken: Apple Musicuga ei õnnestunud ühendust luua
+auth.error.generic: Sisselogimist ei õnnestunud lõpetada. Kontrollige ühendust ja proovige uuesti.
+auth.error.invalidToken: Saadi vale tunnus
 auth.error.popupBlocked: Hüpikaken blokeeriti
+auth.error.timeout: Sisselogimise aeg sai otsa
+auth.error.unavailable: See Apple ID ei saa Cideris Apple Musicut kasutada. Cider nõuab aktiivset, tasulist Apple Musicu tellimust.
 auth.error.windowFailed: Sisselogimisakna avamine ebaõnnestus
 auth.mutExpired.confirm: Logi sisse
 auth.mutExpired.message: Sinu Apple Music seanss on aegunud. Jätkamiseks logi uuesti sisse.
+auth.signedIn: Sisse logitud
 auth.signInRetry.confirm: Proovi uuesti
 auth.signInRetry.message: Sisselogimisakent ei õnnestunud avada. Kas proovid uuesti?
 bugReport.addImage: Lisa pilt
@@ -2876,6 +2885,7 @@ oobe.amupsell.title: Enne alustamist
 oobe.appearance.accentHint: Kasutatakse nuppude, esiletõstmiste ja edenemisribade jaoks kogu rakenduses. Proovi mõnda, eelvaade on reaalajas.
 oobe.appearance.subtitle: Vali värviskeem ja aktsentvärv. Saad neid igal ajal muuta jaotises Seaded → Visuaal.
 oobe.appearance.title: Muuda Cider enda omaks
+oobe.appleNotice: "Palun arvestage: Apple Music on Apple Inc. kaubamärk. Cider on Apple Musicu kolmanda osapoole klient ega ole Apple Inc.-iga seotud."
 oobe.audio.advancedFunctionality: ""
 oobe.audio.subtitle: ""
 oobe.audio.text: |-
@@ -2926,19 +2936,31 @@ oobe.intro.subtitle: ""
 oobe.intro.text: Seadistame mõned asjad, et saaksid kasutada Ciderit just nii, nagu soovid. Neid seadeid saad hiljem alati muuta.
 oobe.intro.title: Tere tulemast Ciderisse
 oobe.layout.subtitle: Vali oma stiilile sobiv paigutus
+oobe.login.alreadySignedIn: Olete juba sisse logitud
 oobe.login.skip: Jäta praegu vahele
 oobe.login.skipTooltip: Saad rakendust kasutada ainult eelvaaterežiimis
 oobe.login.subtitle: Muusika nautimiseks logi sisse oma Apple Music kontoga
+oobe.login.terms: Jätkates nõustute kasutustingimuste ja privaatsuspoliitikaga
 oobe.login.title: Viimane samm
 oobe.login.userToken: Logi sisse kasutajatokeniga
+oobe.music.mute: Vaigista seadistuse muusika
+oobe.music.unmute: Tühista seadistuse muusika vaigistus
 oobe.next: Edasi
 oobe.no: Ei
+oobe.performance.full.descriptionV2: Hoiab visuaalsed efektid sees. Cider lülitab need ise välja ainult siis, kui arvuti neid kuvada ei suuda.
+oobe.performance.fullV2: Täiskvaliteet
 oobe.performance.hint: Jõudlusrežiim vähendab visuaalseid efekte ja säästab protsessorit. Sinu süsteemi puhul on see vaikimisi väljas, kuid saad selle igal ajal sisse lülitada.
 oobe.performance.lowEndHint: Tuvastasime vähemate lõimedega protsessori. Sujuvama taasesituse ja väiksema protsessorikoormuse huvides soovitame jõudlusrežiimi.
+oobe.performance.mode.description: Lülitab välja rasked visuaalsed efektid, nagu suured hägustused ja animeeritud taustad. Sobib vanematele arvutitele.
+oobe.performance.modeV2: Jõudlusrežiim
+oobe.performance.subtitleV3: Jõudlusrežiim lülitab välja kõige raskemad visuaalsed efektid. Täiskvaliteet hoiab need sees, kui arvuti neid kuvada ei suuda.
 oobe.performance.title: Jõudlus
+oobe.performance.whereToChangeV3: Seadetes on see valik lehe {page} all valikus {setting}. Vali {on} jõudlusrežiimi või {automatic} täiskvaliteedi jaoks. Saad seda igal ajal seal muuta.
 oobe.player.subtitle: Akna servas asuv esitusriba. Vali endale sobiv tihedus.
 oobe.player.title: Vali oma mängija
 oobe.previous: Tagasi
+oobe.progress: "Samm {current} / {total}: {title}"
+oobe.progress.label: Seadistamise edenemine
 oobe.step.appearance: Välimus
 oobe.step.connections: Ühendused
 oobe.step.features: Heli
@@ -2948,6 +2970,7 @@ oobe.step.performance: Jõudlus
 oobe.step.player: Mängija
 oobe.step.welcome: Tere tulemast
 oobe.step.window: Akna stiil
+oobe.subscriptionNote: Cider nõuab aktiivset, tasulist Apple Musicu tellimust. Apple Music Voice ja mõned reklaamsed prooviperioodid ei ole toetatud.
 oobe.visual.layout.text: |-
   Cider pakub kahte erinevat akna paigutust.
   Maverick on iTunesi-laadne paigutus, kus pleier asub akna ülaosas.
@@ -2960,6 +2983,10 @@ oobe.visual.title: Visuaalne
 oobe.welcome.getStarted: Alusta
 oobe.welcome.importSettings: Impordi seaded…
 oobe.welcome.selectLanguage: Vali oma eelistatud keel
+oobe.window.native: Natiivne aken
+oobe.window.native.description: Kasutab teie töölauakeskkonna tiitliriba ja servi.
+oobe.window.styled: Kujundatud juhtelemendid
+oobe.window.styled.description: Rakenduse oma tiitliriba koos sisseehitatud akna juhtelementidega.
 oobe.window.subtitle: Vali, kuidas rakenduse aken sinu töölauakeskkonnaga integreerub
 oobe.window.title: Akna stiil
 oobe.yes: Jah
@@ -3060,6 +3087,8 @@ playlist.error.updating.title: Tõrge esitusloendi värskendamisel
 playlist.folderEmpty: Selles kaustas pole esitusloendeid
 playlist.folderMoveFailed: Kausta ei õnnestunud teisaldada. Proovi hetke pärast uuesti.
 playlist.folderRenameHint: Nime muutmiseks topeltklõpsa
+playlist.history: Esitusloendi ajalugu
+playlist.history.withCount: Esitusloendi ajalugu ({count})
 playlist.lastUpdated: Viimati värskendatud {{date}}
 playlist.madeByApple: Loonud Apple
 playlist.moveFailed: Esitusloendit ei õnnestunud teisaldada. Proovi hetke pärast uuesti.
@@ -3180,6 +3209,7 @@ settings.audio.atmos.normalizationHint: Dolby Atmos miksid on vaiksemad kui ster
 settings.audio.atmos.off.desc: Atmos on keelatud. Kogu sisu esitatakse tavalise stereona.
 settings.audio.atmos.passthrough: Otseedastus
 settings.audio.atmos.passthrough.desc: Möödub igasugusest helitöötlusest. Mitmekanaliline Atmos saadetakse otse seadmesse. Ideaalne AV-vastuvõtjate jaoks.
+settings.audio.atmos.passthrough.descV2: Saadab mitmekanalise Atmose otse seadmesse AV-vastuvõtjate jaoks. Audio Lab, ekvalaiser ja kuularežiim on välja lülitatud.
 settings.audio.atmos.passthroughActive: Otseedastus on aktiivne — muuda täielikes seadetes.
 settings.audio.atmos.standard.desc: Mitmekanaliline Atmos koos CiderAudio töötlusega. Crossfade, Automix ja katkestusteta üleminekud töötavad endiselt ootuspäraselt.
 settings.audio.atmosMode: Atmos-režiim
@@ -3282,6 +3312,7 @@ settings.automix.normalizeDuration: Normaliseerimise kestus
 settings.automix.normalizeDurationHint: Sujuv üleminekuaeg helitugevuse ühtlustamiseks ({ms}ms)
 settings.automix.spectralSeparation: Spektraalne eraldus
 settings.automix.spectralSeparationHint: Kui palju kahte lugu üleminekul sageduslikult eraldatakse.
+settings.automix.spectralSeparationHintV2: Kui kaugele kaks lugu üleminekul sageduses teineteisest eraldatakse ({value}).
 settings.automix.speedSettle: Kiiruse taastumisaeg
 settings.automix.speedSettleHint: Kui kaua võtab aega esituskiiruse taastumine normaalseks pärast tempoga ühildatud miksimist ({ms} ms)
 settings.automix.tempoAlign: Rütmi ühildamine
@@ -3439,6 +3470,7 @@ settings.client.windows.v8OptimizeSize.adds: Lisab
 settings.client.windows.v8OptimizeSize.to: WebView2-le
 settings.client.windows.wpfRendering: WPF-i renderdusrežiim
 settings.client.windows.wpfRendering.desc: Vali WPF-i renderdusrežiim. Kui sa pole kindel, vali tarkvaraline.
+settings.client.windows.wpfRendering.descV2: Valige, kuidas aken joonistatakse. Kui pole kindel, jätke see sisse lülitatud valikule Riistvara.
 settings.client.windows.wpfRendering.hardware: Riistvaraline
 settings.client.windows.wpfRendering.software: Tarkvaraline
 settings.configBackups.confirm.body: Sinu praegused seaded asendatakse kuupäeval {date} salvestatud seadetega ja Cider käivitub uuesti.
@@ -3548,6 +3580,7 @@ settings.contentFilter.empty: Märksõnu pole veel lisatud.
 settings.contentFilter.inputPlaceholder: Lisa märksõna...
 settings.contentFilter.title: Filtri märksõnad
 settings.crossfade.advanced: Sujuva ülemineku täpsemad seaded
+settings.crossfade.automixStillBlends: Automix on sisse lülitatud, seega võivad lood ikka üksteisesse sulanduda. Kõigi üleminekute peatamiseks lülitage allpool Automix välja.
 settings.crossfade.description: Hajuta praegune lugu sujuvalt välja, samal ajal järgmist sisse hajutades.
 settings.crossfade.disableFor: Keela sujuv üleminek...
 settings.crossfade.duration: Kestus
@@ -3668,6 +3701,7 @@ settings.general.section.cache: Vahemälu
 settings.general.section.cache.description: Salvestatud kaanekujundused ja metaandmed, mida Cider hoiab kettal, et lehed laadiksid kiiremini.
 settings.general.section.desktop: Töölaud
 settings.general.section.desktop.description: Kiirklahvid ning Cideri käitumine tegumiribal ja sulgemisel.
+settings.general.section.desktop.descriptionV2: Klaviatuuri otseteed, arvuti äratina hoidmine esitamise ajal ning see, kuidas Cider käitub tegumiribal ja sulgemisel.
 settings.general.section.language: Keel
 settings.general.section.language.description: Kasutajaliidese keel ning kuidas teatada tõlgetest või märkida nende autoreid.
 settings.general.section.playback: Taasesitus
@@ -4021,6 +4055,7 @@ settings.option.advanced.mavericksLcd.style: Stiil
 settings.option.advanced.mavericksLcd.style.glass: Klaas
 settings.option.advanced.mediaArtwork: Meediumi kujundus
 settings.option.advanced.mediaArtwork.controls: Kaanekujunduse esiletõstmised ja kõrglahutusega pildid
+settings.option.advanced.mediaArtwork.controlsV2: Kaanepildi esiletõstmine ja sisse hääbumine
 settings.option.advanced.mediaArtwork.description: Kaanekujundused ruudustikes, loendites ja ridades kogu rakenduses.
 settings.option.advanced.notificationStyle: Teavituse stiil
 settings.option.advanced.performance: Jõudlus
@@ -4055,8 +4090,11 @@ settings.option.advanced.simpleArtworkBg:
   issue: 41
   superseded_at: 2026-09-01
 settings.option.advanced.simpleArtworkBg.brightness: Heledus %
+settings.option.advanced.simpleArtworkBg.brightnessV2: Heledus
 settings.option.advanced.simpleArtworkBg.contrast: Kontrastsus %
+settings.option.advanced.simpleArtworkBg.contrastV2: Kontrast
 settings.option.advanced.simpleArtworkBg.saturate: Küllastus %
+settings.option.advanced.simpleArtworkBg.saturateV2: Küllastus
 settings.option.advanced.simpleArtworkBg.useMask: Kasuta alumist maski
 settings.option.advanced.sonoma:
   value: Sonoma
@@ -4375,6 +4413,8 @@ settings.option.general.onStartup: Käivitamisel
 settings.option.general.onStartup.openStartup: Ava käivitusleht
 settings.option.general.onStartup.resume: Jatka viimast seanssi
 settings.option.general.pagination: Elementide arv lehel
+settings.option.general.preventDisplaySleep: Hoia ekraan esitamise ajal sees
+settings.option.general.preventSystemSleep: Hoia arvuti esitamise ajal äratatuna
 settings.option.general.privacy: Privaatsus
 settings.option.general.promptOnClose: Küsi kinnitust sulgemisel, kui muusika mängib
 settings.option.general.queue: Järjekord
@@ -4401,6 +4441,7 @@ settings.option.general.sleepTimerSettings: Unetaimeri seaded
 settings.option.general.startupPage: Alustusleht
 settings.option.general.startupPage.blank: Tühi leht
 settings.option.general.startupPage.description: Vali leht, mida kuvatakse Cideri avamisel.
+settings.option.general.startupPage.descriptionV2: Leht, mida Cider avab uutel vahelehtedel ja käivitamisel, kui valik Käivitamisel on seatud väärtusele Ava käivitusleht.
 settings.option.general.startupPage.newTab:
   value: Uus vaheleht
   source: human
@@ -4414,6 +4455,7 @@ settings.option.general.translators: Tõlkijad
 settings.option.general.translators.description: Täname neid kaasautoreid, kes aitasid Ciderit tõlkida. Nende GitHubi profiili avamiseks klõpsake nimele.
 settings.option.general.useSmartQueueByDefault: Kasuta vaikimisi nutikat järjekorda
 settings.option.general.useSmartQueueByDefault.description: Rakenda järjekorra koostamisel automaatselt Smart Queue järjestust. Nõuab funktsiooni Automix.
+settings.option.general.useSmartQueueByDefault.needsAutomix: Automix on helis välja lülitatud, seega Nutikas järjekord ei muuda järjekorda.
 settings.option.general.warnBeforeQueueOverride: Hoiata enne järjekorra asendamist
 settings.option.hide: Peida
 settings.option.left: Vasak
@@ -4500,6 +4542,9 @@ settings.option.performance.enableMediaItemInspect.description: Võib veidi mõj
 settings.option.performance.gameMode: Mängurežiim
 settings.option.performance.gameMode.description: Vähendab visuaalseid efekte ja võib lubada Windowsi tõhususrežiimi väiksema protsessorikoormuse saavutamiseks.
 settings.option.performance.gameMode.disable: Keela mängurežiim
+settings.option.performance.graphicsAcceleration: Graafika kiirendus
+settings.option.performance.graphicsAcceleration.autoOff: Väljas, sest see arvuti joonistab graafikat tarkvaraliselt.
+settings.option.performance.graphicsAcceleration.description: Automaatne lülitab selle välja virtuaalmasinas, mis joonistab graafikat tarkvaraliselt. Muudatused rakenduvad Cideri järgmisel käivitamisel.
 settings.option.performance.host: Host
 settings.option.performance.immersiveRenderer:
   value: Süüviv renderdaja
@@ -4523,6 +4568,8 @@ settings.option.performance.preloadSidebarPages: Külgriba lehtede eellaadimine
 settings.option.performance.preloadSidebarPages.description: Laadib külgriba lehed enne nende avamist. Valik „Hõljutamisel“ alustab laadimist, kui kursor peatub külgriba üksusel. Valik „Tegevusetuse korral“ laadib pärast käivitamist ka jaotised „Kuula kohe“, „Sirvi“ ja „Raadio“ ning värskendab varem avatud kogude loendeid.
 settings.option.performance.preloadSidebarPages.idle: Tegevusetuse korral
 settings.option.performance.preloadSidebarPages.intent: Hõljutamisel
+settings.option.performance.reduceEffects: Vähenda visuaalseid efekte
+settings.option.performance.reduceEffects.description: Lülitab välja hägususe, klaasi, hõõgumise ja animeeritud taustad, et rakendus joonistaks vähem. Automaatne lülitab need sisse, kui graafikakaart puudub või kui süsteem nõuab vähem läbipaistvust.
 settings.option.performance.renderer.auto: Automaatne (WebGPU, kui on toetatud)
 settings.option.performance.renderer.canvas: Canvas 2D
 settings.option.performance.renderer.webgpu: WebGPU
@@ -4805,7 +4852,10 @@ settings.option.visual.liquidGlassPlayer: Liquid Glass mängijariba
 settings.option.visual.liquidGlassPlayer.description: Kasuta praegu mängiva mängijariba jaoks Liquid Glass pinda. Lülita välja, et kasutada lamedat ühevärvilist paneeli (mida on ka kergem renderdada).
 settings.option.visual.liquidGlassScrollPerf: Kerge klaasiefekt kerimisel
 settings.option.visual.liquidGlassScrollPerf.description: Lihtsustab vedelklaasi valgusemurdumist kerimise ajal tavaliseks hägususeks, taastades selle sujuvalt peatumisel. Vähendab kerimise hakkimist nõudlikes süsteemides, mõjutamata välimust paigalolekus. Mängurežiimis alati sisse lülitatud.
+settings.option.visual.liquidGlassScrollPerf.descriptionV2: Lihtsustab vedelklaasi murdumise tavaliseks hägustuseks kerimise ajal ning lubab selle pärast peatamist tagasi. Vähendab kerimishäireid nõudlikel süsteemidel, puhkeolekus muutust pole.
 settings.option.visual.mainMenuPosition: Peamenüü asukoht
+settings.option.visual.matchPageToArtwork: Sobita leht kaanepildiga
+settings.option.visual.matchPageToArtwork.description: Värvib albumi- ja esitusloendi lehed nende kaanepildi värvides, nii heledas kui tumedas režiimis.
 settings.option.visual.mergeAppleMusicPlaylists: Ühenda Apple Music esitusloendid
 settings.option.visual.mergeAppleMusicPlaylists.description: Sega Apple Music kureeritud esitusloendid peamisesse esitusloendite jaotisesse, selle asemel et näidata neid eraldi grupis.
 settings.option.visual.miniplayerSkin: Minimängija paigutus
@@ -4983,6 +5033,7 @@ settings.prompt.visual.plugin.github.success: Pistikprogramm on edukalt installi
 settings.prompt.visual.plugin.github.URL: Sisesta installitava pistikprogrammi URL
 settings.prompt.visual.theme.github.URL: Sisesta installitava teema URL
 settings.prompt.visual.theme.uninstallTheme: Kas oled kindel, et soovid teema {{theme}} eemaldada?
+settings.reloadPrompt.message: Muudatuste rakendamiseks on vaja rakendust värskendada. Kas soovite jätkata?
 settings.requiresNewerClient: Vajab uuemat Cideri klienti.
 settings.resetCider.category.appleMusic: Logi Apple Musicust välja
 settings.resetCider.category.appleMusic.desc: Eemalda Apple Musicu konto sellest seadmest
@@ -5026,6 +5077,7 @@ settings.smartPlaylists.section.maintenance: Hooldus
 settings.smartPlaylists.section.maintenance.description: Käivita kõik reeglid kohe või kustuta oma teegi puhverdatud koopia.
 settings.smartPlaylists.section.rules: Reeglid
 settings.smartPlaylists.section.rules.description: Kas Cider rakendab sisseehitatud esitusloendite reegleid ja kui sageli neid uuesti hinnatakse.
+settings.smartPlaylists.section.rules.descriptionV2: Kas Cider rakendab manustatud esitusloendi reegleid. Need käivitatakse uuesti jaotises Toitekasutus seadistatud taustavärskenduse ajaga.
 settings.sweetener.useSystemAccentColor: Kasuta süsteemi rõhuvärvi
 settings.takeout.chooseFile: Vali fail…
 settings.takeout.error.badVersion: Sellel failil puudub versiooniteave.
@@ -5056,6 +5108,7 @@ settings.title: Seaded
 settings.troubleshooting.bgDiagnostics: Taustal taasesituse diagnostika
 settings.troubleshooting.bgDiagnostics.desc: Täiendavad logiandmed taasesituse probleemide diagnoosimiseks, kui aken on minimeeritud või fookusest väljas — kes mängija peatas, taimeri nälgimine ja OS-i peatamise episoodid. Lülita sisse, kui teatad taustal taasesituse tõrkest.
 settings.troubleshooting.desc: Logifailid ja MKLite silumislogi.
+settings.troubleshooting.descV2: MKLite'i ja taustal esitamise logimine.
 settings.troubleshooting.hevcWorkaround: HEVC lahendus
 settings.troubleshooting.hevcWorkaround.desc: Lahendus WebView2 veale teatud graafikakaartidega, millel on probleeme 10-bitise SDR HEVC taasesitusega, rakendades visuaalse nihke kompenseerimiseks filtrit.
 settings.troubleshooting.impressionReporting: PlayActivity näitamiste aruandlus
@@ -5079,6 +5132,8 @@ settings.updates.action.check: Otsi värskendusi
 settings.updates.action.install: Paigalda värskendus
 settings.updates.action.restart: Taaskäivita Cider
 settings.updates.action.retry: Proovi uuesti
+settings.updates.autoCheck: Kontrolli värskendusi automaatselt
+settings.updates.autoCheck.description: Kui see on välja lülitatud, kontrollib Cider värskendusi ainult siis, kui avate selle lehe.
 settings.updates.build: Järk
 settings.updates.channel: Kanal
 settings.updates.codename: Koodnimi
@@ -5760,6 +5815,8 @@ updates.installUnavailable.body: See versioon pole sinu kontoga allalaadimiseks 
 updates.lateststable.title: Viimane stabiilne versioon
 updates.loadFailed.body: Kontrolli ühendust ja proovi uuesti.
 updates.loadFailed.title: Cider ei saanud saadavalolevaid versioone laadida
+updates.newVersion.body: Cideri uus versioon on saadaval. Kas minna allalaadimiseks jaotisse Värskendused?
+updates.newVersion.title: Uus versioon saadaval
 updates.notifyForBranch.tooltip: Teavita selle haru uuendustest
 updates.otherVersions.title: Muud versioonid
 updates.ptb.name: Avalik testimisharu
