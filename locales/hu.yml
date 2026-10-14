@@ -41,6 +41,8 @@ action.addToPlaylist.tracksCount: "{count} dal"
 action.addToQueue: Hozzáadás a várólistához
 action.addToQueue.error: Hiba a sorhoz adás közben
 action.addToQueue.success: Hozzáadva a sorhoz
+action.appleMusic.enterUrl: Adja meg az Apple Music URL-t
+action.appleMusic.invalidUrl: Nem érvényes Apple Music URL
 action.appleMusic.yourProfile: Saját profil
 action.apply: Alkalmaz
 action.approve: Jóváhagyás
@@ -108,6 +110,7 @@ action.later: Később
 action.love: Kedvenc
 action.manage: Kezelés
 action.minimize: Minimalizálás
+action.minimizeVideo: Videó kis méretre váltása
 action.moveToFolder: Áthelyezés mappába
 action.moveToFolder.here: '"{{name}}" áthelyezése ide'
 action.moveToTop: Mozgatás a tetejére
@@ -119,6 +122,7 @@ action.openArtworkInBrowser: Borítókép megnyitása böngészőben
 action.openInNewTab: Megnyitás új lapon
 action.openNewTab: Új lap
 action.openUrl: URL megnyitása
+action.openVideo: Videó megnyitása
 action.paste: Beillesztés
 action.pause: Szüneteltetés
 action.pickTime: Időpont kiválasztása
@@ -252,6 +256,472 @@ album.upcoming.badge: Hamarosan megjelenő album
 app.name: Cider
 app.unsupportedClient.message: Ez a kliens nem támogatott. Kérjük, győződj meg róla, hogy a Cider legújabb verzióját használod.
 app.unsupportedClient.title: Nem támogatott kliens
+assistant.sid.agent.added: "{count} dal hozzáadva"
+assistant.sid.agent.addedOne: Egy dal hozzáadva
+assistant.sid.agent.askingPicks: Javaslatok kérése az Apple Musictól
+assistant.sid.agent.averageBpm: "Átlagos tempó: {bpm} BPM"
+assistant.sid.agent.builtGeneric: Íme egy lejátszási lista ehhez.
+assistant.sid.agent.builtHigh: Az energiaszintet magasan tartottam, a csúcs a végén van.
+assistant.sid.agent.builtLow: Az energiaszintet alacsonyan tartottam, a végén lecsillapodik.
+assistant.sid.agent.checked: Tempó és energia ellenőrizve
+assistant.sid.agent.checkedLibrary: A könyvtár ellenőrizve
+assistant.sid.agent.checking: Tempó és energia ellenőrzése
+assistant.sid.agent.deduped: Ismétlések eltávolítva
+assistant.sid.agent.foundCatalog: "{songs} megtalálva az Apple Musicon"
+assistant.sid.agent.foundLibrary: "{songs} megtalálva a könyvtárban"
+assistant.sid.agent.foundPlaylists: Hasonló lejátszási listák megtalálva
+assistant.sid.agent.fromApplePlaylists: "Apple Music: {playlists}"
+assistant.sid.agent.fromArtists: "{artists} dalai és hasonló előadók"
+assistant.sid.agent.fromLibrary: a könyvtárad
+assistant.sid.agent.keptTempo: "Dalok megtartva ebben a tartományban: {range}"
+assistant.sid.agent.libraryFit: "{songs} illik"
+assistant.sid.agent.lookedAt: "Megnézve: {artists}"
+assistant.sid.agent.lookingCatalog: Böngészés az Apple Musicban
+assistant.sid.agent.moved: Egy dal áthelyezve
+assistant.sid.agent.movedTo: "Új pozíció: {row}"
+assistant.sid.agent.noChange: Megnéztem, és nem változtatnék semmin.
+assistant.sid.agent.nothingFound: Nem találtam ehhez dalokat. Próbálja meg másképp leírni.
+assistant.sid.agent.orderEnergyDown: energia, a legpezsgőbb elöl
+assistant.sid.agent.orderEnergyUp: energia, a legnyugodtabb elöl
+assistant.sid.agent.orderKey: hangnem
+assistant.sid.agent.orderTempoDown: tempó, a leggyorsabb elöl
+assistant.sid.agent.orderTempoUp: tempó, a leglassabb elöl
+assistant.sid.agent.picked: "Kiválasztva: {songs}"
+assistant.sid.agent.pulledFrom: "Innen válogattam: {sources}."
+assistant.sid.agent.rangeAny: bármilyen tempóban
+assistant.sid.agent.rangeAtLeast: "{low} BPM-től gyorsabban"
+assistant.sid.agent.rangeAtMost: "{high} BPM-ig vagy lassabban"
+assistant.sid.agent.rangeBetween: "{low} és {high} BPM között"
+assistant.sid.agent.read: "{songs} beolvasva ebből: {playlist}"
+assistant.sid.agent.searchingCatalog: Keresés az Apple Musicban
+assistant.sid.agent.searchingLibrary: Böngészés a könyvtárban
+assistant.sid.agent.sorted: "Rendezve: {order}"
+assistant.sid.agent.stuck: Ebben elakadtam. Próbálja meg másképp megkérdezni.
+assistant.sid.agent.suggested: "Az Apple Music javasolta: {songs}"
+assistant.sid.agent.summary: "{changes}."
+assistant.sid.agent.summaryAdded: "hozzáadtam: {songs}"
+assistant.sid.agent.summaryMoved: "áthelyeztem: {songs}"
+assistant.sid.agent.summaryTookOut: "kivettem: {songs}"
+assistant.sid.agent.thinking: Gondolkodás
+assistant.sid.agent.thinkingOver: Átgondolás
+assistant.sid.agent.thoughtOver: Átgondolva
+assistant.sid.agent.tooBig: Ez a lejátszási lista túl nagy ahhoz, hogy Sid egyszerre beolvassa.
+assistant.sid.agent.tookOut: "{count} dal eltávolítva"
+assistant.sid.agent.tookOutOne: Egy dal eltávolítva
+assistant.sid.agent.tookOutSongs: "Eltávolítva: {songs}"
+assistant.sid.agent.trimmed: "{minutes} percre csökkentve"
+assistant.sid.agent.unsure: Nem vagyok biztos benne.
+assistant.sid.agent.working: Lejátszási lista szerkesztése
+assistant.sid.answer.dropSlowest: A leglassabbakat törlöm
+assistant.sid.applied.made: A Sid {count} változtatást végzett
+assistant.sid.applied.madeOne: A Sid 1 változtatást végzett
+assistant.sid.applied.markAdded: Sid adta hozzá
+assistant.sid.applied.marked: A listában meg vannak jelölve.
+assistant.sid.applied.markMoved: Sid helyezte át
+assistant.sid.applied.undo: Visszavonás
+assistant.sid.applied.undoChanged: A(z) {playlist} megváltozott Sid szerkesztése után, így a visszavonás elveszítené ezt a módosítást. Semmit sem vontunk vissza.
+assistant.sid.applied.undoFailed: Sid nem tudta visszavonni. Próbáld újra egy kis idő múlva.
+assistant.sid.applied.undoHistory: A lejátszási lista előzményei között továbbra is visszahozhatsz egy korábbi verziót.
+assistant.sid.applied.undone: Sid visszaállította a(z) {playlist} lejátszási listát az eredeti állapotába.
+assistant.sid.arc.coolDown: Lecsillapítás
+assistant.sid.arc.peak: Csúcs
+assistant.sid.arc.steady: Egyenletes
+assistant.sid.arc.warmUp: Felmelegítés
+assistant.sid.ask.addFive: Adj hozzá ötöt hasonlóan
+assistant.sid.ask.calmToLively: Nyugodtból pezsgőbe
+assistant.sid.ask.dedupe: Duplikátumok eltávolítása
+assistant.sid.ask.greetBuild: Szia! Milyen legyen ez a lejátszási lista?
+assistant.sid.ask.greetBuildDetail: Írj le egy hangulatot, egy pillanatot vagy néhány előadót, és én feltöltöm.
+assistant.sid.ask.greetEdit: Szia! Mit tegyünk a(z) {playlist} listával?
+assistant.sid.ask.greetEditDetail: Tudok dalokat hozzáadni, törölni és átrendezni, vagy elmondani, milyen a lista.
+assistant.sid.ask.lateDrive: Késő esti autózás
+assistant.sid.ask.morningRun: Reggeli futás
+assistant.sid.ask.onDevice: A Sid ezen a számítógépen gondolkodik. Csak a zenei keresések mennek az Apple Music felé.
+assistant.sid.ask.rainyFocus: Esős napi koncentráció
+assistant.sid.ask.send: Küldés a Sidnek
+assistant.sid.ask.sundayCooking: Vasárnapi főzés
+assistant.sid.ask.trim45: Csökkentés 45 percre
+assistant.sid.ask.whatsItLike: Milyen?
+assistant.sid.brief.highEnergy: magas energiaszint
+assistant.sid.brief.like: mint {artists}
+assistant.sid.brief.lookingFor: "Keresés: {search}"
+assistant.sid.brief.lowEnergy: alacsony energiaszint
+assistant.sid.bubble.arrow: " →"
+assistant.sid.bubble.open: Sid válogatásának megnyitása
+assistant.sid.bubble.replay: Sid üzenetének megjelenítése
+assistant.sid.card.add: "{count} dal hozzáadása"
+assistant.sid.card.added: "Hozzáadva ide: {playlist}"
+assistant.sid.card.addedToQueue: Hozzáadva a várólistához
+assistant.sid.card.addOne: 1 dal hozzáadása
+assistant.sid.card.addTitle: "Hozzáadás ide: {playlist}"
+assistant.sid.card.afterSet: A Sid válogatásában sorba rendezett dalok után.
+assistant.sid.card.alreadyIn: Ezek a dalok már benne vannak a(z) {playlist} listában.
+assistant.sid.card.clear: "{count} dal törlése"
+assistant.sid.card.cleared: Törölve
+assistant.sid.card.clearOne: 1 dal törlése
+assistant.sid.card.clearTitle: Törlöd a következő dalokat?
+assistant.sid.card.created: "Létrehozva: {name}"
+assistant.sid.card.failed: Ez nem sikerült. Próbáld újra egy kis idő múlva.
+assistant.sid.card.guest: Vendégként vagy jelen egy közös hallgatási partin, ezért a házigazda irányítja a várólistát.
+assistant.sid.card.inLibrary: A könyvtáradban
+assistant.sid.card.leftOut: "{count} dal kimaradt, mert nem játszhatók le, vagy a Kevesebb ilyet jelölést kaptak."
+assistant.sid.card.leftOutOne: 1 dal kimaradt, mert nem játszható le, vagy a Kevesebb ilyet jelölést kapta.
+assistant.sid.card.librarySongs: "{count} dal"
+assistant.sid.card.mostPlayed: Legtöbbet játszott {year}-ben
+assistant.sid.card.noQueue: Még nincs lejátszás. Indíts el valamit, utána Sid sorba állíthat dalokat.
+assistant.sid.card.notApplied: Nem alkalmazva
+assistant.sid.card.notNow: Most nem
+assistant.sid.card.open: "Megnyitás: {name}"
+assistant.sid.card.playing: Lejátszás
+assistant.sid.card.playLast: Hozzáadás a várólistához
+assistant.sid.card.playLastTitle: Később
+assistant.sid.card.playlistChanged: Ez a lejátszási lista megváltozott azóta, hogy Sid beolvasta. Kérd újra az újrageneráláshoz.
+assistant.sid.card.playNext: Következő lejátszása
+assistant.sid.card.playNextTitle: Következik
+assistant.sid.card.playNow: Lejátszás most
+assistant.sid.card.playNowTitle: Lejátszásra kész
+assistant.sid.card.plays: "{count} lejátszás"
+assistant.sid.card.playsOne: 1 lejátszás
+assistant.sid.card.queueApplied: A várólista frissítve
+assistant.sid.card.queueChanged: A várólistád megváltozott azóta, hogy Sid megnézte. Kérd újra az újrageneráláshoz.
+assistant.sid.card.queued: A várólistán
+assistant.sid.card.queueUnavailable: Sid ebben a verzióban még nem tudja módosítani a várólistát.
+assistant.sid.card.redo: Kérés újra
+assistant.sid.card.refining: Sid frissíti ezt a tervet.
+assistant.sid.card.retry: Próbáld újra
+assistant.sid.card.saved: "Mentve ide: {playlist}"
+assistant.sid.card.showAll: Mind megjelenítése ({count})
+assistant.sid.card.songsChange: "{before} → {after} dal"
+assistant.sid.card.superseded: Újabb terv váltotta fel
+assistant.sid.card.topArtists: "Legnépszerűbb előadók ekkor: {year}"
+assistant.sid.card.unplayable: Ezek a dalok most nem játszhatók le.
+assistant.sid.card.waitLocked: A következő dal most indul. Alkalmazd pár pillanat múlva.
+assistant.sid.chat.appleOnly: Sid az Apple Musickal működik. Válts vissza, hogy beszélgethess Siddel.
+assistant.sid.chat.dropWaiting: Az Alkalmazásra váró módosítások elvesznek.
+assistant.sid.chat.e2bLimited: Sidnek íráshoz a részletes modell szükséges. Válassz egy javaslatot, vagy válts a Sid beállításaiban.
+assistant.sid.chat.endConfirmOk: Befejezés
+assistant.sid.chat.endConfirmTitle: Befejezed ezt a beszélgetést?
+assistant.sid.chat.findingPlaylist: A lejátszási listád keresése
+assistant.sid.chat.foundPlaylist: "Megtalálva: {playlist}"
+assistant.sid.chat.foundPlaylists: "{count} lejátszási lista megtalálva"
+assistant.sid.chat.fromQueue: "{songs} kiválasztva a várólistádról"
+assistant.sid.chat.greet: Szia! Mit hallgatunk?
+assistant.sid.chat.greetDetail: Zenét tudok keresni és lejátszani, rendezni a várólistádat, lejátszási listákat készíteni, vagy mesélni arról, amit hallgatsz.
+assistant.sid.chat.greetDetailNoQueue: Zenét tudok keresni és a várólistára tenni, lejátszási listákat készíteni, vagy mesélni arról, amit hallgatsz.
+assistant.sid.chat.jumpLatest: Ugrás a legújabbra
+assistant.sid.chat.loading: Sid előkészítése
+assistant.sid.chat.newConfirmTitle: Új beszélgetést kezdesz?
+assistant.sid.chat.newConversation: Új beszélgetés
+assistant.sid.chat.placeholder: Kérdezz Siden a zenéidről
+assistant.sid.chat.placeholderFocus: "Kérdezz Siden erről: {playlist}"
+assistant.sid.chat.playlistUnread: "Sid nem tudta beolvasni ezt: {playlist}. Próbáld újra pár perc múlva."
+assistant.sid.chat.queueDetail: "{songs} következik"
+assistant.sid.chat.readingListening: A lejátszásaid vizsgálata
+assistant.sid.chat.readingPlaylist: "{playlist} olvasása"
+assistant.sid.chat.readingQueue: A várólistád vizsgálata
+assistant.sid.chat.readListening: A hallgatásaid ellenőrizve
+assistant.sid.chat.readQueue: A várólista beolvasva
+assistant.sid.chat.steps: "{count} lépés"
+assistant.sid.chat.stepsOne: 1 lépés
+assistant.sid.chat.stopped: Ezt leállítottad.
+assistant.sid.chat.suggestLikeThis: Játssz valamit hasonlót
+assistant.sid.chat.suggestMostPlayed: Mit hallgatok a legtöbbet?
+assistant.sid.chat.suggestNowPlaying: Mi szól most?
+assistant.sid.chat.suggestQueuePlaylist: Lejátszási lista készítése a várólistából
+assistant.sid.chat.suggestTidyQueue: Várólista rendezése
+assistant.sid.chat.tooBig: Ez túl sok ahhoz, hogy egyszerre feldolgozzam. Próbálj meg rövidebb kérést.
+assistant.sid.chat.workingQueue: A várólistád feldolgozása
+assistant.sid.entry.edit: Szerkesztés Siddel
+assistant.sid.entry.editDetail: Írj le egy változtatást, és előbb nézd át
+assistant.sid.entry.start: Indítás Siddel
+assistant.sid.entry.startDetail: Írj le egy lejátszási listát, Sid pedig kiválasztja a számokat
+assistant.sid.entry.startMenu: Indítás Siddel…
+assistant.sid.failure.belowFloor: A Gemma túl lassan fut ezen a számítógépen.
+assistant.sid.failure.busy: A Gemma most a fájljaival foglalkozik. Próbáld újra egy kis idő múlva.
+assistant.sid.failure.counterMismatch: A Sid leállt, mert egy biztonsági ellenőrzés sikertelen volt.
+assistant.sid.failure.crashed: A Gemma váratlanul leállt. Próbáld újra.
+assistant.sid.failure.deviceLost: A grafikus kártya visszaállt, amikor a Sid dolgozott. Próbáld újra.
+assistant.sid.failure.modelCorrupt: A Gemma letöltése sérült. A folytatáshoz töltsd le újra.
+assistant.sid.failure.modelMissing: A Gemma fájljai hiányoznak. A folytatáshoz töltsd le újra őket.
+assistant.sid.failure.network: A letöltés megszakadt. Ellenőrizd a kapcsolatot, és próbáld újra.
+assistant.sid.failure.notReady: A Gemma még nem áll készen.
+assistant.sid.failure.outOfMemory: A Sid leállította a Gemmát, hogy a számítógéped reagálni tudjon. Több grafikus memóriára lett volna szüksége, mint amennyit biztosítani tudott.
+assistant.sid.failure.storageFull: Nincs elég szabad hely a letöltés befejezéséhez.
+assistant.sid.failure.timeout: A Gemma túl sokáig válaszolt. Próbáld újra.
+assistant.sid.failure.tryAgain: Újrapróbálás
+assistant.sid.failure.watchLost: A Sid leállt, mert elvesztette a grafikus memória nyomon követését. Próbáld újra.
+assistant.sid.gate.description: Próbáld ki a Sidet, mielőtt elkészül. Néhány része még nem működik.
+assistant.sid.gate.name: Sid, a lejátszási lista segítője
+assistant.sid.hello: Üdv, Sid vagyok
+assistant.sid.home.ask: Kérdezz Sidtől a zenéidről
+assistant.sid.home.continueChat: Beszélgetés folytatása
+assistant.sid.home.editHint: Lejátszási lista szerkesztéséhez nyisd meg, és válaszd a Szerkesztés Siddel lehetőséget.
+assistant.sid.home.settings: Sid beállításai
+assistant.sid.insights.average: átl. {bpm} BPM
+assistant.sid.insights.first: 1. szám
+assistant.sid.insights.genres: Leggyakoribb műfajok
+assistant.sid.insights.keys: Hangnemek
+assistant.sid.insights.last: "{count}. szám"
+assistant.sid.insights.length: Hossz
+assistant.sid.insights.minutes: "{minutes} perc"
+assistant.sid.insights.mostly: Főleg {keys}
+assistant.sid.insights.tempo: Tempó, számonként
+assistant.sid.insights.tempoAria: Az egyes számok tempója, {low} és {high} BPM között
+assistant.sid.insights.tempoAriaAverage: Az egyes számok tempója, {low} és {high} BPM között, átlagosan {bpm}
+assistant.sid.listAnd: "{items} és {last}"
+assistant.sid.model.e2b: Gemma 4 E2B
+assistant.sid.model.e4b: Gemma 4 E4B
+assistant.sid.model.quick: Gyors
+assistant.sid.model.thorough: Alapos
+assistant.sid.move.blend: Keverés
+assistant.sid.move.cut: Vágás
+assistant.sid.move.lift: Emelés
+assistant.sid.name: Sid
+assistant.sid.oneSong: 1 szám
+assistant.sid.panel.back: Vissza Sidhez
+assistant.sid.panel.close: Beszélgetés bezárása
+assistant.sid.panel.replaceOk: Újrakezdés
+assistant.sid.panel.resize: Húzd az átméretezéshez, jobb gombbal visszaállítható
+assistant.sid.planner.bringsDown: lehozza
+assistant.sid.planner.closeSecond: közeli második
+assistant.sid.planner.differentStyle: más stílus
+assistant.sid.planner.faster: gyorsabb
+assistant.sid.planner.fromLibrary: a könyvtáradból
+assistant.sid.planner.harderKey: kevésbé egyszerű hangnemváltás
+assistant.sid.planner.keyClashes: hangnemi ütközések
+assistant.sid.planner.lifts: növeli az energiát
+assistant.sid.planner.littleFaster: egy kicsit gyorsabb
+assistant.sid.planner.moreGenre: több {genre}
+assistant.sid.planner.neighborKey: szomszédos hangnem
+assistant.sid.planner.newToYou: új a számodra
+assistant.sid.planner.noTempo: nincs tempó, amivel folytatni lehetne
+assistant.sid.planner.sameArtist: ugyanaz az előadó megint
+assistant.sid.planner.sameKey: ugyanaz a hangnem
+assistant.sid.planner.sameTempo: ugyanaz a tempó
+assistant.sid.planner.slower: lassabb
+assistant.sid.planner.tooBigDrop: túl nagy visszaesés
+assistant.sid.planner.tooBigLift: túl nagy emelkedés
+assistant.sid.planner.tooFastNow: most túl gyors
+assistant.sid.planner.tooFastToMix: túl gyors az átkeveréshez
+assistant.sid.planner.tooSlowNow: most túl lassú
+assistant.sid.planner.tooSlowToMix: túl lassú az átkeveréshez
+assistant.sid.planner.touchSlower: kicsit lassabb
+assistant.sid.queue.looking: A következő szám keresése
+assistant.sid.queue.picked: Sid választotta
+assistant.sid.queue.pickLine: Sid választotta · {reason}
+assistant.sid.queue.thought: „{thought}”
+assistant.sid.ready.checking: Ez a számítógép ellenőrzése
+assistant.sid.ready.checkNow: Ellenőrzés most
+assistant.sid.ready.downloadDetail: A Gemma itt, ezen a számítógépen fut. A letöltése {size} méretű.
+assistant.sid.ready.downloading: Gemma letöltése
+assistant.sid.ready.finishSetup: A Gemma majdnem kész. Fejezd be a beállítását.
+assistant.sid.ready.finishSetupAction: Beállítás befejezése
+assistant.sid.ready.get: Gemma letöltése ({size})
+assistant.sid.ready.needsDownload: Sidnek egyszeri letöltésre van szüksége
+assistant.sid.ready.preparing: Gemma előkészítése
+assistant.sid.ready.progress: "{done} / {total}"
+assistant.sid.ready.ready: Kész
+assistant.sid.ready.retry: Újrapróbálkozás ({size})
+assistant.sid.ready.seeWhy: Miért?
+assistant.sid.ready.setStillWorks: Sid lejátszási listája itt is működik.
+assistant.sid.ready.stop: Leállítás
+assistant.sid.ready.unavailable: Sid nem tud gondolkodni ezen a számítógépen
+assistant.sid.requestTooLong: Ez a kérés túl hosszú. Próbáld meg legfeljebb {max} karakterben.
+assistant.sid.review.actionAdd: Hozzáadás
+assistant.sid.review.actionCut: Eltávolítás
+assistant.sid.review.actionMove: Áthelyezés
+assistant.sid.review.adding: "Hozzáadás: {count}"
+assistant.sid.review.apply: "{count} módosítás alkalmazása"
+assistant.sid.review.applyOne: 1 módosítás alkalmazása
+assistant.sid.review.applyUnavailable: Sid módosításainak mentése ebben a verzióban még nem érhető el.
+assistant.sid.review.bpm: "{bpm} BPM"
+assistant.sid.review.change: "{before} → {after}"
+assistant.sid.review.changed: A(z) {playlist} lejátszási lista megváltozott, mióta Sid beolvasta, ezért nem mentettünk semmit. Nyisd meg újra, hogy elölről kezdd.
+assistant.sid.review.create: Lejátszási lista létrehozása
+assistant.sid.review.createFailed: Sid nem tudta létrehozni a lejátszási listát. Próbáld meg újra kis idő múlva.
+assistant.sid.review.cutting: "Eltávolítás: {count}"
+assistant.sid.review.description: Leírás (nem kötelező)
+assistant.sid.review.empty: Sid nem üríti ki a lejátszási listát. Tarts meg legalább egy számot.
+assistant.sid.review.footnoteBuild: Normál Apple Music lejátszási listaként mentve. A borítót az Apple Music készíti.
+assistant.sid.review.footnoteImport: Az Apple Music-ból Sid által hozzáadott számok a könyvtáradhoz is hozzáadódnak.
+assistant.sid.review.gone: A(z) {playlist} már nincs a könyvtáradban, ezért nem mentettünk semmit.
+assistant.sid.review.hideWhole: Teljes lejátszási lista elrejtése
+assistant.sid.review.incomplete: Sid nem kapta meg a teljes lejátszási listát, ezért nem mentettünk semmit. Nyisd meg újra, miután betöltődött.
+assistant.sid.review.lineAdded: "{artist} · {source}"
+assistant.sid.review.lineMoved: "{artist} · {from} helyett {to} helyre"
+assistant.sid.review.moving: "Áthelyezés: {count}"
+assistant.sid.review.name: Név
+assistant.sid.review.noChange: A(z) {playlist} már most is ilyen, ezért nincs mit menteni.
+assistant.sid.review.notEditable: Az Apple Music nem engedi, hogy Sid módosítsa a(z) {playlist} lejátszólistát.
+assistant.sid.review.pageStale: A(z) {playlist} lejátszólista megváltozott, mióta ez az oldal betöltődött. Frissítés után válaszd újra a Szerkesztés Sid-del lehetőséget.
+assistant.sid.review.removedRow: Eltávolítva
+assistant.sid.review.saveFailed: Sid nem tudta elmenteni a módosításokat. Próbáld újra egy kis idő múlva.
+assistant.sid.review.showWhole: Teljes lejátszólista megtekintése
+assistant.sid.review.skipped: Kihagyva
+assistant.sid.review.snapshotFailed: Sid nem tudott előzetesen visszaállítási pontot létrehozni, ezért semmi nem lett mentve. Próbáld újra egy kis idő múlva.
+assistant.sid.review.songs: Dalok
+assistant.sid.review.tileBpm: átl. BPM
+assistant.sid.review.tileMinutes: perc
+assistant.sid.review.tileSongs: dal
+assistant.sid.review.titleBuild: Itt az első változat
+assistant.sid.review.titleEdit: Itt a terv
+assistant.sid.review.unwritable: A(z) {playlist} lejátszólista néhány dala nem írható vissza, ezért Sid nem mentett semmit.
+assistant.sid.says.hereComes: "Itt jön: {name}!"
+assistant.sid.says.intro: Sid szettje · {direction}
+assistant.sid.says.looking: A következő szám keresése
+assistant.sid.says.mixingInto: "Átvezetés ide: {name}, ennyi idő alatt:"
+assistant.sid.says.move: "{move} · {bars} ütem"
+assistant.sid.says.moveOneBar: "{move} · 1 ütem"
+assistant.sid.says.next: "A következő: {name}."
+assistant.sid.says.nextBecause: "A következő: {name}: {reason}."
+assistant.sid.says.paused: Szüneteltetve. Itt leszek.
+assistant.sid.says.picking: A következő szám kiválasztása.
+assistant.sid.says.steady: "Állandó tempó: {bpm} BPM"
+assistant.sid.says.tempo: "{from} → {to} BPM"
+assistant.sid.says.upWhenBack: A(z) {name} következik, amikor visszajössz.
+assistant.sid.session.failed: Sid nem tudta befejezni.
+assistant.sid.session.failedRetry: Sid nem tudta befejezni. Próbáld újra egy kis idő múlva.
+assistant.sid.session.naming: Elnevezés
+assistant.sid.session.newPlaylist: Új lejátszólista
+assistant.sid.set.askEmpty: Mit szeretnél hallani?
+assistant.sid.set.fromIdea: "{artist} dalai, Sid ötlete"
+assistant.sid.set.fromLibrary: a könyvtáradból
+assistant.sid.set.fromRequest: a kérésed
+assistant.sid.set.fromStation: a szettből épített állomás
+assistant.sid.set.notFound: "Nem találom ezt: „{search}”. Próbáljuk másképp?"
+assistant.sid.set.nothingPlaying: Előbb indíts le valamit, aztán kérdezz tőlem.
+assistant.sid.set.notQueued: Nem tudtam hozzáadni a várólistához.
+assistant.sid.set.queued: "{title} – {artist} ide került: {where}. {reason}."
+assistant.sid.set.request: A kérésed
+assistant.sid.set.whereAfterNext: a következő után rögtön
+assistant.sid.set.whereNext: következőként
+assistant.sid.settings.addMore: További hozzáadása
+assistant.sid.settings.addMoreDetail: Illő dalok keresése a könyvtáradból vagy a teljes Apple Music kínálatából
+assistant.sid.settings.bottom: Alul
+assistant.sid.settings.byPlayer: A lejátszó mellett
+assistant.sid.settings.byPlayerDetail: Sid a lejátszó borítója mellett
+assistant.sid.settings.canRun: Futtatható a Gemma
+assistant.sid.settings.check: Fájlok ellenőrzése
+assistant.sid.settings.checkDamaged: A Gemma néhány fájlja sérült. Töltsd le újra.
+assistant.sid.settings.checkGood: A Gemma fájljai rendben vannak
+assistant.sid.settings.downloadAgain: Letöltés újra
+assistant.sid.settings.downloadedSize: Letöltve · {size}
+assistant.sid.settings.duringSet: Szett közben
+assistant.sid.settings.found: Sid által neked talált dalok
+assistant.sid.settings.fresh: Újrakezdés
+assistant.sid.settings.freshDetail: Teljes lejátszólista építése hangulat, pillanat vagy néhány előadó alapján
+assistant.sid.settings.gemmaHere: Gemma itt
+assistant.sid.settings.gpu: Grafikus kártya
+assistant.sid.settings.group: Asszisztens
+assistant.sid.settings.inEdit: Playlist szerkesztésekor
+assistant.sid.settings.inEditDetail: Szerkesztés Sid-del a lejátszási lista fejlécében
+assistant.sid.settings.inImmersive: Immerzív nézetben
+assistant.sid.settings.inImmersiveDetail: Sid lapja és buborékja immerzív elrendezésben
+assistant.sid.settings.inNewPlaylist: Új playlist készítésekor
+assistant.sid.settings.inNewPlaylistDetail: Indítás Sid-del az új playlist párbeszédablakban
+assistant.sid.settings.inPlayer: Zene lejátszása közben
+assistant.sid.settings.inPlayerDetail: Sid készlete a várólistában és a lejátszó menüjében
+assistant.sid.settings.intro: Sid segít playlistek összeállításában, közvetlenül ezen a számítógépen.
+assistant.sid.settings.inUse: Használatban · {size}
+assistant.sid.settings.machine: Ez a számítógép
+assistant.sid.settings.modelOptions: "{model} beállítások"
+assistant.sid.settings.modelRow: "{style} · {name}"
+assistant.sid.settings.nav: Sid
+assistant.sid.settings.needsGemma: Gemma szükséges
+assistant.sid.settings.nods: Bólintás a ritmusra
+assistant.sid.settings.nodsDetail: Sid minden dalritmusra bólint
+assistant.sid.settings.notDownloadedSize: Nincs letöltve · {size}
+assistant.sid.settings.nothingYet: Még nincs semmi
+assistant.sid.settings.nothingYetDetail: Nyiss meg egy playlistet, és válaszd a Szerkesztés Sid-del lehetőséget.
+assistant.sid.settings.notMeasured: Még nincs mérve. Sid a letöltés után méri.
+assistant.sid.settings.notMeasuredReady: Még nincs mérve. Sid a következő kérés előtt méri.
+assistant.sid.settings.partlySize: Részben letöltve · {size}
+assistant.sid.settings.position: Pozíció
+assistant.sid.settings.positionDetail: Hol helyezkedjen el Sid a borítón
+assistant.sid.settings.privacyChat: "Amit beírsz, ezen a számítógépen marad: Sid itt, helyben gondolkodik Gemma segítségével. Zene kereséséhez Sid keresőszavakat küld az Apple Music-nek, és ha kéred, az Apple Music-fiókodból olvassa a playlistjeidet, a legutóbbi lejátszásaidat és az Apple Music Replay-t. Semmi nem változik, amíg meg nem nyomod az Alkalmazás gombot."
+assistant.sid.settings.reads: Egy teljes playlistet {seconds} s alatt olvas be (legalább {floor} s alatt kell)
+assistant.sid.settings.regular: Normál
+assistant.sid.settings.remove: Eltávolítás
+assistant.sid.settings.removeMenu: Eltávolítás…
+assistant.sid.settings.removeMessage: Sidnek szüksége van rá a playlistek szerkesztéséhez, a visszatöltése pedig {size} letöltés.
+assistant.sid.settings.removeTitle: Eltávolítod a(z) {model} modellt?
+assistant.sid.settings.reshape: Átalakítás
+assistant.sid.settings.reshapeDetail: Rendezés nyugodtról élénkre, tempó szerint vagy úgy, hogy a tonalitások folyamatosak legyenek
+assistant.sid.settings.runSet: Készlet lejátszása
+assistant.sid.settings.runSetDetail: Hangnem és tempó alapján válaszd ki a következő számot, és fogadd a kéréseidet
+assistant.sid.settings.shaped: Sid által formált playlistek
+assistant.sid.settings.shapedOne: Sid által formált playlist
+assistant.sid.settings.size: Méret
+assistant.sid.settings.sizeDetail: A kicsi méret kisebb Sidet és keskenyebb buborékot jelent
+assistant.sid.settings.skills: Mire képes Sid
+assistant.sid.settings.skillsHere: Mire képes Sid itt
+assistant.sid.settings.small: Kicsi
+assistant.sid.settings.speed: Sebesség
+assistant.sid.settings.storage: Tárhely
+assistant.sid.settings.storageLine: A Gemma {size} helyet igényel, ezen a számítógépen {free} szabad
+assistant.sid.settings.takeTime: Hagyod, hogy Sid időt szánjon?
+assistant.sid.settings.takeTimeDetail: A gyors válaszok pillanatok alatt megérkeznek. A alapos válasz kicsit tovább tart, de nagy playlistekkel jobban boldogul.
+assistant.sid.settings.tell: Mesélj róla
+assistant.sid.settings.tellDetail: Tempó, hangnem és műfajok egy pillantással
+assistant.sid.settings.thinking: Ahogy Sid gondolkodik
+assistant.sid.settings.tidy: Rendrakás
+assistant.sid.settings.tidyDetail: Ismétlések eltávolítása, hosszra vágás vagy állandó tempó tartása
+assistant.sid.settings.together: Eddig együtt
+assistant.sid.settings.top: Felül
+assistant.sid.settings.unavailableNote: A Sid-del történő playlist-szerkesztéshez és -készítéshez olyan számítógépen futó Gemma kell, amely képes rá. A Sid készlete itt is működik.
+assistant.sid.settings.unknownGpu: Ismeretlen grafikus kártya
+assistant.sid.settings.where: Hol találod Sidet
+assistant.sid.settings.withoutGemma: Gemma nélkül Sid tempó, hangnem és energia alapján választ dalokat, a kéréseidet pedig pontosan úgy keresi az Apple Music-ben, ahogy beírod őket.
+assistant.sid.settings.writes: Másodpercenként {rate} token írása (legalább {floor} szükséges)
+assistant.sid.setView.confirmMany: A Sid törli a mögé sorba állított {count} számot, és kiválasztja, mi szól ezután.
+assistant.sid.setView.confirmOk: Szett indítása
+assistant.sid.setView.confirmOne: A Sid törli a mögé sorba állított számot, és kiválasztja, mi szól ezután.
+assistant.sid.setView.confirmTitle: Elindítod Sid szettjét?
+assistant.sid.setView.direction: Energia
+assistant.sid.setView.end: Vége
+assistant.sid.setView.endSet: Sid szettjének befejezése
+assistant.sid.setView.known: Ismert számok
+assistant.sid.setView.liveRadio: Sid szettje nem tud követni élő rádiót.
+assistant.sid.setView.new: Neked új
+assistant.sid.setView.nothingPlaying: Játssz le egy számot a szett indításához.
+assistant.sid.setView.requestPlaceholder: Kérj számot Siditől
+assistant.sid.setView.start: Indítás
+assistant.sid.setView.startSet: Sid szettjének indítása
+assistant.sid.setView.stayInKey: Maradj a hangnemben
+assistant.sid.setView.stayInKeyDetail: Csak kompatibilis hangnemek között keverjen
+assistant.sid.setView.subtitleActive: Sid kiválasztja, mi szól ezután
+assistant.sid.setView.subtitleIdle: Sid kiválasztja, mi szól ezután
+assistant.sid.setView.title: Sid szettje
+assistant.sid.size.gb: "{size} GB"
+assistant.sid.size.mb: "{size} MB"
+assistant.sid.songCount: "{count} szám"
+assistant.sid.source.applePick: Apple Music-válogatás
+assistant.sid.source.applePlaylist: egy Apple Music-lejátszási lista
+assistant.sid.source.artist: egy előadó legnépszerűbb számai
+assistant.sid.source.catalog: Apple Music
+assistant.sid.source.library: a könyvtáradból
+assistant.sid.source.playlist: a lejátszási listából
+assistant.sid.unavailable.belowFloor: A Gemma túl lassan futott ezen a számítógépen, ezért Sid nem használhatja.
+assistant.sid.unavailable.counterMismatch: Sid kikapcsolta a Gemmát, mert egy biztonsági ellenőrzés sikertelen volt. A Cider vagy a grafikus illesztőprogram frissítése után újra próbálkozik.
+assistant.sid.unavailable.gpuLimits: Ez a grafikus kártya nem rendelkezik a Gemma által igényelt memóriával.
+assistant.sid.unavailable.gpuUnstable: A grafikus kártya kétszer nem válaszolt, ezért Sid a Cider újraindításáig szünetel.
+assistant.sid.unavailable.modelCorrupt: A Gemma letöltése kétszer sérült meg, ezért Sid már nem kínálja.
+assistant.sid.unavailable.noAdapter: Sid nem talált grafikus kártyát, amelyen futtatni lehetne a Gemmát.
+assistant.sid.unavailable.noGpuWatch: A Cider nem tudja figyelni a grafikus memóriát ezen a számítógépen, ezért Sid nem futtatja a Gemmát.
+assistant.sid.unavailable.noStorage: A Cider nem tudja tárolni a Gemma fájljait ezen a számítógépen.
+assistant.sid.unavailable.noWebgpu: A Gemmához WebGPU szükséges, amely ezen a számítógépen nem érhető el.
+assistant.sid.unavailable.outOfMemory: A Gemmának több grafikus memóriára volt szüksége, mint amennyit ez a számítógép biztosítani tud.
+assistant.sid.unavailable.probeFailed: Sid nem tudta ellenőrizni ezt a számítógépet. Később újra próbálkozik.
+assistant.sid.unavailable.softwareGpu: Ez a számítógép grafikus kártya nélkül jeleníti meg a grafikát, a Gemmához pedig kártya kell.
+assistant.sid.unavailable.storage: Nincs elég szabad hely ezen a számítógépen a Gemmának.
+assistant.sid.why.cameClose: Majdnem bekerült
+assistant.sid.why.linedUp: ami sorban állt
+assistant.sid.why.open: "Miért választotta Sid ezt: {title}"
+assistant.sid.why.weighed: "Sid {count} számot mérlegelt ezekből: {places}."
+assistant.sid.working.starting: Indítás
+assistant.sid.working.stop: Leállítás
+assistant.sid.working.titleBuild: Lejátszási lista készítése
+assistant.sid.working.titleEdit: "Munka: {playlist}"
 audio.device.default: Alapértelmezett eszköz
 audio.device.noneFound: Nem találhatók kimeneti eszközök
 audio.device.placeholder: "Eszköz: {{id}}"
@@ -551,6 +1021,8 @@ home.settings.tryBento: Próbáld ki a Bento táblát (Béta)
 home.syncFavorites: Kedvencek szinkronizálása
 home.syncFavorites.gettingArtists: Kedvenc előadók lekérése...
 home.title: Főoldal
+hostReinstall.drm.body: Az Apple Music nem engedi a lejátszást, mert ezt a Cider-példányt a szükséges DRM-frissítés előtt telepítették. Az alkalmazáson belüli frissítések ezt nem tudják pótolni, ezért töltsd le újra a Cidert a Cider Taproomból, és telepítsd újra. Válaszd az OK gombot a Cider Taproom megnyitásához.
+hostReinstall.drm.title: Telepítsd újra a Cidert a lejátszás helyreállításához
 i18n.authors: CiderCollective
 i18n.category: main
 i18n.languageName: Magyar
@@ -558,6 +1030,7 @@ i18n.languageNameEnglish: Hungarian
 library.albumVersions.clean: Tiszta
 library.albumVersions.explicit: Szókimondó
 library.albumVersions.label: Verziók
+library.artists.empty: Válassz előadót
 library.columnBrowser: Oszlopnézet
 library.favoritesOnly: Csak a kedvencek
 library.genres.counts: "{albums} album, {songs} dal"
@@ -2348,8 +2821,13 @@ notificationCenter.row.muted: Némítva
 notificationCenter.section.active: Aktív
 notificationCenter.section.history: Előzmények
 notificationCenter.title: Értesítések
+notify.explicitRestrictedSkip: '"{name}" kihagyása: a explicit tartalom korlátozva van az Apple-fiókodban'
+notify.explicitRestrictedStop: 'A lejátszás leállt: a "{name}" explicit tartalom, és az explicit tartalom korlátozva van az Apple-fiókodban'
 notify.licenseRefusedSkip: A(z) "{name}" jelenleg nem játszható le, kihagyás
 notify.licenseRefusedStop: 'Lejátszás leállítva: a(z) "{name}" nem játszható le'
+notify.multipleTracksUnavailable: Több szám nem elérhető. Próbálj másik számot vagy albumot.
+notify.trackUnavailableSkip: A "{name}" nem elérhető, kihagyás
+notify.trackUnavailableStop: 'A lejátszás leállt: a "{name}" nem elérhető'
 nowPlaying.a11y.trackWaveform: Zeneszám hullámformája, kattintson a tekeréshez
 nowPlaying.a11y.waveform: A jelenleg lejátszott dal hullámformája
 oobe.amsignin.title: ""
@@ -2512,33 +2990,45 @@ playbackHealth.backgroundFreeze.eyebrow: Lejátszási értesítés
 playbackHealth.backgroundFreeze.hint: Egy ablakkezelő szabály vagy operációsrendszer-beállítás lehetővé teheti, hogy a Cider akkor is fusson, ha nincs fókuszban. A „További információ” gombra kattintva megtekintheti a rendszeréhez javasolt megoldásokat.
 playbackHealth.backgroundFreeze.learnMore: További információ
 playbackHealth.backgroundFreeze.title: A rendszer szüneteltette a Cider futását a háttérben
+playbackHealth.hostReinstall.label: A Cidert újra kell telepíteni
+playbackHealth.hostReinstall.message: Az Apple Music nem fogadja el ezt a telepítést. Telepítsd újra a Cidert a Cider Taproomból.
 playbackHealth.localIssue: Helyi lejátszási hiba
 playlist.collaborative.tooltip: Ez a lejátszási lista nyitott a közreműködők számára
 playlist.collaborators.andOthers: "{{name}} és még {{count}}"
 playlist.collaborators.count: "{{count}} közreműködő"
 playlist.collaborators.owner: Tulajdonos
 playlist.collaborators.pair: "{{a}} és {{b}}"
+playlist.createFailed: A lejátszási lista nem hozható létre. Próbáld meg újra egy kis idő múlva.
 playlist.description: Lejátszási lista leírása
 playlist.error.changedElsewhere.message: Ezt a lejátszási listát egy másik eszközön módosították. Töltse be újra, és próbálja meg újra.
 playlist.error.changedElsewhere.title: A lejátszási lista máshol módosult
 playlist.error.locked.message: Ez a dal nem távolítható el, amíg a rendezési beállítások aktívak.
 playlist.error.locked.title: Lejátszási lista zárolva
 playlist.error.locked.tooltip: Ez a lejátszási lista nem rendezhető át, amíg a rendezési beállítások aktívak.
+playlist.error.notEditable: Ez a lejátszási lista nem szerkeszthető.
+playlist.error.queueRemoveConflict: Ez a lejátszási lista megváltozott a várólista létrehozása óta. Nyisd meg a lejátszási listát a dal eltávolításához.
 playlist.error.save.message: Hiba történt a lejátszási lista mentésekor. Próbálja meg újra.
 playlist.error.save.title: Nem sikerült menteni a lejátszási listát
+playlist.error.smartNotEditable: Az intelligens lejátszási listák a szabályaik szerint működnek, ezért nem lehet kézzel dalokat eltávolítani belőlük.
 playlist.error.updating.message: Hiba történt a lejátszási lista frissítése közben. Kérjük, próbálja újra.
 playlist.error.updating.title: Hiba a lejátszási lista frissítésekor
 playlist.folderEmpty: Nincsenek lejátszási listák ebben a mappában
+playlist.folderMoveFailed: A mappa nem helyezhető át. Próbáld meg újra egy kis idő múlva.
 playlist.folderRenameHint: Kattints duplán az átnevezéshez
 playlist.lastUpdated: "Legutóbb frissítve: {{date}}"
 playlist.madeByApple: "Készítette: Apple"
+playlist.moveFailed: A lejátszási lista nem helyezhető át. Próbáld meg újra egy kis idő múlva.
 playlist.nameEmpty: A lejátszási lista neve nem lehet üres
+playlist.newFolderNotMoved: A mappa létrejött, de nem sikerült áthelyezni a kiválasztott mappába. Mappán kívül találod.
+playlist.newPlaylistNotMoved: A lejátszási lista létrejött, de nem sikerült áthelyezni a kiválasztott mappába. Mappán kívül találod.
 playlist.noTracks: Nincsenek dalok
 playlist.personalMix: Személyes mix
 playlist.playlistName: Lejátszási lista neve
 playlist.publishOnProfileAndSearch: Publish on profile and in search
 playlist.refresh.message: Ezt a lejátszási listát egy másik eszközön frissítették. A lejátszási lista most frissül.
 playlist.refresh.title: A lejátszási listát frissíteni kell
+playlist.suggestions.subtitle: Előnézet és hozzáadás a lejátszási listához
+playlist.suggestions.title: Javasolt dalok
 playlist.untitled: Névtelen
 podcast.comingSoon.description: A podcastok támogatásának újjáépítése folyamatban van, miután a Cider lejátszáskezelése jelentős változásokon ment keresztül. Egy jövőbeli frissítésben újra elérhető lesz.
 podcast.comingSoon.hide: Elrejtés az oldalsávról
@@ -2641,6 +3131,7 @@ settings.artwork.hiresImages.warning: Növelheti a betöltési időt és ronthat
 settings.audio.atmos: Dolby Atmos
 settings.audio.atmos.binaural.desc: Az Atmos binaurális sztereóként jelenik meg a CiderAudio segítségével. Az Áttűnés, az Automix és a Zökkenőmentes átmenetek továbbra is a megszokott módon működnek.
 settings.audio.atmos.description: Az Atmos-lejátszás konfigurálása a jelenlegi kimeneti eszközhöz.
+settings.audio.atmos.normalizationHint: A Dolby Atmos keverések halkabbak, mint a sztereó mesterfelvételek. A kiegyenlítéshez kapcsold be a Hangerő-normalizálást.
 settings.audio.atmos.off.desc: Atmos kikapcsolva. Minden tartalom szabványos sztereóban szólal meg.
 settings.audio.atmos.passthrough: Passthrough
 settings.audio.atmos.passthrough.desc: Megkerül minden hangfeldolgozást. A többcsatornás Atmos közvetlenül az eszközre kerül továbbításra. Ideális AV-vevőkhöz.
@@ -2792,6 +3283,7 @@ settings.client.genten.proxyServer: Proxyszerver
 settings.client.genten.proxyServer.desc: A proxyszerver címe
 settings.client.genten.restartNotice: A módosítások érvénybe lépéséhez újra kell indítania az alkalmazást.
 settings.client.genten.saveError: Hiba a beállítások mentésekor
+settings.client.genten.saveFailed: A beállításokat nem sikerült menteni. Próbáld meg újra.
 settings.client.genten.saveSuccess: Beállítások mentve
 settings.client.genten.smoothScrolling: Finom görgetés
 settings.client.genten.smoothScrolling.desc: A finom görgetés be- vagy kikapcsolása
@@ -2886,6 +3378,7 @@ settings.client.windows.proxyServer: Proxyszerver
 settings.client.windows.proxyServer.desc: A proxyszerver címe
 settings.client.windows.restartNotice: A módosítások érvénybe lépéséhez újra kell indítania az alkalmazást.
 settings.client.windows.saveError: Hiba a beállítások mentésekor
+settings.client.windows.saveFailed: A beállításokat nem sikerült menteni. Próbáld meg újra.
 settings.client.windows.saveSuccess: Beállítások mentve
 settings.client.windows.taskbarProgress: Lejátszási folyamat megjelenítése a tálcán
 settings.client.windows.taskbarProgress.desc: A lejátszási folyamat megjelenítése a tálcaikonon
@@ -3064,6 +3557,7 @@ settings.equalizer.warning: Nem vállalunk felelősséget a hallásában vagy a 
 settings.extensions.addBuiltInSnippet: Beépített kódrészlet hozzáadása
 settings.extensions.browsePluginMarket: Böngészés a bővítményáruházban
 settings.extensions.browseThemeMarket: Böngészés a témaáruházban
+settings.extensions.byAuthor: "szerző: {author}"
 settings.extensions.checkUpdates: Bővítményfrissítések keresése indításkor
 settings.extensions.checkUpdates.desc: Témák, kódrészletek és bővítmények frissítéseinek keresése a Cider minden indításakor.
 settings.extensions.createPlugin: Bővítmény létrehozása
@@ -3074,13 +3568,24 @@ settings.extensions.fileWatcher: Témafájl-figyelő engedélyezése
 settings.extensions.fileWatcher.desc: A stíluslapok automatikus újratöltése, ha a fájljaik módosulnak a lemezen.
 settings.extensions.importFromFile: Importálás fájlból
 settings.extensions.maintenance: Karbantartás
+settings.extensions.marketplaceId: "Azonosító: {id}"
 settings.extensions.newThemeDialog.identifier: Azonosító
 settings.extensions.newThemeDialog.name: Téma neve
 settings.extensions.newThemeDialog.title: Új téma
 settings.extensions.openAppData: AppData mappa megnyitása
 settings.extensions.openAppData.desc: A mappa megnyitása, amelyből a Cider a bővítményeket olvassa.
+settings.extensions.plugins.directory: Könyvtár
 settings.extensions.plugins.empty: Nincsenek telepített bővítmények.
+settings.extensions.plugins.getMore: További bővítmények
+settings.extensions.plugins.identifier: Azonosító
+settings.extensions.plugins.loadFailed.error: "Ez a bővítmény nem indult el: {{ error }}"
+settings.extensions.plugins.loadFailed.incompatible: Ez a bővítmény a Cider egy régebbi verziójához készült, ezért nem futtatható. Nézd meg a piactéren, van-e frissítés.
+settings.extensions.plugins.loadFailed.invalid: Ez nem érvényes Cider-bővítmény, ezért nem futtatható.
+settings.extensions.plugins.refreshList: Bővítménylista frissítése
 settings.extensions.plugins.running: Fut
+settings.extensions.plugins.uninstall: Eltávolítás
+settings.extensions.plugins.uninstallConfirm: 'Eltávolítod ezt: "{name}"?'
+settings.extensions.plugins.uninstallTitle: Bővítmény eltávolítása
 settings.extensions.refresh: Bővítmények frissítése
 settings.extensions.refresh.desc: Témák, kódrészletek és bővítmények újraolvasása a lemezről.
 settings.extensions.refreshed: Témák, kódrészletek és bővítmények frissítve
@@ -3101,6 +3606,7 @@ settings.extensions.themes.activeCount: "{{ count }} aktív"
 settings.extensions.themes.empty: Nincsenek telepített témák.
 settings.extensions.themes.stylesheetMany: "{{ count }} stíluslap"
 settings.extensions.themes.stylesheetOne: 1 stíluslap
+settings.extensions.viewOnMarketplace: Megtekintés a piactéren
 settings.fonts.description: Az alkalmazásban használt betűtípus módosítása
 settings.fonts.lyrics: Dalszöveg betűtípusa
 settings.fonts.lyrics.description: A dalszövegekhez használt betűtípus
@@ -3873,6 +4379,7 @@ settings.option.lyrics.thirdPartySources: Külső források engedélyezése
 settings.option.lyrics.thirdPartySources.description: Dalszövegek lekérésének engedélyezése a Musixmatch és NetEase szolgáltatásokból, ha az Apple Music dalszövegei nem érhetők el. A minőség változó lehet, és a folyamatos használat sebességkorlátozást vonhat maga után.
 settings.option.lyrics.timeOffset: Dalszöveg időzítésének eltolása (másodperc)
 settings.option.lyrics.timeOffset.description: A dalszöveg megjelenítési időzítésének beállítása. A pozitív értékek korábban, a negatív értékek később jelenítik meg a dalszöveget. Hasznos a nem szinkronban lévő audioeszközök korrigálására.
+settings.option.lyrics.timeOffset.descriptionV2: A dalszövegek megjelenítésének időzítését állíthatod. A pozitív értékek később, a negatívak korábban jelenítik meg a szöveget. Hasznos, ha a hang és a szöveg nincs szinkronban.
 settings.option.lyrics.timestampStyle: Időbélyeg stílusa
 settings.option.lyrics.timestampStyle.both: Mindkettő
 settings.option.lyrics.timestampStyle.chip: Kapszula
@@ -4327,6 +4834,7 @@ settings.resetCider.category.appleMusic: Kijelentkezés az Apple Music-ból
 settings.resetCider.category.appleMusic.desc: Az Apple Music-fiók eltávolítása erről az eszközről
 settings.resetCider.category.caches: Gyorsítótárak
 settings.resetCider.category.caches.desc: Albumborítók, könyvtár, főoldal és egyéb offline gyorsítótárak
+settings.resetCider.category.caches.descModels: Borítók, könyvtár, kezdőlap és egyéb offline gyorsítótárak, valamint a letöltött modellek, például a Gemma
 settings.resetCider.category.integrations: Integrációs bejelentkezések
 settings.resetCider.category.integrations.desc: Last.fm, ListenBrainz és egyéb scrobbler-kulcsok
 settings.resetCider.category.localMusic: Helyi zenei könyvtár adatbázisa
