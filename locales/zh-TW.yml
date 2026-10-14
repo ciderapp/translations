@@ -472,6 +472,9 @@ album.track.unavailable.unreleased: 此項目尚未發行。
 album.track.unavailable.zeroDuration: 此項目長度為 0 秒，可能尚未發行。
 album.upcoming.badge: 即將推出
 app.name: Cider
+app.ptbDisclaimer.confirm: 我了解
+app.ptbDisclaimer.message: 這是公開測試分支（Public Testing Branch）版本。此版本不保證穩定，可能包含錯誤。請勿回報此版本中發現的錯誤或問題。如遇到任何問題，請先切換至穩定版本，再進行回報。
+app.ptbDisclaimer.title: 公開測試分支免責聲明
 app.unsupportedClient.message:
   value: 不支援此用戶端。請確保你使用的是最新版本的 Cider。
   source: human
@@ -948,7 +951,12 @@ audio.device.default: 預設裝置
 audio.device.noneFound: 找不到輸出裝置
 audio.device.placeholder: 裝置 {{id}}
 audiolab.waiting: 正在等待歌曲加入待播清單
+auth.error.devToken: 無法連線至 Apple Music
+auth.error.generic: 無法完成登入。請檢查網路連線後再試一次。
+auth.error.invalidToken: 收到無效的權杖
 auth.error.popupBlocked: 彈出式視窗已遭封鎖
+auth.error.timeout: 登入逾時
+auth.error.unavailable: 此 Apple ID 無法在 Cider 中使用 Apple Music。Cider 需要有效的付費 Apple Music 訂閱。
 auth.error.windowFailed:
   value: 無法打開登入視窗
   source: human
@@ -960,6 +968,7 @@ auth.mutExpired.message:
   source: human
   by: "@jay900604"
   issue: 59
+auth.signedIn: 已登入
 auth.signInRetry.confirm: 再試一次
 auth.signInRetry.message:
   value: 無法打開登入視窗。要再試一次嗎？
@@ -3452,6 +3461,7 @@ oobe.appearance.subtitle:
   by: "@jay900604"
   issue: 45
 oobe.appearance.title: 打造專屬的 Cider
+oobe.appleNotice: 請注意：Apple Music 為 Apple Inc. 的商標。Cider 是 Apple Music 的第三方用戶端，與 Apple Inc. 無關聯。
 oobe.audio.advancedFunctionality: ""
 oobe.audio.subtitle: ""
 oobe.audio.text:
@@ -3550,6 +3560,7 @@ oobe.layout.subtitle:
   source: human
   by: "@jay900604"
   issue: 45
+oobe.login.alreadySignedIn: 您已登入
 oobe.login.skip:
   value: 暫時略過
   source: human
@@ -3565,10 +3576,15 @@ oobe.login.subtitle:
   source: human
   by: "@jay900604"
   issue: 45
+oobe.login.terms: 繼續即表示您同意服務條款與隱私權政策
 oobe.login.title: 最後一步
 oobe.login.userToken: 使用使用者權杖登入
+oobe.music.mute: 靜音設定音樂
+oobe.music.unmute: 取消靜音設定音樂
 oobe.next: 下一步
 oobe.no: 否
+oobe.performance.full.descriptionV2: 保留視覺效果。只有在電腦無法繪製時，Cider 才會自動降低效果。
+oobe.performance.fullV2: 完整品質
 oobe.performance.hint:
   value: 「效能模式」會減少視覺效果並節省 CPU 資源。在你的系統上此功能預設為停用，但你隨時可以打開。
   source: human
@@ -3579,7 +3595,11 @@ oobe.performance.lowEndHint:
   source: human
   by: "@jay900604"
   issue: 45
+oobe.performance.mode.description: 關閉大型模糊和動態背景等高負載視覺效果。適合較舊的電腦。
+oobe.performance.modeV2: 效能模式
+oobe.performance.subtitleV3: 效能模式會關閉負載最高的視覺效果。除非電腦無法繪製，否則「完整品質」會保留這些效果。
 oobe.performance.title: 效能
+oobe.performance.whereToChangeV3: 在設定中，此選項位於 {page} 下的 {setting}。若要使用效能模式，請選擇 {on}；若要使用完整品質，請選擇 {automatic}。您隨時可以在該處變更。
 oobe.player.subtitle:
   value: 位於視窗邊緣的「播放中」控制列。選擇適合你的緊湊度。
   source: human
@@ -3591,6 +3611,8 @@ oobe.player.title:
   by: "@jay900604"
   issue: 45
 oobe.previous: 上一步
+oobe.progress: 第 {current} 步，共 {total} 步：{title}
+oobe.progress.label: 設定進度
 oobe.step.appearance: 外觀
 oobe.step.connections: 連線功能
 oobe.step.features: 音訊
@@ -3600,6 +3622,7 @@ oobe.step.performance: 效能
 oobe.step.player: 播放器
 oobe.step.welcome: 歡迎
 oobe.step.window: 視窗樣式
+oobe.subscriptionNote: Cider 需要有效的付費 Apple Music 訂閱。不支援 Apple Music Voice 及部分促銷試用方案。
 oobe.visual.layout.text:
   value: |-
     Cider 提供兩種不同的視窗版面配置。
@@ -3620,6 +3643,10 @@ oobe.welcome.selectLanguage:
   source: human
   by: "@jay900604"
   issue: 58
+oobe.window.native: 原生視窗
+oobe.window.native.description: 使用桌面環境的標題列與邊框。
+oobe.window.styled: 自訂樣式控制項
+oobe.window.styled.description: 應用程式內建的自訂標題列，並內嵌視窗控制項。
 oobe.window.subtitle: 選擇 App 視窗與桌面環境的整合方式
 oobe.window.title: 視窗樣式
 oobe.yes: 是
@@ -3856,6 +3883,8 @@ playlist.folderRenameHint:
   source: human
   by: "@jay900604"
   issue: 1
+playlist.history: 播放清單紀錄
+playlist.history.withCount: 播放清單紀錄（{count}）
 playlist.lastUpdated: 上次更新於 {{date}}
 playlist.madeByApple: Apple 製作
 playlist.moveFailed: 無法移動播放清單，請稍後再試。
@@ -4052,6 +4081,7 @@ settings.audio.atmos.normalizationHint: Dolby Atmos 混音的音量比立體聲�
 settings.audio.atmos.off.desc: 已停用 Atmos。所有內容將以標準立體聲播放。
 settings.audio.atmos.passthrough: 直通
 settings.audio.atmos.passthrough.desc: 繞過所有音訊處理。多聲道 Atmos 將直接傳送到裝置。適合 AV 擴大機。
+settings.audio.atmos.passthrough.descV2: 將多聲道 Atmos 直接傳送至裝置，適用於 AV 接收器。Audio Lab、等化器及聆聽模式將被略過。
 settings.audio.atmos.passthroughActive: 直通輸出已啟用 — 請至完整設定中變更。
 settings.audio.atmos.standard.desc:
   value: 具有 CiderAudio 處理的多聲道 Atmos，交互淡入淡出、自動混音、無縫過場仍可正常運作。
@@ -4194,6 +4224,7 @@ settings.automix.normalizeDuration: 標準化長度
 settings.automix.normalizeDurationHint: 響度比對的融合時間 ({ms} 毫秒)
 settings.automix.spectralSeparation: 頻譜分離
 settings.automix.spectralSeparationHint: 兩首曲目在過渡期間於頻率上的分離程度。
+settings.automix.spectralSeparationHintV2: 轉場時兩首歌曲在頻率上的分離程度（{value}）。
 settings.automix.speedSettle: 速度恢復時間
 settings.automix.speedSettleHint: 在速度同步混合後，播放速度恢復正常所需的時間（{ms} 毫秒）
 settings.automix.tempoAlign: 節拍對齊
@@ -4428,6 +4459,7 @@ settings.client.windows.v8OptimizeSize.adds: 新增
 settings.client.windows.v8OptimizeSize.to: 至 WebView2
 settings.client.windows.wpfRendering: WPF 轉譯模式
 settings.client.windows.wpfRendering.desc: 選擇 WPF 的轉譯模式。如果不確定，請保留為軟體轉譯。
+settings.client.windows.wpfRendering.descV2: 選擇視窗的繪製方式。如不確定，請保持在「硬體」。
 settings.client.windows.wpfRendering.hardware: 硬體
 settings.client.windows.wpfRendering.software: 軟體
 settings.configBackups.confirm.body:
@@ -4617,6 +4649,7 @@ settings.contentFilter.empty: 尚未新增任何關鍵字。
 settings.contentFilter.inputPlaceholder: 新增關鍵字...
 settings.contentFilter.title: 篩選關鍵字
 settings.crossfade.advanced: 進階淡入淡出設定
+settings.crossfade.automixStillBlends: 自動混音已開啟，歌曲仍可能相互融合。請關閉下方的自動混音以停止所有融合。
 settings.crossfade.description:
   value: 淡入和淡出歌曲，讓歌曲之間幾乎沒有靜音。
   source: human
@@ -4856,6 +4889,7 @@ settings.general.section.cache.description:
   issue: 82
 settings.general.section.desktop: 桌面
 settings.general.section.desktop.description: 鍵盤快速鍵，以及 Cider 在工作列和關閉時的行為。
+settings.general.section.desktop.descriptionV2: 鍵盤快速鍵、播放時保持電腦喚醒，以及 Cider 在工作列和關閉視窗時的行為。
 settings.general.section.language: 語言
 settings.general.section.language.description:
   value: 介面語言，以及回報翻譯問題或查看翻譯貢獻者的方式。
@@ -5390,6 +5424,7 @@ settings.option.advanced.mavericksLcd.style: 樣式
 settings.option.advanced.mavericksLcd.style.glass: 玻璃
 settings.option.advanced.mediaArtwork: 媒體項目插圖
 settings.option.advanced.mediaArtwork.controls: 插圖亮點與高解析度圖片
+settings.option.advanced.mediaArtwork.controlsV2: 專輯封面醒目提示與淡入
 settings.option.advanced.mediaArtwork.description: 整個 App 中網格、列表和橫列上的插圖。
 settings.option.advanced.notificationStyle: 通知樣式
 settings.option.advanced.performance: 效能
@@ -5448,8 +5483,11 @@ settings.option.advanced.simpleArtworkBg:
   issue: 24
   superseded_at: 2026-09-01
 settings.option.advanced.simpleArtworkBg.brightness: 亮度 %
+settings.option.advanced.simpleArtworkBg.brightnessV2: 亮度
 settings.option.advanced.simpleArtworkBg.contrast: 對比度 %
+settings.option.advanced.simpleArtworkBg.contrastV2: 對比
 settings.option.advanced.simpleArtworkBg.saturate: 飽和度 %
+settings.option.advanced.simpleArtworkBg.saturateV2: 飽和度
 settings.option.advanced.simpleArtworkBg.useMask: 使用下方遮罩
 settings.option.advanced.sonoma:
   value: Sonoma
@@ -5993,6 +6031,8 @@ settings.option.general.onStartup.openStartup:
   issue: 23
 settings.option.general.onStartup.resume: 繼續上次的播放
 settings.option.general.pagination: 每頁顯示項目數
+settings.option.general.preventDisplaySleep: 播放時保持螢幕開啟
+settings.option.general.preventSystemSleep: 播放時保持電腦喚醒
 settings.option.general.privacy: 隱私權
 settings.option.general.promptOnClose:
   value: 播放音樂時關閉前彈出視窗提醒
@@ -6072,6 +6112,7 @@ settings.option.general.startupPage.description:
   source: human
   by: "@jay900604"
   issue: 58
+settings.option.general.startupPage.descriptionV2: Cider 在新分頁中開啟的頁面；當「啟動時」設為「開啟啟動頁面」時，也會在啟動時開啟此頁面。
 settings.option.general.startupPage.newTab: 新分頁
 settings.option.general.startupPage.personalHome: 個人首頁
 settings.option.general.themeUpdateNotification: 自動檢查主題更新
@@ -6089,6 +6130,7 @@ settings.option.general.useSmartQueueByDefault.description:
   source: human
   by: "@jay900604"
   issue: 85
+settings.option.general.useSmartQueueByDefault.needsAutomix: 「音訊」中的自動混音已關閉，因此智慧佇列不會重新排序任何項目。
 settings.option.general.warnBeforeQueueOverride:
   value: 取代待播清單前彈出視窗提醒
   source: human
@@ -6231,6 +6273,9 @@ settings.option.performance.enableMediaItemInspect.description: 可能會稍微�
 settings.option.performance.gameMode: 遊戲模式
 settings.option.performance.gameMode.description: 減少視覺效果，並可啟用 Windows 效率模式以降低 CPU 使用率。
 settings.option.performance.gameMode.disable: 停用遊戲模式
+settings.option.performance.graphicsAcceleration: 圖形加速
+settings.option.performance.graphicsAcceleration.autoOff: 因為此電腦以軟體繪製圖形，所以已關閉。
+settings.option.performance.graphicsAcceleration.description: 「自動」會在以軟體繪製圖形的虛擬機器中關閉此功能。變更會在下次啟動 Cider 時生效。
 settings.option.performance.host: 主機
 settings.option.performance.immersiveRenderer:
   value: 沉浸式算繪器
@@ -6258,6 +6303,8 @@ settings.option.performance.preloadSidebarPages.description:
   issue: 84
 settings.option.performance.preloadSidebarPages.idle: 系統閒置時
 settings.option.performance.preloadSidebarPages.intent: 指標懸停時
+settings.option.performance.reduceEffects: 減少視覺效果
+settings.option.performance.reduceEffects.description: 關閉模糊、玻璃、光暈及動態背景，讓應用程式減少繪製工作。「自動」會在沒有可用顯示卡，或系統要求降低透明度時開啟此功能。
 settings.option.performance.renderer.auto: 自動（支援時使用 WebGPU）
 settings.option.performance.renderer.canvas: Canvas 2D
 settings.option.performance.renderer.webgpu: WebGPU
@@ -6586,6 +6633,7 @@ settings.option.visual.liquidGlassScrollPerf.description:
   source: human
   by: "@jay900604"
   issue: 85
+settings.option.visual.liquidGlassScrollPerf.descriptionV2: 捲動時將液態玻璃折射簡化為一般模糊，停止後再逐漸恢復。可減少高負載系統的捲動卡頓，靜止時不會有任何變化。
 settings.option.visual.mainMenuPosition: 主選單位置
 settings.option.visual.matchPageToArtwork: 依封面配色頁面
 settings.option.visual.matchPageToArtwork.description: 以專輯和播放清單封面的顏色為頁面上色，同時適用於淺色與深色模式。
@@ -6921,6 +6969,7 @@ settings.prompt.visual.theme.github.URL:
   by: "@jay900604"
   issue: 58
 settings.prompt.visual.theme.uninstallTheme: 確定要解除安裝 {{theme}} 嗎？
+settings.reloadPrompt.message: 需要重新整理應用程式才能套用變更。是否繼續？
 settings.requiresNewerClient: 需要較新版本的 Cider 用戶端。
 settings.resetCider.category.appleMusic: 登出 Apple Music
 settings.resetCider.category.appleMusic.desc: 從此裝置移除 Apple Music 帳號
@@ -6980,6 +7029,7 @@ settings.smartPlaylists.section.maintenance: 維護
 settings.smartPlaylists.section.maintenance.description: 立即強制執行所有規則，或清除資料庫的快取複本。
 settings.smartPlaylists.section.rules: 規則
 settings.smartPlaylists.section.rules.description: Cider 是否套用內嵌的播放清單規則，以及重新評估這些規則的頻率。
+settings.smartPlaylists.section.rules.descriptionV2: Cider 是否套用內嵌的播放清單規則。這些規則會依「省電」中的「背景重新整理時間」重新執行。
 settings.sweetener.useSystemAccentColor: 使用系統強調色
 settings.takeout.chooseFile: 選擇檔案…
 settings.takeout.error.badVersion: 該檔案缺少版本資訊。
@@ -7018,6 +7068,7 @@ settings.title: 設定
 settings.troubleshooting.bgDiagnostics: 背景播放診斷
 settings.troubleshooting.bgDiagnostics.desc: 額外的日誌追蹤記錄，用於診斷視窗最小化或未聚焦時的播放問題 — 例如誰暫停了播放器、計時器耗盡以及作業系統暫停事件。在回報背景播放錯誤時啟用此功能。
 settings.troubleshooting.desc: 記錄檔與 MKLite 偵錯記錄。
+settings.troubleshooting.descV2: MKLite 與背景播放紀錄。
 settings.troubleshooting.hevcWorkaround: HEVC 因應措施
 settings.troubleshooting.hevcWorkaround.desc: 針對部分 GPU 在 WebView2 中播放 10 位元 SDR HEVC 時出現問題的錯誤，透過套用濾鏡來補償視覺偏移的因應措施。
 settings.troubleshooting.impressionReporting: PlayActivity 曝光回報
@@ -7061,6 +7112,8 @@ settings.updates.action.check: 檢查更新
 settings.updates.action.install: 安裝更新
 settings.updates.action.restart: 重新啟動 Cider
 settings.updates.action.retry: 再試一次
+settings.updates.autoCheck: 自動檢查更新
+settings.updates.autoCheck.description: 關閉時，Cider 只會在您開啟此頁面時檢查更新。
 settings.updates.build: 組建
 settings.updates.channel: 更新管道
 settings.updates.codename: 代號
@@ -8224,6 +8277,8 @@ updates.loadFailed.body:
   by: "@jay900604"
   issue: 58
 updates.loadFailed.title: Cider 無法載入可用版本
+updates.newVersion.body: Cider 有新版本可用。是否前往「更新」下載？
+updates.newVersion.title: 有新版本可用
 updates.notifyForBranch.tooltip: 訂閱此分支的通知
 updates.otherVersions.title: 其他版本
 updates.ptb.name: 公開測試分支
