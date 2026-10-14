@@ -286,6 +286,9 @@ album.track.unavailable.unreleased: 이 항목은 아직 출시되지 않았습�
 album.track.unavailable.zeroDuration: 항목의 재생 시간이 0초입니다. 미발매 곡일 수 있습니다.
 album.upcoming.badge: 발매 예정 앨범
 app.name: Cider
+app.ptbDisclaimer.confirm: 이해했습니다
+app.ptbDisclaimer.message: 이것은 Public Testing Branch 빌드입니다. 이 빌드는 안정성이 보장되지 않으며 버그가 포함되어 있을 수 있습니다. 이 빌드에서 발견한 버그나 문제는 보고하지 마세요. 문제가 발생하면 보고하기 전에 안정 버전으로 전환해 주세요.
+app.ptbDisclaimer.title: Public Testing Branch 고지 사항
 app.unsupportedClient.message: 지원되지 않는 클라이언트입니다. 최신 버전의 Cider를 사용하고 있는지 확인하십시오.
 app.unsupportedClient.title: 지원되지 않는 클라이언트
 assistant.sid.agent.added: 노래 {count}곡 추가됨
@@ -758,10 +761,16 @@ audio.device.default: 기본 기기
 audio.device.noneFound: 출력 기기를 찾을 수 없음
 audio.device.placeholder: 기기 {{id}}
 audiolab.waiting: 대기열에 노래가 추가되기를 기다리는 중
+auth.error.devToken: Apple Music에 연결할 수 없습니다
+auth.error.generic: 로그인을 완료하지 못했습니다. 연결을 확인하고 다시 시도해 주세요.
+auth.error.invalidToken: 잘못된 토큰을 받았습니다
 auth.error.popupBlocked: 팝업이 차단되었습니다
+auth.error.timeout: 로그인 시간이 초과되었습니다
+auth.error.unavailable: 이 Apple ID는 Cider에서 Apple Music을 사용할 수 없습니다. Cider에는 활성 상태의 유료 Apple Music 구독이 필요합니다.
 auth.error.windowFailed: 로그인 창을 열지 못했습니다
 auth.mutExpired.confirm: 로그인
 auth.mutExpired.message: Apple Music 세션이 만료되었습니다. 계속하려면 다시 로그인하세요.
+auth.signedIn: 로그인됨
 auth.signInRetry.confirm: 다시 시도
 auth.signInRetry.message: 로그인 창을 열 수 없습니다. 다시 시도하시겠습니까?
 bugReport.addImage: 이미지 추가
@@ -2899,6 +2908,7 @@ oobe.amupsell.title: 시작하기 전에
 oobe.appearance.accentHint: 앱 전반의 버튼, 강조 표시, 진행률 표시줄 등에 사용됩니다. 하나를 선택해 실시간 미리보기로 확인해 보세요.
 oobe.appearance.subtitle: 색상 구성표와 강조 색상을 선택하세요. 설정 → 시각 효과에서 언제든지 변경할 수 있습니다.
 oobe.appearance.title: 나만의 Cider 만들기
+oobe.appleNotice: "참고: Apple Music은 Apple Inc.의 상표입니다. Cider는 Apple Music용 타사 클라이언트이며 Apple Inc.와 제휴 관계가 없습니다."
 oobe.audio.advancedFunctionality: ""
 oobe.audio.subtitle: ""
 oobe.audio.text: |-
@@ -2937,19 +2947,31 @@ oobe.intro.subtitle: ""
 oobe.intro.text: Cider를 원하는 대로 사용할 수 있도록 몇 가지 설정을 진행합니다. 이 설정은 나중에 언제든지 변경할 수 있습니다.
 oobe.intro.title: Cider에 오신 것을 환영합니다
 oobe.layout.subtitle: 스타일에 맞는 레이아웃을 선택하세요
+oobe.login.alreadySignedIn: 이미 로그인되어 있습니다
 oobe.login.skip: 지금은 건너뛰기
 oobe.login.skipTooltip: 미리보기 모드로만 앱을 사용할 수 있습니다
 oobe.login.subtitle: Apple Music 계정으로 로그인하여 음악 감상을 시작해 보세요
+oobe.login.terms: 계속하면 서비스 약관 및 개인정보 처리방침에 동의하게 됩니다
 oobe.login.title: 마지막 단계
 oobe.login.userToken: 사용자 토큰으로 로그인
+oobe.music.mute: 설정 음악 음소거
+oobe.music.unmute: 설정 음악 음소거 해제
 oobe.next: 다음
 oobe.no: 아니요
+oobe.performance.full.descriptionV2: 시각 효과를 켜 둡니다. 컴퓨터가 효과를 표시할 수 없는 경우에만 Cider가 자동으로 효과를 줄입니다.
+oobe.performance.fullV2: 전체 품질
 oobe.performance.hint: 성능 모드는 시각 효과를 줄이고 CPU 사용량을 절약합니다. 현재 시스템에서는 기본적으로 꺼져 있지만, 언제든지 활성화할 수 있습니다.
 oobe.performance.lowEndHint: 낮은 스레드의 CPU가 감지되었습니다. 더 부드러운 재생과 낮은 CPU 사용량을 위해 성능 모드를 권장합니다.
+oobe.performance.mode.description: 큰 블러 및 애니메이션 배경과 같은 무거운 시각 효과를 끕니다. 오래된 컴퓨터에 적합합니다.
+oobe.performance.modeV2: 성능 모드
+oobe.performance.subtitleV3: 성능 모드는 가장 무거운 시각 효과를 끕니다. 전체 품질은 컴퓨터가 표시할 수 없는 경우를 제외하고 효과를 켜 둡니다.
 oobe.performance.title: 성능
+oobe.performance.whereToChangeV3: 설정의 {page} 아래 {setting} 옵션에서 이 선택을 변경할 수 있습니다. 성능 모드에는 {on}, 전체 품질에는 {automatic}을 선택하세요. 언제든지 그곳에서 변경할 수 있습니다.
 oobe.player.subtitle: 창 가장자리에 위치하는 지금 재생 중 표시줄입니다. 나에게 맞는 조밀도를 선택하세요.
 oobe.player.title: 플레이어 선택
 oobe.previous: 이전
+oobe.progress: "{total}단계 중 {current}단계: {title}"
+oobe.progress.label: 설정 진행 상황
 oobe.step.appearance: 외양
 oobe.step.connections: 연결
 oobe.step.features: 사운드
@@ -2959,6 +2981,7 @@ oobe.step.performance: 성능
 oobe.step.player: 플레이어
 oobe.step.welcome: 환영합니다
 oobe.step.window: 창 스타일
+oobe.subscriptionNote: Cider에는 활성 상태의 유료 Apple Music 구독이 필요합니다. Apple Music Voice 및 일부 프로모션 체험판은 지원되지 않습니다.
 oobe.visual.layout.text: |-
   Cider는 두 가지의 서로 다른 윈도우 레이아웃을 제공합니다.
   Maverick은 윈도우 상단에 플레이어가 위치하는 iTunes 스타일의 레이아웃입니다.
@@ -2971,6 +2994,10 @@ oobe.visual.title: 비주얼
 oobe.welcome.getStarted: 시작하기
 oobe.welcome.importSettings: 설정 가져오기…
 oobe.welcome.selectLanguage: 선호하는 언어 선택
+oobe.window.native: 네이티브 창
+oobe.window.native.description: 데스크톱 환경의 제목 표시줄과 테두리를 사용합니다.
+oobe.window.styled: 스타일 컨트롤
+oobe.window.styled.description: 앱 내 사용자 지정 제목 표시줄과 창 컨트롤이 포함됩니다.
 oobe.window.subtitle: 앱 창이 데스크톱 환경과 통합되는 방식을 선택하세요
 oobe.window.title: 창 스타일
 oobe.yes: 예
@@ -3071,6 +3098,8 @@ playlist.error.updating.title: 재생목록 업데이트 오류
 playlist.folderEmpty: 이 폴더에 플레이리스트가 없습니다
 playlist.folderMoveFailed: 폴더를 이동하지 못했습니다. 잠시 후 다시 시도하세요.
 playlist.folderRenameHint: 더블 클릭하여 이름 변경
+playlist.history: 재생목록 기록
+playlist.history.withCount: 재생목록 기록 ({count})
 playlist.lastUpdated: "최근 업데이트: {{date}}"
 playlist.madeByApple: Apple 제작
 playlist.moveFailed: 플레이리스트를 이동하지 못했습니다. 잠시 후 다시 시도하세요.
@@ -3195,6 +3224,7 @@ settings.audio.atmos.normalizationHint: Dolby Atmos 믹스는 스테레오 마�
 settings.audio.atmos.off.desc: Atmos가 비활성화되었습니다. 모든 콘텐츠가 표준 스테레오로 재생됩니다.
 settings.audio.atmos.passthrough: 패스스루
 settings.audio.atmos.passthrough.desc: 모든 오디오 처리를 우회합니다. 다채널 Atmos가 기기로 직접 전송됩니다. AV 리시버에 적합합니다.
+settings.audio.atmos.passthrough.descV2: AV 리시버용으로 다채널 Atmos를 기기에 직접 전송합니다. Audio Lab, 이퀄라이저 및 청취 모드는 우회됩니다.
 settings.audio.atmos.passthroughActive: 패스스루 활성화됨 — 전체 설정에서 변경할 수 있습니다.
 settings.audio.atmos.standard.desc: CiderAudio 처리 기술이 적용된 다채널 Atmos입니다. 크로스페이드, 오토믹스, 끊김 없는 전환이 정상적으로 작동합니다.
 settings.audio.atmosMode: Atmos 모드
@@ -3297,6 +3327,7 @@ settings.automix.normalizeDuration: 재생 시간 표준화
 settings.automix.normalizeDurationHint: 음량 일치를 위한 혼합 시간 ({ms}ms)
 settings.automix.spectralSeparation: 스펙트럼 분리
 settings.automix.spectralSeparationHint: 전환 구간에서 두 트랙의 주파수를 얼마나 분리할지 설정합니다.
+settings.automix.spectralSeparationHintV2: 전환 중 두 트랙이 주파수상에서 얼마나 떨어져 있는지({value})를 나타냅니다.
 settings.automix.speedSettle: 속도 안정화 시간
 settings.automix.speedSettleHint: 템포가 맞춰진 믹스 이후 재생 속도가 정상으로 복구되는 데 걸리는 시간입니다. ({ms}ms)
 settings.automix.tempoAlign: 비트 매칭
@@ -3450,6 +3481,7 @@ settings.client.windows.v8OptimizeSize.adds: 추가
 settings.client.windows.v8OptimizeSize.to: WebView2에
 settings.client.windows.wpfRendering: WPF 렌더링 모드
 settings.client.windows.wpfRendering.desc: WPF의 렌더링 모드를 선택합니다. 잘 모르겠다면 소프트웨어로 두세요.
+settings.client.windows.wpfRendering.descV2: 창을 그리는 방식을 선택합니다. 잘 모르겠다면 하드웨어를 켜 두세요.
 settings.client.windows.wpfRendering.hardware: 하드웨어
 settings.client.windows.wpfRendering.software: 소프트웨어
 settings.configBackups.confirm.body: 현재 설정이 {date}에 저장된 설정으로 대체되며, Cider가 다시 로드됩니다.
@@ -3559,6 +3591,7 @@ settings.contentFilter.empty: 추가된 키워드가 없습니다.
 settings.contentFilter.inputPlaceholder: 키워드 추가...
 settings.contentFilter.title: 필터 키워드
 settings.crossfade.advanced: 고급 크로스페이드 설정
+settings.crossfade.automixStillBlends: 자동 믹스가 켜져 있어 곡들이 여전히 자연스럽게 이어질 수 있습니다. 모든 전환을 중지하려면 아래에서 자동 믹스를 끄세요.
 settings.crossfade.description: 현재 곡이 서서히 사라지면서 다음 곡이 서서히 나타나도록 부드럽게 전환합니다.
 settings.crossfade.disableFor: 크로스페이드 비활성화 대상...
 settings.crossfade.duration: 시간
@@ -3684,6 +3717,7 @@ settings.general.section.cache: 캐시
 settings.general.section.cache.description: 페이지를 더 빠르게 로드하기 위해 Cider가 디스크에 저장하는 앨범 아트 및 메타데이터입니다.
 settings.general.section.desktop: 데스크톱
 settings.general.section.desktop.description: 단축키 및 작업 표시줄에서의 Cider 동작, 창을 닫을 때의 동작을 설정합니다.
+settings.general.section.desktop.descriptionV2: 키보드 단축키, 재생 중 컴퓨터 깨어 있게 유지, 작업 표시줄 및 닫을 때 Cider의 동작을 설정합니다.
 settings.general.section.language: 언어
 settings.general.section.language.description: 인터페이스 언어와 번역 기여자를 확인하거나 번역 오류를 보고하는 방법을 설정합니다.
 settings.general.section.playback: 재생
@@ -4020,6 +4054,7 @@ settings.option.advanced.mavericksLcd.style: 스타일
 settings.option.advanced.mavericksLcd.style.glass: 글래스
 settings.option.advanced.mediaArtwork: 미디어 항목 아트워크
 settings.option.advanced.mediaArtwork.controls: 앨범 아트 하이라이트 및 고해상도 이미지
+settings.option.advanced.mediaArtwork.controlsV2: 아트워크 강조 및 페이드 인
 settings.option.advanced.mediaArtwork.description: 앱 전반의 그리드, 목록, 행에 표시되는 앨범 아트입니다.
 settings.option.advanced.notificationStyle: 알림 스타일
 settings.option.advanced.performance: 성능
@@ -4049,8 +4084,11 @@ settings.option.advanced.settingsTakeout: 설정 내보내기 / 가져오기
 settings.option.advanced.settingsTakeout.description: 설정을 파일로 백업하거나 다른 기기에서 복원합니다. 계정 로그인 정보는 포함되지 않습니다.
 settings.option.advanced.simpleArtworkBg: 단순한 앨범 아트 배경
 settings.option.advanced.simpleArtworkBg.brightness: 밝기 %
+settings.option.advanced.simpleArtworkBg.brightnessV2: 밝기
 settings.option.advanced.simpleArtworkBg.contrast: 대비 %
+settings.option.advanced.simpleArtworkBg.contrastV2: 대비
 settings.option.advanced.simpleArtworkBg.saturate: 채도 %
+settings.option.advanced.simpleArtworkBg.saturateV2: 채도
 settings.option.advanced.simpleArtworkBg.useMask: 하단 마스크 사용
 settings.option.advanced.sonoma: Sonoma
 settings.option.advanced.sonoma.lyricArc: 곡선형 가사
@@ -4381,6 +4419,8 @@ settings.option.general.onStartup: 시작 시
 settings.option.general.onStartup.openStartup: 시작 페이지 열기
 settings.option.general.onStartup.resume: 이전 세션 이어하기
 settings.option.general.pagination: 페이지당 표시할 항목 수
+settings.option.general.preventDisplaySleep: 재생 중 디스플레이 켜 두기
+settings.option.general.preventSystemSleep: 재생 중 컴퓨터 깨어 있게 유지
 settings.option.general.privacy: 개인 정보
 settings.option.general.promptOnClose: 음악 재생 중 종료 시 확인
 settings.option.general.queue: 대기 목록
@@ -4407,6 +4447,7 @@ settings.option.general.sleepTimerSettings: 취침 타이머 설정
 settings.option.general.startupPage: 시작 페이지
 settings.option.general.startupPage.blank: 빈 페이지
 settings.option.general.startupPage.description: Cider를 열 때 표시할 페이지를 선택합니다.
+settings.option.general.startupPage.descriptionV2: Cider가 새 탭에서 여는 페이지이며, 시작 시 '시작 시'가 '시작 페이지 열기'로 설정된 경우 실행 시 열리는 페이지입니다.
 settings.option.general.startupPage.newTab: 새 탭 페이지
 settings.option.general.startupPage.personalHome: 개인 홈 페이지
 settings.option.general.themeUpdateNotification: 테마 업데이트 자동 확인
@@ -4416,6 +4457,7 @@ settings.option.general.translators: 번역가
 settings.option.general.translators.description: Cider 번역에 도움을 주신 기여자분들께 감사드립니다. 이름을 클릭하면 GitHub 프로필이 열립니다.
 settings.option.general.useSmartQueueByDefault: 기본적으로 스마트 대기 목록 사용
 settings.option.general.useSmartQueueByDefault.description: 대기열이 생성될 때 Smart Queue 순서를 자동으로 적용합니다. Automix가 필요합니다.
+settings.option.general.useSmartQueueByDefault.needsAutomix: 오디오 설정에서 자동 믹스가 꺼져 있어 스마트 큐가 순서를 변경하지 않습니다.
 settings.option.general.warnBeforeQueueOverride: 대기 목록을 덮어쓰기 전에 경고
 settings.option.hide: 가리기
 settings.option.left: 왼쪽
@@ -4502,6 +4544,9 @@ settings.option.performance.enableMediaItemInspect.description: 성능에 약간
 settings.option.performance.gameMode: 게임 모드
 settings.option.performance.gameMode.description: 시각 효과를 줄이고 Windows 효율성 모드를 활성화하여 CPU 사용량을 낮춥니다.
 settings.option.performance.gameMode.disable: 게임 모드 비활성화
+settings.option.performance.graphicsAcceleration: 그래픽 가속
+settings.option.performance.graphicsAcceleration.autoOff: 이 PC는 소프트웨어로 그래픽을 그리므로 꺼져 있습니다.
+settings.option.performance.graphicsAcceleration.description: 자동은 소프트웨어로 그래픽을 그리는 가상 머신에서 이 기능을 끕니다. 변경 사항은 다음 Cider 시작 시 적용됩니다.
 settings.option.performance.host: 호스트
 settings.option.performance.immersiveRenderer: 몰입형 렌더러
 settings.option.performance.immersiveRenderer.description: 움직이는 배경이 오작동하거나 GPU를 너무 많이 사용하는 경우 WebGPU 대신 Canvas 2D를 사용합니다.
@@ -4517,6 +4562,8 @@ settings.option.performance.preloadSidebarPages: 사이드바 페이지 미리 �
 settings.option.performance.preloadSidebarPages.description: 사이드바 페이지를 열기 전에 미리 로드합니다. '마우스 올릴 때'는 포인터가 사이드바 항목에 머무를 때 로드를 시작합니다. '대기 상태일 때'는 시작 후 '지금 듣기', '둘러보기', '라디오'도 로드하며 이전에 열었던 보관함 목록을 새로 고칩니다.
 settings.option.performance.preloadSidebarPages.idle: 대기 상태일 때
 settings.option.performance.preloadSidebarPages.intent: 마우스 올릴 때
+settings.option.performance.reduceEffects: 시각 효과 줄이기
+settings.option.performance.reduceEffects.description: 블러, 유리 효과, 글로우 및 애니메이션 배경을 꺼서 앱이 그리는 양을 줄입니다. 자동은 작동하는 그래픽 카드가 없거나 시스템이 투명도를 줄이도록 요청할 때 켜집니다.
 settings.option.performance.renderer.auto: 자동 (지원되는 경우 WebGPU)
 settings.option.performance.renderer.canvas: Canvas 2D
 settings.option.performance.renderer.webgpu: WebGPU
@@ -4736,6 +4783,7 @@ settings.option.visual.liquidGlassPlayer: 리퀴드 글래스 플레이어 바
 settings.option.visual.liquidGlassPlayer.description: 지금 재생 중 플레이어 바에 리퀴드 글래스 효과를 사용합니다. 평평하고 단색인 패널을 사용하려면 이 옵션을 끄십시오 (렌더링 부하가 줄어듭니다).
 settings.option.visual.liquidGlassScrollPerf: 스크롤 시 가벼운 글래스 효과
 settings.option.visual.liquidGlassScrollPerf.description: 스크롤하는 동안 리퀴드 글래스 굴절을 단순한 블러 효과로 간소화하고, 스크롤을 멈추면 서서히 다시 적용합니다. 정지 상태에서는 변화 없이, 시스템 부하가 큰 환경에서 스크롤 끊김 현상을 줄여줍니다. 게임 모드에서는 항상 활성화됩니다.
+settings.option.visual.liquidGlassScrollPerf.descriptionV2: 스크롤하는 동안 리퀴드 글라스 굴절을 단순한 블러로 바꾸고, 멈추면 다시 원래대로 돌립니다. 정지 상태에는 변화가 없으며 사양이 높은 시스템에서 스크롤 끊김을 줄입니다.
 settings.option.visual.mainMenuPosition: 메인 메뉴 위치
 settings.option.visual.matchPageToArtwork: 앨범 아트에 맞춰 페이지 색상 적용
 settings.option.visual.matchPageToArtwork.description: 라이트 모드와 다크 모드에서 앨범 및 플레이리스트 페이지를 아트워크의 색상으로 채웁니다.
@@ -4930,6 +4978,7 @@ settings.prompt.visual.plugin.github.success: 플러그인이 성공적으로 �
 settings.prompt.visual.plugin.github.URL: 설치할 플러그인의 URL을 입력하세요.
 settings.prompt.visual.theme.github.URL: 설치할 테마의 URL을 입력하세요.
 settings.prompt.visual.theme.uninstallTheme: "{{theme}}을(를) 제거하시겠습니까?"
+settings.reloadPrompt.message: 변경 사항을 적용하려면 앱을 새로 고쳐야 합니다. 계속하시겠습니까?
 settings.requiresNewerClient: 더 새로운 버전의 Cider 클라이언트가 필요합니다.
 settings.resetCider.category.appleMusic: Apple Music 로그아웃
 settings.resetCider.category.appleMusic.desc: 이 기기에서 Apple Music 계정 제거
@@ -4973,6 +5022,7 @@ settings.smartPlaylists.section.maintenance: 유지 관리
 settings.smartPlaylists.section.maintenance.description: 지금 모든 규칙을 강제로 실행하거나 보관함의 캐시된 복사본을 삭제합니다.
 settings.smartPlaylists.section.rules: 규칙
 settings.smartPlaylists.section.rules.description: Cider가 내장된 플레이리스트 규칙을 적용할지 여부와 규칙을 재평가하는 주기를 설정합니다.
+settings.smartPlaylists.section.rules.descriptionV2: Cider가 재생목록에 포함된 규칙을 적용할지 여부입니다. 전원 사용의 백그라운드 새로 고침 시간에 따라 다시 실행됩니다.
 settings.sweetener.useSystemAccentColor: 시스템 강조 색상 사용
 settings.takeout.chooseFile: 파일 선택…
 settings.takeout.error.badVersion: 해당 파일에 버전 정보가 없습니다.
@@ -5003,6 +5053,7 @@ settings.title: 설정
 settings.troubleshooting.bgDiagnostics: 백그라운드 재생 진단
 settings.troubleshooting.bgDiagnostics.desc: 창이 최소화되거나 포커스를 잃었을 때 발생하는 재생 문제를 진단하기 위한 추가 로그 기록(플레이어 일시 정지 주체, 타이머 기아 현상, OS 일시 중단 현상 등)입니다. 백그라운드 재생 버그를 신고할 때 활성화하세요.
 settings.troubleshooting.desc: 로그 파일 및 MKLite 디버그 로깅입니다.
+settings.troubleshooting.descV2: MKLite 및 백그라운드 재생 로깅입니다.
 settings.troubleshooting.hevcWorkaround: HEVC 해결 방법
 settings.troubleshooting.hevcWorkaround.desc: 10비트 SDR HEVC 재생에 문제가 있는 일부 GPU의 WebView2 버그를 해결하기 위해 필터를 적용하여 시각적 왜곡을 보정합니다.
 settings.troubleshooting.impressionReporting: PlayActivity 노출 보고
@@ -5026,6 +5077,8 @@ settings.updates.action.check: 업데이트 확인
 settings.updates.action.install: 업데이트 설치
 settings.updates.action.restart: Cider 재시작
 settings.updates.action.retry: 다시 시도
+settings.updates.autoCheck: 업데이트 자동 확인
+settings.updates.autoCheck.description: 끄면 이 페이지를 열 때만 Cider가 업데이트를 확인합니다.
 settings.updates.build: 빌드
 settings.updates.channel: 채널
 settings.updates.codename: 코드네임
@@ -5718,6 +5771,8 @@ updates.installUnavailable.body: 이 버전은 현재 사용자의 계정에서 
 updates.lateststable.title: 최신 안정 버전
 updates.loadFailed.body: 연결 상태를 확인하고 다시 시도해 주세요.
 updates.loadFailed.title: Cider가 사용 가능한 버전을 불러올 수 없습니다
+updates.newVersion.body: 새 버전의 Cider를 사용할 수 있습니다. 업데이트 메뉴로 이동하여 다운로드하시겠습니까?
+updates.newVersion.title: 새 버전 사용 가능
 updates.notifyForBranch.tooltip: 이 브랜치에 대한 알림 받기
 updates.otherVersions.title: 다른 버전
 updates.ptb.name: 공개 테스트 브랜치
