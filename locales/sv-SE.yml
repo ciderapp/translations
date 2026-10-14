@@ -254,6 +254,9 @@ album.track.unavailable.unreleased: Det här objektet har inte släppts än.
 album.track.unavailable.zeroDuration: Objektets spellängd är 0 sekunder, troligtvis inte släppt än.
 album.upcoming.badge: Kommande album
 app.name: Cider
+app.ptbDisclaimer.confirm: Jag förstår
+app.ptbDisclaimer.message: Detta är en build för Public Testing Branch. Den här builden är inte garanterat stabil och kan innehålla buggar. Rapportera inte buggar eller problem som hittas i den här builden. Om du stöter på problem, byt till den stabila builden innan du rapporterar dem.
+app.ptbDisclaimer.title: Ansvarsfriskrivning för Public Testing Branch
 app.unsupportedClient.message: Den här klienten stöds inte. Se till att du använder den senaste versionen av Cider.
 app.unsupportedClient.title: Klienten stöds inte
 assistant.sid.agent.added: Lade till {count} låtar
@@ -726,10 +729,16 @@ audio.device.default: Standardenhet
 audio.device.noneFound: Inga utmatningsenheter hittades
 audio.device.placeholder: Enhet {{id}}
 audiolab.waiting: Väntar på att en låt ska läggas i kön
+auth.error.devToken: Kunde inte nå Apple Music
+auth.error.generic: Det gick inte att slutföra inloggningen. Kontrollera anslutningen och försök igen.
+auth.error.invalidToken: Ogiltig token mottagen
 auth.error.popupBlocked: Popup-fönstret blockerades
+auth.error.timeout: Inloggningen tog för lång tid
+auth.error.unavailable: Det här Apple-ID:t kan inte använda Apple Music i Cider. Cider kräver en aktiv, betald Apple Music-prenumeration.
 auth.error.windowFailed: Inloggningsfönstret kunde inte öppnas
 auth.mutExpired.confirm: Logga in
 auth.mutExpired.message: Din Apple Music-session har löpt ut. Logga in igen för att fortsätta.
+auth.signedIn: Inloggad
 auth.signInRetry.confirm: Försök igen
 auth.signInRetry.message: Inloggningsfönstret kunde inte öppnas. Försök igen?
 bugReport.addImage: Lägg till bild
@@ -2843,6 +2852,7 @@ oobe.amupsell.title: Innan vi börjar
 oobe.appearance.accentHint: Används för knappar, markeringar och förlopp i hela appen. Prova en, den förhandsvisas direkt.
 oobe.appearance.subtitle: Välj ett färgtema och en accentfärg. Du kan ändra dessa när som helst i Inställningar → Visuellt.
 oobe.appearance.title: Gör Cider till ditt
+oobe.appleNotice: "Observera: Apple Music är ett varumärke som tillhör Apple Inc. Cider är en klient från tredje part för Apple Music och är inte kopplad till Apple Inc."
 oobe.audio.advancedFunctionality: ""
 oobe.audio.subtitle: ""
 oobe.audio.text: |-
@@ -2881,19 +2891,31 @@ oobe.intro.subtitle: ""
 oobe.intro.text: Låt oss ställa in några saker så att du kan använda Cider precis som du vill. Du kan alltid ändra dessa inställningar senare.
 oobe.intro.title: Välkommen till Cider
 oobe.layout.subtitle: Välj en layout som passar din stil
+oobe.login.alreadySignedIn: Du är redan inloggad
 oobe.login.skip: Hoppa över så länge
 oobe.login.skipTooltip: Du kommer endast att kunna använda appen i förhandsvisningsläge
 oobe.login.subtitle: Logga in med ditt Apple Music-konto för att börja lyssna på din musik
+oobe.login.terms: Genom att fortsätta godkänner du användarvillkoren och integritetspolicyn
 oobe.login.title: Ett sista steg
 oobe.login.userToken: Logga in med en användartoken
+oobe.music.mute: Stäng av installationsmusiken
+oobe.music.unmute: Slå på installationsmusiken
 oobe.next: Nästa
 oobe.no: Nej
+oobe.performance.full.descriptionV2: Håller visuella effekter på. Cider stänger bara av dem själv när datorn inte kan rita dem.
+oobe.performance.fullV2: Full kvalitet
 oobe.performance.hint: Prestandaläge minskar visuella effekter och sparar processorresurser. Inaktiverat som standard på system som ditt, men du kan aktivera det när som helst.
 oobe.performance.lowEndHint: Vi upptäckte en processor med färre trådar. Vi rekommenderar Prestandaläge för smidigare uppspelning och lägre processoranvändning.
+oobe.performance.mode.description: Stänger av tunga visuella effekter, till exempel stora oskärpeeffekter och animerade bakgrunder. Bra för äldre datorer.
+oobe.performance.modeV2: Prestandaläge
+oobe.performance.subtitleV3: Prestandaläget stänger av de tyngsta visuella effekterna. Full kvalitet behåller dem påslagna om inte datorn saknar stöd för att rita dem.
 oobe.performance.title: Prestanda
+oobe.performance.whereToChangeV3: I Inställningar finns det här valet som alternativet {setting} under {page}. Välj {on} för Prestandaläge eller {automatic} för Full kvalitet. Du kan ändra det där när som helst.
 oobe.player.subtitle: Spelarfältet som ligger i kanten av fönstret. Välj den kompakthet som passar dig.
 oobe.player.title: Välj din spelare
 oobe.previous: Föregående
+oobe.progress: "Steg {current} av {total}: {title}"
+oobe.progress.label: Förlopp för installationen
 oobe.step.appearance: Utseende
 oobe.step.connections: Anslutningar
 oobe.step.features: Ljud
@@ -2903,6 +2925,7 @@ oobe.step.performance: Prestanda
 oobe.step.player: Spelare
 oobe.step.welcome: Välkommen
 oobe.step.window: Fönsterstil
+oobe.subscriptionNote: Cider kräver en aktiv, betald Apple Music-prenumeration. Apple Music Voice och vissa reklamerbjudanden med provperiod stöds inte.
 oobe.visual.layout.text: |-
   Cider har två olika fönsterlayouter.
   Maverick är en iTunes-liknande layout med spelaren högst upp i fönstret.
@@ -2915,6 +2938,10 @@ oobe.visual.title: Utseende
 oobe.welcome.getStarted: Kom igång
 oobe.welcome.importSettings: Importera inställningar…
 oobe.welcome.selectLanguage: Välj ditt föredragna språk
+oobe.window.native: Native-fönster
+oobe.window.native.description: Använder skrivbordsmiljöns namnlist och kanter.
+oobe.window.styled: Anpassade kontroller
+oobe.window.styled.description: Egen namnlist i appen med inbyggda fönsterkontroller.
 oobe.window.subtitle: Välj hur appfönstret integreras med din skrivbordsmiljö
 oobe.window.title: Fönsterstil
 oobe.yes: Ja
@@ -3015,6 +3042,8 @@ playlist.error.updating.title: Fel vid uppdatering av spellistan
 playlist.folderEmpty: Inga spellistor i den här mappen
 playlist.folderMoveFailed: Mappen kunde inte flyttas. Försök igen om en stund.
 playlist.folderRenameHint: Dubbelklicka för att byta namn
+playlist.history: Spellistehistorik
+playlist.history.withCount: Spellistehistorik ({count})
 playlist.lastUpdated: Senast uppdaterad {{date}}
 playlist.madeByApple: Skapad av Apple
 playlist.moveFailed: Spellistan kunde inte flyttas. Försök igen om en stund.
@@ -3135,6 +3164,7 @@ settings.audio.atmos.normalizationHint: Dolby Atmos-mixar är tystare än stereo
 settings.audio.atmos.off.desc: Atmos inaktiverat. Allt innehåll spelas upp i vanlig stereo.
 settings.audio.atmos.passthrough: Passthrough
 settings.audio.atmos.passthrough.desc: Förbikopplar all ljudbehandling. Flerkanalig Atmos skickas direkt till enheten. Perfekt för AV-receivrar.
+settings.audio.atmos.passthrough.descV2: Skickar flerkanalig Atmos direkt till enheten, för AV-mottagare. Audio Lab, equalizern och lyssningsläge kringgås.
 settings.audio.atmos.passthroughActive: Passthrough aktiv — ändra i de fullständiga inställningarna.
 settings.audio.atmos.standard.desc: Flerkanalig Atmos med CiderAudio-behandling. Crossfade, Automix och sömlösa övergångar fortsätter att fungera som vanligt.
 settings.audio.atmosMode: Atmos-läge
@@ -3237,6 +3267,7 @@ settings.automix.normalizeDuration: Normalisera varaktighet
 settings.automix.normalizeDurationHint: Övergångstid för volymmatchning ({ms} ms)
 settings.automix.spectralSeparation: Spektral separation
 settings.automix.spectralSeparationHint: Hur mycket de två låtarna separeras i frekvens under en övergång.
+settings.automix.spectralSeparationHintV2: Hur mycket de två spåren separeras i frekvens under en övergång ({value}).
 settings.automix.speedSettle: Stabiliseringstid för hastighet
 settings.automix.speedSettleHint: Hur lång tid det tar för uppspelningshastigheten att återgå till det normala efter en tempomatchad mix ({ms}ms)
 settings.automix.tempoAlign: Taktmatchning
@@ -3390,6 +3421,7 @@ settings.client.windows.v8OptimizeSize.adds: Lägger till
 settings.client.windows.v8OptimizeSize.to: till WebView2
 settings.client.windows.wpfRendering: WPF-renderingsläge
 settings.client.windows.wpfRendering.desc: Välj renderingsläge för WPF. Om du är osäker, lämna som programvara.
+settings.client.windows.wpfRendering.descV2: Välj hur fönstret ritas. Om du är osäker, behåll Hårdvara.
 settings.client.windows.wpfRendering.hardware: Hårdvara
 settings.client.windows.wpfRendering.software: Programvara
 settings.configBackups.confirm.body: Dina nuvarande inställningar kommer att ersättas av de som sparades den {date}, och Cider kommer att startas om.
@@ -3499,6 +3531,7 @@ settings.contentFilter.empty: Inga sökord har lagts till än.
 settings.contentFilter.inputPlaceholder: Lägg till ett sökord...
 settings.contentFilter.title: Filtrera sökord
 settings.crossfade.advanced: Avancerade inställningar för övertoning
+settings.crossfade.automixStillBlends: Automix är på, så låtar kan fortfarande glida in i varandra. Stäng av Automix nedan för att stoppa all övertoning.
 settings.crossfade.description: Tona smidigt ut det aktuella spåret samtidigt som nästa tonas in.
 settings.crossfade.disableFor: Inaktivera övertoning för...
 settings.crossfade.duration: Varaktighet
@@ -3624,6 +3657,7 @@ settings.general.section.cache: Cache
 settings.general.section.cache.description: Sparade omslag och metadata som Cider sparar på disken så att sidor laddas snabbare.
 settings.general.section.desktop: Skrivbord
 settings.general.section.desktop.description: Kortkommandon och hur Cider beter sig i aktivitetsfältet och vid stängning.
+settings.general.section.desktop.descriptionV2: Kortkommandon, att hålla datorn vaken under uppspelning och hur Cider beter sig i aktivitetsfältet och när fönstret stängs.
 settings.general.section.language: Språk
 settings.general.section.language.description: Gränssnittsspråk, och hur man rapporterar eller krediterar dess översättningar.
 settings.general.section.playback: Uppspelning
@@ -3960,6 +3994,7 @@ settings.option.advanced.mavericksLcd.style: Stil
 settings.option.advanced.mavericksLcd.style.glass: Glas
 settings.option.advanced.mediaArtwork: Omslagsbild för medieobjekt
 settings.option.advanced.mediaArtwork.controls: Omslagsdetaljer och högupplösta bilder
+settings.option.advanced.mediaArtwork.controlsV2: Markering och tonande av omslag
 settings.option.advanced.mediaArtwork.description: Omslag på rutnät, listor och rader i hela appen.
 settings.option.advanced.notificationStyle: Notisstil
 settings.option.advanced.performance: Prestanda
@@ -3989,8 +4024,11 @@ settings.option.advanced.settingsTakeout: Exportera / importera inställningar
 settings.option.advanced.settingsTakeout.description: Säkerhetskopiera dina inställningar till en fil, eller återställ dem på en annan enhet. Kontoinloggningar inkluderas aldrig.
 settings.option.advanced.simpleArtworkBg: Enkel omslagsbakgrund
 settings.option.advanced.simpleArtworkBg.brightness: Ljusstyrka %
+settings.option.advanced.simpleArtworkBg.brightnessV2: Ljusstyrka
 settings.option.advanced.simpleArtworkBg.contrast: Kontrast %
+settings.option.advanced.simpleArtworkBg.contrastV2: Kontrast
 settings.option.advanced.simpleArtworkBg.saturate: Mättnad %
+settings.option.advanced.simpleArtworkBg.saturateV2: Mättnad
 settings.option.advanced.simpleArtworkBg.useMask: Använd nedre mask
 settings.option.advanced.sonoma: Sonoma
 settings.option.advanced.sonoma.lyricArc: Bågformad låttext
@@ -4296,6 +4334,8 @@ settings.option.general.onStartup: Vid uppstart
 settings.option.general.onStartup.openStartup: Öppna startsidan
 settings.option.general.onStartup.resume: Återuppta senaste sessionen
 settings.option.general.pagination: Antal objekt som visas per sida
+settings.option.general.preventDisplaySleep: Håll skärmen på under uppspelning
+settings.option.general.preventSystemSleep: Håll datorn vaken under uppspelning
 settings.option.general.privacy: Sekretess
 settings.option.general.promptOnClose: Fråga vid stängning när musik spelas
 settings.option.general.queue: Kö
@@ -4322,6 +4362,7 @@ settings.option.general.sleepTimerSettings: Inställningar för insomningstimer
 settings.option.general.startupPage: Startsida
 settings.option.general.startupPage.blank: Tom sida
 settings.option.general.startupPage.description: Välj vilken sida som ska visas när du öppnar Cider.
+settings.option.general.startupPage.descriptionV2: Sidan Cider öppnas i nya flikar, och vid start när Vid start är inställt på Öppna startsida.
 settings.option.general.startupPage.newTab: Ny flik
 settings.option.general.startupPage.personalHome: Personlig startsida
 settings.option.general.themeUpdateNotification: Sök efter temauppdateringar automatiskt
@@ -4331,6 +4372,7 @@ settings.option.general.translators: Översättare
 settings.option.general.translators.description: Ett stort tack till dessa bidragsgivare som har hjälpt till att översätta Cider. Klicka på ett namn för att öppna deras GitHub-profil.
 settings.option.general.useSmartQueueByDefault: Använd Smart Queue som standard
 settings.option.general.useSmartQueueByDefault.description: Använd automatiskt Smart kö-sortering när kön skapas. Kräver Automix.
+settings.option.general.useSmartQueueByDefault.needsAutomix: Automix är av i Ljud, så Smart kö sorterar inte om något.
 settings.option.general.warnBeforeQueueOverride: Varna innan kön skrivs över
 settings.option.hide: Dölj
 settings.option.left: Vänster
@@ -4417,6 +4459,9 @@ settings.option.performance.enableMediaItemInspect.description: Kan påverka pre
 settings.option.performance.gameMode: Spelläge
 settings.option.performance.gameMode.description: Minskar visuella effekter och kan aktivera effektivitetsläge i Windows för lägre CPU-användning.
 settings.option.performance.gameMode.disable: Inaktivera spelläge
+settings.option.performance.graphicsAcceleration: Grafikacceleration
+settings.option.performance.graphicsAcceleration.autoOff: Av eftersom den här datorn ritar grafik i programvara.
+settings.option.performance.graphicsAcceleration.description: Automatisk stänger av den i en virtuell maskin som ritar grafik i programvara. Ändringar tillämpas nästa gång Cider startar.
 settings.option.performance.host: Värd
 settings.option.performance.immersiveRenderer: Omslutande renderare
 settings.option.performance.immersiveRenderer.description: Använd Canvas 2D istället för WebGPU om den animerade bakgrunden beter sig felaktigt eller använder för mycket GPU.
@@ -4432,6 +4477,8 @@ settings.option.performance.preloadSidebarPages: Läs in sidofältssidor i förv
 settings.option.performance.preloadSidebarPages.description: Läser in sidofältssidor innan du öppnar dem. "Vid hovring" startar när pekaren vilar på ett objekt i sidofältet. "Vid inaktivitet" läser även in Lyssna nu, Bläddra och Radio efter uppstart samt uppdaterar bibliotekslistor som du har öppnat tidigare.
 settings.option.performance.preloadSidebarPages.idle: Vid inaktivitet
 settings.option.performance.preloadSidebarPages.intent: Vid hovring
+settings.option.performance.reduceEffects: Minska visuella effekter
+settings.option.performance.reduceEffects.description: Stänger av oskärpa, glas, glöd och animerade bakgrunder så att appen ritar mindre. Automatisk slår på den när det inte finns något fungerande grafikkort, eller när systemet begär mindre genomskinlighet.
 settings.option.performance.renderer.auto: Automatisk (WebGPU när det stöds)
 settings.option.performance.renderer.canvas: Canvas 2D
 settings.option.performance.renderer.webgpu: WebGPU
@@ -4651,6 +4698,7 @@ settings.option.visual.liquidGlassPlayer: Liquid Glass-spelarfält
 settings.option.visual.liquidGlassPlayer.description: Använd Liquid Glass-ytan för spelarfältet Nu spelas. Inaktivera för en platt, solid panel (vilket också är mer lättdrivet).
 settings.option.visual.liquidGlassScrollPerf: Lättare glaseffekt vid rullning
 settings.option.visual.liquidGlassScrollPerf.description: Förenklar ljusbrytningen för flytande glas till en enkel oskärpa vid rullning, och tonar sedan mjukt tillbaka den när du stannar. Minskar rullningshack på krävande system utan förändring i stillastående läge. Alltid aktiverat i Game Mode.
+settings.option.visual.liquidGlassScrollPerf.descriptionV2: Förenklar liquid glass-brytningen till en vanlig oskärpa medan du scrollar och tonar sedan in den igen när du slutar. Minskar hack vid scrollning på krävande system utan förändring i vila.
 settings.option.visual.mainMenuPosition: Huvudmenyns position
 settings.option.visual.matchPageToArtwork: Anpassa sidan efter omslaget
 settings.option.visual.matchPageToArtwork.description: Färglägger album- och spellistsidor med färgerna från deras omslag, i ljust och mörkt läge.
@@ -4831,6 +4879,7 @@ settings.prompt.visual.plugin.github.success: Tillägget har installerats. Klick
 settings.prompt.visual.plugin.github.URL: Ange URL:en för tillägget du vill installera
 settings.prompt.visual.theme.github.URL: Ange URL:en för temat du vill installera
 settings.prompt.visual.theme.uninstallTheme: Är du säker på att du vill avinstallera {{theme}}?
+settings.reloadPrompt.message: Appen behöver laddas om för att tillämpa ändringarna. Vill du fortsätta?
 settings.requiresNewerClient: Kräver en nyare Cider-klient.
 settings.resetCider.category.appleMusic: Logga ut från Apple Music
 settings.resetCider.category.appleMusic.desc: Ta bort Apple Music-kontot från den här enheten
@@ -4874,6 +4923,7 @@ settings.smartPlaylists.section.maintenance: Underhåll
 settings.smartPlaylists.section.maintenance.description: Tvinga alla regler att köras nu, eller rensa den cachelagrade kopian av ditt bibliotek.
 settings.smartPlaylists.section.rules: Regler
 settings.smartPlaylists.section.rules.description: Huruvida Cider tillämpar inbäddade spellisteregler och hur ofta de utvärderas på nytt.
+settings.smartPlaylists.section.rules.descriptionV2: Om Cider tillämpar inbäddade spellistregler. De körs om med Uppdateringstid i bakgrunden under Energianvändning.
 settings.sweetener.useSystemAccentColor: Använd systemets accentfärg
 settings.takeout.chooseFile: Välj fil…
 settings.takeout.error.badVersion: Filen saknar versionsinformation.
@@ -4904,6 +4954,7 @@ settings.title: Inställningar
 settings.troubleshooting.bgDiagnostics: Diagnostik för bakgrundsuppspelning
 settings.troubleshooting.bgDiagnostics.desc: Extra loggdetaljer för att diagnostisera uppspelningsproblem när fönstret är minimerat eller inte är i fokus — vem som pausade spelaren, timer-svält och OS-suspenderingsperioder. Aktivera när du rapporterar ett fel med bakgrundsuppspelning.
 settings.troubleshooting.desc: Loggfiler och MKLite-felsökningsloggning.
+settings.troubleshooting.descV2: Loggning för MKLite och uppspelning i bakgrunden.
 settings.troubleshooting.hevcWorkaround: HEVC-lösning
 settings.troubleshooting.hevcWorkaround.desc: Lösning för en bugg i WebView2 med vissa GPU:er som har problem med 10-bitars SDR HEVC-uppspelning genom att tillämpa ett filter för att kompensera för den visuella förskjutningen.
 settings.troubleshooting.impressionReporting: Rapportering av PlayActivity-visningar
@@ -4927,6 +4978,8 @@ settings.updates.action.check: Sök efter uppdateringar
 settings.updates.action.install: Installera uppdatering
 settings.updates.action.restart: Starta om Cider
 settings.updates.action.retry: Försök igen
+settings.updates.autoCheck: Sök efter uppdateringar automatiskt
+settings.updates.autoCheck.description: När det är av kontrollerar Cider bara när du öppnar den här sidan.
 settings.updates.build: Byggversion
 settings.updates.channel: Kanal
 settings.updates.codename: Kodnamn
@@ -5591,6 +5644,8 @@ updates.installUnavailable.body: Denna version är inte tillgänglig för nedlad
 updates.lateststable.title: Senaste stabila versionen
 updates.loadFailed.body: Kontrollera din anslutning och försök igen.
 updates.loadFailed.title: Cider kunde inte läsa in tillgängliga versioner
+updates.newVersion.body: En ny version av Cider finns tillgänglig. Gå till Uppdateringar för att ladda ner den?
+updates.newVersion.title: Ny version tillgänglig
 updates.notifyForBranch.tooltip: Avisera för den här grenen
 updates.otherVersions.title: Andra versioner
 updates.ptb.name: Publik testgren
