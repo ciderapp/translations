@@ -619,6 +619,8 @@ assistant.sid.chat.suggestQueuePlaylist: Создать плейлист из о
 assistant.sid.chat.suggestTidyQueue: Навести порядок в очереди
 assistant.sid.chat.tooBig: Это слишком много для одного раза. Попробуйте запрос покороче.
 assistant.sid.chat.workingQueue: Работаем с вашей очередью
+assistant.sid.engine.apple: Apple Intelligence
+assistant.sid.engine.gemma: Gemma
 assistant.sid.entry.edit: Изменить с Sid
 assistant.sid.entry.editDetail: Опишите изменение и сначала проверьте его
 assistant.sid.entry.start: Начать с Sid
@@ -634,9 +636,12 @@ assistant.sid.failure.modelMissing: Файлы Gemma отсутствуют. З�
 assistant.sid.failure.network: Загрузка прервалась. Проверьте подключение и попробуйте ещё раз.
 assistant.sid.failure.notReady: Gemma пока не готова.
 assistant.sid.failure.outOfMemory: Sid остановил Gemma, чтобы компьютер продолжал отвечать. Ей требовалось больше видеопамяти, чем можно было выделить.
+assistant.sid.failure.stoppedUnexpectedly: Sid неожиданно остановился. Попробуйте ещё раз.
 assistant.sid.failure.storageFull: Недостаточно свободного места для завершения загрузки.
 assistant.sid.failure.timeout: Gemma отвечала слишком долго. Попробуйте ещё раз.
+assistant.sid.failure.tookTooLong: Sid слишком долго отвечал. Попробуйте ещё раз.
 assistant.sid.failure.tryAgain: Повторить
+assistant.sid.failure.unready: Sid ещё не готов.
 assistant.sid.failure.watchLost: Sid остановился, потому что потерял отслеживание видеопамяти. Попробуйте ещё раз.
 assistant.sid.gate.description: Попробуйте Sid до завершения разработки. Некоторые функции пока не работают.
 assistant.sid.gate.name: Sid, помощник по плейлистам
@@ -795,6 +800,8 @@ assistant.sid.settings.checkGood: Файлы Gemma в порядке
 assistant.sid.settings.downloadAgain: Скачать снова
 assistant.sid.settings.downloadedSize: Загружено · {size}
 assistant.sid.settings.duringSet: Во время сета
+assistant.sid.settings.engine: Где Sid думает
+assistant.sid.settings.engineDetail: Используйте Gemma или Apple Intelligence, встроенный в ваш Mac
 assistant.sid.settings.found: Песни, которые Sid подобрал для вас
 assistant.sid.settings.fresh: Начать заново
 assistant.sid.settings.freshDetail: Создайте плейлист по настроению, моменту или нескольким исполнителям
@@ -815,6 +822,7 @@ assistant.sid.settings.machine: Этот компьютер
 assistant.sid.settings.modelOptions: "Параметры: {model}"
 assistant.sid.settings.modelRow: "{style} · {name}"
 assistant.sid.settings.nav: Sid
+assistant.sid.settings.needsEngine: Требуется {engine}
 assistant.sid.settings.needsGemma: Требуется Gemma
 assistant.sid.settings.nods: Кивать в такт
 assistant.sid.settings.nodsDetail: Sid кивает на каждом ударе песни
@@ -827,6 +835,7 @@ assistant.sid.settings.partlySize: Загружено частично · {size}
 assistant.sid.settings.position: Положение
 assistant.sid.settings.positionDetail: Где Sid находится на обложке
 assistant.sid.settings.privacyChat: "То, что вы вводите, остаётся на этом компьютере: Sid думает с помощью Gemma прямо здесь. Чтобы найти музыку, Sid отправляет поисковые слова в Apple Music, а по вашему запросу читает ваши плейлисты, недавние прослушивания и Apple Music Replay из вашей учётной записи Apple Music. Ничего не меняется, пока вы не нажмёте «Применить»."
+assistant.sid.settings.privacyEngine: "То, что вы вводите, остаётся на этом компьютере: Sid думает с помощью {engine}, прямо здесь. Чтобы найти музыку, Sid отправляет поисковые слова в Apple Music, а когда вы попросите, читает ваши плейлисты, недавние прослушивания и Apple Music Replay из вашей учётной записи Apple Music. Ничего не меняется, пока вы не нажмёте «Применить»."
 assistant.sid.settings.reads: Читает полный плейлист за {seconds} с (нужно менее {floor} с)
 assistant.sid.settings.regular: Обычный
 assistant.sid.settings.remove: Удалить
@@ -857,8 +866,10 @@ assistant.sid.settings.tidyDetail: Убрать повторы, обрезать
 assistant.sid.settings.together: Вместе на данный момент
 assistant.sid.settings.top: Сверху
 assistant.sid.settings.unavailableNote: Для редактирования и создания плейлистов с Sid нужна Gemma на компьютере, который её поддерживает. Сет Sid здесь по-прежнему работает.
+assistant.sid.settings.unavailableNoteEngine: Редактирование и создание плейлистов с Sid требует {engine} на компьютере, который его поддерживает. Набор Sid здесь по-прежнему работает.
 assistant.sid.settings.unknownGpu: Неизвестная видеокарта
 assistant.sid.settings.where: Где найти Sid
+assistant.sid.settings.withoutEngine: Без {engine} Sid подбирает песни по темпу, тональности и энергии и ищет в Apple Music ваши запросы в том виде, в каком вы их ввели.
 assistant.sid.settings.withoutGemma: Без Gemma Sid подбирает песни по темпу, тональности и энергии и ищет в Apple Music ваши запросы именно так, как вы их ввели.
 assistant.sid.settings.writes: Записывает {rate} токенов в секунду (нужно {floor})
 assistant.sid.setView.confirmMany: Sid очистит {count} песен в очереди после этой и выберет, что играть дальше.
@@ -889,6 +900,10 @@ assistant.sid.source.artist: топ-песни исполнителя
 assistant.sid.source.catalog: Apple Music
 assistant.sid.source.library: вашей медиатеки
 assistant.sid.source.playlist: в плейлисте
+assistant.sid.unavailable.appleFailed: Sid не смог подключиться к Apple Intelligence.
+assistant.sid.unavailable.appleNotEnabled: Включите Apple Intelligence в Системных настройках, чтобы использовать его с Sid.
+assistant.sid.unavailable.appleNotReady: Apple Intelligence ещё готовится. Попробуйте через минуту.
+assistant.sid.unavailable.appleUnsupported: Apple Intelligence недоступен на этом компьютере.
 assistant.sid.unavailable.belowFloor: Gemma работала на этом компьютере слишком медленно, поэтому Sid не может её использовать.
 assistant.sid.unavailable.counterMismatch: Sid отключил Gemma после неудачной проверки безопасности. Он повторит попытку после обновления Cider или драйвера видеокарты.
 assistant.sid.unavailable.gpuLimits: Этой видеокарте не хватает памяти для работы Gemma.
