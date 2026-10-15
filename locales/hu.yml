@@ -434,6 +434,8 @@ assistant.sid.chat.suggestQueuePlaylist: Lejátszási lista készítése a vár�
 assistant.sid.chat.suggestTidyQueue: Várólista rendezése
 assistant.sid.chat.tooBig: Ez túl sok ahhoz, hogy egyszerre feldolgozzam. Próbálj meg rövidebb kérést.
 assistant.sid.chat.workingQueue: A várólistád feldolgozása
+assistant.sid.engine.apple: Apple Intelligence
+assistant.sid.engine.gemma: Gemma
 assistant.sid.entry.edit: Szerkesztés Siddel
 assistant.sid.entry.editDetail: Írj le egy változtatást, és előbb nézd át
 assistant.sid.entry.start: Indítás Siddel
@@ -449,9 +451,12 @@ assistant.sid.failure.modelMissing: A Gemma fájljai hiányoznak. A folytatásho
 assistant.sid.failure.network: A letöltés megszakadt. Ellenőrizd a kapcsolatot, és próbáld újra.
 assistant.sid.failure.notReady: A Gemma még nem áll készen.
 assistant.sid.failure.outOfMemory: A Sid leállította a Gemmát, hogy a számítógéped reagálni tudjon. Több grafikus memóriára lett volna szüksége, mint amennyit biztosítani tudott.
+assistant.sid.failure.stoppedUnexpectedly: A Sid váratlanul leállt. Próbáld újra.
 assistant.sid.failure.storageFull: Nincs elég szabad hely a letöltés befejezéséhez.
 assistant.sid.failure.timeout: A Gemma túl sokáig válaszolt. Próbáld újra.
+assistant.sid.failure.tookTooLong: Sidnek túl sokáig tartott a válasz. Próbáld újra.
 assistant.sid.failure.tryAgain: Újrapróbálás
+assistant.sid.failure.unready: Sid még nincs készen.
 assistant.sid.failure.watchLost: A Sid leállt, mert elvesztette a grafikus memória nyomon követését. Próbáld újra.
 assistant.sid.gate.description: Próbáld ki a Sidet, mielőtt elkészül. Néhány része még nem működik.
 assistant.sid.gate.name: Sid, a lejátszási lista segítője
@@ -610,6 +615,8 @@ assistant.sid.settings.checkGood: A Gemma fájljai rendben vannak
 assistant.sid.settings.downloadAgain: Letöltés újra
 assistant.sid.settings.downloadedSize: Letöltve · {size}
 assistant.sid.settings.duringSet: Szett közben
+assistant.sid.settings.engine: Ahol Sid gondolkodik
+assistant.sid.settings.engineDetail: Használd a Gemmát vagy a Macbe épített Apple Intelligence-t
 assistant.sid.settings.found: Sid által neked talált dalok
 assistant.sid.settings.fresh: Újrakezdés
 assistant.sid.settings.freshDetail: Teljes lejátszólista építése hangulat, pillanat vagy néhány előadó alapján
@@ -630,6 +637,7 @@ assistant.sid.settings.machine: Ez a számítógép
 assistant.sid.settings.modelOptions: "{model} beállítások"
 assistant.sid.settings.modelRow: "{style} · {name}"
 assistant.sid.settings.nav: Sid
+assistant.sid.settings.needsEngine: "Szükséges: {engine}"
 assistant.sid.settings.needsGemma: Gemma szükséges
 assistant.sid.settings.nods: Bólintás a ritmusra
 assistant.sid.settings.nodsDetail: Sid minden dalritmusra bólint
@@ -642,6 +650,7 @@ assistant.sid.settings.partlySize: Részben letöltve · {size}
 assistant.sid.settings.position: Pozíció
 assistant.sid.settings.positionDetail: Hol helyezkedjen el Sid a borítón
 assistant.sid.settings.privacyChat: "Amit beírsz, ezen a számítógépen marad: Sid itt, helyben gondolkodik Gemma segítségével. Zene kereséséhez Sid keresőszavakat küld az Apple Music-nek, és ha kéred, az Apple Music-fiókodból olvassa a playlistjeidet, a legutóbbi lejátszásaidat és az Apple Music Replay-t. Semmi nem változik, amíg meg nem nyomod az Alkalmazás gombot."
+assistant.sid.settings.privacyEngine: "Amit beírsz, ezen a számítógépen marad: Sid itt, a {engine} segítségével gondolkodik. A zenék kereséséhez Sid kereső szavakat küld az Apple Musicnak, a kérésedre pedig beolvassa a lejátszási listáidat, a legutóbbi lejátszásaidat és az Apple Music Replayt az Apple Music-fiókodból. Semmi nem változik, amíg meg nem nyomod az Alkalmazás gombot."
 assistant.sid.settings.reads: Egy teljes playlistet {seconds} s alatt olvas be (legalább {floor} s alatt kell)
 assistant.sid.settings.regular: Normál
 assistant.sid.settings.remove: Eltávolítás
@@ -672,8 +681,10 @@ assistant.sid.settings.tidyDetail: Ismétlések eltávolítása, hosszra vágás
 assistant.sid.settings.together: Eddig együtt
 assistant.sid.settings.top: Felül
 assistant.sid.settings.unavailableNote: A Sid-del történő playlist-szerkesztéshez és -készítéshez olyan számítógépen futó Gemma kell, amely képes rá. A Sid készlete itt is működik.
+assistant.sid.settings.unavailableNoteEngine: A Siddel való szerkesztéshez és lejátszási listák készítéséhez a {engine} szükséges, olyan számítógépen, amely képes futtatni. Sid beállítása itt is működik.
 assistant.sid.settings.unknownGpu: Ismeretlen grafikus kártya
 assistant.sid.settings.where: Hol találod Sidet
+assistant.sid.settings.withoutEngine: A {engine} nélkül Sid a dalokat tempó, hangnem és energia alapján választja ki, a kéréseidet pedig pontosan úgy keresi az Apple Musicban, ahogy beírod őket.
 assistant.sid.settings.withoutGemma: Gemma nélkül Sid tempó, hangnem és energia alapján választ dalokat, a kéréseidet pedig pontosan úgy keresi az Apple Music-ben, ahogy beírod őket.
 assistant.sid.settings.writes: Másodpercenként {rate} token írása (legalább {floor} szükséges)
 assistant.sid.setView.confirmMany: A Sid törli a mögé sorba állított {count} számot, és kiválasztja, mi szól ezután.
@@ -704,6 +715,10 @@ assistant.sid.source.artist: egy előadó legnépszerűbb számai
 assistant.sid.source.catalog: Apple Music
 assistant.sid.source.library: a könyvtáradból
 assistant.sid.source.playlist: a lejátszási listából
+assistant.sid.unavailable.appleFailed: Sid nem tudott kapcsolódni az Apple Intelligence-hez.
+assistant.sid.unavailable.appleNotEnabled: Kapcsold be az Apple Intelligence-t a Rendszerbeállításokban, hogy Siddel használhasd.
+assistant.sid.unavailable.appleNotReady: Az Apple Intelligence még készül. Próbáld újra egy pillanat múlva.
+assistant.sid.unavailable.appleUnsupported: Az Apple Intelligence nem érhető el ezen a számítógépen.
 assistant.sid.unavailable.belowFloor: A Gemma túl lassan futott ezen a számítógépen, ezért Sid nem használhatja.
 assistant.sid.unavailable.counterMismatch: Sid kikapcsolta a Gemmát, mert egy biztonsági ellenőrzés sikertelen volt. A Cider vagy a grafikus illesztőprogram frissítése után újra próbálkozik.
 assistant.sid.unavailable.gpuLimits: Ez a grafikus kártya nem rendelkezik a Gemma által igényelt memóriával.
