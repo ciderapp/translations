@@ -480,6 +480,8 @@ assistant.sid.chat.suggestQueuePlaylist: Kuyruğumdan çalma listesi oluştur
 assistant.sid.chat.suggestTidyQueue: Kuyruğumu düzenle
 assistant.sid.chat.tooBig: Bu, bir seferde okuyamayacağım kadar fazla. Daha kısa bir istek dene.
 assistant.sid.chat.workingQueue: Kuyruğun üzerinde çalışıyor
+assistant.sid.engine.apple: Apple Intelligence
+assistant.sid.engine.gemma: Gemma
 assistant.sid.entry.edit: Sid ile düzenle
 assistant.sid.entry.editDetail: Bir değişikliği tarif edin ve önce gözden geçirin
 assistant.sid.entry.start: Sid ile başla
@@ -495,9 +497,12 @@ assistant.sid.failure.modelMissing: Gemma'nın dosyaları eksik. Devam etmek iç
 assistant.sid.failure.network: İndirme durdu. Bağlantınızı kontrol edip tekrar deneyin.
 assistant.sid.failure.notReady: Gemma henüz hazır değil.
 assistant.sid.failure.outOfMemory: Bilgisayarınızın yanıt verebilmesi için Sid, Gemma'yı durdurdu. Ayırabileceğinden fazla grafik belleği gerekiyordu.
+assistant.sid.failure.stoppedUnexpectedly: Sid beklenmedik şekilde durdu. Tekrar deneyin.
 assistant.sid.failure.storageFull: İndirmeyi tamamlamak için yeterli boş alan yok.
 assistant.sid.failure.timeout: Gemma yanıt vermek için çok uzun süre harcadı. Tekrar deneyin.
+assistant.sid.failure.tookTooLong: Sid yanıtlamak için çok uzun süre harcadı. Tekrar deneyin.
 assistant.sid.failure.tryAgain: Tekrar dene
+assistant.sid.failure.unready: Sid henüz hazır değil.
 assistant.sid.failure.watchLost: Grafik belleğinin takibini kaybettiği için Sid durdu. Tekrar deneyin.
 assistant.sid.gate.description: Sid tamamlanmadan önce deneyin. Bazı bölümler henüz çalışmıyor.
 assistant.sid.gate.name: Sid, çalma listesi yardımcısı
@@ -656,6 +661,8 @@ assistant.sid.settings.checkGood: Gemma'nın dosyaları sağlam görünüyor
 assistant.sid.settings.downloadAgain: Yeniden indir
 assistant.sid.settings.downloadedSize: İndirildi · {size}
 assistant.sid.settings.duringSet: Set sırasında
+assistant.sid.settings.engine: Sid'in düşündüğü yer
+assistant.sid.settings.engineDetail: Gemma'yı veya Mac'inizde yerleşik olan Apple Intelligence'ı kullanın
 assistant.sid.settings.found: Sid'in sizin için bulduğu şarkılar
 assistant.sid.settings.fresh: Baştan başla
 assistant.sid.settings.freshDetail: Bir ruh halinden, bir andan ya da birkaç sanatçıdan tüm bir çalma listesi oluşturun
@@ -676,6 +683,7 @@ assistant.sid.settings.machine: Bu bilgisayar
 assistant.sid.settings.modelOptions: "{model} seçenekleri"
 assistant.sid.settings.modelRow: "{style} · {name}"
 assistant.sid.settings.nav: Sid
+assistant.sid.settings.needsEngine: "{engine} gerekiyor"
 assistant.sid.settings.needsGemma: Gemma gerekiyor
 assistant.sid.settings.nods: Ritme eşlik etsin
 assistant.sid.settings.nodsDetail: Sid, şarkının her vuruşunda başını sallar
@@ -688,6 +696,7 @@ assistant.sid.settings.partlySize: Kısmen indirildi · {size}
 assistant.sid.settings.position: Konum
 assistant.sid.settings.positionDetail: Sid'in kapak görselinde nerede durduğu
 assistant.sid.settings.privacyChat: "Yazdıklarınız bu bilgisayarda kalır: Sid, Gemma ile burada düşünür. Müzik bulmak için Sid, arama kelimelerini Apple Music'e gönderir; isterseniz Apple Music hesabınızdaki çalma listelerinizi, son çalmalarınızı ve Apple Music Replay verilerinizi okur. Uygula düğmesine basana kadar hiçbir şey değişmez."
+assistant.sid.settings.privacyEngine: "Yazdıklarınız bu bilgisayarda kalır: Sid burada, {engine} ile düşünür. Müzik bulmak için Sid, arama kelimelerini Apple Music'e gönderir; isterseniz Apple Music hesabınızdaki çalma listelerinizi, son dinlemelerinizi ve Apple Music Replay'inizi okur. Siz Uygula'ya basana kadar hiçbir şey değişmez."
 assistant.sid.settings.reads: Tam bir çalma listesini {seconds} sn'de okur (en fazla {floor} sn olmalı)
 assistant.sid.settings.regular: Normal
 assistant.sid.settings.remove: Kaldır
@@ -718,8 +727,10 @@ assistant.sid.settings.tidyDetail: Tekrarları çıkarın, belirli bir uzunluğa
 assistant.sid.settings.together: Şimdiye kadar birlikte
 assistant.sid.settings.top: Üst
 assistant.sid.settings.unavailableNote: Sid ile çalma listesi düzenlemek ve oluşturmak, bunu çalıştırabilen bir bilgisayarda Gemma gerektirir. Sid'in seti burada yine de çalışır.
+assistant.sid.settings.unavailableNoteEngine: Sid ile düzenleme yapmak ve çalma listeleri oluşturmak, bunu çalıştırabilen bir bilgisayarda {engine} gerektirir. Sid'in ayarları burada da çalışmaya devam eder.
 assistant.sid.settings.unknownGpu: Bilinmeyen grafik kartı
 assistant.sid.settings.where: Sid'i nerede bulabilirsiniz
+assistant.sid.settings.withoutEngine: "{engine} olmadan Sid, şarkıları tempo, tonalite ve enerjilerine göre seçer ve isteklerinizi yazdığınız gibi Apple Music'te arar."
 assistant.sid.settings.withoutGemma: Gemma olmadan Sid, şarkıları tempo, ton ve enerjilerine göre seçer ve isteklerinizi yazdığınız gibi Apple Music'te arar.
 assistant.sid.settings.writes: Saniyede {rate} token yazar (en az {floor} gerekir)
 assistant.sid.setView.confirmMany: Sid, bundan sonra sıraya alınmış {count} şarkıyı temizleyip sonra çalacak parçaya kendisi karar verecek.
@@ -750,6 +761,10 @@ assistant.sid.source.artist: bir sanatçının en popüler şarkıları
 assistant.sid.source.catalog: Apple Music
 assistant.sid.source.library: kitaplığın
 assistant.sid.source.playlist: çalma listesinde
+assistant.sid.unavailable.appleFailed: Sid, Apple Intelligence'a ulaşamadı.
+assistant.sid.unavailable.appleNotEnabled: Sid ile kullanmak için Sistem Ayarları'nda Apple Intelligence'ı açın.
+assistant.sid.unavailable.appleNotReady: Apple Intelligence hâlâ hazırlanıyor. Birazdan tekrar deneyin.
+assistant.sid.unavailable.appleUnsupported: Apple Intelligence bu bilgisayarda kullanılamıyor.
 assistant.sid.unavailable.belowFloor: Gemma bu bilgisayarda Sid'in kullanabilmesi için çok yavaş çalıştı.
 assistant.sid.unavailable.counterMismatch: Bir güvenlik kontrolü başarısız olduğu için Sid, Gemma'yı kapattı. Cider ya da ekran kartı sürücün güncellendikten sonra yeniden deneyecek.
 assistant.sid.unavailable.gpuLimits: Bu ekran kartında Gemma'nın ihtiyaç duyduğu alan yok.
