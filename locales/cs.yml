@@ -254,6 +254,9 @@ album.track.unavailable.unreleased: Tato položka ještě nebyla vydána.
 album.track.unavailable.zeroDuration: Délka položky je 0 sekund, pravděpodobně ještě nevyšla.
 album.upcoming.badge: Připravované album
 app.name: Cider
+app.ptbDisclaimer.confirm: Rozumím
+app.ptbDisclaimer.message: Toto je sestavení z veřejné testovací větve (Public Testing Branch). Stabilita tohoto sestavení není zaručena a může obsahovat chyby. Chyby a problémy nalezené v tomto sestavení prosím nenahlašujte. Pokud narazíte na problémy, před jejich nahlášením přejděte na stabilní sestavení.
+app.ptbDisclaimer.title: Upozornění k veřejné testovací větvi
 app.unsupportedClient.message: Tento klient není podporován. Ujistěte se, že používáte nejnovější verzi aplikace Cider.
 app.unsupportedClient.title: Nepodporovaný klient
 assistant.sid.agent.added: "Přidáno skladeb: {count}"
@@ -726,10 +729,16 @@ audio.device.default: Výchozí zařízení
 audio.device.noneFound: Nebyla nalezena žádná výstupní zařízení
 audio.device.placeholder: Zařízení {{id}}
 audiolab.waiting: Čekání na přidání skladby do fronty
+auth.error.devToken: Nepodařilo se spojit s Apple Music
+auth.error.generic: Přihlášení se nepodařilo dokončit. Zkontrolujte připojení a zkuste to znovu.
+auth.error.invalidToken: Přijat neplatný token
 auth.error.popupBlocked: Vyskakovací okno bylo zablokováno
+auth.error.timeout: Přihlášení vypršelo
+auth.error.unavailable: Tento Apple ID nemůže v Cideru používat Apple Music. Cider vyžaduje aktivní placené předplatné Apple Music.
 auth.error.windowFailed: Nepodařilo se otevřít přihlašovací okno
 auth.mutExpired.confirm: Přihlásit se
 auth.mutExpired.message: Platnost vaší relace Apple Music vypršela. Chcete-li pokračovat, přihlaste se znovu.
+auth.signedIn: Přihlášeno
 auth.signInRetry.confirm: Zkusit znovu
 auth.signInRetry.message: Nepodařilo se otevřít přihlašovací okno. Zkusit znovu?
 bugReport.addImage: Přidat obrázek
@@ -2843,6 +2852,7 @@ oobe.amupsell.title: Než začneme
 oobe.appearance.accentHint: Používá se pro tlačítka, zvýraznění a indikátory průběhu v celé aplikaci. Vyzkoušejte si ho, náhled se zobrazuje okamžitě.
 oobe.appearance.subtitle: Vyberte si barevné schéma a barvu akcentu. Tyto hodnoty můžete kdykoli změnit v Nastavení → Vzhled.
 oobe.appearance.title: Přizpůsobte si Cider
+oobe.appleNotice: "Upozornění: Apple Music je ochranná známka společnosti Apple Inc. Cider je klient pro Apple Music třetí strany a není nijak spojen se společností Apple Inc."
 oobe.audio.advancedFunctionality: ""
 oobe.audio.subtitle: ""
 oobe.audio.text: |-
@@ -2881,19 +2891,31 @@ oobe.intro.subtitle: ""
 oobe.intro.text: Pojďme nastavit několik věcí, abyste mohli Cider používat přesně tak, jak chcete. Tato nastavení můžete kdykoli později změnit.
 oobe.intro.title: Vítejte v aplikaci Cider
 oobe.layout.subtitle: Vyberte si rozvržení, které vyhovuje vašemu stylu
+oobe.login.alreadySignedIn: Již jste přihlášeni
 oobe.login.skip: Zatím přeskočit
 oobe.login.skipTooltip: Aplikaci budete moci používat pouze v režimu náhledu
 oobe.login.subtitle: Přihlaste se ke svému účtu Apple Music a začněte poslouchat svou hudbu
+oobe.login.terms: Pokračováním souhlasíte s Podmínkami služby a Zásadami ochrany osobních údajů
 oobe.login.title: Poslední krok
 oobe.login.userToken: Přihlásit se pomocí uživatelského tokenu
+oobe.music.mute: Ztlumit hudbu při nastavení
+oobe.music.unmute: Zapnout hudbu při nastavení
 oobe.next: Další
 oobe.no: Ne
+oobe.performance.full.descriptionV2: Vizuální efekty zůstanou zapnuté. Cider je sám vypne, jen pokud váš počítač nedokáže vykreslit.
+oobe.performance.fullV2: Plná kvalita
 oobe.performance.hint: Režim výkonu omezuje vizuální efekty a šetří procesor. Na systémech, jako je ten váš, je standardně vypnutý, ale můžete ho kdykoli zapnout.
 oobe.performance.lowEndHint: Detekovali jsme procesor s nižším počtem vláken. Pro plynulejší přehrávání a nižší zatížení procesoru doporučujeme zapnout Režim výkonu.
+oobe.performance.mode.description: Vypne náročné vizuální efekty, jako jsou velká rozmazání a animovaná pozadí. Vhodné pro starší počítače.
+oobe.performance.modeV2: Režim výkonu
+oobe.performance.subtitleV3: Režim výkonu vypne nejnáročnější vizuální efekty. Plná kvalita je ponechá zapnuté, pokud je váš počítač dokáže vykreslit.
 oobe.performance.title: Výkon
+oobe.performance.whereToChangeV3: V Nastavení je tato volba možnost {setting} na stránce {page}. Vyberte {on} pro Režim výkonu nebo {automatic} pro Plnou kvalitu. Kdykoli ji můžete změnit.
 oobe.player.subtitle: Panel právě přehrávané skladby na okraji okna. Vyberte si hustotu zobrazení, která vám vyhovuje.
 oobe.player.title: Vyberte si přehrávač
 oobe.previous: Předchozí
+oobe.progress: "Krok {current} z {total}: {title}"
+oobe.progress.label: Průběh nastavení
 oobe.step.appearance: Vzhled
 oobe.step.connections: Připojení
 oobe.step.features: Zvuk
@@ -2903,6 +2925,7 @@ oobe.step.performance: Výkon
 oobe.step.player: Přehrávač
 oobe.step.welcome: Vítejte
 oobe.step.window: Styl okna
+oobe.subscriptionNote: Cider vyžaduje aktivní placené předplatné Apple Music. Hlasová služba Apple Music a některé propagační zkušební verze nejsou podporovány.
 oobe.visual.layout.text: |-
   Cider nabízí dva různé vzhledy oken.
   Maverick je vzhled podobný iTunes s přehrávačem v horní části okna.
@@ -2915,6 +2938,10 @@ oobe.visual.title: Vzhled
 oobe.welcome.getStarted: Začít
 oobe.welcome.importSettings: Importovat nastavení…
 oobe.welcome.selectLanguage: Vyberte preferovaný jazyk
+oobe.window.native: Nativní okno
+oobe.window.native.description: Používá lištu a rámečky vašeho desktopového prostředí.
+oobe.window.styled: Stylizované ovládací prvky
+oobe.window.styled.description: Vlastní lišta v aplikaci s vestavěnými ovládacími prvky okna.
 oobe.window.subtitle: Vyberte, jak se má okno aplikace integrovat do vašeho pracovního prostředí
 oobe.window.title: Styl okna
 oobe.yes: Ano
@@ -3015,6 +3042,8 @@ playlist.error.updating.title: Chyba při aktualizaci playlistu
 playlist.folderEmpty: V této složce nejsou žádné playlisty
 playlist.folderMoveFailed: Složku se nepodařilo přesunout. Zkuste to znovu za chvíli.
 playlist.folderRenameHint: Dvojitým kliknutím přejmenujete
+playlist.history: Historie playlistů
+playlist.history.withCount: Historie playlistů ({count})
 playlist.lastUpdated: Naposledy aktualizováno {{date}}
 playlist.madeByApple: Vytvořeno Apple
 playlist.moveFailed: Playlist se nepodařilo přesunout. Zkuste to znovu za chvíli.
@@ -3135,6 +3164,7 @@ settings.audio.atmos.normalizationHint: Mixy Dolby Atmos jsou tišší než ster
 settings.audio.atmos.off.desc: Atmos je vypnutý. Veškerý obsah se přehrává jako standardní stereo.
 settings.audio.atmos.passthrough: Passthrough
 settings.audio.atmos.passthrough.desc: Obchází veškeré zpracování zvuku. Vícekanálový Atmos je posílán přímo do zařízení. Ideální pro AV přijímače.
+settings.audio.atmos.passthrough.descV2: Posílá vícekanálový Atmos přímo do zařízení, například pro AV přijímače. Audio Lab, ekvalizér a Režim poslechu jsou obejity.
 settings.audio.atmos.passthroughActive: Passthrough je aktivní – změňte v kompletním nastavení.
 settings.audio.atmos.standard.desc: Vícekanálový Atmos se zpracováním CiderAudio. Prolínání, Automix a plynulé přechody fungují i nadále podle očekávání.
 settings.audio.atmosMode: Režim Atmos
@@ -3237,6 +3267,7 @@ settings.automix.normalizeDuration: Normalizovat délku
 settings.automix.normalizeDurationHint: Doba prolínání pro přizpůsobení hlasitosti ({ms} ms)
 settings.automix.spectralSeparation: Spektrální separace
 settings.automix.spectralSeparationHint: Jak moc jsou frekvence obou skladeb během přechodu od sebe odděleny.
+settings.automix.spectralSeparationHintV2: Jak daleko jsou obě skladby od sebe odděleny ve frekvenci během přechodu ({value}).
 settings.automix.speedSettle: Doba ustálení rychlosti
 settings.automix.speedSettleHint: Jak dlouho trvá, než se rychlost přehrávání vrátí k normálu po mixu se sjednoceným tempem ({ms} ms)
 settings.automix.tempoAlign: Sjednocení rytmu
@@ -3390,6 +3421,7 @@ settings.client.windows.v8OptimizeSize.adds: Přidá
 settings.client.windows.v8OptimizeSize.to: do WebView2
 settings.client.windows.wpfRendering: Režim vykreslování WPF
 settings.client.windows.wpfRendering.desc: Vyberte režim vykreslování pro WPF. Pokud si nejste jisti, ponechte softwarové.
+settings.client.windows.wpfRendering.descV2: Vyberte, jak se okno vykresluje. Pokud si nejste jisti, ponechte možnost Hardware.
 settings.client.windows.wpfRendering.hardware: Hardwarové
 settings.client.windows.wpfRendering.software: Softwarové
 settings.configBackups.confirm.body: Vaše aktuální nastavení bude nahrazeno nastavením uloženým dne {date} a Cider se znovu načte.
@@ -3499,6 +3531,7 @@ settings.contentFilter.empty: Zatím nebyla přidána žádná klíčová slova.
 settings.contentFilter.inputPlaceholder: Přidat klíčové slovo...
 settings.contentFilter.title: Filtrovat klíčová slova
 settings.crossfade.advanced: Pokročilé nastavení prolínání
+settings.crossfade.automixStillBlends: Automix je zapnutý, takže se skladby mohou stále prolínat. Pro zastavení všech prolínání vypněte Automix níže.
 settings.crossfade.description: Plynule ztlumí aktuální skladbu a zároveň zesílí následující.
 settings.crossfade.disableFor: Vypnout prolínání pro...
 settings.crossfade.duration: Doba trvání
@@ -3624,6 +3657,7 @@ settings.general.section.cache: Mezipaměť
 settings.general.section.cache.description: Uložené přebaly a metadata, které Cider uchovává na disku pro rychlejší načítání stránek.
 settings.general.section.desktop: Plocha
 settings.general.section.desktop.description: Klávesové zkratky a chování aplikace Cider na hlavním panelu a při zavření.
+settings.general.section.desktop.descriptionV2: Klávesové zkratky, udržování počítače aktivního při přehrávání a chování Cideru na hlavním panelu a při zavření.
 settings.general.section.language: Jazyk
 settings.general.section.language.description: Jazyk rozhraní a jak nahlásit chyby v překladu nebo uvést autory překladů.
 settings.general.section.playback: Přehrávání
@@ -3960,6 +3994,7 @@ settings.option.advanced.mavericksLcd.style: Styl
 settings.option.advanced.mavericksLcd.style.glass: Sklo
 settings.option.advanced.mediaArtwork: Obrázek položky
 settings.option.advanced.mediaArtwork.controls: Zvýraznění přebalů a obrázky ve vysokém rozlišení
+settings.option.advanced.mediaArtwork.controlsV2: Zvýraznění a plynulé zobrazení obalu
 settings.option.advanced.mediaArtwork.description: Přebaly alb v mřížkách, seznamech a řádcích napříč aplikací.
 settings.option.advanced.notificationStyle: Styl oznámení
 settings.option.advanced.performance: Výkon
@@ -3989,8 +4024,11 @@ settings.option.advanced.settingsTakeout: Export a import nastavení
 settings.option.advanced.settingsTakeout.description: Zálohujte své předvolby do souboru nebo je obnovte na jiném zařízení. Přihlašovací údaje k účtu nejsou nikdy zahrnuty.
 settings.option.advanced.simpleArtworkBg: Jednoduché pozadí s přebalem alb
 settings.option.advanced.simpleArtworkBg.brightness: Jas %
+settings.option.advanced.simpleArtworkBg.brightnessV2: Jas
 settings.option.advanced.simpleArtworkBg.contrast: Kontrast %
+settings.option.advanced.simpleArtworkBg.contrastV2: Kontrast
 settings.option.advanced.simpleArtworkBg.saturate: Sytost v %
+settings.option.advanced.simpleArtworkBg.saturateV2: Sytost
 settings.option.advanced.simpleArtworkBg.useMask: Použít dolní masku
 settings.option.advanced.sonoma: Sonoma
 settings.option.advanced.sonoma.lyricArc: Zakřivený text
@@ -4296,6 +4334,8 @@ settings.option.general.onStartup: Při spuštění
 settings.option.general.onStartup.openStartup: Otevřít úvodní stránku
 settings.option.general.onStartup.resume: Obnovit poslední relaci
 settings.option.general.pagination: Počet položek na stránku
+settings.option.general.preventDisplaySleep: Během přehrávání ponechat displej zapnutý
+settings.option.general.preventSystemSleep: Během přehrávání ponechat počítač aktivní
 settings.option.general.privacy: Soukromí
 settings.option.general.promptOnClose: Upozornit při zavření během přehrávání hudby
 settings.option.general.queue: Fronta
@@ -4322,6 +4362,7 @@ settings.option.general.sleepTimerSettings: Nastavení časovače uspání
 settings.option.general.startupPage: Úvodní stránka
 settings.option.general.startupPage.blank: Prázdná stránka
 settings.option.general.startupPage.description: Vyberte stránku, která se zobrazí při otevření Cideru.
+settings.option.general.startupPage.descriptionV2: Stránka, kterou Cider otevírá v nových kartách a při spuštění, pokud je položka Při spuštění nastavena na Otevřít úvodní stránku.
 settings.option.general.startupPage.newTab: Stránka s novým panelem
 settings.option.general.startupPage.personalHome: Osobní domovská stránka
 settings.option.general.themeUpdateNotification: Automaticky kontrolovat aktualizace motivů
@@ -4331,6 +4372,7 @@ settings.option.general.translators: Překladatelé
 settings.option.general.translators.description: Děkujeme těmto přispěvatelům za pomoc s překladem aplikace Cider. Kliknutím na jméno otevřete jejich profil na GitHubu.
 settings.option.general.useSmartQueueByDefault: Ve výchozím nastavení používat chytrou frontu
 settings.option.general.useSmartQueueByDefault.description: Automaticky použít řazení Smart Queue při vytvoření fronty. Vyžaduje Automix.
+settings.option.general.useSmartQueueByDefault.needsAutomix: Automix je v Audiu vypnutý, takže Chytrá fronta nic nepřeřadí.
 settings.option.general.warnBeforeQueueOverride: Varovat před přepsáním fronty
 settings.option.hide: Skrýt
 settings.option.left: Vlevo
@@ -4417,6 +4459,9 @@ settings.option.performance.enableMediaItemInspect.description: Může mírně o
 settings.option.performance.gameMode: Herní režim
 settings.option.performance.gameMode.description: Omezí vizuální efekty a může zapnout režim efektivity systému Windows pro nižší využití procesoru.
 settings.option.performance.gameMode.disable: Zakázat herní režim
+settings.option.performance.graphicsAcceleration: Hardwarová akcelerace grafiky
+settings.option.performance.graphicsAcceleration.autoOff: Vypnuto, protože tento počítač kreslí grafiku softwarově.
+settings.option.performance.graphicsAcceleration.description: Automatické nastavení ji vypne ve virtuálním počítači, který kreslí grafiku softwarově. Změny se projeví při dalším spuštění Cideru.
 settings.option.performance.host: Hostitel
 settings.option.performance.immersiveRenderer: Imerzivní vykreslování
 settings.option.performance.immersiveRenderer.description: Použít Canvas 2D namísto WebGPU, pokud se animované pozadí chová nestandardně nebo spotřebovává příliš mnoho výkonu GPU.
@@ -4432,6 +4477,8 @@ settings.option.performance.preloadSidebarPages: Přednačítat stránky boční
 settings.option.performance.preloadSidebarPages.description: Načte stránky bočního panelu ještě před jejich otevřením. Možnost „Při najetí myší“ spustí načítání, když ukazatel spočine na položce bočního panelu. Možnost „Při nečinnosti“ navíc po spuštění načte sekce Pusťte si, Prohlížení a Rádio a aktualizuje dříve otevřené seznamy knihovny.
 settings.option.performance.preloadSidebarPages.idle: Při nečinnosti
 settings.option.performance.preloadSidebarPages.intent: Při najetí myší
+settings.option.performance.reduceEffects: Omezit vizuální efekty
+settings.option.performance.reduceEffects.description: Vypne rozostření, průhlednost skla, záři a animovaná pozadí, aby aplikace vykreslovala méně. Automatické nastavení je zapne, pokud chybí funkční grafická karta nebo systém vyžaduje menší průhlednost.
 settings.option.performance.renderer.auto: Automaticky (WebGPU, je-li podporováno)
 settings.option.performance.renderer.canvas: Canvas 2D
 settings.option.performance.renderer.webgpu: WebGPU
@@ -4612,6 +4659,7 @@ settings.option.visual.immersive.useBackgroundBpm: Rychlost pozadí podle BPM
 settings.option.visual.immersiveBackground.blank: Prázdné
 settings.option.visual.immersiveBackground.customImage: Vlastní obrázek
 settings.option.visual.immersiveBackground.customImageMixed: Vlastní obrázek (smíšený)
+settings.option.visual.immersiveBackground.gradientMesh: Gradientní síť
 settings.option.visual.immersiveBackground.simpleArtwork: Jednoduchý obal
 settings.option.visual.immersiveBackground.simpleColor: Jednoduchá barva
 settings.option.visual.immersiveBgSettings: Nastavení pohlcujícího pozadí
@@ -4651,7 +4699,10 @@ settings.option.visual.liquidGlassPlayer: Panel přehrávače Liquid Glass
 settings.option.visual.liquidGlassPlayer.description: Použít pro panel právě přehrávané skladby efekt tekutého skla (liquid-glass). Vypnutím získáte plochý, plný panel (který je také méně náročný na vykreslování).
 settings.option.visual.liquidGlassScrollPerf: Odlehčené sklo při posouvání
 settings.option.visual.liquidGlassScrollPerf.description: Zjednoduší refrakci tekutého skla na obyčejné rozostření během posouvání a po zastavení ji plynule vrátí zpět. Snižuje trhání při posouvání na náročných systémech bez změn v klidovém stavu. V Game Mode je vždy aktivní.
+settings.option.visual.liquidGlassScrollPerf.descriptionV2: Při posouvání zjednoduší lomení efektu liquid glass na prosté rozostření a po zastavení ho plynule vrátí. Snižuje zadrhávání při posouvání na náročných systémech bez změny v klidu.
 settings.option.visual.mainMenuPosition: Pozice hlavního menu
+settings.option.visual.matchPageToArtwork: Přizpůsobit stránku obalu
+settings.option.visual.matchPageToArtwork.description: Stránky alb a playlistů se obarví podle barev jejich obalu, ve světlém i tmavém režimu.
 settings.option.visual.mergeAppleMusicPlaylists: Sloučit seznamy skladeb Apple Music
 settings.option.visual.mergeAppleMusicPlaylists.description: Smíchá vybrané seznamy skladeb Apple Music do hlavní sekce Seznamy skladeb, namísto jejich zobrazení jako samostatné skupiny.
 settings.option.visual.miniplayerSkin: Vzhled mini přehrávače
@@ -4829,6 +4880,7 @@ settings.prompt.visual.plugin.github.success: Plugin byl úspěšně nainstalov�
 settings.prompt.visual.plugin.github.URL: Zadejte URL adresu pluginu, který chcete nainstalovat
 settings.prompt.visual.theme.github.URL: Zadejte URL adresu motivu, který chcete nainstalovat
 settings.prompt.visual.theme.uninstallTheme: Opravdu chcete odinstalovat {{theme}}?
+settings.reloadPrompt.message: Pro použití změn je nutné obnovit aplikaci. Chcete pokračovat?
 settings.requiresNewerClient: Vyžaduje novější verzi aplikace Cider.
 settings.resetCider.category.appleMusic: Odhlásit se z Apple Music
 settings.resetCider.category.appleMusic.desc: Odebere účet Apple Music z tohoto zařízení
@@ -4872,6 +4924,7 @@ settings.smartPlaylists.section.maintenance: Údržba
 settings.smartPlaylists.section.maintenance.description: Vynutit okamžité spuštění všech pravidel nebo smazat kopii knihovny v mezipaměti.
 settings.smartPlaylists.section.rules: Pravidla
 settings.smartPlaylists.section.rules.description: Určuje, zda Cider uplatňuje integrovaná pravidla playlistů a jak často je znovu vyhodnocuje.
+settings.smartPlaylists.section.rules.descriptionV2: Zda Cider uplatňuje vložená pravidla playlistů. Znovu se spouštějí s Dobou obnovení na pozadí v Úsporách energie.
 settings.sweetener.useSystemAccentColor: Použít systémovou barvu akcentu
 settings.takeout.chooseFile: Vybrat soubor…
 settings.takeout.error.badVersion: V tomto souboru chybí informace o verzi.
@@ -4902,6 +4955,7 @@ settings.title: Nastavení
 settings.troubleshooting.bgDiagnostics: Diagnostika přehrávání na pozadí
 settings.troubleshooting.bgDiagnostics.desc: Dodatečné záznamy v protokolu pro diagnostiku problémů s přehráváním, když je okno minimalizované nebo neaktivní – kdo pozastavil přehrávač, výpadky časovače a pozastavení operačním systémem. Zapněte při hlášení chyb přehrávání na pozadí.
 settings.troubleshooting.desc: Soubory protokolů a ladicí protokoly MKLite.
+settings.troubleshooting.descV2: Protokolování MKLite a přehrávání na pozadí.
 settings.troubleshooting.hevcWorkaround: Řešení pro HEVC
 settings.troubleshooting.hevcWorkaround.desc: Řešení chyby ve WebView2 u některých grafických karet, které mají problémy s přehráváním 10bitového SDR HEVC, aplikováním filtru pro kompenzaci vizuálního posunu.
 settings.troubleshooting.impressionReporting: Hlášení zobrazení PlayActivity
@@ -4925,6 +4979,8 @@ settings.updates.action.check: Vyhledat aktualizace
 settings.updates.action.install: Instalovat aktualizaci
 settings.updates.action.restart: Restartovat Cider
 settings.updates.action.retry: Zkusit znovu
+settings.updates.autoCheck: Automaticky kontrolovat aktualizace
+settings.updates.autoCheck.description: Když je vypnuto, Cider kontroluje aktualizace jen při otevření této stránky.
 settings.updates.build: Sestavení
 settings.updates.channel: Kanál
 settings.updates.codename: Kódové označení
@@ -5589,6 +5645,8 @@ updates.installUnavailable.body: Tato verze není pro váš účet k dispozici k
 updates.lateststable.title: Nejnovější stabilní verze
 updates.loadFailed.body: Zkontrolujte připojení a zkuste to znovu.
 updates.loadFailed.title: Cider nemohl načíst dostupné verze
+updates.newVersion.body: Je k dispozici nová verze Cideru. Přejít do Aktualizací a stáhnout ji?
+updates.newVersion.title: Je dostupná nová verze
 updates.notifyForBranch.tooltip: Upozorňovat na tuto větev
 updates.otherVersions.title: Ostatní verze
 updates.ptb.name: Veřejná testovací větev
