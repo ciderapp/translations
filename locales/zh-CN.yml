@@ -1340,6 +1340,8 @@ assistant.sid.chat.suggestQueuePlaylist: 用我的队列创建播放列表
 assistant.sid.chat.suggestTidyQueue: 整理我的队列
 assistant.sid.chat.tooBig: 内容太多，我无法一次读取。请尝试更简短的请求。
 assistant.sid.chat.workingQueue: 正在处理你的队列
+assistant.sid.engine.apple: Apple Intelligence
+assistant.sid.engine.gemma: Gemma
 assistant.sid.entry.edit: 与 Sid 一起编辑
 assistant.sid.entry.editDetail: 描述更改并先行检查
 assistant.sid.entry.start: 与 Sid 开始
@@ -1355,9 +1357,12 @@ assistant.sid.failure.modelMissing: Gemma 的文件缺失。请重新获取以�
 assistant.sid.failure.network: 下载已中断。请检查网络连接后重试。
 assistant.sid.failure.notReady: Gemma 尚未就绪。
 assistant.sid.failure.outOfMemory: 为保持你的电脑响应流畅，Sid 已停止 Gemma。它需要的显存超出了可用量。
+assistant.sid.failure.stoppedUnexpectedly: Sid 意外停止了。请重试。
 assistant.sid.failure.storageFull: 可用空间不足，无法完成下载。
 assistant.sid.failure.timeout: Gemma 回复时间过长。请重试。
+assistant.sid.failure.tookTooLong: Sid 回答的时间太长了。请重试。
 assistant.sid.failure.tryAgain: 重试
+assistant.sid.failure.unready: Sid 尚未准备就绪。
 assistant.sid.failure.watchLost: Sid 因无法追踪显存而停止。请重试。
 assistant.sid.gate.description: 抢先体验尚未完成的 Sid。部分功能暂不可用。
 assistant.sid.gate.name: Sid，播放列表助手
@@ -1516,6 +1521,8 @@ assistant.sid.settings.checkGood: Gemma 文件状态良好
 assistant.sid.settings.downloadAgain: 重新下载
 assistant.sid.settings.downloadedSize: 已下载 · {size}
 assistant.sid.settings.duringSet: 播放曲目时
+assistant.sid.settings.engine: Sid 的思考引擎
+assistant.sid.settings.engineDetail: 使用 Gemma，或使用 Mac 内置的 Apple Intelligence
 assistant.sid.settings.found: Sid 为你找到的歌曲
 assistant.sid.settings.fresh: 从头开始
 assistant.sid.settings.freshDetail: 根据情绪、时刻或几位艺人创建整个播放列表
@@ -1536,6 +1543,7 @@ assistant.sid.settings.machine: 这台电脑
 assistant.sid.settings.modelOptions: "{model} 选项"
 assistant.sid.settings.modelRow: "{style} · {name}"
 assistant.sid.settings.nav: Sid
+assistant.sid.settings.needsEngine: 需要 {engine}
 assistant.sid.settings.needsGemma: 需要 Gemma
 assistant.sid.settings.nods: 随节拍点头
 assistant.sid.settings.nodsDetail: Sid 会随着歌曲的每一拍点头
@@ -1548,6 +1556,7 @@ assistant.sid.settings.partlySize: 部分下载 · {size}
 assistant.sid.settings.position: 位置
 assistant.sid.settings.positionDetail: Sid 在封面上的位置
 assistant.sid.settings.privacyChat: 你输入的内容会保留在这台电脑上：Sid 在此使用 Gemma 进行思考。为了查找音乐，Sid 会将搜索词发送到 Apple Music；当你提出请求时，它还会从你的 Apple Music 账户读取播放列表、近期播放记录和 Apple Music Replay。在你点击“应用”之前，不会做出任何更改。
+assistant.sid.settings.privacyEngine: 你输入的内容会保留在这台电脑上：Sid 会在本机通过 {engine} 进行思考。为了查找音乐，Sid 会将搜索词发送至 Apple Music；当你提出请求时，它还会从你的 Apple Music 账户中读取你的播放列表、最近播放记录和 Apple Music Replay。在你点按“应用”之前，不会做出任何更改。
 assistant.sid.settings.reads: 读取完整播放列表耗时 {seconds} 秒（需要少于 {floor} 秒）
 assistant.sid.settings.regular: 标准
 assistant.sid.settings.remove: 移除
@@ -1578,8 +1587,10 @@ assistant.sid.settings.tidyDetail: 移除重复项、裁剪到指定时长，或
 assistant.sid.settings.together: 目前共同完成
 assistant.sid.settings.top: 顶部
 assistant.sid.settings.unavailableNote: 要使用 Sid 编辑和创建播放列表，需要在能够运行 Gemma 的电脑上使用。Sid 的曲目组功能在此仍可使用。
+assistant.sid.settings.unavailableNoteEngine: 要使用 Sid 编辑和创建播放列表，需要在能够运行 {engine} 的电脑上进行。Sid 的设置在此处仍可使用。
 assistant.sid.settings.unknownGpu: 未知显卡
 assistant.sid.settings.where: 在哪里找到 Sid
+assistant.sid.settings.withoutEngine: without {engine}时，Sid 会根据歌曲的节奏、调性和能量来挑选歌曲，并按你输入的内容在 Apple Music 中搜索你的请求。
 assistant.sid.settings.withoutGemma: 在没有 Gemma 的情况下，Sid 会根据歌曲的节奏、调性和能量挑选歌曲，并按你输入的原样在 Apple Music 中搜索你的请求。
 assistant.sid.settings.writes: 每秒写入 {rate} 个 token（需要 {floor}）
 assistant.sid.setView.confirmMany: Sid 将清空此曲目之后排队的 {count} 首歌曲，并选择接下来播放的内容。
@@ -1610,6 +1621,10 @@ assistant.sid.source.artist: 一位艺人的热门歌曲
 assistant.sid.source.catalog: Apple Music
 assistant.sid.source.library: 你的资料库
 assistant.sid.source.playlist: 在播放列表中
+assistant.sid.unavailable.appleFailed: Sid 无法连接到 Apple Intelligence。
+assistant.sid.unavailable.appleNotEnabled: 请在“系统设置”中开启 Apple Intelligence，以便在 Sid 中使用。
+assistant.sid.unavailable.appleNotReady: Apple Intelligence 仍在准备中。请稍后再试。
+assistant.sid.unavailable.appleUnsupported: 这台电脑无法使用 Apple Intelligence。
 assistant.sid.unavailable.belowFloor: Gemma 在这台计算机上运行太慢，Sid 无法使用。
 assistant.sid.unavailable.counterMismatch: 安全检查失败后，Sid 已关闭 Gemma。待 Cider 或显卡驱动程序更新后，它将再次尝试。
 assistant.sid.unavailable.gpuLimits: 这块显卡的显存不足以运行 Gemma。
