@@ -254,6 +254,9 @@ album.track.unavailable.unreleased: Ez az elem még nem jelent meg.
 album.track.unavailable.zeroDuration: Az elem hossza 0 másodperc, valószínűleg még nem jelent meg.
 album.upcoming.badge: Hamarosan megjelenő album
 app.name: Cider
+app.ptbDisclaimer.confirm: Értem
+app.ptbDisclaimer.message: Ez egy Public Testing Branch (nyilvános tesztelési) verzió. Stabilitása nem garantált, és hibákat tartalmazhat. Ebben a verzióban talált hibákat vagy problémákat ne jelentse. Ha problémába ütközik, a jelentés előtt váltson a stabil verzióra.
+app.ptbDisclaimer.title: Public Testing Branch figyelmeztetés
 app.unsupportedClient.message: Ez a kliens nem támogatott. Kérjük, győződj meg róla, hogy a Cider legújabb verzióját használod.
 app.unsupportedClient.title: Nem támogatott kliens
 assistant.sid.agent.added: "{count} dal hozzáadva"
@@ -726,10 +729,16 @@ audio.device.default: Alapértelmezett eszköz
 audio.device.noneFound: Nem találhatók kimeneti eszközök
 audio.device.placeholder: "Eszköz: {{id}}"
 audiolab.waiting: Várakozás egy dal sorba állítására
+auth.error.devToken: Nem sikerült kapcsolatot létesíteni az Apple Music szolgáltatással
+auth.error.generic: A bejelentkezés nem fejeződött be. Ellenőrizze a kapcsolatot, és próbálja újra.
+auth.error.invalidToken: Érvénytelen token érkezett
 auth.error.popupBlocked: A felugró ablak blokkolva lett
+auth.error.timeout: A bejelentkezés időtúllépés miatt megszakadt
+auth.error.unavailable: Ez az Apple-azonosító nem használhatja az Apple Music szolgáltatást a Cideren. A Cider aktív, fizetős Apple Music-előfizetést igényel.
 auth.error.windowFailed: Nem sikerült megnyitni a bejelentkezési ablakot
 auth.mutExpired.confirm: Bejelentkezés
 auth.mutExpired.message: Az Apple Music-munkameneted lejárt. Jelentkezz be újra a folytatáshoz.
+auth.signedIn: Bejelentkezve
 auth.signInRetry.confirm: Próbálja újra
 auth.signInRetry.message: Nem sikerült megnyitni a bejelentkezési ablakot. Megpróbálja újra?
 bugReport.addImage: Kép hozzáadása
@@ -2843,6 +2852,7 @@ oobe.amupsell.title: Mielőtt elkezdenénk
 oobe.appearance.accentHint: Gombokhoz, kiemelésekhez és folyamatjelzőkhöz az alkalmazásban. Próbálj ki egyet, az előnézet azonnal látható.
 oobe.appearance.subtitle: Válassz egy színsémát és egy kiemelőszínt. Ezeket bármikor módosíthatod a Beállítások → Megjelenítés menüpontban.
 oobe.appearance.title: Tedd egyedivé a Cidert
+oobe.appleNotice: "Megjegyzés: az Apple Music az Apple Inc. védjegye. A Cider az Apple Music harmadik féltől származó kliense, és nem áll kapcsolatban az Apple Inc.-vel."
 oobe.audio.advancedFunctionality: ""
 oobe.audio.subtitle: ""
 oobe.audio.text: |-
@@ -2881,19 +2891,31 @@ oobe.intro.subtitle: ""
 oobe.intro.text: Állítsunk be néhány dolgot, hogy úgy használhassa a Cidert, ahogy szeretné. Ezeket a beállításokat később bármikor módosíthatja.
 oobe.intro.title: Üdvözli a Cider
 oobe.layout.subtitle: Válassz a stílusodhoz illő elrendezést
+oobe.login.alreadySignedIn: Már be van jelentkezve
 oobe.login.skip: Kihagyás egyelőre
 oobe.login.skipTooltip: Az alkalmazást csak előnézeti módban fogod tudni használni
 oobe.login.subtitle: Jelentkezz be az Apple Music-fiókoddal a zenehallgatás megkezdéséhez
+oobe.login.terms: A folytatással elfogadja a Felhasználási feltételeket és az Adatvédelmi szabályzatot
 oobe.login.title: Egy utolsó lépés
 oobe.login.userToken: Bejelentkezés felhasználói tokennel
+oobe.music.mute: Beállítási zene némítása
+oobe.music.unmute: Beállítási zene némításának feloldása
 oobe.next: Tovább
 oobe.no: Nem
+oobe.performance.full.descriptionV2: A vizuális effektek bekapcsolva maradnak. A Cider csak akkor csökkenti őket automatikusan, ha a számítógép nem tudja megjeleníteni azokat.
+oobe.performance.fullV2: Teljes minőség
 oobe.performance.hint: A Teljesítmény mód csökkenti a vizuális effektusokat és kíméli a processzort. Alapértelmezés szerint ki van kapcsolva az ilyen rendszereken, de bármikor bekapcsolhatod.
 oobe.performance.lowEndHint: Alacsonyabb szálszámú processzort észleltünk. A zökkenőmentesebb lejátszás és az alacsonyabb processzorhasználat érdekében a Teljesítmény módot javasoljuk.
+oobe.performance.mode.description: Kikapcsolja a nagy teljesítményigényű vizuális effekteket, például a nagy elmosásokat és az animált hátteret. Régebbi számítógépekhez ajánlott.
+oobe.performance.modeV2: Teljesítménymód
+oobe.performance.subtitleV3: A teljesítménymód kikapcsolja a legnagyobb terhelést jelentő vizuális effekteket. A teljes minőség bekapcsolva tartja őket, hacsak a számítógép nem tudja megjeleníteni azokat.
 oobe.performance.title: Teljesítmény
+oobe.performance.whereToChangeV3: A Beállításokban ez a választás a(z) {page} alatti {setting} lehetőség. A teljesítménymódhoz válassza a(z) {on}, a teljes minőséghez a(z) {automatic} lehetőséget. Bármikor módosíthatja ott.
 oobe.player.subtitle: A lejátszósáv az ablak szélén található. Válaszd ki a számodra megfelelő sűrűséget.
 oobe.player.title: Válaszd ki a lejátszódat
 oobe.previous: Előző
+oobe.progress: "{current}. lépés / {total}: {title}"
+oobe.progress.label: Beállítás folyamata
 oobe.step.appearance: Megjelenítés
 oobe.step.connections: Kapcsolatok
 oobe.step.features: Hangzás
@@ -2903,6 +2925,7 @@ oobe.step.performance: Teljesítmény
 oobe.step.player: Lejátszó
 oobe.step.welcome: Üdvözlünk
 oobe.step.window: Ablakstílus
+oobe.subscriptionNote: A Cider aktív, fizetős Apple Music-előfizetést igényel. Az Apple Music Voice és bizonyos promóciós próbaidőszakok nem támogatottak.
 oobe.visual.layout.text: |-
   A Cider két különböző ablakelrendezést kínál.
   A Maverick egy iTunes-szerű elrendezés, ahol a lejátszó az ablak tetején található.
@@ -2915,6 +2938,10 @@ oobe.visual.title: Megjelenítés
 oobe.welcome.getStarted: Kezdés
 oobe.welcome.importSettings: Beállítások importálása…
 oobe.welcome.selectLanguage: Válassza ki a kívánt nyelvet
+oobe.window.native: Natív ablak
+oobe.window.native.description: Az asztali környezet címsorát és szegélyeit használja.
+oobe.window.styled: Egyedi vezérlők
+oobe.window.styled.description: Egyedi, alkalmazáson belüli címsor beágyazott ablakvezérlőkkel.
 oobe.window.subtitle: Válaszd ki, hogyan illeszkedjen az alkalmazás ablaka az asztali környezetedhez
 oobe.window.title: Ablakstílus
 oobe.yes: Igen
@@ -3015,6 +3042,8 @@ playlist.error.updating.title: Hiba a lejátszási lista frissítésekor
 playlist.folderEmpty: Nincsenek lejátszási listák ebben a mappában
 playlist.folderMoveFailed: A mappa nem helyezhető át. Próbáld meg újra egy kis idő múlva.
 playlist.folderRenameHint: Kattints duplán az átnevezéshez
+playlist.history: Lejátszási lista előzményei
+playlist.history.withCount: Lejátszási lista előzményei ({count})
 playlist.lastUpdated: "Legutóbb frissítve: {{date}}"
 playlist.madeByApple: "Készítette: Apple"
 playlist.moveFailed: A lejátszási lista nem helyezhető át. Próbáld meg újra egy kis idő múlva.
@@ -3135,6 +3164,7 @@ settings.audio.atmos.normalizationHint: A Dolby Atmos keverések halkabbak, mint
 settings.audio.atmos.off.desc: Atmos kikapcsolva. Minden tartalom szabványos sztereóban szólal meg.
 settings.audio.atmos.passthrough: Passthrough
 settings.audio.atmos.passthrough.desc: Megkerül minden hangfeldolgozást. A többcsatornás Atmos közvetlenül az eszközre kerül továbbításra. Ideális AV-vevőkhöz.
+settings.audio.atmos.passthrough.descV2: A többcsatornás Atmos hangot közvetlenül az eszköznek küldi, AV-erősítőkhöz. Az Audio Lab, az equalizer és a hallgatási mód kikerül a feldolgozásból.
 settings.audio.atmos.passthroughActive: Passthrough aktív — módosítás a részletes beállításokban.
 settings.audio.atmos.standard.desc: Többcsatornás Atmos CiderAudio feldolgozással. Az Áttűnés, az Automix és a Zökkenőmentes átmenetek továbbra is a megszokott módon működnek.
 settings.audio.atmosMode: Atmos-mód
@@ -3237,6 +3267,7 @@ settings.automix.normalizeDuration: Időtartam normalizálása
 settings.automix.normalizeDurationHint: Áttűnési idő a hangerő-illesztéshez ({ms} ms)
 settings.automix.spectralSeparation: Spektrális szétválasztás
 settings.automix.spectralSeparationHint: Meghatározza, hogy az átmenet során a két szám frekvenciája mennyire válik el egymástól.
+settings.automix.spectralSeparationHintV2: Mennyire válnak szét frekvenciában a két szám az átmenet során ({value}).
 settings.automix.speedSettle: Sebesség-visszaállási idő
 settings.automix.speedSettleHint: Mennyi idő alatt áll vissza a lejátszási sebesség a normál értékre a tempóhoz igazított keverés után ({ms} ms)
 settings.automix.tempoAlign: Ütemegyeztetés
@@ -3390,6 +3421,7 @@ settings.client.windows.v8OptimizeSize.adds: Hozzáadása
 settings.client.windows.v8OptimizeSize.to: a WebView2-höz
 settings.client.windows.wpfRendering: WPF-megjelenítési mód
 settings.client.windows.wpfRendering.desc: Válassza ki a WPF megjelenítési módját. Ha bizonytalan, hagyja szoftveresen.
+settings.client.windows.wpfRendering.descV2: Válassza ki, hogyan jelenjen meg az ablak. Ha nem biztos benne, hagyja a Hardver beállítást.
 settings.client.windows.wpfRendering.hardware: Hardveres
 settings.client.windows.wpfRendering.software: Szoftveres
 settings.configBackups.confirm.body: A jelenlegi beállításaidat felváltják a {date} napon mentett beállítások, és a Cider újraindul.
@@ -3499,6 +3531,7 @@ settings.contentFilter.empty: Még nincsenek hozzáadott kulcsszavak.
 settings.contentFilter.inputPlaceholder: Kulcsszó hozzáadása...
 settings.contentFilter.title: Kulcsszavak szűrése
 settings.crossfade.advanced: Speciális áttűnési beállítások
+settings.crossfade.automixStillBlends: Az automix be van kapcsolva, ezért a számok továbbra is átfedhetnek egymásba. Az összes átfedés leállításához kapcsolja ki lentebb az Automixot.
 settings.crossfade.description: Az aktuális dal fokozatos elhalkítása, miközben a következő fokozatosan felerősödik.
 settings.crossfade.disableFor: Áttűnés letiltása a következőkhöz...
 settings.crossfade.duration: Időtartam
@@ -3624,6 +3657,7 @@ settings.general.section.cache: Gyorsítótár
 settings.general.section.cache.description: A Cider által a lemezen tárolt borítóképek és metaadatok az oldalak gyorsabb betöltése érdekében.
 settings.general.section.desktop: Asztal
 settings.general.section.desktop.description: Billentyűparancsok, valamint a Cider viselkedése a tálcán és bezáráskor.
+settings.general.section.desktop.descriptionV2: Billentyűparancsok, a számítógép ébren tartása lejátszás közben, valamint a Cider viselkedése a tálcán és bezáráskor.
 settings.general.section.language: Nyelv
 settings.general.section.language.description: A felület nyelve, valamint a fordítások bejelentése és a közreműködők elismerése.
 settings.general.section.playback: Lejátszás
@@ -3960,6 +3994,7 @@ settings.option.advanced.mavericksLcd.style: Stílus
 settings.option.advanced.mavericksLcd.style.glass: Üveg
 settings.option.advanced.mediaArtwork: Médiaelem borítója
 settings.option.advanced.mediaArtwork.controls: Borítókép-kiemelések és nagy felbontású képek
+settings.option.advanced.mediaArtwork.controlsV2: Borítókiemelés és fokozatos megjelenítés
 settings.option.advanced.mediaArtwork.description: Borítóképek a rácsokon, listákon és sorokban az alkalmazás egészében.
 settings.option.advanced.notificationStyle: Értesítés stílusa
 settings.option.advanced.performance: Teljesítmény
@@ -3989,8 +4024,11 @@ settings.option.advanced.settingsTakeout: Beállítások exportálása/importál
 settings.option.advanced.settingsTakeout.description: Készítsen biztonsági mentést a beállításairól egy fájlba, vagy állítsa vissza őket egy másik eszközön. A fiókbejelentkezések soha nem kerülnek mentésre.
 settings.option.advanced.simpleArtworkBg: Egyszerű borítókép-háttér
 settings.option.advanced.simpleArtworkBg.brightness: Fényerő %
+settings.option.advanced.simpleArtworkBg.brightnessV2: Fényerő
 settings.option.advanced.simpleArtworkBg.contrast: Kontraszt %
+settings.option.advanced.simpleArtworkBg.contrastV2: Kontraszt
 settings.option.advanced.simpleArtworkBg.saturate: Telítettség %
+settings.option.advanced.simpleArtworkBg.saturateV2: Telítettség
 settings.option.advanced.simpleArtworkBg.useMask: Alsó maszk használata
 settings.option.advanced.sonoma: Sonoma
 settings.option.advanced.sonoma.lyricArc: Íves dalszöveg
@@ -4296,6 +4334,8 @@ settings.option.general.onStartup: Indításkor
 settings.option.general.onStartup.openStartup: Kezdőlap megnyitása
 settings.option.general.onStartup.resume: Utolsó munkamenet folytatása
 settings.option.general.pagination: Oldalanként megjelenítendő elemek száma
+settings.option.general.preventDisplaySleep: Kijelző bekapcsolva tartása lejátszás közben
+settings.option.general.preventSystemSleep: Számítógép ébren tartása lejátszás közben
 settings.option.general.privacy: Adatvédelem
 settings.option.general.promptOnClose: Rákérdezés bezáráskor, ha szól a zene
 settings.option.general.queue: Lejátszási sor
@@ -4322,6 +4362,7 @@ settings.option.general.sleepTimerSettings: Elalváskapcsoló beállításai
 settings.option.general.startupPage: Kezdőlap
 settings.option.general.startupPage.blank: Üres oldal
 settings.option.general.startupPage.description: Válassza ki a Cider megnyitásakor megjelenő oldalt.
+settings.option.general.startupPage.descriptionV2: Az oldal, amely új lapokon és indításkor nyílik meg, ha az Indításkor beállítás Indítóoldal megnyitása.
 settings.option.general.startupPage.newTab: Új lap oldal
 settings.option.general.startupPage.personalHome: Személyes kezdőlap
 settings.option.general.themeUpdateNotification: Témafrissítések automatikus keresése
@@ -4331,6 +4372,7 @@ settings.option.general.translators: Fordítók
 settings.option.general.translators.description: Köszönjük a közreműködőknek, hogy segítettek a Cider lefordításában. Kattints egy névre a GitHub-profiljuk megnyitásához.
 settings.option.general.useSmartQueueByDefault: Intelligens sor használata alapértelmezés szerint
 settings.option.general.useSmartQueueByDefault.description: Automatikusan alkalmazza az Okos sor rendezést a sor összeállításakor. Automix szükséges hozzá.
+settings.option.general.useSmartQueueByDefault.needsAutomix: Az automix ki van kapcsolva a Hangban, ezért az Okos sor nem rendez át semmit.
 settings.option.general.warnBeforeQueueOverride: Figyelmeztetés a lejátszási sor felülírása előtt
 settings.option.hide: Elrejtés
 settings.option.left: Bal
@@ -4417,6 +4459,9 @@ settings.option.performance.enableMediaItemInspect.description: Kismértékben b
 settings.option.performance.gameMode: Játék mód
 settings.option.performance.gameMode.description: Csökkenti a vizuális effektusokat, és engedélyezheti a Windows hatékonysági módot az alacsonyabb CPU-használat érdekében.
 settings.option.performance.gameMode.disable: Játék mód letiltása
+settings.option.performance.graphicsAcceleration: Grafikus gyorsítás
+settings.option.performance.graphicsAcceleration.autoOff: Kikapcsolva, mert ez a számítógép szoftveresen jeleníti meg a grafikát.
+settings.option.performance.graphicsAcceleration.description: Az automatikus mód kikapcsolja virtuális gépen, amely szoftveresen jeleníti meg a grafikát. A módosítások a Cider következő indításakor lépnek életbe.
 settings.option.performance.host: Hoszt
 settings.option.performance.immersiveRenderer: Immerzív renderelő
 settings.option.performance.immersiveRenderer.description: Használja a Canvas 2D-t a WebGPU helyett, ha az animált háttér hibásan működik vagy túl sok GPU-t használ.
@@ -4432,6 +4477,8 @@ settings.option.performance.preloadSidebarPages: Oldalsáv-oldalak előtöltése
 settings.option.performance.preloadSidebarPages.description: Betölti az oldalsáv oldalait, mielőtt megnyitnád őket. A „Rámutatáskor” opció akkor indul el, amikor a kurzor az oldalsáv egyik elemén áll. Az „Inaktív állapotban” opció indítás után betölti a Hallgass most, Böngészés és Rádió lapokat is, valamint frissíti a korábban megnyitott könyvtárlistákat.
 settings.option.performance.preloadSidebarPages.idle: Inaktív állapotban
 settings.option.performance.preloadSidebarPages.intent: Rámutatáskor
+settings.option.performance.reduceEffects: Vizuális effektek csökkentése
+settings.option.performance.reduceEffects.description: Kikapcsolja az elmosást, az üveghatást, a ragyogást és az animált hátteret, hogy az alkalmazás kevesebbet rajzoljon. Az automatikus mód akkor kapcsolja be, ha nincs működő grafikus kártya, vagy ha a rendszer kevesebb átlátszóságot kér.
 settings.option.performance.renderer.auto: Automatikus (WebGPU, ha támogatott)
 settings.option.performance.renderer.canvas: Canvas 2D
 settings.option.performance.renderer.webgpu: WebGPU
@@ -4612,6 +4659,7 @@ settings.option.visual.immersive.useBackgroundBpm: Háttér sebessége a BPM ala
 settings.option.visual.immersiveBackground.blank: Üres
 settings.option.visual.immersiveBackground.customImage: Egyéni kép
 settings.option.visual.immersiveBackground.customImageMixed: Egyéni kép (vegyes)
+settings.option.visual.immersiveBackground.gradientMesh: Színátmenet-háló
 settings.option.visual.immersiveBackground.simpleArtwork: Egyszerű borítókép
 settings.option.visual.immersiveBackground.simpleColor: Egyszerű szín
 settings.option.visual.immersiveBgSettings: Immerzív háttérbeállítások
@@ -4651,6 +4699,7 @@ settings.option.visual.liquidGlassPlayer: Folyékony üveg lejátszósáv
 settings.option.visual.liquidGlassPlayer.description: Folyékony üveg felület használata a lejátszósávhoz. Kapcsolja ki a lapos, egyszínű panelhez (amelynek a kirajzolása is gyorsabb).
 settings.option.visual.liquidGlassScrollPerf: Könnyített üveghatás görgetés közben
 settings.option.visual.liquidGlassScrollPerf.description: Görgetés közben a folyékony üveg fénytörését egyszerű elmosódássá alakítja, majd megálláskor fokozatosan visszaállítja azt. Csökkenti a görgetési akadozást a nagyobb terhelésnek kitett rendszereken, miközben nyugalmi állapotban a látvány változatlan marad. Játék módban mindig aktív.
+settings.option.visual.liquidGlassScrollPerf.descriptionV2: Görgetés közben egyszerű elmosásra egyszerűsíti a folyékony üveg törését, majd leállás után visszaállítja. Csökkenti a görgetési akadozást igényes rendszereken, nyugalmi állapotban pedig nincs változás.
 settings.option.visual.mainMenuPosition: Főmenü pozíciója
 settings.option.visual.matchPageToArtwork: Oldal igazítása a borítóhoz
 settings.option.visual.matchPageToArtwork.description: Az album- és lejátszási lista oldalakat borítójuk színeivel festi ki, világos és sötét módban egyaránt.
@@ -4831,6 +4880,7 @@ settings.prompt.visual.plugin.github.success: Bővítmény sikeresen telepítve.
 settings.prompt.visual.plugin.github.URL: Adja meg a telepíteni kívánt bővítmény URL-címét
 settings.prompt.visual.theme.github.URL: Adja meg a telepíteni kívánt téma URL-címét
 settings.prompt.visual.theme.uninstallTheme: "Biztosan el szeretné távolítani a következőt: {{theme}}?"
+settings.reloadPrompt.message: A módosítások alkalmazásához az alkalmazás frissítése szükséges. Szeretné folytatni?
 settings.requiresNewerClient: Újabb Cider kliens szükséges.
 settings.resetCider.category.appleMusic: Kijelentkezés az Apple Music-ból
 settings.resetCider.category.appleMusic.desc: Az Apple Music-fiók eltávolítása erről az eszközről
@@ -4874,6 +4924,7 @@ settings.smartPlaylists.section.maintenance: Karbantartás
 settings.smartPlaylists.section.maintenance.description: Az összes szabály azonnali futtatásának kényszerítése, vagy a könyvtár gyorsítótárazott másolatának törlése.
 settings.smartPlaylists.section.rules: Szabályok
 settings.smartPlaylists.section.rules.description: Meghatározza, hogy a Cider alkalmazza-e a beágyazott lejátszásilista-szabályokat, és milyen gyakran értékelje újra azokat.
+settings.smartPlaylists.section.rules.descriptionV2: Azt szabályozza, hogy a Cider alkalmazza-e a beágyazott lejátszási lista szabályokat. Ezek a Háttérfrissítési idővel újra lefutnak az Energiahasználatban.
 settings.sweetener.useSystemAccentColor: Rendszerszín használata
 settings.takeout.chooseFile: Fájl kiválasztása…
 settings.takeout.error.badVersion: A fájlból hiányoznak a verzióinformációk.
@@ -4904,6 +4955,7 @@ settings.title: Beállítások
 settings.troubleshooting.bgDiagnostics: Háttérben történő lejátszás diagnosztikája
 settings.troubleshooting.bgDiagnostics.desc: További naplózási adatok a lejátszási problémák diagnosztizálásához, amikor az ablak minimalizálva van vagy nincs fókuszban – ki állította le a lejátszót, időzítési hibák és az operációs rendszer általi felfüggesztések. Engedélyezd, ha háttérben történő lejátszási hibát jelentesz be.
 settings.troubleshooting.desc: Naplófájlok és MKLite hibakeresési naplózás.
+settings.troubleshooting.descV2: MKLite és háttérlejátszási naplózás.
 settings.troubleshooting.hevcWorkaround: HEVC kerülőmegoldás
 settings.troubleshooting.hevcWorkaround.desc: Kerülőmegoldás a WebView2 azon hibájára, amely egyes GPU-k esetén problémát okoz a 10 bites SDR HEVC lejátszásakor; egy szűrő alkalmazásával kompenzálja a képi eltolódást.
 settings.troubleshooting.impressionReporting: PlayActivity megjelenítési jelentések
@@ -4927,6 +4979,8 @@ settings.updates.action.check: Frissítések keresése
 settings.updates.action.install: Frissítés telepítése
 settings.updates.action.restart: Cider újraindítása
 settings.updates.action.retry: Próbálja újra
+settings.updates.autoCheck: Frissítések automatikus keresése
+settings.updates.autoCheck.description: Ha ki van kapcsolva, a Cider csak akkor keres frissítést, amikor megnyitja ezt az oldalt.
 settings.updates.build: Build
 settings.updates.channel: Csatorna
 settings.updates.codename: Kódnév
@@ -5591,6 +5645,8 @@ updates.installUnavailable.body: Ez a verzió nem érhető el letöltésre az Ö
 updates.lateststable.title: Legújabb stabil kiadás
 updates.loadFailed.body: Ellenőrizd a kapcsolatot, és próbáld újra.
 updates.loadFailed.title: A Cider nem tudta betölteni az elérhető verziókat
+updates.newVersion.body: A Cider új verziója elérhető. Szeretné letölteni a Frissítések oldalon?
+updates.newVersion.title: Új verzió érhető el
 updates.notifyForBranch.tooltip: Értesítés ehhez az ághoz
 updates.otherVersions.title: Egyéb verziók
 updates.ptb.name: Nyilvános tesztelési ág
