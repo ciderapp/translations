@@ -97,6 +97,7 @@ Every entry below came from a community member through a [translation issue](../
 | [@kinlay0](https://github.com/kinlay0) | Russian | 222 |
 | [@szymin22](https://github.com/szymin22) | Polish | 111 |
 | [@Vudgekek](https://github.com/Vudgekek) | Croatian | 103 |
+| [@mpratsaki](https://github.com/mpratsaki) | Greek | 95 |
 | [@lumaa-dev](https://github.com/lumaa-dev) | French | 68 |
 | [@nekocats](https://github.com/nekocats) | Estonian | 42 |
 | [@MP-K](https://github.com/MP-K) | Korean | 27 |
@@ -104,7 +105,6 @@ Every entry below came from a community member through a [translation issue](../
 | [@sh-ayu](https://github.com/sh-ayu) | Japanese | 18 |
 | [@itsmeares](https://github.com/itsmeares) | Turkish | 16 |
 | [@emirasaf](https://github.com/emirasaf) | Turkish | 11 |
-| [@mpratsaki](https://github.com/mpratsaki) | Greek | 10 |
 | [@felipecadal](https://github.com/felipecadal) | Portuguese (Brazil) | 1 |
 | [@UnoPanduo](https://github.com/UnoPanduo) | Dutch | 1 |
 | [@yako0755](https://github.com/yako0755) | Japanese | 1 |
