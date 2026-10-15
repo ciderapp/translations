@@ -434,6 +434,8 @@ assistant.sid.chat.suggestQueuePlaylist: Vytvoriť playlist z môjho frontu
 assistant.sid.chat.suggestTidyQueue: Upraviť môj front
 assistant.sid.chat.tooBig: To je na jedno čítanie príliš veľa. Skúste kratšiu požiadavku.
 assistant.sid.chat.workingQueue: Pracujem na vašom fronte
+assistant.sid.engine.apple: Apple Intelligence
+assistant.sid.engine.gemma: Gemma
 assistant.sid.entry.edit: Upraviť so Sidom
 assistant.sid.entry.editDetail: Opíšte zmenu a najprv ju skontrolujte
 assistant.sid.entry.start: Začať so Sidom
@@ -449,9 +451,12 @@ assistant.sid.failure.modelMissing: Súbory Gemmy chýbajú. Stiahnite ich znova
 assistant.sid.failure.network: Sťahovanie sa zastavilo. Skontrolujte pripojenie a skúste to znova.
 assistant.sid.failure.notReady: Gemma ešte nie je pripravená.
 assistant.sid.failure.outOfMemory: Sid zastavil Gemmu, aby váš počítač zostal citlivý. Potrebovala viac grafickej pamäte, než bolo možné uvoľniť.
+assistant.sid.failure.stoppedUnexpectedly: Sid sa neočakávane zastavil. Skúste to znova.
 assistant.sid.failure.storageFull: Na dokončenie sťahovania nie je dostatok voľného miesta.
 assistant.sid.failure.timeout: Gemma odpovedala príliš dlho. Skúste to znova.
+assistant.sid.failure.tookTooLong: Sid odpovedal príliš dlho. Skúste to znova.
 assistant.sid.failure.tryAgain: Skúsiť znova
+assistant.sid.failure.unready: Sid ešte nie je pripravený.
 assistant.sid.failure.watchLost: Sid sa zastavil, pretože stratil prehľad o grafickej pamäti. Skúste to znova.
 assistant.sid.gate.description: Vyskúšajte Sida skôr, než bude hotový. Niektoré časti zatiaľ nefungujú.
 assistant.sid.gate.name: Sid, pomocník pre playlisty
@@ -610,6 +615,8 @@ assistant.sid.settings.checkGood: Súbory Gemmy vyzerajú v poriadku
 assistant.sid.settings.downloadAgain: Stiahnuť znova
 assistant.sid.settings.downloadedSize: Stiahnuté · {size}
 assistant.sid.settings.duringSet: Počas setu
+assistant.sid.settings.engine: Kde Sid rozmýšľa
+assistant.sid.settings.engineDetail: Použite Gemma alebo Apple Intelligence zabudovanú vo vašom Macu
 assistant.sid.settings.found: Skladby, ktoré pre vás Sid našiel
 assistant.sid.settings.fresh: Začať nanovo
 assistant.sid.settings.freshDetail: Vytvorte celý playlist z nálady, chvíle alebo niekoľkých interpretov
@@ -630,6 +637,7 @@ assistant.sid.settings.machine: Tento počítač
 assistant.sid.settings.modelOptions: "Možnosti: {model}"
 assistant.sid.settings.modelRow: "{style} · {name}"
 assistant.sid.settings.nav: Sid
+assistant.sid.settings.needsEngine: Vyžaduje {engine}
 assistant.sid.settings.needsGemma: Vyžaduje Gemma
 assistant.sid.settings.nods: Prikyvovanie do rytmu
 assistant.sid.settings.nodsDetail: Sid prikyvuje na každý úder skladby
@@ -642,6 +650,7 @@ assistant.sid.settings.partlySize: Čiastočne stiahnuté · {size}
 assistant.sid.settings.position: Pozícia
 assistant.sid.settings.positionDetail: Kde Sid sedí na obale
 assistant.sid.settings.privacyChat: "Čo napíšete, zostane na tomto počítači: Sid rozmýšľa s modelom Gemma priamo tu. Na vyhľadávanie hudby Sid posiela hľadané slová do Apple Music a na vašu žiadosť číta vaše playlisty, nedávno prehrávané skladby a Apple Music Replay z vášho účtu Apple Music. Nič sa nezmení, kým nestlačíte Použiť."
+assistant.sid.settings.privacyEngine: "To, čo napíšete, zostáva v tomto počítači: Sid rozmýšľa pomocou {engine}, priamo tu. Na vyhľadávanie hudby Sid posiela hľadané slová do Apple Music a po vašej žiadosti číta vaše playlisty, nedávne prehrávanie a Apple Music Replay z vášho účtu Apple Music. Nič sa nezmení, kým nestlačíte Apply."
 assistant.sid.settings.reads: Prečíta celý playlist za {seconds} s (potrebuje menej ako {floor} s)
 assistant.sid.settings.regular: Bežná
 assistant.sid.settings.remove: Odstrániť
@@ -672,8 +681,10 @@ assistant.sid.settings.tidyDetail: Odstrániť opakovania, skrátiť na dĺžku 
 assistant.sid.settings.together: Doteraz spolu
 assistant.sid.settings.top: Hore
 assistant.sid.settings.unavailableNote: Úprava a vytváranie playlistov so Sidom vyžaduje model Gemma na počítači, ktorý ho zvládne. Sidova sada tu funguje aj tak.
+assistant.sid.settings.unavailableNoteEngine: Úpravy a vytváranie playlistov so Sidom vyžadujú {engine} na počítači, ktorý ho dokáže spustiť. Sidove nastavenia tu fungujú aj tak.
 assistant.sid.settings.unknownGpu: Neznáma grafická karta
 assistant.sid.settings.where: Kde nájsť Sida
+assistant.sid.settings.withoutEngine: Bez {engine} Sid vyberá skladby podľa tempa, tóniny a energie a vyhľadáva vaše požiadavky v Apple Music presne tak, ako ich napíšete.
 assistant.sid.settings.withoutGemma: Bez modelu Gemma Sid vyberá skladby podľa tempa, tóniny a energie a vyhľadáva vaše požiadavky v Apple Music presne tak, ako ich napíšete.
 assistant.sid.settings.writes: Zapisuje {rate} tokenov za sekundu (vyžaduje {floor})
 assistant.sid.setView.confirmMany: Sid vymaže {count} skladieb zaradených po tejto a vyberie, čo sa bude prehrávať ďalej.
@@ -704,6 +715,10 @@ assistant.sid.source.artist: najobľúbenejšie skladby umelca
 assistant.sid.source.catalog: Apple Music
 assistant.sid.source.library: vašej knižnice
 assistant.sid.source.playlist: v playlistе
+assistant.sid.unavailable.appleFailed: Sid sa nepodarilo spojiť s Apple Intelligence.
+assistant.sid.unavailable.appleNotEnabled: Ak chcete používať Sida, zapnite Apple Intelligence v Nastaveniach systému.
+assistant.sid.unavailable.appleNotReady: Apple Intelligence sa ešte pripravuje. Skúste to o chvíľu znova.
+assistant.sid.unavailable.appleUnsupported: Apple Intelligence nie je na tomto počítači dostupná.
 assistant.sid.unavailable.belowFloor: Gemma na tomto počítači bežala príliš pomaly, aby ju Sid mohol použiť.
 assistant.sid.unavailable.counterMismatch: Sid vypol Gemmu po neúspešnej bezpečnostnej kontrole. Skúsi to znova po aktualizácii Cider alebo ovládača grafiky.
 assistant.sid.unavailable.gpuLimits: Táto grafická karta nemá dostatok pamäte, ktorú Gemma potrebuje.
