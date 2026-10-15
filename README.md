@@ -104,6 +104,7 @@ Every entry below came from a community member through a [translation issue](../
 | [@sh-ayu](https://github.com/sh-ayu) | Japanese | 18 |
 | [@itsmeares](https://github.com/itsmeares) | Turkish | 16 |
 | [@emirasaf](https://github.com/emirasaf) | Turkish | 11 |
+| [@mpratsaki](https://github.com/mpratsaki) | Greek | 10 |
 | [@felipecadal](https://github.com/felipecadal) | Portuguese (Brazil) | 1 |
 | [@UnoPanduo](https://github.com/UnoPanduo) | Dutch | 1 |
 | [@yako0755](https://github.com/yako0755) | Japanese | 1 |
