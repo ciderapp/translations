@@ -434,6 +434,8 @@ assistant.sid.chat.suggestQueuePlaylist: Aus meiner Warteschlange eine Playlist 
 assistant.sid.chat.suggestTidyQueue: Meine Warteschlange aufräumen
 assistant.sid.chat.tooBig: Das ist zu viel, als dass ich es auf einmal lesen könnte. Versuche es mit einer kürzeren Anfrage.
 assistant.sid.chat.workingQueue: Ich arbeite an deiner Warteschlange
+assistant.sid.engine.apple: Apple Intelligence
+assistant.sid.engine.gemma: Gemma
 assistant.sid.entry.edit: Mit Sid bearbeiten
 assistant.sid.entry.editDetail: Beschreibe eine Änderung und prüfe sie zuerst
 assistant.sid.entry.start: Mit Sid starten
@@ -449,9 +451,12 @@ assistant.sid.failure.modelMissing: Gemmas Dateien fehlen. Lade sie erneut herun
 assistant.sid.failure.network: Der Download wurde unterbrochen. Prüfe deine Verbindung und versuche es erneut.
 assistant.sid.failure.notReady: Gemma ist noch nicht bereit.
 assistant.sid.failure.outOfMemory: Sid hat Gemma beendet, damit dein Computer reagiert. Es wurde mehr Grafikspeicher benötigt, als verfügbar war.
+assistant.sid.failure.stoppedUnexpectedly: Sid wurde unerwartet beendet. Versuche es erneut.
 assistant.sid.failure.storageFull: Es ist nicht genug freier Speicherplatz vorhanden, um den Download abzuschließen.
 assistant.sid.failure.timeout: Gemma hat zu lange für eine Antwort gebraucht. Versuche es erneut.
+assistant.sid.failure.tookTooLong: Sid hat zu lange für eine Antwort gebraucht. Versuche es erneut.
 assistant.sid.failure.tryAgain: Erneut versuchen
+assistant.sid.failure.unready: Sid ist noch nicht bereit.
 assistant.sid.failure.watchLost: Sid wurde beendet, weil der Grafikspeicher nicht mehr erfasst werden konnte. Versuche es erneut.
 assistant.sid.gate.description: Probiere Sid aus, bevor es fertig ist. Einige Funktionen funktionieren noch nicht.
 assistant.sid.gate.name: Sid, der Playlist-Helfer
@@ -610,6 +615,8 @@ assistant.sid.settings.checkGood: Gemmas Dateien sehen gut aus
 assistant.sid.settings.downloadAgain: Erneut herunterladen
 assistant.sid.settings.downloadedSize: Heruntergeladen · {size}
 assistant.sid.settings.duringSet: Während eines Sets
+assistant.sid.settings.engine: Worüber Sid nachdenkt
+assistant.sid.settings.engineDetail: Gemma verwenden oder Apple Intelligence, das in deinen Mac integriert ist
 assistant.sid.settings.found: Songs, die Sid für dich gefunden hat
 assistant.sid.settings.fresh: Neu starten
 assistant.sid.settings.freshDetail: Eine ganze Playlist aus einer Stimmung, einem Moment oder ein paar Künstlern erstellen
@@ -630,6 +637,7 @@ assistant.sid.settings.machine: Dieser Computer
 assistant.sid.settings.modelOptions: Optionen für {model}
 assistant.sid.settings.modelRow: "{style} · {name}"
 assistant.sid.settings.nav: Sid
+assistant.sid.settings.needsEngine: Benötigt {engine}
 assistant.sid.settings.needsGemma: Benötigt Gemma
 assistant.sid.settings.nods: Im Takt nicken
 assistant.sid.settings.nodsDetail: Sid nickt bei jedem Beat des Songs mit
@@ -642,6 +650,7 @@ assistant.sid.settings.partlySize: Teilweise heruntergeladen · {size}
 assistant.sid.settings.position: Position
 assistant.sid.settings.positionDetail: Wo Sid auf dem Cover sitzt
 assistant.sid.settings.privacyChat: "Was du eingibst, bleibt auf diesem Computer: Sid denkt hier mit Gemma. Um Musik zu finden, sendet Sid Suchbegriffe an Apple Music und liest auf Wunsch deine Playlists, deine letzten Wiedergaben und dein Apple Music Replay aus deinem Apple-Music-Konto. Nichts ändert sich, bis du auf „Anwenden“ drückst."
+assistant.sid.settings.privacyEngine: "Was du eingibst, bleibt auf diesem Computer: Sid denkt hier mit {engine} nach. Zum Finden von Musik sendet Sid Suchbegriffe an Apple Music und liest auf Anfrage deine Playlists, deine letzten Wiedergaben und deine Apple Music Replay aus deinem Apple-Music-Konto. Erst wenn du auf „Anwenden“ drückst, ändert sich etwas."
 assistant.sid.settings.reads: Liest eine vollständige Playlist in {seconds} s (benötigt unter {floor} s)
 assistant.sid.settings.regular: Normal
 assistant.sid.settings.remove: Entfernen
@@ -672,8 +681,10 @@ assistant.sid.settings.tidyDetail: Wiederholungen entfernen, auf eine Länge kü
 assistant.sid.settings.together: Bisher insgesamt
 assistant.sid.settings.top: Oben
 assistant.sid.settings.unavailableNote: Playlists mit Sid bearbeiten und erstellen benötigt Gemma auf einem Computer, der es ausführen kann. Sids Set funktioniert hier weiterhin.
+assistant.sid.settings.unavailableNoteEngine: Das Bearbeiten und Erstellen von Playlists mit Sid erfordert {engine} auf einem Computer, der es ausführen kann. Sids Auswahl funktioniert hier weiterhin.
 assistant.sid.settings.unknownGpu: Unbekannte Grafikkarte
 assistant.sid.settings.where: Wo Sid zu finden ist
+assistant.sid.settings.withoutEngine: Ohne {engine} wählt Sid Songs anhand ihres Tempos, ihrer Tonart und Energie aus und sucht bei Apple Music genau nach deinen Anfragen, so wie du sie eingibst.
 assistant.sid.settings.withoutGemma: Ohne Gemma wählt Sid Songs anhand ihres Tempos, ihrer Tonart und Energie aus und sucht Apple Music nach deinen Wünschen genau so, wie du sie eingibst.
 assistant.sid.settings.writes: Schreibt {rate} Token pro Sekunde (benötigt {floor})
 assistant.sid.setView.confirmMany: Sid entfernt die {count} Songs, die nach diesem in der Warteschlange stehen, und wählt aus, was als Nächstes gespielt wird.
@@ -704,6 +715,10 @@ assistant.sid.source.artist: den Top-Songs eines Künstlers
 assistant.sid.source.catalog: Apple Music
 assistant.sid.source.library: deiner Mediathek
 assistant.sid.source.playlist: in der Playlist
+assistant.sid.unavailable.appleFailed: Sid konnte Apple Intelligence nicht erreichen.
+assistant.sid.unavailable.appleNotEnabled: Aktiviere Apple Intelligence in den Systemeinstellungen, um es mit Sid zu verwenden.
+assistant.sid.unavailable.appleNotReady: Apple Intelligence wird noch vorbereitet. Versuche es gleich noch einmal.
+assistant.sid.unavailable.appleUnsupported: Apple Intelligence ist auf diesem Computer nicht verfügbar.
 assistant.sid.unavailable.belowFloor: Gemma lief auf diesem Computer zu langsam, als dass Sid es nutzen könnte.
 assistant.sid.unavailable.counterMismatch: Sid hat Gemma ausgeschaltet, nachdem eine Sicherheitsprüfung fehlgeschlagen ist. Der nächste Versuch erfolgt nach einem Update von Cider oder deines Grafiktreibers.
 assistant.sid.unavailable.gpuLimits: Diese Grafikkarte hat nicht genug Kapazität für Gemma.
