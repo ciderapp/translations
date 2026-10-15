@@ -300,6 +300,9 @@ album.track.unavailable.unreleased: Bu öğe henüz yayımlanmadı.
 album.track.unavailable.zeroDuration: Öge süresi 0 saniye, muhtemelen henüz yayınlanmadı.
 album.upcoming.badge: Yaklaşan Albüm
 app.name: Cider
+app.ptbDisclaimer.confirm: Anlıyorum
+app.ptbDisclaimer.message: Bu, bir Genel Test Dalı (Public Testing Branch) sürümüdür. Bu sürümün kararlı olması garanti edilmez ve hatalar içerebilir. Bu sürümde bulunan hataları veya sorunları bildirmeyin. Bir sorunla karşılaşırsanız, bildirmeden önce lütfen kararlı sürüme geçin.
+app.ptbDisclaimer.title: Genel Test Dalı uyarısı
 app.unsupportedClient.message: Bu istemci desteklenmiyor. Lütfen Cider'ın en son sürümünü kullandığınızdan emin olun.
 app.unsupportedClient.title: Desteklenmeyen İstemci
 assistant.sid.agent.added: "{count} şarkı eklendi"
@@ -772,10 +775,16 @@ audio.device.default: Varsayılan Cihaz
 audio.device.noneFound: Çıkış cihazı bulunamadı
 audio.device.placeholder: Aygıt {{id}}
 audiolab.waiting: Sıraya bir şarkı eklenmesi bekleniyor
+auth.error.devToken: Apple Music'e ulaşılamadı
+auth.error.generic: Oturum açma tamamlanamadı. Bağlantınızı kontrol edip tekrar deneyin.
+auth.error.invalidToken: Geçersiz bir belirteç alındı
 auth.error.popupBlocked: Açılır pencere engellendi
+auth.error.timeout: Oturum açma zaman aşımına uğradı
+auth.error.unavailable: Bu Apple Kimliği Cider'da Apple Music'i kullanamaz. Cider'ın etkin, ücretli bir Apple Music aboneliği gerektirir.
 auth.error.windowFailed: Giriş penceresi açılamadı
 auth.mutExpired.confirm: Giriş Yap
 auth.mutExpired.message: Apple Music oturumunuzun süresi doldu. Devam etmek için tekrar giriş yapın.
+auth.signedIn: Oturum açıldı
 auth.signInRetry.confirm: Tekrar Dene
 auth.signInRetry.message: Giriş penceresi açılamadı. Tekrar denemek ister misiniz?
 bugReport.addImage: Görsel ekle
@@ -2909,6 +2918,7 @@ oobe.amupsell.title: Başlamadan önce
 oobe.appearance.accentHint: Uygulama genelindeki düğmeler, vurgular ve ilerleme için kullanılır. Birini deneyin, canlı olarak önizlenir.
 oobe.appearance.subtitle: Bir renk şeması ve vurgu rengi seçin. Bunları istediğiniz zaman Ayarlar → Görsel bölümünden değiştirebilirsiniz.
 oobe.appearance.title: Cider'ı kişiselleştirin
+oobe.appleNotice: "Lütfen unutmayın: Apple Music, Apple Inc. şirketinin ticari markasıdır. Cider, Apple Music için üçüncü taraf bir istemcidir ve Apple Inc. ile bağlantılı değildir."
 oobe.audio.advancedFunctionality: ""
 oobe.audio.subtitle: ""
 oobe.audio.text: |-
@@ -2947,19 +2957,31 @@ oobe.intro.subtitle: ""
 oobe.intro.text: Cider'ı dilediğiniz gibi kullanabilmeniz için birkaç ayar yapalım. Bu ayarları daha sonra dilediğiniz zaman değiştirebilirsiniz.
 oobe.intro.title: Cider'a Hoş Geldiniz
 oobe.layout.subtitle: Tarzınıza uygun bir düzen seçin
+oobe.login.alreadySignedIn: Zaten oturum açtınız
 oobe.login.skip: Şimdilik Atla
 oobe.login.skipTooltip: Uygulamayı yalnızca önizleme modunda kullanabileceksiniz
 oobe.login.subtitle: Müziğinizin keyfini çıkarmaya başlamak için Apple Music hesabınızla giriş yapın
+oobe.login.terms: Devam ederek Hizmet Koşulları ve Gizlilik Politikası'nı kabul etmiş olursunuz
 oobe.login.title: Son Bir Adım
 oobe.login.userToken: Kullanıcı jetonu ile giriş yapın
+oobe.music.mute: Kurulum müziğini kapat
+oobe.music.unmute: Kurulum müziğini aç
 oobe.next: İleri
 oobe.no: Hayır
+oobe.performance.full.descriptionV2: Görsel efektleri açık tutar. Cider, bilgisayarınız bunları çizemediğinde yalnızca kendiliğinden azaltır.
+oobe.performance.fullV2: Tam kalite
 oobe.performance.hint: Performans Modu görsel efektleri azaltır ve işlemci tasarrufu sağlar. Sizin gibi sistemlerde varsayılan olarak kapalıdır, ancak istediğiniz zaman etkinleştirebilirsiniz.
 oobe.performance.lowEndHint: Daha düşük iş parçacıklı bir işlemci tespit ettik. Daha akıcı bir oynatma ve daha düşük işlemci kullanımı için Performans Modu'nu öneririz.
+oobe.performance.mode.description: Büyük bulanıklık ve animasyonlu arka plan gibi ağır görsel efektleri kapatır. Eski bilgisayarlar için uygundur.
+oobe.performance.modeV2: Performans modu
+oobe.performance.subtitleV3: Performans modu en ağır görsel efektleri kapatır. Tam kalite ise bilgisayarınız çizemediği durumlar dışında bunları açık tutar.
 oobe.performance.title: Performans
+oobe.performance.whereToChangeV3: Ayarlar'da bu seçim, {page} altındaki {setting} seçeneğidir. Performans modu için {on}, Tam kalite için {automatic} seçin. Bunu istediğiniz zaman orada değiştirebilirsiniz.
 oobe.player.subtitle: Pencerenin kenarında yer alan şu an çalınan çubuğu. Size uygun yoğunluğu seçin.
 oobe.player.title: Oynatıcınızı seçin
 oobe.previous: Geri
+oobe.progress: "Adım {current} / {total}: {title}"
+oobe.progress.label: Kurulum ilerlemesi
 oobe.step.appearance: Görünüm
 oobe.step.connections: Bağlantılar
 oobe.step.features: Ses
@@ -2969,6 +2991,7 @@ oobe.step.performance: Performans
 oobe.step.player: Oynatıcı
 oobe.step.welcome: Hoş Geldiniz
 oobe.step.window: Pencere Stili
+oobe.subscriptionNote: Cider, etkin ve ücretli bir Apple Music aboneliği gerektirir. Apple Music Voice ve bazı promosyon denemeleri desteklenmez.
 oobe.visual.layout.text: |-
   Cider iki farklı pencere düzeni sunar.
   Maverick, oynatıcının pencerenin üst kısmında yer aldığı iTunes benzeri bir düzendir.
@@ -2981,6 +3004,10 @@ oobe.visual.title: Görsel
 oobe.welcome.getStarted: Başlayın
 oobe.welcome.importSettings: Ayarları içe aktar…
 oobe.welcome.selectLanguage: Tercih ettiğiniz dili seçin
+oobe.window.native: Yerel pencere
+oobe.window.native.description: Masaüstü ortamınızın başlık çubuğunu ve kenarlıklarını kullanır.
+oobe.window.styled: Özel denetimler
+oobe.window.styled.description: Pencere denetimleri gömülü, uygulama içi özel başlık çubuğu.
 oobe.window.subtitle: Uygulama penceresinin masaüstü ortamınızla nasıl entegre olacağını seçin
 oobe.window.title: Pencere Stili
 oobe.yes: Evet
@@ -3081,6 +3108,8 @@ playlist.error.updating.title: Çalma listesi güncellenirken hata
 playlist.folderEmpty: Bu klasörde çalma listesi yok
 playlist.folderMoveFailed: Klasör taşınamadı. Lütfen birazdan tekrar deneyin.
 playlist.folderRenameHint: Yeniden adlandırmak için çift tıklayın
+playlist.history: Çalma listesi geçmişi
+playlist.history.withCount: Çalma listesi geçmişi ({count})
 playlist.lastUpdated: "Son Güncelleme: {{date}}"
 playlist.madeByApple: Apple Tarafından Hazırlandı
 playlist.moveFailed: Çalma listesi taşınamadı. Lütfen birazdan tekrar deneyin.
@@ -3205,6 +3234,7 @@ settings.audio.atmos.normalizationHint: Dolby Atmos miksleri stereo masterlardan
 settings.audio.atmos.off.desc: Atmos devre dışı. Tüm içerikler standart stereo olarak çalınır.
 settings.audio.atmos.passthrough: Doğrudan Geçiş
 settings.audio.atmos.passthrough.desc: Tüm ses işlemeyi atlar. Çok kanallı Atmos doğrudan cihaza gönderilir. AV alıcıları için idealdir.
+settings.audio.atmos.passthrough.descV2: Çok kanallı Atmos'u AV alıcıları için doğrudan cihaza gönderir. Audio Lab, ekolayzır ve Dinleme Modu devre dışı kalır.
 settings.audio.atmos.passthroughActive: Doğrudan geçiş etkin — tüm ayarlardan değiştirin.
 settings.audio.atmos.standard.desc:
   value: CiderAudio işlemeli çok kanallı Atmos; Çapraz Geçiş, AutoMix ve Kesintisiz Geçişler beklendiği gibi çalışmaya devam eder.
@@ -3339,6 +3369,7 @@ settings.automix.normalizeDuration: Süreyi Normalleştir
 settings.automix.normalizeDurationHint: Ses yüksekliği eşleme için geçiş süresi ({ms} ms)
 settings.automix.spectralSeparation: Spektral Ayrım
 settings.automix.spectralSeparationHint: Bir geçiş sırasında iki parçanın frekans olarak birbirinden ne kadar uzaklaştırılacağını belirler.
+settings.automix.spectralSeparationHintV2: Geçiş sırasında iki parçanın frekansta ne kadar ayrıştırıldığı ({value}).
 settings.automix.speedSettle: Hız Dengelenme Süresi
 settings.automix.speedSettleHint: Tempo eşleştirmeli bir miksten sonra çalma hızının normale dönmesinin ne kadar süreceğini belirler ({ms} ms)
 settings.automix.tempoAlign: Vuruş Eşleştirme
@@ -3492,6 +3523,7 @@ settings.client.windows.v8OptimizeSize.adds: Ekler
 settings.client.windows.v8OptimizeSize.to: WebView2'ye
 settings.client.windows.wpfRendering: WPF Oluşturma Modu
 settings.client.windows.wpfRendering.desc: WPF için oluşturma modunu seçin. Emin değilseniz yazılım olarak bırakın.
+settings.client.windows.wpfRendering.descV2: Pencerenin nasıl çizileceğini seçin. Emin değilseniz Donanım açık kalsın.
 settings.client.windows.wpfRendering.hardware: Donanım
 settings.client.windows.wpfRendering.software: Yazılım
 settings.configBackups.confirm.body: Mevcut ayarlarınız {date} tarihinde kaydedilenlerle değiştirilecek ve Cider yeniden yüklenecek.
@@ -3601,6 +3633,7 @@ settings.contentFilter.empty: Henüz anahtar kelime eklenmedi.
 settings.contentFilter.inputPlaceholder: Anahtar kelime ekle...
 settings.contentFilter.title: Anahtar Kelimeleri Filtrele
 settings.crossfade.advanced: Gelişmiş Karışarak Geçiş Ayarları
+settings.crossfade.automixStillBlends: Automix açık olduğundan şarkılar yine birbirine karışabilir. Tüm karışımları durdurmak için aşağıdan Automix'i kapatın.
 settings.crossfade.description: Sonraki parçaya geçerken mevcut parçanın sesini yavaşça kısar ve yenisinin sesini yavaşça açar.
 settings.crossfade.disableFor: Karışarak Geçişi Şunun İçin Devre Dışı Bırak...
 settings.crossfade.duration: Süre
@@ -3726,6 +3759,7 @@ settings.general.section.cache: Önbellek
 settings.general.section.cache.description: Sayfaların daha hızlı yüklenmesi için Cider'ın diskte tuttuğu kayıtlı albüm resimleri ve meta veriler.
 settings.general.section.desktop: Masaüstü
 settings.general.section.desktop.description: Klavye kestirmeleri ve Cider'ın görev çubuğundaki ve kapatıldığındaki davranışı.
+settings.general.section.desktop.descriptionV2: Klavye kısayolları, çalarken bilgisayarın uykuya geçmesini önleme ve Cider'ın görev çubuğunda ve kapatıldığında nasıl davrandığı.
 settings.general.section.language: Dil
 settings.general.section.language.description: Arayüz dili ve çevirileri nasıl bildireceğiniz veya katkıda bulunanları nasıl belirteceğiniz.
 settings.general.section.playback: Oynatma
@@ -4062,6 +4096,7 @@ settings.option.advanced.mavericksLcd.style: Stil
 settings.option.advanced.mavericksLcd.style.glass: Cam
 settings.option.advanced.mediaArtwork: Medya Öğesi Resmi
 settings.option.advanced.mediaArtwork.controls: Albüm Resmi Öne Çıkanları ve Yüksek Çözünürlüklü Görseller
+settings.option.advanced.mediaArtwork.controlsV2: Kapak Vurgulama ve Kademeli Görünme
 settings.option.advanced.mediaArtwork.description: Uygulama genelindeki ızgaralarda, listelerde ve satırlarda bulunan albüm resimleri.
 settings.option.advanced.notificationStyle: Bildirim Stili
 settings.option.advanced.performance: Performans
@@ -4091,8 +4126,11 @@ settings.option.advanced.settingsTakeout: Ayarları Dışa / İçe Aktar
 settings.option.advanced.settingsTakeout.description: Tercihlerinizi bir dosyaya yedekleyin veya başka bir cihazda geri yükleyin. Hesap giriş bilgileri asla dahil edilmez.
 settings.option.advanced.simpleArtworkBg: Basit Albüm Resmi Arka Planı
 settings.option.advanced.simpleArtworkBg.brightness: Parlaklık %
+settings.option.advanced.simpleArtworkBg.brightnessV2: Parlaklık
 settings.option.advanced.simpleArtworkBg.contrast: Kontrast %
+settings.option.advanced.simpleArtworkBg.contrastV2: Kontrast
 settings.option.advanced.simpleArtworkBg.saturate: Doygunluk %
+settings.option.advanced.simpleArtworkBg.saturateV2: Doygunluk
 settings.option.advanced.simpleArtworkBg.useMask: Alt Maskeyi Kullan
 settings.option.advanced.sonoma: Sonoma
 settings.option.advanced.sonoma.lyricArc: Kavisli Sözler
@@ -4398,6 +4436,8 @@ settings.option.general.onStartup: Başlangıçta
 settings.option.general.onStartup.openStartup: Başlangıç Sayfasını Aç
 settings.option.general.onStartup.resume: Son Oturumu Sürdür
 settings.option.general.pagination: Sayfa başına gösterilecek öge sayısı
+settings.option.general.preventDisplaySleep: Çalarken ekranı açık tut
+settings.option.general.preventSystemSleep: Çalarken bilgisayarı uyanık tut
 settings.option.general.privacy: Gizlilik
 settings.option.general.promptOnClose: Müzik çalarken kapatırken sor
 settings.option.general.queue: Sıra
@@ -4424,6 +4464,7 @@ settings.option.general.sleepTimerSettings: Uyku Zamanlayıcısı Ayarları
 settings.option.general.startupPage: Başlangıç Sayfası
 settings.option.general.startupPage.blank: Boş Sayfa
 settings.option.general.startupPage.description: Cider'ı açtığınızda görüntülenecek sayfayı seçin.
+settings.option.general.startupPage.descriptionV2: Cider'ın yeni sekmelerde ve Başlangıçta Başlangıç Sayfasını Aç seçiliyken açılan sayfa.
 settings.option.general.startupPage.newTab: Yeni Sekme Sayfası
 settings.option.general.startupPage.personalHome: Kişisel Ana Sayfa
 settings.option.general.themeUpdateNotification: Tema güncellemelerini otomatik olarak denetle
@@ -4433,6 +4474,7 @@ settings.option.general.translators: Çevirmenler
 settings.option.general.translators.description: Cider'ın çevrilmesine yardımcı olan bu katkıda bulunanlara teşekkür ederiz. GitHub profilini açmak için bir isme tıklayın.
 settings.option.general.useSmartQueueByDefault: Varsayılan olarak Akıllı Sıra'yı kullan
 settings.option.general.useSmartQueueByDefault.description: Kuyruk oluşturulduğunda Akıllı Kuyruk sıralamasını otomatik olarak uygula. Automix gerektirir.
+settings.option.general.useSmartQueueByDefault.needsAutomix: Automix, Ses bölümünde kapalı olduğundan Akıllı Kuyruk hiçbir şeyi yeniden sıralamaz.
 settings.option.general.warnBeforeQueueOverride: Sıra değiştirilmeden önce uyar
 settings.option.hide: Gizle
 settings.option.left: Sol
@@ -4519,6 +4561,9 @@ settings.option.performance.enableMediaItemInspect.description: Performansı haf
 settings.option.performance.gameMode: Oyun Modu
 settings.option.performance.gameMode.description: Görsel efektleri azaltır ve daha düşük CPU kullanımı için Windows verimlilik modunu etkinleştirebilir.
 settings.option.performance.gameMode.disable: Oyun Modunu Devre Dışı Bırak
+settings.option.performance.graphicsAcceleration: Grafik hızlandırma
+settings.option.performance.graphicsAcceleration.autoOff: Bu bilgisayar grafikleri yazılımla çizdiği için kapalı.
+settings.option.performance.graphicsAcceleration.description: Otomatik, grafikleri yazılımla çizen sanal makinede bunu kapatır. Değişiklikler Cider bir sonraki açılışta uygulanır.
 settings.option.performance.host: Sunucu
 settings.option.performance.immersiveRenderer: Sarmalayıcı Oluşturucu
 settings.option.performance.immersiveRenderer.description: Hareketli arka plan düzgün çalışmazsa veya çok fazla GPU kullanırsa WebGPU yerine Canvas 2D kullanın.
@@ -4534,6 +4579,8 @@ settings.option.performance.preloadSidebarPages: Kenar çubuğu sayfalarını ö
 settings.option.performance.preloadSidebarPages.description: Kenar çubuğu sayfalarını siz açmadan önce yükler. 'Üzerine gelindiğinde' seçeneği, imleç bir kenar çubuğu öğesinin üzerinde durduğunda başlar. 'Boştayken' seçeneği ise başlangıçtan sonra Şimdi Dinle, Göz At ve Radyo sayfalarını da yükler ve daha önce açtığınız arşiv listelerini yeniler.
 settings.option.performance.preloadSidebarPages.idle: Boştayken
 settings.option.performance.preloadSidebarPages.intent: Üzerine gelindiğinde
+settings.option.performance.reduceEffects: Görsel efektleri azalt
+settings.option.performance.reduceEffects.description: Uygulamanın daha az çizim yapması için bulanıklık, cam, parıltı ve animasyonlu arka planları kapatır. Çalışan bir ekran kartı yoksa ya da sistem daha az saydamlık istiyorsa Otomatik bunu açar.
 settings.option.performance.renderer.auto: Otomatik (Desteklendiğinde WebGPU)
 settings.option.performance.renderer.canvas: Canvas 2D
 settings.option.performance.renderer.webgpu: WebGPU
@@ -4714,6 +4761,7 @@ settings.option.visual.immersive.useBackgroundBpm: BPM'e Göre Arka Plan Hızı
 settings.option.visual.immersiveBackground.blank: Boş
 settings.option.visual.immersiveBackground.customImage: Özel Görsel
 settings.option.visual.immersiveBackground.customImageMixed: Özel Görsel (Karışık)
+settings.option.visual.immersiveBackground.gradientMesh: Gradyan ağı
 settings.option.visual.immersiveBackground.simpleArtwork: Sade Albüm Resmi
 settings.option.visual.immersiveBackground.simpleColor: Sade Renk
 settings.option.visual.immersiveBgSettings: Sarmal Arka Plan Ayarları
@@ -4753,6 +4801,7 @@ settings.option.visual.liquidGlassPlayer: Likit Cam Oynatıcı Çubuğu
 settings.option.visual.liquidGlassPlayer.description: Şu an çalınan oynatıcı çubuğu için likit cam yüzeyini kullanın. Düz ve mat bir panel için kapatın (işlemesi de daha hafiftir).
 settings.option.visual.liquidGlassScrollPerf: Kaydırırken Hafif Cam
 settings.option.visual.liquidGlassScrollPerf.description: Kaydırma sırasında akışkan cam kırılmasını sade bir bulanıklığa dönüştürür, durduğunuzda ise efekti yumuşak bir şekilde geri getirir. Sabit durumdayken değişiklik yapmadan, sistemi zorlayan bilgisayarlarda kaydırma takılmalarını azaltır. Oyun Modu'nda her zaman etkindir.
+settings.option.visual.liquidGlassScrollPerf.descriptionV2: Kaydırma sırasında sıvı cam kırılmasını düz bir bulanıklığa indirir, durduğunuzda yavaşça geri getirir. Yoğun sistemlerde kaydırma takılmalarını azaltır; durağan halde değişiklik yoktur.
 settings.option.visual.mainMenuPosition: Ana Menü Konumu
 settings.option.visual.matchPageToArtwork: Sayfayı kapak resmine uyarla
 settings.option.visual.matchPageToArtwork.description: Albüm ve çalma listesi sayfalarını, açık ve koyu modda kapak resminin renkleriyle boyar.
@@ -4933,6 +4982,7 @@ settings.prompt.visual.plugin.github.success: Eklenti başarıyla yüklendi, Cid
 settings.prompt.visual.plugin.github.URL: Yüklemek istediğiniz eklentinin URL'sini girin
 settings.prompt.visual.theme.github.URL: Yüklemek istediğiniz temanın URL'sini girin
 settings.prompt.visual.theme.uninstallTheme: "{{theme}} temasını kaldırmak istediğinize emin misiniz?"
+settings.reloadPrompt.message: Değişiklikleri uygulamak için uygulamanın yenilenmesi gerekiyor. Devam etmek istiyor musunuz?
 settings.requiresNewerClient: Daha yeni bir Cider istemcisi gerektirir.
 settings.resetCider.category.appleMusic: Apple Music oturumunu kapat
 settings.resetCider.category.appleMusic.desc: Apple Music hesabını bu cihazdan kaldırır
@@ -4976,6 +5026,7 @@ settings.smartPlaylists.section.maintenance: Bakım
 settings.smartPlaylists.section.maintenance.description: Tüm kuralları şimdi çalışmaya zorlayın veya arşivinizin önbelleğe alınmış kopyasını temizleyin.
 settings.smartPlaylists.section.rules: Kurallar
 settings.smartPlaylists.section.rules.description: Cider'ın yerleşik çalma listesi kurallarını uygulayıp uygulamayacağı ve bunları ne sıklıkla yeniden değerlendireceği.
+settings.smartPlaylists.section.rules.descriptionV2: Cider'ın gömülü çalma listesi kurallarını uygulayıp uygulamayacağı. Güç Kullanımı bölümündeki Arka Plan Yenileme Süresi ile yeniden çalışırlar.
 settings.sweetener.useSystemAccentColor: Sistem Vurgu Rengini Kullan
 settings.takeout.chooseFile: Dosya seç…
 settings.takeout.error.badVersion: Bu dosyada sürüm bilgisi eksik.
@@ -5006,6 +5057,7 @@ settings.title: Ayarlar
 settings.troubleshooting.bgDiagnostics: Arka Plan Oynatma Tanılaması
 settings.troubleshooting.bgDiagnostics.desc: Pencere simge durumuna küçültüldüğünde veya odakta olmadığında oynatma sorunlarını tanılamak için ekstra günlük kırıntıları — oynatıcıyı kimin duraklattığı, zamanlayıcı yetersizliği ve işletim sistemi askıya alma durumları. Bir arka plan oynatma hatası bildirirken etkinleştirin.
 settings.troubleshooting.desc: Günlük dosyaları ve MKLite hata ayıklama günlüğü.
+settings.troubleshooting.descV2: MKLite ve arka plan oynatma günlüğü.
 settings.troubleshooting.hevcWorkaround: HEVC Geçici Çözümü
 settings.troubleshooting.hevcWorkaround.desc: Görsel kaymayı telafi etmek için bir filtre uygulayarak, 10 bit SDR HEVC oynatımında sorun yaşayan bazı GPU'lardaki WebView2 hatası için geçici çözüm.
 settings.troubleshooting.impressionReporting: PlayActivity Gösterim Raporlaması
@@ -5029,6 +5081,8 @@ settings.updates.action.check: Güncellemeleri Denetle
 settings.updates.action.install: Güncellemeyi Yükle
 settings.updates.action.restart: Cider'ı Yeniden Başlat
 settings.updates.action.retry: Tekrar Dene
+settings.updates.autoCheck: Güncellemeleri otomatik denetle
+settings.updates.autoCheck.description: Kapalıyken Cider yalnızca bu sayfayı açtığınızda denetleme yapar.
 settings.updates.build: Yapı
 settings.updates.channel: Kanal
 settings.updates.codename: Kod Adı
@@ -5712,6 +5766,8 @@ updates.installUnavailable.body: Bu sürüm hesabınız için indirilebilir değ
 updates.lateststable.title: En Son Kararlı Sürüm
 updates.loadFailed.body: Bağlantınızı kontrol edin ve tekrar deneyin.
 updates.loadFailed.title: Cider kullanılabilir sürümleri yükleyemedi
+updates.newVersion.body: Cider'ın yeni bir sürümü mevcut. İndirmek için Güncellemeler'e gitmek ister misiniz?
+updates.newVersion.title: Yeni sürüm mevcut
 updates.notifyForBranch.tooltip: Bu dal için bildirim al
 updates.otherVersions.title: Diğer Sürümler
 updates.ptb.name: Genel Test Dalı
