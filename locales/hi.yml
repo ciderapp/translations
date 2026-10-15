@@ -434,6 +434,8 @@ assistant.sid.chat.suggestQueuePlaylist: मेरी कतार से प्
 assistant.sid.chat.suggestTidyQueue: मेरी कतार व्यवस्थित करें
 assistant.sid.chat.tooBig: यह मेरे लिए एक साथ पढ़ने के लिए बहुत ज़्यादा है। कोई छोटा अनुरोध आज़माएँ।
 assistant.sid.chat.workingQueue: आपकी कतार पर काम हो रहा है
+assistant.sid.engine.apple: Apple Intelligence
+assistant.sid.engine.gemma: Gemma
 assistant.sid.entry.edit: Sid के साथ संपादित करें
 assistant.sid.entry.editDetail: किसी बदलाव का वर्णन करें और पहले उसकी समीक्षा करें
 assistant.sid.entry.start: Sid के साथ शुरू करें
@@ -449,9 +451,12 @@ assistant.sid.failure.modelMissing: Gemma की फ़ाइलें गाय
 assistant.sid.failure.network: डाउनलोड रुक गया। अपना कनेक्शन जाँचें और फिर कोशिश करें।
 assistant.sid.failure.notReady: Gemma अभी तैयार नहीं है।
 assistant.sid.failure.outOfMemory: आपके कंप्यूटर को सुचारु रखने के लिए Sid ने Gemma को रोक दिया। इसे जितनी ग्राफ़िक्स मेमोरी चाहिए थी, उतनी उपलब्ध नहीं थी।
+assistant.sid.failure.stoppedUnexpectedly: Sid अचानक बंद हो गया। फिर से कोशिश करें।
 assistant.sid.failure.storageFull: डाउनलोड पूरा करने के लिए पर्याप्त खाली जगह नहीं है।
 assistant.sid.failure.timeout: Gemma को जवाब देने में बहुत समय लगा। फिर कोशिश करें।
+assistant.sid.failure.tookTooLong: Sid को जवाब देने में बहुत समय लगा। फिर से कोशिश करें।
 assistant.sid.failure.tryAgain: फिर कोशिश करें
+assistant.sid.failure.unready: Sid अभी तैयार नहीं है।
 assistant.sid.failure.watchLost: ग्राफ़िक्स मेमोरी का ट्रैक खो जाने के कारण Sid रुक गया। फिर कोशिश करें।
 assistant.sid.gate.description: Sid के पूरी तरह तैयार होने से पहले इसे आज़माएँ। कुछ हिस्से अभी काम नहीं करते।
 assistant.sid.gate.name: Sid, प्लेलिस्ट सहायक
@@ -610,6 +615,8 @@ assistant.sid.settings.checkGood: Gemma की फ़ाइलें ठीक �
 assistant.sid.settings.downloadAgain: फिर से डाउनलोड करें
 assistant.sid.settings.downloadedSize: डाउनलोड हुआ · {size}
 assistant.sid.settings.duringSet: सेट के दौरान
+assistant.sid.settings.engine: Sid किसके साथ सोचता है
+assistant.sid.settings.engineDetail: Gemma का उपयोग करें, या अपने Mac में बने Apple Intelligence का उपयोग करें
 assistant.sid.settings.found: Sid ने आपके लिए ढूँढे गए गाने
 assistant.sid.settings.fresh: नई शुरुआत करें
 assistant.sid.settings.freshDetail: किसी मूड, पल या कुछ कलाकारों से पूरी प्लेलिस्ट बनाएँ
@@ -630,6 +637,7 @@ assistant.sid.settings.machine: यह कंप्यूटर
 assistant.sid.settings.modelOptions: "{model} विकल्प"
 assistant.sid.settings.modelRow: "{style} · {name}"
 assistant.sid.settings.nav: Sid
+assistant.sid.settings.needsEngine: "{engine} आवश्यक है"
 assistant.sid.settings.needsGemma: Gemma की ज़रूरत है
 assistant.sid.settings.nods: बीट पर सिर हिलाएँ
 assistant.sid.settings.nodsDetail: Sid गाने की हर बीट पर सिर हिलाता है
@@ -642,6 +650,7 @@ assistant.sid.settings.partlySize: आंशिक रूप से डाउन
 assistant.sid.settings.position: स्थिति
 assistant.sid.settings.positionDetail: आर्टवर्क पर Sid कहाँ बैठता है
 assistant.sid.settings.privacyChat: "आप जो टाइप करते हैं वह इसी कंप्यूटर पर रहता है: Sid यहीं Gemma के साथ सोचता है। संगीत खोजने के लिए Sid खोज शब्द Apple Music को भेजता है, और जब आप कहें, तो आपके Apple Music खाते से आपकी प्लेलिस्ट, हाल के प्ले और Apple Music Replay पढ़ता है। आप Apply दबाने तक कुछ नहीं बदलता।"
+assistant.sid.settings.privacyEngine: "आप जो टाइप करते हैं वह इसी कंप्यूटर पर रहता है: Sid यहीं {engine} के साथ सोचता है। संगीत खोजने के लिए, Sid खोज शब्द Apple Music को भेजता है, और जब आप कहते हैं, तो आपके Apple Music खाते से आपकी प्लेलिस्ट, हाल के प्ले और Apple Music Replay पढ़ता है। आप Apply दबाने तक कुछ भी नहीं बदलता।"
 assistant.sid.settings.reads: पूरी प्लेलिस्ट {seconds} सेकंड में पढ़ता है (कम से कम {floor} सेकंड चाहिए)
 assistant.sid.settings.regular: सामान्य
 assistant.sid.settings.remove: हटाएँ
@@ -672,8 +681,10 @@ assistant.sid.settings.tidyDetail: दोहराव हटाएँ, लंब
 assistant.sid.settings.together: अब तक कुल मिलाकर
 assistant.sid.settings.top: ऊपर
 assistant.sid.settings.unavailableNote: Sid के साथ प्लेलिस्ट संपादित करने और बनाने के लिए ऐसे कंप्यूटर पर Gemma चाहिए जो उसे चला सके। Sid का सेट यहाँ अब भी काम करता है।
+assistant.sid.settings.unavailableNoteEngine: Sid के साथ संपादन और प्लेलिस्ट बनाने के लिए ऐसे कंप्यूटर पर {engine} चाहिए जो उसे चला सके। Sid का सेट यहाँ भी काम करता है।
 assistant.sid.settings.unknownGpu: अज्ञात ग्राफ़िक्स कार्ड
 assistant.sid.settings.where: Sid कहाँ मिलेगा
+assistant.sid.settings.withoutEngine: "{engine} के बिना, Sid गानों को उनकी टेम्पो, की और ऊर्जा से चुनता है, और आपके अनुरोधों को जैसे आप टाइप करते हैं वैसे ही Apple Music में खोजता है।"
 assistant.sid.settings.withoutGemma: Gemma के बिना, Sid गानों को उनके टेम्पो, की और एनर्जी से चुनता है, और आपके अनुरोध Apple Music पर वैसे ही खोजता है जैसे आप टाइप करते हैं।
 assistant.sid.settings.writes: प्रति सेकंड {rate} टोकन लिखता है (कम से कम {floor} चाहिए)
 assistant.sid.setView.confirmMany: Sid इस गाने के बाद कतार में लगे {count} गाने हटा देगा और तय करेगा कि आगे क्या बजेगा।
@@ -704,6 +715,10 @@ assistant.sid.source.artist: एक कलाकार के टॉप गा�
 assistant.sid.source.catalog: Apple Music
 assistant.sid.source.library: आपकी लाइब्रेरी
 assistant.sid.source.playlist: प्लेलिस्ट में
+assistant.sid.unavailable.appleFailed: Sid Apple Intelligence तक नहीं पहुँच सका।
+assistant.sid.unavailable.appleNotEnabled: Sid के साथ उपयोग के लिए System Settings में Apple Intelligence चालू करें।
+assistant.sid.unavailable.appleNotReady: Apple Intelligence अभी तैयार हो रहा है। कुछ देर बाद फिर से कोशिश करें।
+assistant.sid.unavailable.appleUnsupported: यह कंप्यूटर पर Apple Intelligence उपलब्ध नहीं है।
 assistant.sid.unavailable.belowFloor: इस कंप्यूटर पर Gemma बहुत धीमा चला, इसलिए Sid इसका उपयोग नहीं कर सकता।
 assistant.sid.unavailable.counterMismatch: सुरक्षा जाँच विफल होने पर Sid ने Gemma बंद कर दिया। Cider या आपके ग्राफ़िक्स ड्राइवर के अपडेट होने के बाद यह फिर से कोशिश करेगा।
 assistant.sid.unavailable.gpuLimits: इस ग्राफ़िक्स कार्ड में Gemma के लिए ज़रूरी जगह नहीं है।
