@@ -508,6 +508,8 @@ assistant.sid.chat.suggestQueuePlaylist: キューからプレイリストを作
 assistant.sid.chat.suggestTidyQueue: キューを整理
 assistant.sid.chat.tooBig: 一度に読み取るには量が多すぎます。もう少し短いリクエストをお試しください。
 assistant.sid.chat.workingQueue: キューを処理中
+assistant.sid.engine.apple: Apple Intelligence
+assistant.sid.engine.gemma: Gemma
 assistant.sid.entry.edit: Sidで編集
 assistant.sid.entry.editDetail: 変更内容を入力して、先に確認
 assistant.sid.entry.start: Sidで始める
@@ -523,9 +525,12 @@ assistant.sid.failure.modelMissing: Gemmaのファイルが見つかりません
 assistant.sid.failure.network: ダウンロードが中断されました。接続を確認してもう一度お試しください。
 assistant.sid.failure.notReady: Gemmaはまだ準備できていません。
 assistant.sid.failure.outOfMemory: コンピュータの応答性を保つため、Sidは Gemma を停止しました。必要なグラフィックスメモリが不足していました。
+assistant.sid.failure.stoppedUnexpectedly: Sidが予期せず停止しました。もう一度お試しください。
 assistant.sid.failure.storageFull: ダウンロードを完了するための空き容量が足りません。
 assistant.sid.failure.timeout: Gemmaの応答に時間がかかりすぎました。もう一度お試しください。
+assistant.sid.failure.tookTooLong: Sidの応答に時間がかかりすぎました。もう一度お試しください。
 assistant.sid.failure.tryAgain: 再試行
+assistant.sid.failure.unready: Sidはまだ準備ができていません。
 assistant.sid.failure.watchLost: グラフィックスメモリの管理を見失ったため、Sidが停止しました。もう一度お試しください。
 assistant.sid.gate.description: まだ開発中のSidをお試しいただけます。一部の機能はまだ動作しません。
 assistant.sid.gate.name: Sid、プレイリストアシスタント
@@ -684,6 +689,8 @@ assistant.sid.settings.checkGood: Gemma のファイルは正常です
 assistant.sid.settings.downloadAgain: 再ダウンロード
 assistant.sid.settings.downloadedSize: ダウンロード済み · {size}
 assistant.sid.settings.duringSet: セット再生中
+assistant.sid.settings.engine: Sidの思考エンジン
+assistant.sid.settings.engineDetail: Gemma、またはMacに搭載されたApple Intelligenceを使用
 assistant.sid.settings.found: Sid が見つけた曲
 assistant.sid.settings.fresh: 新規作成
 assistant.sid.settings.freshDetail: ムード、シーン、または数名のアーティストから、プレイリスト全体を作成します
@@ -704,6 +711,7 @@ assistant.sid.settings.machine: このコンピュータ
 assistant.sid.settings.modelOptions: "{model}のオプション"
 assistant.sid.settings.modelRow: "{style} · {name}"
 assistant.sid.settings.nav: Sid
+assistant.sid.settings.needsEngine: "{engine}が必要"
 assistant.sid.settings.needsGemma: Gemmaが必要
 assistant.sid.settings.nods: ビートに合わせてうなずく
 assistant.sid.settings.nodsDetail: Sidが曲の each ビートに合わせてうなずきます
@@ -716,6 +724,7 @@ assistant.sid.settings.partlySize: 一部ダウンロード済み · {size}
 assistant.sid.settings.position: 位置
 assistant.sid.settings.positionDetail: Sidがアートワーク上で表示される位置
 assistant.sid.settings.privacyChat: 入力した内容はこのコンピュータに残ります。Sidはここでgemmaを使って考えます。音楽を探すために、Sidは検索語をApple Musicに送信し、お願いされた場合はApple Musicアカウントからプレイリスト、最近の再生履歴、Apple Music Replayを読み取ります。「適用」を押すまで何も変わりません。
+assistant.sid.settings.privacyEngine: 入力した内容はこのコンピュータに残ります。Sidはここで{engine}を使って考えます。音楽を探すために、Sidは検索語をApple Musicに送信し、お願いした場合にはApple Musicアカウントからプレイリスト、最近再生した曲、Apple Music Replayを読み取ります。「適用」を押すまで何も変わりません。
 assistant.sid.settings.reads: プレイリスト全体の読み取りに {seconds} 秒かかります（{floor} 秒未満が必要）
 assistant.sid.settings.regular: 標準
 assistant.sid.settings.remove: 削除
@@ -746,8 +755,10 @@ assistant.sid.settings.tidyDetail: 重複を取り除く、長さに合わせて
 assistant.sid.settings.together: これまでの合計
 assistant.sid.settings.top: 上
 assistant.sid.settings.unavailableNote: Sidでプレイリストを編集・作成するには、実行できるコンピュータでGemmaが必要です。Sidのセットはここでも引き続き使えます。
+assistant.sid.settings.unavailableNoteEngine: Sidでの編集やプレイリスト作成には、{engine}を実行できるコンピュータが必要です。Sidのセットはここでも引き続き機能します。
 assistant.sid.settings.unknownGpu: 不明なグラフィックカード
 assistant.sid.settings.where: Sidの場所
+assistant.sid.settings.withoutEngine: "{engine}がない場合、Sidはテンポ、キー、エナジーで曲を選び、入力されたリクエストをそのままApple Musicで検索します。"
 assistant.sid.settings.withoutGemma: Gemmaがなくても、Sidはテンポ、キー、エネルギーで曲を選び、入力されたリクエストをそのままApple Musicで検索します。
 assistant.sid.settings.writes: 1秒あたり{rate}トークンを書き込み（最低{floor}が必要）
 assistant.sid.setView.confirmMany: Sidは、この曲の後に予約されている{count}曲を消去し、次に再生する曲を選びます。
@@ -778,6 +789,10 @@ assistant.sid.source.artist: アーティストのトップソング
 assistant.sid.source.catalog: Apple Music
 assistant.sid.source.library: ライブラリ
 assistant.sid.source.playlist: プレイリスト内
+assistant.sid.unavailable.appleFailed: Sidは Apple Intelligenceに接続できませんでした。
+assistant.sid.unavailable.appleNotEnabled: Sidで使うには、システム設定でApple Intelligenceをオンにしてください。
+assistant.sid.unavailable.appleNotReady: Apple Intelligenceはまだ準備中です。しばらくしてからもう一度お試しください。
+assistant.sid.unavailable.appleUnsupported: このコンピュータではApple Intelligenceをご利用いただけません。
 assistant.sid.unavailable.belowFloor: このコンピュータではGemmaの処理速度が遅すぎるため、Sidは使用できません。
 assistant.sid.unavailable.counterMismatch: 安全確認に失敗したため、SidはGemmaをオフにしました。Ciderまたはグラフィックスドライバーの更新後に再試行します。
 assistant.sid.unavailable.gpuLimits: このグラフィックカードには、Gemmaに必要な容量がありません。
