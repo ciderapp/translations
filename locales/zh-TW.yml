@@ -656,6 +656,8 @@ assistant.sid.chat.suggestQueuePlaylist: 用我的佇列建立播放清單
 assistant.sid.chat.suggestTidyQueue: 整理我的佇列
 assistant.sid.chat.tooBig: 內容太多，我無法一次讀取。請嘗試較短的要求。
 assistant.sid.chat.workingQueue: 正在處理你的佇列
+assistant.sid.engine.apple: Apple Intelligence
+assistant.sid.engine.gemma: Gemma
 assistant.sid.entry.edit: 與 Sid 一起編輯
 assistant.sid.entry.editDetail: 描述變更並先行檢視
 assistant.sid.entry.start: 與 Sid 開始
@@ -671,9 +673,12 @@ assistant.sid.failure.modelMissing: Gemma 的檔案遺失，請重新取得以�
 assistant.sid.failure.network: 下載已中斷，請檢查連線後再試一次。
 assistant.sid.failure.notReady: Gemma 尚未準備就緒。
 assistant.sid.failure.outOfMemory: 為了讓電腦保持順暢，Sid 已停止 Gemma。它需要的顯示記憶體超過可用量。
+assistant.sid.failure.stoppedUnexpectedly: Sid 意外停止運作，請再試一次。
 assistant.sid.failure.storageFull: 可用空間不足，無法完成下載。
 assistant.sid.failure.timeout: Gemma 回應時間過長，請再試一次。
+assistant.sid.failure.tookTooLong: Sid 回應時間過長，請再試一次。
 assistant.sid.failure.tryAgain: 再試一次
+assistant.sid.failure.unready: Sid 尚未準備就緒。
 assistant.sid.failure.watchLost: Sid 因失去顯示記憶體的追蹤而停止，請再試一次。
 assistant.sid.gate.description: 搶先體驗尚未完成的 Sid。部分功能目前尚無法使用。
 assistant.sid.gate.name: Sid，播放清單小幫手
@@ -832,6 +837,8 @@ assistant.sid.settings.checkGood: Gemma 的檔案看起來正常
 assistant.sid.settings.downloadAgain: 重新下載
 assistant.sid.settings.downloadedSize: 已下載 · {size}
 assistant.sid.settings.duringSet: 選曲期間
+assistant.sid.settings.engine: Sid 的思考引擎
+assistant.sid.settings.engineDetail: 使用 Gemma，或使用內建於 Mac 的 Apple Intelligence
 assistant.sid.settings.found: Sid 為你找到的歌曲
 assistant.sid.settings.fresh: 從頭開始
 assistant.sid.settings.freshDetail: 依據心情、情境或幾位藝人建立完整的播放清單
@@ -852,6 +859,7 @@ assistant.sid.settings.machine: 這台電腦
 assistant.sid.settings.modelOptions: "{model} 選項"
 assistant.sid.settings.modelRow: "{style} · {name}"
 assistant.sid.settings.nav: Sid
+assistant.sid.settings.needsEngine: 需要 {engine}
 assistant.sid.settings.needsGemma: 需要 Gemma
 assistant.sid.settings.nods: 隨節拍點頭
 assistant.sid.settings.nodsDetail: Sid 會隨歌曲的每個節拍點頭
@@ -864,6 +872,7 @@ assistant.sid.settings.partlySize: 部分下載 · {size}
 assistant.sid.settings.position: 位置
 assistant.sid.settings.positionDetail: Sid 在封面上的位置
 assistant.sid.settings.privacyChat: 你輸入的內容會保留在這台電腦上：Sid 會在此使用 Gemma 進行思考。為了尋找音樂，Sid 會將搜尋關鍵字傳送至 Apple Music；當你提出要求時，也會從你的 Apple Music 帳號讀取播放列表、近期播放紀錄和 Apple Music Replay。在你按下「套用」之前，不會有任何變更。
+assistant.sid.settings.privacyEngine: 你輸入的內容會保留在這台電腦上：Sid 會在這裡使用 {engine} 進行思考。為了尋找音樂，Sid 會將搜尋關鍵字傳送至 Apple Music；當你提出要求時，也會從你的 Apple Music 帳號讀取播放清單、最近播放項目和 Apple Music Replay。在你按下「套用」之前，不會有任何變更。
 assistant.sid.settings.reads: 讀取完整播放列表需 {seconds} 秒（需低於 {floor} 秒）
 assistant.sid.settings.regular: 一般
 assistant.sid.settings.remove: 移除
@@ -894,8 +903,10 @@ assistant.sid.settings.tidyDetail: 移除重複項目、依長度修剪，或保
 assistant.sid.settings.together: 目前總計
 assistant.sid.settings.top: 頂部
 assistant.sid.settings.unavailableNote: 要使用 Sid 編輯與建立播放列表，需要在能夠執行的電腦上使用 Gemma。Sid 的組曲功能在這裡仍可使用。
+assistant.sid.settings.unavailableNoteEngine: 若要使用 Sid 編輯及建立播放清單，需要在能執行 {engine} 的電腦上使用。Sid 的設定功能在此仍可使用。
 assistant.sid.settings.unknownGpu: 未知的顯示卡
 assistant.sid.settings.where: 在哪裡找到 Sid
+assistant.sid.settings.withoutEngine: 沒有 {engine} 時，Sid 會依據歌曲的節奏、調性和能量挑選歌曲，並依你輸入的內容直接搜尋 Apple Music。
 assistant.sid.settings.withoutGemma: 在沒有 Gemma 的情況下，Sid 會依據歌曲的節奏、調性與能量挑選歌曲，並依你輸入的內容原樣搜尋 Apple Music 上的點歌要求。
 assistant.sid.settings.writes: 每秒寫入 {rate} 個 token（需要 {floor}）
 assistant.sid.setView.confirmMany: Sid 將清除之後排定的 {count} 首歌曲，並挑選接下來播放的內容。
@@ -926,6 +937,10 @@ assistant.sid.source.artist: 某位藝人的熱門歌曲
 assistant.sid.source.catalog: Apple Music
 assistant.sid.source.library: 你的資料庫
 assistant.sid.source.playlist: 在播放清單中
+assistant.sid.unavailable.appleFailed: Sid 無法連線至 Apple Intelligence。
+assistant.sid.unavailable.appleNotEnabled: 若要搭配 Sid 使用，請在「系統設定」中開啟 Apple Intelligence。
+assistant.sid.unavailable.appleNotReady: Apple Intelligence 仍在準備中，請稍後再試。
+assistant.sid.unavailable.appleUnsupported: 這台電腦無法使用 Apple Intelligence。
 assistant.sid.unavailable.belowFloor: Gemma 在這台電腦上運行太慢，Sid 無法使用。
 assistant.sid.unavailable.counterMismatch: 安全檢查失敗後，Sid 已關閉 Gemma。待 Cider 或你的顯示卡驅動程式更新後，將再次嘗試。
 assistant.sid.unavailable.gpuLimits: 這張顯示卡的空間不足以執行 Gemma。
