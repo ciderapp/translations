@@ -254,6 +254,9 @@ album.track.unavailable.unreleased: Item ini belum dirilis.
 album.track.unavailable.zeroDuration: Durasi item 0 detik, kemungkinan belum dirilis.
 album.upcoming.badge: Album Mendatang
 app.name: Cider
+app.ptbDisclaimer.confirm: Saya mengerti
+app.ptbDisclaimer.message: Ini adalah build Public Testing Branch. Build ini tidak dijamin stabil dan mungkin mengandung bug. Jangan laporkan bug / masalah yang ditemukan di build ini. Jika Anda menemukan masalah, beralihlah ke build stabil sebelum melaporkannya.
+app.ptbDisclaimer.title: Disclaimer Public Testing Branch
 app.unsupportedClient.message: Klien ini tidak didukung. Pastikan Anda menggunakan versi terbaru Cider.
 app.unsupportedClient.title: Klien Tidak Didukung
 assistant.sid.agent.added: Menambahkan {count} lagu
@@ -726,10 +729,16 @@ audio.device.default: Perangkat Default
 audio.device.noneFound: Tidak ada perangkat output yang ditemukan
 audio.device.placeholder: Perangkat {{id}}
 audiolab.waiting: Menunggu Lagu Dimasukkan ke Antrean
+auth.error.devToken: Tidak dapat terhubung ke Apple Music
+auth.error.generic: Tidak dapat menyelesaikan proses masuk. Periksa koneksi Anda dan coba lagi.
+auth.error.invalidToken: Menerima token yang tidak valid
 auth.error.popupBlocked: Popup diblokir
+auth.error.timeout: Proses masuk melewati batas waktu
+auth.error.unavailable: Apple ID ini tidak dapat menggunakan Apple Music di Cider. Cider memerlukan langganan Apple Music berbayar yang aktif.
 auth.error.windowFailed: Jendela masuk gagal dibuka
 auth.mutExpired.confirm: Masuk
 auth.mutExpired.message: Sesi Apple Music Anda telah kedaluwarsa. Masuk kembali untuk melanjutkan.
+auth.signedIn: Sudah masuk
 auth.signInRetry.confirm: Coba lagi
 auth.signInRetry.message: Jendela masuk tidak dapat dibuka. Coba lagi?
 bugReport.addImage: Tambah gambar
@@ -2843,6 +2852,7 @@ oobe.amupsell.title: Sebelum kita mulai
 oobe.appearance.accentHint: Digunakan untuk tombol, sorotan, dan progres di seluruh aplikasi. Coba satu untuk melihat pratinjau langsung.
 oobe.appearance.subtitle: Pilih skema warna dan warna aksen. Anda dapat mengubahnya kapan saja di Pengaturan → Visual.
 oobe.appearance.title: Jadikan Cider milik Anda
+oobe.appleNotice: "Perhatian: Apple Music adalah merek dagang Apple Inc. Cider adalah klien pihak ketiga untuk Apple Music dan tidak berafiliasi dengan Apple Inc."
 oobe.audio.advancedFunctionality: ""
 oobe.audio.subtitle: ""
 oobe.audio.text: |-
@@ -2881,19 +2891,31 @@ oobe.intro.subtitle: ""
 oobe.intro.text: Mari atur beberapa hal agar Anda dapat menggunakan Cider sesuai keinginan Anda. Anda selalu dapat mengubah pengaturan ini nanti.
 oobe.intro.title: Selamat Datang di Cider
 oobe.layout.subtitle: Pilih tata letak yang sesuai dengan gaya Anda
+oobe.login.alreadySignedIn: Anda sudah masuk
 oobe.login.skip: Lewati untuk sekarang
 oobe.login.skipTooltip: Anda hanya dapat menggunakan aplikasi dalam mode pratinjau
 oobe.login.subtitle: Masuk dengan akun Apple Music Anda untuk mulai menikmati musik Anda
+oobe.login.terms: Dengan melanjutkan, Anda menyetujui Ketentuan Layanan dan Kebijakan Privasi
 oobe.login.title: Satu Langkah Terakhir
 oobe.login.userToken: Masuk dengan token pengguna
+oobe.music.mute: Bisukan musik pengaturan
+oobe.music.unmute: Aktifkan suara musik pengaturan
 oobe.next: Berikutnya
 oobe.no: Tidak
+oobe.performance.full.descriptionV2: Efek visual tetap aktif. Cider hanya menguranginya secara otomatis jika komputer Anda tidak mampu menampilkannya.
+oobe.performance.fullV2: Kualitas penuh
 oobe.performance.hint: Mode Performa mengurangi efek visual dan menghemat CPU. Dinonaktifkan secara default pada sistem seperti milik Anda, tetapi Anda dapat mengaktifkannya kapan saja.
 oobe.performance.lowEndHint: Kami mendeteksi CPU dengan thread rendah. Kami merekomendasikan Mode Performa untuk pemutaran yang lebih lancar dan penggunaan CPU yang lebih rendah.
+oobe.performance.mode.description: Mematikan efek visual berat seperti blur besar dan latar belakang animasi. Cocok untuk komputer lama.
+oobe.performance.modeV2: Mode performa
+oobe.performance.subtitleV3: Mode performa mematikan efek visual yang paling berat. Kualitas penuh tetap mengaktifkannya kecuali jika komputer Anda tidak mampu menampilkannya.
 oobe.performance.title: Performa
+oobe.performance.whereToChangeV3: Di Pengaturan, pilihan ini ada di opsi {setting} pada {page}. Pilih {on} untuk Mode performa atau {automatic} untuk Kualitas penuh. Anda dapat mengubahnya kapan saja di sana.
 oobe.player.subtitle: Bilah pemutaran yang berada di tepi jendela. Pilih kepadatan yang sesuai untuk Anda.
 oobe.player.title: Pilih pemutar Anda
 oobe.previous: Sebelumnya
+oobe.progress: "Langkah {current} dari {total}: {title}"
+oobe.progress.label: Progres pengaturan
 oobe.step.appearance: Tampilan
 oobe.step.connections: Koneksi
 oobe.step.features: Suara
@@ -2903,6 +2925,7 @@ oobe.step.performance: Performa
 oobe.step.player: Pemutar
 oobe.step.welcome: Selamat Datang
 oobe.step.window: Gaya Jendela
+oobe.subscriptionNote: Cider memerlukan langganan Apple Music berbayar yang aktif. Apple Music Voice dan beberapa uji coba promosi tidak didukung.
 oobe.visual.layout.text: |-
   Cider memiliki dua tata letak jendela yang berbeda.
   Maverick adalah tata letak seperti iTunes dengan pemutar di bagian atas jendela.
@@ -2915,6 +2938,10 @@ oobe.visual.title: Visual
 oobe.welcome.getStarted: Mulai
 oobe.welcome.importSettings: Impor pengaturan…
 oobe.welcome.selectLanguage: Pilih bahasa pilihan Anda
+oobe.window.native: Jendela native
+oobe.window.native.description: Menggunakan bilah judul dan batas jendela dari lingkungan desktop Anda.
+oobe.window.styled: Kontrol bergaya
+oobe.window.styled.description: Bilah judul kustom di dalam aplikasi dengan kontrol jendela tertanam.
 oobe.window.subtitle: Pilih bagaimana jendela aplikasi berintegrasi dengan lingkungan desktop Anda
 oobe.window.title: Gaya Jendela
 oobe.yes: Ya
@@ -3015,6 +3042,8 @@ playlist.error.updating.title: Gagal memperbarui daftar putar
 playlist.folderEmpty: Tidak ada daftar putar di folder ini
 playlist.folderMoveFailed: Folder tidak dapat dipindahkan. Coba lagi sebentar lagi.
 playlist.folderRenameHint: Klik dua kali untuk mengubah nama
+playlist.history: Riwayat playlist
+playlist.history.withCount: Riwayat playlist ({count})
 playlist.lastUpdated: Terakhir Diperbarui {{date}}
 playlist.madeByApple: Dibuat oleh Apple
 playlist.moveFailed: Playlist tidak dapat dipindahkan. Coba lagi sebentar lagi.
@@ -3135,6 +3164,7 @@ settings.audio.atmos.normalizationHint: Mix Dolby Atmos terdengar lebih pelan di
 settings.audio.atmos.off.desc: Atmos dinonaktifkan. Semua konten diputar sebagai stereo standar.
 settings.audio.atmos.passthrough: Passthrough
 settings.audio.atmos.passthrough.desc: Melewati semua pemrosesan audio. Atmos multisaluran dikirim langsung ke perangkat. Ideal untuk receiver AV.
+settings.audio.atmos.passthrough.descV2: Mengirim Atmos multikanal langsung ke perangkat, untuk penerima AV. Audio Lab, equalizer, dan Mode Mendengarkan dilewati.
 settings.audio.atmos.passthroughActive: Passthrough aktif — ubah di pengaturan lengkap.
 settings.audio.atmos.standard.desc: Atmos multisaluran dengan pemrosesan CiderAudio, Crossfade, Automix, dan Transisi Mulus tetap berfungsi seperti biasa.
 settings.audio.atmosMode: Mode Atmos
@@ -3237,6 +3267,7 @@ settings.automix.normalizeDuration: Normalisasi Durasi
 settings.automix.normalizeDurationHint: Waktu pencampuran untuk penyelarasan kenyaringan ({ms}ms)
 settings.automix.spectralSeparation: Pemisahan Spektral
 settings.automix.spectralSeparationHint: Seberapa jauh kedua lagu dipisahkan dalam frekuensi selama transisi.
+settings.automix.spectralSeparationHintV2: Seberapa jauh kedua lagu dipisahkan dalam frekuensi selama transisi ({value}).
 settings.automix.speedSettle: Waktu Penstabilan Kecepatan
 settings.automix.speedSettleHint: Berapa lama waktu yang dibutuhkan kecepatan pemutaran untuk kembali normal setelah pencocokan tempo ({ms}ms)
 settings.automix.tempoAlign: Pencocokan Ketukan
@@ -3390,6 +3421,7 @@ settings.client.windows.v8OptimizeSize.adds: Menambahkan
 settings.client.windows.v8OptimizeSize.to: ke WebView2
 settings.client.windows.wpfRendering: Mode Rendering WPF
 settings.client.windows.wpfRendering.desc: Pilih mode rendering untuk WPF. Jika ragu, biarkan sebagai perangkat lunak.
+settings.client.windows.wpfRendering.descV2: Pilih cara jendela digambar. Jika tidak yakin, biarkan ini pada Hardware.
 settings.client.windows.wpfRendering.hardware: Perangkat Keras
 settings.client.windows.wpfRendering.software: Perangkat Lunak
 settings.configBackups.confirm.body: Pengaturan Anda saat ini akan digantikan dengan yang disimpan pada {date}, dan Cider akan memuat ulang.
@@ -3499,6 +3531,7 @@ settings.contentFilter.empty: Belum ada kata kunci yang ditambahkan.
 settings.contentFilter.inputPlaceholder: Tambah kata kunci...
 settings.contentFilter.title: Filter Kata Kunci
 settings.crossfade.advanced: Pengaturan Crossfade Lanjutan
+settings.crossfade.automixStillBlends: Automix aktif, sehingga lagu tetap dapat saling menyatu. Nonaktifkan Automix di bawah untuk menghentikan semua penyatuan.
 settings.crossfade.description: Memudarkan lagu saat ini secara perlahan sambil memunculkan lagu berikutnya.
 settings.crossfade.disableFor: Nonaktifkan Crossfade Untuk...
 settings.crossfade.duration: Durasi
@@ -3624,6 +3657,7 @@ settings.general.section.cache: Cache
 settings.general.section.cache.description: Karya seni dan metadata tersimpan yang disimpan Cider pada disk agar halaman dimuat lebih cepat.
 settings.general.section.desktop: Desktop
 settings.general.section.desktop.description: Pintasan papan ketik, dan bagaimana Cider berperilaku di bilah tugas dan saat ditutup.
+settings.general.section.desktop.descriptionV2: Pintasan keyboard, menjaga komputer tetap aktif saat memutar, dan perilaku Cider di taskbar serta saat ditutup.
 settings.general.section.language: Bahasa
 settings.general.section.language.description: Bahasa antarmuka, dan cara melaporkan atau memberikan kredit untuk terjemahannya.
 settings.general.section.playback: Pemutaran
@@ -3960,6 +3994,7 @@ settings.option.advanced.mavericksLcd.style: Gaya
 settings.option.advanced.mavericksLcd.style.glass: Kaca
 settings.option.advanced.mediaArtwork: Ilustrasi Item Media
 settings.option.advanced.mediaArtwork.controls: Sorotan Karya Seni dan Gambar Resolusi Tinggi
+settings.option.advanced.mediaArtwork.controlsV2: Sorotan dan Fade-In Sampul
 settings.option.advanced.mediaArtwork.description: Karya seni pada kisi, daftar, dan baris di seluruh aplikasi.
 settings.option.advanced.notificationStyle: Gaya Pemberitahuan
 settings.option.advanced.performance: Performa
@@ -3989,8 +4024,11 @@ settings.option.advanced.settingsTakeout: Ekspor / Impor Pengaturan
 settings.option.advanced.settingsTakeout.description: Cadangkan preferensi Anda ke file, atau pulihkan di perangkat lain. Login akun tidak pernah disertakan.
 settings.option.advanced.simpleArtworkBg: Latar Belakang Karya Seni Sederhana
 settings.option.advanced.simpleArtworkBg.brightness: Kecerahan %
+settings.option.advanced.simpleArtworkBg.brightnessV2: Kecerahan
 settings.option.advanced.simpleArtworkBg.contrast: Kontras %
+settings.option.advanced.simpleArtworkBg.contrastV2: Kontras
 settings.option.advanced.simpleArtworkBg.saturate: "% Saturasi"
+settings.option.advanced.simpleArtworkBg.saturateV2: Saturasi
 settings.option.advanced.simpleArtworkBg.useMask: Gunakan Masker Bawah
 settings.option.advanced.sonoma: Sonoma
 settings.option.advanced.sonoma.lyricArc: Lirik Melengkung
@@ -4296,6 +4334,8 @@ settings.option.general.onStartup: Saat Mulai
 settings.option.general.onStartup.openStartup: Buka Halaman Mulai
 settings.option.general.onStartup.resume: Lanjutkan Sesi Terakhir
 settings.option.general.pagination: Item yang ditampilkan per halaman
+settings.option.general.preventDisplaySleep: Biarkan layar menyala saat memutar
+settings.option.general.preventSystemSleep: Biarkan komputer tetap aktif saat memutar
 settings.option.general.privacy: Privasi
 settings.option.general.promptOnClose: Konfirmasi saat menutup ketika musik diputar
 settings.option.general.queue: Antrean
@@ -4322,6 +4362,7 @@ settings.option.general.sleepTimerSettings: Pengaturan Timer Tidur
 settings.option.general.startupPage: Halaman Awal
 settings.option.general.startupPage.blank: Halaman Kosong
 settings.option.general.startupPage.description: Pilih halaman yang akan ditampilkan saat Anda membuka Cider.
+settings.option.general.startupPage.descriptionV2: Halaman yang dibuka Cider di tab baru, dan saat meluncurkan aplikasi jika Saat Startup diatur ke Buka Halaman Startup.
 settings.option.general.startupPage.newTab: Halaman Tab Baru
 settings.option.general.startupPage.personalHome: Halaman Beranda Pribadi
 settings.option.general.themeUpdateNotification: Periksa pembaruan tema secara otomatis
@@ -4331,6 +4372,7 @@ settings.option.general.translators: Penerjemah
 settings.option.general.translators.description: Terima kasih kepada para kontributor yang telah membantu menerjemahkan Cider. Klik nama untuk membuka profil GitHub mereka.
 settings.option.general.useSmartQueueByDefault: Gunakan Antrean Pintar secara default
 settings.option.general.useSmartQueueByDefault.description: Terapkan urutan Smart Queue secara otomatis saat antrean dibuat. Memerlukan Automix.
+settings.option.general.useSmartQueueByDefault.needsAutomix: Automix di Audio nonaktif, sehingga Smart Queue tidak akan mengurutkan ulang apa pun.
 settings.option.general.warnBeforeQueueOverride: Peringatkan sebelum menimpa antrean
 settings.option.hide: Sembunyikan
 settings.option.left: Kiri
@@ -4417,6 +4459,9 @@ settings.option.performance.enableMediaItemInspect.description: Dapat sedikit me
 settings.option.performance.gameMode: Mode Game
 settings.option.performance.gameMode.description: Mengurangi efek visual dan dapat mengaktifkan mode efisiensi Windows untuk penggunaan CPU yang lebih rendah.
 settings.option.performance.gameMode.disable: Nonaktifkan Mode Game
+settings.option.performance.graphicsAcceleration: Akselerasi grafis
+settings.option.performance.graphicsAcceleration.autoOff: Nonaktif karena PC ini menggambar grafis secara perangkat lunak.
+settings.option.performance.graphicsAcceleration.description: Otomatis akan menonaktifkannya di mesin virtual yang menggambar grafis secara perangkat lunak. Perubahan berlaku saat Cider dimulai ulang.
 settings.option.performance.host: Host
 settings.option.performance.immersiveRenderer: Perender Imersif
 settings.option.performance.immersiveRenderer.description: Gunakan Canvas 2D alih-alih WebGPU jika latar belakang animasi tidak berfungsi dengan baik atau menggunakan terlalu banyak GPU.
@@ -4432,6 +4477,8 @@ settings.option.performance.preloadSidebarPages: Pramuat halaman bilah samping
 settings.option.performance.preloadSidebarPages.description: Memuat halaman bilah samping sebelum Anda membukanya. 'Saat diarahkan' dimulai ketika penunjuk berada di atas item bilah samping. 'Saat tidak aktif' juga memuat Dengar Sekarang, Telusuri, dan Radio setelah aplikasi dimulai, serta menyegarkan daftar perpustakaan yang telah Anda buka sebelumnya.
 settings.option.performance.preloadSidebarPages.idle: Saat tidak aktif
 settings.option.performance.preloadSidebarPages.intent: Saat diarahkan
+settings.option.performance.reduceEffects: Kurangi efek visual
+settings.option.performance.reduceEffects.description: Mematikan blur, kaca, efek glow, dan latar belakang animasi agar aplikasi menggambar lebih sedikit. Otomatis akan mengaktifkannya saat tidak ada kartu grafis yang berfungsi, atau saat sistem Anda meminta transparansi yang lebih sedikit.
 settings.option.performance.renderer.auto: Otomatis (WebGPU jika didukung)
 settings.option.performance.renderer.canvas: Canvas 2D
 settings.option.performance.renderer.webgpu: WebGPU
@@ -4612,6 +4659,7 @@ settings.option.visual.immersive.useBackgroundBpm: Kecepatan Latar Belakang Berd
 settings.option.visual.immersiveBackground.blank: Kosong
 settings.option.visual.immersiveBackground.customImage: Gambar Kustom
 settings.option.visual.immersiveBackground.customImageMixed: Gambar Kustom (Campuran)
+settings.option.visual.immersiveBackground.gradientMesh: Jaring gradien
 settings.option.visual.immersiveBackground.simpleArtwork: Sampul Sederhana
 settings.option.visual.immersiveBackground.simpleColor: Warna Sederhana
 settings.option.visual.immersiveBgSettings: Pengaturan Latar Belakang Imersif
@@ -4651,6 +4699,7 @@ settings.option.visual.liquidGlassPlayer: Bilah Pemutar Liquid Glass
 settings.option.visual.liquidGlassPlayer.description: Gunakan permukaan liquid-glass untuk bilah pemutar yang sedang diputar. Matikan untuk panel datar dan solid (juga lebih ringan untuk dirender).
 settings.option.visual.liquidGlassScrollPerf: Kaca Ringan Saat Menggulir
 settings.option.visual.liquidGlassScrollPerf.description: Sederhanakan refraksi liquid-glass menjadi efek buram biasa saat menggulir, lalu kembalikan secara perlahan saat Anda berhenti. Mengurangi guliran yang tersendat pada sistem yang berat tanpa perubahan saat diam. Selalu aktif dalam Mode Game.
+settings.option.visual.liquidGlassScrollPerf.descriptionV2: Sederhanakan refraksi liquid-glass menjadi blur biasa saat menggulir, lalu kembalikan secara bertahap saat berhenti. Mengurangi patah-patah saat menggulir pada sistem yang berat tanpa mengubah tampilan saat diam.
 settings.option.visual.mainMenuPosition: Posisi Menu Utama
 settings.option.visual.matchPageToArtwork: Samakan halaman dengan sampul
 settings.option.visual.matchPageToArtwork.description: Mewarnai halaman album dan playlist sesuai warna sampulnya, dalam mode terang maupun gelap.
@@ -4831,6 +4880,7 @@ settings.prompt.visual.plugin.github.success: Plugin berhasil diinstal. Tekan OK
 settings.prompt.visual.plugin.github.URL: Masukkan URL plugin yang ingin Anda instal
 settings.prompt.visual.theme.github.URL: Masukkan URL tema yang ingin Anda instal
 settings.prompt.visual.theme.uninstallTheme: Apakah Anda yakin ingin menghapus instalasi {{theme}}?
+settings.reloadPrompt.message: Penyegaran aplikasi diperlukan untuk menerapkan perubahan. Apakah Anda ingin melanjutkan?
 settings.requiresNewerClient: Memerlukan klien Cider yang lebih baru.
 settings.resetCider.category.appleMusic: Keluar dari Apple Music
 settings.resetCider.category.appleMusic.desc: Hapus akun Apple Music dari perangkat ini
@@ -4874,6 +4924,7 @@ settings.smartPlaylists.section.maintenance: Pemeliharaan
 settings.smartPlaylists.section.maintenance.description: Paksa setiap aturan untuk dijalankan sekarang, atau hapus salinan cache perpustakaan Anda.
 settings.smartPlaylists.section.rules: Aturan
 settings.smartPlaylists.section.rules.description: Menentukan apakah Cider menerapkan aturan daftar putar tersemat, dan seberapa sering aturan tersebut dievaluasi ulang.
+settings.smartPlaylists.section.rules.descriptionV2: Apakah Cider menerapkan aturan playlist tertanam. Aturan dijalankan ulang dengan Waktu Penyegaran Latar Belakang di Penggunaan Daya.
 settings.sweetener.useSystemAccentColor: Gunakan Warna Aksen Sistem
 settings.takeout.chooseFile: Pilih file…
 settings.takeout.error.badVersion: File tersebut tidak memiliki informasi versi.
@@ -4904,6 +4955,7 @@ settings.title: Pengaturan
 settings.troubleshooting.bgDiagnostics: Diagnostik Pemutaran Latar Belakang
 settings.troubleshooting.bgDiagnostics.desc: Log tambahan untuk mendiagnosis masalah pemutaran saat jendela diminimalkan atau tidak difokuskan — siapa yang menjeda pemutar, penundaan timer (timer starvation), dan episode penangguhan OS. Aktifkan saat melaporkan bug pemutaran latar belakang.
 settings.troubleshooting.desc: Berkas log dan pencatatan debug MKLite.
+settings.troubleshooting.descV2: Pencatatan MKLite dan pemutaran latar belakang.
 settings.troubleshooting.hevcWorkaround: Solusi Alternatif HEVC
 settings.troubleshooting.hevcWorkaround.desc: Solusi alternatif untuk bug di WebView2 pada beberapa GPU yang bermasalah dengan pemutaran HEVC SDR 10-bit dengan menerapkan filter untuk mengompensasi pergeseran visual.
 settings.troubleshooting.impressionReporting: Pelaporan Impresi PlayActivity
@@ -4927,6 +4979,8 @@ settings.updates.action.check: Periksa Pembaruan
 settings.updates.action.install: Instal Pembaruan
 settings.updates.action.restart: Mulai Ulang Cider
 settings.updates.action.retry: Coba Lagi
+settings.updates.autoCheck: Periksa pembaruan secara otomatis
+settings.updates.autoCheck.description: Jika nonaktif, Cider hanya memeriksa saat Anda membuka halaman ini.
 settings.updates.build: Build
 settings.updates.channel: Saluran
 settings.updates.codename: Nama Kode
@@ -5591,6 +5645,8 @@ updates.installUnavailable.body: Versi ini tidak tersedia untuk diunduh di akun 
 updates.lateststable.title: Rilis Stabil Terbaru
 updates.loadFailed.body: Periksa koneksi Anda dan coba lagi.
 updates.loadFailed.title: Cider tidak dapat memuat versi yang tersedia
+updates.newVersion.body: Versi baru Cider tersedia. Buka Pembaruan untuk mengunduhnya?
+updates.newVersion.title: Versi baru tersedia
 updates.notifyForBranch.tooltip: Beri tahu untuk cabang ini
 updates.otherVersions.title: Versi Lain
 updates.ptb.name: Cabang Pengujian Publik
