@@ -254,6 +254,9 @@ album.track.unavailable.unreleased: Tätä kohdetta ei ole vielä julkaistu.
 album.track.unavailable.zeroDuration: Kohteen kesto on 0 sekuntia, sitä ei luultavasti ole vielä julkaistu.
 album.upcoming.badge: Tuleva albumi
 app.name: Cider
+app.ptbDisclaimer.confirm: Ymmärrän
+app.ptbDisclaimer.message: Tämä on Public Testing Branch -julkaisu. Sen vakaudesta ei ole takeita, ja siinä voi olla virheitä. Älä ilmoita tässä julkaisussa havaituista virheistä tai ongelmista. Jos kohtaat ongelmia, vaihda vakaaseen julkaisuun ennen ilmoittamista.
+app.ptbDisclaimer.title: Public Testing Branch -vastuuvapauslauseke
 app.unsupportedClient.message: Tätä asiakasohjelmaa ei tueta. Varmista, että käytät Ciderin uusinta versiota.
 app.unsupportedClient.title: Ei-tuettu asiakasohjelma
 assistant.sid.agent.added: Lisättiin {count} kappaletta
@@ -726,10 +729,16 @@ audio.device.default: Oletuslaite
 audio.device.noneFound: Ulostulolaitteita ei löytynyt
 audio.device.placeholder: Laite {{id}}
 audiolab.waiting: Odotetaan kappaleen lisäämistä jonoon
+auth.error.devToken: Apple Musicin tavoittaminen ei onnistunut
+auth.error.generic: Kirjautumista ei voitu viimeistellä. Tarkista yhteytesi ja yritä uudelleen.
+auth.error.invalidToken: Vastaanotettiin virheellinen tunnus
 auth.error.popupBlocked: Ponnahdusikkuna estettiin
+auth.error.timeout: Kirjautuminen aikakatkaistiin
+auth.error.unavailable: Tämä Apple ID ei voi käyttää Apple Musicia Ciderissä. Cider vaatii aktiivisen, maksullisen Apple Music -tilauksen.
 auth.error.windowFailed: Kirjautumisikkunan avaaminen epäonnistui
 auth.mutExpired.confirm: Kirjaudu sisään
 auth.mutExpired.message: Apple Music -istuntosi on vanhentunut. Kirjaudu uudelleen sisään jatkaaksesi.
+auth.signedIn: Kirjauduttu sisään
 auth.signInRetry.confirm: Yritä uudelleen
 auth.signInRetry.message: Kirjautumisikkunaa ei voitu avata. Yritä uudelleen?
 bugReport.addImage: Lisää kuva
@@ -2843,6 +2852,7 @@ oobe.amupsell.title: Ennen kuin aloitamme
 oobe.appearance.accentHint: Käytetään painikkeissa, korostuksissa ja edistymispalkeissa sovelluksessa. Kokeile jotakin, näet esikatselun heti.
 oobe.appearance.subtitle: Valitse väriteema ja korostusväri. Voit muuttaa näitä milloin tahansa kohdassa Asetukset → Ulkoasu.
 oobe.appearance.title: Tee Ciderista omasi
+oobe.appleNotice: "Huomautus: Apple Music on Apple Inc:n tavaramerkki. Cider on Apple Musicin kolmannen osapuolen asiakasohjelma, eikä sillä ole yhteyttä Apple Inc:iin."
 oobe.audio.advancedFunctionality: ""
 oobe.audio.subtitle: ""
 oobe.audio.text: |-
@@ -2881,19 +2891,31 @@ oobe.intro.subtitle: ""
 oobe.intro.text: Määritetään muutamat asetukset, jotta voit käyttää Cideria haluamallasi tavalla. Voit aina muuttaa näitä asetuksia myöhemmin.
 oobe.intro.title: Tervetuloa Cideriin
 oobe.layout.subtitle: Valitse tyyliisi sopiva asettelu
+oobe.login.alreadySignedIn: Olet jo kirjautunut sisään
 oobe.login.skip: Ohita toistaiseksi
 oobe.login.skipTooltip: Voit käyttää sovellusta vain esikatselutilassa
 oobe.login.subtitle: Kirjaudu sisään Apple Music -tililläsi aloittaaksesi musiikin kuuntelun
+oobe.login.terms: Jatkamalla hyväksyt käyttöehdot ja tietosuojakäytännön
 oobe.login.title: Vielä viimeinen vaihe
 oobe.login.userToken: Kirjaudu sisään käyttäjätunnisteella
+oobe.music.mute: Mykistä asennuksen musiikki
+oobe.music.unmute: Poista asennuksen musiikin mykistys
 oobe.next: Seuraava
 oobe.no: Ei
+oobe.performance.full.descriptionV2: Pitää visuaaliset tehosteet päällä. Cider vähentää niitä itse vain, jos tietokone ei pysty piirtämään niitä.
+oobe.performance.fullV2: Täysi laatu
 oobe.performance.hint: Suorituskykytila vähentää visuaalisia tehosteita ja säästää suoritinta. Oletuksena pois käytöstä kaltaisellasi järjestelmällä, mutta voit ottaa sen käyttöön milloin tahansa.
 oobe.performance.lowEndHint: Havaitsimme vähemmän säikeitä tukevan suorittimen. Suosittelemme Suorituskykytilaa sujuvamman toiston ja pienemmän suorittimen käyttöasteen saavuttamiseksi.
+oobe.performance.mode.description: Poistaa raskaat visuaaliset tehosteet, kuten suuret sumennukset ja animoidut taustat. Hyvä vanhemmille tietokoneille.
+oobe.performance.modeV2: Suorituskykytila
+oobe.performance.subtitleV3: Suorituskykytila poistaa raskaimmat visuaaliset tehosteet. Täysi laatu pitää ne päällä, ellei tietokone pysty piirtämään niitä.
 oobe.performance.title: Suorituskyky
+oobe.performance.whereToChangeV3: Asetuksissa tämä valinta on {page}-sivun kohdassa {setting}. Valitse {on} Suorituskykytilalle tai {automatic} Täydelle laadulle. Voit muuttaa sitä milloin tahansa.
 oobe.player.subtitle: Ikkunan reunassa sijaitseva toistopalkki. Valitse sinulle sopiva tiheys.
 oobe.player.title: Valitse soitin
 oobe.previous: Edellinen
+oobe.progress: "Vaihe {current} / {total}: {title}"
+oobe.progress.label: Asennuksen edistyminen
 oobe.step.appearance: Ulkoasu
 oobe.step.connections: Yhteydet
 oobe.step.features: Ääni
@@ -2903,6 +2925,7 @@ oobe.step.performance: Suorituskyky
 oobe.step.player: Soitin
 oobe.step.welcome: Tervetuloa
 oobe.step.window: Ikkunan tyyli
+oobe.subscriptionNote: Cider vaatii aktiivisen, maksullisen Apple Music -tilauksen. Apple Music Voice ja joitakin mainoskokeiluja ei tueta.
 oobe.visual.layout.text: |-
   Cider sisältää kaksi erilaista ikkuna-asettelua.
   Maverick on iTunes-tyylinen asettelu, jossa soitin on ikkunan yläosassa.
@@ -2915,6 +2938,10 @@ oobe.visual.title: Ulkoasu
 oobe.welcome.getStarted: Aloita
 oobe.welcome.importSettings: Tuo asetukset…
 oobe.welcome.selectLanguage: Valitse haluamasi kieli
+oobe.window.native: Natiivi ikkuna
+oobe.window.native.description: Käyttää työpöytäympäristösi otsikkopalkkia ja reunoja.
+oobe.window.styled: Muotoillut säätimet
+oobe.window.styled.description: Sovelluksen oma otsikkopalkki ja upotetut ikkunan säätimet.
 oobe.window.subtitle: Valitse, miten sovellusikkuna mukautuu työpöytäympäristöösi
 oobe.window.title: Ikkunan tyyli
 oobe.yes: Kyllä
@@ -3015,6 +3042,8 @@ playlist.error.updating.title: Virhe päivitettäessä soittolistaa
 playlist.folderEmpty: Tässä kansiossa ei ole soittolistoja
 playlist.folderMoveFailed: Kansiota ei voitu siirtää. Yritä hetken kuluttua uudelleen.
 playlist.folderRenameHint: Nimeä uudelleen kaksoisnapsauttamalla
+playlist.history: Soittolistan historia
+playlist.history.withCount: Soittolistan historia ({count})
 playlist.lastUpdated: Päivitetty viimeksi {{date}}
 playlist.madeByApple: Applen luoma
 playlist.moveFailed: Soittolistaa ei voitu siirtää. Yritä hetken kuluttua uudelleen.
@@ -3135,6 +3164,7 @@ settings.audio.atmos.normalizationHint: Dolby Atmos -miksaukset ovat hiljaisempi
 settings.audio.atmos.off.desc: Atmos poistettu käytöstä. Kaikki sisältö toistetaan tavallisena stereona.
 settings.audio.atmos.passthrough: Läpivienti
 settings.audio.atmos.passthrough.desc: Ohittaa kaiken äänenkäsittelyn. Monikanavainen Atmos lähetetään suoraan laitteelle. Ihanteellinen AV-vastaanottimille.
+settings.audio.atmos.passthrough.descV2: Lähettää monikanavaisen Atmosin suoraan laitteelle AV-vastaanottimia varten. Audio Lab, taajuuskorjain ja kuuntelutila ohitetaan.
 settings.audio.atmos.passthroughActive: Läpivienti aktiivinen — muuta kaikissa asetuksissa.
 settings.audio.atmos.standard.desc: Monikanavainen Atmos CiderAudio-käsittelyllä. Crossfade, Automix ja saumattomat siirtymät toimivat edelleen normaalisti.
 settings.audio.atmosMode: Atmos-tila
@@ -3237,6 +3267,7 @@ settings.automix.normalizeDuration: Normalisoi kesto
 settings.automix.normalizeDurationHint: Sekoitusaika äänenvoimakkuuden sovitukselle ({ms} ms)
 settings.automix.spectralSeparation: Spektrierottelu
 settings.automix.spectralSeparationHint: Kuinka kauas toisistaan kaksi kappaletta erotetaan taajuusalueella siirtymän aikana.
+settings.automix.spectralSeparationHintV2: Kuinka paljon kaksi kappaletta erotetaan taajuudeltaan siirtymässä ({value}).
 settings.automix.speedSettle: Nopeuden palautumisaika
 settings.automix.speedSettleHint: Kuinka kauan toistonopeuden palautuminen normaaliksi kestää tempoon sovitetun miksauksen jälkeen ({ms} ms)
 settings.automix.tempoAlign: Tahtisovitus
@@ -3390,6 +3421,7 @@ settings.client.windows.v8OptimizeSize.adds: Lisää
 settings.client.windows.v8OptimizeSize.to: kohteeseen WebView2
 settings.client.windows.wpfRendering: WPF-renderöintitila
 settings.client.windows.wpfRendering.desc: Valitse WPF-renderöintitila. Jos olet epävarma, jätä valinnaksi ohjelmistopohjainen (software).
+settings.client.windows.wpfRendering.descV2: Valitse, miten ikkuna piirretään. Jos et ole varma, jätä tämä Laitteisto-tilaan.
 settings.client.windows.wpfRendering.hardware: Laitteistopohjainen
 settings.client.windows.wpfRendering.software: Ohjelmistopohjainen
 settings.configBackups.confirm.body: Nykyiset asetuksesi korvataan {date} tallennetuilla asetuksilla, ja Cider käynnistyy uudelleen.
@@ -3499,6 +3531,7 @@ settings.contentFilter.empty: Ei vielä lisättyjä avainsanoja.
 settings.contentFilter.inputPlaceholder: Lisää avainsana...
 settings.contentFilter.title: Suodatinavainsanat
 settings.crossfade.advanced: Ristihäivytyksen lisäasetukset
+settings.crossfade.automixStillBlends: Automix on päällä, joten kappaleet voivat silti sulautua toisiinsa. Poista Automix käytöstä alla lopettaaksesi kaiken sulautumisen.
 settings.crossfade.description: Häivyttää nykyisen kappaleen pehmeästi ulos samalla kun seuraava kappale häivytetään sisään.
 settings.crossfade.disableFor: Poista ristihäivytys käytöstä kohteille...
 settings.crossfade.duration: Kesto
@@ -3624,6 +3657,7 @@ settings.general.section.cache: Välimuisti
 settings.general.section.cache.description: Tallennettu kansitaide ja metadata, joita Cider säilyttää levyllä sivujen nopeampaa latautumista varten.
 settings.general.section.desktop: Työpöytä
 settings.general.section.desktop.description: Pikanäppäimet sekä Ciderin toiminta tehtäväpalkissa ja suljettaessa.
+settings.general.section.desktop.descriptionV2: Pikanäppäimet, tietokoneen pitäminen hereillä soiton aikana sekä Ciderin toiminta tehtäväpalkissa ja sulkemisen yhteydessä.
 settings.general.section.language: Kieli
 settings.general.section.language.description: Käyttöliittymän kieli sekä se, miten käännöksistä voi ilmoittaa tai antaa niistä tunnustusta.
 settings.general.section.playback: Toisto
@@ -3960,6 +3994,7 @@ settings.option.advanced.mavericksLcd.style: Tyyli
 settings.option.advanced.mavericksLcd.style.glass: Lasi
 settings.option.advanced.mediaArtwork: Kohteen kansikuva
 settings.option.advanced.mediaArtwork.controls: Kansitaiteen korostukset ja korkearesoluutioiset kuvat
+settings.option.advanced.mediaArtwork.controlsV2: Kansikuvan korostus ja häivytys
 settings.option.advanced.mediaArtwork.description: Kansitaide ruudukoissa, luetteloissa ja riveillä eri puolilla sovellusta.
 settings.option.advanced.notificationStyle: Ilmoitustyyli
 settings.option.advanced.performance: Suorituskyky
@@ -3989,8 +4024,11 @@ settings.option.advanced.settingsTakeout: Vie / tuo asetukset
 settings.option.advanced.settingsTakeout.description: Varmuuskopioi asetuksesi tiedostoon tai palauta ne toisella laitteella. Kirjautumistietoja ei koskaan sisällytetä.
 settings.option.advanced.simpleArtworkBg: Yksinkertainen kansitaidetausta
 settings.option.advanced.simpleArtworkBg.brightness: Kirkkaus %
+settings.option.advanced.simpleArtworkBg.brightnessV2: Kirkkaus
 settings.option.advanced.simpleArtworkBg.contrast: Kontrasti %
+settings.option.advanced.simpleArtworkBg.contrastV2: Kontrasti
 settings.option.advanced.simpleArtworkBg.saturate: Kylläisyys %
+settings.option.advanced.simpleArtworkBg.saturateV2: Värikylläisyys
 settings.option.advanced.simpleArtworkBg.useMask: Käytä alamaskia
 settings.option.advanced.sonoma: Sonoma
 settings.option.advanced.sonoma.lyricArc: Kaarevat sanat
@@ -4296,6 +4334,8 @@ settings.option.general.onStartup: Käynnistettäessä
 settings.option.general.onStartup.openStartup: Avaa aloitussivu
 settings.option.general.onStartup.resume: Jatka edellistä istuntoa
 settings.option.general.pagination: Sivulla näytettävien kohteiden määrä
+settings.option.general.preventDisplaySleep: Pidä näyttö päällä soiton aikana
+settings.option.general.preventSystemSleep: Pidä tietokone hereillä soiton aikana
 settings.option.general.privacy: Yksityisyys
 settings.option.general.promptOnClose: Vahvista sulkeminen, kun musiikkia toistetaan
 settings.option.general.queue: Jono
@@ -4322,6 +4362,7 @@ settings.option.general.sleepTimerSettings: Uniajastimen asetukset
 settings.option.general.startupPage: Aloitussivu
 settings.option.general.startupPage.blank: Tyhjä sivu
 settings.option.general.startupPage.description: Valitse sivu, joka näytetään, kun avaat Ciderin.
+settings.option.general.startupPage.descriptionV2: Sivu, jonka Cider avaa uusissa välilehdissä ja käynnistyksessä, kun Käynnistys-asetuksena on Avaa aloitussivu.
 settings.option.general.startupPage.newTab: Uusi välilehti
 settings.option.general.startupPage.personalHome: Henkilökohtainen kotisivu
 settings.option.general.themeUpdateNotification: Tarkista teemojen päivitykset automaattisesti
@@ -4331,6 +4372,7 @@ settings.option.general.translators: Kääntäjät
 settings.option.general.translators.description: Kiitos näille avustajille Ciderin kääntämisestä. Klikkaa nimeä avataksesi heidän GitHub-profiilinsa.
 settings.option.general.useSmartQueueByDefault: Käytä älykästä jonoa oletuksena
 settings.option.general.useSmartQueueByDefault.description: Käytä automaattisesti Smart Queue -järjestystä, kun jono luodaan. Vaatii Automixin.
+settings.option.general.useSmartQueueByDefault.needsAutomix: Automix on pois päältä Äänessä, joten Älykäs jono ei järjestele mitään uudelleen.
 settings.option.general.warnBeforeQueueOverride: Varoita ennen jonon korvaamista
 settings.option.hide: Piilota
 settings.option.left: Vasen
@@ -4417,6 +4459,9 @@ settings.option.performance.enableMediaItemInspect.description: Voi vaikuttaa hi
 settings.option.performance.gameMode: Pelitila
 settings.option.performance.gameMode.description: Vähentää visuaalisia tehosteita ja voi ottaa käyttöön Windowsin tehokkuustilan suorittimen käytön vähentämiseksi.
 settings.option.performance.gameMode.disable: Poista pelitila käytöstä
+settings.option.performance.graphicsAcceleration: Grafiikkakiihdytys
+settings.option.performance.graphicsAcceleration.autoOff: Pois päältä, koska tämä tietokone piirtää grafiikan ohjelmistolla.
+settings.option.performance.graphicsAcceleration.description: Automaattinen-asetus kytkee sen pois virtuaalikoneessa, joka piirtää grafiikan ohjelmistolla. Muutokset tulevat voimaan seuraavalla Cider-käynnistyksellä.
 settings.option.performance.host: Isäntä
 settings.option.performance.immersiveRenderer: Immersiivinen renderöijä
 settings.option.performance.immersiveRenderer.description: Käytä Canvas 2D:tä WebGPU:n sijaan, jos animoitu tausta toimii virheellisesti tai kuluttaa liikaa näytönohjainta.
@@ -4432,6 +4477,8 @@ settings.option.performance.preloadSidebarPages: Esilataa sivupalkin sivut
 settings.option.performance.preloadSidebarPages.description: Lataa sivupalkin sivut ennen niiden avaamista. ”Osoitettaessa” aloittaa latauksen, kun osoitin viedään sivupalkin kohteen päälle. ”Joutilaana” lataa käynnistyksen jälkeen myös Kuuntele nyt-, Selaa- ja Radio-osiot sekä päivittää aiemmin avatut kirjastoluettelot.
 settings.option.performance.preloadSidebarPages.idle: Joutilaana
 settings.option.performance.preloadSidebarPages.intent: Osoitettaessa
+settings.option.performance.reduceEffects: Vähennä visuaalisia tehosteita
+settings.option.performance.reduceEffects.description: Poistaa sumennukset, lasivaikutukset, hehkut ja animoidut taustat, jotta sovellus piirtää vähemmän. Automaattinen-asetus kytkee ne päälle, kun toimivaa näytönohjainta ei ole tai järjestelmä pyytää vähemmän läpinäkyvyyttä.
 settings.option.performance.renderer.auto: Automaattinen (WebGPU, jos tuettu)
 settings.option.performance.renderer.canvas: Canvas 2D
 settings.option.performance.renderer.webgpu: WebGPU
@@ -4612,6 +4659,7 @@ settings.option.visual.immersive.useBackgroundBpm: Taustan nopeus BPM:n mukaan
 settings.option.visual.immersiveBackground.blank: Tyhjä
 settings.option.visual.immersiveBackground.customImage: Oma kuva
 settings.option.visual.immersiveBackground.customImageMixed: Oma kuva (sekoitettu)
+settings.option.visual.immersiveBackground.gradientMesh: Liukuväriverkko
 settings.option.visual.immersiveBackground.simpleArtwork: Yksinkertainen kansikuva
 settings.option.visual.immersiveBackground.simpleColor: Yksinkertainen väri
 settings.option.visual.immersiveBgSettings: Immersive-taustan asetukset
@@ -4651,6 +4699,7 @@ settings.option.visual.liquidGlassPlayer: Liquid Glass -soitinpalkki
 settings.option.visual.liquidGlassPlayer.description: Käytä nestemäistä lasipintaa toistettavan kappaleen soitinpalkissa. Poista käytöstä, jos haluat tasaisen, yhtenäisen paneelin (joka on myös kevyempi renderöidä).
 settings.option.visual.liquidGlassScrollPerf: Kevyt lasiefekti vieritettäessä
 settings.option.visual.liquidGlassScrollPerf.description: Yksinkertaistaa nestemäisen lasiefektin taittumisen tavalliseksi sumennukseksi vierityksen aikana ja palauttaa sen pehmeästi, kun pysähdyt. Vähentää vierityksen nykimistä vaativilla järjestelmillä vaikuttamatta ulkoasuun pysähdyksissä. Aina käytössä Pelitilassa.
+settings.option.visual.liquidGlassScrollPerf.descriptionV2: Yksinkertaistaa nestemäisen lasin taittumisen tavalliseksi sumennukseksi vierittäessä ja palauttaa sen pysähtyessä. Vähentää vierityksen takkuilua vaativilla järjestelmillä, eikä lepotilassa muutu mitään.
 settings.option.visual.mainMenuPosition: Päävalikon sijainti
 settings.option.visual.matchPageToArtwork: Sovita sivu kansikuvaan
 settings.option.visual.matchPageToArtwork.description: Värittää albumi- ja soittolistasivut kansikuvan väreillä sekä vaalean että tumman tilan aikana.
@@ -4831,6 +4880,7 @@ settings.prompt.visual.plugin.github.success: Liitännäinen asennettu onnistune
 settings.prompt.visual.plugin.github.URL: Anna asennettavan liitännäisen URL-osoite
 settings.prompt.visual.theme.github.URL: Anna asennettavan teeman URL-osoite
 settings.prompt.visual.theme.uninstallTheme: Haluatko varmasti poistaa teeman {{theme}}?
+settings.reloadPrompt.message: Muutosten käyttöönotto edellyttää sovelluksen päivittämistä. Haluatko jatkaa?
 settings.requiresNewerClient: Vaatii uudemman Cider-version.
 settings.resetCider.category.appleMusic: Kirjaudu ulos Apple Music -palvelusta
 settings.resetCider.category.appleMusic.desc: Poista Apple Music -tili tältä laitteelta
@@ -4874,6 +4924,7 @@ settings.smartPlaylists.section.maintenance: Ylläpito
 settings.smartPlaylists.section.maintenance.description: Pakota jokainen sääntö suoritettavaksi nyt tai tyhjennä kirjastosi välimuistikopio.
 settings.smartPlaylists.section.rules: Säännöt
 settings.smartPlaylists.section.rules.description: Määrittää, soveltaako Cider upotettuja soittolistasääntöjä ja kuinka usein se arvioi ne uudelleen.
+settings.smartPlaylists.section.rules.descriptionV2: Sovelletaanko Ciderissä upotettuja soittolistasääntöjä. Ne ajetaan uudelleen Virrankulutuksen Taustapäivitysaika-asetuksen mukaan.
 settings.sweetener.useSystemAccentColor: Käytä järjestelmän korostusväriä
 settings.takeout.chooseFile: Valitse tiedosto…
 settings.takeout.error.badVersion: Tiedostosta puuttuu versiotieto.
@@ -4904,6 +4955,7 @@ settings.title: Asetukset
 settings.troubleshooting.bgDiagnostics: Taustatoiston diagnostiikka
 settings.troubleshooting.bgDiagnostics.desc: Ylimääräisiä lokimerkintöjä taustatoiston ongelmien diagnosoimiseksi, kun ikkuna on pienennetty tai ei ole aktiivisena – kuten kuka keskeytti toiston, ajastimen resurssipula ja käyttöjärjestelmän keskeytystilat. Ota käyttöön, kun raportoit taustatoiston virheestä.
 settings.troubleshooting.desc: Lokitiedostot ja MKLite-vianmäärityslokit.
+settings.troubleshooting.descV2: MKLite- ja taustatoiston lokitus.
 settings.troubleshooting.hevcWorkaround: HEVC-kiertotapa
 settings.troubleshooting.hevcWorkaround.desc: Kiertotapa WebView2-virheelle tietyillä näytönohjaimilla, joilla on ongelmia 10-bittisen SDR HEVC -toiston kanssa. Kiertotapa käyttää suodatinta kompensoimaan visuaalista siirtymää.
 settings.troubleshooting.impressionReporting: PlayActivity-näyttökertojen raportointi
@@ -4927,6 +4979,8 @@ settings.updates.action.check: Tarkista päivitykset
 settings.updates.action.install: Asenna päivitys
 settings.updates.action.restart: Käynnistä Cider uudelleen
 settings.updates.action.retry: Yritä uudelleen
+settings.updates.autoCheck: Tarkista päivitykset automaattisesti
+settings.updates.autoCheck.description: Kun tämä on pois päältä, Cider tarkistaa päivitykset vain, kun avaat tämän sivun.
 settings.updates.build: Koontiversio
 settings.updates.channel: Kanava
 settings.updates.codename: Koodinimi
@@ -5591,6 +5645,8 @@ updates.installUnavailable.body: Tämä versio ei ole ladattavissa tililläsi.
 updates.lateststable.title: Uusin vakaa julkaisu
 updates.loadFailed.body: Tarkista yhteys ja yritä uudelleen.
 updates.loadFailed.title: Cider ei voinut ladata saatavilla olevia versioita
+updates.newVersion.body: Cideristä on saatavilla uusi versio. Siirryä Päivityksiin ladataksesi sen?
+updates.newVersion.title: Uusi versio saatavilla
 updates.notifyForBranch.tooltip: Ilmoita tämän haaran päivityksistä
 updates.otherVersions.title: Muut versiot
 updates.ptb.name: Julkinen testaushaara
