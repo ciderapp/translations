@@ -61,6 +61,7 @@ action.cast.todevices: Strömma till enheter
 action.change: Ändra
 action.clear: Rensa
 action.close: Stäng
+action.configure: Konfigurera
 action.connect: Anslut
 action.connect.createCollabPlaylist: Skapa ny gemensam spellista
 action.connect.listenTogether: Lyssna tillsammans
@@ -79,6 +80,7 @@ action.deleteFolder: Är du säker på att du vill radera mappen "{{folderName}}
 action.deleteFolder.message: Alla mappar och spellistor i den här mappen kommer också att raderas.
 action.deletePlaylist: Är du säker på att du vill radera spellistan "{{playlistName}}"?
 action.deletepreset: Radera förinställning
+action.deny: Neka
 action.disablePlugins: Disable plugins for this session
 action.disconnect: Koppla från
 action.dislike: Gilla inte
@@ -623,6 +625,12 @@ assistant.sid.settings.freshDetail: Bygg en hel spellista utifrån en stämning,
 assistant.sid.settings.gemmaHere: Gemma här
 assistant.sid.settings.gpu: Grafikkort
 assistant.sid.settings.group: Assistent
+assistant.sid.settings.helloEdit: Öppna en spellista och välj Redigera med Sid, så fixar jag till den.
+assistant.sid.settings.helloFresh: Berätta en stämning eller några artister, så bygger jag en hel spellista.
+assistant.sid.settings.helloRequest: Be om en låt under ett set, så hittar jag den på Apple Music.
+assistant.sid.settings.helloSet: Under ett set väljer jag vad som spelas härnäst utifrån tonart och tempo.
+assistant.sid.settings.helloSort: Be mig sortera en spellista från lugn till livlig, eller så att tonarterna flyter ihop.
+assistant.sid.settings.helloTrim: Jag kan kapa en spellista till en timme, eller hålla den i ett enda tempo.
 assistant.sid.settings.inEdit: När du redigerar en spellista
 assistant.sid.settings.inEditDetail: Redigera med Sid i spellistans rubrik
 assistant.sid.settings.inImmersive: I immersivt läge
@@ -651,6 +659,11 @@ assistant.sid.settings.position: Position
 assistant.sid.settings.positionDetail: Var Sid sitter på omslaget
 assistant.sid.settings.privacyChat: "Det du skriver stannar på den här datorn: Sid tänker med Gemma, här på datorn. För att hitta musik skickar Sid sökord till Apple Music, och när du ber om det läser Sid dina spellistor, dina senaste uppspelningar och din Apple Music Replay från ditt Apple Music-konto. Ingenting ändras förrän du trycker på Använd."
 assistant.sid.settings.privacyEngine: "Det du skriver stannar på den här datorn: Sid tänker med {engine}, här på datorn. För att hitta musik skickar Sid sökord till Apple Music, och när du ber om det läser Sid dina spellistor, dina senaste uppspelningar och din Apple Music Replay från ditt Apple Music-konto. Inget ändras förrän du trycker på Verkställ."
+assistant.sid.settings.quipGaming: Din {gpu} och jag kommer att trivas utmärkt tillsammans.
+assistant.sid.settings.quipIntegrated: Integrerad grafik. Jag håller saker lätta och mysiga.
+assistant.sid.settings.quipOther: Snygg {gpu}. Jag ska använda den väl.
+assistant.sid.settings.quipSetsOnly: Din {gpu} och jag håller oss till att köra set för tillfället.
+assistant.sid.settings.quipTop: "{gpu}? Jag kommer knappt att svettas."
 assistant.sid.settings.reads: Läser en hel spellista på {seconds} s (behöver under {floor} s)
 assistant.sid.settings.regular: Normal
 assistant.sid.settings.remove: Ta bort
@@ -753,6 +766,19 @@ auth.error.unavailable: Det här Apple-ID:t kan inte använda Apple Music i Cide
 auth.error.windowFailed: Inloggningsfönstret kunde inte öppnas
 auth.mutExpired.confirm: Logga in
 auth.mutExpired.message: Din Apple Music-session har löpt ut. Logga in igen för att fortsätta.
+auth.request.authorizing: Auktoriserar…
+auth.request.copyToken: Kopiera token
+auth.request.granted: Beviljad
+auth.request.requestedAccess: Begärd åtkomst
+auth.request.revealNote: Det här är enda gången den här token visas. Klistra in den i {app} nu.
+auth.request.subtitle: vill ha åtkomst till Cider
+auth.request.toast.copied: Token kopierad till urklipp
+auth.request.toast.failed: Kunde inte skapa token
+auth.request.toast.granted: Åtkomst beviljad till {app}
+auth.request.toast.title: Auktorisering
+auth.request.tokenCreated: Token skapad
+auth.request.tokenFor: för {app}
+auth.request.trustNote: Bevilja endast åtkomst till appar du litar på. Du kan när som helst återkalla token under Inställningar › Anslutningar.
 auth.signedIn: Inloggad
 auth.signInRetry.confirm: Försök igen
 auth.signInRetry.message: Inloggningsfönstret kunde inte öppnas. Försök igen?
@@ -951,7 +977,7 @@ gallery.searchSnippets: Sök kodsnuttar
 gallery.submitPlugin: Skicka in ditt tillägg
 gallery.submitSnippet: Skicka in din kodsnutt
 gallery.submitTheme: Skicka in ditt tema
-general.closeToTray: Stäng till systemfältet
+general.closeToTray: Stäng till aktivitetsfältet
 general.closeToTray.description: Stängknappen ska minimera Cider-fönstret
 home.artistsFeed: Ditt artistflöde
 home.artistsFeed.noArtist: Följ några artister för att se deras senaste släpp
@@ -2865,7 +2891,7 @@ oobe.amupsell.text: |-
   Cider fungerar inte med Apple Music Voice Plan eller vissa kampanjprenumerationer. Om du redan har en giltig Apple Music-prenumeration klickar du på Nästa för att fortsätta.
 oobe.amupsell.title: Innan vi börjar
 oobe.appearance.accentHint: Används för knappar, markeringar och förlopp i hela appen. Prova en, den förhandsvisas direkt.
-oobe.appearance.subtitle: Välj ett färgtema och en accentfärg. Du kan ändra dessa när som helst i Inställningar → Visuellt.
+oobe.appearance.subtitle: Välj ett färgschema och en accentfärg. Du kan ändra dessa när som helst under Inställningar › Utseende.
 oobe.appearance.title: Gör Cider till ditt
 oobe.appleNotice: "Observera: Apple Music är ett varumärke som tillhör Apple Inc. Cider är en klient från tredje part för Apple Music och är inte kopplad till Apple Inc."
 oobe.audio.advancedFunctionality: ""
@@ -2880,7 +2906,7 @@ oobe.connections.atmosRatingsHint: Se och dela vilka album som låter fantastisk
 oobe.connections.lastfm.connected: Ansluten
 oobe.connections.lastfm.connectedAs: Ansluten som {username}
 oobe.connections.lastfm.hint: Scrobbla din lyssningshistorik.
-oobe.connections.moreHint: Fler integrationer som Libre.fm, Maloja, ListenBrainz samt WebSockets- och RPC-API:er finns i Inställningar → Anslutningar.
+oobe.connections.moreHint: Fler integrationer som Libre.fm, Maloja, ListenBrainz samt WebSockets- och RPC-API:erna finns under Inställningar › Anslutningar.
 oobe.connections.pairDevice: Parkoppla enhet
 oobe.connections.remoteHint: Styr Cider från din telefon.
 oobe.connections.subtitle: Länka Cider med dina andra appar och tjänster.
@@ -3074,10 +3100,22 @@ playlist.refresh.title: Spellistan behöver uppdateras
 playlist.suggestions.subtitle: Förhandsgranska och lägg till i spellista
 playlist.suggestions.title: Föreslagna låtar
 playlist.untitled: Namnlös
+plugin.install.byAuthor: av {author}
+plugin.install.identifier: Identifierare
+plugin.install.install: Installera
+plugin.install.installing: Installerar…
+plugin.install.source: Källa
+plugin.install.subtitle: Ett Cider-tillägg vill läggas till i ditt bibliotek.
+plugin.install.title: Installera tillägg
+plugin.install.update: Uppdatera
+plugin.install.updateSubtitle: Ett Cider-tillägg vill ersätta en installerad version.
+plugin.install.updateTitle: Uppdatera tillägg
+plugin.install.warning: Tillägg kan köra kod i Cider med åtkomst till uppspelning, kö och bibliotek. Installera endast tillägg från källor du litar på.
 podcast.comingSoon.description: Stödet för poddar byggs om efter stora förändringar i hur Cider hanterar uppspelning. Det kommer tillbaka i en framtida uppdatering.
 podcast.comingSoon.hide: Dölj i sidofältet
 podcast.comingSoon.hint: Du kan aktivera det igen i Visuella inställningar, under Sidofält & navigering.
 podcast.comingSoon.title: Poddar kommer snart
+podcast.comingSoon.tweaksHint: Du kan slå på det igen i inställningarna för Justeringar, under Sidofält och navigering.
 podcast.episodes: Avsnitt
 podcast.followedOnCider: Följer på Cider
 podcast.followOnCider: Följ på Cider
@@ -3160,28 +3198,33 @@ settings.accessibility.section.motion: Rörelse
 settings.accessibility.section.motion.description: Hur mycket animationer som används för knappar, kort och andra ytor.
 settings.accessibility.section.soundEffects: Ljudeffekter
 settings.accessibility.section.soundEffects.description: Gränssnittsljud för knappar, reglage och skjutreglage, samt deras volym.
+settings.accessibility.soundPreview.click: Klick
+settings.accessibility.soundPreview.slider: Reglage
+settings.accessibility.soundPreview.switch: Brytare
+settings.accounts.appleMusic: Apple Music
+settings.accounts.appleMusic.description: Aktivera Apple Music
 settings.advanced.section.backups: Säkerhetskopior och återställning
 settings.advanced.section.backups.description: Spara en kopia av dina inställningar, återställ en som Cider har sparat åt dig, eller återställ allt till standardinställningarna.
-settings.advanced.section.client: Denna klient
+settings.advanced.section.client: Den här klienten
 settings.advanced.section.client.description: Prestandabegränsningar och inställningar som hör till klienten som Cider körs i, snarare än till ditt konto.
 settings.airplay.installed.message: Airplay har installerats
 settings.airplay.installed.title: Airplay installerat
 settings.airplay.requiresCiderAudio: Kräver att CiderAudio är aktiverat
 settings.appleMusic.storefront.warning: Att ändra din butik kommer att orsaka problem med uppspelningen. Du har blivit varnad.
-settings.artwork.disableFadeIn: Inaktivera toningseffekt
-settings.artwork.highlighting: Framhävning av skivomslag
+settings.artwork.disableFadeIn: Inaktivera tonande effekt
+settings.artwork.highlighting: Markering av omslag
 settings.artwork.hiresImages: Använd högupplösta bilder
 settings.artwork.hiresImages.warning: Kan öka laddningstiderna och försämra prestandan.
 settings.audio.atmos: Dolby Atmos
-settings.audio.atmos.binaural.desc: Atmos renderas som binaural stereo via CiderAudio. Crossfade, Automix och sömlösa övergångar fortsätter att fungera som vanligt.
+settings.audio.atmos.binaural.desc: Atmos återges som binaural stereo via CiderAudio. Crossfade, Automix och sömlösa övergångar fungerar som väntat.
 settings.audio.atmos.description: Konfigurera Atmos-uppspelning för din nuvarande ljudenhet.
-settings.audio.atmos.normalizationHint: Dolby Atmos-mixar är tystare än stereomasters. Aktivera Ljudnormalisering för att jämna ut skillnaderna.
+settings.audio.atmos.normalizationHint: Dolby Atmos-mixar är tystare än stereomaster. Aktivera ljudnormalisering för att jämna ut nivåerna.
 settings.audio.atmos.off.desc: Atmos inaktiverat. Allt innehåll spelas upp i vanlig stereo.
 settings.audio.atmos.passthrough: Passthrough
 settings.audio.atmos.passthrough.desc: Förbikopplar all ljudbehandling. Flerkanalig Atmos skickas direkt till enheten. Perfekt för AV-receivrar.
-settings.audio.atmos.passthrough.descV2: Skickar flerkanalig Atmos direkt till enheten, för AV-mottagare. Audio Lab, equalizern och lyssningsläge kringgås.
+settings.audio.atmos.passthrough.descV2: Skickar flerkanalig Atmos direkt till enheten, för AV-receivrar. Audio Lab, equalizern och lyssningsläget kringgås.
 settings.audio.atmos.passthroughActive: Passthrough aktiv — ändra i de fullständiga inställningarna.
-settings.audio.atmos.standard.desc: Flerkanalig Atmos med CiderAudio-behandling. Crossfade, Automix och sömlösa övergångar fortsätter att fungera som vanligt.
+settings.audio.atmos.standard.desc: Flerkanalig Atmos med CiderAudio-bearbetning. Crossfade, Automix och sömlösa övergångar fungerar som väntat.
 settings.audio.atmosMode: Atmos-läge
 settings.audio.atmosMode.switchFromPassthroughConfirm: Att byta från passthrough-läge kräver att appen laddas om. Fortsätta?
 settings.audio.atmosMode.switchToPassthroughConfirm: Att byta till passthrough-läge kräver att appen laddas om. Fortsätta?
@@ -3192,7 +3235,7 @@ settings.audio.card.streaming: Strömning
 settings.audio.ciderAudio: Cider Audio
 settings.audio.ciderAudio.description: Specialanpassad och designad ljudstack som levererar en fyllig ljudupplevelse av hög kvalitet. Rekommenderas framför en traditionell equalizer.
 settings.audio.ciderAudio.enable: Aktivera Cider Audio
-settings.audio.ciderAudio.requiredHint: Krävs för Equalizer
+settings.audio.ciderAudio.requiredHint: Krävs för equalizern
 settings.audio.crossfade: Tonade övergångar
 settings.audio.hostCapture.apps: Utlösande appar
 settings.audio.hostCapture.apps.count: "{{ n }} appar kommer att utlösa ljudfångst."
@@ -3216,13 +3259,13 @@ settings.audio.hostCapture.bitAuto: Auto (högsta)
 settings.audio.hostCapture.bitDepth: Bitdjup
 settings.audio.hostCapture.bitDepthHint: Auto använder det högsta bitdjup som din enhet stöder.
 settings.audio.hostCapture.exclusiveNote: Exklusiv utmatning, bit-transparent, kan inte fångas.
-settings.audio.hostCapture.gain: Justering av utmatningsnivå
+settings.audio.hostCapture.gain: Justering av utgångsnivå
 settings.audio.hostCapture.gainHint: Matcha den fångade ljudstyrkan med den normala utmatningen.
-settings.audio.hostCapture.mode: Ljudutmatningsläge
+settings.audio.hostCapture.mode: Ljudutgångsläge
 settings.audio.hostCapture.modeCapture: Ljudfångst
 settings.audio.hostCapture.modeCaptureLong: Kan fångas (OBS, Discord)
 settings.audio.hostCapture.modeExclusive: Exklusivt
-settings.audio.hostCapture.modeExclusiveLong: WASAPI Exklusivt
+settings.audio.hostCapture.modeExclusiveLong: WASAPI exklusiv
 settings.audio.hostCapture.modeHintCapture: Spelar upp ljud från Cider-processen så att OBS, Discord och andra appar kan fånga det.
 settings.audio.hostCapture.modeHintExclusive: Bit-transparent utmatning direkt till din DAC, vilket förbikopplar Windows-mixern. Kan inte fångas.
 settings.audio.hostCapture.modeHintOff: "Av: ljudet spelas upp som vanligt från WebView2-processen. Inte tillgängligt under Atmos-passthrough eller musikvideor."
@@ -3248,7 +3291,7 @@ settings.audio.occlusion.game.desc: Musiken dämpas i frekvenser för tal och sp
 settings.audio.occlusion.off.desc: Musiken spelas upp oförändrad.
 settings.audio.occlusion.passthroughNote: Inte tillgängligt när Dolby Atmos-passthrough är aktivt.
 settings.audio.occlusion.passthroughNote.short: Inte tillgängligt när Atmos-passthrough är aktivt.
-settings.audio.outputDevice: Välj ljudenhet för utmatning
+settings.audio.outputDevice: Välj ljudutgångsenhet
 settings.audio.outputDeviceHint: Välj ljudenhet för uppspelning.
 settings.audio.outputDeviceHintHost: Ljudfångst är aktiverat, uppspelningen använder denna Windows-utmatningsenhet.
 settings.audio.section.ciderAudio: Cider Audio och indikatorer
@@ -3262,6 +3305,35 @@ settings.audio.section.playback: Uppspelning
 settings.audio.section.playback.description: Ljudkvalitet, rumsligt ljud, lyssningslägen och hur snabbt poddar spelas upp.
 settings.audio.section.volume: Volym
 settings.audio.section.volume.description: Ljudutjämning, hur mycket rullhjulet ändrar volymnivån och hur skjutreglaget avläses.
+settings.audio.signal.atmosCodecs: Atmos-codecar tillgängliga
+settings.audio.signal.atmosNativeMac: Inbyggd (macOS)
+settings.audio.signal.atmosNativeMacTooltip: Dolby Atmos avkodas inbyggt av macOS CoreAudio. Rendering av rumsligt ljud hanteras av systemet.
+settings.audio.signal.atmosOffTooltip: Atmos är inaktiverat för den här enheten. Innehållet spelas upp som vanlig stereo.
+settings.audio.signal.atmosOffTooltipMac: Atmos är inaktiverat för den här enheten.
+settings.audio.signal.atmosSupported: Stöds
+settings.audio.signal.binauralSubtitle: Rendering för hörlurar
+settings.audio.signal.binauralTooltip: Atmos-innehåll renderas som binaural stereo via CiderAudio-pipelinen.
+settings.audio.signal.channels: "{count} kanaler"
+settings.audio.signal.codecs: Codecar
+settings.audio.signal.deviceRateTooltip: Samplingsfrekvens för den aktuella enheten
+settings.audio.signal.directOutput: Direkt utgång
+settings.audio.signal.directOutputChannels: Direkt utgång ({count} kanaler)
+settings.audio.signal.loading: Läser in…
+settings.audio.signal.nativeMatch: Native-matchning
+settings.audio.signal.noAtmosCodecs: Inga Atmos-codecar
+settings.audio.signal.output: Utgång
+settings.audio.signal.passthroughMode: Passthrough-läge
+settings.audio.signal.passthroughSubtitle: Ljudbearbetning kringgås, direkt utgång till enheten
+settings.audio.signal.passthroughTooltip: Ljudet kringgår all bearbetning och skickas direkt till enheten. CiderAudio-funktioner som crossfade, Automix och sömlösa övergångar är inaktiva.
+settings.audio.signal.sampleRate: Samplingsfrekvens
+settings.audio.signal.source: Källa {rate}
+settings.audio.signal.sourceRateTooltip: Uppspelningsfrekvens för Apple Music
+settings.audio.signal.standardSubtitle: Flerkanal + CiderAudio
+settings.audio.signal.standardTooltip: Flerkanaligt Atmos-innehåll spelas upp via CiderAudio-bearbetning och renderas efter enhetens kapacitet.
+settings.audio.signal.stereo: Stereo
+settings.audio.signal.surround51: 5.1-surround
+settings.audio.signal.surround71: 7.1+-surround
+settings.audio.signal.upsamplingTooltip: Systemet uppsamplar från Apple Music-källans frekvens
 settings.automix.allowTempoKeyShifts: Tillåt tempo-/tonartsändringar
 settings.automix.allowTempoKeyShiftsHint: Tillåt små förändringar för att hålla övergångarna energiska. (Tillfälligt inaktiverat, görs om.)
 settings.automix.description: Gör intelligenta övergångar mellan låtar baserat på tempo och tonart.
@@ -3269,7 +3341,7 @@ settings.automix.descriptionV2: Blandar låtar med hjälp av varje låts egna to
 settings.automix.disableFor: Inaktivera Automix för...
 settings.automix.disableForAlbums: Album
 settings.automix.disableForAlbumsHint: Använd inte automix vid uppspelning från album.
-settings.automix.disableForAutoplayContinuation: Fortsatt autouppspelning
+settings.automix.disableForAutoplayContinuation: Automatisk fortsättning
 settings.automix.disableForAutoplayContinuationHint: Använd inte automix när uppspelningen övergår till en station eller autouppspelade låtar efter att den ursprungliga samlingen har tagit slut.
 settings.automix.disableForDjMixes: DJ-mixar
 settings.automix.disableForDjMixesHint: Använd inte automix för DJ-mixar och kontinuerliga mixar.
@@ -3283,33 +3355,33 @@ settings.automix.normalizeDurationHint: Övergångstid för volymmatchning ({ms}
 settings.automix.spectralSeparation: Spektral separation
 settings.automix.spectralSeparationHint: Hur mycket de två låtarna separeras i frekvens under en övergång.
 settings.automix.spectralSeparationHintV2: Hur mycket de två spåren separeras i frekvens under en övergång ({value}).
-settings.automix.speedSettle: Stabiliseringstid för hastighet
+settings.automix.speedSettle: Hastighetsutjämningstid
 settings.automix.speedSettleHint: Hur lång tid det tar för uppspelningshastigheten att återgå till det normala efter en tempomatchad mix ({ms}ms)
 settings.automix.tempoAlign: Taktmatchning
 settings.automix.tempoAlignHint: Justera tempot något för att passa ihop de två låtarna när de redan är nära varandra.
 settings.automix.vocalGuard: Skydda sång
 settings.automix.vocalGuardHint: Korta ner mixen när båda låtarna har sång samtidigt.
 settings.cache.all: Alla
-settings.cache.artistChips: Artistbrickor
+settings.cache.artistChips: Artistchips
 settings.cache.artwork: Skivomslag
 settings.cache.clear: Rensa cache
 settings.cache.content: Innehåll
 settings.cache.entries: "Antal poster: {{ count }}"
-settings.cache.homeData: Hemdata
+settings.cache.homeData: Startdata
 settings.cache.library: Bibliotek
-settings.cache.marketplaceListings: Marketplace-listningar
+settings.cache.marketplaceListings: Marknadsplatsannonser
 settings.cache.playlistIndex: Spellisteindex
 settings.cache.prompt.artwork.cleared.message: Cachen för omslagsbilder har rensats. Uppdatera nu?
-settings.cache.prompt.artwork.cleared.title: Cachen för omslagsbilder har rensats
-settings.cache.prompt.artwork.title: Rensa cache för omslagsbilder
+settings.cache.prompt.artwork.cleared.title: Omslagscachen rensad
+settings.cache.prompt.artwork.title: Rensa omslagscache
 settings.cache.prompt.clearAll.cleared.message: Cachen har rensats. Uppdatera nu?
-settings.cache.prompt.clearAll.cleared.title: Cachen har rensats
+settings.cache.prompt.clearAll.cleared.title: Cachen rensad
 settings.cache.prompt.clearAll.title: Rensa cache
 settings.cache.prompt.marketplace.cleared.message: Cachen har rensats. Uppdatera nu?
-settings.cache.prompt.marketplace.cleared.title: Marketplace-cachen har rensats
+settings.cache.prompt.marketplace.cleared.title: Marknadsplatscachen rensad
 settings.cache.prompt.playlist.cleared.message: Cachen har rensats. Uppdatera nu?
-settings.cache.prompt.playlist.cleared.title: Spellistecachen har rensats
-settings.cache.recentlyModifiedPlaylists: Senast ändrade spellistor
+settings.cache.prompt.playlist.cleared.title: Spellistecachen rensad
+settings.cache.recentlyModifiedPlaylists: Nyligen ändrade spellistor
 settings.cache.storageUsed: "Använt lagringsutrymme: {{ usage }}"
 settings.client.genten.enableTrayIcon: Aktivera systemfältsikon
 settings.client.genten.enableTrayIcon.desc: Välj om systemfältsikonen ska vara aktiverad
@@ -3467,7 +3539,7 @@ settings.connectivity.lastfm.useAlbumArtist.description: Scrobbla med albumets k
 settings.connectivity.legacyToken: Äldre (full åtkomst)
 settings.connectivity.legacyToken.tooltip: Denna token skapades före begränsad åtkomst och ger full behörighet. Generera en ny för att begränsa den.
 settings.connectivity.noDevices: Inga enheter anslutna
-settings.connectivity.requireTokens: Kräv API-tokens
+settings.connectivity.requireTokens: Kräv API-token
 settings.connectivity.requireTokens.desc: När detta är aktiverat måste alla API-anrop innehålla en giltig token.
 settings.connectivity.scrobbler: Scrobbler
 settings.connectivity.scrobbler.blacklist: Svartlista
@@ -3533,7 +3605,7 @@ settings.connectivity.scrobbler.trigger.mode: Utlösarläge
 settings.connectivity.scrobbler.trigger.mode.desc: När en scrobbling ska skickas. "Vilket som än inträffar först" är den klassiska Last.fm-regeln.
 settings.connectivity.scrobbler.trigger.percent: Procentandel
 settings.connectivity.scrobbler.zeroOff: 0 inaktiverar detta filter.
-settings.connectivity.section.communityRatings: Gemenskapens betyg
+settings.connectivity.section.communityRatings: Communitybetyg
 settings.connectivity.section.communityRatings.description: Dolby Atmos-mixbetyg från andra Cider-lyssnare på albumsidor, och om dina delas tillbaka.
 settings.connectivity.section.discord.description: Vad Cider visar på din Discord-profil när musik spelas, och vilken klient den ansluter genom.
 settings.connectivity.section.externalApplications.description: WebSockets-porten och RPC-servern som andra program använder för att läsa uppspelning och styra Cider, samt vilka av dem som tillåts.
@@ -3541,19 +3613,20 @@ settings.connectivity.section.parties.description: Lyssna synkroniserat med andr
 settings.connectivity.section.vrOverlay.description: En Cider-spelare och fästbara paneler över SteamVR och VDXR, som kommunicerar med den här appen via RPC.
 settings.connectivity.tokenCopied: Token har kopierats till urklipp
 settings.connectivity.tokens: Tokens
+settings.connectivity.tokens.empty: Inga token ännu.
 settings.contentFilter.description: Sektioner i Bläddra och Lyssna nu vars titlar eller innehåll matchar något av dessa sökord kommer att döljas.
 settings.contentFilter.empty: Inga sökord har lagts till än.
 settings.contentFilter.inputPlaceholder: Lägg till ett sökord...
-settings.contentFilter.title: Filtrera sökord
-settings.crossfade.advanced: Avancerade inställningar för övertoning
+settings.contentFilter.title: Filtrera nyckelord
+settings.crossfade.advanced: Avancerade inställningar för crossfade
 settings.crossfade.automixStillBlends: Automix är på, så låtar kan fortfarande glida in i varandra. Stäng av Automix nedan för att stoppa all övertoning.
 settings.crossfade.description: Tona smidigt ut det aktuella spåret samtidigt som nästa tonas in.
-settings.crossfade.disableFor: Inaktivera övertoning för...
+settings.crossfade.disableFor: Inaktivera crossfade för...
 settings.crossfade.duration: Varaktighet
-settings.crossfade.enable: Aktivera övertoning
+settings.crossfade.enable: Aktivera crossfade
 settings.crossfade.exclusions.albums: Album
 settings.crossfade.exclusions.albums.description: Använd inte övertoning när du spelar från album.
-settings.crossfade.exclusions.autoplayContinuation: Fortsatt autouppspelning
+settings.crossfade.exclusions.autoplayContinuation: Automatisk uppspelning
 settings.crossfade.exclusions.autoplayContinuation.description: Tona inte över när uppspelningen övergår till en station eller autouppspelade låtar efter att den ursprungliga samlingen har tagit slut.
 settings.crossfade.exclusions.djMixes: DJ-mixar
 settings.crossfade.exclusions.djMixes.description: Använd inte övertoning för DJ-mixar och kontinuerliga mixar.
@@ -3561,13 +3634,13 @@ settings.crossfade.exclusions.liveAlbums: Livealbum
 settings.crossfade.exclusions.liveAlbums.description: Använd inte övertoning för liveinspelningar och konserter.
 settings.crossfade.exclusions.playlists: Spellistor
 settings.crossfade.exclusions.playlists.description: Använd inte övertoning när du spelar från spellistor.
-settings.crossfade.loudnessSensitivity: Känslighet för ljudstyrka
+settings.crossfade.loudnessSensitivity: Känslighet för ljudnivå
 settings.crossfade.loudnessSensitivity.description: Balansera skillnader i ljudstyrka ({{ value }}%)
-settings.crossfade.smoothSkip: Smidigt byte
+settings.crossfade.smoothSkip: Mjuk övergång vid hopp
 settings.crossfade.smoothSkip.description: Tona mellan spår när du byter låt.
-settings.crossfade.tempoSensitivity: Tempokänslighet
+settings.crossfade.tempoSensitivity: Känslighet för tempo
 settings.crossfade.tempoSensitivity.description: Svar på tempoändringar ({{ value }}%)
-settings.customCss.createSnippet: Skapa kodsnutt
+settings.customCss.createSnippet: Skapa snippet
 settings.customCss.migrate.confirm: Detta kommer att konvertera din befintliga anpassade CSS till en ny kodsnutt och rensa den nuvarande anpassade CSS:en. Vill du fortsätta?
 settings.customCss.migrate.title: Konvertera anpassad CSS
 settings.customCss.title: Anpassad CSS
@@ -3606,12 +3679,12 @@ settings.extensions.addBuiltInSnippet: Lägg till ett inbyggt kodavsnitt
 settings.extensions.browsePluginMarket: Bläddra i plugin-marknaden
 settings.extensions.browseThemeMarket: Bläddra i temamarknaden
 settings.extensions.byAuthor: av {author}
-settings.extensions.checkUpdates: Sök efter uppdateringar för tillägg vid start
+settings.extensions.checkUpdates: Sök efter tilläggsuppdateringar vid start
 settings.extensions.checkUpdates.desc: Sök efter uppdateringar för teman, kodavsnitt och plugin-program varje gång Cider startas.
 settings.extensions.createPlugin: Skapa ett plugin-program
 settings.extensions.createSnippet: Skapa nytt kodavsnitt
 settings.extensions.createTheme: Skapa nytt tema
-settings.extensions.cssSnippets: CSS-kodavsnitt
+settings.extensions.cssSnippets: CSS-snippets
 settings.extensions.fileWatcher: Aktivera filbevakare för teman
 settings.extensions.fileWatcher.desc: Läs in temats stilmallar automatiskt när deras filer ändras på disken.
 settings.extensions.importFromFile: Importera från fil
@@ -3637,21 +3710,25 @@ settings.extensions.plugins.uninstallTitle: Avinstallera tillägg
 settings.extensions.refresh: Uppdatera tillägg
 settings.extensions.refresh.desc: Sök igenom teman, kodavsnitt och plugin-program på disken igen.
 settings.extensions.refreshed: Teman, kodavsnitt och plugin-program har uppdaterats
+settings.extensions.snippets.author: Av {{ author }}
 settings.extensions.snippets.created: Kodavsnitt skapat
-settings.extensions.snippets.createTitle: Skapa nytt CSS-kodavsnitt
+settings.extensions.snippets.createTitle: Skapa ny CSS-snippet
 settings.extensions.snippets.deleteConfirm: Är du säker på att du vill ta bort detta CSS-kodavsnitt? Denna åtgärd kan inte ångras.
 settings.extensions.snippets.deleted: Kodavsnitt borttaget
-settings.extensions.snippets.deleteTitle: Ta bort CSS-kodavsnitt
+settings.extensions.snippets.deleteTitle: Ta bort CSS-snippet
 settings.extensions.snippets.empty: Inga CSS-kodavsnitt installerade.
 settings.extensions.snippets.exported: Kodavsnitt exporterat
 settings.extensions.snippets.imported: Importerade {{ count }} kodavsnitt
 settings.extensions.snippets.importFailed: "Misslyckades med att importera {{ file }}: {{ error }}"
+settings.extensions.snippets.invalidFile: "Ogiltigt filformat: {{ file }}"
 settings.extensions.snippets.namePrompt: Ange ett namn för din nya CSS-kodsnutt.
 settings.extensions.snippets.orderUpdated: Ordningen uppdaterad
 settings.extensions.snippets.saved: Kodsnutten sparad
 settings.extensions.themeCreated: Nytt tema har skapats
 settings.extensions.themes.activeCount: "{{ count }} aktiva"
 settings.extensions.themes.empty: Inga teman installerade.
+settings.extensions.themes.getMore: Hämta fler teman
+settings.extensions.themes.refreshList: Uppdatera temalistan
 settings.extensions.themes.stylesheetMany: "{{ count }} formatmallar"
 settings.extensions.themes.stylesheetOne: 1 formatmall
 settings.extensions.viewOnMarketplace: Visa i marknadsplatsen
@@ -3677,6 +3754,7 @@ settings.general.section.language: Språk
 settings.general.section.language.description: Gränssnittsspråk, och hur man rapporterar eller krediterar dess översättningar.
 settings.general.section.playback: Uppspelning
 settings.general.section.playback.description: Vad spela-knappen gör när ingenting spelas.
+settings.general.section.playback.descriptionV2: Vad play-knappen gör när inget spelas, och var uppspelningshastigheten kan ändras.
 settings.general.section.privacy: Integritet
 settings.general.section.privacy.description: Namnet som Cider hälsar dig med, och om det får använda din plats.
 settings.general.section.queue: Kö
@@ -3753,7 +3831,7 @@ settings.intensive.animatedArtworkQuality.description: Högre kvalitet avkodar s
 settings.intensive.catalogAnimatedArtwork.description: Spelar upp flera animerade albumomslag samtidigt när du bläddrar i katalogen.
 settings.intensive.characterFlow.description: Animerar varje texttecken individuellt istället för hela rader.
 settings.intensive.confirm.enable: Aktivera
-settings.intensive.confirm.message: Den här funktionen är prestandakrävande och kan avsevärt öka CPU-/GPU-användningen, värmen och batteridräneringen – särskilt på mindre kraftfull maskinvara. Du kan granska krävande funktioner när som helst via glödlampsknappen längst upp i Inställningar.
+settings.intensive.confirm.message: Den här funktionen är resurskrävande och kan kraftigt öka CPU/GPU-användningen, värmen och batteriförbrukningen, särskilt på enklare hårdvara. Du kan när som helst se krävande funktioner under Inställningar › Energianvändning.
 settings.intensive.emotionEngine.description: Analyserar albumomslag för att ta fram en färgpalett.
 settings.intensive.fsrUpscale.description: Uppskalar albumomslag på GPU:n med FidelityFX Super Resolution.
 settings.intensive.immersiveAnimatedArtwork.description: Spelar upp animerade albumomslag i Immersive-vyn.
@@ -3770,13 +3848,13 @@ settings.intensive.viewTransitions.description: Animerar övergångar när du v�
 settings.intensive.warning: Prestandakrävande – kan orsaka hög CPU-/GPU-användning.
 settings.keybindings.recordingHint: Spelar in. Tryck på Escape för att avbryta
 settings.lyrics.card.providers: Leverantörer
-settings.lyrics.card.songOverrides: Låtundantag
-settings.lyrics.localeOverrides: Språkbaserade regler
-settings.lyrics.localeOverrides.add: Lägg till språkspecifikt undantag
+settings.lyrics.card.songOverrides: Låtspecifika åsidosättningar
+settings.lyrics.localeOverrides: Regler baserade på språk
+settings.lyrics.localeOverrides.add: Lägg till språkregel
 settings.lyrics.localeOverrides.audioLocale: Ljudspråk
 settings.lyrics.localeOverrides.desc: Ställ in anpassade leverantörs- och översättningsinställningar för låtar på specifika språk. När en låts ljudspråk matchar en regel kommer dessa inställningar att åsidosätta standardinställningarna.
-settings.lyrics.localeOverrides.dialogTitle.add: Lägg till språkspecifikt undantag
-settings.lyrics.localeOverrides.dialogTitle.edit: Redigera språkspecifikt undantag
+settings.lyrics.localeOverrides.dialogTitle.add: Lägg till språkregel
+settings.lyrics.localeOverrides.dialogTitle.edit: Redigera språkregel
 settings.lyrics.localeOverrides.empty: Inga regler än. Använd + för att lägga till en.
 settings.lyrics.localeOverrides.overrideTranslation: Åsidosätt översättning
 settings.lyrics.localeOverrides.preferredProvider: Föredragen leverantör
@@ -3784,13 +3862,13 @@ settings.lyrics.localeOverrides.provider.apple: Apple Music
 settings.lyrics.localeOverrides.provider.auto: Standard (Auto)
 settings.lyrics.localeOverrides.provider.mxm: Musixmatch
 settings.lyrics.localeOverrides.provider.netease: NetEase
-settings.lyrics.localeOverrides.provider.user: Användarinskickat
+settings.lyrics.localeOverrides.provider.user: Användarinskickad
 settings.lyrics.localeOverrides.providerLabel: "Leverantör:"
 settings.lyrics.localeOverrides.translateTo: Översätt till
 settings.lyrics.localeOverrides.translateToLabel: "Översätt till:"
 settings.lyrics.player.cascade: Kaskadintensitet
 settings.lyrics.player.cascade.desc: Hur tydlig den stegvisa rad-för-rad-övergången är.
-settings.lyrics.player.cta: Låttextanimationer
+settings.lyrics.player.cta: Animationer för låttexter
 settings.lyrics.player.cta.description: Finjustera utseendet och beteendet för låttextanimationer, inklusive betoning, glöd, lyft, hastighet, toning och kaskadeffekter.
 settings.lyrics.player.deselScale: Skala för inaktiva rader
 settings.lyrics.player.deselScale.desc: Storlek på inaktiva rader; ett lägre värde gör att den aktiva raden sticker ut mer.
@@ -3807,10 +3885,10 @@ settings.lyrics.player.reset: Återställ standardvärden
 settings.lyrics.player.speed: Animationshastighet
 settings.lyrics.player.speed.desc: Fjäderhastighet för radövergångar – högre är snabbare.
 settings.lyrics.player.title: Låttextanimationer
-settings.lyrics.scroll.duration: Tid för textrullning
+settings.lyrics.scroll.duration: Rullningstid för låttexter
 settings.lyrics.scroll.duration.desc1: Justera hastigheten för textrullning i
 settings.lyrics.scroll.duration.desc2: Detta påverkar inte låtens hastighet.
-settings.lyrics.scroll.easing: Utjämningsfunktion
+settings.lyrics.scroll.easing: Easing-funktion
 settings.lyrics.scroll.easing.curveExample: "Kurvexempel:"
 settings.lyrics.scroll.easing.description1: Justera utjämningsfunktionen för textrullning. Detta är en CSS-
 settings.lyrics.scroll.easing.description2: egenskap.
@@ -3829,14 +3907,14 @@ settings.lyrics.section.sources: Källor
 settings.lyrics.section.sources.description: Var låttexter kommer ifrån, och reglerna per språk eller spår som åsidosätter standardleverantören.
 settings.lyrics.section.translation: Översättning
 settings.lyrics.section.translation.description: Översatta låttexter, språket de visas på och om originalet ligger kvar på skärmen.
-settings.lyrics.trackOverrides.clearAll: Rensa alla åsidosättanden
+settings.lyrics.trackOverrides.clearAll: Rensa alla åsidosättningar
 settings.lyrics.trackOverrides.desc: Spår som listas här använder alltid den låttextleverantör du har låst, eller den sångstatus du har ställt in manuellt istället för den som Apple rapporterar. Dessa åsidosättningar ställs in från låttextmenyn och spårets högerklicksmeny.
 settings.lyrics.trackOverrides.empty: Ingenting är åsidosatt än. Allt du låser från de menyerna listas här.
 settings.lyrics.trackOverrides.lyricsForced: Tvingad låttext
 settings.lyrics.trackOverrides.markedInstrumental: Markerad som instrumental
 settings.lyrics.trackOverrides.providerLabel: "Leverantör:"
-settings.lyrics.trackOverrides.remove: Ta bort åsidosättande
-settings.lyrics.trackOverrides.title: Spårspecifika åsidosättanden
+settings.lyrics.trackOverrides.remove: Ta bort åsidosättning
+settings.lyrics.trackOverrides.title: Låtspecifika åsidosättningar
 settings.micaish.blurAmount: Oskärpa
 settings.micaish.brightness: Ljusstyrka %
 settings.micaish.contrast: Kontrast %
@@ -3852,37 +3930,59 @@ settings.miniplayer.unpinWindow: Avfäst fönster
 settings.nav.accessibility: Hjälpmedel
 settings.nav.accounts: Konton
 settings.nav.advanced: Avancerat
+settings.nav.appleMusicWordmark: music
 settings.nav.audio: Ljud
+settings.nav.categories: Inställningskategorier
 settings.nav.concerts: Konserter
-settings.nav.config-backups: Säkerhetskopior av konfiguration
+settings.nav.config-backups: Konfigurationssäkerhetskopior
 settings.nav.connectivity: Anslutningar
 settings.nav.extensions: Tillägg
 settings.nav.general: Allmänt
 settings.nav.group.account: Konto
 settings.nav.group.advanced: Avancerat
 settings.nav.group.appearance: Utseende
+settings.nav.group.connections: Anslutningar
 settings.nav.group.general: Allmänt
 settings.nav.group.integrations: Integreringar
 settings.nav.group.library: Bibliotek
+settings.nav.group.lookAndFeel: Utseende och känsla
 settings.nav.group.playback: Uppspelning
 settings.nav.lyrics: Låttexter
 settings.nav.notifications: Notiser
 settings.nav.plugins: Insticksprogram
-settings.nav.power: Strömanvändning
+settings.nav.power: Energianvändning
 settings.nav.privacy: Integritet
 settings.nav.profile: Profil
 settings.nav.search: Sök
-settings.nav.searchPlaceholder: Sök inställningar...
+settings.nav.searchPlaceholder: Sök i inställningar
+settings.nav.summary.accessibility: Fet text, gränssnittsskala, rörelse, ljudeffekter
+settings.nav.summary.advanced: Säkerhetskopior, felsökning, experiment
+settings.nav.summary.audio: Utgång, kvalitet, crossfade, normalisering
+settings.nav.summary.concerts: Plats, radie, sortering
+settings.nav.summary.connectivity: Discord, scrobbling, lyssningsfester, fjärrstyrning
+settings.nav.summary.extensions: Teman, CSS-snuttar, tillägg
+settings.nav.summary.general: Start, kö, sovtimer, tangentbindningar
+settings.nav.summary.lyrics: Källor, översättning, visning, tidsinställning
+settings.nav.summary.notifications: Kategorier, historik, systemaviseringar
+settings.nav.summary.power: Prestanda, bildfrekvens, energisparlägen
+settings.nav.summary.profile: Apple Music-konto
+settings.nav.summary.sid: Var Sid visas och hur den fungerar
+settings.nav.summary.smartPlaylists: Regler och underhåll för smarta spellistor
+settings.nav.summary.subscriberYear: prenumerant i ett år
+settings.nav.summary.subscriberYears: prenumerant i {{count}} år
+settings.nav.summary.tweaks: Små ändringar i spelaren, sidofältet och mer
+settings.nav.summary.visual: Färgschema, layout, fönster, uppslukande
 settings.nav.themes: Teman
+settings.nav.tweaks: Justeringar
 settings.nav.updates: Uppdateringar
-settings.nav.visual: Visuellt
+settings.nav.visual: Utseende
 settings.normalization.louderTargetHint: Om Cider fortfarande låter för tyst vid 100 % volym kan du välja ett högre målvärde. Högre LUFS-värden låter högre, men toppvärdesskyddet kan begränsa förstärkningen för att förhindra klippning.
 settings.normalization.presets.apple: Apple
 settings.normalization.presets.balanced: Balanserad
 settings.normalization.presets.dynamic: Dynamisk
 settings.normalization.presets.loud: Hög
 settings.normalization.presets.maximum: Maximal
-settings.normalization.target: Målvärde för ljudstyrka
+settings.normalization.target: Målvolym
 settings.normalization.unit: LUFS
 settings.notifications.alwaysOn: Alltid på
 settings.notifications.alwaysOn.description: Dessa innehåller problem och appstatus som du behöver se, så de kan inte stängas av. Fel visas alltid, oavsett vilken kategori de tillhör.
@@ -3918,6 +4018,7 @@ settings.notifications.section.history: Historik
 settings.notifications.section.muted: Tystade notiser
 settings.notifications.section.system: Systemnotiser
 settings.notifications.summary.categoriesOn: Kategorier på
+settings.notifications.summary.categoriesOnCount: "{{on}} av {{total}} på"
 settings.notifications.summary.description: Välj vilka typer av notiser Cider visar dig. Allt du stänger av sparas fortfarande i din notislista, så att du kan läsa dem senare.
 settings.notifications.unmute: Slå på ljudet
 settings.notifications.unmuteAll: Slå på ljudet för alla
@@ -3935,11 +4036,11 @@ settings.notyf.visual.theme.install.success: Temat har installerats
 settings.notyf.visual.theme.updateAvailable: "[Teman] Det finns en uppdatering tillgänglig för {{ theme }}"
 settings.option.accessibility.boldText: Fet text
 settings.option.accessibility.boldText.description: Ökar textens tjocklek i hela appen för förbättrad läsbarhet.
-settings.option.accessibility.cardHoverMotion: Rörelse vid hovring över kort
+settings.option.accessibility.cardHoverMotion: Rörelse vid musövergång på kort
 settings.option.accessibility.cardHoverMotion.description: Gör klickbara kort (albumrutor, funktionskort, rutnätsobjekt) något större vid hovring och komprimerade vid tryck. Inaktiverat som standard.
 settings.option.accessibility.enableSoundEffects: Aktivera ljudeffekter
 settings.option.accessibility.enableSoundEffects.description: Spela upp subtila ljud vid interaktion med knappar, reglage och skjutreglage.
-settings.option.accessibility.forceFocusVisible: Visa alltid fokusring
+settings.option.accessibility.forceFocusVisible: Visa alltid fokusram
 settings.option.accessibility.forceFocusVisible.description: Tvinga fram en synlig kontur på fokuserade element för tangentbordsnavigering.
 settings.option.accessibility.highContrast: Hög kontrast
 settings.option.accessibility.highContrast.description: Ökar kontrasten mellan text, bakgrunder och gränssnittselement.
@@ -3950,7 +4051,7 @@ settings.option.accessibility.motionIntensity.none: Ingen
 settings.option.accessibility.motionIntensity.normal: Normal
 settings.option.accessibility.motionIntensity.playful: Lekfull
 settings.option.accessibility.motionIntensity.reduced: Reducerad
-settings.option.accessibility.playOnHover: Spela vid hovring
+settings.option.accessibility.playOnHover: Spela vid musövergång
 settings.option.accessibility.playOnHover.description: Spela även upp ett subtilt klickljud när pekaren förs över interaktiva element.
 settings.option.accessibility.soundEffects: Ljudeffekter
 settings.option.accessibility.soundPreview: Ljudförhandsvisning
@@ -3969,8 +4070,8 @@ settings.option.advanced.compactSidebar.size: Storlek
 settings.option.advanced.configBackups.description: Återställ en kopia av din inställningsfil som Cider har sparat, om dina inställningar skulle gå förlorade eller återställas.
 settings.option.advanced.experimentalFeatures: Experimentella funktioner
 settings.option.advanced.experimentalFeatures.description: Funktioner under utveckling och funktionsflaggor.
-settings.option.advanced.floatingSearch: Flytande sökpanel
-settings.option.advanced.floatingSearch.blurBackground: Gör bakgrunden oskarp
+settings.option.advanced.floatingSearch: Svävande sökoverlay
+settings.option.advanced.floatingSearch.blurBackground: Suddig bakgrund
 settings.option.advanced.floatingSearch.blurBackground.description: När detta är aktiverat görs bakgrunden oskarp när sökfältet är i fokus.
 settings.option.advanced.floatingSearch.clearSearchOnClose: Rensa sökning vid stängning
 settings.option.advanced.floatingSearch.clearSearchOnClose.description: När detta är aktiverat rensas texten i sökfältet när sökfältet stängs.
@@ -3981,35 +4082,35 @@ settings.option.advanced.home: Hem
 settings.option.advanced.home.buttonLocation: Placering av hemknapp
 settings.option.advanced.home.buttonLocation.sidebar: Sidofält
 settings.option.advanced.home.buttonLocation.sidebar2023: Sidofält (2023)
-settings.option.advanced.home.buttonLocation.topBar: Övre fältet
-settings.option.advanced.immersive: Omslutande vy
-settings.option.advanced.immersive.artworkHighlight: Framhävning av albumomslag
-settings.option.advanced.immersive.controlsTimeout: Tidsgräns för aktiva reglage (sekunder)
+settings.option.advanced.home.buttonLocation.topBar: Översta fältet
+settings.option.advanced.immersive: Uppslukande vy
+settings.option.advanced.immersive.artworkHighlight: Framhävning av omslagsbild
+settings.option.advanced.immersive.controlsTimeout: Tidsgräns för aktiva kontroller (sekunder)
 settings.option.advanced.immersive.description: Själva den omslutande vyn. Layouten den använder väljs under Visuellt.
-settings.option.advanced.immersive.glowEffectOnActiveLyrics: Glödeffekt på aktiv låttext
-settings.option.advanced.lyrics: Låttextanimation
+settings.option.advanced.immersive.glowEffectOnActiveLyrics: Glöd-effekt på aktiva låttexter
+settings.option.advanced.lyrics: Animation av låttexter
 settings.option.advanced.lyrics.characterFlow: Flytande tecken
 settings.option.advanced.lyrics.characterFlow.description: Enskilda tecken flyter uppåt istället för hela raden. Mer resurskrävande.
 settings.option.advanced.lyrics.description: Hur textrader och tecken rör sig medan en låt spelas.
-settings.option.advanced.lyrics.lineStaggering: Radförskjutning
+settings.option.advanced.lyrics.lineStaggering: Stegvis visning av rader
 settings.option.advanced.lyrics.lineStaggering.description: Kommande textrader får en subtil fördröjning när nästa aktiva rad är i fokus
-settings.option.advanced.lyrics.lineStaggeringImmersive: Radförskjutning (omslutande)
+settings.option.advanced.lyrics.lineStaggeringImmersive: Stegvis visning av rader (uppslukande)
 settings.option.advanced.lyrics.lineStaggeringImmersive.description: Mer resurskrävande.
 settings.option.advanced.lyrics.scaleOnAny: Tillåt skalningseffekt på alla ord
 settings.option.advanced.lyrics.scaleOnAny.description: Gör det möjligt för alla ord att skalas, inte bara de betonade
-settings.option.advanced.lyrics.singEngine: Fängslande sångmotor
+settings.option.advanced.lyrics.singEngine: Uppslukande sångmotor
 settings.option.advanced.lyrics.singEngine.classic: Klassisk
 settings.option.advanced.lyrics.singEngine.description: Sångmotor för fängslande vy. Klassisk använder resurssnål CSS-animering, vilket är det bästa valet för mindre kraftfulla system. Sidofältet använder alltid Klassisk.
 settings.option.advanced.lyrics.singEngine.legacy: Äldre
 settings.option.advanced.lyrics.singEngine.waapi: GPU (Web Animations)
-settings.option.advanced.lyrics.singLyricsEverywhere: Sjung-låttext överallt
+settings.option.advanced.lyrics.singLyricsEverywhere: Sjung låttexter överallt
 settings.option.advanced.lyrics.singLyricsEverywhere.description: Aktivera Sjung-låttext utanför omslutande vy. Mer resurskrävande.
 settings.option.advanced.mavericksLcd: Mavericks LCD
 settings.option.advanced.mavericksLcd.style: Stil
 settings.option.advanced.mavericksLcd.style.glass: Glas
-settings.option.advanced.mediaArtwork: Omslagsbild för medieobjekt
+settings.option.advanced.mediaArtwork: Omslagsbild för media
 settings.option.advanced.mediaArtwork.controls: Omslagsdetaljer och högupplösta bilder
-settings.option.advanced.mediaArtwork.controlsV2: Markering och tonande av omslag
+settings.option.advanced.mediaArtwork.controlsV2: Framhävning och tonande inblandning av omslagsbild
 settings.option.advanced.mediaArtwork.description: Omslag på rutnät, listor och rader i hela appen.
 settings.option.advanced.notificationStyle: Notisstil
 settings.option.advanced.performance: Prestanda
@@ -4024,8 +4125,8 @@ settings.option.advanced.progressBar: Förloppsindikator
 settings.option.advanced.progressBar.useAccentColor: Använd accentfärg
 settings.option.advanced.resetCider: Återställ Cider
 settings.option.advanced.resetCider.description: Återställ inställningar, cachefiler och lokala data. Du förblir inloggad på Apple Music och Taproom om du inte väljer något annat.
-settings.option.advanced.resizableMiniplayer: Minispelare med ändringsbar storlek
-settings.option.advanced.richAlbumGrid: Detaljerat albumrutnät
+settings.option.advanced.resizableMiniplayer: Storleksbar minispelare
+settings.option.advanced.richAlbumGrid: Rik albumrutnät
 settings.option.advanced.richAlbumGrid.alwaysNavigateToPage: Navigera alltid till sida
 settings.option.advanced.richAlbumGrid.disableScrollAnimation: Inaktivera rullningsanimering
 settings.option.advanced.richAlbumGrid.scrollToPosition: Rulla till position
@@ -4033,11 +4134,11 @@ settings.option.advanced.richAlbumGrid.scrollToPosition.bottom: Längst ned
 settings.option.advanced.richAlbumGrid.scrollToPosition.top: Längst upp
 settings.option.advanced.searchBar: Huvudsökfält
 settings.option.advanced.searchBar.description: Sökfältet i namnlisten.
-settings.option.advanced.searchBar.noRedirectOnSelect: Ingen landningssida vid fokus
+settings.option.advanced.searchBar.noRedirectOnSelect: Ingen startsida vid fokus
 settings.option.advanced.searchBar.noRedirectOnSelect.description: När detta är aktiverat kommer sökfältet inte att omdirigera till landningssidan när det markeras. För att gå till landningssidan, håll ned SKIFT medan du markerar sökfältet.
 settings.option.advanced.settingsTakeout: Exportera / importera inställningar
 settings.option.advanced.settingsTakeout.description: Säkerhetskopiera dina inställningar till en fil, eller återställ dem på en annan enhet. Kontoinloggningar inkluderas aldrig.
-settings.option.advanced.simpleArtworkBg: Enkel omslagsbakgrund
+settings.option.advanced.simpleArtworkBg: Enkel bakgrund för omslag
 settings.option.advanced.simpleArtworkBg.brightness: Ljusstyrka %
 settings.option.advanced.simpleArtworkBg.brightnessV2: Ljusstyrka
 settings.option.advanced.simpleArtworkBg.contrast: Kontrast %
@@ -4046,21 +4147,21 @@ settings.option.advanced.simpleArtworkBg.saturate: Mättnad %
 settings.option.advanced.simpleArtworkBg.saturateV2: Mättnad
 settings.option.advanced.simpleArtworkBg.useMask: Använd nedre mask
 settings.option.advanced.sonoma: Sonoma
-settings.option.advanced.sonoma.lyricArc: Bågformad låttext
+settings.option.advanced.sonoma.lyricArc: Välvda låttexter
 settings.option.advanced.sonoma.lyricArc.description: Aktiva textrader böjer sig mot mitten av skärmen med en subtil känsla av djup.
 settings.option.advanced.sonoma.radialMask: Använd alternativ mask
 settings.option.advanced.sonoma.radialMask.description: När detta är aktiverat använder Sonoma en annan, radiell mask för omslagsbilden, med fokus på mer skärpa och mindre oskärpa.
 settings.option.advanced.title: Avancerat
 settings.option.advanced.tweaks: Finjusteringar
 settings.option.advanced.tweaks.description: Finjusteringar som inte riktigt passar in någon annanstans
-settings.option.advanced.volumeSlider: Spelarens volymreglage
+settings.option.advanced.volumeSlider: Volymreglage i spelaren
 settings.option.advanced.volumeSlider.iOSStyle: iOS-stil
 settings.option.advanced.window: Fönsterbeteende
 settings.option.advanced.window.description: Storleksändring av Minispelaren och stilen på rullningslisten som används i appen. Fönsterreglage och vibrans finns under Visuellt.
 settings.option.advanced.window.scrollbarType: Typ av rullningslist
 settings.option.all: Alla
 settings.option.alwaysShow: Visa alltid
-settings.option.appleMusic.behavior.playButtonOnStop: Spela-knapp vid stoppad åtgärd
+settings.option.appleMusic.behavior.playButtonOnStop: Uppspelningsknapp vid stoppad åtgärd
 settings.option.audio.advanced: Avancerad volymkontroll
 settings.option.audio.airplay: AirPlay-strömning
 settings.option.audio.airplay.description: Aktivera experimentell meny för AirPlay 2-strömning
@@ -4079,10 +4180,10 @@ settings.option.audio.ciderAudio.showBadges: Visa märken i Spelas nu
 settings.option.audio.ciderAudio.showInToolbar: Visa Cider Audio i verktygsfältet
 settings.option.audio.ciderAudioSettings: Inställningar för Cider Audio
 settings.option.audio.crossfade: Övertoning
-settings.option.audio.dbfs.calibration: 0 dBFS kalibrering
+settings.option.audio.dbfs.calibration: Kalibrering av 0 dBFS
 settings.option.audio.dbfs.description: Ange toppen Z-viktad dB SPL när Cider ligger på 0 dBFS.
 settings.option.audio.dbspl.description: (Endast avancerade användare) Visa dB SPL istället för dBFS på volymreglaget.
-settings.option.audio.dbspl.display: dB SPL Display
+settings.option.audio.dbspl.display: Visning av dB SPL
 settings.option.audio.drmSystem: DRM-system
 settings.option.audio.drmSystem.description: DRM-systemet som ska användas för uppspelning av Apple Music
 settings.option.audio.drmSystem.PlayReadyCAWarning: Cider Audio-funktioner fungerar inte när Microsoft PlayReady används.
@@ -4137,30 +4238,30 @@ settings.option.audio.enableAdvancedFunctionality.tunedAudioSpatialization.profi
 settings.option.audio.enableAdvancedFunctionality.tunedAudioSpatialization.profile.standard: Standard
 settings.option.audio.exponentialVolume: Exponentiell volymkurva
 settings.option.audio.exponentialVolume.description: Följ en mer gradvis volymkurva, vilket möjliggör mer exakt volymkontroll vid lägre volymer.
-settings.option.audio.hostCapture: Fångbart ljud (OBS / Discord)
+settings.option.audio.hostCapture: Inspelningsbart ljud (OBS / Discord)
 settings.option.audio.hostCapture.description: Strömnings- och inspelningsappar som OBS eller Discord behöver Windows-värden för att dirigera uppspelningen.
 settings.option.audio.maxVolume: Maxvolym
 settings.option.audio.mixing: Mixning
 settings.option.audio.normalization: Ljudnormalisering
 settings.option.audio.normalization.description: Justerar automatiskt varje spår till en enhetlig ljudstyrka. Tysta spår förstärks säkert, och högljudda spår sänks.
 settings.option.audio.occlusion: Lyssningsläge
-settings.option.audio.outputDevice: Ljudutgång
+settings.option.audio.outputDevice: Utenhet
 settings.option.audio.playback: Uppspelning
 settings.option.audio.playbackRate: Uppspelningshastighet
 settings.option.audio.playbackRate.change: Ändra
-settings.option.audio.podcastPlayback: Podcast-uppspelning
+settings.option.audio.podcastPlayback: Podduppspelning
 settings.option.audio.podcasts.playbackRate: Uppspelningshastighet för Apple Podcasts
 settings.option.audio.podcasts.playbackRate.description: Justera uppspelningshastigheten för poddar.
 settings.option.audio.quality: Ljudkvalitet
-settings.option.audio.seamlessAudioTransitions: Sömlösa ljudövergångar
+settings.option.audio.seamlessAudioTransitions: Sömlös uppspelning
 settings.option.audio.seamlessTransition: Sömlös ljudövergång
 settings.option.audio.seamlessTransitions: Sömlösa övergångar
-settings.option.audio.showBitrate: Visa bithastighet i Spelas nu
+settings.option.audio.showBitrate: Visa bitrate i Spelas nu
 settings.option.audio.streaming: Strömning
 settings.option.audio.volume: Volym
 settings.option.audio.volumeScrollStep: Volymsteg vid rullning
 settings.option.audio.volumeScrollStep.description: Hur mycket volymen ändras när du rullar upp eller ner på volymreglaget.
-settings.option.audio.volumeStep: Volymsteg vid skrollning
+settings.option.audio.volumeStep: Steg för volymrullning
 settings.option.audio.volumeStep.description: Justera hur mycket volymen ändras när du skrollar.
 settings.option.audio.yourSystem: Ditt system
 settings.option.automatic: Automatisk
@@ -4168,7 +4269,7 @@ settings.option.behavior.addToLibraryOnFavorite.caption: Lägger till nytt favor
 settings.option.concerts.geolocation: Geolokalisering
 settings.option.concerts.radius: Radie
 settings.option.concerts.radius.description: Visa endast konserter inom detta avstånd från din plats (kräver att geolokalisering är aktiverat)
-settings.option.concerts.radiusUnit: Enhet för radie
+settings.option.concerts.radiusUnit: Radieenhet
 settings.option.concerts.radiusUnit.description: Enhet för radiefiltret
 settings.option.concerts.radiusUnit.kilometers: Kilometer
 settings.option.concerts.radiusUnit.miles: Miles
@@ -4179,7 +4280,7 @@ settings.option.concerts.sortBy.date: Datum
 settings.option.concerts.sortBy.description: Hur konserter ska sorteras i listan
 settings.option.concerts.sortBy.distance: Avstånd
 settings.option.connect.link_account.description: Att länka ditt Discord-konto med Cider Connect gör att du kan spara användardata inklusive inställningar, EQ:ar och så småningom mer när det är klart. (Under utveckling)
-settings.option.connectivity.atmosRatings: Atmos-betyg från communityn
+settings.option.connectivity.atmosRatings: Gemenskapens Atmos-betyg
 settings.option.connectivity.atmosRatings.description: Se och dela vilka album som låter fantastiskt i Dolby Atmos.
 settings.option.connectivity.ciderConnect.description: Lyssna tillsammans, gemensamma spellistor, fjärrstyrning av appen och mer!
 settings.option.connectivity.ciderRemote: Cider Remote
@@ -4248,23 +4349,23 @@ settings.option.connectivity.lastfmScrobble.removeFeatured: Ta bort gästartiste
 settings.option.connectivity.parties: Lyssningsfester
 settings.option.connectivity.partiesEnabled: Aktivera lyssningsfester
 settings.option.connectivity.partiesEnabled.description: Håll i eller gå med i synkroniserade lyssningssessioner med andra Cider-användare.
-settings.option.connectivity.partiesQueueDefault: Standardköläge
+settings.option.connectivity.partiesQueueDefault: Standardläge för kö
 settings.option.connectivity.partiesQueueDefault.audited: Värden godkänner tillägg
 settings.option.connectivity.partiesQueueDefault.description: Om gästers tillägg kräver ditt godkännande i fester du är värd för.
 settings.option.connectivity.partiesQueueDefault.open: Öppen
-settings.option.connectivity.partiesTransportDefault: Standard för uppspelningskontroll
+settings.option.connectivity.partiesTransportDefault: Standardreglering av uppspelning
 settings.option.connectivity.partiesTransportDefault.description: Vem som kan spela, pausa, spola och hoppa över i fester du är värd för.
 settings.option.connectivity.partiesTransportDefault.everyone: Alla
 settings.option.connectivity.partiesTransportDefault.host: Endast värden
-settings.option.connectivity.playbackNotifications: Uppspelningsnotiser
+settings.option.connectivity.playbackNotifications: Aviseringar för uppspelning
 settings.option.connectivity.playbackNotifications.description: Visa en notis med den nya låten närhelst den aktuella låten ändras.
 settings.option.connectivity.remoteConnection: Fjärranslutning
 settings.option.connectivity.remoteConnection.description: Parkoppla en telefon eller surfplatta, och ta bort parkopplingen för enheter som styr uppspelningen.
 settings.option.connectivity.rpcServer: RPC-server
 settings.option.connectivity.rpcServer.description: Hantera åtkomst till Cider för externa applikationer som använder RPC-servern.
-settings.option.connectivity.rpcServer.manageAccess: Hantera externa applikationers åtkomst till Cider
+settings.option.connectivity.rpcServer.manageAccess: Hantera externa programs åtkomst till Cider
 settings.option.connectivity.scrobbler: Scrobbler
-settings.option.connectivity.scrobblerIntegration: Scrobbler-integrering
+settings.option.connectivity.scrobblerIntegration: Scrobbler-integration
 settings.option.connectivity.scrobblerIntegration.description: Scrobbling för Last.fm, ListenBrainz, Libre.fm och Maloja för att spara en lyssningshistorik.
 settings.option.connectivity.steam.clearOnPause: Rensa Rich Presence vid paus
 settings.option.connectivity.vrOverlay: VR-överlägg
@@ -4309,13 +4410,13 @@ settings.option.experiments.legacyFetch: Äldre hämtning
 settings.option.experiments.musicVideos: Aktivera musikvideor i biblioteket
 settings.option.experiments.title: Experimentella funktioner
 settings.option.general.app: App
-settings.option.general.artistChips: Artistbrickor
+settings.option.general.artistChips: Artistchips
 settings.option.general.autoplayByDefault: Aktivera autouppspelning som standard
 settings.option.general.autoplayByDefault.description: Aktivera automatiskt autouppspelning när musik spelas (gäller inte radiostationer).
 settings.option.general.autoRemoveDisliked: Ta automatiskt bort ogillade låtar från kön
 settings.option.general.autoRemoveDisliked.description: Ta automatiskt bort låtar från kön när de markeras som ogillade.
 settings.option.general.cache: Cache
-settings.option.general.clearCacheDropdown: Rensa cache-meny
+settings.option.general.clearCacheDropdown: Rullgardinsmeny för rensning av cache
 settings.option.general.contentToCache: Innehåll att cachelagra
 settings.option.general.customizeSidebar: Anpassa sidofältet
 settings.option.general.customizeSidebar.customize: Anpassa
@@ -4342,12 +4443,12 @@ settings.option.general.language.unsorted: Osorterade
 settings.option.general.noPlayingAction.newMusicMix: Spela New Music Mix
 settings.option.general.noPlayingAction.none: Gör ingenting
 settings.option.general.noPlayingAction.personalStation: Starta personlig station
-settings.option.general.noPlayingAction.recent: Spela senaste låtar
-settings.option.general.noPlayingAction.recentlyAdded: Spela senast tillagda låtar
+settings.option.general.noPlayingAction.recent: Spela senaste låtarna
+settings.option.general.noPlayingAction.recentlyAdded: Spela nyligen tillagda låtar
 settings.option.general.noPlayingAction.shuffleLibrary: Blanda låtar i biblioteket
-settings.option.general.onStartup: Vid uppstart
+settings.option.general.onStartup: Vid start
 settings.option.general.onStartup.openStartup: Öppna startsidan
-settings.option.general.onStartup.resume: Återuppta senaste sessionen
+settings.option.general.onStartup.resume: Återuppta senaste session
 settings.option.general.pagination: Antal objekt som visas per sida
 settings.option.general.preventDisplaySleep: Håll skärmen på under uppspelning
 settings.option.general.preventSystemSleep: Håll datorn vaken under uppspelning
@@ -4373,16 +4474,17 @@ settings.option.general.shareAnalytics: Dela analysdata
 settings.option.general.shareAnalytics.description: Hjälp oss att förbättra Cider genom att dela appanalys och användningsinformation
 settings.option.general.showLovedTracksInline: Visa gillade låtar direkt i listan
 settings.option.general.sleepTimer: Insomningstimer
-settings.option.general.sleepTimerSettings: Inställningar för insomningstimer
+settings.option.general.sleepTimerSettings: Inställningar för sovtimer
 settings.option.general.startupPage: Startsida
 settings.option.general.startupPage.blank: Tom sida
 settings.option.general.startupPage.description: Välj vilken sida som ska visas när du öppnar Cider.
 settings.option.general.startupPage.descriptionV2: Sidan Cider öppnas i nya flikar, och vid start när Vid start är inställt på Öppna startsida.
+settings.option.general.startupPage.descriptionV3: Sidan som Cider öppnar vid start.
 settings.option.general.startupPage.newTab: Ny flik
 settings.option.general.startupPage.personalHome: Personlig startsida
 settings.option.general.themeUpdateNotification: Sök efter temauppdateringar automatiskt
-settings.option.general.translationCredits: Översättningsmedverkande
-settings.option.general.translationFeedback: Feedback på översättning
+settings.option.general.translationCredits: Översättningskrediter
+settings.option.general.translationFeedback: Återkoppling om översättning
 settings.option.general.translators: Översättare
 settings.option.general.translators.description: Ett stort tack till dessa bidragsgivare som har hjälpt till att översätta Cider. Klicka på ett namn för att öppna deras GitHub-profil.
 settings.option.general.useSmartQueueByDefault: Använd Smart Queue som standard
@@ -4402,7 +4504,7 @@ settings.option.lyrics.displayOptions.description: Anpassa hur låttexter visas
 settings.option.lyrics.enableMusixmatch: Aktivera låttexter från Musixmatch
 settings.option.lyrics.enableMusixmatchKaraoke: Aktivera karaokeläge (endast Musixmatch)
 settings.option.lyrics.enableQQLyrics: Aktivera QQ-låttexter
-settings.option.lyrics.enableSingLyrics: Aktivera Sing-låttexter
+settings.option.lyrics.enableSingLyrics: Aktivera sjungtexter
 settings.option.lyrics.enableSingLyrics.description: Visa ord-för-ord-synkroniserade låttexter som markeras i takt med musiken när det är tillgängligt.
 settings.option.lyrics.enableStaticLyrics: Aktivera statiska låttexter
 settings.option.lyrics.enableStaticLyrics.description: Visa låttexter även när tidsinformation inte är tillgänglig. Dessa låttexter rullar inte automatiskt.
@@ -4411,10 +4513,10 @@ settings.option.lyrics.enableTranslations.description: Visa översatta låttexte
 settings.option.lyrics.enableYoutubeLyrics: Aktivera Youtube-låttexter för musikvideor
 settings.option.lyrics.fpsLimit: Bildfrekvens för låttexter
 settings.option.lyrics.fpsLimit.description: Maximal bildfrekvens för animerade låttexter. Högre frekvenser ser mjukare ut på skärmar med hög uppdateringsfrekvens men använder mer CPU och GPU. "Anpassa efter skärm" följer din bildskärms uppdateringsfrekvens.
-settings.option.lyrics.fpsLimit.matchDisplay: Anpassa efter skärm
-settings.option.lyrics.keepCompleted: Behåll sjungen låttext
+settings.option.lyrics.fpsLimit.matchDisplay: Matcha skärmen
+settings.option.lyrics.keepCompleted: Behåll avslutade låttexter
 settings.option.lyrics.keepCompleted.description: Behåll redan sjungna rader synliga (nedtonade) ovanför den aktuella raden. När detta är inaktiverat döljs de sjungna raderna.
-settings.option.lyrics.localeOverrides: Språkundantag
+settings.option.lyrics.localeOverrides: Språkinställningar
 settings.option.lyrics.localeOverrides.description: Ställ in anpassade leverantörs- och översättningsregler för specifika ljudspråk
 settings.option.lyrics.musixmatchPreferredLanguage: Föredraget språk för Musixmatch-översättning
 settings.option.lyrics.preferUserLyrics: Föredra användarinskickade låttexter
@@ -4423,34 +4525,34 @@ settings.option.lyrics.provider.apple: Apple Music
 settings.option.lyrics.provider.auto: Auto (bästa tillgängliga)
 settings.option.lyrics.provider.mxm: Musixmatch
 settings.option.lyrics.provider.netease: NetEase
-settings.option.lyrics.provider.user: Användarinskickade
+settings.option.lyrics.provider.user: Användarinskickad
 settings.option.lyrics.providerPreferences: Leverantörsinställningar
 settings.option.lyrics.providerPreferences.description: Konfigurera vilka låttextkällor som ska användas och deras prioritet
-settings.option.lyrics.scrollTuning: Rullningstid och dämpning
+settings.option.lyrics.scrollTuning: Rullningstid och easing
 settings.option.lyrics.scrollTuning.description: Ställ in hur lång tid textraderna tar att rulla och vilken dämpningskurva de följer, separat för sidofältet och den fängslande spelaren.
 settings.option.lyrics.showDualLanguage: Visa dubbla språk
 settings.option.lyrics.showDualLanguage.description: Visa både originallåttexten och översättningen samtidigt.
-settings.option.lyrics.showTimestamps: Visa tidsstämplar när pekaren hålls över
+settings.option.lyrics.showTimestamps: Visa tidsstämplar vid pekning
 settings.option.lyrics.showTimestamps.description: Visa tidsstämpeln för varje rad i låttexten när pekaren hålls över den.
-settings.option.lyrics.thirdPartySources: Aktivera tredjepartskällor
+settings.option.lyrics.thirdPartySources: Aktivera källor från tredje part
 settings.option.lyrics.thirdPartySources.description: Tillåt hämtning av låttexter från Musixmatch och NetEase när låttexter från Apple Music inte är tillgängliga. Kvaliteten kan variera och frekvent användning kan leda till begränsningar av anropsfrekvens.
-settings.option.lyrics.timeOffset: Tidsförskjutning för låttext (sekunder)
+settings.option.lyrics.timeOffset: Tidsförskjutning för låttexter (sekunder)
 settings.option.lyrics.timeOffset.description: Justera tidssynkroniseringen för visning av låttexter. Positiva värden visar låttexten tidigare, negativa värden visar den senare. Användbart för att korrigera osynkroniserat ljud.
 settings.option.lyrics.timeOffset.descriptionV2: Justera tidpunkten när sångtexter visas. Positiva värden visar texterna senare, negativa värden visar dem tidigare. Användbart för att korrigera ljudinställningar som inte är synkroniserade.
-settings.option.lyrics.timestampStyle: Stil för tidsstämplar
+settings.option.lyrics.timestampStyle: Format för tidsstämplar
 settings.option.lyrics.timestampStyle.both: Båda
 settings.option.lyrics.timestampStyle.chip: Chip
 settings.option.lyrics.timestampStyle.description: Välj hur tidsstämplar visas när pekaren hålls över låttexten.
 settings.option.lyrics.timestampStyle.ring: Ring
-settings.option.lyrics.trackOverrides: Spårspecifika undantag
+settings.option.lyrics.trackOverrides: Låtspecifika inställningar
 settings.option.lyrics.trackOverrides.description: Hantera låstextleverantörer och inställningar per spår
 settings.option.lyrics.translationLanguage: Översättningsspråk
 settings.option.lyrics.translationLanguage.description: Språket som låttexterna ska översättas till. Används endast när översättningsläget är inställt på manuellt.
 settings.option.lyrics.translationMode: Översättningsläge
-settings.option.lyrics.translationMode.appLanguage: Automatiskt från appens språk
+settings.option.lyrics.translationMode.appLanguage: Auto från appens språk
 settings.option.lyrics.translationMode.description: Hur målspråket för översättningen ska bestämmas.
 settings.option.lyrics.translationMode.manual: Manuellt (använd valt språk)
-settings.option.lyrics.translationMode.system: Automatiskt från systemspråk
+settings.option.lyrics.translationMode.system: Auto från systemspråk
 settings.option.lyrics.translationSettings: Översättningsinställningar
 settings.option.lyrics.translationSettings.description: Konfigurera hur översättning av låttexter fungerar
 settings.option.medium: Mellan
@@ -4469,7 +4571,7 @@ settings.option.performance.backgroundRefreshTime.description: Tiden i sekunder 
 settings.option.performance.dataAndUiLoad: Data- och UI-laddning
 settings.option.performance.disableLargeRequestOffloading: Inaktivera avlastning av stora förfrågningar
 settings.option.performance.disableLargeRequestOffloading.description: Kommer att påverka UI-prestanda under stora förfrågningar
-settings.option.performance.enableMediaItemInspect: Aktivera utvecklarinspektion för MediaItems
+settings.option.performance.enableMediaItemInspect: Aktivera utvecklarinspektion för mediaobjekt
 settings.option.performance.enableMediaItemInspect.description: Kan påverka prestandan något
 settings.option.performance.gameMode: Spelläge
 settings.option.performance.gameMode.description: Minskar visuella effekter och kan aktivera effektivitetsläge i Windows för lägre CPU-användning.
@@ -4478,7 +4580,7 @@ settings.option.performance.graphicsAcceleration: Grafikacceleration
 settings.option.performance.graphicsAcceleration.autoOff: Av eftersom den här datorn ritar grafik i programvara.
 settings.option.performance.graphicsAcceleration.description: Automatisk stänger av den i en virtuell maskin som ritar grafik i programvara. Ändringar tillämpas nästa gång Cider startar.
 settings.option.performance.host: Värd
-settings.option.performance.immersiveRenderer: Omslutande renderare
+settings.option.performance.immersiveRenderer: Immersiv renderare
 settings.option.performance.immersiveRenderer.description: Använd Canvas 2D istället för WebGPU om den animerade bakgrunden beter sig felaktigt eller använder för mycket GPU.
 settings.option.performance.libraryQueueLimit: Kögräns för bibliotek
 settings.option.performance.libraryQueueLimit.description: Begränsa antalet låtar som kan köas från biblioteket, använd 0 för ingen gräns. Högre värden eller ingen gräns kan orsaka prestandaproblem.
@@ -4486,7 +4588,7 @@ settings.option.performance.limitBlurMapFramerateOnBlur: Begränsa bildfrekvens 
 settings.option.performance.limitBlurMapFramerateOnBlur.description: Sänker bildfrekvensen för den omslutande animerade bakgrunden när fönstret inte är i fokus för att spara ström. Inaktivera för att fortsätta köra med full hastighet.
 settings.option.performance.limitImmersiveBgFramerateOnBlur: Begränsa bildhastigheten för omslutande bakgrund när fönstret inte är i fokus
 settings.option.performance.motion: Rörelse
-settings.option.performance.powerSaverOnBattery: Spara ström vid batteridrift
+settings.option.performance.powerSaverOnBattery: Spara energi på batteri
 settings.option.performance.powerSaverOnBattery.description: När enheten körs på batteri renderas den omslutande bakgrunden i högst 30 bilder per sekund och låttextanimeringar begränsas till 60 bilder per sekund.
 settings.option.performance.preloadSidebarPages: Läs in sidofältssidor i förväg
 settings.option.performance.preloadSidebarPages.description: Läser in sidofältssidor innan du öppnar dem. "Vid hovring" startar när pekaren vilar på ett objekt i sidofältet. "Vid inaktivitet" läser även in Lyssna nu, Bläddra och Radio efter uppstart samt uppdaterar bibliotekslistor som du har öppnat tidigare.
@@ -4511,7 +4613,7 @@ settings.option.smartPlaylists.autoRefreshIntervalMinutes: Intervall för bakgru
 settings.option.smartPlaylists.clearLibraryCache: Rensa cache för bibliotekslåtar
 settings.option.smartPlaylists.clearLibraryCache.description: Tvinga nästa uppdatering att hämta ditt bibliotek igen från Apple Music.
 settings.option.smartPlaylists.defaultTrackLimit: Standardgräns för spår
-settings.option.smartPlaylists.enabled: Aktivera spellisteregler
+settings.option.smartPlaylists.enabled: Aktivera spellistregler
 settings.option.smartPlaylists.enabled.description: Tillåt Cider att automatiskt hantera spellistor med inbäddade regler.
 settings.option.smartPlaylists.maintenance: Underhåll
 settings.option.smartPlaylists.perPlaylistMinIntervalMinutes: Minsta intervall per spellista (minuter)
@@ -4531,53 +4633,53 @@ settings.option.sweetener.accentColor.purple: Lila
 settings.option.sweetener.accentColor.systemHint: Inaktivera systemets accentfärg för att välja en egen.
 settings.option.sweetener.accentColor.yellow: Gul
 settings.option.sweetener.enableSweetener: Aktivera Sweetener
-settings.option.sweetener.header.uiCustomization: Anpassning av UI
+settings.option.sweetener.header.uiCustomization: Anpassning av gränssnitt
 settings.option.sweetener.header.uiCustomization.description: Accent- och toningsfärger som används i appen.
 settings.option.sweetener.immersiveBackground.brightnessPercentage: Ljusstyrka %
 settings.option.sweetener.immersiveBackground.contrastPercentage: Kontrast %
-settings.option.sweetener.immersiveBackground.frameRate: Bildhastighet (fokuserat fönster)
+settings.option.sweetener.immersiveBackground.frameRate: Bildfrekvens (fönster i fokus)
 settings.option.sweetener.immersiveBackground.frameRate.description: 15-30 FPS rekommenderas
 settings.option.sweetener.immersiveBackground.header.filters: Filter
 settings.option.sweetener.immersiveBackground.lightModeWarning: Immersiv bakgrund stöds för närvarande inte i ljust läge.
 settings.option.sweetener.immersiveBackground.saturationPercentage: Mättnad %
 settings.option.sweetener.immersiveBackground.use: Använd immersiv bakgrund
-settings.option.sweetener.immersiveBackgroundType: Typ av omslutande bakgrund
+settings.option.sweetener.immersiveBackgroundType: Typ av immersiv bakgrund
 settings.option.sweetener.immersiveBackgroundType.immersive: Immersive
 settings.option.sweetener.immersiveBackgroundType.immersiveLite: Immersive Lite
 settings.option.sweetener.useCustomAccentColor: Använd anpassad accentfärg
 settings.option.sweetener.useCustomAccentColor.accentColor: Accentfärg
-settings.option.sweetener.useCustomTintColor: Använd anpassad nyansfärg
+settings.option.sweetener.useCustomTintColor: Använd anpassad tonfärg
 settings.option.sweetener.useCustomTintColor.lightModeWarning: Nyansförhållanden under 0,8 ignoreras i ljust läge.
-settings.option.sweetener.useCustomTintColor.tintColor: Nyansfärg
+settings.option.sweetener.useCustomTintColor.tintColor: Tonfärg
 settings.option.sweetener.useCustomTintColor.tintRatio: Nyansförhållande
 settings.option.v2: V2
 settings.option.v2rp: V2 RP
 settings.option.v3: V3
 settings.option.v3rp: V3 RP
 settings.option.visual.accentColor: Accentfärg
-settings.option.visual.adaptiveColorPercent: Adaptiv färgprocent
-settings.option.visual.additionalAnimatedArtwork: Ytterligare animerade omslag i katalogen
+settings.option.visual.adaptiveColorPercent: Procent för adaptiv färg
+settings.option.visual.additionalAnimatedArtwork: Ytterligare animerad omslagsbild i katalogen
 settings.option.visual.additionalAnimatedArtwork.description: Visa fler animerade omslag när de är tillgängliga. Förvänta dig lägre prestanda med många på skärmen.
-settings.option.visual.animateArtworkOnHover: Animera medieobjektets omslag vid hovring
-settings.option.visual.animatedArtwork: Animerad omslagsbild
+settings.option.visual.animateArtworkOnHover: Animera mediaobjektets omslagsbild vid pekning
+settings.option.visual.animatedArtwork: Animerade omslag
 settings.option.visual.animatedArtwork.description: Aktivera animerat omslag, pausa när fönstret inte är i fokus
 settings.option.visual.animatedArtwork.warningDescription: Visa animerade omslag när de är tillgängliga. Detta kan orsaka prestandaproblem på enklare enheter.
-settings.option.visual.animatedArtworkEngine: Motor för animerade omslag
+settings.option.visual.animatedArtworkEngine: Motor för animerade omslagsbilder
 settings.option.visual.animatedArtworkEngine.description: Inbyggd laddar ner ett loopande klipp och spelar upp det utan kvalitetsbyten. Använd Äldre endast om du stöter på uppspelningsproblem.
 settings.option.visual.animatedArtworkEngine.hls: Äldre (hls.js)
 settings.option.visual.animatedArtworkEngine.native: Inbyggd (rekommenderas)
-settings.option.visual.animatedArtworkQuality: Kvalitet på animerade omslag
+settings.option.visual.animatedArtworkQuality: Kvalitet på animerade omslagsbilder
 settings.option.visual.animatedArtworkQuality.balanced: Balanserad
 settings.option.visual.animatedArtworkQuality.description: Hur skarpa animerade omslag är. Automatisk anpassar varje omslag till dess storlek på skärmen och passar de flesta system.
 settings.option.visual.animatedArtworkQuality.performance: Prestanda
 settings.option.visual.animatedArtworkQuality.quality: Kvalitet
-settings.option.visual.animatedBackgroundFramerate: Bildhastighet för animerad bakgrund
+settings.option.visual.animatedBackgroundFramerate: Bildfrekvens för animerad bakgrund
 settings.option.visual.animatedWindowBackground: Animerad fönsterbakgrund
 settings.option.visual.artistHeaderAlignment: Layout för artistrubrik
 settings.option.visual.artistHeaderAlignment.center: Centrerad
 settings.option.visual.artistHeaderAlignment.description: Var artistnamnet och åtgärderna placeras i artistens sidhuvud.
 settings.option.visual.artistHeaderAlignment.left: Vänster (standard)
-settings.option.visual.artworkLoadingMethod: Laddningsmetod för tryckfil
+settings.option.visual.artworkLoadingMethod: Metod för inläsning av omslagsbilder
 settings.option.visual.artworkLoadingMethod.eager: Direkt
 settings.option.visual.artworkLoadingMethod.lazy: Fördröjd
 settings.option.visual.chromaticAberrationIntensity: Intensitet för kromatisk aberration
@@ -4585,39 +4687,39 @@ settings.option.visual.chromaticAberrationIntensity.description: Styrka på RGB-
 settings.option.visual.colorCustomization: Färganpassning
 settings.option.visual.colorScheme: Färgschema
 settings.option.visual.compactArtistHeader: Kompakt artistrubrik
-settings.option.visual.contentFilterKeywords: Sökord för innehållsfilter
+settings.option.visual.contentFilterKeywords: Nyckelord för innehållsfilter
 settings.option.visual.contentPreferences: Innehållsinställningar
 settings.option.visual.contentPreferences.description: Ändra layouten för vissa sidor
 settings.option.visual.contextMenuIcons: Menyikoner
 settings.option.visual.customAccentColor: Anpassad accentfärg
 settings.option.visual.customScalingFactor: Anpassad skalningsfaktor
 settings.option.visual.customScalingFactor.description: Justera appens gränssnittsskalning
-settings.option.visual.enableAnimatedArtworkInMiniPlayer: Aktivera animerade omslag i minispelaren
+settings.option.visual.enableAnimatedArtworkInMiniPlayer: Aktivera animerad bild i minispelaren
 settings.option.visual.extendedEditorialLayout: Använd utökad redaktionell layout på albumsidor
 settings.option.visual.extendedEditorialLayout.description: När detta är aktiverat visas den redaktionella bannern på albumsidan och en färgpalett tillämpas på vissa album baserat på tillgängliga resurser.
-settings.option.visual.filterPromotionalContent: Filtrera marknadsföringsinnehåll
+settings.option.visual.filterPromotionalContent: Filtrera reklaminnehåll
 settings.option.visual.filterPromotionalContent.description: När detta är aktiverat döljs avsnitt i Bläddra och Lyssna nu som matchar dina filtersökord.
 settings.option.visual.floatingPlayer: Flytande spelare
 settings.option.visual.floatingPlayer.description: Frigör spelarfältet från kanterna för ett flytande, pillerformat utseende
 settings.option.visual.floatingPlayerPadding: Utfyllnad för flytande spelare
 settings.option.visual.floatingPlayerPadding.description: Styr hur mycket utrymme som omger den flytande spelaren
-settings.option.visual.floatingPlayerRoundness: Rundning för flytande spelare
+settings.option.visual.floatingPlayerRoundness: Hörnradie för flytande spelare
 settings.option.visual.floatingPlayerRoundness.description: Hörnradie för den flytande spelaren (0 = matcha visningsområdet)
 settings.option.visual.fonts: Typsnitt
-settings.option.visual.forceMpWindowControls: Använd plattformsöverskridande fönsterkontroller
+settings.option.visual.forceMpWindowControls: Använd multiplattformens fönsterkontroller
 settings.option.visual.forceRoundedViewport: Använd rundad visningsyta
 settings.option.visual.forceRoundedViewport.description: Tillämpa rundade hörn på det huvudsakliga visningsområdet i alla layouter
 settings.option.visual.hardwareAcceleration: Hårdvaruacceleration
 settings.option.visual.hardwareAcceleration.description: Kräver omstart
-settings.option.visual.headerStyle: Rubrikstil för album och spellistor
+settings.option.visual.headerStyle: Stil för album- och spellisthuvud
 settings.option.visual.headerStyle.appleMusic: Apple Music
 settings.option.visual.headerStyle.appleMusic.description: Åtgärder visas svävande i sidans övre högra hörn.
 settings.option.visual.headerStyle.classic: Klassisk
 settings.option.visual.headerStyle.classic.description: Åtgärder visas direkt i sidhuvudet.
 settings.option.visual.headerStyle.description: Klassisk behåller åtgärder direkt i rubriken. Apple Music flyttar Dela / Mer / Lägg till i bibliotek till ett flytande fält i det övre högra hörnet på sidan.
-settings.option.visual.hideAppleRecommends: Dölj korten "Apple rekommenderar"
+settings.option.visual.hideAppleRecommends: Dölj kort för "Apple rekommenderar"
 settings.option.visual.hideAppleRecommends.description: Tar bort marknadsföringskort för "Apple rekommenderar" från rekommendationsfälten i Lyssna nu och Hem.
-settings.option.visual.hideHeroItems: Dölj Hero-objekt i Bläddra
+settings.option.visual.hideHeroItems: Dölj huvudobjekt i Browse
 settings.option.visual.immersive.adjustVisuals: Justera det visuella
 settings.option.visual.immersive.background.artwork: Enkelt omslag
 settings.option.visual.immersive.background.blank: Tom
@@ -4631,17 +4733,17 @@ settings.option.visual.immersive.coverflowStyle: Coverflow-stil
 settings.option.visual.immersive.coverflowStyle.default: Standard
 settings.option.visual.immersive.description: Anpassa upplevelsen för det omslutande läget
 settings.option.visual.immersive.enableHdr: Aktivera HDR
-settings.option.visual.immersive.fsrUpscale: FSR-uppskalning av omslag
-settings.option.visual.immersive.fsrUpscale.applyToAll: "FSR: Tillämpa på alla spår"
+settings.option.visual.immersive.fsrUpscale: FSR-uppskalning av bilder
+settings.option.visual.immersive.fsrUpscale.applyToAll: "FSR: använd på alla spår"
 settings.option.visual.immersive.fsrUpscale.applyToAll.description: När detta är inaktiverat körs FSR endast på spår som släppts före tröskelåret. Aktivera för att skala upp alla spår.
 settings.option.visual.immersive.fsrUpscale.description: Skala upp albumomslag med AMD FidelityFX Super Resolution. Hjälper äldre omslag (före 2010) att se skarpare ut. Kräver WebGPU.
-settings.option.visual.immersive.fsrUpscale.sharpness: "FSR: Skärpa"
+settings.option.visual.immersive.fsrUpscale.sharpness: "FSR: skärpa"
 settings.option.visual.immersive.fsrUpscale.sharpness.description: Styrka för den kontrastanpassade skärpepassningen (RCAS). 0 är mjukast, 1 är skarpast.
-settings.option.visual.immersive.fsrUpscale.thresholdYear: "FSR: Tröskelår"
+settings.option.visual.immersive.fsrUpscale.thresholdYear: "FSR: tröskelår"
 settings.option.visual.immersive.fsrUpscale.thresholdYear.description: Spår som släppts före detta år är berättigade till uppskalning när "Tillämpa på alla spår" är inaktiverat.
 settings.option.visual.immersive.hdrBoostScale: HDR-förstärkningsskala
-settings.option.visual.immersive.hideLyricsWhenUnavailable: Dölj låttext när den inte är tillgänglig
-settings.option.visual.immersive.keepCompletedLyrics: Behåll passerade låttexter
+settings.option.visual.immersive.hideLyricsWhenUnavailable: Dölj låttexter när de inte finns
+settings.option.visual.immersive.keepCompletedLyrics: Behåll avslutade låttexter
 settings.option.visual.immersive.keepCompletedLyrics.description: Behåll låttexter som har passerats i låttextvyn.
 settings.option.visual.immersive.layout.default: One (standard)
 settings.option.visual.immersive.layout.minimal: Minimal
@@ -4656,18 +4758,18 @@ settings.option.visual.immersive.startingTab: Startflik
 settings.option.visual.immersive.startingTab.history: Historik
 settings.option.visual.immersive.startingTab.lyrics: Låttext
 settings.option.visual.immersive.startingTab.queue: Kö
-settings.option.visual.immersive.ultraHdr: Uppskalning av Ultra HDR-omslag
+settings.option.visual.immersive.ultraHdr: Uppskalning av Ultra HDR-bilder
 settings.option.visual.immersive.ultraHdr.description: Lägger till HDR-höjdpunkter, kontrast och färg till albumomslag för varje spår. Ser bäst ut på en HDR-skärm; andra skärmar får en mildare effekt. Kräver WebGPU.
-settings.option.visual.immersive.ultraHdr.headroom: "Ultra HDR: Toppmarginal"
+settings.option.visual.immersive.ultraHdr.headroom: "Ultra HDR: toppmarginal"
 settings.option.visual.immersive.ultraHdr.headroom.description: Högsta ljusstyrka för höjdpunkter som en multipel av standardvitt. Sänk detta om höjdpunkterna ser för starka ut på din skärm.
-settings.option.visual.immersive.ultraHdr.intensity: "Ultra HDR: Intensitet"
+settings.option.visual.immersive.ultraHdr.intensity: "Ultra HDR: intensitet"
 settings.option.visual.immersive.ultraHdr.intensity.description: Effektens styrka. 0 lämnar omslaget oförändrat, 1 tillämpar hela profilen.
-settings.option.visual.immersive.ultraHdr.profile: "Ultra HDR: Profil"
+settings.option.visual.immersive.ultraHdr.profile: "Ultra HDR: profil"
 settings.option.visual.immersive.ultraHdr.profile.cinematic: Filmisk
 settings.option.visual.immersive.ultraHdr.profile.description: Naturlig ligger nära originalet, Livfull är djärv och färgstark, Filmisk har hög kontrast med återhållen färg.
 settings.option.visual.immersive.ultraHdr.profile.natural: Naturlig
 settings.option.visual.immersive.ultraHdr.profile.vivid: Livfull
-settings.option.visual.immersive.useAnimatedArtwork: Använd animerade omslag
+settings.option.visual.immersive.useAnimatedArtwork: Använd animerade bilder
 settings.option.visual.immersive.useAnimatedArtwork.description: Visa animerat omslag när det är tillgängligt. Detta kan orsaka prestandaproblem på enheter med lägre prestanda.
 settings.option.visual.immersive.useAnimatedBackground: Animerad bakgrund i Immersive-vyn
 settings.option.visual.immersive.useBackgroundBpm: Bakgrundshastighet baserad på BPM
@@ -4675,9 +4777,9 @@ settings.option.visual.immersiveBackground.blank: Tom
 settings.option.visual.immersiveBackground.customImage: Anpassad bild
 settings.option.visual.immersiveBackground.customImageMixed: Anpassad bild (blandad)
 settings.option.visual.immersiveBackground.gradientMesh: Gradientnät
-settings.option.visual.immersiveBackground.simpleArtwork: Enkelt omslag
+settings.option.visual.immersiveBackground.simpleArtwork: Enkel bild
 settings.option.visual.immersiveBackground.simpleColor: Enkel färg
-settings.option.visual.immersiveBgSettings: Inställningar för omslutande bakgrund
+settings.option.visual.immersiveBgSettings: Inställningar för immersiv bakgrund
 settings.option.visual.immersiveBgSettings.description: Bakgrundseffekter och filter för appen.
 settings.option.visual.immersiveLayout.classic: One Classic
 settings.option.visual.immersiveLayout.classic.description: Den ursprungliga omslutande layouten med en spelare i fullbredd längst ned.
@@ -4693,9 +4795,9 @@ settings.option.visual.immersiveLayout.sonoma: Sonoma
 settings.option.visual.immersiveLayout.sonoma.description: Omslaget smälter in i bakgrunden med ett svävande kontrollkort.
 settings.option.visual.immersiveLayout.spectrumDeck: Spectrum Deck
 settings.option.visual.immersiveLayout.spectrumDeck.description: En spektrumscen i realtid med ett svävande omslag.
-settings.option.visual.immersiveStyle: Omslutande stil
-settings.option.visual.immersiveStylePortrait: Omslutande stil (porträtt)
-settings.option.visual.largeHeaderTitles: Stora rubriker
+settings.option.visual.immersiveStyle: Immersiv stil
+settings.option.visual.immersiveStylePortrait: Immersiv stil (porträtt)
+settings.option.visual.largeHeaderTitles: Stora rubriker i huvudet
 settings.option.visual.largeHeaderTitles.description: Förstorar rubriktexten på album- och spellistesidor för ett mer framträdande utseende.
 settings.option.visual.layoutProfile: Layoutprofiltyp
 settings.option.visual.layoutProfile.description: Anpassa appens layout efter dina önskemål
@@ -4708,14 +4810,14 @@ settings.option.visual.layoutType.mojave: Mojave
 settings.option.visual.layoutType.mojave.description: Verktygsfält i fullbredd med ett spelarfält längst ned.
 settings.option.visual.layoutType.montara: Montara
 settings.option.visual.layoutType.montara.description: Sidofält i fullhöjd med en övre spelare inuti innehållsområdet.
-settings.option.visual.lcdChromaticAberration: Kromatisk aberration för LCD
+settings.option.visual.lcdChromaticAberration: LCD-kromatisk aberration
 settings.option.visual.lcdChromaticAberration.description: Bryt bakgrunden för Nu spelas-LCD:n genom en flytande glas-shader med en RGB-kant.
 settings.option.visual.liquidGlassPlayer: Liquid Glass-spelarfält
 settings.option.visual.liquidGlassPlayer.description: Använd Liquid Glass-ytan för spelarfältet Nu spelas. Inaktivera för en platt, solid panel (vilket också är mer lättdrivet).
-settings.option.visual.liquidGlassScrollPerf: Lättare glaseffekt vid rullning
+settings.option.visual.liquidGlassScrollPerf: Lättviktsglas vid scrollning
 settings.option.visual.liquidGlassScrollPerf.description: Förenklar ljusbrytningen för flytande glas till en enkel oskärpa vid rullning, och tonar sedan mjukt tillbaka den när du stannar. Minskar rullningshack på krävande system utan förändring i stillastående läge. Alltid aktiverat i Game Mode.
 settings.option.visual.liquidGlassScrollPerf.descriptionV2: Förenklar liquid glass-brytningen till en vanlig oskärpa medan du scrollar och tonar sedan in den igen när du slutar. Minskar hack vid scrollning på krävande system utan förändring i vila.
-settings.option.visual.mainMenuPosition: Huvudmenyns position
+settings.option.visual.mainMenuPosition: Position för huvudmenyn
 settings.option.visual.matchPageToArtwork: Anpassa sidan efter omslaget
 settings.option.visual.matchPageToArtwork.description: Färglägger album- och spellistsidor med färgerna från deras omslag, i ljust och mörkt läge.
 settings.option.visual.mergeAppleMusicPlaylists: Slå ihop Apple Music-spellistor
@@ -4737,19 +4839,19 @@ settings.option.visual.mojavePlayerType.compact: Kompakt
 settings.option.visual.mojavePlayerType.compact.description: En smal spelare med en centrerad LCD och en förloppsrad ovanför.
 settings.option.visual.mojavePlayerType.compactInline: Kompakt inline
 settings.option.visual.mojavePlayerType.compactInline.description: En enda smal rad med förlopp inuti LCD-skärmen.
-settings.option.visual.moveUpLinks: Flytta länkarna ”Mer att se” i Bläddra till toppen
-settings.option.visual.musicVideoPinMaxResolution: Spela alltid upp musikvideor med maximal upplösning
+settings.option.visual.moveUpLinks: Flytta länkarna "Mer att upptäcka" på Browse överst
+settings.option.visual.musicVideoPinMaxResolution: Spela alltid musikvideor i maximal upplösning
 settings.option.visual.musicVideoPinMaxResolution.description: Behåller den högsta kvaliteten som videon erbjuder istället för att starta lågt och trappa upp. I ett litet fönster eller vid en anslutning med datatak använder detta märkbart mer bandbredd.
-settings.option.visual.musicVideoPrefetchOnHover: Förbered musikvideor när pekaren hålls över
+settings.option.visual.musicVideoPrefetchOnHover: Förbered musikvideor vid pekning
 settings.option.visual.musicVideoPrefetchOnHover.description: Börjar ladda videon medan pekaren vilar på märket, så att den öppnas snabbare när du klickar.
-settings.option.visual.musicVideoPrefetchSegmentsOnHover: Ladda ner det första segmentet när pekaren hålls över
+settings.option.visual.musicVideoPrefetchSegmentsOnHover: Hämta första segmentet vid pekning
 settings.option.visual.musicVideoPrefetchSegmentsOnHover.description: Hämtar även de första sekunderna av videon innan du klickar. Det kostar några megabyte för varje gång pekaren hålls över, även för de videor som aldrig öppnas.
-settings.option.visual.paletteContrast: Färgkontrast för albumgrafik
+settings.option.visual.paletteContrast: Färgkontrast för bilder
 settings.option.visual.paletteContrast.description: Hur mycket färgerna från album och spellistor justeras mot bakgrunden så att knappar och uppspelningsindikatorn förblir läsbara. Hjälpmedelsinställningen för hög kontrast använder alltid Maximal.
 settings.option.visual.paletteContrast.enhanced: Förbättrad
 settings.option.visual.paletteContrast.maximum: Maximal
 settings.option.visual.paletteContrast.standard: Standard
-settings.option.visual.pauseAnimatedOnBlur: Pausa animerade omslag när fönstret inte är i fokus
+settings.option.visual.pauseAnimatedOnBlur: Pausa animerade bilder när fönstret inte är i fokus
 settings.option.visual.playerMaterial: Spelarmaterial
 settings.option.visual.playerMaterial.blur: Oskärpa
 settings.option.visual.playerMaterial.blur.description: Använd ett halvgenomskinligt frostat material för spelarfältet utan ljusbrytningseffekten från Liquid Glass.
@@ -4760,34 +4862,34 @@ settings.option.visual.playerMaterial.liquidGlass.description: Använd Liquid Gl
 settings.option.visual.playerMaterial.none: Inget
 settings.option.visual.playerMaterial.none.description: Använd en heltäckande ogenomskinlig panel för spelarfältet.
 settings.option.visual.playerPosition: Spelarposition
-settings.option.visual.playerType: Typ av spelare
+settings.option.visual.playerType: Spelartyp
 settings.option.visual.plugin.github.download: Installera från GitHub-URL
 settings.option.visual.plugin.github.explore: Utforska GitHub-tillägg
 settings.option.visual.plugin.github.install.confirm: Är du säker på att du vill installera {{repo}}?
-settings.option.visual.popularityThreshold: Tröskelvärde för popularitet
+settings.option.visual.popularityThreshold: Popularitetströskel
 settings.option.visual.popularityThreshold.description: Den minsta popularitet som krävs för att indikatorer ska visas bredvid ett spår.
-settings.option.visual.precisionScrollSpeed: Precisionsrullningshastighet
+settings.option.visual.precisionScrollSpeed: Hastighet för precisionsscrollning
 settings.option.visual.precisionScrollSpeed.description: Finjustera styrplattans rullning i den nya fönstermotorn (glass). Lägre är långsammare och mer exakt för små justeringar; högre rullar snabbare.
 settings.option.visual.purplePodcastPlaybackBar: Lila uppspelningsfält för poddar
-settings.option.visual.realtimeVisualizer: Ljudvisualiserare i realtid
+settings.option.visual.realtimeVisualizer: Realtidsvisualisering av ljud
 settings.option.visual.realtimeVisualizer.description: Visa en ljudvisualiserare i realtid på spår som spelas istället för de animerade staplarna.
-settings.option.visual.searchType: Söktyp
+settings.option.visual.searchType: SökTyp
 settings.option.visual.searchType.floating: Flytande
 settings.option.visual.searchType.inline: Inline
 settings.option.visual.showBpmAndKey: Visa BPM och tonart för spår i spellistor och album
 settings.option.visual.showBpmAndKey.description: Innehåll tar längre tid att ladda när detta är aktiverat.
 settings.option.visual.showPersonalInfo: Visa personlig information
-settings.option.visual.showPlaylistArtworkInSidebar: Visa spellisteomslag i sidofältet
+settings.option.visual.showPlaylistArtworkInSidebar: Visa spellistbilder i sidofältet
 settings.option.visual.showPodcastsInSidebar: Visa poddar i sidofältet
 settings.option.visual.showPodcastsInSidebar.description: Stödet för poddar byggs fortfarande om, så posten i biblioteket visar bara en platshållare för tillfället.
 settings.option.visual.showQuickActions: Visa snabbåtgärder
-settings.option.visual.showWatchMusicVideoWhenAvailable: Visa "Titta på musikvideo" när det är tillgängligt
-settings.option.visual.sidebarStyle: Sidofältsstil
+settings.option.visual.showWatchMusicVideoWhenAvailable: Visa "Titta på musikvideo" när det finns
+settings.option.visual.sidebarStyle: Stil för sidofält
 settings.option.visual.sidebarStyle.apple: Apple Music
 settings.option.visual.sidebarStyle.default: Standard
 settings.option.visual.sidebarStyle.description: Välj hur sidofältet ska utformas. ”Apple Music” placerar fastnålade objekt inuti bibliotekssektionen och tar bort rubriken för Apple Music-sektionen.
 settings.option.visual.simpleArtworkBg.saturate: Mättnad
-settings.option.visual.sizeProfile: UI Storleks Profil
+settings.option.visual.sizeProfile: Storleksprofil för gränssnittet
 settings.option.visual.sizeProfile.description.default: Standardstorlek, för användning med valfri inmatningsenhet. Stil för iOS / Android / Modern Windows.
 settings.option.visual.sizeProfile.description.desktop: Skrivbordsanpassad storlek, för användning med mus och tangentbord. Stil för macOS / Classic Windows.
 settings.option.visual.sizeProfile.desktop: Skrivbord
@@ -4804,17 +4906,17 @@ settings.option.visual.theme.light: Ljus
 settings.option.visual.theme.manageStyles: Hantera stilar
 settings.option.visual.theme.uninstall: Avinstallera
 settings.option.visual.theme.viewInfo: Visa info
-settings.option.visual.titleBarStyle: Titelradens stil
+settings.option.visual.titleBarStyle: Stil för namnlisten
 settings.option.visual.titleBarStyle.winui: WinUI
 settings.option.visual.topToolbarWidget: Widget för övre verktygsfält
-settings.option.visual.transparency: Aktivera transparens
+settings.option.visual.transparency: Aktivera genomskinlighet
 settings.option.visual.transparent: Transparent ram
 settings.option.visual.transparent.description: kräver temastöd, kräver omstart
 settings.option.visual.uiscale: Gränssnittsskala
 settings.option.visual.useAdaptiveColors: Använd adaptiva färger
 settings.option.visual.useAdaptiveColors.description: Ändra accentfärg för att matcha den aktuella låten
 settings.option.visual.useAdaptiveColors.popup: Anpassningsbara färger tillämpas vid nästa låt.
-settings.option.visual.verticalDrawerMode: Placering av kö och låttext
+settings.option.visual.verticalDrawerMode: Placering av kö och texter
 settings.option.visual.verticalDrawerMode.auto.description: Använd en nedre panel under spelaren/innehållet på stående skärmar och en sidopanel på bredbildsskärmar.
 settings.option.visual.verticalDrawerMode.bottom: Nedre panel
 settings.option.visual.verticalDrawerMode.bottom.description: Visa alltid kön och låttexten i en nedre panel under spelaren/innehållet.
@@ -4824,11 +4926,11 @@ settings.option.visual.verticalDrawerMode.side.description: Visa alltid kön och
 settings.option.visual.vibrancyMode.acrylic: Akryl
 settings.option.visual.vibrancyMode.mica: Mica
 settings.option.visual.vibrancyMode.tabbed: Flikad
-settings.option.visual.vibrancySettings: Vibransinställningar
+settings.option.visual.vibrancySettings: Inställningar för vibrancy
 settings.option.visual.windowBackgroundStyle: Bakgrundsstil för fönster
 settings.option.visual.windowColor: Fönsterfärgton
 settings.option.visual.windowControlPosition: Position för fönsterkontroller
-settings.option.visual.windowingMode: Rullnings- och renderingsläge
+settings.option.visual.windowingMode: Läge för rullning och rendering
 settings.option.visual.windowingMode.auto: Auto (styrplatteanpassat)
 settings.option.visual.windowingMode.description: Välj hur appen renderar och rullar innehåll. "Auto" rekommenderas för de flesta användare, på vissa styrplattor kan "Gammalt" vara mer responsivt.
 settings.option.visual.windowingMode.fallbackNotice.body: Cider använder det gamla läget istället.
@@ -4836,7 +4938,7 @@ settings.option.visual.windowingMode.fallbackNotice.title: Det nya renderingslä
 settings.option.visual.windowingMode.glass: Nytt
 settings.option.visual.windowingMode.performance: Gammalt
 settings.option.visual.windowStyle: Fönsterstil
-settings.option.visual.windowVibrancy: Fönstervibrans
+settings.option.visual.windowVibrancy: Fönstrets vibrancy
 settings.option.window.close_button_hide: Stängningsknappen ska dölja programmet
 settings.option.window.maxElementScale: Maximal elementskala
 settings.option.window.openOnStartup: Öppna Cider vid start
@@ -4867,6 +4969,17 @@ settings.power.savers: Strömsparare
 settings.power.summary.count: "{{high}} med hög påverkan, {{medium}} med medelhög påverkan aktiverade"
 settings.power.summary.high: Hög påverkan
 settings.power.summary.medium: Medelhög påverkan
+settings.privacy.appPreferences: Appinställningar
+settings.privacy.appPreferences.description: Dela dina appinställningar så vi vet hur du helst vill konfigurera Cider.
+settings.privacy.appUsage: Appspecifik användning
+settings.privacy.appUsage.description: Skicka anonym användningsdata för funktioner specifika för Cider. Den innehåller inga personuppgifter eller Apple Music-data.
+settings.privacy.audioLabs: Cider Audio labs
+settings.privacy.audioLabs.description: Skickar information om hur du har konfigurerat Cider Audio labs.
+settings.privacy.deviceSpecs: Enhetsspecifikationer
+settings.privacy.deviceSpecs.description: "Skickar information om din nuvarande hårdvara: processor, grafikkort, RAM, ljudenheter och operativsystem. Informationen är grundläggande och innehåller inga serienummer eller enhets-ID."
+settings.privacy.replay: Bidra med lyssningshistorik för Cider Replay
+settings.privacy.replay.description: Skicka lyssningshistorik anonymt för att bidra till Ciders årliga gemenskapsprojekt Replay. Publik statistik kan ses på cider.sh/replay.
+settings.privacy.statement: På Cider Collective tar vi integritet på största allvar. Vi samlar inte in några personligt identifierbara uppgifter och säljer inga data till tredje part. Eventuella data du väljer att dela med oss används för att förbättra appen och delas inte med någon annan. All personlig information som kan lagras tas bort innan den skickas till oss.
 settings.profile.crop.hint: Dra för att flytta, scrolla för att zooma
 settings.profile.crop.title: Placera ditt foto
 settings.profile.defaultName: Apple Music-användare
@@ -4874,17 +4987,18 @@ settings.profile.field.displayName: Visningsnamn
 settings.profile.field.displayName.description: Visas i sidofältet och i hela Cider.
 settings.profile.field.handle.description: Ditt @användarnamn, används för delning.
 settings.profile.field.photo: Profilbild
+settings.profile.field.photo.change: Byt profilbild
 settings.profile.field.photo.description: En anpassad profilbild har ställts in.
 settings.profile.header.identity: Redigera profil
 settings.profile.header.region: Region och språk
 settings.profile.header.visibility: Visning i sidofältet
 settings.profile.language.description: Språk för katalogens metadata för den valda butiken.
-settings.profile.option.showHandle: Visa socialt användarnamn
-settings.profile.option.showMainMenu: Huvudmeny i sidofältets profilområde
+settings.profile.option.showHandle: Visa användarnamn för sociala medier
+settings.profile.option.showMainMenu: Huvudmeny i profilområdet i sidofältet
 settings.profile.option.showName: Visa profilnamn
 settings.profile.option.showProfile: Visa profil i sidofältet
 settings.profile.policy.allowed: Tillåtet
-settings.profile.policy.label: Explicit innehåll
+settings.profile.policy.label: Innehåll med explicit språk
 settings.profile.policy.restricted: Begränsat
 settings.profile.signOut.confirmMessage: Du kommer att skickas tillbaka till inloggningsskärmen och din lokala bibliotekscache kommer att rensas. Vill du fortsätta?
 settings.profile.signOut.confirmTitle: Logga ut från Apple Music?
@@ -4922,6 +5036,7 @@ settings.resetCider.confirm.ok: Återställ Cider
 settings.resetCider.confirm.title: Vill du återställa Cider?
 settings.resetCider.confirm.warning: Detta kan inte ångras. Cider kommer att startas om efter återställningen.
 settings.resetCider.confirm.willReset: Kommer att återställas
+settings.resetCider.deselectAll: Avmarkera alla
 settings.resetCider.error: Något gick fel under återställningen.
 settings.resetCider.group.accounts: Konton
 settings.resetCider.group.core: Återställ
@@ -4931,6 +5046,10 @@ settings.resetCider.resetButton: Återställ Cider
 settings.resetCider.resetting: Återställer…
 settings.resetCider.selectAll: Markera alla
 settings.resetCider.title: Återställ Cider
+settings.search.empty: Inga inställningar matchar sökningen.
+settings.search.pages: Sidor
+settings.search.resultCount: "{{count}} inställningar matchar"
+settings.search.resultCountOne: 1 inställning matchar
 settings.sleepTimer.endsIn: "Slutar om: {{remainingTime}} ({{endTime}})"
 settings.sleepTimer.notSet: Timern är inte inställd
 settings.sleepTimer.title: Ställ in insomningstimer
@@ -4979,7 +5098,7 @@ settings.troubleshooting.impressionReporting.warning2: Detta är äkta utgående
 settings.troubleshooting.logFile: Loggfil
 settings.troubleshooting.logFile.actions: Åtgärder för loggfil
 settings.troubleshooting.logFile.desc: Visa, kopiera eller rensa din loggfil
-settings.troubleshooting.mkliteDebug: MKLite-felsökningsloggning
+settings.troubleshooting.mkliteDebug: Felsökningslogg för MKLite
 settings.troubleshooting.mkliteDebug.desc: Detaljerad konsolutskrift från MKLite – PlayActivity-nyttolaster (JSPLAY), spårbyten och uppspelningsstatus. Användbart för att jämföra vad vi skickar till Apple med music.apple.com. Låt vara inaktiverat vid normal användning.
 settings.troubleshooting.mkLoadingMethod: Laddningsmetod för MusicKit
 settings.troubleshooting.mkLoadingMethod.warning1: Ändra metoden som används för att ladda MusicKit. Detta används för att åtgärda potentiella laddningsproblem efter uppdateringar av MusicKit.
@@ -4987,9 +5106,68 @@ settings.troubleshooting.mkLoadingMethod.warning2: Denna inställning bör INTE 
 settings.troubleshooting.mkLoadingMethod.warning3: Det här alternativet är inte avsett att lösa allmänna anslutnings- eller uppspelningsproblem.
 settings.troubleshooting.rebootMk: Starta om MusicKit
 settings.troubleshooting.rebootMk.desc: Starta om MusicKit för att åtgärda uppspelningsproblem
-settings.troubleshooting.testSignIn: Testa Apple Music-inloggning
+settings.troubleshooting.testSignIn: Testa inloggning till Apple Music
 settings.troubleshooting.testSignIn.desc: Öppna popup-fönstret för inloggning på Apple Music för att verifiera att inloggningen fungerar, och validera sedan token mot API:et. Ingenting sparas och din nuvarande session påverkas inte.
 settings.troubleshooting.title: Felsökning
+settings.tweaks.animateArtworkOnHover.description: Spela upp animerat omslag när pekaren vilar på det.
+settings.tweaks.artworkFadeIn.description: Visa omslag direkt i stället för att tona in dem när de laddas.
+settings.tweaks.artworkHighlighting.description: Lägg till en mjuk skugga och highlight på omslag i rutnät och listor.
+settings.tweaks.artworkLoadingMethod.description: Laddar omslag när de scrollas in i bild. Ivrig laddning laddar dem direkt.
+settings.tweaks.card.musicVideos: Musikvideor
+settings.tweaks.ciderAudioBadges.description: Visa Cider Audio-märken bredvid låten i spelaren.
+settings.tweaks.ciderAudioToolbar.description: Visa knappen Cider Audio i verktygsfältet.
+settings.tweaks.compactSidebarSize: Kompakt storlek på sidofältet
+settings.tweaks.contextMenuIcons.description: Vilka menyalternativ som visar en ikon.
+settings.tweaks.floatingSearchBlur: Oskärpa bakom flytande sökning
+settings.tweaks.floatingSearchClear: Rensa flytande sökning när den stängs
+settings.tweaks.forceMpWindowControls.description: Använd Ciders egna fönsterknappar i stället för systemets.
+settings.tweaks.hideHeroItems.description: Dölj de stora utvalda bannerna överst i Bläddra.
+settings.tweaks.homeButtonLocation.description: Var startknappen placeras.
+settings.tweaks.immersiveArtworkHighlight: Highlight för omslag i uppslukande vy
+settings.tweaks.immersiveArtworkHighlight.description: Lägg till en highlight på omslaget i uppslukande vy.
+settings.tweaks.immersiveBackgroundBpm.description: Animera bakgrunden i takt med låtens tempo.
+settings.tweaks.immersiveControlsTimeout: Tidsgräns för reglage i fullskärmsvy
+settings.tweaks.immersiveControlsTimeout.description: Sekunder innan reglagen döljs.
+settings.tweaks.immersiveHideLyrics.description: Dölj textpanelen för låtar utan text.
+settings.tweaks.immersiveLyricGlow: Glöd på aktiv rad
+settings.tweaks.immersiveLyricGlow.description: Lägg till ett glöd på raden som sjungs.
+settings.tweaks.immersiveMaxLyricSize.description: Största storlek som låttexten kan växa till i fullskärmsvy.
+settings.tweaks.mainMenuPosition.description: Var knappen för huvudmenyn sitter.
+settings.tweaks.mavericksLcdStyle: LCD-stil för Mavericks
+settings.tweaks.mavericksLcdStyle.description: Hur visningen för spelas nu ser ut i Mavericks-layouten.
+settings.tweaks.miniPlayerAnimatedArtwork.description: Spela upp animerat omslag i minispelarfönstret.
+settings.tweaks.moveUpLinks.description: Placera länkarna till mer innehåll överst i Bläddra.
+settings.tweaks.musicVideoBadge.description: Visa en knapp i spelaren när låten har en musikvideo.
+settings.tweaks.pauseAnimatedOnBlur.description: Pausa animerat omslag när Cider inte är det aktiva fönstret.
+settings.tweaks.progressAccent: Framstegsfält i accentfärg
+settings.tweaks.progressAccent.description: Fyll låtens framstegsfält med accentfärgen.
+settings.tweaks.resizableMiniPlayer.description: Låt minispelarfönstret ändra storlek.
+settings.tweaks.richGridNoScrollAnimation: Omedelbar scrollning i rikt albumrutnät
+settings.tweaks.richGridNoScrollAnimation.description: Hoppa till albumet utan att animera scrollningen.
+settings.tweaks.richGridOpenPage: Öppna album som sidor från rikt albumrutnät
+settings.tweaks.richGridOpenPage.description: Gå till albumsidan i stället för att expandera det i rutnätet.
+settings.tweaks.richGridScrollPosition: Scrollposition i rikt albumrutnät
+settings.tweaks.richGridScrollPosition.description: Var rutnätet scrollar när du öppnar ett album.
+settings.tweaks.scrollbarType.description: Använd Ciders egna scrollbars eller systemets.
+settings.tweaks.searchStyle: Sökstil
+settings.tweaks.searchStyle.description: Sök i namnlisten eller i en panel över sidan.
+settings.tweaks.section.artwork: Omslag
+settings.tweaks.section.browse: Bläddra
+settings.tweaks.section.immersive: Fullskärm
+settings.tweaks.section.lyrics: Låttext
+settings.tweaks.section.pagesGrids: Sidor och rutnät
+settings.tweaks.section.playerBar: Spelarfält
+settings.tweaks.section.search: Sök
+settings.tweaks.section.sidebarNavigation: Sidofält och navigering
+settings.tweaks.section.windowToolbar: Fönster och verktygsfält
+settings.tweaks.showBitrate.description: Visa strömmens bitrate bredvid låten i spelaren.
+settings.tweaks.sidebarPlaylistArtwork.description: Visa varje spellistas omslag bredvid namnet.
+settings.tweaks.simpleArtworkMask.description: Tona ut den nedre delen av bakgrundsomslaget.
+settings.tweaks.sonomaLyricArc: Bågformad låttext i Sonoma
+settings.tweaks.sonomaRadialMask: Alternativ Sonoma-mask
+settings.tweaks.volumeIosStyle: Volymreglage i iOS-stil
+settings.tweaks.volumeIosStyle.description: Rita volymreglaget i stilen som används på iPhone.
+settings.tweaks.windowControlPosition.description: Vilken sida fönsterknapparna sitter på.
 settings.updates.action.check: Sök efter uppdateringar
 settings.updates.action.install: Installera uppdatering
 settings.updates.action.restart: Starta om Cider
@@ -5019,9 +5197,9 @@ settings.updates.progress.success.sub: Starta om Cider för att tillämpa ändri
 settings.updates.progress.working: Installerar uppdatering
 settings.updates.progress.working.sub: Häng kvar, det tar bara ett ögonblick.
 settings.updates.section.about: Om din version
-settings.updates.section.alsoAvailable: Även tillgänglig
+settings.updates.section.alsoAvailable: Också tillgängligt
 settings.updates.section.history: Uppdateringshistorik
-settings.updates.section.whatsNew: Nyheter i Cider
+settings.updates.section.whatsNew: Nyheter i Cider {version}
 settings.updates.status.available: Uppdatering tillgänglig
 settings.updates.status.checking: Söker efter uppdateringar...
 settings.updates.status.failed: Uppdateringen misslyckades
@@ -5029,31 +5207,36 @@ settings.updates.status.idle: Cider är uppdaterat
 settings.updates.status.success: Omstart krävs
 settings.updates.status.working: Installerar...
 settings.visual.card.appBackground: Appbakgrund
-settings.visual.card.behaviorLyrics: Beteende och låttexter
+settings.visual.card.behavior: Beteende
+settings.visual.card.behaviorLyrics: Beteende och låttext
 settings.visual.card.browse: Bläddra
 settings.visual.card.contentFilter: Innehållsfilter
 settings.visual.card.experimental: Experimentell
 settings.visual.card.fsrUpscaling: FSR-uppskalning
-settings.visual.card.moreAnimatedArtwork: Mer animerad grafik
+settings.visual.card.moreAnimatedArtwork: Fler animerade omslag
 settings.visual.card.playerEffects: Spelareffekter
 settings.visual.card.sidebarNavigation: Sidofält och navigering
 settings.visual.card.trackMetadata: Spårmetadata
-settings.visual.card.ultraHdr: Uppskalning med Ultra HDR
+settings.visual.card.ultraHdr: Ultra HDR-uppskalning
 settings.visual.editorialLayout: Använd redaktionell layout
 settings.visual.editorialLayout.desc: Visar en redaktionell banner och tillämpar en färgpalett på vissa album
-settings.visual.editorialPreferenceOrder: Prioriteringsordning för redaktionellt innehåll
+settings.visual.editorialPreferenceOrder: Ordning för redaktionella preferenser
 settings.visual.section.appearance: Utseende
 settings.visual.section.appearance.description: Färgschema, accentfärger och appbakgrund.
-settings.visual.section.artwork: Omslag och rörelse
+settings.visual.section.artwork: Omslagsbilder och rörelse
 settings.visual.section.artwork.description: Inställningar för animerade omslag och rörelse.
 settings.visual.section.content: Bläddring och innehåll
 settings.visual.section.content.description: Sidlayouter, bläddringsinställningar och innehållsfiltrering.
 settings.visual.section.customCss.description: Använd din egen CSS ovanpå Ciders design.
 settings.visual.section.layout: Layout
 settings.visual.section.layout.description: Applayout, spelarstil, sidofält och navigering.
+settings.visual.section.pages: Sidor
+settings.visual.section.pages.description: Hur album- och spellistsidor är upplagda.
+settings.visual.section.themeColors: Tema och färger
 settings.visual.section.window: Fönster
 settings.visual.section.window.description: Fönsterram, vibrans, kontroller och skalning.
-settings.visual.vibrancy.acrylicDarkness: Mörkhetsvärde för Acrylic
+settings.visual.section.window.descriptionV2: Fönsterkant, vibrans, rendering och skalning.
+settings.visual.vibrancy.acrylicDarkness: Mörkhetsvärde för akryl
 settings.visual.vibrancy.mode.acrylic: Akryl
 settings.visual.vibrancy.mode.mica: Mica
 settings.visual.vibrancy.mode.none: Ingen
@@ -5543,7 +5726,7 @@ term.size: Storlek
 term.size.compact: Kompakt
 term.size.normal: Normal
 term.skip: Hoppa över
-term.sleepTimer: Insomningstimer
+term.sleepTimer: Sovtimer
 term.snippets: Kodsnuttar
 term.socials: Sociala medier
 term.socialTeam: Socialt team
@@ -5633,7 +5816,7 @@ term.updates: Uppdateringar
 term.upNext: Upp nästa
 term.username: Användarnamn
 term.userPresets: Användarförinställningar
-term.userSubmitted: Användarbidrag
+term.userSubmitted: Användarinskickad
 term.userToken: Användartoken
 term.variables: Variabler
 term.version: Version
