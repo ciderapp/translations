@@ -61,6 +61,7 @@ action.cast.todevices: Stream naar apparaten
 action.change: Wijzig
 action.clear: Wissen
 action.close: Sluiten
+action.configure: Configureren
 action.connect: Verbinden
 action.connect.createCollabPlaylist: Nieuwe gezamenlijke afspeellijst aanmaken
 action.connect.listenTogether: Samen luisteren
@@ -79,6 +80,7 @@ action.deleteFolder: Weet je zeker dat je de map "{{folderName}}" wilt verwijder
 action.deleteFolder.message: Alle mappen en afspeellijsten in deze map worden ook verwijderd.
 action.deletePlaylist: Weet je zeker dat je de afspeellijst "{{playlistName}}" wilt verwijderen?
 action.deletepreset: Voorinstelling verwijderen
+action.deny: Weigeren
 action.disablePlugins: Disable plugins for this session
 action.disconnect: Verbinding verbreken
 action.dislike: Minder leuk
@@ -125,7 +127,7 @@ action.openUrl: Open URL
 action.openVideo: Video openen
 action.paste: Plakken
 action.pause: Pauzeer
-action.pickTime: Kies tijd
+action.pickTime: Tijd kiezen
 action.pin: Vastzetten
 action.pinToCompactSidebar: Vastpinnen aan compacte zijbalk
 action.pinToHome: Aan beginscherm vastmaken
@@ -183,8 +185,8 @@ action.shuffle.disable: Shuffle uitschakelen
 action.shuffle.enable: Shuffle inschakelen
 action.sidebar.signIn: Log in bij {account}
 action.sidebar.signIn.with: Log in met {account}
-action.signIn: Log in
-action.signOut: Log uit
+action.signIn: Aanmelden
+action.signOut: Afmelden
 action.skip: Overslaan
 action.smartQueue.disable: Slimme wachtrij uitschakelen
 action.smartQueue.enable: Slimme wachtrij inschakelen
@@ -623,6 +625,12 @@ assistant.sid.settings.freshDetail: Bouw een volledige afspeellijst op basis van
 assistant.sid.settings.gemmaHere: Gemma aanwezig
 assistant.sid.settings.gpu: Videokaart
 assistant.sid.settings.group: Assistent
+assistant.sid.settings.helloEdit: Open een afspeellijst en kies Bewerken met Sid, dan ruim ik hem voor je op.
+assistant.sid.settings.helloFresh: Geef me een stemming of een paar artiesten, dan bouw ik een complete afspeellijst.
+assistant.sid.settings.helloRequest: Vraag tijdens een set om een nummer, dan vind ik het op Apple Music.
+assistant.sid.settings.helloSet: Tijdens een set kies ik op toonaard en tempo wat er hierna speelt.
+assistant.sid.settings.helloSort: Vraag me om een afspeellijst te sorteren van rustig naar energiek, of zodat de toonaarden goed op elkaar aansluiten.
+assistant.sid.settings.helloTrim: Ik kan een afspeellijst inkorten tot een uur, of hem op één tempo houden.
 assistant.sid.settings.inEdit: Wanneer je een afspeellijst bewerkt
 assistant.sid.settings.inEditDetail: Bewerk met Sid in de koptekst van de afspeellijst
 assistant.sid.settings.inImmersive: In immersieve weergave
@@ -651,6 +659,11 @@ assistant.sid.settings.position: Positie
 assistant.sid.settings.positionDetail: Waar Sid op de hoes zit
 assistant.sid.settings.privacyChat: "Wat je typt, blijft op deze computer: Sid denkt hier met Gemma. Om muziek te zoeken, stuurt Sid zoekwoorden naar Apple Music. Als je erom vraagt, leest Sid je afspeellijsten, je recente afspeelgeschiedenis en je Apple Music Replay uit je Apple Music-account. Er verandert niets totdat je op Toepassen drukt."
 assistant.sid.settings.privacyEngine: "Wat je typt, blijft op deze computer: Sid denkt hier na met {engine}. Om muziek te vinden, stuurt Sid zoekwoorden naar Apple Music en leest, wanneer je erom vraagt, je afspeellijsten, recente afspeelgeschiedenis en je Apple Music Replay uit je Apple Music-account. Er verandert niets totdat je op Toepassen drukt."
+assistant.sid.settings.quipGaming: Jij en je {gpu} gaan het prima met elkaar vinden.
+assistant.sid.settings.quipIntegrated: Geïntegreerde grafische kaart. Ik houd het licht en gezellig.
+assistant.sid.settings.quipOther: Mooie {gpu}. Ik zet hem goed aan het werk.
+assistant.sid.settings.quipSetsOnly: Jij en je {gpu} blijven voorlopig bij het afspelen van sets.
+assistant.sid.settings.quipTop: "{gpu}? Ik kom nauwelijks in een zweet."
 assistant.sid.settings.reads: Leest een volledige afspeellijst in {seconds} s (moet onder {floor} s blijven)
 assistant.sid.settings.regular: Normaal
 assistant.sid.settings.remove: Verwijderen
@@ -753,6 +766,19 @@ auth.error.unavailable: Deze Apple-id kan Apple Music niet gebruiken in Cider. C
 auth.error.windowFailed: Inlogvenster kon niet worden geopend
 auth.mutExpired.confirm: Log in
 auth.mutExpired.message: Je Apple Music-sessie is verlopen. Log opnieuw in om door te gaan.
+auth.request.authorizing: Autoriseren…
+auth.request.copyToken: Token kopiëren
+auth.request.granted: Toegekend
+auth.request.requestedAccess: Toegang aangevraagd
+auth.request.revealNote: Dit is de enige keer dat dit token wordt getoond. Plak het nu in {app}.
+auth.request.subtitle: wil toegang tot Cider
+auth.request.toast.copied: Token gekopieerd naar klembord
+auth.request.toast.failed: Token kon niet worden aangemaakt
+auth.request.toast.granted: Toegang verleend aan {app}
+auth.request.toast.title: Autorisatie
+auth.request.tokenCreated: Token aangemaakt
+auth.request.tokenFor: voor {app}
+auth.request.trustNote: Geef alleen toegang aan apps die je vertrouwt. Je kunt dit token altijd intrekken via Instellingen › Verbindingen.
 auth.signedIn: Aangemeld
 auth.signInRetry.confirm: Probeer opnieuw
 auth.signInRetry.message: Het inlogvenster kon niet worden geopend. Opnieuw proberen?
@@ -2865,7 +2891,7 @@ oobe.amupsell.text: |-
   Cider werkt niet met het Apple Music Voice-abonnement of sommige promotionele proefabonnementen. Als je al een geschikt Apple Music-abonnement hebt, klik dan op Volgende om door te gaan.
 oobe.amupsell.title: Voordat we beginnen
 oobe.appearance.accentHint: Gebruikt voor knoppen, markeringen en voortgang in de app. Probeer er een uit voor een live-voorvertoning.
-oobe.appearance.subtitle: Kies een kleurenschema en een accentkleur. Je kunt dit altijd wijzigen in Instellingen → Visueel.
+oobe.appearance.subtitle: Kies een kleurenschema en een accentkleur. Je kunt deze altijd wijzigen via Instellingen › Weergave.
 oobe.appearance.title: Maak Cider van jou
 oobe.appleNotice: "Let op: Apple Music is een handelsmerk van Apple Inc. Cider is een client van derden voor Apple Music en is niet verbonden met Apple Inc."
 oobe.audio.advancedFunctionality: ""
@@ -2880,7 +2906,7 @@ oobe.connections.atmosRatingsHint: Bekijk en deel welke albums geweldig klinken 
 oobe.connections.lastfm.connected: Verbonden
 oobe.connections.lastfm.connectedAs: Verbonden als {username}
 oobe.connections.lastfm.hint: Scrobbel je luistergeschiedenis.
-oobe.connections.moreHint: Meer integraties zoals Libre.fm, Maloja, ListenBrainz en de WebSockets- en RPC-API's vind je in Instellingen → Connectiviteit.
+oobe.connections.moreHint: Meer integraties zoals Libre.fm, Maloja, ListenBrainz en de WebSockets- en RPC-API's vind je via Instellingen › Verbindingen.
 oobe.connections.pairDevice: Apparaat koppelen
 oobe.connections.remoteHint: Bedien Cider vanaf je telefoon.
 oobe.connections.subtitle: Koppel Cider met je andere apps en diensten.
@@ -3074,10 +3100,22 @@ playlist.refresh.title: Afspeellijst moet worden vernieuwd
 playlist.suggestions.subtitle: Voorbeeld bekijken en toevoegen aan afspeellijst
 playlist.suggestions.title: Voorgestelde nummers
 playlist.untitled: Naamloos
+plugin.install.byAuthor: door {author}
+plugin.install.identifier: Identificatie
+plugin.install.install: Installeren
+plugin.install.installing: Installeren…
+plugin.install.source: Bron
+plugin.install.subtitle: Een Cider-plug-in wil aan je bibliotheek worden toegevoegd.
+plugin.install.title: Plug-in installeren
+plugin.install.update: Bijwerken
+plugin.install.updateSubtitle: Een Cider-plug-in wil een geïnstalleerde versie vervangen.
+plugin.install.updateTitle: Plug-in bijwerken
+plugin.install.warning: Plug-ins kunnen code uitvoeren binnen Cider, met toegang tot je weergave, wachtrij en bibliotheek. Installeer alleen plug-ins uit bronnen die je vertrouwt.
 podcast.comingSoon.description: Ondersteuning voor podcasts wordt momenteel opnieuw opgebouwd na grote wijzigingen in de manier waarop Cider het afspelen regelt. Dit keert terug in een toekomstige update.
 podcast.comingSoon.hide: Verberg in zijbalk
 podcast.comingSoon.hint: Je kunt dit weer inschakelen in de Weergave-instellingen, onder Zijbalk & navigatie.
 podcast.comingSoon.title: Podcasts komen binnenkort
+podcast.comingSoon.tweaksHint: Je kunt dit weer inschakelen in de instellingen onder Tweaks, bij Zijbalk en navigatie.
 podcast.episodes: Afleveringen
 podcast.followedOnCider: Gevolgd op Cider
 podcast.followOnCider: Volgen op Cider
@@ -3160,7 +3198,12 @@ settings.accessibility.section.motion: Beweging
 settings.accessibility.section.motion.description: Hoeveel animatie knoppen, kaarten en andere oppervlakken gebruiken.
 settings.accessibility.section.soundEffects: Geluidseffecten
 settings.accessibility.section.soundEffects.description: Interfacegeluiden voor knoppen, schakelaars en schuifregelaars, en hoe luid ze worden afgespeeld.
-settings.advanced.section.backups: Back-ups en herstellen
+settings.accessibility.soundPreview.click: Klik
+settings.accessibility.soundPreview.slider: Schuifregelaar
+settings.accessibility.soundPreview.switch: Schakelaar
+settings.accounts.appleMusic: Apple Music
+settings.accounts.appleMusic.description: Apple Music inschakelen
+settings.advanced.section.backups: Back-ups en reset
 settings.advanced.section.backups.description: Sla een kopie van je instellingen op, herstel een back-up die Cider voor je heeft bewaard, of zet alles terug naar de standaardinstellingen.
 settings.advanced.section.client: Deze client
 settings.advanced.section.client.description: Prestatielimieten en de instellingen die horen bij de client waarin Cider draait, in plaats van bij je account.
@@ -3168,20 +3211,20 @@ settings.airplay.installed.message: AirPlay is geïnstalleerd
 settings.airplay.installed.title: AirPlay geïnstalleerd
 settings.airplay.requiresCiderAudio: Vereist dat CiderAudio is ingeschakeld
 settings.appleMusic.storefront.warning: Het wijzigen van je storefront veroorzaakt problemen met afspelen. Je bent gewaarschuwd.
-settings.artwork.disableFadeIn: Fade-in-effect uitschakelen
-settings.artwork.highlighting: Artwork-accentuering
+settings.artwork.disableFadeIn: Infade-effect uitschakelen
+settings.artwork.highlighting: Hoesmarkering
 settings.artwork.hiresImages: Hi-res-afbeeldingen gebruiken
 settings.artwork.hiresImages.warning: Kan de laadtijd verlengen en de prestaties verminderen.
 settings.audio.atmos: Dolby Atmos
-settings.audio.atmos.binaural.desc: Atmos gerenderd als binauraal stereo via CiderAudio. Crossfade, Automix en Seamless Transitions blijven normaal werken.
+settings.audio.atmos.binaural.desc: Atmos weergegeven als binaurale stereo via CiderAudio. Crossfade, Automix en naadloze overgangen blijven werken zoals verwacht.
 settings.audio.atmos.description: Configureer Atmos-afspelen voor je huidige uitvoerapparaat.
-settings.audio.atmos.normalizationHint: Dolby Atmos-mixen zijn zachter dan stereomasters. Schakel Audionormalisatie in om het volume gelijk te trekken.
+settings.audio.atmos.normalizationHint: Dolby Atmos-mixen zijn zachter dan stereomasters. Schakel audionormalisatie in om ze gelijk te trekken.
 settings.audio.atmos.off.desc: Atmos uitgeschakeld. Alle inhoud wordt afgespeeld als standaard stereo.
 settings.audio.atmos.passthrough: Passthrough
 settings.audio.atmos.passthrough.desc: Omzeilt alle audioverwerking. Meerkanaals Atmos wordt rechtstreeks naar het apparaat verzonden. Ideaal voor AV-receivers.
-settings.audio.atmos.passthrough.descV2: Stuurt meerkanaals Atmos rechtstreeks naar het apparaat, voor AV-ontvangers. Audio Lab, de equalizer en Luistermodus worden omzeild.
+settings.audio.atmos.passthrough.descV2: Stuurt meerkanaals Atmos rechtstreeks naar het apparaat, voor AV-receivers. Audio Lab, de equalizer en de luistermodus worden omzeild.
 settings.audio.atmos.passthroughActive: Passthrough actief — wijzig in volledige instellingen.
-settings.audio.atmos.standard.desc: Meerkanaals Atmos met CiderAudio-verwerking. Crossfade, Automix en Seamless Transitions blijven normaal werken.
+settings.audio.atmos.standard.desc: Meerkanaals Atmos met CiderAudio-verwerking. Crossfade, Automix en naadloze overgangen blijven werken zoals verwacht.
 settings.audio.atmosMode: Atmos-modus
 settings.audio.atmosMode.switchFromPassthroughConfirm: Overschakelen van passthrough-modus vereist het vernieuwen van de app. Doorgaan?
 settings.audio.atmosMode.switchToPassthroughConfirm: Overschakelen naar passthrough-modus vereist het vernieuwen van de app. Doorgaan?
@@ -3192,9 +3235,9 @@ settings.audio.card.streaming: Streaming
 settings.audio.ciderAudio: Cider Audio
 settings.audio.ciderAudio.description: Speciaal afgestemde en ontworpen audiostack die een rijke, hoogwaardige audio-ervaring levert. Aanbevolen boven een traditionele equalizer.
 settings.audio.ciderAudio.enable: Cider Audio inschakelen
-settings.audio.ciderAudio.requiredHint: Vereist voor equalizer
+settings.audio.ciderAudio.requiredHint: Vereist voor de equalizer
 settings.audio.crossfade: Crossfade
-settings.audio.hostCapture.apps: Trigger-apps
+settings.audio.hostCapture.apps: Activerende apps
 settings.audio.hostCapture.apps.count: "{{ n }} apps activeren het vastleggen."
 settings.audio.hostCapture.apps.countOne: 1 app activeert het vastleggen.
 settings.audio.hostCapture.apps.emptyAvailable: Geen andere geopende apps. Open er een en klik op Vernieuwen.
@@ -3216,13 +3259,13 @@ settings.audio.hostCapture.bitAuto: Automatisch (hoogste)
 settings.audio.hostCapture.bitDepth: Bitdiepte
 settings.audio.hostCapture.bitDepthHint: Automatisch gebruikt de hoogste bitdiepte die je apparaat ondersteunt.
 settings.audio.hostCapture.exclusiveNote: Exclusieve uitvoer, bit-transparant, niet vast te leggen.
-settings.audio.hostCapture.gain: Aanpassing uitvoerniveau
+settings.audio.hostCapture.gain: Uitvoerniveau bijsturen
 settings.audio.hostCapture.gainHint: Stem de vastgelegde luidheid af op de normale uitvoer.
 settings.audio.hostCapture.mode: Audio-uitvoermodus
 settings.audio.hostCapture.modeCapture: Vastleggen
 settings.audio.hostCapture.modeCaptureLong: Vast te leggen (OBS, Discord)
 settings.audio.hostCapture.modeExclusive: Exclusief
-settings.audio.hostCapture.modeExclusiveLong: WASAPI Exclusief
+settings.audio.hostCapture.modeExclusiveLong: WASAPI exclusief
 settings.audio.hostCapture.modeHintCapture: Speelt audio af via het Cider-proces zodat OBS, Discord en andere apps dit kunnen vastleggen.
 settings.audio.hostCapture.modeHintExclusive: Bit-transparante uitvoer rechtstreeks naar je DAC, waarbij de Windows-mixer wordt omzeild. Niet vast te leggen.
 settings.audio.hostCapture.modeHintOff: "Uit: audio speelt normaal af via het WebView2-proces. Niet beschikbaar tijdens Atmos-passthrough of muziekvideo's."
@@ -3262,6 +3305,35 @@ settings.audio.section.playback: Afspelen
 settings.audio.section.playback.description: Audiokwaliteit, ruimtelijke audio, luistermodi en hoe snel podcasts worden afgespeeld.
 settings.audio.section.volume: Volume
 settings.audio.section.volume.description: Geluidsniveau-aanpassing, hoever het scrollwiel het niveau aanpast en hoe de schuifregelaar afleest.
+settings.audio.signal.atmosCodecs: Atmos-codecs beschikbaar
+settings.audio.signal.atmosNativeMac: Native (macOS)
+settings.audio.signal.atmosNativeMacTooltip: Dolby Atmos wordt native gedecodeerd door macOS CoreAudio. Spatial audio-weergave wordt door het systeem verwerkt.
+settings.audio.signal.atmosOffTooltip: Atmos is uitgeschakeld voor dit apparaat. Inhoud wordt afgespeeld als standaard stereo.
+settings.audio.signal.atmosOffTooltipMac: Atmos is uitgeschakeld voor dit apparaat.
+settings.audio.signal.atmosSupported: Ondersteund
+settings.audio.signal.binauralSubtitle: Koptelefoonweergave
+settings.audio.signal.binauralTooltip: Atmos-inhoud wordt via de CiderAudio-pijplijn weergegeven als binaurale stereo.
+settings.audio.signal.channels: "{count} kanalen"
+settings.audio.signal.codecs: Codecs
+settings.audio.signal.deviceRateTooltip: Samplefrequentie van het huidige apparaat
+settings.audio.signal.directOutput: Directe uitvoer
+settings.audio.signal.directOutputChannels: Directe uitvoer ({count}ch)
+settings.audio.signal.loading: Laden…
+settings.audio.signal.nativeMatch: Native overeenkomst
+settings.audio.signal.noAtmosCodecs: Geen Atmos-codecs
+settings.audio.signal.output: Uitvoer
+settings.audio.signal.passthroughMode: Passthrough-modus
+settings.audio.signal.passthroughSubtitle: Audioverwerking overgeslagen, directe uitvoer naar apparaat
+settings.audio.signal.passthroughTooltip: Audio omzeilt alle verwerking en wordt rechtstreeks naar het apparaat gestuurd. CiderAudio-functies zoals crossfade, Automix en naadloze overgangen zijn inactief.
+settings.audio.signal.sampleRate: Samplefrequentie
+settings.audio.signal.source: Bron {rate}
+settings.audio.signal.sourceRateTooltip: Afspeelsnelheid van Apple Music
+settings.audio.signal.standardSubtitle: Meerkanaals + CiderAudio
+settings.audio.signal.standardTooltip: Meerkanaals Atmos-inhoud wordt via CiderAudio-verwerking afgespeeld en weergegeven op basis van de mogelijkheden van het apparaat.
+settings.audio.signal.stereo: Stereo
+settings.audio.signal.surround51: 5.1-surround
+settings.audio.signal.surround71: 7.1+-surround
+settings.audio.signal.upsamplingTooltip: Het systeem voert upsampling uit vanaf de Apple Music-bronfrequentie
 settings.automix.allowTempoKeyShifts: Tempo-/toonsoortverschuivingen toestaan
 settings.automix.allowTempoKeyShiftsHint: Sta kleine verschuivingen toe om overgangen energiek te houden. (Tijdelijk uitgeschakeld, wordt herzien.)
 settings.automix.description: Schakel intelligent over tussen nummers op basis van tempo en toonsoort.
@@ -3269,9 +3341,9 @@ settings.automix.descriptionV2: Mengt nummers met behulp van de eigen fade- en z
 settings.automix.disableFor: Automix uitschakelen voor...
 settings.automix.disableForAlbums: Albums
 settings.automix.disableForAlbumsHint: Automix niet toepassen bij het afspelen van albums.
-settings.automix.disableForAutoplayContinuation: Voortzetting automatisch afspelen
+settings.automix.disableForAutoplayContinuation: Doorlopend afspelen
 settings.automix.disableForAutoplayContinuationHint: Pas automix niet toe wanneer het afspelen overgaat op een station of automatisch afgespeelde nummers nadat de oorspronkelijke collectie is afgelopen.
-settings.automix.disableForDjMixes: DJ-mixes
+settings.automix.disableForDjMixes: DJ-mixen
 settings.automix.disableForDjMixesHint: Automix niet toepassen voor DJ-mixes en doorlopende mixes.
 settings.automix.disableForLiveAlbums: Live-albums
 settings.automix.disableForLiveAlbumsHint: Pas automix niet toe op live-opnamen en concerten.
@@ -3283,33 +3355,33 @@ settings.automix.normalizeDurationHint: Overgangstijd voor volumenormalisatie ({
 settings.automix.spectralSeparation: Spectrale scheiding
 settings.automix.spectralSeparationHint: Hoe ver de twee nummers in frequentie uit elkaar worden getrokken tijdens een overgang.
 settings.automix.spectralSeparationHintV2: Hoe ver de twee nummers tijdens een overgang in frequentie uit elkaar worden getrokken ({value}).
-settings.automix.speedSettle: Snelheidshersteltijd
+settings.automix.speedSettle: Insteltijd snelheid
 settings.automix.speedSettleHint: Hoe lang het duurt voordat de afspeelsnelheid weer normaal is na een op tempo afgestemde mix ({ms}ms)
-settings.automix.tempoAlign: Beatmatching
+settings.automix.tempoAlign: Beat matching
 settings.automix.tempoAlignHint: Stuur het tempo bij om de twee nummers op elkaar af te stemmen wanneer ze al dicht bij elkaar liggen.
-settings.automix.vocalGuard: Zangbescherming
+settings.automix.vocalGuard: Zang beschermen
 settings.automix.vocalGuardHint: Verkort de mix wanneer er in beide nummers tegelijkertijd wordt gezongen.
 settings.cache.all: Alles
-settings.cache.artistChips: Artiestenchips
+settings.cache.artistChips: Artiestchips
 settings.cache.artwork: Artwork
 settings.cache.clear: Cache wissen
 settings.cache.content: Inhoud
 settings.cache.entries: "Aantal items: {{ count }}"
-settings.cache.homeData: Home-gegevens
+settings.cache.homeData: Startgegevens
 settings.cache.library: Bibliotheek
-settings.cache.marketplaceListings: Marketplace-vermeldingen
-settings.cache.playlistIndex: Afspeellijstindex
+settings.cache.marketplaceListings: Marktplaatsvermeldingen
+settings.cache.playlistIndex: Playlistindex
 settings.cache.prompt.artwork.cleared.message: De cache voor artwork is gewist. Nu vernieuwen?
-settings.cache.prompt.artwork.cleared.title: Artwork-cache gewist
-settings.cache.prompt.artwork.title: Artwork-cache wissen
+settings.cache.prompt.artwork.cleared.title: Hoesjescache gewist
+settings.cache.prompt.artwork.title: Hoesjescache wissen
 settings.cache.prompt.clearAll.cleared.message: De cache is gewist. Nu vernieuwen?
 settings.cache.prompt.clearAll.cleared.title: Cache gewist
 settings.cache.prompt.clearAll.title: Cache wissen
 settings.cache.prompt.marketplace.cleared.message: De cache is gewist. Nu vernieuwen?
-settings.cache.prompt.marketplace.cleared.title: Marketplace-cache gewist
+settings.cache.prompt.marketplace.cleared.title: Marktplaatscache gewist
 settings.cache.prompt.playlist.cleared.message: De cache is gewist. Nu vernieuwen?
-settings.cache.prompt.playlist.cleared.title: Afspeellijst-cache gewist
-settings.cache.recentlyModifiedPlaylists: Onlangs gewijzigde afspeellijsten
+settings.cache.prompt.playlist.cleared.title: Playlistcache gewist
+settings.cache.recentlyModifiedPlaylists: Recent gewijzigde afspeellijsten
 settings.cache.storageUsed: "Gebruikte opslag: {{ usage }}"
 settings.client.genten.enableTrayIcon: Systeemvakpictogram inschakelen
 settings.client.genten.enableTrayIcon.desc: Schakel het systeemvakpictogram in of uit
@@ -3533,7 +3605,7 @@ settings.connectivity.scrobbler.trigger.mode: Triggermodus
 settings.connectivity.scrobbler.trigger.mode.desc: Wanneer een scrobble moet worden verzonden. "Wat het eerste is" is de klassieke Last.fm-regel.
 settings.connectivity.scrobbler.trigger.percent: Percentage
 settings.connectivity.scrobbler.zeroOff: 0 schakelt dit filter uit.
-settings.connectivity.section.communityRatings: Beoordelingen van de community
+settings.connectivity.section.communityRatings: Community-beoordelingen
 settings.connectivity.section.communityRatings.description: Dolby Atmos-mixbeoordelingen van andere Cider-luisteraars op albumpagina's, en of die van jou worden gedeeld.
 settings.connectivity.section.discord.description: Wat Cider op je Discord-profiel toont terwijl er muziek wordt afgespeeld, en via welke client er verbinding wordt gemaakt.
 settings.connectivity.section.externalApplications.description: De WebSockets-poort en RPC-server die andere programma's gebruiken om het afspelen te lezen en Cider te bedienen, en welke programma's zijn toegestaan.
@@ -3541,31 +3613,32 @@ settings.connectivity.section.parties.description: Samen synchroon luisteren met
 settings.connectivity.section.vrOverlay.description: Een Cider-speler en vast te pinnen panelen bovenop SteamVR en VDXR, die via RPC met deze app communiceren.
 settings.connectivity.tokenCopied: Token gekopieerd naar klembord
 settings.connectivity.tokens: Tokens
+settings.connectivity.tokens.empty: Nog geen tokens.
 settings.contentFilter.description: Secties op 'Ontdek' en 'Luister nu' waarvan de titels of inhoud overeenkomen met deze trefwoorden, worden verborgen.
 settings.contentFilter.empty: Nog geen trefwoorden toegevoegd.
 settings.contentFilter.inputPlaceholder: Voeg een trefwoord toe...
-settings.contentFilter.title: Filtertrefwoorden
+settings.contentFilter.title: Filterzoekwoorden
 settings.crossfade.advanced: Geavanceerde crossfade-instellingen
 settings.crossfade.automixStillBlends: Automix is ingeschakeld, dus nummers kunnen nog steeds in elkaar overlopen. Schakel Automix hieronder uit om alle overgangen te stoppen.
 settings.crossfade.description: Laat het huidige nummer vloeiend overgaan in het volgende.
-settings.crossfade.disableFor: Schakel crossfade uit voor...
+settings.crossfade.disableFor: Crossfade uitschakelen voor...
 settings.crossfade.duration: Duur
 settings.crossfade.enable: Crossfade inschakelen
 settings.crossfade.exclusions.albums: Albums
 settings.crossfade.exclusions.albums.description: Geen crossfade toepassen bij het afspelen van albums.
-settings.crossfade.exclusions.autoplayContinuation: Voortzetting automatisch afspelen
+settings.crossfade.exclusions.autoplayContinuation: Doorgaan met automatisch afspelen
 settings.crossfade.exclusions.autoplayContinuation.description: Pas geen crossfade toe wanneer het afspelen overgaat op een station of automatisch afgespeelde nummers nadat de oorspronkelijke collectie is afgelopen.
-settings.crossfade.exclusions.djMixes: DJ-mixes
+settings.crossfade.exclusions.djMixes: DJ-mixen
 settings.crossfade.exclusions.djMixes.description: Geen crossfade toepassen bij DJ-mixes en doorlopende mixes.
 settings.crossfade.exclusions.liveAlbums: Live-albums
 settings.crossfade.exclusions.liveAlbums.description: Geen crossfade toepassen bij live-opnamen en concerten.
 settings.crossfade.exclusions.playlists: Afspeellijsten
 settings.crossfade.exclusions.playlists.description: Geen crossfade toepassen bij het afspelen van afspeellijsten.
-settings.crossfade.loudnessSensitivity: Geluidssterktegevoeligheid
+settings.crossfade.loudnessSensitivity: Gevoeligheid voor luidheid
 settings.crossfade.loudnessSensitivity.description: Verschillen in geluidssterkte compenseren ({{ value }}%)
-settings.crossfade.smoothSkip: Vloeiend overslaan
+settings.crossfade.smoothSkip: Soepel overslaan
 settings.crossfade.smoothSkip.description: Faden tussen nummers bij het overslaan.
-settings.crossfade.tempoSensitivity: Tempogevoeligheid
+settings.crossfade.tempoSensitivity: Gevoeligheid voor tempo
 settings.crossfade.tempoSensitivity.description: Reactie op tempowijzigingen ({{ value }}%)
 settings.customCss.createSnippet: Snippet maken
 settings.customCss.migrate.confirm: Dit zet je bestaande aangepaste CSS om in een nieuwe snippet en wist de huidige aangepaste CSS. Wil je doorgaan?
@@ -3606,12 +3679,12 @@ settings.extensions.addBuiltInSnippet: Ingebouwd fragment toevoegen
 settings.extensions.browsePluginMarket: Plugin-marktplaats verkennen
 settings.extensions.browseThemeMarket: Thema-marktplaats verkennen
 settings.extensions.byAuthor: door {author}
-settings.extensions.checkUpdates: Bij opstarten controleren op updates voor extensies
+settings.extensions.checkUpdates: Controleer bij opstarten op extensie-updates
 settings.extensions.checkUpdates.desc: Zoek naar updates voor thema's, fragmenten en plugins telkens wanneer Cider wordt gestart.
 settings.extensions.createPlugin: Plugin maken
 settings.extensions.createSnippet: Nieuw fragment maken
 settings.extensions.createTheme: Nieuw thema maken
-settings.extensions.cssSnippets: CSS-fragmenten
+settings.extensions.cssSnippets: CSS-snippets
 settings.extensions.fileWatcher: Themabestandscontrole inschakelen
 settings.extensions.fileWatcher.desc: Themastijlbladen automatisch opnieuw laden wanneer de bestanden op de schijf worden gewijzigd.
 settings.extensions.importFromFile: Importeren uit bestand
@@ -3637,28 +3710,32 @@ settings.extensions.plugins.uninstallTitle: Plug-in verwijderen
 settings.extensions.refresh: Extensies vernieuwen
 settings.extensions.refresh.desc: Thema's, fragmenten en plugins opnieuw scannen vanaf de schijf.
 settings.extensions.refreshed: Thema's, fragmenten en plugins vernieuwd
+settings.extensions.snippets.author: Door {{ author }}
 settings.extensions.snippets.created: Fragment gemaakt
-settings.extensions.snippets.createTitle: Nieuw CSS-fragment maken
+settings.extensions.snippets.createTitle: Nieuwe CSS-snippet maken
 settings.extensions.snippets.deleteConfirm: Weet je zeker dat je dit CSS-fragment wilt verwijderen? Deze actie kan niet ongedaan worden gemaakt.
 settings.extensions.snippets.deleted: Fragment verwijderd
-settings.extensions.snippets.deleteTitle: CSS-fragment verwijderen
+settings.extensions.snippets.deleteTitle: CSS-snippet verwijderen
 settings.extensions.snippets.empty: Geen CSS-fragmenten geïnstalleerd.
 settings.extensions.snippets.exported: Fragment geëxporteerd
 settings.extensions.snippets.imported: "{{ count }} fragment(en) geïmporteerd"
 settings.extensions.snippets.importFailed: "Importeren van {{ file }} mislukt: {{ error }}"
+settings.extensions.snippets.invalidFile: "Ongeldig bestandsformaat: {{ file }}"
 settings.extensions.snippets.namePrompt: Voer een naam in voor je nieuwe CSS-snippet.
 settings.extensions.snippets.orderUpdated: Volgorde bijgewerkt
 settings.extensions.snippets.saved: Snippet opgeslagen
 settings.extensions.themeCreated: Nieuw thema succesvol aangemaakt
 settings.extensions.themes.activeCount: "{{ count }} actief"
 settings.extensions.themes.empty: Geen thema's geïnstalleerd.
+settings.extensions.themes.getMore: Meer thema's ophalen
+settings.extensions.themes.refreshList: Themalijst vernieuwen
 settings.extensions.themes.stylesheetMany: "{{ count }} stylesheets"
 settings.extensions.themes.stylesheetOne: 1 stylesheet
 settings.extensions.viewOnMarketplace: Bekijken in Marketplace
 settings.fonts.description: Wijzig het lettertype dat in de app wordt gebruikt
-settings.fonts.lyrics: Lettertype voor songteksten
+settings.fonts.lyrics: Lettertype voor songtekst
 settings.fonts.lyrics.description: Het lettertype dat wordt gebruikt voor songteksten
-settings.fonts.primary: Hoofdlettertype
+settings.fonts.primary: Primair lettertype
 settings.fonts.primary.description: Het lettertype dat voor de meeste tekst in de app wordt gebruikt
 settings.fonts.title: Lettertypen
 settings.gapless.description: Maakt naadloos afspelen van opeenvolgende audiotracks mogelijk zonder merkbare stiltes.
@@ -3677,11 +3754,12 @@ settings.general.section.language: Taal
 settings.general.section.language.description: De interfacetaal, en hoe je vertalingen kunt melden of credits kunt geven.
 settings.general.section.playback: Afspelen
 settings.general.section.playback.description: Wat de afspeelknop doet als er niets wordt afgespeeld.
+settings.general.section.playback.descriptionV2: Wat de afspeelknop doet wanneer er niets wordt afgespeeld, en waar de afspeelsnelheid kan worden gewijzigd.
 settings.general.section.privacy: Privacy
 settings.general.section.privacy.description: De naam waarmee Cider je begroet, en of het je locatie mag gebruiken.
 settings.general.section.queue: Wachtrij
 settings.general.section.queue.description: Hoe de wachtrij wordt opgebouwd, wat erin is toegestaan en wat er wordt hersteld wanneer Cider opnieuw opstart.
-settings.general.section.sleepTimer: Sluimertimer
+settings.general.section.sleepTimer: Slaaptimer
 settings.general.section.startup: Opstarten
 settings.general.section.startup.description: Waarmee Cider opent, en wat er wordt hersteld van je laatste sessie.
 settings.header.accounts: Accounts
@@ -3753,7 +3831,7 @@ settings.intensive.animatedArtworkQuality.description: Hogere kwaliteit decodeer
 settings.intensive.catalogAnimatedArtwork.description: Speelt meerdere geanimeerde artworks tegelijk af tijdens het bladeren in de catalogus.
 settings.intensive.characterFlow.description: Animeert elk songtekstteken afzonderlijk in plaats van hele regels.
 settings.intensive.confirm.enable: Inschakelen
-settings.intensive.confirm.message: Deze functie is prestatie-intensief en kan het CPU/GPU-gebruik, de warmte en het batterijverbruik aanzienlijk verhogen — vooral op minder krachtige hardware. Je kunt veeleisende functies op elk gewenst moment bekijken via de lampknop bovenaan de Instellingen.
+settings.intensive.confirm.message: Deze functie vraagt veel van de prestaties en kan het CPU- en GPU-gebruik, de warmteontwikkeling en het batterijverbruik aanzienlijk verhogen, vooral op apparaten met minder kracht. Je kunt veeleisende functies altijd bekijken onder Instellingen › Energieverbruik.
 settings.intensive.emotionEngine.description: Analyseert album-artwork om een kleurenpalet te bepalen.
 settings.intensive.fsrUpscale.description: Schaalt album-artwork op de GPU op met FidelityFX Super Resolution.
 settings.intensive.immersiveAnimatedArtwork.description: Speelt geanimeerd artwork af in de Immersive-weergave.
@@ -3770,27 +3848,27 @@ settings.intensive.viewTransitions.description: Animeert overgangen bij het wiss
 settings.intensive.warning: Prestatie-intensief — kan leiden tot hoog CPU/GPU-gebruik.
 settings.keybindings.recordingHint: Opnemen. Escape om te annuleren
 settings.lyrics.card.providers: Aanbieders
-settings.lyrics.card.songOverrides: Uitzonderingen voor nummers
-settings.lyrics.localeOverrides: Regio-gebaseerde regels
-settings.lyrics.localeOverrides.add: Regio-overschrijving toevoegen
+settings.lyrics.card.songOverrides: Overschrijvingen per nummer
+settings.lyrics.localeOverrides: Regels op basis van taal
+settings.lyrics.localeOverrides.add: Taaloverschrijving toevoegen
 settings.lyrics.localeOverrides.audioLocale: Audiotaal
 settings.lyrics.localeOverrides.desc: Stel aangepaste provider- en vertaalvoorkeuren in voor nummers in specifieke talen. Wanneer de audiotaal van een nummer overeenkomt met een regel, overschrijven deze instellingen de standaardwaarden.
-settings.lyrics.localeOverrides.dialogTitle.add: Regio-overschrijving toevoegen
-settings.lyrics.localeOverrides.dialogTitle.edit: Regio-overschrijving bewerken
+settings.lyrics.localeOverrides.dialogTitle.add: Taaloverschrijving toevoegen
+settings.lyrics.localeOverrides.dialogTitle.edit: Taaloverschrijving bewerken
 settings.lyrics.localeOverrides.empty: Nog geen regels. Gebruik + om er een toe te voegen.
 settings.lyrics.localeOverrides.overrideTranslation: Vertaling overschrijven
-settings.lyrics.localeOverrides.preferredProvider: Voorkeursprovider
+settings.lyrics.localeOverrides.preferredProvider: Voorkeursaanbieder
 settings.lyrics.localeOverrides.provider.apple: Apple Music
 settings.lyrics.localeOverrides.provider.auto: Standaard (Automatisch)
 settings.lyrics.localeOverrides.provider.mxm: Musixmatch
 settings.lyrics.localeOverrides.provider.netease: NetEase
-settings.lyrics.localeOverrides.provider.user: Ingezonden door gebruikers
+settings.lyrics.localeOverrides.provider.user: Door gebruiker ingediend
 settings.lyrics.localeOverrides.providerLabel: "Provider:"
 settings.lyrics.localeOverrides.translateTo: Vertalen naar
 settings.lyrics.localeOverrides.translateToLabel: "Vertalen naar:"
 settings.lyrics.player.cascade: Cascade-intensiteit
 settings.lyrics.player.cascade.desc: Hoe duidelijk de trapsgewijze weergave van de regels is.
-settings.lyrics.player.cta: Songtekstanimaties
+settings.lyrics.player.cta: Animaties voor songtekst
 settings.lyrics.player.cta.description: Pas de weergave en het gedrag van songtekstanimaties aan, inclusief nadruk, gloed, lift, snelheid, vervaging en cascade-effecten.
 settings.lyrics.player.deselScale: Schaal inactieve regels
 settings.lyrics.player.deselScale.desc: Grootte van niet-actieve regels; een lagere waarde laat de actieve regel meer opvallen.
@@ -3807,11 +3885,11 @@ settings.lyrics.player.reset: Standaardinstellingen herstellen
 settings.lyrics.player.speed: Animatiesnelheid
 settings.lyrics.player.speed.desc: Snelheid van de regelovergang — een hogere waarde is vlotter.
 settings.lyrics.player.title: Songtekstanimaties
-settings.lyrics.scroll.duration: Scrollduur songtekst
+settings.lyrics.scroll.duration: Duur van songtekstscroll
 settings.lyrics.scroll.duration.desc1: Pas de snelheid van het scrollen van de songtekst aan in
 settings.lyrics.scroll.duration.desc2: Dit heeft geen invloed op de snelheid van het nummer.
 settings.lyrics.scroll.easing: Easing-functie
-settings.lyrics.scroll.easing.curveExample: "Voorbeeld curve:"
+settings.lyrics.scroll.easing.curveExample: "Voorbeeld van curve:"
 settings.lyrics.scroll.easing.description1: Pas de easing-functie van het scrollen van de songtekst aan. Dit is een CSS-
 settings.lyrics.scroll.easing.description2: eigenschap.
 settings.lyrics.scroll.easing.namedExample: "Voorbeeld met naam:"
@@ -3829,14 +3907,14 @@ settings.lyrics.section.sources: Bronnen
 settings.lyrics.section.sources.description: Waar songteksten vandaan komen, en de regels per taal of per nummer die voorrang hebben op de standaardaanbieder.
 settings.lyrics.section.translation: Vertaling
 settings.lyrics.section.translation.description: Vertaalde songteksten, de doeltaal en of het origineel op het scherm blijft staan.
-settings.lyrics.trackOverrides.clearAll: Wis alle overschrijvingen
+settings.lyrics.trackOverrides.clearAll: Alle overschrijvingen wissen
 settings.lyrics.trackOverrides.desc: Nummers in deze lijst gebruiken altijd de door jou vergrendelde songtekstprovider of de handmatig ingestelde vocale status in plaats van de status die Apple rapporteert. Deze overschrijvingen worden ingesteld via het songtekstmenu en het rechtermuisknopmenu van het nummer.
 settings.lyrics.trackOverrides.empty: Er zijn nog geen uitzonderingen. Alles wat je in die menu's vergrendelt, wordt hier weergegeven.
 settings.lyrics.trackOverrides.lyricsForced: Songtekst geforceerd
 settings.lyrics.trackOverrides.markedInstrumental: Gemarkeerd als instrumentaal
 settings.lyrics.trackOverrides.providerLabel: "Aanbieder:"
 settings.lyrics.trackOverrides.remove: Overschrijving verwijderen
-settings.lyrics.trackOverrides.title: Nummerspecifieke overschrijvingen
+settings.lyrics.trackOverrides.title: Overschrijvingen per track
 settings.micaish.blurAmount: Vervagingssterkte
 settings.micaish.brightness: Helderheid %
 settings.micaish.contrast: Contrast %
@@ -3852,18 +3930,22 @@ settings.miniplayer.unpinWindow: Venster losmaken
 settings.nav.accessibility: Toegankelijkheid
 settings.nav.accounts: Accounts
 settings.nav.advanced: Geavanceerd
+settings.nav.appleMusicWordmark: music
 settings.nav.audio: Audio
+settings.nav.categories: Instellingencategorieën
 settings.nav.concerts: Concerten
-settings.nav.config-backups: Reservekopieën van configuratie
+settings.nav.config-backups: Configuratiebackups
 settings.nav.connectivity: Verbindingen
 settings.nav.extensions: Extensies
 settings.nav.general: Algemeen
 settings.nav.group.account: Account
 settings.nav.group.advanced: Geavanceerd
 settings.nav.group.appearance: Weergave
+settings.nav.group.connections: Verbindingen
 settings.nav.group.general: Algemeen
 settings.nav.group.integrations: Integraties
 settings.nav.group.library: Bibliotheek
+settings.nav.group.lookAndFeel: Uiterlijk
 settings.nav.group.playback: Afspelen
 settings.nav.lyrics: Songtekst
 settings.nav.notifications: Meldingen
@@ -3872,21 +3954,39 @@ settings.nav.power: Energieverbruik
 settings.nav.privacy: Privacy
 settings.nav.profile: Profiel
 settings.nav.search: Zoeken
-settings.nav.searchPlaceholder: Instellingen zoeken...
+settings.nav.searchPlaceholder: Instellingen zoeken
+settings.nav.summary.accessibility: Vetgedrukte tekst, interfaceschaal, beweging, geluidseffecten
+settings.nav.summary.advanced: Backups, probleemoplossing, experimenten
+settings.nav.summary.audio: Uitvoer, kwaliteit, crossfade, normalisatie
+settings.nav.summary.concerts: Locatie, straal, sorteren
+settings.nav.summary.connectivity: Discord, scrobbling, luisterfeestjes, bediening op afstand
+settings.nav.summary.extensions: Thema's, CSS-snippets, plug-ins
+settings.nav.summary.general: Opstarten, wachtrij, slaaptimer, sneltoetsen
+settings.nav.summary.lyrics: Bronnen, vertaling, weergave, timing
+settings.nav.summary.notifications: Categorieën, geschiedenis, systeemmeldingen
+settings.nav.summary.power: Prestaties, framesnelheid, energiebesparing
+settings.nav.summary.profile: Apple Music-account
+settings.nav.summary.sid: Waar Sid verschijnt en hoe het werkt
+settings.nav.summary.smartPlaylists: Regels en onderhoud voor slimme afspeellijsten
+settings.nav.summary.subscriberYear: abonnee voor een jaar
+settings.nav.summary.subscriberYears: abonnee voor {{count}} jaar
+settings.nav.summary.tweaks: Kleine aanpassingen aan de speler, zijbalk en meer
+settings.nav.summary.visual: Kleurenschema, indeling, venster, immersief
 settings.nav.themes: Thema's
+settings.nav.tweaks: Aanpassingen
 settings.nav.updates: Updates
-settings.nav.visual: Visueel
+settings.nav.visual: Weergave
 settings.normalization.louderTargetHint: Als Cider op 100% volume nog steeds te zacht klinkt, kies dan een luider doel. Hogere LUFS-waarden klinken luider, maar piekbeveiliging kan de versterking beperken om oversturing te voorkomen.
 settings.normalization.presets.apple: Apple
 settings.normalization.presets.balanced: Gebalanceerd
 settings.normalization.presets.dynamic: Dynamisch
 settings.normalization.presets.loud: Luid
 settings.normalization.presets.maximum: Maximum
-settings.normalization.target: Doelgeluidssterkte
+settings.normalization.target: Doelvolume
 settings.normalization.unit: LUFS
 settings.notifications.alwaysOn: Altijd aan
 settings.notifications.alwaysOn.description: Deze bevatten problemen en app-statussen die je moet zien, dus ze kunnen niet worden uitgeschakeld. Fouten worden altijd weergegeven, ongeacht de categorie waartoe ze behoren.
-settings.notifications.category.accountAuth: Account and inloggen
+settings.notifications.category.accountAuth: Account en aanmelding
 settings.notifications.category.accountAuth.description: In- en uitloggen, abonnementsstatus en verbonden diensten.
 settings.notifications.category.castingAirplay: Casten en AirPlay
 settings.notifications.category.castingAirplay.description: Verbinding maken met en verbreken van externe afspeelapparaten.
@@ -3898,7 +3998,7 @@ settings.notifications.category.listeningTogether: Samen luisteren
 settings.notifications.category.listeningTogether.description: Uitnodigingen voor luistersessies, gasten die deelnemen of weggaan, en sessiestatus.
 settings.notifications.category.lyrics: Songtekst
 settings.notifications.category.lyrics.description: Songteksten zoeken, bijdragen en transliteratie.
-settings.notifications.category.playbackSystem: Afspelen en systeem
+settings.notifications.category.playbackSystem: Weergave en systeem
 settings.notifications.category.playbackSystem.description: Afspeelproblemen en app-statussen die je moet zien.
 settings.notifications.category.playlistsLibrary: Afspeellijsten en bibliotheek
 settings.notifications.category.playlistsLibrary.description: Toevoegen, verwijderen, bewerken en synchroniseren van bibliotheekinhoud.
@@ -3918,6 +4018,7 @@ settings.notifications.section.history: Geschiedenis
 settings.notifications.section.muted: Gedempte meldingen
 settings.notifications.section.system: Systeemmeldingen
 settings.notifications.summary.categoriesOn: Categorieën aan
+settings.notifications.summary.categoriesOnCount: "{{on}} van {{total}} aan"
 settings.notifications.summary.description: Kies welke soorten meldingen Cider weergeeft. Meldingen die je uitschakelt, worden nog steeds opgeslagen in je meldingenlijst, zodat je ze later kunt bekijken.
 settings.notifications.unmute: Dempen opheffen
 settings.notifications.unmuteAll: Alles dempen opheffen
@@ -3933,37 +4034,37 @@ settings.notyf.visual.plugin.install.success: Plugin succesvol geïnstalleerd
 settings.notyf.visual.theme.install.error: Installatie van thema mislukt
 settings.notyf.visual.theme.install.success: Thema succesvol geïnstalleerd
 settings.notyf.visual.theme.updateAvailable: "[Thema's] Er is een update beschikbaar voor {{ theme }}"
-settings.option.accessibility.boldText: Vette tekst
+settings.option.accessibility.boldText: Vetgedrukte tekst
 settings.option.accessibility.boldText.description: Verhoogt de dikte van tekst in de app voor een betere leesbaarheid.
-settings.option.accessibility.cardHoverMotion: Beweging bij aanwijzen kaarten
+settings.option.accessibility.cardHoverMotion: Beweging bij zweven over kaarten
 settings.option.accessibility.cardHoverMotion.description: Laat klikbare kaarten (albumtegels, functiekaarten, rasteritems) subtiel groter worden bij aanwijzen en indrukken bij klikken. Standaard uitgeschakeld.
 settings.option.accessibility.enableSoundEffects: Geluidseffecten inschakelen
 settings.option.accessibility.enableSoundEffects.description: Speel subtiele geluiden af bij interactie met knoppen, schakelaars en schuifregelaars.
 settings.option.accessibility.forceFocusVisible: Focusring altijd tonen
 settings.option.accessibility.forceFocusVisible.description: Dwing een zichtbare omtrek af op geselecteerde elementen voor toetsenbordnavigatie.
-settings.option.accessibility.highContrast: Verhoogd contrast
+settings.option.accessibility.highContrast: Hoog contrast
 settings.option.accessibility.highContrast.description: Verhoogt het contrast tussen tekst, achtergronden en interface-elementen.
 settings.option.accessibility.motion: Beweging
-settings.option.accessibility.motionIntensity: Bewegingsintensiteit
+settings.option.accessibility.motionIntensity: Intensiteit van beweging
 settings.option.accessibility.motionIntensity.description: Bepaalt hoeveel beweging knoppen en oppervlakken gebruiken bij aanwijzen en indrukken. Kies 'Geen' om beweging volledig uit te schakelen; 'Speels' voegt extra veerkracht toe.
 settings.option.accessibility.motionIntensity.none: Geen
 settings.option.accessibility.motionIntensity.normal: Normaal
 settings.option.accessibility.motionIntensity.playful: Speels
 settings.option.accessibility.motionIntensity.reduced: Verminderd
-settings.option.accessibility.playOnHover: Afspelen bij aanwijzen
+settings.option.accessibility.playOnHover: Afspelen bij zweven
 settings.option.accessibility.playOnHover.description: Speel ook een subtiele tik af wanneer de aanwijzer interactieve elementen binnengaat.
 settings.option.accessibility.soundEffects: Geluidseffecten
 settings.option.accessibility.soundPreview: Geluidsvoorbeeld
 settings.option.accessibility.soundPreview.description: Speelt een voorbeeld van de interfacegeluiden af op het huidige volume.
 settings.option.accessibility.text: Tekst
-settings.option.accessibility.uiScale: UI-schaal
+settings.option.accessibility.uiScale: Schaal van de interface
 settings.option.accessibility.uiScale.description: Schaalt tekst en interface-elementen. Sommige lay-out-elementen hebben een vaste grootte en schalen mogelijk niet mee.
 settings.option.accessibility.visibility: Zichtbaarheid
 settings.option.accessibility.volume: Volume
 settings.option.accessibility.volume.description: Hoe luid de interfacegeluidseffecten worden afgespeeld.
 settings.option.advanced.clientSettings: Clientinstellingen
 settings.option.advanced.clientSettings.description: Instellingen specifiek voor het huidige clientframework
-settings.option.advanced.compactSidebar: Compacte navigatiekolom
+settings.option.advanced.compactSidebar: Compacte zijbalk
 settings.option.advanced.compactSidebar.description: Is van toepassing wanneer het venster smal genoeg is om de zijbalk in te klappen.
 settings.option.advanced.compactSidebar.size: Grootte
 settings.option.advanced.configBackups.description: Herstel een door Cider opgeslagen kopie van je instellingenbestand, voor het geval je instellingen verloren zijn gegaan of zijn gereset.
@@ -3978,44 +4079,44 @@ settings.option.advanced.floatingSearch.description: Het zoekpaneel dat over de 
 settings.option.advanced.floatingSearch.enterShowsResults: Enter toont resultaten
 settings.option.advanced.floatingSearch.enterShowsResults.description: Indien ingeschakeld, gaat de zoekbalk direct naar de pagina met zoekresultaten wanneer je op enter drukt.
 settings.option.advanced.home: Home
-settings.option.advanced.home.buttonLocation: Locatie Home-knop
+settings.option.advanced.home.buttonLocation: Locatie van de startknop
 settings.option.advanced.home.buttonLocation.sidebar: Navigatiekolom
 settings.option.advanced.home.buttonLocation.sidebar2023: Navigatiekolom (2023)
 settings.option.advanced.home.buttonLocation.topBar: Bovenbalk
-settings.option.advanced.immersive: Meeslepende weergave
-settings.option.advanced.immersive.artworkHighlight: Artwork markeren
-settings.option.advanced.immersive.controlsTimeout: Time-out actieve regelaars (seconden)
+settings.option.advanced.immersive: Immersieve weergave
+settings.option.advanced.immersive.artworkHighlight: Hoogtepunten in hoes
+settings.option.advanced.immersive.controlsTimeout: Time-out actieve bediening (seconden)
 settings.option.advanced.immersive.description: De meeslepende weergave zelf. De lay-out hiervan wordt gekozen onder Visueel.
-settings.option.advanced.immersive.glowEffectOnActiveLyrics: Gloedeffect op actieve songtekst
-settings.option.advanced.lyrics: Songtekstanimatie
+settings.option.advanced.immersive.glowEffectOnActiveLyrics: Gloedeffect bij actieve songtekst
+settings.option.advanced.lyrics: Animatie van songtekst
 settings.option.advanced.lyrics.characterFlow: Vloeiende tekens
 settings.option.advanced.lyrics.characterFlow.description: Afzonderlijke tekens stromen omhoog in plaats van de hele regel. Vraagt meer systeembronnen.
 settings.option.advanced.lyrics.description: Hoe songtekstregels en -tekens bewegen tijdens het afspelen van een nummer.
-settings.option.advanced.lyrics.lineStaggering: Regels spreiden
+settings.option.advanced.lyrics.lineStaggering: Regels gespreid weergeven
 settings.option.advanced.lyrics.lineStaggering.description: Volgende regels hebben een subtiele vertraging wanneer de volgende actieve regel in focus is
-settings.option.advanced.lyrics.lineStaggeringImmersive: Regels spreiden (Meeslepend)
+settings.option.advanced.lyrics.lineStaggeringImmersive: Regels gespreid weergeven (immersief)
 settings.option.advanced.lyrics.lineStaggeringImmersive.description: Vraagt meer systeembronnen.
 settings.option.advanced.lyrics.scaleOnAny: Schaaleffect op elk woord toestaan
 settings.option.advanced.lyrics.scaleOnAny.description: Hiermee kan elk woord worden geschaald, niet alleen de benadrukte woorden
-settings.option.advanced.lyrics.singEngine: Immersive Sing-engine
+settings.option.advanced.lyrics.singEngine: Immersieve zangengine
 settings.option.advanced.lyrics.singEngine.classic: Klassiek
 settings.option.advanced.lyrics.singEngine.description: Sing-engine voor de Immersive-weergave. Klassiek maakt gebruik van lichte CSS-animaties, de beste keuze voor minder krachtige systemen. De navigatiekolom gebruikt altijd Klassiek.
 settings.option.advanced.lyrics.singEngine.legacy: Legacy
 settings.option.advanced.lyrics.singEngine.waapi: GPU (Web Animations)
-settings.option.advanced.lyrics.singLyricsEverywhere: Sing-liedtekst overal
+settings.option.advanced.lyrics.singLyricsEverywhere: Songtekst overal meezingen
 settings.option.advanced.lyrics.singLyricsEverywhere.description: Schakel Sing-liedtekst in buiten de meeslepende weergave. Vraagt meer systeembronnen.
 settings.option.advanced.mavericksLcd: Mavericks LCD
 settings.option.advanced.mavericksLcd.style: Stijl
 settings.option.advanced.mavericksLcd.style.glass: Glas
-settings.option.advanced.mediaArtwork: Media-illustratie
+settings.option.advanced.mediaArtwork: Hoes van mediaitems
 settings.option.advanced.mediaArtwork.controls: Artwork-hoogtepunten en hi-res afbeeldingen
-settings.option.advanced.mediaArtwork.controlsV2: Hoesmarkering en infaden
+settings.option.advanced.mediaArtwork.controlsV2: Hoogtepunten in hoes en fade-in
 settings.option.advanced.mediaArtwork.description: Artwork op rasters, lijsten en rijen in de hele app.
 settings.option.advanced.notificationStyle: Meldingsstijl
 settings.option.advanced.performance: Prestaties
 settings.option.advanced.performance.description: Frameratetlimieten, rendererkeuze en drempelwaarden voor systeembronnen.
-settings.option.advanced.playback: Afspeelsnelheid
-settings.option.advanced.playback.allowPlaybackRateChangeEverywhere: Afspeelsnelheid wijzigen voor nummers toestaan
+settings.option.advanced.playback: Weergavesnelheid
+settings.option.advanced.playback.allowPlaybackRateChangeEverywhere: Weergavesnelheid voor nummers wijzigen toestaan
 settings.option.advanced.playback.allowPlaybackRateChangeEverywhere.description: Standaard ingeschakeld voor podcasts. Schakel dit in om dezelfde eenvoudige regeling van de afspeelsnelheid toe te staan voor alle media, inclusief nummers.
 settings.option.advanced.playlistTrackMapping: Trackmapping voor afspeellijsten
 settings.option.advanced.playlistTrackMapping.description: Schakelt diep scannen van afspeellijsten in om te bepalen welke nummers in welke afspeellijsten staan. De opbouwtijd van de afspeellijstcache kan aanzienlijk toenemen.
@@ -4024,20 +4125,20 @@ settings.option.advanced.progressBar: Voortgangsbalk
 settings.option.advanced.progressBar.useAccentColor: Accentkleur gebruiken
 settings.option.advanced.resetCider: Cider resetten
 settings.option.advanced.resetCider.description: Reset voorkeuren, caches en lokale gegevens. Je blijft aangemeld bij Apple Music en Taproom, tenzij je anders kiest.
-settings.option.advanced.resizableMiniplayer: Aanpasbare miniplayer
-settings.option.advanced.richAlbumGrid: Rijk albumraster
+settings.option.advanced.resizableMiniplayer: Formaat minispeler aanpasbaar
+settings.option.advanced.richAlbumGrid: Uitgebreid albumraster
 settings.option.advanced.richAlbumGrid.alwaysNavigateToPage: Altijd naar pagina navigeren
 settings.option.advanced.richAlbumGrid.disableScrollAnimation: Scrollanimatie uitschakelen
-settings.option.advanced.richAlbumGrid.scrollToPosition: Naar positie scrollen
+settings.option.advanced.richAlbumGrid.scrollToPosition: Scrollen naar positie
 settings.option.advanced.richAlbumGrid.scrollToPosition.bottom: Onderkant
 settings.option.advanced.richAlbumGrid.scrollToPosition.top: Bovenkant
 settings.option.advanced.searchBar: Hoofdzoekbalk
 settings.option.advanced.searchBar.description: Het zoekveld in de titelbalk.
-settings.option.advanced.searchBar.noRedirectOnSelect: Geen landingspagina bij focus
+settings.option.advanced.searchBar.noRedirectOnSelect: Geen startpagina bij focus
 settings.option.advanced.searchBar.noRedirectOnSelect.description: Indien ingeschakeld, zal de zoekbalk niet doorverwijzen naar de landingspagina wanneer deze wordt geselecteerd. Houd SHIFT ingedrukt tijdens het selecteren van de zoekbalk om naar de landingspagina te gaan.
 settings.option.advanced.settingsTakeout: Instellingen exporteren / importeren
 settings.option.advanced.settingsTakeout.description: Maak een back-up van je voorkeuren in een bestand of herstel ze op een ander apparaat. Accountinloggegevens worden nooit meegenomen.
-settings.option.advanced.simpleArtworkBg: Eenvoudige artworkachtergrond
+settings.option.advanced.simpleArtworkBg: Eenvoudige achtergrond voor hoes
 settings.option.advanced.simpleArtworkBg.brightness: Helderheid %
 settings.option.advanced.simpleArtworkBg.brightnessV2: Helderheid
 settings.option.advanced.simpleArtworkBg.contrast: Contrast %
@@ -4046,14 +4147,14 @@ settings.option.advanced.simpleArtworkBg.saturate: Verzadiging %
 settings.option.advanced.simpleArtworkBg.saturateV2: Verzadiging
 settings.option.advanced.simpleArtworkBg.useMask: Onderste masker gebruiken
 settings.option.advanced.sonoma: Sonoma
-settings.option.advanced.sonoma.lyricArc: Gebogen songtekst
+settings.option.advanced.sonoma.lyricArc: Songteksten in boog
 settings.option.advanced.sonoma.lyricArc.description: Actieve regels van de songtekst buigen naar het midden van het scherm met een subtiel gevoel van diepte.
 settings.option.advanced.sonoma.radialMask: Alternatief masker gebruiken
 settings.option.advanced.sonoma.radialMask.description: Indien ingeschakeld, gebruikt Sonoma een ander, radiaal masker voor de illustratie, gericht op meer helderheid en minder vervaging.
 settings.option.advanced.title: Geavanceerd
 settings.option.advanced.tweaks: Aanpassingen
 settings.option.advanced.tweaks.description: Aanpasbare instellingen die nergens anders thuishoren
-settings.option.advanced.volumeSlider: Volumeregelaar van speler
+settings.option.advanced.volumeSlider: Volumeschuifregelaar van speler
 settings.option.advanced.volumeSlider.iOSStyle: iOS-stijl
 settings.option.advanced.window: Venstergedrag
 settings.option.advanced.window.description: Formaat van de miniplayer wijzigen en de stijl van de schuifbalk in de app. Vensterregelaars en levendigheid vind je onder Visueel.
@@ -4075,7 +4176,7 @@ settings.option.audio.audioQuality: Audiokwaliteit
 settings.option.audio.automix: Automix
 settings.option.audio.changePlaybackRate: Afspeelsnelheid wijzigen
 settings.option.audio.ciderAudio: Cider Audio
-settings.option.audio.ciderAudio.showBadges: Badges tonen in 'Nu afgespeeld'
+settings.option.audio.ciderAudio.showBadges: Badges tonen in nu aan het afspelen
 settings.option.audio.ciderAudio.showInToolbar: Cider Audio tonen in werkbalk
 settings.option.audio.ciderAudioSettings: Cider Audio-instellingen
 settings.option.audio.crossfade: Crossfade
@@ -4137,30 +4238,30 @@ settings.option.audio.enableAdvancedFunctionality.tunedAudioSpatialization.profi
 settings.option.audio.enableAdvancedFunctionality.tunedAudioSpatialization.profile.standard: Standaard
 settings.option.audio.exponentialVolume: Exponentiële volumecurve
 settings.option.audio.exponentialVolume.description: Volg een geleidelijkere volumecurve, wat zorgt voor een nauwkeurigere volumeregeling bij lagere volumes.
-settings.option.audio.hostCapture: Vastlegbare audio (OBS / Discord)
+settings.option.audio.hostCapture: Opneembare audio (OBS / Discord)
 settings.option.audio.hostCapture.description: Streaming- en opname-apps zoals OBS of Discord hebben de Windows-host nodig om het afspelen te routeren.
 settings.option.audio.maxVolume: Maximaal volume
 settings.option.audio.mixing: Mixen
-settings.option.audio.normalization: Geluidsnormalisatie
+settings.option.audio.normalization: Audionormalisatie
 settings.option.audio.normalization.description: Past elk nummer automatisch aan voor een consistente geluidssterkte. Zachte nummers worden veilig versterkt; luide nummers worden zachter gezet.
 settings.option.audio.occlusion: Luistermodus
 settings.option.audio.outputDevice: Uitvoerapparaat
 settings.option.audio.playback: Afspelen
 settings.option.audio.playbackRate: Afspeelsnelheid
 settings.option.audio.playbackRate.change: Wijzigen
-settings.option.audio.podcastPlayback: Podcast afspelen
+settings.option.audio.podcastPlayback: Podcastweergave
 settings.option.audio.podcasts.playbackRate: Afspeelsnelheid van Apple Podcasts
 settings.option.audio.podcasts.playbackRate.description: Pas de afspeelsnelheid van podcasts aan.
 settings.option.audio.quality: Audiokwaliteit
-settings.option.audio.seamlessAudioTransitions: Naadloze audio-overgangen
+settings.option.audio.seamlessAudioTransitions: Naadloze weergave
 settings.option.audio.seamlessTransition: Naadloze audio-overgang
 settings.option.audio.seamlessTransitions: Naadloze overgangen
-settings.option.audio.showBitrate: Toon bitrate in 'Nu afgespeeld'
+settings.option.audio.showBitrate: Bitrate tonen in nu aan het afspelen
 settings.option.audio.streaming: Streaming
 settings.option.audio.volume: Volume
 settings.option.audio.volumeScrollStep: Stapgrootte volumeregeling
 settings.option.audio.volumeScrollStep.description: Hoeveel het volume verandert wanneer je omhoog of omlaag scrollt op de volumeregelaar.
-settings.option.audio.volumeStep: Scrollstap volume
+settings.option.audio.volumeStep: Volumestap bij scrollen
 settings.option.audio.volumeStep.description: Pas de stapgrootte van de volumewijziging aan tijdens het scrollen.
 settings.option.audio.yourSystem: Je systeem
 settings.option.automatic: Automatisch
@@ -4168,18 +4269,18 @@ settings.option.behavior.addToLibraryOnFavorite.caption: Voegt nieuw als favorie
 settings.option.concerts.geolocation: Geolocatie
 settings.option.concerts.radius: Straal
 settings.option.concerts.radius.description: Toon alleen concerten binnen deze afstand van je locatie (hiervoor moet geolocatie zijn ingeschakeld)
-settings.option.concerts.radiusUnit: Eenheid straal
+settings.option.concerts.radiusUnit: Eenheid van straal
 settings.option.concerts.radiusUnit.description: Eenheid voor de straalfilter
 settings.option.concerts.radiusUnit.kilometers: Kilometer
 settings.option.concerts.radiusUnit.miles: Mijl
-settings.option.concerts.showInSidebar: Toon concerten in zijbalk
+settings.option.concerts.showInSidebar: Concerten tonen in zijbalk
 settings.option.concerts.showInSidebar.description: Toon de sectie Concerten in de zijbalk
 settings.option.concerts.sortBy: Sorteren op
 settings.option.concerts.sortBy.date: Datum
 settings.option.concerts.sortBy.description: Hoe concerten in de lijst gesorteerd moeten worden
 settings.option.concerts.sortBy.distance: Afstand
 settings.option.connect.link_account.description: Door je Discord-account te koppelen met Cider Connect kun je gebruikersgegevens opslaan, waaronder instellingen, EQ's en uiteindelijk meer zodra dit klaar is. (In ontwikkeling)
-settings.option.connectivity.atmosRatings: Atmos-beoordelingen van de community
+settings.option.connectivity.atmosRatings: Beoordelingen van Dolby Atmos door de community
 settings.option.connectivity.atmosRatings.description: Bekijk en deel welke albums geweldig klinken in Dolby Atmos.
 settings.option.connectivity.ciderConnect.description: Samen luisteren, gezamenlijke afspeellijsten, app-bediening op afstand en meer!
 settings.option.connectivity.ciderRemote: Cider Remote
@@ -4233,7 +4334,7 @@ settings.option.connectivity.discordRPC.stateFormat: Statusindeling
 settings.option.connectivity.discordRPC.timestamp.disabled: Uitgeschakeld
 settings.option.connectivity.discordRPC.timestamp.elapsed: Verstreken tijd
 settings.option.connectivity.discordRPC.timestamp.remaining: Resterende tijd
-settings.option.connectivity.externalApplications: Externe applicaties
+settings.option.connectivity.externalApplications: Externe toepassingen
 settings.option.connectivity.header.externalApplications: Externe applicaties
 settings.option.connectivity.lastfmScrobble: Last.fm-scrobbling
 settings.option.connectivity.lastfmScrobble.delay: Last.fm-scrobbelvertraging (%)
@@ -4245,8 +4346,8 @@ settings.option.connectivity.lastfmScrobble.manualToken: Last.fm-token handmatig
 settings.option.connectivity.lastfmScrobble.manualToken.link: Klik hier om een Last.fm-token te verkrijgen
 settings.option.connectivity.lastfmScrobble.nowPlaying: Last.fm 'Nu afspelen' inschakelen
 settings.option.connectivity.lastfmScrobble.removeFeatured: Gastartiesten verwijderen uit de titel van het nummer (Last.fm)
-settings.option.connectivity.parties: Luisterparty's
-settings.option.connectivity.partiesEnabled: Luisterparty's inschakelen
+settings.option.connectivity.parties: Luisterfeestjes
+settings.option.connectivity.partiesEnabled: Luisterfeestjes inschakelen
 settings.option.connectivity.partiesEnabled.description: Host of neem deel aan gesynchroniseerde luistersessies met andere Cider-gebruikers.
 settings.option.connectivity.partiesQueueDefault: Standaard wachtrijmodus
 settings.option.connectivity.partiesQueueDefault.audited: Host keurt toevoegingen goed
@@ -4258,11 +4359,11 @@ settings.option.connectivity.partiesTransportDefault.everyone: Iedereen
 settings.option.connectivity.partiesTransportDefault.host: Alleen host
 settings.option.connectivity.playbackNotifications: Afspeelmeldingen
 settings.option.connectivity.playbackNotifications.description: Toon een melding met het nieuwe nummer wanneer het huidige nummer verandert.
-settings.option.connectivity.remoteConnection: Verbinding op afstand
+settings.option.connectivity.remoteConnection: Externe verbinding
 settings.option.connectivity.remoteConnection.description: Een telefoon of tablet koppelen, en apparaten ontkoppelen die het afspelen regelen.
 settings.option.connectivity.rpcServer: RPC-server
 settings.option.connectivity.rpcServer.description: Beheer toegang tot Cider voor externe toepassingen die de RPC-server gebruiken.
-settings.option.connectivity.rpcServer.manageAccess: Toegang van externe applicaties tot Cider beheren
+settings.option.connectivity.rpcServer.manageAccess: Toegang van externe toepassingen tot Cider beheren
 settings.option.connectivity.scrobbler: Scrobbler
 settings.option.connectivity.scrobblerIntegration: Scrobbler-integratie
 settings.option.connectivity.scrobblerIntegration.description: Scrobbelen met Last.fm, ListenBrainz, Libre.fm en Maloja om een luistergeschiedenis bij te houden.
@@ -4300,23 +4401,23 @@ settings.option.experimental.unknownPlugin: Onbekende bronnen
 settings.option.experimental.unknownPlugin.description: Sta de installatie van plug-ins toe van andere bronnen dan de Cider Plugin Repository
 settings.option.experiments.chromecast: Chromecast inschakelen
 settings.option.experiments.chromecast.description: Voegt een cast-knop toe voor Google Cast-apparaten op dit netwerk.
-settings.option.experiments.chromecastLyrics: Chromecast-liedteksten
+settings.option.experiments.chromecastLyrics: Chromecast-songteksten
 settings.option.experiments.chromecastLyrics.description: Toon gesynchroniseerde liedteksten op het Chromecast-scherm.
 settings.option.experiments.floatingSearch: Zwevende zoekbalk inschakelen
 settings.option.experiments.forceExplicit: Automatisch overschakelen naar expliciete albumversie
 settings.option.experiments.forceExplicit.description: Kan de laadtijd verlengen bij het zoeken naar expliciete versies van albums.
 settings.option.experiments.legacyFetch: Legacy-ophalen
-settings.option.experiments.musicVideos: Muziekvideo's in bibliotheek inschakelen
+settings.option.experiments.musicVideos: Muziekvideo's uit bibliotheek inschakelen
 settings.option.experiments.title: Experimentele functies
 settings.option.general.app: App
-settings.option.general.artistChips: Artiestentags
+settings.option.general.artistChips: Artiestchips
 settings.option.general.autoplayByDefault: Automatisch afspelen standaard inschakelen
 settings.option.general.autoplayByDefault.description: Schakel automatisch afspelen in bij het afspelen van muziek (geldt niet voor radiostations).
 settings.option.general.autoRemoveDisliked: Minder leuke nummers automatisch uit wachtrij verwijderen
 settings.option.general.autoRemoveDisliked.description: Verwijder nummers automatisch uit de wachtrij wanneer ze als minder leuk zijn gemarkeerd.
 settings.option.general.cache: Cache
-settings.option.general.clearCacheDropdown: Cache-dropdown wissen
-settings.option.general.contentToCache: Te cachen inhoud
+settings.option.general.clearCacheDropdown: Vervolgkeuzelijst cache wissen
+settings.option.general.contentToCache: Inhoud om in cache op te slaan
 settings.option.general.customizeSidebar: Zijbalkitems aanpassen
 settings.option.general.customizeSidebar.customize: Aanpassen
 settings.option.general.displayName: Weergavenaam
@@ -4340,13 +4441,13 @@ settings.option.general.language.fun: Grappige talen
 settings.option.general.language.main: Talen
 settings.option.general.language.unsorted: Niet gesorteerd
 settings.option.general.noPlayingAction.newMusicMix: Speel 'Nieuwe muziek'-mix af
-settings.option.general.noPlayingAction.none: Doe niets
-settings.option.general.noPlayingAction.personalStation: Start persoonlijk station
-settings.option.general.noPlayingAction.recent: Speel recente nummers af
-settings.option.general.noPlayingAction.recentlyAdded: Speel 'Onlangs toegevoegd' af
-settings.option.general.noPlayingAction.shuffleLibrary: Nummers in bibliotheek husselen
+settings.option.general.noPlayingAction.none: Niets doen
+settings.option.general.noPlayingAction.personalStation: Persoonlijk station starten
+settings.option.general.noPlayingAction.recent: Recente nummers afspelen
+settings.option.general.noPlayingAction.recentlyAdded: Recent toegevoegde nummers afspelen
+settings.option.general.noPlayingAction.shuffleLibrary: Nummers uit bibliotheek shuffelen
 settings.option.general.onStartup: Bij opstarten
-settings.option.general.onStartup.openStartup: Open opstartpagina
+settings.option.general.onStartup.openStartup: Startpagina openen
 settings.option.general.onStartup.resume: Laatste sessie hervatten
 settings.option.general.pagination: Aantal items per pagina
 settings.option.general.preventDisplaySleep: Scherm aanhouden tijdens afspelen
@@ -4373,15 +4474,16 @@ settings.option.general.shareAnalytics: Analysegegevens delen
 settings.option.general.shareAnalytics.description: Help ons Cider te verbeteren door app-analysegegevens en gebruiksdetails te delen
 settings.option.general.showLovedTracksInline: Geliefde nummers inline tonen
 settings.option.general.sleepTimer: Slaaptimer
-settings.option.general.sleepTimerSettings: Slaaptimer-instellingen
-settings.option.general.startupPage: Opstartpagina
+settings.option.general.sleepTimerSettings: Instellingen slaaptimer
+settings.option.general.startupPage: Startpagina
 settings.option.general.startupPage.blank: Lege pagina
 settings.option.general.startupPage.description: Kies de pagina die wordt weergegeven wanneer je Cider opent.
 settings.option.general.startupPage.descriptionV2: De pagina die Cider opent in nieuwe tabbladen en bij het starten wanneer Bij opstarten is ingesteld op Opstartpagina openen.
+settings.option.general.startupPage.descriptionV3: De pagina die Cider bij het opstarten opent.
 settings.option.general.startupPage.newTab: Nieuwe tabbladpagina
 settings.option.general.startupPage.personalHome: Persoonlijke startpagina
 settings.option.general.themeUpdateNotification: Automatisch controleren op thema-updates
-settings.option.general.translationCredits: Vertaalcredits
+settings.option.general.translationCredits: Vertalingscredits
 settings.option.general.translationFeedback: Feedback over vertalingen
 settings.option.general.translators: Vertalers
 settings.option.general.translators.description: Met dank aan deze bijdragers voor hun hulp bij het vertalen van Cider. Klik op een naam om hun GitHub-profiel te openen.
@@ -4391,9 +4493,9 @@ settings.option.general.useSmartQueueByDefault.needsAutomix: Automix is uitgesch
 settings.option.general.warnBeforeQueueOverride: Waarschuw voor het overschrijven van de wachtrij
 settings.option.hide: Verbergen
 settings.option.left: Links
-settings.option.lyrics.contributeCta: Songtekst bijdragen en uploaden
+settings.option.lyrics.contributeCta: Bijdragen & songteksten uploaden
 settings.option.lyrics.contributeCta.description: Upload gesynchroniseerde songteksten, bekijk een live voorvertoning en bekijk het klassement van bijdragers.
-settings.option.lyrics.customScrollerProperties: Aangepaste scrolleigenschappen
+settings.option.lyrics.customScrollerProperties: Aangepaste schuifbale-eigenschappen
 settings.option.lyrics.customScrollerProperties.description: Schakel aangepaste styling in voor de scroll-animaties van de songtekst.
 settings.option.lyrics.defaultProvider: Standaardaanbieder
 settings.option.lyrics.defaultProvider.description: Kies de gewenste songtekstaanbieder. "Auto" selecteert automatisch de beste beschikbare bron.
@@ -4402,47 +4504,47 @@ settings.option.lyrics.displayOptions.description: Pas aan hoe songteksten worde
 settings.option.lyrics.enableMusixmatch: Musixmatch-songteksten inschakelen
 settings.option.lyrics.enableMusixmatchKaraoke: Karaokemodus inschakelen (alleen Musixmatch)
 settings.option.lyrics.enableQQLyrics: QQ-songteksten inschakelen
-settings.option.lyrics.enableSingLyrics: Sing-songteksten inschakelen
+settings.option.lyrics.enableSingLyrics: Zingbare songteksten inschakelen
 settings.option.lyrics.enableSingLyrics.description: Toon, indien beschikbaar, woord-voor-woord gesynchroniseerde songteksten die synchroon met de muziek oplichten.
-settings.option.lyrics.enableStaticLyrics: Statische songtekst inschakelen
+settings.option.lyrics.enableStaticLyrics: Statische songteksten inschakelen
 settings.option.lyrics.enableStaticLyrics.description: Toon songteksten, zelfs als er geen timinginformatie beschikbaar is. Deze songteksten scrollen niet automatisch.
 settings.option.lyrics.enableTranslations: Vertalingen inschakelen
 settings.option.lyrics.enableTranslations.description: Toon vertaalde songteksten indien beschikbaar. Vertalingen zijn afkomstig van Musixmatch-bijdragen of automatische vertaling.
 settings.option.lyrics.enableYoutubeLyrics: YouTube-songteksten inschakelen voor muziekvideo's
-settings.option.lyrics.fpsLimit: Framerate songtekst
+settings.option.lyrics.fpsLimit: Framesnelheid songteksten
 settings.option.lyrics.fpsLimit.description: Maximale framerate voor songtekst-animaties. Hogere framerates zien er vloeiender uit op schermen met een hoge verversingssnelheid, maar verbruiken meer CPU en GPU. "Gelijk aan beeldscherm" volgt de verversingssnelheid van je beeldscherm.
-settings.option.lyrics.fpsLimit.matchDisplay: Gelijk aan beeldscherm
-settings.option.lyrics.keepCompleted: Voltooide songtekst behouden
+settings.option.lyrics.fpsLimit.matchDisplay: Gelijk aan scherm
+settings.option.lyrics.keepCompleted: Voltooide songteksten behouden
 settings.option.lyrics.keepCompleted.description: Houd reeds gezongen regels zichtbaar (gedimd) boven de huidige regel. Indien uitgeschakeld, worden voltooide regels verborgen.
-settings.option.lyrics.localeOverrides: Regionale overschrijvingen
+settings.option.lyrics.localeOverrides: Landinstellingen overschrijven
 settings.option.lyrics.localeOverrides.description: Stel aangepaste aanbieder- en vertaalregels in voor specifieke audiotalen
 settings.option.lyrics.musixmatchPreferredLanguage: Voorkeurstaal voor Musixmatch-vertalingen
-settings.option.lyrics.preferUserLyrics: Voorkeur voor door gebruikers ingezonden songteksten
+settings.option.lyrics.preferUserLyrics: Door gebruikers ingediende songteksten voorkeur geven
 settings.option.lyrics.preferUserLyrics.description: Geef, indien beschikbaar, prioriteit aan door gebruikers ingezonden songteksten boven andere bronnen als deze een betere timingkwaliteit hebben.
 settings.option.lyrics.provider.apple: Apple Music
-settings.option.lyrics.provider.auto: Auto (best beschikbaar)
+settings.option.lyrics.provider.auto: Automatisch (beste beschikbaar)
 settings.option.lyrics.provider.mxm: Musixmatch
 settings.option.lyrics.provider.netease: NetEase
-settings.option.lyrics.provider.user: Ingezonden door gebruikers
+settings.option.lyrics.provider.user: Door gebruiker ingediend
 settings.option.lyrics.providerPreferences: Voorkeuren voor aanbieders
 settings.option.lyrics.providerPreferences.description: Configureer welke songtekstbronnen worden gebruikt en hun prioriteit
-settings.option.lyrics.scrollTuning: Scrollduur en -easing
+settings.option.lyrics.scrollTuning: Schuifduur & versnelling
 settings.option.lyrics.scrollTuning.description: Stel in hoe lang het scrollen van songtekstregels duurt en welke easing-curve ze volgen, afzonderlijk voor de navigatiekolom en de meeslepende speler.
-settings.option.lyrics.showDualLanguage: Twee talen weergeven
+settings.option.lyrics.showDualLanguage: Tweetalig weergeven
 settings.option.lyrics.showDualLanguage.description: Toon zowel de originele songtekst als de vertaling tegelijkertijd.
 settings.option.lyrics.showTimestamps: Tijdstempels tonen bij aanwijzen
 settings.option.lyrics.showTimestamps.description: Toon de tijdstempel van elke regel songtekst wanneer je er met de muis overheen beweegt.
-settings.option.lyrics.thirdPartySources: Externe bronnen inschakelen
+settings.option.lyrics.thirdPartySources: Bronnen van derden inschakelen
 settings.option.lyrics.thirdPartySources.description: Sta het ophalen van songteksten van Musixmatch en NetEase toe wanneer Apple Music-songteksten niet beschikbaar zijn. De kwaliteit kan variëren en aanhoudend gebruik kan leiden tot limieten.
-settings.option.lyrics.timeOffset: Tijdsverschil songtekst (seconden)
+settings.option.lyrics.timeOffset: Tijdverschuiving songtekst (seconden)
 settings.option.lyrics.timeOffset.description: Pas de timing van de songtekstweergave aan. Positieve waarden tonen de songtekst eerder, negatieve waarden later. Handig voor het corrigeren van niet-synchrone audio-installaties.
 settings.option.lyrics.timeOffset.descriptionV2: Pas de timing van de songtekstweergave aan. Positieve waarden tonen de songtekst later, negatieve waarden eerder. Handig om niet-synchrone audio-opstellingen te corrigeren.
-settings.option.lyrics.timestampStyle: Stijl van tijdstempel
+settings.option.lyrics.timestampStyle: Stijl tijdstempel
 settings.option.lyrics.timestampStyle.both: Beide
 settings.option.lyrics.timestampStyle.chip: Chip
 settings.option.lyrics.timestampStyle.description: Kies hoe tijdstempels worden weergegeven wanneer je over de songtekst beweegt.
 settings.option.lyrics.timestampStyle.ring: Ring
-settings.option.lyrics.trackOverrides: Nummerspecifieke overschrijvingen
+settings.option.lyrics.trackOverrides: Overschrijvingen per nummer
 settings.option.lyrics.trackOverrides.description: Beheer vergrendelingen en voorkeuren voor songtekstaanbieders per nummer
 settings.option.lyrics.translationLanguage: Vertaaltaal
 settings.option.lyrics.translationLanguage.description: De taal waarnaar de songtekst moet worden vertaald. Alleen gebruikt wanneer de vertaalmodus is ingesteld op Handmatig.
@@ -4464,10 +4566,10 @@ settings.option.notifications.history.persist.description: Je meldingenlijst ont
 settings.option.off: Uit
 settings.option.on: Aan
 settings.option.performance.app: App
-settings.option.performance.backgroundRefreshTime: Achtergrondverversingstijd
+settings.option.performance.backgroundRefreshTime: Tijd voor achtergrondvernieuwing
 settings.option.performance.backgroundRefreshTime.description: De tijd in seconden tussen elke achtergrondverversing. Lagere waarden kunnen prestatieproblemen veroorzaken.
 settings.option.performance.dataAndUiLoad: Gegevens- en UI-belasting
-settings.option.performance.disableLargeRequestOffloading: Offloading van grote verzoeken uitschakelen
+settings.option.performance.disableLargeRequestOffloading: Offloaden van grote verzoeken uitschakelen
 settings.option.performance.disableLargeRequestOffloading.description: Dit heeft invloed op de UI-prestaties tijdens grote verzoeken.
 settings.option.performance.enableMediaItemInspect: Ontwikkelaarsinspectie voor MediaItems inschakelen
 settings.option.performance.enableMediaItemInspect.description: Kan de prestaties enigszins beïnvloeden.
@@ -4478,7 +4580,7 @@ settings.option.performance.graphicsAcceleration: Grafische versnelling
 settings.option.performance.graphicsAcceleration.autoOff: Uit omdat deze pc grafische weergave via software doet.
 settings.option.performance.graphicsAcceleration.description: Automatisch schakelt dit uit in een virtuele machine die grafische weergave via software doet. Wijzigingen worden toegepast de volgende keer dat Cider wordt gestart.
 settings.option.performance.host: Host
-settings.option.performance.immersiveRenderer: Meeslepende renderer
+settings.option.performance.immersiveRenderer: Immersieve renderer
 settings.option.performance.immersiveRenderer.description: Gebruik Canvas 2D in plaats van WebGPU als de geanimeerde achtergrond niet goed werkt of te veel GPU gebruikt.
 settings.option.performance.libraryQueueLimit: Wachtrijlimiet voor bibliotheek
 settings.option.performance.libraryQueueLimit.description: Beperk het aantal nummers dat vanuit de bibliotheek in de wachtrij kan worden geplaatst, gebruik 0 voor geen limiet. Hogere waarden of geen limiet kunnen prestatieproblemen veroorzaken.
@@ -4486,7 +4588,7 @@ settings.option.performance.limitBlurMapFramerateOnBlur: Framerate van geanimeer
 settings.option.performance.limitBlurMapFramerateOnBlur.description: Verlaagt de framerate van de meeslepende geanimeerde achtergrond wanneer het venster niet actief is om stroom te besparen. Schakel dit uit om deze op volledige snelheid te laten draaien.
 settings.option.performance.limitImmersiveBgFramerateOnBlur: Framerate van meeslepende achtergrond beperken wanneer niet in focus
 settings.option.performance.motion: Beweging
-settings.option.performance.powerSaverOnBattery: Energie besparen op batterij
+settings.option.performance.powerSaverOnBattery: Energiezuinig op batterij
 settings.option.performance.powerSaverOnBattery.description: Wanneer het apparaat op batterijstroom werkt, wordt de meeslepende achtergrond met maximaal 30 frames per seconde gerenderd en zijn songtekst-animaties beperkt tot 60 frames per seconde.
 settings.option.performance.preloadSidebarPages: Zijbalkpagina's vooraf laden
 settings.option.performance.preloadSidebarPages.description: Laadt zijbalkpagina's voordat je ze opent. 'Bij aanwijzen' start wanneer de aanwijzer op een onderdeel in de zijbalk rust. 'Bij inactiviteit' laadt na het opstarten ook 'Luister nu', 'Ontdek' en 'Radio', en vernieuwt bibliotheeklijsten die je eerder hebt geopend.
@@ -4497,7 +4599,7 @@ settings.option.performance.reduceEffects.description: Schakelt vervaging, glas,
 settings.option.performance.renderer.auto: Automatisch (WebGPU indien ondersteund)
 settings.option.performance.renderer.canvas: Canvas 2D
 settings.option.performance.renderer.webgpu: WebGPU
-settings.option.performance.ultraWide: Ultrawide
+settings.option.performance.ultraWide: Ultrabreed
 settings.option.performance.ultraWide.description: Dit verwijdert de paginagrenzenlimiet, maar de app is niet geoptimaliseerd voor ultrawide-ondersteuning, waardoor elementen er ongewoon uit kunnen zien.
 settings.option.performance.useEmotionEngine: Emotion Engine gebruiken
 settings.option.performance.useEmotionEngine.description: Indien ingeschakeld, gebruikt de app de Emotion Engine om het kleurenpalet van de albumillustratie te bepalen. Dit kan prestatieproblemen veroorzaken op minder krachtige apparaten.
@@ -4531,17 +4633,17 @@ settings.option.sweetener.accentColor.purple: Paars
 settings.option.sweetener.accentColor.systemHint: Schakel de systeemaccentkleur uit om je eigen kleur te kiezen.
 settings.option.sweetener.accentColor.yellow: Geel
 settings.option.sweetener.enableSweetener: Sweetener inschakelen
-settings.option.sweetener.header.uiCustomization: UI-Aanpassing
+settings.option.sweetener.header.uiCustomization: Aanpassing van de interface
 settings.option.sweetener.header.uiCustomization.description: Accent- en tintkleuren die in de app worden gebruikt.
 settings.option.sweetener.immersiveBackground.brightnessPercentage: Helderheid %
 settings.option.sweetener.immersiveBackground.contrastPercentage: Contrast %
-settings.option.sweetener.immersiveBackground.frameRate: Framerate (venster actief)
+settings.option.sweetener.immersiveBackground.frameRate: Framesnelheid (venster actief)
 settings.option.sweetener.immersiveBackground.frameRate.description: 15-30 FPS aanbevolen
 settings.option.sweetener.immersiveBackground.header.filters: Filters
-settings.option.sweetener.immersiveBackground.lightModeWarning: De immersieve achtergrond wordt momenteel niet ondersteund in de lichte modus.
+settings.option.sweetener.immersiveBackground.lightModeWarning: Immersieve achtergrond wordt momenteel niet ondersteund in de lichte modus.
 settings.option.sweetener.immersiveBackground.saturationPercentage: Verzadiging %
 settings.option.sweetener.immersiveBackground.use: Immersieve achtergrond gebruiken
-settings.option.sweetener.immersiveBackgroundType: Type meeslepende achtergrond
+settings.option.sweetener.immersiveBackgroundType: Type immersieve achtergrond
 settings.option.sweetener.immersiveBackgroundType.immersive: Immersive
 settings.option.sweetener.immersiveBackgroundType.immersiveLite: Immersive Lite
 settings.option.sweetener.useCustomAccentColor: Aangepaste accentkleur gebruiken
@@ -4555,69 +4657,69 @@ settings.option.v2rp: V2 RP
 settings.option.v3: V3
 settings.option.v3rp: V3 RP
 settings.option.visual.accentColor: Accentkleur
-settings.option.visual.adaptiveColorPercent: Adaptieve Kleur Percentage
-settings.option.visual.additionalAnimatedArtwork: Extra geanimeerde illustraties in catalogus
+settings.option.visual.adaptiveColorPercent: Percentage adaptieve kleur
+settings.option.visual.additionalAnimatedArtwork: Extra geanimeerde hoezen in catalogus
 settings.option.visual.additionalAnimatedArtwork.description: Toon meer geanimeerde illustraties indien beschikbaar. Verwacht lagere prestaties met veel illustraties op het scherm.
-settings.option.visual.animateArtworkOnHover: Illustraties van media-items animeren bij aanwijzen
-settings.option.visual.animatedArtwork: Geanimeerde omslag
+settings.option.visual.animateArtworkOnHover: Hoes van mediaitem animeren bij aanwijzen
+settings.option.visual.animatedArtwork: Geanimeerde hoes
 settings.option.visual.animatedArtwork.description: Geanimeerd artwork inschakelen, pauzeren wanneer niet actief
 settings.option.visual.animatedArtwork.warningDescription: Toon geanimeerde illustraties indien beschikbaar. Dit kan prestatieproblemen veroorzaken op minder krachtige apparaten.
-settings.option.visual.animatedArtworkEngine: Geanimeerde artwork-engine
+settings.option.visual.animatedArtworkEngine: Engine voor geanimeerde hoezen
 settings.option.visual.animatedArtworkEngine.description: Native downloadt één herhalende clip en speelt deze af zonder van kwaliteit te wisselen. Gebruik Legacy alleen als je afspeelproblemen ondervindt.
 settings.option.visual.animatedArtworkEngine.hls: Legacy (hls.js)
 settings.option.visual.animatedArtworkEngine.native: Native (aanbevolen)
-settings.option.visual.animatedArtworkQuality: Kwaliteit van geanimeerde artwork
+settings.option.visual.animatedArtworkQuality: Kwaliteit geanimeerde hoezen
 settings.option.visual.animatedArtworkQuality.balanced: Gebalanceerd
 settings.option.visual.animatedArtworkQuality.description: Hoe scherp geanimeerde artwork is. 'Automatisch' stemt elk artwork af op de grootte op het scherm en is geschikt voor de meeste configuraties.
 settings.option.visual.animatedArtworkQuality.performance: Prestaties
 settings.option.visual.animatedArtworkQuality.quality: Kwaliteit
-settings.option.visual.animatedBackgroundFramerate: Framerate van geanimeerde achtergrond
+settings.option.visual.animatedBackgroundFramerate: Framesnelheid geanimeerde achtergrond
 settings.option.visual.animatedWindowBackground: Geanimeerde vensterachtergrond
-settings.option.visual.artistHeaderAlignment: Lay-out van artiestkop
+settings.option.visual.artistHeaderAlignment: Indeling artiestenkop
 settings.option.visual.artistHeaderAlignment.center: Gecentreerd
 settings.option.visual.artistHeaderAlignment.description: De positie van de artiestennaam en acties in de kop van de artiestenpagina.
 settings.option.visual.artistHeaderAlignment.left: Links (standaard)
-settings.option.visual.artworkLoadingMethod: Coverafbeelding laadmethode
+settings.option.visual.artworkLoadingMethod: Laadmethode voor hoezen
 settings.option.visual.artworkLoadingMethod.eager: Direct
 settings.option.visual.artworkLoadingMethod.lazy: Vertraagd
-settings.option.visual.chromaticAberrationIntensity: Intensiteit van chromatische aberratie
+settings.option.visual.chromaticAberrationIntensity: Intensiteit chromatische aberratie
 settings.option.visual.chromaticAberrationIntensity.description: Sterkte van de RGB-rand op het LCD-glas.
 settings.option.visual.colorCustomization: Kleuraanpassing
 settings.option.visual.colorScheme: Kleurenschema
 settings.option.visual.compactArtistHeader: Compacte artiestenkop
-settings.option.visual.contentFilterKeywords: Trefwoorden voor inhoudsfilter
+settings.option.visual.contentFilterKeywords: Trefwoorden contentfilter
 settings.option.visual.contentPreferences: Inhoudsvoorkeuren
 settings.option.visual.contentPreferences.description: Wijzig de lay-out van bepaalde pagina's
-settings.option.visual.contextMenuIcons: Menu-iconen
+settings.option.visual.contextMenuIcons: Menupictogrammen
 settings.option.visual.customAccentColor: Aangepaste accentkleur
 settings.option.visual.customScalingFactor: Aangepaste schaalfactor
 settings.option.visual.customScalingFactor.description: Pas de UI-schaling van de applicatie aan
-settings.option.visual.enableAnimatedArtworkInMiniPlayer: Geanimeerde illustraties inschakelen in MiniPlayer
+settings.option.visual.enableAnimatedArtworkInMiniPlayer: Geanimeerde hoes inschakelen in mini-speler
 settings.option.visual.extendedEditorialLayout: Uitgebreide redactionele lay-out gebruiken op albumpagina's
 settings.option.visual.extendedEditorialLayout.description: Indien ingeschakeld, toont de albumpagina de redactionele banner en wordt er een kleurenpalet toegepast op bepaalde albums op basis van de beschikbare elementen.
-settings.option.visual.filterPromotionalContent: Promotionele inhoud filteren
+settings.option.visual.filterPromotionalContent: Promotionele content filteren
 settings.option.visual.filterPromotionalContent.description: Indien ingeschakeld, worden secties op 'Ontdek' en 'Luister nu' die overeenkomen met je filtertrefwoorden verborgen.
 settings.option.visual.floatingPlayer: Zwevende speler
 settings.option.visual.floatingPlayer.description: Maak de spelerbalk los van de randen voor een zwevende pilvorm
 settings.option.visual.floatingPlayerPadding: Opvulling zwevende speler
 settings.option.visual.floatingPlayerPadding.description: Bepaalt hoeveel ruimte er om de zwevende speler heen zit
-settings.option.visual.floatingPlayerRoundness: Ronding zwevende speler
+settings.option.visual.floatingPlayerRoundness: Afronding zwevende speler
 settings.option.visual.floatingPlayerRoundness.description: Hoekstraal van de zwevende speler (0 = gelijk aan weergavevenster)
 settings.option.visual.fonts: Lettertypen
-settings.option.visual.forceMpWindowControls: Multiplatform-vensterknoppen gebruiken
-settings.option.visual.forceRoundedViewport: Afgeronde viewport gebruiken
+settings.option.visual.forceMpWindowControls: Multiplatform vensterbediening gebruiken
+settings.option.visual.forceRoundedViewport: Afgeronde weergave gebruiken
 settings.option.visual.forceRoundedViewport.description: Pas afgeronde hoeken toe op het hoofdweergavevenster in alle lay-outs
 settings.option.visual.hardwareAcceleration: Hardware acceleratie
 settings.option.visual.hardwareAcceleration.description: Vereist herstart
-settings.option.visual.headerStyle: Kopstijl voor albums en afspeellijsten
+settings.option.visual.headerStyle: Stijl album- en afspeellijstkop
 settings.option.visual.headerStyle.appleMusic: Apple Music
 settings.option.visual.headerStyle.appleMusic.description: Acties zweven rechtsboven op de pagina.
 settings.option.visual.headerStyle.classic: Klassiek
 settings.option.visual.headerStyle.classic.description: Acties blijven inline binnen de paginakop.
 settings.option.visual.headerStyle.description: Klassiek houdt acties inline in de koptekst. Apple Music verplaatst 'Deel' / 'Meer' / 'Voeg toe aan bibliotheek' naar een zwevende balk rechtsboven op de pagina.
-settings.option.visual.hideAppleRecommends: '"Aanbevolen door Apple"-kaarten verbergen'
+settings.option.visual.hideAppleRecommends: '"Apple raadt aan"-kaarten verbergen'
 settings.option.visual.hideAppleRecommends.description: Verwijdert promotionele "Aanbevolen door Apple"-kaarten van de aanbevelingspanelen in 'Luister nu' en 'Home'.
-settings.option.visual.hideHeroItems: Hero-items verbergen in 'Ontdek'
+settings.option.visual.hideHeroItems: Hero-items op Browse verbergen
 settings.option.visual.immersive.adjustVisuals: Visuele effecten aanpassen
 settings.option.visual.immersive.background.artwork: Eenvoudig artwork
 settings.option.visual.immersive.background.blank: Leeg
@@ -4631,17 +4733,17 @@ settings.option.visual.immersive.coverflowStyle: Coverflow-stijl
 settings.option.visual.immersive.coverflowStyle.default: Standaard
 settings.option.visual.immersive.description: Pas de ervaring van de Immersive-modus aan
 settings.option.visual.immersive.enableHdr: HDR inschakelen
-settings.option.visual.immersive.fsrUpscale: FSR-artwork-upscaling
-settings.option.visual.immersive.fsrUpscale.applyToAll: "FSR: Toepassen op alle nummers"
+settings.option.visual.immersive.fsrUpscale: FSR-hoesvergroting
+settings.option.visual.immersive.fsrUpscale.applyToAll: "FSR: toepassen op alle nummers"
 settings.option.visual.immersive.fsrUpscale.applyToAll.description: Indien uitgeschakeld, wordt FSR alleen toegepast op nummers die zijn uitgebracht vóór het drempeljaar. Schakel in om elk nummer op te schalen.
 settings.option.visual.immersive.fsrUpscale.description: Schaal album-artwork op met AMD FidelityFX Super Resolution. Zorgt ervoor dat ouder artwork (van vóór 2010) er scherper uitziet. Vereist WebGPU.
-settings.option.visual.immersive.fsrUpscale.sharpness: "FSR: Scherpte"
+settings.option.visual.immersive.fsrUpscale.sharpness: "FSR: scherpte"
 settings.option.visual.immersive.fsrUpscale.sharpness.description: Sterkte van de contrast-adaptieve verscherping (RCAS). 0 is het zachtst, 1 is het scherpst.
-settings.option.visual.immersive.fsrUpscale.thresholdYear: "FSR: Drempeljaar"
+settings.option.visual.immersive.fsrUpscale.thresholdYear: "FSR: drempeljaar"
 settings.option.visual.immersive.fsrUpscale.thresholdYear.description: Nummers die vóór dit jaar zijn uitgebracht, komen in aanmerking voor upscaling wanneer 'Toepassen op alle nummers' is uitgeschakeld.
 settings.option.visual.immersive.hdrBoostScale: HDR-boostschaal
-settings.option.visual.immersive.hideLyricsWhenUnavailable: Liedtekst verbergen indien niet beschikbaar
-settings.option.visual.immersive.keepCompletedLyrics: Voltooide liedtekst behouden
+settings.option.visual.immersive.hideLyricsWhenUnavailable: Songtekst verbergen wanneer niet beschikbaar
+settings.option.visual.immersive.keepCompletedLyrics: Voltooide songtekst behouden
 settings.option.visual.immersive.keepCompletedLyrics.description: Behoud liedteksten die al zijn voltooid in de liedtekstweergave.
 settings.option.visual.immersive.layout.default: One (standaard)
 settings.option.visual.immersive.layout.minimal: Minimaal
@@ -4650,13 +4752,13 @@ settings.option.visual.immersive.layout.solarium: Solarium
 settings.option.visual.immersive.layout.sonoma: Sonoma
 settings.option.visual.immersive.layout.spectrumDeck: Spectrum Deck
 settings.option.visual.immersive.maxBrightness: Maximale helderheid
-settings.option.visual.immersive.maxLyricFontSize: Max. lettergrootte liedtekst (px)
-settings.option.visual.immersive.startFullscreen: In volledig scherm starten
-settings.option.visual.immersive.startingTab: Begin-tabblad
+settings.option.visual.immersive.maxLyricFontSize: Maximale lettergrootte songtekst (px)
+settings.option.visual.immersive.startFullscreen: Starten in volledig scherm
+settings.option.visual.immersive.startingTab: Starttabblad
 settings.option.visual.immersive.startingTab.history: Geschiedenis
 settings.option.visual.immersive.startingTab.lyrics: Liedtekst
 settings.option.visual.immersive.startingTab.queue: Wachtrij
-settings.option.visual.immersive.ultraHdr: Ultra HDR-hoesopschaling
+settings.option.visual.immersive.ultraHdr: Ultra HDR-hoesvergroting
 settings.option.visual.immersive.ultraHdr.description: Voegt HDR-hooglichten, contrast en kleur toe aan albumhoezen bij elk nummer. Komt het best tot zijn recht op een HDR-scherm; andere schermen krijgen een subtielere weergave. Vereist WebGPU.
 settings.option.visual.immersive.ultraHdr.headroom: "Ultra HDR: piekreserve"
 settings.option.visual.immersive.ultraHdr.headroom.description: Maximale helderheid van hooglichten als veelvoud van standaardwit. Verlaag dit als hooglichten op je scherm te fel lijken.
@@ -4667,17 +4769,17 @@ settings.option.visual.immersive.ultraHdr.profile.cinematic: Cinematisch
 settings.option.visual.immersive.ultraHdr.profile.description: Natuurlijk blijft dicht bij het origineel, Levendig is krachtig en kleurrijk, Cinematisch heeft hoog contrast met ingetogen kleur.
 settings.option.visual.immersive.ultraHdr.profile.natural: Natuurlijk
 settings.option.visual.immersive.ultraHdr.profile.vivid: Levendig
-settings.option.visual.immersive.useAnimatedArtwork: Geanimeerd artwork gebruiken
+settings.option.visual.immersive.useAnimatedArtwork: Geanimeerde hoes gebruiken
 settings.option.visual.immersive.useAnimatedArtwork.description: Toon bewegende albumillustraties indien beschikbaar. Dit kan prestatieproblemen veroorzaken op minder krachtige apparaten.
 settings.option.visual.immersive.useAnimatedBackground: Geanimeerde Immersive-achtergrond
-settings.option.visual.immersive.useBackgroundBpm: Achtergrondsnelheid gebaseerd op BPM
+settings.option.visual.immersive.useBackgroundBpm: Achtergrondsnelheid op basis van BPM
 settings.option.visual.immersiveBackground.blank: Leeg
 settings.option.visual.immersiveBackground.customImage: Aangepaste afbeelding
 settings.option.visual.immersiveBackground.customImageMixed: Aangepaste afbeelding (gemengd)
 settings.option.visual.immersiveBackground.gradientMesh: Verloopmesh
-settings.option.visual.immersiveBackground.simpleArtwork: Eenvoudige albumillustratie
+settings.option.visual.immersiveBackground.simpleArtwork: Eenvoudige hoes
 settings.option.visual.immersiveBackground.simpleColor: Eenvoudige kleur
-settings.option.visual.immersiveBgSettings: Meeslepende achtergrondinstellingen
+settings.option.visual.immersiveBgSettings: Instellingen immersieve achtergrond
 settings.option.visual.immersiveBgSettings.description: Achtergrondeffecten en filters van de app.
 settings.option.visual.immersiveLayout.classic: One Classic
 settings.option.visual.immersiveLayout.classic.description: De originele meeslepende lay-out met een speler over de volledige breedte onderaan.
@@ -4693,13 +4795,13 @@ settings.option.visual.immersiveLayout.sonoma: Sonoma
 settings.option.visual.immersiveLayout.sonoma.description: Albumillustratie loopt over in de achtergrond met een zwevende bedieningskaart.
 settings.option.visual.immersiveLayout.spectrumDeck: Spectrum Deck
 settings.option.visual.immersiveLayout.spectrumDeck.description: Een realtime spectrumscène met zwevende albumillustraties.
-settings.option.visual.immersiveStyle: Meeslepende stijl
-settings.option.visual.immersiveStylePortrait: Meeslepende stijl (portret)
-settings.option.visual.largeHeaderTitles: Grote kopteksten
+settings.option.visual.immersiveStyle: Immersieve stijl
+settings.option.visual.immersiveStylePortrait: Immersieve stijl (staand)
+settings.option.visual.largeHeaderTitles: Grote koptitels
 settings.option.visual.largeHeaderTitles.description: Vergroot de titeltekst op album- en afspeellijstpagina's voor een opvallendere look.
 settings.option.visual.layoutProfile: Type lay-outprofiel
 settings.option.visual.layoutProfile.description: Pas de lay-out van de app aan naar jouw voorkeur
-settings.option.visual.layoutType: Layout Type
+settings.option.visual.layoutType: Lay-outtype
 settings.option.visual.layoutType.calico: Calico
 settings.option.visual.layoutType.calico.description: Zijbalk over de volledige hoogte met de speler in het inhoudsgebied.
 settings.option.visual.layoutType.mavericks: Mavericks
@@ -4708,7 +4810,7 @@ settings.option.visual.layoutType.mojave: Mojave
 settings.option.visual.layoutType.mojave.description: Werkbalk over de volledige breedte met een spelerbalk onderaan.
 settings.option.visual.layoutType.montara: Montara
 settings.option.visual.layoutType.montara.description: Zijbalk over de volledige hoogte met een speler bovenaan in het inhoudsgebied.
-settings.option.visual.lcdChromaticAberration: Chromatische aberratie voor lcd
+settings.option.visual.lcdChromaticAberration: LCD-chromatische aberratie
 settings.option.visual.lcdChromaticAberration.description: Breek de lcd-achtergrond van het huidige nummer via de vloeibaar-glasshader met een RGB-rand.
 settings.option.visual.liquidGlassPlayer: Liquid Glass-spelerbalk
 settings.option.visual.liquidGlassPlayer.description: Gebruik het liquid-glass-oppervlak voor de spelerbalk met het huidige nummer. Schakel dit uit voor een vlak, effen paneel (dit is ook lichter om te renderen).
@@ -4737,19 +4839,19 @@ settings.option.visual.mojavePlayerType.compact: Compact
 settings.option.visual.mojavePlayerType.compact.description: Een slanke speler met een gecentreerd LCD-scherm en een voortgangsrij erboven.
 settings.option.visual.mojavePlayerType.compactInline: Compact inline
 settings.option.visual.mojavePlayerType.compactInline.description: Een enkele slanke rij met voortgang in het LCD-scherm.
-settings.option.visual.moveUpLinks: Verplaats 'Meer om te zien'-links in Ontdekken naar boven
-settings.option.visual.musicVideoPinMaxResolution: Videoclips altijd afspelen in maximale resolutie
+settings.option.visual.moveUpLinks: '"Meer te zien"-links op Browse naar boven verplaatsen'
+settings.option.visual.musicVideoPinMaxResolution: Muziekvideo's altijd in maximale resolutie afspelen
 settings.option.visual.musicVideoPinMaxResolution.description: Behoudt de hoogste kwaliteit die de video biedt in plaats van laag te beginnen en op te bouwen. In een klein venster of bij een verbinding met datalimiet verbruikt dit aanzienlijk meer bandbreedte.
-settings.option.visual.musicVideoPrefetchOnHover: Videoclips voorbereiden bij aanwijzen
+settings.option.visual.musicVideoPrefetchOnHover: Muziekvideo's voorbereiden bij aanwijzen
 settings.option.visual.musicVideoPrefetchOnHover.description: Begint met het laden van de video wanneer de aanwijzer op de badge rust, zodat deze sneller opent wanneer je klikt.
-settings.option.visual.musicVideoPrefetchSegmentsOnHover: Eerste segment downloaden bij aanwijzen
+settings.option.visual.musicVideoPrefetchSegmentsOnHover: Eerste deel downloaden bij aanwijzen
 settings.option.visual.musicVideoPrefetchSegmentsOnHover.description: Haalt ook de eerste paar seconden van de video op vóór de klik. Dit kost een paar megabyte voor elke keer dat je de video aanwijst, ook als je de video uiteindelijk niet opent.
-settings.option.visual.paletteContrast: Kleurcontrast albumillustratie
+settings.option.visual.paletteContrast: Contrast hoeskleuren
 settings.option.visual.paletteContrast.description: Bepaalt in welke mate de kleuren van albums en afspeellijsten worden aangepast ten opzichte van de pagina, zodat knoppen en de afspeelindicator leesbaar blijven. De toegankelijkheidsinstelling 'Verhoog contrast' gebruikt altijd Maximaal.
 settings.option.visual.paletteContrast.enhanced: Verbeterd
 settings.option.visual.paletteContrast.maximum: Maximaal
 settings.option.visual.paletteContrast.standard: Standaard
-settings.option.visual.pauseAnimatedOnBlur: Pauzeer bewegende albumillustraties wanneer niet actief
+settings.option.visual.pauseAnimatedOnBlur: Geanimeerde hoes pauzeren wanneer niet scherp
 settings.option.visual.playerMaterial: Spelermateriaal
 settings.option.visual.playerMaterial.blur: Vervaging
 settings.option.visual.playerMaterial.blur.description: Gebruik een doorschijnend mat materiaal voor de spelerbalk van het huidige nummer, zonder het brekingseffect van vloeibaar glas.
@@ -4760,34 +4862,34 @@ settings.option.visual.playerMaterial.liquidGlass.description: Gebruik het vloei
 settings.option.visual.playerMaterial.none: Geen
 settings.option.visual.playerMaterial.none.description: Gebruik een ondoorzichtig paneel voor de spelerbalk van het huidige nummer.
 settings.option.visual.playerPosition: Spelerpositie
-settings.option.visual.playerType: Speler type
+settings.option.visual.playerType: Spelertype
 settings.option.visual.plugin.github.download: Installeren via GitHub-URL
 settings.option.visual.plugin.github.explore: GitHub-plugins verkennen
 settings.option.visual.plugin.github.install.confirm: Weet je zeker dat je {{repo}} wilt installeren?
 settings.option.visual.popularityThreshold: Populariteitsdrempel
 settings.option.visual.popularityThreshold.description: De minimale populariteit die vereist is om indicatoren naast een nummer weer te geven.
-settings.option.visual.precisionScrollSpeed: Precisiescrolsnelheid
+settings.option.visual.precisionScrollSpeed: Precisie-scrollsnelheid
 settings.option.visual.precisionScrollSpeed.description: Stel het scrollen met het touchpad nauwkeurig af in de nieuwe (glazen) window-engine. Lager is langzamer en nauwkeuriger voor kleine aanpassingen; hoger scrolt sneller.
 settings.option.visual.purplePodcastPlaybackBar: Paarse afspeelbalk voor podcasts
-settings.option.visual.realtimeVisualizer: Realtime audiovizualisatie
+settings.option.visual.realtimeVisualizer: Realtime audiovisualizer
 settings.option.visual.realtimeVisualizer.description: Toon een realtime audiovizualisatie bij afspelende nummers in plaats van de bewegende balken.
 settings.option.visual.searchType: Zoektype
 settings.option.visual.searchType.floating: Zwevend
 settings.option.visual.searchType.inline: Inline
-settings.option.visual.showBpmAndKey: Toon BPM en toonsoort bij nummers in afspeellijsten en albums
+settings.option.visual.showBpmAndKey: BPM en toonsoort tonen bij nummers in afspeellijsten en albums
 settings.option.visual.showBpmAndKey.description: Inhoud laden duurt langer wanneer dit is ingeschakeld.
 settings.option.visual.showPersonalInfo: Persoonlijke gegevens tonen
-settings.option.visual.showPlaylistArtworkInSidebar: Toon afspeellijstillustraties in de zijbalk
-settings.option.visual.showPodcastsInSidebar: Toon podcasts in zijbalk
+settings.option.visual.showPlaylistArtworkInSidebar: Afspeellijsthoezen tonen in zijbalk
+settings.option.visual.showPodcastsInSidebar: Podcasts tonen in zijbalk
 settings.option.visual.showPodcastsInSidebar.description: Ondersteuning voor podcasts wordt nog opnieuw opgebouwd, dus het bibliotheekitem toont momenteel alleen een tijdelijke aanduiding.
-settings.option.visual.showQuickActions: Snelle acties weergeven
-settings.option.visual.showWatchMusicVideoWhenAvailable: Toon "Bekijk videoclip" indien beschikbaar
-settings.option.visual.sidebarStyle: Zijbalkstijl
+settings.option.visual.showQuickActions: Snelle acties tonen
+settings.option.visual.showWatchMusicVideoWhenAvailable: Toon "Muziekvideo bekijken" indien beschikbaar
+settings.option.visual.sidebarStyle: Stijl zijbalk
 settings.option.visual.sidebarStyle.apple: Apple Music
 settings.option.visual.sidebarStyle.default: Standaard
 settings.option.visual.sidebarStyle.description: Kies de indeling van de zijbalk. "Apple Music" plaatst vastgemaakte onderdelen binnen de bibliotheek en verwijdert de Apple Music-sectiekop.
 settings.option.visual.simpleArtworkBg.saturate: Verzadiging
-settings.option.visual.sizeProfile: UI Size Profile
+settings.option.visual.sizeProfile: Profiel voor UI-grootte
 settings.option.visual.sizeProfile.description.default: Standaardgrootte, voor gebruik met elk invoerapparaat. iOS- / Android- / moderne Windows-stijl.
 settings.option.visual.sizeProfile.description.desktop: Desktopgerichte grootte, voor gebruik met een muis en toetsenbord. macOS- / klassieke Windows-stijl.
 settings.option.visual.sizeProfile.desktop: Desktop
@@ -4811,24 +4913,24 @@ settings.option.visual.transparency: Transparantie inschakelen
 settings.option.visual.transparent: Transparant venster
 settings.option.visual.transparent.description: vereist thema-ondersteuning, herstart vereist
 settings.option.visual.uiscale: UI-schaal
-settings.option.visual.useAdaptiveColors: Gebruik adaptieve kleuren
+settings.option.visual.useAdaptiveColors: Adaptieve kleuren gebruiken
 settings.option.visual.useAdaptiveColors.description: Wijzig de accentkleur zodat deze overeenkomt met het huidige nummer
 settings.option.visual.useAdaptiveColors.popup: Aanpassende kleuren worden toegepast bij het volgende nummer.
-settings.option.visual.verticalDrawerMode: Plaatsing van wachtrij en songtekst
+settings.option.visual.verticalDrawerMode: Plaatsing wachtrij en songtekst
 settings.option.visual.verticalDrawerMode.auto.description: Gebruik een lade onderaan onder de speler/inhoud op staande schermen en een zijlade op breedbeeld.
-settings.option.visual.verticalDrawerMode.bottom: Lade onderaan
+settings.option.visual.verticalDrawerMode.bottom: Onderste paneel
 settings.option.visual.verticalDrawerMode.bottom.description: Geef de wachtrij en songtekst altijd weer in een lade onderaan onder de speler/inhoud.
 settings.option.visual.verticalDrawerMode.description: Stel in of de wachtrij en songtekst worden geopend in een lade onderaan of een zijlade op verticale schermen.
-settings.option.visual.verticalDrawerMode.side: Zijlade
+settings.option.visual.verticalDrawerMode.side: Zijpaneel
 settings.option.visual.verticalDrawerMode.side.description: Geef de wachtrij en songtekst altijd weer in een zijlade aan de rechterkant.
 settings.option.visual.vibrancyMode.acrylic: Acryl
 settings.option.visual.vibrancyMode.mica: Mica
 settings.option.visual.vibrancyMode.tabbed: Tabbed
-settings.option.visual.vibrancySettings: Levendigheidsinstellingen
+settings.option.visual.vibrancySettings: Instellingen voor vibrancy
 settings.option.visual.windowBackgroundStyle: Achtergrondstijl van venster
 settings.option.visual.windowColor: Tintkleur van venster
 settings.option.visual.windowControlPosition: Positie vensterknoppen
-settings.option.visual.windowingMode: Scroll- en rendermodus
+settings.option.visual.windowingMode: Scroll- en weergavemodus
 settings.option.visual.windowingMode.auto: Automatisch (touchpad-bewust)
 settings.option.visual.windowingMode.description: Kies hoe de app inhoud rendert en scrollt. "Automatisch" wordt aanbevolen voor de meeste gebruikers, op bepaalde touchpad-apparaten kan "Oud" sneller reageren.
 settings.option.visual.windowingMode.fallbackNotice.body: Cider gebruikt in plaats daarvan de oude modus.
@@ -4836,7 +4938,7 @@ settings.option.visual.windowingMode.fallbackNotice.title: Nieuwe weergavemodus 
 settings.option.visual.windowingMode.glass: Nieuw
 settings.option.visual.windowingMode.performance: Oud
 settings.option.visual.windowStyle: Vensterstijl
-settings.option.visual.windowVibrancy: Vibrancy van venster
+settings.option.visual.windowVibrancy: Vensters vibrancy
 settings.option.window.close_button_hide: Sluitknop moet de applicatie verbergen
 settings.option.window.maxElementScale: Maximale elementschaal
 settings.option.window.openOnStartup: Cider openen bij opstarten
@@ -4867,6 +4969,17 @@ settings.power.savers: Energiebesparingen
 settings.power.summary.count: "{{high}} functies met grote impact, {{medium}} met gemiddelde impact ingeschakeld"
 settings.power.summary.high: Grote impact
 settings.power.summary.medium: Gemiddelde impact
+settings.privacy.appPreferences: App-voorkeuren
+settings.privacy.appPreferences.description: Deel je app-voorkeuren zodat we weten hoe je Cider het liefst instelt.
+settings.privacy.appUsage: Gebruik van app-specifieke functies
+settings.privacy.appUsage.description: Stuur anonieme gebruiksgegevens voor functies die specifiek zijn voor Cider. Dit bevat geen persoonlijke gegevens of Apple Music-gegevens.
+settings.privacy.audioLabs: Cider Audio Labs
+settings.privacy.audioLabs.description: Stuurt informatie over hoe je Cider Audio Labs hebt ingesteld.
+settings.privacy.deviceSpecs: Apparaatspecificaties
+settings.privacy.deviceSpecs.description: Stuurt informatie over je huidige hardware (CPU, GPU, RAM, audioapparaten) en je besturingssysteem. De informatie is beperkt en bevat geen serienummers of apparaat-ID's.
+settings.privacy.replay: Luistergeschiedenis delen voor Cider Replay
+settings.privacy.replay.description: Stuur anoniem je luistergeschiedenis bij aan het jaarlijkse gemeenschapsproject Cider Replay aan het einde van het jaar. Openbare statistieken hiervoor zijn te vinden op cider.sh/replay.
+settings.privacy.statement: Bij Cider Collective nemen we privacy zeer serieus. We verzamelen geen persoonlijk identificeerbare gegevens en verkopen geen gegevens aan derden. Gegevens die je met ons deelt, worden gebruikt om de app te verbeteren en worden met niemand anders gedeeld. Alle persoonlijke gegevens die mogelijk zijn opgeslagen, worden verwijderd voordat ze met ons worden gedeeld.
 settings.profile.crop.hint: Sleep om te verplaatsen, scroll om te zoomen
 settings.profile.crop.title: Positioneer je foto
 settings.profile.defaultName: Apple Music-gebruiker
@@ -4874,15 +4987,16 @@ settings.profile.field.displayName: Weergavenaam
 settings.profile.field.displayName.description: Wordt weergegeven in de zijbalk en in heel Cider.
 settings.profile.field.handle.description: Je @gebruikersnaam, gebruikt voor delen.
 settings.profile.field.photo: Profielfoto
+settings.profile.field.photo.change: Profielfoto wijzigen
 settings.profile.field.photo.description: Er is momenteel een aangepaste foto ingesteld.
 settings.profile.header.identity: Profiel bewerken
 settings.profile.header.region: Regio en taal
-settings.profile.header.visibility: Weergave in zijbalk
+settings.profile.header.visibility: Weergave zijbalk
 settings.profile.language.description: Taal van catalogusmetadata voor de geselecteerde winkel.
 settings.profile.option.showHandle: Sociale gebruikersnaam tonen
-settings.profile.option.showMainMenu: Hoofdmenu in profielgedeelte van zijbalk
+settings.profile.option.showMainMenu: Hoofdmenu in profielgebied van zijbalk
 settings.profile.option.showName: Profielnaam tonen
-settings.profile.option.showProfile: Profiel tonen in zijbalk
+settings.profile.option.showProfile: Profiel in zijbalk tonen
 settings.profile.policy.allowed: Toegestaan
 settings.profile.policy.label: Expliciete inhoud
 settings.profile.policy.restricted: Beperkt
@@ -4922,6 +5036,7 @@ settings.resetCider.confirm.ok: Cider resetten
 settings.resetCider.confirm.title: Cider resetten?
 settings.resetCider.confirm.warning: Dit kan niet ongedaan worden gemaakt. Cider start opnieuw op na het resetten.
 settings.resetCider.confirm.willReset: Wordt gereset
+settings.resetCider.deselectAll: Alles deselecteren
 settings.resetCider.error: Er is iets misgegaan tijdens het resetten.
 settings.resetCider.group.accounts: Accounts
 settings.resetCider.group.core: Resetten
@@ -4931,6 +5046,10 @@ settings.resetCider.resetButton: Cider resetten
 settings.resetCider.resetting: Resetten…
 settings.resetCider.selectAll: Alles selecteren
 settings.resetCider.title: Cider resetten
+settings.search.empty: Geen instellingen gevonden voor deze zoekopdracht.
+settings.search.pages: Pagina's
+settings.search.resultCount: "{{count}} instellingen gevonden"
+settings.search.resultCountOne: 1 instelling gevonden
 settings.sleepTimer.endsIn: "Eindigt over: {{remainingTime}} ({{endTime}})"
 settings.sleepTimer.notSet: Timer is niet ingesteld
 settings.sleepTimer.title: Sluimertimer instellen
@@ -4967,7 +5086,7 @@ settings.takeout.reloadPrompt: Sommige instellingen worden pas na het herladen t
 settings.takeout.selectAll: Alles selecteren
 settings.takeout.title: Instellingen-takeout
 settings.title: Instellingen
-settings.troubleshooting.bgDiagnostics: Diagnostische gegevens voor afspelen op de achtergrond
+settings.troubleshooting.bgDiagnostics: Diagnose achtergrondweergave
 settings.troubleshooting.bgDiagnostics.desc: Extra logboekdetails voor het diagnosticeren van afspeelproblemen wanneer het venster is geminimaliseerd of niet actief is — wie de speler heeft gepauzeerd, timer-starvation en OS-opschortingen. Schakel dit in bij het rapporteren van een bug met afspelen op de achtergrond.
 settings.troubleshooting.desc: Logbestanden en MKLite-foutopsporingslogboeken.
 settings.troubleshooting.descV2: Logboekregistratie voor MKLite en afspelen op de achtergrond.
@@ -4979,7 +5098,7 @@ settings.troubleshooting.impressionReporting.warning2: Dit is daadwerkelijke uit
 settings.troubleshooting.logFile: Logbestand
 settings.troubleshooting.logFile.actions: Logbestandacties
 settings.troubleshooting.logFile.desc: Bekijk, kopieer of wis je logbestand
-settings.troubleshooting.mkliteDebug: MKLite-foutopsporingslogboekregistratie
+settings.troubleshooting.mkliteDebug: MKLite-foutopsporingslogboek
 settings.troubleshooting.mkliteDebug.desc: Uitgebreide console-uitvoer van MKLite — PlayActivity-payloads (JSPLAY), nummerwijzigingen en afspeelstatus. Handig om te vergelijken wat we naar Apple sturen met music.apple.com. Schakel dit uit voor normaal gebruik.
 settings.troubleshooting.mkLoadingMethod: MusicKit-laadmethode
 settings.troubleshooting.mkLoadingMethod.warning1: Wijzig de methode die wordt gebruikt om MusicKit te laden. Dit wordt gebruikt om eventuele laadproblemen door MusicKit-updates op te lossen.
@@ -4987,10 +5106,69 @@ settings.troubleshooting.mkLoadingMethod.warning2: Deze instelling mag NIET word
 settings.troubleshooting.mkLoadingMethod.warning3: Deze optie is niet bedoeld om algemene verbindings- of afspeelproblemen op te lossen.
 settings.troubleshooting.rebootMk: MusicKit herstarten
 settings.troubleshooting.rebootMk.desc: Start MusicKit opnieuw op om afspeelproblemen op te lossen
-settings.troubleshooting.testSignIn: Inloggen bij Apple Music testen
+settings.troubleshooting.testSignIn: Aanmelding bij Apple Music testen
 settings.troubleshooting.testSignIn.desc: Open de inlogpop-up van Apple Music om te controleren of het inloggen werkt en valideer vervolgens de token via de API. Er wordt niets opgeslagen en je huidige sessie blijft ongewijzigd.
 settings.troubleshooting.title: Probleemoplossing
-settings.updates.action.check: Zoek naar updates
+settings.tweaks.animateArtworkOnHover.description: Speel geanimeerde hoes af wanneer de aanwijzer erop rust.
+settings.tweaks.artworkFadeIn.description: Toon hoezen meteen in plaats van ze geleidelijk te laten verschijnen tijdens het laden.
+settings.tweaks.artworkHighlighting.description: Voeg een zachte schaduw en highlight toe aan hoezen in rasters en lijsten.
+settings.tweaks.artworkLoadingMethod.description: Laadt hoezen lui zodra ze in beeld komen. Gretig laadt ze meteen.
+settings.tweaks.card.musicVideos: Muziekvideo's
+settings.tweaks.ciderAudioBadges.description: Toon Cider Audio-badges naast het nummer in de speler.
+settings.tweaks.ciderAudioToolbar.description: Toon de Cider Audio-knop in de werkbalk.
+settings.tweaks.compactSidebarSize: Compacte zijbalkgrootte
+settings.tweaks.contextMenuIcons.description: Welke menu-items een pictogram tonen.
+settings.tweaks.floatingSearchBlur: Vervaging achter zwevende zoekbalk
+settings.tweaks.floatingSearchClear: Zwevende zoekbalk wissen bij sluiten
+settings.tweaks.forceMpWindowControls.description: Gebruik de eigen vensterknoppen van Cider in plaats van die van het systeem.
+settings.tweaks.hideHeroItems.description: Verberg de grote uitgelichte banners bovenaan Ontdekken.
+settings.tweaks.homeButtonLocation.description: Waar de startknop staat.
+settings.tweaks.immersiveArtworkHighlight: Highlight van hoezen in immersieve weergave
+settings.tweaks.immersiveArtworkHighlight.description: Voeg een highlight toe aan de hoes in de immersieve weergave.
+settings.tweaks.immersiveBackgroundBpm.description: Animeer de achtergrond in het tempo van het nummer.
+settings.tweaks.immersiveControlsTimeout: Time-out voor immersieve bediening
+settings.tweaks.immersiveControlsTimeout.description: Seconden voordat de bediening verdwijnt.
+settings.tweaks.immersiveHideLyrics.description: Verberg het tekstvenster voor nummers zonder songtekst.
+settings.tweaks.immersiveLyricGlow: Gloed op de actieve songtekstregel
+settings.tweaks.immersiveLyricGlow.description: Voeg een gloed toe aan de regel die wordt gezongen.
+settings.tweaks.immersiveMaxLyricSize.description: Het grootste formaat waarnaar songteksten in de immersieve weergave kunnen groeien.
+settings.tweaks.mainMenuPosition.description: Waar de knop voor het hoofdmenu staat.
+settings.tweaks.mavericksLcdStyle: Mavericks lcd-stijl
+settings.tweaks.mavericksLcdStyle.description: Hoe het weergavevenster voor het huidige nummer eruitziet in de Mavericks-indeling.
+settings.tweaks.miniPlayerAnimatedArtwork.description: Speel geanimeerde hoezen af in het minispeelvenster.
+settings.tweaks.moveUpLinks.description: Plaats de links naar meer inhoud bovenaan Bladeren.
+settings.tweaks.musicVideoBadge.description: Toon een knop in de speler wanneer het nummer een muziekvideo heeft.
+settings.tweaks.pauseAnimatedOnBlur.description: Pauzeer geanimeerde hoezen wanneer Cider niet het actieve venster is.
+settings.tweaks.progressAccent: Voortgangsbalk in accentkleur
+settings.tweaks.progressAccent.description: Vul de voortgangsbalk van het nummer met de accentkleur.
+settings.tweaks.resizableMiniPlayer.description: Sta toe dat het minispeelvenster wordt verkleind of vergroot.
+settings.tweaks.richGridNoScrollAnimation: Direct scrollen in rijk albumraster
+settings.tweaks.richGridNoScrollAnimation.description: Spring naar het album zonder de scrollbeweging te animeren.
+settings.tweaks.richGridOpenPage: Albums openen als pagina's vanuit het rijke albumraster
+settings.tweaks.richGridOpenPage.description: Ga naar de albumpagina in plaats van het album in het raster uit te vouwen.
+settings.tweaks.richGridScrollPosition: Scrollpositie van het rijke albumraster
+settings.tweaks.richGridScrollPosition.description: Waar het raster naartoe scrolt wanneer je een album opent.
+settings.tweaks.scrollbarType.description: Gebruik de eigen scrollbalken van Cider of die van het systeem.
+settings.tweaks.searchStyle: Zoekstijl
+settings.tweaks.searchStyle.description: Zoek in de titelbalk of in een paneel over de pagina.
+settings.tweaks.section.artwork: Hoezen
+settings.tweaks.section.browse: Bladeren
+settings.tweaks.section.immersive: Immersief
+settings.tweaks.section.lyrics: Songtekst
+settings.tweaks.section.pagesGrids: Pagina's en rasters
+settings.tweaks.section.playerBar: Spelerbalk
+settings.tweaks.section.search: Zoeken
+settings.tweaks.section.sidebarNavigation: Zijbalk en navigatie
+settings.tweaks.section.windowToolbar: Venster en werkbalk
+settings.tweaks.showBitrate.description: Toon de streambitrate naast het nummer in de speler.
+settings.tweaks.sidebarPlaylistArtwork.description: Toon de hoes van elke afspeellijst naast de naam.
+settings.tweaks.simpleArtworkMask.description: Laat de onderkant van de achtergrondhoes vervagen.
+settings.tweaks.sonomaLyricArc: Songtekst in een boog in Sonoma
+settings.tweaks.sonomaRadialMask: Alternatief Sonoma-masker
+settings.tweaks.volumeIosStyle: Volumeschuifregelaar in iOS-stijl
+settings.tweaks.volumeIosStyle.description: Teken de volumeschuifregelaar in de stijl die op iPhone wordt gebruikt.
+settings.tweaks.windowControlPosition.description: Aan welke kant de vensterknoppen staan.
+settings.updates.action.check: Controleer op updates
 settings.updates.action.install: Update installeren
 settings.updates.action.restart: Cider herstarten
 settings.updates.action.retry: Opnieuw proberen
@@ -5000,7 +5178,7 @@ settings.updates.build: Build
 settings.updates.channel: Kanaal
 settings.updates.codename: Codenaam
 settings.updates.currentlyRunning: Momenteel actief
-settings.updates.firstInstalled: Eerste installatie
+settings.updates.firstInstalled: Eerst geïnstalleerd
 settings.updates.platform: Platform
 settings.updates.progress.failed: Update mislukt
 settings.updates.progress.failed.sub: Er is iets misgegaan tijdens het bijwerken.
@@ -5018,42 +5196,47 @@ settings.updates.progress.success: Update geïnstalleerd
 settings.updates.progress.success.sub: Herstart Cider om de wijzigingen toe te passen.
 settings.updates.progress.working: Update installeren
 settings.updates.progress.working.sub: Een moment geduld, dit duurt niet lang.
-settings.updates.section.about: Over jouw versie
+settings.updates.section.about: Over je versie
 settings.updates.section.alsoAvailable: Ook beschikbaar
 settings.updates.section.history: Updategeschiedenis
-settings.updates.section.whatsNew: Nieuw in Cider
+settings.updates.section.whatsNew: Wat is er nieuw in Cider {version}
 settings.updates.status.available: Update beschikbaar
-settings.updates.status.checking: Zoeken naar updates...
+settings.updates.status.checking: Controleren op updates...
 settings.updates.status.failed: Update mislukt
 settings.updates.status.idle: Cider is up-to-date
 settings.updates.status.success: Herstart vereist
 settings.updates.status.working: Installeren...
-settings.visual.card.appBackground: App-achtergrond
+settings.visual.card.appBackground: Achtergrond van app
+settings.visual.card.behavior: Gedrag
 settings.visual.card.behaviorLyrics: Gedrag en songtekst
 settings.visual.card.browse: Bladeren
 settings.visual.card.contentFilter: Inhoudsfilter
 settings.visual.card.experimental: Experimenteel
-settings.visual.card.fsrUpscaling: FSR-upscaling
-settings.visual.card.moreAnimatedArtwork: Meer bewegende albumillustraties
-settings.visual.card.playerEffects: Spelereffecten
+settings.visual.card.fsrUpscaling: FSR-opschaling
+settings.visual.card.moreAnimatedArtwork: Meer geanimeerde hoezen
+settings.visual.card.playerEffects: Effecten van de speler
 settings.visual.card.sidebarNavigation: Zijbalk en navigatie
-settings.visual.card.trackMetadata: Nummermetadata
+settings.visual.card.trackMetadata: Trackmetadata
 settings.visual.card.ultraHdr: Ultra HDR-opschaling
 settings.visual.editorialLayout: Redactionele lay-out gebruiken
 settings.visual.editorialLayout.desc: Toont een redactionele banner en past een kleurenpalet toe op bepaalde albums
-settings.visual.editorialPreferenceOrder: Voorkeursvolgorde voor redactie
+settings.visual.editorialPreferenceOrder: Volgorde van redactionele voorkeur
 settings.visual.section.appearance: Weergave
 settings.visual.section.appearance.description: Kleurenschema, accentkleuren en de app-achtergrond.
-settings.visual.section.artwork: Albumillustraties en beweging
+settings.visual.section.artwork: Artwork en beweging
 settings.visual.section.artwork.description: Voorkeuren voor bewegende albumillustraties en beweging.
 settings.visual.section.content: Bladeren en inhoud
 settings.visual.section.content.description: Paginalay-outs, bladervoorkeuren en inhoudsfiltering.
 settings.visual.section.customCss.description: Pas je eigen CSS toe boven op de stijl van Cider.
 settings.visual.section.layout: Lay-out
 settings.visual.section.layout.description: App-lay-out, spelerstijl, zijbalk en navigatie.
+settings.visual.section.pages: Pagina's
+settings.visual.section.pages.description: Hoe album- en afspeellijstpagina's zijn opgemaakt.
+settings.visual.section.themeColors: Thema en kleuren
 settings.visual.section.window: Venster
 settings.visual.section.window.description: Vensterkader, vibrancy, regelaars en schaling.
-settings.visual.vibrancy.acrylicDarkness: Donkerheidswaarde voor acryl
+settings.visual.section.window.descriptionV2: Vensterelementen, vibrancy, weergave en schaling.
+settings.visual.vibrancy.acrylicDarkness: Waarde voor acrylverduistering
 settings.visual.vibrancy.mode.acrylic: Acryl
 settings.visual.vibrancy.mode.mica: Mica
 settings.visual.vibrancy.mode.none: Geen
@@ -5547,7 +5730,7 @@ term.size: Grootte
 term.size.compact: Compact
 term.size.normal: Normaal
 term.skip: Overslaan
-term.sleepTimer: Sluimertimer
+term.sleepTimer: Slaaptimer
 term.snippets: Snippets
 term.socials: Socials
 term.socialTeam: Sociaal team
@@ -5637,7 +5820,7 @@ term.updates: Updates
 term.upNext: Als volgende
 term.username: Gebruikersnaam
 term.userPresets: Gebruikerspresets
-term.userSubmitted: Ingezonden door gebruiker
+term.userSubmitted: Door gebruiker ingediend
 term.userToken: Gebruikerstoken
 term.variables: Variabelen
 term.version: Versie
