@@ -1339,6 +1339,14 @@ lyrics.loadingLyrics: 가사 불러오는 중...
 lyrics.lyricsBy: "작사:"
 lyrics.noLyricsAvailable: 이 곡의 가사가 없습니다
 lyrics.selectProvider: 가사 제공업체 선택
+lyrics.translation.chip.pronunciation: 발음
+lyrics.translation.chip.translated: 번역됨
+lyrics.translation.credit: "{{source}} 번역"
+lyrics.translation.credit.apple: Apple Music 번역
+lyrics.translation.menu.hide: 번역 숨기기
+lyrics.translation.menu.hidePronunciation: 발음 숨기기
+lyrics.translation.menu.show: 번역 보기
+lyrics.translation.source.community: 커뮤니티
 marketplace.trustedAuthor.tooltip:
   value: 신뢰할 수 있고 검증된 제작자입니다
   source: ai
@@ -3138,6 +3146,18 @@ playbackHealth.backgroundFreeze.title: 시스템이 백그라운드에서 Cider�
 playbackHealth.hostReinstall.label: Cider를 다시 설치해야 합니다
 playbackHealth.hostReinstall.message: Apple Music이 이 설치본을 거부합니다. Cider Taproom에서 Cider를 다시 설치하세요.
 playbackHealth.localIssue: 로컬 재생 문제
+playbackSpeed.keepPitch: 음높이 유지
+playbackSpeed.preset.normal: 보통
+playbackSpeed.preset.slowed: 느리게
+playbackSpeed.preset.spedUp: 빠르게
+playbackSpeed.rateValue: "{{rate}}×"
+playbackSpeed.reset: 재설정
+playbackSpeed.reverb: 리버브
+playbackSpeed.reverbUnavailable: Dolby Atmos 패스스루 중에는 리버브를 사용할 수 없습니다
+playbackSpeed.settings: 재생 속도 설정
+playbackSpeed.title: 재생 속도
+playbackSpeed.unavailable.radio: 라이브 라디오에서는 속도를 변경할 수 없습니다
+playbackSpeed.unavailable.video: 뮤직 비디오에서는 속도를 변경할 수 없습니다
 playlist.collaborative.tooltip: 공동 작업자가 참여할 수 있는 플레이리스트입니다
 playlist.collaborators.andOthers: "{{name}} 외 {{count}}명"
 playlist.collaborators.count: 공동 작업자 {{count}}명
@@ -3384,6 +3404,7 @@ settings.audio.section.output: 출력
 settings.audio.section.output.description: Cider를 재생할 기기 및 재생 신호 전달 방식을 설정합니다.
 settings.audio.section.playback: 재생
 settings.audio.section.playback.description: 오디오 음질, 공간 음향, 청취 모드 및 팟캐스트 재생 속도를 설정합니다.
+settings.audio.section.playback.descriptionV2: 오디오 품질, 공간 음향, 청취 모드, 재생 속도.
 settings.audio.section.volume: 음량
 settings.audio.section.volume.description: 음량 자동 조절, 스크롤 휠 조작 시 음량 변화 폭, 슬라이더 표시 방식을 설정합니다.
 settings.audio.signal.atmosCodecs: 사용 가능한 Atmos 코덱
@@ -3672,6 +3693,9 @@ settings.connectivity.scrobbler.roster.scrobbling: 스크로블 중
 settings.connectivity.scrobbler.roster.scrobblingAs: "{account}(으)로 스크로블 중"
 settings.connectivity.scrobbler.roster.scrobblingTo: "{account} 계정으로 스크로블 중"
 settings.connectivity.scrobbler.roster.signOut: "{service}에서 로그아웃"
+settings.connectivity.scrobbler.roster.signOut.message: Cider가 이 계정에 대한 스크로블링을 중지합니다. 언제든지 다시 연결할 수 있습니다.
+settings.connectivity.scrobbler.roster.signOut.ok: 로그아웃
+settings.connectivity.scrobbler.roster.signOut.title: "{service}에서 로그아웃하시겠습니까?"
 settings.connectivity.scrobbler.roster.switchLabel: "{service}(으)로 스크로블"
 settings.connectivity.scrobbler.roster.waiting: 브라우저 대기 중…
 settings.connectivity.scrobbler.toast.failed: "{services}(으)로 스크로블할 수 없습니다"
@@ -3938,11 +3962,15 @@ settings.lyrics.card.providers: 제공처
 settings.lyrics.card.songOverrides: 곡별 설정
 settings.lyrics.localeOverrides: 언어 기반 규칙
 settings.lyrics.localeOverrides.add: 언어 재정의 추가
+settings.lyrics.localeOverrides.addRule: 규칙 추가
 settings.lyrics.localeOverrides.audioLocale: 오디오 언어
 settings.lyrics.localeOverrides.desc: 특정 언어의 곡에 대한 맞춤 제공업체 및 번역 기본 설정을 지정합니다. 곡의 오디오 로캘이 규칙과 일치하면 이 설정이 기본값보다 우선 적용됩니다.
+settings.lyrics.localeOverrides.dialog.addTitle: 규칙 추가
+settings.lyrics.localeOverrides.dialog.editTitle: 규칙 편집
 settings.lyrics.localeOverrides.dialogTitle.add: 언어 재정의 추가
 settings.lyrics.localeOverrides.dialogTitle.edit: 언어 재정의 편집
 settings.lyrics.localeOverrides.empty: 아직 규칙이 없습니다. +를 눌러 추가하세요.
+settings.lyrics.localeOverrides.emptyV2: 아직 규칙이 없습니다.
 settings.lyrics.localeOverrides.overrideTranslation: 번역 재정의
 settings.lyrics.localeOverrides.preferredProvider: 선호 제공자
 settings.lyrics.localeOverrides.provider.apple: Apple Music
@@ -3990,11 +4018,17 @@ settings.lyrics.section.advanced: 고급
 settings.lyrics.section.advanced.description: 싱크 오프셋, 애니메이션 프레임 레이트, 수동 스크롤 타이밍을 설정합니다.
 settings.lyrics.section.display: 표시
 settings.lyrics.section.display.description: 표시할 가사 줄, 애니메이션 효과, 마우스를 올렸을 때 표시할 타임스탬프를 설정합니다.
+settings.lyrics.section.overrides: 재정의
+settings.lyrics.section.overrides.description: 특정 언어의 노래 또는 단일 트랙에 대해 기본 제공자보다 우선 적용되는 규칙입니다.
 settings.lyrics.section.sources: 소스
 settings.lyrics.section.sources.description: 가사 출처와 기본 제공처보다 우선 적용할 언어별 또는 트랙별 규칙을 설정합니다.
+settings.lyrics.section.sources.descriptionV2: 가사의 출처와 둘 이상의 출처에 가사가 있을 때 우선 적용될 출처를 설정합니다.
 settings.lyrics.section.translation: 번역
 settings.lyrics.section.translation.description: 번역된 가사, 대상 언어, 원문 가사 동시 표시 여부를 설정합니다.
 settings.lyrics.trackOverrides.clearAll: 모든 재정의 지우기
+settings.lyrics.trackOverrides.clearAll.message: 모든 트랙이 기본 제공자와 Apple이 보고한 보컬 상태로 돌아갑니다.
+settings.lyrics.trackOverrides.clearAll.title: 모든 재정의를 지우시겠습니까?
+settings.lyrics.trackOverrides.clearAllShort: 모두 지우기
 settings.lyrics.trackOverrides.desc: 여기에 표시된 곡은 Apple에서 제공하는 정보 대신 사용자가 고정한 가사 제공업체 또는 직접 설정한 보컬 상태를 항상 사용합니다. 이 예외 설정은 가사 메뉴 및 곡 우클릭 메뉴에서 설정할 수 있습니다.
 settings.lyrics.trackOverrides.empty: 아직 재정의된 항목이 없습니다. 해당 메뉴에서 고정한 항목이 여기에 표시됩니다.
 settings.lyrics.trackOverrides.lyricsForced: 가사 강제 적용
@@ -4266,6 +4300,7 @@ settings.option.audio.audioLab.description: Cider를 위해 자체 개발된 다
 settings.option.audio.audioLab.subheader: Designed by Cider Acoustic Technologies in California
 settings.option.audio.audioQuality: 오디오 품질
 settings.option.audio.automix: 오토믹스
+settings.option.audio.automix.pausedForSpeed: 재생 속도가 1×이 아닐 때는 자동 믹스가 일시 중지됩니다.
 settings.option.audio.changePlaybackRate: 재생 속도 변경
 settings.option.audio.ciderAudio: Cider Audio
 settings.option.audio.ciderAudio.showBadges: 지금 재생 중에 배지 표시
@@ -4346,6 +4381,12 @@ settings.option.audio.outputDevice: 출력 장치
 settings.option.audio.playback: 재생
 settings.option.audio.playbackRate: 재생 속도
 settings.option.audio.playbackRate.change: 변경
+settings.option.audio.playbackSpeed: 재생 속도 조절
+settings.option.audio.playbackSpeed.description: 느리게 또는 빠르게 듣기 위한 속도 조절을 플레이어에 표시하며, 선택적으로 리버브를 추가할 수 있습니다.
+settings.option.audio.playbackSpeed.keepPitch: 음높이 유지
+settings.option.audio.playbackSpeed.keepPitch.description: 음높이를 바꾸지 않고 속도를 변경합니다. 느리거나 빠른 사운드를 원하면 끄세요.
+settings.option.audio.playbackSpeed.reverb: 리버브
+settings.option.audio.playbackSpeed.reverb.description: 재생 중인 음악에 룸 리버브를 추가합니다.
 settings.option.audio.podcastPlayback: 팟캐스트 재생
 settings.option.audio.podcasts.playbackRate: Apple Podcasts 재생 속도
 settings.option.audio.podcasts.playbackRate.description: 팟캐스트의 재생 속도를 조절합니다.
@@ -4635,6 +4676,8 @@ settings.option.lyrics.localeOverrides.description: 특정 오디오 언어에 �
 settings.option.lyrics.musixmatchPreferredLanguage: Musixmatch 번역 선호 언어
 settings.option.lyrics.preferUserLyrics: 사용자 제출 가사 우선
 settings.option.lyrics.preferUserLyrics.description: 가능한 경우, 시간 동기화 품질이 더 좋다면 다른 소스보다 사용자가 제출한 가사를 우선시합니다.
+settings.option.lyrics.pronunciation: 발음 표시
+settings.option.lyrics.pronunciation.description: Apple Music이 제공하는 경우, 다른 문자로 된 가사의 발음을 라틴 문자로 표시합니다.
 settings.option.lyrics.provider.apple: Apple Music
 settings.option.lyrics.provider.auto: 자동(가능한 최선)
 settings.option.lyrics.provider.mxm: Musixmatch
@@ -4664,9 +4707,12 @@ settings.option.lyrics.translationLanguage: 번역 언어
 settings.option.lyrics.translationLanguage.description: 가사를 번역할 언어입니다. 번역 모드가 '수동'으로 설정된 경우에만 사용됩니다.
 settings.option.lyrics.translationMode: 번역 모드
 settings.option.lyrics.translationMode.appLanguage: 앱 언어에서 자동 설정
+settings.option.lyrics.translationMode.appLanguageShort: 앱 언어
 settings.option.lyrics.translationMode.description: 대상 번역 언어를 결정하는 방법입니다.
 settings.option.lyrics.translationMode.manual: 수동 (선택한 언어 사용)
+settings.option.lyrics.translationMode.manualShort: 수동
 settings.option.lyrics.translationMode.system: 시스템 언어에서 자동 설정
+settings.option.lyrics.translationMode.systemShort: 시스템 언어
 settings.option.lyrics.translationSettings: 번역 설정
 settings.option.lyrics.translationSettings.description: 가사 번역 동작을 구성합니다.
 settings.option.medium: 중간
