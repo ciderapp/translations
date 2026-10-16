@@ -96,6 +96,7 @@ action.cast.todevices: デバイスにキャスト
 action.change: 変更
 action.clear: クリア
 action.close: 閉じる
+action.configure: 設定
 action.connect: 接続
 action.connect.createCollabPlaylist: 新しいコラボレーションプレイリストを作成
 action.connect.listenTogether: 一緒に聴く
@@ -129,6 +130,7 @@ action.deletePlaylist:
   issue: 20
   superseded_at: 2026-07-08
 action.deletepreset: プリセットを削除
+action.deny: 拒否
 action.disablePlugins:
   value: このセッション中はプラグインを無効化
   source: human
@@ -697,6 +699,12 @@ assistant.sid.settings.freshDetail: ムード、シーン、または数名の�
 assistant.sid.settings.gemmaHere: Gemma の場所
 assistant.sid.settings.gpu: グラフィックスカード
 assistant.sid.settings.group: アシスタント
+assistant.sid.settings.helloEdit: プレイリストを開いて「Sidで編集」を選ぶと、整えておきます。
+assistant.sid.settings.helloFresh: ムードやアーティストを数組教えてください。プレイリスト全体を作ります。
+assistant.sid.settings.helloRequest: セット中に曲をリクエストしてください。Apple Music で見つけます。
+assistant.sid.settings.helloSet: セット中は、キーとテンポに合わせて次に流れる曲を選びます。
+assistant.sid.settings.helloSort: プレイリストを穏やかな曲から盛り上がる曲へ並べ替えたり、キーがつながるように並べたりできます。
+assistant.sid.settings.helloTrim: プレイリストを1時間に収めたり、テンポを一定に保ったりできます。
 assistant.sid.settings.inEdit: プレイリストを編集するとき
 assistant.sid.settings.inEditDetail: プレイリストのヘッダーにある「Sidで編集」から編集します
 assistant.sid.settings.inImmersive: イマーシブ表示
@@ -725,6 +733,11 @@ assistant.sid.settings.position: 位置
 assistant.sid.settings.positionDetail: Sidがアートワーク上で表示される位置
 assistant.sid.settings.privacyChat: 入力した内容はこのコンピュータに残ります。Sidはここでgemmaを使って考えます。音楽を探すために、Sidは検索語をApple Musicに送信し、お願いされた場合はApple Musicアカウントからプレイリスト、最近の再生履歴、Apple Music Replayを読み取ります。「適用」を押すまで何も変わりません。
 assistant.sid.settings.privacyEngine: 入力した内容はこのコンピュータに残ります。Sidはここで{engine}を使って考えます。音楽を探すために、Sidは検索語をApple Musicに送信し、お願いした場合にはApple Musicアカウントからプレイリスト、最近再生した曲、Apple Music Replayを読み取ります。「適用」を押すまで何も変わりません。
+assistant.sid.settings.quipGaming: "{gpu} とはきっと良い相棒になれますね。"
+assistant.sid.settings.quipIntegrated: 内蔵グラフィックスですね。軽快に、心地よく動かします。
+assistant.sid.settings.quipOther: いい {gpu} ですね。しっかり活用させてもらいます。
+assistant.sid.settings.quipSetsOnly: "{gpu} では、当面はセットの再生に専念しますね。"
+assistant.sid.settings.quipTop: "{gpu} ですか？ 汗ひとつかかずに動かします。"
 assistant.sid.settings.reads: プレイリスト全体の読み取りに {seconds} 秒かかります（{floor} 秒未満が必要）
 assistant.sid.settings.regular: 標準
 assistant.sid.settings.remove: 削除
@@ -827,6 +840,19 @@ auth.error.unavailable: このApple IDではCiderでApple Musicを利用でき�
 auth.error.windowFailed: サインインウィンドウを開けませんでした
 auth.mutExpired.confirm: サインイン
 auth.mutExpired.message: Apple Musicのセッションの期限が切れました。続行するにはもう一度サインインしてください。
+auth.request.authorizing: 認証中…
+auth.request.copyToken: トークンをコピー
+auth.request.granted: 許可済み
+auth.request.requestedAccess: アクセスをリクエスト
+auth.request.revealNote: このトークンが表示されるのは今回だけです。今すぐ {app} に貼り付けてください。
+auth.request.subtitle: Cider へのアクセスを求めています
+auth.request.toast.copied: トークンをクリップボードにコピーしました
+auth.request.toast.failed: トークンを作成できませんでした
+auth.request.toast.granted: "{app} へのアクセスを許可しました"
+auth.request.toast.title: 認証
+auth.request.tokenCreated: トークンを作成しました
+auth.request.tokenFor: "{app} 用"
+auth.request.trustNote: 信頼できるアプリにのみアクセスを許可してください。このトークンは、設定 › 接続からいつでも取り消せます。
 auth.signedIn: サインインしました
 auth.signInRetry.confirm: 再試行
 auth.signInRetry.message: サインインウィンドウを開けませんでした。もう一度試しますか？
@@ -1038,7 +1064,7 @@ gallery.searchSnippets: スニペットを検索
 gallery.submitPlugin: プラグインを送信する
 gallery.submitSnippet: スニペットを送信
 gallery.submitTheme: テーマを送信する
-general.closeToTray: システムトレイに閉じる
+general.closeToTray: 閉じるとトレイに格納
 general.closeToTray.description:
   value: 閉じるボタンを押したときにCiderウィンドウを最小化します
   source: ai
@@ -2965,7 +2991,7 @@ oobe.amupsell.text: |-
   Cider は Apple Music Voice プランや、一部のプロモーション用試用サブスクリプションでは動作しません。すでに対象の Apple Music サブスクリプションをお持ちの場合は、「次へ」をクリックして続行してください。
 oobe.amupsell.title: 開始する前に
 oobe.appearance.accentHint: アプリ全体のボタン、ハイライト、進行状況に使用されます。選択するとリアルタイムでプレビューされます。
-oobe.appearance.subtitle: カラースキームとアクセントカラーを選択します。これらはいつでも「設定 → ビジュアル」で変更できます。
+oobe.appearance.subtitle: 配色とアクセントカラーを選択してください。設定 › 外観からいつでも変更できます。
 oobe.appearance.title: Ciderをあなた好みに
 oobe.appleNotice: ご注意ください：Apple Musicは Apple Inc. の商標です。Ciderは Apple Music のサードパーティ製クライアントであり、Apple Inc. とは提携していません。
 oobe.audio.advancedFunctionality: ""
@@ -2980,7 +3006,7 @@ oobe.connections.atmosRatingsHint: どのアルバムがDolby Atmosで素晴ら�
 oobe.connections.lastfm.connected: 接続済み
 oobe.connections.lastfm.connectedAs: "{username} として接続済み"
 oobe.connections.lastfm.hint: 再生履歴をスクロブルします。
-oobe.connections.moreHint: Libre.fm、Maloja、ListenBrainz、WebSocketsやRPC APIなどのその他の連携は、「設定 → 接続」にあります。
+oobe.connections.moreHint: Libre.fm、Maloja、ListenBrainz、WebSockets や RPC API などの連携は、設定 › 接続にあります。
 oobe.connections.pairDevice: デバイスをペアリング
 oobe.connections.remoteHint: スマートフォンからCiderをコントロールします。
 oobe.connections.subtitle: Ciderを他のアプリやサービスと連携します。
@@ -3178,10 +3204,22 @@ playlist.refresh.title: プレイリストの更新が必要です
 playlist.suggestions.subtitle: プレビューしてプレイリストに追加
 playlist.suggestions.title: おすすめの曲
 playlist.untitled: 名称未設定
+plugin.install.byAuthor: "作成者: {author}"
+plugin.install.identifier: 識別子
+plugin.install.install: インストール
+plugin.install.installing: インストール中…
+plugin.install.source: 提供元
+plugin.install.subtitle: Cider のプラグインがライブラリに追加されようとしています。
+plugin.install.title: プラグインをインストール
+plugin.install.update: アップデート
+plugin.install.updateSubtitle: Cider のプラグインがインストール済みのバージョンを置き換えようとしています。
+plugin.install.updateTitle: プラグインをアップデート
+plugin.install.warning: プラグインは Cider 内でコードを実行でき、再生、キュー、ライブラリにアクセスできます。信頼できる提供元のプラグインのみインストールしてください。
 podcast.comingSoon.description: Ciderの再生処理に関する大幅な変更に伴い、ポッドキャスト機能の再構築を行っています。今後のアップデートで再び利用可能になる予定です。
 podcast.comingSoon.hide: サイドバーから非表示にする
 podcast.comingSoon.hint: 「設定」の「ビジュアル」＞「サイドバーとナビゲーション」から再度有効にできます。
 podcast.comingSoon.title: ポッドキャスト機能は近日公開予定です
+podcast.comingSoon.tweaksHint: 設定 › 調整 › サイドバーとナビゲーションで再度オンにできます。
 podcast.episodes: エピソード
 podcast.followedOnCider: Cider でフォロー中
 podcast.followOnCider: Cider でフォローする
@@ -3262,8 +3300,13 @@ settings.accessibility.section.display: ディスプレイ
 settings.accessibility.section.display.description: 文字の太さ、インターフェイスの拡大縮小、コントラスト、フォーカス表示の設定。
 settings.accessibility.section.motion: 動作
 settings.accessibility.section.motion.description: ボタン、カード、その他の要素で使用するアニメーションの量を設定します。
-settings.accessibility.section.soundEffects: サウンドエフェクト
+settings.accessibility.section.soundEffects: 効果音
 settings.accessibility.section.soundEffects.description: ボタン、スイッチ、スライダーの操作音と、その音量を設定します。
+settings.accessibility.soundPreview.click: クリック
+settings.accessibility.soundPreview.slider: スライダー
+settings.accessibility.soundPreview.switch: スイッチ
+settings.accounts.appleMusic: Apple Music
+settings.accounts.appleMusic.description: Apple Music を有効にする
 settings.advanced.section.backups: バックアップとリセット
 settings.advanced.section.backups.description: 設定のコピーを保存、Ciderが保存したバックアップから復元、またはすべてをデフォルトに戻します。
 settings.advanced.section.client: このクライアント
@@ -3272,31 +3315,31 @@ settings.airplay.installed.message: AirPlayがインストールされました
 settings.airplay.installed.title: AirPlayインストール完了
 settings.airplay.requiresCiderAudio: CiderAudio を有効にする必要があります
 settings.appleMusic.storefront.warning: ストアフロントを変更すると、再生に問題が発生する可能性があります。ご注意ください。
-settings.artwork.disableFadeIn: フェードイン効果を無効にする
+settings.artwork.disableFadeIn: フェードインeffectを無効にする
 settings.artwork.highlighting: アートワークのハイライト
 settings.artwork.hiresImages: 高解像度画像を使用
 settings.artwork.hiresImages.warning: 読み込み時間が長くなり、パフォーマンスが低下する可能性があります。
 settings.audio.atmos: Dolby Atmos
-settings.audio.atmos.binaural.desc: CiderAudioを介してバイノーラルステレオとしてレンダリングされたAtmos。クロスフェード、オートミックス、シームレス移行は通常通り機能します。
+settings.audio.atmos.binaural.desc: CiderAudio を通じて Atmos をバイノーラルステレオで再生します。クロスフェード、自動ミックス、シームレスな切り替えは従来どおり動作します。
 settings.audio.atmos.description: 現在の出力デバイスのAtmos再生を設定します。
-settings.audio.atmos.normalizationHint: Dolby Atmos のミックスはステレオマスターより音量が小さくなっています。音量を揃えるには、オーディオの正規化をオンにしてください。
+settings.audio.atmos.normalizationHint: Dolby Atmos のミックスはステレオマスターより音量が小さめです。音量のばらつきを抑えるには、オーディオの音量自動調整をオンにしてください。
 settings.audio.atmos.off.desc: Atmosは無効です。すべてのコンテンツは標準のステレオで再生されます。
 settings.audio.atmos.passthrough: パススルー
 settings.audio.atmos.passthrough.desc: すべてのオーディオ処理をバイパスします。マルチチャンネルAtmosがデバイスに直接送信されます。AVレシーバーに最適です。
-settings.audio.atmos.passthrough.descV2: AVレシーバー向けに、マルチチャンネルのAtmosをデバイスへそのまま送信します。Audio Lab、イコライザー、リスニングモードはバイパスされます。
+settings.audio.atmos.passthrough.descV2: AV レシーバー向けに、マルチチャンネルの Atmos をそのままデバイスへ送ります。Audio Lab、イコライザー、リスニングモードはバイパスされます。
 settings.audio.atmos.passthroughActive: パススルーが有効です — 詳細設定で変更してください。
-settings.audio.atmos.standard.desc: CiderAudio処理によるマルチチャンネルAtmos。クロスフェード、オートミックス、シームレス移行は通常通り機能します。
+settings.audio.atmos.standard.desc: CiderAudio の処理を経たマルチチャンネル Atmos です。クロスフェード、自動ミックス、シームレスな切り替えは従来どおり動作します。
 settings.audio.atmosMode: Atmos モード
 settings.audio.atmosMode.switchFromPassthroughConfirm: パススルーモードから切り替えるにはアプリの再読み込みが必要です。続行しますか？
 settings.audio.atmosMode.switchToPassthroughConfirm: パススルーモードに切り替えるにはアプリの再読み込みが必要です。続行しますか？
 settings.audio.automix: オートミックス
-settings.audio.card.advancedVolume: 高度な音量設定
+settings.audio.card.advancedVolume: 詳細ボリューム
 settings.audio.card.badges: バッジ
 settings.audio.card.streaming: ストリーミング
 settings.audio.ciderAudio: Cider Audio
 settings.audio.ciderAudio.description: 豊かで高品質なオーディオ体験を提供する、カスタムチューニングおよび設計されたオーディオスタック。従来のイコライザーよりも推奨されます。
 settings.audio.ciderAudio.enable: Cider Audioを有効にする
-settings.audio.ciderAudio.requiredHint: イコライザーに必要
+settings.audio.ciderAudio.requiredHint: イコライザーに必要です
 settings.audio.crossfade: クロスフェード
 settings.audio.hostCapture.apps: トリガーアプリ
 settings.audio.hostCapture.apps.count: "{{ n }} 個のアプリがキャプチャをトリガーします。"
@@ -3310,7 +3353,7 @@ settings.audio.hostCapture.apps.running: 実行中のアプリ
 settings.audio.hostCapture.apps.runningNow: 実行中
 settings.audio.hostCapture.apps.title: 自動キャプチャトリガーアプリ
 settings.audio.hostCapture.apps.triggers: トリガー
-settings.audio.hostCapture.auto: アプリ起動時に自動有効化
+settings.audio.hostCapture.auto: アプリと連動して自動で有効化
 settings.audio.hostCapture.autoHint: 選択したアプリが実行されている間は自動的にキャプチャをオンにし、閉じるとオフにします。
 settings.audio.hostCapture.autoNote: 選択したアプリの実行中に自動オン。
 settings.audio.hostCapture.bit16: 16ビット
@@ -3326,12 +3369,12 @@ settings.audio.hostCapture.mode: オーディオ出力モード
 settings.audio.hostCapture.modeCapture: キャプチャ
 settings.audio.hostCapture.modeCaptureLong: キャプチャ可能（OBS、Discord）
 settings.audio.hostCapture.modeExclusive: 排他
-settings.audio.hostCapture.modeExclusiveLong: WASAPI 排他
+settings.audio.hostCapture.modeExclusiveLong: WASAPI 排他モード
 settings.audio.hostCapture.modeHintCapture: OBSやDiscordなどのアプリがキャプチャできるように、Ciderプロセスからオーディオを再生します。
 settings.audio.hostCapture.modeHintExclusive: Windowsミキサーをバイパスし、DACに直接ビットパーフェクトで出力します。キャプチャはできません。
 settings.audio.hostCapture.modeHintOff: オフ：オーディオはWebView2プロセスから通常通り再生されます。Atmosパススルーまたはミュージックビデオの再生中は利用できません。
 settings.audio.hostCapture.outputShort: オーディオ出力
-settings.audio.hostCapture.rate: サンプリングレート
+settings.audio.hostCapture.rate: サンプルレート
 settings.audio.hostCapture.rateHint: 「ソースに合わせる」はビットパーフェクトです。その他のレートは高品質にリサンプリングされます。
 settings.audio.hostCapture.rateMatch: ソースに合わせる (44.1 kHz)
 settings.audio.lab: Audio Lab
@@ -3355,9 +3398,9 @@ settings.audio.occlusion.passthroughNote.short: Atmosパススルーの有効時
 settings.audio.outputDevice: オーディオ出力デバイスを選択
 settings.audio.outputDeviceHint: 再生に使用するオーディオ出力デバイスを選択します。
 settings.audio.outputDeviceHintHost: キャプチャ可能オーディオがオンです。再生にはこのWindows出力デバイスが使用されます。
-settings.audio.section.ciderAudio: Cider Audioとインジケータ
+settings.audio.section.ciderAudio: Cider Audio とインジケーター
 settings.audio.section.ciderAudio.description: Cider Audioプロセッシングスタック、およびトラック再生中に表示されるバッジの設定。
-settings.audio.section.currentSignal: 現在のシグナル
+settings.audio.section.currentSignal: 現在の信号
 settings.audio.section.mixing: ミキシング
 settings.audio.section.mixing.description: 曲間のクロスフェードや、曲間のギャップ（無音部分）をなくすかどうかの設定。
 settings.audio.section.output: 出力
@@ -3366,16 +3409,45 @@ settings.audio.section.playback: 再生
 settings.audio.section.playback.description: オーディオ品質、空間オーディオ、リスニングモード、ポッドキャストの再生速度の設定。
 settings.audio.section.volume: 音量
 settings.audio.section.volume.description: 音量の自動調整、スクロールホイールでの音量変化量、スライダーの表示設定。
+settings.audio.signal.atmosCodecs: 利用可能な Atmos コーデック
+settings.audio.signal.atmosNativeMac: ネイティブ (macOS)
+settings.audio.signal.atmosNativeMacTooltip: Dolby Atmos は macOS CoreAudio によりネイティブにデコードされます。空間オーディオのレンダリングはシステムが処理します。
+settings.audio.signal.atmosOffTooltip: このデバイスでは Atmos が無効です。コンテンツは通常のステレオで再生されます。
+settings.audio.signal.atmosOffTooltipMac: このデバイスでは Atmos が無効です。
+settings.audio.signal.atmosSupported: 対応
+settings.audio.signal.binauralSubtitle: ヘッドフォン向けレンダリング
+settings.audio.signal.binauralTooltip: Atmos コンテンツは CiderAudio パイプラインを通じてバイノーラルステレオにレンダリングされます。
+settings.audio.signal.channels: "{count} チャンネル"
+settings.audio.signal.codecs: コーデック
+settings.audio.signal.deviceRateTooltip: 現在のデバイスのサンプルレート
+settings.audio.signal.directOutput: ダイレクト出力
+settings.audio.signal.directOutputChannels: ダイレクト出力 ({count}ch)
+settings.audio.signal.loading: 読み込み中…
+settings.audio.signal.nativeMatch: ネイティブ一致
+settings.audio.signal.noAtmosCodecs: Atmos コーデックなし
+settings.audio.signal.output: 出力
+settings.audio.signal.passthroughMode: パススルーモード
+settings.audio.signal.passthroughSubtitle: オーディオ処理をバイパスし、デバイスへ直接出力
+settings.audio.signal.passthroughTooltip: オーディオはすべての処理をバイパスしてデバイスへ直接送られます。クロスフェード、Automix、シームレス遷移などの CiderAudio 機能は無効です。
+settings.audio.signal.sampleRate: サンプルレート
+settings.audio.signal.source: ソース {rate}
+settings.audio.signal.sourceRateTooltip: Apple Music の再生レート
+settings.audio.signal.standardSubtitle: マルチチャンネル + CiderAudio
+settings.audio.signal.standardTooltip: マルチチャンネルの Atmos コンテンツは CiderAudio で処理され、デバイスの性能に合わせてレンダリングされます。
+settings.audio.signal.stereo: ステレオ
+settings.audio.signal.surround51: 5.1 サラウンド
+settings.audio.signal.surround71: 7.1+ サラウンド
+settings.audio.signal.upsamplingTooltip: システムが Apple Music のソースレートからアップサンプリングしています
 settings.automix.allowTempoKeyShifts: テンポ／キーの変更を許可
 settings.automix.allowTempoKeyShiftsHint: 移行の勢いを保つために、わずかなテンポやキーの変更を許可します。（一時的に無効化されており、再構築中です。）
 settings.automix.description: テンポとキーに基づいて、トラック間をインテリジェントに移行します。
 settings.automix.descriptionV2: 固定のクロスフェードではなく、各トラック独自のフェードとボーカルデータを使用して曲をブレンドします。
-settings.automix.disableFor: 以下でオートミックスを無効化...
+settings.automix.disableFor: 次の場合は Automix を無効にする…
 settings.automix.disableForAlbums: アルバム
 settings.automix.disableForAlbumsHint: アルバムからの再生時にはオートミックスを適用しない。
-settings.automix.disableForAutoplayContinuation: 自動再生の継続
+settings.automix.disableForAutoplayContinuation: 自動再生の続き
 settings.automix.disableForAutoplayContinuationHint: 元のコレクションの再生が終了し、ステーションや自動再生トラックに移行した後は、オートミックスを適用しません。
-settings.automix.disableForDjMixes: DJミックス
+settings.automix.disableForDjMixes: DJ ミックス
 settings.automix.disableForDjMixesHint: DJミックスや連続ミックスにはオートミックスを適用しない。
 settings.automix.disableForLiveAlbums: ライブアルバム
 settings.automix.disableForLiveAlbumsHint: ライブ録音やコンサートにはオートミックスを適用しない。
@@ -3387,11 +3459,11 @@ settings.automix.normalizeDurationHint: 音量マッチングのブレンド時�
 settings.automix.spectralSeparation: スペクトル分離
 settings.automix.spectralSeparationHint: トランジション時に2つのトラックの周波数をどの程度引き離すかを設定します。
 settings.automix.spectralSeparationHintV2: トランジション中に2曲が周波数上でどれだけ離れるか（{value}）。
-settings.automix.speedSettle: 速度復帰時間
+settings.automix.speedSettle: 速度安定時間
 settings.automix.speedSettleHint: テンポを合わせたミックスの後、再生速度が通常に戻るまでの時間（{ms}ミリ秒）
-settings.automix.tempoAlign: ビートマッチング
+settings.automix.tempoAlign: ビートマッチ
 settings.automix.tempoAlignHint: 2つのトラックのテンポがすでに近い場合に、テンポを微調整して同期させます。
-settings.automix.vocalGuard: ボーカル保護
+settings.automix.vocalGuard: ボーカルを保護
 settings.automix.vocalGuardHint: 両方のトラックで同時にボーカルが流れている場合、ミックスを短縮します。
 settings.cache.all: すべて
 settings.cache.artistChips: アーティストチップ
@@ -3401,19 +3473,19 @@ settings.cache.content: コンテンツ
 settings.cache.entries: "エントリー数: {{ count }}"
 settings.cache.homeData: ホームデータ
 settings.cache.library: ライブラリ
-settings.cache.marketplaceListings: マーケットプレイスのリスト
-settings.cache.playlistIndex: プレイリストのインデックス
+settings.cache.marketplaceListings: マーケットプレイスの掲載情報
+settings.cache.playlistIndex: プレイリストインデックス
 settings.cache.prompt.artwork.cleared.message: アートワークのキャッシュが消去されました。今すぐ再読み込みしますか？
-settings.cache.prompt.artwork.cleared.title: アートワークキャッシュの消去完了
-settings.cache.prompt.artwork.title: アートワークキャッシュを消去
+settings.cache.prompt.artwork.cleared.title: アートワークのキャッシュを消去しました
+settings.cache.prompt.artwork.title: アートワークのキャッシュを消去
 settings.cache.prompt.clearAll.cleared.message: キャッシュが消去されました。今すぐ再読み込みしますか？
-settings.cache.prompt.clearAll.cleared.title: キャッシュの消去完了
+settings.cache.prompt.clearAll.cleared.title: キャッシュを消去しました
 settings.cache.prompt.clearAll.title: キャッシュを消去
 settings.cache.prompt.marketplace.cleared.message: キャッシュが消去されました。今すぐ再読み込みしますか？
-settings.cache.prompt.marketplace.cleared.title: マーケットプレイスキャッシュの消去完了
+settings.cache.prompt.marketplace.cleared.title: マーケットプレイスのキャッシュを消去しました
 settings.cache.prompt.playlist.cleared.message: キャッシュが消去されました。今すぐ再読み込みしますか？
-settings.cache.prompt.playlist.cleared.title: プレイリストキャッシュの消去完了
-settings.cache.recentlyModifiedPlaylists: 最近変更されたプレイリスト
+settings.cache.prompt.playlist.cleared.title: プレイリストのキャッシュを消去しました
+settings.cache.recentlyModifiedPlaylists: 最近変更したプレイリスト
 settings.cache.storageUsed: "使用済みのストレージ: {{ usage }}"
 settings.client.genten.enableTrayIcon: トレイアイコンを有効にする
 settings.client.genten.enableTrayIcon.desc: トレイアイコンを有効にするかどうかを切り替えます
@@ -3575,7 +3647,7 @@ settings.connectivity.lastfm.useAlbumArtist.description: トラックのアー�
 settings.connectivity.legacyToken: レガシー（フルアクセス）
 settings.connectivity.legacyToken.tooltip: このトークンはスコープ制限が導入される前のもので、すべての権限が付与されています。スコープを適用するには再発行してください。
 settings.connectivity.noDevices: 接続されているデバイスはありません
-settings.connectivity.requireTokens: APIトークンを要求
+settings.connectivity.requireTokens: APIトークンを必須にする
 settings.connectivity.requireTokens.desc: 有効にすると、すべてのAPIリクエストに有効なトークンが必要になります。
 settings.connectivity.scrobbler: スクロブラー
 settings.connectivity.scrobbler.blacklist: ブラックリスト
@@ -3649,14 +3721,15 @@ settings.connectivity.section.parties.description: 他のCiderユーザーと同
 settings.connectivity.section.vrOverlay.description: SteamVRおよびVDXR上にピン留め可能なパネルとCiderプレイヤーを表示し、RPC経由でこのアプリと通信します。
 settings.connectivity.tokenCopied: トークンをクリップボードにコピーしました
 settings.connectivity.tokens: トークン
+settings.connectivity.tokens.empty: トークンはまだありません。
 settings.contentFilter.description: 「見つける」や「今すぐ聴く」で、タイトルまたはコンテンツがこれらのキーワードに一致するセクションが非表示になります。
 settings.contentFilter.empty: キーワードはまだ追加されていません。
 settings.contentFilter.inputPlaceholder: キーワードを追加...
-settings.contentFilter.title: フィルターキーワード
+settings.contentFilter.title: フィルターするキーワード
 settings.crossfade.advanced: クロスフェードの詳細設定
 settings.crossfade.automixStillBlends: Automixがオンのため、曲同士が重なり合うことがあります。下のAutomixをオフにすると、すべてのブレンドが停止します。
 settings.crossfade.description: 現在の曲をスムーズにフェードアウトしながら、次の曲をフェードインします。
-settings.crossfade.disableFor: クロスフェードを無効にする対象...
+settings.crossfade.disableFor: 次の場合はクロスフェードを無効にする...
 settings.crossfade.duration: 時間
 settings.crossfade.enable: クロスフェードを有効にする
 settings.crossfade.exclusions.albums: アルバム
@@ -3669,15 +3742,15 @@ settings.crossfade.exclusions.liveAlbums: ライブアルバム
 settings.crossfade.exclusions.liveAlbums.description: ライブ録音やコンサート音源ではクロスフェードしない。
 settings.crossfade.exclusions.playlists: プレイリスト
 settings.crossfade.exclusions.playlists.description: プレイリストから再生するときはクロスフェードしない。
-settings.crossfade.loudnessSensitivity: 音量感度
+settings.crossfade.loudnessSensitivity: ラウドネスの感度
 settings.crossfade.loudnessSensitivity.description: 音量の差を調整します ({{ value }}%)
 settings.crossfade.smoothSkip: スムーズスキップ
 settings.crossfade.smoothSkip.description: スキップ時に曲間をフェードします。
-settings.crossfade.tempoSensitivity: テンポ感度
+settings.crossfade.tempoSensitivity: テンポの感度
 settings.crossfade.tempoSensitivity.description: テンポの変化への対応度 ({{ value }}%)
 settings.customCss.createSnippet: スニペットを作成
 settings.customCss.migrate.confirm: 既存のカスタムCSSを新しいスニペットに変換し、現在のカスタムCSSをクリアします。続行しますか？
-settings.customCss.migrate.title: カスタムCSSの変換
+settings.customCss.migrate.title: カスタムCSSを変換
 settings.customCss.title: カスタムCSS
 settings.description.albums: ライブラリのアルバム
 settings.description.artists: ライブラリのアーティスト
@@ -3714,7 +3787,7 @@ settings.extensions.addBuiltInSnippet: 組み込みスニペットを追加
 settings.extensions.browsePluginMarket: プラグインマーケットプレイスを閲覧
 settings.extensions.browseThemeMarket: テーママーケットプレイスを閲覧
 settings.extensions.byAuthor: "作成者: {author}"
-settings.extensions.checkUpdates: 起動時に拡張機能のアップデートを確認する
+settings.extensions.checkUpdates: 起動時に拡張機能の更新を確認
 settings.extensions.checkUpdates.desc: Ciderの起動時に、テーマ、スニペット、プラグインのアップデートを確認します。
 settings.extensions.createPlugin: プラグインを作成
 settings.extensions.createSnippet: 新規スニペットを作成
@@ -3727,7 +3800,7 @@ settings.extensions.maintenance: メンテナンス
 settings.extensions.marketplaceId: "ID: {id}"
 settings.extensions.newThemeDialog.identifier: 識別子
 settings.extensions.newThemeDialog.name: テーマ名
-settings.extensions.newThemeDialog.title: 新規テーマ
+settings.extensions.newThemeDialog.title: 新しいテーマ
 settings.extensions.openAppData: AppDataフォルダーを開く
 settings.extensions.openAppData.desc: Ciderが拡張機能を読み込むフォルダーを表示します。
 settings.extensions.plugins.directory: ディレクトリ
@@ -3745,8 +3818,9 @@ settings.extensions.plugins.uninstallTitle: プラグインをアンインスト
 settings.extensions.refresh: 拡張機能を更新
 settings.extensions.refresh.desc: ディスクからテーマ、スニペット、プラグインを再スキャンします。
 settings.extensions.refreshed: テーマ、スニペット、プラグインを更新しました
+settings.extensions.snippets.author: "作者: {{ author }}"
 settings.extensions.snippets.created: スニペットを作成しました
-settings.extensions.snippets.createTitle: 新規CSSスニペットを作成
+settings.extensions.snippets.createTitle: 新しいCSSスニペットを作成
 settings.extensions.snippets.deleteConfirm: このCSSスニペットを削除してもよろしいですか？この操作は取り消せません。
 settings.extensions.snippets.deleted: スニペットを削除しました
 settings.extensions.snippets.deleteTitle: CSSスニペットを削除
@@ -3754,19 +3828,22 @@ settings.extensions.snippets.empty: CSSスニペットがインストールさ�
 settings.extensions.snippets.exported: スニペットをエクスポートしました
 settings.extensions.snippets.imported: "{{ count }}個のスニペットをインポートしました"
 settings.extensions.snippets.importFailed: "{{ file }} のインポートに失敗しました: {{ error }}"
+settings.extensions.snippets.invalidFile: "無効なファイル形式: {{ file }}"
 settings.extensions.snippets.namePrompt: 新しいCSSスニペットの名前を入力してください。
 settings.extensions.snippets.orderUpdated: 順序を更新しました
 settings.extensions.snippets.saved: スニペットを保存しました
 settings.extensions.themeCreated: 新しいテーマを作成しました
 settings.extensions.themes.activeCount: "{{ count }}件有効"
 settings.extensions.themes.empty: インストールされているテーマはありません。
+settings.extensions.themes.getMore: テーマをさらに入手
+settings.extensions.themes.refreshList: テーマリストを更新
 settings.extensions.themes.stylesheetMany: "{{ count }}件のスタイルシート"
 settings.extensions.themes.stylesheetOne: 1件のスタイルシート
 settings.extensions.viewOnMarketplace: マーケットプレイスで見る
 settings.fonts.description: アプリで使用するフォントを変更します
 settings.fonts.lyrics: 歌詞のフォント
 settings.fonts.lyrics.description: 歌詞に使用されるフォント
-settings.fonts.primary: プライマリフォント
+settings.fonts.primary: メインフォント
 settings.fonts.primary.description: アプリ内のほとんどのテキストに使用されるフォント
 settings.fonts.title: フォント
 settings.gapless.description: 曲間のギャップ（無音部分）をなくし、シームレスに連続再生します。
@@ -3785,6 +3862,7 @@ settings.general.section.language: 言語
 settings.general.section.language.description: インターフェースの言語、および翻訳の報告やクレジットに関する設定。
 settings.general.section.playback: 再生
 settings.general.section.playback.description: 何も再生されていないときに再生ボタンを押したときの動作を設定します。
+settings.general.section.playback.descriptionV2: 何も再生していないときの再生ボタンの動作と、再生速度を変更できる場所です。
 settings.general.section.privacy: プライバシー
 settings.general.section.privacy.description: Ciderがあなたを呼ぶ名前、および位置情報の使用を許可するかどうかを設定します。
 settings.general.section.queue: キュー
@@ -3861,7 +3939,7 @@ settings.intensive.animatedArtworkQuality.description: 高画質にすると、�
 settings.intensive.catalogAnimatedArtwork.description: カタログの閲覧中に、複数のアニメーションアートワークを同時に再生します。
 settings.intensive.characterFlow.description: 歌詞を行単位ではなく、文字単位で個別にアニメーション化します。
 settings.intensive.confirm.enable: 有効にする
-settings.intensive.confirm.message: この機能は負荷が高く、特にスペックの低いハードウェアにおいて、CPU/GPUの使用率、発熱、バッテリー消費を大幅に増加させる可能性があります。負荷の高い機能は、「設定」の上部にある電球ボタンからいつでも確認できます。
+settings.intensive.confirm.message: この機能はパフォーマンスへの負荷が高く、特に低スペックのハードウェアでは、CPU/GPUの使用率、発熱、バッテリー消費が大幅に増える可能性があります。負荷の高い機能は、いつでも設定 › 電力使用量から確認できます。
 settings.intensive.emotionEngine.description: アルバムアートワークを分析してカラーパレットを生成します。
 settings.intensive.fsrUpscale.description: FidelityFX Super Resolutionを使用して、GPU上でアルバムアートワークをアップスケーリングします。
 settings.intensive.immersiveAnimatedArtwork.description: イマーシブ表示内でアニメーションアートワークを再生します。
@@ -3878,8 +3956,8 @@ settings.intensive.viewTransitions.description: 一部の表示を切り替え�
 settings.intensive.warning: 高負荷 — CPU/GPUの使用率が高くなる可能性があります。
 settings.keybindings.recordingHint: 記録中。Escapeでキャンセル
 settings.lyrics.card.providers: プロバイダー
-settings.lyrics.card.songOverrides: 曲のオーバーライド
-settings.lyrics.localeOverrides: ロケールに基づくルール
+settings.lyrics.card.songOverrides: 曲ごとの上書き設定
+settings.lyrics.localeOverrides: ロケールベースのルール
 settings.lyrics.localeOverrides.add: ロケールの上書きを追加
 settings.lyrics.localeOverrides.audioLocale: オーディオのロケール
 settings.lyrics.localeOverrides.desc: 特定の言語の楽曲に対して、カスタムプロバイダや翻訳の優先設定を行います。楽曲のオーディオロケールがルールに一致する場合、これらの設定がデフォルトより優先されます。
@@ -3937,14 +4015,14 @@ settings.lyrics.section.sources: ソース
 settings.lyrics.section.sources.description: 歌詞の取得元、およびデフォルトのプロバイダーより優先される言語別またはトラック別のルールを設定します。
 settings.lyrics.section.translation: 翻訳
 settings.lyrics.section.translation.description: 翻訳された歌詞、表示する言語、および元の歌詞を画面に残すかどうかを設定します。
-settings.lyrics.trackOverrides.clearAll: すべての上書きをクリア
+settings.lyrics.trackOverrides.clearAll: すべての上書きを消去
 settings.lyrics.trackOverrides.desc: ここにリストされている曲は、Appleが提供する情報の代わりに、固定した歌詞プロバイダー、または手動で設定したボーカル状態を常に使用します。これらのオーバーライドは、歌詞メニューや曲の右クリックメニューから設定できます。
 settings.lyrics.trackOverrides.empty: オーバーライドされた項目はまだありません。メニューからロックした項目がここに表示されます。
 settings.lyrics.trackOverrides.lyricsForced: 歌詞を強制表示
 settings.lyrics.trackOverrides.markedInstrumental: インストゥルメンタルとしてマーク済み
 settings.lyrics.trackOverrides.providerLabel: "プロバイダ:"
 settings.lyrics.trackOverrides.remove: 上書きを削除
-settings.lyrics.trackOverrides.title: 曲個別の上書き設定
+settings.lyrics.trackOverrides.title: トラックごとの上書き
 settings.micaish.blurAmount: ぼかしの量
 settings.micaish.brightness: 明るさ %
 settings.micaish.contrast: コントラスト %
@@ -3960,7 +4038,9 @@ settings.miniplayer.unpinWindow: ピン留めを解除
 settings.nav.accessibility: アクセシビリティ
 settings.nav.accounts: アカウント
 settings.nav.advanced: 詳細設定
+settings.nav.appleMusicWordmark: music
 settings.nav.audio: オーディオ
+settings.nav.categories: 設定のカテゴリ
 settings.nav.concerts: コンサート
 settings.nav.config-backups: 設定のバックアップ
 settings.nav.connectivity: 接続
@@ -3969,9 +4049,11 @@ settings.nav.general: 一般
 settings.nav.group.account: アカウント
 settings.nav.group.advanced: 詳細設定
 settings.nav.group.appearance: 外観
+settings.nav.group.connections: 接続
 settings.nav.group.general: 一般
 settings.nav.group.integrations: 連携
 settings.nav.group.library: ライブラリ
+settings.nav.group.lookAndFeel: 外観
 settings.nav.group.playback: 再生
 settings.nav.lyrics: 歌詞
 settings.nav.notifications: 通知
@@ -3980,17 +4062,35 @@ settings.nav.power: 電力使用量
 settings.nav.privacy: プライバシー
 settings.nav.profile: プロフィール
 settings.nav.search: 検索
-settings.nav.searchPlaceholder: 設定を検索...
+settings.nav.searchPlaceholder: 設定を検索
+settings.nav.summary.accessibility: 太字テキスト、インターフェースの拡大率、モーション、サウンドエフェクト
+settings.nav.summary.advanced: バックアップ、トラブルシューティング、実験的機能
+settings.nav.summary.audio: 出力、音質、クロスフェード、ノーマライゼーション
+settings.nav.summary.concerts: 場所、半径、並び替え
+settings.nav.summary.connectivity: Discord、スクロブル、リスニングパーティー、リモート
+settings.nav.summary.extensions: テーマ、CSSスニペット、プラグイン
+settings.nav.summary.general: 起動、キュー、スリープタイマー、キーバインド
+settings.nav.summary.lyrics: ソース、翻訳、表示、タイミング
+settings.nav.summary.notifications: カテゴリ、履歴、システム通知
+settings.nav.summary.power: パフォーマンス、フレームレート、省電力
+settings.nav.summary.profile: Apple Music アカウント
+settings.nav.summary.sid: Sid の表示場所と動作
+settings.nav.summary.smartPlaylists: スマートプレイリストのルールとメンテナンス
+settings.nav.summary.subscriberYear: 1年間のサブスクライバー
+settings.nav.summary.subscriberYears: "{{count}}年間のサブスクライバー"
+settings.nav.summary.tweaks: プレーヤー、サイドバーなどの細かな変更
+settings.nav.summary.visual: 配色、レイアウト、ウィンドウ、没入表示
 settings.nav.themes: テーマ
+settings.nav.tweaks: 調整
 settings.nav.updates: アップデート
-settings.nav.visual: ビジュアル
+settings.nav.visual: 外観
 settings.normalization.louderTargetHint: 音量を100%にしてもCiderの音量が小さく感じられる場合は、より大きなターゲットを選択してください。LUFS値が高くなるほど音量は大きくなりますが、音割れを防ぐためのピーク保護機能により、ブーストが制限される場合があります。
 settings.normalization.presets.apple: Apple
 settings.normalization.presets.balanced: バランス
 settings.normalization.presets.dynamic: ダイナミック
 settings.normalization.presets.loud: ラウド
 settings.normalization.presets.maximum: 最大
-settings.normalization.target: ラウドネスターゲット
+settings.normalization.target: ラウドネスの目標値
 settings.normalization.unit: LUFS
 settings.notifications.alwaysOn: 常にオン
 settings.notifications.alwaysOn.description: これらは確認が必要な問題やアプリのステータスを通知するため、オフにすることはできません。エラーは、どのカテゴリに属しているかに関わらず常に通知されます。
@@ -4004,9 +4104,10 @@ settings.notifications.category.general: 一般
 settings.notifications.category.general.description: 独自のカテゴリを持たないすべての通知。
 settings.notifications.category.listeningTogether:
   value: 一緒に聴く
-  source: human
+  source: ai
   by: "@sh-ayu"
   issue: 91
+  superseded_at: 2026-10-16
 settings.notifications.category.listeningTogether.description: パーティーへの招待、ゲストの参加や退出、およびセッションのステータス。
 settings.notifications.category.lyrics: 歌詞
 settings.notifications.category.lyrics.description: 歌詞の検索、貢献、および音訳。
@@ -4030,6 +4131,7 @@ settings.notifications.section.history: 履歴
 settings.notifications.section.muted: ミュート済みの通知
 settings.notifications.section.system: システム通知
 settings.notifications.summary.categoriesOn: オンのカテゴリ
+settings.notifications.summary.categoriesOnCount: "{{total}} 件中 {{on}} 件が有効"
 settings.notifications.summary.description: Ciderが表示する通知の種類を選択します。オフにした通知も通知リストに記録されるため、後から確認することができます。
 settings.notifications.unmute: ミュート解除
 settings.notifications.unmuteAll: すべてのミュートを解除
@@ -4045,30 +4147,30 @@ settings.notyf.visual.plugin.install.success: プラグインが正常にイン�
 settings.notyf.visual.theme.install.error: テーマのインストールに失敗しました
 settings.notyf.visual.theme.install.success: テーマが正常にインストールされました
 settings.notyf.visual.theme.updateAvailable: "[テーマ] {{ theme }} のアップデートが利用可能です"
-settings.option.accessibility.boldText: 文字を太くする
+settings.option.accessibility.boldText: 太字テキスト
 settings.option.accessibility.boldText.description: アプリ全体のテキストの太さを増して、視認性を向上させます。
-settings.option.accessibility.cardHoverMotion: カードのホバーモーション
+settings.option.accessibility.cardHoverMotion: カードのホバーアニメーション
 settings.option.accessibility.cardHoverMotion.description: クリック可能なカード（アルバムタイル、機能カード、グリッド項目）をホバー時にわずかに拡大し、プレス時に縮小させます。デフォルトはオフです。
-settings.option.accessibility.enableSoundEffects: サウンドエフェクトを有効にする
+settings.option.accessibility.enableSoundEffects: 効果音を有効にする
 settings.option.accessibility.enableSoundEffects.description: ボタン、スイッチ、スライダーを操作するときに、かすかなサウンドを再生します。
 settings.option.accessibility.forceFocusVisible: フォーカスリングを常に表示
 settings.option.accessibility.forceFocusVisible.description: キーボードナビゲーション用に、フォーカスされた要素の輪郭を常に表示します。
-settings.option.accessibility.highContrast: コントラストを上げる
+settings.option.accessibility.highContrast: ハイコントラスト
 settings.option.accessibility.highContrast.description: テキスト、背景、インターフェイス要素の間のコントラストを高めます。
 settings.option.accessibility.motion: 動作
-settings.option.accessibility.motionIntensity: 動作の強度
+settings.option.accessibility.motionIntensity: モーションの強さ
 settings.option.accessibility.motionIntensity.description: ホバーやプレス時にボタンやサーフェスが動く量をコントロールします。「なし」を選択すると動作が完全に無効になり、「プレイフル」を選択すると弾むような動きが追加されます。
 settings.option.accessibility.motionIntensity.none: なし
 settings.option.accessibility.motionIntensity.normal: 標準
 settings.option.accessibility.motionIntensity.playful: プレイフル
 settings.option.accessibility.motionIntensity.reduced: 控えめ
-settings.option.accessibility.playOnHover: ホバー時に再生
+settings.option.accessibility.playOnHover: ホバーで再生
 settings.option.accessibility.playOnHover.description: ポインタがインタラクティブな要素に入ったときに、かすかなクリック音を再生します。
 settings.option.accessibility.soundEffects: サウンドエフェクト
-settings.option.accessibility.soundPreview: サウンドプレビュー
+settings.option.accessibility.soundPreview: サウンドのプレビュー
 settings.option.accessibility.soundPreview.description: 現在の音量でインターフェース音のサンプルを再生します。
 settings.option.accessibility.text: テキスト
-settings.option.accessibility.uiScale: UIの倍率
+settings.option.accessibility.uiScale: UI の拡大率
 settings.option.accessibility.uiScale.description: テキストとインターフェイス要素のサイズを変更します。一部のレイアウト要素は固定サイズを使用しているため、拡大縮小されない場合があります。
 settings.option.accessibility.visibility: 表示
 settings.option.accessibility.volume: 音量
@@ -4084,7 +4186,7 @@ settings.option.advanced.experimentalFeatures.description: 開発中の機能や
 settings.option.advanced.floatingSearch: フローティング検索オーバーレイ
 settings.option.advanced.floatingSearch.blurBackground: 背景をぼかす
 settings.option.advanced.floatingSearch.blurBackground.description: 有効にすると、検索バーにフォーカスがあるときに背景がぼかされます。
-settings.option.advanced.floatingSearch.clearSearchOnClose: 閉じる時に検索をクリア
+settings.option.advanced.floatingSearch.clearSearchOnClose: 閉じるときに検索をクリア
 settings.option.advanced.floatingSearch.clearSearchOnClose.description: 有効にすると、検索バーを閉じたときに検索バーのテキストがクリアされます。
 settings.option.advanced.floatingSearch.description: ページの上に重なって表示される検索パネル。
 settings.option.advanced.floatingSearch.enterShowsResults: Enterキーで結果を表示
@@ -4093,28 +4195,28 @@ settings.option.advanced.home: ホーム
 settings.option.advanced.home.buttonLocation: ホームボタンの位置
 settings.option.advanced.home.buttonLocation.sidebar: サイドバー
 settings.option.advanced.home.buttonLocation.sidebar2023: サイドバー (2023)
-settings.option.advanced.home.buttonLocation.topBar: トップバー
-settings.option.advanced.immersive: イマーシブビュー
+settings.option.advanced.home.buttonLocation.topBar: 上部バー
+settings.option.advanced.immersive: 没入表示
 settings.option.advanced.immersive.artworkHighlight: アートワークのハイライト
-settings.option.advanced.immersive.controlsTimeout: コントロール表示のタイムアウト（秒）
+settings.option.advanced.immersive.controlsTimeout: コントロールの非表示までの時間（秒）
 settings.option.advanced.immersive.description: イマーシブビュー自体。使用するレイアウトは「ビジュアル」で選択します。
-settings.option.advanced.immersive.glowEffectOnActiveLyrics: 再生中の歌詞の発光エフェクト
+settings.option.advanced.immersive.glowEffectOnActiveLyrics: 再生中の歌詞にグロー効果
 settings.option.advanced.lyrics: 歌詞のアニメーション
-settings.option.advanced.lyrics.characterFlow: 文字のフロー
+settings.option.advanced.lyrics.characterFlow: 文字の流れるアニメーション
 settings.option.advanced.lyrics.characterFlow.description: 行全体ではなく、個々の文字が上に向かって流れるようになります。リソースをより多く消費します。
 settings.option.advanced.lyrics.description: 曲の再生中に歌詞の行や文字がどのように動くかを設定します。
 settings.option.advanced.lyrics.lineStaggering: 行の時間差表示
 settings.option.advanced.lyrics.lineStaggering.description: 次の有効な歌詞にフォーカスが移る際、次に続く歌詞がわずかに遅れて表示されます。
-settings.option.advanced.lyrics.lineStaggeringImmersive: 行の時間差表示（イマーシブ）
+settings.option.advanced.lyrics.lineStaggeringImmersive: 行の時間差表示（没入表示）
 settings.option.advanced.lyrics.lineStaggeringImmersive.description: リソースをより多く消費します。
-settings.option.advanced.lyrics.scaleOnAny: すべての単語で拡大縮小エフェクトを許可
+settings.option.advanced.lyrics.scaleOnAny: どの単語にも拡大効果を許可
 settings.option.advanced.lyrics.scaleOnAny.description: 強調された単語だけでなく、すべての単語が拡大縮小されるようになります。
-settings.option.advanced.lyrics.singEngine: イマーシブ Sing エンジン
+settings.option.advanced.lyrics.singEngine: 没入表示のシングエンジン
 settings.option.advanced.lyrics.singEngine.classic: クラシック
 settings.option.advanced.lyrics.singEngine.description: イマーシブ表示用のSingエンジン。「クラシック」は軽量なCSSアニメーションを使用するため、低スペックのシステムに最適です。サイドバーでは常に「クラシック」が使用されます。
 settings.option.advanced.lyrics.singEngine.legacy: レガシー
 settings.option.advanced.lyrics.singEngine.waapi: GPU（Web Animations）
-settings.option.advanced.lyrics.singLyricsEverywhere: すべての場所でSing歌詞を表示
+settings.option.advanced.lyrics.singLyricsEverywhere: どこでも歌詞を歌う
 settings.option.advanced.lyrics.singLyricsEverywhere.description: イマーシブ表示以外でもSing歌詞を有効にします。リソースをより多く消費します。
 settings.option.advanced.mavericksLcd: Mavericks LCD
 settings.option.advanced.mavericksLcd.style: スタイル
@@ -4132,20 +4234,20 @@ settings.option.advanced.playback.allowPlaybackRateChangeEverywhere.description:
 settings.option.advanced.playlistTrackMapping: プレイリストのトラックマッピング
 settings.option.advanced.playlistTrackMapping.description: どのトラックがどのプレイリストに含まれているかを特定するために、プレイリストのディープスキャンを有効にします。プレイリストのキャッシュ構築時間が大幅に増加する可能性があります。
 settings.option.advanced.powerUsage.description: フレームレート制限、レンダラーの選択、および負荷の高いビジュアル機能を設定します。
-settings.option.advanced.progressBar: プログレスバー
+settings.option.advanced.progressBar: 進行バー
 settings.option.advanced.progressBar.useAccentColor: アクセントカラーを使用
 settings.option.advanced.resetCider: Ciderをリセット
 settings.option.advanced.resetCider.description: 環境設定、キャッシュ、およびローカルデータをリセットします。特に選択しない限り、Apple MusicとTaproomはサインインしたままになります。
 settings.option.advanced.resizableMiniplayer: サイズ変更可能なミニプレーヤー
 settings.option.advanced.richAlbumGrid: リッチアルバムグリッド
 settings.option.advanced.richAlbumGrid.alwaysNavigateToPage: 常にページに移動
-settings.option.advanced.richAlbumGrid.disableScrollAnimation: スクロールアニメーションを無効化
-settings.option.advanced.richAlbumGrid.scrollToPosition: 位置までスクロール
+settings.option.advanced.richAlbumGrid.disableScrollAnimation: スクロールアニメーションを無効にする
+settings.option.advanced.richAlbumGrid.scrollToPosition: 位置にスクロール
 settings.option.advanced.richAlbumGrid.scrollToPosition.bottom: 下部
 settings.option.advanced.richAlbumGrid.scrollToPosition.top: 上部
 settings.option.advanced.searchBar: メイン検索バー
 settings.option.advanced.searchBar.description: タイトルバーにある検索フィールド。
-settings.option.advanced.searchBar.noRedirectOnSelect: フォーカス時にランディングページに遷移しない
+settings.option.advanced.searchBar.noRedirectOnSelect: フォーカス時にランディングページを表示しない
 settings.option.advanced.searchBar.noRedirectOnSelect.description: 有効にすると、検索バーを選択したときにランディングページに遷移しなくなります。ランディングページに移動するには、SHIFTキーを押しながら検索バーを選択してください。
 settings.option.advanced.settingsTakeout: 設定のエクスポート / インポート
 settings.option.advanced.settingsTakeout.description: 設定をファイルにバックアップしたり、別のデバイスで復元したりできます。アカウントのログイン情報は含まれません。
@@ -4158,15 +4260,15 @@ settings.option.advanced.simpleArtworkBg.saturate: 彩度（%）
 settings.option.advanced.simpleArtworkBg.saturateV2: 彩度
 settings.option.advanced.simpleArtworkBg.useMask: 下部マスクを使用
 settings.option.advanced.sonoma: Sonoma
-settings.option.advanced.sonoma.lyricArc: アーク歌詞
+settings.option.advanced.sonoma.lyricArc: 歌詞をアーチ表示
 settings.option.advanced.sonoma.lyricArc.description: 再生中の歌詞の行が、かすかな奥行き感を持って画面の中央に向かって湾曲します。
 settings.option.advanced.sonoma.radialMask: 代替マスクを使用
 settings.option.advanced.sonoma.radialMask.description: 有効にすると、Sonomaはアートワークに別の放射状マスクを使用し、ぼかしを抑えてより鮮明に表示します。
 settings.option.advanced.title: 詳細設定
 settings.option.advanced.tweaks: 微調整
 settings.option.advanced.tweaks.description: 他のカテゴリに分類されない微調整設定
-settings.option.advanced.volumeSlider: プレイヤーの音量スライダー
-settings.option.advanced.volumeSlider.iOSStyle: iOSスタイル
+settings.option.advanced.volumeSlider: プレーヤーの音量スライダー
+settings.option.advanced.volumeSlider.iOSStyle: iOS スタイル
 settings.option.advanced.window: ウィンドウの動作
 settings.option.advanced.window.description: ミニプレーヤーのサイズ変更と、アプリ全体で使用されるスクロールバーのスタイル。ウィンドウコントロールとバイブランシーは「ビジュアル」にあります。
 settings.option.advanced.window.scrollbarType: スクロールバーの種類
@@ -4179,7 +4281,7 @@ settings.option.audio.airplay.description: 実験的な AirPlay 2 キャスト�
 settings.option.audio.atmos: Dolby Atmos
 settings.option.audio.atmos.binaural: バイノーラル
 settings.option.audio.atmos.standard: 標準
-settings.option.audio.audioConfiguration: オーディオ設定
+settings.option.audio.audioConfiguration: オーディオ構成
 settings.option.audio.audioLab: Cider Audio Laboratories
 settings.option.audio.audioLab.description: Cider 向けに独自開発されたオーディオエフェクトの詰め合わせ。
 settings.option.audio.audioLab.subheader:
@@ -4187,13 +4289,13 @@ settings.option.audio.audioLab.subheader:
   source: human
   by: "@sh-ayu"
   issue: 91
-settings.option.audio.audioQuality: オーディオの品質
+settings.option.audio.audioQuality: オーディオ品質
 settings.option.audio.automix: オートミックス
 settings.option.audio.changePlaybackRate: 再生速度の変更
 settings.option.audio.ciderAudio: Cider Audio
-settings.option.audio.ciderAudio.showBadges: 「再生中」にバッジを表示
-settings.option.audio.ciderAudio.showInToolbar: ツールバーにCider Audioを表示
-settings.option.audio.ciderAudioSettings: Cider Audio設定
+settings.option.audio.ciderAudio.showBadges: 再生中にバッジを表示
+settings.option.audio.ciderAudio.showInToolbar: ツールバーに Cider Audio を表示
+settings.option.audio.ciderAudioSettings: Cider Audio の設定
 settings.option.audio.crossfade: クロスフェード
 settings.option.audio.dbfs.calibration: 0 dBFS キャリブレーション
 settings.option.audio.dbfs.description: Ciderが0 dBFSとするZ特性の値を入力してください
@@ -4253,25 +4355,25 @@ settings.option.audio.enableAdvancedFunctionality.tunedAudioSpatialization.profi
 settings.option.audio.enableAdvancedFunctionality.tunedAudioSpatialization.profile.standard: スタンダード
 settings.option.audio.exponentialVolume: 指数関数的な音量カーブ
 settings.option.audio.exponentialVolume.description: より緩やかな音量カーブに従うことで、低い音量でのより精密な音量コントロールが可能になります。
-settings.option.audio.hostCapture: キャプチャ可能オーディオ（OBS / Discord）
+settings.option.audio.hostCapture: キャプチャ可能なオーディオ (OBS / Discord)
 settings.option.audio.hostCapture.description: OBSやDiscordなどの配信・キャプチャアプリで再生音をルーティングするには、Windowsホストが必要です。
 settings.option.audio.maxVolume: 最大音量
 settings.option.audio.mixing: ミキシング
-settings.option.audio.normalization: 音量の自動調整
+settings.option.audio.normalization: オーディオのノーマライズ
 settings.option.audio.normalization.description: すべての曲の音量を自動的に調整し、一定の音量に揃えます。音量の小さい曲は安全に音量が上げられ、音量の大きい曲は下げられます。
 settings.option.audio.occlusion: リスニングモード
 settings.option.audio.outputDevice: 出力デバイス
 settings.option.audio.playback: 再生
 settings.option.audio.playbackRate: 再生速度
 settings.option.audio.playbackRate.change: 変更
-settings.option.audio.podcastPlayback: Podcastの再生
-settings.option.audio.podcasts.playbackRate: Apple Podcastsの再生速度
+settings.option.audio.podcastPlayback: ポッドキャストの再生
+settings.option.audio.podcasts.playbackRate: Apple Podcasts の再生速度
 settings.option.audio.podcasts.playbackRate.description: ポッドキャストの再生速度を調整します。
-settings.option.audio.quality: 音質
-settings.option.audio.seamlessAudioTransitions: 曲間なしで再生
+settings.option.audio.quality: オーディオ品質
+settings.option.audio.seamlessAudioTransitions: ギャップレス再生
 settings.option.audio.seamlessTransition: シームレスなオーディオ遷移
-settings.option.audio.seamlessTransitions: シームレスな曲間遷移
-settings.option.audio.showBitrate: 「再生中」にビットレートを表示
+settings.option.audio.seamlessTransitions: シームレストランジション
+settings.option.audio.showBitrate: 再生中にビットレートを表示
 settings.option.audio.streaming: ストリーミング
 settings.option.audio.volume: 音量
 settings.option.audio.volumeScrollStep: 音量スクロールのステップ
@@ -4295,7 +4397,7 @@ settings.option.concerts.sortBy.date: 日付
 settings.option.concerts.sortBy.description: リスト内のコンサートの並べ替え方法
 settings.option.concerts.sortBy.distance: 距離
 settings.option.connect.link_account.description: DiscordアカウントをCider Connectと連携すると、設定やイコライザなどのユーザーデータを保存できます。その他の機能も順次追加予定です。（開発中）
-settings.option.connectivity.atmosRatings: コミュニティの Atmos 評価
+settings.option.connectivity.atmosRatings: コミュニティの Dolby Atmos 評価
 settings.option.connectivity.atmosRatings.description: どのアルバムがDolby Atmosで素晴らしいサウンドを提供しているかを確認し、共有します。
 settings.option.connectivity.ciderConnect.description: 「一緒に聴く」機能、コラボレーションプレイリスト、リモートアプリ操作など！
 settings.option.connectivity.ciderRemote: Cider Remote
@@ -4364,11 +4466,11 @@ settings.option.connectivity.lastfmScrobble.removeFeatured: 曲名からフィ�
 settings.option.connectivity.parties: リスニングパーティー
 settings.option.connectivity.partiesEnabled: リスニングパーティーを有効にする
 settings.option.connectivity.partiesEnabled.description: 他の Cider ユーザーと同期したリスニングセッションをホストしたり、セッションに参加したりできます。
-settings.option.connectivity.partiesQueueDefault: デフォルトのキューモード
+settings.option.connectivity.partiesQueueDefault: 既定のキューモード
 settings.option.connectivity.partiesQueueDefault.audited: ホストが追加を承認
 settings.option.connectivity.partiesQueueDefault.description: 自分がホストするパーティーで、ゲストによる追加に自分の承認が必要かどうかを設定します。
 settings.option.connectivity.partiesQueueDefault.open: オープン
-settings.option.connectivity.partiesTransportDefault: デフォルトの再生コントロール
+settings.option.connectivity.partiesTransportDefault: 既定の再生コントロール
 settings.option.connectivity.partiesTransportDefault.description: 自分がホストするパーティーで、誰が再生、一時停止、シーク、スキップを行えるかを設定します。
 settings.option.connectivity.partiesTransportDefault.everyone: 全員
 settings.option.connectivity.partiesTransportDefault.host: ホストのみ
@@ -4378,7 +4480,7 @@ settings.option.connectivity.remoteConnection: リモート接続
 settings.option.connectivity.remoteConnection.description: スマートフォンやタブレットとのペアリング、および再生を制御するデバイスのペアリング解除を設定します。
 settings.option.connectivity.rpcServer: RPC サーバー
 settings.option.connectivity.rpcServer.description: RPCサーバーを使用して、外部アプリケーションからのCiderへのアクセスを管理します。
-settings.option.connectivity.rpcServer.manageAccess: Ciderへの外部アプリケーションアクセスを管理
+settings.option.connectivity.rpcServer.manageAccess: Cider への外部アプリケーションのアクセスを管理
 settings.option.connectivity.scrobbler: スクロブラー
 settings.option.connectivity.scrobblerIntegration: スクロブラー連携
 settings.option.connectivity.scrobblerIntegration.description: 再生履歴を保存するための、Last.fm、ListenBrainz、Libre.fm、Malojaへのスクロブル。
@@ -4416,7 +4518,7 @@ settings.option.experimental.unknownPlugin: 不明なソース
 settings.option.experimental.unknownPlugin.description: Ciderプラグインリポジトリ以外のリポジトリからのプラグインのインストールを許可します
 settings.option.experiments.chromecast: Chromecastを有効にする
 settings.option.experiments.chromecast.description: このネットワーク上のGoogle Castデバイス用のキャストボタンを追加します。
-settings.option.experiments.chromecastLyrics: Chromecastの歌詞
+settings.option.experiments.chromecastLyrics: Chromecast の歌詞
 settings.option.experiments.chromecastLyrics.description: Chromecastのディスプレイに同期された歌詞を表示します。
 settings.option.experiments.floatingSearch: フローティング検索を有効にする
 settings.option.experiments.forceExplicit: Explicit バージョンのアルバムに自動切り替え
@@ -4431,7 +4533,7 @@ settings.option.general.autoplayByDefault.description: 音楽の再生時に自�
 settings.option.general.autoRemoveDisliked: 低評価の曲をキューから自動削除
 settings.option.general.autoRemoveDisliked.description: 曲が低評価に設定された場合、キューから自動的に削除します。
 settings.option.general.cache: キャッシュ
-settings.option.general.clearCacheDropdown: キャッシュクリアのドロップダウン
+settings.option.general.clearCacheDropdown: キャッシュの消去ドロップダウン
 settings.option.general.contentToCache: キャッシュするコンテンツ
 settings.option.general.customizeSidebar: サイドバー項目のカスタマイズ
 settings.option.general.customizeSidebar.customize: カスタマイズ
@@ -4458,11 +4560,11 @@ settings.option.general.language.unsorted: 未分類
 settings.option.general.noPlayingAction.newMusicMix: 「ニュー・ミュージック・ミックス」を再生
 settings.option.general.noPlayingAction.none: 何もしない
 settings.option.general.noPlayingAction.personalStation: パーソナルステーションを開始
-settings.option.general.noPlayingAction.recent: 最近再生した曲を再生
+settings.option.general.noPlayingAction.recent: 最近の曲を再生
 settings.option.general.noPlayingAction.recentlyAdded: 最近追加した曲を再生
 settings.option.general.noPlayingAction.shuffleLibrary: ライブラリの曲をシャッフル再生
 settings.option.general.onStartup: 起動時
-settings.option.general.onStartup.openStartup: スタートアップページを開く
+settings.option.general.onStartup.openStartup: 起動ページを開く
 settings.option.general.onStartup.resume: 前回のセッションを再開
 settings.option.general.pagination: 1ページあたりの表示件数
 settings.option.general.preventDisplaySleep: 再生中はディスプレイをオンのままにする
@@ -4489,16 +4591,17 @@ settings.option.general.shareAnalytics: 解析を共有
 settings.option.general.shareAnalytics.description: アプリの解析情報や使用状況の詳細を共有して、Ciderの改善にご協力ください。
 settings.option.general.showLovedTracksInline: お気に入りのトラックをインラインで表示
 settings.option.general.sleepTimer: スリープタイマー
-settings.option.general.sleepTimerSettings: スリープタイマー設定
-settings.option.general.startupPage: スタートアップページ
-settings.option.general.startupPage.blank: 空白ページ
+settings.option.general.sleepTimerSettings: スリープタイマーの設定
+settings.option.general.startupPage: 起動ページ
+settings.option.general.startupPage.blank: 空白のページ
 settings.option.general.startupPage.description: Ciderを開いたときに表示するページを選択します。
 settings.option.general.startupPage.descriptionV2: Ciderが新しいタブで開くページ、および「起動時」が「起動ページを開く」に設定されている場合に起動時に開くページです。
-settings.option.general.startupPage.newTab: 新規タブページ
-settings.option.general.startupPage.personalHome: 個人用ホームページ
+settings.option.general.startupPage.descriptionV3: Cider の起動時に開くページです。
+settings.option.general.startupPage.newTab: 新しいタブページ
+settings.option.general.startupPage.personalHome: パーソナルホーム
 settings.option.general.themeUpdateNotification: テーマのアップデートを自動的に確認する
 settings.option.general.translationCredits: 翻訳クレジット
-settings.option.general.translationFeedback: 翻訳のフィードバック
+settings.option.general.translationFeedback: 翻訳へのフィードバック
 settings.option.general.translators: 翻訳者
 settings.option.general.translators.description: Ciderの翻訳に協力してくれたコントリビューターの皆様に感謝いたします。名前をクリックすると、GitHubのプロフィールが開きます。
 settings.option.general.useSmartQueueByDefault: デフォルトでスマートキューを使用する
@@ -4507,18 +4610,18 @@ settings.option.general.useSmartQueueByDefault.needsAutomix: オーディオのA
 settings.option.general.warnBeforeQueueOverride: キューを上書きする前に警告する
 settings.option.hide: 非表示
 settings.option.left: 左
-settings.option.lyrics.contributeCta: 歌詞の提供とアップロード
+settings.option.lyrics.contributeCta: 歌詞を投稿・アップロード
 settings.option.lyrics.contributeCta.description: 同期された歌詞のアップロード、ライブプレビュー、貢献者リーダーボードの表示が行えます。
-settings.option.lyrics.customScrollerProperties: カスタムスクロールのプロパティ
+settings.option.lyrics.customScrollerProperties: カスタムスクロールの設定
 settings.option.lyrics.customScrollerProperties.description: 歌詞のスクロールアニメーションのカスタムスタイルを有効にします。
-settings.option.lyrics.defaultProvider: デフォルトのプロバイダ
+settings.option.lyrics.defaultProvider: 既定のプロバイダ
 settings.option.lyrics.defaultProvider.description: 優先する歌詞プロバイダを選択します。「自動」に設定すると、利用可能な最適なソースが自動的に選択されます。
 settings.option.lyrics.displayOptions: 表示オプション
 settings.option.lyrics.displayOptions.description: 歌詞の表示方法をカスタマイズします
 settings.option.lyrics.enableMusixmatch: Musixmatchの歌詞を有効にする
 settings.option.lyrics.enableMusixmatchKaraoke: カラオケモードを有効にする（Musixmatchのみ）
 settings.option.lyrics.enableQQLyrics: QQの歌詞を有効にする
-settings.option.lyrics.enableSingLyrics: Sing歌詞を有効にする
+settings.option.lyrics.enableSingLyrics: シング歌詞を有効にする
 settings.option.lyrics.enableSingLyrics.description: 利用可能な場合、音楽に合わせて単語ごとにハイライトされる同期歌詞を表示します。
 settings.option.lyrics.enableStaticLyrics: 静的歌詞を有効にする
 settings.option.lyrics.enableStaticLyrics.description: タイミング情報が利用できない場合でも歌詞を表示します。これらの歌詞は自動的にスクロールしません。
@@ -4528,7 +4631,7 @@ settings.option.lyrics.enableYoutubeLyrics: ミュージックビデオのYoutub
 settings.option.lyrics.fpsLimit: 歌詞のフレームレート
 settings.option.lyrics.fpsLimit.description: 歌詞アニメーションの最大フレームレート。フレームレートを高くすると、高リフレッシュレートのディスプレイでより滑らかに表示されますが、CPUとGPUの消費量が増加します。「ディスプレイに合わせる」を選択すると、モニターのリフレッシュレートに同期します。
 settings.option.lyrics.fpsLimit.matchDisplay: ディスプレイに合わせる
-settings.option.lyrics.keepCompleted: 歌い終わった歌詞を表示したままにする
+settings.option.lyrics.keepCompleted: 完了した歌詞を保持
 settings.option.lyrics.keepCompleted.description: 歌い終わった行を現在の行の上に（薄暗くして）表示したままにします。オフにすると、歌い終わった行は非表示になります。
 settings.option.lyrics.localeOverrides: ロケールの上書き
 settings.option.lyrics.localeOverrides.description: 特定のオーディオ言語に対してカスタムプロバイダと翻訳ルールを設定します
@@ -4536,7 +4639,7 @@ settings.option.lyrics.musixmatchPreferredLanguage: Musixmatch翻訳の優先言
 settings.option.lyrics.preferUserLyrics: ユーザー投稿の歌詞を優先
 settings.option.lyrics.preferUserLyrics.description: 利用可能な場合、タイミングの精度が高いユーザー投稿の歌詞を他のソースよりも優先します。
 settings.option.lyrics.provider.apple: Apple Music
-settings.option.lyrics.provider.auto: 自動（最適なソース）
+settings.option.lyrics.provider.auto: 自動（最適なもの）
 settings.option.lyrics.provider.mxm: Musixmatch
 settings.option.lyrics.provider.netease: NetEase
 settings.option.lyrics.provider.user: ユーザー投稿
@@ -4550,10 +4653,10 @@ settings.option.lyrics.showTimestamps: ホバー時にタイムスタンプを�
 settings.option.lyrics.showTimestamps.description: 歌詞の行にカーソルを合わせたときに、その行のタイムスタンプを表示します。
 settings.option.lyrics.thirdPartySources: サードパーティのソースを有効にする
 settings.option.lyrics.thirdPartySources.description: Apple Musicの歌詞が利用できない場合に、MusixmatchやNetEaseから歌詞を取得できるようにします。品質は異なる場合があり、頻繁に使用すると利用制限がかかる可能性があります。
-settings.option.lyrics.timeOffset: 歌詞のタイミングオフセット（秒）
+settings.option.lyrics.timeOffset: 歌詞のタイミングのずれ（秒）
 settings.option.lyrics.timeOffset.description: 歌詞が表示されるタイミングを調整します。正の値にすると歌詞が早く表示され、負の値にすると遅く表示されます。オーディオの同期ズレを補正するのに便利です。
 settings.option.lyrics.timeOffset.descriptionV2: 歌詞の表示タイミングを調整します。正の値では歌詞が遅く、負の値では早く表示されます。音声がずれている環境の補正に役立ちます。
-settings.option.lyrics.timestampStyle: タイムスタンプのスタイル
+settings.option.lyrics.timestampStyle: タイムスタンプの形式
 settings.option.lyrics.timestampStyle.both: 両方
 settings.option.lyrics.timestampStyle.chip: チップ
 settings.option.lyrics.timestampStyle.description: 歌詞にカーソルを合わせたときのタイムスタンプの表示方法を選択します。
@@ -4563,10 +4666,10 @@ settings.option.lyrics.trackOverrides.description: トラックごとの歌詞�
 settings.option.lyrics.translationLanguage: 翻訳言語
 settings.option.lyrics.translationLanguage.description: 歌詞を翻訳する言語。翻訳モードが「手動」に設定されている場合のみ使用されます。
 settings.option.lyrics.translationMode: 翻訳モード
-settings.option.lyrics.translationMode.appLanguage: アプリの言語から自動設定
+settings.option.lyrics.translationMode.appLanguage: アプリの言語から自動
 settings.option.lyrics.translationMode.description: 翻訳先の言語を決定する方法。
 settings.option.lyrics.translationMode.manual: 手動（選択した言語を使用）
-settings.option.lyrics.translationMode.system: システムの言語から自動設定
+settings.option.lyrics.translationMode.system: システムの言語から自動
 settings.option.lyrics.translationSettings: 翻訳設定
 settings.option.lyrics.translationSettings.description: 歌詞の翻訳動作を設定します
 settings.option.medium:
@@ -4589,12 +4692,12 @@ settings.option.off:
   superseded_at: 2026-06-17
 settings.option.on: オン
 settings.option.performance.app: アプリ
-settings.option.performance.backgroundRefreshTime: バックグラウンド更新時間
+settings.option.performance.backgroundRefreshTime: バックグラウンド更新の時間
 settings.option.performance.backgroundRefreshTime.description: バックグラウンド更新の間隔（秒）。値が小さすぎるとパフォーマンスに影響を与える可能性があります。
 settings.option.performance.dataAndUiLoad: データとUIの読み込み
-settings.option.performance.disableLargeRequestOffloading: 大規模リクエストのオフロードを無効化
+settings.option.performance.disableLargeRequestOffloading: 大きなリクエストのオフロードを無効にする
 settings.option.performance.disableLargeRequestOffloading.description: 大規模なリクエストの処理中にUIのパフォーマンスに影響します。
-settings.option.performance.enableMediaItemInspect: MediaItemの開発者インスペクトを有効にする
+settings.option.performance.enableMediaItemInspect: MediaItem の開発者向け検査を有効にする
 settings.option.performance.enableMediaItemInspect.description: パフォーマンスにわずかに影響する場合があります。
 settings.option.performance.gameMode: ゲームモード
 settings.option.performance.gameMode.description: 視覚効果を抑え、Windowsの効率モードを有効にしてCPU使用率を低減します。
@@ -4611,7 +4714,7 @@ settings.option.performance.limitBlurMapFramerateOnBlur: 非フォーカス時�
 settings.option.performance.limitBlurMapFramerateOnBlur.description: ウィンドウが非フォーカス状態のときに、イマーシブなアニメーション背景のフレームレートを下げて消費電力を抑えます。常にフルスピードで動作させるには、この設定をオフにしてください。
 settings.option.performance.limitImmersiveBgFramerateOnBlur: フォーカスが外れている時にイマーシブ背景のフレームレートを制限する
 settings.option.performance.motion: モーション
-settings.option.performance.powerSaverOnBattery: バッテリー駆動時に電力を節約
+settings.option.performance.powerSaverOnBattery: バッテリー駆動時に省電力
 settings.option.performance.powerSaverOnBattery.description: デバイスがバッテリー駆動中の場合、イマーシブ背景のレンダリングは最大30 fpsに、歌詞のアニメーションは最大60 fpsに制限されます。
 settings.option.performance.preloadSidebarPages: サイドバーのページをプリロード
 settings.option.performance.preloadSidebarPages.description: 開く前にサイドバーのページを読み込みます。「ホバー時」は、ポインタがサイドバーの項目上にあるときに開始されます。「アイドル時」は、起動後に「今すぐ聴く」、「見つける」、「ラジオ」も読み込み、以前に開いたライブラリリストを更新します。
@@ -4636,7 +4739,7 @@ settings.option.smartPlaylists.autoRefreshIntervalMinutes: バックグラウン
 settings.option.smartPlaylists.clearLibraryCache: ライブラリの曲キャッシュを消去
 settings.option.smartPlaylists.clearLibraryCache.description: 次回の更新時に、Apple Musicからライブラリを強制的に再取得します。
 settings.option.smartPlaylists.defaultTrackLimit: デフォルトのトラック制限数
-settings.option.smartPlaylists.enabled: プレイリストのルールを有効にする
+settings.option.smartPlaylists.enabled: プレイリストルールを有効にする
 settings.option.smartPlaylists.enabled.description: Ciderが埋め込まれたルールに基づいてプレイリストを自動管理できるようにします。
 settings.option.smartPlaylists.maintenance: メンテナンス
 settings.option.smartPlaylists.perPlaylistMinIntervalMinutes: プレイリストごとの最小間隔（分）
@@ -4656,22 +4759,22 @@ settings.option.sweetener.accentColor.purple: パープル
 settings.option.sweetener.accentColor.systemHint: 独自のカラーを選択するには、システムのアクセントカラーをオフにしてください。
 settings.option.sweetener.accentColor.yellow: イエロー
 settings.option.sweetener.enableSweetener: Sweetenerを有効にする
-settings.option.sweetener.header.uiCustomization: 外観のカスタマイズ
+settings.option.sweetener.header.uiCustomization: UI のカスタマイズ
 settings.option.sweetener.header.uiCustomization.description: アプリ全体で使用されるアクセントカラーとティントカラー。
 settings.option.sweetener.immersiveBackground.brightnessPercentage: 明るさ（%）
 settings.option.sweetener.immersiveBackground.contrastPercentage: コントラスト（%）
-settings.option.sweetener.immersiveBackground.frameRate: フレームレート（ウィンドウフォーカス時）
+settings.option.sweetener.immersiveBackground.frameRate: フレームレート（ウィンドウがフォーカス中）
 settings.option.sweetener.immersiveBackground.frameRate.description: 15-30 FPSを推奨
 settings.option.sweetener.immersiveBackground.header.filters: フィルター
-settings.option.sweetener.immersiveBackground.lightModeWarning: イマーシブ背景は現在ライトモードに対応していません。
+settings.option.sweetener.immersiveBackground.lightModeWarning: イマーシブ背景は現在ライトモードではサポートされていません。
 settings.option.sweetener.immersiveBackground.saturationPercentage: 彩度（%）
-settings.option.sweetener.immersiveBackground.use: イマーシブ背景を使用する
-settings.option.sweetener.immersiveBackgroundType: イマーシブ背景のタイプ
+settings.option.sweetener.immersiveBackground.use: イマーシブ背景を使用
+settings.option.sweetener.immersiveBackgroundType: イマーシブ背景の種類
 settings.option.sweetener.immersiveBackgroundType.immersive: Immersive
 settings.option.sweetener.immersiveBackgroundType.immersiveLite: Immersive Lite
 settings.option.sweetener.useCustomAccentColor: カスタムアクセントカラーを使用する
 settings.option.sweetener.useCustomAccentColor.accentColor: アクセントカラー
-settings.option.sweetener.useCustomTintColor: カスタムティントカラーを使用する
+settings.option.sweetener.useCustomTintColor: カスタムのティントカラーを使用
 settings.option.sweetener.useCustomTintColor.lightModeWarning: ライトモードを使用している場合、0.8未満のティント比率は無視されます。
 settings.option.sweetener.useCustomTintColor.tintColor: ティントカラー
 settings.option.sweetener.useCustomTintColor.tintRatio: ティントカラーの比率
@@ -4681,17 +4784,18 @@ settings.option.v3: V3
 settings.option.v3rp: V3 RP
 settings.option.visual.accentColor: アクセントカラー
 settings.option.visual.adaptiveColorPercent:
-  value: アダプティブカラーの適用率
-  source: human
+  value: アダプティブカラーの割合
+  source: ai
   by: "@sh-ayu"
   issue: 91
+  superseded_at: 2026-10-16
 settings.option.visual.additionalAnimatedArtwork: カタログ内の追加のアニメーションアートワーク
 settings.option.visual.additionalAnimatedArtwork.description: 利用可能な場合、より多くのアニメーションアートワークを表示します。画面上に多く表示されると、パフォーマンスが低下する可能性があります。
-settings.option.visual.animateArtworkOnHover: ホバー時にメディアアイテムのアートワークをアニメーション表示する
+settings.option.visual.animateArtworkOnHover: ホバー時にメディアアイテムのアートワークをアニメーション
 settings.option.visual.animatedArtwork: アニメーションアートワーク
 settings.option.visual.animatedArtwork.description: モーションアートワークを有効にする（フォーカスが外れているときは一時停止）
 settings.option.visual.animatedArtwork.warningDescription: 利用可能な場合にアニメーションアートワークを表示します。低スペックのデバイスではパフォーマンスに影響を与える可能性があります。
-settings.option.visual.animatedArtworkEngine: アニメーションアートワークエンジン
+settings.option.visual.animatedArtworkEngine: アニメーションアートワークのエンジン
 settings.option.visual.animatedArtworkEngine.description: 「ネイティブ」はループクリップを1つダウンロードし、画質を切り替えることなく再生します。再生に問題が発生する場合のみ「レガシー」を使用してください。
 settings.option.visual.animatedArtworkEngine.hls: レガシー (hls.js)
 settings.option.visual.animatedArtworkEngine.native: ネイティブ (推奨)
@@ -4712,41 +4816,41 @@ settings.option.visual.artworkLoadingMethod.lazy: 遅延
 settings.option.visual.chromaticAberrationIntensity: 色収差の強度
 settings.option.visual.chromaticAberrationIntensity.description: LCDガラス上のRGBフリンジの強度。
 settings.option.visual.colorCustomization: カラーのカスタマイズ
-settings.option.visual.colorScheme: 配色設定
+settings.option.visual.colorScheme: カラースキーム
 settings.option.visual.compactArtistHeader: コンパクトなアーティストヘッダー
 settings.option.visual.contentFilterKeywords: コンテンツフィルターのキーワード
 settings.option.visual.contentPreferences: コンテンツ設定
 settings.option.visual.contentPreferences.description: 特定のページのレイアウトを変更します
 settings.option.visual.contextMenuIcons: メニューアイコン
 settings.option.visual.customAccentColor: カスタムアクセントカラー
-settings.option.visual.customScalingFactor: カスタムスケーリング倍率
+settings.option.visual.customScalingFactor: カスタム拡大縮小率
 settings.option.visual.customScalingFactor.description: アプリケーションのUIスケーリングを調整します
 settings.option.visual.enableAnimatedArtworkInMiniPlayer: ミニプレーヤーでアニメーションアートワークを有効にする
-settings.option.visual.extendedEditorialLayout: アルバムページで拡張エディトリアルレイアウトを使用する
+settings.option.visual.extendedEditorialLayout: アルバムページで拡張エディトリアルレイアウトを使用
 settings.option.visual.extendedEditorialLayout.description: 有効にすると、利用可能なアセットに基づいて、一部のアルバムでエディトリアルバナーが表示され、カラーパレットが適用されます。
-settings.option.visual.filterPromotionalContent: プロモーションコンテンツをフィルター
+settings.option.visual.filterPromotionalContent: プロモーションコンテンツを非表示
 settings.option.visual.filterPromotionalContent.description: 有効にすると、「見つける」と「今すぐ聴く」でフィルターキーワードに一致するセクションが非表示になります。
 settings.option.visual.floatingPlayer: フローティングプレーヤー
 settings.option.visual.floatingPlayer.description: プレーヤーバーを端から切り離し、丸みのあるフローティング表示にします
 settings.option.visual.floatingPlayerPadding: フローティングプレーヤーの余白
 settings.option.visual.floatingPlayerPadding.description: フローティングプレーヤーの周囲の余白を調整します
-settings.option.visual.floatingPlayerRoundness: フローティングプレーヤーの角の丸み
+settings.option.visual.floatingPlayerRoundness: フローティングプレーヤーの角丸
 settings.option.visual.floatingPlayerRoundness.description: フローティングプレーヤーの角の半径（0 = ビューポートに合わせる）
 settings.option.visual.fonts: フォント
-settings.option.visual.forceMpWindowControls: マルチプラットフォームのウィンドウコントロールを使用する
-settings.option.visual.forceRoundedViewport: 丸みのあるビューポートを使用
+settings.option.visual.forceMpWindowControls: マルチプラットフォームのウィンドウコントロールを使用
+settings.option.visual.forceRoundedViewport: 角丸のビューポートを使用
 settings.option.visual.forceRoundedViewport.description: すべてのレイアウトでメインビューポートの角を丸くします
 settings.option.visual.hardwareAcceleration: ハードウェアアクセラレーション
 settings.option.visual.hardwareAcceleration.description: 再起動が必要
-settings.option.visual.headerStyle: アルバムとプレイリストのヘッダースタイル
+settings.option.visual.headerStyle: アルバム・プレイリストのヘッダースタイル
 settings.option.visual.headerStyle.appleMusic: Apple Music
 settings.option.visual.headerStyle.appleMusic.description: アクションがページの右上にフローティング表示されます。
 settings.option.visual.headerStyle.classic: クラシック
 settings.option.visual.headerStyle.classic.description: アクションはページヘッダー内にインラインで配置されます。
 settings.option.visual.headerStyle.description: 「クラシック」ではアクションがヘッダー内にインラインで配置されます。「Apple Music」では「共有」「その他」「ライブラリに追加」がページ右上のフローティングバーに移動します。
-settings.option.visual.hideAppleRecommends: 「Appleのおすすめ」カードを非表示にする
+settings.option.visual.hideAppleRecommends: 「Apple のおすすめ」カードを非表示
 settings.option.visual.hideAppleRecommends.description: 「今すぐ聴く」およびホームのレコメンド棚から、プロモーション用の「Appleのおすすめ」カードを削除します。
-settings.option.visual.hideHeroItems: 「見つける」のヒーローアイテムを非表示にする
+settings.option.visual.hideHeroItems: ブラウズのヒーローアイテムを非表示
 settings.option.visual.immersive.adjustVisuals: ビジュアルを調整
 settings.option.visual.immersive.background.artwork: シンプルなアートワーク
 settings.option.visual.immersive.background.blank: ブランク
@@ -4754,13 +4858,13 @@ settings.option.visual.immersive.background.color: シンプルなカラー
 settings.option.visual.immersive.background.customImage: カスタム画像
 settings.option.visual.immersive.background.customImageMix: カスタム画像（ミックス）
 settings.option.visual.immersive.background.default: デフォルト
-settings.option.visual.immersive.backgroundType: 背景のタイプ
+settings.option.visual.immersive.backgroundType: 背景の種類
 settings.option.visual.immersive.contrastRatio: コントラスト比
 settings.option.visual.immersive.coverflowStyle: カバーフロースタイル
 settings.option.visual.immersive.coverflowStyle.default: デフォルト
 settings.option.visual.immersive.description: イマーシブモードのエクスペリエンスをカスタマイズします
 settings.option.visual.immersive.enableHdr: HDRを有効にする
-settings.option.visual.immersive.fsrUpscale: FSRアートワークアップスケーリング
+settings.option.visual.immersive.fsrUpscale: FSR アートワークのアップスケール
 settings.option.visual.immersive.fsrUpscale.applyToAll: "FSR: すべてのトラックに適用"
 settings.option.visual.immersive.fsrUpscale.applyToAll.description: オフの場合、FSRはしきい値の年より前にリリースされたトラックにのみ実行されます。オンにすると、すべてのトラックがアップスケールされます。
 settings.option.visual.immersive.fsrUpscale.description: AMD FidelityFX Super Resolutionを使用してアルバムアートワークをアップスケールします。古いアートワーク（2010年以前）をより鮮明に表示できます。WebGPUが必要です。
@@ -4769,8 +4873,8 @@ settings.option.visual.immersive.fsrUpscale.sharpness.description: コントラ�
 settings.option.visual.immersive.fsrUpscale.thresholdYear: "FSR: しきい値の年"
 settings.option.visual.immersive.fsrUpscale.thresholdYear.description: 「すべてのトラックに適用」がオフの場合、この年より前にリリースされたトラックがアップスケーリングの対象になります。
 settings.option.visual.immersive.hdrBoostScale: HDRブーストスケール
-settings.option.visual.immersive.hideLyricsWhenUnavailable: 歌詞が利用できない場合は非表示にする
-settings.option.visual.immersive.keepCompletedLyrics: 歌い終わった歌詞を表示したままにする
+settings.option.visual.immersive.hideLyricsWhenUnavailable: 歌詞がない場合は非表示
+settings.option.visual.immersive.keepCompletedLyrics: 完了した歌詞を保持
 settings.option.visual.immersive.keepCompletedLyrics.description: 歌詞ビューで、すでに歌い終わった歌詞を表示したままにします。
 settings.option.visual.immersive.layout.default: One（デフォルト）
 settings.option.visual.immersive.layout.minimal:
@@ -4784,13 +4888,13 @@ settings.option.visual.immersive.layout.solarium: Solarium
 settings.option.visual.immersive.layout.sonoma: Sonoma
 settings.option.visual.immersive.layout.spectrumDeck: Spectrum Deck
 settings.option.visual.immersive.maxBrightness: 最大輝度
-settings.option.visual.immersive.maxLyricFontSize: 最大歌詞フォントサイズ (px)
-settings.option.visual.immersive.startFullscreen: フルスクリーンで開始
+settings.option.visual.immersive.maxLyricFontSize: 歌詞の最大フォントサイズ (px)
+settings.option.visual.immersive.startFullscreen: 全画面表示で開始
 settings.option.visual.immersive.startingTab: 開始時のタブ
 settings.option.visual.immersive.startingTab.history: 履歴
 settings.option.visual.immersive.startingTab.lyrics: 歌詞
 settings.option.visual.immersive.startingTab.queue: 次に再生
-settings.option.visual.immersive.ultraHdr: Ultra HDR アートワーク拡張
+settings.option.visual.immersive.ultraHdr: Ultra HDR アートワークのアップスケール
 settings.option.visual.immersive.ultraHdr.description: すべてのトラックのアルバムアートにHDRのハイライト、コントラスト、色味を追加します。HDRディスプレイで最も効果的で、それ以外のディスプレイではより控えめな効果になります。WebGPUが必要です。
 settings.option.visual.immersive.ultraHdr.headroom: "Ultra HDR: ピークヘッドルーム"
 settings.option.visual.immersive.ultraHdr.headroom.description: 標準の白に対する倍率で表した、ハイライトの最大輝度です。ディスプレイでハイライトが明るすぎる場合は、この値を下げてください。
@@ -4801,17 +4905,17 @@ settings.option.visual.immersive.ultraHdr.profile.cinematic: シネマティッ�
 settings.option.visual.immersive.ultraHdr.profile.description: ナチュラルは元の画像に近い仕上がり、ビビッドは鮮やかで色彩豊か、シネマティックは色味を抑えたコントラストの高い仕上がりです。
 settings.option.visual.immersive.ultraHdr.profile.natural: ナチュラル
 settings.option.visual.immersive.ultraHdr.profile.vivid: ビビッド
-settings.option.visual.immersive.useAnimatedArtwork: アニメーションアートワークを使用する
+settings.option.visual.immersive.useAnimatedArtwork: アニメーションアートワークを使用
 settings.option.visual.immersive.useAnimatedArtwork.description: 利用可能な場合にアニメーションアートワークを表示します。低スペックのデバイスではパフォーマンスが低下する可能性があります。
 settings.option.visual.immersive.useAnimatedBackground: イマーシブ・アニメーション背景
-settings.option.visual.immersive.useBackgroundBpm: BPMに基づく背景の速度
+settings.option.visual.immersive.useBackgroundBpm: BPM に基づく背景の速度
 settings.option.visual.immersiveBackground.blank: 空白
 settings.option.visual.immersiveBackground.customImage: カスタム画像
 settings.option.visual.immersiveBackground.customImageMixed: カスタム画像（ミックス）
 settings.option.visual.immersiveBackground.gradientMesh: グラデーションメッシュ
-settings.option.visual.immersiveBackground.simpleArtwork: シンプルアートワーク
-settings.option.visual.immersiveBackground.simpleColor: シンプルカラー
-settings.option.visual.immersiveBgSettings: イマーシブ背景の設定
+settings.option.visual.immersiveBackground.simpleArtwork: シンプルなアートワーク
+settings.option.visual.immersiveBackground.simpleColor: 単色
+settings.option.visual.immersiveBgSettings: 没入型背景の設定
 settings.option.visual.immersiveBgSettings.description: アプリの背景エフェクトとフィルター。
 settings.option.visual.immersiveLayout.classic: One Classic
 settings.option.visual.immersiveLayout.classic.description: 全幅のボトムプレーヤーを備えた、オリジナルのイマーシブレイアウト。
@@ -4831,13 +4935,13 @@ settings.option.visual.immersiveLayout.sonoma: Sonoma
 settings.option.visual.immersiveLayout.sonoma.description: アートワークが背景に溶け込み、コントロールカードがフローティング表示されます。
 settings.option.visual.immersiveLayout.spectrumDeck: Spectrum Deck
 settings.option.visual.immersiveLayout.spectrumDeck.description: フローティングアートワークを備えた、リアルタイムのスペクトラム画面。
-settings.option.visual.immersiveStyle: イマーシブスタイル
-settings.option.visual.immersiveStylePortrait: イマーシブスタイル（縦向き）
-settings.option.visual.largeHeaderTitles: 大きなヘッダータイトル
+settings.option.visual.immersiveStyle: 没入型スタイル
+settings.option.visual.immersiveStylePortrait: 没入型スタイル（縦向き）
+settings.option.visual.largeHeaderTitles: 大きいヘッダータイトル
 settings.option.visual.largeHeaderTitles.description: アルバムやプレイリストのページでタイトルテキストを大きく表示し、より強調します。
 settings.option.visual.layoutProfile: レイアウトプロファイルの種類
 settings.option.visual.layoutProfile.description: アプリのレイアウトをお好みに合わせて調整します
-settings.option.visual.layoutType: レイアウトタイプ
+settings.option.visual.layoutType: レイアウトの種類
 settings.option.visual.layoutType.calico: Calico
 settings.option.visual.layoutType.calico.description: コンテンツエリア内にプレーヤーを配置した、フルハイトのサイドバー。
 settings.option.visual.layoutType.mavericks: Mavericks
@@ -4846,17 +4950,17 @@ settings.option.visual.layoutType.mojave: Mojave
 settings.option.visual.layoutType.mojave.description: ボトムプレーヤーバーを備えた、全幅のツールバー。
 settings.option.visual.layoutType.montara: Montara
 settings.option.visual.layoutType.montara.description: コンテンツエリア内の上部にプレーヤーを配置した、フルハイトのサイドバー。
-settings.option.visual.lcdChromaticAberration: LCD色収差
+settings.option.visual.lcdChromaticAberration: LCD の色収差
 settings.option.visual.lcdChromaticAberration.description: 再生中LCDの背景をリキッドガラスシェーダーに通して屈折させ、RGBフリンジを適用します。
 settings.option.visual.liquidGlassPlayer: リキッドガラス・プレイヤーバー
 settings.option.visual.liquidGlassPlayer.description: 再生中プレイヤーバーにリキッドガラスの質感を使用します。オフにすると、フラットでソリッドなパネルになります（描画負荷も軽くなります）。
-settings.option.visual.liquidGlassScrollPerf: スクロール時のグラス効果を軽量化
+settings.option.visual.liquidGlassScrollPerf: スクロール中は軽量なガラス効果
 settings.option.visual.liquidGlassScrollPerf.description: スクロール中はリキッドグラスの屈折をシンプルなぼかしに簡略化し、停止時に滑らかに元に戻します。静止時の表示品質を維持しながら、負荷の高いシステムでのスクロールの引っかかりを軽減します。ゲームモードでは常に有効になります。
 settings.option.visual.liquidGlassScrollPerf.descriptionV2: スクロール中はリキッドガラスの屈折を単純なぼかしに変更し、停止すると元に戻します。負荷の高いシステムでのスクロールのカクつきを減らします。静止時の見た目は変わりません。
 settings.option.visual.mainMenuPosition: メインメニューの位置
 settings.option.visual.matchPageToArtwork: アートワークに合わせてページの色を変更
 settings.option.visual.matchPageToArtwork.description: ライトモードとダークモードの両方で、アルバムとプレイリストのページをアートワークの色で彩ります。
-settings.option.visual.mergeAppleMusicPlaylists: Apple Musicプレイリストを統合
+settings.option.visual.mergeAppleMusicPlaylists: Apple Music のプレイリストを統合
 settings.option.visual.mergeAppleMusicPlaylists.description: Apple Musicがキュレートしたプレイリストを、別のグループとして表示する代わりに、メインの「プレイリスト」セクションに統合します。
 settings.option.visual.miniplayerSkin: ミニプレーヤーのレイアウト
 settings.option.visual.miniplayerSkin.aluminum: アルミニウム
@@ -4873,22 +4977,22 @@ settings.option.visual.mojavePlayerType.comfy: Comfy
 settings.option.visual.mojavePlayerType.comfy.description: 左側にアートワークとメタデータを配置した、縦幅の広いプレーヤー。
 settings.option.visual.mojavePlayerType.compact: コンパクト
 settings.option.visual.mojavePlayerType.compact.description: 中央にLCDを配置し、上部に進行状況バーを備えたスリムなプレーヤー。
-settings.option.visual.mojavePlayerType.compactInline: コンパクト（インライン）
+settings.option.visual.mojavePlayerType.compactInline: コンパクト インライン
 settings.option.visual.mojavePlayerType.compactInline.description: LCD内に進行状況を表示する、スリムな1行のプレーヤー。
-settings.option.visual.moveUpLinks: 「見つける」の「その他」リンクを上部に移動する
+settings.option.visual.moveUpLinks: ブラウズの「その他のおすすめ」リンクを上部に移動
 settings.option.visual.musicVideoPinMaxResolution: ミュージックビデオを常に最大解像度で再生
 settings.option.visual.musicVideoPinMaxResolution.description: 低い画質から段階的に上げるのではなく、常にビデオの最高画質を維持します。小さなウィンドウや従量制接続では、データ通信量が大幅に増加する場合があります。
 settings.option.visual.musicVideoPrefetchOnHover: ホバー時にミュージックビデオを準備
 settings.option.visual.musicVideoPrefetchOnHover.description: ポインターがバッジの上にある間にビデオの読み込みを開始し、クリック時により素早く再生できるようにします。
-settings.option.visual.musicVideoPrefetchSegmentsOnHover: ホバー時に最初のセグメントをダウンロード
+settings.option.visual.musicVideoPrefetchSegmentsOnHover: ホバー時に最初のチャンクをダウンロード
 settings.option.visual.musicVideoPrefetchSegmentsOnHover.description: クリックする前にビデオの最初の数秒をプリロードします。ビデオを開かなかった場合も含め、ホバーするたびに数メガバイトのデータ通信量が発生します。
-settings.option.visual.paletteContrast: アートワークのカラーコントラスト
+settings.option.visual.paletteContrast: アートワークの色のコントラスト
 settings.option.visual.paletteContrast.description: ボタンや再生インジケーターの視認性を保つために、アルバムやプレイリストのカラーをページの背景色からどの程度離すかを調整します。アクセシビリティの「高コントラスト」設定では、常に「最大」が使用されます。
 settings.option.visual.paletteContrast.enhanced: 拡張
 settings.option.visual.paletteContrast.maximum: 最大
 settings.option.visual.paletteContrast.standard: 標準
-settings.option.visual.pauseAnimatedOnBlur: フォーカスが外れたときにアニメーションアートワークを一時停止する
-settings.option.visual.playerMaterial: プレイヤーのマテリアル
+settings.option.visual.pauseAnimatedOnBlur: フォーカスが外れたらアニメーションアートワークを一時停止
+settings.option.visual.playerMaterial: プレーヤーの素材
 settings.option.visual.playerMaterial.blur: ブラー
 settings.option.visual.playerMaterial.blur.description: 再生中プレイヤーバーに、Liquid Glassの屈折効果のない半透明のすりガラス風マテリアルを使用します。
 settings.option.visual.playerMaterial.default.description: プラットフォームのデフォルトに従います（macOSではLiquid Glass、その他ではブラー）。
@@ -4898,34 +5002,34 @@ settings.option.visual.playerMaterial.liquidGlass.description: 再生中プレ�
 settings.option.visual.playerMaterial.none: なし
 settings.option.visual.playerMaterial.none.description: 再生中プレイヤーバーに不透明なパネルを使用します。
 settings.option.visual.playerPosition: プレイヤーの位置
-settings.option.visual.playerType: プレイヤーの種類
+settings.option.visual.playerType: プレーヤーの種類
 settings.option.visual.plugin.github.download: GitHubのURLからインストール
 settings.option.visual.plugin.github.explore: GitHubプラグインを探す
 settings.option.visual.plugin.github.install.confirm: "{{repo}} をインストールしてもよろしいですか？"
-settings.option.visual.popularityThreshold: 人気度のしきい値
+settings.option.visual.popularityThreshold: 人気のしきい値
 settings.option.visual.popularityThreshold.description: トラックの横にインジケーターを表示するために必要な最小の人気度。
-settings.option.visual.precisionScrollSpeed: 高精度スクロール速度
+settings.option.visual.precisionScrollSpeed: 精密スクロール速度
 settings.option.visual.precisionScrollSpeed.description: New (glass) ウィンドウエンジンにおけるタッチパッドのスクロールを微調整します。値を小さくするとスクロールが遅くなり、微調整が容易になります。値を大きくするとスクロールが速くなります。
 settings.option.visual.purplePodcastPlaybackBar: ポッドキャストの再生バーを紫色にする
-settings.option.visual.realtimeVisualizer: リアルタイム・オーディオビジュアライザー
+settings.option.visual.realtimeVisualizer: リアルタイムオーディオビジュアライザー
 settings.option.visual.realtimeVisualizer.description: 再生中のトラックで、アニメーションバーの代わりにリアルタイム・オーディオビジュアライザーを表示します。
-settings.option.visual.searchType: 検索タイプ
+settings.option.visual.searchType: 検索の種類
 settings.option.visual.searchType.floating: フローティング
 settings.option.visual.searchType.inline: インライン
-settings.option.visual.showBpmAndKey: プレイリストとアルバムのトラックにBPMとキーを表示する
+settings.option.visual.showBpmAndKey: プレイリストとアルバムのトラックに BPM とキーを表示
 settings.option.visual.showBpmAndKey.description: 有効にすると、コンテンツの読み込みに時間がかかるようになります。
 settings.option.visual.showPersonalInfo: 個人情報を表示
-settings.option.visual.showPlaylistArtworkInSidebar: サイドバーにプレイリストのアートワークを表示する
+settings.option.visual.showPlaylistArtworkInSidebar: サイドバーにプレイリストのアートワークを表示
 settings.option.visual.showPodcastsInSidebar: サイドバーにポッドキャストを表示
 settings.option.visual.showPodcastsInSidebar.description: ポッドキャスト機能は現在再構築中のため、ライブラリ項目には現在プレースホルダーのみが表示されます。
 settings.option.visual.showQuickActions: クイックアクションを表示
-settings.option.visual.showWatchMusicVideoWhenAvailable: 利用可能な場合に「ミュージックビデオを視聴」を表示する
-settings.option.visual.sidebarStyle: サイドバースタイル
+settings.option.visual.showWatchMusicVideoWhenAvailable: 利用可能な場合は「ミュージックビデオを見る」を表示
+settings.option.visual.sidebarStyle: サイドバーのスタイル
 settings.option.visual.sidebarStyle.apple: Apple Music
 settings.option.visual.sidebarStyle.default: デフォルト
 settings.option.visual.sidebarStyle.description: サイドバーのレイアウトを選択します。「Apple Music」では、ピン留めが「ライブラリ」セクション内にネストされ、Apple Musicのセクションヘッダーが非表示になります。
 settings.option.visual.simpleArtworkBg.saturate: 彩度
-settings.option.visual.sizeProfile: UI サイズ
+settings.option.visual.sizeProfile: UIサイズのプロファイル
 settings.option.visual.sizeProfile.description.default: デフォルトのサイズ。あらゆる入力デバイス向け。iOS / Android / モダンWindowsスタイル。
 settings.option.visual.sizeProfile.description.desktop: デスクトップ向けのサイズ。マウスとキーボードでの操作向け。macOS / クラシックWindowsスタイル。
 settings.option.visual.sizeProfile.desktop: デスクトップ
@@ -4949,7 +5053,7 @@ settings.option.visual.transparency: 透明度を有効にする
 settings.option.visual.transparent: 透明なフレーム
 settings.option.visual.transparent.description: テーマのサポートが必要、再起動が必要
 settings.option.visual.uiscale: UIスケール
-settings.option.visual.useAdaptiveColors: アダプティブカラーを使用する
+settings.option.visual.useAdaptiveColors: 適応カラーを使用
 settings.option.visual.useAdaptiveColors.description: 現在の曲に合わせてアクセントカラーを変更する
 settings.option.visual.useAdaptiveColors.popup:
   value: アダプティブカラーは次のトラックから適用されます。
@@ -4967,11 +5071,11 @@ settings.option.visual.verticalDrawerMode.side.description: 常に右側のサ�
 settings.option.visual.vibrancyMode.acrylic: アクリル
 settings.option.visual.vibrancyMode.mica: マイカ
 settings.option.visual.vibrancyMode.tabbed: タブ
-settings.option.visual.vibrancySettings: バイブランシーの設定
+settings.option.visual.vibrancySettings: ビブランシーの設定
 settings.option.visual.windowBackgroundStyle: ウィンドウの背景スタイル
 settings.option.visual.windowColor: ウィンドウのティントカラー
 settings.option.visual.windowControlPosition: ウィンドウコントロールの位置
-settings.option.visual.windowingMode: スクロールとレンダリングモード
+settings.option.visual.windowingMode: スクロールとレンダリングのモード
 settings.option.visual.windowingMode.auto: 自動（タッチパッド対応）
 settings.option.visual.windowingMode.description: アプリがコンテンツをレンダリングおよびスクロールする方法を選択します。ほとんどのユーザーには「自動」が推奨されますが、特定のタッチパッドデバイスでは「旧」の方が応答性が高くなる場合があります。
 settings.option.visual.windowingMode.fallbackNotice.body: 代わりにCiderは旧モードを使用しています。
@@ -4979,7 +5083,7 @@ settings.option.visual.windowingMode.fallbackNotice.title: 新しいレンダリ
 settings.option.visual.windowingMode.glass: 新
 settings.option.visual.windowingMode.performance: 旧
 settings.option.visual.windowStyle: ウィンドウスタイル
-settings.option.visual.windowVibrancy: ウィンドウのバイブランシー
+settings.option.visual.windowVibrancy: ウィンドウのビブランシー
 settings.option.window.close_button_hide: 閉じるボタンでアプリケーションを非表示にする
 settings.option.window.maxElementScale: 要素の最大スケール
 settings.option.window.openOnStartup: スタートアップ時にCiderを開く
@@ -5010,6 +5114,17 @@ settings.power.savers: 省電力機能
 settings.power.summary.count: "影響大: {{high}}、影響中: {{medium}} がオン"
 settings.power.summary.high: 影響大
 settings.power.summary.medium: 影響中
+settings.privacy.appPreferences: アプリの環境設定
+settings.privacy.appPreferences.description: アプリの環境設定を共有して、Ciderの設定の好みをお知らせください。
+settings.privacy.appUsage: Cider固有の利用状況
+settings.privacy.appUsage.description: Cider固有の機能に関する匿名の利用データを送信します。個人情報やApple Musicのデータは含まれません。
+settings.privacy.audioLabs: Cider Audio Labs
+settings.privacy.audioLabs.description: Cider Audio Labsの設定に関する情報を送信します。
+settings.privacy.deviceSpecs: デバイスの仕様
+settings.privacy.deviceSpecs.description: 現在のハードウェア（CPU、GPU、RAM、オーディオデバイス）とオペレーティングシステムに関する情報を送信します。情報は基本的なもので、シリアル番号やデバイスIDは含まれません。
+settings.privacy.replay: Cider Replayのために再生履歴を提供
+settings.privacy.replay.description: 再生履歴を匿名で送信し、Ciderの年末のコミュニティReplayプロジェクトに貢献します。公開統計はcider.sh/replayで確認できます。
+settings.privacy.statement: Cider Collectiveは、プライバシーを非常に重視しています。個人を特定できる情報は収集せず、データを第三者に販売することもありません。共有いただいたデータはアプリの改善にのみ使用され、他者と共有されることはありません。保存される可能性のある個人情報は、共有前にすべて削除されます。
 settings.profile.crop.hint: ドラッグで移動、スクロールでズーム
 settings.profile.crop.title: 写真の位置を調整
 settings.profile.defaultName: Apple Musicユーザー
@@ -5017,17 +5132,18 @@ settings.profile.field.displayName: 表示名
 settings.profile.field.displayName.description: サイドバーおよびCider全体に表示されます。
 settings.profile.field.handle.description: 共有に使用されるあなたの@ユーザー名。
 settings.profile.field.photo: プロフィール写真
+settings.profile.field.photo.change: プロフィール写真を変更
 settings.profile.field.photo.description: 現在、カスタム写真が設定されています。
 settings.profile.header.identity: プロフィールを編集
 settings.profile.header.region: 地域と言語
-settings.profile.header.visibility: サイドバー表示
+settings.profile.header.visibility: サイドバーの表示
 settings.profile.language.description: 選択したストアフロントのカタログメタデータの言語。
 settings.profile.option.showHandle: ソーシャルハンドルを表示
-settings.profile.option.showMainMenu: サイドバーのプロフィールエリアにメインメニューを表示
+settings.profile.option.showMainMenu: サイドバーのプロフィール領域にメインメニューを表示
 settings.profile.option.showName: プロフィール名を表示
 settings.profile.option.showProfile: サイドバーにプロフィールを表示
 settings.profile.policy.allowed: 許可
-settings.profile.policy.label: 不適切なコンテンツ
+settings.profile.policy.label: 露骨な表現のコンテンツ
 settings.profile.policy.restricted: 制限
 settings.profile.signOut.confirmMessage: サインイン画面に戻り、ローカルライブラリのキャッシュが消去されます。続行しますか？
 settings.profile.signOut.confirmTitle: Apple Musicからサインアウトしますか？
@@ -5065,6 +5181,7 @@ settings.resetCider.confirm.ok: Ciderをリセット
 settings.resetCider.confirm.title: Ciderをリセットしますか？
 settings.resetCider.confirm.warning: この操作は取り消せません。リセット後、Ciderは再起動します。
 settings.resetCider.confirm.willReset: リセット対象
+settings.resetCider.deselectAll: すべての選択を解除
 settings.resetCider.error: リセット中にエラーが発生しました。
 settings.resetCider.group.accounts: アカウント
 settings.resetCider.group.core: リセット
@@ -5074,6 +5191,10 @@ settings.resetCider.resetButton: Ciderをリセット
 settings.resetCider.resetting: リセット中…
 settings.resetCider.selectAll: すべて選択
 settings.resetCider.title: Ciderのリセット
+settings.search.empty: その検索に一致する設定はありません。
+settings.search.pages: ページ
+settings.search.resultCount: "{{count}}件の設定が一致"
+settings.search.resultCountOne: 1件の設定が一致
 settings.sleepTimer.endsIn: "残り時間: {{remainingTime}} ({{endTime}})"
 settings.sleepTimer.notSet: タイマーは設定されていません
 settings.sleepTimer.title: スリープタイマーを設定
@@ -5083,7 +5204,7 @@ settings.smartPlaylists.section.maintenance.description: すべてのルール�
 settings.smartPlaylists.section.rules: ルール
 settings.smartPlaylists.section.rules.description: Ciderが埋め込まれたプレイリストルールを適用するかどうか、およびその再評価の頻度を設定します。
 settings.smartPlaylists.section.rules.descriptionV2: Ciderが埋め込みのプレイリストルールを適用するかどうか。ルールは、電源の使用量にあるバックグラウンド更新時間に合わせて再実行されます。
-settings.sweetener.useSystemAccentColor: システムのアクセントカラーを使用する
+settings.sweetener.useSystemAccentColor: システムのアクセントカラーを使用
 settings.takeout.chooseFile: ファイルを選択…
 settings.takeout.error.badVersion: そのファイルにはバージョン情報が含まれていません。
 settings.takeout.error.generic: ファイルを読み込めませんでした。
@@ -5122,7 +5243,7 @@ settings.troubleshooting.impressionReporting.warning2: これは、Ciderがす�
 settings.troubleshooting.logFile: ログファイル
 settings.troubleshooting.logFile.actions: ログファイルのアクション
 settings.troubleshooting.logFile.desc: ログファイルの表示、コピー、または消去
-settings.troubleshooting.mkliteDebug: MKLiteデバッグログ
+settings.troubleshooting.mkliteDebug: MKLiteのデバッグログ
 settings.troubleshooting.mkliteDebug.desc: MKLiteからの詳細なコンソール出力 — PlayActivityペイロード（JSPLAY）、トラックの変更、および再生状態。Appleに送信する内容とmusic.apple.comを比較する際に便利です。通常の使用時はオフにしてください。
 settings.troubleshooting.mkLoadingMethod: MusicKitの読み込み方法
 settings.troubleshooting.mkLoadingMethod.warning1: MusicKitの読み込みに使用する方法を変更します。これは、MusicKitのアップデートによる潜在的な読み込み問題に対処するために使用されます。
@@ -5130,9 +5251,68 @@ settings.troubleshooting.mkLoadingMethod.warning2: この設定は、内容を�
 settings.troubleshooting.mkLoadingMethod.warning3: このオプションは、一般的な接続や再生の問題に対処するためのものではありません。
 settings.troubleshooting.rebootMk: MusicKitを再起動
 settings.troubleshooting.rebootMk.desc: 再生の問題を解決するためにMusicKitを再起動します
-settings.troubleshooting.testSignIn: Apple Music サインインをテスト
+settings.troubleshooting.testSignIn: Apple Musicのサインインをテスト
 settings.troubleshooting.testSignIn.desc: Apple Musicのサインインポップアップを表示してログインが機能するか確認し、APIでトークンを検証します。情報は保存されず、現在のセッションに影響はありません。
 settings.troubleshooting.title: トラブルシューティング
+settings.tweaks.animateArtworkOnHover.description: ポインタをアートワークに合わせると、アニメーションアートワークを再生します。
+settings.tweaks.artworkFadeIn.description: 読み込み中にフェードインせず、アートワークをすぐに表示します。
+settings.tweaks.artworkHighlighting.description: グリッドとリストのアートワークに、柔らかい影とハイライトを追加します。
+settings.tweaks.artworkLoadingMethod.description: アートワークはスクロールして表示領域に入ると読み込まれます（遅延読み込み）。即時読み込みはすぐに読み込みます。
+settings.tweaks.card.musicVideos: ミュージックビデオ
+settings.tweaks.ciderAudioBadges.description: プレーヤーの曲名の横にCider Audioのバッジを表示します。
+settings.tweaks.ciderAudioToolbar.description: ツールバーにCider Audioボタンを表示します。
+settings.tweaks.compactSidebarSize: コンパクトなサイドバーのサイズ
+settings.tweaks.contextMenuIcons.description: アイコンを表示するメニュー項目を選択します。
+settings.tweaks.floatingSearchBlur: フローティング検索の背景をぼかす
+settings.tweaks.floatingSearchClear: 閉じるときにフローティング検索をクリア
+settings.tweaks.forceMpWindowControls.description: システムのボタンではなく、Cider独自のウィンドウボタンを使用します。
+settings.tweaks.hideHeroItems.description: ブラウズ上部の大きなおすすめバナーを非表示にします。
+settings.tweaks.homeButtonLocation.description: ホームボタンの位置です。
+settings.tweaks.immersiveArtworkHighlight: イマーシブアートワークのハイライト
+settings.tweaks.immersiveArtworkHighlight.description: イマーシブ表示のアートワークにハイライトを追加します。
+settings.tweaks.immersiveBackgroundBpm.description: 曲のテンポに合わせて背景をアニメーションさせます。
+settings.tweaks.immersiveControlsTimeout: 没入モードのコントロール非表示までの時間
+settings.tweaks.immersiveControlsTimeout.description: コントロールが非表示になるまでの秒数です。
+settings.tweaks.immersiveHideLyrics.description: 歌詞のない曲では歌詞パネルを非表示にします。
+settings.tweaks.immersiveLyricGlow: 再生中の歌詞を光らせる
+settings.tweaks.immersiveLyricGlow.description: 歌われている行に光彩を追加します。
+settings.tweaks.immersiveMaxLyricSize.description: 没入モードで歌詞を拡大できる最大サイズです。
+settings.tweaks.mainMenuPosition.description: メインメニューボタンの位置です。
+settings.tweaks.mavericksLcdStyle: Mavericks LCD スタイル
+settings.tweaks.mavericksLcdStyle.description: Mavericks レイアウトで再生中の表示がどのように見えるかを設定します。
+settings.tweaks.miniPlayerAnimatedArtwork.description: ミニプレーヤーウインドウでアニメーションアートワークを再生します。
+settings.tweaks.moveUpLinks.description: ブラウズの先頭に、その他のコンテンツへのリンクを表示します。
+settings.tweaks.musicVideoBadge.description: 曲にミュージックビデオがある場合、プレーヤーにボタンを表示します。
+settings.tweaks.pauseAnimatedOnBlur.description: Cider がアクティブでないウインドウのとき、アニメーションアートワークを一時停止します。
+settings.tweaks.progressAccent: アクセントカラーの進行バー
+settings.tweaks.progressAccent.description: 曲の進行バーをアクセントカラーで塗りつぶします。
+settings.tweaks.resizableMiniPlayer.description: ミニプレーヤーウインドウのサイズを変更できるようにします。
+settings.tweaks.richGridNoScrollAnimation: リッチアルバムグリッドで即時スクロール
+settings.tweaks.richGridNoScrollAnimation.description: スクロールのアニメーションなしでアルバムに移動します。
+settings.tweaks.richGridOpenPage: リッチアルバムグリッドからアルバムをページとして開く
+settings.tweaks.richGridOpenPage.description: グリッド内で展開する代わりにアルバムページに移動します。
+settings.tweaks.richGridScrollPosition: リッチアルバムグリッドのスクロール位置
+settings.tweaks.richGridScrollPosition.description: アルバムを開いたときにグリッドがスクロールする位置です。
+settings.tweaks.scrollbarType.description: Cider 独自のスクロールバーかシステムのスクロールバーを使用します。
+settings.tweaks.searchStyle: 検索スタイル
+settings.tweaks.searchStyle.description: タイトルバーに検索を表示するか、ページ上のパネルに表示するかを選択します。
+settings.tweaks.section.artwork: アートワーク
+settings.tweaks.section.browse: ブラウズ
+settings.tweaks.section.immersive: 没入モード
+settings.tweaks.section.lyrics: 歌詞
+settings.tweaks.section.pagesGrids: ページとグリッド
+settings.tweaks.section.playerBar: プレーヤーバー
+settings.tweaks.section.search: 検索
+settings.tweaks.section.sidebarNavigation: サイドバーとナビゲーション
+settings.tweaks.section.windowToolbar: ウインドウとツールバー
+settings.tweaks.showBitrate.description: プレーヤーの曲名の横にストリームのビットレートを表示します。
+settings.tweaks.sidebarPlaylistArtwork.description: 各プレイリストのアートワークを名前の横に表示します。
+settings.tweaks.simpleArtworkMask.description: 背景アートワークの下部をフェードさせます。
+settings.tweaks.sonomaLyricArc: Sonoma で歌詞を弧状に表示
+settings.tweaks.sonomaRadialMask: Sonoma の代替マスク
+settings.tweaks.volumeIosStyle: iOS スタイルの音量スライダー
+settings.tweaks.volumeIosStyle.description: iPhone で使われているスタイルで音量スライダーを描画します。
+settings.tweaks.windowControlPosition.description: ウインドウボタンを配置する側です。
 settings.updates.action.check: アップデートを確認
 settings.updates.action.install: アップデートをインストール
 settings.updates.action.restart: Ciderを再起動
@@ -5143,7 +5323,7 @@ settings.updates.build: ビルド
 settings.updates.channel: チャンネル
 settings.updates.codename: コードネーム
 settings.updates.currentlyRunning: 現在実行中
-settings.updates.firstInstalled: 初回インストール日
+settings.updates.firstInstalled: 初回インストール
 settings.updates.platform: プラットフォーム
 settings.updates.progress.failed: アップデートに失敗しました
 settings.updates.progress.failed.sub: アップデート中に問題が発生しました。
@@ -5161,42 +5341,47 @@ settings.updates.progress.success: アップデートがインストールされ
 settings.updates.progress.success.sub: 変更を適用するにはCiderを再起動してください。
 settings.updates.progress.working: アップデートをインストール中
 settings.updates.progress.working.sub: しばらくお待ちください。まもなく完了します。
-settings.updates.section.about: バージョン情報
-settings.updates.section.alsoAvailable: こちらも利用可能
+settings.updates.section.about: 現在のバージョンについて
+settings.updates.section.alsoAvailable: その他の利用可能な項目
 settings.updates.section.history: アップデート履歴
-settings.updates.section.whatsNew: Ciderの新機能
-settings.updates.status.available: アップデートが利用可能です
+settings.updates.section.whatsNew: Cider {version} の新機能
+settings.updates.status.available: アップデートがあります
 settings.updates.status.checking: アップデートを確認中...
-settings.updates.status.failed: アップデート失敗
+settings.updates.status.failed: アップデートに失敗しました
 settings.updates.status.idle: Ciderは最新の状態です
-settings.updates.status.success: 再起動が必要
+settings.updates.status.success: 再起動が必要です
 settings.updates.status.working: インストール中...
 settings.visual.card.appBackground: アプリの背景
+settings.visual.card.behavior: 動作
 settings.visual.card.behaviorLyrics: 動作と歌詞
 settings.visual.card.browse: 見つける
 settings.visual.card.contentFilter: コンテンツフィルター
 settings.visual.card.experimental: 実験的
 settings.visual.card.fsrUpscaling: FSR アップスケーリング
 settings.visual.card.moreAnimatedArtwork: その他のアニメーションアートワーク
-settings.visual.card.playerEffects: プレーヤーのエフェクト
+settings.visual.card.playerEffects: プレーヤーエフェクト
 settings.visual.card.sidebarNavigation: サイドバーとナビゲーション
 settings.visual.card.trackMetadata: トラックのメタデータ
-settings.visual.card.ultraHdr: Ultra HDR 拡張
-settings.visual.editorialLayout: エディトリアルレイアウトを使用する
+settings.visual.card.ultraHdr: Ultra HDR アップスケール
+settings.visual.editorialLayout: エディトリアルレイアウトを使用
 settings.visual.editorialLayout.desc: 一部のアルバムでエディトリアルバナーを表示し、カラーパレットを適用します
 settings.visual.editorialPreferenceOrder: エディトリアルの優先順位
 settings.visual.section.appearance: 外観
 settings.visual.section.appearance.description: カラースキーム、アクセントカラー、およびアプリの背景。
 settings.visual.section.artwork: アートワークとモーション
 settings.visual.section.artwork.description: アニメーションアートワークとモーションの設定。
-settings.visual.section.content: ブラウズとコンテンツ
+settings.visual.section.content: 閲覧とコンテンツ
 settings.visual.section.content.description: ページレイアウト、ブラウズ設定、およびコンテンツフィルター。
 settings.visual.section.customCss.description: Cider のスタイルの上に独自の CSS を適用します。
 settings.visual.section.layout: レイアウト
 settings.visual.section.layout.description: アプリのレイアウト、プレーヤーのスタイル、サイドバー、およびナビゲーション。
+settings.visual.section.pages: ページ
+settings.visual.section.pages.description: アルバムとプレイリストのページのレイアウトです。
+settings.visual.section.themeColors: テーマとカラー
 settings.visual.section.window: ウィンドウ
 settings.visual.section.window.description: ウィンドウフレーム、バイブランシー、コントロール、およびスケーリング。
-settings.visual.vibrancy.acrylicDarkness: アクリル暗度値
+settings.visual.section.window.descriptionV2: ウィンドウの枠、ビビッド効果、レンダリング、スケーリング。
+settings.visual.vibrancy.acrylicDarkness: アクリルの暗さ
 settings.visual.vibrancy.mode.acrylic: アクリル
 settings.visual.vibrancy.mode.mica: マイカ
 settings.visual.vibrancy.mode.none: なし
@@ -5814,7 +5999,7 @@ term.upNext:
   issue: 91
 term.username: ユーザー名
 term.userPresets: ユーザープリセット
-term.userSubmitted: ユーザー提供
+term.userSubmitted: ユーザー投稿
 term.userToken: ユーザートークン
 term.variables: 変数
 term.version: バージョン
