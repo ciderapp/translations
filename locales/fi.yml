@@ -50,7 +50,7 @@ action.autoplay.disable: Poista automaattinen toisto käytöstä
 action.autoplay.enable: Ota automaattinen toisto käyttöön
 action.back: Takaisin
 action.cancel: Peruuta
-action.cancelTimer: Peruuta ajastin
+action.cancelTimer: Peru ajastin
 action.cast.airplay: AirPlay
 action.cast.airplay.underdevelopment: AirPlay on vielä kehitysvaiheessa
 action.cast.chromecast: Chromecast
@@ -61,13 +61,14 @@ action.cast.todevices: Toista laitteissa
 action.change: Vaihda
 action.clear: Tyhjennä
 action.close: Sulje
+action.configure: Määritä
 action.connect: Yhdistä
 action.connect.createCollabPlaylist: Luo uusi yhteinen soittolista
 action.connect.listenTogether: Kuuntele yhdessä
 action.connect.signIn: Kirjaudu sisään tunnuksella {account}
 action.connectRemoteApp: Yhdistä Remote-sovellus
 action.copy: Kopioi
-action.copyToken: Kopioi token
+action.copyToken: Kopioi tunnus
 action.create: Luo
 action.createNew: Luo uusi
 action.createNewPlaylist: Luo uusi soittolista
@@ -79,6 +80,7 @@ action.deleteFolder: Haluatko varmasti poistaa kansion ”{{folderName}}”?
 action.deleteFolder.message: Myös kaikki tämän kansion sisällä olevat kansiot ja soittolistat poistetaan.
 action.deletePlaylist: Haluatko varmasti poistaa soittolistan ”{{playlistName}}”?
 action.deletepreset: Poista esiasetus
+action.deny: Estä
 action.disablePlugins: Disable plugins for this session
 action.disconnect: Katkaise yhteys
 action.dislike: Tykkää vähemmän
@@ -434,6 +436,8 @@ assistant.sid.chat.suggestQueuePlaylist: Tee soittolista jonostani
 assistant.sid.chat.suggestTidyQueue: Siisti jonoani
 assistant.sid.chat.tooBig: Se on liian suuri luettavaksi kerralla. Kokeile lyhyempää pyyntöä.
 assistant.sid.chat.workingQueue: Työstetään jonoasi
+assistant.sid.engine.apple: Apple Intelligence
+assistant.sid.engine.gemma: Gemma
 assistant.sid.entry.edit: Muokkaa Sidin kanssa
 assistant.sid.entry.editDetail: Kuvaile muutos ja tarkista se ensin
 assistant.sid.entry.start: Aloita Sidin kanssa
@@ -449,9 +453,12 @@ assistant.sid.failure.modelMissing: Gemman tiedostot puuttuvat. Lataa ne uudelle
 assistant.sid.failure.network: Lataus keskeytyi. Tarkista yhteys ja yritä uudelleen.
 assistant.sid.failure.notReady: Gemma ei ole vielä valmis.
 assistant.sid.failure.outOfMemory: Sid pysäytti Gemman, jotta tietokoneesi pysyy toimintakykyisenä. Se tarvitsi enemmän näytönohjainmuistia kuin pystyi antamaan.
+assistant.sid.failure.stoppedUnexpectedly: Sid pysähtyi odottamatta. Yritä uudelleen.
 assistant.sid.failure.storageFull: Latauksen loppuun saattamiseen ei ole tarpeeksi vapaata tilaa.
 assistant.sid.failure.timeout: Gemma vastasi liian hitaasti. Yritä uudelleen.
+assistant.sid.failure.tookTooLong: Sidillä kesti liian kauan vastata. Yritä uudelleen.
 assistant.sid.failure.tryAgain: Yritä uudelleen
+assistant.sid.failure.unready: Sid ei ole vielä valmis.
 assistant.sid.failure.watchLost: Sid pysähtyi, koska se menetti näytönohjainmuistin seurannan. Yritä uudelleen.
 assistant.sid.gate.description: Kokeile Sidiä ennen kuin se on valmis. Osa toiminnoista ei vielä toimi.
 assistant.sid.gate.name: Sid, soittolistojen apuri
@@ -610,12 +617,20 @@ assistant.sid.settings.checkGood: Gemman tiedostot ovat kunnossa
 assistant.sid.settings.downloadAgain: Lataa uudelleen
 assistant.sid.settings.downloadedSize: Ladattu · {size}
 assistant.sid.settings.duringSet: Setin aikana
+assistant.sid.settings.engine: Missä Sid ajattelee
+assistant.sid.settings.engineDetail: Käytä Gemmaa tai Macissasi olevaa Apple Intelligenceä
 assistant.sid.settings.found: Sidin sinulle löytämät kappaleet
 assistant.sid.settings.fresh: Aloita alusta
 assistant.sid.settings.freshDetail: Rakenna kokonainen soittolista tunnelmasta, hetkestä tai muutamasta artistista
 assistant.sid.settings.gemmaHere: Gemma täällä
 assistant.sid.settings.gpu: Näytönohjain
 assistant.sid.settings.group: Avustaja
+assistant.sid.settings.helloEdit: Avaa soittolista ja valitse Muokkaa Sidillä, niin siivoan sen.
+assistant.sid.settings.helloFresh: Kerro tunnelma tai muutama artisti, niin rakennan koko soittolistan.
+assistant.sid.settings.helloRequest: Pyydä kappaletta setin aikana, niin löydän sen Apple Musicista.
+assistant.sid.settings.helloSet: Setin aikana valitsen seuraavan kappaleen sävellajin ja tempon perusteella.
+assistant.sid.settings.helloSort: Pyydä minua lajittelemaan soittolista rauhallisesta eloisaan tai niin, että sävellajit sujuvat yhteen.
+assistant.sid.settings.helloTrim: Voin lyhentää soittolistan tuntiin tai pitää sen yhdessä tempossa.
 assistant.sid.settings.inEdit: Kun muokkaat soittolistaa
 assistant.sid.settings.inEditDetail: Muokkaa Sidin kanssa soittolistan otsikossa
 assistant.sid.settings.inImmersive: Immersiivisessä näkymässä
@@ -630,6 +645,7 @@ assistant.sid.settings.machine: Tämä tietokone
 assistant.sid.settings.modelOptions: "{model}-asetukset"
 assistant.sid.settings.modelRow: "{style} · {name}"
 assistant.sid.settings.nav: Sid
+assistant.sid.settings.needsEngine: "Vaatii: {engine}"
 assistant.sid.settings.needsGemma: Vaatii Gemman
 assistant.sid.settings.nods: Nyökkää rytmin mukaan
 assistant.sid.settings.nodsDetail: Sid nyökkää mukana jokaisella kappaleen iskulla
@@ -642,6 +658,12 @@ assistant.sid.settings.partlySize: Osittain ladattu · {size}
 assistant.sid.settings.position: Sijainti
 assistant.sid.settings.positionDetail: Missä kohdassa Sid istuu kansikuvassa
 assistant.sid.settings.privacyChat: "Kirjoittamasi pysyy tällä tietokoneella: Sid ajattelee Gemmalla täällä. Musiikkia etsiessään Sid lähettää hakusanat Apple Musicille, ja kun pyydät, se lukee soittolistasi, viimeisimmät toistosi ja Apple Music Replay -tilisi Apple Music -tililtäsi. Mikään ei muutu ennen kuin painat Käytä."
+assistant.sid.settings.privacyEngine: "Kirjoittamasi pysyy tässä tietokoneessa: Sid ajattelee {engine}-mallilla täällä. Musiikkia etsiessään Sid lähettää hakusanat Apple Musicille, ja kun pyydät, se lukee soittolistasi, viimeaikaiset kuuntelusi ja Apple Music Replayn Apple Music -tililtäsi. Mikään ei muutu ennen kuin painat Käytä."
+assistant.sid.settings.quipGaming: Sinun {gpu} ja minä tulemme varmasti toimeen.
+assistant.sid.settings.quipIntegrated: Integroitu grafiikka. Pidän asiat kevyinä ja mukavina.
+assistant.sid.settings.quipOther: Hyvä {gpu}. Käytän sen hyvin.
+assistant.sid.settings.quipSetsOnly: Sinun {gpu} ja minä pysytään toistaiseksi setin ajamisessa.
+assistant.sid.settings.quipTop: "{gpu}? Tuskin hikoilen."
 assistant.sid.settings.reads: Lukee koko soittolistan {seconds} s (vaatii alle {floor} s)
 assistant.sid.settings.regular: Normaali
 assistant.sid.settings.remove: Poista
@@ -672,8 +694,10 @@ assistant.sid.settings.tidyDetail: Poista toistot, rajaa pituus tai pidä tempo 
 assistant.sid.settings.together: Yhteensä tähän asti
 assistant.sid.settings.top: Ylhäällä
 assistant.sid.settings.unavailableNote: Sidin kanssa muokkaaminen ja soittolistojen luominen vaatii Gemman tietokoneella, joka pystyy sen ajamaan. Sidin setti toimii silti täällä.
+assistant.sid.settings.unavailableNoteEngine: Sidillä muokkaaminen ja soittolistojen tekeminen vaatii {engine}-mallin koneella, joka pystyy sen ajamaan. Sidin setti toimii tässä silti.
 assistant.sid.settings.unknownGpu: Tuntematon näytönohjain
 assistant.sid.settings.where: Mistä Sid löytyy
+assistant.sid.settings.withoutEngine: Ilman {engine}-mallia Sid valitsee kappaleet tempon, sävellajin ja energian perusteella ja etsii Apple Musicista pyyntösi juuri niin kuin kirjoitat ne.
 assistant.sid.settings.withoutGemma: Ilman Gemmaa Sid valitsee kappaleet tempon, sävellajin ja energian perusteella ja hakee pyyntösi Apple Musicista juuri niin kuin kirjoitat ne.
 assistant.sid.settings.writes: Kirjoittaa {rate} tokenia sekunnissa (vaatii {floor})
 assistant.sid.setView.confirmMany: Sid tyhjentää tämän jälkeen jonotetut {count} kappaletta ja valitsee, mikä soi seuraavaksi.
@@ -704,6 +728,10 @@ assistant.sid.source.artist: artistin suosituimmat kappaleet
 assistant.sid.source.catalog: Apple Music
 assistant.sid.source.library: kirjastosi
 assistant.sid.source.playlist: soittolistalta
+assistant.sid.unavailable.appleFailed: Sid ei saanut yhteyttä Apple Intelligenceen.
+assistant.sid.unavailable.appleNotEnabled: Ota Apple Intelligence käyttöön Järjestelmäasetuksissa, jotta voit käyttää sitä Sidin kanssa.
+assistant.sid.unavailable.appleNotReady: Apple Intelligence valmistautuu yhä. Yritä hetken päästä uudelleen.
+assistant.sid.unavailable.appleUnsupported: Apple Intelligence ei ole käytettävissä tässä tietokoneessa.
 assistant.sid.unavailable.belowFloor: Gemma toimi tällä tietokoneella liian hitaasti, jotta Sid voisi käyttää sitä.
 assistant.sid.unavailable.counterMismatch: Sid poisti Gemman käytöstä, koska turvatarkistus epäonnistui. Se yrittää uudelleen Cider- tai näytönohjainpäivityksen jälkeen.
 assistant.sid.unavailable.gpuLimits: Tässä näytönohjaimessa ei ole Gemmalle tarvittavaa tilaa.
@@ -738,6 +766,19 @@ auth.error.unavailable: Tämä Apple ID ei voi käyttää Apple Musicia Cideriss
 auth.error.windowFailed: Kirjautumisikkunan avaaminen epäonnistui
 auth.mutExpired.confirm: Kirjaudu sisään
 auth.mutExpired.message: Apple Music -istuntosi on vanhentunut. Kirjaudu uudelleen sisään jatkaaksesi.
+auth.request.authorizing: Valtuutetaan…
+auth.request.copyToken: Kopioi tunnus
+auth.request.granted: Myönnetty
+auth.request.requestedAccess: Pyydetty käyttöoikeus
+auth.request.revealNote: Tämä tunnus näytetään vain kerran. Liitä se sovellukseen {app} nyt.
+auth.request.subtitle: haluaa käyttöoikeuden Cideriin
+auth.request.toast.copied: Tunnus kopioitu leikepöydälle
+auth.request.toast.failed: Tunnusta ei voitu luoda
+auth.request.toast.granted: Käyttöoikeus myönnetty sovellukselle {app}
+auth.request.toast.title: Valtuutus
+auth.request.tokenCreated: Tunnus luotu
+auth.request.tokenFor: sovellukselle {app}
+auth.request.trustNote: Myönnä käyttöoikeus vain sovelluksille, joihin luotat. Voit peruuttaa tunnuksen milloin tahansa kohdassa Asetukset › Yhteydet.
 auth.signedIn: Kirjauduttu sisään
 auth.signInRetry.confirm: Yritä uudelleen
 auth.signInRetry.message: Kirjautumisikkunaa ei voitu avata. Yritä uudelleen?
@@ -2850,7 +2891,10 @@ oobe.amupsell.text: |-
   Cider ei toimi Apple Music Voice -tilauksella tai joillakin kampanjakokeilujaksoilla. Jos sinulla on jo soveltuva Apple Music -tilaus, jatka napsauttamalla Seuraava.
 oobe.amupsell.title: Ennen kuin aloitamme
 oobe.appearance.accentHint: Käytetään painikkeissa, korostuksissa ja edistymispalkeissa sovelluksessa. Kokeile jotakin, näet esikatselun heti.
-oobe.appearance.subtitle: Valitse väriteema ja korostusväri. Voit muuttaa näitä milloin tahansa kohdassa Asetukset → Ulkoasu.
+oobe.appearance.changeLater: Voit muuttaa näitä milloin tahansa kohdassa {path}.
+oobe.appearance.colorScheme: Väriteema
+oobe.appearance.subtitle: Valitse väriteema ja korostusväri. Voit muuttaa näitä milloin tahansa kohdassa Asetukset › Ulkoasu.
+oobe.appearance.subtitleV2: Valitse väriteema ja korostusväri.
 oobe.appearance.title: Tee Ciderista omasi
 oobe.appleNotice: "Huomautus: Apple Music on Apple Inc:n tavaramerkki. Cider on Apple Musicin kolmannen osapuolen asiakasohjelma, eikä sillä ole yhteyttä Apple Inc:iin."
 oobe.audio.advancedFunctionality: ""
@@ -2865,14 +2909,15 @@ oobe.connections.atmosRatingsHint: Katso ja jaa, mitkä albumit kuulostavat upei
 oobe.connections.lastfm.connected: Yhdistetty
 oobe.connections.lastfm.connectedAs: Yhdistetty käyttäjänä {username}
 oobe.connections.lastfm.hint: Scrobblaa kuunteluhistoriasi.
-oobe.connections.moreHint: Muut integraatiot, kuten Libre.fm, Maloja, ListenBrainz sekä WebSockets- ja RPC-rajapinnat, löytyvät kohdasta Asetukset → Yhteydet.
-oobe.connections.pairDevice: Muodosta laitepari
+oobe.connections.moreHint: Lisää yhteyksiä, kuten Libre.fm, Maloja, ListenBrainz sekä WebSockets- ja RPC-rajapinnat, löytyy kohdasta Asetukset › Yhteydet.
+oobe.connections.pairDevice: Yhdistä laite
 oobe.connections.remoteHint: Ohjaa Cideria puhelimellasi.
 oobe.connections.subtitle: Yhdistä Cider muihin sovelluksiisi ja palveluihisi.
 oobe.connections.title: Pysy yhteydessä
 oobe.done: Valmis
 oobe.features.discordHint: Näytä Discordissa, mitä kuuntelet.
 oobe.features.normalizationHint: Toista jokainen kappale tasaisella äänenvoimakkuudella.
+oobe.features.quality: Laatu ja parannukset
 oobe.features.subtitle: Laatu, siirtymät ja parannukset. Kaikkea voi muuttaa myöhemmin Asetuksissa.
 oobe.features.title: Määritä ääniasetukset
 oobe.features.transitions: Kappaleiden siirtymät
@@ -2896,7 +2941,7 @@ oobe.login.skip: Ohita toistaiseksi
 oobe.login.skipTooltip: Voit käyttää sovellusta vain esikatselutilassa
 oobe.login.subtitle: Kirjaudu sisään Apple Music -tililläsi aloittaaksesi musiikin kuuntelun
 oobe.login.terms: Jatkamalla hyväksyt käyttöehdot ja tietosuojakäytännön
-oobe.login.title: Vielä viimeinen vaihe
+oobe.login.title: Viimeinen vaihe
 oobe.login.userToken: Kirjaudu sisään käyttäjätunnisteella
 oobe.music.mute: Mykistä asennuksen musiikki
 oobe.music.unmute: Poista asennuksen musiikin mykistys
@@ -2916,6 +2961,14 @@ oobe.player.title: Valitse soitin
 oobe.previous: Edellinen
 oobe.progress: "Vaihe {current} / {total}: {title}"
 oobe.progress.label: Asennuksen edistyminen
+oobe.scene.content: Sisältö
+oobe.scene.grid: Kirjasto
+oobe.scene.inset: Minisoitin
+oobe.scene.lcd: Nyt soi
+oobe.scene.player: Soitin
+oobe.scene.queue: Seuraavaksi
+oobe.scene.sidebar: Sivupalkki
+oobe.scene.toolbar: Työkalupalkki
 oobe.step.appearance: Ulkoasu
 oobe.step.connections: Yhteydet
 oobe.step.features: Ääni
@@ -2935,9 +2988,18 @@ oobe.visual.layout.text: |-
 oobe.visual.subtitle: ""
 oobe.visual.text: ""
 oobe.visual.title: Ulkoasu
+oobe.welcome.allLanguagesSubtitle: Cider tukee {count} kieltä.
+oobe.welcome.allLanguagesTitle: Valitse kieli
 oobe.welcome.getStarted: Aloita
 oobe.welcome.importSettings: Tuo asetukset…
+oobe.welcome.moreLanguages: Lisää kieliä
+oobe.welcome.noLanguages: Haulla ei löytynyt kieliä
+oobe.welcome.searchLanguages: Hae kieliä
 oobe.welcome.selectLanguage: Valitse haluamasi kieli
+oobe.welcome.subscriptionDetail: Cider edellyttää voimassa olevaa, maksullista tilausta. Apple Music Voice ja osa kampanjakokeiluista eivät ole tuettuja.
+oobe.welcome.subscriptionTitle: Apple Music -tilaus
+oobe.welcome.subtitle: Muutama nopea valinta, ja Cider tuntuu omalta. Se vie noin kaksi minuuttia, ja kaikkia asetuksia voi muuttaa myöhemmin Asetuksissa.
+oobe.welcome.systemLanguage: Vastaa järjestelmää
 oobe.window.native: Natiivi ikkuna
 oobe.window.native.description: Käyttää työpöytäympäristösi otsikkopalkkia ja reunoja.
 oobe.window.styled: Muotoillut säätimet
@@ -3059,10 +3121,22 @@ playlist.refresh.title: Soittolista on päivitettävä
 playlist.suggestions.subtitle: Esikuuntele ja lisää soittolistaan
 playlist.suggestions.title: Ehdotetut kappaleet
 playlist.untitled: Nimetön
+plugin.install.byAuthor: tekijä {author}
+plugin.install.identifier: Tunniste
+plugin.install.install: Asenna
+plugin.install.installing: Asennetaan…
+plugin.install.source: Lähde
+plugin.install.subtitle: Cider-laajennus haluaa lisätä itsensä kirjastoosi.
+plugin.install.title: Asenna laajennus
+plugin.install.update: Päivitä
+plugin.install.updateSubtitle: Cider-laajennus haluaa korvata asennetun version.
+plugin.install.updateTitle: Päivitä laajennus
+plugin.install.warning: Laajennukset voivat suorittaa koodia Cider-sovelluksen sisällä ja käyttää toistoa, jonoa ja kirjastoa. Asenna laajennuksia vain luotetuista lähteistä.
 podcast.comingSoon.description: Podcast-tukea rakennetaan uudelleen Ciderin toistojärjestelmään tehtyjen suurten muutosten vuoksi. Se palaa tulevassa päivityksessä.
 podcast.comingSoon.hide: Piilota sivupalkista
 podcast.comingSoon.hint: Voit ottaa sen uudelleen käyttöön Ulkoasu-asetuksista kohdasta Sivupalkki ja navigointi.
 podcast.comingSoon.title: Podcastit ovat tulossa pian
+podcast.comingSoon.tweaksHint: Voit ottaa sen takaisin käyttöön Säätöasetuksissa kohdassa Sivupalkki ja navigointi.
 podcast.episodes: Jaksot
 podcast.followedOnCider: Seurataan Ciderissa
 podcast.followOnCider: Seuraa Ciderissa
@@ -3145,28 +3219,33 @@ settings.accessibility.section.motion: Liike
 settings.accessibility.section.motion.description: Kuinka paljon animaatioita painikkeet, kortit ja muut pinnat käyttävät.
 settings.accessibility.section.soundEffects: Äänitehosteet
 settings.accessibility.section.soundEffects.description: Käyttöliittymän äänet painikkeille, kytkimille ja liukusäätimille sekä niiden äänenvoimakkuus.
+settings.accessibility.soundPreview.click: Napsautus
+settings.accessibility.soundPreview.slider: Liukusäädin
+settings.accessibility.soundPreview.switch: Kytkin
+settings.accounts.appleMusic: Apple Music
+settings.accounts.appleMusic.description: Ota Apple Music käyttöön
 settings.advanced.section.backups: Varmuuskopiot ja nollaus
 settings.advanced.section.backups.description: Tallenna kopio asetuksistasi, palauta Ciderin tallentama varmuuskopio tai palauta kaikki oletusasetuksiin.
-settings.advanced.section.client: Tämä sovellus
+settings.advanced.section.client: Tämä asiakasohjelma
 settings.advanced.section.client.description: Suorituskykyrajat ja asetukset, jotka koskevat paikallista Cider-sovellusta tilisi sijaan.
 settings.airplay.installed.message: Airplay on asennettu
 settings.airplay.installed.title: Airplay asennettu
 settings.airplay.requiresCiderAudio: Vaatii, että CiderAudio on käytössä
 settings.appleMusic.storefront.warning: Kauppa-alueen muuttaminen aiheuttaa ongelmia toistossa. Sinua on varoitettu.
-settings.artwork.disableFadeIn: Poista häivytystehoste käytöstä
+settings.artwork.disableFadeIn: Poista häivytysefekti käytöstä
 settings.artwork.highlighting: Kansikuvan korostus
 settings.artwork.hiresImages: Käytä korkearesoluutioisia kuvia
 settings.artwork.hiresImages.warning: Saattaa pidentää latausaikoja ja heikentää suorituskykyä.
 settings.audio.atmos: Dolby Atmos
-settings.audio.atmos.binaural.desc: Atmos toistetaan binauraalisena stereona CiderAudion kautta. Crossfade, Automix ja saumattomat siirtymät toimivat edelleen normaalisti.
+settings.audio.atmos.binaural.desc: Atmos toistetaan binauraalisena stereona CiderAudion kautta. Ristiinhäivytys, Automix ja saumattomat siirtymät toimivat edelleen odotetusti.
 settings.audio.atmos.description: Määritä Atmos-toisto nykyiselle ulostulolaitteellesi.
-settings.audio.atmos.normalizationHint: Dolby Atmos -miksaukset ovat hiljaisempia kuin stereomasterit. Tasaa äänenvoimakkuus käynnistämällä Äänen normalisointi.
+settings.audio.atmos.normalizationHint: Dolby Atmos -miksaukset ovat hiljaisempia kuin stereomasterit. Ota äänenvoimakkuuden normalisointi käyttöön tasoittaaksesi eroja.
 settings.audio.atmos.off.desc: Atmos poistettu käytöstä. Kaikki sisältö toistetaan tavallisena stereona.
 settings.audio.atmos.passthrough: Läpivienti
 settings.audio.atmos.passthrough.desc: Ohittaa kaiken äänenkäsittelyn. Monikanavainen Atmos lähetetään suoraan laitteelle. Ihanteellinen AV-vastaanottimille.
-settings.audio.atmos.passthrough.descV2: Lähettää monikanavaisen Atmosin suoraan laitteelle AV-vastaanottimia varten. Audio Lab, taajuuskorjain ja kuuntelutila ohitetaan.
+settings.audio.atmos.passthrough.descV2: Lähettää monikanavaisen Atmos-äänen suoraan laitteeseen AV-vastaanottimia varten. Audio Lab, taajuuskorjain ja kuuntelutila ohitetaan.
 settings.audio.atmos.passthroughActive: Läpivienti aktiivinen — muuta kaikissa asetuksissa.
-settings.audio.atmos.standard.desc: Monikanavainen Atmos CiderAudio-käsittelyllä. Crossfade, Automix ja saumattomat siirtymät toimivat edelleen normaalisti.
+settings.audio.atmos.standard.desc: Monikanavainen Atmos CiderAudio-käsittelyllä. Ristiinhäivytys, Automix ja saumattomat siirtymät toimivat edelleen odotetusti.
 settings.audio.atmosMode: Atmos-tila
 settings.audio.atmosMode.switchFromPassthroughConfirm: Läpivientitilasta poistuminen vaatii sovelluksen lataamisen uudelleen. Jatka?
 settings.audio.atmosMode.switchToPassthroughConfirm: Läpivientitilaan siirtyminen vaatii sovelluksen lataamisen uudelleen. Jatka?
@@ -3191,7 +3270,7 @@ settings.audio.hostCapture.apps.running: Käynnissä olevat sovellukset
 settings.audio.hostCapture.apps.runningNow: Käynnissä
 settings.audio.hostCapture.apps.title: Automaattisen kaappauksen käynnistävät sovellukset
 settings.audio.hostCapture.apps.triggers: Käynnistimet
-settings.audio.hostCapture.auto: Ota automaattisesti käyttöön sovelluksen kanssa
+settings.audio.hostCapture.auto: Ota automaattisesti käyttöön sovelluksen mukana
 settings.audio.hostCapture.autoHint: Ota kaappaus käyttöön automaattisesti, kun valittu sovellus on käynnissä, ja poista käytöstä, kun se suljetaan.
 settings.audio.hostCapture.autoNote: Automaattisesti päällä, kun valittu sovellus on käynnissä.
 settings.audio.hostCapture.bit16: 16-bittinen
@@ -3201,13 +3280,13 @@ settings.audio.hostCapture.bitAuto: Automaattinen (korkein)
 settings.audio.hostCapture.bitDepth: Bittisyvyys
 settings.audio.hostCapture.bitDepthHint: Automaattinen käyttää korkeinta laitteesi tukemaa syvyyttä.
 settings.audio.hostCapture.exclusiveNote: Eksklusiivinen ulostulo, bittitarkka, ei kaapattavissa.
-settings.audio.hostCapture.gain: Ulostulotason hienosäätö
+settings.audio.hostCapture.gain: Lähtötason säätö
 settings.audio.hostCapture.gainHint: Sovita kaapatun äänenvoimakkuus normaaliin ulostuloon.
-settings.audio.hostCapture.mode: Äänen ulostulotila
+settings.audio.hostCapture.mode: Äänilähdön tila
 settings.audio.hostCapture.modeCapture: Kaappaus
 settings.audio.hostCapture.modeCaptureLong: Kaapattava (OBS, Discord)
 settings.audio.hostCapture.modeExclusive: Eksklusiivinen
-settings.audio.hostCapture.modeExclusiveLong: WASAPI-eksklusiivinen
+settings.audio.hostCapture.modeExclusiveLong: WASAPI-yksinoikeus
 settings.audio.hostCapture.modeHintCapture: Toistaa äänen Cider-prosessista, jotta OBS, Discord ja muut sovellukset voivat kaapata sen.
 settings.audio.hostCapture.modeHintExclusive: Bittitarkka ulostulo suoraan DAC-laitteeseesi ohittaen Windowsin mikserin. Ei kaapattavissa.
 settings.audio.hostCapture.modeHintOff: "Pois päältä: ääni toistetaan normaalisti WebView2-prosessista. Ei käytettävissä Atmos-läpiviennin tai musiikkivideoiden aikana."
@@ -3222,7 +3301,7 @@ settings.audio.lab.enableHint: Ota Cider Audio käyttöön päästäksesi Audio 
 settings.audio.lab.passthroughNote: Audio Lab ohitetaan, kun Dolby Atmos -läpivienti on käytössä. Vaihda Atmos-tilaksi Vakio tai Binauraalinen kuullaksesi nämä asetukset.
 settings.audio.lab.spatialProfile: Optimoitu tilaääni
 settings.audio.moreSettings: Lisää ääniasetuksia…
-settings.audio.occlusion: Kuuntelutila
+settings.audio.occlusion: Kuunteluntila
 settings.audio.occlusion.antifatigue: Rentoutuminen
 settings.audio.occlusion.antifatigue.desc: Pehmentää korkeita ja kovia ääniä rentoon, koko päivän kestävään kuunteluun.
 settings.audio.occlusion.cozy: Kotoisa
@@ -3233,7 +3312,7 @@ settings.audio.occlusion.game.desc: Musiikki väistää puheen ja pelien ääniv
 settings.audio.occlusion.off.desc: Musiikki toistetaan muuttumattomana.
 settings.audio.occlusion.passthroughNote: Ei käytettävissä, kun Dolby Atmos -läpivienti on aktiivinen.
 settings.audio.occlusion.passthroughNote.short: Ei käytettävissä, kun Atmos-läpivienti on aktiivinen.
-settings.audio.outputDevice: Valitse äänen ulostulolaite
+settings.audio.outputDevice: Valitse äänilähtölaite
 settings.audio.outputDeviceHint: Valitse toiston äänentoistolaite.
 settings.audio.outputDeviceHintHost: Kaapattava ääni on käytössä, toisto käyttää tätä Windows-ulostulolaitetta.
 settings.audio.section.ciderAudio: Cider Audio ja ilmaisimet
@@ -3247,16 +3326,45 @@ settings.audio.section.playback: Toisto
 settings.audio.section.playback.description: Äänenlaatu, tilaääni, kuuntelutilat ja podcastien toistonopeus.
 settings.audio.section.volume: Äänenvoimakkuus
 settings.audio.section.volume.description: Äänenvoimakkuuden tasaus, kuinka paljon vierityspyörä muuttaa tasoa ja miten liukusäädin toimii.
+settings.audio.signal.atmosCodecs: Atmos-koodekit käytettävissä
+settings.audio.signal.atmosNativeMac: Natiivi (macOS)
+settings.audio.signal.atmosNativeMacTooltip: macOS CoreAudio käsittelee Dolby Atmosin natiivisti. Tilaäänen toiston hoitaa järjestelmä.
+settings.audio.signal.atmosOffTooltip: Atmos on poistettu käytöstä tälle laitteelle. Sisältö toistetaan tavallisena stereona.
+settings.audio.signal.atmosOffTooltipMac: Atmos on poistettu käytöstä tällä laitteella.
+settings.audio.signal.atmosSupported: Tuettu
+settings.audio.signal.binauralSubtitle: Kuuloketoisto
+settings.audio.signal.binauralTooltip: Atmos-sisältö toistetaan binauraalisena stereona CiderAudio-putken kautta.
+settings.audio.signal.channels: "{count} kanavaa"
+settings.audio.signal.codecs: Koodekit
+settings.audio.signal.deviceRateTooltip: Nykyisen laitteen näytteenottotaajuus
+settings.audio.signal.directOutput: Suora ulostulo
+settings.audio.signal.directOutputChannels: Suora ulostulo ({count} kanavaa)
+settings.audio.signal.loading: Ladataan…
+settings.audio.signal.nativeMatch: Natiivi vastaavuus
+settings.audio.signal.noAtmosCodecs: Ei Atmos-koodekkeja
+settings.audio.signal.output: Ulostulo
+settings.audio.signal.passthroughMode: Läpivientitila
+settings.audio.signal.passthroughSubtitle: Äänenkäsittely ohitettu, suora ulostulo laitteeseen
+settings.audio.signal.passthroughTooltip: Ääni ohittaa kaiken käsittelyn ja lähetetään suoraan laitteeseen. CiderAudio-ominaisuudet, kuten ristihäivytys, Automix ja saumattomat siirtymät, eivät ole käytössä.
+settings.audio.signal.sampleRate: Näytteenottotaajuus
+settings.audio.signal.source: Lähde {rate}
+settings.audio.signal.sourceRateTooltip: Apple Music -toistonopeus
+settings.audio.signal.standardSubtitle: Monikanavainen + CiderAudio
+settings.audio.signal.standardTooltip: Monikanavainen Atmos-sisältö toistetaan CiderAudio-käsittelyn kautta ja renderöidään laitteen ominaisuuksien mukaan.
+settings.audio.signal.stereo: Stereo
+settings.audio.signal.surround51: 5.1-surround
+settings.audio.signal.surround71: 7.1+-surround
+settings.audio.signal.upsamplingTooltip: Järjestelmä ylinäytteistää Apple Music -lähteen taajuudesta
 settings.automix.allowTempoKeyShifts: Salli tempon/sävellajin muutokset
 settings.automix.allowTempoKeyShiftsHint: Salli pienet muutokset siirtymien pitämiseksi energisinä. (Poistettu tilapäisesti käytöstä, uudistettavana.)
 settings.automix.description: Siirry älykkäästi kappaleesta toiseen tempon ja sävellajin perusteella.
 settings.automix.descriptionV2: Yhdistää kappaleet käyttämällä kunkin kappaleen omia häivytys- ja laulutietoja kiinteän ristiinhäivytyksen sijaan.
-settings.automix.disableFor: Poista Automix käytöstä kohteille...
+settings.automix.disableFor: Poista Automix käytöstä...
 settings.automix.disableForAlbums: Albumit
 settings.automix.disableForAlbumsHint: Älä käytä Automixiä, kun toistetaan albumeita.
-settings.automix.disableForAutoplayContinuation: Automaattisen toiston jatkaminen
+settings.automix.disableForAutoplayContinuation: Automaattisen toiston jatkuminen
 settings.automix.disableForAutoplayContinuationHint: Älä käytä automix-toimintoa, kun toisto siirtyy asemalle tai automaattisesti toistettaviin kappaleisiin alkuperäisen kokoelman päätyttyä.
-settings.automix.disableForDjMixes: DJ-miksaukset
+settings.automix.disableForDjMixes: DJ-miksit
 settings.automix.disableForDjMixesHint: Älä käytä Automixiä DJ-miksauksille ja jatkuville miksauksille.
 settings.automix.disableForLiveAlbums: Live-albumit
 settings.automix.disableForLiveAlbumsHint: Älä käytä Automixiä livetallenteissa ja konserteissa.
@@ -3268,32 +3376,32 @@ settings.automix.normalizeDurationHint: Sekoitusaika äänenvoimakkuuden sovituk
 settings.automix.spectralSeparation: Spektrierottelu
 settings.automix.spectralSeparationHint: Kuinka kauas toisistaan kaksi kappaletta erotetaan taajuusalueella siirtymän aikana.
 settings.automix.spectralSeparationHintV2: Kuinka paljon kaksi kappaletta erotetaan taajuudeltaan siirtymässä ({value}).
-settings.automix.speedSettle: Nopeuden palautumisaika
+settings.automix.speedSettle: Nopeuden tasaantumisaika
 settings.automix.speedSettleHint: Kuinka kauan toistonopeuden palautuminen normaaliksi kestää tempoon sovitetun miksauksen jälkeen ({ms} ms)
-settings.automix.tempoAlign: Tahtisovitus
+settings.automix.tempoAlign: Tahdin tasaus
 settings.automix.tempoAlignHint: Hienosäädä tempoa kappaleiden kohdistamiseksi, kun ne ovat jo lähellä toisiaan.
-settings.automix.vocalGuard: Suojaa lauluosuudet
+settings.automix.vocalGuard: Suojaa laulu
 settings.automix.vocalGuardHint: Lyhennä miksausta, kun molemmissa kappaleissa lauletaan samanaikaisesti.
 settings.cache.all: Kaikki
-settings.cache.artistChips: Artistikortit
+settings.cache.artistChips: Artistisirut
 settings.cache.artwork: Kansikuvat
 settings.cache.clear: Tyhjennä välimuisti
 settings.cache.content: Sisältö
 settings.cache.entries: "Kohteiden määrä: {{ count }}"
-settings.cache.homeData: Koti-tiedot
+settings.cache.homeData: Etusivun tiedot
 settings.cache.library: Kirjasto
-settings.cache.marketplaceListings: Marketplace-kohteet
-settings.cache.playlistIndex: Soittolista-indeksi
+settings.cache.marketplaceListings: Markkinapaikan ilmoitukset
+settings.cache.playlistIndex: Soittolistahakemisto
 settings.cache.prompt.artwork.cleared.message: Kansikuvavälimuisti on tyhjennetty. Päivitetäänkö nyt?
-settings.cache.prompt.artwork.cleared.title: Kansikuvavälimuisti tyhjennetty
-settings.cache.prompt.artwork.title: Tyhjennä kansikuvavälimuisti
+settings.cache.prompt.artwork.cleared.title: Kansitaidevälimuisti tyhjennetty
+settings.cache.prompt.artwork.title: Tyhjennä kansitaidevälimuisti
 settings.cache.prompt.clearAll.cleared.message: Välimuisti on tyhjennetty. Päivitetäänkö nyt?
 settings.cache.prompt.clearAll.cleared.title: Välimuisti tyhjennetty
 settings.cache.prompt.clearAll.title: Tyhjennä välimuisti
 settings.cache.prompt.marketplace.cleared.message: Välimuisti on tyhjennetty. Päivitetäänkö nyt?
-settings.cache.prompt.marketplace.cleared.title: Marketplace-välimuisti tyhjennetty
+settings.cache.prompt.marketplace.cleared.title: Markkinapaikan välimuisti tyhjennetty
 settings.cache.prompt.playlist.cleared.message: Välimuisti on tyhjennetty. Päivitetäänkö nyt?
-settings.cache.prompt.playlist.cleared.title: Soittolistavälimuisti tyhjennetty
+settings.cache.prompt.playlist.cleared.title: Soittolistan välimuisti tyhjennetty
 settings.cache.recentlyModifiedPlaylists: Äskettäin muokatut soittolistat
 settings.cache.storageUsed: "Käytetty tallennustila: {{ usage }}"
 settings.client.genten.enableTrayIcon: Ota ilmoitusalueen kuvake käyttöön
@@ -3518,7 +3626,7 @@ settings.connectivity.scrobbler.trigger.mode: Käynnistystila
 settings.connectivity.scrobbler.trigger.mode.desc: Milloin scrobblaus lähetetään. "Kumpi tahansa ensin" on perinteinen Last.fm-sääntö.
 settings.connectivity.scrobbler.trigger.percent: Prosenttiosuus
 settings.connectivity.scrobbler.zeroOff: 0 poistaa tämän suodattimen käytöstä.
-settings.connectivity.section.communityRatings: Yhteisön arviot
+settings.connectivity.section.communityRatings: Yhteisöarvostelut
 settings.connectivity.section.communityRatings.description: Muiden Cider-kuuntelijoiden Dolby Atmos -miksausten arviot albumisivuilla ja se, jaetaanko omat arviosi takaisin.
 settings.connectivity.section.discord.description: Mitä Cider näyttää Discord-profiilissasi musiikin soidessa ja minkä sovelluksen kautta se yhdistää.
 settings.connectivity.section.externalApplications.description: WebSockets-portti ja RPC-palvelin, joita muut ohjelmat käyttävät toiston lukemiseen ja Ciderin ohjaamiseen, sekä se, mitkä niistä sallitaan.
@@ -3526,33 +3634,34 @@ settings.connectivity.section.parties.description: Kuuntelu synkronoituna muiden
 settings.connectivity.section.vrOverlay.description: Cider-soitin ja kiinnitettävät paneelit SteamVR- ja VDXR-ympäristöissä, jotka viestivät tämän sovelluksen kanssa RPC-yhteydellä.
 settings.connectivity.tokenCopied: Tunnus kopioitu leikepöydälle
 settings.connectivity.tokens: Tunnukset
+settings.connectivity.tokens.empty: Ei vielä tunnuksia.
 settings.contentFilter.description: Selaa- ja Kuuntele nyt -osioiden sisällöt, joiden otsikko tai sisältö vastaa jotakin näistä avainsanoista, piilotetaan.
 settings.contentFilter.empty: Ei vielä lisättyjä avainsanoja.
 settings.contentFilter.inputPlaceholder: Lisää avainsana...
-settings.contentFilter.title: Suodatinavainsanat
+settings.contentFilter.title: Suodata avainsanat
 settings.crossfade.advanced: Ristihäivytyksen lisäasetukset
 settings.crossfade.automixStillBlends: Automix on päällä, joten kappaleet voivat silti sulautua toisiinsa. Poista Automix käytöstä alla lopettaaksesi kaiken sulautumisen.
 settings.crossfade.description: Häivyttää nykyisen kappaleen pehmeästi ulos samalla kun seuraava kappale häivytetään sisään.
-settings.crossfade.disableFor: Poista ristihäivytys käytöstä kohteille...
+settings.crossfade.disableFor: Poista ristihäivytys käytöstä...
 settings.crossfade.duration: Kesto
 settings.crossfade.enable: Ota ristihäivytys käyttöön
 settings.crossfade.exclusions.albums: Albumit
 settings.crossfade.exclusions.albums.description: Älä käytä ristihäivytystä, kun toistetaan albumeita.
-settings.crossfade.exclusions.autoplayContinuation: Automaattisen toiston jatkaminen
+settings.crossfade.exclusions.autoplayContinuation: Automaattisen toiston jatkuminen
 settings.crossfade.exclusions.autoplayContinuation.description: Älä käytä ristihäivytystä, kun toisto siirtyy asemalle tai automaattisesti toistettaviin kappaleisiin alkuperäisen kokoelman päätyttyä.
-settings.crossfade.exclusions.djMixes: DJ-miksaukset
+settings.crossfade.exclusions.djMixes: DJ-miksit
 settings.crossfade.exclusions.djMixes.description: Älä käytä ristihäivytystä DJ-miksauksissa ja jatkuvissa miksauksissa.
 settings.crossfade.exclusions.liveAlbums: Live-albumit
 settings.crossfade.exclusions.liveAlbums.description: Älä käytä ristihäivytystä livetallenteissa ja konserteissa.
 settings.crossfade.exclusions.playlists: Soittolistat
 settings.crossfade.exclusions.playlists.description: Älä käytä ristihäivytystä, kun toistetaan soittolistoilta.
-settings.crossfade.loudnessSensitivity: Äänenvoimakkuuden herkkyys
+settings.crossfade.loudnessSensitivity: Äänekkyysherkkyys
 settings.crossfade.loudnessSensitivity.description: Tasaa äänenvoimakkuuden eroja ({{ value }} %)
 settings.crossfade.smoothSkip: Pehmeä ohitus
 settings.crossfade.smoothSkip.description: Häivytä kappaleiden välillä, kun ohitat kappaleen.
-settings.crossfade.tempoSensitivity: Tempon herkkyys
+settings.crossfade.tempoSensitivity: Tempoherkkyys
 settings.crossfade.tempoSensitivity.description: Reagointi tempon muutoksiin ({{ value }} %)
-settings.customCss.createSnippet: Luo koodinpätkä
+settings.customCss.createSnippet: Luo katkelma
 settings.customCss.migrate.confirm: Tämä muuntaa nykyisen mukautetun CSS-koodisi uudeksi koodinpätkäksi ja tyhjentää nykyisen mukautetun CSS:n. Haluatko jatkaa?
 settings.customCss.migrate.title: Muunna mukautettu CSS
 settings.customCss.title: Mukautettu CSS
@@ -3591,12 +3700,12 @@ settings.extensions.addBuiltInSnippet: Lisää sisäänrakennettu koodinpätkä
 settings.extensions.browsePluginMarket: Selaa lisäosakauppaa
 settings.extensions.browseThemeMarket: Selaa teemakauppaa
 settings.extensions.byAuthor: tekijä {author}
-settings.extensions.checkUpdates: Tarkista laajennusten päivitykset käynnistyksen yhteydessä
+settings.extensions.checkUpdates: Tarkista laajennusten päivitykset käynnistettäessä
 settings.extensions.checkUpdates.desc: Etsi teema-, koodinpätkä- ja lisäosapäivityksiä aina kun Cider käynnistetään.
 settings.extensions.createPlugin: Luo lisäosa
 settings.extensions.createSnippet: Luo uusi koodinpätkä
 settings.extensions.createTheme: Luo uusi teema
-settings.extensions.cssSnippets: CSS-koodinpätkät
+settings.extensions.cssSnippets: CSS-katkelmat
 settings.extensions.fileWatcher: Ota käyttöön teematiedostojen tarkkailija
 settings.extensions.fileWatcher.desc: Lataa teeman tyylitiedostot uudelleen automaattisesti, kun niiden tiedostot muuttuvat levyllä.
 settings.extensions.importFromFile: Tuo tiedostosta
@@ -3622,21 +3731,25 @@ settings.extensions.plugins.uninstallTitle: Poista liitännäinen
 settings.extensions.refresh: Päivitä laajennukset
 settings.extensions.refresh.desc: Skannaa teemat, koodinpätkät ja lisäosat uudelleen levyltä.
 settings.extensions.refreshed: Teemat, koodinpätkät ja lisäosat päivitetty
+settings.extensions.snippets.author: "Tekijä: {{ author }}"
 settings.extensions.snippets.created: Koodinpätkä luotu
-settings.extensions.snippets.createTitle: Luo uusi CSS-koodinpätkä
+settings.extensions.snippets.createTitle: Luo uusi CSS-katkelma
 settings.extensions.snippets.deleteConfirm: Haluatko varmasti poistaa tämän CSS-koodinpätkän? Tätä toimintoa ei voi peruuttaa.
 settings.extensions.snippets.deleted: Koodinpätkä poistettu
-settings.extensions.snippets.deleteTitle: Poista CSS-koodinpätkä
+settings.extensions.snippets.deleteTitle: Poista CSS-katkelma
 settings.extensions.snippets.empty: Ei asennettuja CSS-koodinpätkiä.
 settings.extensions.snippets.exported: Koodinpätkä viety
 settings.extensions.snippets.imported: Tuotu {{ count }} koodinpätkä(ä)
 settings.extensions.snippets.importFailed: "Tiedoston {{ file }} tuonti epäonnistui: {{ error }}"
+settings.extensions.snippets.invalidFile: "Virheellinen tiedostomuoto: {{ file }}"
 settings.extensions.snippets.namePrompt: Anna nimi uudelle CSS-koodinpätkälle.
 settings.extensions.snippets.orderUpdated: Järjestys päivitetty
 settings.extensions.snippets.saved: Koodinpätkä tallennettu
 settings.extensions.themeCreated: Uusi teema luotu onnistuneesti
 settings.extensions.themes.activeCount: "{{ count }} aktiivista"
 settings.extensions.themes.empty: Ei asennettuja teemoja.
+settings.extensions.themes.getMore: Hae lisää teemoja
+settings.extensions.themes.refreshList: Päivitä teemaluettelo
 settings.extensions.themes.stylesheetMany: "{{ count }} tyylitiedostoa"
 settings.extensions.themes.stylesheetOne: 1 tyylitiedosto
 settings.extensions.viewOnMarketplace: Näytä markkinapaikassa
@@ -3662,6 +3775,7 @@ settings.general.section.language: Kieli
 settings.general.section.language.description: Käyttöliittymän kieli sekä se, miten käännöksistä voi ilmoittaa tai antaa niistä tunnustusta.
 settings.general.section.playback: Toisto
 settings.general.section.playback.description: Mitä toistopainike tekee, kun mitään ei soiteta.
+settings.general.section.playback.descriptionV2: Mitä toistopainike tekee, kun mitään ei soi, ja missä toistonopeutta voi muuttaa.
 settings.general.section.privacy: Tietosuoja
 settings.general.section.privacy.description: Nimi, jolla Cider tervehtii sinua, ja saako se käyttää sijaintiasi.
 settings.general.section.queue: Jono
@@ -3738,7 +3852,7 @@ settings.intensive.animatedArtworkQuality.description: Korkeampi laatu purkaa su
 settings.intensive.catalogAnimatedArtwork.description: Toistaa useita animoituja kansikuvia samanaikaisesti, kun selaat luetteloa.
 settings.intensive.characterFlow.description: Animoi jokaisen sanoituksen merkin erikseen kokonaisten rivien sijaan.
 settings.intensive.confirm.enable: Ota käyttöön
-settings.intensive.confirm.message: Tämä ominaisuus vaatii paljon suorituskykyä ja voi lisätä merkittävästi suorittimen ja näytönohjaimen käyttöä, kuumenemista ja akun kulutusta – erityisesti heikommalla laitteistolla. Voit tarkastella vaativia ominaisuuksia milloin tahansa asetusten yläosassa olevasta lamppupainikkeesta.
+settings.intensive.confirm.message: Tämä ominaisuus vaatii paljon suorituskykyä ja voi merkittävästi lisätä suorittimen ja näytönohjaimen kuormitusta, lämpenemistä ja akun kulumista, erityisesti heikommilla laitteilla. Voit tarkistaa raskaat ominaisuudet milloin tahansa kohdassa Asetukset › Virrankulutus.
 settings.intensive.emotionEngine.description: Analysoi albumin kansikuvan väripaletin luomiseksi.
 settings.intensive.fsrUpscale.description: Skaalaa albumin kansikuvaa näytönohjaimella käyttäen FidelityFX Super Resolution -tekniikkaa.
 settings.intensive.immersiveAnimatedArtwork.description: Toistaa animoitua kansikuvaa Immersive-näkymässä.
@@ -3756,7 +3870,7 @@ settings.intensive.warning: Vaatii suorituskykyä – saattaa aiheuttaa korkeaa 
 settings.keybindings.recordingHint: Tallennetaan. Peruuta painamalla Escape
 settings.lyrics.card.providers: Tarjoajat
 settings.lyrics.card.songOverrides: Kappalekohtaiset ohitukset
-settings.lyrics.localeOverrides: Kielialuekohtaiset säännöt
+settings.lyrics.localeOverrides: Kielialueeseen perustuvat säännöt
 settings.lyrics.localeOverrides.add: Lisää kielialueen ohitus
 settings.lyrics.localeOverrides.audioLocale: Äänen kielialue
 settings.lyrics.localeOverrides.desc: Määritä mukautetut tarjoaja- ja käännösasetukset tietyillä kielillä oleville kappaleille. Kun kappaleen äänen kielialue vastaa sääntöä, nämä asetukset ohittavat oletusasetukset.
@@ -3764,7 +3878,7 @@ settings.lyrics.localeOverrides.dialogTitle.add: Lisää kielialueen ohitus
 settings.lyrics.localeOverrides.dialogTitle.edit: Muokkaa kielialueen ohitusta
 settings.lyrics.localeOverrides.empty: Ei vielä sääntöjä. Lisää sääntö painamalla +.
 settings.lyrics.localeOverrides.overrideTranslation: Ohita käännös
-settings.lyrics.localeOverrides.preferredProvider: Ensisijainen tarjoaja
+settings.lyrics.localeOverrides.preferredProvider: Ensisijainen palveluntarjoaja
 settings.lyrics.localeOverrides.provider.apple: Apple Music
 settings.lyrics.localeOverrides.provider.auto: Oletus (Automaattinen)
 settings.lyrics.localeOverrides.provider.mxm: Musixmatch
@@ -3775,7 +3889,7 @@ settings.lyrics.localeOverrides.translateTo: Käännä kielelle
 settings.lyrics.localeOverrides.translateToLabel: "Käännä kielelle:"
 settings.lyrics.player.cascade: Porrastuksen voimakkuus
 settings.lyrics.player.cascade.desc: Kuinka selkeä rivi riviltä tapahtuva porrastettu sisääntulo on.
-settings.lyrics.player.cta: Sanoitusten animaatiot
+settings.lyrics.player.cta: Sanoitusanimaatiot
 settings.lyrics.player.cta.description: Hienosäädä sanoitusten animaatioiden ulkoasua ja toimintaa, mukaan lukien korostus-, hehku-, nousu-, nopeus-, häivytys- ja porrastustehosteet.
 settings.lyrics.player.deselScale: Ei-aktiivisen rivin koko
 settings.lyrics.player.deselScale.desc: Muiden kuin aktiivisten rivien koko; pienempi arvo korostaa aktiivista riviä enemmän.
@@ -3795,8 +3909,8 @@ settings.lyrics.player.title: Sanoitusten animaatiot
 settings.lyrics.scroll.duration: Sanoitusten vierityksen kesto
 settings.lyrics.scroll.duration.desc1: Säädä sanoitusten vieritysnopeutta kohteessa
 settings.lyrics.scroll.duration.desc2: Tämä ei vaikuta kappaleen nopeuteen.
-settings.lyrics.scroll.easing: Kevennysfunktio
-settings.lyrics.scroll.easing.curveExample: "Käyräesimerkki:"
+settings.lyrics.scroll.easing: Tasoitusfunktio
+settings.lyrics.scroll.easing.curveExample: "Käyrän esimerkki:"
 settings.lyrics.scroll.easing.description1: Säädä sanoitusten vierityksen kevennysfunktiota. Tämä on CSS-
 settings.lyrics.scroll.easing.description2: ominaisuus.
 settings.lyrics.scroll.easing.namedExample: "Nimetty esimerkki:"
@@ -3814,7 +3928,7 @@ settings.lyrics.section.sources: Lähteet
 settings.lyrics.section.sources.description: Mistä sanoitukset haetaan sekä kieli- tai kappalekohtaiset säännöt, jotka ohittavat oletustarjoajan.
 settings.lyrics.section.translation: Käännös
 settings.lyrics.section.translation.description: Käännetyt sanoitukset, niiden kohdekieli ja se, säilyykö alkuperäinen teksti näytöllä.
-settings.lyrics.trackOverrides.clearAll: Poista kaikki ohitukset
+settings.lyrics.trackOverrides.clearAll: Tyhjennä kaikki ohitukset
 settings.lyrics.trackOverrides.desc: Tässä luetellut kappaleet käyttävät aina lukitsemaasi sanoitusten tarjoajaa tai manuaalisesti asettamaasi laulun tilaa Applen ilmoittaman sijaan. Nämä ohitukset asetetaan sanoitusvalikosta ja kappaleen oikean painikkeen valikosta.
 settings.lyrics.trackOverrides.empty: Mitään ei ole vielä ohitettu. Kaikki kyseisistä valikoista lukitsemasi kohteet näkyvät tässä.
 settings.lyrics.trackOverrides.lyricsForced: Sanoitukset pakotettu
@@ -3837,37 +3951,59 @@ settings.miniplayer.unpinWindow: Vapauta ikkunan kiinnitys
 settings.nav.accessibility: Käyttöapu
 settings.nav.accounts: Tilit
 settings.nav.advanced: Lisäasetukset
+settings.nav.appleMusicWordmark: music
 settings.nav.audio: Ääni
+settings.nav.categories: Asetusluokat
 settings.nav.concerts: Konsertit
-settings.nav.config-backups: Määritysten varmuuskopiot
+settings.nav.config-backups: Asetusten varmuuskopiot
 settings.nav.connectivity: Yhteydet
 settings.nav.extensions: Laajennukset
 settings.nav.general: Yleiset
 settings.nav.group.account: Tili
 settings.nav.group.advanced: Lisäasetukset
 settings.nav.group.appearance: Ulkoasu
+settings.nav.group.connections: Yhteydet
 settings.nav.group.general: Yleiset
 settings.nav.group.integrations: Integraatiot
 settings.nav.group.library: Kirjasto
+settings.nav.group.lookAndFeel: Ulkoasu ja tuntuma
 settings.nav.group.playback: Toisto
 settings.nav.lyrics: Sanat
 settings.nav.notifications: Ilmoitukset
 settings.nav.plugins: Lisäosat
-settings.nav.power: Virrankäyttö
+settings.nav.power: Virrankulutus
 settings.nav.privacy: Tietosuoja
 settings.nav.profile: Profiili
 settings.nav.search: Haku
-settings.nav.searchPlaceholder: Etsi asetuksista...
+settings.nav.searchPlaceholder: Hae asetuksia
+settings.nav.summary.accessibility: Lihavoitu teksti, käyttöliittymän koko, liike, äänitehosteet
+settings.nav.summary.advanced: Varmuuskopiot, vianmääritys, kokeilut
+settings.nav.summary.audio: Ulostulo, laatu, ristiinhäivytys, normalisointi
+settings.nav.summary.concerts: Sijainti, säde, lajittelu
+settings.nav.summary.connectivity: Discord, scrobbling, kuuntelujuhlat, etäkäyttö
+settings.nav.summary.extensions: Teemat, CSS-katkelmat, liitännäiset
+settings.nav.summary.general: Käynnistys, jono, uniajastin, pikanäppäimet
+settings.nav.summary.lyrics: Lähteet, käännös, näyttö, ajoitus
+settings.nav.summary.notifications: Luokat, historia, järjestelmäilmoitukset
+settings.nav.summary.power: Suorituskyky, kuvataajuus, virransäästäjät
+settings.nav.summary.profile: Apple Music -tili
+settings.nav.summary.sid: Missä Sid näkyy ja miten se toimii
+settings.nav.summary.smartPlaylists: Älysoittolistojen säännöt ja ylläpito
+settings.nav.summary.subscriberYear: tilaaja vuoden ajan
+settings.nav.summary.subscriberYears: tilaaja {{count}} vuoden ajan
+settings.nav.summary.tweaks: Pienet muutokset soittimeen, sivupalkkiin ym.
+settings.nav.summary.visual: Väriteema, asettelu, ikkuna, immersiivinen
 settings.nav.themes: Teemat
+settings.nav.tweaks: Muokkaukset
 settings.nav.updates: Päivitykset
-settings.nav.visual: Visuaalinen
+settings.nav.visual: Ulkoasu
 settings.normalization.louderTargetHint: Jos Cider kuulostaa edelleen liian hiljaiselta 100 %:n äänenvoimakkuudella, valitse voimakkaampi tavoite. Suuremmat LUFS-arvot kuulostavat voimakkaammilta, mutta huipputason suojaus saattaa rajoittaa tehostusta säröytymisen estämiseksi.
 settings.normalization.presets.apple: Apple
 settings.normalization.presets.balanced: Tasapainoinen
 settings.normalization.presets.dynamic: Dynaaminen
 settings.normalization.presets.loud: Voimakas
 settings.normalization.presets.maximum: Maksimi
-settings.normalization.target: Tavoiteäänekkyys
+settings.normalization.target: Äänenvoimakkuuden tavoite
 settings.normalization.unit: LUFS
 settings.notifications.alwaysOn: Aina käytössä
 settings.notifications.alwaysOn.description: Nämä sisältävät tärkeitä ongelmia ja sovelluksen tilatietoja, joten niitä ei voi poistaa käytöstä. Virheilmoitukset näytetään aina kategoriasta riippumatta.
@@ -3879,7 +4015,7 @@ settings.notifications.category.extensionsThemes: Laajennukset ja teemat
 settings.notifications.category.extensionsThemes.description: Lisäosien, teemojen ja koodinpätkien asennus, päivitys ja poisto.
 settings.notifications.category.general: Yleiset
 settings.notifications.category.general.description: Kaikki ilmoitukset, joilla ei ole omaa kategoriaa.
-settings.notifications.category.listeningTogether: Yhdessä kuuntelu
+settings.notifications.category.listeningTogether: Yhteiskuuntelu
 settings.notifications.category.listeningTogether.description: Kutsut kuunteluryhmiin, vieraiden liittyminen tai poistuminen sekä istunnon tila.
 settings.notifications.category.lyrics: Sanat
 settings.notifications.category.lyrics.description: Sanoitusten haku, muokkaukset ja translitterointi.
@@ -3895,7 +4031,7 @@ settings.notifications.category.scrobbling: Scrobblaus
 settings.notifications.category.scrobbling.description: Kappalekohtaiset scrobblaustulokset Last.fm-, ListenBrainz- ja muista palveluista.
 settings.notifications.category.settingsBackups: Asetukset ja varmuuskopiot
 settings.notifications.category.settingsBackups.description: Asetusten tuonti ja vienti sekä määritysten varmuuskopiointi.
-settings.notifications.category.sharingClipboard: Jako ja leikepöytä
+settings.notifications.category.sharingClipboard: Jakaminen ja leikepöytä
 settings.notifications.category.sharingClipboard.description: Jakolinkkien luominen ja kopioiminen.
 settings.notifications.muted.empty: Mitään ei ole erikseen mykistetty. Yksittäisen ilmoituksen hiljentäminen ilmoitusluettelosta lisää sen tänne, ja täältä voit palauttaa sen.
 settings.notifications.section.categories: Kategoriat
@@ -3903,6 +4039,7 @@ settings.notifications.section.history: Historia
 settings.notifications.section.muted: Mykistetyt ilmoitukset
 settings.notifications.section.system: Järjestelmäilmoitukset
 settings.notifications.summary.categoriesOn: Kategoriat käytössä
+settings.notifications.summary.categoriesOnCount: "{{on}} / {{total}} päällä"
 settings.notifications.summary.description: Valitse, millaisia ilmoituksia Cider näyttää sinulle. Vaikka poistat jonkin luokan käytöstä, sen ilmoitukset tallennetaan silti ilmoitusluetteloosi, jotta voit lukea ne myöhemmin.
 settings.notifications.unmute: Poista vaimennus
 settings.notifications.unmuteAll: Poista kaikkien vaimennus
@@ -3920,11 +4057,11 @@ settings.notyf.visual.theme.install.success: Teema asennettu
 settings.notyf.visual.theme.updateAvailable: "[Teemat] Teemalle {{ theme }} on saatavilla päivitys"
 settings.option.accessibility.boldText: Lihavoitu teksti
 settings.option.accessibility.boldText.description: Lihavoi sovelluksen tekstit luettavuuden parantamiseksi.
-settings.option.accessibility.cardHoverMotion: Korttien korostusliike
+settings.option.accessibility.cardHoverMotion: Kortin hover-liike
 settings.option.accessibility.cardHoverMotion.description: Saa klikattavat kortit (albumit, suositukset, ruudukon kohteet) laajenemaan kevyesti, kun osoitin viedään niiden päälle, ja painumaan kasaan klikattaessa. Oletuksena pois päältä.
 settings.option.accessibility.enableSoundEffects: Ota äänitehosteet käyttöön
 settings.option.accessibility.enableSoundEffects.description: Toista hienovaraisia ääniä, kun käytät painikkeita, kytkimiä ja liukusäätimiä.
-settings.option.accessibility.forceFocusVisible: Näytä aina kohdistuskehys
+settings.option.accessibility.forceFocusVisible: Näytä aina tarkennuskehys
 settings.option.accessibility.forceFocusVisible.description: Pakota näkyvä reunus kohdistetuille elementeille näppäimistönavigointia varten.
 settings.option.accessibility.highContrast: Suuri kontrasti
 settings.option.accessibility.highContrast.description: Parantaa tekstin, taustan ja käyttöliittymän osien välistä kontrastia.
@@ -3935,20 +4072,20 @@ settings.option.accessibility.motionIntensity.none: Ei mitään
 settings.option.accessibility.motionIntensity.normal: Normaali
 settings.option.accessibility.motionIntensity.playful: Leikkisä
 settings.option.accessibility.motionIntensity.reduced: Vähennetty
-settings.option.accessibility.playOnHover: Toista osoitettaessa
+settings.option.accessibility.playOnHover: Toista osoittaessa
 settings.option.accessibility.playOnHover.description: Toistaa myös hienovaraisen naksahduksen, kun osoitin siirtyy vuorovaikutteisten elementtien päälle.
 settings.option.accessibility.soundEffects: Äänitehosteet
 settings.option.accessibility.soundPreview: Äänen esikuuntelu
 settings.option.accessibility.soundPreview.description: Toistaa näytteen käyttöliittymän äänistä nykyisellä äänenvoimakkuudella.
 settings.option.accessibility.text: Teksti
-settings.option.accessibility.uiScale: Käyttöliittymän skaalaus
+settings.option.accessibility.uiScale: Käyttöliittymän koko
 settings.option.accessibility.uiScale.description: Skaalaa tekstiä ja käyttöliittymän elementtejä. Jotkin asetteluelementit ovat kiinteän kokoisia eivätkä välttämättä skaalaudu.
 settings.option.accessibility.visibility: Näkyvyys
 settings.option.accessibility.volume: Äänenvoimakkuus
 settings.option.accessibility.volume.description: Kuinka voimakkaasti käyttöliittymän äänitehosteet toistetaan.
 settings.option.advanced.clientSettings: Asiakasohjelman asetukset
 settings.option.advanced.clientSettings.description: Nykyiseen asiakasohjelmakehykseen liittyvät asetukset
-settings.option.advanced.compactSidebar: Kompakti sivupalkki
+settings.option.advanced.compactSidebar: Tiivis sivupalkki
 settings.option.advanced.compactSidebar.description: Käytetään, kun ikkuna on tarpeeksi kapea sivupalkin piilottamiseksi.
 settings.option.advanced.compactSidebar.size: Koko
 settings.option.advanced.configBackups.description: Palauta Ciderin tallentama kopio asetustiedostostasi siltä varalta, että asetuksesi katosivat tai nollautuivat.
@@ -3968,39 +4105,39 @@ settings.option.advanced.home.buttonLocation.sidebar: Sivupalkki
 settings.option.advanced.home.buttonLocation.sidebar2023: Sivupalkki (2023)
 settings.option.advanced.home.buttonLocation.topBar: Yläpalkki
 settings.option.advanced.immersive: Immersiivinen näkymä
-settings.option.advanced.immersive.artworkHighlight: Kansikuvan korostus
-settings.option.advanced.immersive.controlsTimeout: Säätimien piilotusaika (sekuntia)
+settings.option.advanced.immersive.artworkHighlight: Kansitaiteen korostus
+settings.option.advanced.immersive.controlsTimeout: Aktiivisten ohjainten aikakatkaisu (sekuntia)
 settings.option.advanced.immersive.description: Itse immersiivinen näkymä. Sen käyttämä asettelu valitaan kohdassa Ulkoasu.
-settings.option.advanced.immersive.glowEffectOnActiveLyrics: Hehkuefekti aktiivisissa sanoissa
-settings.option.advanced.lyrics: Sanoitusten animaatio
-settings.option.advanced.lyrics.characterFlow: Virtaavat merkit
+settings.option.advanced.immersive.glowEffectOnActiveLyrics: Hehkuefekti aktiivisille sanoitukselle
+settings.option.advanced.lyrics: Sanoitusanimaatio
+settings.option.advanced.lyrics.characterFlow: Sujuvat merkit
 settings.option.advanced.lyrics.characterFlow.description: Yksittäiset merkit virtaavat ylöspäin koko rivin sijaan. Kuluttaa enemmän resursseja.
 settings.option.advanced.lyrics.description: Miten sanoitusrivit ja -merkit liikkuvat kappaleen soidessa.
 settings.option.advanced.lyrics.lineStaggering: Rivien porrastus
 settings.option.advanced.lyrics.lineStaggering.description: Tulevissa riveissä on hienovaraista viivettä, kun seuraava aktiivinen rivi on kohdistettuna.
-settings.option.advanced.lyrics.lineStaggeringImmersive: Rivien porrastus (Immersiivinen)
+settings.option.advanced.lyrics.lineStaggeringImmersive: Rivien porrastus (immersiivinen)
 settings.option.advanced.lyrics.lineStaggeringImmersive.description: Kuluttaa enemmän resursseja.
-settings.option.advanced.lyrics.scaleOnAny: Salli skaalaustehoste kaikille sanoille
+settings.option.advanced.lyrics.scaleOnAny: Salli skaalausefekti millä tahansa sanalla
 settings.option.advanced.lyrics.scaleOnAny.description: Sallii minkä tahansa sanan skaalautumisen, ei vain painotettujen
-settings.option.advanced.lyrics.singEngine: Immersiivinen Sing-moottori
+settings.option.advanced.lyrics.singEngine: Immersiivinen laulumoottori
 settings.option.advanced.lyrics.singEngine.classic: Klassinen
 settings.option.advanced.lyrics.singEngine.description: Sing-moottori immersiiviselle näkymälle. Klassinen käyttää kevyttä CSS-animaatiota, ja se on paras valinta suorituskyvyltään heikommille järjestelmille. Sivupalkki käyttää aina Klassista.
 settings.option.advanced.lyrics.singEngine.legacy: Legacy
 settings.option.advanced.lyrics.singEngine.waapi: GPU (Web Animations)
-settings.option.advanced.lyrics.singLyricsEverywhere: Näytä Sing-sanat kaikkialla
+settings.option.advanced.lyrics.singLyricsEverywhere: Laula sanoituksia kaikkialla
 settings.option.advanced.lyrics.singLyricsEverywhere.description: Ota Sing-sanat käyttöön immersiivisen näkymän ulkopuolella. Kuluttaa enemmän resursseja.
 settings.option.advanced.mavericksLcd: Mavericks LCD
 settings.option.advanced.mavericksLcd.style: Tyyli
 settings.option.advanced.mavericksLcd.style.glass: Lasi
-settings.option.advanced.mediaArtwork: Kohteen kansikuva
+settings.option.advanced.mediaArtwork: Median kansitaide
 settings.option.advanced.mediaArtwork.controls: Kansitaiteen korostukset ja korkearesoluutioiset kuvat
-settings.option.advanced.mediaArtwork.controlsV2: Kansikuvan korostus ja häivytys
+settings.option.advanced.mediaArtwork.controlsV2: Kansitaiteen korostus ja häivytys
 settings.option.advanced.mediaArtwork.description: Kansitaide ruudukoissa, luetteloissa ja riveillä eri puolilla sovellusta.
 settings.option.advanced.notificationStyle: Ilmoitustyyli
 settings.option.advanced.performance: Suorituskyky
 settings.option.advanced.performance.description: Ruudunpäivitysrajat, renderöijän valinta ja resurssien kynnysarvot.
 settings.option.advanced.playback: Toistonopeus
-settings.option.advanced.playback.allowPlaybackRateChangeEverywhere: Salli kappaleiden toistonopeuden muuttaminen
+settings.option.advanced.playback.allowPlaybackRateChangeEverywhere: Salli toistonopeuden muuttaminen kappaleille
 settings.option.advanced.playback.allowPlaybackRateChangeEverywhere.description: Käytössä oletuksena podcasteille. Ota käyttöön salliaksesi saman helpon toistonopeuden säädön kaikelle medialle, mukaan lukien kappaleille.
 settings.option.advanced.playlistTrackMapping: Soittolistan kappalekartoitus
 settings.option.advanced.playlistTrackMapping.description: Ottaa käyttöön soittolistojen syvän skannauksen sen määrittämiseksi, mitkä kappaleet ovat milläkin soittolistoilla. Soittolistan välimuistin luontiaika voi pidentyä huomattavasti.
@@ -4009,50 +4146,50 @@ settings.option.advanced.progressBar: Edistymispalkki
 settings.option.advanced.progressBar.useAccentColor: Käytä korostusväriä
 settings.option.advanced.resetCider: Nollaa Cider
 settings.option.advanced.resetCider.description: Nollaa asetukset, välimuistit ja paikalliset tiedot. Apple Music- ja Taproom-kirjautumiset säilyvät, ellet valitse toisin.
-settings.option.advanced.resizableMiniplayer: Kokoa muutettava minisoitin
-settings.option.advanced.richAlbumGrid: Monipuolinen albumiruudukko
+settings.option.advanced.resizableMiniplayer: Muutettava minisoitin
+settings.option.advanced.richAlbumGrid: Rikas albumiruudukko
 settings.option.advanced.richAlbumGrid.alwaysNavigateToPage: Siirry aina sivulle
-settings.option.advanced.richAlbumGrid.disableScrollAnimation: Poista vieritysanimaatio käytöstä
-settings.option.advanced.richAlbumGrid.scrollToPosition: Vieritä kohtaan
+settings.option.advanced.richAlbumGrid.disableScrollAnimation: Poista vierityksen animaatio käytöstä
+settings.option.advanced.richAlbumGrid.scrollToPosition: Vieritä sijaintiin
 settings.option.advanced.richAlbumGrid.scrollToPosition.bottom: Alareuna
 settings.option.advanced.richAlbumGrid.scrollToPosition.top: Yläreuna
-settings.option.advanced.searchBar: Päähakupalkki
+settings.option.advanced.searchBar: Pääasiallinen hakupalkki
 settings.option.advanced.searchBar.description: Otsikkopalkissa oleva hakukenttä.
 settings.option.advanced.searchBar.noRedirectOnSelect: Ei aloitussivua kohdistettaessa
 settings.option.advanced.searchBar.noRedirectOnSelect.description: Kun käytössä, hakukenttä ei ohjaa aloitussivulle, kun se valitaan. Pääset aloitussivulle pitämällä SHIFT-näppäintä painettuna, kun valitset hakukentän.
 settings.option.advanced.settingsTakeout: Vie / tuo asetukset
 settings.option.advanced.settingsTakeout.description: Varmuuskopioi asetuksesi tiedostoon tai palauta ne toisella laitteella. Kirjautumistietoja ei koskaan sisällytetä.
-settings.option.advanced.simpleArtworkBg: Yksinkertainen kansitaidetausta
+settings.option.advanced.simpleArtworkBg: Yksinkertainen kansitaustakuva
 settings.option.advanced.simpleArtworkBg.brightness: Kirkkaus %
 settings.option.advanced.simpleArtworkBg.brightnessV2: Kirkkaus
 settings.option.advanced.simpleArtworkBg.contrast: Kontrasti %
 settings.option.advanced.simpleArtworkBg.contrastV2: Kontrasti
 settings.option.advanced.simpleArtworkBg.saturate: Kylläisyys %
 settings.option.advanced.simpleArtworkBg.saturateV2: Värikylläisyys
-settings.option.advanced.simpleArtworkBg.useMask: Käytä alamaskia
+settings.option.advanced.simpleArtworkBg.useMask: Käytä alempaa maskia
 settings.option.advanced.sonoma: Sonoma
-settings.option.advanced.sonoma.lyricArc: Kaarevat sanat
+settings.option.advanced.sonoma.lyricArc: Kaarevat sanoitukset
 settings.option.advanced.sonoma.lyricArc.description: Aktiiviset sanoitusrivit kaareutuvat kohti näytön keskiosaa luoden hienovaraisen syvyysvaikutelman.
 settings.option.advanced.sonoma.radialMask: Käytä vaihtoehtoista maskia
 settings.option.advanced.sonoma.radialMask.description: Kun käytössä, Sonoma käyttää kansikuvalle erilaista, säteittäistä maskia, joka keskittyy parempaan selkeyteen ja vähäisempään sumennukseen.
 settings.option.advanced.title: Lisäasetukset
 settings.option.advanced.tweaks: Hienosäädöt
 settings.option.advanced.tweaks.description: Hienosäädettävät asetukset, jotka eivät sovi muualle
-settings.option.advanced.volumeSlider: Soittimen äänenvoimakkuuden säädin
+settings.option.advanced.volumeSlider: Soittimen äänenvoimakkuuden liukusäädin
 settings.option.advanced.volumeSlider.iOSStyle: iOS-tyyli
 settings.option.advanced.window: Ikkunan toiminta
 settings.option.advanced.window.description: Minisoittimen koon muuttaminen ja sovelluksen vierityspalkin tyyli. Ikkunan painikkeet ja lasitehosteet löytyvät Visuaalinen-osiosta.
 settings.option.advanced.window.scrollbarType: Vierityspalkin tyyppi
 settings.option.all: Kaikki
 settings.option.alwaysShow: Näytä aina
-settings.option.appleMusic.behavior.playButtonOnStop: Toistopainikkeen toiminto pysäytettynä
+settings.option.appleMusic.behavior.playButtonOnStop: Toistopainike pysäytetyn toiminnon jälkeen
 settings.option.audio.advanced: Äänenvoimakkuuden lisäasetukset
 settings.option.audio.airplay: AirPlay-suoratoisto
 settings.option.audio.airplay.description: Ota käyttöön kokeellinen AirPlay 2 -suoratoistovalikko
 settings.option.audio.atmos: Dolby Atmos
 settings.option.audio.atmos.binaural: Binauraalinen
 settings.option.audio.atmos.standard: Standardi
-settings.option.audio.audioConfiguration: Ääniasetukset
+settings.option.audio.audioConfiguration: Äänimääritykset
 settings.option.audio.audioLab: Cider Audio Laboratories
 settings.option.audio.audioLab.description: Valikoima Ciderille kehitettyjä omia äänitehosteita.
 settings.option.audio.audioLab.subheader: Suunnitellut Cider Acoustic Technologies Kaliforniassa
@@ -4060,14 +4197,14 @@ settings.option.audio.audioQuality: Äänenlaatu
 settings.option.audio.automix: Automaattinen miksaus
 settings.option.audio.changePlaybackRate: Muuta toistonopeutta
 settings.option.audio.ciderAudio: Cider Audio
-settings.option.audio.ciderAudio.showBadges: Näytä merkit Toistetaan nyt -näkymässä
-settings.option.audio.ciderAudio.showInToolbar: Näytä Cider Audio työkalupalkissa
+settings.option.audio.ciderAudio.showBadges: Näytä merkit nyt soi -näkymässä
+settings.option.audio.ciderAudio.showInToolbar: Näytä Cider Audio työkalurivillä
 settings.option.audio.ciderAudioSettings: Cider Audio -asetukset
 settings.option.audio.crossfade: Häivytys
-settings.option.audio.dbfs.calibration: 0 dBFS-kalibrointi
+settings.option.audio.dbfs.calibration: 0 dBFS -kalibrointi
 settings.option.audio.dbfs.description: Anna huippu Z-painotettu dB SPL, kun siideri on 0 dBFS.
 settings.option.audio.dbspl.description: (Vain edistyneet käyttäjät) Näytä dB SPL sijasta dBFS äänenvoimakkuuden liukusäädintä.
-settings.option.audio.dbspl.display: dB SPL näyttö
+settings.option.audio.dbspl.display: dB SPL -näyttö
 settings.option.audio.drmSystem: DRM-järjestelmä
 settings.option.audio.drmSystem.description: Apple Music -toistossa käytettävä DRM-järjestelmä
 settings.option.audio.drmSystem.PlayReadyCAWarning: Cider-äänitoiminnot eivät toimi käytettäessä Microsoft PlayReadyä.
@@ -4122,30 +4259,30 @@ settings.option.audio.enableAdvancedFunctionality.tunedAudioSpatialization.profi
 settings.option.audio.enableAdvancedFunctionality.tunedAudioSpatialization.profile.standard: Vakio
 settings.option.audio.exponentialVolume: Eksponentiaalinen äänenvoimakkuuskäyrä
 settings.option.audio.exponentialVolume.description: Seuraa asteittaisempaa äänenvoimakkuuskäyrää, mikä mahdollistaa tarkemman säädön pienemmillä äänenvoimakkuuksilla.
-settings.option.audio.hostCapture: Kaapattava ääni (OBS / Discord)
+settings.option.audio.hostCapture: Tallennettava ääni (OBS / Discord)
 settings.option.audio.hostCapture.description: Suoratoisto- ja tallennussovellukset, kuten OBS tai Discord, tarvitsevat Windows-isännän toiston reitittämiseen.
 settings.option.audio.maxVolume: Enimmäisäänenvoimakkuus
 settings.option.audio.mixing: Miksaus
-settings.option.audio.normalization: Äänenvoimakkuuden tasaus
+settings.option.audio.normalization: Äänen normalisointi
 settings.option.audio.normalization.description: Säätää automaattisesti jokaisen kappaleen äänenvoimakkuuden yhtenäiseksi. Hiljaisia kappaleita voimistetaan turvallisesti ja voimakkaita hiljennetään.
 settings.option.audio.occlusion: Kuuntelutila
-settings.option.audio.outputDevice: Ulostulolaite
+settings.option.audio.outputDevice: Toistolaite
 settings.option.audio.playback: Toisto
 settings.option.audio.playbackRate: Toistonopeus
 settings.option.audio.playbackRate.change: Muuta
-settings.option.audio.podcastPlayback: Podcast-toisto
-settings.option.audio.podcasts.playbackRate: Apple Podcastien toistonopeus
+settings.option.audio.podcastPlayback: Podcastien toisto
+settings.option.audio.podcasts.playbackRate: Apple Podcastsin toistonopeus
 settings.option.audio.podcasts.playbackRate.description: Säädä podcastien toistonopeutta.
 settings.option.audio.quality: Äänenlaatu
-settings.option.audio.seamlessAudioTransitions: Saumattomat Äänen Siirtymät
+settings.option.audio.seamlessAudioTransitions: Saumaton toisto
 settings.option.audio.seamlessTransition: Saumaton äänisiirtymä
 settings.option.audio.seamlessTransitions: Saumattomat siirtymät
-settings.option.audio.showBitrate: Näytä bittinopeus Nyt toistetaan -näkymässä
+settings.option.audio.showBitrate: Näytä bitinopeus nyt soi -näkymässä
 settings.option.audio.streaming: Suoratoisto
 settings.option.audio.volume: Äänenvoimakkuus
 settings.option.audio.volumeScrollStep: Äänenvoimakkuuden vieritysaskel
 settings.option.audio.volumeScrollStep.description: Kuinka paljon äänenvoimakkuus muuttuu, kun vierität ylös tai alas äänenvoimakkuuden säädinpalkissa.
-settings.option.audio.volumeStep: Äänenvoimakkuuden vieritysaskel
+settings.option.audio.volumeStep: Äänenvoimakkuuden vierityksen askel
 settings.option.audio.volumeStep.description: Säädä äänenvoimakkuuden muutosaskelta vieritettäessä.
 settings.option.audio.yourSystem: Järjestelmäsi
 settings.option.automatic: Automaattinen
@@ -4157,14 +4294,14 @@ settings.option.concerts.radiusUnit: Säteen yksikkö
 settings.option.concerts.radiusUnit.description: Sädesuodattimen yksikkö
 settings.option.concerts.radiusUnit.kilometers: Kilometrit
 settings.option.concerts.radiusUnit.miles: Mailit
-settings.option.concerts.showInSidebar: Näytä konsertit sivupalkissa
+settings.option.concerts.showInSidebar: Näytä keikat sivupalkissa
 settings.option.concerts.showInSidebar.description: Näytä Konsertit-osio sivupalkissa
-settings.option.concerts.sortBy: Lajitteluperuste
+settings.option.concerts.sortBy: Lajittele
 settings.option.concerts.sortBy.date: Päivämäärä
 settings.option.concerts.sortBy.description: Miten konsertit järjestetään luettelossa
 settings.option.concerts.sortBy.distance: Etäisyys
 settings.option.connect.link_account.description: Discord-tilin yhdistäminen Cider Connectiin mahdollistaa käyttäjätietojen tallentamisen, mukaan lukien asetukset, taajuuskorjaimet ja myöhemmin lisää toimintoja niiden valmistuttua. (Keskeneräinen)
-settings.option.connectivity.atmosRatings: Yhteisön Atmos-arviot
+settings.option.connectivity.atmosRatings: Yhteisön Dolby Atmos -arviot
 settings.option.connectivity.atmosRatings.description: Katso ja jaa, mitkä albumit kuulostavat upeilta Dolby Atmos -muodossa.
 settings.option.connectivity.ciderConnect.description: Kuuntele yhdessä, yhteiset soittolistat, sovelluksen etäohjaus ja paljon muuta!
 settings.option.connectivity.ciderRemote: Cider Remote
@@ -4230,14 +4367,14 @@ settings.option.connectivity.lastfmScrobble.manualToken: Syötä Last.fm-tunnist
 settings.option.connectivity.lastfmScrobble.manualToken.link: Klikkaa tästä hakeaksesi Last.fm-tunnisteen
 settings.option.connectivity.lastfmScrobble.nowPlaying: Ota Last.fm Nyt toistetaan käyttöön
 settings.option.connectivity.lastfmScrobble.removeFeatured: Poista vierailevat artistit kappaleen nimestä (Last.fm)
-settings.option.connectivity.parties: Kuuntelubileet
-settings.option.connectivity.partiesEnabled: Ota kuuntelubileet käyttöön
+settings.option.connectivity.parties: Kuunteluhuoneet
+settings.option.connectivity.partiesEnabled: Ota kuunteluhuoneet käyttöön
 settings.option.connectivity.partiesEnabled.description: Isännöi synkronoituja kuunteluistuntoja muiden Cider-käyttäjien kanssa tai liity niihin.
-settings.option.connectivity.partiesQueueDefault: Jonon oletustila
+settings.option.connectivity.partiesQueueDefault: Oletusjonotila
 settings.option.connectivity.partiesQueueDefault.audited: Isäntä hyväksyy lisäykset
 settings.option.connectivity.partiesQueueDefault.description: Tarvitsevatko vieraiden lisäykset hyväksyntäsi isännöimissäsi bileissä.
 settings.option.connectivity.partiesQueueDefault.open: Avoin
-settings.option.connectivity.partiesTransportDefault: Toiston oletushallinta
+settings.option.connectivity.partiesTransportDefault: Oletustoiston ohjaus
 settings.option.connectivity.partiesTransportDefault.description: Kuka voi toistaa, keskeyttää, siirtyä ajassa ja ohittaa kappaleita isännöimissäsi bileissä.
 settings.option.connectivity.partiesTransportDefault.everyone: Kaikki
 settings.option.connectivity.partiesTransportDefault.host: Vain isäntä
@@ -4247,7 +4384,7 @@ settings.option.connectivity.remoteConnection: Etäyhteys
 settings.option.connectivity.remoteConnection.description: Puhelimen tai tabletin pariliitoksen muodostaminen ja toistoa ohjaavien laitteiden pariliitoksen poistaminen.
 settings.option.connectivity.rpcServer: RPC-palvelin
 settings.option.connectivity.rpcServer.description: Hallitse ulkoisten sovellusten pääsyä Cideriin RPC-palvelimen kautta.
-settings.option.connectivity.rpcServer.manageAccess: Hallitse ulkoisten sovellusten pääsyä Cideriin
+settings.option.connectivity.rpcServer.manageAccess: Hallinnoi ulkoisten sovellusten pääsyä Ciderille
 settings.option.connectivity.scrobbler: Scrobbler
 settings.option.connectivity.scrobblerIntegration: Scrobbler-integraatio
 settings.option.connectivity.scrobblerIntegration.description: Last.fm-, ListenBrainz-, Libre.fm- ja Maloja-skrobblaus kuunteluhistorian tallentamiseen.
@@ -4285,22 +4422,22 @@ settings.option.experimental.unknownPlugin: Tuntemattomat lähteet
 settings.option.experimental.unknownPlugin.description: Salli lisäosien asennus muista lähteistä kuin Ciderin lisäosakirjastosta
 settings.option.experiments.chromecast: Ota Chromecast käyttöön
 settings.option.experiments.chromecast.description: Lisää suoratoistopainikkeen verkossa oleville Google Cast -laitteille.
-settings.option.experiments.chromecastLyrics: Chromecast-sanat
+settings.option.experiments.chromecastLyrics: Chromecast-sanoitukset
 settings.option.experiments.chromecastLyrics.description: Näytä synkronoidut sanat Chromecast-näytöllä.
 settings.option.experiments.floatingSearch: Ota käyttöön kelluva haku
 settings.option.experiments.forceExplicit: Vaihda automaattisesti Explicit-versioon albumista
 settings.option.experiments.forceExplicit.description: Saattaa pidentää latausaikoja etsittäessä albumien Explicit-versioita.
 settings.option.experiments.legacyFetch: Legacy-haku
-settings.option.experiments.musicVideos: Ota käyttöön kirjaston musiikkivideot
+settings.option.experiments.musicVideos: Ota kirjaston musiikkivideot käyttöön
 settings.option.experiments.title: Kokeelliset ominaisuudet
 settings.option.general.app: Sovellus
-settings.option.general.artistChips: Artistitunnisteet
+settings.option.general.artistChips: Artistipainikkeet
 settings.option.general.autoplayByDefault: Ota automaattinen toisto käyttöön oletuksena
 settings.option.general.autoplayByDefault.description: Ota automaattinen toisto käyttöön automaattisesti musiikkia toistettaessa (ei koske radioasemia).
 settings.option.general.autoRemoveDisliked: Poista epämieluisat kappaleet jonosta automaattisesti
 settings.option.general.autoRemoveDisliked.description: Poistaa kappaleet jonosta automaattisesti, kun ne merkitään epämieluisiksi.
 settings.option.general.cache: Välimuisti
-settings.option.general.clearCacheDropdown: Tyhjennä välimuisti -pudotusvalikko
+settings.option.general.clearCacheDropdown: Tyhjennä välimuisti -valikko
 settings.option.general.contentToCache: Välimuistiin tallennettava sisältö
 settings.option.general.customizeSidebar: Muokkaa sivupalkin kohteita
 settings.option.general.customizeSidebar.customize: Muokkaa
@@ -4325,14 +4462,14 @@ settings.option.general.language.fun: Hupikielet
 settings.option.general.language.main: Kielet
 settings.option.general.language.unsorted: Järjestämättömät
 settings.option.general.noPlayingAction.newMusicMix: Toista Uuden musiikin miksaus
-settings.option.general.noPlayingAction.none: Älä tee mitään
-settings.option.general.noPlayingAction.personalStation: Aloita oma asema
-settings.option.general.noPlayingAction.recent: Toista viimeisimmät kappaleet
-settings.option.general.noPlayingAction.recentlyAdded: Toista viimeksi lisätyt kappaleet
+settings.option.general.noPlayingAction.none: Ei toimintoa
+settings.option.general.noPlayingAction.personalStation: Käynnistä oma asema
+settings.option.general.noPlayingAction.recent: Toista viimeksi kuunnellut kappaleet
+settings.option.general.noPlayingAction.recentlyAdded: Toista äskettäin lisätyt kappaleet
 settings.option.general.noPlayingAction.shuffleLibrary: Sekoita kirjaston kappaleet
 settings.option.general.onStartup: Käynnistettäessä
 settings.option.general.onStartup.openStartup: Avaa aloitussivu
-settings.option.general.onStartup.resume: Jatka edellistä istuntoa
+settings.option.general.onStartup.resume: Jatka viimeisintä istuntoa
 settings.option.general.pagination: Sivulla näytettävien kohteiden määrä
 settings.option.general.preventDisplaySleep: Pidä näyttö päällä soiton aikana
 settings.option.general.preventSystemSleep: Pidä tietokone hereillä soiton aikana
@@ -4363,8 +4500,9 @@ settings.option.general.startupPage: Aloitussivu
 settings.option.general.startupPage.blank: Tyhjä sivu
 settings.option.general.startupPage.description: Valitse sivu, joka näytetään, kun avaat Ciderin.
 settings.option.general.startupPage.descriptionV2: Sivu, jonka Cider avaa uusissa välilehdissä ja käynnistyksessä, kun Käynnistys-asetuksena on Avaa aloitussivu.
-settings.option.general.startupPage.newTab: Uusi välilehti
-settings.option.general.startupPage.personalHome: Henkilökohtainen kotisivu
+settings.option.general.startupPage.descriptionV3: Sivu, jonka Cider avaa käynnistyessään.
+settings.option.general.startupPage.newTab: Uuden välilehden sivu
+settings.option.general.startupPage.personalHome: Oma etusivu
 settings.option.general.themeUpdateNotification: Tarkista teemojen päivitykset automaattisesti
 settings.option.general.translationCredits: Käännöksen tekijät
 settings.option.general.translationFeedback: Käännöspalaute
@@ -4376,66 +4514,66 @@ settings.option.general.useSmartQueueByDefault.needsAutomix: Automix on pois pä
 settings.option.general.warnBeforeQueueOverride: Varoita ennen jonon korvaamista
 settings.option.hide: Piilota
 settings.option.left: Vasen
-settings.option.lyrics.contributeCta: Osallistu ja lähetä sanoja
+settings.option.lyrics.contributeCta: Osallistu ja lähetä sanoituksia
 settings.option.lyrics.contributeCta.description: Lähetä synkronoituja sanoja, esikatsele niitä livenä ja tarkastele osallistujien tulostaulukkoa.
-settings.option.lyrics.customScrollerProperties: Vierityksen mukautetut ominaisuudet
+settings.option.lyrics.customScrollerProperties: Mukautetun vierityksen ominaisuudet
 settings.option.lyrics.customScrollerProperties.description: Ota käyttöön mukautetut tyylit sanoitusten vieritysanimaatioille.
-settings.option.lyrics.defaultProvider: Oletustarjoaja
+settings.option.lyrics.defaultProvider: Oletuslähde
 settings.option.lyrics.defaultProvider.description: Valitse ensisijainen sanoitusten tarjoaja. ”Automaattinen” valitsee parhaan saatavilla olevan lähteen automaattisesti.
 settings.option.lyrics.displayOptions: Näyttöasetukset
 settings.option.lyrics.displayOptions.description: Mukauta sanoitusten näyttötapaa
 settings.option.lyrics.enableMusixmatch: Ota käyttöön Musixmatch-sanat
 settings.option.lyrics.enableMusixmatchKaraoke: Ota käyttöön karaoketila (vain Musixmatch)
 settings.option.lyrics.enableQQLyrics: Ota käyttöön QQ-sanat
-settings.option.lyrics.enableSingLyrics: Ota käyttöön Sing-sanoitukset
+settings.option.lyrics.enableSingLyrics: Ota laulusanoitukset käyttöön
 settings.option.lyrics.enableSingLyrics.description: Näytä sana sanalta synkronoidut sanoitukset, jotka korostuvat musiikin tahdissa, kun ne ovat saatavilla.
-settings.option.lyrics.enableStaticLyrics: Ota käyttöön staattiset sanoitukset
+settings.option.lyrics.enableStaticLyrics: Ota staattiset sanoitukset käyttöön
 settings.option.lyrics.enableStaticLyrics.description: Näytä sanoitukset myös silloin, kun ajoitustietoja ei ole saatavilla. Nämä sanoitukset eivät vieri automaattisesti.
 settings.option.lyrics.enableTranslations: Ota käännökset käyttöön
 settings.option.lyrics.enableTranslations.description: Näytä käännetyt sanoitukset, kun ne ovat saatavilla. Käännökset ovat peräisin Musixmatch-yhteisöltä tai konekäännöksistä.
 settings.option.lyrics.enableYoutubeLyrics: Ota käyttöön YouTube-sanat musiikkivideoille
-settings.option.lyrics.fpsLimit: Sanoitusten kehysnopeus
+settings.option.lyrics.fpsLimit: Sanoitusten kuvataajuus
 settings.option.lyrics.fpsLimit.description: Sanoitusanimaatioiden enimmäiskehysnopeus. Korkeammat nopeudet näyttävät sulavammilta korkean virkistystaajuuden näytöillä, mutta kuluttavat enemmän suoritin- ja näytönohjaintehoa. ”Vastaa näyttöä” noudattaa näyttösi virkistystaajuutta.
-settings.option.lyrics.fpsLimit.matchDisplay: Vastaa näyttöä
-settings.option.lyrics.keepCompleted: Näytä jo lauletut sanoitukset
+settings.option.lyrics.fpsLimit.matchDisplay: Vastaa näytön virkistystaajuutta
+settings.option.lyrics.keepCompleted: Säilytä valmiit sanoitukset
 settings.option.lyrics.keepCompleted.description: Pidä jo lauletut rivit näkyvissä (himmennettyinä) nykyisen rivin yläpuolella. Kun asetus on poissa päältä, jo lauletut rivit piilotetaan.
 settings.option.lyrics.localeOverrides: Kielikohtaiset ohitukset
 settings.option.lyrics.localeOverrides.description: Määritä mukautetut tarjoaja- ja käännössäännöt tietyille musiikin kielille
 settings.option.lyrics.musixmatchPreferredLanguage: Musixmatch-käännösten ensisijainen kieli
-settings.option.lyrics.preferUserLyrics: Suosi käyttäjien lähettämiä sanoituksia
+settings.option.lyrics.preferUserLyrics: Suosi käyttäjien lisäämiä sanoituksia
 settings.option.lyrics.preferUserLyrics.description: Aseta käyttäjien lähettämät sanoitukset etusijalle muihin lähteisiin nähden, jos niiden ajoitus on tarkempi.
 settings.option.lyrics.provider.apple: Apple Music
 settings.option.lyrics.provider.auto: Automaattinen (paras saatavilla oleva)
 settings.option.lyrics.provider.mxm: Musixmatch
 settings.option.lyrics.provider.netease: NetEase
-settings.option.lyrics.provider.user: Käyttäjän lähettämä
+settings.option.lyrics.provider.user: Käyttäjien lisäämät
 settings.option.lyrics.providerPreferences: Tarjoajien asetukset
 settings.option.lyrics.providerPreferences.description: Määritä käytettävät sanoitusten lähteet ja niiden tärkeysjärjestys
-settings.option.lyrics.scrollTuning: Vierityksen kesto ja kevennys
+settings.option.lyrics.scrollTuning: Vierityksen kesto ja kiihtyvyys
 settings.option.lyrics.scrollTuning.description: Määritä sanoitusrivien vierityksen kesto ja kevennyskäyrä erikseen sivupalkille ja immersiiviselle soittimelle.
-settings.option.lyrics.showDualLanguage: Näytä molemmat kielet
+settings.option.lyrics.showDualLanguage: Näytä kaksi kieltä
 settings.option.lyrics.showDualLanguage.description: Näytä sekä alkuperäiset sanoitukset että käännös samanaikaisesti.
-settings.option.lyrics.showTimestamps: Näytä aikaleimat vietäessä osoitin päälle
+settings.option.lyrics.showTimestamps: Näytä aikaleimat osoitettaessa
 settings.option.lyrics.showTimestamps.description: Näytä kunkin sanoitusrivin aikaleima, kun osoitin viedään sen päälle.
 settings.option.lyrics.thirdPartySources: Ota käyttöön kolmannen osapuolen lähteet
 settings.option.lyrics.thirdPartySources.description: Salli sanoitusten haku Musixmatch- ja NetEase-palveluista, kun Apple Music -sanoituksia ei ole saatavilla. Laatu voi vaihdella, ja jatkuva käyttö voi johtaa käyttörajoituksiin.
-settings.option.lyrics.timeOffset: Sanoitusten ajoituksen siirtymä (sekuntia)
+settings.option.lyrics.timeOffset: Sanoitusten ajoitussiirto (sekuntia)
 settings.option.lyrics.timeOffset.description: Säädä sanoitusten näyttöajankohtaa. Positiiviset arvot näyttävät sanoitukset aikaisemmin, negatiiviset myöhemmin. Hyödyllinen epätahdissa olevien äänilaitteistojen korjaamiseen.
 settings.option.lyrics.timeOffset.descriptionV2: Säädä sanoitusten ajoitusta. Positiiviset arvot näyttävät sanoitukset myöhemmin, negatiiviset aiemmin. Hyödyllinen, kun äänen ja sanoitusten ajoitus ei ole kohdallaan.
-settings.option.lyrics.timestampStyle: Aikaleiman tyyli
+settings.option.lyrics.timestampStyle: Aikaleimojen tyyli
 settings.option.lyrics.timestampStyle.both: Molemmat
 settings.option.lyrics.timestampStyle.chip: Kapseli
 settings.option.lyrics.timestampStyle.description: Valitse, miten aikaleimat näytetään, kun osoitin viedään sanoitusten päälle.
 settings.option.lyrics.timestampStyle.ring: Rengas
 settings.option.lyrics.trackOverrides: Kappalekohtaiset ohitukset
 settings.option.lyrics.trackOverrides.description: Hallitse kappalekohtaisia sanoitustarjoajien lukituksia ja asetuksia
-settings.option.lyrics.translationLanguage: Käännöskieli
+settings.option.lyrics.translationLanguage: Käännöksen kieli
 settings.option.lyrics.translationLanguage.description: Kieli, jolle sanoitukset käännetään. Käytetään vain, kun käännöstilaksi on asetettu Manuaalinen.
 settings.option.lyrics.translationMode: Käännöstila
-settings.option.lyrics.translationMode.appLanguage: Automaattinen sovelluksen kielen mukaan
+settings.option.lyrics.translationMode.appLanguage: Automaattisesti sovelluksen kielestä
 settings.option.lyrics.translationMode.description: Miten kohdekäännöskieli määritetään.
 settings.option.lyrics.translationMode.manual: Manuaalinen (käytä valittua kieltä)
-settings.option.lyrics.translationMode.system: Automaattinen järjestelmän kielen mukaan
+settings.option.lyrics.translationMode.system: Automaattisesti järjestelmän kielestä
 settings.option.lyrics.translationSettings: Käännösasetukset
 settings.option.lyrics.translationSettings.description: Määritä sanoitusten kääntämisen asetukset
 settings.option.medium: Keskitaso
@@ -4449,12 +4587,12 @@ settings.option.notifications.history.persist.description: Muista ilmoitusluette
 settings.option.off: Pois päältä
 settings.option.on: Päällä
 settings.option.performance.app: Sovellus
-settings.option.performance.backgroundRefreshTime: Taustapäivityksen aikaväli
+settings.option.performance.backgroundRefreshTime: Taustapäivityksen aika
 settings.option.performance.backgroundRefreshTime.description: Aika sekunteina kunkin taustapäivityksen välillä. Pienemmät arvot voivat aiheuttaa suorituskykyongelmia.
 settings.option.performance.dataAndUiLoad: Datan ja käyttöliittymän lataus
-settings.option.performance.disableLargeRequestOffloading: Poista suurten pyyntöjen kevennys käytöstä
+settings.option.performance.disableLargeRequestOffloading: Poista suurten pyyntöjen siirtäminen käytöstä
 settings.option.performance.disableLargeRequestOffloading.description: Vaikuttaa käyttöliittymän suorituskykyyn suurten pyyntöjen aikana
-settings.option.performance.enableMediaItemInspect: Ota käyttöön MediaItem-kohteiden kehittäjätarkastelu
+settings.option.performance.enableMediaItemInspect: Ota MediaItem-kohteiden kehittäjätarkastelu käyttöön
 settings.option.performance.enableMediaItemInspect.description: Voi vaikuttaa hieman suorituskykyyn
 settings.option.performance.gameMode: Pelitila
 settings.option.performance.gameMode.description: Vähentää visuaalisia tehosteita ja voi ottaa käyttöön Windowsin tehokkuustilan suorittimen käytön vähentämiseksi.
@@ -4471,7 +4609,7 @@ settings.option.performance.limitBlurMapFramerateOnBlur: Rajoita animoidun taust
 settings.option.performance.limitBlurMapFramerateOnBlur.description: Laskee immersiivisen animoidun taustan kehysnopeutta, kun ikkuna ei ole aktiivinen, säästääkseen virtaa. Poista käytöstä, jos haluat sen toimivan täydellä nopeudella.
 settings.option.performance.limitImmersiveBgFramerateOnBlur: Rajoita immersiivisen taustan kuvanopeutta, kun sovellus ei ole aktiivisena
 settings.option.performance.motion: Liike
-settings.option.performance.powerSaverOnBattery: Säästä virtaa akkukäytössä
+settings.option.performance.powerSaverOnBattery: Säästä virtaa akulla
 settings.option.performance.powerSaverOnBattery.description: Kun laite toimii akkuvirralla, immersiivinen tausta renderöidään enintään 30 kuvan sekuntinopeudella ja sanoitusten animaatiot on rajoitettu 60 kuvaan sekunnissa.
 settings.option.performance.preloadSidebarPages: Esilataa sivupalkin sivut
 settings.option.performance.preloadSidebarPages.description: Lataa sivupalkin sivut ennen niiden avaamista. ”Osoitettaessa” aloittaa latauksen, kun osoitin viedään sivupalkin kohteen päälle. ”Joutilaana” lataa käynnistyksen jälkeen myös Kuuntele nyt-, Selaa- ja Radio-osiot sekä päivittää aiemmin avatut kirjastoluettelot.
@@ -4482,7 +4620,7 @@ settings.option.performance.reduceEffects.description: Poistaa sumennukset, lasi
 settings.option.performance.renderer.auto: Automaattinen (WebGPU, jos tuettu)
 settings.option.performance.renderer.canvas: Canvas 2D
 settings.option.performance.renderer.webgpu: WebGPU
-settings.option.performance.ultraWide: Ultraleveä
+settings.option.performance.ultraWide: Erittäin leveä
 settings.option.performance.ultraWide.description: Tämä poistaa sivun reunojen rajoituksen. Sovellusta ei kuitenkaan ole optimoitu ultraleveille näytöille, joten jotkin elementit saattavat näyttää epätavallisilta.
 settings.option.performance.useEmotionEngine: Käytä Emotion Engineä
 settings.option.performance.useEmotionEngine.description: Kun käytössä, sovellus käyttää Emotion Engineä albumin kansikuvan väripaletin määrittämiseen. Tämä voi aiheuttaa suorituskykyongelmia heikkotehoisilla laitteilla.
@@ -4516,56 +4654,56 @@ settings.option.sweetener.accentColor.purple: Violetti
 settings.option.sweetener.accentColor.systemHint: Poista järjestelmän korostusväri käytöstä valitaksesi oman värisi.
 settings.option.sweetener.accentColor.yellow: Keltainen
 settings.option.sweetener.enableSweetener: Ota Sweetener käyttöön
-settings.option.sweetener.header.uiCustomization: Käyttöliittymän Mukauttaminen
+settings.option.sweetener.header.uiCustomization: Käyttöliittymän mukauttaminen
 settings.option.sweetener.header.uiCustomization.description: Sovelluksessa käytettävät korostus- ja sävyvärit.
 settings.option.sweetener.immersiveBackground.brightnessPercentage: Kirkkaus %
 settings.option.sweetener.immersiveBackground.contrastPercentage: Kontrasti %
-settings.option.sweetener.immersiveBackground.frameRate: Ruudunpäivitysnopeus (ikkuna aktiivisena)
+settings.option.sweetener.immersiveBackground.frameRate: Kuvataajuus (ikkuna aktiivinen)
 settings.option.sweetener.immersiveBackground.frameRate.description: "Suositus: 15–30 FPS"
 settings.option.sweetener.immersiveBackground.header.filters: Suodattimet
-settings.option.sweetener.immersiveBackground.lightModeWarning: Immersiivistä taustaa ei tällä hetkellä tueta vaaleassa tilassa.
+settings.option.sweetener.immersiveBackground.lightModeWarning: Immersiivinen tausta ei tällä hetkellä tue vaaleaa teemaa.
 settings.option.sweetener.immersiveBackground.saturationPercentage: Kylläisyys %
 settings.option.sweetener.immersiveBackground.use: Käytä immersiivistä taustaa
 settings.option.sweetener.immersiveBackgroundType: Immersiivisen taustan tyyppi
 settings.option.sweetener.immersiveBackgroundType.immersive: Immersive
 settings.option.sweetener.immersiveBackgroundType.immersiveLite: Immersive Lite
 settings.option.sweetener.useCustomAccentColor: Käytä mukautettua korostusväriä
-settings.option.sweetener.useCustomAccentColor.accentColor: Korostettu Väri
-settings.option.sweetener.useCustomTintColor: Käytä mukautettua sävyväriä
+settings.option.sweetener.useCustomAccentColor.accentColor: Korostusväri
+settings.option.sweetener.useCustomTintColor: Käytä mukautettua sävytysväriä
 settings.option.sweetener.useCustomTintColor.lightModeWarning: Alle 0,8 sävysuhteita ei huomioida vaaleassa tilassa.
-settings.option.sweetener.useCustomTintColor.tintColor: Sävyväri
+settings.option.sweetener.useCustomTintColor.tintColor: Sävytysväri
 settings.option.sweetener.useCustomTintColor.tintRatio: Sävyvärin suhde
 settings.option.v2: V2
 settings.option.v2rp: V2 RP
 settings.option.v3: V3
 settings.option.v3rp: V3 RP
 settings.option.visual.accentColor: Korostusväri
-settings.option.visual.adaptiveColorPercent: Mukautuva Väri Prosentti
-settings.option.visual.additionalAnimatedArtwork: Ylimääräiset animoidut kansikuvat luettelossa
+settings.option.visual.adaptiveColorPercent: Mukautuvan värin prosenttiosuus
+settings.option.visual.additionalAnimatedArtwork: Lisää animoituja kansikuvia katalogissa
 settings.option.visual.additionalAnimatedArtwork.description: Näytä enemmän animoituja kansikuvia, kun niitä on saatavilla. Suorituskyky voi heikentyä, jos näytöllä on useita.
-settings.option.visual.animateArtworkOnHover: Animoi kohteen kansikuva, kun hiiri on sen päällä
-settings.option.visual.animatedArtwork: Animoitu taideteos
+settings.option.visual.animateArtworkOnHover: Animoi kohteen kansikuva osoitettaessa
+settings.option.visual.animatedArtwork: Animoitu kansikuva
 settings.option.visual.animatedArtwork.description: Ota käyttöön animoitu kansitaide, keskeytä kun ikkuna ei ole aktiivinen
 settings.option.visual.animatedArtwork.warningDescription: Näytä animoidut kansikuvat, kun niitä on saatavilla. Tämä voi aiheuttaa suorituskykyongelmia heikkotehoisilla laitteilla.
 settings.option.visual.animatedArtworkEngine: Animoitujen kansikuvien moottori
 settings.option.visual.animatedArtworkEngine.description: Natiivi lataa yhden toistuvan videon ja toistaa sen ilman laadun vaihtamista. Käytä Legacy-vaihtoehtoa vain, jos kohtaat toisto-ongelmia.
 settings.option.visual.animatedArtworkEngine.hls: Legacy (hls.js)
 settings.option.visual.animatedArtworkEngine.native: Natiivi (Suositeltu)
-settings.option.visual.animatedArtworkQuality: Animoidun kansikuvan laatu
+settings.option.visual.animatedArtworkQuality: Animoitujen kansikuvien laatu
 settings.option.visual.animatedArtworkQuality.balanced: Tasapainoinen
 settings.option.visual.animatedArtworkQuality.description: Miten tarkka animoitu kansikuva on. Automaattinen sovittaa kansikuvan koon näytön koon mukaan ja sopii useimmille laitteistoille.
 settings.option.visual.animatedArtworkQuality.performance: Suorituskyky
 settings.option.visual.animatedArtworkQuality.quality: Laatu
-settings.option.visual.animatedBackgroundFramerate: Animoidun taustan ruudunpäivitysnopeus
+settings.option.visual.animatedBackgroundFramerate: Animoidun taustan kuvataajuus
 settings.option.visual.animatedWindowBackground: Animoitu ikkunan tausta
-settings.option.visual.artistHeaderAlignment: Artistisivun yläosan asettelu
+settings.option.visual.artistHeaderAlignment: Artistin otsikon asettelu
 settings.option.visual.artistHeaderAlignment.center: Keskitetty
 settings.option.visual.artistHeaderAlignment.description: Artistin nimen ja toimintojen sijainti artistisivun yläosassa.
 settings.option.visual.artistHeaderAlignment.left: Vasen (oletus)
-settings.option.visual.artworkLoadingMethod: Artwork Loading Method
+settings.option.visual.artworkLoadingMethod: Kansikuvien lataustapa
 settings.option.visual.artworkLoadingMethod.eager: Ennakoiva
 settings.option.visual.artworkLoadingMethod.lazy: Viivästetty
-settings.option.visual.chromaticAberrationIntensity: Kromaattisen poikkeaman voimakkuus
+settings.option.visual.chromaticAberrationIntensity: Kromaattisen aberraation voimakkuus
 settings.option.visual.chromaticAberrationIntensity.description: RGB-reunuksen voimakkuus LCD-lasilla.
 settings.option.visual.colorCustomization: Värien mukauttaminen
 settings.option.visual.colorScheme: Väriteema
@@ -4580,29 +4718,29 @@ settings.option.visual.customScalingFactor.description: Säädä sovelluksen kä
 settings.option.visual.enableAnimatedArtworkInMiniPlayer: Ota animoidut kansikuvat käyttöön minisoittimessa
 settings.option.visual.extendedEditorialLayout: Käytä laajennettua toimituksellista asettelua albumisivuilla
 settings.option.visual.extendedEditorialLayout.description: Kun käytössä, albumisivulla näytetään toimituksellinen banneri ja tietyille albumeille otetaan käyttöön väripaletti saatavilla olevien elementtien perusteella.
-settings.option.visual.filterPromotionalContent: Suodata mainossisältöä
+settings.option.visual.filterPromotionalContent: Suodata mainossisältö
 settings.option.visual.filterPromotionalContent.description: Kun käytössä, Selaa- ja Kuuntele nyt -osioiden osat, jotka vastaavat suodatinavainsanojasi, piilotetaan.
 settings.option.visual.floatingPlayer: Kelluva soitin
 settings.option.visual.floatingPlayer.description: Irrota soitinpalkki reunoista kelluvan pillerimäisen ulkoasun saavuttamiseksi
-settings.option.visual.floatingPlayerPadding: Kelluvan soittimen reunaväli
+settings.option.visual.floatingPlayerPadding: Kelluvan soittimen sisennys
 settings.option.visual.floatingPlayerPadding.description: Määrittää, kuinka paljon tyhjää tilaa kelluvan soittimen ympärille jätetään
 settings.option.visual.floatingPlayerRoundness: Kelluvan soittimen pyöristys
 settings.option.visual.floatingPlayerRoundness.description: Kelluvan soittimen kulman pyöristys (0 = vastaa näkymää)
 settings.option.visual.fonts: Fontit
-settings.option.visual.forceMpWindowControls: Käytä monialustaisia ikkunanohjaimia
-settings.option.visual.forceRoundedViewport: Käytä pyöristettyä näkymäaluetta
+settings.option.visual.forceMpWindowControls: Käytä monialustaisia ikkunan ohjaimia
+settings.option.visual.forceRoundedViewport: Käytä pyöristettyä näkymää
 settings.option.visual.forceRoundedViewport.description: Käytä pyöristettyjä kulmia päänäkymässä kaikissa asetteluissa
 settings.option.visual.hardwareAcceleration: Laitteistokiihdytys
 settings.option.visual.hardwareAcceleration.description: Vaatii uudelleenkäynnistyksen
-settings.option.visual.headerStyle: Albumin ja soittolistan ylätunnisteen tyyli
+settings.option.visual.headerStyle: Albumin ja soittolistan otsikkotyyli
 settings.option.visual.headerStyle.appleMusic: Apple Music
 settings.option.visual.headerStyle.appleMusic.description: Toiminnot kelluvat sivun oikeassa yläkulmassa.
 settings.option.visual.headerStyle.classic: Klassinen
 settings.option.visual.headerStyle.classic.description: Toiminnot pysyvät rivissä sivun otsikossa.
 settings.option.visual.headerStyle.description: Klassinen pitää toiminnot ylätunnisteen sisällä. Apple Music siirtää Jaa / Lisää / Lisää kirjastoon -toiminnot kelluvaan palkkiin sivun oikeaan yläkulmaan.
-settings.option.visual.hideAppleRecommends: Piilota ”Apple suosittelee” -kortit
+settings.option.visual.hideAppleRecommends: Piilota "Apple suosittelee" -kortit
 settings.option.visual.hideAppleRecommends.description: Poistaa mainostavat ”Apple suosittelee” -kortit Kuuntele nyt- ja Koti-suositusriveiltä.
-settings.option.visual.hideHeroItems: Piilota korostetut kohteet Selaa-näkymästä
+settings.option.visual.hideHeroItems: Piilota pääkohteet Selaa-näkymässä
 settings.option.visual.immersive.adjustVisuals: Säädä visuaaleja
 settings.option.visual.immersive.background.artwork: Yksinkertainen kansitaide
 settings.option.visual.immersive.background.blank: Tyhjä
@@ -4610,23 +4748,23 @@ settings.option.visual.immersive.background.color: Yksinkertainen väri
 settings.option.visual.immersive.background.customImage: Mukautettu kuva
 settings.option.visual.immersive.background.customImageMix: Mukautettu kuva (sekoitettu)
 settings.option.visual.immersive.background.default: Oletus
-settings.option.visual.immersive.backgroundType: Taustatyyppi
+settings.option.visual.immersive.backgroundType: Taustan tyyppi
 settings.option.visual.immersive.contrastRatio: Kontrastisuhde
 settings.option.visual.immersive.coverflowStyle: Coverflow-tyyli
 settings.option.visual.immersive.coverflowStyle.default: Oletus
 settings.option.visual.immersive.description: Mukauta Immersive-tilan kokemusta
 settings.option.visual.immersive.enableHdr: Ota HDR käyttöön
-settings.option.visual.immersive.fsrUpscale: Kansikuvan FSR-skaalaus
-settings.option.visual.immersive.fsrUpscale.applyToAll: "FSR: Käytä kaikissa kappaleissa"
+settings.option.visual.immersive.fsrUpscale: FSR-kansikuvan skaalaus
+settings.option.visual.immersive.fsrUpscale.applyToAll: "FSR: käytä kaikissa kappaleissa"
 settings.option.visual.immersive.fsrUpscale.applyToAll.description: Kun pois käytöstä, FSR-skaalausta käytetään vain ennen kynnysvuotta julkaistuihin kappaleisiin. Ota käyttöön skaataksesi jokaisen kappaleen.
 settings.option.visual.immersive.fsrUpscale.description: Skaalaa albumin kansikuvaa käyttämällä AMD FidelityFX Super Resolution -tekniikkaa. Auttaa vanhempia kansikuvia (ennen vuotta 2010) näyttämään terävämmiltä. Vaatii WebGPU:n.
-settings.option.visual.immersive.fsrUpscale.sharpness: "FSR: Terävyys"
+settings.option.visual.immersive.fsrUpscale.sharpness: "FSR: terävyys"
 settings.option.visual.immersive.fsrUpscale.sharpness.description: Kontrastisopeutuvan terävöitysvaiheen (RCAS) voimakkuus. 0 on pehmein, 1 on terävin.
-settings.option.visual.immersive.fsrUpscale.thresholdYear: "FSR: Kynnysvuosi"
+settings.option.visual.immersive.fsrUpscale.thresholdYear: "FSR: kynnysvuosi"
 settings.option.visual.immersive.fsrUpscale.thresholdYear.description: Kappaleet, jotka on julkaistu ennen tätä vuotta, ovat oikeutettuja skaalaukseen, kun ”Käytä kaikissa kappaleissa” on pois käytöstä.
 settings.option.visual.immersive.hdrBoostScale: HDR-tehostuksen asteikko
-settings.option.visual.immersive.hideLyricsWhenUnavailable: Piilota sanoitukset, kun niitä ei ole saatavilla
-settings.option.visual.immersive.keepCompletedLyrics: Säilytä jo soitetut sanoitukset
+settings.option.visual.immersive.hideLyricsWhenUnavailable: Piilota sanoitukset, kun ne eivät ole saatavilla
+settings.option.visual.immersive.keepCompletedLyrics: Säilytä valmiit sanoitukset
 settings.option.visual.immersive.keepCompletedLyrics.description: Säilytä jo soitetut sanoitukset näkyvissä sanoitusnäkymässä.
 settings.option.visual.immersive.layout.default: One (oletus)
 settings.option.visual.immersive.layout.minimal: Minimaalinen
@@ -4635,34 +4773,34 @@ settings.option.visual.immersive.layout.solarium: Solarium
 settings.option.visual.immersive.layout.sonoma: Sonoma
 settings.option.visual.immersive.layout.spectrumDeck: Spectrum Deck
 settings.option.visual.immersive.maxBrightness: Enimmäiskirkkaus
-settings.option.visual.immersive.maxLyricFontSize: Sanoitusten suurin fonttikoko (px)
+settings.option.visual.immersive.maxLyricFontSize: Sanoitusten enimmäisfonttikoko (px)
 settings.option.visual.immersive.startFullscreen: Käynnistä koko näytön tilassa
 settings.option.visual.immersive.startingTab: Aloitusvälilehti
 settings.option.visual.immersive.startingTab.history: Historia
 settings.option.visual.immersive.startingTab.lyrics: Sanoitukset
 settings.option.visual.immersive.startingTab.queue: Jono
-settings.option.visual.immersive.ultraHdr: Ultra HDR -kansikuvan skaalaus
+settings.option.visual.immersive.ultraHdr: Ultra HDR -kansitaiteen skaalaus
 settings.option.visual.immersive.ultraHdr.description: Lisää HDR-korostuksia, kontrastia ja väriä jokaisen kappaleen albumin kansikuvaan. Näyttää parhaimmalta HDR-näytöllä; muut näytöt saavat lievemmän tehosteen. Vaatii WebGPU:n.
-settings.option.visual.immersive.ultraHdr.headroom: "Ultra HDR: Huippukirkkauden varaa"
+settings.option.visual.immersive.ultraHdr.headroom: "Ultra HDR: huippuvara"
 settings.option.visual.immersive.ultraHdr.headroom.description: Korostusten enimmäiskirkkaus vakiovalkoisen monikertana. Laske arvoa, jos korostukset näyttävät liian kirkkailta näytölläsi.
-settings.option.visual.immersive.ultraHdr.intensity: "Ultra HDR: Voimakkuus"
+settings.option.visual.immersive.ultraHdr.intensity: "Ultra HDR: voimakkuus"
 settings.option.visual.immersive.ultraHdr.intensity.description: Tehosteen voimakkuus. 0 jättää kansikuvan ennalleen, 1 käyttää koko profiilia.
-settings.option.visual.immersive.ultraHdr.profile: "Ultra HDR: Profiili"
+settings.option.visual.immersive.ultraHdr.profile: "Ultra HDR: profiili"
 settings.option.visual.immersive.ultraHdr.profile.cinematic: Elokuvallinen
 settings.option.visual.immersive.ultraHdr.profile.description: Luonnollinen pysyy lähellä alkuperäistä, Eloisa on rohkea ja värikäs, Elokuvallinen on korkeakontrastinen ja hillitysti värikäs.
 settings.option.visual.immersive.ultraHdr.profile.natural: Luonnollinen
 settings.option.visual.immersive.ultraHdr.profile.vivid: Eloisa
-settings.option.visual.immersive.useAnimatedArtwork: Käytä animoitua kansikuvaa
+settings.option.visual.immersive.useAnimatedArtwork: Käytä animoituja kansikuvia
 settings.option.visual.immersive.useAnimatedArtwork.description: Näytä animoitu kansikuva, kun se on saatavilla. Tämä saattaa aiheuttaa suorituskykyongelmia heikkotehoisilla laitteilla.
 settings.option.visual.immersive.useAnimatedBackground: Immersive-näkymän animoitu tausta
-settings.option.visual.immersive.useBackgroundBpm: Taustan nopeus BPM:n mukaan
+settings.option.visual.immersive.useBackgroundBpm: Taustan nopeus BPM-arvon mukaan
 settings.option.visual.immersiveBackground.blank: Tyhjä
-settings.option.visual.immersiveBackground.customImage: Oma kuva
-settings.option.visual.immersiveBackground.customImageMixed: Oma kuva (sekoitettu)
+settings.option.visual.immersiveBackground.customImage: Mukautettu kuva
+settings.option.visual.immersiveBackground.customImageMixed: Mukautettu kuva (sekoitettu)
 settings.option.visual.immersiveBackground.gradientMesh: Liukuväriverkko
 settings.option.visual.immersiveBackground.simpleArtwork: Yksinkertainen kansikuva
 settings.option.visual.immersiveBackground.simpleColor: Yksinkertainen väri
-settings.option.visual.immersiveBgSettings: Immersive-taustan asetukset
+settings.option.visual.immersiveBgSettings: Immersiivisen taustan asetukset
 settings.option.visual.immersiveBgSettings.description: Sovelluksen taustatehosteet ja suodattimet.
 settings.option.visual.immersiveLayout.classic: Yksi klassinen
 settings.option.visual.immersiveLayout.classic.description: Alkuperäinen immersiivinen asettelu täyslevyisellä alasoittimella.
@@ -4678,13 +4816,13 @@ settings.option.visual.immersiveLayout.sonoma: Sonoma
 settings.option.visual.immersiveLayout.sonoma.description: Kansikuva sulautuu taustaan kelluvan ohjauskortin kanssa.
 settings.option.visual.immersiveLayout.spectrumDeck: Spectrum Deck
 settings.option.visual.immersiveLayout.spectrumDeck.description: Reaaliaikainen spektri kelluvalla kansikuvalla.
-settings.option.visual.immersiveStyle: Immersive-tyyli
-settings.option.visual.immersiveStylePortrait: Immersive-tyyli (pysty)
+settings.option.visual.immersiveStyle: Immersiivinen tyyli
+settings.option.visual.immersiveStylePortrait: Immersiivinen tyyli (pystysuunnassa)
 settings.option.visual.largeHeaderTitles: Suuret otsikot
 settings.option.visual.largeHeaderTitles.description: Suurentaa otsikkotekstiä albumi- ja soittolistasivuilla näyttävämmän ulkoasun saavuttamiseksi.
 settings.option.visual.layoutProfile: Asetteluprofiilin tyyppi
 settings.option.visual.layoutProfile.description: Säädä sovelluksen asettelua mieltymystesi mukaan
-settings.option.visual.layoutType: Layout Type
+settings.option.visual.layoutType: Asettelutyyppi
 settings.option.visual.layoutType.calico: Calico
 settings.option.visual.layoutType.calico.description: Täyskorkea sivupalkki, jossa soitin on sisältöalueen sisällä.
 settings.option.visual.layoutType.mavericks: Mavericks
@@ -4693,11 +4831,11 @@ settings.option.visual.layoutType.mojave: Mojave
 settings.option.visual.layoutType.mojave.description: Täyslevyinen työkalupalkki ja alasoitinpalkki.
 settings.option.visual.layoutType.montara: Montara
 settings.option.visual.layoutType.montara.description: Täyskorkea sivupalkki, jossa yläsoitin on sisältöalueen sisällä.
-settings.option.visual.lcdChromaticAberration: LCD:n kromaattinen poikkeama
+settings.option.visual.lcdChromaticAberration: LCD-kromaattinen aberraatio
 settings.option.visual.lcdChromaticAberration.description: Taittaa toistettavan kappaleen LCD-taustan nestelasisävyttimen läpi RGB-reunuksella.
 settings.option.visual.liquidGlassPlayer: Liquid Glass -soitinpalkki
 settings.option.visual.liquidGlassPlayer.description: Käytä nestemäistä lasipintaa toistettavan kappaleen soitinpalkissa. Poista käytöstä, jos haluat tasaisen, yhtenäisen paneelin (joka on myös kevyempi renderöidä).
-settings.option.visual.liquidGlassScrollPerf: Kevyt lasiefekti vieritettäessä
+settings.option.visual.liquidGlassScrollPerf: Kevyt lasi vierityksen aikana
 settings.option.visual.liquidGlassScrollPerf.description: Yksinkertaistaa nestemäisen lasiefektin taittumisen tavalliseksi sumennukseksi vierityksen aikana ja palauttaa sen pehmeästi, kun pysähdyt. Vähentää vierityksen nykimistä vaativilla järjestelmillä vaikuttamatta ulkoasuun pysähdyksissä. Aina käytössä Pelitilassa.
 settings.option.visual.liquidGlassScrollPerf.descriptionV2: Yksinkertaistaa nestemäisen lasin taittumisen tavalliseksi sumennukseksi vierittäessä ja palauttaa sen pysähtyessä. Vähentää vierityksen takkuilua vaativilla järjestelmillä, eikä lepotilassa muutu mitään.
 settings.option.visual.mainMenuPosition: Päävalikon sijainti
@@ -4720,21 +4858,21 @@ settings.option.visual.mojavePlayerType.comfy: Väljä
 settings.option.visual.mojavePlayerType.comfy.description: Korkeampi soitin, jossa kansikuva ja metatiedot ovat vasemmalla.
 settings.option.visual.mojavePlayerType.compact: Tiivis
 settings.option.visual.mojavePlayerType.compact.description: Kapea soitin, jossa on keskitetty LCD ja edistymispalkki yläpuolella.
-settings.option.visual.mojavePlayerType.compactInline: Tiivis rivissä
+settings.option.visual.mojavePlayerType.compactInline: Tiivis rivinäkymä
 settings.option.visual.mojavePlayerType.compactInline.description: Yksittäinen kapea rivi, jossa edistyminen näkyy LCD-näytön sisällä.
-settings.option.visual.moveUpLinks: Siirrä Selaa-osion "Lisää nähtävää" -linkit ylös
-settings.option.visual.musicVideoPinMaxResolution: Toista musiikkivideot aina enimmäistarkkuudella
+settings.option.visual.moveUpLinks: Siirrä Selaa-sivun "Lisää aiheesta" -linkit ylös
+settings.option.visual.musicVideoPinMaxResolution: Toista musiikkivideot aina suurimmalla resoluutiolla
 settings.option.visual.musicVideoPinMaxResolution.description: Säilyttää videon tarjoaman parhaan laadun sen sijaan, että aloittaisi matalalla laadulla ja nostaisi sitä vähitellen. Pienessä ikkunassa tai käytön mukaan laskutettavassa yhteydessä tämä kuluttaa huomattavasti enemmän kaistanleveyttä.
-settings.option.visual.musicVideoPrefetchOnHover: Valmistele musiikkivideot vietäessä osoitin päälle
+settings.option.visual.musicVideoPrefetchOnHover: Valmistele musiikkivideot osoitettaessa
 settings.option.visual.musicVideoPrefetchOnHover.description: Aloittaa videon lataamisen, kun osoitin on kuvakkeen päällä, jotta se avautuu nopeammin klikattaessa.
-settings.option.visual.musicVideoPrefetchSegmentsOnHover: Lataa ensimmäinen osa vietäessä osoitin päälle
+settings.option.visual.musicVideoPrefetchSegmentsOnHover: Lataa ensimmäinen osa osoitettaessa
 settings.option.visual.musicVideoPrefetchSegmentsOnHover.description: Lataa myös videon ensimmäiset sekunnit ennen klikkausta. Kuluttaa muutaman megatavun joka kerta, kun osoitin viedään päälle, myös silloin, kun videota ei koskaan avata.
-settings.option.visual.paletteContrast: Kansikuvan värikontrasti
+settings.option.visual.paletteContrast: Kansitaiteen värikontrasti
 settings.option.visual.paletteContrast.description: Määrittää, kuinka paljon albumin ja soittolistan värit erottuvat sivusta, jotta painikkeet ja toistoilmaisin pysyvät luettavina. Käyttöavun Suuri kontrasti -asetus käyttää aina Maksimaalinen-vaihtoehtoa.
 settings.option.visual.paletteContrast.enhanced: Parannettu
 settings.option.visual.paletteContrast.maximum: Maksimaalinen
 settings.option.visual.paletteContrast.standard: Vakio
-settings.option.visual.pauseAnimatedOnBlur: Keskeytä animoitu kansikuva, kun sovellus ei ole aktiivinen
+settings.option.visual.pauseAnimatedOnBlur: Keskeytä animoidut kansikuvat, kun ikkuna ei ole aktiivinen
 settings.option.visual.playerMaterial: Soittimen materiaali
 settings.option.visual.playerMaterial.blur: Sumennus
 settings.option.visual.playerMaterial.blur.description: Käytä toistopalkissa puoliläpinäkyvää huurrettua materiaalia ilman Liquid Glass -valontaittotehostetta.
@@ -4745,13 +4883,13 @@ settings.option.visual.playerMaterial.liquidGlass.description: Käytä Liquid Gl
 settings.option.visual.playerMaterial.none: Ei mitään
 settings.option.visual.playerMaterial.none.description: Käytä yhtenäistä, läpinäkymätöntä paneelia toistopalkissa.
 settings.option.visual.playerPosition: Soittimen sijainti
-settings.option.visual.playerType: Pelaajan Tyyppi
+settings.option.visual.playerType: Soittimen tyyppi
 settings.option.visual.plugin.github.download: Asenna GitHub-osoitteesta
 settings.option.visual.plugin.github.explore: Selaa GitHub-liitännäisiä
 settings.option.visual.plugin.github.install.confirm: Haluatko varmasti asentaa kohteen {{repo}}?
-settings.option.visual.popularityThreshold: Suosion kynnysarvo
+settings.option.visual.popularityThreshold: Suosion raja
 settings.option.visual.popularityThreshold.description: Vähimmäissuosio, joka vaaditaan ilmaisimien näyttämiseksi kappaleen vieressä.
-settings.option.visual.precisionScrollSpeed: Tarkkuusvierityksen nopeus
+settings.option.visual.precisionScrollSpeed: Tarkan vierityksen nopeus
 settings.option.visual.precisionScrollSpeed.description: Hienosäädä kosketuslevyn vieritystä uudessa (glass) -ikkunamoottorissa. Pienempi arvo on hitaampi ja tarkempi pieniin säätöihin; suurempi arvo vierittää nopeammin.
 settings.option.visual.purplePodcastPlaybackBar: Violetti toistopalkki podcasteille
 settings.option.visual.realtimeVisualizer: Reaaliaikainen äänivisualisointi
@@ -4762,17 +4900,17 @@ settings.option.visual.searchType.inline: Rivissä
 settings.option.visual.showBpmAndKey: Näytä BPM ja sävellaji soittolistojen ja albumien kappaleissa
 settings.option.visual.showBpmAndKey.description: Sisällön lataaminen kestää kauemmin, kun tämä on käytössä.
 settings.option.visual.showPersonalInfo: Näytä henkilötiedot
-settings.option.visual.showPlaylistArtworkInSidebar: Näytä soittolistan kansikuva sivupalkissa
+settings.option.visual.showPlaylistArtworkInSidebar: Näytä soittolistan kansikuvat sivupalkissa
 settings.option.visual.showPodcastsInSidebar: Näytä podcastit sivupalkissa
 settings.option.visual.showPodcastsInSidebar.description: Podcast-tukea rakennetaan edelleen uudelleen, joten Kirjasto-kohta näyttää tällä hetkellä vain paikkamerkin.
-settings.option.visual.showQuickActions: Näytä Pikatoiminnot
+settings.option.visual.showQuickActions: Näytä pikatoiminnot
 settings.option.visual.showWatchMusicVideoWhenAvailable: Näytä "Katso musiikkivideo", kun saatavilla
 settings.option.visual.sidebarStyle: Sivupalkin tyyli
 settings.option.visual.sidebarStyle.apple: Apple Music
 settings.option.visual.sidebarStyle.default: Oletus
 settings.option.visual.sidebarStyle.description: Valitse sivupalkin asettelu. ”Apple Music” sijoittaa kiinnitykset Kirjasto-osion sisälle ja poistaa Apple Music -osion otsikon.
 settings.option.visual.simpleArtworkBg.saturate: Värikylläisyys
-settings.option.visual.sizeProfile: UI Size Profile
+settings.option.visual.sizeProfile: Käyttöliittymän kokoprofiili
 settings.option.visual.sizeProfile.description.default: Oletuskoko, sopii kaikille syöttölaitteille. iOS- / Android- / Moderni Windows -tyyli.
 settings.option.visual.sizeProfile.description.desktop: Työpöytäkäyttöön optimoitu koko, sopii hiirelle ja näppäimistölle. macOS- / Perinteinen Windows -tyyli.
 settings.option.visual.sizeProfile.desktop: Työpöytä
@@ -4789,31 +4927,31 @@ settings.option.visual.theme.light: Vaalea
 settings.option.visual.theme.manageStyles: Hallitse tyylejä
 settings.option.visual.theme.uninstall: Poista asennus
 settings.option.visual.theme.viewInfo: Näytä tiedot
-settings.option.visual.titleBarStyle: Otsikkopalkin Tyyli
+settings.option.visual.titleBarStyle: Otsikkopalkin tyyli
 settings.option.visual.titleBarStyle.winui: WinUI
 settings.option.visual.topToolbarWidget: Ylätyökalupalkin widget
 settings.option.visual.transparency: Ota läpinäkyvyys käyttöön
 settings.option.visual.transparent: Läpinäkyvä kehys
 settings.option.visual.transparent.description: vaatii teeman tuen, vaatii uudelleenkäynnistyksen
 settings.option.visual.uiscale: Käyttöliittymän skaalaus
-settings.option.visual.useAdaptiveColors: Käytä Mukautuvia Värejä
+settings.option.visual.useAdaptiveColors: Käytä mukautuvia värejä
 settings.option.visual.useAdaptiveColors.description: Muuta aksenttiväriä, joka vastaa nykyistä kappaletta
 settings.option.visual.useAdaptiveColors.popup: Mukautuvat värit tulevat käyttöön seuraavan kappaleen kohdalla.
-settings.option.visual.verticalDrawerMode: Jonon ja sanoitusten sijoittelu
+settings.option.visual.verticalDrawerMode: Jonon ja sanoitusten sijainti
 settings.option.visual.verticalDrawerMode.auto.description: Käytä alapaneelia soittimen/sisällön alla pystynäytöillä ja sivupaneelia laajakuvalla.
-settings.option.visual.verticalDrawerMode.bottom: Alapaneeli
+settings.option.visual.verticalDrawerMode.bottom: Alalaatikko
 settings.option.visual.verticalDrawerMode.bottom.description: Näytä jono ja sanoitukset aina alapaneelissa soittimen/sisällön alla.
 settings.option.visual.verticalDrawerMode.description: Määritä, avautuvatko jono ja sanoitukset alapaneelina vai sivupaneelina pystynäytöillä.
-settings.option.visual.verticalDrawerMode.side: Sivupaneeli
+settings.option.visual.verticalDrawerMode.side: Sivulaatikko
 settings.option.visual.verticalDrawerMode.side.description: Näytä jono ja sanoitukset aina sivupaneelissa oikealla.
 settings.option.visual.vibrancyMode.acrylic: Akryyli
 settings.option.visual.vibrancyMode.mica: Mica
 settings.option.visual.vibrancyMode.tabbed: Välilehdellinen
-settings.option.visual.vibrancySettings: Eloisuusasetukset
+settings.option.visual.vibrancySettings: Värikylläisyyden asetukset
 settings.option.visual.windowBackgroundStyle: Ikkunan taustatyyli
 settings.option.visual.windowColor: Ikkunan sävyväri
-settings.option.visual.windowControlPosition: Ikkunan painikkeiden sijainti
-settings.option.visual.windowingMode: Vieritys- ja renderöintitila
+settings.option.visual.windowControlPosition: Ikkunan ohjainten sijainti
+settings.option.visual.windowingMode: Vieritys- ja piirtotila
 settings.option.visual.windowingMode.auto: Automaattinen (kosketuslevytunnistus)
 settings.option.visual.windowingMode.description: Valitse, miten sovellus renderöi ja vierittää sisältöä. "Automaattinen" on suositeltava useimmille käyttäjille. Joillakin kosketuslevylaitteilla "Vanha" voi olla reagoivampi.
 settings.option.visual.windowingMode.fallbackNotice.body: Cider käyttää sen sijaan vanhaa tilaa.
@@ -4821,7 +4959,7 @@ settings.option.visual.windowingMode.fallbackNotice.title: Uutta renderöintitil
 settings.option.visual.windowingMode.glass: Uusi
 settings.option.visual.windowingMode.performance: Vanha
 settings.option.visual.windowStyle: Ikkunatyyli
-settings.option.visual.windowVibrancy: Ikkunan kuultavuus
+settings.option.visual.windowVibrancy: Ikkunan värikylläisyys
 settings.option.window.close_button_hide: Sulkemispainikkeen tulisi piilottaa sovellus
 settings.option.window.maxElementScale: Elementtien enimmäisskaalaus
 settings.option.window.openOnStartup: Avaa Cider käynnistyksen yhteydessä
@@ -4852,6 +4990,17 @@ settings.power.savers: Virransäästäjät
 settings.power.summary.count: "{{high}} suuren vaikutuksen, {{medium}} kohtalaisen vaikutuksen ominaisuutta käytössä"
 settings.power.summary.high: Suuri vaikutus
 settings.power.summary.medium: Kohtalainen vaikutus
+settings.privacy.appPreferences: Sovelluksen asetukset
+settings.privacy.appPreferences.description: Jaa sovelluksen asetukset, jotta tiedämme, miten haluat Cider-sovelluksen määritettävän.
+settings.privacy.appUsage: Sovelluskohtainen käyttö
+settings.privacy.appUsage.description: Lähetä anonyymejä käyttötietoja Cider-sovelluksen ominaisuuksista. Tähän ei sisälly henkilötietoja eikä Apple Music -tietoja.
+settings.privacy.audioLabs: Cider Audio labs
+settings.privacy.audioLabs.description: Lähettää tietoja siitä, miten Cider Audio labs on määritetty.
+settings.privacy.deviceSpecs: Laitteen tekniset tiedot
+settings.privacy.deviceSpecs.description: Lähettää tietoja laitteesi nykyisestä laitteistosta (suoritin, näytönohjain, muisti ja äänilaitteet) sekä käyttöjärjestelmästä. Tiedot ovat perustason, eivätkä ne sisällä sarjanumeroita tai laitetunnuksia.
+settings.privacy.replay: Jaa kuunteluhistoria Cider Replayta varten
+settings.privacy.replay.description: Lähetä kuunteluhistoria nimettömänä osana Ciderin vuoden lopun yhteisöllistä Replay-projektia. Julkiset tilastot löytyvät osoitteesta cider.sh/replay.
+settings.privacy.statement: Cider Collective suhtautuu yksityisyyteen erittäin vakavasti. Emme kerää henkilötietoja emmekä myy tietoja kolmansille osapuolille. Kaikkia tietoja, jotka päätät jakaa kanssamme, käytetään sovelluksen parantamiseen eikä niitä jaeta kenellekään muulle. Kaikki mahdollisesti tallennetut henkilötiedot poistetaan ennen niiden lähettämistä meille.
 settings.profile.crop.hint: Siirrä vetämällä, zoomaa vierittämällä
 settings.profile.crop.title: Aseta kuva
 settings.profile.defaultName: Apple Music -käyttäjä
@@ -4859,17 +5008,18 @@ settings.profile.field.displayName: Näyttönimi
 settings.profile.field.displayName.description: Näytetään sivupalkissa ja kaikkialla Ciderissa.
 settings.profile.field.handle.description: Käyttäjätunnuksesi (@käyttäjänimi), jota käytetään jakamiseen.
 settings.profile.field.photo: Profiilikuva
+settings.profile.field.photo.change: Vaihda profiilikuva
 settings.profile.field.photo.description: Mukautettu kuva on tällä hetkellä käytössä.
 settings.profile.header.identity: Muokkaa profiilia
 settings.profile.header.region: Alue ja kieli
 settings.profile.header.visibility: Sivupalkin näyttö
 settings.profile.language.description: Katalogin metatietojen kieli valitulle kaupalle.
-settings.profile.option.showHandle: Näytä käyttäjätunnus
+settings.profile.option.showHandle: Näytä sosiaalinen käyttäjätunnus
 settings.profile.option.showMainMenu: Päävalikko sivupalkin profiilialueella
 settings.profile.option.showName: Näytä profiilin nimi
 settings.profile.option.showProfile: Näytä profiili sivupalkissa
 settings.profile.policy.allowed: Sallittu
-settings.profile.policy.label: Sopimaton sisältö
+settings.profile.policy.label: Eksplisiittinen sisältö
 settings.profile.policy.restricted: Rajoitettu
 settings.profile.signOut.confirmMessage: Sinut siirretään takaisin kirjautumisnäyttöön ja paikallisen kirjastosi välimuisti tyhjennetään. Haluatko jatkaa?
 settings.profile.signOut.confirmTitle: Kirjaudutaanko ulos Apple Music -palvelusta?
@@ -4907,6 +5057,7 @@ settings.resetCider.confirm.ok: Nollaa Cider
 settings.resetCider.confirm.title: Nollataanko Cider?
 settings.resetCider.confirm.warning: Tätä toimintoa ei voi peruuttaa. Cider käynnistyy uudelleen nollauksen jälkeen.
 settings.resetCider.confirm.willReset: Nollataan
+settings.resetCider.deselectAll: Poista kaikkien valinta
 settings.resetCider.error: Jotain meni vikaan nollauksen aikana.
 settings.resetCider.group.accounts: Tilit
 settings.resetCider.group.core: Nollaa
@@ -4916,6 +5067,10 @@ settings.resetCider.resetButton: Nollaa Cider
 settings.resetCider.resetting: Nollataan…
 settings.resetCider.selectAll: Valitse kaikki
 settings.resetCider.title: Nollaa Cider
+settings.search.empty: Haulle ei löytynyt asetuksia.
+settings.search.pages: Sivut
+settings.search.resultCount: "{{count}} asetusta vastaa"
+settings.search.resultCountOne: 1 asetus vastaa
 settings.sleepTimer.endsIn: "Päättyy: {{remainingTime}} ({{endTime}})"
 settings.sleepTimer.notSet: Ajastinta ei ole asetettu
 settings.sleepTimer.title: Aseta uniajastin
@@ -4964,7 +5119,7 @@ settings.troubleshooting.impressionReporting.warning2: Tämä on aitoa ulosläht
 settings.troubleshooting.logFile: Lokitiedosto
 settings.troubleshooting.logFile.actions: Lokitiedoston toiminnot
 settings.troubleshooting.logFile.desc: Tarkastele, kopioi tai tyhjennä lokitiedostosi
-settings.troubleshooting.mkliteDebug: MKLite-vianmäärityslokit
+settings.troubleshooting.mkliteDebug: MKLite-vianetsintäloki
 settings.troubleshooting.mkliteDebug.desc: Yksityiskohtainen konsolituloste MKLitesta — PlayActivity-hyötykuormat (JSPLAY), kappaleen vaihdot ja toiston tila. Hyödyllinen verrattaessa Applelle lähetettäviä tietoja sivustoon music.apple.com. Pidä poissa käytöstä normaalissa käytössä.
 settings.troubleshooting.mkLoadingMethod: MusicKit-lataustapa
 settings.troubleshooting.mkLoadingMethod.warning1: Muuta tapaa, jolla MusicKit ladataan. Tätä käytetään mahdollisten MusicKit-päivityksistä johtuvien latausongelmien ratkaisemiseen.
@@ -4972,9 +5127,68 @@ settings.troubleshooting.mkLoadingMethod.warning2: Tätä asetusta EI tule muutt
 settings.troubleshooting.mkLoadingMethod.warning3: Tätä vaihtoehtoa ei ole tarkoitettu yleisten yhteys- tai toisto-ongelmien ratkaisemiseen.
 settings.troubleshooting.rebootMk: Käynnistä MusicKit uudelleen
 settings.troubleshooting.rebootMk.desc: Käynnistä MusicKit uudelleen toisto-ongelmien korjaamiseksi
-settings.troubleshooting.testSignIn: Testaa Apple Music -kirjautumista
+settings.troubleshooting.testSignIn: Testaa Apple Music -kirjautuminen
 settings.troubleshooting.testSignIn.desc: Avaa Apple Music -kirjautumisikkuna varmistaaksesi kirjautumisen toimivuuden ja vahvista sitten tunniste API-rajapinnassa. Mitään ei tallenneta, eikä nykyiseen istuntoosi tehdä muutoksia.
 settings.troubleshooting.title: Vianmääritys
+settings.tweaks.animateArtworkOnHover.description: Toista animoitu kansikuva, kun osoitin lepää sen päällä.
+settings.tweaks.artworkFadeIn.description: Näytä kansikuva heti sen sijaan, että se ilmestyy vähitellen latautuessaan.
+settings.tweaks.artworkHighlighting.description: Lisää pehmeä varjo ja korostus kansikuviin ruudukoissa ja luetteloissa.
+settings.tweaks.artworkLoadingMethod.description: Lataa kansikuvat laiskasti, kun ne vierivät näkyviin. Ahne lataus lataa ne heti.
+settings.tweaks.card.musicVideos: Musiikkivideot
+settings.tweaks.ciderAudioBadges.description: Näytä Cider Audio -merkit soittimessa kappaleen vieressä.
+settings.tweaks.ciderAudioToolbar.description: Näytä Cider Audio -painike työkalupalkissa.
+settings.tweaks.compactSidebarSize: Sivupalkin tiivis koko
+settings.tweaks.contextMenuIcons.description: Mitkä valikkokohdat näyttävät kuvakkeen.
+settings.tweaks.floatingSearchBlur: Sumennus kelluvan haun takana
+settings.tweaks.floatingSearchClear: Tyhjennä kelluva haku sulkeutuessa
+settings.tweaks.forceMpWindowControls.description: Käytä Ciderin omia ikkunapainikkeita järjestelmän painikkeiden sijaan.
+settings.tweaks.hideHeroItems.description: Piilota Selaa-näkymän yläosan suuret esittelybannerit.
+settings.tweaks.homeButtonLocation.description: Missä Koti-painike sijaitsee.
+settings.tweaks.immersiveArtworkHighlight: Immersiivisen kansikuvan korostus
+settings.tweaks.immersiveArtworkHighlight.description: Lisää korostus kansikuvaan Immersiivisessä näkymässä.
+settings.tweaks.immersiveBackgroundBpm.description: Animoi tausta kappaleen tempon mukaisesti.
+settings.tweaks.immersiveControlsTimeout: Immersiivisen näkymän ohjainten aikakatkaisu
+settings.tweaks.immersiveControlsTimeout.description: Sekuntien määrä ennen kuin ohjaimet piilotetaan.
+settings.tweaks.immersiveHideLyrics.description: Piilota sanoituspaneeli kappaleilta, joissa ei ole sanoituksia.
+settings.tweaks.immersiveLyricGlow: Aktiivisen sanoituksen hehku
+settings.tweaks.immersiveLyricGlow.description: Lisää hehku laulettavaan riviin.
+settings.tweaks.immersiveMaxLyricSize.description: Suurin koko, johon sanoitukset voivat kasvaa Immersiivisessä näkymässä.
+settings.tweaks.mainMenuPosition.description: Missä päävalikkopainike sijaitsee.
+settings.tweaks.mavericksLcdStyle: Mavericks-LCD-tyyli
+settings.tweaks.mavericksLcdStyle.description: Miltä toistonäyttö näyttää Mavericks-asettelussa.
+settings.tweaks.miniPlayerAnimatedArtwork.description: Toista animoitu kansikuva minisoittimen ikkunassa.
+settings.tweaks.moveUpLinks.description: Siirrä linkit lisäsisältöihin Selaa-näkymän yläosaan.
+settings.tweaks.musicVideoBadge.description: Näytä soittimessa painike, kun kappaleesta on musiikkivideo.
+settings.tweaks.pauseAnimatedOnBlur.description: Keskeytä animoitu kansikuva, kun Cider ei ole aktiivinen ikkuna.
+settings.tweaks.progressAccent: Korostusvärinen edistymispalkki
+settings.tweaks.progressAccent.description: Täytä kappaleen edistymispalkki korostusvärillä.
+settings.tweaks.resizableMiniPlayer.description: Anna minisoittimen ikkunan muuttaa kokoa.
+settings.tweaks.richGridNoScrollAnimation: Välitön vierityskäyttäytyminen rikkaassa albumiruudukossa
+settings.tweaks.richGridNoScrollAnimation.description: Siirry albumiin ilman vierityksen animaatiota.
+settings.tweaks.richGridOpenPage: Avaa albumit sivuina rikkaasta albumiruudukosta
+settings.tweaks.richGridOpenPage.description: Siirry albumin sivulle sen sijaan, että laajennat sen ruudukossa.
+settings.tweaks.richGridScrollPosition: Rikkaan albumiruudukon vierityskohta
+settings.tweaks.richGridScrollPosition.description: Mihin kohtaan ruudukko vierittyy, kun avaat albumin.
+settings.tweaks.scrollbarType.description: Käytä Cider-sovelluksen omia vierityspalkkeja tai järjestelmän palkkeja.
+settings.tweaks.searchStyle: Hakutyyli
+settings.tweaks.searchStyle.description: Haku ikkunan otsikkopalkissa tai sivun päällä olevassa paneelissa.
+settings.tweaks.section.artwork: Kansitaide
+settings.tweaks.section.browse: Selaa
+settings.tweaks.section.immersive: Immersiivinen
+settings.tweaks.section.lyrics: Sanat
+settings.tweaks.section.pagesGrids: Sivut ja ruudukot
+settings.tweaks.section.playerBar: Soittimen palkki
+settings.tweaks.section.search: Haku
+settings.tweaks.section.sidebarNavigation: Sivupalkki ja navigointi
+settings.tweaks.section.windowToolbar: Ikkuna ja työkalupalkki
+settings.tweaks.showBitrate.description: Näytä striimin bitrate kappaleen vieressä soittimessa.
+settings.tweaks.sidebarPlaylistArtwork.description: Näytä kunkin soittolistan kansitaide sen nimen vieressä.
+settings.tweaks.simpleArtworkMask.description: Häivytä taustakansitaiteen alareuna.
+settings.tweaks.sonomaLyricArc: Kaareva sanoitus Sonomassa
+settings.tweaks.sonomaRadialMask: Vaihtoehtoinen Sonoma-maski
+settings.tweaks.volumeIosStyle: iOS-tyylinen äänenvoimakkuuden liukusäädin
+settings.tweaks.volumeIosStyle.description: Piirrä äänenvoimakkuuden liukusäädin iPhonessa käytetyllä tyylillä.
+settings.tweaks.windowControlPosition.description: Ikkunapainikkeiden sijainti.
 settings.updates.action.check: Tarkista päivitykset
 settings.updates.action.install: Asenna päivitys
 settings.updates.action.restart: Käynnistä Cider uudelleen
@@ -5006,39 +5220,44 @@ settings.updates.progress.working.sub: Hetkinen, tässä menee vain hetki.
 settings.updates.section.about: Tietoja versiostasi
 settings.updates.section.alsoAvailable: Myös saatavilla
 settings.updates.section.history: Päivityshistoria
-settings.updates.section.whatsNew: Mitä uutta Ciderissa
+settings.updates.section.whatsNew: Uutta Cider {version}-versiossa
 settings.updates.status.available: Päivitys saatavilla
 settings.updates.status.checking: Tarkistetaan päivityksiä...
 settings.updates.status.failed: Päivitys epäonnistui
 settings.updates.status.idle: Cider on ajan tasalla
-settings.updates.status.success: Vaatii uudelleenkäynnistyksen
+settings.updates.status.success: Uudelleenkäynnistys vaaditaan
 settings.updates.status.working: Asennetaan...
 settings.visual.card.appBackground: Sovelluksen tausta
+settings.visual.card.behavior: Toiminta
 settings.visual.card.behaviorLyrics: Toiminta ja sanat
 settings.visual.card.browse: Selaa
-settings.visual.card.contentFilter: Sisällönsuodatus
+settings.visual.card.contentFilter: Sisältösuodatin
 settings.visual.card.experimental: Kokeellinen
 settings.visual.card.fsrUpscaling: FSR-skaalaus
-settings.visual.card.moreAnimatedArtwork: Lisää animoituja kansikuvia
-settings.visual.card.playerEffects: Soitintehosteet
+settings.visual.card.moreAnimatedArtwork: Lisää animoitua kansitaidetta
+settings.visual.card.playerEffects: Soittimen tehosteet
 settings.visual.card.sidebarNavigation: Sivupalkki ja navigointi
 settings.visual.card.trackMetadata: Kappaleen metatiedot
 settings.visual.card.ultraHdr: Ultra HDR -skaalaus
 settings.visual.editorialLayout: Käytä toimituksellista asettelua
 settings.visual.editorialLayout.desc: Näyttää toimituksellisen bannerin ja soveltaa väripalettia tietyissä albumeissa
-settings.visual.editorialPreferenceOrder: Toimituksellinen tärkeysjärjestys
+settings.visual.editorialPreferenceOrder: Toimituksellinen mieltymysjärjestys
 settings.visual.section.appearance: Ulkoasu
 settings.visual.section.appearance.description: Väriteema, korostusvärit ja sovelluksen tausta.
-settings.visual.section.artwork: Kansikuvat ja liike
+settings.visual.section.artwork: Kansitaide ja liike
 settings.visual.section.artwork.description: Animoidut kansikuvat ja liikeasetukset.
-settings.visual.section.content: Selaaminen ja sisältö
+settings.visual.section.content: Selaus ja sisältö
 settings.visual.section.content.description: Sivujen asettelut, selausasetukset ja sisällönsuodatus.
 settings.visual.section.customCss.description: Käytä omaa CSS-tyyliäsi Ciderin tyylien päällä.
 settings.visual.section.layout: Asettelu
 settings.visual.section.layout.description: Sovelluksen asettelu, soittimen tyyli, sivupalkki ja navigointi.
+settings.visual.section.pages: Sivut
+settings.visual.section.pages.description: Albumi- ja soittolistasivujen asettelu.
+settings.visual.section.themeColors: Teema ja värit
 settings.visual.section.window: Ikkuna
 settings.visual.section.window.description: Ikkunan reunat, kuultavuus, säätimet ja skaalaus.
-settings.visual.vibrancy.acrylicDarkness: Akryylin tummuusarvo
+settings.visual.section.window.descriptionV2: Ikkunan ulkoasu, väriloisto, renderöinti ja skaalaus.
+settings.visual.vibrancy.acrylicDarkness: Akryylin tummuuden arvo
 settings.visual.vibrancy.mode.acrylic: Akryyli
 settings.visual.vibrancy.mode.mica: Mica
 settings.visual.vibrancy.mode.none: Ei mitään
