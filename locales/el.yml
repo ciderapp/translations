@@ -50,7 +50,7 @@ action.autoplay.disable: Απενεργοποίηση αυτόματης ανα�
 action.autoplay.enable: Ενεργοποίηση αυτόματης αναπαραγωγής
 action.back: Πίσω
 action.cancel: Ακύρωση
-action.cancelTimer: Ακύρωση χρονοδιακόπτη
+action.cancelTimer: Ακύρωση χρονομέτρου
 action.cast.airplay: AirPlay
 action.cast.airplay.underdevelopment: Το AirPlay βρίσκεται ακόμα υπό ανάπτυξη
 action.cast.chromecast: Chromecast
@@ -61,13 +61,14 @@ action.cast.todevices: Μετάδοση σε συσκευές
 action.change: Αλλαγή
 action.clear: Εκκαθάριση
 action.close: Κλείσιμο
+action.configure: Ρύθμιση
 action.connect: Σύνδεση
 action.connect.createCollabPlaylist: Δημιουργία νέας συνεργατικής λίστας αναπαραγωγής
 action.connect.listenTogether: Κοινή ακρόαση
 action.connect.signIn: Σύνδεση με {account}
 action.connectRemoteApp: Σύνδεση εφαρμογής Remote
 action.copy: Αντιγραφή
-action.copyToken: Αντιγραφή Token
+action.copyToken: Αντιγραφή διακριτικού
 action.create: Δημιουργία
 action.createNew: Δημιουργία νέου
 action.createNewPlaylist: Δημιουργία νέας λίστας αναπαραγωγής
@@ -79,6 +80,7 @@ action.deleteFolder: Είστε βέβαιοι ότι θέλετε να διαγ
 action.deleteFolder.message: Όλοι οι φάκελοι και οι λίστες αναπαραγωγής μέσα σε αυτόν τον φάκελο θα διαγραφούν επίσης.
 action.deletePlaylist: Είστε βέβαιοι ότι θέλετε να διαγράψετε τη λίστα αναπαραγωγής "{{playlistName}}";
 action.deletepreset: Διαγραφή προεπιλογής
+action.deny: Άρνηση
 action.disablePlugins: Απενεργοποίηση πρόσθετων για αυτή τη συνεδρία
 action.disconnect: Αποσύνδεση
 action.dislike: Δεν μου αρέσει
@@ -183,7 +185,7 @@ action.shuffle.disable: Απενεργοποίηση τυχαίας σειράς
 action.shuffle.enable: Ενεργοποίηση τυχαίας σειράς
 action.sidebar.signIn: Σύνδεση στο {account}
 action.sidebar.signIn.with: Σύνδεση με {account}
-action.signIn: Σύνδεση
+action.signIn: Είσοδος
 action.signOut: Αποσύνδεση
 action.skip: Παράλειψη
 action.smartQueue.disable: Απενεργοποίηση έξυπνης ουράς
@@ -510,6 +512,8 @@ assistant.sid.chat.workingQueue:
   source: human
   by: "@mpratsaki"
   issue: 94
+assistant.sid.engine.apple: Apple Intelligence
+assistant.sid.engine.gemma: Gemma
 assistant.sid.entry.edit: Επεξεργασία με τον Sid
 assistant.sid.entry.editDetail: Περιγράψτε μια αλλαγή και ελέγξτε την πρώτα
 assistant.sid.entry.start: Ξεκινήστε με τον Sid
@@ -525,9 +529,12 @@ assistant.sid.failure.modelMissing: Τα αρχεία του Gemma λείπου�
 assistant.sid.failure.network: Η λήψη διακόπηκε. Ελέγξτε τη σύνδεσή σας και δοκιμάστε ξανά.
 assistant.sid.failure.notReady: Το Gemma δεν είναι ακόμη έτοιμο.
 assistant.sid.failure.outOfMemory: Ο Sid σταμάτησε το Gemma για να διατηρήσει τον υπολογιστή σας ανταποκρινόμενο. Χρειαζόταν περισσότερη μνήμη γραφικών από όση μπορούσε να διαθέσει.
+assistant.sid.failure.stoppedUnexpectedly: Ο Sid σταμάτησε απροσδόκητα. Δοκιμάστε ξανά.
 assistant.sid.failure.storageFull: Δεν υπάρχει αρκετός ελεύθερος χώρος για να ολοκληρωθεί η λήψη.
 assistant.sid.failure.timeout: Το Gemma άργησε πολύ να απαντήσει. Δοκιμάστε ξανά.
+assistant.sid.failure.tookTooLong: Ο Sid χρειάστηκε πολύ χρόνο για να απαντήσει. Δοκιμάστε ξανά.
 assistant.sid.failure.tryAgain: Δοκιμάστε ξανά
+assistant.sid.failure.unready: Ο Sid δεν είναι ακόμη έτοιμος.
 assistant.sid.failure.watchLost: Ο Sid σταμάτησε επειδή έχασε τη μνήμη γραφικών. Δοκιμάστε ξανά.
 assistant.sid.gate.description: Δοκιμάστε τον Sid πριν ολοκληρωθεί. Ορισμένα μέρη δεν λειτουργούν ακόμη.
 assistant.sid.gate.name: Sid, ο βοηθός λιστών
@@ -714,12 +721,20 @@ assistant.sid.settings.checkGood: Τα αρχεία του Gemma είναι εν
 assistant.sid.settings.downloadAgain: Λήψη ξανά
 assistant.sid.settings.downloadedSize: Ληφθέν · {size}
 assistant.sid.settings.duringSet: Κατά τη διάρκεια ενός set
+assistant.sid.settings.engine: Πού σκέφτεται ο Sid
+assistant.sid.settings.engineDetail: Χρησιμοποιήστε το Gemma ή το Apple Intelligence που είναι ενσωματωμένο στο Mac σας
 assistant.sid.settings.found: Τραγούδια που βρήκε ο Sid για εσάς
 assistant.sid.settings.fresh: Νέα αρχή
 assistant.sid.settings.freshDetail: Δημιουργήστε ολόκληρη λίστα από διάθεση, στιγμή ή μερικούς καλλιτέχνες
 assistant.sid.settings.gemmaHere: Το Gemma εδώ
 assistant.sid.settings.gpu: Κάρτα γραφικών
 assistant.sid.settings.group: Βοηθός
+assistant.sid.settings.helloEdit: Ανοίξτε μια λίστα αναπαραγωγής και επιλέξτε Επεξεργασία με τον Sid, και θα τη τακτοποιήσω.
+assistant.sid.settings.helloFresh: Δώστε μου μια διάθεση ή μερικούς καλλιτέχνες, και θα φτιάξω μια ολόκληρη λίστα αναπαραγωγής.
+assistant.sid.settings.helloRequest: Ζητήστε ένα τραγούδι κατά τη διάρκεια ενός σετ, και θα το βρω στο Apple Music.
+assistant.sid.settings.helloSet: Κατά τη διάρκεια ενός σετ, θα επιλέγω το επόμενο κομμάτι με βάση το κλειδί και τον ρυθμό.
+assistant.sid.settings.helloSort: Ζητήστε μου να ταξινομήσω μια λίστα αναπαραγωγής από ήρεμη σε ζωηρή, ή ώστε τα κλειδιά να ρέουν ομαλά.
+assistant.sid.settings.helloTrim: Μπορώ να περικόψω μια λίστα αναπαραγωγής σε μία ώρα, ή να την κρατήσω σε έναν ρυθμό.
 assistant.sid.settings.inEdit:
   value: Όταν επεξεργάζεστε μια λίστα αναπαραγωγής
   source: human
@@ -750,6 +765,7 @@ assistant.sid.settings.machine: Αυτός ο υπολογιστής
 assistant.sid.settings.modelOptions: Επιλογές {model}
 assistant.sid.settings.modelRow: "{style} · {name}"
 assistant.sid.settings.nav: Sid
+assistant.sid.settings.needsEngine: Απαιτεί {engine}
 assistant.sid.settings.needsGemma: Απαιτεί Gemma
 assistant.sid.settings.nods: Κούνημα στον ρυθμό
 assistant.sid.settings.nodsDetail: Ο Sid κουνά το κεφάλι του σε κάθε χτύπο του τραγουδιού
@@ -766,6 +782,12 @@ assistant.sid.settings.partlySize: Ληφθεί εν μέρει · {size}
 assistant.sid.settings.position: Θέση
 assistant.sid.settings.positionDetail: Πού βρίσκεται ο Sid πάνω στο εξώφυλλο
 assistant.sid.settings.privacyChat: "Ό,τι πληκτρολογείς μένει σε αυτόν τον υπολογιστή: ο Sid σκέφτεται με τη Gemma, εδώ ακριβώς. Για να βρει μουσική, ο Sid στέλνει λέξεις αναζήτησης στο Apple Music και, όταν το ζητήσεις, διαβάζει τις λίστες αναπαραγωγής σου, τις πρόσφατες αναπαραγωγές σου και το Apple Music Replay από τον λογαριασμό σου στο Apple Music. Τίποτα δεν αλλάζει μέχρι να πατήσεις Εφαρμογή."
+assistant.sid.settings.privacyEngine: "Όσα πληκτρολογείτε μένουν σε αυτόν τον υπολογιστή: ο Sid σκέφτεται με το {engine}, εδώ ακριβώς. Για να βρει μουσική, ο Sid στέλνει λέξεις αναζήτησης στο Apple Music και, όταν το ζητήσετε, διαβάζει τις λίστες αναπαραγωγής σας, τις πρόσφατες αναπαραγωγές σας και το Apple Music Replay σας από τον λογαριασμό σας στο Apple Music. Τίποτα δεν αλλάζει μέχρι να πατήσετε Εφαρμογή."
+assistant.sid.settings.quipGaming: Εγώ και η {gpu} σας θα τα πάμε τέλεια.
+assistant.sid.settings.quipIntegrated: Ενσωματωμένη γραφική. Θα κρατήσω τα πράγματα ελαφριά και άνετα.
+assistant.sid.settings.quipOther: Ωραία {gpu}. Θα την αξιοποιήσω καλά.
+assistant.sid.settings.quipSetsOnly: Εγώ και η {gpu} σας θα περιοριστούμε προς το παρόν στα σετ.
+assistant.sid.settings.quipTop: "{gpu}; Δεν θα ιδρώσω καν."
 assistant.sid.settings.reads: Διαβάζει μια πλήρη λίστα σε {seconds} s (απαιτεί λιγότερο από {floor} s)
 assistant.sid.settings.regular: Κανονικό
 assistant.sid.settings.remove: Αφαίρεση
@@ -800,12 +822,14 @@ assistant.sid.settings.tidyDetail: Αφαίρεση επαναλήψεων, πε
 assistant.sid.settings.together: Μέχρι στιγμής μαζί
 assistant.sid.settings.top: Πάνω
 assistant.sid.settings.unavailableNote: Η επεξεργασία και η δημιουργία λιστών με τον Sid απαιτεί τη Gemma σε υπολογιστή που μπορεί να την εκτελέσει. Το σετ του Sid εξακολουθεί να λειτουργεί εδώ.
+assistant.sid.settings.unavailableNoteEngine: Η επεξεργασία και η δημιουργία λιστών αναπαραγωγής με τον Sid απαιτεί το {engine} σε υπολογιστή που μπορεί να το εκτελέσει. Τα σετ του Sid λειτουργούν κανονικά εδώ.
 assistant.sid.settings.unknownGpu: Άγνωστη κάρτα γραφικών
 assistant.sid.settings.where:
   value: Πού θα βρείτε τον Sid
   source: human
   by: "@mpratsaki"
   issue: 94
+assistant.sid.settings.withoutEngine: Χωρίς το {engine}, ο Sid επιλέγει τραγούδια με βάση τον ρυθμό, το κλειδί και την ενέργειά τους, και αναζητά τα αιτήματά σας στο Apple Music όπως ακριβώς τα πληκτρολογείτε.
 assistant.sid.settings.withoutGemma: Χωρίς τη Gemma, ο Sid επιλέγει τραγούδια με βάση τον ρυθμό, την τονικότητα και την ενέργειά τους, και αναζητά στο Apple Music τα αιτήματά σου ακριβώς όπως τα πληκτρολογείς.
 assistant.sid.settings.writes: Εγγράφει {rate} tokens το δευτερόλεπτο (απαιτεί {floor})
 assistant.sid.setView.confirmMany: Ο Sid θα διαγράψει τα {count} τραγούδια που είναι στη σειρά μετά από αυτό και θα επιλέξει τι παίζει στη συνέχεια.
@@ -852,6 +876,10 @@ assistant.sid.source.library:
   by: "@mpratsaki"
   issue: 94
 assistant.sid.source.playlist: στη λίστα αναπαραγωγής
+assistant.sid.unavailable.appleFailed: Ο Sid δεν μπόρεσε να συνδεθεί με το Apple Intelligence.
+assistant.sid.unavailable.appleNotEnabled: Ενεργοποιήστε το Apple Intelligence στις Ρυθμίσεις συστήματος για να το χρησιμοποιήσετε με τον Sid.
+assistant.sid.unavailable.appleNotReady: Το Apple Intelligence εξακολουθεί να προετοιμάζεται. Δοκιμάστε ξανά σε λίγο.
+assistant.sid.unavailable.appleUnsupported: Το Apple Intelligence δεν είναι διαθέσιμο σε αυτόν τον υπολογιστή.
 assistant.sid.unavailable.belowFloor: Το Gemma λειτούργησε πολύ αργά σε αυτόν τον υπολογιστή για να μπορέσει να το χρησιμοποιήσει ο Sid.
 assistant.sid.unavailable.counterMismatch: Ο Sid απενεργοποίησε το Gemma αφού απέτυχε ένας έλεγχος ασφαλείας. Θα δοκιμάσει ξανά μετά από ενημερώσεις του Cider ή του προγράμματος οδήγησης γραφικών.
 assistant.sid.unavailable.gpuLimits: Αυτή η κάρτα γραφικών δεν έχει τον χώρο που χρειάζεται το Gemma.
@@ -890,6 +918,19 @@ auth.error.unavailable: Αυτό το Apple ID δεν μπορεί να χρησ
 auth.error.windowFailed: Το παράθυρο σύνδεσης απέτυχε να ανοίξει
 auth.mutExpired.confirm: Σύνδεση
 auth.mutExpired.message: Η περίοδος σύνδεσής σας στο Apple Music έχει λήξει. Συνδεθείτε ξανά για να συνεχίσετε.
+auth.request.authorizing: Εξουσιοδότηση…
+auth.request.copyToken: Αντιγραφή διακριτικού
+auth.request.granted: Εγκρίθηκε
+auth.request.requestedAccess: Ζητήθηκε πρόσβαση
+auth.request.revealNote: Αυτή είναι η μοναδική φορά που θα εμφανιστεί αυτό το διακριτικό. Επικολλήστε το στο {app} τώρα.
+auth.request.subtitle: ζητά πρόσβαση στο Cider
+auth.request.toast.copied: Το διακριτικό αντιγράφηκε στο πρόχειρο
+auth.request.toast.failed: Δεν ήταν δυνατή η δημιουργία διακριτικού
+auth.request.toast.granted: Παρασχέθηκε πρόσβαση στο {app}
+auth.request.toast.title: Εξουσιοδότηση
+auth.request.tokenCreated: Το διακριτικό δημιουργήθηκε
+auth.request.tokenFor: για το {app}
+auth.request.trustNote: Παρέχετε πρόσβαση μόνο σε εφαρμογές που εμπιστεύεστε. Μπορείτε να ανακαλέσετε αυτό το διακριτικό ανά πάσα στιγμή στις Ρυθμίσεις › Συνδέσεις.
 auth.signedIn: Συνδέθηκες
 auth.signInRetry.confirm: Δοκιμάστε ξανά
 auth.signInRetry.message: Το παράθυρο σύνδεσης δεν μπόρεσε να ανοίξει. Δοκιμάστε ξανά;
@@ -1092,7 +1133,7 @@ gallery.searchSnippets: Αναζήτηση αποσπασμάτων
 gallery.submitPlugin: Υποβολή του πρόσθετού σας
 gallery.submitSnippet: Υποβολή του αποσπάσματός σας
 gallery.submitTheme: Υποβολή του θέματός σας
-general.closeToTray: Κλείσιμο στην περιοχή ειδοποιήσεων
+general.closeToTray: Κλείσιμο στο δίσκο συστήματος
 general.closeToTray.description: Το κουμπί κλεισίματος θα πρέπει να ελαχιστοποιεί το παράθυρο του Cider
 home.artistsFeed: Ροή καλλιτεχνών
 home.artistsFeed.noArtist: Ακολουθήστε καλλιτέχνες για να δείτε τις τελευταίες κυκλοφορίες τους
@@ -3226,7 +3267,7 @@ oobe.amupsell.text: |-
   Το Cider δεν λειτουργεί με το Apple Music Voice Plan ή με ορισμένες προωθητικές δοκιμαστικές συνδρομές. Εάν έχετε ήδη μια κατάλληλη συνδρομή Apple Music, κάντε κλικ στο Επόμενο για να συνεχίσετε.
 oobe.amupsell.title: Πριν ξεκινήσουμε
 oobe.appearance.accentHint: Χρησιμοποιείται για κουμπιά, επισημάνσεις και την πρόοδο στην εφαρμογή. Δοκιμάστε ένα, η προεπισκόπηση είναι ζωντανή.
-oobe.appearance.subtitle: Επιλέξτε έναν συνδυασμό χρωμάτων και ένα χρώμα έμφασης. Μπορείτε να τα αλλάξετε ανά πάσα στιγμή στις Ρυθμίσεις → Οπτικά.
+oobe.appearance.subtitle: Επιλέξτε ένα χρωματικό θέμα και ένα χρώμα τονισμού. Μπορείτε να τα αλλάξετε ανά πάσα στιγμή στις Ρυθμίσεις › Εμφάνιση.
 oobe.appearance.title: Κάντε το Cider δικό σας
 oobe.appleNotice: "Σημείωση: Το Apple Music είναι εμπορικό σήμα της Apple Inc. Το Cider είναι εξωτερικό πρόγραμμα-πελάτης για το Apple Music και δεν συνδέεται με την Apple Inc."
 oobe.audio.advancedFunctionality: ""
@@ -3241,7 +3282,7 @@ oobe.connections.atmosRatingsHint: Δείτε και μοιραστείτε πο
 oobe.connections.lastfm.connected: Συνδέθηκε
 oobe.connections.lastfm.connectedAs: Συνδέθηκε ως {username}
 oobe.connections.lastfm.hint: Κάντε scrobble το ιστορικό ακρόασής σας.
-oobe.connections.moreHint: Περισσότερες συνδέσεις όπως τα Libre.fm, Maloja, ListenBrainz, καθώς και τα WebSockets και RPC API βρίσκονται στις Ρυθμίσεις → Συνδεσιμότητα.
+oobe.connections.moreHint: Περισσότερες ενσωματώσεις, όπως Libre.fm, Maloja, ListenBrainz και τα APIs WebSockets και RPC, βρίσκονται στις Ρυθμίσεις › Συνδέσεις.
 oobe.connections.pairDevice: Σύζευξη συσκευής
 oobe.connections.remoteHint: Ελέγξτε το Cider από το τηλέφωνό σας.
 oobe.connections.subtitle: Συνδέστε το Cider με άλλες εφαρμογές και υπηρεσίες σας.
@@ -3439,10 +3480,22 @@ playlist.refresh.title: Απαιτείται ανανέωση της λίστα�
 playlist.suggestions.subtitle: Προεπισκόπηση και προσθήκη σε λίστα αναπαραγωγής
 playlist.suggestions.title: Προτεινόμενα τραγούδια
 playlist.untitled: Χωρίς τίτλο
+plugin.install.byAuthor: από {author}
+plugin.install.identifier: Αναγνωριστικό
+plugin.install.install: Εγκατάσταση
+plugin.install.installing: Εγκατάσταση…
+plugin.install.source: Πηγή
+plugin.install.subtitle: Ένα πρόσθετο του Cider θέλει να προστεθεί στη βιβλιοθήκη σας.
+plugin.install.title: Εγκατάσταση πρόσθετου
+plugin.install.update: Ενημέρωση
+plugin.install.updateSubtitle: Ένα πρόσθετο του Cider θέλει να αντικαταστήσει μια εγκατεστημένη έκδοση.
+plugin.install.updateTitle: Ενημέρωση πρόσθετου
+plugin.install.warning: Τα πρόσθετα μπορούν να εκτελούν κώδικα μέσα στο Cider με πρόσβαση στην αναπαραγωγή, την ουρά και τη βιβλιοθήκη σας. Εγκαθιστάτε πρόσθετα μόνο από πηγές που εμπιστεύεστε.
 podcast.comingSoon.description: Η υποστήριξη podcast ανακατασκευάζεται μετά από σημαντικές αλλαγές στον τρόπο με τον οποίο το Cider διαχειρίζεται την αναπαραγωγή. Θα επιστρέψει σε μελλοντική ενημέρωση.
 podcast.comingSoon.hide: Απόκρυψη από την πλευρική στήλη
 podcast.comingSoon.hint: Μπορείτε να το ενεργοποιήσετε ξανά στις ρυθμίσεις Εμφάνισης, στην ενότητα Πλευρική στήλη & Πλοήγηση.
 podcast.comingSoon.title: Τα Podcast έρχονται σύντομα
+podcast.comingSoon.tweaksHint: Μπορείτε να το ενεργοποιήσετε ξανά στις ρυθμίσεις Tweaks, στην ενότητα Πλαϊνή στήλη και πλοήγηση.
 podcast.episodes: Επεισόδια
 podcast.followedOnCider: Ακολουθείται στο Cider
 podcast.followOnCider: Ακολουθήστε στο Cider
@@ -3525,39 +3578,44 @@ settings.accessibility.section.motion: Κίνηση
 settings.accessibility.section.motion.description: Πόσα εφέ κίνησης χρησιμοποιούν τα κουμπιά, οι κάρτες και άλλες επιφάνειες.
 settings.accessibility.section.soundEffects: Ηχητικά εφέ
 settings.accessibility.section.soundEffects.description: Ήχοι διεπαφής για κουμπιά, διακόπτες και ρυθμιστικά, καθώς και η ένταση αναπαραγωγής τους.
+settings.accessibility.soundPreview.click: Κλικ
+settings.accessibility.soundPreview.slider: Ρυθμιστικό
+settings.accessibility.soundPreview.switch: Διακόπτης
+settings.accounts.appleMusic: Apple Music
+settings.accounts.appleMusic.description: Ενεργοποίηση Apple Music
 settings.advanced.section.backups: Αντίγραφα ασφαλείας και επαναφορά
 settings.advanced.section.backups.description: Αποθηκεύστε ένα αντίγραφο των ρυθμίσεών σας, επαναφέρετε ένα που κράτησε το Cider για εσάς ή επαναφέρετε τα πάντα στις προεπιλογές.
-settings.advanced.section.client: Αυτή η εφαρμογή
+settings.advanced.section.client: Αυτό το πρόγραμμα
 settings.advanced.section.client.description: Όρια απόδοσης και οι ρυθμίσεις που ανήκουν στην εφαρμογή στην οποία εκτελείται το Cider, αντί για τον λογαριασμό σας.
 settings.airplay.installed.message: Το Airplay εγκαταστάθηκε
 settings.airplay.installed.title: Το Airplay εγκαταστάθηκε
 settings.airplay.requiresCiderAudio: Απαιτείται η ενεργοποίηση του CiderAudio
 settings.appleMusic.storefront.warning: Η αλλαγή της περιοχής καταστήματος θα προκαλέσει προβλήματα στην αναπαραγωγή. Έχετε προειδοποιηθεί.
 settings.artwork.disableFadeIn: Απενεργοποίηση εφέ σταδιακής εμφάνισης
-settings.artwork.highlighting: Τονισμός εξωφύλλου
+settings.artwork.highlighting: Επισήμανση εξωφύλλου
 settings.artwork.hiresImages: Χρήση εικόνων υψηλής ανάλυσης
 settings.artwork.hiresImages.warning: Ενδέχεται να αυξήσει τους χρόνους φόρτωσης και να μειώσει την απόδοση.
 settings.audio.atmos: Dolby Atmos
-settings.audio.atmos.binaural.desc: Το Atmos αποδίδεται ως διωτική στερεοφωνία μέσω του CiderAudio. Τα Crossfade, Automix και οι Απρόσκοπτες μεταβάσεις συνεχίζουν να λειτουργούν κανονικά.
+settings.audio.atmos.binaural.desc: Το Atmos αποδίδεται ως binaural στέρεο μέσω του CiderAudio. Το Crossfade, το Automix και οι απρόσκοπτες μεταβάσεις συνεχίζουν να λειτουργούν κανονικά.
 settings.audio.atmos.description: Διαμόρφωση αναπαραγωγής Atmos για την τρέχουσα συσκευή εξόδου.
-settings.audio.atmos.normalizationHint: Τα μείγματα Dolby Atmos είναι πιο χαμηλά από τα στερεοφωνικά master. Ενεργοποιήστε την Κανονικοποίηση ήχου για να τα εξισορροπήσετε.
+settings.audio.atmos.normalizationHint: Τα μίγματα Dolby Atmos είναι πιο χαμηλά από τα στέρεο master. Ενεργοποιήστε την κανονικοποίηση ήχου για να τα εξισορροπήσετε.
 settings.audio.atmos.off.desc: Το Atmos είναι απενεργοποιημένο. Όλο το περιεχόμενο αναπαράγεται ως τυπικό στερεοφωνικό.
 settings.audio.atmos.passthrough: Passthrough
 settings.audio.atmos.passthrough.desc: Παρακάμπτει κάθε επεξεργασία ήχου. Το πολυκάναλο Atmos στέλνεται απευθείας στη συσκευή. Ιδανικό για δέκτες AV.
-settings.audio.atmos.passthrough.descV2: Στέλνει το πολυκαναλικό Atmos απευθείας στη συσκευή, για δέκτες AV. Το Audio Lab, το ισοσταθμιστή και η Λειτουργία ακρόασης παρακάμπτονται.
+settings.audio.atmos.passthrough.descV2: Στέλνει το πολυκάναλο Atmos απευθείας στη συσκευή, για δέκτες AV. Το Audio Lab, το ισοσταθμιστή και η λειτουργία ακρόασης παρακάμπτονται.
 settings.audio.atmos.passthroughActive: Το Passthrough είναι ενεργό — αλλάξτε το στις πλήρεις ρυθμίσεις.
-settings.audio.atmos.standard.desc: Πολυκάναλο Atmos με επεξεργασία CiderAudio. Τα Crossfade, Automix και οι Απρόσκοπτες μεταβάσεις συνεχίζουν να λειτουργούν κανονικά.
+settings.audio.atmos.standard.desc: Πολυκάναλο Atmos με επεξεργασία CiderAudio. Το Crossfade, το Automix και οι απρόσκοπτες μεταβάσεις συνεχίζουν να λειτουργούν κανονικά.
 settings.audio.atmosMode: Λειτουργία Atmos
 settings.audio.atmosMode.switchFromPassthroughConfirm: Η απενεργοποίηση της λειτουργίας passthrough απαιτεί ανανέωση της εφαρμογής. Συνέχεια;
 settings.audio.atmosMode.switchToPassthroughConfirm: Η ενεργοποίηση της λειτουργίας passthrough απαιτεί ανανέωση της εφαρμογής. Συνέχεια;
 settings.audio.automix: Automix
-settings.audio.card.advancedVolume: Προηγμένη ένταση ήχου
+settings.audio.card.advancedVolume: Προηγμένη ένταση
 settings.audio.card.badges: Διακριτικά
 settings.audio.card.streaming: Streaming
 settings.audio.ciderAudio: Cider Audio
 settings.audio.ciderAudio.description: Ειδικά ρυθμισμένη και σχεδιασμένη αρχιτεκτονική ήχου που προσφέρει μια πλούσια εμπειρία ήχου υψηλής ποιότητας. Συνιστάται αντί για έναν παραδοσιακό ισοσταθμιστή.
 settings.audio.ciderAudio.enable: Ενεργοποίηση Cider Audio
-settings.audio.ciderAudio.requiredHint: Απαιτείται για τον Ισοσταθμιστή
+settings.audio.ciderAudio.requiredHint: Απαιτείται για τον ισοσταθμιστή
 settings.audio.crossfade: Crossfade
 settings.audio.hostCapture.apps: Εφαρμογές ενεργοποίησης
 settings.audio.hostCapture.apps.count: "{{ n }} εφαρμογές θα ενεργοποιήσουν την καταγραφή."
@@ -3571,7 +3629,7 @@ settings.audio.hostCapture.apps.running: Εκτελούμενες εφαρμογ
 settings.audio.hostCapture.apps.runningNow: Σε εκτέλεση
 settings.audio.hostCapture.apps.title: Εφαρμογές αυτόματης ενεργοποίησης καταγραφής
 settings.audio.hostCapture.apps.triggers: Ενεργοποιητές
-settings.audio.hostCapture.auto: Αυτόματη ενεργοποίηση με εφαρμογή
+settings.audio.hostCapture.auto: Αυτόματη ενεργοποίηση με την εφαρμογή
 settings.audio.hostCapture.autoHint: Αυτόματη ενεργοποίηση της καταγραφής κατά την εκτέλεση μιας επιλεγμένης εφαρμογής και απενεργοποίηση όταν αυτή κλείνει.
 settings.audio.hostCapture.autoNote: Αυτόματη ενεργοποίηση κατά την εκτέλεση μιας επιλεγμένης εφαρμογής.
 settings.audio.hostCapture.bit16: 16-bit
@@ -3581,13 +3639,13 @@ settings.audio.hostCapture.bitAuto: Αυτόματο (μέγιστο)
 settings.audio.hostCapture.bitDepth: Βάθος bit
 settings.audio.hostCapture.bitDepthHint: Η αυτόματη επιλογή χρησιμοποιεί το μέγιστο βάθος που υποστηρίζει η συσκευή σας.
 settings.audio.hostCapture.exclusiveNote: Αποκλειστική έξοδος, bit-transparent, χωρίς δυνατότητα καταγραφής.
-settings.audio.hostCapture.gain: Μικρορύθμιση επιπέδου εξόδου
+settings.audio.hostCapture.gain: Προσαρμογή επιπέδου εξόδου
 settings.audio.hostCapture.gainHint: Αντιστοίχιση της έντασης καταγραφής με την κανονική έξοδο.
 settings.audio.hostCapture.mode: Λειτουργία εξόδου ήχου
 settings.audio.hostCapture.modeCapture: Καταγραφή
 settings.audio.hostCapture.modeCaptureLong: Με δυνατότητα καταγραφής (OBS, Discord)
 settings.audio.hostCapture.modeExclusive: Αποκλειστική
-settings.audio.hostCapture.modeExclusiveLong: WASAPI Exclusive
+settings.audio.hostCapture.modeExclusiveLong: WASAPI αποκλειστική
 settings.audio.hostCapture.modeHintCapture: Αναπαράγει ήχο από τη διεργασία του Cider, ώστε το OBS, το Discord και άλλες εφαρμογές να μπορούν να τον καταγράψουν.
 settings.audio.hostCapture.modeHintExclusive: Έξοδος bit-transparent απευθείας στο DAC σας, παρακάμπτοντας τον μίκτη των Windows. Χωρίς δυνατότητα καταγραφής.
 settings.audio.hostCapture.modeHintOff: "Απενεργοποιημένο: ο ήχος αναπαράγεται κανονικά από τη διεργασία WebView2. Μη διαθέσιμο κατά τη διέλευση Atmos ή σε βίντεο κλιπ."
@@ -3616,7 +3674,7 @@ settings.audio.occlusion.passthroughNote.short: Μη διαθέσιμο με ε�
 settings.audio.outputDevice: Επιλογή συσκευής εξόδου ήχου
 settings.audio.outputDeviceHint: Επιλέξτε τη συσκευή εξόδου ήχου για την αναπαραγωγή.
 settings.audio.outputDeviceHintHost: Ο ήχος με δυνατότητα καταγραφής είναι ενεργός, η αναπαραγωγή χρησιμοποιεί αυτήν τη συσκευή εξόδου των Windows.
-settings.audio.section.ciderAudio: Cider Audio και δείκτες
+settings.audio.section.ciderAudio: Cider Audio και ενδείξεις
 settings.audio.section.ciderAudio.description: Η στοίβα επεξεργασίας Cider Audio και τα διακριτικά που εμφανίζονται κατά την αναπαραγωγή ενός κομματιού.
 settings.audio.section.currentSignal: Τρέχον σήμα
 settings.audio.section.mixing: Μίξη
@@ -3627,16 +3685,45 @@ settings.audio.section.playback: Αναπαραγωγή
 settings.audio.section.playback.description: Ποιότητα ήχου, χωρικός ήχος, λειτουργίες ακρόασης και η ταχύτητα αναπαραγωγής των podcast.
 settings.audio.section.volume: Ένταση ήχου
 settings.audio.section.volume.description: Εξισορρόπηση έντασης, πόσο μεταβάλλει το επίπεδο ο τροχός κύλισης και πώς ανταποκρίνεται το ρυθμιστικό.
+settings.audio.signal.atmosCodecs: Διαθέσιμα κωδικοποιητές Atmos
+settings.audio.signal.atmosNativeMac: Εγγενής (macOS)
+settings.audio.signal.atmosNativeMacTooltip: Το Dolby Atmos αποκωδικοποιείται εγγενώς από το macOS CoreAudio. Η απόδοση χωρικού ήχου γίνεται από το σύστημα.
+settings.audio.signal.atmosOffTooltip: Το Atmos είναι απενεργοποιημένο για αυτή τη συσκευή. Το περιεχόμενο αναπαράγεται ως τυπικό στέρεο.
+settings.audio.signal.atmosOffTooltipMac: Το Atmos είναι απενεργοποιημένο για αυτή τη συσκευή.
+settings.audio.signal.atmosSupported: Υποστηρίζεται
+settings.audio.signal.binauralSubtitle: Απόδοση για ακουστικά
+settings.audio.signal.binauralTooltip: Το περιεχόμενο Atmos αποδίδεται ως binaural στέρεο μέσω της διαδικασίας CiderAudio.
+settings.audio.signal.channels: "{count} κανάλια"
+settings.audio.signal.codecs: Κωδικοποιητές
+settings.audio.signal.deviceRateTooltip: Ρυθμός δειγματοληψίας της τρέχουσας συσκευής
+settings.audio.signal.directOutput: Άμεση έξοδος
+settings.audio.signal.directOutputChannels: Άμεση έξοδος ({count}ch)
+settings.audio.signal.loading: Φόρτωση…
+settings.audio.signal.nativeMatch: Εγγενής αντιστοίχιση
+settings.audio.signal.noAtmosCodecs: Δεν υπάρχουν κωδικοποιητές Atmos
+settings.audio.signal.output: Έξοδος
+settings.audio.signal.passthroughMode: Λειτουργία passthrough
+settings.audio.signal.passthroughSubtitle: Η επεξεργασία ήχου παρακάμπτεται, άμεση έξοδος στη συσκευή
+settings.audio.signal.passthroughTooltip: Ο ήχος παρακάμπτει κάθε επεξεργασία και στέλνεται απευθείας στη συσκευή. Οι λειτουργίες CiderAudio, όπως το Crossfade, το Automix και οι απρόσκοπτες μεταβάσεις, είναι ανενεργές.
+settings.audio.signal.sampleRate: Ρυθμός δειγματοληψίας
+settings.audio.signal.source: Πηγή {rate}
+settings.audio.signal.sourceRateTooltip: Ρυθμός αναπαραγωγής του Apple Music
+settings.audio.signal.standardSubtitle: Πολυκάναλο + CiderAudio
+settings.audio.signal.standardTooltip: Το πολυκάναλο περιεχόμενο Atmos αναπαράγεται μέσω της επεξεργασίας CiderAudio και αποδίδεται στις δυνατότητες της συσκευής.
+settings.audio.signal.stereo: Στέρεο
+settings.audio.signal.surround51: Surround 5.1
+settings.audio.signal.surround71: Surround 7.1+
+settings.audio.signal.upsamplingTooltip: Το σύστημα κάνει upsampling από τον ρυθμό πηγής του Apple Music
 settings.automix.allowTempoKeyShifts: Να επιτρέπονται οι αλλαγές Tempo/Τονικότητας
 settings.automix.allowTempoKeyShiftsHint: Να επιτρέπονται μικρές αλλαγές για να διατηρείται η ενέργεια στις μεταβάσεις. (Προσωρινά απενεργοποιημένο, υπό επανασχεδιασμό.)
 settings.automix.description: Έξυπνη μετάβαση μεταξύ των κομματιών με βάση το tempo και την τονικότητα.
 settings.automix.descriptionV2: Αναμιγνύει τα κομμάτια χρησιμοποιώντας τα δεδομένα fade και φωνητικών του κάθε κομματιού, αντί για ένα σταθερό crossfade.
-settings.automix.disableFor: Απενεργοποίηση του Automix για...
+settings.automix.disableFor: Απενεργοποίηση Automix για...
 settings.automix.disableForAlbums: Άλμπουμ
 settings.automix.disableForAlbumsHint: Να μην εφαρμόζεται το Automix κατά την αναπαραγωγή από άλμπουμ.
-settings.automix.disableForAutoplayContinuation: Συνέχιση αυτόματης αναπαραγωγής
+settings.automix.disableForAutoplayContinuation: Συνέχεια αυτόματης αναπαραγωγής
 settings.automix.disableForAutoplayContinuationHint: Να μην εφαρμόζεται η αυτόματη μίξη όταν η αναπαραγωγή συνεχίζεται με σταθμό ή κομμάτια αυτόματης αναπαραγωγής μετά το τέλος της αρχικής συλλογής.
-settings.automix.disableForDjMixes: DJ Mix
+settings.automix.disableForDjMixes: Μίγματα DJ
 settings.automix.disableForDjMixesHint: Να μην εφαρμόζεται το Automix για DJ mix και συνεχή mix.
 settings.automix.disableForLiveAlbums: Ζωντανά άλμπουμ
 settings.automix.disableForLiveAlbumsHint: Να μην εφαρμόζεται το automix για ζωντανές ηχογραφήσεις και συναυλίες.
@@ -3650,31 +3737,31 @@ settings.automix.spectralSeparationHint: Πόσο πολύ διαχωρίζον�
 settings.automix.spectralSeparationHintV2: Πόσο απομακρύνονται τα δύο κομμάτια σε συχνότητα κατά τη μετάβαση ({value}).
 settings.automix.speedSettle: Χρόνος σταθεροποίησης ταχύτητας
 settings.automix.speedSettleHint: Πόσος χρόνος απαιτείται για να επανέλθει η ταχύτητα αναπαραγωγής στο κανονικό μετά από μια μίξη με συγχρονισμένο tempo ({ms}ms)
-settings.automix.tempoAlign: Ταίριασμα ρυθμού
+settings.automix.tempoAlign: Ευθυγράμμιση ρυθμού
 settings.automix.tempoAlignHint: Μικρορύθμιση του tempo για την ευθυγράμμιση των δύο κομματιών όταν βρίσκονται ήδη κοντά.
 settings.automix.vocalGuard: Προστασία φωνητικών
 settings.automix.vocalGuardHint: Συντόμευση της μίξης όταν υπάρχουν φωνητικά και στα δύο κομμάτια ταυτόχρονα.
 settings.cache.all: Όλα
-settings.cache.artistChips: Ετικέτες καλλιτεχνών
+settings.cache.artistChips: Chips καλλιτεχνών
 settings.cache.artwork: Εξώφυλλα
 settings.cache.clear: Εκκαθάριση προσωρινής μνήμης
 settings.cache.content: Περιεχόμενο
 settings.cache.entries: "Αριθμός καταχωρίσεων: {{ count }}"
 settings.cache.homeData: Δεδομένα αρχικής σελίδας
 settings.cache.library: Βιβλιοθήκη
-settings.cache.marketplaceListings: Καταχωρίσεις Marketplace
-settings.cache.playlistIndex: Ευρετήριο λιστών αναπαραγωγής
+settings.cache.marketplaceListings: Καταχωρίσεις αγοράς
+settings.cache.playlistIndex: Ευρετήριο playlist
 settings.cache.prompt.artwork.cleared.message: Η προσωρινή μνήμη εξωφύλλων εκκαθαρίστηκε. Ανανέωση τώρα;
-settings.cache.prompt.artwork.cleared.title: Η προσωρινή μνήμη εξωφύλλων εκκαθαρίστηκε
-settings.cache.prompt.artwork.title: Εκκαθάριση προσωρινής μνήμης εξωφύλλων
+settings.cache.prompt.artwork.cleared.title: Η προσωρινή μνήμη εικονιδίων διαγράφηκε
+settings.cache.prompt.artwork.title: Εκκαθάριση προσωρινής μνήμης εικονιδίων
 settings.cache.prompt.clearAll.cleared.message: Η προσωρινή μνήμη εκκαθαρίστηκε. Ανανέωση τώρα;
-settings.cache.prompt.clearAll.cleared.title: Η προσωρινή μνήμη εκκαθαρίστηκε
+settings.cache.prompt.clearAll.cleared.title: Η προσωρινή μνήμη διαγράφηκε
 settings.cache.prompt.clearAll.title: Εκκαθάριση προσωρινής μνήμης
 settings.cache.prompt.marketplace.cleared.message: Η προσωρινή μνήμη εκκαθαρίστηκε. Ανανέωση τώρα;
-settings.cache.prompt.marketplace.cleared.title: Η προσωρινή μνήμη του Marketplace εκκαθαρίστηκε
+settings.cache.prompt.marketplace.cleared.title: Η προσωρινή μνήμη αγοράς διαγράφηκε
 settings.cache.prompt.playlist.cleared.message: Η προσωρινή μνήμη εκκαθαρίστηκε. Ανανέωση τώρα;
-settings.cache.prompt.playlist.cleared.title: Η προσωρινή μνήμη λιστών αναπαραγωγής εκκαθαρίστηκε
-settings.cache.recentlyModifiedPlaylists: Πρόσφατα τροποποιημένες λίστες αναπαραγωγής
+settings.cache.prompt.playlist.cleared.title: Η προσωρινή μνήμη playlist διαγράφηκε
+settings.cache.recentlyModifiedPlaylists: Πρόσφατα τροποποιημένα playlists
 settings.cache.storageUsed: "Χώρος αποθήκευσης σε χρήση: {{ usage }}"
 settings.client.genten.enableTrayIcon: Ενεργοποίηση εικονιδίου Tray
 settings.client.genten.enableTrayIcon.desc: Εναλλαγή για την ενεργοποίηση ή απενεργοποίηση του εικονιδίου Tray
@@ -3898,7 +3985,7 @@ settings.connectivity.scrobbler.trigger.mode: Λειτουργία έναυση�
 settings.connectivity.scrobbler.trigger.mode.desc: Πότε να υποβάλλεται ένα scrobble. Το "Όποιο συμβεί πρώτο" είναι ο κλασικός κανόνας του Last.fm.
 settings.connectivity.scrobbler.trigger.percent: Ποσοστό
 settings.connectivity.scrobbler.zeroOff: Το 0 απενεργοποιεί αυτό το φίλτρο.
-settings.connectivity.section.communityRatings: Αξιολογήσεις κοινότητας
+settings.connectivity.section.communityRatings: Βαθμολογίες κοινότητας
 settings.connectivity.section.communityRatings.description: Αξιολογήσεις μίξης Dolby Atmos από άλλους ακροατές του Cider στις σελίδες άλμπουμ, και αν οι δικές σας κοινοποιούνται πίσω.
 settings.connectivity.section.discord.description: Τι εμφανίζει το Cider στο προφίλ σας στο Discord κατά την αναπαραγωγή μουσικής, και μέσω ποιου client συνδέεται.
 settings.connectivity.section.externalApplications.description: Η θύρα WebSockets και ο διακομιστής RPC που χρησιμοποιούν άλλα προγράμματα για την ανάγνωση της αναπαραγωγής και τον έλεγχο του Cider, καθώς και ποια από αυτά επιτρέπονται.
@@ -3906,33 +3993,34 @@ settings.connectivity.section.parties.description: Συγχρονισμένη α
 settings.connectivity.section.vrOverlay.description: Ένα πρόγραμμα αναπαραγωγής Cider και καρφιτσώσιμοι πίνακες πάνω από το SteamVR και το VDXR, που επικοινωνούν με αυτήν την εφαρμογή μέσω RPC.
 settings.connectivity.tokenCopied: Το διακριτικό αντιγράφηκε στο πρόχειρο
 settings.connectivity.tokens: Διακριτικά
+settings.connectivity.tokens.empty: Δεν υπάρχουν διακριτικά ακόμη.
 settings.contentFilter.description: Οι ενότητες στην «Περιήγηση» και στο «Ακούστε τώρα» των οποίων οι τίτλοι ή το περιεχόμενο ταιριάζουν με οποιαδήποτε από αυτές τις λέξεις-κλειδιά θα αποκρύπτονται.
 settings.contentFilter.empty: Δεν έχουν προστεθεί λέξεις-κλειδιά ακόμα.
 settings.contentFilter.inputPlaceholder: Προσθήκη λέξης-κλειδιού...
-settings.contentFilter.title: Φιλτράρισμα λέξεων-κλειδιών
-settings.crossfade.advanced: Προηγμένες ρυθμίσεις Crossfade
+settings.contentFilter.title: Φίλτρο λέξεων-κλειδιών
+settings.crossfade.advanced: Ρυθμίσεις σύνθετου crossfade
 settings.crossfade.automixStillBlends: Το Automix είναι ενεργό, οπότε τα τραγούδια μπορεί ακόμα να μπλέκονται μεταξύ τους. Απενεργοποιήστε το Automix παρακάτω για να σταματήσει κάθε μπλέξιμο.
 settings.crossfade.description: Ομαλή εξασθένηση του τρέχοντος κομματιού κατά την εισαγωγή του επόμενου.
-settings.crossfade.disableFor: Απενεργοποίηση Crossfade για...
+settings.crossfade.disableFor: Απενεργοποίηση crossfade για...
 settings.crossfade.duration: Διάρκεια
-settings.crossfade.enable: Ενεργοποίηση Crossfade
+settings.crossfade.enable: Ενεργοποίηση crossfade
 settings.crossfade.exclusions.albums: Άλμπουμ
 settings.crossfade.exclusions.albums.description: Να μην γίνεται crossfade κατά την αναπαραγωγή από άλμπουμ.
-settings.crossfade.exclusions.autoplayContinuation: Συνέχιση αυτόματης αναπαραγωγής
+settings.crossfade.exclusions.autoplayContinuation: Συνέχεια αυτόματης αναπαραγωγής
 settings.crossfade.exclusions.autoplayContinuation.description: Να μην εφαρμόζεται crossfade όταν η αναπαραγωγή συνεχίζεται με σταθμό ή κομμάτια αυτόματης αναπαραγωγής μετά το τέλος της αρχικής συλλογής.
-settings.crossfade.exclusions.djMixes: DJ Mix
+settings.crossfade.exclusions.djMixes: DJ mixes
 settings.crossfade.exclusions.djMixes.description: Να μην γίνεται crossfade για DJ mix και συνεχή mix.
-settings.crossfade.exclusions.liveAlbums: Ζωντανές ηχογραφήσεις
+settings.crossfade.exclusions.liveAlbums: Ζωντανά άλμπουμ
 settings.crossfade.exclusions.liveAlbums.description: Να μην γίνεται crossfade για ζωντανές ηχογραφήσεις και συναυλίες.
 settings.crossfade.exclusions.playlists: Λίστες αναπαραγωγής
 settings.crossfade.exclusions.playlists.description: Να μην γίνεται crossfade κατά την αναπαραγωγή από λίστες αναπαραγωγής.
-settings.crossfade.loudnessSensitivity: Ευαισθησία έντασης ήχου
+settings.crossfade.loudnessSensitivity: Ευαισθησία έντασης
 settings.crossfade.loudnessSensitivity.description: Εξισορρόπηση διαφορών έντασης ({{ value }}%)
-settings.crossfade.smoothSkip: Ομαλή παράκαμψη
+settings.crossfade.smoothSkip: Ομαλή παράλειψη
 settings.crossfade.smoothSkip.description: Σταδιακή μετάβαση μεταξύ των κομματιών κατά την παράκαμψη.
 settings.crossfade.tempoSensitivity: Ευαισθησία ρυθμού
 settings.crossfade.tempoSensitivity.description: Απόκριση στις αλλαγές ρυθμού ({{ value }}%)
-settings.customCss.createSnippet: Δημιουργία αποσπάσματος
+settings.customCss.createSnippet: Δημιουργία snippet
 settings.customCss.migrate.confirm: Αυτό θα μετατρέψει το υπάρχον προσαρμοσμένο CSS σας σε ένα νέο απόσπασμα και θα εκκαθαρίσει το τρέχον προσαρμοσμένο CSS. Θέλετε να συνεχίσετε;
 settings.customCss.migrate.title: Μετατροπή προσαρμοσμένου CSS
 settings.customCss.title: Προσαρμοσμένο CSS
@@ -3971,12 +4059,12 @@ settings.extensions.addBuiltInSnippet: Προσθήκη ενσωματωμένο
 settings.extensions.browsePluginMarket: Περιήγηση στο Marketplace πρόσθετων
 settings.extensions.browseThemeMarket: Περιήγηση στο Marketplace θεμάτων
 settings.extensions.byAuthor: από {author}
-settings.extensions.checkUpdates: Έλεγχος για ενημερώσεις επεκτάσεων κατά την εκκίνηση
+settings.extensions.checkUpdates: Έλεγχος ενημερώσεων επεκτάσεων κατά την εκκίνηση
 settings.extensions.checkUpdates.desc: Αναζήτηση για ενημερώσεις θεμάτων, αποσπασμάτων και πρόσθετων κάθε φορά που εκκινείται το Cider.
 settings.extensions.createPlugin: Δημιουργία πρόσθετου
 settings.extensions.createSnippet: Δημιουργία νέου αποσπάσματος
 settings.extensions.createTheme: Δημιουργία νέου θέματος
-settings.extensions.cssSnippets: Αποσπάσματα CSS
+settings.extensions.cssSnippets: Snippets CSS
 settings.extensions.fileWatcher: Ενεργοποίηση παρακολούθησης αρχείων θέματος
 settings.extensions.fileWatcher.desc: Αυτόματη επαναφόρτωση των φύλλων στυλ του θέματος όταν αλλάζουν τα αρχεία τους στον δίσκο.
 settings.extensions.importFromFile: Εισαγωγή από αρχείο
@@ -4002,21 +4090,25 @@ settings.extensions.plugins.uninstallTitle: Κατάργηση εγκατάστ�
 settings.extensions.refresh: Ανανέωση επεκτάσεων
 settings.extensions.refresh.desc: Επανασάρωση θεμάτων, αποσπασμάτων και πρόσθετων από τον δίσκο.
 settings.extensions.refreshed: Έγινε ανανέωση θεμάτων, αποσπασμάτων και πρόσθετων
+settings.extensions.snippets.author: Από {{ author }}
 settings.extensions.snippets.created: Το απόσπασμα δημιουργήθηκε
-settings.extensions.snippets.createTitle: Δημιουργία νέου αποσπάσματος CSS
+settings.extensions.snippets.createTitle: Δημιουργία νέου snippet CSS
 settings.extensions.snippets.deleteConfirm: Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτό το απόσπασμα CSS; Αυτή η ενέργεια δεν μπορεί να αναιρεθεί.
 settings.extensions.snippets.deleted: Το απόσπασμα διαγράφηκε
-settings.extensions.snippets.deleteTitle: Διαγραφή αποσπάσματος CSS
+settings.extensions.snippets.deleteTitle: Διαγραφή snippet CSS
 settings.extensions.snippets.empty: Δεν υπάρχουν εγκατεστημένα αποσπάσματα CSS.
 settings.extensions.snippets.exported: Το απόσπασμα εξήχθη
 settings.extensions.snippets.imported: Εισήχθησαν {{ count }} αποσπάσματα
 settings.extensions.snippets.importFailed: "Αποτυχία εισαγωγής του {{ file }}: {{ error }}"
+settings.extensions.snippets.invalidFile: "Μη έγκυρη μορφή αρχείου: {{ file }}"
 settings.extensions.snippets.namePrompt: Εισαγάγετε ένα όνομα για το νέο σας απόσπασμα CSS.
 settings.extensions.snippets.orderUpdated: Η σειρά ενημερώθηκε
 settings.extensions.snippets.saved: Το απόσπασμα αποθηκεύτηκε
 settings.extensions.themeCreated: Το νέο θέμα δημιουργήθηκε με επιτυχία
 settings.extensions.themes.activeCount: "{{ count }} ενεργά"
 settings.extensions.themes.empty: Δεν υπάρχουν εγκατεστημένα θέματα.
+settings.extensions.themes.getMore: Περισσότερα θέματα
+settings.extensions.themes.refreshList: Ανανέωση λίστας θεμάτων
 settings.extensions.themes.stylesheetMany: "{{ count }} φύλλα στυλ"
 settings.extensions.themes.stylesheetOne: 1 φύλλο στυλ
 settings.extensions.viewOnMarketplace: Προβολή στο Marketplace
@@ -4042,6 +4134,7 @@ settings.general.section.language: Γλώσσα
 settings.general.section.language.description: Η γλώσσα της διεπαφής, και πώς να αναφέρετε ή να δώσετε τα εύσημα για τις μεταφράσεις της.
 settings.general.section.playback: Αναπαραγωγή
 settings.general.section.playback.description: Τι κάνει το κουμπί αναπαραγωγής όταν δεν αναπαράγεται τίποτα.
+settings.general.section.playback.descriptionV2: Τι κάνει το κουμπί αναπαραγωγής όταν δεν παίζει τίποτα και πού μπορεί να αλλάξει ο ρυθμός αναπαραγωγής.
 settings.general.section.privacy: Απόρρητο
 settings.general.section.privacy.description: Το όνομα με το οποίο σας καλωσορίζει το Cider, και αν επιτρέπεται να χρησιμοποιεί την τοποθεσία σας.
 settings.general.section.queue: Ουρά
@@ -4118,7 +4211,7 @@ settings.intensive.animatedArtworkQuality.description: Η υψηλότερη π�
 settings.intensive.catalogAnimatedArtwork.description: Αναπαράγει πολλά κινούμενα εξώφυλλα ταυτόχρονα κατά την περιήγηση στον κατάλογο.
 settings.intensive.characterFlow.description: Δημιουργεί κίνηση για κάθε χαρακτήρα στίχου ξεχωριστά αντί για ολόκληρες γραμμές.
 settings.intensive.confirm.enable: Ενεργοποίηση
-settings.intensive.confirm.message: Αυτή η δυνατότητα απαιτεί πολλούς πόρους και μπορεί να αυξήσει σημαντικά τη χρήση CPU/GPU, την υπερθέρμανση και την κατανάλωση μπαταρίας — ειδικά σε παλαιότερο ή λιγότερο ισχυρό υλικό. Μπορείτε να ελέγξετε τις απαιτητικές δυνατότητες ανά πάσα στιγμή μέσω του εικονιδίου με τη λάμπα στο επάνω μέρος των Ρυθμίσεων.
+settings.intensive.confirm.message: Αυτή η λειτουργία είναι απαιτητική σε απόδοση και μπορεί να αυξήσει σημαντικά τη χρήση CPU/GPU, τη θερμοκρασία και την κατανάλωση μπαταρίας, ειδικά σε συσκευές χαμηλότερης κατηγορίας. Μπορείτε να δείτε τις απαιτητικές λειτουργίες ανά πάσα στιγμή στις Ρυθμίσεις › Χρήση ενέργειας.
 settings.intensive.emotionEngine.description: Αναλύει το εξώφυλλο του άλμπουμ για να εξαγάγει μια χρωματική παλέτα.
 settings.intensive.fsrUpscale.description: Αναβαθμίζει την ανάλυση του εξωφύλλου στην GPU με τη χρήση του FidelityFX Super Resolution.
 settings.intensive.immersiveAnimatedArtwork.description: Αναπαράγει κινούμενα εξώφυλλα μέσα στην Καθηλωτική προβολή.
@@ -4135,13 +4228,13 @@ settings.intensive.viewTransitions.description: Δημιουργεί κίνησ�
 settings.intensive.warning: Υψηλή κατανάλωση πόρων — ενδέχεται να προκαλέσει υψηλή χρήση CPU/GPU.
 settings.keybindings.recordingHint: Καταγραφή. Πατήστε Escape για ακύρωση
 settings.lyrics.card.providers: Πάροχοι
-settings.lyrics.card.songOverrides: Παρακάμψεις τραγουδιών
+settings.lyrics.card.songOverrides: Εξαιρέσεις τραγουδιών
 settings.lyrics.localeOverrides: Κανόνες βάσει τοπικών ρυθμίσεων
-settings.lyrics.localeOverrides.add: Προσθήκη παράκαμψης τοπικών ρυθμίσεων
+settings.lyrics.localeOverrides.add: Προσθήκη εξαίρεσης τοπικών ρυθμίσεων
 settings.lyrics.localeOverrides.audioLocale: Τοπικές ρυθμίσεις ήχου
 settings.lyrics.localeOverrides.desc: Ορίστε προσαρμοσμένο πάροχο και προτιμήσεις μετάφρασης για τραγούδια σε συγκεκριμένες γλώσσες. Όταν οι τοπικές ρυθμίσεις ήχου ενός τραγουδιού ταιριάζουν με έναν κανόνα, αυτές οι ρυθμίσεις θα παρακάμπτουν τις προεπιλογές.
-settings.lyrics.localeOverrides.dialogTitle.add: Προσθήκη παράκαμψης τοπικών ρυθμίσεων
-settings.lyrics.localeOverrides.dialogTitle.edit: Επεξεργασία παράκαμψης τοπικών ρυθμίσεων
+settings.lyrics.localeOverrides.dialogTitle.add: Προσθήκη εξαίρεσης τοπικών ρυθμίσεων
+settings.lyrics.localeOverrides.dialogTitle.edit: Επεξεργασία εξαίρεσης τοπικών ρυθμίσεων
 settings.lyrics.localeOverrides.empty: Δεν υπάρχουν κανόνες ακόμα. Χρησιμοποιήστε το + για να προσθέσετε έναν.
 settings.lyrics.localeOverrides.overrideTranslation: Παράκαμψη μετάφρασης
 settings.lyrics.localeOverrides.preferredProvider: Προτιμώμενος πάροχος
@@ -4149,13 +4242,13 @@ settings.lyrics.localeOverrides.provider.apple: Apple Music
 settings.lyrics.localeOverrides.provider.auto: Προεπιλογή (Αυτόματα)
 settings.lyrics.localeOverrides.provider.mxm: Musixmatch
 settings.lyrics.localeOverrides.provider.netease: NetEase
-settings.lyrics.localeOverrides.provider.user: Υποβληθέν από τον χρήστη
+settings.lyrics.localeOverrides.provider.user: Υποβλήθηκε από χρήστη
 settings.lyrics.localeOverrides.providerLabel: "Πάροχος:"
 settings.lyrics.localeOverrides.translateTo: Μετάφραση σε
 settings.lyrics.localeOverrides.translateToLabel: "Μετάφραση σε:"
 settings.lyrics.player.cascade: Ένταση καταρράκτη
 settings.lyrics.player.cascade.desc: Πόσο έντονη είναι η διαδοχική εμφάνιση των στίχων γραμμή προς γραμμή.
-settings.lyrics.player.cta: Εφέ κίνησης στίχων
+settings.lyrics.player.cta: Κινούμενα εφέ στίχων
 settings.lyrics.player.cta.description: Προσαρμόστε την εμφάνιση και τη συμπεριφορά των εφέ κίνησης των στίχων, συμπεριλαμβανομένων των εφέ έμφασης, λάμψης, ανύψωσης, ταχύτητας, απαλότητας και καταρράκτη.
 settings.lyrics.player.deselScale: Κλίμακα ανενεργής γραμμής
 settings.lyrics.player.deselScale.desc: Το μέγεθος των μη ενεργών γραμμών. Οι χαμηλότερες τιμές κάνουν την ενεργή γραμμή να ξεχωρίζει περισσότερο.
@@ -4175,7 +4268,7 @@ settings.lyrics.player.title: Εφέ κίνησης στίχων
 settings.lyrics.scroll.duration: Διάρκεια κύλισης στίχων
 settings.lyrics.scroll.duration.desc1: Προσαρμόστε την ταχύτητα κύλισης των στίχων σε
 settings.lyrics.scroll.duration.desc2: Αυτό δεν θα επηρεάσει την ταχύτητα του τραγουδιού.
-settings.lyrics.scroll.easing: Συνάρτηση εξομάλυνσης
+settings.lyrics.scroll.easing: Συνάρτηση επιτάχυνσης
 settings.lyrics.scroll.easing.curveExample: "Παράδειγμα καμπύλης:"
 settings.lyrics.scroll.easing.description1: Προσαρμόστε τη συνάρτηση εξομάλυνσης της κύλισης των στίχων. Αυτή είναι μια ιδιότητα
 settings.lyrics.scroll.easing.description2: CSS.
@@ -4194,14 +4287,14 @@ settings.lyrics.section.sources: Πηγές
 settings.lyrics.section.sources.description: Από πού προέρχονται οι στίχοι, και οι κανόνες ανά γλώσσα ή ανά κομμάτι που υπερισχύουν του προεπιλεγμένου παρόχου.
 settings.lyrics.section.translation: Μετάφραση
 settings.lyrics.section.translation.description: Μεταφρασμένοι στίχοι, η γλώσσα στην οποία εμφανίζονται και αν οι πρωτότυποι παραμένουν στην οθόνη.
-settings.lyrics.trackOverrides.clearAll: Κατάργηση όλων των παρακάμψεων
+settings.lyrics.trackOverrides.clearAll: Διαγραφή όλων των εξαιρέσεων
 settings.lyrics.trackOverrides.desc: Τα κομμάτια που αναφέρονται εδώ χρησιμοποιούν πάντα τον πάροχο στίχων που κλειδώσατε ή την κατάσταση φωνητικών που ορίσατε χειροκίνητα, αντί για αυτήν που αναφέρει η Apple. Αυτές οι παρακάμψεις ορίζονται από το μενού στίχων και το μενού δεξιού κλικ του κομματιού.
 settings.lyrics.trackOverrides.empty: Δεν έχει παρακαμφθεί τίποτα ακόμα. Ό,τι κλειδώνετε από αυτά τα μενού θα εμφανίζεται εδώ.
 settings.lyrics.trackOverrides.lyricsForced: Επιβολή στίχων
 settings.lyrics.trackOverrides.markedInstrumental: Σημειώθηκε ως οργανικό
 settings.lyrics.trackOverrides.providerLabel: "Πάροχος:"
-settings.lyrics.trackOverrides.remove: Κατάργηση παράκαμψης
-settings.lyrics.trackOverrides.title: Παρακάμψεις ανά κομμάτι
+settings.lyrics.trackOverrides.remove: Κατάργηση εξαίρεσης
+settings.lyrics.trackOverrides.title: Εξαιρέσεις ανά κομμάτι
 settings.micaish.blurAmount: Ποσότητα θολώματος
 settings.micaish.brightness: Φωτεινότητα %
 settings.micaish.contrast: Αντίθεση %
@@ -4217,18 +4310,22 @@ settings.miniplayer.unpinWindow: Ξεκαρφίτσωμα παραθύρου
 settings.nav.accessibility: Προσβασιμότητα
 settings.nav.accounts: Λογαριασμοί
 settings.nav.advanced: Για προχωρημένους
+settings.nav.appleMusicWordmark: music
 settings.nav.audio: Ήχος
+settings.nav.categories: Κατηγορίες ρυθμίσεων
 settings.nav.concerts: Συναυλίες
-settings.nav.config-backups: Αντίγραφα ασφαλείας διαμόρφωσης
+settings.nav.config-backups: Αντίγραφα ρυθμίσεων
 settings.nav.connectivity: Συνδέσεις
 settings.nav.extensions: Επεκτάσεις
 settings.nav.general: Γενικά
 settings.nav.group.account: Λογαριασμός
 settings.nav.group.advanced: Για προχωρημένους
 settings.nav.group.appearance: Εμφάνιση
+settings.nav.group.connections: Συνδέσεις
 settings.nav.group.general: Γενικά
 settings.nav.group.integrations: Ενσωματώσεις
 settings.nav.group.library: Βιβλιοθήκη
+settings.nav.group.lookAndFeel: Εμφάνιση και αίσθηση
 settings.nav.group.playback: Αναπαραγωγή
 settings.nav.lyrics: Στίχοι
 settings.nav.notifications: Ειδοποιήσεις
@@ -4237,10 +4334,28 @@ settings.nav.power: Χρήση ενέργειας
 settings.nav.privacy: Απόρρητο
 settings.nav.profile: Προφίλ
 settings.nav.search: Αναζήτηση
-settings.nav.searchPlaceholder: Αναζήτηση ρυθμίσεων...
+settings.nav.searchPlaceholder: Αναζήτηση ρυθμίσεων
+settings.nav.summary.accessibility: Έντονο κείμενο, κλίμακα διεπαφής, κίνηση, ηχητικά εφέ
+settings.nav.summary.advanced: Αντίγραφα, αντιμετώπιση προβλημάτων, πειράματα
+settings.nav.summary.audio: Έξοδος, ποιότητα, crossfade, κανονικοποίηση
+settings.nav.summary.concerts: Τοποθεσία, ακτίνα, ταξινόμηση
+settings.nav.summary.connectivity: Discord, scrobbling, κοινή ακρόαση, απομακρυσμένος έλεγχος
+settings.nav.summary.extensions: Θέματα, αποσπάσματα CSS, πρόσθετα
+settings.nav.summary.general: Εκκίνηση, ουρά, χρονόμετρο ύπνου, συντομεύσεις
+settings.nav.summary.lyrics: Πηγές, μετάφραση, εμφάνιση, χρονισμός
+settings.nav.summary.notifications: Κατηγορίες, ιστορικό, ειδοποιήσεις συστήματος
+settings.nav.summary.power: Απόδοση, ρυθμός καρέ, εξοικονόμηση ενέργειας
+settings.nav.summary.profile: Λογαριασμός Apple Music
+settings.nav.summary.sid: Πού εμφανίζεται ο Sid και πώς λειτουργεί
+settings.nav.summary.smartPlaylists: Κανόνες και συντήρηση έξυπνων λιστών
+settings.nav.summary.subscriberYear: συνδρομητής για ένα έτος
+settings.nav.summary.subscriberYears: συνδρομητής για {{count}} έτη
+settings.nav.summary.tweaks: Μικρές αλλαγές στο πρόγραμμα αναπαραγωγής, στην πλαϊνή στήλη και άλλα
+settings.nav.summary.visual: Χρωματικό σχέδιο, διάταξη, παράθυρο, immersive
 settings.nav.themes: Θέματα
+settings.nav.tweaks: Προσαρμογές
 settings.nav.updates: Ενημερώσεις
-settings.nav.visual: Οπτικά
+settings.nav.visual: Εμφάνιση
 settings.normalization.louderTargetHint: Αν το Cider ακούγεται ακόμα πολύ χαμηλά στο 100% της έντασης, επιλέξτε έναν πιο δυνατό στόχο. Οι υψηλότερες τιμές LUFS ακούγονται πιο δυνατά, αλλά η προστασία αιχμής ενδέχεται να περιορίσει την ενίσχυση για την αποφυγή παραμόρφωσης.
 settings.normalization.presets.apple: Apple
 settings.normalization.presets.balanced: Ισορροπημένο
@@ -4251,11 +4366,11 @@ settings.normalization.target: Στόχος έντασης
 settings.normalization.unit: LUFS
 settings.notifications.alwaysOn: Πάντα ενεργό
 settings.notifications.alwaysOn.description: Αυτές αφορούν προβλήματα και την κατάσταση της εφαρμογής που πρέπει να βλέπετε, επομένως δεν μπορούν να απενεργοποιηθούν. Τα σφάλματα εμφανίζονται πάντα, ανεξάρτητα από την κατηγορία στην οποία ανήκουν.
-settings.notifications.category.accountAuth: Λογαριασμός και Σύνδεση
+settings.notifications.category.accountAuth: Λογαριασμός και σύνδεση
 settings.notifications.category.accountAuth.description: Σύνδεση και αποσύνδεση, κατάσταση συνδρομής και συνδεδεμένες υπηρεσίες.
 settings.notifications.category.castingAirplay: Μετάδοση και AirPlay
 settings.notifications.category.castingAirplay.description: Σύνδεση και αποσύνδεση από εξωτερικές συσκευές αναπαραγωγής.
-settings.notifications.category.extensionsThemes: Επεκτάσεις και Θέματα
+settings.notifications.category.extensionsThemes: Επεκτάσεις και θέματα
 settings.notifications.category.extensionsThemes.description: Εγκατάσταση, ενημέρωση και κατάργηση πρόσθετων, θεμάτων και αποσπασμάτων κώδικα.
 settings.notifications.category.general: Γενικά
 settings.notifications.category.general.description: Οτιδήποτε δεν ανήκει σε δική του κατηγορία.
@@ -4263,9 +4378,9 @@ settings.notifications.category.listeningTogether: Κοινή ακρόαση
 settings.notifications.category.listeningTogether.description: Προσκλήσεις σε πάρτι, είσοδος ή αποχώρηση επισκεπτών και κατάσταση περιόδου λειτουργίας.
 settings.notifications.category.lyrics: Στίχοι
 settings.notifications.category.lyrics.description: Αναζήτηση στίχων, συνεισφορές και μεταγραμματισμός.
-settings.notifications.category.playbackSystem: Αναπαραγωγή και Σύστημα
+settings.notifications.category.playbackSystem: Αναπαραγωγή και σύστημα
 settings.notifications.category.playbackSystem.description: Προβλήματα αναπαραγωγής και κατάσταση σε επίπεδο εφαρμογής που πρέπει να βλέπετε.
-settings.notifications.category.playlistsLibrary: Λίστες αναπαραγωγής και Βιβλιοθήκη
+settings.notifications.category.playlistsLibrary: Λίστες και βιβλιοθήκη
 settings.notifications.category.playlistsLibrary.description: Προσθήκη, αφαίρεση, επεξεργασία και συγχρονισμός περιεχομένου βιβλιοθήκης.
 settings.notifications.category.plugins: Πρόσθετα
 settings.notifications.category.plugins.description: Μηνύματα που προέρχονται από τα εγκατεστημένα πρόσθετά σας, αντί για αναφορές του Cider.
@@ -4273,9 +4388,9 @@ settings.notifications.category.queueUpNext: Ουρά και Επόμενο
 settings.notifications.category.queueUpNext.description: Κομμάτια στην ουρά για αναπαραγωγή στη συνέχεια ή που προστέθηκαν στο τέλος της ουράς.
 settings.notifications.category.scrobbling: Scrobbling
 settings.notifications.category.scrobbling.description: Αποτελέσματα scrobble ανά κομμάτι από το Last.fm, το ListenBrainz και άλλες υπηρεσίες.
-settings.notifications.category.settingsBackups: Ρυθμίσεις και Αντίγραφα ασφαλείας
+settings.notifications.category.settingsBackups: Ρυθμίσεις και αντίγραφα
 settings.notifications.category.settingsBackups.description: Εισαγωγές και εξαγωγές ρυθμίσεων, καθώς και αντίγραφα ασφαλείας παραμέτρων.
-settings.notifications.category.sharingClipboard: Κοινή χρήση και Πρόχειρο
+settings.notifications.category.sharingClipboard: Κοινοποίηση και πρόχειρο
 settings.notifications.category.sharingClipboard.description: Δημιουργία και αντιγραφή συνδέσμων κοινής χρήσης.
 settings.notifications.muted.empty: Δεν υπάρχει τίποτα σε σίγαση. Η σίγαση μιας μεμονωμένης ειδοποίησης από τη λίστα ειδοποιήσεών σας την προσθέτει εδώ, και από εδώ μπορείτε να την επαναφέρετε.
 settings.notifications.section.categories: Κατηγορίες
@@ -4283,6 +4398,7 @@ settings.notifications.section.history: Ιστορικό
 settings.notifications.section.muted: Ειδοποιήσεις σε σίγαση
 settings.notifications.section.system: Ειδοποιήσεις συστήματος
 settings.notifications.summary.categoriesOn: Ενεργές κατηγορίες
+settings.notifications.summary.categoriesOnCount: "{{on}} από {{total}} ενεργά"
 settings.notifications.summary.description: Επιλέξτε τους τύπους ειδοποιήσεων που θα σας εμφανίζει το Cider. Ό,τι απενεργοποιείτε εξακολουθεί να καταγράφεται στη λίστα ειδοποιήσεών σας, ώστε να μπορείτε να ενημερωθείτε αργότερα.
 settings.notifications.unmute: Κατάργηση σίγασης
 settings.notifications.unmuteAll: Κατάργηση σίγασης όλων
@@ -4300,11 +4416,11 @@ settings.notyf.visual.theme.install.success: Το θέμα εγκαταστάθ�
 settings.notyf.visual.theme.updateAvailable: "[Θέματα] Υπάρχει διαθέσιμη ενημέρωση για το {{ theme }}"
 settings.option.accessibility.boldText: Έντονο κείμενο
 settings.option.accessibility.boldText.description: Αυξάνει το πάχος του κειμένου σε όλη την εφαρμογή για καλύτερη αναγνωσιμότητα.
-settings.option.accessibility.cardHoverMotion: Κίνηση κατά την κατάδειξη κάρτας
+settings.option.accessibility.cardHoverMotion: Κίνηση κάρτας κατά το δρομέα
 settings.option.accessibility.cardHoverMotion.description: Οι επιλέξιμες κάρτες (πλακίδια άλμπουμ, κάρτες δυνατοτήτων, στοιχεία πλέγματος) διογκώνονται ελαφρώς κατά την κατάδειξη και συμπιέζονται κατά το πάτημα. Ανενεργό από προεπιλογή.
 settings.option.accessibility.enableSoundEffects: Ενεργοποίηση ηχητικών εφέ
 settings.option.accessibility.enableSoundEffects.description: Αναπαραγωγή διακριτικών ήχων κατά την αλληλεπίδραση με κουμπιά, διακόπτες και ρυθμιστικά.
-settings.option.accessibility.forceFocusVisible: Πάντα εμφάνιση πλαισίου εστίασης
+settings.option.accessibility.forceFocusVisible: Πάντα εμφάνιση δακτυλίου εστίασης
 settings.option.accessibility.forceFocusVisible.description: Επιβολή ορατού περιγράμματος στα εστιασμένα στοιχεία για πλοήγηση με το πληκτρολόγιο.
 settings.option.accessibility.highContrast: Υψηλή αντίθεση
 settings.option.accessibility.highContrast.description: Αυξάνει την αντίθεση μεταξύ κειμένου, φόντου και στοιχείων της διεπαφής.
@@ -4315,7 +4431,7 @@ settings.option.accessibility.motionIntensity.none: Καμία
 settings.option.accessibility.motionIntensity.normal: Κανονική
 settings.option.accessibility.motionIntensity.playful: Παιχνιδιάρικη
 settings.option.accessibility.motionIntensity.reduced: Μειωμένη
-settings.option.accessibility.playOnHover: Αναπαραγωγή κατά την κατάδειξη
+settings.option.accessibility.playOnHover: Αναπαραγωγή με αιώρηση
 settings.option.accessibility.playOnHover.description: Αναπαραγωγή ενός διακριτικού ήχου (κλικ) όταν ο δείκτης εισέρχεται σε διαδραστικά στοιχεία.
 settings.option.accessibility.soundEffects: Ηχητικά εφέ
 settings.option.accessibility.soundPreview: Προεπισκόπηση ήχου
@@ -4328,59 +4444,59 @@ settings.option.accessibility.volume: Ένταση ήχου
 settings.option.accessibility.volume.description: Πόσο δυνατά αναπαράγονται τα ηχητικά εφέ της διεπαφής.
 settings.option.advanced.clientSettings: Ρυθμίσεις εφαρμογής
 settings.option.advanced.clientSettings.description: Ρυθμίσεις ειδικά για το τρέχον πλαίσιο της εφαρμογής
-settings.option.advanced.compactSidebar: Συμπαγής πλευρική στήλη
+settings.option.advanced.compactSidebar: Συμπαγής πλαϊνή στήλη
 settings.option.advanced.compactSidebar.description: Εφαρμόζεται όταν το παράθυρο είναι αρκετά στενό ώστε να συμπτυχθεί η πλευρική στήλη.
 settings.option.advanced.compactSidebar.size: Μέγεθος
 settings.option.advanced.configBackups.description: Επαναφέρετε ένα αντίγραφο του αρχείου ρυθμίσεών σας που αποθήκευσε το Cider, σε περίπτωση που οι ρυθμίσεις σας χάθηκαν ή μηδενίστηκαν.
 settings.option.advanced.experimentalFeatures: Πειραματικές λειτουργίες
 settings.option.advanced.experimentalFeatures.description: Λειτουργίες υπό ανάπτυξη και πειραματικές επιλογές.
-settings.option.advanced.floatingSearch: Αιωρούμενο πλαίσιο αναζήτησης
+settings.option.advanced.floatingSearch: Πλωτή επικάλυψη αναζήτησης
 settings.option.advanced.floatingSearch.blurBackground: Θόλωση φόντου
 settings.option.advanced.floatingSearch.blurBackground.description: Όταν είναι ενεργοποιημένο, το φόντο θα θολώνει όταν εστιάζεται η γραμμή αναζήτησης.
-settings.option.advanced.floatingSearch.clearSearchOnClose: Καθαρισμός αναζήτησης κατά το κλείσιμο
+settings.option.advanced.floatingSearch.clearSearchOnClose: Εκκαθάριση αναζήτησης κατά το κλείσιμο
 settings.option.advanced.floatingSearch.clearSearchOnClose.description: Όταν είναι ενεργοποιημένο, το κείμενο της γραμμής αναζήτησης θα απαλείφεται όταν κλείνει η γραμμή αναζήτησης.
 settings.option.advanced.floatingSearch.description: Το πλαίσιο αναζήτησης που ανοίγει πάνω από τη σελίδα.
 settings.option.advanced.floatingSearch.enterShowsResults: Το Enter εμφανίζει τα αποτελέσματα
 settings.option.advanced.floatingSearch.enterShowsResults.description: Όταν είναι ενεργοποιημένο, η γραμμή αναζήτησης θα μεταβαίνει απευθείας στη σελίδα αποτελεσμάτων αναζήτησης όταν πατάτε enter.
 settings.option.advanced.home: Αρχική
-settings.option.advanced.home.buttonLocation: Θέση κουμπιού Αρχικής
+settings.option.advanced.home.buttonLocation: Θέση κουμπιού Αρχική
 settings.option.advanced.home.buttonLocation.sidebar: Πλευρική στήλη
 settings.option.advanced.home.buttonLocation.sidebar2023: Πλευρική στήλη (2023)
 settings.option.advanced.home.buttonLocation.topBar: Επάνω γραμμή
-settings.option.advanced.immersive: Καθηλωτική προβολή
-settings.option.advanced.immersive.artworkHighlight: Τονισμός εξωφύλλου
+settings.option.advanced.immersive: Immersive προβολή
+settings.option.advanced.immersive.artworkHighlight: Επισήμανση εξωφύλλου
 settings.option.advanced.immersive.controlsTimeout: Χρονικό όριο ενεργών στοιχείων ελέγχου (δευτερόλεπτα)
 settings.option.advanced.immersive.description: Η ίδια η καθηλωτική προβολή. Η διάταξη που χρησιμοποιεί επιλέγεται στην ενότητα «Οπτικά».
 settings.option.advanced.immersive.glowEffectOnActiveLyrics: Εφέ λάμψης στους ενεργούς στίχους
-settings.option.advanced.lyrics: Κίνηση στίχων
-settings.option.advanced.lyrics.characterFlow: Ρέοντες χαρακτήρες
+settings.option.advanced.lyrics: Κινούμενοι στίχοι
+settings.option.advanced.lyrics.characterFlow: Ρευστοί χαρακτήρες
 settings.option.advanced.lyrics.characterFlow.description: Οι μεμονωμένοι χαρακτήρες θα ρέουν προς τα πάνω αντί για ολόκληρη τη γραμμή. Απαιτεί περισσότερους πόρους.
 settings.option.advanced.lyrics.description: Πώς κινούνται οι γραμμές και οι χαρακτήρες των στίχων κατά την αναπαραγωγή ενός τραγουδιού.
-settings.option.advanced.lyrics.lineStaggering: Σταδιακή εμφάνιση γραμμών
+settings.option.advanced.lyrics.lineStaggering: Διαδοχική εμφάνιση γραμμών
 settings.option.advanced.lyrics.lineStaggering.description: Οι επόμενοι στίχοι θα έχουν μια ανεπαίσθητη καθυστέρηση όταν εστιάζεται ο επόμενος ενεργός στίχος
-settings.option.advanced.lyrics.lineStaggeringImmersive: Σταδιακή εμφάνιση γραμμών (Καθηλωτική)
+settings.option.advanced.lyrics.lineStaggeringImmersive: Διαδοχική εμφάνιση γραμμών (Immersive)
 settings.option.advanced.lyrics.lineStaggeringImmersive.description: Απαιτεί περισσότερους πόρους.
-settings.option.advanced.lyrics.scaleOnAny: Επιλογή εφέ μεγέθυνσης σε οποιαδήποτε λέξη
+settings.option.advanced.lyrics.scaleOnAny: Επιτρέπεται το εφέ κλιμάκωσης σε οποιαδήποτε λέξη
 settings.option.advanced.lyrics.scaleOnAny.description: Επιτρέπει τη μεγέθυνση οποιασδήποτε λέξης, όχι μόνο των τονισμένων
-settings.option.advanced.lyrics.singEngine: Μηχανή Immersive Sing
+settings.option.advanced.lyrics.singEngine: Μηχανή τραγουδιού Immersive
 settings.option.advanced.lyrics.singEngine.classic: Κλασική
 settings.option.advanced.lyrics.singEngine.description: Μηχανή Sing για την καθηλωτική προβολή. Η «Κλασική» χρησιμοποιεί ελαφριά εφέ κίνησης CSS, αποτελώντας την καλύτερη επιλογή για συστήματα χαμηλών επιδόσεων. Η πλευρική στήλη χρησιμοποιεί πάντα την «Κλασική».
 settings.option.advanced.lyrics.singEngine.legacy: Παλαιού τύπου
 settings.option.advanced.lyrics.singEngine.waapi: GPU (Web Animations)
-settings.option.advanced.lyrics.singLyricsEverywhere: Στίχοι Sing παντού
+settings.option.advanced.lyrics.singLyricsEverywhere: Τραγούδι στίχων παντού
 settings.option.advanced.lyrics.singLyricsEverywhere.description: Ενεργοποίηση στίχων Sing εκτός της καθηλωτικής προβολής. Απαιτεί περισσότερους πόρους.
 settings.option.advanced.mavericksLcd: Mavericks LCD
 settings.option.advanced.mavericksLcd.style: Στυλ
 settings.option.advanced.mavericksLcd.style.glass: Γυαλί
-settings.option.advanced.mediaArtwork: Εξώφυλλο στοιχείου πολυμέσων
+settings.option.advanced.mediaArtwork: Εικονίδιο στοιχείου πολυμέσων
 settings.option.advanced.mediaArtwork.controls: Επισημάνσεις εξωφύλλων και εικόνες υψηλής ανάλυσης
-settings.option.advanced.mediaArtwork.controlsV2: Επισήμανση και εμφάνιση εξωφύλλου
+settings.option.advanced.mediaArtwork.controlsV2: Επισήμανση και εμφάνιση εικονιδίου
 settings.option.advanced.mediaArtwork.description: Εξώφυλλα σε πλέγματα, λίστες και σειρές σε όλη την εφαρμογή.
 settings.option.advanced.notificationStyle: Στυλ ειδοποιήσεων
 settings.option.advanced.performance: Επιδόσεις
 settings.option.advanced.performance.description: Όρια ρυθμού καρέ, επιλογή μηχανής απόδοσης και όρια πόρων.
-settings.option.advanced.playback: Ταχύτητα αναπαραγωγής
-settings.option.advanced.playback.allowPlaybackRateChangeEverywhere: Αλλαγή ταχύτητας αναπαραγωγής για τραγούδια
+settings.option.advanced.playback: Ρυθμός αναπαραγωγής
+settings.option.advanced.playback.allowPlaybackRateChangeEverywhere: Αλλαγή ρυθμού αναπαραγωγής για τραγούδια
 settings.option.advanced.playback.allowPlaybackRateChangeEverywhere.description: Ενεργοποιημένο από προεπιλογή για podcast. Ενεργοποιήστε το για να επιτρέψετε τον ίδιο εύκολο έλεγχο ταχύτητας αναπαραγωγής σε όλα τα πολυμέσα, συμπεριλαμβανομένων των τραγουδιών.
 settings.option.advanced.playlistTrackMapping: Αντιστοίχιση κομματιών λίστας αναπαραγωγής
 settings.option.advanced.playlistTrackMapping.description: Επιτρέπει τη βαθιά σάρωση των λιστών αναπαραγωγής για τον προσδιορισμό των κομματιών που περιέχονται σε αυτές. Ο χρόνος δημιουργίας της προσωρινής μνήμης των λιστών αναπαραγωγής ενδέχεται να αυξηθεί σημαντικά.
@@ -4389,20 +4505,20 @@ settings.option.advanced.progressBar: Γραμμή προόδου
 settings.option.advanced.progressBar.useAccentColor: Χρήση χρώματος έμφασης
 settings.option.advanced.resetCider: Επαναφορά του Cider
 settings.option.advanced.resetCider.description: Επαναφορά προτιμήσεων, προσωρινής μνήμης και τοπικών δεδομένων. Η σύνδεση στο Apple Music και το Taproom θα διατηρηθεί, εκτός αν επιλέξετε διαφορετικά.
-settings.option.advanced.resizableMiniplayer: Miniplayer με δυνατότητα αλλαγής μεγέθους
-settings.option.advanced.richAlbumGrid: Πλούσιο πλέγμα άλμπουμ
+settings.option.advanced.resizableMiniplayer: Μεγέθυνση μίνι αναπαραγωγέα
+settings.option.advanced.richAlbumGrid: Πλέγμα άλμπουμ με λεπτομέρειες
 settings.option.advanced.richAlbumGrid.alwaysNavigateToPage: Πάντα πλοήγηση στη σελίδα
-settings.option.advanced.richAlbumGrid.disableScrollAnimation: Απενεργοποίηση κίνησης κύλισης
+settings.option.advanced.richAlbumGrid.disableScrollAnimation: Απενεργοποίηση κινούμενης κύλισης
 settings.option.advanced.richAlbumGrid.scrollToPosition: Κύλιση στη θέση
 settings.option.advanced.richAlbumGrid.scrollToPosition.bottom: Κάτω μέρος
 settings.option.advanced.richAlbumGrid.scrollToPosition.top: Πάνω μέρος
 settings.option.advanced.searchBar: Κύρια γραμμή αναζήτησης
 settings.option.advanced.searchBar.description: Το πεδίο αναζήτησης στη γραμμή τίτλου.
-settings.option.advanced.searchBar.noRedirectOnSelect: Όχι σελίδα προορισμού κατά την εστίαση
+settings.option.advanced.searchBar.noRedirectOnSelect: Χωρίς αρχική σελίδα κατά την εστίαση
 settings.option.advanced.searchBar.noRedirectOnSelect.description: Όταν είναι ενεργοποιημένο, η γραμμή αναζήτησης δεν θα ανακατευθύνει στη σελίδα προορισμού κατά την επιλογή της. Για να μεταβείτε στη σελίδα προορισμού, κρατήστε πατημένο το SHIFT κατά την επιλογή της γραμμής αναζήτησης.
-settings.option.advanced.settingsTakeout: Εξαγωγή / Εισαγωγή ρυθμίσεων
+settings.option.advanced.settingsTakeout: Εξαγωγή / εισαγωγή ρυθμίσεων
 settings.option.advanced.settingsTakeout.description: Δημιουργήστε αντίγραφα ασφαλείας των προτιμήσεών σας σε ένα αρχείο ή επαναφέρετέ τις σε άλλη συσκευή. Τα στοιχεία σύνδεσης λογαριασμού δεν περιλαμβάνονται ποτέ.
-settings.option.advanced.simpleArtworkBg: Απλό φόντο εξωφύλλου
+settings.option.advanced.simpleArtworkBg: Απλό φόντο εικονιδίου
 settings.option.advanced.simpleArtworkBg.brightness: Φωτεινότητα %
 settings.option.advanced.simpleArtworkBg.brightnessV2: Φωτεινότητα
 settings.option.advanced.simpleArtworkBg.contrast: Αντίθεση %
@@ -4411,21 +4527,21 @@ settings.option.advanced.simpleArtworkBg.saturate: Κορεσμός %
 settings.option.advanced.simpleArtworkBg.saturateV2: Κορεσμός
 settings.option.advanced.simpleArtworkBg.useMask: Χρήση κάτω μάσκας
 settings.option.advanced.sonoma: Sonoma
-settings.option.advanced.sonoma.lyricArc: Καμπυλωτοί στίχοι
+settings.option.advanced.sonoma.lyricArc: Τοξωτοί στίχοι
 settings.option.advanced.sonoma.lyricArc.description: Οι ενεργές γραμμές στίχων καμπυλώνουν προς το κέντρο της οθόνης με μια διακριτική αίσθηση βάθους.
 settings.option.advanced.sonoma.radialMask: Χρήση εναλλακτικής μάσκας
 settings.option.advanced.sonoma.radialMask.description: Όταν είναι ενεργοποιημένο, το Sonoma θα χρησιμοποιεί μια διαφορετική, ακτινική μάσκα για το εξώφυλλο, εστιάζοντας σε μεγαλύτερη ευκρίνεια και λιγότερο θόλωμα.
 settings.option.advanced.title: Προηγμένα
 settings.option.advanced.tweaks: Μικρορυθμίσεις
 settings.option.advanced.tweaks.description: Προσαρμόσιμες ρυθμίσεις που δεν ανήκουν κάπου αλλού
-settings.option.advanced.volumeSlider: Ρυθμιστικό έντασης ήχου προγράμματος αναπαραγωγής
+settings.option.advanced.volumeSlider: Ρυθμιστής έντασης αναπαραγωγέα
 settings.option.advanced.volumeSlider.iOSStyle: Στυλ iOS
 settings.option.advanced.window: Συμπεριφορά παραθύρου
 settings.option.advanced.window.description: Αλλαγή μεγέθους του Miniplayer και το στυλ της γραμμής κύλισης σε όλη την εφαρμογή. Τα στοιχεία ελέγχου παραθύρου και η ζωηρότητα βρίσκονται στην ενότητα «Εμφάνιση».
 settings.option.advanced.window.scrollbarType: Τύπος γραμμής κύλισης
 settings.option.all: Όλα
 settings.option.alwaysShow: Πάντα εμφάνιση
-settings.option.appleMusic.behavior.playButtonOnStop: Κουμπί αναπαραγωγής σε ενέργεια διακοπής
+settings.option.appleMusic.behavior.playButtonOnStop: Κουμπί αναπαραγωγής κατά τη διακοπή
 settings.option.audio.advanced: Προηγμένος έλεγχος έντασης ήχου
 settings.option.audio.airplay: Μετάδοση AirPlay
 settings.option.audio.airplay.description: Ενεργοποίηση πειραματικού μενού μετάδοσης AirPlay 2
@@ -4440,14 +4556,14 @@ settings.option.audio.audioQuality: Ποιότητα ήχου
 settings.option.audio.automix: Automix
 settings.option.audio.changePlaybackRate: Αλλαγή ταχύτητας αναπαραγωγής
 settings.option.audio.ciderAudio: Cider Audio
-settings.option.audio.ciderAudio.showBadges: Εμφάνιση σημάτων στο «Αναπαραγωγή τώρα»
-settings.option.audio.ciderAudio.showInToolbar: Εμφάνιση του Cider Audio στη γραμμή εργαλείων
+settings.option.audio.ciderAudio.showBadges: Εμφάνιση σημάτων στην αναπαραγωγή
+settings.option.audio.ciderAudio.showInToolbar: Εμφάνιση Cider Audio στη γραμμή εργαλείων
 settings.option.audio.ciderAudioSettings: Ρυθμίσεις Cider Audio
 settings.option.audio.crossfade: Ομαλή μετάβαση
 settings.option.audio.dbfs.calibration: Βαθμονόμηση 0 dBFS
 settings.option.audio.dbfs.description: Εισάγετε το μέγιστο dB SPL Z ζύγισης όταν ο Cider είναι στα 0 dBFS.
 settings.option.audio.dbspl.description: (Για προχωρημένους) Εμφάνιση dB SPL αντί για dBFS στο ρυθμιστικό έντασης.
-settings.option.audio.dbspl.display: Οθόνη dB SPL
+settings.option.audio.dbspl.display: Εμφάνιση dB SPL
 settings.option.audio.drmSystem: Σύστημα DRM
 settings.option.audio.drmSystem.description: Το σύστημα DRM που θα χρησιμοποιείται για την αναπαραγωγή Apple Music
 settings.option.audio.drmSystem.PlayReadyCAWarning: Η λειτουργικότητα ήχου του Cider δεν λειτουργεί κατά τη χρήση του Microsoft PlayReady.
@@ -4506,21 +4622,21 @@ settings.option.audio.hostCapture: Ήχος με δυνατότητα καταγ
 settings.option.audio.hostCapture.description: Οι εφαρμογές ροής και καταγραφής όπως το OBS ή το Discord χρειάζονται τον κεντρικό υπολογιστή Windows για τη δρομολόγηση της αναπαραγωγής.
 settings.option.audio.maxVolume: Μέγιστη ένταση
 settings.option.audio.mixing: Μίξη
-settings.option.audio.normalization: Εξισορρόπηση έντασης
+settings.option.audio.normalization: Κανονικοποίηση ήχου
 settings.option.audio.normalization.description: Προσαρμόζει αυτόματα κάθε κομμάτι σε μια ομοιόμορφη ένταση ήχου. Τα χαμηλόφωνα κομμάτια ενισχύονται με ασφάλεια, ενώ τα δυνατά κομμάτια χαμηλώνουν.
 settings.option.audio.occlusion: Λειτουργία ακρόασης
 settings.option.audio.outputDevice: Συσκευή εξόδου
 settings.option.audio.playback: Αναπαραγωγή
 settings.option.audio.playbackRate: Ταχύτητα αναπαραγωγής
 settings.option.audio.playbackRate.change: Αλλαγή
-settings.option.audio.podcastPlayback: Αναπαραγωγή Podcast
-settings.option.audio.podcasts.playbackRate: Ταχύτητα αναπαραγωγής του Apple Podcasts
+settings.option.audio.podcastPlayback: Αναπαραγωγή podcast
+settings.option.audio.podcasts.playbackRate: Ρυθμός αναπαραγωγής των Apple Podcasts
 settings.option.audio.podcasts.playbackRate.description: Προσαρμόστε την ταχύτητα αναπαραγωγής των podcast.
 settings.option.audio.quality: Ποιότητα ήχου
-settings.option.audio.seamlessAudioTransitions: Αδιάκοπες μεταβάσεις ήχου
+settings.option.audio.seamlessAudioTransitions: Αναπαραγωγή χωρίς κενά
 settings.option.audio.seamlessTransition: Απρόσκοπτη μετάβαση ήχου
-settings.option.audio.seamlessTransitions: Μεταβάσεις χωρίς διακοπή
-settings.option.audio.showBitrate: Εμφάνιση Bitrate στο «Τώρα αναπαράγεται»
+settings.option.audio.seamlessTransitions: Απρόσκοπτες μεταβάσεις
+settings.option.audio.showBitrate: Εμφάνιση bitrate στην αναπαραγωγή
 settings.option.audio.streaming: Streaming
 settings.option.audio.volume: Ένταση ήχου
 settings.option.audio.volumeScrollStep: Βήμα κύλισης έντασης
@@ -4537,14 +4653,14 @@ settings.option.concerts.radiusUnit: Μονάδα ακτίνας
 settings.option.concerts.radiusUnit.description: Μονάδα μέτρησης για το φίλτρο ακτίνας
 settings.option.concerts.radiusUnit.kilometers: Χιλιόμετρα
 settings.option.concerts.radiusUnit.miles: Μίλια
-settings.option.concerts.showInSidebar: Εμφάνιση συναυλιών στην πλευρική στήλη
+settings.option.concerts.showInSidebar: Εμφάνιση συναυλιών στην πλαϊνή στήλη
 settings.option.concerts.showInSidebar.description: Εμφάνιση της ενότητας «Συναυλίες» στην πλευρική στήλη
 settings.option.concerts.sortBy: Ταξινόμηση κατά
 settings.option.concerts.sortBy.date: Ημερομηνία
 settings.option.concerts.sortBy.description: Τρόπος ταξινόμησης των συναυλιών στη λίστα
 settings.option.concerts.sortBy.distance: Απόσταση
 settings.option.connect.link_account.description: Η σύνδεση του λογαριασμού σας Discord με το Cider Connect σάς επιτρέπει να αποθηκεύετε δεδομένα χρήστη, συμπεριλαμβανομένων των Ρυθμίσεων, των EQ και τελικά περισσότερων μόλις ολοκληρωθεί. (Σε εξέλιξη)
-settings.option.connectivity.atmosRatings: Αξιολογήσεις Atmos της κοινότητας
+settings.option.connectivity.atmosRatings: Βαθμολογίες Atmos από την κοινότητα
 settings.option.connectivity.atmosRatings.description: Δείτε και μοιραστείτε ποια άλμπουμ ακούγονται εξαιρετικά σε Dolby Atmos.
 settings.option.connectivity.ciderConnect.description: Ακούστε μαζί, Συνεργατικές λίστες αναπαραγωγής, Απομακρυσμένος έλεγχος εφαρμογής και πολλά άλλα!
 settings.option.connectivity.ciderRemote: Cider Remote
@@ -4558,7 +4674,7 @@ settings.option.connectivity.discordRPC.buttons.listenOnCider: Ακρόαση σ
 settings.option.connectivity.discordRPC.buttons.viewOnAppleMusic: Προβολή στο Apple Music
 settings.option.connectivity.discordRPC.buttons.viewOnOtherMusicServices: Προβολή σε άλλες υπηρεσίες μουσικής
 settings.option.connectivity.discordRPC.clearOnPause: Εκκαθάριση του Discord Rich Presence κατά την παύση
-settings.option.connectivity.discordRPC.clientName: Όνομα εφαρμογής-πελάτη
+settings.option.connectivity.discordRPC.clientName: Όνομα πελάτη
 settings.option.connectivity.discordRPC.customize: Προσαρμόστε το Discord Rich Presence σας
 settings.option.connectivity.discordRPC.customize.applyButton: Εφαρμογή
 settings.option.connectivity.discordRPC.customize.artistImageSource.apple: Apple Music
@@ -4610,8 +4726,8 @@ settings.option.connectivity.lastfmScrobble.manualToken: Μη αυτόματη �
 settings.option.connectivity.lastfmScrobble.manualToken.link: Κάντε κλικ εδώ για να λάβετε ένα διακριτικό (token) Last.fm
 settings.option.connectivity.lastfmScrobble.nowPlaying: Ενεργοποίηση του «Τώρα αναπαράγεται» στο Last.FM
 settings.option.connectivity.lastfmScrobble.removeFeatured: Αφαίρεση συμμετεχόντων καλλιτεχνών (featuring) από τον τίτλο του τραγουδιού (Last.fm)
-settings.option.connectivity.parties: Παρέες ακρόασης
-settings.option.connectivity.partiesEnabled: Ενεργοποίηση παρεών ακρόασης
+settings.option.connectivity.parties: Κοινές ακροάσεις
+settings.option.connectivity.partiesEnabled: Ενεργοποίηση κοινών ακροάσεων
 settings.option.connectivity.partiesEnabled.description: Φιλοξενήστε ή συμμετάσχετε σε συγχρονισμένες συνεδρίες ακρόασης με άλλους χρήστες του Cider.
 settings.option.connectivity.partiesQueueDefault: Προεπιλεγμένη λειτουργία ουράς
 settings.option.connectivity.partiesQueueDefault.audited: Έγκριση προσθηκών από τον οικοδεσπότη
@@ -4629,7 +4745,7 @@ settings.option.connectivity.rpcServer: Διακομιστής RPC
 settings.option.connectivity.rpcServer.description: Διαχείριση της πρόσβασης στο Cider για εξωτερικές εφαρμογές που χρησιμοποιούν τον διακομιστή RPC.
 settings.option.connectivity.rpcServer.manageAccess: Διαχείριση πρόσβασης εξωτερικών εφαρμογών στο Cider
 settings.option.connectivity.scrobbler: Scrobbler
-settings.option.connectivity.scrobblerIntegration: Ενσωμάτωση Scrobbler
+settings.option.connectivity.scrobblerIntegration: Ενσωμάτωση scrobbler
 settings.option.connectivity.scrobblerIntegration.description: Scrobbling για Last.fm, ListenBrainz, Libre.fm και Maloja, για τη διατήρηση ιστορικού ακρόασης.
 settings.option.connectivity.steam.clearOnPause: Εκκαθάριση Rich Presence κατά την παύση
 settings.option.connectivity.vrOverlay: Επικάλυψη VR
@@ -4671,7 +4787,7 @@ settings.option.experiments.floatingSearch: Ενεργοποίηση αιωρο�
 settings.option.experiments.forceExplicit: Αυτόματη μετάβαση στην έκδοση άλμπουμ με ακατάλληλο περιεχόμενο
 settings.option.experiments.forceExplicit.description: Ενδέχεται να αυξήσει τους χρόνους φόρτωσης κατά την αναζήτηση εκδόσεων άλμπουμ με ακατάλληλο περιεχόμενο.
 settings.option.experiments.legacyFetch: Ανάκτηση παλαιού τύπου
-settings.option.experiments.musicVideos: Ενεργοποίηση βιντεοκλίπ βιβλιοθήκης
+settings.option.experiments.musicVideos: Ενεργοποίηση μουσικών βίντεο βιβλιοθήκης
 settings.option.experiments.title: Πειραματικές λειτουργίες
 settings.option.general.app: Εφαρμογή
 settings.option.general.artistChips: Ετικέτες καλλιτεχνών
@@ -4680,8 +4796,8 @@ settings.option.general.autoplayByDefault.description: Αυτόματη ενερ
 settings.option.general.autoRemoveDisliked: Αυτόματη αφαίρεση μη αρεστών κομματιών από την ουρά
 settings.option.general.autoRemoveDisliked.description: Αυτόματη αφαίρεση κομματιών από την ουρά όταν επισημαίνονται ως μη αρεστά.
 settings.option.general.cache: Προσωρινή μνήμη
-settings.option.general.clearCacheDropdown: Μενού εκκαθάρισης προσωρινής μνήμης
-settings.option.general.contentToCache: Περιεχόμενο προς αποθήκευση στην προσωρινή μνήμη
+settings.option.general.clearCacheDropdown: Αναπτυσσόμενο μενού εκκαθάρισης μνήμης cache
+settings.option.general.contentToCache: Περιεχόμενο για αποθήκευση στην cache
 settings.option.general.customizeSidebar: Προσαρμογή στοιχείων πλευρικής στήλης
 settings.option.general.customizeSidebar.customize: Προσαρμογή
 settings.option.general.displayName: Όνομα εμφάνισης
@@ -4708,11 +4824,11 @@ settings.option.general.noPlayingAction.newMusicMix: Αναπαραγωγή τη
 settings.option.general.noPlayingAction.none: Καμία ενέργεια
 settings.option.general.noPlayingAction.personalStation: Έναρξη προσωπικού σταθμού
 settings.option.general.noPlayingAction.recent: Αναπαραγωγή πρόσφατων κομματιών
-settings.option.general.noPlayingAction.recentlyAdded: Αναπαραγωγή πρόσφατα προστεθειμένων κομματιών
+settings.option.general.noPlayingAction.recentlyAdded: Αναπαραγωγή πρόσφατα προστιθέμενων κομματιών
 settings.option.general.noPlayingAction.shuffleLibrary: Τυχαία αναπαραγωγή τραγουδιών βιβλιοθήκης
 settings.option.general.onStartup: Κατά την εκκίνηση
-settings.option.general.onStartup.openStartup: Άνοιγμα σελίδας εκκίνησης
-settings.option.general.onStartup.resume: Συνέχιση προηγούμενης περιόδου λειτουργίας
+settings.option.general.onStartup.openStartup: Άνοιγμα αρχικής σελίδας
+settings.option.general.onStartup.resume: Συνέχιση τελευταίας συνεδρίας
 settings.option.general.pagination: Στοιχεία προς εμφάνιση ανά σελίδα
 settings.option.general.preventDisplaySleep: Διατήρηση ενεργής οθόνης κατά την αναπαραγωγή
 settings.option.general.preventSystemSleep: Διατήρηση του υπολογιστή ξύπνιου κατά την αναπαραγωγή
@@ -4739,15 +4855,16 @@ settings.option.general.shareAnalytics.description: Βοηθήστε μας να
 settings.option.general.showLovedTracksInline: Εμφάνιση αγαπημένων κομματιών στη σειρά
 settings.option.general.sleepTimer: Χρονοδιακόπτης ύπνου
 settings.option.general.sleepTimerSettings: Ρυθμίσεις χρονοδιακόπτη ύπνου
-settings.option.general.startupPage: Σελίδα εκκίνησης
+settings.option.general.startupPage: Αρχική σελίδα εκκίνησης
 settings.option.general.startupPage.blank: Κενή σελίδα
 settings.option.general.startupPage.description: Επιλέξτε τη σελίδα που θα εμφανίζεται όταν ανοίγετε το Cider.
 settings.option.general.startupPage.descriptionV2: Η σελίδα που ανοίγει το Cider σε νέες καρτέλες και κατά την εκκίνηση, όταν το Κατά την εκκίνηση είναι ρυθμισμένο σε Άνοιγμα σελίδας εκκίνησης.
+settings.option.general.startupPage.descriptionV3: Η σελίδα που ανοίγει το Cider κατά την εκκίνηση.
 settings.option.general.startupPage.newTab: Σελίδα νέας καρτέλας
 settings.option.general.startupPage.personalHome: Προσωπική αρχική σελίδα
 settings.option.general.themeUpdateNotification: Αυτόματος έλεγχος για ενημερώσεις θεμάτων
-settings.option.general.translationCredits: Συντελεστές μετάφρασης
-settings.option.general.translationFeedback: Σχόλια για τη μετάφραση
+settings.option.general.translationCredits: Πιστώσεις μετάφρασης
+settings.option.general.translationFeedback: Σχόλια μετάφρασης
 settings.option.general.translators: Μεταφραστές
 settings.option.general.translators.description: Ευχαριστούμε αυτούς τους συνεισφέροντες για τη βοήθειά τους στη μετάφραση του Cider. Κάντε κλικ σε ένα όνομα για να ανοίξετε το προφίλ τους στο GitHub.
 settings.option.general.useSmartQueueByDefault: Χρήση Έξυπνης ουράς από προεπιλογή
@@ -4756,7 +4873,7 @@ settings.option.general.useSmartQueueByDefault.needsAutomix: Το Automix είν
 settings.option.general.warnBeforeQueueOverride: Προειδοποίηση πριν από την αντικατάσταση της ουράς
 settings.option.hide: Απόκρυψη
 settings.option.left: Αριστερά
-settings.option.lyrics.contributeCta: Συνεισφορά & υποβολή στίχων
+settings.option.lyrics.contributeCta: Συνεισφορά και μεταφόρτωση στίχων
 settings.option.lyrics.contributeCta.description: Υποβάλετε συγχρονισμένους στίχους, δείτε τους σε ζωντανή προεπισκόπηση και δείτε τον πίνακα κορυφαίων συνεισφερόντων.
 settings.option.lyrics.customScrollerProperties: Προσαρμοσμένες ιδιότητες κύλισης
 settings.option.lyrics.customScrollerProperties.description: Ενεργοποίηση προσαρμοσμένης εμφάνισης για τα εφέ κίνησης κύλισης των στίχων.
@@ -4767,7 +4884,7 @@ settings.option.lyrics.displayOptions.description: Προσαρμογή του �
 settings.option.lyrics.enableMusixmatch: Ενεργοποίηση στίχων Musixmatch
 settings.option.lyrics.enableMusixmatchKaraoke: Ενεργοποίηση λειτουργίας καραόκε (μόνο Musixmatch)
 settings.option.lyrics.enableQQLyrics: Ενεργοποίηση στίχων QQ
-settings.option.lyrics.enableSingLyrics: Ενεργοποίηση στίχων Sing
+settings.option.lyrics.enableSingLyrics: Ενεργοποίηση στίχων τραγουδιού
 settings.option.lyrics.enableSingLyrics.description: Όταν είναι διαθέσιμοι, εμφάνιση συγχρονισμένων στίχων λέξη προς λέξη με επισήμανση σε πραγματικό χρόνο με τη μουσική.
 settings.option.lyrics.enableStaticLyrics: Ενεργοποίηση στατικών στίχων
 settings.option.lyrics.enableStaticLyrics.description: Εμφάνιση στίχων ακόμη και όταν δεν υπάρχουν πληροφορίες χρονισμού. Αυτοί οι στίχοι δεν θα κυλούν αυτόματα.
@@ -4776,26 +4893,26 @@ settings.option.lyrics.enableTranslations.description: Εμφάνιση μετα
 settings.option.lyrics.enableYoutubeLyrics: Ενεργοποίηση στίχων Youtube για βίντεο κλιπ
 settings.option.lyrics.fpsLimit: Ρυθμός καρέ στίχων
 settings.option.lyrics.fpsLimit.description: Μέγιστος ρυθμός καρέ για τα εφέ κίνησης των στίχων. Οι υψηλότεροι ρυθμοί φαίνονται πιο ομαλοί σε οθόνες υψηλού ρυθμού ανανέωσης, αλλά καταναλώνουν περισσότερη CPU και GPU. Η επιλογή «Αντιστοίχιση με την οθόνη» ακολουθεί τον ρυθμό ανανέωσης της οθόνης σας.
-settings.option.lyrics.fpsLimit.matchDisplay: Αντιστοίχιση με την οθόνη
+settings.option.lyrics.fpsLimit.matchDisplay: Ταίριασμα με την οθόνη
 settings.option.lyrics.keepCompleted: Διατήρηση ολοκληρωμένων στίχων
 settings.option.lyrics.keepCompleted.description: Διατήρηση των ήδη τραγουδισμένων γραμμών ορατών (με χαμηλό φωτισμό) πάνω από την τρέχουσα γραμμή. Όταν είναι απενεργοποιημένο, οι ολοκληρωμένες γραμμές αποκρύπτονται.
-settings.option.lyrics.localeOverrides: Παρακάμψεις γλώσσας
+settings.option.lyrics.localeOverrides: Παρακάμψεις τοπικών ρυθμίσεων
 settings.option.lyrics.localeOverrides.description: Ορισμός προσαρμοσμένου παρόχου και κανόνων μετάφρασης για συγκεκριμένες γλώσσες ήχου
 settings.option.lyrics.musixmatchPreferredLanguage: Προτιμώμενη γλώσσα μετάφρασης Musixmatch
-settings.option.lyrics.preferUserLyrics: Προτίμηση στίχων από χρήστες
+settings.option.lyrics.preferUserLyrics: Προτίμηση στίχων που υποβλήθηκαν από χρήστες
 settings.option.lyrics.preferUserLyrics.description: Όταν είναι διαθέσιμοι, να δίνεται προτεραιότητα στους στίχους που έχουν υποβληθεί από χρήστες έναντι άλλων πηγών, εάν έχουν καλύτερη ποιότητα χρονισμού.
 settings.option.lyrics.provider.apple: Apple Music
-settings.option.lyrics.provider.auto: Αυτόματα (Καλύτερο διαθέσιμο)
+settings.option.lyrics.provider.auto: Αυτόματα (καλύτερος διαθέσιμος)
 settings.option.lyrics.provider.mxm: Musixmatch
 settings.option.lyrics.provider.netease: NetEase
 settings.option.lyrics.provider.user: Υποβληθέντες από χρήστες
 settings.option.lyrics.providerPreferences: Προτιμήσεις παρόχου
 settings.option.lyrics.providerPreferences.description: Διαμόρφωση των πηγών στίχων που θα χρησιμοποιούνται και της προτεραιότητάς τους
-settings.option.lyrics.scrollTuning: Διάρκεια κύλισης & Εξομάλυνση
+settings.option.lyrics.scrollTuning: Διάρκεια κύλισης και επιτάχυνση
 settings.option.lyrics.scrollTuning.description: Ορίστε τη διάρκεια κύλισης των στίχων και την καμπύλη εξομάλυνσης που ακολουθούν, ξεχωριστά για την πλευρική στήλη και το καθηλωτικό πρόγραμμα αναπαραγωγής.
-settings.option.lyrics.showDualLanguage: Εμφάνιση διπλής γλώσσας
+settings.option.lyrics.showDualLanguage: Εμφάνιση δύο γλωσσών
 settings.option.lyrics.showDualLanguage.description: Ταυτόχρονη εμφάνιση τόσο των πρωτότυπων στίχων όσο και της μετάφρασης.
-settings.option.lyrics.showTimestamps: Εμφάνιση χρονικών σημάνσεων κατά την τοποθέτηση του δείκτη
+settings.option.lyrics.showTimestamps: Εμφάνιση χρονικών σημάνσεων κατά την αιώρηση
 settings.option.lyrics.showTimestamps.description: Εμφάνιση της χρονικής σήμανσης κάθε γραμμής στίχου κατά την τοποθέτηση του δείκτη πάνω της.
 settings.option.lyrics.thirdPartySources: Ενεργοποίηση πηγών τρίτων
 settings.option.lyrics.thirdPartySources.description: Να επιτρέπεται η ανάκτηση στίχων από το Musixmatch και το NetEase όταν οι στίχοι του Apple Music δεν είναι διαθέσιμοι. Η ποιότητα ενδέχεται να διαφέρει και η συνεχής χρήση μπορεί να οδηγήσει σε όρια ρυθμού αιτημάτων.
@@ -4812,7 +4929,7 @@ settings.option.lyrics.trackOverrides.description: Διαχείριση κλει
 settings.option.lyrics.translationLanguage: Γλώσσα μετάφρασης
 settings.option.lyrics.translationLanguage.description: Η γλώσσα στην οποία θα μεταφράζονται οι στίχοι. Χρησιμοποιείται μόνο όταν η Λειτουργία μετάφρασης έχει οριστεί σε Χειροκίνητη.
 settings.option.lyrics.translationMode: Λειτουργία μετάφρασης
-settings.option.lyrics.translationMode.appLanguage: Αυτόματα από τη γλώσσα της εφαρμογής
+settings.option.lyrics.translationMode.appLanguage: Αυτόματα από τη γλώσσα εφαρμογής
 settings.option.lyrics.translationMode.description: Πώς θα καθορίζεται η γλώσσα προορισμού της μετάφρασης.
 settings.option.lyrics.translationMode.manual: Χειροκίνητα (Χρήση επιλεγμένης γλώσσας)
 settings.option.lyrics.translationMode.system: Αυτόματα από τη γλώσσα συστήματος
@@ -4829,12 +4946,12 @@ settings.option.notifications.history.persist.description: Απομνημόνε�
 settings.option.off: Ανενεργό
 settings.option.on: Ενεργό
 settings.option.performance.app: Εφαρμογή
-settings.option.performance.backgroundRefreshTime: Χρόνος ανανέωσης στο υπόβαθρο
+settings.option.performance.backgroundRefreshTime: Χρόνος ανανέωσης στο παρασκήνιο
 settings.option.performance.backgroundRefreshTime.description: Ο χρόνος σε δευτερόλεπτα μεταξύ κάθε ανανέωσης στο υπόβαθρο. Χαμηλότερες τιμές ενδέχεται να προκαλέσουν προβλήματα απόδοσης.
 settings.option.performance.dataAndUiLoad: Φόρτωση δεδομένων και UI
 settings.option.performance.disableLargeRequestOffloading: Απενεργοποίηση εκφόρτωσης μεγάλων αιτημάτων
 settings.option.performance.disableLargeRequestOffloading.description: Θα επηρεάσει την απόδοση του UI κατά τη διάρκεια μεγάλων αιτημάτων
-settings.option.performance.enableMediaItemInspect: Ενεργοποίηση επιθεώρησης προγραμματιστή για MediaItems
+settings.option.performance.enableMediaItemInspect: Ενεργοποίηση επιθεώρησης MediaItems για προγραμματιστές
 settings.option.performance.enableMediaItemInspect.description: Ενδέχεται να επηρεάσει ελαφρώς την απόδοση
 settings.option.performance.gameMode: Λειτουργία παιχνιδιού
 settings.option.performance.gameMode.description: Μειώνει τα οπτικά εφέ και μπορεί να ενεργοποιήσει τη λειτουργία αποδοτικότητας των Windows για χαμηλότερη χρήση CPU.
@@ -4843,7 +4960,7 @@ settings.option.performance.graphicsAcceleration: Επιτάχυνση γραφ�
 settings.option.performance.graphicsAcceleration.autoOff: Απενεργοποιημένη επειδή αυτός ο υπολογιστής σχεδιάζει γραφικά με λογισμικό.
 settings.option.performance.graphicsAcceleration.description: Το Αυτόματο την απενεργοποιεί σε εικονική μηχανή που σχεδιάζει γραφικά με λογισμικό. Οι αλλαγές ισχύουν την επόμενη φορά που θα ξεκινήσει το Cider.
 settings.option.performance.host: Host
-settings.option.performance.immersiveRenderer: Καθηλωτικός renderer
+settings.option.performance.immersiveRenderer: Αποδότης immersive
 settings.option.performance.immersiveRenderer.description: Χρήση του Canvas 2D αντί για το WebGPU εάν το κινούμενο φόντο δεν λειτουργεί σωστά ή χρησιμοποιεί υπερβολική GPU.
 settings.option.performance.libraryQueueLimit: Όριο ουράς βιβλιοθήκης
 settings.option.performance.libraryQueueLimit.description: Περιορίστε τον αριθμό των τραγουδιών που μπορούν να μπουν στην ουρά από τη βιβλιοθήκη, χρησιμοποιήστε το 0 για κανένα όριο. Υψηλότερες τιμές ή καθόλου όριο ενδέχεται να προκαλέσουν προβλήματα απόδοσης.
@@ -4851,7 +4968,7 @@ settings.option.performance.limitBlurMapFramerateOnBlur: Περιορισμός 
 settings.option.performance.limitBlurMapFramerateOnBlur.description: Μειώνει τον ρυθμό καρέ του καθηλωτικού κινούμενου φόντου όταν το παράθυρο δεν είναι εστιασμένο για εξοικονόμηση ενέργειας. Απενεργοποιήστε το για να συνεχίσει να λειτουργεί με πλήρη ταχύτητα.
 settings.option.performance.limitImmersiveBgFramerateOnBlur: Περιορισμός ρυθμού καρέ καθηλωτικού φόντου όταν δεν είναι εστιασμένο
 settings.option.performance.motion: Κίνηση
-settings.option.performance.powerSaverOnBattery: Εξοικονόμηση ενέργειας στη μπαταρία
+settings.option.performance.powerSaverOnBattery: Εξοικονόμηση ενέργειας με μπαταρία
 settings.option.performance.powerSaverOnBattery.description: Όταν η συσκευή λειτουργεί με μπαταρία, το καθηλωτικό φόντο αποδίδεται το πολύ στα 30 καρέ ανά δευτερόλεπτο και οι κινούμενες εικόνες των στίχων περιορίζονται στα 60 καρέ ανά δευτερόλεπτο.
 settings.option.performance.preloadSidebarPages: Προφόρτωση σελίδων πλευρικής στήλης
 settings.option.performance.preloadSidebarPages.description: Φορτώνει τις σελίδες της πλευρικής στήλης προτού τις ανοίξετε. Η επιλογή «Κατά την κατάδειξη» ξεκινά όταν ο δείκτης παραμένει πάνω σε ένα στοιχείο της πλευρικής στήλης. Η επιλογή «Σε αδράνεια» φορτώνει επίσης τα «Ακούστε τώρα», «Περιήγηση» και «Ραδιόφωνο» μετά την εκκίνηση και ανανεώνει τις λίστες βιβλιοθήκης που έχετε ανοίξει προηγουμένως.
@@ -4862,7 +4979,7 @@ settings.option.performance.reduceEffects.description: Απενεργοποιε�
 settings.option.performance.renderer.auto: Αυτόματα (WebGPU όταν υποστηρίζεται)
 settings.option.performance.renderer.canvas: Canvas 2D
 settings.option.performance.renderer.webgpu: WebGPU
-settings.option.performance.ultraWide: Ultra Wide
+settings.option.performance.ultraWide: Ultra wide
 settings.option.performance.ultraWide.description: Αυτό καταργεί το όριο των ορίων της σελίδας, ωστόσο η εφαρμογή δεν είναι βελτιστοποιημένη για υποστήριξη ultra-wide, επομένως ορισμένα στοιχεία ενδέχεται να φαίνονται ασυνήθιστα.
 settings.option.performance.useEmotionEngine: Χρήση του Emotion Engine
 settings.option.performance.useEmotionEngine.description: Όταν είναι ενεργοποιημένο, η εφαρμογή θα χρησιμοποιεί το Emotion Engine για να καθορίσει τη χρωματική παλέτα του εξωφύλλου του άλμπουμ. Αυτό θα μπορούσε να προκαλέσει προβλήματα απόδοσης σε συσκευές χαμηλών προδιαγραφών.
@@ -4896,59 +5013,59 @@ settings.option.sweetener.accentColor.purple: Μοβ
 settings.option.sweetener.accentColor.systemHint: Απενεργοποιήστε το χρώμα έμφασης συστήματος για να επιλέξετε το δικό σας.
 settings.option.sweetener.accentColor.yellow: Κίτρινο
 settings.option.sweetener.enableSweetener: Ενεργοποίηση Sweetener
-settings.option.sweetener.header.uiCustomization: Προσαρμογή UI
+settings.option.sweetener.header.uiCustomization: Προσαρμογή διεπαφής
 settings.option.sweetener.header.uiCustomization.description: Χρώματα έμφασης και απόχρωσης που χρησιμοποιούνται στην εφαρμογή.
 settings.option.sweetener.immersiveBackground.brightnessPercentage: Φωτεινότητα %
 settings.option.sweetener.immersiveBackground.contrastPercentage: Αντίθεση %
-settings.option.sweetener.immersiveBackground.frameRate: Ρυθμός καρέ (Εστιασμένο παράθυρο)
+settings.option.sweetener.immersiveBackground.frameRate: Ρυθμός καρέ (όταν η παράθυρο είναι ενεργό)
 settings.option.sweetener.immersiveBackground.frameRate.description: Συνιστάται 15-30 FPS
 settings.option.sweetener.immersiveBackground.header.filters: Φίλτρα
-settings.option.sweetener.immersiveBackground.lightModeWarning: Το Immersive Background δεν υποστηρίζεται προς το παρόν στη φωτεινή λειτουργία.
+settings.option.sweetener.immersiveBackground.lightModeWarning: Το immersive φόντο δεν υποστηρίζεται προς το παρόν στη φωτεινή λειτουργία.
 settings.option.sweetener.immersiveBackground.saturationPercentage: Κορεσμός %
-settings.option.sweetener.immersiveBackground.use: Χρήση Immersive Background
-settings.option.sweetener.immersiveBackgroundType: Τύπος καθηλωτικού φόντου
+settings.option.sweetener.immersiveBackground.use: Χρήση immersive φόντου
+settings.option.sweetener.immersiveBackgroundType: Τύπος immersive φόντου
 settings.option.sweetener.immersiveBackgroundType.immersive: Immersive
 settings.option.sweetener.immersiveBackgroundType.immersiveLite: Immersive Lite
 settings.option.sweetener.useCustomAccentColor: Χρήση προσαρμοσμένου χρώματος έμφασης
 settings.option.sweetener.useCustomAccentColor.accentColor: Χρώμα έμφασης
-settings.option.sweetener.useCustomTintColor: Χρήση προσαρμοσμένου χρώματος απόχρωσης
+settings.option.sweetener.useCustomTintColor: Χρήση προσαρμοσμένου χρώματος τόνου
 settings.option.sweetener.useCustomTintColor.lightModeWarning: Οι αναλογίες απόχρωσης κάτω από 0.8 αγνοούνται κατά τη χρήση της φωτεινής λειτουργίας.
-settings.option.sweetener.useCustomTintColor.tintColor: Χρώμα απόχρωσης
+settings.option.sweetener.useCustomTintColor.tintColor: Χρώμα τόνου
 settings.option.sweetener.useCustomTintColor.tintRatio: Αναλογία χρώματος απόχρωσης
 settings.option.v2: V2
 settings.option.v2rp: V2 RP
 settings.option.v3: V3
 settings.option.v3rp: V3 RP
 settings.option.visual.accentColor: Χρώμα έμφασης
-settings.option.visual.adaptiveColorPercent: Ποσοστό δυναμικού χρώματος
-settings.option.visual.additionalAnimatedArtwork: Πρόσθετα κινούμενα εξώφυλλα στον κατάλογο
+settings.option.visual.adaptiveColorPercent: Ποσοστό προσαρμοστικού χρώματος
+settings.option.visual.additionalAnimatedArtwork: Επιπλέον animated artwork στον κατάλογο
 settings.option.visual.additionalAnimatedArtwork.description: Εμφάνιση περισσότερων κινούμενων εξωφύλλων όταν είναι διαθέσιμα. Αναμένεται χαμηλότερη απόδοση με πολλά στην οθόνη.
-settings.option.visual.animateArtworkOnHover: Κίνηση εξωφύλλου στοιχείου πολυμέσων κατά την κατάδειξη
-settings.option.visual.animatedArtwork: Κινούμενο εξώφυλλο
+settings.option.visual.animateArtworkOnHover: Κίνηση artwork στοιχείων πολυμέσων κατά το hover
+settings.option.visual.animatedArtwork: Κινούμενα εξώφυλλα
 settings.option.visual.animatedArtwork.description: Ενεργοποίηση κινούμενου εξωφύλλου, παύση όταν δεν είναι εστιασμένο
 settings.option.visual.animatedArtwork.warningDescription: Εμφάνιση κινούμενων εξωφύλλων όταν είναι διαθέσιμα. Αυτό ενδέχεται να προκαλέσει προβλήματα απόδοσης σε συσκευές χαμηλών προδιαγραφών.
-settings.option.visual.animatedArtworkEngine: Μηχανή κινούμενων εξωφύλλων
+settings.option.visual.animatedArtworkEngine: Μηχανή animated artwork
 settings.option.visual.animatedArtworkEngine.description: Η επιλογή «Εγγενής» πραγματοποιεί λήψη ενός επαναλαμβανόμενου κλιπ και το αναπαράγει χωρίς εναλλαγή ποιότητας. Χρησιμοποιήστε την επιλογή «Παλαιού τύπου» μόνο αν αντιμετωπίσετε προβλήματα αναπαραγωγής.
 settings.option.visual.animatedArtworkEngine.hls: Παλαιού τύπου (hls.js)
 settings.option.visual.animatedArtworkEngine.native: Εγγενής (Συνιστάται)
-settings.option.visual.animatedArtworkQuality: Ποιότητα κινούμενων εξωφύλλων
+settings.option.visual.animatedArtworkQuality: Ποιότητα animated artwork
 settings.option.visual.animatedArtworkQuality.balanced: Ισορροπημένη
 settings.option.visual.animatedArtworkQuality.description: Πόσο ευκρινή είναι τα κινούμενα εξώφυλλα. Η επιλογή «Αυτόματα» προσαρμόζει κάθε εξώφυλλο στο μέγεθος της οθόνης σας και είναι κατάλληλη για τις περισσότερες ρυθμίσεις.
 settings.option.visual.animatedArtworkQuality.performance: Επιδόσεις
 settings.option.visual.animatedArtworkQuality.quality: Ποιότητα
-settings.option.visual.animatedBackgroundFramerate: Ρυθμός καρέ κινούμενου φόντου
+settings.option.visual.animatedBackgroundFramerate: Ρυθμός καρέ animated φόντου
 settings.option.visual.animatedWindowBackground: Κινούμενο φόντο παραθύρου
-settings.option.visual.artistHeaderAlignment: Διάταξη κεφαλίδας καλλιτέχνη
+settings.option.visual.artistHeaderAlignment: Διάταξη επικεφαλίδας καλλιτέχνη
 settings.option.visual.artistHeaderAlignment.center: Στο κέντρο
 settings.option.visual.artistHeaderAlignment.description: Η θέση του ονόματος του καλλιτέχνη και των ενεργειών στην κεφαλίδα της σελίδας του καλλιτέχνη.
 settings.option.visual.artistHeaderAlignment.left: Αριστερά (Προεπιλογή)
-settings.option.visual.artworkLoadingMethod: Μέθοδος φόρτωσης εξώφυλλων
+settings.option.visual.artworkLoadingMethod: Μέθοδος φόρτωσης artwork
 settings.option.visual.artworkLoadingMethod.eager: Άμεση
 settings.option.visual.artworkLoadingMethod.lazy: Καθυστερημένη
 settings.option.visual.chromaticAberrationIntensity: Ένταση χρωματικής εκτροπής
 settings.option.visual.chromaticAberrationIntensity.description: Ισχύς του περιγράμματος RGB στο γυαλί της οθόνης LCD.
 settings.option.visual.colorCustomization: Προσαρμογή χρωμάτων
-settings.option.visual.colorScheme: Χρωματικός συνδυασμός
+settings.option.visual.colorScheme: Χρωματικό θέμα
 settings.option.visual.compactArtistHeader: Συμπαγής κεφαλίδα καλλιτέχνη
 settings.option.visual.contentFilterKeywords: Λέξεις-κλειδιά φίλτρου περιεχομένου
 settings.option.visual.contentPreferences: Προτιμήσεις περιεχομένου
@@ -4957,32 +5074,32 @@ settings.option.visual.contextMenuIcons: Εικονίδια μενού
 settings.option.visual.customAccentColor: Προσαρμοσμένο χρώμα έμφασης
 settings.option.visual.customScalingFactor: Προσαρμοσμένος συντελεστής κλιμάκωσης
 settings.option.visual.customScalingFactor.description: Προσαρμογή της κλιμάκωσης διεπαφής (UI) της εφαρμογής
-settings.option.visual.enableAnimatedArtworkInMiniPlayer: Ενεργοποίηση κινούμενων εξωφύλλων στο Mini Player
-settings.option.visual.extendedEditorialLayout: Χρήση εκτεταμένης συντακτικής διάταξης στις σελίδες άλμπουμ
+settings.option.visual.enableAnimatedArtworkInMiniPlayer: Ενεργοποίηση animated artwork στο mini player
+settings.option.visual.extendedEditorialLayout: Χρήση εκτεταμένης editorial διάταξης στις σελίδες άλμπουμ
 settings.option.visual.extendedEditorialLayout.description: Όταν είναι ενεργοποιημένο, η σελίδα του άλμπουμ θα εμφανίζει το συντακτικό banner και θα εφαρμόζει μια χρωματική παλέτα σε ορισμένα άλμπουμ με βάση τα διαθέσιμα στοιχεία.
-settings.option.visual.filterPromotionalContent: Φιλτράρισμα διαφημιστικού περιεχομένου
+settings.option.visual.filterPromotionalContent: Φιλτράρισμα προωθητικού περιεχομένου
 settings.option.visual.filterPromotionalContent.description: Όταν είναι ενεργοποιημένο, οι ενότητες στην «Περιήγηση» και στο «Ακούστε τώρα» που ταιριάζουν με τις λέξεις-κλειδιά φίλτρου σας θα αποκρύπτονται.
-settings.option.visual.floatingPlayer: Αιωρούμενο πρόγραμμα αναπαραγωγής
+settings.option.visual.floatingPlayer: Αιωρούμενο player
 settings.option.visual.floatingPlayer.description: Απόσπαση της γραμμής αναπαραγωγής από τα άκρα για μια αιωρούμενη εμφάνιση σε σχήμα κάψουλας
-settings.option.visual.floatingPlayerPadding: Περιθώριο αιωρούμενου προγράμματος αναπαραγωγής
+settings.option.visual.floatingPlayerPadding: Εσωτερικό περιθώριο αιωρούμενου player
 settings.option.visual.floatingPlayerPadding.description: Ελέγχει πόσος χώρος περιβάλλει το αιωρούμενο πρόγραμμα αναπαραγωγής
-settings.option.visual.floatingPlayerRoundness: Στρογγυλότητα αιωρούμενου προγράμματος αναπαραγωγής
+settings.option.visual.floatingPlayerRoundness: Στρογγυλότητα αιωρούμενου player
 settings.option.visual.floatingPlayerRoundness.description: Ακτίνα γωνίας του αιωρούμενου προγράμματος αναπαραγωγής (0 = ταίριασμα με το παράθυρο προβολής)
 settings.option.visual.fonts: Γραμματοσειρές
 settings.option.visual.forceMpWindowControls: Χρήση στοιχείων ελέγχου παραθύρου πολλαπλών πλατφορμών
-settings.option.visual.forceRoundedViewport: Χρήση στρογγυλεμένου παραθύρου προβολής
+settings.option.visual.forceRoundedViewport: Χρήση στρογγυλεμένης προβολής
 settings.option.visual.forceRoundedViewport.description: Εφαρμογή στρογγυλεμένων γωνιών στο κύριο παράθυρο προβολής σε όλες τις διατάξεις
 settings.option.visual.hardwareAcceleration: Επιτάχυνση υλικού
 settings.option.visual.hardwareAcceleration.description: Απαιτείται επανεκκίνηση
-settings.option.visual.headerStyle: Στυλ κεφαλίδας άλμπουμ και λίστας αναπαραγωγής
+settings.option.visual.headerStyle: Στυλ επικεφαλίδας άλμπουμ και playlist
 settings.option.visual.headerStyle.appleMusic: Apple Music
 settings.option.visual.headerStyle.appleMusic.description: Οι ενέργειες αιωρούνται πάνω δεξιά στη σελίδα.
 settings.option.visual.headerStyle.classic: Κλασικό
 settings.option.visual.headerStyle.classic.description: Οι ενέργειες παραμένουν ενσωματωμένες στην κεφαλίδα της σελίδας.
 settings.option.visual.headerStyle.description: Το «Κλασικό» διατηρεί τις ενέργειες εντός της κεφαλίδας. Το Apple Music μεταφέρει τις επιλογές Κοινή χρήση / Περισσότερα / Προσθήκη στη βιβλιοθήκη σε μια αιωρούμενη γραμμή πάνω δεξιά στη σελίδα.
-settings.option.visual.hideAppleRecommends: Απόκρυψη καρτών «Προτάσεις Apple»
+settings.option.visual.hideAppleRecommends: Απόκρυψη καρτελών "Προτάσεις Apple"
 settings.option.visual.hideAppleRecommends.description: Αφαιρεί τις διαφημιστικές κάρτες «Προτάσεις Apple» από τα ράφια προτάσεων στο «Ακούστε τώρα» και στην «Αφετηρία».
-settings.option.visual.hideHeroItems: Απόκρυψη στοιχείων Hero στην Περιήγηση
+settings.option.visual.hideHeroItems: Απόκρυψη κύριων στοιχείων στο Browse
 settings.option.visual.immersive.adjustVisuals: Προσαρμογή γραφικών
 settings.option.visual.immersive.background.artwork: Απλό εξώφυλλο
 settings.option.visual.immersive.background.blank: Κενό
@@ -4996,13 +5113,13 @@ settings.option.visual.immersive.coverflowStyle: Στυλ Coverflow
 settings.option.visual.immersive.coverflowStyle.default: Προεπιλογή
 settings.option.visual.immersive.description: Προσαρμογή της εμπειρίας λειτουργίας Immersive
 settings.option.visual.immersive.enableHdr: Ενεργοποίηση HDR
-settings.option.visual.immersive.fsrUpscale: Αναβάθμιση ανάλυσης εξωφύλλου FSR
-settings.option.visual.immersive.fsrUpscale.applyToAll: "FSR: Εφαρμογή σε όλα τα κομμάτια"
+settings.option.visual.immersive.fsrUpscale: Αναβάθμιση artwork με FSR
+settings.option.visual.immersive.fsrUpscale.applyToAll: "FSR: εφαρμογή σε όλα τα κομμάτια"
 settings.option.visual.immersive.fsrUpscale.applyToAll.description: Όταν είναι απενεργοποιημένο, το FSR εκτελείται μόνο σε κομμάτια που κυκλοφόρησαν πριν από το έτος-όριο. Ενεργοποιήστε το για αναβάθμιση κάθε κομματιού.
 settings.option.visual.immersive.fsrUpscale.description: Αναβαθμίστε την ανάλυση του εξωφύλλου άλμπουμ χρησιμοποιώντας το AMD FidelityFX Super Resolution. Βοηθά τα παλαιότερα εξώφυλλα (πριν από το 2010) να φαίνονται πιο ευκρινή. Απαιτεί WebGPU.
-settings.option.visual.immersive.fsrUpscale.sharpness: "FSR: Ευκρίνεια"
+settings.option.visual.immersive.fsrUpscale.sharpness: "FSR: ευκρίνεια"
 settings.option.visual.immersive.fsrUpscale.sharpness.description: Ένταση του περάσματος ευκρίνειας προσαρμογής αντίθεσης (RCAS). Το 0 είναι το πιο απαλό, το 1 το πιο ευκρινές.
-settings.option.visual.immersive.fsrUpscale.thresholdYear: "FSR: Έτος-όριο"
+settings.option.visual.immersive.fsrUpscale.thresholdYear: "FSR: έτος ορίου"
 settings.option.visual.immersive.fsrUpscale.thresholdYear.description: Τα κομμάτια που κυκλοφόρησαν πριν από αυτό το έτος είναι επιλέξιμα για αναβάθμιση ανάλυσης όταν η «Εφαρμογή σε όλα τα κομμάτια» είναι απενεργοποιημένη.
 settings.option.visual.immersive.hdrBoostScale: Κλίμακα ενίσχυσης HDR
 settings.option.visual.immersive.hideLyricsWhenUnavailable: Απόκρυψη στίχων όταν δεν είναι διαθέσιμοι
@@ -5017,32 +5134,32 @@ settings.option.visual.immersive.layout.spectrumDeck: Spectrum Deck
 settings.option.visual.immersive.maxBrightness: Μέγιστη φωτεινότητα
 settings.option.visual.immersive.maxLyricFontSize: Μέγιστο μέγεθος γραμματοσειράς στίχων (px)
 settings.option.visual.immersive.startFullscreen: Έναρξη σε πλήρη οθόνη
-settings.option.visual.immersive.startingTab: Καρτέλα έναρξης
+settings.option.visual.immersive.startingTab: Αρχική καρτέλα
 settings.option.visual.immersive.startingTab.history: Ιστορικό
 settings.option.visual.immersive.startingTab.lyrics: Στίχοι
 settings.option.visual.immersive.startingTab.queue: Λίστα αναμονής
-settings.option.visual.immersive.ultraHdr: Κλιμάκωση εξωφύλλων Ultra HDR
+settings.option.visual.immersive.ultraHdr: Αναβάθμιση artwork με Ultra HDR
 settings.option.visual.immersive.ultraHdr.description: Προσθέτει φωτεινές περιοχές HDR, αντίθεση και χρώμα στα εξώφυλλα άλμπουμ σε κάθε κομμάτι. Αποδίδει καλύτερα σε οθόνη HDR· οι υπόλοιπες οθόνες έχουν πιο ήπιο αποτέλεσμα. Απαιτεί WebGPU.
-settings.option.visual.immersive.ultraHdr.headroom: "Ultra HDR: Μέγιστη φωτεινότητα"
+settings.option.visual.immersive.ultraHdr.headroom: "Ultra HDR: περιθώριο αιχμής"
 settings.option.visual.immersive.ultraHdr.headroom.description: Η μέγιστη φωτεινότητα των φωτεινών περιοχών ως πολλαπλάσιο του τυπικού λευκού. Μειώστε την τιμή αν οι φωτεινές περιοχές φαίνονται υπερβολικά έντονες στην οθόνη σας.
-settings.option.visual.immersive.ultraHdr.intensity: "Ultra HDR: Ένταση"
+settings.option.visual.immersive.ultraHdr.intensity: "Ultra HDR: ένταση"
 settings.option.visual.immersive.ultraHdr.intensity.description: Η ισχύς του εφέ. Το 0 αφήνει το εξώφυλλο αμετάβλητο, ενώ το 1 εφαρμόζει το πλήρες προφίλ.
-settings.option.visual.immersive.ultraHdr.profile: "Ultra HDR: Προφίλ"
+settings.option.visual.immersive.ultraHdr.profile: "Ultra HDR: προφίλ"
 settings.option.visual.immersive.ultraHdr.profile.cinematic: Κινηματογραφικό
 settings.option.visual.immersive.ultraHdr.profile.description: Το Φυσικό παραμένει κοντά στο αρχικό, το Έντονο είναι τολμηρό και πολύχρωμο, ενώ το Κινηματογραφικό έχει υψηλή αντίθεση με συγκρατημένα χρώματα.
 settings.option.visual.immersive.ultraHdr.profile.natural: Φυσικό
 settings.option.visual.immersive.ultraHdr.profile.vivid: Έντονο
-settings.option.visual.immersive.useAnimatedArtwork: Χρήση κινούμενου εξωφύλλου
+settings.option.visual.immersive.useAnimatedArtwork: Χρήση animated artwork
 settings.option.visual.immersive.useAnimatedArtwork.description: Εμφάνιση κινούμενου εξωφύλλου όταν είναι διαθέσιμο. Αυτό ενδέχεται να προκαλέσει προβλήματα απόδοσης σε συσκευές χαμηλών προδιαγραφών.
 settings.option.visual.immersive.useAnimatedBackground: Κινούμενο φόντο καθηλωτικής προβολής
-settings.option.visual.immersive.useBackgroundBpm: Ταχύτητα φόντου βάσει BPM
+settings.option.visual.immersive.useBackgroundBpm: Ταχύτητα φόντου με βάση το BPM
 settings.option.visual.immersiveBackground.blank: Κενό
 settings.option.visual.immersiveBackground.customImage: Προσαρμοσμένη εικόνα
-settings.option.visual.immersiveBackground.customImageMixed: Προσαρμοσμένη εικόνα (Μικτή)
+settings.option.visual.immersiveBackground.customImageMixed: Προσαρμοσμένη εικόνα (μικτή)
 settings.option.visual.immersiveBackground.gradientMesh: Πλέγμα διαβαθμίσεων
-settings.option.visual.immersiveBackground.simpleArtwork: Απλό εξώφυλλο
+settings.option.visual.immersiveBackground.simpleArtwork: Απλό artwork
 settings.option.visual.immersiveBackground.simpleColor: Απλό χρώμα
-settings.option.visual.immersiveBgSettings: Ρυθμίσεις καθηλωτικού φόντου
+settings.option.visual.immersiveBgSettings: Ρυθμίσεις immersive φόντου
 settings.option.visual.immersiveBgSettings.description: Βελτιώσεις και φίλτρα φόντου της εφαρμογής.
 settings.option.visual.immersiveLayout.classic: One Classic
 settings.option.visual.immersiveLayout.classic.description: Η αρχική καθηλωτική διάταξη με πρόγραμμα αναπαραγωγής πλήρους πλάτους στο κάτω μέρος.
@@ -5058,9 +5175,9 @@ settings.option.visual.immersiveLayout.sonoma: Sonoma
 settings.option.visual.immersiveLayout.sonoma.description: Το εξώφυλλο συγχωνεύεται στο φόντο με μια αιωρούμενη κάρτα ελέγχου.
 settings.option.visual.immersiveLayout.spectrumDeck: Spectrum Deck
 settings.option.visual.immersiveLayout.spectrumDeck.description: Μια σκηνή φάσματος σε πραγματικό χρόνο με αιωρούμενο εξώφυλλο.
-settings.option.visual.immersiveStyle: Καθηλωτικό στυλ
-settings.option.visual.immersiveStylePortrait: Καθηλωτικό στυλ (Κατακόρυφο)
-settings.option.visual.largeHeaderTitles: Μεγάλοι τίτλοι κεφαλίδας
+settings.option.visual.immersiveStyle: Στυλ immersive
+settings.option.visual.immersiveStylePortrait: Στυλ immersive (πορτρέτο)
+settings.option.visual.largeHeaderTitles: Μεγάλοι τίτλοι επικεφαλίδων
 settings.option.visual.largeHeaderTitles.description: Μεγεθύνει το κείμενο του τίτλου στις σελίδες άλμπουμ και λιστών αναπαραγωγής για μια πιο έντονη εμφάνιση.
 settings.option.visual.layoutProfile: Τύπος προφίλ διάταξης
 settings.option.visual.layoutProfile.description: Προσαρμόστε τη διάταξη της εφαρμογής στις προτιμήσεις σας
@@ -5083,9 +5200,9 @@ settings.option.visual.liquidGlassScrollPerf.descriptionV2: Απλοποιεί �
 settings.option.visual.mainMenuPosition: Θέση κύριου μενού
 settings.option.visual.matchPageToArtwork: Αντιστοίχιση σελίδας με το εξώφυλλο
 settings.option.visual.matchPageToArtwork.description: Βάφει τις σελίδες άλμπουμ και λιστών αναπαραγωγής με τα χρώματα του εξωφύλλου τους, σε λειτουργία φωτεινού και σκοτεινού θέματος.
-settings.option.visual.mergeAppleMusicPlaylists: Συγχώνευση λιστών αναπαραγωγής Apple Music
+settings.option.visual.mergeAppleMusicPlaylists: Συγχώνευση playlists του Apple Music
 settings.option.visual.mergeAppleMusicPlaylists.description: Ανάμειξη των επιμελημένων λιστών αναπαραγωγής του Apple Music στην κύρια ενότητα «Λίστες αναπαραγωγής», αντί για την εμφάνισή τους ως ξεχωριστή ομάδα.
-settings.option.visual.miniplayerSkin: Διάταξη MiniPlayer
+settings.option.visual.miniplayerSkin: Διάταξη mini player
 settings.option.visual.miniplayerSkin.aluminum: Αλουμίνιο
 settings.option.visual.miniplayerSkin.aqua: Aqua
 settings.option.visual.miniplayerSkin.aquaAlt: Aqua (εναλλ.)
@@ -5100,22 +5217,22 @@ settings.option.visual.mojavePlayerType.comfy: Άνετο
 settings.option.visual.mojavePlayerType.comfy.description: Ένα ψηλότερο πρόγραμμα αναπαραγωγής με το εξώφυλλο και τα μεταδεδομένα στα αριστερά.
 settings.option.visual.mojavePlayerType.compact: Συμπαγές
 settings.option.visual.mojavePlayerType.compact.description: Ένα λεπτό πρόγραμμα αναπαραγωγής με κεντραρισμένη οθόνη LCD και γραμμή προόδου από πάνω.
-settings.option.visual.mojavePlayerType.compactInline: Συμπαγές εντός γραμμής
+settings.option.visual.mojavePlayerType.compactInline: Συμπαγής ενσωματωμένη
 settings.option.visual.mojavePlayerType.compactInline.description: Μια ενιαία λεπτή γραμμή με την πρόοδο μέσα στην οθόνη LCD.
-settings.option.visual.moveUpLinks: Μετακίνηση των συνδέσμων «Περισσότερα για εξερεύνηση» στην Περιήγηση στην κορυφή
-settings.option.visual.musicVideoPinMaxResolution: Πάντα αναπαραγωγή βίντεο κλιπ στη μέγιστη ανάλυση
+settings.option.visual.moveUpLinks: Μετακίνηση των συνδέσμων «Περισσότερα» στην κορυφή της Περιήγησης
+settings.option.visual.musicVideoPinMaxResolution: Αναπαραγωγή μουσικών βίντεο πάντα στη μέγιστη ανάλυση
 settings.option.visual.musicVideoPinMaxResolution.description: Διατηρεί την υψηλότερη ποιότητα που προσφέρει το βίντεο αντί να ξεκινά από χαμηλή και να αυξάνεται. Σε μικρό παράθυρο ή σύνδεση με χρέωση δεδομένων, αυτό χρησιμοποιεί αισθητά περισσότερο εύρος ζώνης.
-settings.option.visual.musicVideoPrefetchOnHover: Προετοιμασία βίντεο κλιπ κατά την κατάδειξη
+settings.option.visual.musicVideoPrefetchOnHover: Προετοιμασία μουσικών βίντεο με την επίδειξη του δείκτη
 settings.option.visual.musicVideoPrefetchOnHover.description: Ξεκινά τη φόρτωση του βίντεο όταν ο δείκτης βρίσκεται πάνω στο σήμα, ώστε να ανοίγει πιο γρήγορα όταν κάνετε κλικ.
-settings.option.visual.musicVideoPrefetchSegmentsOnHover: Λήψη του πρώτου τμήματος κατά την κατάδειξη
+settings.option.visual.musicVideoPrefetchSegmentsOnHover: Λήψη του πρώτου τμήματος με την επίδειξη του δείκτη
 settings.option.visual.musicVideoPrefetchSegmentsOnHover.description: Πραγματοποιεί επίσης λήψη των πρώτων δευτερολέπτων του βίντεο πριν από το κλικ. Αυτό καταναλώνει μερικά megabyte για κάθε κατάδειξη, ακόμη και για εκείνες που δεν καταλήγουν σε άνοιγμα βίντεο.
 settings.option.visual.paletteContrast: Αντίθεση χρωμάτων εξωφύλλου
 settings.option.visual.paletteContrast.description: Πόσο έντονα διαχωρίζονται τα χρώματα των άλμπουμ και των λιστών αναπαραγωγής από τη σελίδα, ώστε τα κουμπιά και η ένδειξη αναπαραγωγής να παραμένουν ευανάγνωστα. Η ρύθμιση προσβασιμότητας «Υψηλή αντίθεση» χρησιμοποιεί πάντα τη Μέγιστη.
 settings.option.visual.paletteContrast.enhanced: Βελτιωμένη
 settings.option.visual.paletteContrast.maximum: Μέγιστη
 settings.option.visual.paletteContrast.standard: Τυπική
-settings.option.visual.pauseAnimatedOnBlur: Παύση κινούμενου εξωφύλλου εκτός εστίασης
-settings.option.visual.playerMaterial: Υλικό αναπαραγωγέα
+settings.option.visual.pauseAnimatedOnBlur: Παύση κινούμενων εξωφύλλων εκτός εστίασης
+settings.option.visual.playerMaterial: Υλικό προγράμματος αναπαραγωγής
 settings.option.visual.playerMaterial.blur: Θόλωση
 settings.option.visual.playerMaterial.blur.description: Χρήση ημιδιαφανούς θαμπού υλικού για τη γραμμή αναπαραγωγής, χωρίς το εφέ διάθλασης Liquid Glass.
 settings.option.visual.playerMaterial.default.description: "Ακολουθεί την προεπιλογή της πλατφόρμας: Liquid Glass σε macOS, Θόλωση αλλού."
@@ -5125,34 +5242,34 @@ settings.option.visual.playerMaterial.liquidGlass.description: Χρήση της
 settings.option.visual.playerMaterial.none: Κανένα
 settings.option.visual.playerMaterial.none.description: Χρήση συμπαγούς αδιαφανούς πλαισίου για τη γραμμή αναπαραγωγής.
 settings.option.visual.playerPosition: Θέση προγράμματος αναπαραγωγής
-settings.option.visual.playerType: Τύπος αναπαραγωγέα
+settings.option.visual.playerType: Τύπος προγράμματος αναπαραγωγής
 settings.option.visual.plugin.github.download: Εγκατάσταση από URL του GitHub
 settings.option.visual.plugin.github.explore: Εξερεύνηση πρόσθετων GitHub
 settings.option.visual.plugin.github.install.confirm: Είστε βέβαιοι ότι θέλετε να εγκαταστήσετε το {{repo}};
-settings.option.visual.popularityThreshold: Όριο δημοτικότητας
+settings.option.visual.popularityThreshold: Όριο δημοφιλίας
 settings.option.visual.popularityThreshold.description: Η ελάχιστη δημοτικότητα που απαιτείται για την εμφάνιση δεικτών δίπλα σε ένα κομμάτι.
-settings.option.visual.precisionScrollSpeed: Ταχύτητα κύλισης ακριβείας
+settings.option.visual.precisionScrollSpeed: Ταχύτητα ακριβούς κύλισης
 settings.option.visual.precisionScrollSpeed.description: Ρυθμίστε με ακρίβεια την κύλιση του touchpad στη νέα μηχανή παραθύρων (glass). Οι χαμηλότερες τιμές προσφέρουν πιο αργή και ακριβή κύλιση για μικρορυθμίσεις, ενώ οι υψηλότερες αυξάνουν την ταχύτητα κύλισης.
 settings.option.visual.purplePodcastPlaybackBar: Μωβ γραμμή αναπαραγωγής για Podcasts
-settings.option.visual.realtimeVisualizer: Οπτικοποιητής ήχου σε πραγματικό χρόνο
+settings.option.visual.realtimeVisualizer: Οπτικοποίηση ήχου σε πραγματικό χρόνο
 settings.option.visual.realtimeVisualizer.description: Εμφάνιση οπτικοποιητή ήχου σε πραγματικό χρόνο στα κομμάτια που αναπαράγονται αντί για τις κινούμενες μπάρες.
 settings.option.visual.searchType: Τύπος αναζήτησης
 settings.option.visual.searchType.floating: Αιωρούμενο
 settings.option.visual.searchType.inline: Εντός γραμμής
-settings.option.visual.showBpmAndKey: Εμφάνιση BPM και κλειδιού στα κομμάτια σε λίστες αναπαραγωγής και άλμπουμ
+settings.option.visual.showBpmAndKey: Εμφάνιση BPM και τονικότητας στα κομμάτια των λιστών αναπαραγωγής και των άλμπουμ
 settings.option.visual.showBpmAndKey.description: Το περιεχόμενο θα χρειάζεται περισσότερο χρόνο για να φορτώσει όταν είναι ενεργοποιημένο.
 settings.option.visual.showPersonalInfo: Εμφάνιση προσωπικών πληροφοριών
-settings.option.visual.showPlaylistArtworkInSidebar: Εμφάνιση εξωφύλλου λίστας αναπαραγωγής στην πλευρική στήλη
-settings.option.visual.showPodcastsInSidebar: Εμφάνιση Podcast στην πλευρική στήλη
+settings.option.visual.showPlaylistArtworkInSidebar: Εμφάνιση εξωφύλλων λιστών αναπαραγωγής στην πλαϊνή στήλη
+settings.option.visual.showPodcastsInSidebar: Εμφάνιση podcast στην πλαϊνή στήλη
 settings.option.visual.showPodcastsInSidebar.description: Η υποστήριξη podcast εξακολουθεί να ανακατασκευάζεται, επομένως η καταχώριση της Βιβλιοθήκης εμφανίζει μόνο ένα προσωρινό στοιχείο προς το παρόν.
 settings.option.visual.showQuickActions: Εμφάνιση γρήγορων ενεργειών
-settings.option.visual.showWatchMusicVideoWhenAvailable: Εμφάνιση του «Προβολή βίντεο κλιπ» όταν είναι διαθέσιμο
-settings.option.visual.sidebarStyle: Στυλ πλευρικής στήλης
+settings.option.visual.showWatchMusicVideoWhenAvailable: Εμφάνιση «Προβολή μουσικού βίντεο» όταν είναι διαθέσιμο
+settings.option.visual.sidebarStyle: Στυλ πλαϊνής στήλης
 settings.option.visual.sidebarStyle.apple: Apple Music
 settings.option.visual.sidebarStyle.default: Προεπιλογή
 settings.option.visual.sidebarStyle.description: Επιλέξτε τη διάταξη της πλευρικής στήλης. Η επιλογή «Apple Music» τοποθετεί τα Καρφιτσώματα μέσα στην ενότητα «Βιβλιοθήκη» και αφαιρεί την κεφαλίδα της ενότητας Apple Music.
 settings.option.visual.simpleArtworkBg.saturate: Κορεσμός
-settings.option.visual.sizeProfile: Προφίλ μεγέθους UI
+settings.option.visual.sizeProfile: Προφίλ μεγέθους διεπαφής
 settings.option.visual.sizeProfile.description.default: Προεπιλεγμένο μέγεθος, για χρήση με οποιαδήποτε συσκευή εισόδου. Στυλ iOS / Android / Modern Windows.
 settings.option.visual.sizeProfile.description.desktop: Μέγεθος προσανατολισμένο για υπολογιστές, για χρήση με ποντίκι και πληκτρολόγιο. Στυλ macOS / Classic Windows.
 settings.option.visual.sizeProfile.desktop: Υπολογιστής
@@ -5176,24 +5293,24 @@ settings.option.visual.transparency: Ενεργοποίηση διαφάνεια
 settings.option.visual.transparent: Διαφανές πλαίσιο
 settings.option.visual.transparent.description: απαιτείται υποστήριξη θέματος, απαιτείται επανεκκίνηση
 settings.option.visual.uiscale: Κλίμακα UI
-settings.option.visual.useAdaptiveColors: Χρήση δυναμικών χρωμάτων
+settings.option.visual.useAdaptiveColors: Χρήση προσαρμοστικών χρωμάτων
 settings.option.visual.useAdaptiveColors.description: Αλλαγή του χρώματος έμφασης για να ταιριάζει με το τρέχον τραγούδι
 settings.option.visual.useAdaptiveColors.popup: Τα προσαρμοστικά χρώματα θα εφαρμοστούν στο επόμενο κομμάτι.
-settings.option.visual.verticalDrawerMode: Τοποθέτηση ουράς & στίχων
+settings.option.visual.verticalDrawerMode: Τοποθέτηση ουράς και στίχων
 settings.option.visual.verticalDrawerMode.auto.description: Χρήση κάτω συρταριού κάτω από το πρόγραμμα αναπαραγωγής/περιεχόμενο σε κατακόρυφες οθόνες, και πλευρικού συρταριού σε ευρείες οθόνες.
-settings.option.visual.verticalDrawerMode.bottom: Κάτω συρτάρι
+settings.option.visual.verticalDrawerMode.bottom: Συρτάρι κάτω
 settings.option.visual.verticalDrawerMode.bottom.description: Να εμφανίζεται πάντα η ουρά και οι στίχοι σε κάτω συρτάρι κάτω από το πρόγραμμα αναπαραγωγής/περιεχόμενο.
 settings.option.visual.verticalDrawerMode.description: Ρύθμιση του αν η ουρά και οι στίχοι θα ανοίγουν ως κάτω ή πλευρικό συρτάρι σε κατακόρυφες οθόνες.
-settings.option.visual.verticalDrawerMode.side: Πλευρικό συρτάρι
+settings.option.visual.verticalDrawerMode.side: Συρτάρι πλαϊνό
 settings.option.visual.verticalDrawerMode.side.description: Να εμφανίζεται πάντα η ουρά και οι στίχοι σε πλευρικό συρτάρι στα δεξιά.
 settings.option.visual.vibrancyMode.acrylic: Acrylic
 settings.option.visual.vibrancyMode.mica: Mica
 settings.option.visual.vibrancyMode.tabbed: Tabbed
-settings.option.visual.vibrancySettings: Ρυθμίσεις ζωντάνιας
+settings.option.visual.vibrancySettings: Ρυθμίσεις έντασης χρωμάτων
 settings.option.visual.windowBackgroundStyle: Στυλ φόντου παραθύρου
 settings.option.visual.windowColor: Χρώμα απόχρωσης παραθύρου
 settings.option.visual.windowControlPosition: Θέση στοιχείων ελέγχου παραθύρου
-settings.option.visual.windowingMode: Λειτουργία κύλισης & απόδοσης
+settings.option.visual.windowingMode: Λειτουργία κύλισης και απόδοσης
 settings.option.visual.windowingMode.auto: Αυτόματο (με ανίχνευση touchpad)
 settings.option.visual.windowingMode.description: Επιλέξτε τον τρόπο με τον οποίο η εφαρμογή αποδίδει και κυλά το περιεχόμενο. Η επιλογή «Αυτόματο» συνιστάται για τους περισσότερους χρήστες, ενώ σε ορισμένες συσκευές με touchpad η επιλογή «Παλιό» ενδέχεται να ανταποκρίνεται καλύτερα.
 settings.option.visual.windowingMode.fallbackNotice.body: Το Cider χρησιμοποιεί την Παλιά λειτουργία αντ' αυτού.
@@ -5201,7 +5318,7 @@ settings.option.visual.windowingMode.fallbackNotice.title: Η νέα λειτο�
 settings.option.visual.windowingMode.glass: Νέο
 settings.option.visual.windowingMode.performance: Παλιό
 settings.option.visual.windowStyle: Στυλ παραθύρου
-settings.option.visual.windowVibrancy: Ζωντάνια παραθύρου
+settings.option.visual.windowVibrancy: Ένταση χρωμάτων παραθύρου
 settings.option.window.close_button_hide: Το κουμπί κλεισίματος να αποκρύπτει την εφαρμογή
 settings.option.window.maxElementScale: Μέγιστη κλίμακα στοιχείων
 settings.option.window.openOnStartup: Άνοιγμα του Cider κατά την εκκίνηση
@@ -5232,24 +5349,36 @@ settings.power.savers: Εξοικονόμηση ενέργειας
 settings.power.summary.count: "{{high}} υψηλής επιβάρυνσης, {{medium}} μεσαίας επιβάρυνσης στοιχεία ενεργά"
 settings.power.summary.high: Υψηλή επιβάρυνση
 settings.power.summary.medium: Μεσαία επιβάρυνση
+settings.privacy.appPreferences: Προτιμήσεις εφαρμογής
+settings.privacy.appPreferences.description: Κοινοποιήστε τις προτιμήσεις εφαρμογής σας, ώστε να μάθουμε πώς προτιμάτε να ρυθμίζεται το Cider.
+settings.privacy.appUsage: Χρήση συγκεκριμένων λειτουργιών της εφαρμογής
+settings.privacy.appUsage.description: Αποστολή ανώνυμων δεδομένων χρήσης για λειτουργίες συγκεκριμένες για το Cider. Δεν περιλαμβάνονται προσωπικά στοιχεία ή δεδομένα Apple Music.
+settings.privacy.audioLabs: Εργαστήρια ήχου Cider
+settings.privacy.audioLabs.description: Αποστέλλει πληροφορίες για τον τρόπο ρύθμισης των εργαστηρίων ήχου Cider.
+settings.privacy.deviceSpecs: Προδιαγραφές συσκευής
+settings.privacy.deviceSpecs.description: "Αποστέλλει πληροφορίες για το τρέχον υλικό σας: CPU, GPU, RAM, συσκευές ήχου, καθώς και το λειτουργικό σας σύστημα. Οι πληροφορίες είναι βασικές και δεν περιλαμβάνουν σειριακούς αριθμούς ή αναγνωριστικά συσκευών."
+settings.privacy.replay: Συνεισφορά ιστορικού ακρόασης για το Cider Replay
+settings.privacy.replay.description: Αποστολή ιστορικού ακρόασης ανώνυμα για συμμετοχή στο κοινοτικό έργο Replay του Cider στο τέλος του έτους. Τα δημόσια στατιστικά μπορείτε να τα δείτε στο cider.sh/replay.
+settings.privacy.statement: Στην Cider Collective δίνουμε μεγάλη σημασία στο απόρρητο. Δεν συλλέγουμε προσωπικά αναγνωριστικά στοιχεία και δεν πουλάμε δεδομένα σε τρίτους. Όσα δεδομένα επιλέγετε να μοιραστείτε μαζί μας χρησιμοποιούνται για τη βελτίωση της εφαρμογής και δεν κοινοποιούνται σε κανέναν άλλο. Όλα τα προσωπικά στοιχεία που ενδέχεται να αποθηκεύονται αφαιρούνται πριν σταλούν σε εμάς.
 settings.profile.crop.hint: Σύρετε για μετακίνηση, κυλήστε για εστίαση
 settings.profile.crop.title: Τοποθέτηση της φωτογραφίας σας
 settings.profile.defaultName: Χρήστης Apple Music
-settings.profile.field.displayName: Όνομα εμφάνισης
+settings.profile.field.displayName: Εμφανιζόμενο όνομα
 settings.profile.field.displayName.description: Εμφανίζεται στην πλευρική στήλη και σε όλο το Cider.
 settings.profile.field.handle.description: Το @όνομα_χρήστη σας, χρησιμοποιείται για κοινή χρήση.
 settings.profile.field.photo: Φωτογραφία προφίλ
+settings.profile.field.photo.change: Αλλαγή φωτογραφίας προφίλ
 settings.profile.field.photo.description: Έχει οριστεί μια προσαρμοσμένη φωτογραφία.
 settings.profile.header.identity: Επεξεργασία προφίλ
 settings.profile.header.region: Περιοχή και γλώσσα
-settings.profile.header.visibility: Εμφάνιση πλευρικής στήλης
+settings.profile.header.visibility: Εμφάνιση στην πλαϊνή στήλη
 settings.profile.language.description: Γλώσσα μεταδεδομένων καταλόγου για το επιλεγμένο κατάστημα.
-settings.profile.option.showHandle: Εμφάνιση ονόματος χρήστη κοινωνικών δικτύων
-settings.profile.option.showMainMenu: Κύριο μενού στην περιοχή προφίλ της πλευρικής στήλης
+settings.profile.option.showHandle: Εμφάνιση κοινωνικού χειριστή
+settings.profile.option.showMainMenu: Κύριο μενού στην περιοχή προφίλ της πλαϊνής στήλης
 settings.profile.option.showName: Εμφάνιση ονόματος προφίλ
-settings.profile.option.showProfile: Εμφάνιση προφίλ στην πλευρική στήλη
+settings.profile.option.showProfile: Εμφάνιση προφίλ στην πλαϊνή στήλη
 settings.profile.policy.allowed: Επιτρέπεται
-settings.profile.policy.label: Ακατάλληλο περιεχόμενο
+settings.profile.policy.label: Ρητό περιεχόμενο
 settings.profile.policy.restricted: Περιορισμένο
 settings.profile.signOut.confirmMessage: Θα επιστρέψετε στην οθόνη σύνδεσης και η προσωρινή μνήμη της τοπικής βιβλιοθήκης σας θα απαλειφθεί. Συνέχεια;
 settings.profile.signOut.confirmTitle: Αποσύνδεση από το Apple Music;
@@ -5287,6 +5416,7 @@ settings.resetCider.confirm.ok: Επαναφορά του Cider
 settings.resetCider.confirm.title: Επαναφορά του Cider;
 settings.resetCider.confirm.warning: Αυτή η ενέργεια δεν μπορεί να αναιρεθεί. Το Cider θα επανεκκινηθεί μετά την επαναφορά.
 settings.resetCider.confirm.willReset: Θα επαναφερθούν
+settings.resetCider.deselectAll: Αποεπιλογή όλων
 settings.resetCider.error: Παρουσιάστηκε σφάλμα κατά την επαναφορά.
 settings.resetCider.group.accounts: Λογαριασμοί
 settings.resetCider.group.core: Επαναφορά
@@ -5296,6 +5426,10 @@ settings.resetCider.resetButton: Επαναφορά του Cider
 settings.resetCider.resetting: Γίνεται επαναφορά…
 settings.resetCider.selectAll: Επιλογή όλων
 settings.resetCider.title: Επαναφορά του Cider
+settings.search.empty: Δεν βρέθηκαν ρυθμίσεις που να ταιριάζουν με την αναζήτηση.
+settings.search.pages: Σελίδες
+settings.search.resultCount: "{{count}} ρυθμίσεις ταιριάζουν"
+settings.search.resultCountOne: 1 ρύθμιση ταιριάζει
 settings.sleepTimer.endsIn: "Λήξη σε: {{remainingTime}} ({{endTime}})"
 settings.sleepTimer.notSet: Το χρονόμετρο δεν έχει οριστεί
 settings.sleepTimer.title: Ορισμός χρονοδιακόπτη ύπνου
@@ -5344,7 +5478,7 @@ settings.troubleshooting.impressionReporting.warning2: Πρόκειται για
 settings.troubleshooting.logFile: Αρχείο καταγραφής
 settings.troubleshooting.logFile.actions: Ενέργειες αρχείου καταγραφής
 settings.troubleshooting.logFile.desc: Προβολή, αντιγραφή ή απαλοιφή του αρχείου καταγραφής σας
-settings.troubleshooting.mkliteDebug: Καταγραφή εντοπισμού σφαλμάτων MKLite
+settings.troubleshooting.mkliteDebug: Καταγραφή αποσφαλμάτωσης MKLite
 settings.troubleshooting.mkliteDebug.desc: Λεπτομερής έξοδος κονσόλας από το MKLite — δεδομένα PlayActivity (JSPLAY), αλλαγές κομματιών και κατάσταση αναπαραγωγής. Χρήσιμο για τη σύγκριση των δεδομένων που στέλνουμε στην Apple με το music.apple.com. Αφήστε το απενεργοποιημένο για κανονική χρήση.
 settings.troubleshooting.mkLoadingMethod: Μέθοδος φόρτωσης MusicKit
 settings.troubleshooting.mkLoadingMethod.warning1: Αλλάξτε τη μέθοδο που χρησιμοποιείται για τη φόρτωση του MusicKit. Αυτό χρησιμοποιείται για την αντιμετώπιση πιθανών προβλημάτων φόρτωσης από ενημερώσεις του MusicKit.
@@ -5355,6 +5489,65 @@ settings.troubleshooting.rebootMk.desc: Επανεκκίνηση του MusicKit
 settings.troubleshooting.testSignIn: Δοκιμή σύνδεσης στο Apple Music
 settings.troubleshooting.testSignIn.desc: Εκτελέστε το αναδυόμενο παράθυρο σύνδεσης του Apple Music για να επαληθεύσετε ότι η σύνδεση λειτουργεί και, στη συνέχεια, επικυρώστε το token μέσω του API. Δεν αποθηκεύεται τίποτα και η τρέχουσα συνεδρία σας παραμένει ανέπαφη.
 settings.troubleshooting.title: Αντιμετώπιση προβλημάτων
+settings.tweaks.animateArtworkOnHover.description: Αναπαραγωγή κινούμενων εξωφύλλων όταν ο δείκτης βρίσκεται πάνω τους.
+settings.tweaks.artworkFadeIn.description: Εμφάνιση των εξωφύλλων αμέσως, χωρίς σταδιακή εμφάνιση κατά τη φόρτωσή τους.
+settings.tweaks.artworkHighlighting.description: Προσθήκη απαλής σκιάς και φωτισμού στα εξώφυλλα σε πλέγματα και λίστες.
+settings.tweaks.artworkLoadingMethod.description: Τα εξώφυλλα φορτώνουν καθώς εμφανίζονται στην οθόνη. Το Eager τα φορτώνει αμέσως.
+settings.tweaks.card.musicVideos: Μουσικά βίντεο
+settings.tweaks.ciderAudioBadges.description: Εμφάνιση ενδείξεων Cider Audio δίπλα στο τραγούδι στο πρόγραμμα αναπαραγωγής.
+settings.tweaks.ciderAudioToolbar.description: Εμφάνιση του κουμπιού Cider Audio στη γραμμή εργαλείων.
+settings.tweaks.compactSidebarSize: Μέγεθος συμπαγούς πλαϊνής στήλης
+settings.tweaks.contextMenuIcons.description: Ποια στοιχεία του μενού εμφανίζουν εικονίδιο.
+settings.tweaks.floatingSearchBlur: Θολούρα πίσω από την πλωτή αναζήτηση
+settings.tweaks.floatingSearchClear: Εκκαθάριση πλωτής αναζήτησης κατά το κλείσιμο
+settings.tweaks.forceMpWindowControls.description: Χρήση των δικών του κουμπιών παραθύρου του Cider αντί των κουμπιών του συστήματος.
+settings.tweaks.hideHeroItems.description: Απόκρυψη των μεγάλων προβεβλημένων banner στην κορυφή της περιήγησης.
+settings.tweaks.homeButtonLocation.description: Θέση του κουμπιού Αρχική.
+settings.tweaks.immersiveArtworkHighlight: Φωτισμός εξωφύλλου στην immersive προβολή
+settings.tweaks.immersiveArtworkHighlight.description: Προσθήκη φωτισμού στο εξώφυλλο στην immersive προβολή.
+settings.tweaks.immersiveBackgroundBpm.description: Κίνηση του φόντου σύμφωνα με τον ρυθμό του τραγουδιού.
+settings.tweaks.immersiveControlsTimeout: Χρονικό όριο στοιχείων ελέγχου immersive
+settings.tweaks.immersiveControlsTimeout.description: Δευτερόλεπτα έως ότου κρυφτούν τα στοιχεία ελέγχου.
+settings.tweaks.immersiveHideLyrics.description: Απόκρυψη του πίνακα στίχων για τραγούδια χωρίς στίχους.
+settings.tweaks.immersiveLyricGlow: Λάμψη στον ενεργό στίχο
+settings.tweaks.immersiveLyricGlow.description: Προσθήκη λάμψης στη γραμμή που τραγουδιέται.
+settings.tweaks.immersiveMaxLyricSize.description: Το μέγιστο μέγεθος στο οποίο μπορούν να μεγαλώσουν οι στίχοι στην immersive προβολή.
+settings.tweaks.mainMenuPosition.description: Θέση του κουμπιού κύριου μενού.
+settings.tweaks.mavericksLcdStyle: Στυλ LCD Mavericks
+settings.tweaks.mavericksLcdStyle.description: Πώς εμφανίζεται η οθόνη αναπαραγωγής στη διάταξη Mavericks.
+settings.tweaks.miniPlayerAnimatedArtwork.description: Αναπαραγωγή κινούμενων εξωφύλλων στο μίνι πρόγραμμα αναπαραγωγής.
+settings.tweaks.moveUpLinks.description: Τοποθέτηση των συνδέσμων για περισσότερο περιεχόμενο στην κορυφή της περιήγησης.
+settings.tweaks.musicVideoBadge.description: Εμφάνιση κουμπιού στο πρόγραμμα αναπαραγωγής όταν το τραγούδι έχει μουσικό βίντεο.
+settings.tweaks.pauseAnimatedOnBlur.description: Παύση των κινούμενων εξωφύλλων όταν το Cider δεν είναι το ενεργό παράθυρο.
+settings.tweaks.progressAccent: Μπάρα προόδου με χρώμα έμφασης
+settings.tweaks.progressAccent.description: Γέμισμα της μπάρας προόδου του τραγουδιού με το χρώμα έμφασης.
+settings.tweaks.resizableMiniPlayer.description: Επιτρέπει την αλλαγή μεγέθους του μίνι προγράμματος αναπαραγωγής.
+settings.tweaks.richGridNoScrollAnimation: Άμεση κύλιση στο πλέγμα άλμπουμ
+settings.tweaks.richGridNoScrollAnimation.description: Μετάβαση στο άλμπουμ χωρίς κινούμενη κύλιση.
+settings.tweaks.richGridOpenPage: Άνοιγμα άλμπουμ ως σελίδες από το πλούσιο πλέγμα
+settings.tweaks.richGridOpenPage.description: Μετάβαση στη σελίδα του άλμπουμ αντί για ανάπτυξη στο πλέγμα.
+settings.tweaks.richGridScrollPosition: Θέση κύλισης πλούσιου πλέγματος άλμπουμ
+settings.tweaks.richGridScrollPosition.description: Πού κυλίει το πλέγμα όταν ανοίγετε ένα άλμπουμ.
+settings.tweaks.scrollbarType.description: Χρήση των δικών του κύλισης του Cider ή των κύλισης του συστήματος.
+settings.tweaks.searchStyle: Στυλ αναζήτησης
+settings.tweaks.searchStyle.description: Αναζήτηση στη γραμμή τίτλου ή σε πάνελ πάνω από τη σελίδα.
+settings.tweaks.section.artwork: Εξώφυλλα
+settings.tweaks.section.browse: Περιήγηση
+settings.tweaks.section.immersive: Immersive
+settings.tweaks.section.lyrics: Στίχοι
+settings.tweaks.section.pagesGrids: Σελίδες και πλέγματα
+settings.tweaks.section.playerBar: Γραμμή αναπαραγωγής
+settings.tweaks.section.search: Αναζήτηση
+settings.tweaks.section.sidebarNavigation: Πλαϊνή στήλη και πλοήγηση
+settings.tweaks.section.windowToolbar: Παράθυρο και γραμμή εργαλείων
+settings.tweaks.showBitrate.description: Εμφάνιση του bitrate της ροής δίπλα στο τραγούδι στο πρόγραμμα αναπαραγωγής.
+settings.tweaks.sidebarPlaylistArtwork.description: Εμφάνιση του εξωφύλλου κάθε λίστας δίπλα στο όνομά της.
+settings.tweaks.simpleArtworkMask.description: Σταδιακή αχνοφάνεια στο κάτω μέρος του εξωφύλλου φόντου.
+settings.tweaks.sonomaLyricArc: Καμπύλοι στίχοι στο Sonoma
+settings.tweaks.sonomaRadialMask: Εναλλακτική μάσκα Sonoma
+settings.tweaks.volumeIosStyle: Ρυθμιστής έντασης σε στυλ iOS
+settings.tweaks.volumeIosStyle.description: Σχεδίαση του ρυθμιστή έντασης με το στυλ που χρησιμοποιείται στο iPhone.
+settings.tweaks.windowControlPosition.description: Σε ποια πλευρά βρίσκονται τα κουμπιά του παραθύρου.
 settings.updates.action.check: Έλεγχος για ενημερώσεις
 settings.updates.action.install: Εγκατάσταση ενημέρωσης
 settings.updates.action.restart: Επανεκκίνηση του Cider
@@ -5386,7 +5579,7 @@ settings.updates.progress.working.sub: Μισό λεπτό, αυτό θα πάρ
 settings.updates.section.about: Σχετικά με την έκδοσή σας
 settings.updates.section.alsoAvailable: Επίσης διαθέσιμο
 settings.updates.section.history: Ιστορικό ενημερώσεων
-settings.updates.section.whatsNew: Τι νέο υπάρχει στο Cider
+settings.updates.section.whatsNew: Τι νέο υπάρχει στο Cider {version}
 settings.updates.status.available: Διαθέσιμη ενημέρωση
 settings.updates.status.checking: Έλεγχος για ενημερώσεις...
 settings.updates.status.failed: Η ενημέρωση απέτυχε
@@ -5394,19 +5587,20 @@ settings.updates.status.idle: Το Cider είναι ενημερωμένο
 settings.updates.status.success: Απαιτείται επανεκκίνηση
 settings.updates.status.working: Εγκατάσταση...
 settings.visual.card.appBackground: Φόντο εφαρμογής
+settings.visual.card.behavior: Συμπεριφορά
 settings.visual.card.behaviorLyrics: Συμπεριφορά και στίχοι
 settings.visual.card.browse: Περιήγηση
 settings.visual.card.contentFilter: Φίλτρο περιεχομένου
 settings.visual.card.experimental: Πειραματικό
-settings.visual.card.fsrUpscaling: Αναβάθμιση FSR
-settings.visual.card.moreAnimatedArtwork: Περισσότερα κινούμενα εξώφυλλα
-settings.visual.card.playerEffects: Εφέ προγράμματος αναπαραγωγής
-settings.visual.card.sidebarNavigation: Πλευρική στήλη και πλοήγηση
-settings.visual.card.trackMetadata: Μεταδεδομένα κομματιού
+settings.visual.card.fsrUpscaling: Κλιμάκωση FSR
+settings.visual.card.moreAnimatedArtwork: Περισσότερα animated εξώφυλλα
+settings.visual.card.playerEffects: Εφέ αναπαραγωγής
+settings.visual.card.sidebarNavigation: Πλαϊνή στήλη και πλοήγηση
+settings.visual.card.trackMetadata: Μεταδεδομένα κομματιών
 settings.visual.card.ultraHdr: Κλιμάκωση Ultra HDR
-settings.visual.editorialLayout: Χρήση συντακτικής διάταξης
+settings.visual.editorialLayout: Χρήση editorial διάταξης
 settings.visual.editorialLayout.desc: Εμφανίζει ένα συντακτικό banner και εφαρμόζει μια χρωματική παλέτα σε ορισμένα άλμπουμ
-settings.visual.editorialPreferenceOrder: Σειρά προτίμησης συντακτικού περιεχομένου
+settings.visual.editorialPreferenceOrder: Σειρά προτίμησης editorial
 settings.visual.section.appearance: Εμφάνιση
 settings.visual.section.appearance.description: Συνδυασμός χρωμάτων, χρώματα έμφασης και το φόντο της εφαρμογής.
 settings.visual.section.artwork: Εξώφυλλα και κίνηση
@@ -5416,9 +5610,13 @@ settings.visual.section.content.description: Διατάξεις σελίδων, 
 settings.visual.section.customCss.description: Εφαρμόστε το δικό σας CSS πάνω από το στυλ του Cider.
 settings.visual.section.layout: Διάταξη
 settings.visual.section.layout.description: Διάταξη εφαρμογής, στυλ προγράμματος αναπαραγωγής, πλευρική στήλη και πλοήγηση.
+settings.visual.section.pages: Σελίδες
+settings.visual.section.pages.description: Πώς είναι διατεταγμένες οι σελίδες άλμπουμ και λιστών αναπαραγωγής.
+settings.visual.section.themeColors: Θέμα και χρώματα
 settings.visual.section.window: Παράθυρο
 settings.visual.section.window.description: Πλαίσιο παραθύρου, εφέ διαφάνειας, στοιχεία ελέγχου και κλιμάκωση.
-settings.visual.vibrancy.acrylicDarkness: Τιμή σκουρότητας Acrylic
+settings.visual.section.window.descriptionV2: Στοιχεία παραθύρου, vibrancy, απόδοση και κλιμάκωση.
+settings.visual.vibrancy.acrylicDarkness: Τιμή σκουρότητας acrylic
 settings.visual.vibrancy.mode.acrylic: Ακρυλικό
 settings.visual.vibrancy.mode.mica: Mica
 settings.visual.vibrancy.mode.none: Κανένα
