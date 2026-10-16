@@ -3474,6 +3474,14 @@ lyrics.loadingLyrics: 正在加载歌词...
 lyrics.lyricsBy: 词：
 lyrics.noLyricsAvailable: 此曲目暂无歌词
 lyrics.selectProvider: 选择歌词源
+lyrics.translation.chip.pronunciation: 发音
+lyrics.translation.chip.translated: 已翻译
+lyrics.translation.credit: 翻译来源：{{source}}
+lyrics.translation.credit.apple: 由 Apple Music 翻译
+lyrics.translation.menu.hide: 隐藏翻译
+lyrics.translation.menu.hidePronunciation: 隐藏发音
+lyrics.translation.menu.show: 显示翻译
+lyrics.translation.source.community: 社区
 marketplace.trustedAuthor.tooltip:
   value: 这是一位受信任且已认证的作者
   source: ai
@@ -5611,6 +5619,18 @@ playbackHealth.backgroundFreeze.title: 系统在后台暂停了 Cider
 playbackHealth.hostReinstall.label: Cider 需要重新安装
 playbackHealth.hostReinstall.message: Apple Music 拒绝此安装。请从 Cider Taproom 重新安装 Cider。
 playbackHealth.localIssue: 本地播放问题
+playbackSpeed.keepPitch: 保持音调
+playbackSpeed.preset.normal: 正常
+playbackSpeed.preset.slowed: 减速
+playbackSpeed.preset.spedUp: 加速
+playbackSpeed.rateValue: "{{rate}}×"
+playbackSpeed.reset: 重置
+playbackSpeed.reverb: 混响
+playbackSpeed.reverbUnavailable: Dolby Atmos 直通时不可用混响
+playbackSpeed.settings: 播放速度设置
+playbackSpeed.title: 播放速度
+playbackSpeed.unavailable.radio: 无法更改实时电台的播放速度
+playbackSpeed.unavailable.video: 无法更改音乐视频的播放速度
 playlist.collaborative.tooltip: 此歌单已对协作者开放
 playlist.collaborators.andOthers: "{{name}} 及其他 {{count}} 人"
 playlist.collaborators.count: "{{count}} 位协作者"
@@ -6256,6 +6276,7 @@ settings.audio.section.output: 输出
 settings.audio.section.output.description: Cider 播放所使用的设备以及音频输出方式。
 settings.audio.section.playback: 播放
 settings.audio.section.playback.description: 音频质量、空间音频、聆听模式以及播客播放速度。
+settings.audio.section.playback.descriptionV2: 音频质量、空间音频、聆听模式和播放速度。
 settings.audio.section.volume: 音量
 settings.audio.section.volume.description: 响度匹配、滚轮调节音量的幅度以及滑块的读数方式。
 settings.audio.signal.atmosCodecs: 可用的 Atmos 编解码器
@@ -7181,6 +7202,9 @@ settings.connectivity.scrobbler.roster.scrobbling: 正在记录
 settings.connectivity.scrobbler.roster.scrobblingAs: 正在以 {account} 身份记录
 settings.connectivity.scrobbler.roster.scrobblingTo: 正在记录至 {account}
 settings.connectivity.scrobbler.roster.signOut: 退出登录 {service}
+settings.connectivity.scrobbler.roster.signOut.message: Cider 将停止向此账户记录播放。你可以随时重新连接。
+settings.connectivity.scrobbler.roster.signOut.ok: 退出登录
+settings.connectivity.scrobbler.roster.signOut.title: 要退出 {service} 吗？
 settings.connectivity.scrobbler.roster.switchLabel: 记录至 {service}
 settings.connectivity.scrobbler.roster.waiting: 正在等待浏览器…
 settings.connectivity.scrobbler.toast.failed: 无法记录至 {services}
@@ -8260,6 +8284,7 @@ settings.lyrics.localeOverrides.add:
   by: "@Tesutarin"
   issue: 28
   superseded_at: 2026-10-16
+settings.lyrics.localeOverrides.addRule: 添加规则
 settings.lyrics.localeOverrides.audioLocale:
   value: 音频语言区域
   source: ai
@@ -8271,6 +8296,8 @@ settings.lyrics.localeOverrides.desc:
   source: human
   by: "@Tesutarin"
   issue: 28
+settings.lyrics.localeOverrides.dialog.addTitle: 添加规则
+settings.lyrics.localeOverrides.dialog.editTitle: 编辑规则
 settings.lyrics.localeOverrides.dialogTitle.add:
   value: 添加语言区域覆盖
   source: ai
@@ -8289,6 +8316,7 @@ settings.lyrics.localeOverrides.empty:
   by: "@Tesutarin"
   issue: 28
   superseded_at: 2026-09-01
+settings.lyrics.localeOverrides.emptyV2: 暂无规则。
 settings.lyrics.localeOverrides.overrideTranslation:
   value: 覆盖翻译
   source: ai
@@ -8517,8 +8545,11 @@ settings.lyrics.section.advanced: 高级
 settings.lyrics.section.advanced.description: 同步偏差、动画帧率和手动微调的滚动时机。
 settings.lyrics.section.display: 显示
 settings.lyrics.section.display.description: 显示哪些歌词行、它们的动画方式，以及悬停时显示的条目时间戳。
+settings.lyrics.section.overrides: 覆盖设置
+settings.lyrics.section.overrides.description: 针对某种语言的歌曲或单首曲目，优先于默认提供方的规则。
 settings.lyrics.section.sources: 来源
 settings.lyrics.section.sources.description: 歌词来源，以及优先级高于默认提供商的按语言或按音轨规则。
+settings.lyrics.section.sources.descriptionV2: 歌词来源，以及多个来源都有歌词时采用哪个来源。
 settings.lyrics.section.translation: 翻译
 settings.lyrics.section.translation.description: 翻译歌词、目标语言，以及是否在屏幕上保留原文。
 settings.lyrics.trackOverrides.clearAll:
@@ -8527,6 +8558,9 @@ settings.lyrics.trackOverrides.clearAll:
   by: "@Tesutarin"
   issue: 28
   superseded_at: 2026-10-16
+settings.lyrics.trackOverrides.clearAll.message: 所有曲目将恢复为默认提供方和 Apple 报告的人声状态。
+settings.lyrics.trackOverrides.clearAll.title: 要清除所有覆盖设置吗？
+settings.lyrics.trackOverrides.clearAllShort: 全部清除
 settings.lyrics.trackOverrides.desc:
   value: 此处列出的歌曲将始终使用您锁定的歌词源，或您手动设置的人声状态，而非 Apple 报告的状态。这些覆盖设置可通过歌词菜单和歌曲右键菜单进行配置。
   source: ai
@@ -9538,6 +9572,7 @@ settings.option.audio.automix:
   source: human
   by: "@Tesutarin"
   issue: 8
+settings.option.audio.automix.pausedForSpeed: 播放速度不为 1× 时，自动混音已暂停。
 settings.option.audio.changePlaybackRate:
   value: 更改播放速率
   source: ai
@@ -9952,6 +9987,12 @@ settings.option.audio.playbackRate.change:
   by: "@Tesutarin"
   issue: 8
   superseded_at: 2026-07-08
+settings.option.audio.playbackSpeed: 播放速度控制
+settings.option.audio.playbackSpeed.description: 在播放器中显示速度控件，用于减速或加速聆听，并可选择混响。
+settings.option.audio.playbackSpeed.keepPitch: 保持音调
+settings.option.audio.playbackSpeed.keepPitch.description: 更改速度时保持音调不变。关闭后可获得减速或加速的音效。
+settings.option.audio.playbackSpeed.reverb: 混响
+settings.option.audio.playbackSpeed.reverb.description: 为正在播放的内容添加房间混响。
 settings.option.audio.podcastPlayback:
   value: 播客播放
   source: ai
@@ -11232,6 +11273,8 @@ settings.option.lyrics.preferUserLyrics.description:
   source: human
   by: "@Tesutarin"
   issue: 10
+settings.option.lyrics.pronunciation: 显示发音
+settings.option.lyrics.pronunciation.description: 当 Apple Music 提供时，以拉丁字母显示其他文字歌词的发音。
 settings.option.lyrics.provider.apple:
   value: Apple Music
   source: human
@@ -11376,6 +11419,7 @@ settings.option.lyrics.translationMode.appLanguage:
   by: "@Tesutarin"
   issue: 32
   superseded_at: 2026-10-16
+settings.option.lyrics.translationMode.appLanguageShort: 应用语言
 settings.option.lyrics.translationMode.description:
   value: 确定目标翻译语言的方式。
   source: human
@@ -11386,12 +11430,14 @@ settings.option.lyrics.translationMode.manual:
   source: human
   by: "@Tesutarin"
   issue: 10
+settings.option.lyrics.translationMode.manualShort: 手动
 settings.option.lyrics.translationMode.system:
   value: 自动跟随系统语言
   source: ai
   by: "@Tesutarin"
   issue: 32
   superseded_at: 2026-10-16
+settings.option.lyrics.translationMode.systemShort: 系统语言
 settings.option.lyrics.translationSettings:
   value: 翻译设置
   source: human
