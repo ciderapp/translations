@@ -61,6 +61,7 @@ action.cast.todevices: डिवाइस पर कास्ट करें
 action.change: बदलें
 action.clear: साफ़ करें
 action.close: बंद करें
+action.configure: कॉन्फ़िगर करें
 action.connect: कनेक्ट करें
 action.connect.createCollabPlaylist: नई सहयोगी प्लेलिस्ट बनाएं
 action.connect.listenTogether: साथ मिलकर सुनें
@@ -79,6 +80,7 @@ action.deleteFolder: क्या आप वाकई फ़ोल्डर "{{f
 action.deleteFolder.message: इस फ़ोल्डर के अंदर के सभी फ़ोल्डर और प्लेलिस्ट भी हटा दिए जाएंगे।
 action.deletePlaylist: क्या आप वाकई प्लेलिस्ट "{{playlistName}}" को हटाना चाहते हैं?
 action.deletepreset: प्रीसेट हटाएं
+action.deny: अस्वीकार करें
 action.disablePlugins: इस सत्र के लिए प्लगइन्स अक्षम करें
 action.disconnect: डिस्कनेक्ट करें
 action.dislike: नापसंद करें
@@ -623,6 +625,12 @@ assistant.sid.settings.freshDetail: किसी मूड, पल या कु
 assistant.sid.settings.gemmaHere: यहाँ Gemma
 assistant.sid.settings.gpu: ग्राफ़िक्स कार्ड
 assistant.sid.settings.group: सहायक
+assistant.sid.settings.helloEdit: कोई प्लेलिस्ट खोलें और Sid के साथ संपादित करें चुनें, मैं उसे व्यवस्थित कर दूँगा।
+assistant.sid.settings.helloFresh: मुझे कोई मूड या कुछ कलाकार बताइए, मैं पूरी प्लेलिस्ट बना दूँगा।
+assistant.sid.settings.helloRequest: सेट के दौरान कोई गाना माँगिए, मैं उसे Apple Music पर ढूँढ दूँगा।
+assistant.sid.settings.helloSet: सेट के दौरान मैं की और टेम्पो के आधार पर अगला गाना चुनूँगा।
+assistant.sid.settings.helloSort: मुझसे प्लेलिस्ट को शांत से जीवंत क्रम में लगाने या कीज़ को सुचारू रूप से जोड़ने के लिए कहिए।
+assistant.sid.settings.helloTrim: मैं प्लेलिस्ट को एक घंटे तक सीमित कर सकता हूँ, या उसका टेम्पो एक जैसा रख सकता हूँ।
 assistant.sid.settings.inEdit: जब आप कोई प्लेलिस्ट संपादित करते हैं
 assistant.sid.settings.inEditDetail: प्लेलिस्ट के हेडर में Sid के साथ संपादित करें
 assistant.sid.settings.inImmersive: इमर्सिव में
@@ -651,6 +659,11 @@ assistant.sid.settings.position: स्थिति
 assistant.sid.settings.positionDetail: आर्टवर्क पर Sid कहाँ बैठता है
 assistant.sid.settings.privacyChat: "आप जो टाइप करते हैं वह इसी कंप्यूटर पर रहता है: Sid यहीं Gemma के साथ सोचता है। संगीत खोजने के लिए Sid खोज शब्द Apple Music को भेजता है, और जब आप कहें, तो आपके Apple Music खाते से आपकी प्लेलिस्ट, हाल के प्ले और Apple Music Replay पढ़ता है। आप Apply दबाने तक कुछ नहीं बदलता।"
 assistant.sid.settings.privacyEngine: "आप जो टाइप करते हैं वह इसी कंप्यूटर पर रहता है: Sid यहीं {engine} के साथ सोचता है। संगीत खोजने के लिए, Sid खोज शब्द Apple Music को भेजता है, और जब आप कहते हैं, तो आपके Apple Music खाते से आपकी प्लेलिस्ट, हाल के प्ले और Apple Music Replay पढ़ता है। आप Apply दबाने तक कुछ भी नहीं बदलता।"
+assistant.sid.settings.quipGaming: आपका {gpu} और मैं अच्छे दोस्त बनने वाले हैं।
+assistant.sid.settings.quipIntegrated: इंटीग्रेटेड ग्राफ़िक्स। मैं चीज़ों को हल्का और आरामदेह रखूँगा।
+assistant.sid.settings.quipOther: बढ़िया {gpu}। मैं इसका अच्छा उपयोग करूँगा।
+assistant.sid.settings.quipSetsOnly: आपका {gpu} और मैं अभी के लिए सिर्फ़ सेट चलाने तक सीमित रहेंगे।
+assistant.sid.settings.quipTop: "{gpu}? मुझे मुश्किल से पसीना आएगा।"
 assistant.sid.settings.reads: पूरी प्लेलिस्ट {seconds} सेकंड में पढ़ता है (कम से कम {floor} सेकंड चाहिए)
 assistant.sid.settings.regular: सामान्य
 assistant.sid.settings.remove: हटाएँ
@@ -753,6 +766,19 @@ auth.error.unavailable: यह Apple ID Cider में Apple Music का उ�
 auth.error.windowFailed: साइन-इन विंडो नहीं खुल सकी
 auth.mutExpired.confirm: साइन इन करें
 auth.mutExpired.message: आपका Apple Music सत्र समाप्त हो गया है। जारी रखने के लिए फिर से साइन इन करें।
+auth.request.authorizing: अधिकृत किया जा रहा है…
+auth.request.copyToken: टोकन कॉपी करें
+auth.request.granted: स्वीकृत
+auth.request.requestedAccess: पहुँच का अनुरोध किया गया
+auth.request.revealNote: यह एकमात्र अवसर है जब यह टोकन दिखाया जाएगा। इसे अभी {app} में पेस्ट करें।
+auth.request.subtitle: Cider तक पहुँच चाहता है
+auth.request.toast.copied: टोकन क्लिपबोर्ड पर कॉपी हो गया
+auth.request.toast.failed: टोकन बनाया नहीं जा सका
+auth.request.toast.granted: "{app} को पहुँच दी गई"
+auth.request.toast.title: प्राधिकरण
+auth.request.tokenCreated: टोकन बनाया गया
+auth.request.tokenFor: "{app} के लिए"
+auth.request.trustNote: केवल उन्हीं ऐप्स को पहुँच दें जिन पर आप भरोसा करते हैं। आप सेटिंग्स › कनेक्शन में कभी भी इस टोकन को रद्द कर सकते हैं।
 auth.signedIn: साइन इन हो गया
 auth.signInRetry.confirm: फिर से प्रयास करें
 auth.signInRetry.message: साइन-इन विंडो नहीं खुल सकी। फिर से प्रयास करें?
@@ -951,7 +977,7 @@ gallery.searchSnippets: स्निपेट्स खोजें
 gallery.submitPlugin: अपना प्लगइन सबमिट करें
 gallery.submitSnippet: अपना स्निपेट सबमिट करें
 gallery.submitTheme: अपनी थीम सबमिट करें
-general.closeToTray: सिस्टम ट्रे में बंद करें
+general.closeToTray: ट्रे में बंद करें
 general.closeToTray.description: बंद करें बटन को Cider विंडो को मिनिमाइज़ करना चाहिए
 home.artistsFeed: आपके कलाकारों का फ़ीड
 home.artistsFeed.noArtist: अपने पसंदीदा कलाकारों की नवीनतम रिलीज़ देखने के लिए उन्हें फ़ॉलो करें
@@ -2865,7 +2891,7 @@ oobe.amupsell.text: |-
   Cider, Apple Music Voice Plan या कुछ प्रचारक ट्रायल सब्सक्रिप्शन के साथ काम नहीं करेगा। यदि आपके पास पहले से ही एक योग्य Apple Music सब्सक्रिप्शन है, तो जारी रखने के लिए 'आगे बढ़ें' पर क्लिक करें।
 oobe.amupsell.title: शुरू करने से पहले
 oobe.appearance.accentHint: ऐप में बटन, हाइलाइट और प्रोग्रेस के लिए उपयोग किया जाता है। एक आज़माएं, इसका लाइव प्रिव्यू दिखता है.
-oobe.appearance.subtitle: एक कलर स्कीम और एक्सेंट कलर चुनें। आप इन्हें कभी भी Settings → Visual में बदल सकते हैं.
+oobe.appearance.subtitle: एक रंग योजना और एक एक्सेंट रंग चुनें। आप इन्हें सेटिंग्स › रूप-रंग में कभी भी बदल सकते हैं।
 oobe.appearance.title: Cider को अपना बनाएं
 oobe.appleNotice: "कृपया ध्यान दें: Apple Music, Apple Inc. का ट्रेडमार्क है। Cider Apple Music के लिए एक तृतीय-पक्ष क्लाइंट है और Apple Inc. से संबद्ध नहीं है।"
 oobe.audio.advancedFunctionality: ""
@@ -2880,7 +2906,7 @@ oobe.connections.atmosRatingsHint: देखें और शेयर करे
 oobe.connections.lastfm.connected: कनेक्टेड
 oobe.connections.lastfm.connectedAs: "{username} के रूप में कनेक्टेड"
 oobe.connections.lastfm.hint: अपने सुनने के इतिहास को स्क्रॉबल करें.
-oobe.connections.moreHint: Libre.fm, Maloja, ListenBrainz जैसे अन्य इंटीग्रेशन और WebSockets व RPC APIs, Settings → Connectivity में उपलब्ध हैं.
+oobe.connections.moreHint: Libre.fm, Maloja, ListenBrainz, और WebSockets व RPC APIs जैसे अधिक एकीकरण सेटिंग्स › कनेक्शन में उपलब्ध हैं।
 oobe.connections.pairDevice: डिवाइस पेयर करें
 oobe.connections.remoteHint: अपने फ़ोन से Cider को कंट्रोल करें.
 oobe.connections.subtitle: Cider को अपने अन्य ऐप्स और सेवाओं से लिंक करें.
@@ -3074,10 +3100,22 @@ playlist.refresh.title: प्लेलिस्ट को रीफ़्रे
 playlist.suggestions.subtitle: पूर्वावलोकन करें और प्लेलिस्ट में जोड़ें
 playlist.suggestions.title: सुझाए गए गाने
 playlist.untitled: बिना शीर्षक
+plugin.install.byAuthor: "{author} द्वारा"
+plugin.install.identifier: पहचानकर्ता
+plugin.install.install: इंस्टॉल करें
+plugin.install.installing: इंस्टॉल हो रहा है…
+plugin.install.source: स्रोत
+plugin.install.subtitle: एक Cider प्लगइन आपकी लाइब्रेरी में जोड़ा जाना चाहता है।
+plugin.install.title: प्लगइन इंस्टॉल करें
+plugin.install.update: अपडेट करें
+plugin.install.updateSubtitle: एक Cider प्लगइन इंस्टॉल किए गए संस्करण को बदलना चाहता है।
+plugin.install.updateTitle: प्लगइन अपडेट करें
+plugin.install.warning: प्लगइन्स Cider के भीतर कोड चला सकते हैं और आपके प्लेबैक, queue और लाइब्रेरी तक पहुँच सकते हैं। केवल भरोसेमंद स्रोतों से प्लगइन इंस्टॉल करें।
 podcast.comingSoon.description: Cider द्वारा प्लेबैक को संभालने के तरीके में बड़े बदलावों के बाद पॉडकास्ट सपोर्ट को फिर से तैयार किया जा रहा है। यह भविष्य के अपडेट में वापस आएगा।
 podcast.comingSoon.hide: साइडबार से छिपाएं
 podcast.comingSoon.hint: आप इसे विज़ुअल सेटिंग्स में, साइडबार और नेविगेशन के अंतर्गत फिर से चालू कर सकते हैं।
 podcast.comingSoon.title: पॉडकास्ट जल्द ही आ रहे हैं
+podcast.comingSoon.tweaksHint: आप इसे Tweaks सेटिंग्स में, Sidebar and navigation के अंतर्गत फिर से चालू कर सकते हैं।
 podcast.episodes: एपिसोड
 podcast.followedOnCider: Cider पर फ़ॉलो किया जा रहा है
 podcast.followOnCider: Cider पर फ़ॉलो करें
@@ -3160,6 +3198,11 @@ settings.accessibility.section.motion: मोशन
 settings.accessibility.section.motion.description: बटन, कार्ड और अन्य सतहें कितनी एनिमेशन का उपयोग करती हैं।
 settings.accessibility.section.soundEffects: ध्वनि प्रभाव
 settings.accessibility.section.soundEffects.description: बटन, स्विच और स्लाइडर के लिए इंटरफ़ेस ध्वनियाँ, और वे कितनी तेज़ बजती हैं।
+settings.accessibility.soundPreview.click: क्लिक
+settings.accessibility.soundPreview.slider: स्लाइडर
+settings.accessibility.soundPreview.switch: स्विच
+settings.accounts.appleMusic: Apple Music
+settings.accounts.appleMusic.description: Apple Music सक्षम करें
 settings.advanced.section.backups: बैकअप और रीसेट
 settings.advanced.section.backups.description: अपनी सेटिंग्स की एक प्रति सहेजें, Cider द्वारा आपके लिए रखी गई सेटिंग्स को रीस्टोर करें, या सब कुछ वापस डिफ़ॉल्ट पर सेट करें।
 settings.advanced.section.client: यह क्लाइंट
@@ -3168,20 +3211,20 @@ settings.airplay.installed.message: AirPlay इंस्टॉल हो गय�
 settings.airplay.installed.title: AirPlay इंस्टॉल हुआ
 settings.airplay.requiresCiderAudio: इसके लिए CiderAudio सक्षम होना आवश्यक है
 settings.appleMusic.storefront.warning: अपना स्टोरफ़्रंट बदलने से प्लेबैक में समस्याएं आ सकती हैं। आपको चेतावनी दी गई है।
-settings.artwork.disableFadeIn: फ़ेड-इन प्रभाव को अक्षम करें
+settings.artwork.disableFadeIn: फ़ेड-इन प्रभाव बंद करें
 settings.artwork.highlighting: आर्टवर्क हाइलाइटिंग
 settings.artwork.hiresImages: हाई-रिज़ॉल्यूशन छवियों का उपयोग करें
 settings.artwork.hiresImages.warning: इससे लोडिंग का समय बढ़ सकता है और प्रदर्शन धीमा हो सकता है।
 settings.audio.atmos: Dolby Atmos
-settings.audio.atmos.binaural.desc: Atmos को CiderAudio के माध्यम से बाइनॉरल स्टीरियो के रूप में रेंडर किया गया है। Crossfade, Automix और Seamless Transitions सामान्य रूप से काम करते रहेंगे।
+settings.audio.atmos.binaural.desc: CiderAudio के माध्यम से Atmos को बाइनॉरल स्टीरियो में रेंडर किया जाता है। Crossfade, Automix और seamless transitions अपेक्षित रूप से काम करते रहते हैं।
 settings.audio.atmos.description: अपने वर्तमान आउटपुट डिवाइस के लिए Atmos प्लेबैक कॉन्फ़िगर करें।
-settings.audio.atmos.normalizationHint: Dolby Atmos मिक्स स्टीरियो मास्टर से धीमे होते हैं। उन्हें बराबर करने के लिए Audio Normalization चालू करें।
+settings.audio.atmos.normalizationHint: Dolby Atmos मिक्स स्टीरियो मास्टर से धीमे होते हैं। उन्हें बराबर करने के लिए ऑडियो normalization चालू करें।
 settings.audio.atmos.off.desc: Atmos अक्षम है। सभी सामग्री मानक स्टीरियो के रूप में चलेगी।
 settings.audio.atmos.passthrough: Passthrough
 settings.audio.atmos.passthrough.desc: सभी ऑडियो प्रोसेसिंग को बायपास करता है। मल्टीचैनल Atmos सीधे डिवाइस पर भेजा जाता है। AV रिसीवर के लिए आदर्श।
-settings.audio.atmos.passthrough.descV2: मल्टीचैनल Atmos को AV रिसीवर के लिए सीधे डिवाइस पर भेजता है। Audio Lab, इक्वलाइज़र और Listening Mode बायपास हो जाते हैं।
+settings.audio.atmos.passthrough.descV2: AV रिसीवर के लिए मल्टीचैनल Atmos को सीधे डिवाइस तक भेजता है। Audio Lab, equalizer और listening mode बायपास हो जाते हैं।
 settings.audio.atmos.passthroughActive: Passthrough सक्रिय है — पूर्ण सेटिंग्स में बदलें।
-settings.audio.atmos.standard.desc: CiderAudio प्रोसेसिंग के साथ मल्टीचैनल Atmos, Crossfade, Automix और Seamless Transitions सामान्य रूप से काम करते रहेंगे।
+settings.audio.atmos.standard.desc: CiderAudio प्रोसेसिंग के साथ मल्टीचैनल Atmos। Crossfade, Automix और seamless transitions अपेक्षित रूप से काम करते रहते हैं।
 settings.audio.atmosMode: Atmos मोड
 settings.audio.atmosMode.switchFromPassthroughConfirm: Passthrough मोड से स्विच करने के लिए ऐप को रीफ़्रेश करना होगा। क्या आप जारी रखना चाहते हैं?
 settings.audio.atmosMode.switchToPassthroughConfirm: Passthrough मोड पर स्विच करने के लिए ऐप को रीफ़्रेश करना होगा। क्या आप जारी रखना चाहते हैं?
@@ -3206,7 +3249,7 @@ settings.audio.hostCapture.apps.running: चल रहे ऐप्स
 settings.audio.hostCapture.apps.runningNow: चल रहा है
 settings.audio.hostCapture.apps.title: ऑटो-कैप्चर ट्रिगर ऐप्स
 settings.audio.hostCapture.apps.triggers: ट्रिगर्स
-settings.audio.hostCapture.auto: ऐप के साथ ऑटो-सक्षम करें
+settings.audio.hostCapture.auto: ऐप के साथ स्वतः सक्षम करें
 settings.audio.hostCapture.autoHint: चुना हुआ ऐप चलने पर कैप्चर को स्वचालित रूप से चालू करें, और उसके बंद होने पर बंद करें।
 settings.audio.hostCapture.autoNote: चुना हुआ ऐप चलने पर ऑटो-ऑन।
 settings.audio.hostCapture.bit16: 16-बिट
@@ -3216,7 +3259,7 @@ settings.audio.hostCapture.bitAuto: ऑटो (उच्चतम)
 settings.audio.hostCapture.bitDepth: बिट डेप्थ
 settings.audio.hostCapture.bitDepthHint: ऑटो आपके डिवाइस द्वारा समर्थित उच्चतम डेप्थ का उपयोग करता है।
 settings.audio.hostCapture.exclusiveNote: एक्सक्लूसिव आउटपुट, बिट-ट्रांसपेरेंट, कैप्चर करने योग्य नहीं।
-settings.audio.hostCapture.gain: आउटपुट लेवल ट्रिम
+settings.audio.hostCapture.gain: आउटपुट स्तर ट्रिम
 settings.audio.hostCapture.gainHint: कैप्चर की गई लाउडनेस को सामान्य आउटपुट से मिलाएं।
 settings.audio.hostCapture.mode: ऑडियो आउटपुट मोड
 settings.audio.hostCapture.modeCapture: कैप्चर
@@ -3262,16 +3305,45 @@ settings.audio.section.playback: प्लेबैक
 settings.audio.section.playback.description: ऑडियो गुणवत्ता, स्पेशियल ऑडियो, सुनने के मोड, और पॉडकास्ट कितनी तेज़ी से चलते हैं।
 settings.audio.section.volume: वॉल्यूम
 settings.audio.section.volume.description: लाउडनेस मैचिंग, स्क्रॉल व्हील स्तर को कितना आगे बढ़ाता है, और स्लाइडर कैसे रीड करता है।
+settings.audio.signal.atmosCodecs: Atmos कोडेक उपलब्ध
+settings.audio.signal.atmosNativeMac: नेटिव (macOS)
+settings.audio.signal.atmosNativeMacTooltip: Dolby Atmos को macOS CoreAudio द्वारा नेटिव रूप से डिकोड किया जाता है। स्पेशियल ऑडियो रेंडरिंग सिस्टम द्वारा संभाली जाती है।
+settings.audio.signal.atmosOffTooltip: इस डिवाइस के लिए Atmos बंद है। कंटेंट सामान्य स्टीरियो में चलता है।
+settings.audio.signal.atmosOffTooltipMac: इस डिवाइस के लिए Atmos बंद है।
+settings.audio.signal.atmosSupported: समर्थित
+settings.audio.signal.binauralSubtitle: हेडफ़ोन रेंडरिंग
+settings.audio.signal.binauralTooltip: Atmos कंटेंट CiderAudio पाइपलाइन के माध्यम से बाइनॉरल स्टीरियो में रेंडर किया जाता है।
+settings.audio.signal.channels: "{count} चैनल"
+settings.audio.signal.codecs: कोडेक
+settings.audio.signal.deviceRateTooltip: वर्तमान डिवाइस की सैंपल रेट
+settings.audio.signal.directOutput: डायरेक्ट आउटपुट
+settings.audio.signal.directOutputChannels: डायरेक्ट आउटपुट ({count}ch)
+settings.audio.signal.loading: लोड हो रहा है…
+settings.audio.signal.nativeMatch: नेटिव मैच
+settings.audio.signal.noAtmosCodecs: कोई Atmos कोडेक नहीं
+settings.audio.signal.output: आउटपुट
+settings.audio.signal.passthroughMode: पासथ्रू मोड
+settings.audio.signal.passthroughSubtitle: ऑडियो प्रोसेसिंग बायपास, डिवाइस को सीधा आउटपुट
+settings.audio.signal.passthroughTooltip: ऑडियो सभी प्रोसेसिंग को बायपास करके सीधे डिवाइस को भेजा जाता है। क्रॉसफ़ेड, Automix और सीमलेस ट्रांज़िशन जैसी CiderAudio सुविधाएँ निष्क्रिय हैं।
+settings.audio.signal.sampleRate: सैंपल रेट
+settings.audio.signal.source: स्रोत {rate}
+settings.audio.signal.sourceRateTooltip: Apple Music प्लेबैक रेट
+settings.audio.signal.standardSubtitle: मल्टीचैनल + CiderAudio
+settings.audio.signal.standardTooltip: मल्टीचैनल Atmos कंटेंट CiderAudio प्रोसेसिंग से चलाया जाता है और डिवाइस की क्षमताओं के अनुसार रेंडर किया जाता है।
+settings.audio.signal.stereo: स्टीरियो
+settings.audio.signal.surround51: 5.1 सराउंड
+settings.audio.signal.surround71: 7.1+ सराउंड
+settings.audio.signal.upsamplingTooltip: सिस्टम Apple Music स्रोत रेट से अपसैंपलिंग कर रहा है
 settings.automix.allowTempoKeyShifts: टेम्पो/की शिफ्ट की अनुमति दें
 settings.automix.allowTempoKeyShiftsHint: ट्रांज़िशन को ऊर्जावान बनाए रखने के लिए छोटे बदलावों की अनुमति दें। (अस्थायी रूप से अक्षम, इस पर काम चल रहा है।)
 settings.automix.description: टेम्पो और की (key) के आधार पर ट्रैक्स के बीच समझदारी से ट्रांज़िशन करें।
 settings.automix.descriptionV2: एक निश्चित क्रॉसफ़ेड के बजाय प्रत्येक ट्रैक के अपने फ़ेड और वोकल डेटा का उपयोग करके ट्रैक्स को मिलाता है।
-settings.automix.disableFor: इनके लिए ऑटोमिक्स अक्षम करें...
+settings.automix.disableFor: इनके लिए Automix बंद करें...
 settings.automix.disableForAlbums: एल्बम
 settings.automix.disableForAlbumsHint: एल्बम से चलाते समय ऑटोमिक्स लागू न करें।
-settings.automix.disableForAutoplayContinuation: ऑटोप्ले जारी रखना
+settings.automix.disableForAutoplayContinuation: ऑटोप्ले निरंतरता
 settings.automix.disableForAutoplayContinuationHint: मूल कलेक्शन समाप्त होने के बाद प्लेबैक के स्टेशन या ऑटोप्ले ट्रैक्स पर जाने पर ऑटोमिक्स लागू न करें।
-settings.automix.disableForDjMixes: डीजे मिक्स
+settings.automix.disableForDjMixes: DJ मिक्स
 settings.automix.disableForDjMixesHint: DJ मिक्स और लगातार मिक्स के लिए ऑटोमिक्स लागू न करें।
 settings.automix.disableForLiveAlbums: लाइव एल्बम
 settings.automix.disableForLiveAlbumsHint: लाइव रिकॉर्डिंग और कॉन्सर्ट के लिए automix लागू न करें।
@@ -3283,11 +3355,11 @@ settings.automix.normalizeDurationHint: लाउडनेस मैचिंग
 settings.automix.spectralSeparation: स्पेक्ट्रल सेपरेशन
 settings.automix.spectralSeparationHint: एक ट्रांज़िशन के दौरान दोनों ट्रैक्स को फ़्रीक्वेंसी में कितनी दूर अलग किया जाता है।
 settings.automix.spectralSeparationHintV2: किसी ट्रांज़िशन के दौरान दोनों ट्रैक आवृत्ति में कितनी दूर अलग किए जाते हैं ({value})।
-settings.automix.speedSettle: स्पीड सेटल होने का समय
+settings.automix.speedSettle: स्पीड सेटल समय
 settings.automix.speedSettleHint: टेम्पो-मैच किए गए मिक्स के बाद प्लेबैक स्पीड को सामान्य होने में कितना समय लगता है ({ms}ms)
 settings.automix.tempoAlign: बीट मैचिंग
 settings.automix.tempoAlignHint: जब दोनों ट्रैक्स पहले से ही करीब हों, तो उन्हें एक सीध में लाने के लिए टेम्पो को थोड़ा खिसकाएं।
-settings.automix.vocalGuard: वोकल्स सुरक्षित रखें
+settings.automix.vocalGuard: वोकल सुरक्षित करें
 settings.automix.vocalGuardHint: जब दोनों ट्रैक्स में एक ही समय पर गायन हो रहा हो, तो मिक्स को छोटा करें।
 settings.cache.all: सभी
 settings.cache.artistChips: आर्टिस्ट चिप्स
@@ -3300,15 +3372,15 @@ settings.cache.library: लाइब्रेरी
 settings.cache.marketplaceListings: मार्केटप्लेस लिस्टिंग
 settings.cache.playlistIndex: प्लेलिस्ट इंडेक्स
 settings.cache.prompt.artwork.cleared.message: आर्टवर्क कैश साफ़ कर दिया गया है। क्या अभी रीफ़्रेश करें?
-settings.cache.prompt.artwork.cleared.title: आर्टवर्क कैश साफ़ किया गया
+settings.cache.prompt.artwork.cleared.title: आर्टवर्क कैश साफ़ हो गया
 settings.cache.prompt.artwork.title: आर्टवर्क कैश साफ़ करें
 settings.cache.prompt.clearAll.cleared.message: कैश साफ़ कर दिया गया है। क्या अभी रीफ़्रेश करें?
-settings.cache.prompt.clearAll.cleared.title: कैश साफ़ किया गया
+settings.cache.prompt.clearAll.cleared.title: कैश साफ़ हो गया
 settings.cache.prompt.clearAll.title: कैश साफ़ करें
 settings.cache.prompt.marketplace.cleared.message: कैश साफ़ कर दिया गया है। क्या अभी रीफ़्रेश करें?
-settings.cache.prompt.marketplace.cleared.title: मार्केटप्लेस कैश साफ़ किया गया
+settings.cache.prompt.marketplace.cleared.title: मार्केटप्लेस कैश साफ़ हो गया
 settings.cache.prompt.playlist.cleared.message: कैश साफ़ कर दिया गया है। क्या अभी रीफ़्रेश करें?
-settings.cache.prompt.playlist.cleared.title: प्लेलिस्ट कैश साफ़ किया गया
+settings.cache.prompt.playlist.cleared.title: प्लेलिस्ट कैश साफ़ हो गया
 settings.cache.recentlyModifiedPlaylists: हाल ही में संशोधित प्लेलिस्ट
 settings.cache.storageUsed: "उपयोग किया गया स्टोरेज: {{ usage }}"
 settings.client.genten.enableTrayIcon: ट्रे आइकन सक्षम करें
@@ -3445,9 +3517,9 @@ settings.configBackups.empty: अभी तक कोई बैकअप सह�
 settings.configBackups.subtitle: सेटिंग्स फ़ाइल के ओवरराइट होने से पहले Cider उसकी एक प्रति रखता है। यदि आपकी सेटिंग्स खो गई हैं या रीसेट हो गई हैं, तो किसी एक को रीस्टोर करें।
 settings.configBackups.unreachable: Cider अभी आपके सहेजे गए बैकअप तक नहीं पहुँच सका, इसलिए उन्हें सूचीबद्ध नहीं किया जा सकता। कुछ देर बाद फिर से प्रयास करें।
 settings.configBackups.unsupported: यह क्लाइंट कॉन्फ़िगरेशन बैकअप नहीं रखता है।
-settings.connectivity.connectedDevices: कनेक्टेड डिवाइस
+settings.connectivity.connectedDevices: जुड़े हुए डिवाइस
 settings.connectivity.connectedDevices.desc: अपने पेयर्ड Cider Remote डिवाइस प्रबंधित करें
-settings.connectivity.connectNewDevice: नया डिवाइस कनेक्ट करें
+settings.connectivity.connectNewDevice: नया डिवाइस जोड़ें
 settings.connectivity.lanPairing.desc: LAN पर पेयरिंग Cider को आपके स्थानीय नेटवर्क से कनेक्शन स्वीकार करने की अनुमति देता है।
 settings.connectivity.lastfm.context: स्क्रॉबलिंग और 'अभी चल रहा है' अपडेट सक्षम करने के लिए Last.FM में साइन इन करें
 settings.connectivity.lastfm.header.trackAdjustments: ट्रैक एडजस्टमेंट
@@ -3467,7 +3539,7 @@ settings.connectivity.lastfm.useAlbumArtist.description: ट्रैक कल�
 settings.connectivity.legacyToken: लेगेसी (पूर्ण एक्सेस)
 settings.connectivity.legacyToken.tooltip: यह टोकन स्कोप्ड एक्सेस से पुराना है और सभी एक्सेस प्रदान करता है। इसे सीमित करने के लिए फिर से जारी करें।
 settings.connectivity.noDevices: कोई डिवाइस कनेक्टेड नहीं है
-settings.connectivity.requireTokens: API टोकन की आवश्यकता है
+settings.connectivity.requireTokens: API टोकन आवश्यक करें
 settings.connectivity.requireTokens.desc: सक्षम होने पर, सभी API अनुरोधों में एक मान्य टोकन होना चाहिए।
 settings.connectivity.scrobbler: स्क्रॉबलर
 settings.connectivity.scrobbler.blacklist: ब्लैकलिस्ट
@@ -3541,16 +3613,17 @@ settings.connectivity.section.parties.description: अन्य Cider उपय�
 settings.connectivity.section.vrOverlay.description: RPC के ज़रिए इस ऐप से कम्यूनिकेट करने वाला, SteamVR और VDXR के ऊपर एक Cider प्लेयर और पिन किए जा सकने वाले पैनल।
 settings.connectivity.tokenCopied: टोकन क्लिपबोर्ड पर कॉपी किया गया
 settings.connectivity.tokens: टोकन
+settings.connectivity.tokens.empty: अभी कोई टोकन नहीं है।
 settings.contentFilter.description: Browse और Listen Now के वे सेक्शन जिनके शीर्षक या कंटेंट इन कीवर्ड से मेल खाते हैं, उन्हें छिपा दिया जाएगा।
 settings.contentFilter.empty: अभी तक कोई कीवर्ड नहीं जोड़ा गया है।
 settings.contentFilter.inputPlaceholder: कीवर्ड जोड़ें...
-settings.contentFilter.title: कीवर्ड फ़िल्टर करें
-settings.crossfade.advanced: उन्नत क्रॉसफ़ेड सेटिंग्स
+settings.contentFilter.title: फ़िल्टर कीवर्ड
+settings.crossfade.advanced: उन्नत क्रॉसफ़ेड सेटिंग
 settings.crossfade.automixStillBlends: Automix चालू है, इसलिए गाने अब भी एक-दूसरे में मिल सकते हैं। सभी ब्लेंडिंग रोकने के लिए नीचे Automix बंद करें।
 settings.crossfade.description: अगले ट्रैक को फ़ेड-इन करते हुए वर्तमान ट्रैक को आसानी से फ़ेड-आउट करें।
-settings.crossfade.disableFor: इसके लिए क्रॉसफ़ेड अक्षम करें...
+settings.crossfade.disableFor: इनके लिए क्रॉसफ़ेड बंद करें...
 settings.crossfade.duration: अवधि
-settings.crossfade.enable: क्रॉसफ़ेड सक्षम करें
+settings.crossfade.enable: क्रॉसफ़ेड चालू करें
 settings.crossfade.exclusions.albums: एल्बम
 settings.crossfade.exclusions.albums.description: एल्बम से चलाते समय क्रॉसफ़ेड न करें।
 settings.crossfade.exclusions.autoplayContinuation: ऑटोप्ले जारी रखना
@@ -3567,7 +3640,7 @@ settings.crossfade.smoothSkip: स्मूथ स्किप
 settings.crossfade.smoothSkip.description: स्किप करते समय ट्रैक्स के बीच फ़ेड करें।
 settings.crossfade.tempoSensitivity: टेम्पो संवेदनशीलता
 settings.crossfade.tempoSensitivity.description: टेम्पो परिवर्तनों के प्रति प्रतिक्रिया ({{ value }}%)
-settings.customCss.createSnippet: स्निपेट बनाएं
+settings.customCss.createSnippet: स्निपेट बनाएँ
 settings.customCss.migrate.confirm: यह आपके मौजूदा कस्टम CSS को एक नए स्निपेट में बदल देगा और वर्तमान कस्टम CSS को साफ़ कर देगा। क्या आप आगे बढ़ना चाहते हैं?
 settings.customCss.migrate.title: कस्टम CSS बदलें
 settings.customCss.title: कस्टम CSS
@@ -3606,12 +3679,12 @@ settings.extensions.addBuiltInSnippet: एक इन-बिल्ट स्न�
 settings.extensions.browsePluginMarket: प्लगइन मार्केटप्लेस ब्राउज़ करें
 settings.extensions.browseThemeMarket: थीम मार्केटप्लेस ब्राउज़ करें
 settings.extensions.byAuthor: "लेखक: {author}"
-settings.extensions.checkUpdates: स्टार्टअप पर एक्सटेंशन अपडेट की जाँच करें
+settings.extensions.checkUpdates: स्टार्टअप पर एक्सटेंशन अपडेट जाँचें
 settings.extensions.checkUpdates.desc: हर बार Cider लॉन्च होने पर थीम, स्निपेट और प्लगइन अपडेट की जाँच करें।
 settings.extensions.createPlugin: एक प्लगइन बनाएं
 settings.extensions.createSnippet: नया स्निपेट बनाएं
 settings.extensions.createTheme: नई थीम बनाएं
-settings.extensions.cssSnippets: CSS स्निपेट्स
+settings.extensions.cssSnippets: CSS स्निपेट
 settings.extensions.fileWatcher: थीम फ़ाइल वॉचर सक्षम करें
 settings.extensions.fileWatcher.desc: डिस्क पर फ़ाइलें बदलने पर थीम स्टाइलशीट को स्वचालित रूप से रीलोड करें।
 settings.extensions.importFromFile: फ़ाइल से इम्पोर्ट करें
@@ -3637,28 +3710,32 @@ settings.extensions.plugins.uninstallTitle: प्लगइन अनइंस�
 settings.extensions.refresh: एक्सटेंशन रीफ़्रेश करें
 settings.extensions.refresh.desc: डिस्क से थीम, स्निपेट और प्लगइन्स को फिर से स्कैन करें।
 settings.extensions.refreshed: थीम, स्निपेट और प्लगइन्स रीफ़्रेश किए गए
+settings.extensions.snippets.author: "लेखक: {{ author }}"
 settings.extensions.snippets.created: स्निपेट बनाया गया
-settings.extensions.snippets.createTitle: नया CSS स्निपेट बनाएं
+settings.extensions.snippets.createTitle: नया CSS स्निपेट बनाएँ
 settings.extensions.snippets.deleteConfirm: क्या आप वाकई इस CSS स्निपेट को हटाना चाहते हैं? इस कार्रवाई को पूर्ववत नहीं किया जा सकता।
 settings.extensions.snippets.deleted: स्निपेट हटा दिया गया
-settings.extensions.snippets.deleteTitle: CSS स्निपेट हटाएं
+settings.extensions.snippets.deleteTitle: CSS स्निपेट हटाएँ
 settings.extensions.snippets.empty: कोई CSS स्निपेट इंस्टॉल नहीं है।
 settings.extensions.snippets.exported: स्निपेट एक्सपोर्ट किया गया
 settings.extensions.snippets.imported: "{{ count }} स्निपेट इम्पोर्ट किए गए"
 settings.extensions.snippets.importFailed: "{{ file }} को इम्पोर्ट करने में विफल: {{ error }}"
+settings.extensions.snippets.invalidFile: "अमान्य फ़ाइल प्रारूप: {{ file }}"
 settings.extensions.snippets.namePrompt: अपने नए CSS स्निपेट के लिए नाम दर्ज करें।
 settings.extensions.snippets.orderUpdated: क्रम अपडेट किया गया
 settings.extensions.snippets.saved: स्निपेट सहेजा गया
 settings.extensions.themeCreated: नया थीम सफलतापूर्वक बनाया गया
 settings.extensions.themes.activeCount: "{{ count }} सक्रिय"
 settings.extensions.themes.empty: कोई थीम इंस्टॉल नहीं है।
+settings.extensions.themes.getMore: और थीम पाएँ
+settings.extensions.themes.refreshList: थीम सूची ताज़ा करें
 settings.extensions.themes.stylesheetMany: "{{ count }} स्टाइलशीट्स"
 settings.extensions.themes.stylesheetOne: 1 स्टाइलशीट
 settings.extensions.viewOnMarketplace: मार्केटप्लेस पर देखें
 settings.fonts.description: ऐप में उपयोग किए जाने वाले फ़ॉन्ट को बदलें
-settings.fonts.lyrics: लिरिक्स फ़ॉन्ट
+settings.fonts.lyrics: बोल फ़ॉन्ट
 settings.fonts.lyrics.description: लिरिक्स के लिए उपयोग किया जाने वाला फ़ॉन्ट
-settings.fonts.primary: प्राथमिक फ़ॉन्ट
+settings.fonts.primary: मुख्य फ़ॉन्ट
 settings.fonts.primary.description: ऐप में अधिकांश टेक्स्ट के लिए उपयोग किया जाने वाला फ़ॉन्ट
 settings.fonts.title: फ़ॉन्ट
 settings.gapless.description: बिना किसी ध्यान देने योग्य अंतर के लगातार ऑडियो ट्रैक्स के सहज प्लेबैक की अनुमति देता है।
@@ -3677,6 +3754,7 @@ settings.general.section.language: भाषा
 settings.general.section.language.description: इंटरफ़ेस की भाषा, और इसके अनुवादों की रिपोर्ट करने या श्रेय देने का तरीका।
 settings.general.section.playback: प्लेबैक
 settings.general.section.playback.description: जब कुछ भी नहीं चल रहा हो तो प्ले बटन क्या करता है।
+settings.general.section.playback.descriptionV2: कुछ भी न चल रहा हो तो प्ले बटन क्या करता है, और प्लेबैक दर कहाँ बदली जा सकती है।
 settings.general.section.privacy: गोपनीयता
 settings.general.section.privacy.description: वह नाम जिससे Cider आपका अभिवादन करता है, और क्या यह आपके स्थान का उपयोग कर सकता है।
 settings.general.section.queue: कतार
@@ -3753,7 +3831,7 @@ settings.intensive.animatedArtworkQuality.description: उच्च गुणव
 settings.intensive.catalogAnimatedArtwork.description: कैटलॉग ब्राउज़ करते समय एक साथ कई एनिमेटेड आर्टवर्क चलाता है।
 settings.intensive.characterFlow.description: पूरी लाइनों के बजाय प्रत्येक लिरिक्स के अक्षर को व्यक्तिगत रूप से एनिमेट करता है।
 settings.intensive.confirm.enable: सक्षम करें
-settings.intensive.confirm.message: यह फ़ीचर परफ़ॉर्मेंस पर भारी पड़ता है और इससे CPU/GPU उपयोग, गर्मी और बैटरी खर्च काफी बढ़ सकती है — विशेष रूप से कमज़ोर हार्डवेयर पर। आप सेटिंग्स के शीर्ष पर बल्ब बटन के माध्यम से किसी भी समय भारी फ़ीचर्स की समीक्षा कर सकते हैं।
+settings.intensive.confirm.message: यह सुविधा परफ़ॉर्मेंस-गहन है और CPU/GPU उपयोग, गर्मी और बैटरी खपत को काफ़ी बढ़ा सकती है, खासकर कम क्षमता वाले हार्डवेयर पर। आप सेटिंग › पावर उपयोग में कभी भी गहन सुविधाएँ देख सकते हैं।
 settings.intensive.emotionEngine.description: कलर पैलेट प्राप्त करने के लिए एल्बम आर्टवर्क का विश्लेषण करता है।
 settings.intensive.fsrUpscale.description: FidelityFX Super Resolution के साथ GPU पर एल्बम आर्टवर्क को अपस्केल करता है।
 settings.intensive.immersiveAnimatedArtwork.description: Immersive व्यू के अंदर एनिमेटेड आर्टवर्क चलाता है।
@@ -3770,7 +3848,7 @@ settings.intensive.viewTransitions.description: कुछ व्यू बदल
 settings.intensive.warning: परफ़ॉर्मेंस पर भारी — उच्च CPU/GPU उपयोग का कारण बन सकता है।
 settings.keybindings.recordingHint: रिकॉर्डिंग जारी है। रद्द करने के लिए Escape दबाएं
 settings.lyrics.card.providers: प्रदाता
-settings.lyrics.card.songOverrides: गीत ओवरराइड
+settings.lyrics.card.songOverrides: गाने के ओवरराइड
 settings.lyrics.localeOverrides: लोकेल-आधारित नियम
 settings.lyrics.localeOverrides.add: लोकेल ओवरराइड जोड़ें
 settings.lyrics.localeOverrides.audioLocale: ऑडियो लोकेल
@@ -3784,13 +3862,13 @@ settings.lyrics.localeOverrides.provider.apple: Apple Music
 settings.lyrics.localeOverrides.provider.auto: डिफ़ॉल्ट (ऑटो)
 settings.lyrics.localeOverrides.provider.mxm: Musixmatch
 settings.lyrics.localeOverrides.provider.netease: NetEase
-settings.lyrics.localeOverrides.provider.user: उपयोगकर्ता द्वारा सबमिट किया गया
+settings.lyrics.localeOverrides.provider.user: उपयोगकर्ता द्वारा सबमिट
 settings.lyrics.localeOverrides.providerLabel: "प्रदाता:"
 settings.lyrics.localeOverrides.translateTo: इसमें अनुवाद करें
 settings.lyrics.localeOverrides.translateToLabel: "इसमें अनुवाद करें:"
 settings.lyrics.player.cascade: कैस्केड तीव्रता
 settings.lyrics.player.cascade.desc: एक के बाद एक आने वाली पंक्तियों का प्रभाव कितना स्पष्ट होगा।
-settings.lyrics.player.cta: लिरिक्स एनिमेशन
+settings.lyrics.player.cta: बोल एनिमेशन
 settings.lyrics.player.cta.description: लिरिक्स एनिमेशन के रूप और व्यवहार को बारीकी से ट्यून करें, जिसमें एम्फेसिस, ग्लो, लिफ्ट, स्पीड, फेड और कैस्केड प्रभाव शामिल हैं।
 settings.lyrics.player.deselScale: निष्क्रिय पंक्ति का आकार
 settings.lyrics.player.deselScale.desc: गैर-सक्रिय पंक्तियों का आकार; इसे कम करने से सक्रिय पंक्ति अधिक उभर कर दिखती है।
@@ -3807,11 +3885,11 @@ settings.lyrics.player.reset: डिफ़ॉल्ट पर रीसेट �
 settings.lyrics.player.speed: एनिमेशन की गति
 settings.lyrics.player.speed.desc: पंक्ति-बदलाव की स्प्रिंग गति — अधिक मान इसे और तेज़ बनाता है।
 settings.lyrics.player.title: लिरिक्स एनिमेशन
-settings.lyrics.scroll.duration: लिरिक्स स्क्रॉल अवधि
+settings.lyrics.scroll.duration: बोल स्क्रॉल अवधि
 settings.lyrics.scroll.duration.desc1: लिरिक्स स्क्रॉल करने की गति को इसमें समायोजित करें
 settings.lyrics.scroll.duration.desc2: इससे गाने की गति पर कोई प्रभाव नहीं पड़ेगा।
 settings.lyrics.scroll.easing: ईज़िंग फ़ंक्शन
-settings.lyrics.scroll.easing.curveExample: "वक्र उदाहरण:"
+settings.lyrics.scroll.easing.curveExample: "कर्व उदाहरण:"
 settings.lyrics.scroll.easing.description1: लिरिक्स स्क्रॉलिंग के ईज़िंग फ़ंक्शन को समायोजित करें। यह एक CSS
 settings.lyrics.scroll.easing.description2: प्रॉपर्टी है।
 settings.lyrics.scroll.easing.namedExample: "नामित उदाहरण:"
@@ -3829,13 +3907,13 @@ settings.lyrics.section.sources: स्रोत
 settings.lyrics.section.sources.description: बोल (lyrics) कहाँ से आते हैं, और प्रति-भाषा या प्रति-ट्रैक नियम जो डिफ़ॉल्ट प्रदाता से ऊपर लागू होते हैं।
 settings.lyrics.section.translation: अनुवाद
 settings.lyrics.section.translation.description: अनुवादित बोल, वे किस भाषा में दिखाई देंगे, और क्या मूल बोल स्क्रीन पर बने रहेंगे।
-settings.lyrics.trackOverrides.clearAll: सभी ओवरराइड साफ़ करें
+settings.lyrics.trackOverrides.clearAll: सभी ओवरराइड हटाएँ
 settings.lyrics.trackOverrides.desc: यहाँ सूचीबद्ध ट्रैक हमेशा आपके द्वारा लॉक किए गए लिरिक्स प्रदाता या आपके द्वारा मैन्युअल रूप से सेट की गई वोकल स्थिति का उपयोग करते हैं, न कि Apple द्वारा रिपोर्ट की गई स्थिति का। ये ओवरराइड लिरिक्स मेनू और ट्रैक के राइट-क्लिक मेनू से सेट किए जाते हैं।
 settings.lyrics.trackOverrides.empty: अभी तक कुछ भी ओवरराइड नहीं किया गया है। उन मेनू से आपके द्वारा लॉक की गई कोई भी चीज़ यहाँ सूचीबद्ध होगी।
 settings.lyrics.trackOverrides.lyricsForced: लिरिक्स फ़ोर्स किए गए
 settings.lyrics.trackOverrides.markedInstrumental: इंस्ट्रूमेंटल चिह्नित किया गया
 settings.lyrics.trackOverrides.providerLabel: "प्रदाता:"
-settings.lyrics.trackOverrides.remove: ओवरराइड हटाएं
+settings.lyrics.trackOverrides.remove: ओवरराइड हटाएँ
 settings.lyrics.trackOverrides.title: ट्रैक-विशिष्ट ओवरराइड
 settings.micaish.blurAmount: ब्लर की मात्रा
 settings.micaish.brightness: चमक %
@@ -3852,7 +3930,9 @@ settings.miniplayer.unpinWindow: विंडो अनपिन करें
 settings.nav.accessibility: सुलभता
 settings.nav.accounts: खाते
 settings.nav.advanced: उन्नत
+settings.nav.appleMusicWordmark: music
 settings.nav.audio: ऑडियो
+settings.nav.categories: सेटिंग श्रेणियाँ
 settings.nav.concerts: कंसर्ट
 settings.nav.config-backups: कॉन्फ़िगरेशन बैकअप
 settings.nav.connectivity: कनेक्शन
@@ -3861,9 +3941,11 @@ settings.nav.general: सामान्य
 settings.nav.group.account: खाता
 settings.nav.group.advanced: उन्नत
 settings.nav.group.appearance: रूप-रंग
+settings.nav.group.connections: कनेक्शन
 settings.nav.group.general: सामान्य
 settings.nav.group.integrations: इंटीग्रेशन
 settings.nav.group.library: लाइब्रेरी
+settings.nav.group.lookAndFeel: लुक और फ़ील
 settings.nav.group.playback: प्लेबैक
 settings.nav.lyrics: लिरिक्स
 settings.nav.notifications: नोटिफिकेशन
@@ -3872,10 +3954,28 @@ settings.nav.power: पावर उपयोग
 settings.nav.privacy: गोपनीयता
 settings.nav.profile: प्रोफ़ाइल
 settings.nav.search: खोज
-settings.nav.searchPlaceholder: सेटिंग्स खोजें...
+settings.nav.searchPlaceholder: सेटिंग खोजें
+settings.nav.summary.accessibility: बोल्ड टेक्स्ट, इंटरफ़ेस स्केल, मोशन, साउंड इफ़ेक्ट
+settings.nav.summary.advanced: बैकअप, समस्या निवारण, प्रयोग
+settings.nav.summary.audio: आउटपुट, गुणवत्ता, क्रॉसफ़ेड, नॉर्मलाइज़ेशन
+settings.nav.summary.concerts: स्थान, दायरा, क्रम
+settings.nav.summary.connectivity: Discord, स्क्रोबलिंग, लिसनिंग पार्टी, रिमोट
+settings.nav.summary.extensions: थीम, CSS स्निपेट, प्लगइन
+settings.nav.summary.general: स्टार्टअप, कतार, स्लीप टाइमर, कीबाइंडिंग
+settings.nav.summary.lyrics: स्रोत, अनुवाद, डिस्प्ले, टाइमिंग
+settings.nav.summary.notifications: श्रेणियाँ, इतिहास, सिस्टम सूचनाएँ
+settings.nav.summary.power: परफ़ॉर्मेंस, फ़्रेम रेट, पावर सेवर
+settings.nav.summary.profile: Apple Music खाता
+settings.nav.summary.sid: Sid कहाँ दिखता है और यह कैसे काम करता है
+settings.nav.summary.smartPlaylists: स्मार्ट प्लेलिस्ट के नियम और रखरखाव
+settings.nav.summary.subscriberYear: एक वर्ष के लिए सब्सक्राइबर
+settings.nav.summary.subscriberYears: "{{count}} वर्षों के लिए सब्सक्राइबर"
+settings.nav.summary.tweaks: प्लेयर, साइडबार और अन्य में छोटे बदलाव
+settings.nav.summary.visual: कलर स्कीम, लेआउट, विंडो, इमर्सिव
 settings.nav.themes: थीम
+settings.nav.tweaks: ट्वीक्स
 settings.nav.updates: अपडेट
-settings.nav.visual: विज़ुअल
+settings.nav.visual: दिखावट
 settings.normalization.louderTargetHint: यदि 100% वॉल्यूम पर भी Cider की आवाज़ बहुत धीमी लगती है, तो अधिक तेज़ लक्ष्य चुनें। उच्च LUFS मान अधिक तेज़ सुनाई देते हैं, लेकिन क्लिपिंग को रोकने के लिए पीक प्रोटेक्शन बूस्ट को सीमित कर सकता है।
 settings.normalization.presets.apple: Apple
 settings.normalization.presets.balanced: संतुलित
@@ -3894,7 +3994,7 @@ settings.notifications.category.extensionsThemes: एक्सटेंशन �
 settings.notifications.category.extensionsThemes.description: प्लगइन्स, थीम और स्निपेट्स इंस्टॉल करना, अपडेट करना और हटाना।
 settings.notifications.category.general: सामान्य
 settings.notifications.category.general.description: कोई भी चीज़ जिसकी अपनी कोई श्रेणी नहीं है।
-settings.notifications.category.listeningTogether: एक साथ सुनना
+settings.notifications.category.listeningTogether: साथ में सुनना
 settings.notifications.category.listeningTogether.description: पार्टी आमंत्रण, मेहमानों का शामिल होना या छोड़ना, और सेशन की स्थिति।
 settings.notifications.category.lyrics: लिरिक्स
 settings.notifications.category.lyrics.description: लिरिक्स खोजना, योगदान और लिप्यंतरण।
@@ -3918,6 +4018,7 @@ settings.notifications.section.history: इतिहास
 settings.notifications.section.muted: म्यूट किए गए नोटिफिकेशन
 settings.notifications.section.system: सिस्टम नोटिफिकेशन
 settings.notifications.summary.categoriesOn: श्रेणियां चालू
+settings.notifications.summary.categoriesOnCount: "{{total}} में से {{on}} चालू"
 settings.notifications.summary.description: चुनें कि Cider आपको किस प्रकार के नोटिफिकेशन दिखाए। आपके द्वारा बंद किए गए नोटिफिकेशन भी आपकी नोटिफिकेशन सूची में रिकॉर्ड किए जाएंगे, ताकि आप उन्हें बाद में देख सकें।
 settings.notifications.unmute: अनम्यूट करें
 settings.notifications.unmuteAll: सभी अनम्यूट करें
@@ -3933,24 +4034,24 @@ settings.notyf.visual.plugin.install.success: प्लगइन सफलता
 settings.notyf.visual.theme.install.error: थीम इंस्टॉलेशन विफल रहा
 settings.notyf.visual.theme.install.success: थीम सफलतापूर्वक इंस्टॉल हो गई
 settings.notyf.visual.theme.updateAvailable: "[थीम्स] {{ theme }} के लिए एक अपडेट उपलब्ध है"
-settings.option.accessibility.boldText: बोल्ड टेक्स्ट
+settings.option.accessibility.boldText: मोटा टेक्स्ट
 settings.option.accessibility.boldText.description: बेहतर पठनीयता के लिए पूरे ऐप में टेक्स्ट की मोटाई बढ़ाता है।
-settings.option.accessibility.cardHoverMotion: कार्ड होवर मोशन
+settings.option.accessibility.cardHoverMotion: कार्ड होवर गति
 settings.option.accessibility.cardHoverMotion.description: क्लिक करने योग्य कार्ड (एल्बम टाइल्स, फ़ीचर कार्ड, ग्रिड आइटम) होवर करने पर धीरे से बड़े होते हैं और दबाने पर सिकुड़ते हैं। डिफ़ॉल्ट रूप से बंद।
-settings.option.accessibility.enableSoundEffects: ध्वनि प्रभाव सक्षम करें
+settings.option.accessibility.enableSoundEffects: ध्वनि प्रभाव चालू करें
 settings.option.accessibility.enableSoundEffects.description: बटन, स्विच और स्लाइडर के साथ इंटरैक्ट करते समय हल्की आवाज़ें चलाएं।
-settings.option.accessibility.forceFocusVisible: हमेशा फ़ोकस रिंग दिखाएं
+settings.option.accessibility.forceFocusVisible: फ़ोकस रिंग हमेशा दिखाएँ
 settings.option.accessibility.forceFocusVisible.description: कीबोर्ड नेविगेशन के लिए फ़ोकस किए गए तत्वों पर एक दृश्य रूपरेखा (आउटलाइन) बाध्य करें।
 settings.option.accessibility.highContrast: उच्च कंट्रास्ट
 settings.option.accessibility.highContrast.description: टेक्स्ट, बैकग्राउंड और इंटरफ़ेस तत्वों के बीच कंट्रास्ट को बढ़ाता है।
 settings.option.accessibility.motion: मोशन
-settings.option.accessibility.motionIntensity: मोशन की तीव्रता
+settings.option.accessibility.motionIntensity: गति की तीव्रता
 settings.option.accessibility.motionIntensity.description: नियंत्रित करता है कि होवर और प्रेस करने पर बटन और सतहें कितने मोशन का उपयोग करती हैं। मोशन को पूरी तरह से अक्षम करने के लिए 'कोई नहीं' चुनें; 'प्लेफुल' अतिरिक्त बाउंस जोड़ता है।
 settings.option.accessibility.motionIntensity.none: कोई नहीं
 settings.option.accessibility.motionIntensity.normal: सामान्य
 settings.option.accessibility.motionIntensity.playful: प्लेफुल
 settings.option.accessibility.motionIntensity.reduced: कम किया गया
-settings.option.accessibility.playOnHover: होवर करने पर चलाएं
+settings.option.accessibility.playOnHover: होवर पर चलाएँ
 settings.option.accessibility.playOnHover.description: पॉइंटर के इंटरैक्टिव तत्वों पर जाने पर एक हल्की टिक ध्वनि भी चलाएं।
 settings.option.accessibility.soundEffects: ध्वनि प्रभाव
 settings.option.accessibility.soundPreview: ध्वनि पूर्वावलोकन
@@ -3967,12 +4068,12 @@ settings.option.advanced.compactSidebar: कॉम्पैक्ट साइ�
 settings.option.advanced.compactSidebar.description: तब लागू होता है जब विंडो साइडबार को छोटा करने के लिए पर्याप्त संकीर्ण हो।
 settings.option.advanced.compactSidebar.size: आकार
 settings.option.advanced.configBackups.description: यदि आपकी सेटिंग्स खो गई हैं या रीसेट हो गई हैं, तो Cider द्वारा सहेजी गई अपनी सेटिंग्स फ़ाइल की एक प्रति रीस्टोर करें।
-settings.option.advanced.experimentalFeatures: प्रायोगिक फ़ीचर्स
+settings.option.advanced.experimentalFeatures: प्रयोगात्मक सुविधाएँ
 settings.option.advanced.experimentalFeatures.description: निर्माणाधीन क्षमताएं और फ़ीचर फ़्लैग।
-settings.option.advanced.floatingSearch: फ्लोटिंग सर्च ओवरले
-settings.option.advanced.floatingSearch.blurBackground: बैकग्राउंड धुंधला करें
+settings.option.advanced.floatingSearch: फ़्लोटिंग खोज ओवरले
+settings.option.advanced.floatingSearch.blurBackground: पृष्ठभूमि धुंधली करें
 settings.option.advanced.floatingSearch.blurBackground.description: सक्षम होने पर, सर्च बार पर फ़ोकस होने पर बैकग्राउंड धुंधला हो जाएगा।
-settings.option.advanced.floatingSearch.clearSearchOnClose: बंद करने पर सर्च साफ़ करें
+settings.option.advanced.floatingSearch.clearSearchOnClose: बंद करने पर खोज साफ़ करें
 settings.option.advanced.floatingSearch.clearSearchOnClose.description: सक्षम होने पर, सर्च बार बंद होने पर सर्च बार का टेक्स्ट साफ़ हो जाएगा।
 settings.option.advanced.floatingSearch.description: सर्च पैनल जो पेज के ऊपर खुलता है।
 settings.option.advanced.floatingSearch.enterShowsResults: Enter दबाने पर परिणाम दिखाएं
@@ -3981,14 +4082,14 @@ settings.option.advanced.home: होम
 settings.option.advanced.home.buttonLocation: होम बटन का स्थान
 settings.option.advanced.home.buttonLocation.sidebar: साइडबार
 settings.option.advanced.home.buttonLocation.sidebar2023: साइडबार (2023)
-settings.option.advanced.home.buttonLocation.topBar: टॉप बार
+settings.option.advanced.home.buttonLocation.topBar: ऊपरी बार
 settings.option.advanced.immersive: इमर्सिव व्यू
 settings.option.advanced.immersive.artworkHighlight: आर्टवर्क हाइलाइटिंग
 settings.option.advanced.immersive.controlsTimeout: सक्रिय नियंत्रण टाइमआउट (सेकंड)
 settings.option.advanced.immersive.description: इमर्सिव व्यू स्वयं। इसके द्वारा उपयोग किया जाने वाला लेआउट 'विज़ुअल' के अंतर्गत चुना जाता है।
-settings.option.advanced.immersive.glowEffectOnActiveLyrics: सक्रिय लिरिक्स पर ग्लो इफ़ेक्ट
-settings.option.advanced.lyrics: बोल एनिमेशन
-settings.option.advanced.lyrics.characterFlow: फ्लोई कैरेक्टर्स
+settings.option.advanced.immersive.glowEffectOnActiveLyrics: सक्रिय बोलों पर ग्लो प्रभाव
+settings.option.advanced.lyrics: लिरिक एनिमेशन
+settings.option.advanced.lyrics.characterFlow: लहरदार अक्षर
 settings.option.advanced.lyrics.characterFlow.description: पूरी लाइन के बजाय अलग-अलग अक्षर ऊपर की ओर बहेंगे। इसमें अधिक संसाधनों की आवश्यकता होती है।
 settings.option.advanced.lyrics.description: गाना बजने के दौरान बोल की लाइनें और अक्षर कैसे चलते हैं।
 settings.option.advanced.lyrics.lineStaggering: लाइन स्टैगरिंग
@@ -4002,7 +4103,7 @@ settings.option.advanced.lyrics.singEngine.classic: क्लासिक
 settings.option.advanced.lyrics.singEngine.description: इमर्सिव व्यू के लिए सिंग इंजन। क्लासिक हल्के CSS एनिमेशन का उपयोग करता है, जो कम क्षमता वाले सिस्टम के लिए सबसे बेहतरीन विकल्प है। साइडबार हमेशा क्लासिक का उपयोग करता है।
 settings.option.advanced.lyrics.singEngine.legacy: लेगेसी
 settings.option.advanced.lyrics.singEngine.waapi: GPU (Web Animations)
-settings.option.advanced.lyrics.singLyricsEverywhere: हर जगह सिंग लिरिक्स
+settings.option.advanced.lyrics.singLyricsEverywhere: हर जगह बोल गाएँ
 settings.option.advanced.lyrics.singLyricsEverywhere.description: इमर्सिव व्यू के बाहर सिंग लिरिक्स सक्षम करें। इसमें अधिक संसाधनों की आवश्यकता होती है।
 settings.option.advanced.mavericksLcd: Mavericks LCD
 settings.option.advanced.mavericksLcd.style: स्टाइल
@@ -4020,47 +4121,47 @@ settings.option.advanced.playback.allowPlaybackRateChangeEverywhere.description:
 settings.option.advanced.playlistTrackMapping: प्लेलिस्ट ट्रैक मैपिंग
 settings.option.advanced.playlistTrackMapping.description: यह निर्धारित करने के लिए प्लेलिस्ट की गहन स्कैनिंग सक्षम करता है कि कौन से ट्रैक किस प्लेलिस्ट में हैं। प्लेलिस्ट कैश बनने के समय में काफी वृद्धि हो सकती है।
 settings.option.advanced.powerUsage.description: फ़्रेमरेट सीमाएं, रेंडरर का चयन, और अधिक संसाधन लेने वाली विज़ुअल विशेषताएं।
-settings.option.advanced.progressBar: प्रोग्रेस बार
+settings.option.advanced.progressBar: प्रगति बार
 settings.option.advanced.progressBar.useAccentColor: एक्सेंट कलर का उपयोग करें
 settings.option.advanced.resetCider: Cider रीसेट करें
 settings.option.advanced.resetCider.description: प्राथमिकताएं, कैशे और स्थानीय डेटा रीसेट करें। जब तक आप अन्यथा न चुनें, Apple Music और Taproom साइन इन रहेंगे।
 settings.option.advanced.resizableMiniplayer: आकार बदलने योग्य मिनीप्लेयर
-settings.option.advanced.richAlbumGrid: रिच एल्बम ग्रिड
-settings.option.advanced.richAlbumGrid.alwaysNavigateToPage: हमेशा पेज पर नेविगेट करें
-settings.option.advanced.richAlbumGrid.disableScrollAnimation: स्क्रॉल एनिमेशन अक्षम करें
+settings.option.advanced.richAlbumGrid: समृद्ध एल्बम ग्रिड
+settings.option.advanced.richAlbumGrid.alwaysNavigateToPage: हमेशा पेज पर जाएँ
+settings.option.advanced.richAlbumGrid.disableScrollAnimation: स्क्रॉल एनिमेशन बंद करें
 settings.option.advanced.richAlbumGrid.scrollToPosition: स्थिति पर स्क्रॉल करें
 settings.option.advanced.richAlbumGrid.scrollToPosition.bottom: नीचे
 settings.option.advanced.richAlbumGrid.scrollToPosition.top: ऊपर
-settings.option.advanced.searchBar: मुख्य सर्च बार
+settings.option.advanced.searchBar: मुख्य खोज बार
 settings.option.advanced.searchBar.description: टाइटल बार में सर्च फ़ील्ड।
-settings.option.advanced.searchBar.noRedirectOnSelect: फोकस करने पर कोई लैंडिंग पेज नहीं
+settings.option.advanced.searchBar.noRedirectOnSelect: फ़ोकस पर लैंडिंग पेज नहीं
 settings.option.advanced.searchBar.noRedirectOnSelect.description: सक्षम होने पर, सर्च बार चुने जाने पर लैंडिंग पेज पर रीडायरेक्ट नहीं करेगा। लैंडिंग पेज पर जाने के लिए सर्च बार चुनते समय SHIFT दबाकर रखें।
-settings.option.advanced.settingsTakeout: सेटिंग्स एक्सपोर्ट / इम्पोर्ट
+settings.option.advanced.settingsTakeout: सेटिंग्स निर्यात / आयात करें
 settings.option.advanced.settingsTakeout.description: अपनी प्राथमिकताओं को एक फ़ाइल में बैकअप लें, या उन्हें किसी अन्य डिवाइस पर रीस्टोर करें। अकाउंट लॉगिन कभी भी शामिल नहीं किए जाते हैं।
-settings.option.advanced.simpleArtworkBg: सरल आर्टवर्क बैकग्राउंड
+settings.option.advanced.simpleArtworkBg: सरल आर्टवर्क पृष्ठभूमि
 settings.option.advanced.simpleArtworkBg.brightness: ब्राइटनेस %
 settings.option.advanced.simpleArtworkBg.brightnessV2: चमक
 settings.option.advanced.simpleArtworkBg.contrast: कॉन्ट्रास्ट %
 settings.option.advanced.simpleArtworkBg.contrastV2: कंट्रास्ट
 settings.option.advanced.simpleArtworkBg.saturate: सैचुरेशन %
 settings.option.advanced.simpleArtworkBg.saturateV2: संतृप्ति
-settings.option.advanced.simpleArtworkBg.useMask: लोअर मास्क का उपयोग करें
+settings.option.advanced.simpleArtworkBg.useMask: निचला मास्क उपयोग करें
 settings.option.advanced.sonoma: Sonoma
-settings.option.advanced.sonoma.lyricArc: आर्क लिरिक्स
+settings.option.advanced.sonoma.lyricArc: गीत आर्क
 settings.option.advanced.sonoma.lyricArc.description: सक्रिय लिरिक्स लाइनें गहराई के सूक्ष्म अहसास के साथ स्क्रीन के केंद्र की ओर झुकती हैं।
-settings.option.advanced.sonoma.radialMask: वैकल्पिक मास्क का उपयोग करें
+settings.option.advanced.sonoma.radialMask: वैकल्पिक मास्क उपयोग करें
 settings.option.advanced.sonoma.radialMask.description: सक्षम होने पर, Sonoma आर्टवर्क के लिए एक अलग, रेडियल मास्क का उपयोग करेगा, जो अधिक स्पष्टता और कम धुंधलेपन पर केंद्रित होगा।
 settings.option.advanced.title: एडवांस्ड
 settings.option.advanced.tweaks: ट्वीक्स
 settings.option.advanced.tweaks.description: बदलाव करने योग्य सेटिंग्स जो वास्तव में कहीं और फिट नहीं होती हैं
 settings.option.advanced.volumeSlider: प्लेयर वॉल्यूम स्लाइडर
-settings.option.advanced.volumeSlider.iOSStyle: iOS स्टाइल
+settings.option.advanced.volumeSlider.iOSStyle: iOS शैली
 settings.option.advanced.window: विंडो व्यवहार
 settings.option.advanced.window.description: मिनीप्लेयर का आकार बदलना और पूरे ऐप में उपयोग की जाने वाली स्क्रॉलबार शैली। विंडो नियंत्रण और वाइब्रेंसी 'Visual' के अंतर्गत हैं।
-settings.option.advanced.window.scrollbarType: स्क्रॉलबार का प्रकार
+settings.option.advanced.window.scrollbarType: स्क्रॉलबार प्रकार
 settings.option.all: सभी
 settings.option.alwaysShow: हमेशा दिखाएं
-settings.option.appleMusic.behavior.playButtonOnStop: रुकी हुई कार्रवाई पर प्ले बटन
+settings.option.appleMusic.behavior.playButtonOnStop: रुकने पर प्ले बटन क्रिया
 settings.option.audio.advanced: उन्नत वॉल्यूम नियंत्रण
 settings.option.audio.airplay: AirPlay कास्टिंग
 settings.option.audio.airplay.description: प्रायोगिक AirPlay 2 कास्टिंग मेनू सक्षम करें
@@ -4071,18 +4172,18 @@ settings.option.audio.audioConfiguration: ऑडियो कॉन्फ़ि�
 settings.option.audio.audioLab: Cider Audio Laboratories
 settings.option.audio.audioLab.description: Cider के लिए इन-हाउस विकसित ऑडियो प्रभावों का एक संग्रह।
 settings.option.audio.audioLab.subheader: कैलिफ़ोर्निया में Cider Acoustic Technologies द्वारा डिज़ाइन किया गया
-settings.option.audio.audioQuality: ऑडियो क्वालिटी
+settings.option.audio.audioQuality: ऑडियो गुणवत्ता
 settings.option.audio.automix: ऑटोमिक्स
 settings.option.audio.changePlaybackRate: प्लेबैक दर बदलें
 settings.option.audio.ciderAudio: Cider Audio
-settings.option.audio.ciderAudio.showBadges: अभी चल रहा है में बैज दिखाएं
-settings.option.audio.ciderAudio.showInToolbar: टूलबार में Cider Audio दिखाएं
+settings.option.audio.ciderAudio.showBadges: अभी चल रहा है में बैज दिखाएँ
+settings.option.audio.ciderAudio.showInToolbar: टूलबार में Cider Audio दिखाएँ
 settings.option.audio.ciderAudioSettings: Cider Audio सेटिंग्स
 settings.option.audio.crossfade: क्रॉसफ़ेड
 settings.option.audio.dbfs.calibration: 0 dBFS कैलिब्रेशन
 settings.option.audio.dbfs.description: जब Cider 0 dBFS पर हो, तो पीक Z-वेटेड dB SPL दर्ज करें।
 settings.option.audio.dbspl.description: (केवल उन्नत उपयोगकर्ताओं के लिए) वॉल्यूम स्लाइडर पर dBFS के बजाय dB SPL प्रदर्शित करें।
-settings.option.audio.dbspl.display: dB SPL डिस्प्ले
+settings.option.audio.dbspl.display: dB SPL प्रदर्शन
 settings.option.audio.drmSystem: DRM सिस्टम
 settings.option.audio.drmSystem.description: Apple Music प्लेबैक के लिए उपयोग किया जाने वाला DRM सिस्टम
 settings.option.audio.drmSystem.PlayReadyCAWarning: Microsoft PlayReady का उपयोग करते समय Cider Audio कार्यक्षमता काम नहीं करती है।
@@ -4135,13 +4236,13 @@ settings.option.audio.enableAdvancedFunctionality.tunedAudioSpatialization.profi
 settings.option.audio.enableAdvancedFunctionality.tunedAudioSpatialization.profile.separation: सेपरेशन
 settings.option.audio.enableAdvancedFunctionality.tunedAudioSpatialization.profile.soundstage: साउंडस्टेज
 settings.option.audio.enableAdvancedFunctionality.tunedAudioSpatialization.profile.standard: मानक
-settings.option.audio.exponentialVolume: एक्सपोनेंशियल वॉल्यूम कर्व
+settings.option.audio.exponentialVolume: घातांकीय वॉल्यूम वक्र
 settings.option.audio.exponentialVolume.description: अधिक क्रमिक वॉल्यूम कर्व का पालन करें, जिससे कम वॉल्यूम पर अधिक सटीक वॉल्यूम नियंत्रण की अनुमति मिलती है।
-settings.option.audio.hostCapture: कैप्चर करने योग्य ऑडियो (OBS / Discord)
+settings.option.audio.hostCapture: कैप्चर योग्य ऑडियो (OBS / Discord)
 settings.option.audio.hostCapture.description: OBS या Discord जैसे स्ट्रीमिंग और कैप्चर ऐप्स को प्लेबैक रूट करने के लिए Windows होस्ट की आवश्यकता होती है।
 settings.option.audio.maxVolume: अधिकतम वॉल्यूम
 settings.option.audio.mixing: मिक्सिंग
-settings.option.audio.normalization: ऑडियो नॉर्मलाइज़ेशन
+settings.option.audio.normalization: ऑडियो सामान्यीकरण
 settings.option.audio.normalization.description: प्रत्येक ट्रैक की लाउडनेस को स्वचालित रूप से एक समान स्तर पर समायोजित करता है। कम आवाज़ वाले ट्रैक सुरक्षित रूप से बढ़ाए जाते हैं; तेज़ आवाज़ वाले ट्रैक कम किए जाते हैं।
 settings.option.audio.occlusion: सुनने का मोड
 settings.option.audio.outputDevice: आउटपुट डिवाइस
@@ -4149,18 +4250,18 @@ settings.option.audio.playback: प्लेबैक
 settings.option.audio.playbackRate: प्लेबैक स्पीड
 settings.option.audio.playbackRate.change: बदलें
 settings.option.audio.podcastPlayback: पॉडकास्ट प्लेबैक
-settings.option.audio.podcasts.playbackRate: Apple Podcasts की प्लेबैक स्पीड
+settings.option.audio.podcasts.playbackRate: Apple Podcasts की प्लेबैक दर
 settings.option.audio.podcasts.playbackRate.description: पॉडकास्ट की प्लेबैक स्पीड को समायोजित करें।
 settings.option.audio.quality: ऑडियो गुणवत्ता
 settings.option.audio.seamlessAudioTransitions: गैपलेस प्लेबैक
 settings.option.audio.seamlessTransition: निर्बाध ऑडियो ट्रांज़िशन
-settings.option.audio.seamlessTransitions: सीमलेस ट्रांज़िशन
-settings.option.audio.showBitrate: अभी चल रहे गाने में बिटरेट दिखाएं
+settings.option.audio.seamlessTransitions: निर्बाध संक्रमण
+settings.option.audio.showBitrate: अभी चल रहा है में बिटरेट दिखाएँ
 settings.option.audio.streaming: स्ट्रीमिंग
 settings.option.audio.volume: वॉल्यूम
 settings.option.audio.volumeScrollStep: वॉल्यूम स्क्रॉल स्टेप
 settings.option.audio.volumeScrollStep.description: वॉल्यूम स्लाइडर पर ऊपर या नीचे स्क्रॉल करने पर वॉल्यूम कितना बदलता है।
-settings.option.audio.volumeStep: वॉल्यूम स्क्रॉल स्टेप
+settings.option.audio.volumeStep: वॉल्यूम स्क्रॉल चरण
 settings.option.audio.volumeStep.description: स्क्रॉल करते समय वॉल्यूम में होने वाले बदलाव की मात्रा को एडजस्ट करें।
 settings.option.audio.yourSystem: आपका सिस्टम
 settings.option.automatic: ऑटोमैटिक
@@ -4168,18 +4269,18 @@ settings.option.behavior.addToLibraryOnFavorite.caption: हाल ही मे
 settings.option.concerts.geolocation: जियोलोकेशन
 settings.option.concerts.radius: दायरा
 settings.option.concerts.radius.description: केवल अपने स्थान से इस दूरी के भीतर के कॉन्सर्ट दिखाएं (जियोलोकेशन सक्षम होना आवश्यक है)
-settings.option.concerts.radiusUnit: दायरे की इकाई
+settings.option.concerts.radiusUnit: त्रिज्या इकाई
 settings.option.concerts.radiusUnit.description: दायरा फ़िल्टर के लिए इकाई
 settings.option.concerts.radiusUnit.kilometers: किलोमीटर
 settings.option.concerts.radiusUnit.miles: मील
-settings.option.concerts.showInSidebar: साइडबार में कॉन्सर्ट दिखाएं
+settings.option.concerts.showInSidebar: साइडबार में कॉन्सर्ट दिखाएँ
 settings.option.concerts.showInSidebar.description: साइडबार में कॉन्सर्ट सेक्शन दिखाएं
-settings.option.concerts.sortBy: इसके अनुसार सॉर्ट करें
+settings.option.concerts.sortBy: क्रमबद्ध करें
 settings.option.concerts.sortBy.date: तारीख
 settings.option.concerts.sortBy.description: सूची में कॉन्सर्ट को कैसे सॉर्ट किया जाए
 settings.option.concerts.sortBy.distance: दूरी
 settings.option.connect.link_account.description: अपने Discord खाते को Cider Connect से लिंक करने से आप सेटिंग्स, EQ और काम पूरा होने पर अन्य उपयोगकर्ता डेटा को स्टोर कर सकते हैं। (कार्य प्रगति पर है)
-settings.option.connectivity.atmosRatings: कम्युनिटी Atmos रेटिंग
+settings.option.connectivity.atmosRatings: समुदाय Atmos रेटिंग
 settings.option.connectivity.atmosRatings.description: देखें और साझा करें कि कौन से एल्बम Dolby Atmos में बेहतरीन लगते हैं।
 settings.option.connectivity.ciderConnect.description: Listen Together, Collaborative Playlists, रिमोट ऐप कंट्रोल और बहुत कुछ!
 settings.option.connectivity.ciderRemote: Cider रिमोट
@@ -4193,7 +4294,7 @@ settings.option.connectivity.discordRPC.buttons.listenOnCider: Cider पर स�
 settings.option.connectivity.discordRPC.buttons.viewOnAppleMusic: Apple Music पर देखें
 settings.option.connectivity.discordRPC.buttons.viewOnOtherMusicServices: अन्य संगीत सेवाओं पर देखें
 settings.option.connectivity.discordRPC.clearOnPause: पॉज़ करने पर Discord Rich Presence हटाएं
-settings.option.connectivity.discordRPC.clientName: क्लाइंट का नाम
+settings.option.connectivity.discordRPC.clientName: क्लाइंट नाम
 settings.option.connectivity.discordRPC.customize: अपने Discord Rich Presence को कस्टमाइज़ करें
 settings.option.connectivity.discordRPC.customize.applyButton: लागू करें
 settings.option.connectivity.discordRPC.customize.artistImageSource.apple: Apple Music
@@ -4233,7 +4334,7 @@ settings.option.connectivity.discordRPC.stateFormat: स्थिति का �
 settings.option.connectivity.discordRPC.timestamp.disabled: अक्षम
 settings.option.connectivity.discordRPC.timestamp.elapsed: बीता हुआ समय
 settings.option.connectivity.discordRPC.timestamp.remaining: बचा हुआ समय
-settings.option.connectivity.externalApplications: बाहरी ऐप्स
+settings.option.connectivity.externalApplications: बाहरी एप्लिकेशन
 settings.option.connectivity.header.externalApplications: बाहरी ऐप्स
 settings.option.connectivity.lastfmScrobble: Last.FM स्क्रॉबलिंग
 settings.option.connectivity.lastfmScrobble.delay: Last.FM स्क्रॉबल विलंब (%)
@@ -4245,10 +4346,10 @@ settings.option.connectivity.lastfmScrobble.manualToken: Last.fm टोकन �
 settings.option.connectivity.lastfmScrobble.manualToken.link: Last.fm टोकन प्राप्त करने के लिए यहाँ क्लिक करें
 settings.option.connectivity.lastfmScrobble.nowPlaying: Last.FM 'अभी चल रहा है' सक्षम करें
 settings.option.connectivity.lastfmScrobble.removeFeatured: गाने के शीर्षक से सहयोगी कलाकारों को हटाएं (Last.fm)
-settings.option.connectivity.parties: लिसनिंग पार्टीज़
-settings.option.connectivity.partiesEnabled: लिसनिंग पार्टीज़ सक्षम करें
+settings.option.connectivity.parties: लिसनिंग पार्टियाँ
+settings.option.connectivity.partiesEnabled: लिसनिंग पार्टियाँ सक्षम करें
 settings.option.connectivity.partiesEnabled.description: अन्य Cider उपयोगकर्ताओं के साथ सिंक्रोनाइज़्ड लिसनिंग सेशन होस्ट करें या उनमें शामिल हों।
-settings.option.connectivity.partiesQueueDefault: डिफ़ॉल्ट क्यू मोड
+settings.option.connectivity.partiesQueueDefault: डिफ़ॉल्ट कतार मोड
 settings.option.connectivity.partiesQueueDefault.audited: होस्ट मंज़ूरी देता है
 settings.option.connectivity.partiesQueueDefault.description: क्या आपके द्वारा होस्ट की जाने वाली पार्टियों में मेहमानों द्वारा जोड़े जाने वाले गानों के लिए आपकी मंज़ूरी की आवश्यकता है।
 settings.option.connectivity.partiesQueueDefault.open: ओपन
@@ -4256,15 +4357,15 @@ settings.option.connectivity.partiesTransportDefault: डिफ़ॉल्ट �
 settings.option.connectivity.partiesTransportDefault.description: आपके द्वारा होस्ट की जाने वाली पार्टियों में कौन प्ले, पॉज़, सीक और स्किप कर सकता है।
 settings.option.connectivity.partiesTransportDefault.everyone: सभी
 settings.option.connectivity.partiesTransportDefault.host: केवल होस्ट
-settings.option.connectivity.playbackNotifications: प्लेबैक सूचनाएं
+settings.option.connectivity.playbackNotifications: प्लेबैक सूचनाएँ
 settings.option.connectivity.playbackNotifications.description: जब भी वर्तमान गाना बदले, नए गाने की जानकारी वाली एक सूचना प्रदर्शित करें।
 settings.option.connectivity.remoteConnection: रिमोट कनेक्शन
 settings.option.connectivity.remoteConnection.description: फोन या टैबलेट को पेयर करना, और प्लेबैक को नियंत्रित करने वाले डिवाइस को अनपेयर करना।
 settings.option.connectivity.rpcServer: RPC सर्वर
 settings.option.connectivity.rpcServer.description: RPC सर्वर का उपयोग करके बाहरी अनुप्रयोगों के लिए Cider तक पहुंच प्रबंधित करें।
-settings.option.connectivity.rpcServer.manageAccess: Cider के लिए बाहरी एप्लिकेशन एक्सेस प्रबंधित करें
+settings.option.connectivity.rpcServer.manageAccess: Cider तक बाहरी एप्लिकेशन की पहुँच प्रबंधित करें
 settings.option.connectivity.scrobbler: Scrobbler
-settings.option.connectivity.scrobblerIntegration: Scrobbler इंटीग्रेशन
+settings.option.connectivity.scrobblerIntegration: स्क्रोब्लर एकीकरण
 settings.option.connectivity.scrobblerIntegration.description: सुनने का इतिहास रखने के लिए Last.fm, ListenBrainz, Libre.fm और Maloja स्क्रॉब्लिंग।
 settings.option.connectivity.steam.clearOnPause: रोकने पर Rich Presence हटाएं
 settings.option.connectivity.vrOverlay: VR ओवरले
@@ -4300,23 +4401,23 @@ settings.option.experimental.unknownPlugin: अज्ञात स्रोत
 settings.option.experimental.unknownPlugin.description: Cider प्लगइन रिपॉजिटरी के अलावा अन्य रिपॉजिटरी से प्लगइन्स इंस्टॉल करने की अनुमति दें
 settings.option.experiments.chromecast: Chromecast सक्षम करें
 settings.option.experiments.chromecast.description: इस नेटवर्क पर Google Cast डिवाइस के लिए एक कास्ट बटन जोड़ता है।
-settings.option.experiments.chromecastLyrics: Chromecast लिरिक्स
+settings.option.experiments.chromecastLyrics: Chromecast गीत
 settings.option.experiments.chromecastLyrics.description: Chromecast डिस्प्ले पर सिंक किए गए लिरिक्स दिखाएं।
 settings.option.experiments.floatingSearch: फ्लोटिंग सर्च सक्षम करें
 settings.option.experiments.forceExplicit: एक्प्लिसिट एल्बम वैरिएंट पर ऑटो-स्विच करें
 settings.option.experiments.forceExplicit.description: एल्बम के एक्प्लिसिट वैरिएंट खोजते समय लोड होने का समय बढ़ सकता है।
 settings.option.experiments.legacyFetch: लेगेसी फ़ेच
-settings.option.experiments.musicVideos: लाइब्रेरी म्यूज़िक वीडियो सक्षम करें
+settings.option.experiments.musicVideos: लाइब्रेरी संगीत वीडियो सक्षम करें
 settings.option.experiments.title: प्रायोगिक फ़ीचर्स
 settings.option.general.app: ऐप
-settings.option.general.artistChips: आर्टिस्ट चिप्स
+settings.option.general.artistChips: कलाकार चिप्स
 settings.option.general.autoplayByDefault: डिफ़ॉल्ट रूप से ऑटोप्ले सक्षम करें
 settings.option.general.autoplayByDefault.description: म्यूज़िक चलाते समय ऑटोप्ले को स्वचालित रूप से सक्षम करें (रेडियो स्टेशनों पर लागू नहीं होता)।
 settings.option.general.autoRemoveDisliked: नापसंद किए गए ट्रैक्स को कतार से स्वचालित रूप से हटाएं
 settings.option.general.autoRemoveDisliked.description: ट्रैक्स को नापसंद के रूप में चिह्नित किए जाने पर उन्हें कतार से स्वचालित रूप से हटाएं।
 settings.option.general.cache: कैश
-settings.option.general.clearCacheDropdown: कैश ड्रॉपडाउन साफ़ करें
-settings.option.general.contentToCache: कैश करने योग्य कंटेंट
+settings.option.general.clearCacheDropdown: कैश साफ़ करें ड्रॉपडाउन
+settings.option.general.contentToCache: कैश की जाने वाली सामग्री
 settings.option.general.customizeSidebar: साइडबार आइटम कस्टमाइज़ करें
 settings.option.general.customizeSidebar.customize: कस्टमाइज़ करें
 settings.option.general.displayName: प्रदर्शित नाम
@@ -4342,12 +4443,12 @@ settings.option.general.language.unsorted: अवर्गीकृत
 settings.option.general.noPlayingAction.newMusicMix: New Music Mix चलाएं
 settings.option.general.noPlayingAction.none: कुछ न करें
 settings.option.general.noPlayingAction.personalStation: पर्सनल स्टेशन शुरू करें
-settings.option.general.noPlayingAction.recent: हाल के ट्रैक्स चलाएं
-settings.option.general.noPlayingAction.recentlyAdded: हाल ही में जोड़े गए ट्रैक्स चलाएं
-settings.option.general.noPlayingAction.shuffleLibrary: लाइब्रेरी के गानों को शफ़ल करें
+settings.option.general.noPlayingAction.recent: हाल के ट्रैक चलाएँ
+settings.option.general.noPlayingAction.recentlyAdded: हाल में जोड़े गए ट्रैक चलाएँ
+settings.option.general.noPlayingAction.shuffleLibrary: लाइब्रेरी के गाने शफ़ल करें
 settings.option.general.onStartup: स्टार्टअप पर
 settings.option.general.onStartup.openStartup: स्टार्टअप पेज खोलें
-settings.option.general.onStartup.resume: पिछला सेशन फिर से शुरू करें
+settings.option.general.onStartup.resume: पिछला सत्र फिर से शुरू करें
 settings.option.general.pagination: प्रति पृष्ठ दिखाए जाने वाले आइटम
 settings.option.general.preventDisplaySleep: चलते समय डिस्प्ले चालू रखें
 settings.option.general.preventSystemSleep: चलते समय कंप्यूटर को जागता रखें
@@ -4378,11 +4479,12 @@ settings.option.general.startupPage: स्टार्टअप पेज
 settings.option.general.startupPage.blank: खाली पेज
 settings.option.general.startupPage.description: वह पेज चुनें जो Cider खोलने पर दिखाई देगा।
 settings.option.general.startupPage.descriptionV2: वह पेज जो Cider नए टैब में खोलता है, और स्टार्टअप पर जब On Startup को Open Startup Page पर सेट किया हो।
+settings.option.general.startupPage.descriptionV3: लॉन्च होने पर Cider जो पेज खोलता है।
 settings.option.general.startupPage.newTab: नया टैब पेज
-settings.option.general.startupPage.personalHome: व्यक्तिगत होम पेज
+settings.option.general.startupPage.personalHome: निजी होम पेज
 settings.option.general.themeUpdateNotification: थीम अपडेट के लिए स्वचालित रूप से जांचें
 settings.option.general.translationCredits: अनुवाद श्रेय
-settings.option.general.translationFeedback: अनुवाद फ़ीडबैक
+settings.option.general.translationFeedback: अनुवाद पर प्रतिक्रिया
 settings.option.general.translators: अनुवादक
 settings.option.general.translators.description: Cider का अनुवाद करने में मदद करने के लिए इन योगदानकर्ताओं को धन्यवाद। उनका GitHub प्रोफ़ाइल खोलने के लिए किसी नाम पर क्लिक करें।
 settings.option.general.useSmartQueueByDefault: डिफ़ॉल्ट रूप से स्मार्ट कतार का उपयोग करें
@@ -4391,9 +4493,9 @@ settings.option.general.useSmartQueueByDefault.needsAutomix: Audio में Aut
 settings.option.general.warnBeforeQueueOverride: कतार को ओवरराइड करने से पहले चेतावनी दें
 settings.option.hide: छिपाएँ
 settings.option.left: बाएँ
-settings.option.lyrics.contributeCta: योगदान दें और लिरिक्स अपलोड करें
+settings.option.lyrics.contributeCta: योगदान दें और गीत अपलोड करें
 settings.option.lyrics.contributeCta.description: सिंक किए गए लिरिक्स अपलोड करें, उन्हें लाइव प्रीव्यू करें, और योगदानकर्ता लीडरबोर्ड देखें।
-settings.option.lyrics.customScrollerProperties: कस्टम स्क्रोलर विशेषताएँ
+settings.option.lyrics.customScrollerProperties: कस्टम स्क्रॉलर गुण
 settings.option.lyrics.customScrollerProperties.description: बोल स्क्रॉलिंग एनिमेशन के लिए कस्टम स्टाइलिंग सक्षम करें।
 settings.option.lyrics.defaultProvider: डिफ़ॉल्ट प्रदाता
 settings.option.lyrics.defaultProvider.description: पसंदीदा बोल प्रदाता चुनें। "ऑटो" स्वचालित रूप से सर्वोत्तम उपलब्ध स्रोत का चयन करेगा।
@@ -4402,55 +4504,55 @@ settings.option.lyrics.displayOptions.description: कस्टमाइज़ �
 settings.option.lyrics.enableMusixmatch: Musixmatch लिरिक्स सक्षम करें
 settings.option.lyrics.enableMusixmatchKaraoke: कराओके मोड सक्षम करें (केवल Musixmatch)
 settings.option.lyrics.enableQQLyrics: QQ लिरिक्स सक्षम करें
-settings.option.lyrics.enableSingLyrics: Sing बोल सक्षम करें
+settings.option.lyrics.enableSingLyrics: सिंग लिरिक्स चालू करें
 settings.option.lyrics.enableSingLyrics.description: उपलब्ध होने पर, शब्द-दर-शब्द सिंक किए गए बोल दिखाएं जो संगीत के साथ हाइलाइट होते हैं।
-settings.option.lyrics.enableStaticLyrics: स्थिर बोल सक्षम करें
+settings.option.lyrics.enableStaticLyrics: स्टैटिक लिरिक्स चालू करें
 settings.option.lyrics.enableStaticLyrics.description: समय की जानकारी उपलब्ध न होने पर भी बोल दिखाएं। ये बोल स्वचालित रूप से स्क्रॉल नहीं होंगे।
-settings.option.lyrics.enableTranslations: अनुवाद सक्षम करें
+settings.option.lyrics.enableTranslations: अनुवाद चालू करें
 settings.option.lyrics.enableTranslations.description: उपलब्ध होने पर अनुवादित बोल दिखाएं। अनुवाद Musixmatch क्राउड योगदान या मशीन अनुवाद से लिए जाते हैं।
 settings.option.lyrics.enableYoutubeLyrics: म्यूजिक वीडियो के लिए Youtube लिरिक्स सक्षम करें
-settings.option.lyrics.fpsLimit: लिरिक्स फ़्रेम रेट
+settings.option.lyrics.fpsLimit: लिरिक्स फ़्रेम दर
 settings.option.lyrics.fpsLimit.description: लिरिक्स एनिमेशन के लिए अधिकतम फ़्रेम रेट। उच्च-रिफ्रेश डिस्प्ले पर अधिक रेट अधिक स्मूथ दिखते हैं लेकिन अधिक CPU और GPU का उपयोग करते हैं। "डिस्प्ले से मिलाएं" आपके मॉनिटर की रिफ्रेश रेट के अनुसार चलता है।
 settings.option.lyrics.fpsLimit.matchDisplay: डिस्प्ले से मिलाएं
-settings.option.lyrics.keepCompleted: पूरे हो चुके लिरिक्स दिखाए रखें
+settings.option.lyrics.keepCompleted: पूरे हुए लिरिक्स रखें
 settings.option.lyrics.keepCompleted.description: पहले ही गाई जा चुकी पंक्तियों को वर्तमान पंक्ति के ऊपर दृश्यमान (धुंधला) रखें। बंद होने पर, पूरी हो चुकी पंक्तियाँ छिप जाती हैं।
-settings.option.lyrics.localeOverrides: लोकेल ओवरराइड्स
+settings.option.lyrics.localeOverrides: लोकेल ओवरराइड
 settings.option.lyrics.localeOverrides.description: विशिष्ट ऑडियो भाषाओं के लिए कस्टम प्रदाता और अनुवाद नियम सेट करें
 settings.option.lyrics.musixmatchPreferredLanguage: Musixmatch अनुवाद की पसंदीदा भाषा
-settings.option.lyrics.preferUserLyrics: उपयोगकर्ताओं द्वारा सबमिट किए गए बोलों को प्राथमिकता दें
+settings.option.lyrics.preferUserLyrics: उपयोगकर्ता द्वारा जमा किए गए लिरिक्स को प्राथमिकता दें
 settings.option.lyrics.preferUserLyrics.description: उपलब्ध होने पर, यदि उपयोगकर्ताओं द्वारा सबमिट किए गए बोलों की टाइमिंग गुणवत्ता बेहतर है, तो उन्हें अन्य स्रोतों पर प्राथमिकता दें।
 settings.option.lyrics.provider.apple: Apple Music
-settings.option.lyrics.provider.auto: ऑटो (सर्वोत्तम उपलब्ध)
+settings.option.lyrics.provider.auto: स्वचालित (सर्वश्रेष्ठ उपलब्ध)
 settings.option.lyrics.provider.mxm: Musixmatch
 settings.option.lyrics.provider.netease: NetEase
-settings.option.lyrics.provider.user: उपयोगकर्ता द्वारा सबमिट किए गए
+settings.option.lyrics.provider.user: उपयोगकर्ता द्वारा जमा किए गए
 settings.option.lyrics.providerPreferences: प्रदाता प्राथमिकताएं
 settings.option.lyrics.providerPreferences.description: कॉन्फ़िगर करें कि किन बोल स्रोतों का उपयोग करना है और उनकी प्राथमिकता क्या है
-settings.option.lyrics.scrollTuning: स्क्रॉल अवधि और ईज़िंग
+settings.option.lyrics.scrollTuning: स्क्रॉल अवधि और इज़िंग
 settings.option.lyrics.scrollTuning.description: साइडबार और इमर्सिव प्लेयर के लिए अलग से सेट करें कि बोल (lyrics) की लाइनों को स्क्रॉल होने में कितना समय लगता है और वे किस ईज़िंग कर्व का पालन करती हैं।
 settings.option.lyrics.showDualLanguage: दोहरी भाषा दिखाएं
 settings.option.lyrics.showDualLanguage.description: मूल बोल और अनुवाद दोनों को एक ही समय में प्रदर्शित करें।
-settings.option.lyrics.showTimestamps: होवर करने पर टाइमस्टैम्प दिखाएं
+settings.option.lyrics.showTimestamps: होवर पर टाइमस्टैंप दिखाएं
 settings.option.lyrics.showTimestamps.description: प्रत्येक बोल पंक्ति पर होवर करने पर उसका टाइमस्टैम्प प्रदर्शित करें।
-settings.option.lyrics.thirdPartySources: तृतीय-पक्ष स्रोत सक्षम करें
+settings.option.lyrics.thirdPartySources: तृतीय-पक्ष स्रोत चालू करें
 settings.option.lyrics.thirdPartySources.description: Apple Music के बोल अनुपलब्ध होने पर Musixmatch और NetEase से बोल प्राप्त करने की अनुमति दें। गुणवत्ता भिन्न हो सकती है और लगातार उपयोग से दर सीमा लागू हो सकती है।
-settings.option.lyrics.timeOffset: बोल टाइमिंग ऑफ़सेट (सेकंड)
+settings.option.lyrics.timeOffset: लिरिक टाइमिंग ऑफ़सेट (सेकंड)
 settings.option.lyrics.timeOffset.description: बोल प्रदर्शित होने के समय को समायोजित करें। सकारात्मक मान बोल पहले दिखाते हैं, नकारात्मक मान उन्हें बाद में दिखाते हैं। आउट-ऑफ-सिंक ऑडियो सेटअप को ठीक करने के लिए उपयोगी है।
 settings.option.lyrics.timeOffset.descriptionV2: बोल दिखाने के समय को समायोजित करें। सकारात्मक मान बोल बाद में दिखाते हैं, नकारात्मक मान पहले दिखाते हैं। असिंक्रोनाइज़्ड ऑडियो सेटअप को ठीक करने के लिए उपयोगी।
-settings.option.lyrics.timestampStyle: टाइमस्टैम्प शैली
+settings.option.lyrics.timestampStyle: टाइमस्टैंप शैली
 settings.option.lyrics.timestampStyle.both: दोनों
 settings.option.lyrics.timestampStyle.chip: चिप
 settings.option.lyrics.timestampStyle.description: चुनें कि बोलों पर होवर करते समय टाइमस्टैम्प कैसे प्रदर्शित किए जाएं।
 settings.option.lyrics.timestampStyle.ring: रिंग
-settings.option.lyrics.trackOverrides: ट्रैक ओवरराइड्स
+settings.option.lyrics.trackOverrides: ट्रैक ओवरराइड
 settings.option.lyrics.trackOverrides.description: प्रति-ट्रैक बोल प्रदाता लॉक और प्राथमिकताओं को प्रबंधित करें
-settings.option.lyrics.translationLanguage: अनुवाद की भाषा
+settings.option.lyrics.translationLanguage: अनुवाद भाषा
 settings.option.lyrics.translationLanguage.description: बोलों का अनुवाद करने के लिए भाषा। केवल तब उपयोग किया जाता है जब अनुवाद मोड 'मैन्युअल' पर सेट हो।
 settings.option.lyrics.translationMode: अनुवाद मोड
-settings.option.lyrics.translationMode.appLanguage: ऐप की भाषा से ऑटो
+settings.option.lyrics.translationMode.appLanguage: ऐप भाषा से स्वचालित
 settings.option.lyrics.translationMode.description: लक्षित अनुवाद भाषा का निर्धारण कैसे करें।
 settings.option.lyrics.translationMode.manual: मैन्युअल (चयनित भाषा का उपयोग करें)
-settings.option.lyrics.translationMode.system: सिस्टम की भाषा से ऑटो
+settings.option.lyrics.translationMode.system: सिस्टम भाषा से स्वचालित
 settings.option.lyrics.translationSettings: अनुवाद सेटिंग्स
 settings.option.lyrics.translationSettings.description: बोल अनुवाद व्यवहार को कॉन्फ़िगर करें
 settings.option.medium: मध्यम
@@ -4464,12 +4566,12 @@ settings.option.notifications.history.persist.description: Cider बंद ह�
 settings.option.off: बंद
 settings.option.on: चालू
 settings.option.performance.app: ऐप
-settings.option.performance.backgroundRefreshTime: बैकग्राउंड रीफ़्रेश समय
+settings.option.performance.backgroundRefreshTime: बैकग्राउंड रिफ़्रेश समय
 settings.option.performance.backgroundRefreshTime.description: प्रत्येक बैकग्राउंड रीफ़्रेश के बीच का समय (सेकंड में)। कम मानों से परफ़ॉर्मेंस संबंधी समस्याएं हो सकती हैं।
 settings.option.performance.dataAndUiLoad: डेटा और UI लोड
-settings.option.performance.disableLargeRequestOffloading: लार्ज रिक्वेस्ट ऑफ़लोडिंग अक्षम करें
+settings.option.performance.disableLargeRequestOffloading: बड़े अनुरोध ऑफ़लोडिंग बंद करें
 settings.option.performance.disableLargeRequestOffloading.description: बड़ी रिक्वेस्ट के दौरान UI परफ़ॉर्मेंस प्रभावित होगी
-settings.option.performance.enableMediaItemInspect: MediaItems के लिए डेवलपर इंस्पेक्ट सक्षम करें
+settings.option.performance.enableMediaItemInspect: MediaItems के लिए डेवलपर इंस्पेक्ट चालू करें
 settings.option.performance.enableMediaItemInspect.description: इससे परफ़ॉर्मेंस थोड़ा प्रभावित हो सकता है
 settings.option.performance.gameMode: गेम मोड
 settings.option.performance.gameMode.description: विज़ुअल इफ़ेक्ट्स को कम करता है और कम CPU उपयोग के लिए Windows एफ़िशिएंसी मोड को सक्षम कर सकता है।
@@ -4511,7 +4613,7 @@ settings.option.smartPlaylists.autoRefreshIntervalMinutes: बैकग्रा
 settings.option.smartPlaylists.clearLibraryCache: लाइब्रेरी सॉन्ग कैशे साफ़ करें
 settings.option.smartPlaylists.clearLibraryCache.description: अगले रीफ़्रेश को Apple Music से आपकी लाइब्रेरी को फिर से प्राप्त करने के लिए बाध्य करें।
 settings.option.smartPlaylists.defaultTrackLimit: डिफ़ॉल्ट ट्रैक सीमा
-settings.option.smartPlaylists.enabled: प्लेलिस्ट नियम सक्षम करें
+settings.option.smartPlaylists.enabled: प्लेलिस्ट नियम चालू करें
 settings.option.smartPlaylists.enabled.description: Cider को एम्बेडेड नियमों के साथ प्लेलिस्ट को स्वचालित रूप से प्रबंधित करने की अनुमति दें।
 settings.option.smartPlaylists.maintenance: मेंटेनेंस
 settings.option.smartPlaylists.perPlaylistMinIntervalMinutes: प्रति-प्लेलिस्ट न्यूनतम अंतराल (मिनट)
@@ -4535,18 +4637,18 @@ settings.option.sweetener.header.uiCustomization: UI कस्टमाइज़
 settings.option.sweetener.header.uiCustomization.description: ऐप में उपयोग किए जाने वाले एक्सेंट और टिंट रंग।
 settings.option.sweetener.immersiveBackground.brightnessPercentage: ब्राइटनेस %
 settings.option.sweetener.immersiveBackground.contrastPercentage: कॉन्ट्रास्ट %
-settings.option.sweetener.immersiveBackground.frameRate: फ्रेमरेट (विंडो फ़ोकस होने पर)
+settings.option.sweetener.immersiveBackground.frameRate: फ़्रेमरेट (विंडो फ़ोकस में)
 settings.option.sweetener.immersiveBackground.frameRate.description: 15-30 FPS अनुशंसित
 settings.option.sweetener.immersiveBackground.header.filters: फ़िल्टर
-settings.option.sweetener.immersiveBackground.lightModeWarning: इमर्सिव बैकग्राउंड वर्तमान में लाइट मोड पर समर्थित नहीं है।
+settings.option.sweetener.immersiveBackground.lightModeWarning: इमर्सिव बैकग्राउंड फ़िलहाल लाइट मोड में समर्थित नहीं है।
 settings.option.sweetener.immersiveBackground.saturationPercentage: सैचुरेशन %
-settings.option.sweetener.immersiveBackground.use: इमर्सिव बैकग्राउंड का उपयोग करें
-settings.option.sweetener.immersiveBackgroundType: इमर्सिव बैकग्राउंड का प्रकार
+settings.option.sweetener.immersiveBackground.use: इमर्सिव बैकग्राउंड उपयोग करें
+settings.option.sweetener.immersiveBackgroundType: इमर्सिव बैकग्राउंड प्रकार
 settings.option.sweetener.immersiveBackgroundType.immersive: इमर्सिव
 settings.option.sweetener.immersiveBackgroundType.immersiveLite: इमर्सिव लाइट
 settings.option.sweetener.useCustomAccentColor: कस्टम एक्सेंट रंग का उपयोग करें
-settings.option.sweetener.useCustomAccentColor.accentColor: एक्सेंट कलर
-settings.option.sweetener.useCustomTintColor: कस्टम टिंट रंग का उपयोग करें
+settings.option.sweetener.useCustomAccentColor.accentColor: एक्सेंट रंग
+settings.option.sweetener.useCustomTintColor: कस्टम टिंट रंग उपयोग करें
 settings.option.sweetener.useCustomTintColor.lightModeWarning: लाइट मोड का उपयोग करते समय 0.8 से कम के टिंट अनुपात को अनदेखा कर दिया जाता है।
 settings.option.sweetener.useCustomTintColor.tintColor: टिंट रंग
 settings.option.sweetener.useCustomTintColor.tintRatio: टिंट रंग अनुपात
@@ -4555,23 +4657,23 @@ settings.option.v2rp: V2 RP
 settings.option.v3: V3
 settings.option.v3rp: V3 RP
 settings.option.visual.accentColor: एक्सेंट रंग
-settings.option.visual.adaptiveColorPercent: एडैप्टिव कलर प्रतिशत
+settings.option.visual.adaptiveColorPercent: अनुकूली रंग प्रतिशत
 settings.option.visual.additionalAnimatedArtwork: कैटलॉग में अतिरिक्त एनिमेटेड आर्टवर्क
 settings.option.visual.additionalAnimatedArtwork.description: उपलब्ध होने पर अधिक एनिमेटेड आर्टवर्क दिखाएं। स्क्रीन पर कई आर्टवर्क होने से परफ़ॉर्मेंस कम होने की उम्मीद करें।
-settings.option.visual.animateArtworkOnHover: होवर करने पर मीडिया आइटम आर्टवर्क को एनिमेट करें
+settings.option.visual.animateArtworkOnHover: होवर पर मीडिया आइटम आर्टवर्क एनिमेट करें
 settings.option.visual.animatedArtwork: एनिमेटेड आर्टवर्क
 settings.option.visual.animatedArtwork.description: एनिमेटेड आर्टवर्क सक्षम करें, फ़ोकस से बाहर होने पर रोकें
 settings.option.visual.animatedArtwork.warningDescription: उपलब्ध होने पर एनिमेटेड आर्टवर्क दिखाएं। इससे कमज़ोर डिवाइसों पर परफ़ॉर्मेंस संबंधी समस्याएं हो सकती हैं।
-settings.option.visual.animatedArtworkEngine: Animated Artwork Engine
+settings.option.visual.animatedArtworkEngine: एनिमेटेड आर्टवर्क इंजन
 settings.option.visual.animatedArtworkEngine.description: Native एक लूपिंग क्लिप डाउनलोड करता है और बिना क्वालिटी बदले उसे चलाता है। Legacy का उपयोग केवल तभी करें जब आपको प्लेबैक में समस्या आ रही हो।
 settings.option.visual.animatedArtworkEngine.hls: Legacy (hls.js)
 settings.option.visual.animatedArtworkEngine.native: Native (अनुशंसित)
-settings.option.visual.animatedArtworkQuality: एनिमेटेड आर्टवर्क क्वालिटी
+settings.option.visual.animatedArtworkQuality: एनिमेटेड आर्टवर्क गुणवत्ता
 settings.option.visual.animatedArtworkQuality.balanced: संतुलित
 settings.option.visual.animatedArtworkQuality.description: एनिमेटेड आर्टवर्क कितना स्पष्ट है। 'स्वचालित' प्रत्येक आर्टवर्क को उसके ऑन-स्क्रीन आकार से मिलाता है और अधिकांश सेटअप के लिए उपयुक्त है।
 settings.option.visual.animatedArtworkQuality.performance: परफ़ॉर्मेंस
 settings.option.visual.animatedArtworkQuality.quality: क्वालिटी
-settings.option.visual.animatedBackgroundFramerate: एनिमेटेड बैकग्राउंड फ्रेमरेट
+settings.option.visual.animatedBackgroundFramerate: एनिमेटेड बैकग्राउंड फ़्रेमरेट
 settings.option.visual.animatedWindowBackground: एनिमेटेड विंडो बैकग्राउंड
 settings.option.visual.artistHeaderAlignment: कलाकार हेडर लेआउट
 settings.option.visual.artistHeaderAlignment.center: केंद्रित
@@ -4585,7 +4687,7 @@ settings.option.visual.chromaticAberrationIntensity.description: LCD ग्ल�
 settings.option.visual.colorCustomization: रंग अनुकूलन
 settings.option.visual.colorScheme: कलर स्कीम
 settings.option.visual.compactArtistHeader: कॉम्पैक्ट कलाकार हेडर
-settings.option.visual.contentFilterKeywords: सामग्री फ़िल्टर कीवर्ड
+settings.option.visual.contentFilterKeywords: कंटेंट फ़िल्टर कीवर्ड
 settings.option.visual.contentPreferences: सामग्री प्राथमिकताएं
 settings.option.visual.contentPreferences.description: कुछ पेजों का लेआउट बदलें
 settings.option.visual.contextMenuIcons: मेनू आइकन
@@ -4593,31 +4695,31 @@ settings.option.visual.customAccentColor: कस्टम एक्सेंट 
 settings.option.visual.customScalingFactor: कस्टम स्केलिंग फ़ैक्टर
 settings.option.visual.customScalingFactor.description: एप्लिकेशन के UI स्केलिंग को समायोजित करें
 settings.option.visual.enableAnimatedArtworkInMiniPlayer: मिनी प्लेयर में एनिमेटेड आर्टवर्क सक्षम करें
-settings.option.visual.extendedEditorialLayout: एल्बम पेजों पर एक्सटेंडेड एडिटोरियल लेआउट का उपयोग करें
+settings.option.visual.extendedEditorialLayout: एल्बम पेजों पर विस्तारित एडिटोरियल लेआउट का उपयोग करें
 settings.option.visual.extendedEditorialLayout.description: सक्षम होने पर, एल्बम पेज पर संपादकीय बैनर दिखाई देगा और उपलब्ध एसेट्स के आधार पर कुछ एल्बमों पर कलर पैलेट लागू होगा।
-settings.option.visual.filterPromotionalContent: प्रमोशनल कंटेंट फ़िल्टर करें
+settings.option.visual.filterPromotionalContent: प्रचारात्मक सामग्री फ़िल्टर करें
 settings.option.visual.filterPromotionalContent.description: सक्षम होने पर, 'ब्राउज़' और 'अभी सुनें' के वे सेक्शन छिप जाएंगे जो आपके फ़िल्टर कीवर्ड से मेल खाते हैं।
-settings.option.visual.floatingPlayer: फ्लोटिंग प्लेयर
+settings.option.visual.floatingPlayer: फ़्लोटिंग प्लेयर
 settings.option.visual.floatingPlayer.description: फ्लोटिंग पिल लुक के लिए प्लेयर बार को किनारों से अलग करें
-settings.option.visual.floatingPlayerPadding: फ्लोटिंग प्लेयर पैडिंग
+settings.option.visual.floatingPlayerPadding: फ़्लोटिंग प्लेयर पैडिंग
 settings.option.visual.floatingPlayerPadding.description: यह नियंत्रित करता है कि फ्लोटिंग प्लेयर के चारों ओर कितना स्पेस रहेगा
-settings.option.visual.floatingPlayerRoundness: फ्लोटिंग प्लेयर की गोलाई
+settings.option.visual.floatingPlayerRoundness: फ़्लोटिंग प्लेयर की गोलाई
 settings.option.visual.floatingPlayerRoundness.description: फ्लोटिंग प्लेयर का कॉर्नर रेडियस (0 = व्यूपोर्ट के समान)
 settings.option.visual.fonts: फ़ॉन्ट
-settings.option.visual.forceMpWindowControls: मल्टीप्लेटफ़ॉर्म विंडो कंट्रोल्स का उपयोग करें
-settings.option.visual.forceRoundedViewport: गोलाकार व्यूपोर्ट का उपयोग करें
+settings.option.visual.forceMpWindowControls: मल्टीप्लेटफ़ॉर्म विंडो नियंत्रण का उपयोग करें
+settings.option.visual.forceRoundedViewport: गोल व्यूपोर्ट का उपयोग करें
 settings.option.visual.forceRoundedViewport.description: सभी लेआउट पर मुख्य व्यूपोर्ट में राउंडेड कॉर्नर्स लागू करें
 settings.option.visual.hardwareAcceleration: हार्डवेयर एक्सेलेरेशन
 settings.option.visual.hardwareAcceleration.description: पुनः लॉन्च की आवश्यकता है
-settings.option.visual.headerStyle: एल्बम और प्लेलिस्ट हेडर स्टाइल
+settings.option.visual.headerStyle: एल्बम और प्लेलिस्ट हेडर शैली
 settings.option.visual.headerStyle.appleMusic: Apple Music
 settings.option.visual.headerStyle.appleMusic.description: कार्रवाइयां पेज के ऊपर दाईं ओर फ़्लोट होती हैं।
 settings.option.visual.headerStyle.classic: क्लासिक
 settings.option.visual.headerStyle.classic.description: कार्रवाइयां पेज हेडर के अंदर इनलाइन रहती हैं।
 settings.option.visual.headerStyle.description: क्लासिक स्टाइल एक्शन्स को हेडर के अंदर ही रखता है। Apple Music 'शेयर / अधिक / लाइब्रेरी में जोड़ें' को पेज के ऊपर दाईं ओर एक फ्लोटिंग बार में ले जाता है।
-settings.option.visual.hideAppleRecommends: '"Apple Recommends" कार्ड छिपाएं'
+settings.option.visual.hideAppleRecommends: '"Apple Recommends" कार्ड छिपाएँ'
 settings.option.visual.hideAppleRecommends.description: "'अभी सुनें' और 'होम' के सुझावों से प्रमोशनल \"Apple Recommends\" कार्ड हटाता है।"
-settings.option.visual.hideHeroItems: "'ब्राउज़' पर हीरो आइटम्स छिपाएं"
+settings.option.visual.hideHeroItems: Browse पर हीरो आइटम छिपाएँ
 settings.option.visual.immersive.adjustVisuals: विज़ुअल्स एडजस्ट करें
 settings.option.visual.immersive.background.artwork: साधारण आर्टवर्क
 settings.option.visual.immersive.background.blank: खाली
@@ -4625,14 +4727,14 @@ settings.option.visual.immersive.background.color: साधारण रंग
 settings.option.visual.immersive.background.customImage: कस्टम इमेज
 settings.option.visual.immersive.background.customImageMix: कस्टम इमेज (मिश्रित)
 settings.option.visual.immersive.background.default: डिफ़ॉल्ट
-settings.option.visual.immersive.backgroundType: बैकग्राउंड का प्रकार
+settings.option.visual.immersive.backgroundType: बैकग्राउंड प्रकार
 settings.option.visual.immersive.contrastRatio: कंट्रास्ट रेशियो
 settings.option.visual.immersive.coverflowStyle: कवरफ्लो स्टाइल
 settings.option.visual.immersive.coverflowStyle.default: डिफ़ॉल्ट
 settings.option.visual.immersive.description: इमर्सिव मोड के अनुभव को कस्टमाइज़ करें
 settings.option.visual.immersive.enableHdr: HDR सक्षम करें
 settings.option.visual.immersive.fsrUpscale: FSR आर्टवर्क अपस्केलिंग
-settings.option.visual.immersive.fsrUpscale.applyToAll: "FSR: सभी ट्रैक्स पर लागू करें"
+settings.option.visual.immersive.fsrUpscale.applyToAll: "FSR: सभी ट्रैक पर लागू करें"
 settings.option.visual.immersive.fsrUpscale.applyToAll.description: बंद होने पर, FSR केवल थ्रेशोल्ड वर्ष से पहले रिलीज़ हुए ट्रैक्स पर ही काम करता है। हर ट्रैक को अपस्केल करने के लिए इसे चालू करें।
 settings.option.visual.immersive.fsrUpscale.description: AMD FidelityFX Super Resolution का उपयोग करके एल्बम आर्टवर्क को अपस्केल करें। इससे पुराना आर्टवर्क (2010 से पहले का) अधिक स्पष्ट दिखाई देता है। इसके लिए WebGPU आवश्यक है।
 settings.option.visual.immersive.fsrUpscale.sharpness: "FSR: शार्पनेस"
@@ -4640,8 +4742,8 @@ settings.option.visual.immersive.fsrUpscale.sharpness.description: कंट्�
 settings.option.visual.immersive.fsrUpscale.thresholdYear: "FSR: थ्रेशोल्ड वर्ष"
 settings.option.visual.immersive.fsrUpscale.thresholdYear.description: जब "सभी ट्रैक्स पर लागू करें" बंद हो, तो इस वर्ष से पहले रिलीज़ हुए ट्रैक्स अपस्केलिंग के योग्य होंगे।
 settings.option.visual.immersive.hdrBoostScale: HDR बूस्ट स्केल
-settings.option.visual.immersive.hideLyricsWhenUnavailable: अनुपलब्ध होने पर लिरिक्स छिपाएं
-settings.option.visual.immersive.keepCompletedLyrics: पूरे हो चुके लिरिक्स बनाए रखें
+settings.option.visual.immersive.hideLyricsWhenUnavailable: उपलब्ध न होने पर गीत छिपाएँ
+settings.option.visual.immersive.keepCompletedLyrics: पूरे हो चुके गीत रखें
 settings.option.visual.immersive.keepCompletedLyrics.description: लिरिक्स व्यू में उन लिरिक्स को बनाए रखें जो पूरे हो चुके हैं।
 settings.option.visual.immersive.layout.default: One (डिफ़ॉल्ट)
 settings.option.visual.immersive.layout.minimal: मिनिमल
@@ -4649,9 +4751,9 @@ settings.option.visual.immersive.layout.oneClassic: One Classic
 settings.option.visual.immersive.layout.solarium: Solarium
 settings.option.visual.immersive.layout.sonoma: Sonoma
 settings.option.visual.immersive.layout.spectrumDeck: Spectrum Deck
-settings.option.visual.immersive.maxBrightness: अधिकतम ब्राइटनेस
-settings.option.visual.immersive.maxLyricFontSize: अधिकतम लिरिक्स फ़ॉन्ट साइज़ (px)
-settings.option.visual.immersive.startFullscreen: फुलस्क्रीन में शुरू करें
+settings.option.visual.immersive.maxBrightness: अधिकतम चमक
+settings.option.visual.immersive.maxLyricFontSize: गीत का अधिकतम फ़ॉन्ट आकार (px)
+settings.option.visual.immersive.startFullscreen: फ़ुलस्क्रीन में शुरू करें
 settings.option.visual.immersive.startingTab: शुरुआती टैब
 settings.option.visual.immersive.startingTab.history: इतिहास
 settings.option.visual.immersive.startingTab.lyrics: लिरिक्स
@@ -4670,13 +4772,13 @@ settings.option.visual.immersive.ultraHdr.profile.vivid: विविड
 settings.option.visual.immersive.useAnimatedArtwork: एनिमेटेड आर्टवर्क का उपयोग करें
 settings.option.visual.immersive.useAnimatedArtwork.description: उपलब्ध होने पर एनिमेटेड आर्टवर्क दिखाएं। इससे कम क्षमता वाले डिवाइस पर परफॉर्मेंस की समस्या हो सकती है।
 settings.option.visual.immersive.useAnimatedBackground: Immersive एनिमेटेड बैकग्राउंड
-settings.option.visual.immersive.useBackgroundBpm: BPM पर आधारित बैकग्राउंड स्पीड
+settings.option.visual.immersive.useBackgroundBpm: BPM पर आधारित बैकग्राउंड गति
 settings.option.visual.immersiveBackground.blank: खाली
 settings.option.visual.immersiveBackground.customImage: कस्टम इमेज
 settings.option.visual.immersiveBackground.customImageMixed: कस्टम इमेज (मिश्रित)
 settings.option.visual.immersiveBackground.gradientMesh: ग्रेडिएंट मेश
-settings.option.visual.immersiveBackground.simpleArtwork: साधारण आर्टवर्क
-settings.option.visual.immersiveBackground.simpleColor: साधारण रंग
+settings.option.visual.immersiveBackground.simpleArtwork: सरल आर्टवर्क
+settings.option.visual.immersiveBackground.simpleColor: सरल रंग
 settings.option.visual.immersiveBgSettings: इमर्सिव बैकग्राउंड सेटिंग्स
 settings.option.visual.immersiveBgSettings.description: ऐप बैकग्राउंड एन्हांसमेंट और फ़िल्टर।
 settings.option.visual.immersiveLayout.classic: वन क्लासिक
@@ -4693,8 +4795,8 @@ settings.option.visual.immersiveLayout.sonoma: सोनोमा
 settings.option.visual.immersiveLayout.sonoma.description: फ़्लोटिंग कंट्रोल कार्ड के साथ आर्टवर्क बैकग्राउंड में मिल जाता है।
 settings.option.visual.immersiveLayout.spectrumDeck: स्पेक्ट्रम डेक
 settings.option.visual.immersiveLayout.spectrumDeck.description: फ़्लोटिंग आर्टवर्क के साथ एक रीयल-टाइम स्पेक्ट्रम सीन।
-settings.option.visual.immersiveStyle: इमर्सिव स्टाइल
-settings.option.visual.immersiveStylePortrait: इमर्सिव स्टाइल (पोर्ट्रेट)
+settings.option.visual.immersiveStyle: इमर्सिव शैली
+settings.option.visual.immersiveStylePortrait: इमर्सिव शैली (पोर्ट्रेट)
 settings.option.visual.largeHeaderTitles: बड़े हेडर शीर्षक
 settings.option.visual.largeHeaderTitles.description: अधिक आकर्षक लुक के लिए एल्बम और प्लेलिस्ट पेजों पर शीर्षक टेक्स्ट को बड़ा करता है।
 settings.option.visual.layoutProfile: लेआउट प्रोफ़ाइल प्रकार
@@ -4712,13 +4814,13 @@ settings.option.visual.lcdChromaticAberration: LCD क्रोमैटिक �
 settings.option.visual.lcdChromaticAberration.description: RGB फ्रिंज के साथ लिक्विड-ग्लास शेडर के माध्यम से अभी चल रहे LCD बैकग्राउंड को रिफ्रैक्ट करें।
 settings.option.visual.liquidGlassPlayer: लिक्विड ग्लास प्लेयर बार
 settings.option.visual.liquidGlassPlayer.description: अभी चल रहे प्लेयर बार के लिए लिक्विड-ग्लास सतह का उपयोग करें। फ्लैट, सॉलिड पैनल के लिए इसे बंद करें (यह रेंडर करने में भी हल्का है)।
-settings.option.visual.liquidGlassScrollPerf: स्क्रॉल करते समय लाइटवेट ग्लास
+settings.option.visual.liquidGlassScrollPerf: स्क्रॉल करते समय हल्का ग्लास
 settings.option.visual.liquidGlassScrollPerf.description: स्क्रॉल करते समय लिक्विड-ग्लास रिफ्रैक्शन को एक साधारण ब्लर में बदलें, और रुकने पर इसे धीरे-धीरे वापस लाएं। यह अधिक लोड वाले सिस्टम पर स्क्रॉलिंग के दौरान होने वाली रुकावट को कम करता है, जबकि स्थिर रहने पर कोई बदलाव नहीं होता। Game Mode में हमेशा चालू रहता है।
 settings.option.visual.liquidGlassScrollPerf.descriptionV2: स्क्रॉल करते समय लिक्विड-ग्लास रिफ्रैक्शन को सादे ब्लर में बदलता है, और रुकने पर धीरे-धीरे वापस लाता है। भारी सिस्टम पर स्क्रॉल में रुकावट कम करता है, आराम की स्थिति में कोई बदलाव नहीं।
 settings.option.visual.mainMenuPosition: मुख्य मेनू की स्थिति
 settings.option.visual.matchPageToArtwork: पेज को आर्टवर्क से मिलाएँ
 settings.option.visual.matchPageToArtwork.description: एल्बम और प्लेलिस्ट पेजों को उनके आर्टवर्क के रंगों में रंगता है, लाइट और डार्क मोड दोनों में।
-settings.option.visual.mergeAppleMusicPlaylists: Apple Music प्लेलिस्ट को मर्ज करें
+settings.option.visual.mergeAppleMusicPlaylists: Apple Music प्लेलिस्ट मर्ज करें
 settings.option.visual.mergeAppleMusicPlaylists.description: Apple Music द्वारा तैयार की गई प्लेलिस्ट को एक अलग समूह के रूप में दिखाने के बजाय मुख्य प्लेलिस्ट अनुभाग में मिलाएँ।
 settings.option.visual.miniplayerSkin: मिनी प्लेयर लेआउट
 settings.option.visual.miniplayerSkin.aluminum: एल्युमिनियम
@@ -4737,20 +4839,20 @@ settings.option.visual.mojavePlayerType.compact: कॉम्पैक्ट
 settings.option.visual.mojavePlayerType.compact.description: सेंटर्ड LCD और ऊपर प्रोग्रेस रो के साथ एक स्लिम प्लेयर।
 settings.option.visual.mojavePlayerType.compactInline: कॉम्पैक्ट इनलाइन
 settings.option.visual.mojavePlayerType.compactInline.description: LCD के अंदर प्रोग्रेस के साथ एक सिंगल स्लिम रो।
-settings.option.visual.moveUpLinks: ब्राउज़ पर "More To See" लिंक को सबसे ऊपर ले जाएं
-settings.option.visual.musicVideoPinMaxResolution: म्यूज़िक वीडियो हमेशा अधिकतम रिज़ॉल्यूशन पर चलाएं
+settings.option.visual.moveUpLinks: Browse पर "More to see" लिंक को सबसे ऊपर ले जाएँ
+settings.option.visual.musicVideoPinMaxResolution: म्यूज़िक वीडियो हमेशा अधिकतम रिज़ॉल्यूशन पर चलाएँ
 settings.option.visual.musicVideoPinMaxResolution.description: कम गुणवत्ता से शुरू करके धीरे-धीरे बढ़ाने के बजाय, यह वीडियो द्वारा दी जाने वाली उच्चतम गुणवत्ता को बनाए रखता है। छोटी विंडो या सीमित (metered) कनेक्शन पर यह काफी अधिक बैंडविड्थ का उपयोग करता है।
-settings.option.visual.musicVideoPrefetchOnHover: होवर करने पर म्यूज़िक वीडियो तैयार करें
+settings.option.visual.musicVideoPrefetchOnHover: होवर पर म्यूज़िक वीडियो तैयार करें
 settings.option.visual.musicVideoPrefetchOnHover.description: जब पॉइंटर बैज पर होता है, तभी वीडियो लोड होना शुरू हो जाता है, ताकि क्लिक करने पर यह जल्दी खुल सके।
-settings.option.visual.musicVideoPrefetchSegmentsOnHover: होवर करने पर पहला हिस्सा डाउनलोड करें
+settings.option.visual.musicVideoPrefetchSegmentsOnHover: होवर पर पहला हिस्सा डाउनलोड करें
 settings.option.visual.musicVideoPrefetchSegmentsOnHover.description: क्लिक करने से पहले ही वीडियो के शुरुआती कुछ सेकंड भी डाउनलोड कर लेता है। हर बार होवर करने पर कुछ मेगाबाइट खर्च होते हैं, भले ही वीडियो कभी खोला न जाए।
 settings.option.visual.paletteContrast: आर्टवर्क रंग कंट्रास्ट
 settings.option.visual.paletteContrast.description: एल्बम और प्लेलिस्ट के रंगों को पेज से कितना अलग किया जाता है ताकि बटन और प्ले होने का इंडिकेटर साफ़ दिखाई दे। 'हाई कंट्रास्ट' एक्सेसिबिलिटी सेटिंग हमेशा 'अधिकतम' का उपयोग करती है।
 settings.option.visual.paletteContrast.enhanced: बेहतर
 settings.option.visual.paletteContrast.maximum: अधिकतम
 settings.option.visual.paletteContrast.standard: मानक
-settings.option.visual.pauseAnimatedOnBlur: आउट ऑफ फोकस होने पर एनिमेटेड आर्टवर्क को पॉज़ करें
-settings.option.visual.playerMaterial: प्लेयर मटेरियल
+settings.option.visual.pauseAnimatedOnBlur: फ़ोकस से बाहर होने पर एनिमेटेड आर्टवर्क रोकें
+settings.option.visual.playerMaterial: प्लेयर मटीरियल
 settings.option.visual.playerMaterial.blur: ब्लर
 settings.option.visual.playerMaterial.blur.description: लिक्विड-ग्लास रिफ्रैक्शन प्रभाव के बिना, अभी चल रहे प्लेयर बार के लिए पारभासी फ्रॉस्टेड मटेरियल का उपयोग करें।
 settings.option.visual.playerMaterial.default.description: "प्लेटफ़ॉर्म डिफ़ॉल्ट का पालन करें: macOS पर लिक्विड ग्लास, अन्य जगहों पर ब्लर।"
@@ -4769,20 +4871,20 @@ settings.option.visual.popularityThreshold.description: ट्रैक के �
 settings.option.visual.precisionScrollSpeed: सटीक स्क्रॉल गति
 settings.option.visual.precisionScrollSpeed.description: नए (ग्लास) विंडो इंजन में टचपैड स्क्रॉलिंग को बारीकी से समायोजित करें। कम मान छोटे बदलावों के लिए धीमा और अधिक सटीक होता है; अधिक मान तेज़ी से स्क्रॉल करता है।
 settings.option.visual.purplePodcastPlaybackBar: पॉडकास्ट के लिए बैंगनी प्लेबैक बार
-settings.option.visual.realtimeVisualizer: रीयल-टाइम ऑडियो विज़ुअलाइज़र
+settings.option.visual.realtimeVisualizer: रियलटाइम ऑडियो विज़ुअलाइज़र
 settings.option.visual.realtimeVisualizer.description: एनिमेटेड बार के बजाय चल रहे ट्रैक पर रीयल-टाइम ऑडियो विज़ुअलाइज़र दिखाएं।
-settings.option.visual.searchType: खोज का प्रकार
+settings.option.visual.searchType: खोज प्रकार
 settings.option.visual.searchType.floating: फ्लोटिंग
 settings.option.visual.searchType.inline: इनलाइन
-settings.option.visual.showBpmAndKey: प्लेलिस्ट और एल्बम में ट्रैक पर BPM और की (Key) दिखाएं
+settings.option.visual.showBpmAndKey: प्लेलिस्ट और एल्बम के ट्रैक पर BPM और की दिखाएँ
 settings.option.visual.showBpmAndKey.description: सक्षम होने पर कंटेंट लोड होने में अधिक समय लगेगा।
 settings.option.visual.showPersonalInfo: व्यक्तिगत जानकारी दिखाएं
-settings.option.visual.showPlaylistArtworkInSidebar: साइडबार में प्लेलिस्ट आर्टवर्क दिखाएं
-settings.option.visual.showPodcastsInSidebar: साइडबार में पॉडकास्ट दिखाएं
+settings.option.visual.showPlaylistArtworkInSidebar: साइडबार में प्लेलिस्ट आर्टवर्क दिखाएँ
+settings.option.visual.showPodcastsInSidebar: साइडबार में पॉडकास्ट दिखाएँ
 settings.option.visual.showPodcastsInSidebar.description: पॉडकास्ट सपोर्ट को अभी भी फिर से तैयार किया जा रहा है, इसलिए लाइब्रेरी प्रविष्टि अभी के लिए केवल एक प्लेसहोल्डर दिखाती है।
-settings.option.visual.showQuickActions: त्वरित क्रियाएं दिखाएं
-settings.option.visual.showWatchMusicVideoWhenAvailable: उपलब्ध होने पर "म्यूजिक वीडियो देखें" दिखाएं
-settings.option.visual.sidebarStyle: साइडबार स्टाइल
+settings.option.visual.showQuickActions: त्वरित क्रियाएँ दिखाएँ
+settings.option.visual.showWatchMusicVideoWhenAvailable: उपलब्ध होने पर "म्यूज़िक वीडियो देखें" दिखाएँ
+settings.option.visual.sidebarStyle: साइडबार शैली
 settings.option.visual.sidebarStyle.apple: Apple Music
 settings.option.visual.sidebarStyle.default: डिफ़ॉल्ट
 settings.option.visual.sidebarStyle.description: चुनें कि साइडबार का लेआउट कैसा हो। "Apple Music" पिन को लाइब्रेरी अनुभाग के अंदर व्यवस्थित करता है और Apple Music अनुभाग हेडर को हटा देता है।
@@ -4804,19 +4906,19 @@ settings.option.visual.theme.light: लाइट
 settings.option.visual.theme.manageStyles: स्टाइल्स प्रबंधित करें
 settings.option.visual.theme.uninstall: अनइंस्टॉल करें
 settings.option.visual.theme.viewInfo: जानकारी देखें
-settings.option.visual.titleBarStyle: टाइटल बार स्टाइल
+settings.option.visual.titleBarStyle: शीर्षक बार शैली
 settings.option.visual.titleBarStyle.winui: WinUI
 settings.option.visual.topToolbarWidget: शीर्ष टूलबार विजेट
 settings.option.visual.transparency: पारदर्शिता सक्षम करें
 settings.option.visual.transparent: पारदर्शी फ़्रेम
 settings.option.visual.transparent.description: थीम सपोर्ट की आवश्यकता है, फिर से शुरू करना होगा
 settings.option.visual.uiscale: UI स्केल
-settings.option.visual.useAdaptiveColors: एडैप्टिव कलर्स का उपयोग करें
+settings.option.visual.useAdaptiveColors: अनुकूली रंग उपयोग करें
 settings.option.visual.useAdaptiveColors.description: वर्तमान गाने से मेल खाने के लिए एक्सेंट कलर बदलें
 settings.option.visual.useAdaptiveColors.popup: अनुकूली रंग अगले ट्रैक पर प्रभावी होंगे।
-settings.option.visual.verticalDrawerMode: कतार और बोल का स्थान
+settings.option.visual.verticalDrawerMode: कतार और गीत स्थान
 settings.option.visual.verticalDrawerMode.auto.description: पोर्ट्रेट डिस्प्ले पर प्लेयर/सामग्री के नीचे बॉटम ड्रॉअर का उपयोग करें, और वाइडस्क्रीन पर साइड ड्रॉअर का उपयोग करें।
-settings.option.visual.verticalDrawerMode.bottom: बॉटम ड्रॉअर
+settings.option.visual.verticalDrawerMode.bottom: निचला ड्रॉअर
 settings.option.visual.verticalDrawerMode.bottom.description: कतार और बोल को हमेशा प्लेयर/सामग्री के नीचे बॉटम ड्रॉअर में प्रदर्शित करें।
 settings.option.visual.verticalDrawerMode.description: कॉन्फ़िगर करें कि वर्टिकल डिस्प्ले पर कतार और बोल बॉटम ड्रॉअर के रूप में खुलें या साइड ड्रॉअर के रूप में
 settings.option.visual.verticalDrawerMode.side: साइड ड्रॉअर
@@ -4824,10 +4926,10 @@ settings.option.visual.verticalDrawerMode.side.description: कतार और 
 settings.option.visual.vibrancyMode.acrylic: Acrylic
 settings.option.visual.vibrancyMode.mica: Mica
 settings.option.visual.vibrancyMode.tabbed: Tabbed
-settings.option.visual.vibrancySettings: वाइब्रेंसी सेटिंग्स
+settings.option.visual.vibrancySettings: जीवंतता सेटिंग्स
 settings.option.visual.windowBackgroundStyle: विंडो बैकग्राउंड स्टाइल
 settings.option.visual.windowColor: विंडो टिंट रंग
-settings.option.visual.windowControlPosition: विंडो कंट्रोल की स्थिति
+settings.option.visual.windowControlPosition: विंडो नियंत्रण स्थिति
 settings.option.visual.windowingMode: स्क्रॉल और रेंडरिंग मोड
 settings.option.visual.windowingMode.auto: ऑटो (टचपैड-अवेयर)
 settings.option.visual.windowingMode.description: चुनें कि ऐप सामग्री को कैसे रेंडर और स्क्रॉल करता है। अधिकांश उपयोगकर्ताओं के लिए "ऑटो" की अनुशंसा की जाती है, कुछ टचपैड डिवाइसों पर "पुराना" अधिक प्रतिक्रियाशील हो सकता है।
@@ -4836,7 +4938,7 @@ settings.option.visual.windowingMode.fallbackNotice.title: इस सिस्�
 settings.option.visual.windowingMode.glass: नया
 settings.option.visual.windowingMode.performance: पुराना
 settings.option.visual.windowStyle: विंडो स्टाइल
-settings.option.visual.windowVibrancy: विंडो वाइब्रेंसी
+settings.option.visual.windowVibrancy: विंडो जीवंतता
 settings.option.window.close_button_hide: बंद करें बटन से एप्लिकेशन छिप जाना चाहिए
 settings.option.window.maxElementScale: अधिकतम एलिमेंट स्केल
 settings.option.window.openOnStartup: स्टार्टअप पर Cider खोलें
@@ -4867,24 +4969,36 @@ settings.power.savers: पावर सेवर
 settings.power.summary.count: "{{high}} उच्च प्रभाव, {{medium}} मध्यम प्रभाव वाले फ़ीचर्स चालू हैं"
 settings.power.summary.high: उच्च प्रभाव
 settings.power.summary.medium: मध्यम प्रभाव
+settings.privacy.appPreferences: ऐप प्राथमिकताएँ
+settings.privacy.appPreferences.description: अपनी ऐप प्राथमिकताएँ साझा करें ताकि हमें पता चले कि आप Cider को कैसे कॉन्फ़िगर करना पसंद करते हैं।
+settings.privacy.appUsage: ऐप-विशिष्ट उपयोग
+settings.privacy.appUsage.description: Cider की विशेष सुविधाओं के लिए गुमनाम उपयोग डेटा भेजें। इसमें कोई व्यक्तिगत जानकारी या Apple Music डेटा शामिल नहीं है।
+settings.privacy.audioLabs: Cider Audio labs
+settings.privacy.audioLabs.description: भेजता है कि आपने Cider Audio labs कैसे कॉन्फ़िगर किया है, इसकी जानकारी।
+settings.privacy.deviceSpecs: डिवाइस विनिर्देश
+settings.privacy.deviceSpecs.description: आपके वर्तमान हार्डवेयर CPU, GPU, RAM, ऑडियो डिवाइस तथा ऑपरेटिंग सिस्टम की जानकारी भेजता है। जानकारी मूलभूत है और इसमें सीरियल नंबर या डिवाइस ID शामिल नहीं हैं।
+settings.privacy.replay: Cider Replay के लिए सुनने का इतिहास योगदान करें
+settings.privacy.replay.description: Cider के वार्षिक सामुदायिक replay प्रोजेक्ट में योगदान के लिए सुनने का इतिहास गुमनाम रूप से भेजें। इसके सार्वजनिक आँकड़े cider.sh/replay पर देखे जा सकते हैं।
+settings.privacy.statement: Cider Collective गोपनीयता को बहुत गंभीरता से लेता है। हम कोई व्यक्तिगत पहचान योग्य जानकारी एकत्र नहीं करते, और तीसरे पक्षों को कोई डेटा नहीं बेचते। आप जो भी डेटा हमारे साथ साझा करना चुनते हैं, उसका उपयोग ऐप को बेहतर बनाने के लिए होता है और उसे किसी और के साथ साझा नहीं किया जाता; साझा करने से पहले सभी संभावित व्यक्तिगत जानकारी हटा दी जाती है।
 settings.profile.crop.hint: स्थानांतरित करने के लिए ड्रैग करें, ज़ूम करने के लिए स्क्रॉल करें
 settings.profile.crop.title: अपनी फ़ोटो की स्थिति सेट करें
 settings.profile.defaultName: Apple Music यूज़र
-settings.profile.field.displayName: डिस्प्ले नाम
+settings.profile.field.displayName: प्रदर्शित नाम
 settings.profile.field.displayName.description: साइडबार में और Cider पर हर जगह दिखाया जाता है।
 settings.profile.field.handle.description: आपका @username, शेयर करने के लिए उपयोग किया जाता है।
 settings.profile.field.photo: प्रोफ़ाइल फ़ोटो
+settings.profile.field.photo.change: प्रोफ़ाइल फ़ोटो बदलें
 settings.profile.field.photo.description: वर्तमान में एक कस्टम फ़ोटो सेट है।
 settings.profile.header.identity: प्रोफ़ाइल संपादित करें
 settings.profile.header.region: क्षेत्र और भाषा
-settings.profile.header.visibility: साइडबार डिस्प्ले
+settings.profile.header.visibility: साइडबार प्रदर्शन
 settings.profile.language.description: चयनित स्टोरफ़्रंट के लिए कैटलॉग मेटाडेटा भाषा।
-settings.profile.option.showHandle: सोशल हैंडल दिखाएं
+settings.profile.option.showHandle: सोशल हैंडल दिखाएँ
 settings.profile.option.showMainMenu: साइडबार प्रोफ़ाइल क्षेत्र में मुख्य मेनू
-settings.profile.option.showName: प्रोफ़ाइल नाम दिखाएं
-settings.profile.option.showProfile: साइडबार में प्रोफ़ाइल दिखाएं
+settings.profile.option.showName: प्रोफ़ाइल नाम दिखाएँ
+settings.profile.option.showProfile: साइडबार में प्रोफ़ाइल दिखाएँ
 settings.profile.policy.allowed: अनुमति है
-settings.profile.policy.label: एक्सप्लिसिट कंटेंट
+settings.profile.policy.label: स्पष्ट सामग्री
 settings.profile.policy.restricted: प्रतिबंधित
 settings.profile.signOut.confirmMessage: आपको साइन-इन स्क्रीन पर वापस भेज दिया जाएगा और आपका स्थानीय लाइब्रेरी कैश साफ़ कर दिया जाएगा। क्या आप जारी रखना चाहते हैं?
 settings.profile.signOut.confirmTitle: Apple Music से साइन आउट करें?
@@ -4922,6 +5036,7 @@ settings.resetCider.confirm.ok: Cider रीसेट करें
 settings.resetCider.confirm.title: Cider रीसेट करें?
 settings.resetCider.confirm.warning: इसे वापस नहीं लिया जा सकता। रीसेट के बाद Cider रीस्टार्ट होगा।
 settings.resetCider.confirm.willReset: रीसेट किया जाएगा
+settings.resetCider.deselectAll: सभी का चयन हटाएँ
 settings.resetCider.error: रीसेट करते समय कुछ गड़बड़ हो गई।
 settings.resetCider.group.accounts: अकाउंट
 settings.resetCider.group.core: रीसेट
@@ -4931,6 +5046,10 @@ settings.resetCider.resetButton: Cider रीसेट करें
 settings.resetCider.resetting: रीसेट किया जा रहा है…
 settings.resetCider.selectAll: सभी चुनें
 settings.resetCider.title: Cider रीसेट करें
+settings.search.empty: उस खोज से कोई सेटिंग मेल नहीं खाती।
+settings.search.pages: पृष्ठ
+settings.search.resultCount: "{{count}} सेटिंग्स मेल खाती हैं"
+settings.search.resultCountOne: 1 सेटिंग मेल खाती है
 settings.sleepTimer.endsIn: "समाप्त होने में: {{remainingTime}} ({{endTime}})"
 settings.sleepTimer.notSet: टाइमर सेट नहीं है
 settings.sleepTimer.title: स्लीप टाइमर सेट करें
@@ -4940,7 +5059,7 @@ settings.smartPlaylists.section.maintenance.description: सभी नियम�
 settings.smartPlaylists.section.rules: नियम
 settings.smartPlaylists.section.rules.description: क्या Cider एम्बेडेड प्लेलिस्ट नियमों को लागू करता है, और वह कितनी बार उनका पुनर्मूल्यांकन करता है।
 settings.smartPlaylists.section.rules.descriptionV2: Cider एम्बेडेड प्लेलिस्ट नियम लागू करता है या नहीं। ये Power Usage में Background Refresh Time के साथ फिर से चलते हैं।
-settings.sweetener.useSystemAccentColor: सिस्टम एक्सेंट रंग का उपयोग करें
+settings.sweetener.useSystemAccentColor: सिस्टम एक्सेंट रंग उपयोग करें
 settings.takeout.chooseFile: फ़ाइल चुनें…
 settings.takeout.error.badVersion: उस फ़ाइल में वर्शन की जानकारी मौजूद नहीं है।
 settings.takeout.error.generic: वह फ़ाइल पढ़ी नहीं जा सकी।
@@ -4967,7 +5086,7 @@ settings.takeout.reloadPrompt: कुछ सेटिंग्स रीलो�
 settings.takeout.selectAll: सभी चुनें
 settings.takeout.title: सेटिंग्स टेकआउट
 settings.title: सेटिंग्स
-settings.troubleshooting.bgDiagnostics: बैकग्राउंड प्लेबैक डायग्नोस्टिक्स
+settings.troubleshooting.bgDiagnostics: पृष्ठभूमि प्लेबैक निदान
 settings.troubleshooting.bgDiagnostics.desc: विंडो के मिनिमाइज़ या अनफ़ोकस्ड होने पर प्लेबैक समस्याओं के निदान के लिए अतिरिक्त लॉग ब्रेडक्रम्ब्स — जैसे कि प्लेयर को किसने पॉज़ किया, टाइमर स्टार्वेशन, और OS सस्पेंशन एपिसोड। बैकग्राउंड प्लेबैक बग की रिपोर्ट करते समय इसे सक्षम करें।
 settings.troubleshooting.desc: लॉग फ़ाइलें और MKLite डीबग लॉगिंग।
 settings.troubleshooting.descV2: MKLite और बैकग्राउंड प्लेबैक लॉगिंग।
@@ -4987,13 +5106,72 @@ settings.troubleshooting.mkLoadingMethod.warning2: इस सेटिंग क
 settings.troubleshooting.mkLoadingMethod.warning3: यह विकल्प सामान्य कनेक्शन या प्लेबैक समस्याओं को हल करने के लिए नहीं है।
 settings.troubleshooting.rebootMk: MusicKit रीबूट करें
 settings.troubleshooting.rebootMk.desc: प्लेबैक समस्याओं को ठीक करने के लिए MusicKit रीबूट करें
-settings.troubleshooting.testSignIn: Apple Music साइन-इन का परीक्षण करें
+settings.troubleshooting.testSignIn: Apple Music साइन-इन जाँचें
 settings.troubleshooting.testSignIn.desc: लॉगिन काम कर रहा है या नहीं, यह सत्यापित करने के लिए Apple Music साइन-इन पॉपअप चलाएं, फिर API के साथ टोकन को सत्यापित करें। कुछ भी सहेजा नहीं जाता है और आपका वर्तमान सत्र अप्रभावित रहता है।
 settings.troubleshooting.title: समस्या निवारण
-settings.updates.action.check: अपडेट के लिए जाँच करें
+settings.tweaks.animateArtworkOnHover.description: पॉइंटर रुकने पर एनिमेटेड आर्टवर्क चलाएँ।
+settings.tweaks.artworkFadeIn.description: लोड होते समय धीरे-धीरे दिखाने के बजाय आर्टवर्क तुरंत दिखाएँ।
+settings.tweaks.artworkHighlighting.description: ग्रिड और सूचियों में आर्टवर्क पर हल्की छाया और हाइलाइट जोड़ें।
+settings.tweaks.artworkLoadingMethod.description: स्क्रॉल में दिखने पर आर्टवर्क लेज़ी लोड करता है। Eager तुरंत लोड करता है।
+settings.tweaks.card.musicVideos: म्यूज़िक वीडियो
+settings.tweaks.ciderAudioBadges.description: प्लेयर में गीत के आगे Cider Audio बैज दिखाएँ।
+settings.tweaks.ciderAudioToolbar.description: टूलबार में Cider Audio बटन दिखाएँ।
+settings.tweaks.compactSidebarSize: संक्षिप्त साइडबार आकार
+settings.tweaks.contextMenuIcons.description: कौन से मेनू आइटम आइकन दिखाते हैं।
+settings.tweaks.floatingSearchBlur: फ़्लोटिंग खोज के पीछे धुंधलापन
+settings.tweaks.floatingSearchClear: बंद होने पर फ़्लोटिंग खोज साफ़ करें
+settings.tweaks.forceMpWindowControls.description: सिस्टम बटनों के बजाय Cider के अपने विंडो बटन उपयोग करें।
+settings.tweaks.hideHeroItems.description: Browse के शीर्ष पर बड़े फ़ीचर्ड बैनर छुपाएँ।
+settings.tweaks.homeButtonLocation.description: होम बटन कहाँ स्थित है।
+settings.tweaks.immersiveArtworkHighlight: इमर्सिव आर्टवर्क हाइलाइटिंग
+settings.tweaks.immersiveArtworkHighlight.description: इमर्सिव व्यू में आर्टवर्क पर हाइलाइट जोड़ें।
+settings.tweaks.immersiveBackgroundBpm.description: गाने की टेम्पो के अनुसार पृष्ठभूमि को एनिमेट करें।
+settings.tweaks.immersiveControlsTimeout: इमर्सिव नियंत्रण टाइमआउट
+settings.tweaks.immersiveControlsTimeout.description: नियंत्रण छिपने से पहले के सेकंड।
+settings.tweaks.immersiveHideLyrics.description: बिना बोल वाले गानों के लिए बोल पैनल छिपाएँ।
+settings.tweaks.immersiveLyricGlow: सक्रिय बोल पर चमक
+settings.tweaks.immersiveLyricGlow.description: गाई जा रही पंक्ति में चमक जोड़ें।
+settings.tweaks.immersiveMaxLyricSize.description: इमर्सिव व्यू में बोल का अधिकतम आकार।
+settings.tweaks.mainMenuPosition.description: मुख्य मेनू बटन की स्थिति।
+settings.tweaks.mavericksLcdStyle: Mavericks LCD शैली
+settings.tweaks.mavericksLcdStyle.description: Mavericks लेआउट में अभी चल रहा डिस्प्ले कैसा दिखता है।
+settings.tweaks.miniPlayerAnimatedArtwork.description: मिनी प्लेयर विंडो में एनिमेटेड आर्टवर्क चलाएँ।
+settings.tweaks.moveUpLinks.description: ब्राउज़ के शीर्ष पर अधिक सामग्री के लिंक रखें।
+settings.tweaks.musicVideoBadge.description: गाने का म्यूज़िक वीडियो होने पर प्लेयर में एक बटन दिखाएँ।
+settings.tweaks.pauseAnimatedOnBlur.description: जब Cider सक्रिय विंडो न हो, एनिमेटेड आर्टवर्क रोकें।
+settings.tweaks.progressAccent: एक्सेंट रंग प्रोग्रेस बार
+settings.tweaks.progressAccent.description: गाने के प्रोग्रेस बार को एक्सेंट रंग से भरें।
+settings.tweaks.resizableMiniPlayer.description: मिनी प्लेयर विंडो का आकार बदलने दें।
+settings.tweaks.richGridNoScrollAnimation: रिच एल्बम ग्रिड में तुरंत स्क्रॉल
+settings.tweaks.richGridNoScrollAnimation.description: स्क्रॉल को एनिमेट किए बिना एल्बम पर पहुँचें।
+settings.tweaks.richGridOpenPage: रिच एल्बम ग्रिड से एल्बम पेज के रूप में खोलें
+settings.tweaks.richGridOpenPage.description: ग्रिड में विस्तार करने के बजाय एल्बम पेज पर जाएँ।
+settings.tweaks.richGridScrollPosition: रिच एल्बम ग्रिड स्क्रॉल स्थिति
+settings.tweaks.richGridScrollPosition.description: एल्बम खोलने पर ग्रिड कहाँ स्क्रॉल हो।
+settings.tweaks.scrollbarType.description: Cider के अपने स्क्रॉलबार या सिस्टम के स्क्रॉलबार का उपयोग करें।
+settings.tweaks.searchStyle: खोज शैली
+settings.tweaks.searchStyle.description: शीर्षक बार में खोजें, या पेज के ऊपर पैनल में।
+settings.tweaks.section.artwork: आर्टवर्क
+settings.tweaks.section.browse: ब्राउज़
+settings.tweaks.section.immersive: इमर्सिव
+settings.tweaks.section.lyrics: बोल
+settings.tweaks.section.pagesGrids: पेज और ग्रिड
+settings.tweaks.section.playerBar: प्लेयर बार
+settings.tweaks.section.search: खोज
+settings.tweaks.section.sidebarNavigation: साइडबार और नेविगेशन
+settings.tweaks.section.windowToolbar: विंडो और टूलबार
+settings.tweaks.showBitrate.description: प्लेयर में गाने के बगल में स्ट्रीम बिटरेट दिखाएँ।
+settings.tweaks.sidebarPlaylistArtwork.description: हर प्लेलिस्ट के नाम के बगल में उसका आर्टवर्क दिखाएँ।
+settings.tweaks.simpleArtworkMask.description: बैकग्राउंड आर्टवर्क के निचले हिस्से को धुंधला करें।
+settings.tweaks.sonomaLyricArc: Sonoma में बोल को आर्क में दिखाएँ
+settings.tweaks.sonomaRadialMask: वैकल्पिक Sonoma मास्क
+settings.tweaks.volumeIosStyle: iOS शैली वॉल्यूम स्लाइडर
+settings.tweaks.volumeIosStyle.description: iPhone पर उपयोग होने वाली शैली में वॉल्यूम स्लाइडर बनाएँ।
+settings.tweaks.windowControlPosition.description: विंडो बटन किस ओर स्थित हों।
+settings.updates.action.check: अपडेट जाँचें
 settings.updates.action.install: अपडेट इंस्टॉल करें
 settings.updates.action.restart: Cider रीस्टार्ट करें
-settings.updates.action.retry: पुनः प्रयास करें
+settings.updates.action.retry: फिर से कोशिश करें
 settings.updates.autoCheck: अपडेट स्वचालित रूप से जाँचें
 settings.updates.autoCheck.description: बंद होने पर, Cider केवल तब जाँचता है जब आप यह पेज खोलते हैं।
 settings.updates.build: बिल्ड
@@ -5018,24 +5196,25 @@ settings.updates.progress.success: अपडेट इंस्टॉल हो 
 settings.updates.progress.success.sub: बदलावों को लागू करने के लिए Cider रीस्टार्ट करें।
 settings.updates.progress.working: अपडेट इंस्टॉल किया जा रहा है
 settings.updates.progress.working.sub: कृपया प्रतीक्षा करें, इसमें बस कुछ ही समय लगेगा।
-settings.updates.section.about: आपके वर्शन के बारे में
+settings.updates.section.about: आपके संस्करण के बारे में
 settings.updates.section.alsoAvailable: यह भी उपलब्ध है
 settings.updates.section.history: अपडेट इतिहास
-settings.updates.section.whatsNew: Cider में नया क्या है
+settings.updates.section.whatsNew: Cider {version} में नया क्या है
 settings.updates.status.available: अपडेट उपलब्ध है
-settings.updates.status.checking: अपडेट की जाँच की जा रही है...
-settings.updates.status.failed: अपडेट विफल रहा
+settings.updates.status.checking: अपडेट जाँचे जा रहे हैं...
+settings.updates.status.failed: अपडेट विफल
 settings.updates.status.idle: Cider अप-टू-डेट है
-settings.updates.status.success: रीस्टार्ट आवश्यक है
+settings.updates.status.success: पुनः आरंभ करना आवश्यक है
 settings.updates.status.working: इंस्टॉल किया जा रहा है...
-settings.visual.card.appBackground: ऐप बैकग्राउंड
-settings.visual.card.behaviorLyrics: व्यवहार और लिरिक्स
+settings.visual.card.appBackground: ऐप पृष्ठभूमि
+settings.visual.card.behavior: व्यवहार
+settings.visual.card.behaviorLyrics: व्यवहार और बोल
 settings.visual.card.browse: ब्राउज़ करें
 settings.visual.card.contentFilter: सामग्री फ़िल्टर
 settings.visual.card.experimental: प्रायोगिक
 settings.visual.card.fsrUpscaling: FSR अपस्केलिंग
-settings.visual.card.moreAnimatedArtwork: अधिक एनिमेटेड आर्टवर्क
-settings.visual.card.playerEffects: प्लेयर इफेक्ट्स
+settings.visual.card.moreAnimatedArtwork: और एनिमेटेड आर्टवर्क
+settings.visual.card.playerEffects: प्लेयर प्रभाव
 settings.visual.card.sidebarNavigation: साइडबार और नेविगेशन
 settings.visual.card.trackMetadata: ट्रैक मेटाडेटा
 settings.visual.card.ultraHdr: Ultra HDR अपस्केलिंग
@@ -5046,14 +5225,18 @@ settings.visual.section.appearance: रूप-रंग
 settings.visual.section.appearance.description: कलर स्कीम, एक्सेंट रंग और ऐप बैकग्राउंड।
 settings.visual.section.artwork: आर्टवर्क और मोशन
 settings.visual.section.artwork.description: एनिमेटेड आर्टवर्क और मोशन प्राथमिकताएं।
-settings.visual.section.content: ब्राउज़िंग और सामग्री
+settings.visual.section.content: ब्राउज़िंग और कंटेंट
 settings.visual.section.content.description: पेज लेआउट, ब्राउज़ प्राथमिकताएं और सामग्री फ़िल्टरिंग।
 settings.visual.section.customCss.description: Cider की स्टाइलिंग के ऊपर अपना खुद का CSS लागू करें।
 settings.visual.section.layout: लेआउट
 settings.visual.section.layout.description: ऐप लेआउट, प्लेयर स्टाइल, साइडबार और नेविगेशन।
+settings.visual.section.pages: पेज
+settings.visual.section.pages.description: एल्बम और प्लेलिस्ट पेज कैसे लेआउट किए जाते हैं।
+settings.visual.section.themeColors: थीम और रंग
 settings.visual.section.window: विंडो
 settings.visual.section.window.description: विंडो क्रोम, वाइब्रेंसी, कंट्रोल और स्केलिंग।
-settings.visual.vibrancy.acrylicDarkness: एक्रिलिक डार्कनेस वैल्यू
+settings.visual.section.window.descriptionV2: विंडो क्रोम, विब्रेंसी, रेंडरिंग और स्केलिंग।
+settings.visual.vibrancy.acrylicDarkness: एक्रेलिक गहराई मान
 settings.visual.vibrancy.mode.acrylic: एक्रिलिक
 settings.visual.vibrancy.mode.mica: माइका
 settings.visual.vibrancy.mode.none: कोई नहीं
