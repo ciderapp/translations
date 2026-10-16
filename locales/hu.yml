@@ -50,7 +50,7 @@ action.autoplay.disable: Automatikus lejátszás kikapcsolása
 action.autoplay.enable: Automatikus lejátszás bekapcsolása
 action.back: Vissza
 action.cancel: Mégse
-action.cancelTimer: Időzítő leállítása
+action.cancelTimer: Időzítő megszakítása
 action.cast.airplay: AirPlay
 action.cast.airplay.underdevelopment: Az AirPlay még fejlesztés alatt áll
 action.cast.chromecast: Chromecast
@@ -61,6 +61,7 @@ action.cast.todevices: Közvetítés eszközökre
 action.change: Módosítás
 action.clear: Törlés
 action.close: Bezárás
+action.configure: Beállítás
 action.connect: Csatlakozás
 action.connect.createCollabPlaylist: Új közös lejátszási lista létrehozása
 action.connect.listenTogether: Közös zenehallgatás
@@ -79,6 +80,7 @@ action.deleteFolder: Biztosan törölni szeretné a(z) „{{folderName}}” mapp
 action.deleteFolder.message: A mappában található összes mappa és lejátszási lista is törlődik.
 action.deletePlaylist: Biztosan törölni szeretné a(z) „{{playlistName}}” lejátszási listát?
 action.deletepreset: Előbeállítás törlése
+action.deny: Elutasítás
 action.disablePlugins: Disable plugins for this session
 action.disconnect: Leválasztás
 action.dislike: Nem tetszik
@@ -623,6 +625,12 @@ assistant.sid.settings.freshDetail: Teljes lejátszólista építése hangulat, 
 assistant.sid.settings.gemmaHere: Gemma itt
 assistant.sid.settings.gpu: Grafikus kártya
 assistant.sid.settings.group: Asszisztens
+assistant.sid.settings.helloEdit: Nyiss meg egy lejátszási listát, és válaszd az Szerkesztés Sid-del lehetőséget, én pedig rendbe teszem.
+assistant.sid.settings.helloFresh: Adj meg egy hangulatot vagy néhány előadót, és összeállítok egy teljes lejátszási listát.
+assistant.sid.settings.helloRequest: Kérj egy dalt a szett közben, és megtalálom az Apple Musicon.
+assistant.sid.settings.helloSet: Szett közben a tonalitás és a tempó alapján választom ki, mi szóljon legközelebb.
+assistant.sid.settings.helloSort: Kérd, hogy rendezzem a lejátszási listát a nyugodttól a pörgősig, vagy hogy a tonalitások szép sorrendben kövessék egymást.
+assistant.sid.settings.helloTrim: Lejátszási listát tudok egy órára csonkítani, vagy egy tempón tartani.
 assistant.sid.settings.inEdit: Playlist szerkesztésekor
 assistant.sid.settings.inEditDetail: Szerkesztés Sid-del a lejátszási lista fejlécében
 assistant.sid.settings.inImmersive: Immerzív nézetben
@@ -651,6 +659,11 @@ assistant.sid.settings.position: Pozíció
 assistant.sid.settings.positionDetail: Hol helyezkedjen el Sid a borítón
 assistant.sid.settings.privacyChat: "Amit beírsz, ezen a számítógépen marad: Sid itt, helyben gondolkodik Gemma segítségével. Zene kereséséhez Sid keresőszavakat küld az Apple Music-nek, és ha kéred, az Apple Music-fiókodból olvassa a playlistjeidet, a legutóbbi lejátszásaidat és az Apple Music Replay-t. Semmi nem változik, amíg meg nem nyomod az Alkalmazás gombot."
 assistant.sid.settings.privacyEngine: "Amit beírsz, ezen a számítógépen marad: Sid itt, a {engine} segítségével gondolkodik. A zenék kereséséhez Sid kereső szavakat küld az Apple Musicnak, a kérésedre pedig beolvassa a lejátszási listáidat, a legutóbbi lejátszásaidat és az Apple Music Replayt az Apple Music-fiókodból. Semmi nem változik, amíg meg nem nyomod az Alkalmazás gombot."
+assistant.sid.settings.quipGaming: A {gpu} és én remekül kijövünk majd egymással.
+assistant.sid.settings.quipIntegrated: Integrált grafika. Könnyed és kellemes hangulatot teremtek.
+assistant.sid.settings.quipOther: Szép {gpu}. Jó kezekben lesz.
+assistant.sid.settings.quipSetsOnly: A {gpu} és én egyelőre csak a szettek futtatására szorítkozunk.
+assistant.sid.settings.quipTop: "{gpu}? Alig izzadok majd tőle."
 assistant.sid.settings.reads: Egy teljes playlistet {seconds} s alatt olvas be (legalább {floor} s alatt kell)
 assistant.sid.settings.regular: Normál
 assistant.sid.settings.remove: Eltávolítás
@@ -753,6 +766,19 @@ auth.error.unavailable: Ez az Apple-azonosító nem használhatja az Apple Music
 auth.error.windowFailed: Nem sikerült megnyitni a bejelentkezési ablakot
 auth.mutExpired.confirm: Bejelentkezés
 auth.mutExpired.message: Az Apple Music-munkameneted lejárt. Jelentkezz be újra a folytatáshoz.
+auth.request.authorizing: Engedélyezés…
+auth.request.copyToken: Token másolása
+auth.request.granted: Engedélyezve
+auth.request.requestedAccess: Kért hozzáférés
+auth.request.revealNote: Ez az egyetlen alkalom, amikor ez a token megjelenik. Illeszd be most a(z) {app} alkalmazásba.
+auth.request.subtitle: hozzáférést kér a Ciderhez
+auth.request.toast.copied: Token másolva a vágólapra
+auth.request.toast.failed: A token nem hozható létre
+auth.request.toast.granted: Hozzáférés engedélyezve a(z) {app} számára
+auth.request.toast.title: Engedélyezés
+auth.request.tokenCreated: Token létrehozva
+auth.request.tokenFor: "ehhez: {app}"
+auth.request.trustNote: Csak megbízható alkalmazásoknak adj hozzáférést. Ezt a tokent bármikor visszavonhatod a Beállítások › Kapcsolatok menüpontban.
 auth.signedIn: Bejelentkezve
 auth.signInRetry.confirm: Próbálja újra
 auth.signInRetry.message: Nem sikerült megnyitni a bejelentkezési ablakot. Megpróbálja újra?
@@ -951,7 +977,7 @@ gallery.searchSnippets: Snippetek keresése
 gallery.submitPlugin: Bővítmény beküldése
 gallery.submitSnippet: Saját snippet beküldése
 gallery.submitTheme: Téma beküldése
-general.closeToTray: Bezárás a tálcára
+general.closeToTray: Bezárás tálcára
 general.closeToTray.description: A bezárás gomb minimalizálja a Cider ablakot
 home.artistsFeed: Előadói hírfolyam
 home.artistsFeed.noArtist: Kövessen előadókat a legújabb megjelenéseik megtekintéséhez
@@ -2865,7 +2891,7 @@ oobe.amupsell.text: |-
   A Cider nem működik az Apple Music Voice Plan csomaggal vagy bizonyos promóciós próbaelőfizetésekkel. Ha már rendelkezik megfelelő Apple Music előfizetéssel, kattintson a Tovább gombra a folytatáshoz.
 oobe.amupsell.title: Mielőtt elkezdenénk
 oobe.appearance.accentHint: Gombokhoz, kiemelésekhez és folyamatjelzőkhöz az alkalmazásban. Próbálj ki egyet, az előnézet azonnal látható.
-oobe.appearance.subtitle: Válassz egy színsémát és egy kiemelőszínt. Ezeket bármikor módosíthatod a Beállítások → Megjelenítés menüpontban.
+oobe.appearance.subtitle: Válassz színsémát és kiemelőszínt. Ezeket bármikor módosíthatod a Beállítások › Megjelenés menüpontban.
 oobe.appearance.title: Tedd egyedivé a Cidert
 oobe.appleNotice: "Megjegyzés: az Apple Music az Apple Inc. védjegye. A Cider az Apple Music harmadik féltől származó kliense, és nem áll kapcsolatban az Apple Inc.-vel."
 oobe.audio.advancedFunctionality: ""
@@ -2880,7 +2906,7 @@ oobe.connections.atmosRatingsHint: Nézd meg és oszd meg, mely albumok szólnak
 oobe.connections.lastfm.connected: Csatlakoztatva
 oobe.connections.lastfm.connectedAs: Csatlakoztatva mint {username}
 oobe.connections.lastfm.hint: Scrobblold a lejátszási előzményeidet.
-oobe.connections.moreHint: További integrációk, mint a Libre.fm, Maloja, ListenBrainz, valamint a WebSockets és RPC API-k a Beállítások → Kapcsolatok menüpontban találhatók.
+oobe.connections.moreHint: A további integrációk, mint a Libre.fm, a Maloja, a ListenBrainz, valamint a WebSockets és RPC API-k a Beállítások › Kapcsolatok menüpontban érhetők el.
 oobe.connections.pairDevice: Eszköz párosítása
 oobe.connections.remoteHint: Vezéreld a Cidert a telefonodról.
 oobe.connections.subtitle: Kapcsold össze a Cidert más alkalmazásokkal és szolgáltatásokkal.
@@ -3074,10 +3100,22 @@ playlist.refresh.title: A lejátszási listát frissíteni kell
 playlist.suggestions.subtitle: Előnézet és hozzáadás a lejátszási listához
 playlist.suggestions.title: Javasolt dalok
 playlist.untitled: Névtelen
+plugin.install.byAuthor: "szerző: {author}"
+plugin.install.identifier: Azonosító
+plugin.install.install: Telepítés
+plugin.install.installing: Telepítés…
+plugin.install.source: Forrás
+plugin.install.subtitle: Egy Cider-bővítmény a könyvtáradhoz szeretne hozzáadódni.
+plugin.install.title: Bővítmény telepítése
+plugin.install.update: Frissítés
+plugin.install.updateSubtitle: Egy Cider-bővítmény a telepített verzió cseréjét szeretné.
+plugin.install.updateTitle: Bővítmény frissítése
+plugin.install.warning: A bővítmények kódot futtathatnak a Ciderben, hozzáférve a lejátszáshoz, a várólistához és a könyvtárhoz. Csak megbízható forrásból származó bővítményeket telepíts.
 podcast.comingSoon.description: A podcastok támogatásának újjáépítése folyamatban van, miután a Cider lejátszáskezelése jelentős változásokon ment keresztül. Egy jövőbeli frissítésben újra elérhető lesz.
 podcast.comingSoon.hide: Elrejtés az oldalsávról
 podcast.comingSoon.hint: Visszakapcsolhatod a Megjelenítési beállításokban, az Oldalsáv és navigáció menüpont alatt.
 podcast.comingSoon.title: A podcastok hamarosan elérhetők lesznek
+podcast.comingSoon.tweaksHint: A Finomhangolás beállításaiban, a Oldalsáv és navigáció alatt újra bekapcsolhatod.
 podcast.episodes: Epizódok
 podcast.followedOnCider: Követve a Cideren
 podcast.followOnCider: Követés a Cideren
@@ -3158,9 +3196,14 @@ settings.accessibility.section.display: Megjelenítés
 settings.accessibility.section.display.description: Szövegvastagság, felület méretezése, kontraszt és fókuszjelzők.
 settings.accessibility.section.motion: Mozgás
 settings.accessibility.section.motion.description: A gombok, kártyák és egyéb felületek animációjának mértéke.
-settings.accessibility.section.soundEffects: Hangeffektusok
+settings.accessibility.section.soundEffects: Hangeffektek
 settings.accessibility.section.soundEffects.description: A gombok, kapcsolók és csúszkák felülethangjai, valamint azok hangereje.
-settings.advanced.section.backups: Biztonsági mentések és visszaállítás
+settings.accessibility.soundPreview.click: Kattintás
+settings.accessibility.soundPreview.slider: Csúszka
+settings.accessibility.soundPreview.switch: Kapcsoló
+settings.accounts.appleMusic: Apple Music
+settings.accounts.appleMusic.description: Apple Music engedélyezése
+settings.advanced.section.backups: Mentések és visszaállítás
 settings.advanced.section.backups.description: Mentsd el a beállításaid másolatát, állíts vissza egy korábbi Cider-mentést, vagy állíts vissza mindent az alapértelmezettre.
 settings.advanced.section.client: Ez a kliens
 settings.advanced.section.client.description: Teljesítménykorlátok és azon beállítások, amelyek a Cider-kliensre vonatkoznak, nem pedig a fiókodra.
@@ -3168,33 +3211,33 @@ settings.airplay.installed.message: Az AirPlay telepítve lett
 settings.airplay.installed.title: AirPlay telepítve
 settings.airplay.requiresCiderAudio: A CiderAudio engedélyezése szükséges
 settings.appleMusic.storefront.warning: Az áruház megváltoztatása lejátszási problémákat okozhat. Csak saját felelősségre.
-settings.artwork.disableFadeIn: Áttűnési effektus kikapcsolása
-settings.artwork.highlighting: Borítókép kiemelése
+settings.artwork.disableFadeIn: Beúszási effektus letiltása
+settings.artwork.highlighting: Borítókiemelés
 settings.artwork.hiresImages: Nagy felbontású képek használata
 settings.artwork.hiresImages.warning: Növelheti a betöltési időt és ronthatja a teljesítményt.
 settings.audio.atmos: Dolby Atmos
-settings.audio.atmos.binaural.desc: Az Atmos binaurális sztereóként jelenik meg a CiderAudio segítségével. Az Áttűnés, az Automix és a Zökkenőmentes átmenetek továbbra is a megszokott módon működnek.
+settings.audio.atmos.binaural.desc: Az Atmos binaurális sztereóként, a CiderAudio-n keresztül renderelve. A keresztmosás, az Automix és a zökkenőmentes átmenetek a szokásos módon működnek.
 settings.audio.atmos.description: Az Atmos-lejátszás konfigurálása a jelenlegi kimeneti eszközhöz.
-settings.audio.atmos.normalizationHint: A Dolby Atmos keverések halkabbak, mint a sztereó mesterfelvételek. A kiegyenlítéshez kapcsold be a Hangerő-normalizálást.
+settings.audio.atmos.normalizationHint: A Dolby Atmos keverékek halkabbak a sztereó mastereknél. Kapcsold be a hangerő-normalizálást, hogy kiegyenlítsd őket.
 settings.audio.atmos.off.desc: Atmos kikapcsolva. Minden tartalom szabványos sztereóban szólal meg.
 settings.audio.atmos.passthrough: Passthrough
 settings.audio.atmos.passthrough.desc: Megkerül minden hangfeldolgozást. A többcsatornás Atmos közvetlenül az eszközre kerül továbbításra. Ideális AV-vevőkhöz.
-settings.audio.atmos.passthrough.descV2: A többcsatornás Atmos hangot közvetlenül az eszköznek küldi, AV-erősítőkhöz. Az Audio Lab, az equalizer és a hallgatási mód kikerül a feldolgozásból.
+settings.audio.atmos.passthrough.descV2: A többcsatornás Atmos-t közvetlenül az eszköznek küldi, AV-erősítőkhöz. Az Audio Lab, az equalizer és a hallgatási mód kikerül a láncból.
 settings.audio.atmos.passthroughActive: Passthrough aktív — módosítás a részletes beállításokban.
-settings.audio.atmos.standard.desc: Többcsatornás Atmos CiderAudio feldolgozással. Az Áttűnés, az Automix és a Zökkenőmentes átmenetek továbbra is a megszokott módon működnek.
-settings.audio.atmosMode: Atmos-mód
+settings.audio.atmos.standard.desc: Többcsatornás Atmos a CiderAudio feldolgozásával. A keresztmosás, az Automix és a zökkenőmentes átmenetek a szokásos módon működnek.
+settings.audio.atmosMode: Atmos mód
 settings.audio.atmosMode.switchFromPassthroughConfirm: A passthrough módból való váltáshoz az alkalmazás újratöltése szükséges. Folytatod?
 settings.audio.atmosMode.switchToPassthroughConfirm: A passthrough módra való váltáshoz az alkalmazás újratöltése szükséges. Folytatod?
 settings.audio.automix: Automix
-settings.audio.card.advancedVolume: Részletes hangerő
+settings.audio.card.advancedVolume: Speciális hangerő
 settings.audio.card.badges: Jelvények
 settings.audio.card.streaming: Streamelés
 settings.audio.ciderAudio: Cider Audio
 settings.audio.ciderAudio.description: Egyedileg hangolt és tervezett audiorendszer, amely gazdag, kiváló minőségű hangélményt nyújt. Használata ajánlott a hagyományos hangszínszabályzó helyett.
 settings.audio.ciderAudio.enable: Cider Audio engedélyezése
-settings.audio.ciderAudio.requiredHint: Szükséges a hangszínszabályzóhoz
+settings.audio.ciderAudio.requiredHint: Az equalizerhez szükséges
 settings.audio.crossfade: Áttűnés
-settings.audio.hostCapture.apps: Indítóalkalmazások
+settings.audio.hostCapture.apps: Indító alkalmazások
 settings.audio.hostCapture.apps.count: "{{ n }} alkalmazás fogja indítani a rögzítést."
 settings.audio.hostCapture.apps.countOne: 1 alkalmazás fogja indítani a rögzítést.
 settings.audio.hostCapture.apps.emptyAvailable: Nincs más megnyitott alkalmazás. Nyiss meg egyet, majd kattints a Frissítés gombra.
@@ -3216,7 +3259,7 @@ settings.audio.hostCapture.bitAuto: Automatikus (legmagasabb)
 settings.audio.hostCapture.bitDepth: Bitmélység
 settings.audio.hostCapture.bitDepthHint: Az automatikus beállítás az eszközöd által támogatott legmagasabb bitmélységet használja.
 settings.audio.hostCapture.exclusiveNote: Exkluzív kimenet, bitpontos, nem rögzíthető.
-settings.audio.hostCapture.gain: Kimeneti szint finomhangolása
+settings.audio.hostCapture.gain: Kimeneti szint korrekció
 settings.audio.hostCapture.gainHint: A rögzített hangerő igazítása a normál kimenethez.
 settings.audio.hostCapture.mode: Hangkimeneti mód
 settings.audio.hostCapture.modeCapture: Rögzítés
@@ -3227,7 +3270,7 @@ settings.audio.hostCapture.modeHintCapture: A hangot a Cider folyamatból játss
 settings.audio.hostCapture.modeHintExclusive: Bitpontos kimenet közvetlenül a DAC-odra, megkerülve a Windows keverőt. Nem rögzíthető.
 settings.audio.hostCapture.modeHintOff: "Kikapcsolva: a hang normál módon játszódik le a WebView2 folyamatból. Nem érhető el Dolby Atmos átengedés vagy videóklipek lejátszása közben."
 settings.audio.hostCapture.outputShort: Hangkimenet
-settings.audio.hostCapture.rate: Mintavételezési gyakoriság
+settings.audio.hostCapture.rate: Mintavételezési frekvencia
 settings.audio.hostCapture.rateHint: A forráshoz igazított beállítás bitpontos; a többi frekvencia kiváló minőségben újramintavételezett.
 settings.audio.hostCapture.rateMatch: Forráshoz igazítás (44,1 kHz)
 settings.audio.lab: Audio Lab
@@ -3251,7 +3294,7 @@ settings.audio.occlusion.passthroughNote.short: Nem érhető el aktív Atmos pas
 settings.audio.outputDevice: Hangkimeneti eszköz kiválasztása
 settings.audio.outputDeviceHint: Válaszd ki a lejátszáshoz használni kívánt kimeneti audioeszközt.
 settings.audio.outputDeviceHintHost: A rögzíthető hang be van kapcsolva, a lejátszás ezt a Windows-kimeneti eszközt használja.
-settings.audio.section.ciderAudio: Cider Audio és jelzők
+settings.audio.section.ciderAudio: Cider Audio és jelzések
 settings.audio.section.ciderAudio.description: A Cider Audio feldolgozási lánca és a számok lejátszásakor megjelenő jelvények.
 settings.audio.section.currentSignal: Aktuális jel
 settings.audio.section.mixing: Keverés
@@ -3262,18 +3305,47 @@ settings.audio.section.playback: Lejátszás
 settings.audio.section.playback.description: Hangminőség, térbeli hangzás, hallgatási módok és a podcastok lejátszási sebessége.
 settings.audio.section.volume: Hangerő
 settings.audio.section.volume.description: Hangerő-kiegyenlítés, a görgetőkerék érzékenysége és a hangerőcsúszka kijelzése.
+settings.audio.signal.atmosCodecs: Atmos kodekek elérhetők
+settings.audio.signal.atmosNativeMac: Natív (macOS)
+settings.audio.signal.atmosNativeMacTooltip: A Dolby Atmos dekódolását a macOS CoreAudio natívan végzi. A térhatású hang megjelenítését a rendszer kezeli.
+settings.audio.signal.atmosOffTooltip: Az Atmos le van tiltva ehhez az eszközhöz. A tartalom szabványos sztereóban szól.
+settings.audio.signal.atmosOffTooltipMac: Az Atmos le van tiltva ehhez az eszközhöz.
+settings.audio.signal.atmosSupported: Támogatott
+settings.audio.signal.binauralSubtitle: Fejhallgatós megjelenítés
+settings.audio.signal.binauralTooltip: Az Atmos tartalom binaurális sztereóban jelenik meg a CiderAudio feldolgozón keresztül.
+settings.audio.signal.channels: "{count} csatorna"
+settings.audio.signal.codecs: Kodekek
+settings.audio.signal.deviceRateTooltip: Az aktuális eszköz mintavételezési frekvenciája
+settings.audio.signal.directOutput: Közvetlen kimenet
+settings.audio.signal.directOutputChannels: Közvetlen kimenet ({count}ch)
+settings.audio.signal.loading: Betöltés…
+settings.audio.signal.nativeMatch: Natív egyezés
+settings.audio.signal.noAtmosCodecs: Nincsenek Atmos kodekek
+settings.audio.signal.output: Kimenet
+settings.audio.signal.passthroughMode: Átviteli mód
+settings.audio.signal.passthroughSubtitle: Hangfeldolgozás kihagyva, közvetlen kimenet az eszközre
+settings.audio.signal.passthroughTooltip: A hang kihagyja a feldolgozást, és közvetlenül az eszközre kerül. A CiderAudio funkciók, például az átfedéses átmenet, az Automix és a zökkenőmentes átmenetek inaktívak.
+settings.audio.signal.sampleRate: Mintavételezési frekvencia
+settings.audio.signal.source: Forrás {rate}
+settings.audio.signal.sourceRateTooltip: Apple Music lejátszási frekvencia
+settings.audio.signal.standardSubtitle: Többcsatornás + CiderAudio
+settings.audio.signal.standardTooltip: A többcsatornás Atmos tartalom CiderAudio feldolgozáson keresztül szól, és az eszköz képességeihez igazodva jelenik meg.
+settings.audio.signal.stereo: Sztereó
+settings.audio.signal.surround51: 5.1 surround
+settings.audio.signal.surround71: 7.1+ surround
+settings.audio.signal.upsamplingTooltip: A rendszer az Apple Music forrásfrekvenciájáról mintavételez újra
 settings.automix.allowTempoKeyShifts: Tempó- és hangnemváltások engedélyezése
 settings.automix.allowTempoKeyShiftsHint: Kisebb eltolások engedélyezése az átmenetek dinamikájának megőrzéséhez. (Ideiglenesen letiltva, átdolgozás alatt.)
 settings.automix.description: Intelligens átmenet a dalok között a tempó és a hangnem alapján.
 settings.automix.descriptionV2: A számokat a saját elhalkulási és énekadataik alapján mossa össze a rögzített áttűnés helyett.
-settings.automix.disableFor: Automix letiltása a következőkhöz...
+settings.automix.disableFor: Automix kikapcsolása...
 settings.automix.disableForAlbums: Albumok
 settings.automix.disableForAlbumsHint: Ne alkalmazza az Automixet albumok lejátszásakor.
-settings.automix.disableForAutoplayContinuation: Automatikus lejátszás folytatása
+settings.automix.disableForAutoplayContinuation: Automatikus folytatás
 settings.automix.disableForAutoplayContinuationHint: Ne alkalmazza az automixet, ha a lejátszás rádióállomásra vagy automatikusan lejátszott dalokra vált az eredeti gyűjtemény befejezése után.
 settings.automix.disableForDjMixes: DJ-mixek
 settings.automix.disableForDjMixesHint: Ne alkalmazza az Automixet DJ-mixek és folyamatos mixek esetén.
-settings.automix.disableForLiveAlbums: Koncertalbumok
+settings.automix.disableForLiveAlbums: Élő albumok
 settings.automix.disableForLiveAlbumsHint: Ne alkalmazza az automixet élő felvételek és koncertek esetén.
 settings.automix.disableForPlaylists: Lejátszási listák
 settings.automix.disableForPlaylistsHint: Ne alkalmazza az Automixet lejátszási listák lejátszásakor.
@@ -3283,33 +3355,33 @@ settings.automix.normalizeDurationHint: Áttűnési idő a hangerő-illesztéshe
 settings.automix.spectralSeparation: Spektrális szétválasztás
 settings.automix.spectralSeparationHint: Meghatározza, hogy az átmenet során a két szám frekvenciája mennyire válik el egymástól.
 settings.automix.spectralSeparationHintV2: Mennyire válnak szét frekvenciában a két szám az átmenet során ({value}).
-settings.automix.speedSettle: Sebesség-visszaállási idő
+settings.automix.speedSettle: Sebesség-stabilizálási idő
 settings.automix.speedSettleHint: Mennyi idő alatt áll vissza a lejátszási sebesség a normál értékre a tempóhoz igazított keverés után ({ms} ms)
-settings.automix.tempoAlign: Ütemegyeztetés
+settings.automix.tempoAlign: Ütemillesztés
 settings.automix.tempoAlignHint: Finoman módosítja a tempót a két szám összehangolásához, ha azok már közel vannak egymáshoz.
-settings.automix.vocalGuard: Énekvédelem
+settings.automix.vocalGuard: Énekhang védelme
 settings.automix.vocalGuardHint: Lerövidíti a keverést, ha mindkét számban egyszerre van énekhang.
 settings.cache.all: Összes
-settings.cache.artistChips: Előadói kártyák
+settings.cache.artistChips: Előadócímkék
 settings.cache.artwork: Borítóképek
-settings.cache.clear: Gyorsítótár ürítése
+settings.cache.clear: Gyorsítótár törlése
 settings.cache.content: Tartalom
 settings.cache.entries: "Bejegyzések száma: {{ count }}"
-settings.cache.homeData: Kezdőlap adatai
+settings.cache.homeData: Főoldali adatok
 settings.cache.library: Könyvtár
-settings.cache.marketplaceListings: Marketplace-ajánlatok
-settings.cache.playlistIndex: Lejátszási listák indexe
+settings.cache.marketplaceListings: Piactér-listák
+settings.cache.playlistIndex: Lejátszási lista index
 settings.cache.prompt.artwork.cleared.message: A borítókép-gyorsítótár törölve lett. Frissíti most?
-settings.cache.prompt.artwork.cleared.title: Borítókép-gyorsítótár törölve
-settings.cache.prompt.artwork.title: Borítókép-gyorsítótár törlése
+settings.cache.prompt.artwork.cleared.title: Borítógyorsítótár törölve
+settings.cache.prompt.artwork.title: Borítógyorsítótár törlése
 settings.cache.prompt.clearAll.cleared.message: A gyorsítótár törölve lett. Frissíti most?
 settings.cache.prompt.clearAll.cleared.title: Gyorsítótár törölve
 settings.cache.prompt.clearAll.title: Gyorsítótár törlése
 settings.cache.prompt.marketplace.cleared.message: A gyorsítótár törölve lett. Frissíti most?
-settings.cache.prompt.marketplace.cleared.title: Marketplace-gyorsítótár törölve
+settings.cache.prompt.marketplace.cleared.title: Piactér-gyorsítótár törölve
 settings.cache.prompt.playlist.cleared.message: A gyorsítótár törölve lett. Frissíti most?
-settings.cache.prompt.playlist.cleared.title: Lejátszási lista gyorsítótára törölve
-settings.cache.recentlyModifiedPlaylists: Legutóbb módosított lejátszási listák
+settings.cache.prompt.playlist.cleared.title: Lejátszási lista gyorsítótár törölve
+settings.cache.recentlyModifiedPlaylists: Nemrég módosított lejátszólisták
 settings.cache.storageUsed: "Használt tárhely: {{ usage }}"
 settings.client.genten.enableTrayIcon: Tálcaikon engedélyezése
 settings.client.genten.enableTrayIcon.desc: A tálcaikon megjelenítésének be- vagy kikapcsolása
@@ -3541,35 +3613,36 @@ settings.connectivity.section.parties.description: Közös zenehallgatás más C
 settings.connectivity.section.vrOverlay.description: Egy Cider lejátszó és rögzíthető panelek a SteamVR és VDXR felett, amelyek RPC-n keresztül kommunikálnak ezzel az alkalmazással.
 settings.connectivity.tokenCopied: Token a vágólapra másolva
 settings.connectivity.tokens: Tokenek
+settings.connectivity.tokens.empty: Még nincsenek tokenek.
 settings.contentFilter.description: A Böngészés és a Hallgatás most azon szakaszai, amelyek címe vagy tartalma megegyezik ezen kulcsszavak bármelyikével, el lesznek rejtve.
 settings.contentFilter.empty: Még nincsenek hozzáadott kulcsszavak.
 settings.contentFilter.inputPlaceholder: Kulcsszó hozzáadása...
-settings.contentFilter.title: Kulcsszavak szűrése
-settings.crossfade.advanced: Speciális áttűnési beállítások
+settings.contentFilter.title: Szűrőkulcsszavak
+settings.crossfade.advanced: Speciális átmenet-beállítások
 settings.crossfade.automixStillBlends: Az automix be van kapcsolva, ezért a számok továbbra is átfedhetnek egymásba. Az összes átfedés leállításához kapcsolja ki lentebb az Automixot.
 settings.crossfade.description: Az aktuális dal fokozatos elhalkítása, miközben a következő fokozatosan felerősödik.
-settings.crossfade.disableFor: Áttűnés letiltása a következőkhöz...
+settings.crossfade.disableFor: Átmenet letiltása ehhez...
 settings.crossfade.duration: Időtartam
-settings.crossfade.enable: Áttűnés engedélyezése
+settings.crossfade.enable: Átmenet engedélyezése
 settings.crossfade.exclusions.albums: Albumok
 settings.crossfade.exclusions.albums.description: Nincs áttűnés albumok lejátszásakor.
-settings.crossfade.exclusions.autoplayContinuation: Automatikus lejátszás folytatása
+settings.crossfade.exclusions.autoplayContinuation: Automatikus folytatás
 settings.crossfade.exclusions.autoplayContinuation.description: Ne alkalmazzon áttűnést, ha a lejátszás rádióállomásra vagy automatikusan lejátszott dalokra vált az eredeti gyűjtemény befejezése után.
 settings.crossfade.exclusions.djMixes: DJ-mixek
 settings.crossfade.exclusions.djMixes.description: Nincs áttűnés DJ-mixek és folyamatos mixek esetén.
-settings.crossfade.exclusions.liveAlbums: Koncertalbumok
+settings.crossfade.exclusions.liveAlbums: Élő albumok
 settings.crossfade.exclusions.liveAlbums.description: Nincs áttűnés élő felvételek és koncertek esetén.
 settings.crossfade.exclusions.playlists: Lejátszási listák
 settings.crossfade.exclusions.playlists.description: Nincs áttűnés lejátszási listák lejátszásakor.
 settings.crossfade.loudnessSensitivity: Hangerő-érzékenység
 settings.crossfade.loudnessSensitivity.description: Hangerőkülönbségek kiegyenlítése ({{ value }}%)
-settings.crossfade.smoothSkip: Fokozatos átugrás
+settings.crossfade.smoothSkip: Finom átmenetes ugrás
 settings.crossfade.smoothSkip.description: Áttűnés a dalok között átugráskor.
-settings.crossfade.tempoSensitivity: Tempóérzékenység
+settings.crossfade.tempoSensitivity: Tempó-érzékenység
 settings.crossfade.tempoSensitivity.description: Reakció a tempóváltozásokra ({{ value }}%)
-settings.customCss.createSnippet: Kódrészlet létrehozása
+settings.customCss.createSnippet: Részlet létrehozása
 settings.customCss.migrate.confirm: Ez átalakítja a meglévő egyéni CSS-t egy új kódrészletté, és törli a jelenlegi egyéni CSS-t. Szeretné folytatni?
-settings.customCss.migrate.title: Egyéni CSS átalakítása
+settings.customCss.migrate.title: Egyéni CSS konvertálása
 settings.customCss.title: Egyéni CSS
 settings.description.albums: Könyvtár albumai
 settings.description.artists: Könyvtár előadói
@@ -3611,7 +3684,7 @@ settings.extensions.checkUpdates.desc: Témák, kódrészletek és bővítménye
 settings.extensions.createPlugin: Bővítmény létrehozása
 settings.extensions.createSnippet: Új kódrészlet létrehozása
 settings.extensions.createTheme: Új téma létrehozása
-settings.extensions.cssSnippets: CSS-kódrészletek
+settings.extensions.cssSnippets: CSS-részletek
 settings.extensions.fileWatcher: Témafájl-figyelő engedélyezése
 settings.extensions.fileWatcher.desc: A stíluslapok automatikus újratöltése, ha a fájljaik módosulnak a lemezen.
 settings.extensions.importFromFile: Importálás fájlból
@@ -3637,21 +3710,25 @@ settings.extensions.plugins.uninstallTitle: Bővítmény eltávolítása
 settings.extensions.refresh: Bővítmények frissítése
 settings.extensions.refresh.desc: Témák, kódrészletek és bővítmények újraolvasása a lemezről.
 settings.extensions.refreshed: Témák, kódrészletek és bővítmények frissítve
+settings.extensions.snippets.author: "Szerző: {{ author }}"
 settings.extensions.snippets.created: Kódrészlet létrehozva
-settings.extensions.snippets.createTitle: Új CSS-kódrészlet létrehozása
+settings.extensions.snippets.createTitle: Új CSS-részlet létrehozása
 settings.extensions.snippets.deleteConfirm: Biztosan törölni szeretné ezt a CSS-kódrészletet? Ez a művelet nem vonható vissza.
 settings.extensions.snippets.deleted: Kódrészlet törölve
-settings.extensions.snippets.deleteTitle: CSS-kódrészlet törlése
+settings.extensions.snippets.deleteTitle: CSS-részlet törlése
 settings.extensions.snippets.empty: Nincsenek telepített CSS-kódrészletek.
 settings.extensions.snippets.exported: Kódrészlet exportálva
 settings.extensions.snippets.imported: "{{ count }} kódrészlet importálva"
 settings.extensions.snippets.importFailed: "Nem sikerült a(z) {{ file }} importálása: {{ error }}"
+settings.extensions.snippets.invalidFile: "Érvénytelen fájlformátum: {{ file }}"
 settings.extensions.snippets.namePrompt: Add meg az új CSS-kódrészlet nevét.
 settings.extensions.snippets.orderUpdated: Sorrend frissítve
 settings.extensions.snippets.saved: Kódrészlet mentve
 settings.extensions.themeCreated: Új téma sikeresen létrehozva
 settings.extensions.themes.activeCount: "{{ count }} aktív"
 settings.extensions.themes.empty: Nincsenek telepített témák.
+settings.extensions.themes.getMore: További témák letöltése
+settings.extensions.themes.refreshList: Témalista frissítése
 settings.extensions.themes.stylesheetMany: "{{ count }} stíluslap"
 settings.extensions.themes.stylesheetOne: 1 stíluslap
 settings.extensions.viewOnMarketplace: Megtekintés a piactéren
@@ -3677,11 +3754,12 @@ settings.general.section.language: Nyelv
 settings.general.section.language.description: A felület nyelve, valamint a fordítások bejelentése és a közreműködők elismerése.
 settings.general.section.playback: Lejátszás
 settings.general.section.playback.description: A lejátszás gomb funkciója, ha semmi sincs lejátszás alatt.
+settings.general.section.playback.descriptionV2: Mit csinál a lejátszásgomb, ha nincs lejátszás, és hol lehet megváltoztatni a lejátszási sebességet.
 settings.general.section.privacy: Adatvédelem
 settings.general.section.privacy.description: A név, amellyel a Cider köszönt, és hogy használhatja-e a helyzetedet.
 settings.general.section.queue: Lejátszási sor
 settings.general.section.queue.description: Hogyan épül fel a lejátszási sor, mi kerülhet bele, és mi áll vissza a Cider újraindításakor.
-settings.general.section.sleepTimer: Elalváskapcsoló
+settings.general.section.sleepTimer: Alvásidőzítő
 settings.general.section.startup: Indítás
 settings.general.section.startup.description: Melyik oldallal nyíljon meg a Cider, és mit állítson vissza a legutóbbi munkamenetből.
 settings.header.accounts: Fiókok
@@ -3753,7 +3831,7 @@ settings.intensive.animatedArtworkQuality.description: A jobb minőség nagyobb 
 settings.intensive.catalogAnimatedArtwork.description: Egyszerre több animált borítót is lejátszik a katalógus böngészése közben.
 settings.intensive.characterFlow.description: A dalszöveg minden egyes karakterét külön animálja a teljes sorok helyett.
 settings.intensive.confirm.enable: Engedélyezés
-settings.intensive.confirm.message: Ez a funkció erőforrás-igényes, és jelentősen növelheti a CPU-/GPU-használatot, a melegedést és az akkumulátor merülését – különösen gyengébb hardvereken. Az erőforrás-igényes funkciókat bármikor áttekintheti a Beállítások tetején található villanykörte gombbal.
+settings.intensive.confirm.message: Ez a funkció erőforrás-igényes, és jelentősen növelheti a CPU/GPU terhelést, a melegedést és az akkumulátor-fogyasztást, különösen gyengébb hardvereken. A megterhelő funkciókat bármikor áttekintheti a Beállítások › Energiafelhasználás menüpontban.
 settings.intensive.emotionEngine.description: Elemzi az albumborítót egy színpaletta előállításához.
 settings.intensive.fsrUpscale.description: Felskálázza az albumborítót a GPU-n a FidelityFX Super Resolution segítségével.
 settings.intensive.immersiveAnimatedArtwork.description: Lejátssza az animált borítót az Immerzív nézetben.
@@ -3770,23 +3848,23 @@ settings.intensive.viewTransitions.description: Animálja az átmeneteket egyes 
 settings.intensive.warning: Erőforrás-igényes – magas CPU-/GPU-használatot okozhat.
 settings.keybindings.recordingHint: "Rögzítés. Mégse: Escape"
 settings.lyrics.card.providers: Szolgáltatók
-settings.lyrics.card.songOverrides: Dal-felülbírálások
-settings.lyrics.localeOverrides: Területi beállításokon alapuló szabályok
-settings.lyrics.localeOverrides.add: Területi felülbírálás hozzáadása
-settings.lyrics.localeOverrides.audioLocale: Hang nyelve
+settings.lyrics.card.songOverrides: Dalspecifikus felülírások
+settings.lyrics.localeOverrides: Nyelvi szabályok
+settings.lyrics.localeOverrides.add: Nyelvi felülírás hozzáadása
+settings.lyrics.localeOverrides.audioLocale: Hangnyelv
 settings.lyrics.localeOverrides.desc: Egyéni szolgáltatói és fordítási beállítások megadása adott nyelvű dalokhoz. Ha egy dal hangjának nyelve megegyezik egy szabállyal, ezek a beállítások felülbírálják az alapértelmezetteket.
-settings.lyrics.localeOverrides.dialogTitle.add: Területi felülbírálás hozzáadása
-settings.lyrics.localeOverrides.dialogTitle.edit: Területi felülbírálás szerkesztése
+settings.lyrics.localeOverrides.dialogTitle.add: Nyelvi felülírás hozzáadása
+settings.lyrics.localeOverrides.dialogTitle.edit: Nyelvi felülírás szerkesztése
 settings.lyrics.localeOverrides.empty: Még nincsenek szabályok. Új hozzáadásához használd a + gombot.
-settings.lyrics.localeOverrides.overrideTranslation: Fordítás felülbírálása
+settings.lyrics.localeOverrides.overrideTranslation: Fordítás felülírása
 settings.lyrics.localeOverrides.preferredProvider: Előnyben részesített szolgáltató
 settings.lyrics.localeOverrides.provider.apple: Apple Music
 settings.lyrics.localeOverrides.provider.auto: Alapértelmezett (Automatikus)
 settings.lyrics.localeOverrides.provider.mxm: Musixmatch
 settings.lyrics.localeOverrides.provider.netease: NetEase
-settings.lyrics.localeOverrides.provider.user: Felhasználók által beküldött
+settings.lyrics.localeOverrides.provider.user: Felhasználói beküldés
 settings.lyrics.localeOverrides.providerLabel: "Szolgáltató:"
-settings.lyrics.localeOverrides.translateTo: "Fordítás erre:"
+settings.lyrics.localeOverrides.translateTo: Fordítás erre a nyelvre
 settings.lyrics.localeOverrides.translateToLabel: "Fordítás erre:"
 settings.lyrics.player.cascade: Kaszkád intenzitása
 settings.lyrics.player.cascade.desc: Meghatározza, mennyire legyen hangsúlyos a sorok lépcsőzetes megjelenítése.
@@ -3807,14 +3885,14 @@ settings.lyrics.player.reset: Alapértelmezések visszaállítása
 settings.lyrics.player.speed: Animáció sebessége
 settings.lyrics.player.speed.desc: A sorátmenet rugózási sebessége – a magasabb érték gyorsabb átmenetet eredményez.
 settings.lyrics.player.title: Dalszöveg-animációk
-settings.lyrics.scroll.duration: Dalszöveg görgetési időtartama
+settings.lyrics.scroll.duration: Dalszöveg-görgetés időtartama
 settings.lyrics.scroll.duration.desc1: "A dalszöveg görgetési sebességének beállítása itt:"
 settings.lyrics.scroll.duration.desc2: Ez nincs hatással a dal sebességére.
-settings.lyrics.scroll.easing: Átmenetfüggvény
-settings.lyrics.scroll.easing.curveExample: "Görbe példa:"
+settings.lyrics.scroll.easing: Easing-függvény
+settings.lyrics.scroll.easing.curveExample: "Görbepélda:"
 settings.lyrics.scroll.easing.description1: A dalszöveg görgetésének átmenetfüggvényének beállítása. Ez egy CSS
 settings.lyrics.scroll.easing.description2: tulajdonság.
-settings.lyrics.scroll.easing.namedExample: "Megnevezett példa:"
+settings.lyrics.scroll.easing.namedExample: "Nevesített példa:"
 settings.lyrics.scroll.easing.presetDefault: "Alapértelmezett értékek: gyors belépés és finom kilépés"
 settings.lyrics.scroll.easing.presetSmooth: "Lágy finomítás be és ki - (készítette: cryptofyre)"
 settings.lyrics.scroll.easing.presetSpring: "Rugós animáció - (készítette: SoNothing)"
@@ -3829,14 +3907,14 @@ settings.lyrics.section.sources: Források
 settings.lyrics.section.sources.description: Honnan származnak a dalszövegek, valamint az alapértelmezett szolgáltatót felülbíráló nyelv- vagy dalspecifikus szabályok.
 settings.lyrics.section.translation: Fordítás
 settings.lyrics.section.translation.description: Lefordított dalszövegek, a célnyelv, és hogy az eredeti szöveg a képernyőn maradjon-e.
-settings.lyrics.trackOverrides.clearAll: Összes felülbírálás törlése
+settings.lyrics.trackOverrides.clearAll: Összes felülírás törlése
 settings.lyrics.trackOverrides.desc: Az itt felsorolt dalok mindig a rögzített dalszöveg-szolgáltatót vagy a manuálisan beállított énekállapotot használják az Apple által jelentett helyett. Ezeket a felülbírálásokat a dalszöveg menüből és a dal jobb gombos menüjéből lehet beállítani.
 settings.lyrics.trackOverrides.empty: Még semmi sincs felülbírálva. Minden, amit zárolsz azokból a menükből, itt fog megjelenni.
 settings.lyrics.trackOverrides.lyricsForced: Dalszöveg kényszerítve
 settings.lyrics.trackOverrides.markedInstrumental: Instrumentálisként megjelölve
 settings.lyrics.trackOverrides.providerLabel: "Szolgáltató:"
-settings.lyrics.trackOverrides.remove: Felülbírálás eltávolítása
-settings.lyrics.trackOverrides.title: Dal-specifikus felülbírálások
+settings.lyrics.trackOverrides.remove: Felülírás eltávolítása
+settings.lyrics.trackOverrides.title: Számspecifikus felülírások
 settings.micaish.blurAmount: Elmosás mértéke
 settings.micaish.brightness: Fényerő %
 settings.micaish.contrast: Kontraszt %
@@ -3852,37 +3930,59 @@ settings.miniplayer.unpinWindow: Ablak rögzítésének feloldása
 settings.nav.accessibility: Kisegítő lehetőségek
 settings.nav.accounts: Fiókok
 settings.nav.advanced: Haladó
+settings.nav.appleMusicWordmark: music
 settings.nav.audio: Hang
+settings.nav.categories: Beállítási kategóriák
 settings.nav.concerts: Koncertek
-settings.nav.config-backups: Konfigurációs biztonsági másolatok
+settings.nav.config-backups: Konfigurációs mentések
 settings.nav.connectivity: Kapcsolatok
 settings.nav.extensions: Bővítmények
 settings.nav.general: Általános
 settings.nav.group.account: Fiók
 settings.nav.group.advanced: Haladó
 settings.nav.group.appearance: Megjelenés
+settings.nav.group.connections: Kapcsolatok
 settings.nav.group.general: Általános
 settings.nav.group.integrations: Integrációk
 settings.nav.group.library: Könyvtár
+settings.nav.group.lookAndFeel: Megjelenés
 settings.nav.group.playback: Lejátszás
 settings.nav.lyrics: Dalszöveg
 settings.nav.notifications: Értesítések
 settings.nav.plugins: Bővítmények
-settings.nav.power: Energiahasználat
+settings.nav.power: Energiafelhasználás
 settings.nav.privacy: Adatvédelem
 settings.nav.profile: Profil
 settings.nav.search: Keresés
-settings.nav.searchPlaceholder: Keresés a beállításokban...
+settings.nav.searchPlaceholder: Beállítások keresése
+settings.nav.summary.accessibility: Félkövér szöveg, felületméretezés, mozgás, hangeffektusok
+settings.nav.summary.advanced: Mentések, hibaelhárítás, kísérletek
+settings.nav.summary.audio: Kimenet, minőség, átmenet, normalizálás
+settings.nav.summary.concerts: Helyszín, sugár, rendezés
+settings.nav.summary.connectivity: Discord, scrobbling, közös hallgatás, távirányítás
+settings.nav.summary.extensions: Témák, CSS-kódrészletek, bővítmények
+settings.nav.summary.general: Indítás, várólista, alvásidőzítő, billentyűparancsok
+settings.nav.summary.lyrics: Források, fordítás, megjelenítés, időzítés
+settings.nav.summary.notifications: Kategóriák, előzmények, rendszerértesítések
+settings.nav.summary.power: Teljesítmény, képkockasebesség, energiatakarékos módok
+settings.nav.summary.profile: Apple Music-fiók
+settings.nav.summary.sid: Hol jelenik meg Sid, és hogyan működik
+settings.nav.summary.smartPlaylists: Intelligens lejátszási listák szabályai és karbantartása
+settings.nav.summary.subscriberYear: egy éve előfizető
+settings.nav.summary.subscriberYears: "{{count}} éve előfizető"
+settings.nav.summary.tweaks: Kisebb változtatások a lejátszóban, az oldalsávban és máshol
+settings.nav.summary.visual: Színséma, elrendezés, ablak, immerzív
 settings.nav.themes: Témák
+settings.nav.tweaks: Finomhangolás
 settings.nav.updates: Frissítések
-settings.nav.visual: Látvány
+settings.nav.visual: Megjelenés
 settings.normalization.louderTargetHint: Ha a Cider 100%-os hangerő mellett is túl halk, válasszon hangosabb célértéket. A magasabb LUFS-értékek hangosabb megszólalást eredményeznek, de a csúcsvédelem korlátozhatja az erősítést a túlvezérlés elkerülése érdekében.
 settings.normalization.presets.apple: Apple
 settings.normalization.presets.balanced: Kiegyensúlyozott
 settings.normalization.presets.dynamic: Dinamikus
 settings.normalization.presets.loud: Hangos
 settings.normalization.presets.maximum: Maximum
-settings.normalization.target: Hangerő-célérték
+settings.normalization.target: Hangerőcél
 settings.normalization.unit: LUFS
 settings.notifications.alwaysOn: Mindig bekapcsolva
 settings.notifications.alwaysOn.description: Ezek a fontos problémákról és az alkalmazás állapotáról tájékoztatnak, ezért nem kapcsolhatók ki. A hibákról szóló értesítések kategóriától függetlenül mindig megjelennek.
@@ -3894,7 +3994,7 @@ settings.notifications.category.extensionsThemes: Bővítmények és témák
 settings.notifications.category.extensionsThemes.description: Bővítmények, témák és kódrészletek telepítése, frissítése és eltávolítása.
 settings.notifications.category.general: Általános
 settings.notifications.category.general.description: Minden egyéb, saját kategóriával nem rendelkező értesítés.
-settings.notifications.category.listeningTogether: Közös zenehallgatás
+settings.notifications.category.listeningTogether: Közös hallgatás
 settings.notifications.category.listeningTogether.description: Meghívók, vendégek csatlakozása vagy távozása, valamint a munkamenet állapota.
 settings.notifications.category.lyrics: Dalszövegek
 settings.notifications.category.lyrics.description: Dalszövegek keresése, beküldése és átírása.
@@ -3918,6 +4018,7 @@ settings.notifications.section.history: Előzmények
 settings.notifications.section.muted: Némított értesítések
 settings.notifications.section.system: Rendszerértesítések
 settings.notifications.summary.categoriesOn: Bekapcsolt kategóriák
+settings.notifications.summary.categoriesOnCount: "{{total}} közül {{on}} be van kapcsolva"
 settings.notifications.summary.description: Válaszd ki, milyen típusú értesítéseket jelenítsen meg a Cider. Amit kikapcsolsz, az is bekerül az értesítési listába, így később is megtekintheted.
 settings.notifications.unmute: Némítás feloldása
 settings.notifications.unmuteAll: Összes némításának feloldása
@@ -3935,28 +4036,28 @@ settings.notyf.visual.theme.install.success: A téma sikeresen telepítve
 settings.notyf.visual.theme.updateAvailable: "[Témák] Új frissítés érhető el a következő témához: {{ theme }}"
 settings.option.accessibility.boldText: Félkövér szöveg
 settings.option.accessibility.boldText.description: Növeli a szöveg vastagságát az alkalmazásban a jobb olvashatóság érdekében.
-settings.option.accessibility.cardHoverMotion: Kártyák mozgása rámutatáskor
+settings.option.accessibility.cardHoverMotion: Kártya lebegési animáció
 settings.option.accessibility.cardHoverMotion.description: A kattintható kártyák (albumok, funkciólapok, rácselemek) finoman megduzzadnak rámutatáskor, és összenyomódnak kattintáskor. Alapértelmezés szerint ki van kapcsolva.
-settings.option.accessibility.enableSoundEffects: Hangeffektusok engedélyezése
+settings.option.accessibility.enableSoundEffects: Hangeffektek engedélyezése
 settings.option.accessibility.enableSoundEffects.description: Finom hangok lejátszása gombok, kapcsolók és csúszkák használatakor.
-settings.option.accessibility.forceFocusVisible: Fókuszkeret állandó megjelenítése
+settings.option.accessibility.forceFocusVisible: Fókuszgyűrű mindig látszik
 settings.option.accessibility.forceFocusVisible.description: Látható körvonal kényszerítése a fókuszban lévő elemekre a billentyűzetes navigációhoz.
 settings.option.accessibility.highContrast: Nagy kontraszt
 settings.option.accessibility.highContrast.description: Növeli a kontrasztot a szöveg, a háttér és a felület elemei között.
 settings.option.accessibility.motion: Mozgás
-settings.option.accessibility.motionIntensity: Mozgás intenzitása
+settings.option.accessibility.motionIntensity: Mozgás erőssége
 settings.option.accessibility.motionIntensity.description: Szabályozza, hogy a gombok és felületek mennyire mozogjanak rámutatáskor és lenyomáskor. Válaszd a „Nincs” lehetőséget a mozgás teljes kikapcsolásához; a „Játékos” extra rugózást ad.
 settings.option.accessibility.motionIntensity.none: Nincs
 settings.option.accessibility.motionIntensity.normal: Normál
 settings.option.accessibility.motionIntensity.playful: Játékos
 settings.option.accessibility.motionIntensity.reduced: Csökkentett
-settings.option.accessibility.playOnHover: Lejátszás rámutatáskor
+settings.option.accessibility.playOnHover: Lejátszás egérmutatóra
 settings.option.accessibility.playOnHover.description: Finom kattanó hang lejátszása is, amikor a mutató interaktív elemek fölé ér.
 settings.option.accessibility.soundEffects: Hangeffektusok
-settings.option.accessibility.soundPreview: Hangminta
+settings.option.accessibility.soundPreview: Hangelőnézet
 settings.option.accessibility.soundPreview.description: Lejátssza a felülethangok mintáját az aktuális hangerőn.
 settings.option.accessibility.text: Szöveg
-settings.option.accessibility.uiScale: Felület méretezése
+settings.option.accessibility.uiScale: Felület mérete
 settings.option.accessibility.uiScale.description: Méretezi a szöveget és a felület elemeit. Egyes elrendezési elemek rögzített méretűek, és előfordulhat, hogy nem méretezhetők.
 settings.option.accessibility.visibility: Láthatóság
 settings.option.accessibility.volume: Hangerő
@@ -3969,8 +4070,8 @@ settings.option.advanced.compactSidebar.size: Méret
 settings.option.advanced.configBackups.description: Állítsd vissza a Cider által mentett beállításfájl-másolatot, ha a beállításaid elvesztek vagy visszaálltak alaphelyzetbe.
 settings.option.advanced.experimentalFeatures: Kísérleti funkciók
 settings.option.advanced.experimentalFeatures.description: Fejlesztés alatt álló képességek és funkciójelzők.
-settings.option.advanced.floatingSearch: Lebegő keresősáv
-settings.option.advanced.floatingSearch.blurBackground: Háttér elhomályosítása
+settings.option.advanced.floatingSearch: Lebegő keresőpanel
+settings.option.advanced.floatingSearch.blurBackground: Háttér elmosása
 settings.option.advanced.floatingSearch.blurBackground.description: Ha engedélyezve van, a háttér elhomályosul, amikor a keresősáv fókuszba kerül.
 settings.option.advanced.floatingSearch.clearSearchOnClose: Keresés törlése bezáráskor
 settings.option.advanced.floatingSearch.clearSearchOnClose.description: Ha engedélyezve van, a keresősáv szövege törlődik a keresősáv bezárásakor.
@@ -3978,31 +4079,31 @@ settings.option.advanced.floatingSearch.description: Az oldal felett megnyíló 
 settings.option.advanced.floatingSearch.enterShowsResults: Az Enter megjeleníti az eredményeket
 settings.option.advanced.floatingSearch.enterShowsResults.description: Ha engedélyezve van, az Enter billentyű megnyomásakor a keresősáv közvetlenül a keresési eredmények oldalára lép.
 settings.option.advanced.home: Kezdőlap
-settings.option.advanced.home.buttonLocation: Kezdőlap gomb helye
+settings.option.advanced.home.buttonLocation: Kezdőgomb helye
 settings.option.advanced.home.buttonLocation.sidebar: Oldalsáv
 settings.option.advanced.home.buttonLocation.sidebar2023: Oldalsáv (2023)
 settings.option.advanced.home.buttonLocation.topBar: Felső sáv
 settings.option.advanced.immersive: Immerzív nézet
-settings.option.advanced.immersive.artworkHighlight: Borítókép kiemelése
-settings.option.advanced.immersive.controlsTimeout: Aktív vezérlők időtúllépése (másodperc)
+settings.option.advanced.immersive.artworkHighlight: Borítókiemelés
+settings.option.advanced.immersive.controlsTimeout: Aktív vezérlők időkorlátja (másodperc)
 settings.option.advanced.immersive.description: Maga az immerzív nézet. A használt elrendezés a Vizuális menüpontban választható ki.
-settings.option.advanced.immersive.glowEffectOnActiveLyrics: Ragyogás effektus az aktív dalszövegen
+settings.option.advanced.immersive.glowEffectOnActiveLyrics: Izzáshatás az aktív dalszövegen
 settings.option.advanced.lyrics: Dalszöveg-animáció
-settings.option.advanced.lyrics.characterFlow: Áramló karakterek
+settings.option.advanced.lyrics.characterFlow: Folyékony karakterek
 settings.option.advanced.lyrics.characterFlow.description: Az egyes karakterek fognak felfelé áramlani a teljes sor helyett. Erőforrás-igényesebb.
 settings.option.advanced.lyrics.description: Hogyan mozogjanak a dalszöveg sorai és karakterei a dal lejátszása közben.
-settings.option.advanced.lyrics.lineStaggering: Sorok eltolása
+settings.option.advanced.lyrics.lineStaggering: Soronkénti késleltetés
 settings.option.advanced.lyrics.lineStaggering.description: A következő dalszövegsorok enyhe késleltetéssel jelennek meg, amikor a következő aktív sor fókuszba kerül.
-settings.option.advanced.lyrics.lineStaggeringImmersive: Sorok eltolása (Immerzív)
+settings.option.advanced.lyrics.lineStaggeringImmersive: Soronkénti késleltetés (immerzív)
 settings.option.advanced.lyrics.lineStaggeringImmersive.description: Erőforrás-igényesebb.
-settings.option.advanced.lyrics.scaleOnAny: Nagyítási effektus engedélyezése bármely szónál
+settings.option.advanced.lyrics.scaleOnAny: Méretezési effekt bármely szón
 settings.option.advanced.lyrics.scaleOnAny.description: Lehetővé teszi bármely szó méretezését, nem csak a hangsúlyosakét.
-settings.option.advanced.lyrics.singEngine: Immerzív Éneklés motor
+settings.option.advanced.lyrics.singEngine: Immerzív éneklőmotor
 settings.option.advanced.lyrics.singEngine.classic: Klasszikus
 settings.option.advanced.lyrics.singEngine.description: Éneklés motor az Immerzív nézethez. A Klasszikus könnyű CSS-animációt használ, amely a legjobb választás gyengébb rendszerekhez. Az oldalsáv mindig a Klasszikus verziót használja.
 settings.option.advanced.lyrics.singEngine.legacy: Klasszikus
 settings.option.advanced.lyrics.singEngine.waapi: GPU (Web Animations)
-settings.option.advanced.lyrics.singLyricsEverywhere: Sing dalszöveg mindenhol
+settings.option.advanced.lyrics.singLyricsEverywhere: Dalszövegek éneklése mindenhol
 settings.option.advanced.lyrics.singLyricsEverywhere.description: Az Ének dalszövegek engedélyezése az Immerzív nézeten kívül is. Erőforrás-igényesebb.
 settings.option.advanced.mavericksLcd: Mavericks LCD
 settings.option.advanced.mavericksLcd.style: Stílus
@@ -4015,7 +4116,7 @@ settings.option.advanced.notificationStyle: Értesítés stílusa
 settings.option.advanced.performance: Teljesítmény
 settings.option.advanced.performance.description: Képkockasebesség-korlátok, renderelő kiválasztása és erőforrás-határértékek.
 settings.option.advanced.playback: Lejátszási sebesség
-settings.option.advanced.playback.allowPlaybackRateChangeEverywhere: Lejátszási sebesség módosításának engedélyezése daloknál
+settings.option.advanced.playback.allowPlaybackRateChangeEverywhere: Lejátszási sebesség módosítása dalokhoz
 settings.option.advanced.playback.allowPlaybackRateChangeEverywhere.description: Podcasteknél alapértelmezés szerint engedélyezve van. Kapcsolja be, hogy ugyanezt az egyszerű lejátszásisebesség-szabályozást minden médiatartalomra, beleértve a dalokat is, kiterjessze.
 settings.option.advanced.playlistTrackMapping: Lejátszási lista dalainak feltérképezése
 settings.option.advanced.playlistTrackMapping.description: Engedélyezi a lejátszási listák mélyreható vizsgálatát annak meghatározására, hogy mely dalok melyik lejátszási listában szerepelnek. Ez jelentősen növelheti a lejátszási listák gyorsítótárának felépítési idejét.
@@ -4025,19 +4126,19 @@ settings.option.advanced.progressBar.useAccentColor: Kiemelőszín használata
 settings.option.advanced.resetCider: Cider alaphelyzetbe állítása
 settings.option.advanced.resetCider.description: Beállítások, gyorsítótárak és helyi adatok alaphelyzetbe állítása. Az Apple Music- és Taproom-bejelentkezések megmaradnak, hacsak másképp nem dönt.
 settings.option.advanced.resizableMiniplayer: Átméretezhető minilejátszó
-settings.option.advanced.richAlbumGrid: Részletes albumrács
-settings.option.advanced.richAlbumGrid.alwaysNavigateToPage: Mindig navigáljon az oldalra
+settings.option.advanced.richAlbumGrid: Gazdag albumrács
+settings.option.advanced.richAlbumGrid.alwaysNavigateToPage: Mindig lépjen az oldalra
 settings.option.advanced.richAlbumGrid.disableScrollAnimation: Görgetési animáció letiltása
-settings.option.advanced.richAlbumGrid.scrollToPosition: Görgetés a pozícióhoz
+settings.option.advanced.richAlbumGrid.scrollToPosition: Görgetés a pozícióra
 settings.option.advanced.richAlbumGrid.scrollToPosition.bottom: Alulra
 settings.option.advanced.richAlbumGrid.scrollToPosition.top: Felülre
 settings.option.advanced.searchBar: Fő keresősáv
 settings.option.advanced.searchBar.description: A címsorban található keresőmező.
-settings.option.advanced.searchBar.noRedirectOnSelect: Nincs céloldal fókuszáláskor
+settings.option.advanced.searchBar.noRedirectOnSelect: Nincs kezdőoldal fókuszáláskor
 settings.option.advanced.searchBar.noRedirectOnSelect.description: Ha engedélyezve van, a keresősáv kijelölésekor nem irányít át a céloldalra. A céloldal eléréséhez tartsa lenyomva a SHIFT billentyűt a keresősáv kijelölése közben.
-settings.option.advanced.settingsTakeout: Beállítások exportálása/importálása
+settings.option.advanced.settingsTakeout: Beállítások exportálása / importálása
 settings.option.advanced.settingsTakeout.description: Készítsen biztonsági mentést a beállításairól egy fájlba, vagy állítsa vissza őket egy másik eszközön. A fiókbejelentkezések soha nem kerülnek mentésre.
-settings.option.advanced.simpleArtworkBg: Egyszerű borítókép-háttér
+settings.option.advanced.simpleArtworkBg: Egyszerű borítóháttér
 settings.option.advanced.simpleArtworkBg.brightness: Fényerő %
 settings.option.advanced.simpleArtworkBg.brightnessV2: Fényerő
 settings.option.advanced.simpleArtworkBg.contrast: Kontraszt %
@@ -4046,21 +4147,21 @@ settings.option.advanced.simpleArtworkBg.saturate: Telítettség %
 settings.option.advanced.simpleArtworkBg.saturateV2: Telítettség
 settings.option.advanced.simpleArtworkBg.useMask: Alsó maszk használata
 settings.option.advanced.sonoma: Sonoma
-settings.option.advanced.sonoma.lyricArc: Íves dalszöveg
+settings.option.advanced.sonoma.lyricArc: Ívelt dalszövegek
 settings.option.advanced.sonoma.lyricArc.description: Az aktív dalszövegsorok a képernyő közepe felé ívelnek, finom mélységérzetet keltve.
 settings.option.advanced.sonoma.radialMask: Alternatív maszk használata
 settings.option.advanced.sonoma.radialMask.description: Ha engedélyezve van, a Sonoma egy másik, radiális maszkot használ a borítókhoz, amely nagyobb tisztaságra és kevesebb elmosódásra fókuszál.
 settings.option.advanced.title: Haladó
 settings.option.advanced.tweaks: Finomhangolások
 settings.option.advanced.tweaks.description: Finomhangolható beállítások, amelyek máshová nem igazán illenek
-settings.option.advanced.volumeSlider: Lejátszó hangerőcsúszkája
-settings.option.advanced.volumeSlider.iOSStyle: iOS-stílus
+settings.option.advanced.volumeSlider: Lejátszó hangerőcsúszka
+settings.option.advanced.volumeSlider.iOSStyle: iOS stílus
 settings.option.advanced.window: Ablak viselkedése
 settings.option.advanced.window.description: A Miniplayer átméretezése és az alkalmazásban használt görgetősáv stílusa. Az ablakvezérlők és az áttetszőség a Vizuális menüpontban találhatók.
 settings.option.advanced.window.scrollbarType: Görgetősáv típusa
 settings.option.all: Összes
 settings.option.alwaysShow: Mindig mutassa
-settings.option.appleMusic.behavior.playButtonOnStop: Lejátszás gomb működése leállított állapotban
+settings.option.appleMusic.behavior.playButtonOnStop: Lejátszás gomb leállított állapotban
 settings.option.audio.advanced: Speciális hangerőszabályzás
 settings.option.audio.airplay: AirPlay-lejátszás
 settings.option.audio.airplay.description: Kísérleti AirPlay 2 lejátszási menü engedélyezése
@@ -4075,11 +4176,11 @@ settings.option.audio.audioQuality: Hangminőség
 settings.option.audio.automix: Automix
 settings.option.audio.changePlaybackRate: Lejátszási sebesség módosítása
 settings.option.audio.ciderAudio: Cider Audio
-settings.option.audio.ciderAudio.showBadges: Jelvények megjelenítése a Lejátszás alatt nézetben
-settings.option.audio.ciderAudio.showInToolbar: Cider Audio megjelenítése az eszköztáron
-settings.option.audio.ciderAudioSettings: Cider Audio-beállítások
+settings.option.audio.ciderAudio.showBadges: Jelvények megjelenítése a most játszottban
+settings.option.audio.ciderAudio.showInToolbar: Cider Audio megjelenítése az eszköztárban
+settings.option.audio.ciderAudioSettings: Cider Audio beállításai
 settings.option.audio.crossfade: Áttűnés
-settings.option.audio.dbfs.calibration: 0 dBFS kalibráció
+settings.option.audio.dbfs.calibration: 0 dBFS kalibrálás
 settings.option.audio.dbfs.description: Adja meg a csúcs Z-súlyozott dB SPL értékét, amikor a Cider 0 dBFS-en van.
 settings.option.audio.dbspl.description: (Haladó felhasználóknak) A hangerő dB SPL-ben történő kijelzése a dBFS helyett.
 settings.option.audio.dbspl.display: dB SPL kijelzés
@@ -4141,21 +4242,21 @@ settings.option.audio.hostCapture: Rögzíthető hang (OBS / Discord)
 settings.option.audio.hostCapture.description: A streaming- és rögzítőalkalmazásoknak, mint például az OBS vagy a Discord, szükségük van a Windows-gazdagépre a lejátszás átirányításához.
 settings.option.audio.maxVolume: Maximális hangerő
 settings.option.audio.mixing: Keverés
-settings.option.audio.normalization: Hangerő-kiegyenlítés
+settings.option.audio.normalization: Hangerő-normalizálás
 settings.option.audio.normalization.description: Automatikusan beállítja az egyes zeneszámok hangerejét az egységes hangzás érdekében. A halk zeneszámokat biztonságosan felerősíti, a hangosakat pedig lehalkítja.
 settings.option.audio.occlusion: Hallgatási mód
 settings.option.audio.outputDevice: Kimeneti eszköz
 settings.option.audio.playback: Lejátszás
 settings.option.audio.playbackRate: Lejátszási sebesség
 settings.option.audio.playbackRate.change: Módosítás
-settings.option.audio.podcastPlayback: Podcast-lejátszás
-settings.option.audio.podcasts.playbackRate: Az Apple Podcasts lejátszási sebessége
+settings.option.audio.podcastPlayback: Podcast lejátszás
+settings.option.audio.podcasts.playbackRate: Apple Podcasts lejátszási sebessége
 settings.option.audio.podcasts.playbackRate.description: A podcastok lejátszási sebességének beállítása.
 settings.option.audio.quality: Hangminőség
 settings.option.audio.seamlessAudioTransitions: Szünetmentes lejátszás
 settings.option.audio.seamlessTransition: Zökkenőmentes hangátmenet
 settings.option.audio.seamlessTransitions: Zökkenőmentes átmenetek
-settings.option.audio.showBitrate: Bitráta megjelenítése a Most játszódik nézetben
+settings.option.audio.showBitrate: Bitráta megjelenítése a most játszottban
 settings.option.audio.streaming: Streaming
 settings.option.audio.volume: Hangerő
 settings.option.audio.volumeScrollStep: Hangerő görgetési lépésköze
@@ -4179,7 +4280,7 @@ settings.option.concerts.sortBy.date: Dátum
 settings.option.concerts.sortBy.description: A koncertek rendezési elve a listában
 settings.option.concerts.sortBy.distance: Távolság
 settings.option.connect.link_account.description: A Discord-fiókod összekapcsolása a Cider Connecttel lehetővé teszi a felhasználói adatok tárolását, beleértve a beállításokat, a hangszínszabályzókat (EQ) és idővel még többet, amint elkészül. (Folyamatban lévő munka)
-settings.option.connectivity.atmosRatings: Közösségi Atmos-értékelések
+settings.option.connectivity.atmosRatings: Közösségi Atmos értékelések
 settings.option.connectivity.atmosRatings.description: Megtekintheted és megoszthatod, mely albumok szólnak nagyszerűen Dolby Atmos hangzásban.
 settings.option.connectivity.ciderConnect.description: Közös zenehallgatás, közös lejátszási listák, távoli alkalmazásvezérlés és még sok más!
 settings.option.connectivity.ciderRemote: Cider Remote
@@ -4245,10 +4346,10 @@ settings.option.connectivity.lastfmScrobble.manualToken: Last.fm token megadása
 settings.option.connectivity.lastfmScrobble.manualToken.link: Kattints ide Last.fm token igényléséhez
 settings.option.connectivity.lastfmScrobble.nowPlaying: Last.FM „Most játszott” engedélyezése
 settings.option.connectivity.lastfmScrobble.removeFeatured: Közreműködő előadók eltávolítása a dal címéből (Last.fm)
-settings.option.connectivity.parties: Közös zenehallgatás
-settings.option.connectivity.partiesEnabled: Közös zenehallgatás engedélyezése
+settings.option.connectivity.parties: Közös hallgatások
+settings.option.connectivity.partiesEnabled: Közös hallgatások engedélyezése
 settings.option.connectivity.partiesEnabled.description: Indíts vagy csatlakozz szinkronizált zenehallgatásokhoz más Cider-felhasználókkal.
-settings.option.connectivity.partiesQueueDefault: Lejátszási sor alapértelmezett módja
+settings.option.connectivity.partiesQueueDefault: Alapértelmezett várólista mód
 settings.option.connectivity.partiesQueueDefault.audited: Házigazda általi jóváhagyás
 settings.option.connectivity.partiesQueueDefault.description: Meghatározza, hogy a vendégek által hozzáadott dalokhoz szükséges-e a jóváhagyásod az általad vezetett partikban.
 settings.option.connectivity.partiesQueueDefault.open: Nyitott
@@ -4260,11 +4361,11 @@ settings.option.connectivity.playbackNotifications: Lejátszási értesítések
 settings.option.connectivity.playbackNotifications.description: Értesítés megjelenítése az új dalról, amikor a lejátszás új dalra vált.
 settings.option.connectivity.remoteConnection: Távoli kapcsolat
 settings.option.connectivity.remoteConnection.description: Telefon vagy táblagép párosítása, valamint a lejátszást vezérlő eszközök leválasztása.
-settings.option.connectivity.rpcServer: RPC-szerver
+settings.option.connectivity.rpcServer: RPC szerver
 settings.option.connectivity.rpcServer.description: A Ciderhez való hozzáférés kezelése az RPC-szervert használó külső alkalmazások számára.
-settings.option.connectivity.rpcServer.manageAccess: Külső alkalmazások Cider-hozzáférésének kezelése
+settings.option.connectivity.rpcServer.manageAccess: Külső alkalmazások hozzáférésének kezelése a Ciderhez
 settings.option.connectivity.scrobbler: Scrobbler
-settings.option.connectivity.scrobblerIntegration: Scrobbler-integráció
+settings.option.connectivity.scrobblerIntegration: Scrobbler integráció
 settings.option.connectivity.scrobblerIntegration.description: Last.fm, ListenBrainz, Libre.fm és Maloja scrobbelés a lejátszási előzmények megőrzéséhez.
 settings.option.connectivity.steam.clearOnPause: Rich Presence törlése szüneteltetéskor
 settings.option.connectivity.vrOverlay: VR-overlay
@@ -4300,16 +4401,16 @@ settings.option.experimental.unknownPlugin: Ismeretlen források
 settings.option.experimental.unknownPlugin.description: Bővítmények telepítésének engedélyezése a Cider Plugin Repository-n kívüli forrásokból
 settings.option.experiments.chromecast: Chromecast engedélyezése
 settings.option.experiments.chromecast.description: Hozzáad egy cast gombot a hálózaton lévő Google Cast eszközökhöz.
-settings.option.experiments.chromecastLyrics: Chromecast-dalszöveg
+settings.option.experiments.chromecastLyrics: Chromecast dalszövegek
 settings.option.experiments.chromecastLyrics.description: Szinkronizált dalszöveg megjelenítése a Chromecast kijelzőjén.
 settings.option.experiments.floatingSearch: Lebegő kereső engedélyezése
 settings.option.experiments.forceExplicit: Automatikus váltás az explicit albumváltozatra
 settings.option.experiments.forceExplicit.description: Növelheti a betöltési időt az albumok szókimondó (explicit) változatainak keresése közben.
 settings.option.experiments.legacyFetch: Klasszikus lekérés
-settings.option.experiments.musicVideos: Könyvtári videoklipek engedélyezése
+settings.option.experiments.musicVideos: Zenei videók engedélyezése a könyvtárban
 settings.option.experiments.title: Kísérleti funkciók
 settings.option.general.app: Alkalmazás
-settings.option.general.artistChips: Előadói címkék
+settings.option.general.artistChips: Előadó címkék
 settings.option.general.autoplayByDefault: Automatikus lejátszás engedélyezése alapértelmezés szerint
 settings.option.general.autoplayByDefault.description: Az automatikus lejátszás automatikus engedélyezése zenelejátszáskor (rádióállomásokra nem vonatkozik).
 settings.option.general.autoRemoveDisliked: Nem kedvelt számok automatikus eltávolítása a sorból
@@ -4341,12 +4442,12 @@ settings.option.general.language.main: Nyelvek
 settings.option.general.language.unsorted: Rendezetlen
 settings.option.general.noPlayingAction.newMusicMix: Új zenék mix lejátszása
 settings.option.general.noPlayingAction.none: Nincs művelet
-settings.option.general.noPlayingAction.personalStation: Saját állomás indítása
+settings.option.general.noPlayingAction.personalStation: Személyes állomás indítása
 settings.option.general.noPlayingAction.recent: Legutóbbi számok lejátszása
 settings.option.general.noPlayingAction.recentlyAdded: Legutóbb hozzáadott számok lejátszása
 settings.option.general.noPlayingAction.shuffleLibrary: Könyvtár dalainak keverése
 settings.option.general.onStartup: Indításkor
-settings.option.general.onStartup.openStartup: Kezdőlap megnyitása
+settings.option.general.onStartup.openStartup: Kezdőoldal megnyitása
 settings.option.general.onStartup.resume: Utolsó munkamenet folytatása
 settings.option.general.pagination: Oldalanként megjelenítendő elemek száma
 settings.option.general.preventDisplaySleep: Kijelző bekapcsolva tartása lejátszás közben
@@ -4373,16 +4474,17 @@ settings.option.general.shareAnalytics: Analitika megosztása
 settings.option.general.shareAnalytics.description: Segítsen a Cider fejlesztésében az alkalmazásanalitika és a használati adatok megosztásával
 settings.option.general.showLovedTracksInline: Kedvelt dalok megjelenítése a listában
 settings.option.general.sleepTimer: Elalváskapcsoló
-settings.option.general.sleepTimerSettings: Elalváskapcsoló beállításai
-settings.option.general.startupPage: Kezdőlap
+settings.option.general.sleepTimerSettings: Alvásidőzítő beállításai
+settings.option.general.startupPage: Kezdőoldal
 settings.option.general.startupPage.blank: Üres oldal
 settings.option.general.startupPage.description: Válassza ki a Cider megnyitásakor megjelenő oldalt.
 settings.option.general.startupPage.descriptionV2: Az oldal, amely új lapokon és indításkor nyílik meg, ha az Indításkor beállítás Indítóoldal megnyitása.
+settings.option.general.startupPage.descriptionV3: Az oldal, amelyet a Cider indításkor megnyit.
 settings.option.general.startupPage.newTab: Új lap oldal
 settings.option.general.startupPage.personalHome: Személyes kezdőlap
 settings.option.general.themeUpdateNotification: Témafrissítések automatikus keresése
 settings.option.general.translationCredits: Fordítási közreműködők
-settings.option.general.translationFeedback: Visszajelzés a fordításról
+settings.option.general.translationFeedback: Fordítási visszajelzés
 settings.option.general.translators: Fordítók
 settings.option.general.translators.description: Köszönjük a közreműködőknek, hogy segítettek a Cider lefordításában. Kattints egy névre a GitHub-profiljuk megnyitásához.
 settings.option.general.useSmartQueueByDefault: Intelligens sor használata alapértelmezés szerint
@@ -4393,7 +4495,7 @@ settings.option.hide: Elrejtés
 settings.option.left: Bal
 settings.option.lyrics.contributeCta: Közreműködés és dalszövegek feltöltése
 settings.option.lyrics.contributeCta.description: Tölts fel szinkronizált dalszövegeket, tekintsd meg az élő előnézetüket, és nézd meg a közreműködők ranglistáját.
-settings.option.lyrics.customScrollerProperties: Egyéni görgetési tulajdonságok
+settings.option.lyrics.customScrollerProperties: Egyéni görgetősáv tulajdonságai
 settings.option.lyrics.customScrollerProperties.description: Egyéni stílus engedélyezése a dalszöveg-görgetési animációkhoz.
 settings.option.lyrics.defaultProvider: Alapértelmezett szolgáltató
 settings.option.lyrics.defaultProvider.description: Válassza ki a preferált dalszöveg-szolgáltatót. Az „Automatikus” lehetőség automatikusan a legjobb elérhető forrást választja ki.
@@ -4402,7 +4504,7 @@ settings.option.lyrics.displayOptions.description: A dalszövegek megjelenítés
 settings.option.lyrics.enableMusixmatch: Musixmatch dalszövegek engedélyezése
 settings.option.lyrics.enableMusixmatchKaraoke: Karaoke mód engedélyezése (csak Musixmatch)
 settings.option.lyrics.enableQQLyrics: QQ dalszövegek engedélyezése
-settings.option.lyrics.enableSingLyrics: Éneklés dalszövegek engedélyezése
+settings.option.lyrics.enableSingLyrics: Énekelhető dalszövegek engedélyezése
 settings.option.lyrics.enableSingLyrics.description: Ha elérhető, szavanként szinkronizált dalszövegek megjelenítése, amelyek a zenével ütemben jelennek meg kiemelve.
 settings.option.lyrics.enableStaticLyrics: Statikus dalszövegek engedélyezése
 settings.option.lyrics.enableStaticLyrics.description: Dalszövegek megjelenítése akkor is, ha az időzítési információk nem állnak rendelkezésre. Ezek a dalszövegek nem fognak automatikusan görgetni.
@@ -4411,13 +4513,13 @@ settings.option.lyrics.enableTranslations.description: Lefordított dalszövegek
 settings.option.lyrics.enableYoutubeLyrics: YouTube dalszövegek engedélyezése videóklipekhez
 settings.option.lyrics.fpsLimit: Dalszöveg képkockasebessége
 settings.option.lyrics.fpsLimit.description: A dalszöveg-animációk maximális képkockasebessége. A magasabb értékek simább megjelenítést biztosítanak a magas frissítési gyakoriságú kijelzőkön, de növelik a CPU- és GPU-használatot. A „Kijelzőhöz igazítás” opció a monitor frissítési gyakoriságát követi.
-settings.option.lyrics.fpsLimit.matchDisplay: Kijelzőhöz igazítás
-settings.option.lyrics.keepCompleted: Már elénekelt sorok megtartása
+settings.option.lyrics.fpsLimit.matchDisplay: Igazodás a kijelzőhöz
+settings.option.lyrics.keepCompleted: Befejezett dalszövegek megtartása
 settings.option.lyrics.keepCompleted.description: A már elénekelt sorok láthatóak (halványítva) maradnak az aktuális sor felett. Ha ki van kapcsolva, a befejezett sorok eltűnnek.
-settings.option.lyrics.localeOverrides: Területi beállítások felülbírálása
+settings.option.lyrics.localeOverrides: Nyelvi felülbírálások
 settings.option.lyrics.localeOverrides.description: Egyéni szolgáltatói és fordítási szabályok beállítása adott hangnyelvekhez
 settings.option.lyrics.musixmatchPreferredLanguage: Musixmatch fordítás preferált nyelve
-settings.option.lyrics.preferUserLyrics: Felhasználók által beküldött dalszövegek előnyben részesítése
+settings.option.lyrics.preferUserLyrics: Felhasználói dalszövegek előnyben részesítése
 settings.option.lyrics.preferUserLyrics.description: Ha elérhető, a felhasználók által beküldött dalszövegek előnyben részesítése más forrásokkal szemben, amennyiben jobb az időzítésük minősége.
 settings.option.lyrics.provider.apple: Apple Music
 settings.option.lyrics.provider.auto: Automatikus (legjobb elérhető)
@@ -4426,15 +4528,15 @@ settings.option.lyrics.provider.netease: NetEase
 settings.option.lyrics.provider.user: Felhasználó által beküldött
 settings.option.lyrics.providerPreferences: Szolgáltatói beállítások
 settings.option.lyrics.providerPreferences.description: A használni kívánt dalszövegforrások és azok prioritásának konfigurálása
-settings.option.lyrics.scrollTuning: Görgetési időtartam és finomítás
+settings.option.lyrics.scrollTuning: Görgetés időtartama és gyorsulása
 settings.option.lyrics.scrollTuning.description: Beállíthatja a dalszövegsorok görgetési időtartamát és a hozzájuk tartozó finomítási görbét, külön az oldalsávhoz és a magával ragadó lejátszóhoz.
 settings.option.lyrics.showDualLanguage: Kétnyelvű megjelenítés
 settings.option.lyrics.showDualLanguage.description: Az eredeti dalszöveg és a fordítás egyidejű megjelenítése.
-settings.option.lyrics.showTimestamps: Időbélyegek megjelenítése rámutatáskor
+settings.option.lyrics.showTimestamps: Időbélyegek megjelenítése egérmutatóra
 settings.option.lyrics.showTimestamps.description: Az egyes dalszövegsorok időbélyegének megjelenítése, ha rámutat az egérrel.
-settings.option.lyrics.thirdPartySources: Külső források engedélyezése
+settings.option.lyrics.thirdPartySources: Harmadik féltől származó források engedélyezése
 settings.option.lyrics.thirdPartySources.description: Dalszövegek lekérésének engedélyezése a Musixmatch és NetEase szolgáltatásokból, ha az Apple Music dalszövegei nem érhetők el. A minőség változó lehet, és a folyamatos használat sebességkorlátozást vonhat maga után.
-settings.option.lyrics.timeOffset: Dalszöveg időzítésének eltolása (másodperc)
+settings.option.lyrics.timeOffset: Dalszöveg időeltolódása (másodperc)
 settings.option.lyrics.timeOffset.description: A dalszöveg megjelenítési időzítésének beállítása. A pozitív értékek korábban, a negatív értékek később jelenítik meg a dalszöveget. Hasznos a nem szinkronban lévő audioeszközök korrigálására.
 settings.option.lyrics.timeOffset.descriptionV2: A dalszövegek megjelenítésének időzítését állíthatod. A pozitív értékek később, a negatívak korábban jelenítik meg a szöveget. Hasznos, ha a hang és a szöveg nincs szinkronban.
 settings.option.lyrics.timestampStyle: Időbélyeg stílusa
@@ -4442,9 +4544,9 @@ settings.option.lyrics.timestampStyle.both: Mindkettő
 settings.option.lyrics.timestampStyle.chip: Kapszula
 settings.option.lyrics.timestampStyle.description: Válassza ki, hogyan jelenjenek meg az időbélyegek a dalszövegekre való rámutatáskor.
 settings.option.lyrics.timestampStyle.ring: Gyűrű
-settings.option.lyrics.trackOverrides: Dalok felülbírálásai
+settings.option.lyrics.trackOverrides: Számonkénti felülbírálások
 settings.option.lyrics.trackOverrides.description: Dalonkénti dalszöveg-szolgáltatói zárolások és beállítások kezelése
-settings.option.lyrics.translationLanguage: Fordítás nyelve
+settings.option.lyrics.translationLanguage: Fordítási nyelv
 settings.option.lyrics.translationLanguage.description: A nyelv, amelyre a dalszövegeket le kell fordítani. Csak akkor használatos, ha a Fordítási mód Kézi beállítású.
 settings.option.lyrics.translationMode: Fordítási mód
 settings.option.lyrics.translationMode.appLanguage: Automatikus az alkalmazás nyelve alapján
@@ -4464,12 +4566,12 @@ settings.option.notifications.history.persist.description: Az értesítési list
 settings.option.off: Ki
 settings.option.on: Be
 settings.option.performance.app: Alkalmazás
-settings.option.performance.backgroundRefreshTime: Háttérbeli frissítési idő
+settings.option.performance.backgroundRefreshTime: Háttérfrissítési idő
 settings.option.performance.backgroundRefreshTime.description: A háttérbeli frissítések közötti idő másodpercben. Az alacsonyabb értékek teljesítménybeli problémákat okozhatnak.
 settings.option.performance.dataAndUiLoad: Adat- és felületbetöltés
-settings.option.performance.disableLargeRequestOffloading: Nagy kérések kiszervezésének letiltása
+settings.option.performance.disableLargeRequestOffloading: Nagy kérések áthelyezésének letiltása
 settings.option.performance.disableLargeRequestOffloading.description: Hatással lesz a felhasználói felület teljesítményére a nagy kérések során
-settings.option.performance.enableMediaItemInspect: Fejlesztői vizsgálat engedélyezése a médiaelemekhez
+settings.option.performance.enableMediaItemInspect: Fejlesztői vizsgálat engedélyezése a MediaItem elemekhez
 settings.option.performance.enableMediaItemInspect.description: Kismértékben befolyásolhatja a teljesítményt
 settings.option.performance.gameMode: Játék mód
 settings.option.performance.gameMode.description: Csökkenti a vizuális effektusokat, és engedélyezheti a Windows hatékonysági módot az alacsonyabb CPU-használat érdekében.
@@ -4478,7 +4580,7 @@ settings.option.performance.graphicsAcceleration: Grafikus gyorsítás
 settings.option.performance.graphicsAcceleration.autoOff: Kikapcsolva, mert ez a számítógép szoftveresen jeleníti meg a grafikát.
 settings.option.performance.graphicsAcceleration.description: Az automatikus mód kikapcsolja virtuális gépen, amely szoftveresen jeleníti meg a grafikát. A módosítások a Cider következő indításakor lépnek életbe.
 settings.option.performance.host: Hoszt
-settings.option.performance.immersiveRenderer: Immerzív renderelő
+settings.option.performance.immersiveRenderer: Immerzív megjelenítő
 settings.option.performance.immersiveRenderer.description: Használja a Canvas 2D-t a WebGPU helyett, ha az animált háttér hibásan működik vagy túl sok GPU-t használ.
 settings.option.performance.libraryQueueLimit: Könyvtári lejátszási sor korlátja
 settings.option.performance.libraryQueueLimit.description: Korlátozza a könyvtárból sorba állítható dalok számát, a 0 jelenti a korlát nélküliséget. A magasabb értékek vagy a korlát hiánya teljesítménybeli problémákat okozhat.
@@ -4486,7 +4588,7 @@ settings.option.performance.limitBlurMapFramerateOnBlur: Animált háttér képk
 settings.option.performance.limitBlurMapFramerateOnBlur.description: Energiatakarékossági okokból csökkenti a magával ragadó animált háttér képkockasebességét, amikor az ablak nincs fókuszban. Kapcsolja ki, ha azt szeretné, hogy folyamatosan maximális sebességgel fusson.
 settings.option.performance.limitImmersiveBgFramerateOnBlur: Immerzív háttér képkockasebességének korlátozása, ha nincs fókuszban
 settings.option.performance.motion: Mozgás
-settings.option.performance.powerSaverOnBattery: Energiatakarékosság akkumulátorról
+settings.option.performance.powerSaverOnBattery: Energiatakarékos mód akkumulátoron
 settings.option.performance.powerSaverOnBattery.description: Amíg az eszköz akkumulátorról működik, az immerzív háttér legfeljebb 30 képkocka/másodperc sebességgel renderel, a dalszöveg-animációk sebessége pedig maximum 60 képkocka/másodpercre korlátozódik.
 settings.option.performance.preloadSidebarPages: Oldalsáv-oldalak előtöltése
 settings.option.performance.preloadSidebarPages.description: Betölti az oldalsáv oldalait, mielőtt megnyitnád őket. A „Rámutatáskor” opció akkor indul el, amikor a kurzor az oldalsáv egyik elemén áll. Az „Inaktív állapotban” opció indítás után betölti a Hallgass most, Böngészés és Rádió lapokat is, valamint frissíti a korábban megnyitott könyvtárlistákat.
@@ -4511,7 +4613,7 @@ settings.option.smartPlaylists.autoRefreshIntervalMinutes: Háttérbeli frissít
 settings.option.smartPlaylists.clearLibraryCache: Könyvtár dalgyorsítótárának törlése
 settings.option.smartPlaylists.clearLibraryCache.description: A következő frissítés kényszerítése a könyvtár újbóli lekérésére az Apple Music-ból.
 settings.option.smartPlaylists.defaultTrackLimit: Alapértelmezett számlimit
-settings.option.smartPlaylists.enabled: Lejátszási lista szabályainak engedélyezése
+settings.option.smartPlaylists.enabled: Lejátszólista-szabályok engedélyezése
 settings.option.smartPlaylists.enabled.description: Engedélyezi a Cider számára a beágyazott szabályokkal rendelkező lejátszási listák automatikus kezelését.
 settings.option.smartPlaylists.maintenance: Karbantartás
 settings.option.smartPlaylists.perPlaylistMinIntervalMinutes: Lejátszási listánkénti minimális időköz (perc)
@@ -4535,20 +4637,20 @@ settings.option.sweetener.header.uiCustomization: Felület testreszabása
 settings.option.sweetener.header.uiCustomization.description: Az alkalmazásban használt kiemelő- és árnyalatszínek.
 settings.option.sweetener.immersiveBackground.brightnessPercentage: Fényerő %
 settings.option.sweetener.immersiveBackground.contrastPercentage: Kontraszt %
-settings.option.sweetener.immersiveBackground.frameRate: Képkockasebesség (aktív ablaknál)
+settings.option.sweetener.immersiveBackground.frameRate: Képkockasebesség (ablak fókuszban)
 settings.option.sweetener.immersiveBackground.frameRate.description: 15-30 FPS javasolt
 settings.option.sweetener.immersiveBackground.header.filters: Szűrők
-settings.option.sweetener.immersiveBackground.lightModeWarning: Az imerzív háttér jelenleg nem támogatott világos módban.
+settings.option.sweetener.immersiveBackground.lightModeWarning: Az immerzív háttér jelenleg nem támogatott világos módban.
 settings.option.sweetener.immersiveBackground.saturationPercentage: Telítettség %
-settings.option.sweetener.immersiveBackground.use: Imerzív háttér használata
+settings.option.sweetener.immersiveBackground.use: Immerzív háttér használata
 settings.option.sweetener.immersiveBackgroundType: Immerzív háttér típusa
 settings.option.sweetener.immersiveBackgroundType.immersive: Immersive
 settings.option.sweetener.immersiveBackgroundType.immersiveLite: Immersive Lite
 settings.option.sweetener.useCustomAccentColor: Egyéni kiemelőszín használata
 settings.option.sweetener.useCustomAccentColor.accentColor: Kiemelőszín
-settings.option.sweetener.useCustomTintColor: Egyéni árnyalatszín használata
+settings.option.sweetener.useCustomTintColor: Egyéni árnyalat használata
 settings.option.sweetener.useCustomTintColor.lightModeWarning: Világos módban a 0,8 alatti árnyalati arányok figyelmen kívül maradnak.
-settings.option.sweetener.useCustomTintColor.tintColor: Árnyalatszín
+settings.option.sweetener.useCustomTintColor.tintColor: Árnyalat színe
 settings.option.sweetener.useCustomTintColor.tintRatio: Árnyalatszín aránya
 settings.option.v2: V2
 settings.option.v2rp: V2 RP
@@ -4558,48 +4660,48 @@ settings.option.visual.accentColor: Kiemelőszín
 settings.option.visual.adaptiveColorPercent: Adaptív szín aránya
 settings.option.visual.additionalAnimatedArtwork: További animált borítók a katalógusban
 settings.option.visual.additionalAnimatedArtwork.description: Több animált borító megjelenítése, ha elérhető. Gyengébb teljesítmény várható, ha sok van a képernyőn.
-settings.option.visual.animateArtworkOnHover: Médiaelem borítójának animálása rámutatáskor
-settings.option.visual.animatedArtwork: Animált borító
+settings.option.visual.animateArtworkOnHover: Médiaelem borítójának animálása egérmutatóra
+settings.option.visual.animatedArtwork: Animált borítókép
 settings.option.visual.animatedArtwork.description: Animált albumborítók engedélyezése, szüneteltetés ha nincs fókuszban
 settings.option.visual.animatedArtwork.warningDescription: Animált borítók megjelenítése, ha elérhető. Ez teljesítménybeli problémákat okozhat gyengébb eszközökön.
-settings.option.visual.animatedArtworkEngine: Animált borítókép-motor
+settings.option.visual.animatedArtworkEngine: Animált borító motorja
 settings.option.visual.animatedArtworkEngine.description: A Natív letölt egy ismétlődő klipet, és minőségváltás nélkül játssza le. A Korábbi opciót csak lejátszási problémák esetén használd.
 settings.option.visual.animatedArtworkEngine.hls: Korábbi (hls.js)
 settings.option.visual.animatedArtworkEngine.native: Natív (ajánlott)
-settings.option.visual.animatedArtworkQuality: Animált borítókép minősége
+settings.option.visual.animatedArtworkQuality: Animált borító minősége
 settings.option.visual.animatedArtworkQuality.balanced: Kiegyensúlyozott
 settings.option.visual.animatedArtworkQuality.description: Az animált borítóképek élessége. Az Automatikus beállítás minden borítóképet a képernyőn megjelenő méretéhez igazít, ami a legtöbb konfigurációhoz megfelelő.
 settings.option.visual.animatedArtworkQuality.performance: Teljesítmény
 settings.option.visual.animatedArtworkQuality.quality: Minőség
 settings.option.visual.animatedBackgroundFramerate: Animált háttér képkockasebessége
 settings.option.visual.animatedWindowBackground: Animált ablak-háttér
-settings.option.visual.artistHeaderAlignment: Előadófejléc elrendezése
+settings.option.visual.artistHeaderAlignment: Előadói fejléc elrendezése
 settings.option.visual.artistHeaderAlignment.center: Középre igazított
 settings.option.visual.artistHeaderAlignment.description: Az előadó nevének és a műveleteknek a helye az előadói oldal fejlécében.
 settings.option.visual.artistHeaderAlignment.left: Balra (alapértelmezett)
-settings.option.visual.artworkLoadingMethod: Lemezborító betöltési módja
+settings.option.visual.artworkLoadingMethod: Borítóbetöltési mód
 settings.option.visual.artworkLoadingMethod.eager: Azonnali
 settings.option.visual.artworkLoadingMethod.lazy: Késleltetett
-settings.option.visual.chromaticAberrationIntensity: Kromatikus aberráció intenzitása
+settings.option.visual.chromaticAberrationIntensity: Kromatikus aberráció erőssége
 settings.option.visual.chromaticAberrationIntensity.description: Az RGB-szegély erőssége az LCD-üvegen.
 settings.option.visual.colorCustomization: Színreszabás
 settings.option.visual.colorScheme: Színséma
 settings.option.visual.compactArtistHeader: Kompakt előadó-fejléc
-settings.option.visual.contentFilterKeywords: Tartalomszűrő kulcsszavak
+settings.option.visual.contentFilterKeywords: Tartalomszűrő kulcsszavai
 settings.option.visual.contentPreferences: Tartalmi beállítások
 settings.option.visual.contentPreferences.description: Bizonyos oldalak elrendezésének módosítása
 settings.option.visual.contextMenuIcons: Menüikonok
 settings.option.visual.customAccentColor: Egyéni kiemelőszín
 settings.option.visual.customScalingFactor: Egyéni méretezési tényező
 settings.option.visual.customScalingFactor.description: Az alkalmazás felhasználói felületének méretezése
-settings.option.visual.enableAnimatedArtworkInMiniPlayer: Animált borítók engedélyezése a minilejátszóban
-settings.option.visual.extendedEditorialLayout: Bővített szerkesztői elrendezés használata az albumoldalakon
+settings.option.visual.enableAnimatedArtworkInMiniPlayer: Animált borítók engedélyezése a mini lejátszóban
+settings.option.visual.extendedEditorialLayout: Bővített szerkesztői elrendezés használata az album oldalakon
 settings.option.visual.extendedEditorialLayout.description: Ha engedélyezve van, az albumoldal megjeleníti a szerkesztői bannert, és a rendelkezésre álló elemek alapján színpalettát alkalmaz bizonyos albumoknál.
 settings.option.visual.filterPromotionalContent: Promóciós tartalmak szűrése
 settings.option.visual.filterPromotionalContent.description: Ha engedélyezve van, a Böngészés és a Hallgatás most lapokon a szűrőkulcsszavaknak megfelelő szakaszok rejtve maradnak.
 settings.option.visual.floatingPlayer: Lebegő lejátszó
 settings.option.visual.floatingPlayer.description: Leválasztja a lejátszósávot a szélekről a lebegő kapszula megjelenéshez
-settings.option.visual.floatingPlayerPadding: Lebegő lejátszó térköze
+settings.option.visual.floatingPlayerPadding: Lebegő lejátszó belső margója
 settings.option.visual.floatingPlayerPadding.description: Szabályozza a lebegő lejátszót körülvevő térközt
 settings.option.visual.floatingPlayerRoundness: Lebegő lejátszó lekerekítése
 settings.option.visual.floatingPlayerRoundness.description: A lebegő lejátszó saroklekerekítési sugara (0 = igazodás a nézethez)
@@ -4609,15 +4711,15 @@ settings.option.visual.forceRoundedViewport: Lekerekített nézet használata
 settings.option.visual.forceRoundedViewport.description: Lekerekített sarkok alkalmazása a fő nézetre minden elrendezésben
 settings.option.visual.hardwareAcceleration: Hardveres gyorsítás
 settings.option.visual.hardwareAcceleration.description: Újraindítást igényel
-settings.option.visual.headerStyle: Album- és lejátszási lista fejlécstílusa
+settings.option.visual.headerStyle: Album- és lejátszási lista fejléc stílusa
 settings.option.visual.headerStyle.appleMusic: Apple Music
 settings.option.visual.headerStyle.appleMusic.description: A műveletek az oldal jobb felső sarkában lebegnek.
 settings.option.visual.headerStyle.classic: Klasszikus
 settings.option.visual.headerStyle.classic.description: A műveletek az oldalfejlécen belül maradnak.
 settings.option.visual.headerStyle.description: A Klasszikus stílus a fejlécben tartja a műveleteket. Az Apple Music a Megosztás / Továbbiak / Hozzáadás a könyvtárhoz opciókat az oldal jobb felső sarkában lévő lebegő sávba helyezi át.
-settings.option.visual.hideAppleRecommends: „Az Apple ajánlásai” kártyák elrejtése
+settings.option.visual.hideAppleRecommends: Az „Apple ajánlja” kártyák elrejtése
 settings.option.visual.hideAppleRecommends.description: Eltávolítja a promóciós „Az Apple ajánlásai” kártyákat a Hallgatás most és a Főoldal ajánlási sávjaiból.
-settings.option.visual.hideHeroItems: Kiemelt elemek elrejtése a Böngészés lapon
+settings.option.visual.hideHeroItems: Kiemelt elemek elrejtése a Böngészésben
 settings.option.visual.immersive.adjustVisuals: Vizuális elemek testreszabása
 settings.option.visual.immersive.background.artwork: Egyszerű albumborító
 settings.option.visual.immersive.background.blank: Üres
@@ -4631,17 +4733,17 @@ settings.option.visual.immersive.coverflowStyle: Coverflow stílus
 settings.option.visual.immersive.coverflowStyle.default: Alapértelmezett
 settings.option.visual.immersive.description: Az Immerzív mód élményének testreszabása
 settings.option.visual.immersive.enableHdr: HDR engedélyezése
-settings.option.visual.immersive.fsrUpscale: FSR albumborító-felskálázás
-settings.option.visual.immersive.fsrUpscale.applyToAll: "FSR: Alkalmazás az összes dalra"
+settings.option.visual.immersive.fsrUpscale: FSR borítónagyítás
+settings.option.visual.immersive.fsrUpscale.applyToAll: "FSR: alkalmazás minden számra"
 settings.option.visual.immersive.fsrUpscale.applyToAll.description: Ha ki van kapcsolva, az FSR csak a küszöbév előtt megjelent daloknál fut le. Kapcsolja be az összes dal felskálázásához.
 settings.option.visual.immersive.fsrUpscale.description: Az albumborítók felskálázása az AMD FidelityFX Super Resolution segítségével. Segít élesebbé tenni a régebbi (2010 előtti) borítókat. WebGPU szükséges hozzá.
-settings.option.visual.immersive.fsrUpscale.sharpness: "FSR: Élesség"
+settings.option.visual.immersive.fsrUpscale.sharpness: "FSR: élesség"
 settings.option.visual.immersive.fsrUpscale.sharpness.description: A kontrasztadaptív élesítési fázis (RCAS) erőssége. A 0 a leglágyabb, az 1 a legélesebb.
-settings.option.visual.immersive.fsrUpscale.thresholdYear: "FSR: Küszöbév"
+settings.option.visual.immersive.fsrUpscale.thresholdYear: "FSR: küszöbév"
 settings.option.visual.immersive.fsrUpscale.thresholdYear.description: Az ezen év előtt megjelent dalok felskálázhatók, ha az „Alkalmazás az összes dalra” opció ki van kapcsolva.
 settings.option.visual.immersive.hdrBoostScale: HDR-kiemelés mértéke
-settings.option.visual.immersive.hideLyricsWhenUnavailable: Dalszöveg elrejtése, ha nem érhető el
-settings.option.visual.immersive.keepCompletedLyrics: Lejátszott dalszövegek megtartása
+settings.option.visual.immersive.hideLyricsWhenUnavailable: Dalszöveg elrejtése, ha nem elérhető
+settings.option.visual.immersive.keepCompletedLyrics: Befejezett dalszövegek megtartása
 settings.option.visual.immersive.keepCompletedLyrics.description: A már lejátszott dalszövegrészek megtartása a dalszöveg nézetben.
 settings.option.visual.immersive.layout.default: One (Alapértelmezett)
 settings.option.visual.immersive.layout.minimal: Minimál
@@ -4652,17 +4754,17 @@ settings.option.visual.immersive.layout.spectrumDeck: Spectrum Deck
 settings.option.visual.immersive.maxBrightness: Maximális fényerő
 settings.option.visual.immersive.maxLyricFontSize: Dalszöveg maximális betűmérete (px)
 settings.option.visual.immersive.startFullscreen: Indítás teljes képernyőn
-settings.option.visual.immersive.startingTab: Induló lap
+settings.option.visual.immersive.startingTab: Kezdő lap
 settings.option.visual.immersive.startingTab.history: Előzmények
 settings.option.visual.immersive.startingTab.lyrics: Dalszöveg
 settings.option.visual.immersive.startingTab.queue: Következők
-settings.option.visual.immersive.ultraHdr: Ultra HDR borítófelskálázás
+settings.option.visual.immersive.ultraHdr: Ultra HDR borítónagyítás
 settings.option.visual.immersive.ultraHdr.description: HDR-kiemeléseket, kontrasztot és színeket ad az albumborítókhoz minden számnál. HDR-kijelzőn a legjobb, más kijelzőkön enyhébb a hatás. WebGPU szükséges.
-settings.option.visual.immersive.ultraHdr.headroom: "Ultra HDR: Csúcsfénytartalék"
+settings.option.visual.immersive.ultraHdr.headroom: "Ultra HDR: csúcsfénytartalék"
 settings.option.visual.immersive.ultraHdr.headroom.description: A legnagyobb kiemelésfényesség a standard fehér többszöröseként. Csökkentsd, ha a kiemelések túl erősnek tűnnek a kijelzőn.
-settings.option.visual.immersive.ultraHdr.intensity: "Ultra HDR: Erősség"
+settings.option.visual.immersive.ultraHdr.intensity: "Ultra HDR: intenzitás"
 settings.option.visual.immersive.ultraHdr.intensity.description: A hatás erőssége. A 0 az eredeti borítót hagyja változatlanul, az 1 a teljes profilt alkalmazza.
-settings.option.visual.immersive.ultraHdr.profile: "Ultra HDR: Profil"
+settings.option.visual.immersive.ultraHdr.profile: "Ultra HDR: profil"
 settings.option.visual.immersive.ultraHdr.profile.cinematic: Filmes
 settings.option.visual.immersive.ultraHdr.profile.description: A Természetes közel marad az eredetihez, a Élénk merész és színes, a Filmes erős kontrasztú, visszafogott színekkel.
 settings.option.visual.immersive.ultraHdr.profile.natural: Természetes
@@ -4673,11 +4775,11 @@ settings.option.visual.immersive.useAnimatedBackground: Immerzív animált hátt
 settings.option.visual.immersive.useBackgroundBpm: Háttér sebessége a BPM alapján
 settings.option.visual.immersiveBackground.blank: Üres
 settings.option.visual.immersiveBackground.customImage: Egyéni kép
-settings.option.visual.immersiveBackground.customImageMixed: Egyéni kép (vegyes)
+settings.option.visual.immersiveBackground.customImageMixed: Egyéni kép (kevert)
 settings.option.visual.immersiveBackground.gradientMesh: Színátmenet-háló
-settings.option.visual.immersiveBackground.simpleArtwork: Egyszerű borítókép
+settings.option.visual.immersiveBackground.simpleArtwork: Egyszerű borító
 settings.option.visual.immersiveBackground.simpleColor: Egyszerű szín
-settings.option.visual.immersiveBgSettings: Immerzív háttérbeállítások
+settings.option.visual.immersiveBgSettings: Immerzív háttér beállításai
 settings.option.visual.immersiveBgSettings.description: Alkalmazásháttér-effektusok és szűrők.
 settings.option.visual.immersiveLayout.classic: One Classic
 settings.option.visual.immersiveLayout.classic.description: Az eredeti immerzív elrendezés teljes szélességű alsó lejátszóval.
@@ -4695,7 +4797,7 @@ settings.option.visual.immersiveLayout.spectrumDeck: Spectrum Deck
 settings.option.visual.immersiveLayout.spectrumDeck.description: Valós idejű spektrumkép lebegő albumborítóval.
 settings.option.visual.immersiveStyle: Immerzív stílus
 settings.option.visual.immersiveStylePortrait: Immerzív stílus (álló)
-settings.option.visual.largeHeaderTitles: Nagy fejléc-címek
+settings.option.visual.largeHeaderTitles: Nagy fejléccímek
 settings.option.visual.largeHeaderTitles.description: Megnöveli a címszöveget az album- és lejátszási lista oldalakon a hangsúlyosabb megjelenés érdekében.
 settings.option.visual.layoutProfile: Elrendezési profil típusa
 settings.option.visual.layoutProfile.description: Az alkalmazás elrendezésének testreszabása
@@ -4712,15 +4814,15 @@ settings.option.visual.lcdChromaticAberration: LCD kromatikus aberráció
 settings.option.visual.lcdChromaticAberration.description: A most játszott LCD-hátteret töri meg a folyékony üveg shaderen keresztül, RGB-szegéllyel.
 settings.option.visual.liquidGlassPlayer: Folyékony üveg lejátszósáv
 settings.option.visual.liquidGlassPlayer.description: Folyékony üveg felület használata a lejátszósávhoz. Kapcsolja ki a lapos, egyszínű panelhez (amelynek a kirajzolása is gyorsabb).
-settings.option.visual.liquidGlassScrollPerf: Könnyített üveghatás görgetés közben
+settings.option.visual.liquidGlassScrollPerf: Könnyű üveghatás görgetés közben
 settings.option.visual.liquidGlassScrollPerf.description: Görgetés közben a folyékony üveg fénytörését egyszerű elmosódássá alakítja, majd megálláskor fokozatosan visszaállítja azt. Csökkenti a görgetési akadozást a nagyobb terhelésnek kitett rendszereken, miközben nyugalmi állapotban a látvány változatlan marad. Játék módban mindig aktív.
 settings.option.visual.liquidGlassScrollPerf.descriptionV2: Görgetés közben egyszerű elmosásra egyszerűsíti a folyékony üveg törését, majd leállás után visszaállítja. Csökkenti a görgetési akadozást igényes rendszereken, nyugalmi állapotban pedig nincs változás.
-settings.option.visual.mainMenuPosition: Főmenü pozíciója
+settings.option.visual.mainMenuPosition: Főmenü helye
 settings.option.visual.matchPageToArtwork: Oldal igazítása a borítóhoz
 settings.option.visual.matchPageToArtwork.description: Az album- és lejátszási lista oldalakat borítójuk színeivel festi ki, világos és sötét módban egyaránt.
-settings.option.visual.mergeAppleMusicPlaylists: Apple Music-lejátszási listák összevonása
+settings.option.visual.mergeAppleMusicPlaylists: Apple Music lejátszási listák egyesítése
 settings.option.visual.mergeAppleMusicPlaylists.description: Az Apple Music által összeállított lejátszási listák beolvasztása a fő Lejátszási listák szakaszba, ahelyett, hogy külön csoportként jelennének meg.
-settings.option.visual.miniplayerSkin: Minilejátszó elrendezése
+settings.option.visual.miniplayerSkin: Mini lejátszó elrendezése
 settings.option.visual.miniplayerSkin.aluminum: Alumínium
 settings.option.visual.miniplayerSkin.aqua: Aqua
 settings.option.visual.miniplayerSkin.aquaAlt: Aqua (alt.)
@@ -4735,21 +4837,21 @@ settings.option.visual.mojavePlayerType.comfy: Kényelmes
 settings.option.visual.mojavePlayerType.comfy.description: Magasabb lejátszó albumborítóval és metaadatokkal a bal oldalon.
 settings.option.visual.mojavePlayerType.compact: Kompakt
 settings.option.visual.mojavePlayerType.compact.description: Karcsú lejátszó középre igazított LCD-vel és felette lévő folyamatjelző sávval.
-settings.option.visual.mojavePlayerType.compactInline: Kompakt beágyazott
+settings.option.visual.mojavePlayerType.compactInline: Kompakt, soros
 settings.option.visual.mojavePlayerType.compactInline.description: Egyetlen karcsú sor az LCD-n belüli folyamatjelzővel.
-settings.option.visual.moveUpLinks: A „További látnivalók” hivatkozások felülre helyezése a Böngészés lapon
-settings.option.visual.musicVideoPinMaxResolution: Videoklipek lejátszása mindig maximális felbontásban
+settings.option.visual.moveUpLinks: A „További megtekintés” hivatkozások áthelyezése a Böngészés tetejére
+settings.option.visual.musicVideoPinMaxResolution: Zenei videók mindig maximális felbontásban
 settings.option.visual.musicVideoPinMaxResolution.description: A videó által kínált legmagasabb minőséget tartja fenn ahelyett, hogy alacsony felbontásról indulva fokozatosan javulna. Kis ablakban vagy forgalmi díjas kapcsolat esetén ez észrevehetően több adatforgalmat generál.
-settings.option.visual.musicVideoPrefetchOnHover: Videoklipek előkészítése rámutatáskor
+settings.option.visual.musicVideoPrefetchOnHover: Zenei videók előkészítése egérmutatóra
 settings.option.visual.musicVideoPrefetchOnHover.description: Elkezdi betölteni a videót, miközben a kurzor az elemen áll, így kattintáskor gyorsabban megnyílik.
-settings.option.visual.musicVideoPrefetchSegmentsOnHover: Első részlet letöltése rámutatáskor
+settings.option.visual.musicVideoPrefetchSegmentsOnHover: Első darab letöltése egérmutatóra
 settings.option.visual.musicVideoPrefetchSegmentsOnHover.description: A kattintás előtt a videó első néhány másodpercét is letölti. Ez rámutatásonként néhány megabájt adatforgalmat jelent, azoknál is, amelyeknél végül nem nyitja meg a videót.
-settings.option.visual.paletteContrast: Borítókép színkontrasztja
+settings.option.visual.paletteContrast: Borítószín kontraszt
 settings.option.visual.paletteContrast.description: Meghatározza, hogy az albumok és lejátszási listák színei mennyire térjenek el a háttértől, hogy a gombok és a lejátszásjelző jól olvashatóak maradjanak. A „Nagy kontraszt” akadálymentesítési beállítás mindig a Maximális opciót használja.
 settings.option.visual.paletteContrast.enhanced: Fokozott
 settings.option.visual.paletteContrast.maximum: Maximális
 settings.option.visual.paletteContrast.standard: Standard
-settings.option.visual.pauseAnimatedOnBlur: Animált borítókép szüneteltetése, ha az ablak nincs fókuszban
+settings.option.visual.pauseAnimatedOnBlur: Animált borító szüneteltetése, ha nincs fókuszban
 settings.option.visual.playerMaterial: Lejátszó anyaga
 settings.option.visual.playerMaterial.blur: Elmosódás
 settings.option.visual.playerMaterial.blur.description: Félig áttetsző, matt felület használata a lejátszósávhoz a folyékony üveg fénytörési hatása nélkül.
@@ -4766,7 +4868,7 @@ settings.option.visual.plugin.github.explore: GitHub-bővítmények felfedezése
 settings.option.visual.plugin.github.install.confirm: "Biztosan telepíti a következőt: {{repo}}?"
 settings.option.visual.popularityThreshold: Népszerűségi küszöb
 settings.option.visual.popularityThreshold.description: A számok melletti jelzők megjelenítéséhez szükséges minimális népszerűség.
-settings.option.visual.precisionScrollSpeed: Precíziós görgetési sebesség
+settings.option.visual.precisionScrollSpeed: Pontos görgetési sebesség
 settings.option.visual.precisionScrollSpeed.description: Az érintőpad görgetésének finomhangolása az új (glass) ablakmotorban. Az alacsonyabb érték lassabb és precízebb a kisebb igazításokhoz; a magasabb gyorsabban görget.
 settings.option.visual.purplePodcastPlaybackBar: Lila lejátszási sáv a podcastokhoz
 settings.option.visual.realtimeVisualizer: Valós idejű hangvizualizáció
@@ -4777,17 +4879,17 @@ settings.option.visual.searchType.inline: Beágyazott
 settings.option.visual.showBpmAndKey: BPM és hangnem megjelenítése a számoknál a lejátszási listákban és albumokban
 settings.option.visual.showBpmAndKey.description: Engedélyezése esetén a tartalom betöltése hosszabb ideig tarthat.
 settings.option.visual.showPersonalInfo: Személyes adatok megjelenítése
-settings.option.visual.showPlaylistArtworkInSidebar: Lejátszási listák borítóképének megjelenítése az oldalsávban
-settings.option.visual.showPodcastsInSidebar: Podcastok megjelenítése az oldalsávon
+settings.option.visual.showPlaylistArtworkInSidebar: Lejátszási lista borítói az oldalsávban
+settings.option.visual.showPodcastsInSidebar: Podcastok megjelenítése az oldalsávban
 settings.option.visual.showPodcastsInSidebar.description: A podcastok támogatásának újjáépítése még folyamatban van, így a Könyvtár menüpontban egyelőre csak egy helyőrző látható.
-settings.option.visual.showQuickActions: Gyors Műveletek Mutatása
-settings.option.visual.showWatchMusicVideoWhenAvailable: „Videóklip megtekintése” megjelenítése, ha elérhető
+settings.option.visual.showQuickActions: Gyorsműveletek megjelenítése
+settings.option.visual.showWatchMusicVideoWhenAvailable: Ha elérhető, jelenjen meg a "Zenei videó megtekintése" lehetőség
 settings.option.visual.sidebarStyle: Oldalsáv stílusa
 settings.option.visual.sidebarStyle.apple: Apple Music
 settings.option.visual.sidebarStyle.default: Alapértelmezett
 settings.option.visual.sidebarStyle.description: Válaszd ki az oldalsáv elrendezését. Az "Apple Music" stílus a Könyvtár szakaszba ágyazza a rögzített elemeket, és eltávolítja az Apple Music szakaszfejlécet.
 settings.option.visual.simpleArtworkBg.saturate: Telítettség
-settings.option.visual.sizeProfile: UI méretének kiválasztása
+settings.option.visual.sizeProfile: Felhasználói felület méretprofilja
 settings.option.visual.sizeProfile.description.default: Alapértelmezett méretezés, bármilyen beviteli eszközhöz. iOS / Android / Modern Windows stílus.
 settings.option.visual.sizeProfile.description.desktop: Asztali környezetre optimalizált méretezés, egérhez és billentyűzethez. macOS / Klasszikus Windows stílus.
 settings.option.visual.sizeProfile.desktop: Asztali
@@ -4807,28 +4909,28 @@ settings.option.visual.theme.viewInfo: Információk megtekintése
 settings.option.visual.titleBarStyle: Címsor stílusa
 settings.option.visual.titleBarStyle.winui: WinUI
 settings.option.visual.topToolbarWidget: Felső eszköztár widget
-settings.option.visual.transparency: Áttetszőség engedélyezése
+settings.option.visual.transparency: Átlátszóság engedélyezése
 settings.option.visual.transparent: Átlátszó keret
 settings.option.visual.transparent.description: tématámogatás szükséges, újraindítást igényel
 settings.option.visual.uiscale: Felhasználói felület méretezése
 settings.option.visual.useAdaptiveColors: Adaptív színek használata
 settings.option.visual.useAdaptiveColors.description: A kiemelő szín megváltoztatása a jelenleg játszott dal szerint
 settings.option.visual.useAdaptiveColors.popup: Az adaptív színek a következő számnál lépnek életbe.
-settings.option.visual.verticalDrawerMode: Lejátszási sor és dalszöveg elhelyezése
+settings.option.visual.verticalDrawerMode: Várólista és dalszöveg elhelyezése
 settings.option.visual.verticalDrawerMode.auto.description: Álló tájolású kijelzőkön használjon alsó fiókot a lejátszó/tartalom alatt, szélesvásznú kijelzőkön pedig oldalsó fiókot.
-settings.option.visual.verticalDrawerMode.bottom: Alsó fiók
+settings.option.visual.verticalDrawerMode.bottom: Alsó panel
 settings.option.visual.verticalDrawerMode.bottom.description: Mindig jelenítse meg a lejátszási sort és a dalszöveget egy alsó fiókban a lejátszó/tartalom alatt.
 settings.option.visual.verticalDrawerMode.description: Beállíthatja, hogy a lejátszási sor és a dalszöveg alsó vagy oldalsó fiókként nyíljon meg függőleges kijelzőkön.
-settings.option.visual.verticalDrawerMode.side: Oldalsó fiók
+settings.option.visual.verticalDrawerMode.side: Oldalsó panel
 settings.option.visual.verticalDrawerMode.side.description: Mindig jelenítse meg a lejátszási sort és a dalszöveget egy jobb oldalsó fiókban.
 settings.option.visual.vibrancyMode.acrylic: Akril
 settings.option.visual.vibrancyMode.mica: Mica
 settings.option.visual.vibrancyMode.tabbed: Tabbed
-settings.option.visual.vibrancySettings: Vibrancy-beállítások
+settings.option.visual.vibrancySettings: Élénkítés beállításai
 settings.option.visual.windowBackgroundStyle: Ablakháttér stílusa
 settings.option.visual.windowColor: Ablak árnyalatszíne
-settings.option.visual.windowControlPosition: Ablakvezérlők pozíciója
-settings.option.visual.windowingMode: Görgetési és renderelési mód
+settings.option.visual.windowControlPosition: Ablakvezérlők helye
+settings.option.visual.windowingMode: Görgetési és megjelenítési mód
 settings.option.visual.windowingMode.auto: Automatikus (érintőpad-érzékeny)
 settings.option.visual.windowingMode.description: Válaszd ki, hogyan jelenítse meg és görgesse az alkalmazás a tartalmat. Az „Automatikus” javasolt a legtöbb felhasználónak, bizonyos érintőpados eszközökön a „Régi” gyorsabb választ adhat.
 settings.option.visual.windowingMode.fallbackNotice.body: A Cider helyette a Régi módot használja.
@@ -4836,7 +4938,7 @@ settings.option.visual.windowingMode.fallbackNotice.title: Az új megjelenítés
 settings.option.visual.windowingMode.glass: Új
 settings.option.visual.windowingMode.performance: Régi
 settings.option.visual.windowStyle: Ablakstílus
-settings.option.visual.windowVibrancy: Ablak áttetszősége
+settings.option.visual.windowVibrancy: Ablak élénkítése
 settings.option.window.close_button_hide: A bezárás gomb csak rejtse el az alkalmazást
 settings.option.window.maxElementScale: Elemek maximális méretezése
 settings.option.window.openOnStartup: Cider megnyitása indításkor
@@ -4867,6 +4969,17 @@ settings.power.savers: Energiatakarékosság
 settings.power.summary.count: "{{high}} nagy hatású, {{medium}} közepes hatású funkció bekapcsolva"
 settings.power.summary.high: Nagy hatású
 settings.power.summary.medium: Közepes hatású
+settings.privacy.appPreferences: Alkalmazásbeállítások
+settings.privacy.appPreferences.description: Ossza meg az alkalmazásbeállításait, hogy tudjuk, hogyan szeretné beállítani a Cider't.
+settings.privacy.appUsage: Alkalmazásspecifikus használat
+settings.privacy.appUsage.description: Anonim használati adatok küldése a Cider specifikus funkcióiról. Ez nem tartalmaz személyes adatokat vagy Apple Music-adatokat.
+settings.privacy.audioLabs: Cider Audio labor
+settings.privacy.audioLabs.description: Információt küld arról, hogyan állította be a Cider Audio labort.
+settings.privacy.deviceSpecs: Eszközspecifikációk
+settings.privacy.deviceSpecs.description: Információt küld a jelenlegi hardveréről (processzor, grafikus kártya, RAM, hangeszközök), valamint az operációs rendszerről. Az információk alapvetőek, és nem tartalmaznak sorozatszámokat vagy eszközazonosítókat.
+settings.privacy.replay: Hallgatási előzmények megosztása a Cider Replay számára
+settings.privacy.replay.description: Hallgatási előzmények anonim küldése a Cider éves közösségi Replay projektjéhez. A nyilvános statisztikák a cider.sh/replay oldalon tekinthetők meg.
+settings.privacy.statement: A Cider Collective nagyon komolyan veszi az adatvédelmet. Nem gyűjtünk személyazonosításra alkalmas adatokat, és nem adunk el adatokat harmadik feleknek. Az Ön által megosztott adatokat az alkalmazás fejlesztésére használjuk, és senkivel mással nem osztjuk meg; minden tárolt személyes adatot eltávolítunk, mielőtt megosztanánk velünk.
 settings.profile.crop.hint: Húzd a mozgatáshoz, görgess a nagyításhoz
 settings.profile.crop.title: Igazítsd el a fotódat
 settings.profile.defaultName: Apple Music-felhasználó
@@ -4874,15 +4987,16 @@ settings.profile.field.displayName: Megjelenített név
 settings.profile.field.displayName.description: Megjelenik az oldalsávban és a Cider többi részén.
 settings.profile.field.handle.description: A @felhasználóneved, megosztáshoz használatos.
 settings.profile.field.photo: Profilkép
+settings.profile.field.photo.change: Profilkép módosítása
 settings.profile.field.photo.description: Jelenleg egyéni fotó van beállítva.
 settings.profile.header.identity: Profil szerkesztése
 settings.profile.header.region: Régió és nyelv
-settings.profile.header.visibility: Megjelenítés az oldalsávban
+settings.profile.header.visibility: Oldalsáv megjelenítése
 settings.profile.language.description: A katalógus metaadatainak nyelve a kiválasztott áruházhoz.
-settings.profile.option.showHandle: Közösségi azonosító megjelenítése
+settings.profile.option.showHandle: Közösségi felhasználónév megjelenítése
 settings.profile.option.showMainMenu: Főmenü az oldalsáv profilterületén
 settings.profile.option.showName: Profilnév megjelenítése
-settings.profile.option.showProfile: Profil megjelenítése az oldalsávban
+settings.profile.option.showProfile: Profil megjelenítése az oldalsávon
 settings.profile.policy.allowed: Engedélyezve
 settings.profile.policy.label: Explicit tartalom
 settings.profile.policy.restricted: Korlátozva
@@ -4922,6 +5036,7 @@ settings.resetCider.confirm.ok: Cider alaphelyzetbe állítása
 settings.resetCider.confirm.title: Alaphelyzetbe állítja a Cidert?
 settings.resetCider.confirm.warning: Ez a művelet nem vonható vissza. A Cider az alaphelyzetbe állítás után újraindul.
 settings.resetCider.confirm.willReset: Alaphelyzetbe állítandó
+settings.resetCider.deselectAll: Összes kijelölésének megszüntetése
 settings.resetCider.error: Hiba történt az alaphelyzetbe állítás során.
 settings.resetCider.group.accounts: Fiókok
 settings.resetCider.group.core: Alaphelyzetbe állítás
@@ -4931,6 +5046,10 @@ settings.resetCider.resetButton: Cider alaphelyzetbe állítása
 settings.resetCider.resetting: Alaphelyzetbe állítás…
 settings.resetCider.selectAll: Összes kijelölése
 settings.resetCider.title: Cider alaphelyzetbe állítása
+settings.search.empty: Nincs a keresésnek megfelelő beállítás.
+settings.search.pages: Oldalak
+settings.search.resultCount: "{{count}} megfelelő beállítás"
+settings.search.resultCountOne: 1 megfelelő beállítás
 settings.sleepTimer.endsIn: "Hátralévő idő: {{remainingTime}} ({{endTime}})"
 settings.sleepTimer.notSet: Az időzítő nincs beállítva
 settings.sleepTimer.title: Elalváskapcsoló beállítása
@@ -4940,7 +5059,7 @@ settings.smartPlaylists.section.maintenance.description: Az összes szabály azo
 settings.smartPlaylists.section.rules: Szabályok
 settings.smartPlaylists.section.rules.description: Meghatározza, hogy a Cider alkalmazza-e a beágyazott lejátszásilista-szabályokat, és milyen gyakran értékelje újra azokat.
 settings.smartPlaylists.section.rules.descriptionV2: Azt szabályozza, hogy a Cider alkalmazza-e a beágyazott lejátszási lista szabályokat. Ezek a Háttérfrissítési idővel újra lefutnak az Energiahasználatban.
-settings.sweetener.useSystemAccentColor: Rendszerszín használata
+settings.sweetener.useSystemAccentColor: Rendszer kiemelőszínének használata
 settings.takeout.chooseFile: Fájl kiválasztása…
 settings.takeout.error.badVersion: A fájlból hiányoznak a verzióinformációk.
 settings.takeout.error.generic: A fájl olvasása sikertelen.
@@ -4967,7 +5086,7 @@ settings.takeout.reloadPrompt: Néhány beállítás csak az újratöltés után
 settings.takeout.selectAll: Összes kijelölése
 settings.takeout.title: Beállítások kimentése
 settings.title: Beállítások
-settings.troubleshooting.bgDiagnostics: Háttérben történő lejátszás diagnosztikája
+settings.troubleshooting.bgDiagnostics: Háttérlejátszási diagnosztika
 settings.troubleshooting.bgDiagnostics.desc: További naplózási adatok a lejátszási problémák diagnosztizálásához, amikor az ablak minimalizálva van vagy nincs fókuszban – ki állította le a lejátszót, időzítési hibák és az operációs rendszer általi felfüggesztések. Engedélyezd, ha háttérben történő lejátszási hibát jelentesz be.
 settings.troubleshooting.desc: Naplófájlok és MKLite hibakeresési naplózás.
 settings.troubleshooting.descV2: MKLite és háttérlejátszási naplózás.
@@ -4990,10 +5109,69 @@ settings.troubleshooting.rebootMk.desc: A MusicKit újraindítása a lejátszás
 settings.troubleshooting.testSignIn: Apple Music bejelentkezés tesztelése
 settings.troubleshooting.testSignIn.desc: Indítsa el az Apple Music bejelentkezési felugró ablakot a bejelentkezés ellenőrzéséhez, majd érvényesítse a tokent az API-val. Semmi sem kerül mentésre, és a jelenlegi munkamenet érintetlen marad.
 settings.troubleshooting.title: Hibaelhárítás
+settings.tweaks.animateArtworkOnHover.description: Animált borító lejátszása, ha a mutató fölé kerül.
+settings.tweaks.artworkFadeIn.description: Borítók azonnali megjelenítése betöltés közben, fokozatos áttűnés helyett.
+settings.tweaks.artworkHighlighting.description: Enyhe árnyék és kiemelés hozzáadása a borítókhoz rácsokon és listákon.
+settings.tweaks.artworkLoadingMethod.description: A borítók görgetés közben, a látómezőbe érve töltődnek be. Az azonnali betöltés rögtön betölti őket.
+settings.tweaks.card.musicVideos: Zenei videók
+settings.tweaks.ciderAudioBadges.description: Cider Audio jelvények megjelenítése a dal mellett a lejátszóban.
+settings.tweaks.ciderAudioToolbar.description: Cider Audio gomb megjelenítése az eszköztárban.
+settings.tweaks.compactSidebarSize: Kompakt oldalsáv mérete
+settings.tweaks.contextMenuIcons.description: Mely menüpontok jelenjenek meg ikonnal.
+settings.tweaks.floatingSearchBlur: Homályosítás a lebegő keresés mögött
+settings.tweaks.floatingSearchClear: Lebegő keresés törlése bezáráskor
+settings.tweaks.forceMpWindowControls.description: A rendszer ablakvezérlői helyett a Cider saját ablakgombjainak használata.
+settings.tweaks.hideHeroItems.description: A Böngészés tetején lévő nagy kiemelt bannerek elrejtése.
+settings.tweaks.homeButtonLocation.description: A Kezdőlap gomb helye.
+settings.tweaks.immersiveArtworkHighlight: Immerzív borítókiemelés
+settings.tweaks.immersiveArtworkHighlight.description: Kiemelés hozzáadása a borítóhoz az Immerzív nézetben.
+settings.tweaks.immersiveBackgroundBpm.description: A háttér a dal tempójához igazodva animálódik.
+settings.tweaks.immersiveControlsTimeout: Immersive vezérlők időkorlátja
+settings.tweaks.immersiveControlsTimeout.description: Másodpercek, mielőtt a vezérlők elrejtődnek.
+settings.tweaks.immersiveHideLyrics.description: A dalszövegpanel elrejtése a dalszöveg nélküli számoknál.
+settings.tweaks.immersiveLyricGlow: Izzás az aktív dalszövegsoron
+settings.tweaks.immersiveLyricGlow.description: Fényhatás hozzáadása az éppen énekelt sorhoz.
+settings.tweaks.immersiveMaxLyricSize.description: A dalszöveg legnagyobb mérete az Immersive nézetben.
+settings.tweaks.mainMenuPosition.description: A főmenü gombjának helye.
+settings.tweaks.mavericksLcdStyle: Mavericks LCD stílus
+settings.tweaks.mavericksLcdStyle.description: A lejátszás kijelzőjének megjelenése a Mavericks elrendezésben.
+settings.tweaks.miniPlayerAnimatedArtwork.description: Animált borítók lejátszása a mini lejátszó ablakban.
+settings.tweaks.moveUpLinks.description: A további tartalmakra mutató hivatkozások a Böngészés oldal tetejére kerülnek.
+settings.tweaks.musicVideoBadge.description: Gomb megjelenítése a lejátszóban, ha a számhoz tartozik zenei videó.
+settings.tweaks.pauseAnimatedOnBlur.description: Animált borítók szüneteltetése, ha a Cider nincs aktív ablakban.
+settings.tweaks.progressAccent: Kiemelőszínű előrehaladásjelző
+settings.tweaks.progressAccent.description: A dal előrehaladási sávjának kitöltése kiemelőszínnel.
+settings.tweaks.resizableMiniPlayer.description: A mini lejátszó ablakának átméretezésének engedélyezése.
+settings.tweaks.richGridNoScrollAnimation: Azonnali görgetés a gazdag albumrácsban
+settings.tweaks.richGridNoScrollAnimation.description: Ugrás az albumhoz görgetési animáció nélkül.
+settings.tweaks.richGridOpenPage: Albumok megnyitása oldalként a gazdag albumrácsból
+settings.tweaks.richGridOpenPage.description: Ugrás az album oldalára a rácsban történő kibontás helyett.
+settings.tweaks.richGridScrollPosition: Gazdag albumrács görgetési pozíciója
+settings.tweaks.richGridScrollPosition.description: Hová görgessen a rács, amikor megnyit egy albumot.
+settings.tweaks.scrollbarType.description: A Cider saját görgetősávjainak vagy a rendszer görgetősávjainak használata.
+settings.tweaks.searchStyle: Keresés stílusa
+settings.tweaks.searchStyle.description: Keresés a címsorban vagy az oldal fölötti panelben.
+settings.tweaks.section.artwork: Borítók
+settings.tweaks.section.browse: Böngészés
+settings.tweaks.section.immersive: Immersive
+settings.tweaks.section.lyrics: Dalszöveg
+settings.tweaks.section.pagesGrids: Oldalak és rácsok
+settings.tweaks.section.playerBar: Lejátszósáv
+settings.tweaks.section.search: Keresés
+settings.tweaks.section.sidebarNavigation: Oldalsáv és navigáció
+settings.tweaks.section.windowToolbar: Ablak és eszköztár
+settings.tweaks.showBitrate.description: A streamelés bitrátájának megjelenítése a dal mellett a lejátszóban.
+settings.tweaks.sidebarPlaylistArtwork.description: Minden lejátszási lista borítójának megjelenítése a neve mellett.
+settings.tweaks.simpleArtworkMask.description: A háttérborító alsó részének elhalványítása.
+settings.tweaks.sonomaLyricArc: Ívelt dalszöveg Sonomán
+settings.tweaks.sonomaRadialMask: Alternatív Sonoma maszk
+settings.tweaks.volumeIosStyle: iOS stílusú hangerőcsúszka
+settings.tweaks.volumeIosStyle.description: A hangerőcsúszka megjelenítése az iPhone-on használt stílusban.
+settings.tweaks.windowControlPosition.description: Az ablakgombok oldala.
 settings.updates.action.check: Frissítések keresése
 settings.updates.action.install: Frissítés telepítése
 settings.updates.action.restart: Cider újraindítása
-settings.updates.action.retry: Próbálja újra
+settings.updates.action.retry: Újrapróbálkozás
 settings.updates.autoCheck: Frissítések automatikus keresése
 settings.updates.autoCheck.description: Ha ki van kapcsolva, a Cider csak akkor keres frissítést, amikor megnyitja ezt az oldalt.
 settings.updates.build: Build
@@ -5018,41 +5196,46 @@ settings.updates.progress.success: Frissítés telepítve
 settings.updates.progress.success.sub: Indítsa újra a Cider alkalmazást a változtatások alkalmazásához.
 settings.updates.progress.working: Frissítés telepítése
 settings.updates.progress.working.sub: Kis türelmet, ez csak egy pillanatig tart.
-settings.updates.section.about: A verzió névjegye
-settings.updates.section.alsoAvailable: Szintén elérhető
+settings.updates.section.about: A verzió adatai
+settings.updates.section.alsoAvailable: További elérhető
 settings.updates.section.history: Frissítési előzmények
-settings.updates.section.whatsNew: Újdonságok a Ciderben
-settings.updates.status.available: Frissítés érhető el
+settings.updates.section.whatsNew: Újdonságok a Cider {version} verzióban
+settings.updates.status.available: Frissítés elérhető
 settings.updates.status.checking: Frissítések keresése...
 settings.updates.status.failed: A frissítés sikertelen
 settings.updates.status.idle: A Cider naprakész
 settings.updates.status.success: Újraindítás szükséges
 settings.updates.status.working: Telepítés...
 settings.visual.card.appBackground: Alkalmazás háttere
-settings.visual.card.behaviorLyrics: Működés és dalszövegek
+settings.visual.card.behavior: Viselkedés
+settings.visual.card.behaviorLyrics: Viselkedés és dalszöveg
 settings.visual.card.browse: Böngészés
 settings.visual.card.contentFilter: Tartalomszűrő
 settings.visual.card.experimental: Kísérleti
 settings.visual.card.fsrUpscaling: FSR felskálázás
-settings.visual.card.moreAnimatedArtwork: További animált albumborítók
-settings.visual.card.playerEffects: Lejátszóeffektusok
+settings.visual.card.moreAnimatedArtwork: További animált borítók
+settings.visual.card.playerEffects: Lejátszóeffektek
 settings.visual.card.sidebarNavigation: Oldalsáv és navigáció
-settings.visual.card.trackMetadata: Dal metaadatai
+settings.visual.card.trackMetadata: Szám metaadatai
 settings.visual.card.ultraHdr: Ultra HDR felskálázás
 settings.visual.editorialLayout: Szerkesztői elrendezés használata
 settings.visual.editorialLayout.desc: Szerkesztői bannert jelenít meg, és színpalettát alkalmaz bizonyos albumoknál
-settings.visual.editorialPreferenceOrder: Szerkesztői preferenciák sorrendje
+settings.visual.editorialPreferenceOrder: Szerkesztői előnyben részesítési sorrend
 settings.visual.section.appearance: Megjelenés
 settings.visual.section.appearance.description: Színséma, kiemelőszínek és az alkalmazás háttere.
-settings.visual.section.artwork: Albumborító és mozgás
+settings.visual.section.artwork: Borítók és mozgás
 settings.visual.section.artwork.description: Animált albumborítók és mozgási beállítások.
 settings.visual.section.content: Böngészés és tartalom
 settings.visual.section.content.description: Oldalelrendezések, böngészési beállítások és tartalomszűrés.
 settings.visual.section.customCss.description: Saját CSS alkalmazása a Cider stílusán felül.
 settings.visual.section.layout: Elrendezés
 settings.visual.section.layout.description: Alkalmazáselrendezés, lejátszóstílus, oldalsáv és navigáció.
+settings.visual.section.pages: Oldalak
+settings.visual.section.pages.description: Az album- és lejátszási lista oldalak elrendezése.
+settings.visual.section.themeColors: Téma és színek
 settings.visual.section.window: Ablak
 settings.visual.section.window.description: Ablakkeret, áttetszőség, vezérlők és méretezés.
+settings.visual.section.window.descriptionV2: Ablakkeret, átlátszóság, megjelenítés és méretezés.
 settings.visual.vibrancy.acrylicDarkness: Akril sötétség értéke
 settings.visual.vibrancy.mode.acrylic: Akril
 settings.visual.vibrancy.mode.mica: Mica
@@ -5543,7 +5726,7 @@ term.size: Méret
 term.size.compact: Kompakt
 term.size.normal: Normál
 term.skip: Kihagyás
-term.sleepTimer: Elalváskapcsoló
+term.sleepTimer: Alvásidőzítő
 term.snippets: Snippetek
 term.socials: Közösségi média
 term.socialTeam: Közösségi csapat
