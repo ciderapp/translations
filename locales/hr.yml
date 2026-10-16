@@ -172,10 +172,11 @@ action.cancel:
   by: "@Vudgekek"
   issue: 5
 action.cancelTimer:
-  value: Otkaži odbrojavanje
-  source: human
+  value: Otkaži tajmer
+  source: ai
   by: "@Vudgekek"
   issue: 5
+  superseded_at: 2026-10-16
 action.cast.airplay:
   value: AirPlay
   source: ai
@@ -229,6 +230,7 @@ action.close:
   source: human
   by: "@Vudgekek"
   issue: 5
+action.configure: Postavi
 action.connect:
   value: Poveži
   source: human
@@ -264,9 +266,10 @@ action.copy:
   issue: 5
 action.copyToken:
   value: Kopiraj token
-  source: human
+  source: ai
   by: "@Vudgekek"
   issue: 5
+  superseded_at: 2026-10-16
 action.create:
   value: Stvori
   source: human
@@ -325,6 +328,7 @@ action.deletepreset:
   by: "@Vudgekek"
   issue: 5
   superseded_at: 2026-07-08
+action.deny: Odbij
 action.disablePlugins:
   value: Onemogući dodatke za ovu sesiju
   source: human
@@ -535,9 +539,10 @@ action.paste:
 action.pause: Pauziraj
 action.pickTime:
   value: Odaberi vrijeme
-  source: human
+  source: ai
   by: "@Vudgekek"
   issue: 5
+  superseded_at: 2026-10-16
 action.pin:
   value: Prikvači
   source: human
@@ -1095,6 +1100,12 @@ assistant.sid.settings.freshDetail: Izradi cijeli popis iz raspoloženja, trenut
 assistant.sid.settings.gemmaHere: Gemma ovdje
 assistant.sid.settings.gpu: Grafička kartica
 assistant.sid.settings.group: Asistent
+assistant.sid.settings.helloEdit: Otvori popis za reprodukciju i odaberi Uredi sa Sidom, pa ću ga srediti.
+assistant.sid.settings.helloFresh: Reci mi raspoloženje ili nekoliko izvođača, pa ću napraviti cijeli popis za reprodukciju.
+assistant.sid.settings.helloRequest: Zatraži pjesmu tijekom seta, pa ću je pronaći na Apple Musicu.
+assistant.sid.settings.helloSet: Tijekom seta odabirat ću što sljedeće svira prema tonalitetu i tempu.
+assistant.sid.settings.helloSort: Zamoli me da poredam popis za reprodukciju od mirnog do živahnog ili da tonaliteti teku glatko.
+assistant.sid.settings.helloTrim: Mogu skratiti popis za reprodukciju na sat vremena ili zadržati jedan tempo.
 assistant.sid.settings.inEdit: Kad uređujete popis
 assistant.sid.settings.inEditDetail: Uređujte sa Sidom u zaglavlju popisa
 assistant.sid.settings.inImmersive: U imerzivnom prikazu
@@ -1123,6 +1134,11 @@ assistant.sid.settings.position: Položaj
 assistant.sid.settings.positionDetail: Gdje se Sid nalazi na naslovnoj slici
 assistant.sid.settings.privacyChat: "Ono što upišete ostaje na ovom računalu: Sid razmišlja s Gemmom, upravo ovdje. Za pronalazak glazbe Sid šalje pojmove za pretragu Apple Musicu, a kad to zatražite, čita vaše popise, nedavna slušanja i Apple Music Replay s vašeg Apple Music računa. Ništa se ne mijenja dok ne pritisnete Primijeni."
 assistant.sid.settings.privacyEngine: "Ono što upišete ostaje na ovom računalu: Sid razmišlja pomoću {engine}, upravo ovdje. Za pronalaženje glazbe Sid šalje pojmove za pretraživanje Apple Musicu, a kada to zatražite, čita vaše popise za reprodukciju, nedavna slušanja i vaš Apple Music Replay iz vašeg Apple Music računa. Ništa se ne mijenja dok ne pritisnete Primijeni."
+assistant.sid.settings.quipGaming: Tvoj {gpu} i ja ćemo se odlično slagati.
+assistant.sid.settings.quipIntegrated: Integrirana grafika. Držat ću stvari lagano i ugodno.
+assistant.sid.settings.quipOther: Lijepa {gpu}. Dobro ću je iskoristiti.
+assistant.sid.settings.quipSetsOnly: Tvoj {gpu} i ja ćemo se za sada držati pokretanja setova.
+assistant.sid.settings.quipTop: "{gpu}? Jedva ću se oznojiti."
 assistant.sid.settings.reads: Čita cijeli popis za {seconds} s (potrebno manje od {floor} s)
 assistant.sid.settings.regular: Normalno
 assistant.sid.settings.remove: Ukloni
@@ -1225,6 +1241,19 @@ auth.error.unavailable: Ovaj Apple ID ne može koristiti Apple Music u Cideru. C
 auth.error.windowFailed: Prozor za prijavu nije se uspio otvoriti
 auth.mutExpired.confirm: Prijavi se
 auth.mutExpired.message: Vaša Apple Music sesija je istekla. Prijavite se ponovno za nastavak.
+auth.request.authorizing: Autorizacija…
+auth.request.copyToken: Kopiraj token
+auth.request.granted: Odobreno
+auth.request.requestedAccess: Zatražen pristup
+auth.request.revealNote: Ovo je jedini put da će se ovaj token prikazati. Zalijepi ga u {app} odmah.
+auth.request.subtitle: želi pristup Ciderу
+auth.request.toast.copied: Token je kopiran u međuspremnik
+auth.request.toast.failed: Token nije moguće stvoriti
+auth.request.toast.granted: Odobren pristup za {app}
+auth.request.toast.title: Autorizacija
+auth.request.tokenCreated: Token je stvoren
+auth.request.tokenFor: za {app}
+auth.request.trustNote: Odobri pristup samo aplikacijama kojima vjeruješ. Ovaj token možeš opozvati u bilo kojem trenutku u Postavke › Veze.
 auth.signedIn: Prijavljeni ste
 auth.signInRetry.confirm: Pokušaj ponovno
 auth.signInRetry.message: Prozor za prijavu nije se mogao otvoriti. Pokušati ponovno?
@@ -1423,7 +1452,7 @@ gallery.searchSnippets: Pretraži isječke
 gallery.submitPlugin: Pošalji svoj priključak
 gallery.submitSnippet: Pošaljite svoj isječak
 gallery.submitTheme: Pošalji svoju temu
-general.closeToTray: Zatvori u sistemsku traku
+general.closeToTray: Zatvori u ladicu
 general.closeToTray.description: Gumb za zatvaranje trebao bi minimizirati prozor aplikacije Cider
 home.artistsFeed: Novosti vaših izvođača
 home.artistsFeed.noArtist: Pratite izvođače kako biste vidjeli njihova najnovija izdanja
@@ -3337,7 +3366,7 @@ oobe.amupsell.text: |-
   Cider neće raditi s pretplatom Apple Music Voice Plan ili nekim promotivnim probnim pretplatama. Ako već imate odgovarajuću pretplatu na Apple Music, kliknite Dalje za nastavak.
 oobe.amupsell.title: Prije nego što počnemo
 oobe.appearance.accentHint: Koristi se za gumbe, isticanja i napredak u cijeloj aplikaciji. Isprobajte neku, prikazat će se uživo.
-oobe.appearance.subtitle: Odaberite shemu boja i naglašenu boju. Možete ih promijeniti bilo kada u Postavke → Vizualno.
+oobe.appearance.subtitle: Odaberi shemu boja i naglasnu boju. Ovo možeš promijeniti u bilo kojem trenutku u Postavke › Izgled.
 oobe.appearance.title: Prilagodite Cider sebi
 oobe.appleNotice: "Napomena: Apple Music je zaštitni znak tvrtke Apple Inc. Cider je klijent treće strane za Apple Music i nije povezan s tvrtkom Apple Inc."
 oobe.audio.advancedFunctionality: ""
@@ -3352,7 +3381,7 @@ oobe.connections.atmosRatingsHint: Pogledajte i podijelite koji albumi zvuče sj
 oobe.connections.lastfm.connected: Povezano
 oobe.connections.lastfm.connectedAs: Povezano kao {username}
 oobe.connections.lastfm.hint: Scroblajte svoju povijest slušanja.
-oobe.connections.moreHint: Više integracija poput Libre.fm, Maloja, ListenBrainz te WebSockets i RPC API-ja nalazi se u Postavke → Povezivost.
+oobe.connections.moreHint: Dodatne integracije poput Libre.fm, Maloja, ListenBrainz te WebSockets i RPC API-ja nalaze se u Postavke › Veze.
 oobe.connections.pairDevice: Upari uređaj
 oobe.connections.remoteHint: Upravljajte aplikacijom Cider s telefona.
 oobe.connections.subtitle: Povežite Cider sa svojim ostalim aplikacijama i uslugama.
@@ -3546,10 +3575,22 @@ playlist.refresh.title: Potrebno je osvježiti popis pjesama
 playlist.suggestions.subtitle: Pregledajte i dodajte u playlistu
 playlist.suggestions.title: Predložene pjesme
 playlist.untitled: Bez naslova
+plugin.install.byAuthor: od {author}
+plugin.install.identifier: Identifikator
+plugin.install.install: Instaliraj
+plugin.install.installing: Instalacija…
+plugin.install.source: Izvor
+plugin.install.subtitle: Dodatak za Cider želi biti dodan u tvoju biblioteku.
+plugin.install.title: Instaliraj dodatak
+plugin.install.update: Ažuriraj
+plugin.install.updateSubtitle: Dodatak za Cider želi zamijeniti instaliranu verziju.
+plugin.install.updateTitle: Ažuriraj dodatak
+plugin.install.warning: Dodaci mogu izvoditi kod unutar Ciderа s pristupom tvojoj reprodukciji, redu čekanja i biblioteci. Instaliraj dodatke samo iz izvora kojima vjeruješ.
 podcast.comingSoon.description: Podrška za podcaste se ponovno izgrađuje nakon velikih promjena u načinu na koji Cider upravlja reprodukcijom. Vratit će se u budućem ažuriranju.
 podcast.comingSoon.hide: Sakrij iz bočne trake
 podcast.comingSoon.hint: Možete je ponovno uključiti u Vizualnim postavkama, pod Bočna traka i navigacija.
 podcast.comingSoon.title: Podcasti stižu uskoro
+podcast.comingSoon.tweaksHint: Možeš ga ponovno uključiti u postavkama Prilagodbe, pod Bočna traka i navigacija.
 podcast.episodes: Epizode
 podcast.followedOnCider: Prati se na Cideru
 podcast.followOnCider: Prati na Cideru
@@ -3632,7 +3673,12 @@ settings.accessibility.section.motion: Pokret
 settings.accessibility.section.motion.description: Količina animacija koju koriste gumbi, kartice i druge površine.
 settings.accessibility.section.soundEffects: Zvučni efekti
 settings.accessibility.section.soundEffects.description: Zvukovi sučelja za gumbe, prekidače i klizače te glasnoća njihove reprodukcije.
-settings.advanced.section.backups: Sigurnosne kopije i resetiranje
+settings.accessibility.soundPreview.click: Klik
+settings.accessibility.soundPreview.slider: Klizač
+settings.accessibility.soundPreview.switch: Prekidač
+settings.accounts.appleMusic: Apple Music
+settings.accounts.appleMusic.description: Omogući Apple Music
+settings.advanced.section.backups: Sigurnosne kopije i vraćanje
 settings.advanced.section.backups.description: Spremite kopiju svojih postavki, obnovite onu koju je Cider sačuvao za vas ili vratite sve na zadano.
 settings.advanced.section.client: Ovaj klijent
 settings.advanced.section.client.description: Ograničenja performansi i postavke koje pripadaju klijentu u kojem se Cider izvodi, a ne vašem računu.
@@ -3640,20 +3686,20 @@ settings.airplay.installed.message: AirPlay je instaliran
 settings.airplay.installed.title: AirPlay je instaliran
 settings.airplay.requiresCiderAudio: Zahtijeva da CiderAudio bude omogućen
 settings.appleMusic.storefront.warning: Promjena regije trgovine uzrokovat će probleme s reprodukcijom. Upozoreni ste.
-settings.artwork.disableFadeIn: Onemogući efekt postepenog pojavljivanja
+settings.artwork.disableFadeIn: Isključi efekt postupnog pojavljivanja
 settings.artwork.highlighting: Isticanje omota
 settings.artwork.hiresImages: Koristi slike visoke razlučivosti
 settings.artwork.hiresImages.warning: Može produžiti vrijeme učitavanja i smanjiti performanse.
 settings.audio.atmos: Dolby Atmos
-settings.audio.atmos.binaural.desc: Atmos se prikazuje kao binauralni stereo putem CiderAudio. Crossfade, Automix i neprimjetni prijelazi i dalje rade očekivano.
+settings.audio.atmos.binaural.desc: Atmos se prikazuje kao binauralni stereo putem CiderAudio. Crossfade, Automix i neprekidni prijelazi i dalje rade kako se očekuje.
 settings.audio.atmos.description: Konfigurirajte Atmos reprodukciju za svoj trenutačni izlazni uređaj.
-settings.audio.atmos.normalizationHint: Dolby Atmos miksevi su tiši od stereo masteringa. Uključite Audio normalizaciju da ih izjednačite.
+settings.audio.atmos.normalizationHint: Dolby Atmos miksevi tiši su od stereo masterâ. Uključi normalizaciju zvuka da ih izjednačiš.
 settings.audio.atmos.off.desc: Atmos je onemogućen. Sav se sadržaj reproducira kao standardni stereo.
 settings.audio.atmos.passthrough: Passthrough
 settings.audio.atmos.passthrough.desc: Zaobilazi svu obradu zvuka. Višekanalni Atmos šalje se izravno na uređaj. Idealno za AV prijemnike.
-settings.audio.atmos.passthrough.descV2: Šalje višekanalni Atmos izravno uređaju, za AV prijemnike. Audio Lab, ekvilizator i Listening Mode su zaobiđeni.
+settings.audio.atmos.passthrough.descV2: Šalje višekanalni Atmos izravno na uređaj, za AV prijemnike. Audio Lab, ekvilajzer i način slušanja su zaobiđeni.
 settings.audio.atmos.passthroughActive: Passthrough je aktivan — promijenite u potpunim postavkama.
-settings.audio.atmos.standard.desc: Višekanalni Atmos s CiderAudio obradom, Pretapanje, Automix i Neprimjetni prijelazi nastavljaju raditi kako je očekivano.
+settings.audio.atmos.standard.desc: Višekanalni Atmos uz obradu CiderAudio. Crossfade, Automix i neprekidni prijelazi i dalje rade kako se očekuje.
 settings.audio.atmosMode: Atmos način rada
 settings.audio.atmosMode.switchFromPassthroughConfirm: Prebacivanje iz passthrough načina rada zahtijeva osvježavanje aplikacije. Nastaviti?
 settings.audio.atmosMode.switchToPassthroughConfirm: Prebacivanje u passthrough način rada zahtijeva osvježavanje aplikacije. Nastaviti?
@@ -3666,7 +3712,7 @@ settings.audio.ciderAudio.description: Prilagođeno podešen i dizajniran audio 
 settings.audio.ciderAudio.enable: Omogući Cider Audio
 settings.audio.ciderAudio.requiredHint: Potrebno za ekvilajzer
 settings.audio.crossfade: Pretapanje
-settings.audio.hostCapture.apps: Aplikacije pokretači
+settings.audio.hostCapture.apps: Aplikacije za pokretanje
 settings.audio.hostCapture.apps.count: "{{ n }} aplikacija pokrenut će snimanje."
 settings.audio.hostCapture.apps.countOne: 1 aplikacija pokrenut će snimanje.
 settings.audio.hostCapture.apps.emptyAvailable: Nema drugih otvorenih aplikacija. Otvorite jednu i kliknite Osvježi.
@@ -3678,17 +3724,17 @@ settings.audio.hostCapture.apps.running: Pokrenute aplikacije
 settings.audio.hostCapture.apps.runningNow: Pokrenuto
 settings.audio.hostCapture.apps.title: Aplikacije za automatsko pokretanje snimanja
 settings.audio.hostCapture.apps.triggers: Pokretači
-settings.audio.hostCapture.auto: Automatski omogući s aplikacijom
+settings.audio.hostCapture.auto: Automatski uključi s aplikacijom
 settings.audio.hostCapture.autoHint: Automatski uključi snimanje dok je odabrana aplikacija pokrenuta, a isključi ga kada se zatvori.
 settings.audio.hostCapture.autoNote: Automatski uključeno dok je odabrana aplikacija pokrenuta.
 settings.audio.hostCapture.bit16: 16-bitni
 settings.audio.hostCapture.bit24: 24-bitni
 settings.audio.hostCapture.bit32: 32-bitni float
 settings.audio.hostCapture.bitAuto: Automatski (najviše)
-settings.audio.hostCapture.bitDepth: Bitna dubina
+settings.audio.hostCapture.bitDepth: Dubina bita
 settings.audio.hostCapture.bitDepthHint: Automatska postavka koristi najveću dubinu koju vaš uređaj podržava.
 settings.audio.hostCapture.exclusiveNote: Ekskluzivni izlaz, bit-transparentan, ne može se snimati.
-settings.audio.hostCapture.gain: Prilagodba izlazne razine
+settings.audio.hostCapture.gain: Podešavanje izlazne razine
 settings.audio.hostCapture.gainHint: Uskladite glasnoću snimljenog zvuka s normalnim izlazom.
 settings.audio.hostCapture.mode: Način izlaza zvuka
 settings.audio.hostCapture.modeCapture: Snimanje
@@ -3699,7 +3745,7 @@ settings.audio.hostCapture.modeHintCapture: Reproducira zvuk iz procesa Cider ka
 settings.audio.hostCapture.modeHintExclusive: Bit-transparentan izlaz izravno u vaš DAC, zaobilazeći mikser sustava Windows. Ne može se snimati.
 settings.audio.hostCapture.modeHintOff: "Isključeno: zvuk se reproducira normalno iz procesa WebView2. Nije dostupno tijekom prolaza za Dolby Atmos ili glazbenih videozapisa."
 settings.audio.hostCapture.outputShort: Izlaz zvuka
-settings.audio.hostCapture.rate: Frekvencija uzorkovanja
+settings.audio.hostCapture.rate: Brzina uzorkovanja
 settings.audio.hostCapture.rateHint: Usklađivanje s izvorom je bit-transparentno; ostale frekvencije se ponovno uzorkuju u visokoj kvaliteti.
 settings.audio.hostCapture.rateMatch: Uskladi s izvorom (44,1 kHz)
 settings.audio.lab: Audio Lab
@@ -3720,7 +3766,7 @@ settings.audio.occlusion.game.desc: Glazba se prigušuje na frekvencijama govora
 settings.audio.occlusion.off.desc: Glazba se reproducira bez izmjena.
 settings.audio.occlusion.passthroughNote: Nije dostupno dok je aktivna opcija Dolby Atmos passthrough.
 settings.audio.occlusion.passthroughNote.short: Nije dostupno dok je aktivna opcija Atmos passthrough.
-settings.audio.outputDevice: Odaberite izlazni audio uređaj
+settings.audio.outputDevice: Odaberi uređaj za izlaz zvuka
 settings.audio.outputDeviceHint: Odaberite izlazni audio uređaj za reprodukciju.
 settings.audio.outputDeviceHintHost: Snimanje zvuka je uključeno, reprodukcija koristi ovaj izlazni uređaj sustava Windows.
 settings.audio.section.ciderAudio: Cider Audio i indikatori
@@ -3734,6 +3780,35 @@ settings.audio.section.playback: Reprodukcija
 settings.audio.section.playback.description: Kvaliteta zvuka, prostorni zvuk, načini slušanja i brzina reprodukcije podcasta.
 settings.audio.section.volume: Glasnoća
 settings.audio.section.volume.description: Ujednačavanje glasnoće, koliko kotačić miša mijenja razinu i kako klizač prikazuje vrijednost.
+settings.audio.signal.atmosCodecs: Dostupni Atmos kodeci
+settings.audio.signal.atmosNativeMac: Izvorno (macOS)
+settings.audio.signal.atmosNativeMacTooltip: Dolby Atmos dekodira izvorno macOS CoreAudio. Prostorno renderiranje zvuka obavlja sustav.
+settings.audio.signal.atmosOffTooltip: Atmos je onemogućen za ovaj uređaj. Sadržaj se reproducira kao standardni stereo.
+settings.audio.signal.atmosOffTooltipMac: Atmos je onemogućen za ovaj uređaj.
+settings.audio.signal.atmosSupported: Podržano
+settings.audio.signal.binauralSubtitle: Renderiranje za slušalice
+settings.audio.signal.binauralTooltip: Atmos sadržaj se renderira kao binauralni stereo kroz CiderAudio obradu.
+settings.audio.signal.channels: "{count} kanala"
+settings.audio.signal.codecs: Kodeci
+settings.audio.signal.deviceRateTooltip: Brzina uzorkovanja trenutnog uređaja
+settings.audio.signal.directOutput: Izravni izlaz
+settings.audio.signal.directOutputChannels: Izravni izlaz ({count}ch)
+settings.audio.signal.loading: Učitavanje…
+settings.audio.signal.nativeMatch: Izvorno podudaranje
+settings.audio.signal.noAtmosCodecs: Nema Atmos kodeka
+settings.audio.signal.output: Izlaz
+settings.audio.signal.passthroughMode: Način prolaska
+settings.audio.signal.passthroughSubtitle: Obrada zvuka zaobiđena, izravni izlaz na uređaj
+settings.audio.signal.passthroughTooltip: Zvuk zaobilazi svu obradu i šalje se izravno na uređaj. Značajke CiderAudio, poput crossfadea, Automixa i bezprekidnih prijelaza, nisu aktivne.
+settings.audio.signal.sampleRate: Brzina uzorkovanja
+settings.audio.signal.source: Izvor {rate}
+settings.audio.signal.sourceRateTooltip: Brzina reprodukcije Apple Musica
+settings.audio.signal.standardSubtitle: Višekanalno + CiderAudio
+settings.audio.signal.standardTooltip: Višekanalni Atmos sadržaj reproducira se kroz CiderAudio obradu i prilagođen mogućnostima uređaja.
+settings.audio.signal.stereo: Stereo
+settings.audio.signal.surround51: 5.1 surround
+settings.audio.signal.surround71: 7.1+ surround
+settings.audio.signal.upsamplingTooltip: Sustav radi upsampling iz brzine izvora Apple Musica
 settings.automix.allowTempoKeyShifts: Dopusti promjene tempa/tonaliteta
 settings.automix.allowTempoKeyShiftsHint: Dopusti male promjene kako bi prijelazi ostali energični. (Privremeno onemogućeno, u tijeku je dorada.)
 settings.automix.description: Inteligentni prijelaz između pjesama na temelju tempa i tonaliteta.
@@ -3743,9 +3818,9 @@ settings.automix.disableForAlbums: Albume
 settings.automix.disableForAlbumsHint: Nemoj primijeniti Automix pri reprodukciji s albuma.
 settings.automix.disableForAutoplayContinuation: Nastavak automatske reprodukcije
 settings.automix.disableForAutoplayContinuationHint: Nemoj primijeniti automiks nakon što reprodukcija prijeđe na postaju / automatski reproducirane pjesme nakon završetka izvorne kolekcije.
-settings.automix.disableForDjMixes: DJ mikseve
+settings.automix.disableForDjMixes: DJ miksevi
 settings.automix.disableForDjMixesHint: Nemoj primijeniti Automix za DJ mikseve i neprekidne mikseve.
-settings.automix.disableForLiveAlbums: Albume uživo
+settings.automix.disableForLiveAlbums: Live albumi
 settings.automix.disableForLiveAlbumsHint: Nemoj primijeniti Automix za snimke uživo i koncerte.
 settings.automix.disableForPlaylists: Popise pjesama
 settings.automix.disableForPlaylistsHint: Nemoj primijeniti Automix pri reprodukciji s popisa pjesama.
@@ -3757,31 +3832,31 @@ settings.automix.spectralSeparationHint: Koliko su dvije pjesme frekvencijski ra
 settings.automix.spectralSeparationHintV2: Koliko su dvije pjesme razdvojene po frekvenciji tijekom prijelaza ({value}).
 settings.automix.speedSettle: Vrijeme stabilizacije brzine
 settings.automix.speedSettleHint: Koliko je vremena potrebno da se brzina reprodukcije vrati na normalnu nakon miksa s usklađenim tempom ({ms}ms)
-settings.automix.tempoAlign: Usklađivanje ritma
+settings.automix.tempoAlign: Usklađivanje takta
 settings.automix.tempoAlignHint: Blago prilagođava tempo kako bi se dvije pjesme uskladile kada su već blizu.
-settings.automix.vocalGuard: Zaštita vokala
+settings.automix.vocalGuard: Zaštiti vokale
 settings.automix.vocalGuardHint: Skraćuje miks kada se u obje pjesme istovremeno pjeva.
 settings.cache.all: Sve
-settings.cache.artistChips: Značke izvođača
+settings.cache.artistChips: Oznake izvođača
 settings.cache.artwork: Omoti
-settings.cache.clear: Očisti međuspremnik
+settings.cache.clear: Obriši predmemoriju
 settings.cache.content: Sadržaj
 settings.cache.entries: "Broj unosa: {{ count }}"
-settings.cache.homeData: Početni podaci
+settings.cache.homeData: Podaci početne stranice
 settings.cache.library: Knjižnica
-settings.cache.marketplaceListings: Marketplace ponude
-settings.cache.playlistIndex: Indeks popisa pjesama
+settings.cache.marketplaceListings: Oglasi tržnice
+settings.cache.playlistIndex: Indeks popisa za reprodukciju
 settings.cache.prompt.artwork.cleared.message: Međuspremnik omota je očišćen. Osvježiti sada?
-settings.cache.prompt.artwork.cleared.title: Međuspremnik omota očišćen
-settings.cache.prompt.artwork.title: Očisti međuspremnik omota
+settings.cache.prompt.artwork.cleared.title: Predmemorija omota obrisana
+settings.cache.prompt.artwork.title: Obriši predmemoriju omota
 settings.cache.prompt.clearAll.cleared.message: Međuspremnik je očišćen. Osvježiti sada?
-settings.cache.prompt.clearAll.cleared.title: Međuspremnik očišćen
-settings.cache.prompt.clearAll.title: Očisti međuspremnik
+settings.cache.prompt.clearAll.cleared.title: Predmemorija obrisana
+settings.cache.prompt.clearAll.title: Obriši predmemoriju
 settings.cache.prompt.marketplace.cleared.message: Međuspremnik je očišćen. Osvježiti sada?
-settings.cache.prompt.marketplace.cleared.title: Marketplace međuspremnik očišćen
+settings.cache.prompt.marketplace.cleared.title: Predmemorija tržnice obrisana
 settings.cache.prompt.playlist.cleared.message: Međuspremnik je očišćen. Osvježiti sada?
-settings.cache.prompt.playlist.cleared.title: Međuspremnik popisa pjesama očišćen
-settings.cache.recentlyModifiedPlaylists: Nedavno izmijenjeni popisi pjesama
+settings.cache.prompt.playlist.cleared.title: Predmemorija popisa za reprodukciju obrisana
+settings.cache.recentlyModifiedPlaylists: Nedavno izmijenjeni popisi
 settings.cache.storageUsed: "Iskorišteni prostor: {{ usage }}"
 settings.client.genten.enableTrayIcon: Omogući ikonu u traci sustava
 settings.client.genten.enableTrayIcon.desc: Uključite ili isključite prikaz ikone u traci sustava
@@ -4013,23 +4088,24 @@ settings.connectivity.section.parties.description: Sinkronizirano slušanje s dr
 settings.connectivity.section.vrOverlay.description: Cider player i ploče koje se mogu prikvačiti preko SteamVR-a i VDXR-a, a komuniciraju s ovom aplikacijom putem RPC-a.
 settings.connectivity.tokenCopied: Token je kopiran u međuspremnik
 settings.connectivity.tokens: Tokeni
+settings.connectivity.tokens.empty: Još nema tokena.
 settings.contentFilter.description: Odjeljci u Pregledaj i Slušaj odmah čiji se naslovi ili sadržaj podudaraju s bilo kojom od ovih ključnih riječi bit će skriveni.
 settings.contentFilter.empty: Još nema dodanih ključnih riječi.
 settings.contentFilter.inputPlaceholder: Dodaj ključnu riječ...
-settings.contentFilter.title: Ključne riječi filtra
-settings.crossfade.advanced: Napredne postavke pretapanja
+settings.contentFilter.title: Filtriraj ključne riječi
+settings.crossfade.advanced: Napredne postavke crossfadea
 settings.crossfade.automixStillBlends: Automix je uključen, pa se pjesme i dalje mogu stapati jedna s drugom. Isključite Automix below da zaustavite sve stapanje.
 settings.crossfade.description: Glatko stišava trenutnu pjesmu dok istovremeno pojačava sljedeću.
-settings.crossfade.disableFor: Onemogući pretapanje za...
+settings.crossfade.disableFor: Isključi crossfade za...
 settings.crossfade.duration: Trajanje
-settings.crossfade.enable: Omogući pretapanje
+settings.crossfade.enable: Omogući crossfade
 settings.crossfade.exclusions.albums: Albumi
 settings.crossfade.exclusions.albums.description: Bez pretapanja pri reprodukciji iz albuma.
 settings.crossfade.exclusions.autoplayContinuation: Nastavak automatske reprodukcije
 settings.crossfade.exclusions.autoplayContinuation.description: Nemoj primijeniti stapanje (crossfade) nakon što reprodukcija prijeđe na postaju / automatski reproducirane pjesme nakon završetka izvorne kolekcije.
 settings.crossfade.exclusions.djMixes: DJ miksevi
 settings.crossfade.exclusions.djMixes.description: Bez pretapanja za DJ mikseve i neprekidne mikseve.
-settings.crossfade.exclusions.liveAlbums: Uživo albumi
+settings.crossfade.exclusions.liveAlbums: Live albumi
 settings.crossfade.exclusions.liveAlbums.description: Bez pretapanja za snimke uživo i koncerte.
 settings.crossfade.exclusions.playlists: Popisi pjesama
 settings.crossfade.exclusions.playlists.description: Bez pretapanja pri reprodukciji s popisa pjesama.
@@ -4039,7 +4115,7 @@ settings.crossfade.smoothSkip: Glatko preskakanje
 settings.crossfade.smoothSkip.description: Pretapanje između pjesama pri preskakanju.
 settings.crossfade.tempoSensitivity: Osjetljivost na tempo
 settings.crossfade.tempoSensitivity.description: Reakcija na promjene tempa ({{ value }}%)
-settings.customCss.createSnippet: Izradi isječak
+settings.customCss.createSnippet: Stvori isječak
 settings.customCss.migrate.confirm: Ovo će pretvoriti vaš postojeći prilagođeni CSS u novi isječak i očistiti trenutni prilagođeni CSS. Želite li nastaviti?
 settings.customCss.migrate.title: Pretvori prilagođeni CSS
 settings.customCss.title: Prilagođeni CSS
@@ -4109,6 +4185,7 @@ settings.extensions.plugins.uninstallTitle: Deinstaliraj dodatak
 settings.extensions.refresh: Osvježi proširenja
 settings.extensions.refresh.desc: Ponovno skeniraj teme, isječke i dodatke s diska.
 settings.extensions.refreshed: Teme, isječci i dodaci su osvježeni
+settings.extensions.snippets.author: "Autor: {{ author }}"
 settings.extensions.snippets.created: Isječak je stvoren
 settings.extensions.snippets.createTitle: Stvori novi CSS isječak
 settings.extensions.snippets.deleteConfirm: Jeste li sigurni da želite izbrisati ovaj CSS isječak? Ova se radnja ne može poništiti.
@@ -4118,17 +4195,20 @@ settings.extensions.snippets.empty: Nema instaliranih CSS isječaka.
 settings.extensions.snippets.exported: Isječak je izvezen
 settings.extensions.snippets.imported: "Uvezeno: {{ count }} isječak(a)"
 settings.extensions.snippets.importFailed: "Uvoz datoteke {{ file }} nije uspio: {{ error }}"
+settings.extensions.snippets.invalidFile: "Neispravan format datoteke: {{ file }}"
 settings.extensions.snippets.namePrompt: Unesite naziv za svoj novi CSS isječak.
 settings.extensions.snippets.orderUpdated: Redoslijed je ažuriran
 settings.extensions.snippets.saved: Isječak je spremljen
 settings.extensions.themeCreated: Nova tema uspješno je stvorena
 settings.extensions.themes.activeCount: "{{ count }} aktivno"
 settings.extensions.themes.empty: Nema instaliranih tema.
+settings.extensions.themes.getMore: Preuzmi više tema
+settings.extensions.themes.refreshList: Osvježi popis tema
 settings.extensions.themes.stylesheetMany: "{{ count }} tablica stilova"
 settings.extensions.themes.stylesheetOne: 1 tablica stilova
 settings.extensions.viewOnMarketplace: Prikaži na tržištu
 settings.fonts.description: Promijenite font koji se koristi u aplikaciji
-settings.fonts.lyrics: Font tekstova pjesama
+settings.fonts.lyrics: Font za stihove
 settings.fonts.lyrics.description: Font koji se koristi za tekstove pjesama
 settings.fonts.primary: Primarni font
 settings.fonts.primary.description: Font koji se koristi za većinu teksta u aplikaciji
@@ -4149,11 +4229,12 @@ settings.general.section.language: Jezik
 settings.general.section.language.description: Jezik sučelja te kako prijaviti pogreške ili navesti zasluge za prijevode.
 settings.general.section.playback: Reprodukcija
 settings.general.section.playback.description: Što gumb za reprodukciju radi kada se ništa ne reproducira.
+settings.general.section.playback.descriptionV2: Što gumb za reprodukciju radi kada ništa ne svira i gdje se može promijeniti brzina reprodukcije.
 settings.general.section.privacy: Privatnost
 settings.general.section.privacy.description: Ime kojim vas Cider pozdravlja i smije li koristiti vašu lokaciju.
 settings.general.section.queue: Red čekanja
 settings.general.section.queue.description: Kako se gradi red čekanja, što je u njega dopušteno dodati i što se vraća kada se Cider ponovno pokrene.
-settings.general.section.sleepTimer: Timer za spavanje
+settings.general.section.sleepTimer: Tajmer za spavanje
 settings.general.section.startup: Pokretanje
 settings.general.section.startup.description: Što Cider otvara pri pokretanju i što vraća iz vaše posljednje sesije.
 settings.header.accounts: Računi
@@ -4225,7 +4306,7 @@ settings.intensive.animatedArtworkQuality.description: Viša kvaliteta dekodira 
 settings.intensive.catalogAnimatedArtwork.description: Reproducira više animiranih omota odjednom tijekom pregledavanja kataloga.
 settings.intensive.characterFlow.description: Animira svaki znak teksta pjesme pojedinačno umjesto cijelih redaka.
 settings.intensive.confirm.enable: Omogući
-settings.intensive.confirm.message: Ova je značajka zahtjevna za performanse i može značajno povećati potrošnju CPU-a/GPU-a, zagrijavanje i pražnjenje baterije — posebno na slabijem hardveru. Zahtjevne značajke možete pregledati u bilo kojem trenutku putem gumba sa žaruljom na vrhu Postavki.
+settings.intensive.confirm.message: Ova značajka zahtijeva mnogo resursa i može znatno povećati opterećenje CPU-a/GPU-a, zagrijavanje i potrošnju baterije, osobito na slabijem hardveru. Zahtjevne značajke možete pregledati u bilo kojem trenutku u Postavke › Potrošnja energije.
 settings.intensive.emotionEngine.description: Analizira omot albuma radi dobivanja palete boja.
 settings.intensive.fsrUpscale.description: Povećava razlučivost omota albuma na grafičkoj kartici (GPU) pomoću tehnologije FidelityFX Super Resolution.
 settings.intensive.immersiveAnimatedArtwork.description: Reproducira animirani omot unutar prožimajućeg prikaza.
@@ -4242,27 +4323,27 @@ settings.intensive.viewTransitions.description: Animira prijelaze pri promjeni o
 settings.intensive.warning: Zahtjevno za performanse — može uzrokovati visoku potrošnju CPU-a/GPU-a.
 settings.keybindings.recordingHint: Snimanje. Escape za odustajanje
 settings.lyrics.card.providers: Pružatelji usluga
-settings.lyrics.card.songOverrides: Iznimke za pjesme
-settings.lyrics.localeOverrides: Pravila temeljena na lokalnim postavkama
-settings.lyrics.localeOverrides.add: Dodaj iznimku lokalnih postavki
-settings.lyrics.localeOverrides.audioLocale: Lokalne postavke zvuka
+settings.lyrics.card.songOverrides: Prilagodbe pjesama
+settings.lyrics.localeOverrides: Pravila temeljena na jeziku
+settings.lyrics.localeOverrides.add: Dodaj prilagodbu jezika
+settings.lyrics.localeOverrides.audioLocale: Jezik zvuka
 settings.lyrics.localeOverrides.desc: Postavite prilagođenog pružatelja usluga i postavke prijevoda za pjesme na određenim jezicima. Kada lokalne postavke zvuka pjesme odgovaraju pravilu, ove će postavke nadjačati zadane.
-settings.lyrics.localeOverrides.dialogTitle.add: Dodaj iznimku lokalnih postavki
-settings.lyrics.localeOverrides.dialogTitle.edit: Uredi iznimku lokalnih postavki
+settings.lyrics.localeOverrides.dialogTitle.add: Dodaj prilagodbu jezika
+settings.lyrics.localeOverrides.dialogTitle.edit: Uredi prilagodbu jezika
 settings.lyrics.localeOverrides.empty: Još nema pravila. Upotrijebite + za dodavanje.
-settings.lyrics.localeOverrides.overrideTranslation: Premošćivanje prijevoda
+settings.lyrics.localeOverrides.overrideTranslation: Prilagodi prijevod
 settings.lyrics.localeOverrides.preferredProvider: Preferirani pružatelj
 settings.lyrics.localeOverrides.provider.apple: Apple Music
 settings.lyrics.localeOverrides.provider.auto: Zadano (automatski)
 settings.lyrics.localeOverrides.provider.mxm: Musixmatch
 settings.lyrics.localeOverrides.provider.netease: NetEase
-settings.lyrics.localeOverrides.provider.user: Korisnički poslano
+settings.lyrics.localeOverrides.provider.user: Korisnički dodano
 settings.lyrics.localeOverrides.providerLabel: "Pružatelj:"
 settings.lyrics.localeOverrides.translateTo: Prevedi na
 settings.lyrics.localeOverrides.translateToLabel: "Prevedi na:"
 settings.lyrics.player.cascade: Intenzitet kaskade
 settings.lyrics.player.cascade.desc: Koliko je izražen stupnjeviti ulazak redak po redak.
-settings.lyrics.player.cta: Animacije tekstova pjesama
+settings.lyrics.player.cta: Animacije stihova
 settings.lyrics.player.cta.description: Prilagodite izgled i ponašanje animacija teksta, uključujući naglasak, sjaj, podizanje, brzinu, blijeđenje i kaskadne efekte.
 settings.lyrics.player.deselScale: Veličina neaktivnog retka
 settings.lyrics.player.deselScale.desc: Veličina neaktivnih redaka; manja vrijednost čini aktivni redak istaknutijim.
@@ -4279,14 +4360,14 @@ settings.lyrics.player.reset: Vrati na zadano
 settings.lyrics.player.speed: Brzina animacije
 settings.lyrics.player.speed.desc: Brzina opruge prijelaza stihova — veća vrijednost pruža brži odziv.
 settings.lyrics.player.title: Animacije stihova
-settings.lyrics.scroll.duration: Trajanje pomicanja teksta
+settings.lyrics.scroll.duration: Trajanje pomicanja stihova
 settings.lyrics.scroll.duration.desc1: Prilagodite brzinu pomicanja teksta u
 settings.lyrics.scroll.duration.desc2: Ovo neće utjecati na brzinu pjesme.
 settings.lyrics.scroll.easing: Funkcija ublažavanja
 settings.lyrics.scroll.easing.curveExample: "Primjer krivulje:"
 settings.lyrics.scroll.easing.description1: Prilagodite funkciju ublažavanja pomicanja teksta. Ovo je CSS
 settings.lyrics.scroll.easing.description2: svojstvo.
-settings.lyrics.scroll.easing.namedExample: "Imenovani primjer:"
+settings.lyrics.scroll.easing.namedExample: "Primjer s nazivom:"
 settings.lyrics.scroll.easing.presetDefault: Zadane vrijednosti, brzi ulaz i blagi izlaz
 settings.lyrics.scroll.easing.presetSmooth: "Glatki blagi ulaz i izlaz – (autor: cryptofyre)"
 settings.lyrics.scroll.easing.presetSpring: "Opružna animacija – (autor: SoNothing)"
@@ -4301,14 +4382,14 @@ settings.lyrics.section.sources: Izvori
 settings.lyrics.section.sources.description: Odakle dolaze tekstovi pjesama te pravila po jeziku ili pjesmi koja nadjačavaju zadane pružatelje usluga.
 settings.lyrics.section.translation: Prijevod
 settings.lyrics.section.translation.description: Prevedeni tekstovi pjesama, jezik na kojem se prikazuju i ostaje li izvornik na zaslonu.
-settings.lyrics.trackOverrides.clearAll: Ukloni sva premošćivanja
+settings.lyrics.trackOverrides.clearAll: Obriši sve prilagodbe
 settings.lyrics.trackOverrides.desc: Ovdje navedene pjesme uvijek koriste pružatelja tekstova kojeg ste zaključali ili vokalno stanje koje ste ručno postavili umjesto onog koje javlja Apple. Ova nadjačavanja postavljaju se iz izbornika tekstova i izbornika desnog klika na pjesmu.
 settings.lyrics.trackOverrides.empty: Još ništa nije nadjačano. Sve što zaključate iz tih izbornika bit će navedeno ovdje.
 settings.lyrics.trackOverrides.lyricsForced: Prisilni tekst
 settings.lyrics.trackOverrides.markedInstrumental: Označeno kao instrumental
 settings.lyrics.trackOverrides.providerLabel: "Pružatelj:"
-settings.lyrics.trackOverrides.remove: Ukloni premošćivanje
-settings.lyrics.trackOverrides.title: Premošćivanja specifična za pjesmu
+settings.lyrics.trackOverrides.remove: Ukloni prilagodbu
+settings.lyrics.trackOverrides.title: Prilagodbe za pojedine pjesme
 settings.micaish.blurAmount: Količina zamućenja
 settings.micaish.brightness: Svjetlina %
 settings.micaish.contrast: Kontrast %
@@ -4324,7 +4405,9 @@ settings.miniplayer.unpinWindow: Otkvači prozor
 settings.nav.accessibility: Pristupačnost
 settings.nav.accounts: Računi
 settings.nav.advanced: Napredno
+settings.nav.appleMusicWordmark: music
 settings.nav.audio: Zvuk
+settings.nav.categories: Kategorije postavki
 settings.nav.concerts: Koncerti
 settings.nav.config-backups: Sigurnosne kopije konfiguracije
 settings.nav.connectivity: Veze
@@ -4333,9 +4416,11 @@ settings.nav.general: Općenito
 settings.nav.group.account: Račun
 settings.nav.group.advanced: Napredno
 settings.nav.group.appearance: Izgled
+settings.nav.group.connections: Veze
 settings.nav.group.general: Općenito
 settings.nav.group.integrations: Integracije
 settings.nav.group.library: Biblioteka
+settings.nav.group.lookAndFeel: Izgled i dojam
 settings.nav.group.playback: Reprodukcija
 settings.nav.lyrics: Tekstovi
 settings.nav.notifications: Obavijesti
@@ -4344,10 +4429,28 @@ settings.nav.power: Potrošnja energije
 settings.nav.privacy: Privatnost
 settings.nav.profile: Profil
 settings.nav.search: Pretraživanje
-settings.nav.searchPlaceholder: Pretraži postavke...
+settings.nav.searchPlaceholder: Pretraži postavke
+settings.nav.summary.accessibility: Podebljani tekst, skala sučelja, pokret, zvučni efekti
+settings.nav.summary.advanced: Sigurnosne kopije, rješavanje problema, eksperimenti
+settings.nav.summary.audio: Izlaz, kvaliteta, crossfade, normalizacija
+settings.nav.summary.concerts: Lokacija, radijus, razvrstavanje
+settings.nav.summary.connectivity: Discord, scrobbling, zajednička slušanja, daljinsko upravljanje
+settings.nav.summary.extensions: Teme, CSS isječci, dodaci
+settings.nav.summary.general: Pokretanje, red čekanja, tajmer za spavanje, tipkovni prečaci
+settings.nav.summary.lyrics: Izvori, prijevod, prikaz, vremenski raspored
+settings.nav.summary.notifications: Kategorije, povijest, obavijesti sustava
+settings.nav.summary.power: Performanse, broj sličica u sekundi, načini uštede energije
+settings.nav.summary.profile: Račun za Apple Music
+settings.nav.summary.sid: Gdje se Sid prikazuje i kako radi
+settings.nav.summary.smartPlaylists: Pravila i održavanje pametnih popisa
+settings.nav.summary.subscriberYear: pretplatnik godinu dana
+settings.nav.summary.subscriberYears: pretplatnik {{count}} godina
+settings.nav.summary.tweaks: Manje promjene na playeru, bočnoj traci i drugdje
+settings.nav.summary.visual: Shema boja, izgled, prozor, immersive
 settings.nav.themes: Teme
+settings.nav.tweaks: Prilagodbe
 settings.nav.updates: Ažuriranja
-settings.nav.visual: Vizualno
+settings.nav.visual: Izgled
 settings.normalization.louderTargetHint: Ako je Cider i dalje pretih na 100% glasnoće, odaberite glasniju ciljnu vrijednost. Više LUFS vrijednosti zvuče glasnije, ali zaštita od vršnih vrijednosti može ograničiti pojačanje kako bi se spriječilo izobličenje.
 settings.normalization.presets.apple: Apple
 settings.normalization.presets.balanced: Uravnoteženo
@@ -4362,7 +4465,7 @@ settings.notifications.category.accountAuth: Račun i prijava
 settings.notifications.category.accountAuth.description: Prijava i odjava, status pretplate i povezani servisi.
 settings.notifications.category.castingAirplay: Streaming i AirPlay
 settings.notifications.category.castingAirplay.description: Povezivanje s vanjskim uređajima za reprodukciju i prekidanje veze s njima.
-settings.notifications.category.extensionsThemes: Proširenja i teme
+settings.notifications.category.extensionsThemes: Dodaci i teme
 settings.notifications.category.extensionsThemes.description: Instaliranje, ažuriranje i uklanjanje priključaka, tema i isječaka koda.
 settings.notifications.category.general: Općenito
 settings.notifications.category.general.description: Sve što nema vlastitu kategoriju.
@@ -4372,7 +4475,7 @@ settings.notifications.category.lyrics: Tekstovi pjesama
 settings.notifications.category.lyrics.description: Pretraživanje, doprinosi i transliteracija tekstova pjesama.
 settings.notifications.category.playbackSystem: Reprodukcija i sustav
 settings.notifications.category.playbackSystem.description: Problemi s reprodukcijom i status na razini aplikacije koje morate vidjeti.
-settings.notifications.category.playlistsLibrary: Popisi pjesama i biblioteka
+settings.notifications.category.playlistsLibrary: Popisi i biblioteka
 settings.notifications.category.playlistsLibrary.description: Dodavanje, uklanjanje, uređivanje i sinkronizacija sadržaja biblioteke.
 settings.notifications.category.plugins: Priključci
 settings.notifications.category.plugins.description: Poruke koje šalju sami instalirani priključci, umjesto da o njima izvještava Cider.
@@ -4390,6 +4493,7 @@ settings.notifications.section.history: Povijest
 settings.notifications.section.muted: Utišane obavijesti
 settings.notifications.section.system: Sustavne obavijesti
 settings.notifications.summary.categoriesOn: Uključene kategorije
+settings.notifications.summary.categoriesOnCount: "uključeno: {{on}} od {{total}}"
 settings.notifications.summary.description: Odaberite koje vam vrste obavijesti Cider prikazuje. Sve što isključite i dalje se bilježi na vašem popisu obavijesti, pa to možete nadoknaditi kasnije.
 settings.notifications.unmute: Uključi zvuk
 settings.notifications.unmuteAll: Uključi zvuk za sve
@@ -4407,7 +4511,7 @@ settings.notyf.visual.theme.install.success: Tema je uspješno instalirana
 settings.notyf.visual.theme.updateAvailable: "[Teme] Dostupno je ažuriranje za {{ theme }}"
 settings.option.accessibility.boldText: Podebljani tekst
 settings.option.accessibility.boldText.description: Povećava debljinu teksta u cijeloj aplikaciji radi bolje čitljivosti.
-settings.option.accessibility.cardHoverMotion: Pokret pri lebdenju iznad kartice
+settings.option.accessibility.cardHoverMotion: Pomicanje kartica pri prelasku mišem
 settings.option.accessibility.cardHoverMotion.description: Omogućuje da se kartice na koje se može kliknuti (albumi, istaknute kartice, stavke mreže) blago povećaju pri lebdenju i smanje pri pritisku. Isključeno prema zadanim postavkama.
 settings.option.accessibility.enableSoundEffects: Omogući zvučne efekte
 settings.option.accessibility.enableSoundEffects.description: Reproduciraj suptilne zvukove pri interakciji s gumbima, prekidačima i klizačima.
@@ -4416,19 +4520,19 @@ settings.option.accessibility.forceFocusVisible.description: Prisilno prikazuje 
 settings.option.accessibility.highContrast: Visoki kontrast
 settings.option.accessibility.highContrast.description: Povećava kontrast između teksta, pozadine i elemenata sučelja.
 settings.option.accessibility.motion: Pokret
-settings.option.accessibility.motionIntensity: Intenzitet pokreta
+settings.option.accessibility.motionIntensity: Intenzitet animacije
 settings.option.accessibility.motionIntensity.description: Kontrolira koliko se pokreta koristi na gumbima i površinama pri lebdenju i pritisku. Odaberite „Bez pokreta” za potpuno onemogućavanje; „Razigrano” dodaje dodatni odskok.
 settings.option.accessibility.motionIntensity.none: Bez pokreta
 settings.option.accessibility.motionIntensity.normal: Normalno
 settings.option.accessibility.motionIntensity.playful: Razigrano
 settings.option.accessibility.motionIntensity.reduced: Smanjeno
-settings.option.accessibility.playOnHover: Reproduciraj pri lebdenju
+settings.option.accessibility.playOnHover: Reproduciraj pri prelasku mišem
 settings.option.accessibility.playOnHover.description: Također reproducira suptilan zvuk klika kada pokazivač uđe u interaktivne elemente.
 settings.option.accessibility.soundEffects: Zvučni efekti
 settings.option.accessibility.soundPreview: Pregled zvuka
 settings.option.accessibility.soundPreview.description: Reproducira uzorak zvukova sučelja pri trenutačnoj glasnoći.
 settings.option.accessibility.text: Tekst
-settings.option.accessibility.uiScale: Skaliranje sučelja
+settings.option.accessibility.uiScale: Skala sučelja
 settings.option.accessibility.uiScale.description: Skalira tekst i elemente sučelja. Neki elementi rasporeda koriste fiksnu veličinu i možda se neće skalirati.
 settings.option.accessibility.visibility: Vidljivost
 settings.option.accessibility.volume: Glasnoća
@@ -4441,47 +4545,47 @@ settings.option.advanced.compactSidebar.size: Veličina
 settings.option.advanced.configBackups.description: Vratite kopiju datoteke s postavkama koju je Cider spremio, u slučaju da su vaše postavke izgubljene ili ponovno postavljene.
 settings.option.advanced.experimentalFeatures: Eksperimentalne značajke
 settings.option.advanced.experimentalFeatures.description: Značajke u razvoju i eksperimentalne opcije.
-settings.option.advanced.floatingSearch: Plutajući sloj za pretraživanje
-settings.option.advanced.floatingSearch.blurBackground: Zamućenje pozadine
+settings.option.advanced.floatingSearch: Plutajući prozor pretraživanja
+settings.option.advanced.floatingSearch.blurBackground: Zamagli pozadinu
 settings.option.advanced.floatingSearch.blurBackground.description: Kada je omogućeno, pozadina će se zamutiti kada je traka za pretraživanje u fokusu.
-settings.option.advanced.floatingSearch.clearSearchOnClose: Očisti pretraživanje nakon zatvaranja
+settings.option.advanced.floatingSearch.clearSearchOnClose: Obriši pretragu pri zatvaranju
 settings.option.advanced.floatingSearch.clearSearchOnClose.description: Kada je omogućeno, tekst u traci za pretraživanje bit će izbrisan nakon zatvaranja trake.
 settings.option.advanced.floatingSearch.description: Ploča za pretraživanje koja se otvara preko stranice.
 settings.option.advanced.floatingSearch.enterShowsResults: Tipka Enter prikazuje rezultate
 settings.option.advanced.floatingSearch.enterShowsResults.description: Kada je omogućeno, pritisak na tipku Enter odvest će vas izravno na stranicu s rezultatima pretraživanja.
 settings.option.advanced.home: Početna
-settings.option.advanced.home.buttonLocation: Lokacija gumba Početna
+settings.option.advanced.home.buttonLocation: Mjesto gumba Početna
 settings.option.advanced.home.buttonLocation.sidebar: Bočna traka
 settings.option.advanced.home.buttonLocation.sidebar2023: Bočna traka (2023.)
 settings.option.advanced.home.buttonLocation.topBar: Gornja traka
-settings.option.advanced.immersive: Prožimajući prikaz
-settings.option.advanced.immersive.artworkHighlight: Isticanje naslovnice
-settings.option.advanced.immersive.controlsTimeout: Istek aktivnih kontrola (u sekundama)
+settings.option.advanced.immersive: Immersive prikaz
+settings.option.advanced.immersive.artworkHighlight: Isticanje omota
+settings.option.advanced.immersive.controlsTimeout: Vrijeme do skrivanja kontrola (sekunde)
 settings.option.advanced.immersive.description: Sam prožimajući prikaz. Izgled koji koristi bira se pod Vizualno.
-settings.option.advanced.immersive.glowEffectOnActiveLyrics: Efekt sjaja na aktivnom tekstu
-settings.option.advanced.lyrics: Animacija teksta
-settings.option.advanced.lyrics.characterFlow: Plutajući znakovi
+settings.option.advanced.immersive.glowEffectOnActiveLyrics: Efekt sjaja na aktivnim stihovima
+settings.option.advanced.lyrics: Animacija stihova
+settings.option.advanced.lyrics.characterFlow: Tekuća slova
 settings.option.advanced.lyrics.characterFlow.description: Pojedinačni znakovi plutat će prema gore umjesto cijelog retka. Zahtijeva više resursa.
 settings.option.advanced.lyrics.description: Kako se redci i znakovi teksta kreću dok pjesma svira.
-settings.option.advanced.lyrics.lineStaggering: Postupno prikazivanje redaka
+settings.option.advanced.lyrics.lineStaggering: Postupno pojavljivanje redaka
 settings.option.advanced.lyrics.lineStaggering.description: Sljedeći stihovi imat će suptilnu odgodu kada je sljedeći aktivni stih u fokusu
-settings.option.advanced.lyrics.lineStaggeringImmersive: Postupno prikazivanje redaka (imerzivno)
+settings.option.advanced.lyrics.lineStaggeringImmersive: Postupno pojavljivanje redaka (Immersive)
 settings.option.advanced.lyrics.lineStaggeringImmersive.description: Zahtijeva više resursa.
 settings.option.advanced.lyrics.scaleOnAny: Dopusti efekt povećanja na bilo kojoj riječi
 settings.option.advanced.lyrics.scaleOnAny.description: Omogućuje potencijalno povećanje bilo koje riječi, ne samo onih naglašenih
-settings.option.advanced.lyrics.singEngine: Imerzivni pokretač za Sing
+settings.option.advanced.lyrics.singEngine: Immersive pjevački engine
 settings.option.advanced.lyrics.singEngine.classic: Klasični
 settings.option.advanced.lyrics.singEngine.description: Pokretač za Sing u imerzivnom prikazu. Klasični koristi lagane CSS animacije, što je najbolji izbor za slabije sustave. Bočna traka uvijek koristi klasični.
 settings.option.advanced.lyrics.singEngine.legacy: Klasično
 settings.option.advanced.lyrics.singEngine.waapi: GPU (Web Animations)
-settings.option.advanced.lyrics.singLyricsEverywhere: Tekst za pjevanje svugdje
+settings.option.advanced.lyrics.singLyricsEverywhere: Pjevaj stihove svugdje
 settings.option.advanced.lyrics.singLyricsEverywhere.description: Omogući tekst za pjevanje izvan imerzivnog prikaza. Zahtijeva više resursa.
 settings.option.advanced.mavericksLcd: Mavericks LCD
 settings.option.advanced.mavericksLcd.style: Stil
 settings.option.advanced.mavericksLcd.style.glass: Staklo
-settings.option.advanced.mediaArtwork: Naslovnica medijskog sadržaja
+settings.option.advanced.mediaArtwork: Omot medijskog sadržaja
 settings.option.advanced.mediaArtwork.controls: Istaknute naslovnice i slike visoke razlučivosti
-settings.option.advanced.mediaArtwork.controlsV2: Isticanje i postupno pojavljivanje omota
+settings.option.advanced.mediaArtwork.controlsV2: Isticanje omota i postupno pojavljivanje
 settings.option.advanced.mediaArtwork.description: Naslovnice na mrežama, popisima i redcima u cijeloj aplikaciji.
 settings.option.advanced.notificationStyle: Stil obavijesti
 settings.option.advanced.performance: Performanse
@@ -4493,23 +4597,23 @@ settings.option.advanced.playlistTrackMapping: Mapiranje pjesama na popisima pje
 settings.option.advanced.playlistTrackMapping.description: Omogućuje dubinsko skeniranje popisa pjesama kako bi se utvrdilo koje se pjesme nalaze na kojim popisima. Vrijeme izgradnje predmemorije popisa pjesama može se znatno povećati.
 settings.option.advanced.powerUsage.description: Ograničenja broja sličica u sekundi, odabir renderera i zahtjevne vizualne značajke.
 settings.option.advanced.progressBar: Traka napretka
-settings.option.advanced.progressBar.useAccentColor: Koristi istaknutu boju
+settings.option.advanced.progressBar.useAccentColor: Koristi naglasnu boju
 settings.option.advanced.resetCider: Ponovno postavi Cider
 settings.option.advanced.resetCider.description: Ponovno postavite postavke, predmemoriju i lokalne podatke. Apple Music i Taproom ostaju prijavljeni osim ako ne odaberete drugačije.
-settings.option.advanced.resizableMiniplayer: Mini-reproduktor s promjenjivom veličinom
+settings.option.advanced.resizableMiniplayer: Mini player s promjenjivom veličinom
 settings.option.advanced.richAlbumGrid: Bogata mreža albuma
-settings.option.advanced.richAlbumGrid.alwaysNavigateToPage: Uvijek navigiraj na stranicu
-settings.option.advanced.richAlbumGrid.disableScrollAnimation: Onemogući animaciju pomicanja
+settings.option.advanced.richAlbumGrid.alwaysNavigateToPage: Uvijek otvori stranicu
+settings.option.advanced.richAlbumGrid.disableScrollAnimation: Isključi animaciju pomicanja
 settings.option.advanced.richAlbumGrid.scrollToPosition: Pomakni na položaj
 settings.option.advanced.richAlbumGrid.scrollToPosition.bottom: Dno
 settings.option.advanced.richAlbumGrid.scrollToPosition.top: Vrh
 settings.option.advanced.searchBar: Glavna traka za pretraživanje
 settings.option.advanced.searchBar.description: Polje za pretraživanje u traci naslova.
-settings.option.advanced.searchBar.noRedirectOnSelect: Bez odredišne stranice pri fokusu
+settings.option.advanced.searchBar.noRedirectOnSelect: Bez početne stranice pri fokusu
 settings.option.advanced.searchBar.noRedirectOnSelect.description: Kada je omogućeno, traka za pretraživanje neće preusmjeriti na odredišnu stranicu kada se odabere. Za odlazak na odredišnu stranicu držite SHIFT dok odabirete traku za pretraživanje.
 settings.option.advanced.settingsTakeout: Izvoz / uvoz postavki
 settings.option.advanced.settingsTakeout.description: Izradite sigurnosnu kopiju svojih postavki u datoteku ili ih obnovite na drugom uređaju. Podaci za prijavu na račun nikada nisu uključeni.
-settings.option.advanced.simpleArtworkBg: Jednostavna pozadina s naslovnicom
+settings.option.advanced.simpleArtworkBg: Jednostavna pozadina za omot
 settings.option.advanced.simpleArtworkBg.brightness: Svjetlina %
 settings.option.advanced.simpleArtworkBg.brightnessV2: Svjetlina
 settings.option.advanced.simpleArtworkBg.contrast: Kontrast %
@@ -4518,7 +4622,7 @@ settings.option.advanced.simpleArtworkBg.saturate: Zasićenost %
 settings.option.advanced.simpleArtworkBg.saturateV2: Zasićenost
 settings.option.advanced.simpleArtworkBg.useMask: Koristi donju masku
 settings.option.advanced.sonoma: Sonoma
-settings.option.advanced.sonoma.lyricArc: Lučni tekst
+settings.option.advanced.sonoma.lyricArc: Zakrivljeni stihovi
 settings.option.advanced.sonoma.lyricArc.description: Aktivni redci teksta savijaju se prema središtu zaslona uz suptilan osjećaj dubine.
 settings.option.advanced.sonoma.radialMask: Koristi alternativnu masku
 settings.option.advanced.sonoma.radialMask.description: Kada je omogućeno, Sonoma će koristiti drugačiju, radijalnu masku za naslovnicu, fokusirajući se na veću jasnoću i manje zamućenja.
@@ -4547,11 +4651,11 @@ settings.option.audio.audioQuality: Kvaliteta zvuka
 settings.option.audio.automix: Automatsko miksanje
 settings.option.audio.changePlaybackRate: Promijeni brzinu reprodukcije
 settings.option.audio.ciderAudio: Cider Audio
-settings.option.audio.ciderAudio.showBadges: Prikaži značke u Trenutno svira
+settings.option.audio.ciderAudio.showBadges: Prikaži oznake u trenutnoj reprodukciji
 settings.option.audio.ciderAudio.showInToolbar: Prikaži Cider Audio na alatnoj traci
 settings.option.audio.ciderAudioSettings: Postavke za Cider Audio
 settings.option.audio.crossfade: Pretapanje
-settings.option.audio.dbfs.calibration: Kalibracija na 0 dBFS
+settings.option.audio.dbfs.calibration: Kalibracija 0 dBFS
 settings.option.audio.dbfs.description: Unesite vršni Z-ponderirani dB SPL kada je Cider na 0 dBFS.
 settings.option.audio.dbspl.description: (Samo za napredne korisnike) Prikaži dB SPL umjesto dBFS na klizaču glasnoće.
 settings.option.audio.dbspl.display: Prikaz dB SPL
@@ -4609,7 +4713,7 @@ settings.option.audio.enableAdvancedFunctionality.tunedAudioSpatialization.profi
 settings.option.audio.enableAdvancedFunctionality.tunedAudioSpatialization.profile.standard: Standardno
 settings.option.audio.exponentialVolume: Eksponencijalna krivulja glasnoće
 settings.option.audio.exponentialVolume.description: Prati postupniju krivulju glasnoće, omogućujući preciznije upravljanje glasnoćom pri nižim razinama.
-settings.option.audio.hostCapture: Zvuk pogodan za snimanje (OBS / Discord)
+settings.option.audio.hostCapture: Snimljivi zvuk (OBS / Discord)
 settings.option.audio.hostCapture.description: Aplikacije za strujanje i snimanje poput OBS-a ili Discorda trebaju Windows host za usmjeravanje reprodukcije.
 settings.option.audio.maxVolume: Maksimalna glasnoća
 settings.option.audio.mixing: Miksanje
@@ -4621,13 +4725,13 @@ settings.option.audio.playback: Reprodukcija
 settings.option.audio.playbackRate: Brzina reprodukcije
 settings.option.audio.playbackRate.change: Promijeni
 settings.option.audio.podcastPlayback: Reprodukcija podcasta
-settings.option.audio.podcasts.playbackRate: Brzina reprodukcije za Apple Podcasts
+settings.option.audio.podcasts.playbackRate: Brzina reprodukcije Apple Podcasta
 settings.option.audio.podcasts.playbackRate.description: Prilagodite brzinu reprodukcije podcasta.
 settings.option.audio.quality: Kvaliteta zvuka
 settings.option.audio.seamlessAudioTransitions: Reprodukcija bez prekida
 settings.option.audio.seamlessTransition: Besprijekoran prijelaz zvuka
-settings.option.audio.seamlessTransitions: Besprijekorni prijelazi
-settings.option.audio.showBitrate: Prikaži brzinu prijenosa u Trenutno svira
+settings.option.audio.seamlessTransitions: Bezprijelazni prijelazi
+settings.option.audio.showBitrate: Prikaži bitrate u trenutnoj reprodukciji
 settings.option.audio.streaming: Streaming
 settings.option.audio.volume: Glasnoća
 settings.option.audio.volumeScrollStep: Korak pomicanja glasnoće
@@ -4640,18 +4744,18 @@ settings.option.behavior.addToLibraryOnFavorite.caption: Dodaje novi omiljeni sa
 settings.option.concerts.geolocation: Geolokacija
 settings.option.concerts.radius: Polumjer
 settings.option.concerts.radius.description: Prikaži samo koncerte unutar ove udaljenosti od vaše lokacije (zahtijeva omogućenu geolokaciju)
-settings.option.concerts.radiusUnit: Jedinica polumjera
+settings.option.concerts.radiusUnit: Mjerna jedinica polumjera
 settings.option.concerts.radiusUnit.description: Jedinica za filtar polumjera
 settings.option.concerts.radiusUnit.kilometers: Kilometri
 settings.option.concerts.radiusUnit.miles: Milje
 settings.option.concerts.showInSidebar: Prikaži koncerte u bočnoj traci
 settings.option.concerts.showInSidebar.description: Prikaži odjeljak Koncerti u bočnoj traci
-settings.option.concerts.sortBy: Poredaj po
+settings.option.concerts.sortBy: Razvrstaj po
 settings.option.concerts.sortBy.date: Datum
 settings.option.concerts.sortBy.description: Kako sortirati koncerte na popisu
 settings.option.concerts.sortBy.distance: Udaljenost
 settings.option.connect.link_account.description: Povezivanje vašeg Discord računa s uslugom Cider Connect omogućuje vam pohranu korisničkih podataka, uključujući postavke, ekvilizatore i s vremenom više toga kada bude dovršeno. (Rad u tijeku)
-settings.option.connectivity.atmosRatings: Atmos ocjene zajednice
+settings.option.connectivity.atmosRatings: Zajedničke ocjene Atmos
 settings.option.connectivity.atmosRatings.description: Pogledajte i podijelite koji albumi zvuče sjajno u Dolby Atmos formatu.
 settings.option.connectivity.ciderConnect.description: Slušajte zajedno, zajednički popisi pjesama, daljinsko upravljanje aplikacijom i još mnogo toga!
 settings.option.connectivity.ciderRemote: Cider Remote
@@ -4717,10 +4821,10 @@ settings.option.connectivity.lastfmScrobble.manualToken: Ručno unesi Last.fm to
 settings.option.connectivity.lastfmScrobble.manualToken.link: Kliknite ovdje za preuzimanje Last.fm tokena
 settings.option.connectivity.lastfmScrobble.nowPlaying: Omogući Last.FM Trenutno svira
 settings.option.connectivity.lastfmScrobble.removeFeatured: Ukloni gostujuće izvođače iz naslova pjesme (Last.fm)
-settings.option.connectivity.parties: Zajedničko slušanje
-settings.option.connectivity.partiesEnabled: Omogući zajedničko slušanje
+settings.option.connectivity.parties: Slušanje zajedno
+settings.option.connectivity.partiesEnabled: Omogući slušanje zajedno
 settings.option.connectivity.partiesEnabled.description: Pokrenite ili se pridružite sinkroniziranim sesijama slušanja s drugim korisnicima aplikacije Cider.
-settings.option.connectivity.partiesQueueDefault: Zadani način reda reprodukcije
+settings.option.connectivity.partiesQueueDefault: Zadani način reda čekanja
 settings.option.connectivity.partiesQueueDefault.audited: Domaćin odobrava dodavanja
 settings.option.connectivity.partiesQueueDefault.description: Trebaju li dodavanja gostiju vaše odobrenje u sesijama koje vi organizirate.
 settings.option.connectivity.partiesQueueDefault.open: Otvoreno
@@ -4730,13 +4834,13 @@ settings.option.connectivity.partiesTransportDefault.everyone: Svi
 settings.option.connectivity.partiesTransportDefault.host: Samo domaćin
 settings.option.connectivity.playbackNotifications: Obavijesti o reprodukciji
 settings.option.connectivity.playbackNotifications.description: Prikaži obavijest s novom pjesmom pri svakoj promjeni trenutne pjesme.
-settings.option.connectivity.remoteConnection: Udaljena veza
+settings.option.connectivity.remoteConnection: Daljinska veza
 settings.option.connectivity.remoteConnection.description: Uparivanje telefona ili tableta i rasparivanje uređaja koji upravljaju reprodukcijom.
 settings.option.connectivity.rpcServer: RPC poslužitelj
 settings.option.connectivity.rpcServer.description: Upravljajte pristupom Cideru za vanjske aplikacije koje koriste RPC poslužitelj.
-settings.option.connectivity.rpcServer.manageAccess: Upravljanje pristupom vanjskih aplikacija Cideru
+settings.option.connectivity.rpcServer.manageAccess: Upravljaj pristupom vanjskih aplikacija Cideru
 settings.option.connectivity.scrobbler: Scrobbler
-settings.option.connectivity.scrobblerIntegration: Integracija Scrobblera
+settings.option.connectivity.scrobblerIntegration: Integracija scrobblera
 settings.option.connectivity.scrobblerIntegration.description: Scrobblanje na Last.fm, ListenBrainz, Libre.fm i Maloja za vođenje povijesti slušanja.
 settings.option.connectivity.steam.clearOnPause: Ukloni Rich Presence pri pauzi
 settings.option.connectivity.vrOverlay: VR prekrivanje
@@ -4772,23 +4876,23 @@ settings.option.experimental.unknownPlugin: Nepoznati izvori
 settings.option.experimental.unknownPlugin.description: Dopusti instalaciju dodataka iz repozitorija koji nisu Cider repozitorij dodataka
 settings.option.experiments.chromecast: Omogući Chromecast
 settings.option.experiments.chromecast.description: Dodaje gumb za emitiranje za Google Cast uređaje na ovoj mreži.
-settings.option.experiments.chromecastLyrics: Chromecast tekstovi
+settings.option.experiments.chromecastLyrics: Stihovi za Chromecast
 settings.option.experiments.chromecastLyrics.description: Prikaži sinkronizirane tekstove na Chromecast zaslonu.
 settings.option.experiments.floatingSearch: Omogući plutajuće pretraživanje
 settings.option.experiments.forceExplicit: Automatski prebaci na eksplicitnu verziju albuma
 settings.option.experiments.forceExplicit.description: Može produžiti vrijeme učitavanja tijekom pretraživanja eksplicitnih verzija albuma.
 settings.option.experiments.legacyFetch: Naslijeđeno dohvaćanje
-settings.option.experiments.musicVideos: Omogući glazbene videozapise u knjižnici
+settings.option.experiments.musicVideos: Omogući glazbene videospotove u knjižnici
 settings.option.experiments.title: Eksperimentalne značajke
 settings.option.general.app: Aplikacija
-settings.option.general.artistChips: Kartice izvođača
+settings.option.general.artistChips: Oznake izvođača
 settings.option.general.autoplayByDefault: Zadano omogući automatsku reprodukciju
 settings.option.general.autoplayByDefault.description: Automatski omogući automatsku reprodukciju prilikom puštanja glazbe (ne odnosi se na radio postaje).
 settings.option.general.autoRemoveDisliked: Automatski ukloni nesviđene pjesme iz reda čekanja
 settings.option.general.autoRemoveDisliked.description: Automatski ukloni pjesme iz reda čekanja kada su označene kao nesviđene.
 settings.option.general.cache: Predmemorija
-settings.option.general.clearCacheDropdown: Padajući izbornik za čišćenje predmemorije
-settings.option.general.contentToCache: Sadržaj za predmemoriranje
+settings.option.general.clearCacheDropdown: Padajući izbornik za brisanje predmemorije
+settings.option.general.contentToCache: Sadržaj za predmemoriju
 settings.option.general.customizeSidebar: Prilagodi stavke bočne trake
 settings.option.general.customizeSidebar.customize: Prilagodi
 settings.option.general.displayName: Prikazano ime
@@ -4812,14 +4916,14 @@ settings.option.general.language.fun: Zabavni jezici
 settings.option.general.language.main: Jezici
 settings.option.general.language.unsorted: Nerazvrstano
 settings.option.general.noPlayingAction.newMusicMix: Reproduciraj Miks nove glazbe
-settings.option.general.noPlayingAction.none: Ne čini ništa
+settings.option.general.noPlayingAction.none: Ne radi ništa
 settings.option.general.noPlayingAction.personalStation: Pokreni osobnu postaju
-settings.option.general.noPlayingAction.recent: Reproduciraj nedavne pjesme
-settings.option.general.noPlayingAction.recentlyAdded: Reproduciraj nedavno dodane pjesme
+settings.option.general.noPlayingAction.recent: Reproduciraj nedavne skladbe
+settings.option.general.noPlayingAction.recentlyAdded: Reproduciraj nedavno dodane skladbe
 settings.option.general.noPlayingAction.shuffleLibrary: Nasumično reproduciraj pjesme iz knjižnice
 settings.option.general.onStartup: Pri pokretanju
-settings.option.general.onStartup.openStartup: Otvori stranicu pri pokretanju
-settings.option.general.onStartup.resume: Nastavi zadnju sesiju
+settings.option.general.onStartup.openStartup: Otvori početnu stranicu
+settings.option.general.onStartup.resume: Nastavi posljednju sesiju
 settings.option.general.pagination: Broj stavki po stranici
 settings.option.general.preventDisplaySleep: Zadrži zaslon uključenim tijekom reprodukcije
 settings.option.general.preventSystemSleep: Zadrži računalo budnim tijekom reprodukcije
@@ -4850,6 +4954,7 @@ settings.option.general.startupPage: Početna stranica
 settings.option.general.startupPage.blank: Prazna stranica
 settings.option.general.startupPage.description: Odaberite stranicu koja će se prikazati kada otvorite Cider.
 settings.option.general.startupPage.descriptionV2: Stranica koju Cider otvara u novim karticama i pri pokretanju kada je Pri pokretanju postavljeno na Otvori početnu stranicu.
+settings.option.general.startupPage.descriptionV3: Stranica koju Cider otvara pri pokretanju.
 settings.option.general.startupPage.newTab: Stranica nove kartice
 settings.option.general.startupPage.personalHome: Osobna početna stranica
 settings.option.general.themeUpdateNotification: Automatski provjeri ažuriranja tema
@@ -4867,32 +4972,32 @@ settings.option.lyrics.contributeCta: Doprinesi i prenesi stihove
 settings.option.lyrics.contributeCta.description: Prenesi sinkronizirane stihove, pregledaj ih uživo i pogledaj ljestvicu doprinositelja.
 settings.option.lyrics.customScrollerProperties: Prilagođena svojstva klizača
 settings.option.lyrics.customScrollerProperties.description: Omogućite prilagođeni stil za animacije pomicanja tekstova pjesama.
-settings.option.lyrics.defaultProvider: Zadani pružatelj usluge
+settings.option.lyrics.defaultProvider: Zadani pružatelj
 settings.option.lyrics.defaultProvider.description: Odaberite željenog pružatelja tekstova pjesama. „Automatski” će automatski odabrati najbolji dostupan izvor.
 settings.option.lyrics.displayOptions: Opcije prikaza
 settings.option.lyrics.displayOptions.description: Prilagodite način prikaza tekstova pjesama
 settings.option.lyrics.enableMusixmatch: Omogući Musixmatch tekstove
 settings.option.lyrics.enableMusixmatchKaraoke: Omogući karaoke način (samo Musixmatch)
 settings.option.lyrics.enableQQLyrics: Omogući QQ Lyrics
-settings.option.lyrics.enableSingLyrics: Omogući tekstove za pjevanje
+settings.option.lyrics.enableSingLyrics: Omogući stihove za pjevanje
 settings.option.lyrics.enableSingLyrics.description: Kada je dostupno, prikažite sinkronizirane tekstove riječ po riječ koji se ističu u ritmu glazbe.
-settings.option.lyrics.enableStaticLyrics: Omogući statične tekstove
+settings.option.lyrics.enableStaticLyrics: Omogući statične stihove
 settings.option.lyrics.enableStaticLyrics.description: Prikažite tekstove čak i kada informacije o vremenu nisu dostupne. Ovi se tekstovi neće automatski pomicati.
 settings.option.lyrics.enableTranslations: Omogući prijevode
 settings.option.lyrics.enableTranslations.description: Prikažite prevedene tekstove kada su dostupni. Prijevodi potječu od doprinosa zajednice Musixmatch ili strojnog prevođenja.
 settings.option.lyrics.enableYoutubeLyrics: Omogući Youtube tekstove za glazbene videozapise
-settings.option.lyrics.fpsLimit: Broj sličica u sekundi za tekst
+settings.option.lyrics.fpsLimit: Brzina osvježavanja stihova
 settings.option.lyrics.fpsLimit.description: Maksimalni broj sličica u sekundi za animacije teksta. Više vrijednosti izgledaju glađe na zaslonima s visokom stopom osvježavanja, ali troše više procesorskih (CPU) i grafičkih (GPU) resursa. Opcija „Prilagodi zaslonu” prati brzinu osvježavanja vašeg monitora.
-settings.option.lyrics.fpsLimit.matchDisplay: Prilagodi zaslonu
-settings.option.lyrics.keepCompleted: Zadrži otpjevane stihove
+settings.option.lyrics.fpsLimit.matchDisplay: Prema zaslonu
+settings.option.lyrics.keepCompleted: Zadrži završene stihove
 settings.option.lyrics.keepCompleted.description: Zadrži već otpjevane stihove vidljivima (zatamnjenima) iznad trenutnog stiha. Kada je isključeno, dovršeni stihovi se skrivaju.
-settings.option.lyrics.localeOverrides: Nadjačavanje lokalnih postavki
+settings.option.lyrics.localeOverrides: Lokalne postavke
 settings.option.lyrics.localeOverrides.description: Postavite prilagođenog pružatelja i pravila prevođenja za određene jezike zvuka
 settings.option.lyrics.musixmatchPreferredLanguage: Željeni jezik prijevoda za Musixmatch
-settings.option.lyrics.preferUserLyrics: Prednost tekstovima koje su poslali korisnici
+settings.option.lyrics.preferUserLyrics: Prednost za stihove koje su poslali korisnici
 settings.option.lyrics.preferUserLyrics.description: Kada je dostupno, dajte prednost tekstovima koje su poslali korisnici u odnosu na druge izvore ako imaju bolju kvalitetu sinkronizacije.
 settings.option.lyrics.provider.apple: Apple Music
-settings.option.lyrics.provider.auto: Automatski (najbolje dostupno)
+settings.option.lyrics.provider.auto: Automatski (najbolji dostupni)
 settings.option.lyrics.provider.mxm: Musixmatch
 settings.option.lyrics.provider.netease: NetEase
 settings.option.lyrics.provider.user: Poslali korisnici
@@ -4900,21 +5005,21 @@ settings.option.lyrics.providerPreferences: Postavke pružatelja usluge
 settings.option.lyrics.providerPreferences.description: Konfigurirajte koje izvore tekstova koristiti i njihov prioritet
 settings.option.lyrics.scrollTuning: Trajanje i ublažavanje pomicanja
 settings.option.lyrics.scrollTuning.description: Postavite trajanje pomicanja redaka teksta i njihovu krivulju ublažavanja, zasebno za bočnu traku i imerzivni reproduktor.
-settings.option.lyrics.showDualLanguage: Prikaži dvojezično
+settings.option.lyrics.showDualLanguage: Prikaži dvojezične stihove
 settings.option.lyrics.showDualLanguage.description: Display both the original lyrics and the translation at the same time.
-settings.option.lyrics.showTimestamps: Prikaži vremenske oznake pri lebdenju mišem
+settings.option.lyrics.showTimestamps: Prikaži vremenske oznake pri prelasku mišem
 settings.option.lyrics.showTimestamps.description: Prikažite vremensku oznaku svakog retka teksta kada pokazivačem miša prijeđete preko njega.
 settings.option.lyrics.thirdPartySources: Omogući izvore trećih strana
 settings.option.lyrics.thirdPartySources.description: Dopusti dohvaćanje tekstova pjesama s usluga Musixmatch i NetEase kada tekstovi na platformi Apple Music nisu dostupni. Kvaliteta može varirati, a učestalo korištenje može dovesti do ograničenja brzine.
-settings.option.lyrics.timeOffset: Vremenski pomak teksta (sekunde)
+settings.option.lyrics.timeOffset: Pomak vremena stihova (sekunde)
 settings.option.lyrics.timeOffset.description: Prilagodite vrijeme prikaza teksta. Pozitivne vrijednosti prikazuju tekst ranije, a negativne kasnije. Korisno za ispravljanje nesinkroniziranog zvuka.
 settings.option.lyrics.timeOffset.descriptionV2: Prilagodite vremenski raspored prikaza stihova. Pozitivne vrijednosti prikazuju stihove kasnije, a negativne ranije. Korisno za ispravljanje audio postavki koje nisu sinkronizirane.
-settings.option.lyrics.timestampStyle: Stil vremenske oznake
+settings.option.lyrics.timestampStyle: Stil vremenskih oznaka
 settings.option.lyrics.timestampStyle.both: Oboje
 settings.option.lyrics.timestampStyle.chip: Značka
 settings.option.lyrics.timestampStyle.description: Odaberite kako se prikazuju vremenske oznake pri prelasku pokazivačem preko teksta.
 settings.option.lyrics.timestampStyle.ring: Prsten
-settings.option.lyrics.trackOverrides: Prilagodbe za pojedine pjesme
+settings.option.lyrics.trackOverrides: Postavke za pojedine pjesme
 settings.option.lyrics.trackOverrides.description: Upravljajte zaključavanjem i preferencijama pružatelja tekstova za pojedine pjesme
 settings.option.lyrics.translationLanguage: Jezik prijevoda
 settings.option.lyrics.translationLanguage.description: Jezik na koji se prevodi tekst pjesme. Koristi se samo kada je Način prijevoda postavljen na Ručno.
@@ -4950,7 +5055,7 @@ settings.option.performance.graphicsAcceleration: Ubrzanje grafike
 settings.option.performance.graphicsAcceleration.autoOff: Isključeno jer ovo računalo iscrtava grafiku softverski.
 settings.option.performance.graphicsAcceleration.description: Automatski način isključuje ubrzanje u virtualnom stroju koji iscrtava grafiku softverski. Promjene se primjenjuju pri sljedećem pokretanju Ciderа.
 settings.option.performance.host: Host
-settings.option.performance.immersiveRenderer: Imerzivni renderer
+settings.option.performance.immersiveRenderer: Renderer za uronjeni prikaz
 settings.option.performance.immersiveRenderer.description: Koristite Canvas 2D umjesto WebGPU ako se animirana pozadina ne ponaša ispravno ili koristi previše grafičkog procesora (GPU).
 settings.option.performance.libraryQueueLimit: Ograničenje reda čekanja knjižnice
 settings.option.performance.libraryQueueLimit.description: Ograničite broj pjesama koje se mogu staviti u red čekanja iz knjižnice, koristite 0 za bez ograničenja. Veće vrijednosti ili nepostojanje ograničenja mogu uzrokovati probleme s performansama.
@@ -4958,7 +5063,7 @@ settings.option.performance.limitBlurMapFramerateOnBlur: Ograniči broj sličica
 settings.option.performance.limitBlurMapFramerateOnBlur.description: Smanjuje broj sličica u sekundi imerzivne animirane pozadine dok prozor nije u fokusu radi uštede energije. Isključite ovu opciju ako želite da radi punom brzinom.
 settings.option.performance.limitImmersiveBgFramerateOnBlur: Ograniči broj sličica u sekundi imerzivne pozadine kada nije u fokusu
 settings.option.performance.motion: Pokret
-settings.option.performance.powerSaverOnBattery: Štednja energije na bateriji
+settings.option.performance.powerSaverOnBattery: Štedi energiju na bateriji
 settings.option.performance.powerSaverOnBattery.description: Dok uređaj radi na bateriji, imerzivna pozadina se prikazuje s najviše 30 sličica u sekundi, a animacije tekstova pjesama ograničene su na 60 sličica u sekundi.
 settings.option.performance.preloadSidebarPages: Unaprijed učitaj stranice bočne trake
 settings.option.performance.preloadSidebarPages.description: Učitava stranice bočne trake prije nego što ih otvorite. Opcija „Pri prijelazu pokazivača” započinje kada se pokazivač zadrži na stavci bočne trake. Opcija „Tijekom neaktivnosti” također učitava Slušajte odmah, Pregledaj i Radio nakon pokretanja te osvježava popise medijateke koje ste prethodno otvorili.
@@ -4969,7 +5074,7 @@ settings.option.performance.reduceEffects.description: Isključuje zamućenje, s
 settings.option.performance.renderer.auto: Automatski (WebGPU kada je podržan)
 settings.option.performance.renderer.canvas: Canvas 2D
 settings.option.performance.renderer.webgpu: WebGPU
-settings.option.performance.ultraWide: Ultraširoko
+settings.option.performance.ultraWide: Ultra široko
 settings.option.performance.ultraWide.description: Ovo uklanja ograničenje granica stranice, međutim aplikacija nije optimizirana za ultraširoke zaslone, pa elementi mogu izgledati neobično.
 settings.option.performance.useEmotionEngine: Koristi Emotion Engine
 settings.option.performance.useEmotionEngine.description: Kada je omogućeno, aplikacija će koristiti Emotion Engine za određivanje palete boja omota albuma. To može uzrokovati probleme s performansama na slabijim uređajima.
@@ -4983,7 +5088,7 @@ settings.option.smartPlaylists.autoRefreshIntervalMinutes: Interval osvježavanj
 settings.option.smartPlaylists.clearLibraryCache: Očisti predmemoriju pjesama knjižnice
 settings.option.smartPlaylists.clearLibraryCache.description: Prisili sljedeće osvježavanje da ponovno dohvati vašu knjižnicu s platforme Apple Music.
 settings.option.smartPlaylists.defaultTrackLimit: Zadano ograničenje broja pjesama
-settings.option.smartPlaylists.enabled: Omogući pravila popisa pjesama
+settings.option.smartPlaylists.enabled: Omogući pravila popisa
 settings.option.smartPlaylists.enabled.description: Dopustite Cideru da automatski upravlja playlistama s ugrađenim pravilima.
 settings.option.smartPlaylists.maintenance: Održavanje
 settings.option.smartPlaylists.perPlaylistMinIntervalMinutes: Minimalni interval po playlisti (minute)
@@ -5007,20 +5112,20 @@ settings.option.sweetener.header.uiCustomization: Prilagodba sučelja
 settings.option.sweetener.header.uiCustomization.description: Istaknute boje i nijanse koje se koriste u aplikaciji.
 settings.option.sweetener.immersiveBackground.brightnessPercentage: Svjetlina %
 settings.option.sweetener.immersiveBackground.contrastPercentage: Kontrast %
-settings.option.sweetener.immersiveBackground.frameRate: Broj sličica u sekundi (fokusiran prozor)
+settings.option.sweetener.immersiveBackground.frameRate: Brzina kadrova (aktivan prozor)
 settings.option.sweetener.immersiveBackground.frameRate.description: Preporučeno 15-30 FPS
 settings.option.sweetener.immersiveBackground.header.filters: Filtri
-settings.option.sweetener.immersiveBackground.lightModeWarning: Imerzivna pozadina trenutno nije podržana u svijetlom načinu rada.
+settings.option.sweetener.immersiveBackground.lightModeWarning: Uronjena pozadina trenutno nije podržana u svijetlom načinu rada.
 settings.option.sweetener.immersiveBackground.saturationPercentage: Zasićenost %
-settings.option.sweetener.immersiveBackground.use: Koristi imerzivnu pozadinu
-settings.option.sweetener.immersiveBackgroundType: Vrsta imerzivne pozadine
+settings.option.sweetener.immersiveBackground.use: Koristi uronjenu pozadinu
+settings.option.sweetener.immersiveBackgroundType: Vrsta uronjene pozadine
 settings.option.sweetener.immersiveBackgroundType.immersive: Imerzivna
 settings.option.sweetener.immersiveBackgroundType.immersiveLite: Imerzivna Lite
 settings.option.sweetener.useCustomAccentColor: Koristi prilagođenu istaknutu boju
-settings.option.sweetener.useCustomAccentColor.accentColor: Istaknuta boja
-settings.option.sweetener.useCustomTintColor: Koristi prilagođenu nijansu boje
+settings.option.sweetener.useCustomAccentColor.accentColor: Boja naglaska
+settings.option.sweetener.useCustomTintColor: Koristi prilagođenu boju nijanse
 settings.option.sweetener.useCustomTintColor.lightModeWarning: Omjeri nijanse ispod 0,8 zanemaruju se u svijetlom načinu rada.
-settings.option.sweetener.useCustomTintColor.tintColor: Nijansa boje
+settings.option.sweetener.useCustomTintColor.tintColor: Boja nijanse
 settings.option.sweetener.useCustomTintColor.tintRatio: Omjer nijanse boje
 settings.option.v2: V2
 settings.option.v2rp: V2 RP
@@ -5028,28 +5133,28 @@ settings.option.v3: V3
 settings.option.v3rp: V3 RP
 settings.option.visual.accentColor: Istaknuta boja
 settings.option.visual.adaptiveColorPercent: Postotak prilagodljive boje
-settings.option.visual.additionalAnimatedArtwork: Dodatne animirane naslovnice u katalogu
+settings.option.visual.additionalAnimatedArtwork: Dodatne animirane ilustracije u katalogu
 settings.option.visual.additionalAnimatedArtwork.description: Prikaži više animiranih naslovnica kada su dostupne. Očekujte slabije performanse s više njih na zaslonu.
-settings.option.visual.animateArtworkOnHover: Animiraj naslovnicu medijske stavke pri prelasku mišem
+settings.option.visual.animateArtworkOnHover: Animiraj ilustraciju stavke pri prelasku mišem
 settings.option.visual.animatedArtwork: Animirane naslovnice
 settings.option.visual.animatedArtwork.description: Omogući animirane ilustracije, pauziraj izvan fokusa
 settings.option.visual.animatedArtwork.warningDescription: Prikaži animirane naslovnice kada su dostupne. To može uzrokovati probleme s performansama na slabijim uređajima.
-settings.option.visual.animatedArtworkEngine: Pokretač animiranih omota
+settings.option.visual.animatedArtworkEngine: Motor animirane ilustracije
 settings.option.visual.animatedArtworkEngine.description: Izvorna opcija preuzima jedan isječak koji se ponavlja i reproducira ga bez promjene kvalitete. Koristite klasičnu opciju samo ako naiđete na probleme s reprodukcijom.
 settings.option.visual.animatedArtworkEngine.hls: Klasično (hls.js)
 settings.option.visual.animatedArtworkEngine.native: Izvorno (preporučeno)
-settings.option.visual.animatedArtworkQuality: Kvaliteta animiranih omota
+settings.option.visual.animatedArtworkQuality: Kvaliteta animirane ilustracije
 settings.option.visual.animatedArtworkQuality.balanced: Uravnoteženo
 settings.option.visual.animatedArtworkQuality.description: Oštrina animiranih omota. Automatska postavka prilagođava svaki omot veličini zaslona i odgovara većini konfiguracija.
 settings.option.visual.animatedArtworkQuality.performance: Performanse
 settings.option.visual.animatedArtworkQuality.quality: Kvaliteta
-settings.option.visual.animatedBackgroundFramerate: Broj sličica u sekundi animirane pozadine
+settings.option.visual.animatedBackgroundFramerate: Brzina kadrova animirane pozadine
 settings.option.visual.animatedWindowBackground: Animirana pozadina prozora
-settings.option.visual.artistHeaderAlignment: Izgled zaglavlja izvođača
+settings.option.visual.artistHeaderAlignment: Raspored zaglavlja izvođača
 settings.option.visual.artistHeaderAlignment.center: Centrirano
 settings.option.visual.artistHeaderAlignment.description: Položaj imena izvođača i radnji u zaglavlju stranice izvođača.
 settings.option.visual.artistHeaderAlignment.left: Lijevo (zadano)
-settings.option.visual.artworkLoadingMethod: Način učitavanja naslovnica
+settings.option.visual.artworkLoadingMethod: Način učitavanja ilustracija
 settings.option.visual.artworkLoadingMethod.eager: Odmah
 settings.option.visual.artworkLoadingMethod.lazy: Po potrebi
 settings.option.visual.chromaticAberrationIntensity: Intenzitet kromatske aberacije
@@ -5057,19 +5162,19 @@ settings.option.visual.chromaticAberrationIntensity.description: Jačina RGB rub
 settings.option.visual.colorCustomization: Prilagodba boja
 settings.option.visual.colorScheme: Shema boja
 settings.option.visual.compactArtistHeader: Kompaktno zaglavlje izvođača
-settings.option.visual.contentFilterKeywords: Ključne riječi za filtriranje sadržaja
+settings.option.visual.contentFilterKeywords: Ključne riječi filtra sadržaja
 settings.option.visual.contentPreferences: Postavke sadržaja
 settings.option.visual.contentPreferences.description: Promijenite raspored određenih stranica
 settings.option.visual.contextMenuIcons: Ikone izbornika
 settings.option.visual.customAccentColor: Prilagođena istaknuta boja
 settings.option.visual.customScalingFactor: Prilagođeni faktor skaliranja
 settings.option.visual.customScalingFactor.description: Prilagodite skaliranje sučelja aplikacije
-settings.option.visual.enableAnimatedArtworkInMiniPlayer: Omogući animirane naslovnice u mini reproduktoru
-settings.option.visual.extendedEditorialLayout: Koristi prošireni urednički izgled na stranicama albuma
+settings.option.visual.enableAnimatedArtworkInMiniPlayer: Omogući animiranu grafiku u mini playeru
+settings.option.visual.extendedEditorialLayout: Koristi prošireni urednički raspored na stranicama albuma
 settings.option.visual.extendedEditorialLayout.description: Kada je omogućeno, stranica albuma prikazat će urednički natpis i primijeniti paletu boja na određene albume na temelju dostupnih elemenata.
 settings.option.visual.filterPromotionalContent: Filtriraj promotivni sadržaj
 settings.option.visual.filterPromotionalContent.description: Kada je omogućeno, odjeljci na karticama Pregled i Slušajte odmah koji odgovaraju vašim ključnim riječima filtra bit će skriveni.
-settings.option.visual.floatingPlayer: Plutajući reproduktor
+settings.option.visual.floatingPlayer: Plutajući player
 settings.option.visual.floatingPlayer.description: Odvojite traku reproduktora od rubova za izgled plutajuće pilule
 settings.option.visual.floatingPlayerPadding: Razmak plutajućeg playera
 settings.option.visual.floatingPlayerPadding.description: Kontrolira količinu prostora oko plutajućeg playera
@@ -5081,15 +5186,15 @@ settings.option.visual.forceRoundedViewport: Koristi zaobljeni prikaz
 settings.option.visual.forceRoundedViewport.description: Primijeni zaobljene kutove na glavni prikaz u svim rasporedima
 settings.option.visual.hardwareAcceleration: Hardversko ubrzanje
 settings.option.visual.hardwareAcceleration.description: Zahtijeva ponovno pokretanje
-settings.option.visual.headerStyle: Stil zaglavlja albuma i playlista
+settings.option.visual.headerStyle: Stil zaglavlja albuma i popisa
 settings.option.visual.headerStyle.appleMusic: Apple Music
 settings.option.visual.headerStyle.appleMusic.description: Radnje plutaju u gornjem desnom kutu stranice.
 settings.option.visual.headerStyle.classic: Klasično
 settings.option.visual.headerStyle.classic.description: Radnje ostaju u liniji unutar zaglavlja stranice.
 settings.option.visual.headerStyle.description: Klasični stil zadržava radnje unutar zaglavlja. Apple Music premješta Podijeli / Više / Dodaj u knjižnicu u plutajuću traku u gornjem desnom kutu stranice.
-settings.option.visual.hideAppleRecommends: Sakrij kartice „Apple preporučuje”
+settings.option.visual.hideAppleRecommends: Sakrij kartice "Apple preporučuje"
 settings.option.visual.hideAppleRecommends.description: Uklanja promotivne kartice „Apple preporučuje” s polica s preporukama Slušajte odmah i Početna.
-settings.option.visual.hideHeroItems: Sakrij istaknute stavke u Pregledu
+settings.option.visual.hideHeroItems: Sakrij istaknute stavke na Pregledavanju
 settings.option.visual.immersive.adjustVisuals: Prilagodi vizuale
 settings.option.visual.immersive.background.artwork: Jednostavna ilustracija
 settings.option.visual.immersive.background.blank: Prazno
@@ -5103,16 +5208,16 @@ settings.option.visual.immersive.coverflowStyle: Coverflow stil
 settings.option.visual.immersive.coverflowStyle.default: Zadano
 settings.option.visual.immersive.description: Prilagodite doživljaj imerzivnog načina rada
 settings.option.visual.immersive.enableHdr: Omogući HDR
-settings.option.visual.immersive.fsrUpscale: FSR povećanje rezolucije omota
-settings.option.visual.immersive.fsrUpscale.applyToAll: "FSR: Primijeni na sve pjesme"
+settings.option.visual.immersive.fsrUpscale: FSR povećanje grafike
+settings.option.visual.immersive.fsrUpscale.applyToAll: "FSR: primijeni na sve pjesme"
 settings.option.visual.immersive.fsrUpscale.applyToAll.description: Kada je isključeno, FSR se pokreće samo na pjesmama objavljenim prije praga godine. Uključite za povećanje rezolucije svake pjesme.
 settings.option.visual.immersive.fsrUpscale.description: Povećajte rezoluciju omota albuma pomoću AMD FidelityFX Super Resolution tehnologije. Pomaže da stariji omoti (prije 2010.) izgledaju oštrije. Zahtijeva WebGPU.
-settings.option.visual.immersive.fsrUpscale.sharpness: "FSR: Oštrina"
+settings.option.visual.immersive.fsrUpscale.sharpness: "FSR: oštrina"
 settings.option.visual.immersive.fsrUpscale.sharpness.description: Jačina prolaza oštrenja prilagođenog kontrastu (RCAS). 0 je najmekše, 1 je najoštrije.
-settings.option.visual.immersive.fsrUpscale.thresholdYear: "FSR: Prag godine"
+settings.option.visual.immersive.fsrUpscale.thresholdYear: "FSR: godina praga"
 settings.option.visual.immersive.fsrUpscale.thresholdYear.description: Pjesme objavljene prije ove godine ispunjavaju uvjete za povećanje rezolucije kada je opcija „Primijeni na sve pjesme” isključena.
 settings.option.visual.immersive.hdrBoostScale: Skala HDR pojačanja
-settings.option.visual.immersive.hideLyricsWhenUnavailable: Sakrij tekst pjesme kada je nedostupan
+settings.option.visual.immersive.hideLyricsWhenUnavailable: Sakrij tekstove kada nisu dostupni
 settings.option.visual.immersive.keepCompletedLyrics: Zadrži dovršene tekstove
 settings.option.visual.immersive.keepCompletedLyrics.description: Zadrži tekstove koji su završili s reprodukcijom u prikazu teksta.
 settings.option.visual.immersive.layout.default: One (zadano)
@@ -5121,35 +5226,35 @@ settings.option.visual.immersive.layout.oneClassic: One Classic
 settings.option.visual.immersive.layout.solarium: Solarium
 settings.option.visual.immersive.layout.sonoma: Sonoma
 settings.option.visual.immersive.layout.spectrumDeck: Spectrum Deck
-settings.option.visual.immersive.maxBrightness: Maksimalna svjetlina
-settings.option.visual.immersive.maxLyricFontSize: Maksimalna veličina fonta teksta (px)
-settings.option.visual.immersive.startFullscreen: Pokreni preko cijelog zaslona
+settings.option.visual.immersive.maxBrightness: Najveća svjetlina
+settings.option.visual.immersive.maxLyricFontSize: Najveća veličina fonta teksta (px)
+settings.option.visual.immersive.startFullscreen: Pokreni na cijelom zaslonu
 settings.option.visual.immersive.startingTab: Početna kartica
 settings.option.visual.immersive.startingTab.history: Povijest
 settings.option.visual.immersive.startingTab.lyrics: Tekst pjesme
 settings.option.visual.immersive.startingTab.queue: Red čekanja
-settings.option.visual.immersive.ultraHdr: Ultra HDR poboljšanje naslovnica
+settings.option.visual.immersive.ultraHdr: Ultra HDR povećanje grafike
 settings.option.visual.immersive.ultraHdr.description: Dodaje HDR isticanja, kontrast i boje naslovnicama albuma za svaku pjesmu. Najbolje izgleda na HDR zaslonu; ostali zasloni prikazuju blaži efekt. Zahtijeva WebGPU.
-settings.option.visual.immersive.ultraHdr.headroom: "Ultra HDR: Najveća rezerva svjetline"
+settings.option.visual.immersive.ultraHdr.headroom: "Ultra HDR: vršna rezerva"
 settings.option.visual.immersive.ultraHdr.headroom.description: Najveća svjetlina isticanja kao višekratnik standardne bijele. Smanjite ovu vrijednost ako su isticanja prevelika na vašem zaslonu.
-settings.option.visual.immersive.ultraHdr.intensity: "Ultra HDR: Intenzitet"
+settings.option.visual.immersive.ultraHdr.intensity: "Ultra HDR: intenzitet"
 settings.option.visual.immersive.ultraHdr.intensity.description: Snaga efekta. 0 ostavlja naslovnicu nepromijenjenom, 1 primjenjuje puni profil.
-settings.option.visual.immersive.ultraHdr.profile: "Ultra HDR: Profil"
+settings.option.visual.immersive.ultraHdr.profile: "Ultra HDR: profil"
 settings.option.visual.immersive.ultraHdr.profile.cinematic: Filmski
 settings.option.visual.immersive.ultraHdr.profile.description: Prirodni ostaje blizu originala, Živahni je smion i šareniji, Filmski ima visok kontrast i suzdržane boje.
 settings.option.visual.immersive.ultraHdr.profile.natural: Prirodni
 settings.option.visual.immersive.ultraHdr.profile.vivid: Živahni
-settings.option.visual.immersive.useAnimatedArtwork: Koristi animirane omote
+settings.option.visual.immersive.useAnimatedArtwork: Koristi animiranu grafiku
 settings.option.visual.immersive.useAnimatedArtwork.description: Prikaži animirane omote kada su dostupni. To može uzrokovati probleme s performansama na slabijim uređajima.
 settings.option.visual.immersive.useAnimatedBackground: Prožimajuća animirana pozadina
-settings.option.visual.immersive.useBackgroundBpm: Brzina pozadine na temelju BPM-a
+settings.option.visual.immersive.useBackgroundBpm: Brzina pozadine prema BPM-u
 settings.option.visual.immersiveBackground.blank: Prazno
 settings.option.visual.immersiveBackground.customImage: Prilagođena slika
 settings.option.visual.immersiveBackground.customImageMixed: Prilagođena slika (miješano)
 settings.option.visual.immersiveBackground.gradientMesh: Gradijentna mreža
-settings.option.visual.immersiveBackground.simpleArtwork: Jednostavan omot
+settings.option.visual.immersiveBackground.simpleArtwork: Jednostavna grafika
 settings.option.visual.immersiveBackground.simpleColor: Jednostavna boja
-settings.option.visual.immersiveBgSettings: Postavke imerzivne pozadine
+settings.option.visual.immersiveBgSettings: Postavke immersive pozadine
 settings.option.visual.immersiveBgSettings.description: Vizualni efekti i filtri pozadine aplikacije.
 settings.option.visual.immersiveLayout.classic: One Classic
 settings.option.visual.immersiveLayout.classic.description: Izvorni imerzivni izgled s donjim reproduktorom pune širine.
@@ -5165,8 +5270,8 @@ settings.option.visual.immersiveLayout.sonoma: Sonoma
 settings.option.visual.immersiveLayout.sonoma.description: Naslovnica se prelijeva u pozadinu s plutajućom karticom za upravljanje.
 settings.option.visual.immersiveLayout.spectrumDeck: Spectrum Deck
 settings.option.visual.immersiveLayout.spectrumDeck.description: Prikaz spektra u stvarnom vremenu s plutajućom naslovnicom.
-settings.option.visual.immersiveStyle: Imerzivni stil
-settings.option.visual.immersiveStylePortrait: Imerzivni stil (portret)
+settings.option.visual.immersiveStyle: Immersive stil
+settings.option.visual.immersiveStylePortrait: Immersive stil (portret)
 settings.option.visual.largeHeaderTitles: Veliki naslovi zaglavlja
 settings.option.visual.largeHeaderTitles.description: Povećava tekst naslova na stranicama albuma i popisa pjesama za upečatljiviji izgled.
 settings.option.visual.layoutProfile: Vrsta profila rasporeda
@@ -5190,9 +5295,9 @@ settings.option.visual.liquidGlassScrollPerf.descriptionV2: Pojednostavljuje lom
 settings.option.visual.mainMenuPosition: Položaj glavnog izbornika
 settings.option.visual.matchPageToArtwork: Prilagodi stranicu omotu
 settings.option.visual.matchPageToArtwork.description: Boji stranice albuma i popisa u bojama njihovih omota, u svjetlom i tamnom načinu rada.
-settings.option.visual.mergeAppleMusicPlaylists: Spoji Apple Music popise pjesama
+settings.option.visual.mergeAppleMusicPlaylists: Spoji Apple Music popise
 settings.option.visual.mergeAppleMusicPlaylists.description: Pomiješajte popise pjesama koje je uredio Apple Music u glavni odjeljak Popisi pjesama umjesto da ih prikazujete kao zasebnu grupu.
-settings.option.visual.miniplayerSkin: Izgled mini-reproduktora
+settings.option.visual.miniplayerSkin: Raspored mini playera
 settings.option.visual.miniplayerSkin.aluminum: Aluminij
 settings.option.visual.miniplayerSkin.aqua: Aqua
 settings.option.visual.miniplayerSkin.aquaAlt: Aqua (alt.)
@@ -5207,22 +5312,22 @@ settings.option.visual.mojavePlayerType.comfy: Udobno
 settings.option.visual.mojavePlayerType.comfy.description: Viši reproduktor s naslovnicom i metapodacima na lijevoj strani.
 settings.option.visual.mojavePlayerType.compact: Kompaktno
 settings.option.visual.mojavePlayerType.compact.description: Tanji reproduktor s centriranim LCD-om i trakom napretka iznad.
-settings.option.visual.mojavePlayerType.compactInline: Kompaktno u nizu
+settings.option.visual.mojavePlayerType.compactInline: Kompaktno u retku
 settings.option.visual.mojavePlayerType.compactInline.description: Jedan tanak redak s napretkom unutar LCD-a.
-settings.option.visual.moveUpLinks: Premjesti poveznice „Još za vidjeti” u odjeljku Pregled na vrh
-settings.option.visual.musicVideoPinMaxResolution: Uvijek reproduciraj glazbene videozapise u maksimalnoj razlučivosti
+settings.option.visual.moveUpLinks: Pomakni veze "Više za pogledati" na Pregledavanju na vrh
+settings.option.visual.musicVideoPinMaxResolution: Uvijek reproduciraj glazbene videe u najvišoj razlučivosti
 settings.option.visual.musicVideoPinMaxResolution.description: Zadržava najvišu kvalitetu koju videozapis nudi umjesto da započne s niskom i postupno je povećava. Na malom prozoru ili vezi s ograničenim prometom ovo troši primjetno više propusnosti.
-settings.option.visual.musicVideoPrefetchOnHover: Pripremi glazbene videozapise pri prelasku pokazivačem
+settings.option.visual.musicVideoPrefetchOnHover: Pripremi glazbene videe pri prelasku mišem
 settings.option.visual.musicVideoPrefetchOnHover.description: Započinje učitavanje videozapisa dok se pokazivač nalazi na znački, pa se brže otvara kada kliknete.
-settings.option.visual.musicVideoPrefetchSegmentsOnHover: Preuzmi prvi isječak pri prelasku pokazivačem
+settings.option.visual.musicVideoPrefetchSegmentsOnHover: Preuzmi prvi dio pri prelasku mišem
 settings.option.visual.musicVideoPrefetchSegmentsOnHover.description: Također učitava prvih nekoliko sekundi videozapisa prije klika. To troši nekoliko megabajta za svaki prelazak pokazivačem, uključujući i one koji nikada ne otvore videozapis.
-settings.option.visual.paletteContrast: Kontrast boja omota
+settings.option.visual.paletteContrast: Kontrast boja grafike
 settings.option.visual.paletteContrast.description: Određuje koliko se boje albuma i popisa pjesama udaljavaju od pozadine stranice kako bi gumbi i indikator reprodukcije ostali čitljivi. Postavka pristupačnosti „Visoki kontrast” uvijek koristi opciju „Maksimalno”.
 settings.option.visual.paletteContrast.enhanced: Poboljšano
 settings.option.visual.paletteContrast.maximum: Maksimalno
 settings.option.visual.paletteContrast.standard: Standardno
-settings.option.visual.pauseAnimatedOnBlur: Pauziraj animirani omot kada aplikacija nije u fokusu
-settings.option.visual.playerMaterial: Materijal reproduktora
+settings.option.visual.pauseAnimatedOnBlur: Pauziraj animiranu grafiku kada nije u fokusu
+settings.option.visual.playerMaterial: Materijal playera
 settings.option.visual.playerMaterial.blur: Zamućenje
 settings.option.visual.playerMaterial.blur.description: Upotrijebite poluprozirni matirani materijal za traku reproduktora 'Sada svira' bez efekta loma svjetlosti Liquid Glass.
 settings.option.visual.playerMaterial.default.description: "Prati zadane postavke platforme: Liquid Glass na macOS-u, zamućenje na ostalim platformama."
@@ -5241,16 +5346,16 @@ settings.option.visual.popularityThreshold.description: Minimalna popularnost po
 settings.option.visual.precisionScrollSpeed: Brzina preciznog pomicanja
 settings.option.visual.precisionScrollSpeed.description: Fino podesite pomicanje dodirnom površinom u novom (staklenom) pokretaču prozora. Niža vrijednost je sporija i preciznija za male prilagodbe; viša pomiče brže.
 settings.option.visual.purplePodcastPlaybackBar: Ljubičasta traka reprodukcije za podcaste
-settings.option.visual.realtimeVisualizer: Audio vizualizator u stvarnom vremenu
+settings.option.visual.realtimeVisualizer: Vizualizator zvuka u stvarnom vremenu
 settings.option.visual.realtimeVisualizer.description: Prikaži audio vizualizator u stvarnom vremenu na pjesmama koje se reproduciraju umjesto animiranih traka.
 settings.option.visual.searchType: Vrsta pretraživanja
 settings.option.visual.searchType.floating: Plutajuće
 settings.option.visual.searchType.inline: U nizu
-settings.option.visual.showBpmAndKey: Prikaži BPM i tonalitet na pjesmama u popisima pjesama i albumima
+settings.option.visual.showBpmAndKey: Prikaži BPM i tonalitet na pjesmama u popisima i albumima
 settings.option.visual.showBpmAndKey.description: Učitavanje sadržaja trajat će dulje kada je ova opcija omogućena.
 settings.option.visual.showPersonalInfo: Prikaži osobne podatke
-settings.option.visual.showPlaylistArtworkInSidebar: Prikaži omot popisa pjesama u bočnoj traci
-settings.option.visual.showPodcastsInSidebar: Prikaži podcaste u bočnoj traci
+settings.option.visual.showPlaylistArtworkInSidebar: Prikaži grafiku popisa na bočnoj traci
+settings.option.visual.showPodcastsInSidebar: Prikaži podcaste na bočnoj traci
 settings.option.visual.showPodcastsInSidebar.description: Podrška za podcaste se još uvijek ponovno izgrađuje, pa stavka u Knjižnici za sada prikazuje samo rezervirano mjesto.
 settings.option.visual.showQuickActions: Prikaži brze radnje
 settings.option.visual.showWatchMusicVideoWhenAvailable: Prikaži "Gledaj glazbeni video" kada je dostupno
@@ -5276,7 +5381,7 @@ settings.option.visual.theme.light: Svijetla
 settings.option.visual.theme.manageStyles: Upravljaj stilovima
 settings.option.visual.theme.uninstall: Deinstaliraj
 settings.option.visual.theme.viewInfo: Prikaži informacije
-settings.option.visual.titleBarStyle: Stil trake naslova
+settings.option.visual.titleBarStyle: Stil naslovne trake
 settings.option.visual.titleBarStyle.winui: WinUI
 settings.option.visual.topToolbarWidget: Widget gornje alatne trake
 settings.option.visual.transparency: Omogući prozirnost
@@ -5286,7 +5391,7 @@ settings.option.visual.uiscale: Skaliranje sučelja
 settings.option.visual.useAdaptiveColors: Koristi prilagodljive boje
 settings.option.visual.useAdaptiveColors.description: Promijeni istaknutu boju kako bi odgovarala trenutnoj pjesmi
 settings.option.visual.useAdaptiveColors.popup: Prilagodljive boje primijenit će se na sljedećoj pjesmi.
-settings.option.visual.verticalDrawerMode: Položaj reda čekanja i tekstova
+settings.option.visual.verticalDrawerMode: Položaj reda čekanja i teksta pjesme
 settings.option.visual.verticalDrawerMode.auto.description: Koristi donju ladicu ispod reproduktora/sadržaja na uspravnim zaslonima, a bočnu ladicu na širokim zaslonima.
 settings.option.visual.verticalDrawerMode.bottom: Donja ladica
 settings.option.visual.verticalDrawerMode.bottom.description: Uvijek prikaži red čekanja i tekstove u donjoj ladici ispod reproduktora/sadržaja.
@@ -5296,11 +5401,11 @@ settings.option.visual.verticalDrawerMode.side.description: Uvijek prikaži red 
 settings.option.visual.vibrancyMode.acrylic: Acrylic
 settings.option.visual.vibrancyMode.mica: Mica
 settings.option.visual.vibrancyMode.tabbed: Tabbed
-settings.option.visual.vibrancySettings: Postavke efekta živosti
+settings.option.visual.vibrancySettings: Postavke živosti
 settings.option.visual.windowBackgroundStyle: Stil pozadine prozora
 settings.option.visual.windowColor: Boja nijanse prozora
-settings.option.visual.windowControlPosition: Položaj kontrola prozora
-settings.option.visual.windowingMode: Način pomicanja i renderiranja
+settings.option.visual.windowControlPosition: Položaj upravljačkih gumba prozora
+settings.option.visual.windowingMode: Način pomicanja i prikaza
 settings.option.visual.windowingMode.auto: Automatski (prilagođeno dodirnoj površini)
 settings.option.visual.windowingMode.description: Odaberite kako aplikacija iscrtava i pomiče sadržaj. Opcija „Automatski” preporučuje se većini korisnika, dok na određenim uređajima s dodirnom površinom opcija „Staro” može biti responzivnija.
 settings.option.visual.windowingMode.fallbackNotice.body: Cider umjesto toga koristi stari način rada.
@@ -5339,6 +5444,17 @@ settings.power.savers: Štednja energije
 settings.power.summary.count: "Uključeno: {{high}} s visokim utjecajem, {{medium}} sa srednjim utjecajem"
 settings.power.summary.high: Visok utjecaj
 settings.power.summary.medium: Srednji utjecaj
+settings.privacy.appPreferences: Postavke aplikacije
+settings.privacy.appPreferences.description: Podijelite postavke aplikacije kako bismo znali kako želite konfigurirati Cider.
+settings.privacy.appUsage: Upotreba specifična za aplikaciju
+settings.privacy.appUsage.description: Šalje anonimne podatke o upotrebi za funkcije specifične za Cider. Ne uključuje osobne podatke ni podatke iz Apple Musica.
+settings.privacy.audioLabs: Cider Audio laboratorij
+settings.privacy.audioLabs.description: Šalje informacije o tome kako ste konfigurirali Cider Audio laboratorij.
+settings.privacy.deviceSpecs: Specifikacije uređaja
+settings.privacy.deviceSpecs.description: "Šalje informacije o vašem trenutnom hardveru: procesoru, grafičkoj kartici, RAM-u, audio uređajima i operacijskom sustavu. Podaci su osnovni i ne uključuju serijske brojeve ni ID-ove uređaja."
+settings.privacy.replay: Doprinesi povijesti slušanja za Cider Replay
+settings.privacy.replay.description: Anonimno šalje povijest slušanja kako bi doprinijela Cideru projektu zajedničkog godišnjeg pregleda. Javna statistika može se pogledati na cider.sh/replay.
+settings.privacy.statement: U Cider Collectiveu vrlo ozbiljno shvaćamo privatnost. Ne prikupljamo nikakve osobne identifikacijske podatke i ne prodajemo podatke trećim stranama. Svi podaci koje odlučite podijeliti s nama koriste se za poboljšanje aplikacije i ne dijele se ni s kim drugim; svi osobni podaci koji bi mogli biti pohranjeni uklanjaju se prije slanja.
 settings.profile.crop.hint: Povucite za pomicanje, skrolajte za zumiranje
 settings.profile.crop.title: Pozicionirajte svoju fotografiju
 settings.profile.defaultName: Korisnik Apple Music
@@ -5346,17 +5462,18 @@ settings.profile.field.displayName: Prikazano ime
 settings.profile.field.displayName.description: Prikazuje se u bočnoj traci i u cijelom Cideru.
 settings.profile.field.handle.description: Vaše @korisničkoime, koristi se za dijeljenje.
 settings.profile.field.photo: Profilna fotografija
+settings.profile.field.photo.change: Promijeni profilnu fotografiju
 settings.profile.field.photo.description: Trenutno je postavljena prilagođena fotografija.
 settings.profile.header.identity: Uredi profil
 settings.profile.header.region: Regija i jezik
-settings.profile.header.visibility: Prikaz u bočnoj traci
+settings.profile.header.visibility: Prikaz na bočnoj traci
 settings.profile.language.description: Jezik metapodataka kataloga za odabranu trgovinu.
-settings.profile.option.showHandle: Prikaži korisničko ime društvenih mreža
-settings.profile.option.showMainMenu: Glavni izbornik u području profila bočne trake
+settings.profile.option.showHandle: Prikaži društveni nadimak
+settings.profile.option.showMainMenu: Glavni izbornik u području profila na bočnoj traci
 settings.profile.option.showName: Prikaži ime profila
-settings.profile.option.showProfile: Prikaži profil u bočnoj traci
+settings.profile.option.showProfile: Prikaži profil na bočnoj traci
 settings.profile.policy.allowed: Dopušteno
-settings.profile.policy.label: Eksplicitan sadržaj
+settings.profile.policy.label: Eksplicitni sadržaj
 settings.profile.policy.restricted: Ograničeno
 settings.profile.signOut.confirmMessage: Vratit ćete se na zaslon za prijavu, a lokalna predmemorija knjižnice bit će izbrisana. Nastaviti?
 settings.profile.signOut.confirmTitle: Odjaviti se iz usluge Apple Music?
@@ -5394,6 +5511,7 @@ settings.resetCider.confirm.ok: Ponovno postavi Cider
 settings.resetCider.confirm.title: Ponovno postaviti Cider?
 settings.resetCider.confirm.warning: Ova se radnja ne može poništiti. Cider će se ponovno pokrenuti nakon ponovnog postavljanja.
 settings.resetCider.confirm.willReset: Bit će ponovno postavljeno
+settings.resetCider.deselectAll: Poništi sve odabire
 settings.resetCider.error: Došlo je do pogreške tijekom ponovnog postavljanja.
 settings.resetCider.group.accounts: Računi
 settings.resetCider.group.core: Ponovno postavljanje
@@ -5403,6 +5521,10 @@ settings.resetCider.resetButton: Ponovno postavi Cider
 settings.resetCider.resetting: Ponovno postavljanje…
 settings.resetCider.selectAll: Odaberi sve
 settings.resetCider.title: Ponovno postavljanje aplikacije Cider
+settings.search.empty: Nijedna postavka ne odgovara ovoj pretrazi.
+settings.search.pages: Stranice
+settings.search.resultCount: "{{count}} postavki odgovara"
+settings.search.resultCountOne: 1 postavka odgovara
 settings.sleepTimer.endsIn: "Završava za: {{remainingTime}} ({{endTime}})"
 settings.sleepTimer.notSet: Mjerač vremena nije postavljen
 settings.sleepTimer.title: Postavi mjerač vremena spavanja
@@ -5412,7 +5534,7 @@ settings.smartPlaylists.section.maintenance.description: Prisilno pokrenite sva 
 settings.smartPlaylists.section.rules: Pravila
 settings.smartPlaylists.section.rules.description: Određuje primjenjuje li Cider ugrađena pravila popisa pjesama i koliko ih često ponovno procjenjuje.
 settings.smartPlaylists.section.rules.descriptionV2: Određuje primjenjuje li Cider ugrađena pravila popisa. Ona se ponovno pokreću uz Vrijeme osvježavanja u pozadini u Potrošnji energije.
-settings.sweetener.useSystemAccentColor: Koristi istaknutu boju sustava
+settings.sweetener.useSystemAccentColor: Koristi sistemsku boju naglaska
 settings.takeout.chooseFile: Odaberi datoteku…
 settings.takeout.error.badVersion: U toj datoteci nedostaju informacije o verziji.
 settings.takeout.error.generic: Nije moguće pročitati tu datoteku.
@@ -5451,7 +5573,7 @@ settings.troubleshooting.impressionReporting.warning2: Ovo je stvarna odlazna te
 settings.troubleshooting.logFile: Datoteka zapisnika
 settings.troubleshooting.logFile.actions: Radnje s datotekom zapisnika
 settings.troubleshooting.logFile.desc: Pregledajte, kopirajte ili očistite datoteku zapisnika
-settings.troubleshooting.mkliteDebug: MKLite zapisivanje ispravljanja pogrešaka
+settings.troubleshooting.mkliteDebug: Zapisivanje otklanjanja pogrešaka za MKLite
 settings.troubleshooting.mkliteDebug.desc: Detaljan izlaz konzole iz MKLite-a — korisni podaci PlayActivity (JSPLAY), promjene pjesama i stanje reprodukcije. Korisno pri usporedbi onoga što šaljemo Appleu s music.apple.com. Ostavite isključeno za uobičajenu upotrebu.
 settings.troubleshooting.mkLoadingMethod: MusicKit Način učitavanja
 settings.troubleshooting.mkLoadingMethod.warning1: Promijenite način koji se koristi za učitavanje MusicKit-a, ovo se koristi za rješavanje potencijalnih problema s učitavanjem nakon ažuriranja MusicKit-a.
@@ -5459,9 +5581,68 @@ settings.troubleshooting.mkLoadingMethod.warning2: Ova se postavka NE bi trebala
 settings.troubleshooting.mkLoadingMethod.warning3: Ova opcija nije namijenjena rješavanju općih problema s povezivanjem ili reprodukcijom.
 settings.troubleshooting.rebootMk: Ponovno pokreni MusicKit
 settings.troubleshooting.rebootMk.desc: Ponovno pokrenite MusicKit kako biste riješili probleme s reprodukcijom
-settings.troubleshooting.testSignIn: Testiraj prijavu u Apple Music
+settings.troubleshooting.testSignIn: Testiraj prijavu na Apple Music
 settings.troubleshooting.testSignIn.desc: Pokrenite skočni prozor za prijavu u Apple Music kako biste provjerili radi li prijava, a zatim potvrdite valjanost tokena putem API-ja. Ništa se ne sprema i vaša trenutna sesija ostaje netaknuta.
 settings.troubleshooting.title: Rješavanje problema
+settings.tweaks.animateArtworkOnHover.description: Reproduciraj animiranu naslovnicu kada pokazivač miruje na njoj.
+settings.tweaks.artworkFadeIn.description: Odmah prikaži naslovnice umjesto postupnog pojavljivanja tijekom učitavanja.
+settings.tweaks.artworkHighlighting.description: Dodaj blagu sjenu i isticanje naslovnicama u mrežama i popisima.
+settings.tweaks.artworkLoadingMethod.description: Lijeno učitavanje naslovnica dok ulaze u vidno polje. Nestrpljivo učitavanje odmah učitava sve.
+settings.tweaks.card.musicVideos: Glazbeni videi
+settings.tweaks.ciderAudioBadges.description: Prikaži oznake Cider Audio pored pjesme u playeru.
+settings.tweaks.ciderAudioToolbar.description: Prikaži gumb Cider Audio na alatnoj traci.
+settings.tweaks.compactSidebarSize: Veličina kompaktne bočne trake
+settings.tweaks.contextMenuIcons.description: Koje stavke izbornika prikazuju ikonu.
+settings.tweaks.floatingSearchBlur: Zamućenje iza plutajuće pretrage
+settings.tweaks.floatingSearchClear: Očisti plutajuću pretragu pri zatvaranju
+settings.tweaks.forceMpWindowControls.description: Koristi vlastite gumbe prozora Ciderа umjesto sistemskih.
+settings.tweaks.hideHeroItems.description: Sakrij velike istaknute banere na vrhu stranice Pregled.
+settings.tweaks.homeButtonLocation.description: Gdje se nalazi gumb Početna.
+settings.tweaks.immersiveArtworkHighlight: Isticanje naslovnica u imerzivnom prikazu
+settings.tweaks.immersiveArtworkHighlight.description: Dodaj isticanje naslovnici u imerzivnom prikazu.
+settings.tweaks.immersiveBackgroundBpm.description: Animiraj pozadinu u ritmu tempa pjesme.
+settings.tweaks.immersiveControlsTimeout: Vrijeme do skrivanja kontrola u imerzivnom prikazu
+settings.tweaks.immersiveControlsTimeout.description: Broj sekundi prije nego se kontrole sakriju.
+settings.tweaks.immersiveHideLyrics.description: Sakrij panel stihova za pjesme bez stihova.
+settings.tweaks.immersiveLyricGlow: Sjaj na aktivnom retku stihova
+settings.tweaks.immersiveLyricGlow.description: Dodaj sjaj retku koji se trenutno pjeva.
+settings.tweaks.immersiveMaxLyricSize.description: Najveća veličina na koju stihovi mogu narasti u imerzivnom prikazu.
+settings.tweaks.mainMenuPosition.description: Gdje se nalazi gumb glavnog izbornika.
+settings.tweaks.mavericksLcdStyle: LCD stil Mavericks
+settings.tweaks.mavericksLcdStyle.description: Izgled prikaza trenutne reprodukcije u rasporedu Mavericks.
+settings.tweaks.miniPlayerAnimatedArtwork.description: Reproduciraj animiranu naslovnicu u prozoru mini playera.
+settings.tweaks.moveUpLinks.description: Postavi poveznice na više sadržaja na vrh stranice Pregled.
+settings.tweaks.musicVideoBadge.description: Prikaži gumb u playeru kada pjesma ima glazbeni spot.
+settings.tweaks.pauseAnimatedOnBlur.description: Pauziraj animiranu naslovnicu kada Cider nije aktivan prozor.
+settings.tweaks.progressAccent: Traka napretka u boji naglaska
+settings.tweaks.progressAccent.description: Ispuni traku napretka pjesme bojom naglaska.
+settings.tweaks.resizableMiniPlayer.description: Dopusti promjenu veličine prozora mini playera.
+settings.tweaks.richGridNoScrollAnimation: Trenutačno pomicanje u mreži albuma
+settings.tweaks.richGridNoScrollAnimation.description: Skoči na album bez animacije pomicanja.
+settings.tweaks.richGridOpenPage: Otvaraj albume kao stranice iz mreže albuma
+settings.tweaks.richGridOpenPage.description: Idi na stranicu albuma umjesto proširivanja u mreži.
+settings.tweaks.richGridScrollPosition: Položaj pomicanja mreže albuma
+settings.tweaks.richGridScrollPosition.description: Mjesto na koje se mreža pomakne kada otvoriš album.
+settings.tweaks.scrollbarType.description: Koristi Ciderove vlastite klizače ili sustavne.
+settings.tweaks.searchStyle: Stil pretraživanja
+settings.tweaks.searchStyle.description: Pretraži u naslovnoj traci ili u panelu preko stranice.
+settings.tweaks.section.artwork: Naslovnica
+settings.tweaks.section.browse: Pregled
+settings.tweaks.section.immersive: Imerzivno
+settings.tweaks.section.lyrics: Stihovi
+settings.tweaks.section.pagesGrids: Stranice i mreže
+settings.tweaks.section.playerBar: Traka playera
+settings.tweaks.section.search: Pretraživanje
+settings.tweaks.section.sidebarNavigation: Bočna traka i navigacija
+settings.tweaks.section.windowToolbar: Prozor i alatna traka
+settings.tweaks.showBitrate.description: Prikaži bitrate streama pored pjesme u playeru.
+settings.tweaks.sidebarPlaylistArtwork.description: Prikaži naslovnicu svake playliste pored njezina naziva.
+settings.tweaks.simpleArtworkMask.description: Postupno stapaj dno pozadinske naslovnice.
+settings.tweaks.sonomaLyricArc: Zakrivljeni stihovi u Sonomi
+settings.tweaks.sonomaRadialMask: Alternativna maska Sonome
+settings.tweaks.volumeIosStyle: Klizač glasnoće u iOS stilu
+settings.tweaks.volumeIosStyle.description: Prikaži klizač glasnoće u stilu koji se koristi na iPhoneu.
+settings.tweaks.windowControlPosition.description: S koje strane se nalaze gumbi prozora.
 settings.updates.action.check: Provjeri ažuriranja
 settings.updates.action.install: Instaliraj ažuriranje
 settings.updates.action.restart: Ponovno pokreni Cider
@@ -5472,7 +5653,7 @@ settings.updates.build: Sastav
 settings.updates.channel: Kanal
 settings.updates.codename: Kodno ime
 settings.updates.currentlyRunning: Trenutačno pokrenuto
-settings.updates.firstInstalled: Prva instalacija
+settings.updates.firstInstalled: Prvi put instalirano
 settings.updates.platform: Platforma
 settings.updates.progress.failed: Ažuriranje nije uspjelo
 settings.updates.progress.failed.sub: Došlo je do pogreške tijekom ažuriranja.
@@ -5493,39 +5674,44 @@ settings.updates.progress.working.sub: Strpite se trenutak, ovo će trajati samo
 settings.updates.section.about: O vašoj verziji
 settings.updates.section.alsoAvailable: Također dostupno
 settings.updates.section.history: Povijest ažuriranja
-settings.updates.section.whatsNew: Što je novo u aplikaciji Cider
-settings.updates.status.available: Dostupno je ažuriranje
+settings.updates.section.whatsNew: Novosti u Ciderу {version}
+settings.updates.status.available: Ažuriranje je dostupno
 settings.updates.status.checking: Provjera ažuriranja...
 settings.updates.status.failed: Ažuriranje nije uspjelo
 settings.updates.status.idle: Cider je ažuran
 settings.updates.status.success: Potrebno je ponovno pokretanje
 settings.updates.status.working: Instaliranje...
 settings.visual.card.appBackground: Pozadina aplikacije
-settings.visual.card.behaviorLyrics: Ponašanje i tekstovi
+settings.visual.card.behavior: Ponašanje
+settings.visual.card.behaviorLyrics: Ponašanje i stihovi
 settings.visual.card.browse: Pregledaj
 settings.visual.card.contentFilter: Filtar sadržaja
 settings.visual.card.experimental: Eksperimentalno
-settings.visual.card.fsrUpscaling: FSR skaliranje
-settings.visual.card.moreAnimatedArtwork: Više animiranih naslovnica
-settings.visual.card.playerEffects: Efekti reproduktora
+settings.visual.card.fsrUpscaling: FSR povećanje
+settings.visual.card.moreAnimatedArtwork: Više animirane naslovnice
+settings.visual.card.playerEffects: Efekti playera
 settings.visual.card.sidebarNavigation: Bočna traka i navigacija
-settings.visual.card.trackMetadata: Metapodaci pjesme
+settings.visual.card.trackMetadata: Metapodaci skladbe
 settings.visual.card.ultraHdr: Ultra HDR poboljšanje
-settings.visual.editorialLayout: Koristi urednički izgled
+settings.visual.editorialLayout: Koristi uredski raspored
 settings.visual.editorialLayout.desc: Prikazuje urednički natpis i primjenjuje paletu boja na određene albume
-settings.visual.editorialPreferenceOrder: Redoslijed uredničkih preferencija
+settings.visual.editorialPreferenceOrder: Redoslijed uredskih preferencija
 settings.visual.section.appearance: Izgled
 settings.visual.section.appearance.description: Shema boja, istaknute boje i pozadina aplikacije.
-settings.visual.section.artwork: Naslovnice i kretanje
+settings.visual.section.artwork: Umjetnička djela i pokret
 settings.visual.section.artwork.description: Animirane naslovnice i postavke kretanja.
 settings.visual.section.content: Pregledavanje i sadržaj
 settings.visual.section.content.description: Izgledi stranica, postavke pregledavanja i filtriranje sadržaja.
 settings.visual.section.customCss.description: Primijenite vlastiti CSS povrh Cider stiliziranja.
 settings.visual.section.layout: Raspored
 settings.visual.section.layout.description: Raspored aplikacije, stil reproduktora, bočna traka i navigacija.
+settings.visual.section.pages: Stranice
+settings.visual.section.pages.description: Način rasporeda stranica albuma i popisa za reprodukciju.
+settings.visual.section.themeColors: Tema i boje
 settings.visual.section.window: Prozor
 settings.visual.section.window.description: Okvir prozora, živost, kontrole i skaliranje.
-settings.visual.vibrancy.acrylicDarkness: Vrijednost zatamnjenja akrila
+settings.visual.section.window.descriptionV2: Okvir prozora, živost, prikaz i skaliranje.
+settings.visual.vibrancy.acrylicDarkness: Vrijednost tamnoće akrila
 settings.visual.vibrancy.mode.acrylic: Akril
 settings.visual.vibrancy.mode.mica: Mica
 settings.visual.vibrancy.mode.none: Bez
@@ -6015,7 +6201,7 @@ term.size: Veličina
 term.size.compact: Kompaktno
 term.size.normal: Normalno
 term.skip: Preskoči
-term.sleepTimer: Mjerač vremena za spavanje
+term.sleepTimer: Mjerač vremena spavanja
 term.snippets: Isječci
 term.socials: Društvene mreže
 term.socialTeam: Društveni tim
@@ -6095,8 +6281,8 @@ term.unavailableTrack: Nedostupno
 term.uniqueAlbums: Jedinstveni albumi
 term.uniqueArtists: Jedinstveni izvođači
 term.uniqueSongs: Jedinstvene pjesme
-term.unknownArtist: Nepoznati izvođač
-term.unknownDevice: Nepoznati uređaj
+term.unknownArtist: Nepoznat izvođač
+term.unknownDevice: Nepoznat uređaj
 term.unknownError: Nepoznata pogreška
 term.unmute: Uključi zvuk
 term.unnamed: Neimenovano
@@ -6105,7 +6291,7 @@ term.updates: Ažuriranja
 term.upNext: Sljedeće na redu
 term.username: Korisničko ime
 term.userPresets: Korisničke postavke
-term.userSubmitted: Poslao korisnik
+term.userSubmitted: Dodao korisnik
 term.userToken: Korisnički token
 term.variables: Varijable
 term.version: Verzija
