@@ -1388,6 +1388,14 @@ lyrics.loadingLyrics: Chargement des paroles...
 lyrics.lyricsBy: Paroles de
 lyrics.noLyricsAvailable: Aucune parole disponible pour ce morceau
 lyrics.selectProvider: Sélectionner le fournisseur de paroles
+lyrics.translation.chip.pronunciation: Prononciation
+lyrics.translation.chip.translated: Traduit
+lyrics.translation.credit: Traduit par {{source}}
+lyrics.translation.credit.apple: Traduit par Apple Music
+lyrics.translation.menu.hide: Masquer les traductions
+lyrics.translation.menu.hidePronunciation: Masquer la prononciation
+lyrics.translation.menu.show: Afficher les traductions
+lyrics.translation.source.community: Communauté
 marketplace.trustedAuthor.tooltip: Cet auteur est de confiance et vérifié
 menu.signIn: Se connecter
 menu.signOut: Se déconnecter
@@ -3192,6 +3200,18 @@ playbackHealth.backgroundFreeze.title: Votre système a mis Cider en pause en ar
 playbackHealth.hostReinstall.label: Cider doit être réinstallé
 playbackHealth.hostReinstall.message: Apple Music refuse cette installation. Réinstallez Cider depuis Cider Taproom.
 playbackHealth.localIssue: Problème de lecture locale
+playbackSpeed.keepPitch: Conserver la hauteur
+playbackSpeed.preset.normal: Normal
+playbackSpeed.preset.slowed: Ralenti
+playbackSpeed.preset.spedUp: Accéléré
+playbackSpeed.rateValue: "{{rate}}×"
+playbackSpeed.reset: Réinitialiser
+playbackSpeed.reverb: Réverbération
+playbackSpeed.reverbUnavailable: La réverbération n'est pas disponible avec le passthrough Dolby Atmos
+playbackSpeed.settings: Réglages de la vitesse de lecture
+playbackSpeed.title: Vitesse de lecture
+playbackSpeed.unavailable.radio: La vitesse ne peut pas être modifiée sur la radio en direct
+playbackSpeed.unavailable.video: La vitesse ne peut pas être modifiée pour les clips vidéo
 playlist.collaborative.tooltip: Cette playlist est ouverte aux collaborateurs
 playlist.collaborators.andOthers: "{{name}} et {{count}} autres"
 playlist.collaborators.count: "{{count}} contributeurs"
@@ -3438,6 +3458,7 @@ settings.audio.section.output: Sortie
 settings.audio.section.output.description: Le périphérique de sortie de Cider et le mode de transmission de la lecture.
 settings.audio.section.playback: Lecture
 settings.audio.section.playback.description: Qualité audio, audio spatial, modes d'écoute et vitesse de lecture des podcasts.
+settings.audio.section.playback.descriptionV2: Qualité audio, audio spatial, modes d'écoute et vitesse de lecture.
 settings.audio.section.volume: Volume
 settings.audio.section.volume.description: Égalisation du volume, sensibilité de la molette de défilement et comportement du curseur.
 settings.audio.signal.atmosCodecs: Codecs Atmos disponibles
@@ -3765,6 +3786,9 @@ settings.connectivity.scrobbler.roster.scrobbling: Scrobbling
 settings.connectivity.scrobbler.roster.scrobblingAs: Scrobbling en tant que {account}
 settings.connectivity.scrobbler.roster.scrobblingTo: Scrobbling vers {account}
 settings.connectivity.scrobbler.roster.signOut: Se déconnecter de {service}
+settings.connectivity.scrobbler.roster.signOut.message: Cider cesse de envoyer les écoutes à ce compte. Vous pourrez le reconnecter à tout moment.
+settings.connectivity.scrobbler.roster.signOut.ok: Se déconnecter
+settings.connectivity.scrobbler.roster.signOut.title: Se déconnecter de {service} ?
 settings.connectivity.scrobbler.roster.switchLabel: Scrobbler vers {service}
 settings.connectivity.scrobbler.roster.waiting: En attente du navigateur…
 settings.connectivity.scrobbler.toast.failed: Impossible de scrobbler vers {services}
@@ -3898,13 +3922,19 @@ settings.extensions.snippets.createTitle: Créer un nouvel extrait CSS
 settings.extensions.snippets.deleteConfirm: Voulez-vous vraiment supprimer cet extrait CSS ? Cette action est irréversible.
 settings.extensions.snippets.deleted: Extrait supprimé
 settings.extensions.snippets.deleteTitle: Supprimer l'extrait CSS
+settings.extensions.snippets.editTitle: Modifier l'extrait CSS
 settings.extensions.snippets.empty: Aucun extrait CSS installé.
 settings.extensions.snippets.exported: Extrait exporté
+settings.extensions.snippets.fieldCreatedBy: Créé par
+settings.extensions.snippets.fieldDescription: Description
+settings.extensions.snippets.fieldName: Nom de l'extrait
 settings.extensions.snippets.imported: "{{ count }} extrait(s) importé(s)"
 settings.extensions.snippets.importFailed: "Échec de l'importation de {{ file }} : {{ error }}"
 settings.extensions.snippets.invalidFile: "Format de fichier non valide : {{ file }}"
 settings.extensions.snippets.namePrompt: Saisissez un nom pour votre nouvel extrait CSS.
 settings.extensions.snippets.orderUpdated: Ordre mis à jour
+settings.extensions.snippets.preview: Aperçu
+settings.extensions.snippets.previewDesc: Prévisualiser les modifications sans les enregistrer
 settings.extensions.snippets.saved: Extrait enregistré
 settings.extensions.themeCreated: Nouveau thème créé avec succès
 settings.extensions.themes.activeCount: "{{ count }} actifs"
@@ -4038,11 +4068,15 @@ settings.lyrics.card.providers: Fournisseurs
 settings.lyrics.card.songOverrides: Paramètres par morceau
 settings.lyrics.localeOverrides: Règles par langue
 settings.lyrics.localeOverrides.add: Ajouter une règle de langue
+settings.lyrics.localeOverrides.addRule: Ajouter une règle
 settings.lyrics.localeOverrides.audioLocale: Langue audio
 settings.lyrics.localeOverrides.desc: Définissez un fournisseur et des préférences de traduction personnalisés pour les chansons dans des langues spécifiques. Lorsque la langue audio d'une chanson correspond à une règle, ces paramètres remplaceront les valeurs par défaut.
+settings.lyrics.localeOverrides.dialog.addTitle: Ajouter une règle
+settings.lyrics.localeOverrides.dialog.editTitle: Modifier la règle
 settings.lyrics.localeOverrides.dialogTitle.add: Ajouter une règle de langue
 settings.lyrics.localeOverrides.dialogTitle.edit: Modifier la règle de langue
 settings.lyrics.localeOverrides.empty: Aucune règle pour l'instant. Utilisez + pour en ajouter une.
+settings.lyrics.localeOverrides.emptyV2: Aucune règle pour le moment.
 settings.lyrics.localeOverrides.overrideTranslation: Remplacer la traduction
 settings.lyrics.localeOverrides.preferredProvider: Fournisseur préféré
 settings.lyrics.localeOverrides.provider.apple: Apple Music
@@ -4090,11 +4124,17 @@ settings.lyrics.section.advanced: Avancé
 settings.lyrics.section.advanced.description: Décalage de synchronisation, taux de rafraîchissement des animations et timing de défilement ajusté manuellement.
 settings.lyrics.section.display: Affichage
 settings.lyrics.section.display.description: Les lignes de paroles qui s'affichent, leur animation et les repères temporels affichés au survol.
+settings.lyrics.section.overrides: Exceptions
+settings.lyrics.section.overrides.description: Règles qui remplacent le fournisseur par défaut pour les morceaux dans une langue donnée, ou pour un seul titre.
 settings.lyrics.section.sources: Sources
 settings.lyrics.section.sources.description: La provenance des paroles, et les règles par langue ou par morceau qui prévalent sur le fournisseur par défaut.
+settings.lyrics.section.sources.descriptionV2: D'où viennent les paroles, et quelle source est prioritaire lorsque plusieurs en proposent.
 settings.lyrics.section.translation: Traduction
 settings.lyrics.section.translation.description: Les paroles traduites, leur langue cible et si la version originale reste affichée à l'écran.
 settings.lyrics.trackOverrides.clearAll: Effacer toutes les exceptions
+settings.lyrics.trackOverrides.clearAll.message: Chaque titre revient au fournisseur par défaut et à l'état vocal indiqué par Apple.
+settings.lyrics.trackOverrides.clearAll.title: Effacer toutes les exceptions ?
+settings.lyrics.trackOverrides.clearAllShort: Tout effacer
 settings.lyrics.trackOverrides.desc: Les morceaux listés ici utilisent toujours le fournisseur de paroles que vous avez verrouillé, ou l'état vocal que vous avez défini manuellement au lieu de celui signalé par Apple. Ces exceptions sont définies depuis le menu des paroles et le menu du clic droit du morceau.
 settings.lyrics.trackOverrides.empty: Aucune exception pour l'instant. Tout ce que vous verrouillez depuis ces menus s'affichera ici.
 settings.lyrics.trackOverrides.lyricsForced: Paroles forcées
@@ -4380,6 +4420,7 @@ settings.option.audio.audioLab.description: Une sélection d'effets audio dével
 settings.option.audio.audioLab.subheader: Conçu par Cider Acoustic Technologies en Californie
 settings.option.audio.audioQuality: Qualité audio
 settings.option.audio.automix: Automix
+settings.option.audio.automix.pausedForSpeed: Le mixage automatique est suspendu lorsque la vitesse de lecture n'est pas 1×.
 settings.option.audio.changePlaybackRate: Modifier la vitesse de lecture
 settings.option.audio.ciderAudio: Cider Audio
 settings.option.audio.ciderAudio.showBadges: Afficher les badges dans la lecture en cours
@@ -4455,6 +4496,12 @@ settings.option.audio.outputDevice: Périphérique de sortie
 settings.option.audio.playback: Lecture
 settings.option.audio.playbackRate: Vitesse de lecture
 settings.option.audio.playbackRate.change: Modifier
+settings.option.audio.playbackSpeed: Contrôle de la vitesse de lecture
+settings.option.audio.playbackSpeed.description: Affiche un contrôle de vitesse dans le lecteur pour une écoute ralentie ou accélérée, avec réverbération facultative.
+settings.option.audio.playbackSpeed.keepPitch: Conserver la hauteur
+settings.option.audio.playbackSpeed.keepPitch.description: Modifie la vitesse sans changer la hauteur. Désactivez pour un son ralenti ou accéléré.
+settings.option.audio.playbackSpeed.reverb: Réverbération
+settings.option.audio.playbackSpeed.reverb.description: Ajoute une réverbération de pièce à la lecture en cours.
 settings.option.audio.podcastPlayback: Lecture des podcasts
 settings.option.audio.podcasts.playbackRate: Vitesse de lecture des podcasts Apple
 settings.option.audio.podcasts.playbackRate.description: Ajuste la vitesse de lecture des podcasts.
@@ -4630,6 +4677,8 @@ settings.option.experimental.unknownPlugin.description:
   by: "@lumaa-dev"
   issue: 4
   superseded_at: 2026-07-08
+settings.option.experiments.aura: Aura
+settings.option.experiments.aura.description: Teinte l'arrière-plan de l'app avec les couleurs de la page actuelle.
 settings.option.experiments.chromecast: Activer Chromecast
 settings.option.experiments.chromecast.description: Ajoute un bouton de diffusion pour les appareils Google Cast sur ce réseau.
 settings.option.experiments.chromecastLyrics: Paroles Chromecast
@@ -4752,6 +4801,8 @@ settings.option.lyrics.localeOverrides.description: Définir des règles personn
 settings.option.lyrics.musixmatchPreferredLanguage: Langue préférée pour la traduction Musixmatch
 settings.option.lyrics.preferUserLyrics: Privilégier les paroles soumises par les utilisateurs
 settings.option.lyrics.preferUserLyrics.description: Lorsque disponible, donner la priorité aux paroles soumises par les utilisateurs si leur synchronisation est de meilleure qualité.
+settings.option.lyrics.pronunciation: Afficher la prononciation
+settings.option.lyrics.pronunciation.description: Affiche la prononciation des paroles dans une autre écriture, en lettres latines, lorsqu'Apple Music la fournit.
 settings.option.lyrics.provider.apple: Apple Music
 settings.option.lyrics.provider.auto: Auto (meilleure disponible)
 settings.option.lyrics.provider.mxm: Musixmatch
@@ -4781,9 +4832,12 @@ settings.option.lyrics.translationLanguage: Langue de traduction
 settings.option.lyrics.translationLanguage.description: La langue dans laquelle traduire les paroles. Utilisé uniquement lorsque le mode de traduction est défini sur Manuel.
 settings.option.lyrics.translationMode: Mode de traduction
 settings.option.lyrics.translationMode.appLanguage: Automatique selon la langue de l'app
+settings.option.lyrics.translationMode.appLanguageShort: Langue de l'app
 settings.option.lyrics.translationMode.description: Définir comment la langue de traduction cible est déterminée.
 settings.option.lyrics.translationMode.manual: Manuel (utiliser la langue sélectionnée)
+settings.option.lyrics.translationMode.manualShort: Manuel
 settings.option.lyrics.translationMode.system: Automatique selon la langue du système
+settings.option.lyrics.translationMode.systemShort: Langue du système
 settings.option.lyrics.translationSettings: Réglages de traduction
 settings.option.lyrics.translationSettings.description: Configurer le comportement de la traduction des paroles
 settings.option.medium: Moyen
@@ -4987,6 +5041,14 @@ settings.option.visual.fonts: Polices
 settings.option.visual.forceMpWindowControls: Utiliser les commandes de fenêtre multiplateforme
 settings.option.visual.forceRoundedViewport: Utiliser une fenêtre d'affichage arrondie
 settings.option.visual.forceRoundedViewport.description: Appliquer des angles arrondis à la zone d'affichage principale sur toutes les dispositions
+settings.option.visual.glazeType: Reflet
+settings.option.visual.glazeType.description: La lumière de bordure dessinée autour des surfaces en verre.
+settings.option.visual.glazeType.diffused: Diffus
+settings.option.visual.glazeType.diffused.description: Une lueur douce le long de toute la bordure.
+settings.option.visual.glazeType.liquidGlass: Liquid Glass
+settings.option.visual.glazeType.liquidGlass.description: Un liseré net qui s'estompe vers les extrémités.
+settings.option.visual.glazeType.none: Aucun
+settings.option.visual.glazeType.none.description: Aucun contour en surbrillance.
 settings.option.visual.hardwareAcceleration: Accélération matérielle
 settings.option.visual.hardwareAcceleration.description: Nécessite un redémarrage
 settings.option.visual.headerStyle: Style de l'en-tête des albums et playlists
