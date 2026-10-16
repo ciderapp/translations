@@ -61,6 +61,7 @@ action.cast.todevices: Транслювати на пристрої
 action.change: Змінити
 action.clear: Очистити
 action.close: Закрити
+action.configure: Налаштувати
 action.connect: Підключити
 action.connect.createCollabPlaylist: Створити спільний плейліст
 action.connect.listenTogether: Слухати разом
@@ -79,6 +80,7 @@ action.deleteFolder: Ви дійсно бажаєте видалити папк�
 action.deleteFolder.message: Усі папки та плейлісти в цій папці також будуть вилучені.
 action.deletePlaylist: Ви дійсно бажаєте видалити плейліст "{{playlistName}}"?
 action.deletepreset: Видалити пресет
+action.deny: Відмовити
 action.disablePlugins: Disable plugins for this session
 action.disconnect: Відключити
 action.dislike: Не подобається
@@ -623,6 +625,12 @@ assistant.sid.settings.freshDetail: Створіть весь плейлист �
 assistant.sid.settings.gemmaHere: Gemma тут
 assistant.sid.settings.gpu: Відеокарта
 assistant.sid.settings.group: Асистент
+assistant.sid.settings.helloEdit: Відкрийте плейлист і виберіть «Редагувати з Sid», і я його впорядкую.
+assistant.sid.settings.helloFresh: Назвіть настрій або кілька виконавців, і я складу повний плейлист.
+assistant.sid.settings.helloRequest: Попросіть пісню під час сету, і я знайду її в Apple Music.
+assistant.sid.settings.helloSet: Під час сету я вибиратиму наступну композицію за тональністю та темпом.
+assistant.sid.settings.helloSort: Попросіть мене відсортувати плейлист від спокійного до жвавого або так, щоб тональності плавно змінювалися.
+assistant.sid.settings.helloTrim: Я можу обрізати плейлист до години або зберегти один темп.
 assistant.sid.settings.inEdit: Коли редагуєте плейлист
 assistant.sid.settings.inEditDetail: Редагуйте з Sid у заголовку плейлиста
 assistant.sid.settings.inImmersive: В іммерсивному режимі
@@ -651,6 +659,11 @@ assistant.sid.settings.position: Положення
 assistant.sid.settings.positionDetail: Де Sid розміщується на обкладинці
 assistant.sid.settings.privacyChat: "Те, що ви пишете, залишається на цьому комп'ютері: Sid думає з Gemma прямо тут. Щоб знайти музику, Sid надсилає пошукові слова до Apple Music, а коли ви попросите, читає ваші плейлисти, нещодавнє прослуховування та Apple Music Replay з вашого облікового запису Apple Music. Нічого не зміниться, доки ви не натиснете «Застосувати»."
 assistant.sid.settings.privacyEngine: "Те, що ви вводите, залишається на цьому комп'ютері: Sid думає за допомогою {engine}, прямо тут. Щоб знайти музику, Sid надсилає пошукові слова до Apple Music, а коли ви попросите, читає ваші плейлисти, нещодавні прослуховування та Replay з Apple Music з вашого облікового запису Apple Music. Нічого не зміниться, доки ви не натиснете «Застосувати»."
+assistant.sid.settings.quipGaming: Ми з вашою {gpu} чудово спрацюємося.
+assistant.sid.settings.quipIntegrated: Інтегрована графіка. Я триматиму все легко й затишно.
+assistant.sid.settings.quipOther: Чудова {gpu}. Я найкраще її використаю.
+assistant.sid.settings.quipSetsOnly: Поки що ми з вашою {gpu} обмежимося запуском сетів.
+assistant.sid.settings.quipTop: "{gpu}? Мені навряд чи знадобиться й краплю поту."
 assistant.sid.settings.reads: Читає повний плейлист за {seconds} с (потрібно менше {floor} с)
 assistant.sid.settings.regular: Звичайний
 assistant.sid.settings.remove: Видалити
@@ -753,6 +766,19 @@ auth.error.unavailable: Цей Apple ID не може використовува
 auth.error.windowFailed: Не вдалося відкрити вікно входу
 auth.mutExpired.confirm: Увійти
 auth.mutExpired.message: Термін дії вашого сеансу Apple Music закінчився. Увійдіть знову, щоб продовжити.
+auth.request.authorizing: Авторизація…
+auth.request.copyToken: Копіювати токен
+auth.request.granted: Надано
+auth.request.requestedAccess: Запитаний доступ
+auth.request.revealNote: Цей токен показується лише один раз. Вставте його в {app} зараз.
+auth.request.subtitle: хоче доступ до Cider
+auth.request.toast.copied: Токен скопійовано в буфер обміну
+auth.request.toast.failed: Не вдалося створити токен
+auth.request.toast.granted: Надано доступ до {app}
+auth.request.toast.title: Авторизація
+auth.request.tokenCreated: Токен створено
+auth.request.tokenFor: для {app}
+auth.request.trustNote: Надавайте доступ лише довіреним застосункам. Цей токен можна відкликати в будь-який час у розділі Налаштування › Підключення.
 auth.signedIn: Виконано вхід
 auth.signInRetry.confirm: Спробувати знову
 auth.signInRetry.message: Не вдалося відкрити вікно входу. Спробувати знову?
@@ -2865,7 +2891,7 @@ oobe.amupsell.text: |-
   Cider не працюватиме з тарифом Apple Music Voice або деякими акційними пробними підписками. Якщо у вас уже є відповідна підписка Apple Music, натисніть «Далі», щоб продовжити.
 oobe.amupsell.title: Перш ніж почати
 oobe.appearance.accentHint: Використовується для кнопок, виділень та індикаторів виконання в додатку. Спробуйте один, щоб переглянути наживо.
-oobe.appearance.subtitle: Виберіть колірну схему та акцентний колір. Ви можете змінити їх у будь-який момент у меню Параметри → Вигляд.
+oobe.appearance.subtitle: Виберіть колірну схему та акцентний колір. Їх можна змінити в будь-який час у розділі Налаштування › Оформлення.
 oobe.appearance.title: Зробіть Cider своїм
 oobe.appleNotice: "Зверніть увагу: Apple Music є торговельною маркою Apple Inc. Cider є клієнтом Apple Music сторонньої розробки і не пов'язаний з Apple Inc."
 oobe.audio.advancedFunctionality: ""
@@ -2880,7 +2906,7 @@ oobe.connections.atmosRatingsHint: Дивіться та діліться тим
 oobe.connections.lastfm.connected: Підключено
 oobe.connections.lastfm.connectedAs: Підключено як {username}
 oobe.connections.lastfm.hint: Скроблити історію прослуховувань.
-oobe.connections.moreHint: Інші інтеграції, як-от Libre.fm, Maloja, ListenBrainz, а також WebSockets та RPC API, доступні в меню Параметри → Підключення.
+oobe.connections.moreHint: Додаткові інтеграції, як-от Libre.fm, Maloja, ListenBrainz, а також API WebSockets і RPC, доступні в розділі Налаштування › Підключення.
 oobe.connections.pairDevice: Створити пару з пристроєм
 oobe.connections.remoteHint: Керуйте Cider зі свого телефона.
 oobe.connections.subtitle: Зв’яжіть Cider з іншими додатками та службами.
@@ -3074,10 +3100,22 @@ playlist.refresh.title: Потрібно оновити плейліст
 playlist.suggestions.subtitle: Переглянути та додати до плейлиста
 playlist.suggestions.title: Рекомендовані пісні
 playlist.untitled: Без назви
+plugin.install.byAuthor: "автор: {author}"
+plugin.install.identifier: Ідентифікатор
+plugin.install.install: Встановити
+plugin.install.installing: Встановлення…
+plugin.install.source: Джерело
+plugin.install.subtitle: Плагін Cider хоче бути доданим до вашої медіатеки.
+plugin.install.title: Встановити плагін
+plugin.install.update: Оновити
+plugin.install.updateSubtitle: Плагін Cider хоче замінити встановлену версію.
+plugin.install.updateTitle: Оновити плагін
+plugin.install.warning: Плагіни можуть виконувати код у Cider з доступом до відтворення, черги та медіатеки. Встановлюйте плагіни лише з довірених джерел.
 podcast.comingSoon.description: Підтримка подкастів перебудовується після значних змін у тому, як Cider працює з відтворенням. Вона повернеться в майбутньому оновленні.
 podcast.comingSoon.hide: Приховати з бічної панелі
 podcast.comingSoon.hint: Ви можете ввімкнути її знову в налаштуваннях вигляду, у розділі «Бічна панель та навігація».
 podcast.comingSoon.title: Подкасти з’являться незабаром
+podcast.comingSoon.tweaksHint: Ви можете увімкнути це знову в налаштуваннях Tweaks, у розділі Бічна панель і навігація.
 podcast.episodes: Епізоди
 podcast.followedOnCider: Стежите в Cider
 podcast.followOnCider: Стежити в Cider
@@ -3160,6 +3198,11 @@ settings.accessibility.section.motion: Рух
 settings.accessibility.section.motion.description: Інтенсивність анімації кнопок, карток та інших елементів інтерфейсу.
 settings.accessibility.section.soundEffects: Звукові ефекти
 settings.accessibility.section.soundEffects.description: Звуки інтерфейсу для кнопок, перемикачів і повзунків, а також гучність їх відтворення.
+settings.accessibility.soundPreview.click: Клік
+settings.accessibility.soundPreview.slider: Повзунок
+settings.accessibility.soundPreview.switch: Перемикач
+settings.accounts.appleMusic: Apple Music
+settings.accounts.appleMusic.description: Увімкнути Apple Music
 settings.advanced.section.backups: Резервні копії та скидання
 settings.advanced.section.backups.description: Збережіть копію своїх налаштувань, відновіть збережену Cider копію або скиньте все до початкових значень.
 settings.advanced.section.client: Цей клієнт
@@ -3168,31 +3211,31 @@ settings.airplay.installed.message: AirPlay встановлено
 settings.airplay.installed.title: AirPlay встановлено
 settings.airplay.requiresCiderAudio: Потрібно ввімкнути CiderAudio
 settings.appleMusic.storefront.warning: Зміна регіону магазину призведе до проблем із відтворенням. Вас попереджено.
-settings.artwork.disableFadeIn: Вимкнути ефект появи
+settings.artwork.disableFadeIn: Вимкнути ефект плавної появи
 settings.artwork.highlighting: Підсвічування обкладинки
 settings.artwork.hiresImages: Зображення високої роздільної здатності
 settings.artwork.hiresImages.warning: Це може збільшити час завантаження та знизити продуктивність.
 settings.audio.atmos: Dolby Atmos
-settings.audio.atmos.binaural.desc: Atmos відтворюється як бінауральне стерео через CiderAudio. Перехресне згасання, Automix та безшовні переходи працюватимуть як зазвичай.
+settings.audio.atmos.binaural.desc: Atmos відтворюється як бінауральне стерео через CiderAudio. Кросфейд, Automix і безперервні переходи працюють як очікувалося.
 settings.audio.atmos.description: Налаштуйте відтворення Atmos для поточного пристрою виведення.
-settings.audio.atmos.normalizationHint: Мікси Dolby Atmos звучать тихіше за стерео-майстри. Увімкніть нормалізацію звуку, щоб вирівняти гучність.
+settings.audio.atmos.normalizationHint: Мікси Dolby Atmos звучать тихіше за стерео-майстри. Увімкніть нормалізацію гучності, щоб вирівняти їх.
 settings.audio.atmos.off.desc: Atmos вимкнено. Весь вміст відтворюється як стандартне стерео.
 settings.audio.atmos.passthrough: Наскрізне передавання
 settings.audio.atmos.passthrough.desc: Обходить будь-яку обробку звуку. Багатоканальний Atmos надсилається безпосередньо на пристрій. Ідеально для AV-ресиверів.
-settings.audio.atmos.passthrough.descV2: Надсилає багатоканальний Atmos безпосередньо на пристрій, для AV-ресиверів. Audio Lab, еквалайзер і Listening Mode вимкнено.
+settings.audio.atmos.passthrough.descV2: Надсилає багатоканальний Atmos напряму на пристрій, для AV-ресиверів. Audio Lab, еквалайзер і режим прослуховування вимкнені.
 settings.audio.atmos.passthroughActive: Наскрізне відтворення активне — змініть у повних параметрах.
-settings.audio.atmos.standard.desc: Багатоканальний Atmos з обробкою CiderAudio. Перехресне згасання, Automix та безшовні переходи працюватимуть як зазвичай.
+settings.audio.atmos.standard.desc: Багатоканальний Atmos з обробкою CiderAudio. Кросфейд, Automix і безперервні переходи працюють як очікувалося.
 settings.audio.atmosMode: Режим Atmos
 settings.audio.atmosMode.switchFromPassthroughConfirm: Перемикання з режиму наскрізної передачі потребує оновлення програми. Продовжити?
 settings.audio.atmosMode.switchToPassthroughConfirm: Перемикання в режим наскрізної передачі потребує оновлення програми. Продовжити?
 settings.audio.automix: Автомікс
-settings.audio.card.advancedVolume: Додаткові налаштування гучності
+settings.audio.card.advancedVolume: Розширена гучність
 settings.audio.card.badges: Значки
 settings.audio.card.streaming: Стрімінг
 settings.audio.ciderAudio: Cider Audio
 settings.audio.ciderAudio.description: Спеціально налаштована та розроблена аудіосистема, яка забезпечує насичений та якісний звук. Рекомендовано замість традиційного еквалайзера.
 settings.audio.ciderAudio.enable: Увімкнути Cider Audio
-settings.audio.ciderAudio.requiredHint: Необхідно для еквалайзера
+settings.audio.ciderAudio.requiredHint: Потрібно для еквалайзера
 settings.audio.crossfade: Перехресне згасання
 settings.audio.hostCapture.apps: Програми-тригери
 settings.audio.hostCapture.apps.count: "{{ n }} програм(и) запускатимуть захоплення."
@@ -3213,16 +3256,16 @@ settings.audio.hostCapture.bit16: 16-біт
 settings.audio.hostCapture.bit24: 24-біт
 settings.audio.hostCapture.bit32: 32-біт (з рухомою комою)
 settings.audio.hostCapture.bitAuto: Авто (найвища)
-settings.audio.hostCapture.bitDepth: Розрядність
+settings.audio.hostCapture.bitDepth: Глибина біта
 settings.audio.hostCapture.bitDepthHint: Режим «Авто» використовує найвищу розрядність, яку підтримує ваш пристрій.
 settings.audio.hostCapture.exclusiveNote: Ексклюзивний вивід, побітово точний, без можливості захоплення.
-settings.audio.hostCapture.gain: Коригування рівня виходу
+settings.audio.hostCapture.gain: Корекція рівня виходу
 settings.audio.hostCapture.gainHint: Узгодження гучності захопленого звуку зі звичайним виходом.
-settings.audio.hostCapture.mode: Режим виведення аудіо
+settings.audio.hostCapture.mode: Режим аудіовиходу
 settings.audio.hostCapture.modeCapture: Захоплення
 settings.audio.hostCapture.modeCaptureLong: Із захопленням (OBS, Discord)
 settings.audio.hostCapture.modeExclusive: Ексклюзивний
-settings.audio.hostCapture.modeExclusiveLong: WASAPI Exclusive
+settings.audio.hostCapture.modeExclusiveLong: WASAPI ексклюзивний
 settings.audio.hostCapture.modeHintCapture: Відтворює аудіо через процес Cider, щоб OBS, Discord та інші програми могли його захоплювати.
 settings.audio.hostCapture.modeHintExclusive: Побітово точний вивід безпосередньо на ЦАП в обхід мікшера Windows. Без можливості захоплення.
 settings.audio.hostCapture.modeHintOff: "Вимкнено: аудіо відтворюється у звичайному режимі через процес WebView2. Недоступно під час трансляції Atmos або відтворення музичних відео."
@@ -3248,10 +3291,10 @@ settings.audio.occlusion.game.desc: Музика приглушується на
 settings.audio.occlusion.off.desc: Музика відтворюється без змін.
 settings.audio.occlusion.passthroughNote: Недоступно, коли активне наскрізне передавання Dolby Atmos.
 settings.audio.occlusion.passthroughNote.short: Недоступно, коли активне наскрізне передавання Atmos.
-settings.audio.outputDevice: Виберіть пристрій виведення звуку
+settings.audio.outputDevice: Вибрати пристрій аудіовиходу
 settings.audio.outputDeviceHint: Виберіть пристрій виведення звуку для відтворення.
 settings.audio.outputDeviceHintHost: Захоплення аудіо увімкнено, для відтворення використовується цей пристрій виводу Windows.
-settings.audio.section.ciderAudio: Cider Audio та індикатори
+settings.audio.section.ciderAudio: Cider Audio і індикатори
 settings.audio.section.ciderAudio.description: Стек обробки Cider Audio та значки, що відображаються під час відтворення треку.
 settings.audio.section.currentSignal: Поточний сигнал
 settings.audio.section.mixing: Мікшування
@@ -3262,18 +3305,47 @@ settings.audio.section.playback: Відтворення
 settings.audio.section.playback.description: Якість аудіо, просторове аудіо, режими прослуховування та швидкість відтворення подкастів.
 settings.audio.section.volume: Гучність
 settings.audio.section.volume.description: Вирівнювання гучності, крок зміни гучності коліщатком миші та відображення повзунка.
+settings.audio.signal.atmosCodecs: Доступні кодеки Atmos
+settings.audio.signal.atmosNativeMac: Нативний (macOS)
+settings.audio.signal.atmosNativeMacTooltip: Dolby Atmos декодується нативно через macOS CoreAudio. Просторовий аудіорендеринг виконується системою.
+settings.audio.signal.atmosOffTooltip: Atmos вимкнено для цього пристрою. Вміст відтворюється як стандартний стерео.
+settings.audio.signal.atmosOffTooltipMac: Atmos вимкнено для цього пристрою.
+settings.audio.signal.atmosSupported: Підтримується
+settings.audio.signal.binauralSubtitle: Рендеринг для навушників
+settings.audio.signal.binauralTooltip: Вміст Atmos рендериться як бінауральне стерео через конвеєр CiderAudio.
+settings.audio.signal.channels: "Каналів: {count}"
+settings.audio.signal.codecs: Кодеки
+settings.audio.signal.deviceRateTooltip: Частота дискретизації поточного пристрою
+settings.audio.signal.directOutput: Прямий вихід
+settings.audio.signal.directOutputChannels: Прямий вихід ({count} кан.)
+settings.audio.signal.loading: Завантаження…
+settings.audio.signal.nativeMatch: Нативна відповідність
+settings.audio.signal.noAtmosCodecs: Немає кодеків Atmos
+settings.audio.signal.output: Вихід
+settings.audio.signal.passthroughMode: Режим проходження
+settings.audio.signal.passthroughSubtitle: Обробку аудіо вимкнено, прямий вихід на пристрій
+settings.audio.signal.passthroughTooltip: Аудіо минає всю обробку і надсилається безпосередньо на пристрій. Функції CiderAudio, такі як кросфейд, Automix і безшовні переходи, неактивні.
+settings.audio.signal.sampleRate: Частота дискретизації
+settings.audio.signal.source: Джерело {rate}
+settings.audio.signal.sourceRateTooltip: Частота відтворення Apple Music
+settings.audio.signal.standardSubtitle: Багатоканальний + CiderAudio
+settings.audio.signal.standardTooltip: Багатоканальний вміст Atmos відтворюється через обробку CiderAudio і рендериться відповідно до можливостей пристрою.
+settings.audio.signal.stereo: Стерео
+settings.audio.signal.surround51: Просторовий звук 5.1
+settings.audio.signal.surround71: Просторовий звук 7.1+
+settings.audio.signal.upsamplingTooltip: Система виконує апсемплінг з частоти джерела Apple Music
 settings.automix.allowTempoKeyShifts: Дозволити зміну темпу/тональності
 settings.automix.allowTempoKeyShiftsHint: Дозволити невеликі зміни темпу та тональності для збереження енергійності переходів. (Тимчасово вимкнено, доопрацьовується.)
 settings.automix.description: Інтелектуальний перехід між треками на основі темпу та тональності.
 settings.automix.descriptionV2: Зводить треки, використовуючи індивідуальні дані про затухання та вокал для кожного треку замість фіксованого кросфейду.
-settings.automix.disableFor: Вимкнути автомікс для...
+settings.automix.disableFor: Вимкнути Automix для...
 settings.automix.disableForAlbums: Альбомів
 settings.automix.disableForAlbumsHint: Не застосовувати автомікс під час відтворення з альбомів.
-settings.automix.disableForAutoplayContinuation: Продовження автопрогравання
+settings.automix.disableForAutoplayContinuation: Продовження автовідтворення
 settings.automix.disableForAutoplayContinuationHint: Не застосовувати автомікс, коли відтворення переходить до станції або треків автопрогравання після завершення початкової колекції.
-settings.automix.disableForDjMixes: DJ-міксів
+settings.automix.disableForDjMixes: DJ-мікси
 settings.automix.disableForDjMixesHint: Не застосовувати автомікс для DJ-міксів та безперервних міксів.
-settings.automix.disableForLiveAlbums: Концертні альбоми
+settings.automix.disableForLiveAlbums: Живі альбоми
 settings.automix.disableForLiveAlbumsHint: Не застосовувати Automix для концертних та живих записів.
 settings.automix.disableForPlaylists: Плейлістів
 settings.automix.disableForPlaylistsHint: Не застосовувати автомікс під час відтворення з плейлістів.
@@ -3285,20 +3357,20 @@ settings.automix.spectralSeparationHint: Наскільки сильно час�
 settings.automix.spectralSeparationHintV2: Наскільки далеко дві доріжки розводяться за частотою під час переходу ({value}).
 settings.automix.speedSettle: Час стабілізації швидкості
 settings.automix.speedSettleHint: Час, необхідний для повернення швидкості відтворення до норми після зведення з вирівнюванням темпу ({ms} мс)
-settings.automix.tempoAlign: Синхронізація бітів
+settings.automix.tempoAlign: Зведення за ритмом
 settings.automix.tempoAlignHint: Незначне коригування темпу для синхронізації двох треків, коли вони вже близькі за швидкістю.
 settings.automix.vocalGuard: Захист вокалу
 settings.automix.vocalGuardHint: Скорочувати час зведення, якщо в обох треках одночасно лунає вокал.
 settings.cache.all: Усе
-settings.cache.artistChips: Теги виконавців
+settings.cache.artistChips: Кеш карток виконавців
 settings.cache.artwork: Обкладинки
 settings.cache.clear: Очистити кеш
 settings.cache.content: Вміст
 settings.cache.entries: "Кількість записів: {{ count }}"
-settings.cache.homeData: Дані головної
+settings.cache.homeData: Дані головної сторінки
 settings.cache.library: Медіатека
-settings.cache.marketplaceListings: Елементи Marketplace
-settings.cache.playlistIndex: Індекс плейлістів
+settings.cache.marketplaceListings: Списки маркетплейсу
+settings.cache.playlistIndex: Індекс плейлистів
 settings.cache.prompt.artwork.cleared.message: Кеш обкладинок очищено. Оновити зараз?
 settings.cache.prompt.artwork.cleared.title: Кеш обкладинок очищено
 settings.cache.prompt.artwork.title: Очистити кеш обкладинок
@@ -3308,8 +3380,8 @@ settings.cache.prompt.clearAll.title: Очистити кеш
 settings.cache.prompt.marketplace.cleared.message: Кеш маркетплейсу очищено. Оновити зараз?
 settings.cache.prompt.marketplace.cleared.title: Кеш маркетплейсу очищено
 settings.cache.prompt.playlist.cleared.message: Кеш плейлістів очищено. Оновити зараз?
-settings.cache.prompt.playlist.cleared.title: Кеш плейлістів очищено
-settings.cache.recentlyModifiedPlaylists: Нещодавно змінені плейлісти
+settings.cache.prompt.playlist.cleared.title: Кеш плейлистів очищено
+settings.cache.recentlyModifiedPlaylists: Нещодавно змінені плейлисти
 settings.cache.storageUsed: "Використано пам’яті: {{ usage }}"
 settings.client.genten.enableTrayIcon: Увімкнути іконку в треї
 settings.client.genten.enableTrayIcon.desc: Увімкнути або вимкнути відображення іконки в треї
@@ -3541,29 +3613,30 @@ settings.connectivity.section.parties.description: Спільне прослух
 settings.connectivity.section.vrOverlay.description: Програвач Cider та закріплювані панелі поверх SteamVR і VDXR, що взаємодіють із цим додатком через RPC.
 settings.connectivity.tokenCopied: Токен скопійовано в буфер обміну
 settings.connectivity.tokens: Токени
+settings.connectivity.tokens.empty: Токенів поки немає.
 settings.contentFilter.description: Розділи в «Огляд» та «Слухати зараз», назви або вміст яких збігаються з цими ключовими словами, будуть приховані.
 settings.contentFilter.empty: Ще не додано жодного ключового слова.
 settings.contentFilter.inputPlaceholder: Додати ключове слово...
 settings.contentFilter.title: Фільтр ключових слів
-settings.crossfade.advanced: Додаткові параметри перехресного згасання
+settings.crossfade.advanced: Розширені налаштування кросфейду
 settings.crossfade.automixStillBlends: Automix увімкнено, тож пісні все ще можуть плавно переходити одна в одну. Вимкніть Automix нижче, щоб зупинити всі переходи.
 settings.crossfade.description: Плавне згасання поточної пісні під час поступового збільшення гучності наступної.
-settings.crossfade.disableFor: Вимкнути перехресне згасання для...
+settings.crossfade.disableFor: Вимкнути кросфейд для...
 settings.crossfade.duration: Тривалість
-settings.crossfade.enable: Увімкнути перехресне згасання
+settings.crossfade.enable: Увімкнути кросфейд
 settings.crossfade.exclusions.albums: Альбоми
 settings.crossfade.exclusions.albums.description: Не застосовувати перехресне згасання під час відтворення з альбомів.
-settings.crossfade.exclusions.autoplayContinuation: Продовження автопрогравання
+settings.crossfade.exclusions.autoplayContinuation: Продовження автовідтворення
 settings.crossfade.exclusions.autoplayContinuation.description: Не застосовувати перехресне згасання, коли відтворення переходить до станції або треків автопрогравання після завершення початкової колекції.
 settings.crossfade.exclusions.djMixes: DJ-мікси
 settings.crossfade.exclusions.djMixes.description: Не застосовувати перехресне згасання для DJ-міксів та безперервних міксів.
-settings.crossfade.exclusions.liveAlbums: Концертні альбоми
+settings.crossfade.exclusions.liveAlbums: Живі альбоми
 settings.crossfade.exclusions.liveAlbums.description: Не застосовувати перехресне згасання для концертних та живих записів.
 settings.crossfade.exclusions.playlists: Плейлісти
 settings.crossfade.exclusions.playlists.description: Не застосовувати перехресне згасання під час відтворення з плейлістів.
 settings.crossfade.loudnessSensitivity: Чутливість до гучності
 settings.crossfade.loudnessSensitivity.description: Баланс різниці гучності ({{ value }}%)
-settings.crossfade.smoothSkip: Плавний пропуск
+settings.crossfade.smoothSkip: Плавне перемикання
 settings.crossfade.smoothSkip.description: Плавне згасання між треками під час пропуску.
 settings.crossfade.tempoSensitivity: Чутливість до темпу
 settings.crossfade.tempoSensitivity.description: Реакція на зміну темпу ({{ value }}%)
@@ -3606,7 +3679,7 @@ settings.extensions.addBuiltInSnippet: Додати вбудований фра�
 settings.extensions.browsePluginMarket: Переглянути магазин плагінів
 settings.extensions.browseThemeMarket: Переглянути магазин тем
 settings.extensions.byAuthor: "автор: {author}"
-settings.extensions.checkUpdates: Перевіряти наявність оновлень розширень під час запуску
+settings.extensions.checkUpdates: Перевіряти оновлення розширень під час запуску
 settings.extensions.checkUpdates.desc: Шукати оновлення тем, фрагментів та плагінів під час кожного запуску Cider.
 settings.extensions.createPlugin: Створити плагін
 settings.extensions.createSnippet: Створити фрагмент
@@ -3637,6 +3710,7 @@ settings.extensions.plugins.uninstallTitle: Видалення плагіна
 settings.extensions.refresh: Оновити розширення
 settings.extensions.refresh.desc: Повторно сканувати теми, фрагменти та плагіни на диску.
 settings.extensions.refreshed: Теми, фрагменти та плагіни оновлено
+settings.extensions.snippets.author: "Автор: {{ author }}"
 settings.extensions.snippets.created: Фрагмент створено
 settings.extensions.snippets.createTitle: Створити новий фрагмент CSS
 settings.extensions.snippets.deleteConfirm: Ви впевнені, що хочете видалити цей фрагмент CSS? Цю дію не можна скасувати.
@@ -3646,17 +3720,20 @@ settings.extensions.snippets.empty: Немає встановлених фраг
 settings.extensions.snippets.exported: Фрагмент експортовано
 settings.extensions.snippets.imported: Імпортовано {{ count }} фрагмент(ів)
 settings.extensions.snippets.importFailed: "Не вдалося імпортувати {{ file }}: {{ error }}"
+settings.extensions.snippets.invalidFile: "Недійсний формат файлу: {{ file }}"
 settings.extensions.snippets.namePrompt: Введіть назву для нового CSS-фрагмента.
 settings.extensions.snippets.orderUpdated: Порядок оновлено
 settings.extensions.snippets.saved: Фрагмент збережено
 settings.extensions.themeCreated: Нову тему успішно створено
 settings.extensions.themes.activeCount: "{{ count }} активних"
 settings.extensions.themes.empty: Немає встановлених тем.
+settings.extensions.themes.getMore: Знайти більше тем
+settings.extensions.themes.refreshList: Оновити список тем
 settings.extensions.themes.stylesheetMany: "{{ count }} таблиць стилів"
 settings.extensions.themes.stylesheetOne: 1 таблиця стилів
 settings.extensions.viewOnMarketplace: Переглянути в маркетплейсі
 settings.fonts.description: Змінити шрифт у застосунку
-settings.fonts.lyrics: Шрифт тексту пісень
+settings.fonts.lyrics: Шрифт текстів пісень
 settings.fonts.lyrics.description: Шрифт, що використовується для відображення тексту пісень
 settings.fonts.primary: Основний шрифт
 settings.fonts.primary.description: Шрифт, що використовується для більшості тексту в застосунку
@@ -3677,6 +3754,7 @@ settings.general.section.language: Мова
 settings.general.section.language.description: Мова інтерфейсу, а також способи повідомити про помилку або вказати авторів перекладу.
 settings.general.section.playback: Відтворення
 settings.general.section.playback.description: Дія кнопки відтворення, коли нічого не відтворюється.
+settings.general.section.playback.descriptionV2: Що робить кнопка відтворення, коли нічого не грає, і де можна змінити швидкість відтворення.
 settings.general.section.privacy: Конфіденційність
 settings.general.section.privacy.description: Ім'я, яким Cider вітає вас, і дозвіл на використання вашої геопозиції.
 settings.general.section.queue: Черга
@@ -3753,7 +3831,7 @@ settings.intensive.animatedArtworkQuality.description: Вища якість д�
 settings.intensive.catalogAnimatedArtwork.description: Відтворює кілька анімованих обкладинок одночасно під час перегляду каталогу.
 settings.intensive.characterFlow.description: Анімує кожен символ тексту пісні окремо, а не цілими рядками.
 settings.intensive.confirm.enable: Увімкнути
-settings.intensive.confirm.message: Ця функція є ресурсомісткою та може значно збільшити навантаження на ЦП/ГП, нагрівання та розряджання акумулятора — особливо на слабшому обладнанні. Ви можете переглянути ресурсомісткі функції в будь-який час за допомогою кнопки з лампочкою вгорі Параметрів.
+settings.intensive.confirm.message: Ця функція потребує багато ресурсів і може суттєво збільшити навантаження на ЦП/GPU, нагрівання та витрату батареї, особливо на слабших пристроях. Ресурсомісткі функції можна переглянути в будь-який час у розділі Налаштування › Споживання енергії.
 settings.intensive.emotionEngine.description: Аналізує обкладинку альбому для створення колірної палітри.
 settings.intensive.fsrUpscale.description: Масштабує обкладинку альбому на ГП за допомогою FidelityFX Super Resolution.
 settings.intensive.immersiveAnimatedArtwork.description: Відтворює анімовану обкладинку в режимі Immersive.
@@ -3770,27 +3848,27 @@ settings.intensive.viewTransitions.description: Анімує переходи п
 settings.intensive.warning: Ресурсомістка функція — може спричинити високе навантаження на ЦП/ГП.
 settings.keybindings.recordingHint: Запис. Натисніть Escape для скасування
 settings.lyrics.card.providers: Постачальники
-settings.lyrics.card.songOverrides: Винятки для пісень
+settings.lyrics.card.songOverrides: Налаштування для пісень
 settings.lyrics.localeOverrides: Правила на основі мови
-settings.lyrics.localeOverrides.add: Додати виняток для мови
+settings.lyrics.localeOverrides.add: Додати правило для мови
 settings.lyrics.localeOverrides.audioLocale: Мова аудіо
 settings.lyrics.localeOverrides.desc: Встановіть власного постачальника та параметри перекладу для пісень певними мовами. Якщо мова аудіо пісні відповідає правилу, ці налаштування замінять стандартні.
-settings.lyrics.localeOverrides.dialogTitle.add: Додати виняток для мови
-settings.lyrics.localeOverrides.dialogTitle.edit: Редагувати виняток для мови
+settings.lyrics.localeOverrides.dialogTitle.add: Додати правило для мови
+settings.lyrics.localeOverrides.dialogTitle.edit: Редагувати правило для мови
 settings.lyrics.localeOverrides.empty: Правил ще немає. Натисніть «+», щоб додати.
-settings.lyrics.localeOverrides.overrideTranslation: Перевизначити переклад
-settings.lyrics.localeOverrides.preferredProvider: Пріоритетний постачальник
+settings.lyrics.localeOverrides.overrideTranslation: Замінити переклад
+settings.lyrics.localeOverrides.preferredProvider: Бажаний постачальник
 settings.lyrics.localeOverrides.provider.apple: Apple Music
 settings.lyrics.localeOverrides.provider.auto: За замовчуванням (Авто)
 settings.lyrics.localeOverrides.provider.mxm: Musixmatch
 settings.lyrics.localeOverrides.provider.netease: NetEase
-settings.lyrics.localeOverrides.provider.user: Надіслано користувачами
+settings.lyrics.localeOverrides.provider.user: Надано користувачем
 settings.lyrics.localeOverrides.providerLabel: "Постачальник:"
 settings.lyrics.localeOverrides.translateTo: Перекласти на
 settings.lyrics.localeOverrides.translateToLabel: "Перекласти на:"
 settings.lyrics.player.cascade: Інтенсивність каскаду
 settings.lyrics.player.cascade.desc: Наскільки вираженою є послідовна поява рядків.
-settings.lyrics.player.cta: Анімація тексту
+settings.lyrics.player.cta: Анімації текстів пісень
 settings.lyrics.player.cta.description: Тонке налаштування вигляду та поведінки анімації тексту, зокрема ефектів виділення, світіння, підйому, швидкості, згасання та каскаду.
 settings.lyrics.player.deselScale: Масштаб неактивних рядків
 settings.lyrics.player.deselScale.desc: Розмір неактивних рядків; менше значення робить активний рядок помітнішим.
@@ -3807,10 +3885,10 @@ settings.lyrics.player.reset: Скинути до стандартних
 settings.lyrics.player.speed: Швидкість анімації
 settings.lyrics.player.speed.desc: Швидкість переходу між рядками — що вища, то динамічніша анімація.
 settings.lyrics.player.title: Анімація тексту
-settings.lyrics.scroll.duration: Тривалість прокручування тексту
+settings.lyrics.scroll.duration: Тривалість прокручування текстів
 settings.lyrics.scroll.duration.desc1: Налаштуйте швидкість прокручування тексту в
 settings.lyrics.scroll.duration.desc2: Це не вплине на швидкість відтворення пісні.
-settings.lyrics.scroll.easing: Функція згладжування
+settings.lyrics.scroll.easing: Функція плавності
 settings.lyrics.scroll.easing.curveExample: "Приклад кривої:"
 settings.lyrics.scroll.easing.description1: Налаштуйте функцію згладжування прокручування тексту. Це
 settings.lyrics.scroll.easing.description2: властивість CSS.
@@ -3829,14 +3907,14 @@ settings.lyrics.section.sources: Джерела
 settings.lyrics.section.sources.description: Звідки завантажується текст пісень, а також правила для окремих мов або треків, які мають пріоритет над стандартним постачальником.
 settings.lyrics.section.translation: Переклад
 settings.lyrics.section.translation.description: Перекладений текст пісень, цільова мова перекладу та чи залишається оригінал на екрані.
-settings.lyrics.trackOverrides.clearAll: Очистити всі перевизначення
+settings.lyrics.trackOverrides.clearAll: Очистити всі налаштування
 settings.lyrics.trackOverrides.desc: Треки в цьому списку завжди використовуватимуть закріпленого вами постачальника текстів або встановлений вручну режим вокалу замість того, про який повідомляє Apple. Ці перевизначення налаштовуються в меню тексту пісні та в контекстному меню треку.
 settings.lyrics.trackOverrides.empty: Винятків ще немає. Усе, що ви зафіксуєте в цих меню, відображатиметься тут.
 settings.lyrics.trackOverrides.lyricsForced: Примусовий текст
 settings.lyrics.trackOverrides.markedInstrumental: Позначено як інструментал
 settings.lyrics.trackOverrides.providerLabel: "Провайдер:"
-settings.lyrics.trackOverrides.remove: Вилучити перевизначення
-settings.lyrics.trackOverrides.title: Перевизначення для конкретних треків
+settings.lyrics.trackOverrides.remove: Видалити налаштування
+settings.lyrics.trackOverrides.title: Налаштування для окремих треків
 settings.micaish.blurAmount: Інтенсивність розмиття
 settings.micaish.brightness: Яскравість %
 settings.micaish.contrast: Контрастність %
@@ -3852,7 +3930,9 @@ settings.miniplayer.unpinWindow: Відкріпити вікно
 settings.nav.accessibility: Доступність
 settings.nav.accounts: Облікові записи
 settings.nav.advanced: Додатково
+settings.nav.appleMusicWordmark: music
 settings.nav.audio: Аудіо
+settings.nav.categories: Категорії налаштувань
 settings.nav.concerts: Концерти
 settings.nav.config-backups: Резервні копії конфігурації
 settings.nav.connectivity: Підключення
@@ -3861,21 +3941,41 @@ settings.nav.general: Загальні
 settings.nav.group.account: Обліковий запис
 settings.nav.group.advanced: Додатково
 settings.nav.group.appearance: Вигляд
+settings.nav.group.connections: Підключення
 settings.nav.group.general: Загальні
 settings.nav.group.integrations: Інтеграції
 settings.nav.group.library: Медіатека
+settings.nav.group.lookAndFeel: Вигляд і відчуття
 settings.nav.group.playback: Відтворення
 settings.nav.lyrics: Тексти пісень
 settings.nav.notifications: Сповіщення
 settings.nav.plugins: Плагіни
-settings.nav.power: Енергоспоживання
+settings.nav.power: Споживання енергії
 settings.nav.privacy: Приватність
 settings.nav.profile: Профіль
 settings.nav.search: Пошук
-settings.nav.searchPlaceholder: Пошук налаштувань...
+settings.nav.searchPlaceholder: Пошук у налаштуваннях
+settings.nav.summary.accessibility: Жирний текст, масштаб інтерфейсу, рух, звукові ефекти
+settings.nav.summary.advanced: Резервні копії, усунення несправностей, експерименти
+settings.nav.summary.audio: Вивід, якість, кросфейд, нормалізація
+settings.nav.summary.concerts: Місцезнаходження, радіус, сортування
+settings.nav.summary.connectivity: Discord, скробблінг, спільне прослуховування, віддалене керування
+settings.nav.summary.extensions: Теми, CSS-фрагменти, плагіни
+settings.nav.summary.general: Запуск, черга, таймер сну, комбінації клавіш
+settings.nav.summary.lyrics: Джерела, переклад, відображення, синхронізація
+settings.nav.summary.notifications: Категорії, історія, системні сповіщення
+settings.nav.summary.power: Продуктивність, частота кадрів, режими економії енергії
+settings.nav.summary.profile: Обліковий запис Apple Music
+settings.nav.summary.sid: Де з'являється Sid і як він працює
+settings.nav.summary.smartPlaylists: Правила та обслуговування розумних плейлистів
+settings.nav.summary.subscriberYear: передплатник протягом року
+settings.nav.summary.subscriberYears: передплатник протягом {{count}} років
+settings.nav.summary.tweaks: Невеликі зміни плеєра, бічної панелі та іншого
+settings.nav.summary.visual: Колірна схема, макет, вікно, занурення
 settings.nav.themes: Теми
+settings.nav.tweaks: Налаштування
 settings.nav.updates: Оновлення
-settings.nav.visual: Візуалізація
+settings.nav.visual: Оформлення
 settings.normalization.louderTargetHint: Якщо Cider все одно звучить занадто тихо на 100% гучності, виберіть вищий цільовий рівень. Вищі значення LUFS звучать гучніше, але захист від піків може обмежити підсилення, щоб запобігти кліппінгу.
 settings.normalization.presets.apple: Apple
 settings.normalization.presets.balanced: Збалансований
@@ -3886,7 +3986,7 @@ settings.normalization.target: Цільова гучність
 settings.normalization.unit: LUFS
 settings.notifications.alwaysOn: Завжди увімкнено
 settings.notifications.alwaysOn.description: Ці сповіщення містять інформацію про проблеми та стан програми, яку необхідно бачити, тому їх не можна вимкнути. Помилки відображаються завжди, незалежно від їхньої категорії.
-settings.notifications.category.accountAuth: Обліковий запис та вхід
+settings.notifications.category.accountAuth: Обліковий запис і вхід
 settings.notifications.category.accountAuth.description: Вхід та вихід з облікового запису, стан підписки та підключені служби.
 settings.notifications.category.castingAirplay: Трансляція та AirPlay
 settings.notifications.category.castingAirplay.description: Підключення та відключення від зовнішніх пристроїв відтворення.
@@ -3910,7 +4010,7 @@ settings.notifications.category.scrobbling: Скроблінг
 settings.notifications.category.scrobbling.description: Результати скроблінгу треків через Last.fm, ListenBrainz та інші служби.
 settings.notifications.category.settingsBackups: Налаштування та резервні копії
 settings.notifications.category.settingsBackups.description: Імпорт та експорт налаштувань, а також резервне копіювання конфігурації.
-settings.notifications.category.sharingClipboard: Поширення та буфер обміну
+settings.notifications.category.sharingClipboard: Спільний доступ і буфер обміну
 settings.notifications.category.sharingClipboard.description: Створення та копіювання посилань для поширення.
 settings.notifications.muted.empty: Немає окремо вимкнених сповіщень. Якщо вимкнути окреме сповіщення зі списку, воно з’явиться тут, і тут його можна буде знову ввімкнути.
 settings.notifications.section.categories: Категорії
@@ -3918,6 +4018,7 @@ settings.notifications.section.history: Історія
 settings.notifications.section.muted: Вимкнені сповіщення
 settings.notifications.section.system: Системні сповіщення
 settings.notifications.summary.categoriesOn: Категорії увімкнено
+settings.notifications.summary.categoriesOnCount: "{{on}} з {{total}} увімкнено"
 settings.notifications.summary.description: Виберіть типи сповіщень, які показуватиме Cider. Усі вимкнені сповіщення все одно зберігатимуться в списку сповіщень, тож ви зможете переглянути їх пізніше.
 settings.notifications.unmute: Увімкнути звук
 settings.notifications.unmuteAll: Увімкнути звук для всіх
@@ -3933,15 +4034,15 @@ settings.notyf.visual.plugin.install.success: Плагін успішно вст
 settings.notyf.visual.theme.install.error: Помилка встановлення теми
 settings.notyf.visual.theme.install.success: Тему успішно встановлено
 settings.notyf.visual.theme.updateAvailable: "[Теми] Доступне оновлення для {{ theme }}"
-settings.option.accessibility.boldText: Жирний шрифт
+settings.option.accessibility.boldText: Жирний текст
 settings.option.accessibility.boldText.description: Збільшує товщину тексту в усій програмі для кращої читаваності.
-settings.option.accessibility.cardHoverMotion: Анімація карток при наведенні
+settings.option.accessibility.cardHoverMotion: Анімація картки під час наведення
 settings.option.accessibility.cardHoverMotion.description: Дозволяє клікабельним карткам (обкладинкам альбомів, елементам сітки) плавно збільшуватися при наведенні та стискатися при натисканні. Вимкнено за замовчуванням.
 settings.option.accessibility.enableSoundEffects: Увімкнути звукові ефекти
 settings.option.accessibility.enableSoundEffects.description: Відтворювати ледь помітні звуки під час взаємодії з кнопками, перемикачами та повзунками.
 settings.option.accessibility.forceFocusVisible: Завжди показувати рамку фокусу
 settings.option.accessibility.forceFocusVisible.description: Примусово показувати контур навколо активних елементів для навігації з клавіатури.
-settings.option.accessibility.highContrast: Висока контрастність
+settings.option.accessibility.highContrast: Високий контраст
 settings.option.accessibility.highContrast.description: Підвищує контрастність між текстом, тлом та елементами інтерфейсу.
 settings.option.accessibility.motion: Рух
 settings.option.accessibility.motionIntensity: Інтенсивність руху
@@ -3950,10 +4051,10 @@ settings.option.accessibility.motionIntensity.none: Немає
 settings.option.accessibility.motionIntensity.normal: Звичайна
 settings.option.accessibility.motionIntensity.playful: Грайлива
 settings.option.accessibility.motionIntensity.reduced: Зменшена
-settings.option.accessibility.playOnHover: Звук при наведенні
+settings.option.accessibility.playOnHover: Відтворювати під час наведення
 settings.option.accessibility.playOnHover.description: Також відтворювати ледь помітне клацання, коли вказівник наводиться на інтерактивні елементи.
 settings.option.accessibility.soundEffects: Звукові ефекти
-settings.option.accessibility.soundPreview: Прослуховування звуку
+settings.option.accessibility.soundPreview: Попередній перегляд звуку
 settings.option.accessibility.soundPreview.description: Відтворює зразок звуків інтерфейсу на поточній гучності.
 settings.option.accessibility.text: Текст
 settings.option.accessibility.uiScale: Масштаб інтерфейсу
@@ -3961,7 +4062,7 @@ settings.option.accessibility.uiScale.description: Масштабує текст
 settings.option.accessibility.visibility: Видимість
 settings.option.accessibility.volume: Гучність
 settings.option.accessibility.volume.description: Гучність відтворення звукових ефектів інтерфейсу.
-settings.option.advanced.clientSettings: Параметри клієнта
+settings.option.advanced.clientSettings: Налаштування клієнта
 settings.option.advanced.clientSettings.description: Налаштування, специфічні для поточної платформи клієнта
 settings.option.advanced.compactSidebar: Компактна бічна панель
 settings.option.advanced.compactSidebar.description: Застосовується, коли вікно достатньо вузьке для згортання бічної панелі.
@@ -3969,45 +4070,45 @@ settings.option.advanced.compactSidebar.size: Розмір
 settings.option.advanced.configBackups.description: Відновіть збережену Cider копію файлу налаштувань, якщо ваші налаштування було втрачено або скинуто.
 settings.option.advanced.experimentalFeatures: Експериментальні функції
 settings.option.advanced.experimentalFeatures.description: Функції, що перебувають у розробці, та прапорці функцій.
-settings.option.advanced.floatingSearch: Плаваюча панель пошуку
-settings.option.advanced.floatingSearch.blurBackground: Розмивати тло
+settings.option.advanced.floatingSearch: Плаваючий пошук
+settings.option.advanced.floatingSearch.blurBackground: Розмиття фону
 settings.option.advanced.floatingSearch.blurBackground.description: Якщо увімкнено, тло розмиватиметься, коли поле пошуку активне.
-settings.option.advanced.floatingSearch.clearSearchOnClose: Очищати пошук після закриття
+settings.option.advanced.floatingSearch.clearSearchOnClose: Очищати пошук під час закриття
 settings.option.advanced.floatingSearch.clearSearchOnClose.description: Якщо увімкнено, текст у полі пошуку очищатиметься після його закриття.
 settings.option.advanced.floatingSearch.description: Панель пошуку, яка відкривається поверх сторінки.
 settings.option.advanced.floatingSearch.enterShowsResults: Enter показує результати
 settings.option.advanced.floatingSearch.enterShowsResults.description: Якщо увімкнено, натискання Enter перенаправлятиме безпосередньо на сторінку результатів пошуку.
 settings.option.advanced.home: Домівка
-settings.option.advanced.home.buttonLocation: Розташування кнопки «Домівка»
+settings.option.advanced.home.buttonLocation: Розташування кнопки «Головна»
 settings.option.advanced.home.buttonLocation.sidebar: Бічна панель
 settings.option.advanced.home.buttonLocation.sidebar2023: Бічна панель (2023)
 settings.option.advanced.home.buttonLocation.topBar: Верхня панель
 settings.option.advanced.immersive: Режим занурення
 settings.option.advanced.immersive.artworkHighlight: Підсвічування обкладинки
-settings.option.advanced.immersive.controlsTimeout: Час очікування активних елементів керування (сек)
+settings.option.advanced.immersive.controlsTimeout: Час до приховування елементів керування (секунди)
 settings.option.advanced.immersive.description: Сам режим занурення. Його макет вибирається в розділі «Візуалізація».
-settings.option.advanced.immersive.glowEffectOnActiveLyrics: Ефект світіння активного тексту пісні
+settings.option.advanced.immersive.glowEffectOnActiveLyrics: Ефект свічення для активної лірики
 settings.option.advanced.lyrics: Анімація тексту пісні
 settings.option.advanced.lyrics.characterFlow: Плавні символи
 settings.option.advanced.lyrics.characterFlow.description: Окремі символи плавно підніматимуться вгору замість усього рядка. Використовує більше ресурсів.
 settings.option.advanced.lyrics.description: Як рухаються рядки та символи тексту під час відтворення пісні.
-settings.option.advanced.lyrics.lineStaggering: Каскадна поява рядків
+settings.option.advanced.lyrics.lineStaggering: Поетапна поява рядків
 settings.option.advanced.lyrics.lineStaggering.description: Наступні рядки тексту з'являтимуться з невеликою затримкою, коли активується поточний рядок.
-settings.option.advanced.lyrics.lineStaggeringImmersive: Каскадна поява рядків (Імерсивний режим)
+settings.option.advanced.lyrics.lineStaggeringImmersive: Поетапна поява рядків (занурення)
 settings.option.advanced.lyrics.lineStaggeringImmersive.description: Використовує більше ресурсів.
-settings.option.advanced.lyrics.scaleOnAny: Масштабування будь-якого слова
+settings.option.advanced.lyrics.scaleOnAny: Дозволити ефект масштабування для будь-якого слова
 settings.option.advanced.lyrics.scaleOnAny.description: Дозволяє масштабувати будь-яке слово, а не лише ті, на які падає наголос.
-settings.option.advanced.lyrics.singEngine: Імерсивний рушій «Співати»
+settings.option.advanced.lyrics.singEngine: Механізм караоке в режимі занурення
 settings.option.advanced.lyrics.singEngine.classic: Класичний
 settings.option.advanced.lyrics.singEngine.description: Рушій функції «Співати» для імерсивного режиму. Класичний рушій використовує легку CSS-анімацію, що є найкращим вибором для малопотужних систем. Бічна панель завжди використовує класичний рушій.
 settings.option.advanced.lyrics.singEngine.legacy: Застарілий
 settings.option.advanced.lyrics.singEngine.waapi: GPU (Web Animations)
-settings.option.advanced.lyrics.singLyricsEverywhere: Режим «Співати» всюди
+settings.option.advanced.lyrics.singLyricsEverywhere: Караоке-текст скрізь
 settings.option.advanced.lyrics.singLyricsEverywhere.description: Увімкнути режим «Співати» поза імерсивним виглядом. Використовує більше ресурсів.
 settings.option.advanced.mavericksLcd: Mavericks LCD
 settings.option.advanced.mavericksLcd.style: Стиль
 settings.option.advanced.mavericksLcd.style.glass: Скло
-settings.option.advanced.mediaArtwork: Обкладинка медіафайлу
+settings.option.advanced.mediaArtwork: Обкладинка медіаелементів
 settings.option.advanced.mediaArtwork.controls: Ефекти обкладинок та зображення високої роздільної здатності
 settings.option.advanced.mediaArtwork.controlsV2: Підсвічування обкладинки та плавна поява
 settings.option.advanced.mediaArtwork.description: Обкладинки в сітках, списках і рядках по всій програмі.
@@ -4015,29 +4116,29 @@ settings.option.advanced.notificationStyle: Стиль сповіщень
 settings.option.advanced.performance: Продуктивність
 settings.option.advanced.performance.description: Обмеження частоти кадрів, вибір рендерера та ліміти ресурсів.
 settings.option.advanced.playback: Швидкість відтворення
-settings.option.advanced.playback.allowPlaybackRateChangeEverywhere: Зміна швидкості відтворення для пісень
+settings.option.advanced.playback.allowPlaybackRateChangeEverywhere: Дозволити зміну швидкості відтворення для пісень
 settings.option.advanced.playback.allowPlaybackRateChangeEverywhere.description: Увімкнено за умовчанням для подкастів. Увімкніть, щоб отримати такий самий зручний контроль швидкості відтворення для всіх медіафайлів, зокрема пісень.
 settings.option.advanced.playlistTrackMapping: Зіставлення треків у плейлістах
 settings.option.advanced.playlistTrackMapping.description: Вмикає глибоке сканування плейлістів для визначення наявності треків у них. Час створення кешу плейлістів може значно збільшитися.
 settings.option.advanced.powerUsage.description: Обмеження частоти кадрів, вибір рендерера та ресурсомісткі візуальні функції.
-settings.option.advanced.progressBar: Шкала поступу
-settings.option.advanced.progressBar.useAccentColor: Використовувати колір акценту
+settings.option.advanced.progressBar: Індикатор прогресу
+settings.option.advanced.progressBar.useAccentColor: Використовувати акцентний колір
 settings.option.advanced.resetCider: Скинути Cider
 settings.option.advanced.resetCider.description: Скидання налаштувань, кешу та локальних даних. Вхід в Apple Music та Taproom буде збережено, якщо ви не виберете інше.
-settings.option.advanced.resizableMiniplayer: Мініплеєр зі змінним розміром
+settings.option.advanced.resizableMiniplayer: Міні-плеєр зі змінним розміром
 settings.option.advanced.richAlbumGrid: Розширена сітка альбомів
 settings.option.advanced.richAlbumGrid.alwaysNavigateToPage: Завжди переходити на сторінку
 settings.option.advanced.richAlbumGrid.disableScrollAnimation: Вимкнути анімацію прокручування
-settings.option.advanced.richAlbumGrid.scrollToPosition: Прокрутити до позиції
+settings.option.advanced.richAlbumGrid.scrollToPosition: Прокручувати до позиції
 settings.option.advanced.richAlbumGrid.scrollToPosition.bottom: Низ
 settings.option.advanced.richAlbumGrid.scrollToPosition.top: Верх
-settings.option.advanced.searchBar: Головна панель пошуку
+settings.option.advanced.searchBar: Основна панель пошуку
 settings.option.advanced.searchBar.description: Поле пошуку в рядку заголовка.
-settings.option.advanced.searchBar.noRedirectOnSelect: Без переходу на цільову сторінку при фокусуванні
+settings.option.advanced.searchBar.noRedirectOnSelect: Без стартової сторінки при фокусі
 settings.option.advanced.searchBar.noRedirectOnSelect.description: Якщо увімкнено, поле пошуку не перенаправлятиме на цільову сторінку під час вибору. Щоб перейти на цільову сторінку, утримуйте SHIFT під час вибору поля пошуку.
 settings.option.advanced.settingsTakeout: Експорт / імпорт налаштувань
 settings.option.advanced.settingsTakeout.description: Створюйте резервні копії своїх налаштувань у файл або відновлюйте їх на іншому пристрої. Дані для входу в обліковий запис ніколи не додаються.
-settings.option.advanced.simpleArtworkBg: Спрощений фон з обкладинкою
+settings.option.advanced.simpleArtworkBg: Простий фон обкладинки
 settings.option.advanced.simpleArtworkBg.brightness: Яскравість %
 settings.option.advanced.simpleArtworkBg.brightnessV2: Яскравість
 settings.option.advanced.simpleArtworkBg.contrast: Контрастність %
@@ -4046,7 +4147,7 @@ settings.option.advanced.simpleArtworkBg.saturate: Насиченість, %
 settings.option.advanced.simpleArtworkBg.saturateV2: Насиченість
 settings.option.advanced.simpleArtworkBg.useMask: Використовувати нижню маску
 settings.option.advanced.sonoma: Sonoma
-settings.option.advanced.sonoma.lyricArc: Вигнутий текст пісень
+settings.option.advanced.sonoma.lyricArc: Дугові тексти пісень
 settings.option.advanced.sonoma.lyricArc.description: Активні рядки тексту вигинаються до центру екрана з ледь помітним відчуттям глибини.
 settings.option.advanced.sonoma.radialMask: Використовувати альтернативну маску
 settings.option.advanced.sonoma.radialMask.description: Якщо увімкнено, Sonoma використовуватиме іншу, радіальну маску для обкладинки, що забезпечує більшу чіткість і менше розмиття.
@@ -4060,7 +4161,7 @@ settings.option.advanced.window.description: Зміна розміру міні�
 settings.option.advanced.window.scrollbarType: Тип смуги прокручування
 settings.option.all: Усі
 settings.option.alwaysShow: Завжди показувати
-settings.option.appleMusic.behavior.playButtonOnStop: Дія кнопки відтворення після зупинки
+settings.option.appleMusic.behavior.playButtonOnStop: Кнопка відтворення після зупинки
 settings.option.audio.advanced: Розширене керування гучністю
 settings.option.audio.airplay: Трансляція AirPlay
 settings.option.audio.airplay.description: Увімкнути експериментальне меню трансляції AirPlay 2
@@ -4075,14 +4176,14 @@ settings.option.audio.audioQuality: Якість аудіо
 settings.option.audio.automix: Автомікс
 settings.option.audio.changePlaybackRate: Змінити швидкість відтворення
 settings.option.audio.ciderAudio: Cider Audio
-settings.option.audio.ciderAudio.showBadges: Показувати значки у «Зараз відтворюється»
+settings.option.audio.ciderAudio.showBadges: Показувати значки у програванні
 settings.option.audio.ciderAudio.showInToolbar: Показувати Cider Audio на панелі інструментів
-settings.option.audio.ciderAudioSettings: Параметри Cider Audio
+settings.option.audio.ciderAudioSettings: Налаштування Cider Audio
 settings.option.audio.crossfade: Перехресне згасання
-settings.option.audio.dbfs.calibration: Калібрація 0 dBFS
+settings.option.audio.dbfs.calibration: Калібрування 0 dBFS
 settings.option.audio.dbfs.description: Введіть піковий Z-зважений дБ SPL, коли Cider знаходиться на рівні 0 dBFS.
 settings.option.audio.dbspl.description: (Лише для досвідчених користувачів) Відображення dB SPL замість dBFS на повзунку гучності.
-settings.option.audio.dbspl.display: dB SPL Display
+settings.option.audio.dbspl.display: Відображення dB SPL
 settings.option.audio.drmSystem: Система DRM
 settings.option.audio.drmSystem.description: Система DRM для відтворення Apple Music
 settings.option.audio.drmSystem.PlayReadyCAWarning: Функції Cider Audio не працюють під час використання Microsoft PlayReady.
@@ -4137,14 +4238,14 @@ settings.option.audio.enableAdvancedFunctionality.tunedAudioSpatialization.profi
 settings.option.audio.enableAdvancedFunctionality.tunedAudioSpatialization.profile.standard: Стандартний
 settings.option.audio.exponentialVolume: Експоненційна крива гучності
 settings.option.audio.exponentialVolume.description: Використовує більш поступову криву гучності, що дозволяє точніше регулювати звук на низьких рівнях.
-settings.option.audio.hostCapture: Аудіо із захопленням (OBS / Discord)
+settings.option.audio.hostCapture: Аудіо для запису (OBS / Discord)
 settings.option.audio.hostCapture.description: Програмам для трансляції та захоплення екрана, як-от OBS або Discord, потрібен хост Windows для маршрутизації відтворення.
 settings.option.audio.maxVolume: Максимальна гучність
 settings.option.audio.mixing: Мікшування
-settings.option.audio.normalization: Нормалізація гучності
+settings.option.audio.normalization: Нормалізація аудіо
 settings.option.audio.normalization.description: Автоматично регулює гучність кожного треку для забезпечення однакового рівня звучання. Тихі треки безпечно підсилюються, а гучні — притишуються.
 settings.option.audio.occlusion: Режим прослуховування
-settings.option.audio.outputDevice: Пристрій виводу
+settings.option.audio.outputDevice: Пристрій виведення
 settings.option.audio.playback: Відтворення
 settings.option.audio.playbackRate: Швидкість відтворення
 settings.option.audio.playbackRate.change: Змінити
@@ -4152,15 +4253,15 @@ settings.option.audio.podcastPlayback: Відтворення подкастів
 settings.option.audio.podcasts.playbackRate: Швидкість відтворення Apple Podcasts
 settings.option.audio.podcasts.playbackRate.description: Налаштування швидкості відтворення подкастів.
 settings.option.audio.quality: Якість аудіо
-settings.option.audio.seamlessAudioTransitions: Плавні аудіо переходи
+settings.option.audio.seamlessAudioTransitions: Безперервне відтворення
 settings.option.audio.seamlessTransition: Безшовний перехід аудіо
-settings.option.audio.seamlessTransitions: Плавні переходи
-settings.option.audio.showBitrate: Показувати бітрейт у «Зараз відтворюється»
+settings.option.audio.seamlessTransitions: Безперервні переходи
+settings.option.audio.showBitrate: Показувати бітрейт у програванні
 settings.option.audio.streaming: Потокове відтворення
 settings.option.audio.volume: Гучність
 settings.option.audio.volumeScrollStep: Крок прокручування гучності
 settings.option.audio.volumeScrollStep.description: Наскільки змінюється гучність під час прокручування вгору або вниз на повзунку гучності.
-settings.option.audio.volumeStep: Крок прокручування гучності
+settings.option.audio.volumeStep: Крок гучності прокручуванням
 settings.option.audio.volumeStep.description: Налаштування кроку зміни гучності під час прокручування.
 settings.option.audio.yourSystem: Ваша система
 settings.option.automatic: Автоматично
@@ -4168,18 +4269,18 @@ settings.option.behavior.addToLibraryOnFavorite.caption: Додає нещода
 settings.option.concerts.geolocation: Геолокація
 settings.option.concerts.radius: Радіус
 settings.option.concerts.radius.description: Показувати лише концерти в межах цієї відстані від вашого розташування (потрібно ввімкнути геолокацію)
-settings.option.concerts.radiusUnit: Одиниця вимірювання радіуса
+settings.option.concerts.radiusUnit: Одиниця радіуса
 settings.option.concerts.radiusUnit.description: Одиниця вимірювання для фільтра радіуса
 settings.option.concerts.radiusUnit.kilometers: Кілометри
 settings.option.concerts.radiusUnit.miles: Милі
-settings.option.concerts.showInSidebar: Показувати концерти в бічній панелі
+settings.option.concerts.showInSidebar: Показувати концерти на бічній панелі
 settings.option.concerts.showInSidebar.description: Показувати розділ «Концерти» в бічній панелі
 settings.option.concerts.sortBy: Сортувати за
 settings.option.concerts.sortBy.date: Датою
 settings.option.concerts.sortBy.description: Спосіб сортування концертів у списку
 settings.option.concerts.sortBy.distance: Відстанню
 settings.option.connect.link_account.description: Зв'язування облікового запису Discord із Cider Connect дозволяє зберігати дані користувача, зокрема налаштування, еквалайзери тощо в майбутньому. (У розробці)
-settings.option.connectivity.atmosRatings: Оцінки Atmos від спільноти
+settings.option.connectivity.atmosRatings: Оцінки Dolby Atmos від спільноти
 settings.option.connectivity.atmosRatings.description: Переглядайте та діліться інформацією про те, які альбоми чудово звучать у Dolby Atmos.
 settings.option.connectivity.ciderConnect.description: Спільне прослуховування, спільні плейлисти, дистанційне керування додатком та багато іншого!
 settings.option.connectivity.ciderRemote: Cider Remote
@@ -4233,7 +4334,7 @@ settings.option.connectivity.discordRPC.stateFormat: Формат стану
 settings.option.connectivity.discordRPC.timestamp.disabled: Вимкнено
 settings.option.connectivity.discordRPC.timestamp.elapsed: Час, що минув
 settings.option.connectivity.discordRPC.timestamp.remaining: Залишок часу
-settings.option.connectivity.externalApplications: Зовнішні програми
+settings.option.connectivity.externalApplications: Зовнішні застосунки
 settings.option.connectivity.header.externalApplications: Зовнішні програми
 settings.option.connectivity.lastfmScrobble: Скроблінг у Last.FM
 settings.option.connectivity.lastfmScrobble.delay: Затримка скроблінгу Last.FM (%)
@@ -4245,8 +4346,8 @@ settings.option.connectivity.lastfmScrobble.manualToken: Ввести токен
 settings.option.connectivity.lastfmScrobble.manualToken.link: Натисніть тут, щоб отримати токен Last.fm
 settings.option.connectivity.lastfmScrobble.nowPlaying: Увімкнути статус «Зараз грає» в Last.FM
 settings.option.connectivity.lastfmScrobble.removeFeatured: Вилучати запрошених виконавців із назви пісні (Last.fm)
-settings.option.connectivity.parties: Спільні прослуховування
-settings.option.connectivity.partiesEnabled: Увімкнути спільні прослуховування
+settings.option.connectivity.parties: Спільне прослуховування
+settings.option.connectivity.partiesEnabled: Увімкнути спільне прослуховування
 settings.option.connectivity.partiesEnabled.description: Створюйте або приєднуйтеся до синхронізованих сеансів прослуховування з іншими користувачами Cider.
 settings.option.connectivity.partiesQueueDefault: Режим черги за замовчуванням
 settings.option.connectivity.partiesQueueDefault.audited: Організатор схвалює додавання
@@ -4260,11 +4361,11 @@ settings.option.connectivity.playbackNotifications: Сповіщення про 
 settings.option.connectivity.playbackNotifications.description: Показувати сповіщення з новою піснею під час кожної зміни поточного треку.
 settings.option.connectivity.remoteConnection: Віддалене підключення
 settings.option.connectivity.remoteConnection.description: Створення пари з телефоном або планшетом, а також скасування зв'язку з пристроями, які керують відтворенням.
-settings.option.connectivity.rpcServer: Сервер RPC
+settings.option.connectivity.rpcServer: RPC-сервер
 settings.option.connectivity.rpcServer.description: Керування доступом до Cider для зовнішніх програм за допомогою RPC-сервера.
-settings.option.connectivity.rpcServer.manageAccess: Керування доступом зовнішніх програм до Cider
+settings.option.connectivity.rpcServer.manageAccess: Керувати доступом зовнішніх застосунків до Cider
 settings.option.connectivity.scrobbler: Скроблер
-settings.option.connectivity.scrobblerIntegration: Інтеграція скроблера
+settings.option.connectivity.scrobblerIntegration: Інтеграція скробблера
 settings.option.connectivity.scrobblerIntegration.description: Скроблінг Last.fm, ListenBrainz, Libre.fm та Maloja для збереження історії прослуховування.
 settings.option.connectivity.steam.clearOnPause: Очищати Rich Presence під час паузи
 settings.option.connectivity.vrOverlay: VR-оверлей
@@ -4300,7 +4401,7 @@ settings.option.experimental.unknownPlugin: Невідомі джерела
 settings.option.experimental.unknownPlugin.description: Дозволити встановлення плагінів із репозиторіїв, відмінних від Cider Plugin Repository
 settings.option.experiments.chromecast: Увімкнути Chromecast
 settings.option.experiments.chromecast.description: Додає кнопку трансляції для пристроїв Google Cast у цій мережі.
-settings.option.experiments.chromecastLyrics: Текст пісні Chromecast
+settings.option.experiments.chromecastLyrics: Тексти пісень для Chromecast
 settings.option.experiments.chromecastLyrics.description: Показувати синхронізований текст пісні на екрані Chromecast.
 settings.option.experiments.floatingSearch: Увімкнути плаваючий пошук
 settings.option.experiments.forceExplicit: Автоперемикання на версію альбому з ненормативним вмістом
@@ -4309,13 +4410,13 @@ settings.option.experiments.legacyFetch: Застаріле отримання �
 settings.option.experiments.musicVideos: Увімкнути музичні відео в медіатеці
 settings.option.experiments.title: Експериментальні функції
 settings.option.general.app: Програма
-settings.option.general.artistChips: Теги виконавців
+settings.option.general.artistChips: Чіпси виконавців
 settings.option.general.autoplayByDefault: Увімкнути автовідтворення за замовчуванням
 settings.option.general.autoplayByDefault.description: Автоматично вмикати автовідтворення під час відтворення музики (не застосовується до радіостанцій).
 settings.option.general.autoRemoveDisliked: Автоматично вилучати небажані треки з черги
 settings.option.general.autoRemoveDisliked.description: Автоматично вилучати треки з черги, якщо їх позначено як «Не подобається».
 settings.option.general.cache: Кеш
-settings.option.general.clearCacheDropdown: Очистити кеш (випадне меню)
+settings.option.general.clearCacheDropdown: Випадаюче меню очищення кешу
 settings.option.general.contentToCache: Вміст для кешування
 settings.option.general.customizeSidebar: Налаштувати елементи бічної панелі
 settings.option.general.customizeSidebar.customize: Налаштувати
@@ -4341,13 +4442,13 @@ settings.option.general.language.main: Мови
 settings.option.general.language.unsorted: Несортовані
 settings.option.general.noPlayingAction.newMusicMix: Відтворити «Мікс нової музики»
 settings.option.general.noPlayingAction.none: Нічого не робити
-settings.option.general.noPlayingAction.personalStation: Запустити особисту станцію
+settings.option.general.noPlayingAction.personalStation: Запустити персональну станцію
 settings.option.general.noPlayingAction.recent: Відтворити нещодавні треки
-settings.option.general.noPlayingAction.recentlyAdded: Відтворити нещодавно додані треки
+settings.option.general.noPlayingAction.recentlyAdded: Відтворити нещодавno додані треки
 settings.option.general.noPlayingAction.shuffleLibrary: Перемішати пісні з медіатеки
 settings.option.general.onStartup: Під час запуску
-settings.option.general.onStartup.openStartup: Відкривати початкову сторінку
-settings.option.general.onStartup.resume: Відновлювати останній сеанс
+settings.option.general.onStartup.openStartup: Відкривати стартову сторінку
+settings.option.general.onStartup.resume: Відновити останній сеанс
 settings.option.general.pagination: Кількість елементів на сторінці
 settings.option.general.preventDisplaySleep: Не вимикати дисплей під час відтворення
 settings.option.general.preventSystemSleep: Не переводити комп'ютер у сон під час відтворення
@@ -4373,11 +4474,12 @@ settings.option.general.shareAnalytics: Ділитися аналітикою
 settings.option.general.shareAnalytics.description: Допоможіть нам покращити Cider, ділячись аналітикою програми та даними про використання
 settings.option.general.showLovedTracksInline: Показувати улюблені треки в списку
 settings.option.general.sleepTimer: Таймер сну
-settings.option.general.sleepTimerSettings: Параметри таймера сну
+settings.option.general.sleepTimerSettings: Налаштування таймера сну
 settings.option.general.startupPage: Стартова сторінка
 settings.option.general.startupPage.blank: Порожня сторінка
 settings.option.general.startupPage.description: Виберіть сторінку, яка відображатиметься під час відкриття Cider.
 settings.option.general.startupPage.descriptionV2: Сторінка, яку Cider відкриває в нових вкладках і під час запуску, якщо для параметра «При запуску» вибрано «Відкрити сторінку запуску».
+settings.option.general.startupPage.descriptionV3: Сторінка, яку Cider відкриває під час запуску.
 settings.option.general.startupPage.newTab: Сторінка нової вкладки
 settings.option.general.startupPage.personalHome: Персональна головна сторінка
 settings.option.general.themeUpdateNotification: Автоматично перевіряти наявність оновлень тем
@@ -4391,9 +4493,9 @@ settings.option.general.useSmartQueueByDefault.needsAutomix: Automix вимкн�
 settings.option.general.warnBeforeQueueOverride: Попереджати перед заміною черги
 settings.option.hide: Приховати
 settings.option.left: Ліворуч
-settings.option.lyrics.contributeCta: Додати та завантажити текст пісні
+settings.option.lyrics.contributeCta: Долучитися та завантажити текст
 settings.option.lyrics.contributeCta.description: Завантажуйте синхронізовані тексти пісень, переглядайте їх наживо та стежте за таблицею лідерів.
-settings.option.lyrics.customScrollerProperties: Власні параметри прокручування
+settings.option.lyrics.customScrollerProperties: Власні параметри прокрутки
 settings.option.lyrics.customScrollerProperties.description: Увімкнути власне оформлення для анімації прокручування тексту пісень.
 settings.option.lyrics.defaultProvider: Постачальник за замовчуванням
 settings.option.lyrics.defaultProvider.description: Виберіть бажаного постачальника текстів пісень. Варіант «Авто» автоматично вибере найкраще доступне джерело.
@@ -4402,19 +4504,19 @@ settings.option.lyrics.displayOptions.description: Налаштування ві
 settings.option.lyrics.enableMusixmatch: Увімкнути тексти пісень Musixmatch
 settings.option.lyrics.enableMusixmatchKaraoke: Увімкнути режим караоке (лише Musixmatch)
 settings.option.lyrics.enableQQLyrics: Увімкнути тексти пісень QQ
-settings.option.lyrics.enableSingLyrics: Увімкнути текст для співу
+settings.option.lyrics.enableSingLyrics: Увімкнути караоке-текст
 settings.option.lyrics.enableSingLyrics.description: Показувати синхронізований пословно текст пісні, що підсвічується в такт музиці (якщо доступно).
 settings.option.lyrics.enableStaticLyrics: Увімкнути статичний текст
 settings.option.lyrics.enableStaticLyrics.description: Показувати текст пісні, навіть якщо немає інформації про час. Цей текст не прокручуватиметься автоматично.
-settings.option.lyrics.enableTranslations: Увімкнути переклад
+settings.option.lyrics.enableTranslations: Увімкнути переклади
 settings.option.lyrics.enableTranslations.description: Показувати переклад тексту пісні, якщо він доступний. Переклади надаються спільнотою Musixmatch або створюються за допомогою машинного перекладу.
 settings.option.lyrics.enableYoutubeLyrics: Увімкнути тексти пісень YouTube для музичних відео
-settings.option.lyrics.fpsLimit: Частота кадрів тексту пісні
+settings.option.lyrics.fpsLimit: Частота кадрів тексту
 settings.option.lyrics.fpsLimit.description: Максимальна частота кадрів для анімації тексту пісні. Вища частота забезпечує плавніший вигляд на екранах із високою частотою оновлення, але споживає більше ресурсів процесора та відеокарти. Параметр «Узгодити з дисплеєм» відповідає частоті оновлення вашого монітора.
-settings.option.lyrics.fpsLimit.matchDisplay: Узгодити з дисплеєм
-settings.option.lyrics.keepCompleted: Залишати пройдений текст
+settings.option.lyrics.fpsLimit.matchDisplay: Як на дисплеї
+settings.option.lyrics.keepCompleted: Зберігати завершений текст
 settings.option.lyrics.keepCompleted.description: Залишати вже проспівані рядки видимими (затемненими) над поточним рядком. Якщо вимкнено, пройдені рядки приховуються.
-settings.option.lyrics.localeOverrides: Перевизначення для мовних версій
+settings.option.lyrics.localeOverrides: Перевизначення мови
 settings.option.lyrics.localeOverrides.description: Встановлення власних правил постачальника та перекладу для конкретних мов аудіо
 settings.option.lyrics.musixmatchPreferredLanguage: Бажана мова перекладу Musixmatch
 settings.option.lyrics.preferUserLyrics: Надавати перевагу текстам від користувачів
@@ -4423,21 +4525,21 @@ settings.option.lyrics.provider.apple: Apple Music
 settings.option.lyrics.provider.auto: Авто (найкращий доступний)
 settings.option.lyrics.provider.mxm: Musixmatch
 settings.option.lyrics.provider.netease: NetEase
-settings.option.lyrics.provider.user: Надіслано користувачами
+settings.option.lyrics.provider.user: Від користувачів
 settings.option.lyrics.providerPreferences: Параметри постачальників
 settings.option.lyrics.providerPreferences.description: Налаштування джерел текстів пісень та їхнього пріоритету
-settings.option.lyrics.scrollTuning: Тривалість і плавність прокручування
+settings.option.lyrics.scrollTuning: Тривалість прокрутки та плавність
 settings.option.lyrics.scrollTuning.description: Налаштуйте тривалість прокручування рядків тексту та криву їхньої плавності окремо для бічної панелі та імерсивного плеєра.
-settings.option.lyrics.showDualLanguage: Показувати двома мовами
+settings.option.lyrics.showDualLanguage: Показувати дві мови
 settings.option.lyrics.showDualLanguage.description: Відображати оригінальний текст і переклад одночасно.
-settings.option.lyrics.showTimestamps: Показувати мітки часу при наведенні
+settings.option.lyrics.showTimestamps: Показувати часові мітки при наведенні
 settings.option.lyrics.showTimestamps.description: Відображати мітку часу для кожного рядка тексту пісні при наведенні курсора.
 settings.option.lyrics.thirdPartySources: Увімкнути сторонні джерела
 settings.option.lyrics.thirdPartySources.description: Дозволити завантаження текстів пісень із Musixmatch та NetEase, якщо тексти в Apple Music недоступні. Якість може відрізнятися, а постійне використання може призвести до обмеження частоти запитів.
 settings.option.lyrics.timeOffset: Зсув часу тексту (секунди)
 settings.option.lyrics.timeOffset.description: Налаштування часу відображення тексту. Додатні значення показують текст раніше, від’ємні — пізніше. Корисно для виправлення розсинхронізації аудіо.
 settings.option.lyrics.timeOffset.descriptionV2: Налаштуйте синхронізацію відображення тексту пісень. Додатні значення показують текст пізніше, від'ємні — раніше. Корисно для виправлення розсинхронізації аудіо.
-settings.option.lyrics.timestampStyle: Стиль міток часу
+settings.option.lyrics.timestampStyle: Стиль часових міток
 settings.option.lyrics.timestampStyle.both: Обидва
 settings.option.lyrics.timestampStyle.chip: Плашка
 settings.option.lyrics.timestampStyle.description: Виберіть спосіб відображення міток часу при наведенні на текст пісні.
@@ -4447,10 +4549,10 @@ settings.option.lyrics.trackOverrides.description: Керування блоку
 settings.option.lyrics.translationLanguage: Мова перекладу
 settings.option.lyrics.translationLanguage.description: Мова, якою перекладатиметься текст пісні. Використовується, лише якщо для режиму перекладу вибрано значення «Вручну».
 settings.option.lyrics.translationMode: Режим перекладу
-settings.option.lyrics.translationMode.appLanguage: Автоматично за мовою програми
+settings.option.lyrics.translationMode.appLanguage: Авто за мовою застосунку
 settings.option.lyrics.translationMode.description: Спосіб визначення цільової мови перекладу.
 settings.option.lyrics.translationMode.manual: Вручну (використовувати вибрану мову)
-settings.option.lyrics.translationMode.system: Автоматично за мовою системи
+settings.option.lyrics.translationMode.system: Авто за системною мовою
 settings.option.lyrics.translationSettings: Параметри перекладу
 settings.option.lyrics.translationSettings.description: Налаштування поведінки перекладу тексту пісень
 settings.option.medium: Середній
@@ -4469,7 +4571,7 @@ settings.option.performance.backgroundRefreshTime.description: Час у сек�
 settings.option.performance.dataAndUiLoad: Завантаження даних та інтерфейсу
 settings.option.performance.disableLargeRequestOffloading: Вимкнути розвантаження великих запитів
 settings.option.performance.disableLargeRequestOffloading.description: Вплине на продуктивність інтерфейсу під час великих запитів
-settings.option.performance.enableMediaItemInspect: Увімкнути інспектування медіаелементів для розробників
+settings.option.performance.enableMediaItemInspect: Увімкнути перевірку MediaItems для розробників
 settings.option.performance.enableMediaItemInspect.description: Може незначно вплинути на продуктивність
 settings.option.performance.gameMode: Ігровий режим
 settings.option.performance.gameMode.description: Зменшує візуальні ефекти та може вмикати режим ефективності Windows для зниження навантаження на процесор.
@@ -4478,7 +4580,7 @@ settings.option.performance.graphicsAcceleration: Прискорення гра�
 settings.option.performance.graphicsAcceleration.autoOff: Вимкнено, оскільки цей ПК малює графіку програмно.
 settings.option.performance.graphicsAcceleration.description: Автоматичний режим вимикає його у віртуальній машині, яка малює графіку програмно. Зміни застосовуються під час наступного запуску Cider.
 settings.option.performance.host: Хост
-settings.option.performance.immersiveRenderer: Імерсивний рендерер
+settings.option.performance.immersiveRenderer: Рендерер занурення
 settings.option.performance.immersiveRenderer.description: Використовуйте Canvas 2D замість WebGPU, якщо анімоване тло відображається некоректно або споживає забагато ресурсів графічного процесора.
 settings.option.performance.libraryQueueLimit: Ліміт черги медіатеки
 settings.option.performance.libraryQueueLimit.description: Обмеження кількості пісень, які можна додати в чергу з медіатеки (0 — без обмежень). Більші значення або відсутність ліміту можуть спричинити проблеми з продуктивністю.
@@ -4486,7 +4588,7 @@ settings.option.performance.limitBlurMapFramerateOnBlur: Обмежувати ч
 settings.option.performance.limitBlurMapFramerateOnBlur.description: Знижує частоту кадрів імерсивного анімованого фону, коли вікно не в фокусі, для заощадження енергії. Вимкніть цей параметр, щоб зберегти максимальну швидкість.
 settings.option.performance.limitImmersiveBgFramerateOnBlur: Обмежувати частоту кадрів імерсивного тла, коли вікно не у фокусі
 settings.option.performance.motion: Рух
-settings.option.performance.powerSaverOnBattery: Енергозбереження під час роботи від акумулятора
+settings.option.performance.powerSaverOnBattery: Економія енергії від батареї
 settings.option.performance.powerSaverOnBattery.description: Коли пристрій працює від акумулятора, імерсивне тло відтворюється з частотою не більше 30 кадрів/с, а анімація тексту пісень обмежена 60 кадрами/с.
 settings.option.performance.preloadSidebarPages: Попереднє завантаження сторінок бічної панелі
 settings.option.performance.preloadSidebarPages.description: Завантажує сторінки бічної панелі до того, як ви їх відкриєте. Варіант «При наведенні» запускає завантаження, коли вказівник зупиняється на елементі бічної панелі. Варіант «Під час простою» також завантажує розділи «Слухати зараз», «Огляд» і «Радіо» після запуску та оновлює раніше відкриті списки медіатеки.
@@ -4497,7 +4599,7 @@ settings.option.performance.reduceEffects.description: Вимикає розми
 settings.option.performance.renderer.auto: Автоматично (WebGPU, якщо підтримується)
 settings.option.performance.renderer.canvas: Canvas 2D
 settings.option.performance.renderer.webgpu: WebGPU
-settings.option.performance.ultraWide: Ультраширокий
+settings.option.performance.ultraWide: Ультрашироке
 settings.option.performance.ultraWide.description: Це знімає обмеження меж сторінки, проте програма не оптимізована для ультрашироких екранів, тому елементи можуть виглядати незвично.
 settings.option.performance.useEmotionEngine: Використовувати Emotion Engine
 settings.option.performance.useEmotionEngine.description: Якщо увімкнено, програма використовуватиме Emotion Engine для визначення колірної палітри обкладинки альбому. Це може спричинити проблеми з продуктивністю на слабких пристроях.
@@ -4511,7 +4613,7 @@ settings.option.smartPlaylists.autoRefreshIntervalMinutes: Інтервал фо
 settings.option.smartPlaylists.clearLibraryCache: Очистити кеш пісень медіатеки
 settings.option.smartPlaylists.clearLibraryCache.description: Примусово завантажити медіатеку з Apple Music заново під час наступного оновлення.
 settings.option.smartPlaylists.defaultTrackLimit: Ліміт треків за замовчуванням
-settings.option.smartPlaylists.enabled: Увімкнути правила плейлістів
+settings.option.smartPlaylists.enabled: Увімкнути правила плейлистів
 settings.option.smartPlaylists.enabled.description: Дозволити Cider автоматично керувати плейлістами за допомогою вбудованих правил.
 settings.option.smartPlaylists.maintenance: Обслуговування
 settings.option.smartPlaylists.perPlaylistMinIntervalMinutes: Мінімальний інтервал для кожного плейліста (у хвилинах)
@@ -4535,31 +4637,31 @@ settings.option.sweetener.header.uiCustomization: Налаштування ін�
 settings.option.sweetener.header.uiCustomization.description: Акцентні кольори та відтінки, що використовуються в додатку.
 settings.option.sweetener.immersiveBackground.brightnessPercentage: Яскравість %
 settings.option.sweetener.immersiveBackground.contrastPercentage: Контрастність %
-settings.option.sweetener.immersiveBackground.frameRate: Частота кадрів (активне вікно)
+settings.option.sweetener.immersiveBackground.frameRate: Частота кадрів (вікно активне)
 settings.option.sweetener.immersiveBackground.frameRate.description: Рекомендовано 15–30 FPS
 settings.option.sweetener.immersiveBackground.header.filters: Фільтри
-settings.option.sweetener.immersiveBackground.lightModeWarning: Імерсивне тло наразі не підтримується у світлій темі.
+settings.option.sweetener.immersiveBackground.lightModeWarning: Фон занурення наразі не підтримується в світлому режимі.
 settings.option.sweetener.immersiveBackground.saturationPercentage: Насиченість %
-settings.option.sweetener.immersiveBackground.use: Використовувати імерсивне тло
-settings.option.sweetener.immersiveBackgroundType: Тип імерсивного фону
+settings.option.sweetener.immersiveBackground.use: Використовувати фон занурення
+settings.option.sweetener.immersiveBackgroundType: Тип фону занурення
 settings.option.sweetener.immersiveBackgroundType.immersive: Immersive
 settings.option.sweetener.immersiveBackgroundType.immersiveLite: Immersive Lite
 settings.option.sweetener.useCustomAccentColor: Використовувати власний колір акценту
-settings.option.sweetener.useCustomAccentColor.accentColor: Колір акценту
-settings.option.sweetener.useCustomTintColor: Використовувати власний колір відтінку
+settings.option.sweetener.useCustomAccentColor.accentColor: Акцентний колір
+settings.option.sweetener.useCustomTintColor: Використовувати власний колір тонування
 settings.option.sweetener.useCustomTintColor.lightModeWarning: Коефіцієнти відтінку нижче 0.8 ігноруються у світлій темі.
-settings.option.sweetener.useCustomTintColor.tintColor: Колір відтінку
+settings.option.sweetener.useCustomTintColor.tintColor: Колір тонування
 settings.option.sweetener.useCustomTintColor.tintRatio: Коефіцієнт кольору відтінку
 settings.option.v2: V2
 settings.option.v2rp: V2 RP
 settings.option.v3: V3
 settings.option.v3rp: V3 RP
 settings.option.visual.accentColor: Колір акценту
-settings.option.visual.adaptiveColorPercent: Відсоток Адаптивного Кольору
+settings.option.visual.adaptiveColorPercent: Відсоток адаптивного кольору
 settings.option.visual.additionalAnimatedArtwork: Додаткові анімовані обкладинки в каталозі
 settings.option.visual.additionalAnimatedArtwork.description: Показувати більше анімованих обкладинок, коли вони доступні. Велика кількість анімацій на екрані може знизити продуктивність.
-settings.option.visual.animateArtworkOnHover: Анімувати обкладинку медіаелемента при наведенні
-settings.option.visual.animatedArtwork: Анімовані обкладинки
+settings.option.visual.animateArtworkOnHover: Анімувати обкладинку при наведенні
+settings.option.visual.animatedArtwork: Анімована обкладинка
 settings.option.visual.animatedArtwork.description: Увімкнути анімовані обкладинки, призупиняти, коли вікно неактивне
 settings.option.visual.animatedArtwork.warningDescription: Показувати анімовані обкладинки, коли вони доступні. Це може спричинити проблеми з продуктивністю на слабких пристроях.
 settings.option.visual.animatedArtworkEngine: Рушій анімованих обкладинок
@@ -4571,13 +4673,13 @@ settings.option.visual.animatedArtworkQuality.balanced: Збалансована
 settings.option.visual.animatedArtworkQuality.description: Чіткість анімованої обкладинки. Автоматичний режим підлаштовує кожну обкладинку під її розмір на екрані й підходить для більшості систем.
 settings.option.visual.animatedArtworkQuality.performance: Продуктивність
 settings.option.visual.animatedArtworkQuality.quality: Якість
-settings.option.visual.animatedBackgroundFramerate: Частота кадрів анімованого тла
+settings.option.visual.animatedBackgroundFramerate: Частота кадрів анімованого фону
 settings.option.visual.animatedWindowBackground: Анімоване тло вікна
 settings.option.visual.artistHeaderAlignment: Макет заголовка виконавця
 settings.option.visual.artistHeaderAlignment.center: По центру
 settings.option.visual.artistHeaderAlignment.description: Розташування імені виконавця та дій у заголовку сторінки виконавця.
 settings.option.visual.artistHeaderAlignment.left: Ліворуч (за замовчуванням)
-settings.option.visual.artworkLoadingMethod: Спосіб завантаження ілюстрації
+settings.option.visual.artworkLoadingMethod: Спосіб завантаження обкладинок
 settings.option.visual.artworkLoadingMethod.eager: Активне
 settings.option.visual.artworkLoadingMethod.lazy: Відкладене
 settings.option.visual.chromaticAberrationIntensity: Інтенсивність хроматичної аберації
@@ -4585,39 +4687,39 @@ settings.option.visual.chromaticAberrationIntensity.description: Сила ефе
 settings.option.visual.colorCustomization: Налаштування кольорів
 settings.option.visual.colorScheme: Колірна схема
 settings.option.visual.compactArtistHeader: Компактний заголовок виконавця
-settings.option.visual.contentFilterKeywords: Ключові слова для фільтрації вмісту
+settings.option.visual.contentFilterKeywords: Ключові слова фільтра вмісту
 settings.option.visual.contentPreferences: Параметри вмісту
 settings.option.visual.contentPreferences.description: Зміна макета певних сторінок
 settings.option.visual.contextMenuIcons: Значки меню
 settings.option.visual.customAccentColor: Власний колір акценту
-settings.option.visual.customScalingFactor: Власний масштаб
+settings.option.visual.customScalingFactor: Користувацький коефіцієнт масштабування
 settings.option.visual.customScalingFactor.description: Налаштування масштабу інтерфейсу додатка
-settings.option.visual.enableAnimatedArtworkInMiniPlayer: Увімкнути анімовані обкладинки в мініплеєрі
+settings.option.visual.enableAnimatedArtworkInMiniPlayer: Увімкнути анімовану обкладинку в міні-програвачі
 settings.option.visual.extendedEditorialLayout: Використовувати розширений редакційний макет на сторінках альбомів
 settings.option.visual.extendedEditorialLayout.description: Якщо ввімкнено, на сторінці альбому відображатиметься редакційний банер і застосовуватиметься колірна палітра для певних альбомів на основі доступних ресурсів.
-settings.option.visual.filterPromotionalContent: Фільтрувати рекламний вміст
+settings.option.visual.filterPromotionalContent: Фільтрувати рекламний контент
 settings.option.visual.filterPromotionalContent.description: Якщо ввімкнено, розділи в «Огляді» та «Слухати зараз», які відповідають вашим ключовим словам фільтра, будуть приховані.
-settings.option.visual.floatingPlayer: Плаваючий плеєр
+settings.option.visual.floatingPlayer: Плаваючий програвач
 settings.option.visual.floatingPlayer.description: Від’єднати панель плеєра від країв для вигляду плаваючої капсули
-settings.option.visual.floatingPlayerPadding: Відступи плаваючого плеєра
+settings.option.visual.floatingPlayerPadding: Відступ плаваючого програвача
 settings.option.visual.floatingPlayerPadding.description: Керує розміром простору навколо плаваючого плеєра
-settings.option.visual.floatingPlayerRoundness: Заокруглення плаваючого плеєра
+settings.option.visual.floatingPlayerRoundness: Заокруглення плаваючого програвача
 settings.option.visual.floatingPlayerRoundness.description: Радіус кутів плаваючого плеєра (0 = відповідно до вікна перегляду)
 settings.option.visual.fonts: Шрифти
-settings.option.visual.forceMpWindowControls: Використовувати мультиплатформні елементи керування вікном
+settings.option.visual.forceMpWindowControls: Використовувати багатоплатформні елементи керування вікном
 settings.option.visual.forceRoundedViewport: Використовувати заокруглену область перегляду
 settings.option.visual.forceRoundedViewport.description: Застосовувати заокруглені кути до головного вікна перегляду в усіх макетах
 settings.option.visual.hardwareAcceleration: Апаратне прискорення
 settings.option.visual.hardwareAcceleration.description: Потрібен перезапуск
-settings.option.visual.headerStyle: Стиль заголовка альбомів і плейлістів
+settings.option.visual.headerStyle: Стиль заголовка альбому та плейлиста
 settings.option.visual.headerStyle.appleMusic: Apple Music
 settings.option.visual.headerStyle.appleMusic.description: Кнопки дій розміщуються у верхньому правому куті сторінки.
 settings.option.visual.headerStyle.classic: Класичний
 settings.option.visual.headerStyle.classic.description: Кнопки дій залишаються вбудованими в заголовок сторінки.
 settings.option.visual.headerStyle.description: У класичному стилі дії залишаються в заголовку. В Apple Music кнопки «Поділитися», «Ще» та «Додати до медіатеки» переносяться у плаваючу панель у верхньому правому куті сторінки.
-settings.option.visual.hideAppleRecommends: Приховати картки «Apple рекомендує»
+settings.option.visual.hideAppleRecommends: Приховати картки «Рекомендації Apple»
 settings.option.visual.hideAppleRecommends.description: Вилучає рекламні картки «Apple рекомендує» з розділів рекомендацій «Слухати зараз» та «Головна».
-settings.option.visual.hideHeroItems: Приховати головні банери в «Огляді»
+settings.option.visual.hideHeroItems: Приховати головні елементи в «Огляд»
 settings.option.visual.immersive.adjustVisuals: Налаштувати візуальні ефекти
 settings.option.visual.immersive.background.artwork: Проста обкладинка
 settings.option.visual.immersive.background.blank: Порожньо
@@ -4632,16 +4734,16 @@ settings.option.visual.immersive.coverflowStyle.default: Стандартний
 settings.option.visual.immersive.description: Налаштування імерсивного режиму
 settings.option.visual.immersive.enableHdr: Увімкнути HDR
 settings.option.visual.immersive.fsrUpscale: Масштабування обкладинок за допомогою FSR
-settings.option.visual.immersive.fsrUpscale.applyToAll: "FSR: застосовувати до всіх треків"
+settings.option.visual.immersive.fsrUpscale.applyToAll: "FSR: застосувати до всіх треків"
 settings.option.visual.immersive.fsrUpscale.applyToAll.description: Якщо вимкнено, FSR працює лише для треків, випущених до вказаного року. Увімкніть, щоб масштабувати кожен трек.
 settings.option.visual.immersive.fsrUpscale.description: Масштабування обкладинок альбомів за допомогою AMD FidelityFX Super Resolution. Допомагає старішим обкладинкам (до 2010 року) виглядати чіткіше. Потребує WebGPU.
 settings.option.visual.immersive.fsrUpscale.sharpness: "FSR: різкість"
 settings.option.visual.immersive.fsrUpscale.sharpness.description: Інтенсивність адаптивного до контрасту підвищення різкості (RCAS). 0 — найм’якше, 1 — найрізкіше.
-settings.option.visual.immersive.fsrUpscale.thresholdYear: "FSR: пороговий рік"
+settings.option.visual.immersive.fsrUpscale.thresholdYear: "FSR: рік порогу"
 settings.option.visual.immersive.fsrUpscale.thresholdYear.description: Треки, випущені до цього року, підлягають масштабуванню, якщо вимкнено параметр «Застосовувати до всіх треків».
 settings.option.visual.immersive.hdrBoostScale: Масштаб підсилення HDR
-settings.option.visual.immersive.hideLyricsWhenUnavailable: Приховувати текст пісні, якщо він недоступний
-settings.option.visual.immersive.keepCompletedLyrics: Залишати відтворені рядки тексту
+settings.option.visual.immersive.hideLyricsWhenUnavailable: Приховувати текст пісні, коли він недоступний
+settings.option.visual.immersive.keepCompletedLyrics: Зберігати завершений текст пісні
 settings.option.visual.immersive.keepCompletedLyrics.description: Залишати рядки тексту, які вже були відтворені, на екрані тексту пісні.
 settings.option.visual.immersive.layout.default: One (за замовчуванням)
 settings.option.visual.immersive.layout.minimal: Мінімалістичний
@@ -4650,15 +4752,15 @@ settings.option.visual.immersive.layout.solarium: Solarium
 settings.option.visual.immersive.layout.sonoma: Sonoma
 settings.option.visual.immersive.layout.spectrumDeck: Spectrum Deck
 settings.option.visual.immersive.maxBrightness: Максимальна яскравість
-settings.option.visual.immersive.maxLyricFontSize: Макс. розмір шрифту тексту (пікс.)
+settings.option.visual.immersive.maxLyricFontSize: Максимальний розмір шрифту тексту (px)
 settings.option.visual.immersive.startFullscreen: Запускати в повноекранному режимі
 settings.option.visual.immersive.startingTab: Початкова вкладка
 settings.option.visual.immersive.startingTab.history: Історія
 settings.option.visual.immersive.startingTab.lyrics: Текст пісні
 settings.option.visual.immersive.startingTab.queue: Черга
-settings.option.visual.immersive.ultraHdr: Покращення обкладинок у Ultra HDR
+settings.option.visual.immersive.ultraHdr: Масштабування обкладинок Ultra HDR
 settings.option.visual.immersive.ultraHdr.description: Додає HDR-відблиски, контраст і колір до обкладинок альбомів у кожному треку. Найкраще виглядає на HDR-дисплеї; на інших дисплеях ефект слабший. Потрібен WebGPU.
-settings.option.visual.immersive.ultraHdr.headroom: "Ultra HDR: запас яскравості"
+settings.option.visual.immersive.ultraHdr.headroom: "Ultra HDR: запас пікової яскравості"
 settings.option.visual.immersive.ultraHdr.headroom.description: Максимальна яскравість відблисків як множник стандартного білого. Зменште це значення, якщо відблиски занадто яскраві на вашому дисплеї.
 settings.option.visual.immersive.ultraHdr.intensity: "Ultra HDR: інтенсивність"
 settings.option.visual.immersive.ultraHdr.intensity.description: Сила ефекту. 0 залишає обкладинку без змін, 1 застосовує повний профіль.
@@ -4667,17 +4769,17 @@ settings.option.visual.immersive.ultraHdr.profile.cinematic: Кінематог�
 settings.option.visual.immersive.ultraHdr.profile.description: Natural залишається близьким до оригіналу, Vivid — яскравий і насичений, Cinematic — з високим контрастом і стриманим кольором.
 settings.option.visual.immersive.ultraHdr.profile.natural: Природний
 settings.option.visual.immersive.ultraHdr.profile.vivid: Яскравий
-settings.option.visual.immersive.useAnimatedArtwork: Використовувати анімовані обкладинки
+settings.option.visual.immersive.useAnimatedArtwork: Використовувати анімовану обкладинку
 settings.option.visual.immersive.useAnimatedArtwork.description: Показувати анімовані обкладинки, якщо вони доступні. Це може спричинити проблеми з продуктивністю на слабких пристроях.
 settings.option.visual.immersive.useAnimatedBackground: Анімоване тло Immersive
-settings.option.visual.immersive.useBackgroundBpm: Швидкість тла на основі BPM
+settings.option.visual.immersive.useBackgroundBpm: Швидкість фону на основі BPM
 settings.option.visual.immersiveBackground.blank: Пусто
 settings.option.visual.immersiveBackground.customImage: Власне зображення
 settings.option.visual.immersiveBackground.customImageMixed: Власне зображення (змішане)
 settings.option.visual.immersiveBackground.gradientMesh: Градієнтна сітка
 settings.option.visual.immersiveBackground.simpleArtwork: Проста обкладинка
 settings.option.visual.immersiveBackground.simpleColor: Простий колір
-settings.option.visual.immersiveBgSettings: Налаштування імерсивного тла
+settings.option.visual.immersiveBgSettings: Налаштування занурювального фону
 settings.option.visual.immersiveBgSettings.description: Ефекти та фільтри фону додатка.
 settings.option.visual.immersiveLayout.classic: One Classic
 settings.option.visual.immersiveLayout.classic.description: Оригінальний імерсивний макет із нижнім плеєром на всю ширину.
@@ -4693,13 +4795,13 @@ settings.option.visual.immersiveLayout.sonoma: Sonoma
 settings.option.visual.immersiveLayout.sonoma.description: Обкладинка зливається з фоном, з плаваючою карткою керування.
 settings.option.visual.immersiveLayout.spectrumDeck: Spectrum Deck
 settings.option.visual.immersiveLayout.spectrumDeck.description: Спектр у реальному часі з плаваючою обкладинкою.
-settings.option.visual.immersiveStyle: Імерсивний стиль
-settings.option.visual.immersiveStylePortrait: Імерсивний стиль (портретний)
+settings.option.visual.immersiveStyle: Стиль занурення
+settings.option.visual.immersiveStylePortrait: Стиль занурення (портретний)
 settings.option.visual.largeHeaderTitles: Великі заголовки
 settings.option.visual.largeHeaderTitles.description: Збільшує текст заголовків на сторінках альбомів і плейлістів для виразнішого вигляду.
 settings.option.visual.layoutProfile: Тип профілю макета
 settings.option.visual.layoutProfile.description: Налаштуйте макет програми відповідно до своїх уподобань
-settings.option.visual.layoutType: Тип розташування
+settings.option.visual.layoutType: Тип макета
 settings.option.visual.layoutType.calico: Calico
 settings.option.visual.layoutType.calico.description: Бічна панель на всю висоту з плеєром в області вмісту.
 settings.option.visual.layoutType.mavericks: Mavericks
@@ -4712,15 +4814,15 @@ settings.option.visual.lcdChromaticAberration: Хроматична аберац
 settings.option.visual.lcdChromaticAberration.description: Заломлювати тло LCD-екрана відтворення через шейдер рідкого скла з RGB-облямівкою.
 settings.option.visual.liquidGlassPlayer: Панель плеєра Liquid Glass
 settings.option.visual.liquidGlassPlayer.description: Використовувати ефект рідкого скла для панелі відтворення. Вимкніть для плоскої суцільної панелі (яка також легша для рендерингу).
-settings.option.visual.liquidGlassScrollPerf: Полегшене скло під час прокручування
+settings.option.visual.liquidGlassScrollPerf: Легке скло під час прокручування
 settings.option.visual.liquidGlassScrollPerf.description: Спрощує заломлення рідкого скла до звичайного розмиття під час прокручування, плавно повертаючи ефект після зупинки. Зменшує посмикування при прокручуванні на вимогливих системах без змін у стані спокою. Завжди ввімкнено в ігровому режимі.
 settings.option.visual.liquidGlassScrollPerf.descriptionV2: Під час прокручування спрощує заломлення рідкого скла до простого розмиття, а після зупинки плавно повертає його. Зменшує ривки прокручування на потужних системах і не змінює вигляд у спокої.
-settings.option.visual.mainMenuPosition: Позиція головного меню
+settings.option.visual.mainMenuPosition: Положення головного меню
 settings.option.visual.matchPageToArtwork: Узгодити сторінку з обкладинкою
 settings.option.visual.matchPageToArtwork.description: Фарбує сторінки альбомів і плейлистів у кольори їхніх обкладинок у світлому та темному режимах.
-settings.option.visual.mergeAppleMusicPlaylists: Об’єднати плейлисти Apple Music
+settings.option.visual.mergeAppleMusicPlaylists: Об'єднати плейлисти Apple Music
 settings.option.visual.mergeAppleMusicPlaylists.description: Змішувати кураторські плейлисти Apple Music з основним розділом «Плейлисти» замість показу їх окремою групою.
-settings.option.visual.miniplayerSkin: Макет мініплеєра
+settings.option.visual.miniplayerSkin: Макет міні-програвача
 settings.option.visual.miniplayerSkin.aluminum: Алюміній
 settings.option.visual.miniplayerSkin.aqua: Aqua
 settings.option.visual.miniplayerSkin.aquaAlt: Aqua (альт.)
@@ -4735,12 +4837,12 @@ settings.option.visual.mojavePlayerType.comfy: Зручний
 settings.option.visual.mojavePlayerType.comfy.description: Вищий плеєр з обкладинкою та метаданими ліворуч.
 settings.option.visual.mojavePlayerType.compact: Компактний
 settings.option.visual.mojavePlayerType.compact.description: Тонкий плеєр із РК-дисплеєм по центру та шкалою відтворення зверху.
-settings.option.visual.mojavePlayerType.compactInline: Вбудований компактний
+settings.option.visual.mojavePlayerType.compactInline: Компактний рядок
 settings.option.visual.mojavePlayerType.compactInline.description: Один тонкий рядок зі шкалою відтворення всередині РК-дисплея.
-settings.option.visual.moveUpLinks: Перемістити посилання «Дивіться також» в Огляді вгору
-settings.option.visual.musicVideoPinMaxResolution: Завжди відтворювати музичні відео в максимальній роздільній здатності
+settings.option.visual.moveUpLinks: Перемістити посилання «Більше для перегляду» в «Огляд» угору
+settings.option.visual.musicVideoPinMaxResolution: Завжди відтворювати музичні відео у максимальній роздільній здатності
 settings.option.visual.musicVideoPinMaxResolution.description: Зберігає найвищу якість відео замість того, щоб починати з низької та поступово її підвищувати. У маленькому вікні або за лімітного підключення це споживає помітно більше трафіку.
-settings.option.visual.musicVideoPrefetchOnHover: Підготовка музичних відео при наведенні
+settings.option.visual.musicVideoPrefetchOnHover: Підготувати музичні відео при наведенні
 settings.option.visual.musicVideoPrefetchOnHover.description: Починає завантаження відео, коли курсор затримується на значку, щоб воно відкривалося швидше після натискання.
 settings.option.visual.musicVideoPrefetchSegmentsOnHover: Завантажувати перший фрагмент при наведенні
 settings.option.visual.musicVideoPrefetchSegmentsOnHover.description: Також завантажує перші кілька секунд відео ще до натискання. Це витрачає кілька мегабайтів при кожному наведенні, навіть якщо відео так і не буде відкрито.
@@ -4749,8 +4851,8 @@ settings.option.visual.paletteContrast.description: Наскільки коль�
 settings.option.visual.paletteContrast.enhanced: Покращений
 settings.option.visual.paletteContrast.maximum: Максимальний
 settings.option.visual.paletteContrast.standard: Стандартний
-settings.option.visual.pauseAnimatedOnBlur: Призупиняти анімовані обкладинки, коли вікно неактивне
-settings.option.visual.playerMaterial: Матеріал плеєра
+settings.option.visual.pauseAnimatedOnBlur: Призупиняти анімовану обкладинку, коли вікно неактивне
+settings.option.visual.playerMaterial: Матеріал програвача
 settings.option.visual.playerMaterial.blur: Розмиття
 settings.option.visual.playerMaterial.blur.description: Використовувати напівпрозорий матовий матеріал для панелі відтворення без ефекту заломлення рідкого скла.
 settings.option.visual.playerMaterial.default.description: "За замовчуванням для платформи: «Рідке скло» на macOS, «Розмиття» на інших ОС."
@@ -4760,7 +4862,7 @@ settings.option.visual.playerMaterial.liquidGlass.description: Використ�
 settings.option.visual.playerMaterial.none: Немає
 settings.option.visual.playerMaterial.none.description: Використовувати суцільну непрозору панель для панелі відтворення.
 settings.option.visual.playerPosition: Позиція плеєра
-settings.option.visual.playerType: Тип плеєра
+settings.option.visual.playerType: Тип програвача
 settings.option.visual.plugin.github.download: Інсталювати з URL-адреси GitHub
 settings.option.visual.plugin.github.explore: Огляд плагінів GitHub
 settings.option.visual.plugin.github.install.confirm: Ви впевнені, що хочете встановити {{repo}}?
@@ -4774,20 +4876,20 @@ settings.option.visual.realtimeVisualizer.description: Показувати ві
 settings.option.visual.searchType: Тип пошуку
 settings.option.visual.searchType.floating: Плаваючий
 settings.option.visual.searchType.inline: Вбудований
-settings.option.visual.showBpmAndKey: Показувати темп (BPM) і тональність треків у плейлістах та альбомах
+settings.option.visual.showBpmAndKey: Показувати BPM і тональність треків у плейлистах та альбомах
 settings.option.visual.showBpmAndKey.description: Якщо ввімкнено, завантаження вмісту триватиме довше.
 settings.option.visual.showPersonalInfo: Показувати особисту інформацію
-settings.option.visual.showPlaylistArtworkInSidebar: Показувати обкладинки плейлістів у бічній панелі
+settings.option.visual.showPlaylistArtworkInSidebar: Показувати обкладинки плейлистів на бічній панелі
 settings.option.visual.showPodcastsInSidebar: Показувати подкасти на бічній панелі
 settings.option.visual.showPodcastsInSidebar.description: Підтримка подкастів усе ще перебудовується, тому в Медіатеці наразі відображається лише заглушка.
-settings.option.visual.showQuickActions: Показати Швидкі дії
-settings.option.visual.showWatchMusicVideoWhenAvailable: Показувати "Дивитися музичне відео" за наявності
+settings.option.visual.showQuickActions: Показувати швидкі дії
+settings.option.visual.showWatchMusicVideoWhenAvailable: Показувати «Дивитися музичне відео», коли доступно
 settings.option.visual.sidebarStyle: Стиль бічної панелі
 settings.option.visual.sidebarStyle.apple: Apple Music
 settings.option.visual.sidebarStyle.default: За замовчуванням
 settings.option.visual.sidebarStyle.description: Виберіть вигляд бічної панелі. Варіант «Apple Music» вкладає закріплені елементи в розділ «Медіатека» та вилучає заголовок розділу «Apple Music».
 settings.option.visual.simpleArtworkBg.saturate: Насиченість
-settings.option.visual.sizeProfile: Розмір інтерфейсу профілю
+settings.option.visual.sizeProfile: Профіль розміру інтерфейсу
 settings.option.visual.sizeProfile.description.default: Стандартний розмір для будь-яких пристроїв введення. Стиль iOS / Android / Modern Windows.
 settings.option.visual.sizeProfile.description.desktop: Розмір для настільних комп'ютерів, для використання з мишею та клавіатурою. Стиль macOS / Classic Windows.
 settings.option.visual.sizeProfile.desktop: Настільний
@@ -4804,31 +4906,31 @@ settings.option.visual.theme.light: Світла
 settings.option.visual.theme.manageStyles: Керування стилями
 settings.option.visual.theme.uninstall: Видалити
 settings.option.visual.theme.viewInfo: Переглянути інформацію
-settings.option.visual.titleBarStyle: Стиль заголовку
+settings.option.visual.titleBarStyle: Стиль заголовка вікна
 settings.option.visual.titleBarStyle.winui: WinUI
 settings.option.visual.topToolbarWidget: Віджет верхньої панелі інструментів
 settings.option.visual.transparency: Увімкнути прозорість
 settings.option.visual.transparent: Прозора рамка
 settings.option.visual.transparent.description: потребує підтримки темою, необхідний перезапуск
 settings.option.visual.uiscale: Масштаб інтерфейсу
-settings.option.visual.useAdaptiveColors: Використовувати Адаптивні Кольори
+settings.option.visual.useAdaptiveColors: Використовувати адаптивні кольори
 settings.option.visual.useAdaptiveColors.description: Змініть колір акценту відповідно до поточної пісні
 settings.option.visual.useAdaptiveColors.popup: Адаптивні кольори будуть застосовані до наступного треку.
-settings.option.visual.verticalDrawerMode: Розміщення черги та тексту пісень
+settings.option.visual.verticalDrawerMode: Розташування черги та текстів
 settings.option.visual.verticalDrawerMode.auto.description: Використовувати нижню висувну панель під плеєром/вмістом на портретних екранах та бічну панель на широкоформатних.
-settings.option.visual.verticalDrawerMode.bottom: Нижня висувна панель
+settings.option.visual.verticalDrawerMode.bottom: Нижня панель
 settings.option.visual.verticalDrawerMode.bottom.description: Завжди показувати чергу та текст пісень у нижній висувній панелі під плеєром/вмістом.
 settings.option.visual.verticalDrawerMode.description: Налаштуйте, чи відкриватимуться черга та текст пісень у нижній або бічній висувній панелі на вертикальних екранах.
-settings.option.visual.verticalDrawerMode.side: Бічна висувна панель
+settings.option.visual.verticalDrawerMode.side: Бічна панель
 settings.option.visual.verticalDrawerMode.side.description: Завжди показувати чергу та текст пісень у бічній висувній панелі праворуч.
 settings.option.visual.vibrancyMode.acrylic: Акрил
 settings.option.visual.vibrancyMode.mica: Слюда
 settings.option.visual.vibrancyMode.tabbed: Вкладки
-settings.option.visual.vibrancySettings: Налаштування ефекту насиченості
+settings.option.visual.vibrancySettings: Налаштування яскравості
 settings.option.visual.windowBackgroundStyle: Стиль фону вікна
 settings.option.visual.windowColor: Колір відтінку вікна
-settings.option.visual.windowControlPosition: Позиція кнопок керування вікном
-settings.option.visual.windowingMode: Режим прокручування та рендерингу
+settings.option.visual.windowControlPosition: Розташування кнопок керування вікном
+settings.option.visual.windowingMode: Режим прокрутки та відображення
 settings.option.visual.windowingMode.auto: Авто (з підтримкою тачпада)
 settings.option.visual.windowingMode.description: Виберіть, як застосунок рендерить та прокручує вміст. Варіант «Авто» рекомендований для більшості користувачів, на деяких пристроях із тачпадом варіант «Старий» може бути чутливішим.
 settings.option.visual.windowingMode.fallbackNotice.body: Натомість Cider використовує старий режим.
@@ -4836,7 +4938,7 @@ settings.option.visual.windowingMode.fallbackNotice.title: Новий режим
 settings.option.visual.windowingMode.glass: Новий
 settings.option.visual.windowingMode.performance: Старий
 settings.option.visual.windowStyle: Стиль вікна
-settings.option.visual.windowVibrancy: Ефект насиченості вікна
+settings.option.visual.windowVibrancy: Яскравість вікна
 settings.option.window.close_button_hide: Кнопка закриття має приховувати програму
 settings.option.window.maxElementScale: Максимальний масштаб елементів
 settings.option.window.openOnStartup: Запускати Cider під час запуску
@@ -4867,24 +4969,36 @@ settings.power.savers: Енергозбереження
 settings.power.summary.count: "Увімкнено функцій: {{high}} з високим впливом, {{medium}} з помірним"
 settings.power.summary.high: Високий вплив
 settings.power.summary.medium: Помірний вплив
+settings.privacy.appPreferences: Параметри застосунку
+settings.privacy.appPreferences.description: Поділіться параметрами застосунку, щоб ми знали, як вам зручніше налаштувати Cider.
+settings.privacy.appUsage: Використання саме застосунку
+settings.privacy.appUsage.description: Надсилати анонімні дані про використання функцій,特定 для Cider. Вони не містять особистої інформації чи даних Apple Music.
+settings.privacy.audioLabs: Лабораторія аудіо Cider
+settings.privacy.audioLabs.description: Надсилає інформацію про те, як налаштовано лабораторію аудіо Cider.
+settings.privacy.deviceSpecs: Характеристики пристрою
+settings.privacy.deviceSpecs.description: "Надсилає інформацію про поточне апаратне забезпечення: ЦП, ГП, оперативну пам'ять, аудіопристрої, а також операційну систему. Інформація є базовою і не містить серійних номерів чи ідентифікаторів пристрою."
+settings.privacy.replay: Надсилати історію прослуховування для Cider Replay
+settings.privacy.replay.description: Анонімно надсилати історію прослуховування для участі в річному спільному проєкті Cider Replay. Публічну статистику можна переглянути на cider.sh/replay.
+settings.privacy.statement: Ми в Cider Collective дуже серйозно ставимося до конфіденційності. Ми не збираємо жодної особистої інформації, що може ідентифікувати користувача, і не продаємо дані третім сторонам. Будь-які дані, якими ви вирішите поділитися з нами, використовуються для покращення застосунку і не передаються нікому іншому; уся особиста інформація, яка може зберігатися, видаляється перед передачею нам.
 settings.profile.crop.hint: Перетягуйте для переміщення, прокручуйте для масштабування
 settings.profile.crop.title: Розташування фотографії
 settings.profile.defaultName: Користувач Apple Music
-settings.profile.field.displayName: Ім'я, що відображається
+settings.profile.field.displayName: Відображуване ім’я
 settings.profile.field.displayName.description: Відображається в бічній панелі та в усьому Cider.
 settings.profile.field.handle.description: Ваш @username, використовується для спільного доступу.
 settings.profile.field.photo: Фото профілю
+settings.profile.field.photo.change: Змінити фото профілю
 settings.profile.field.photo.description: Зараз встановлено власне фото.
 settings.profile.header.identity: Редагувати профіль
-settings.profile.header.region: Регіон та мова
-settings.profile.header.visibility: Відображення в бічній панелі
+settings.profile.header.region: Регіон і мова
+settings.profile.header.visibility: Відображення на бічній панелі
 settings.profile.language.description: Мова метаданих каталогу для вибраної вітрини.
-settings.profile.option.showHandle: Показувати нікнейм
-settings.profile.option.showMainMenu: Головне меню в області профілю бічної панелі
+settings.profile.option.showHandle: Показувати соціальний нік
+settings.profile.option.showMainMenu: Головне меню в області профілю на бічній панелі
 settings.profile.option.showName: Показувати ім'я профілю
-settings.profile.option.showProfile: Показувати профіль у бічній панелі
+settings.profile.option.showProfile: Показувати профіль на бічній панелі
 settings.profile.policy.allowed: Дозволено
-settings.profile.policy.label: Нецензурний вміст
+settings.profile.policy.label: Явний вміст
 settings.profile.policy.restricted: Обмежено
 settings.profile.signOut.confirmMessage: Ви повернетеся на екран входу, а кеш вашої локальної медіатеки буде очищено. Продовжити?
 settings.profile.signOut.confirmTitle: Вийти з Apple Music?
@@ -4922,6 +5036,7 @@ settings.resetCider.confirm.ok: Скинути Cider
 settings.resetCider.confirm.title: Скинути Cider?
 settings.resetCider.confirm.warning: Цю дію не можна скасувати. Cider перезапуститься після скидання.
 settings.resetCider.confirm.willReset: Буде скинуто
+settings.resetCider.deselectAll: Скасувати вибір усіх
 settings.resetCider.error: Під час скидання сталася помилка.
 settings.resetCider.group.accounts: Облікові записи
 settings.resetCider.group.core: Скинути
@@ -4931,6 +5046,10 @@ settings.resetCider.resetButton: Скинути Cider
 settings.resetCider.resetting: Скидання…
 settings.resetCider.selectAll: Виділити все
 settings.resetCider.title: Скинути Cider
+settings.search.empty: Немає налаштувань, що відповідають пошуку.
+settings.search.pages: Сторінки
+settings.search.resultCount: "Налаштувань відповідає: {{count}}"
+settings.search.resultCountOne: "Налаштування відповідає: 1"
 settings.sleepTimer.endsIn: "Завершується через: {{remainingTime}} ({{endTime}})"
 settings.sleepTimer.notSet: Таймер не встановлено
 settings.sleepTimer.title: Встановити таймер сну
@@ -4940,7 +5059,7 @@ settings.smartPlaylists.section.maintenance.description: Примусово ви
 settings.smartPlaylists.section.rules: Правила
 settings.smartPlaylists.section.rules.description: Чи застосовує Cider вбудовані правила плейлістів і як часто їх перевіряє.
 settings.smartPlaylists.section.rules.descriptionV2: Чи застосовує Cider вбудовані правила плейлистів. Вони повторно виконуються з часом фонового оновлення в розділі «Споживання енергії».
-settings.sweetener.useSystemAccentColor: Використовувати системний акцентний колір
+settings.sweetener.useSystemAccentColor: Використовувати системний колір акценту
 settings.takeout.chooseFile: Вибрати файл…
 settings.takeout.error.badVersion: У цьому файлі відсутня інформація про версію.
 settings.takeout.error.generic: Не вдалося прочитати цей файл.
@@ -4979,7 +5098,7 @@ settings.troubleshooting.impressionReporting.warning2: Це справжня в�
 settings.troubleshooting.logFile: Файл журналу
 settings.troubleshooting.logFile.actions: Дії з файлом журналу
 settings.troubleshooting.logFile.desc: Перегляд, копіювання або очищення файлу журналу
-settings.troubleshooting.mkliteDebug: Журналювання налагодження MKLite
+settings.troubleshooting.mkliteDebug: Журнал налагодження MKLite
 settings.troubleshooting.mkliteDebug.desc: Детальний вивід у консоль від MKLite — корисні дані PlayActivity (JSPLAY), зміни треків та стан відтворення. Корисно для порівняння даних, які ми надсилаємо Apple, з music.apple.com. Вимкніть для звичайного використання.
 settings.troubleshooting.mkLoadingMethod: Метод завантаження MusicKit
 settings.troubleshooting.mkLoadingMethod.warning1: Зміна методу завантаження MusicKit. Використовується для вирішення можливих проблем із завантаженням після оновлень MusicKit.
@@ -4990,7 +5109,66 @@ settings.troubleshooting.rebootMk.desc: Перезапустіть MusicKit дл
 settings.troubleshooting.testSignIn: Перевірити вхід в Apple Music
 settings.troubleshooting.testSignIn.desc: Запустіть спливне вікно входу в Apple Music, щоб перевірити успішність входу, а потім підтвердьте токен через API. Нічого не зберігається, а ваш поточний сеанс залишається без змін.
 settings.troubleshooting.title: Усунення неполадок
-settings.updates.action.check: Перевірити наявність оновлень
+settings.tweaks.animateArtworkOnHover.description: Відтворювати анімовану обкладинку, коли на ній зупиняється вказівник.
+settings.tweaks.artworkFadeIn.description: Показувати обкладинки одразу, а не плавно з'являтися під час завантаження.
+settings.tweaks.artworkHighlighting.description: Додавати м'яку тінь і підсвічування обкладинкам у сітках і списках.
+settings.tweaks.artworkLoadingMethod.description: Лінивe завантаження обкладинок під час прокрутки до них. Негайне завантаження — одразу.
+settings.tweaks.card.musicVideos: Музичні відео
+settings.tweaks.ciderAudioBadges.description: Показувати значки Cider Audio поруч із піснею в програвачі.
+settings.tweaks.ciderAudioToolbar.description: Показувати кнопку Cider Audio на панелі інструментів.
+settings.tweaks.compactSidebarSize: Компактний розмір бічної панелі
+settings.tweaks.contextMenuIcons.description: Для яких пунктів меню показувати значок.
+settings.tweaks.floatingSearchBlur: Розмиття за плаваючим пошуком
+settings.tweaks.floatingSearchClear: Очищати плаваючий пошук під час закриття
+settings.tweaks.forceMpWindowControls.description: Використовувати власні кнопки вікна Cider замість системних.
+settings.tweaks.hideHeroItems.description: Приховувати великі рекламні банери у верхній частині розділу «Огляд».
+settings.tweaks.homeButtonLocation.description: Where the Home button sits.
+settings.tweaks.immersiveArtworkHighlight: Підсвічування обкладинок у режимі занурення
+settings.tweaks.immersiveArtworkHighlight.description: Додавати підсвічування до обкладинки в режимі занурення.
+settings.tweaks.immersiveBackgroundBpm.description: Анімувати фон у такт темпу пісні.
+settings.tweaks.immersiveControlsTimeout: Час до приховування елементів керування в immersive-режимі
+settings.tweaks.immersiveControlsTimeout.description: Секунди до приховування елементів керування.
+settings.tweaks.immersiveHideLyrics.description: Приховувати панель тексту для пісень без тексту.
+settings.tweaks.immersiveLyricGlow: Світіння активного рядка тексту
+settings.tweaks.immersiveLyricGlow.description: Додавати світіння до рядка, що виконується.
+settings.tweaks.immersiveMaxLyricSize.description: Найбільший розмір, до якого може збільшуватися текст у режимі Immersive.
+settings.tweaks.mainMenuPosition.description: Розташування кнопки головного меню.
+settings.tweaks.mavericksLcdStyle: Стиль LCD Mavericks
+settings.tweaks.mavericksLcdStyle.description: Вигляд дисплея «Зараз грає» у макеті Mavericks.
+settings.tweaks.miniPlayerAnimatedArtwork.description: Відтворювати анімовані обкладинки у вікні міні-плеєра.
+settings.tweaks.moveUpLinks.description: Розмістити посилання на додатковий вміст угорі розділу «Огляд».
+settings.tweaks.musicVideoBadge.description: Показувати кнопку в плеєрі, якщо для пісні є музичне відео.
+settings.tweaks.pauseAnimatedOnBlur.description: Призупиняти анімовані обкладинки, коли Cider не активне вікно.
+settings.tweaks.progressAccent: Смуга прогресу в акцентному кольорі
+settings.tweaks.progressAccent.description: Заповнювати смугу прогресу пісні акцентним кольором.
+settings.tweaks.resizableMiniPlayer.description: Дозволити змінювати розмір вікна міні-плеєра.
+settings.tweaks.richGridNoScrollAnimation: Миттєве прокручування в сітці альбомів
+settings.tweaks.richGridNoScrollAnimation.description: Переходити до альбому без анімації прокручування.
+settings.tweaks.richGridOpenPage: Відкривати альбоми як сторінки із сітки альбомів
+settings.tweaks.richGridOpenPage.description: Переходити на сторінку альбому замість розгортання в сітці.
+settings.tweaks.richGridScrollPosition: Положення прокручування сітки альбомів
+settings.tweaks.richGridScrollPosition.description: Де прокручувати сітку після відкриття альбому.
+settings.tweaks.scrollbarType.description: Використовувати власні смуги прокручування Cider або системні.
+settings.tweaks.searchStyle: Стиль пошуку
+settings.tweaks.searchStyle.description: Пошук у заголовку вікна або на панелі поверх сторінки.
+settings.tweaks.section.artwork: Обкладинки
+settings.tweaks.section.browse: Огляд
+settings.tweaks.section.immersive: Immersive
+settings.tweaks.section.lyrics: Текст пісні
+settings.tweaks.section.pagesGrids: Сторінки та сітки
+settings.tweaks.section.playerBar: Панель плеєра
+settings.tweaks.section.search: Пошук
+settings.tweaks.section.sidebarNavigation: Бічна панель і навігація
+settings.tweaks.section.windowToolbar: Вікно та панель інструментів
+settings.tweaks.showBitrate.description: Показувати бітрейт потоку поруч із піснею в плеєрі.
+settings.tweaks.sidebarPlaylistArtwork.description: Показувати обкладинку кожного плейлиста поруч з його назвою.
+settings.tweaks.simpleArtworkMask.description: Розчиняти нижню частину фонової обкладинки.
+settings.tweaks.sonomaLyricArc: Вигнутий текст у Sonoma
+settings.tweaks.sonomaRadialMask: Альтернативна маска Sonoma
+settings.tweaks.volumeIosStyle: Повзунок гучності в стилі iOS
+settings.tweaks.volumeIosStyle.description: Малювати повзунок гучності у стилі, який використовується на iPhone.
+settings.tweaks.windowControlPosition.description: З якого боку розташовані кнопки керування вікном.
+settings.updates.action.check: Перевірити оновлення
 settings.updates.action.install: Встановити оновлення
 settings.updates.action.restart: Перезапустити Cider
 settings.updates.action.retry: Спробувати знову
@@ -5000,7 +5178,7 @@ settings.updates.build: Збірка
 settings.updates.channel: Канал
 settings.updates.codename: Кодова назва
 settings.updates.currentlyRunning: Поточна версія
-settings.updates.firstInstalled: Вперше встановлено
+settings.updates.firstInstalled: Встановлено вперше
 settings.updates.platform: Платформа
 settings.updates.progress.failed: Помилка оновлення
 settings.updates.progress.failed.sub: Під час оновлення сталася помилка.
@@ -5021,39 +5199,44 @@ settings.updates.progress.working.sub: Зачекайте трохи, це за�
 settings.updates.section.about: Про вашу версію
 settings.updates.section.alsoAvailable: Також доступно
 settings.updates.section.history: Історія оновлень
-settings.updates.section.whatsNew: Що нового в Cider
+settings.updates.section.whatsNew: Що нового в Cider {version}
 settings.updates.status.available: Доступне оновлення
-settings.updates.status.checking: Пошук оновлень...
-settings.updates.status.failed: Помилка оновлення
+settings.updates.status.checking: Перевірка оновлень...
+settings.updates.status.failed: Не вдалося оновити
 settings.updates.status.idle: Встановлено найновішу версію Cider
 settings.updates.status.success: Потрібен перезапуск
 settings.updates.status.working: Встановлення...
-settings.visual.card.appBackground: Фон додатка
-settings.visual.card.behaviorLyrics: Поведінка та тексти пісень
+settings.visual.card.appBackground: Фон застосунку
+settings.visual.card.behavior: Поведінка
+settings.visual.card.behaviorLyrics: Поведінка та текст пісні
 settings.visual.card.browse: Огляд
 settings.visual.card.contentFilter: Фільтр вмісту
 settings.visual.card.experimental: Експериментальні
 settings.visual.card.fsrUpscaling: Масштабування FSR
 settings.visual.card.moreAnimatedArtwork: Більше анімованих обкладинок
 settings.visual.card.playerEffects: Ефекти плеєра
-settings.visual.card.sidebarNavigation: Бічна панель та навігація
-settings.visual.card.trackMetadata: Метадані треку
-settings.visual.card.ultraHdr: Покращення у Ultra HDR
-settings.visual.editorialLayout: Використовувати редакційне оформлення
+settings.visual.card.sidebarNavigation: Бічна панель і навігація
+settings.visual.card.trackMetadata: Метадані треків
+settings.visual.card.ultraHdr: Масштабування Ultra HDR
+settings.visual.editorialLayout: Використовувати редакційний макет
 settings.visual.editorialLayout.desc: Відображає редакційний банер і застосовує колірну палітру для певних альбомів
-settings.visual.editorialPreferenceOrder: Пріоритет редакційного оформлення
+settings.visual.editorialPreferenceOrder: Порядок редакційних пріоритетів
 settings.visual.section.appearance: Зовнішній вигляд
 settings.visual.section.appearance.description: Колірна схема, акцентні кольори та фон додатка.
-settings.visual.section.artwork: Обкладинки та рух
+settings.visual.section.artwork: Обкладинки та анімація
 settings.visual.section.artwork.description: Анімовані обкладинки та налаштування руху.
-settings.visual.section.content: Огляд та вміст
+settings.visual.section.content: Перегляд і вміст
 settings.visual.section.content.description: Макети сторінок, параметри огляду та фільтрація вмісту.
 settings.visual.section.customCss.description: Застосувати власний CSS поверх стилів Cider.
 settings.visual.section.layout: Макет
 settings.visual.section.layout.description: Макет додатка, стиль плеєра, бічна панель та навігація.
+settings.visual.section.pages: Сторінки
+settings.visual.section.pages.description: Як відображаються сторінки альбомів і плейлистів.
+settings.visual.section.themeColors: Тема та кольори
 settings.visual.section.window: Вікно
 settings.visual.section.window.description: Оформлення вікна, ефекти прозорості, елементи керування та масштабування.
-settings.visual.vibrancy.acrylicDarkness: Рівень затемнення ефекту Acrylic
+settings.visual.section.window.descriptionV2: Оформлення вікна, прозорість, рендеринг і масштабування.
+settings.visual.vibrancy.acrylicDarkness: Значення затемнення акрилу
 settings.visual.vibrancy.mode.acrylic: Акрил
 settings.visual.vibrancy.mode.mica: Слюда
 settings.visual.vibrancy.mode.none: Немає
@@ -5633,7 +5816,7 @@ term.updates: Оновлення
 term.upNext: До наступного
 term.username: Ім'я користувача
 term.userPresets: Пресети користувача
-term.userSubmitted: Надіслано користувачем
+term.userSubmitted: Додано користувачем
 term.userToken: Токен користувача
 term.variables: Змінні
 term.version: Версія
