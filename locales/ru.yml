@@ -110,6 +110,7 @@ action.cast.todevices: Транслировать на устройства
 action.change: Изменить
 action.clear: Очистить
 action.close: Закрыть
+action.configure: Настроить
 action.connect: Подключить
 action.connect.createCollabPlaylist: Создать совместный плейлист
 action.connect.listenTogether:
@@ -121,7 +122,7 @@ action.connect.listenTogether:
 action.connect.signIn: Войти с помощью {account}
 action.connectRemoteApp: Подключить приложение Remote
 action.copy: Скопировать
-action.copyToken: Скопировать токен
+action.copyToken: Копировать токен
 action.create: Создать
 action.createNew: Создать новый
 action.createNewPlaylist: Создать новый плейлист
@@ -133,6 +134,7 @@ action.deleteFolder: Вы действительно хотите удалить
 action.deleteFolder.message: Все папки и плейлисты внутри этой папки также будут удалены.
 action.deletePlaylist: Вы действительно хотите удалить плейлист «{{playlistName}}»?
 action.deletepreset: Удалить пресет
+action.deny: Отклонить
 action.disablePlugins: Отключить плагины в текущей сессии
 action.disconnect: Отключить
 action.dislike:
@@ -808,6 +810,12 @@ assistant.sid.settings.freshDetail: Создайте плейлист по на�
 assistant.sid.settings.gemmaHere: Gemma здесь
 assistant.sid.settings.gpu: Видеокарта
 assistant.sid.settings.group: Ассистент
+assistant.sid.settings.helloEdit: Откройте плейлист и выберите «Редактировать с Sid», и я его приведу в порядок.
+assistant.sid.settings.helloFresh: Назовите настроение или несколько исполнителей, и я соберу целый плейлист.
+assistant.sid.settings.helloRequest: Попросите песню во время сета, и я найду её в Apple Music.
+assistant.sid.settings.helloSet: Во время сета я выберу, что играет дальше, по тональности и темпу.
+assistant.sid.settings.helloSort: Попросите меня отсортировать плейлист от спокойного к живому или так, чтобы тональности сменяли друг друга плавно.
+assistant.sid.settings.helloTrim: Могу обрезать плейлист до часа или оставить его в одном темпе.
 assistant.sid.settings.inEdit: При редактировании плейлиста
 assistant.sid.settings.inEditDetail: Редактируйте с Sid в заголовке плейлиста
 assistant.sid.settings.inImmersive: В иммерсивном режиме
@@ -836,6 +844,11 @@ assistant.sid.settings.position: Положение
 assistant.sid.settings.positionDetail: Где Sid находится на обложке
 assistant.sid.settings.privacyChat: "То, что вы вводите, остаётся на этом компьютере: Sid думает с помощью Gemma прямо здесь. Чтобы найти музыку, Sid отправляет поисковые слова в Apple Music, а по вашему запросу читает ваши плейлисты, недавние прослушивания и Apple Music Replay из вашей учётной записи Apple Music. Ничего не меняется, пока вы не нажмёте «Применить»."
 assistant.sid.settings.privacyEngine: "То, что вы вводите, остаётся на этом компьютере: Sid думает с помощью {engine}, прямо здесь. Чтобы найти музыку, Sid отправляет поисковые слова в Apple Music, а когда вы попросите, читает ваши плейлисты, недавние прослушивания и Apple Music Replay из вашей учётной записи Apple Music. Ничего не меняется, пока вы не нажмёте «Применить»."
+assistant.sid.settings.quipGaming: Мы с вашей {gpu} точно поладим.
+assistant.sid.settings.quipIntegrated: Встроенная графика. Буду держать всё легко и уютно.
+assistant.sid.settings.quipOther: Отличная {gpu}. Найду ей достойное применение.
+assistant.sid.settings.quipSetsOnly: Мы с вашей {gpu} пока ограничимся запуском сетов.
+assistant.sid.settings.quipTop: "{gpu}? Я едва вспотею."
 assistant.sid.settings.reads: Читает полный плейлист за {seconds} с (нужно менее {floor} с)
 assistant.sid.settings.regular: Обычный
 assistant.sid.settings.remove: Удалить
@@ -943,6 +956,19 @@ auth.error.unavailable: Этот Apple ID не может использоват
 auth.error.windowFailed: Не удалось открыть окно входа
 auth.mutExpired.confirm: Войти
 auth.mutExpired.message: Истек срок действия сессии Apple Music. Войдите снова, чтобы продолжить.
+auth.request.authorizing: Авторизация…
+auth.request.copyToken: Копировать токен
+auth.request.granted: Доступ предоставлен
+auth.request.requestedAccess: Запрошен доступ
+auth.request.revealNote: Этот токен показывается только один раз. Вставьте его в {app} прямо сейчас.
+auth.request.subtitle: запрашивает доступ к Cider
+auth.request.toast.copied: Токен скопирован в буфер обмена
+auth.request.toast.failed: Не удалось создать токен
+auth.request.toast.granted: Доступ к {app} предоставлен
+auth.request.toast.title: Авторизация
+auth.request.tokenCreated: Токен создан
+auth.request.tokenFor: для {app}
+auth.request.trustNote: Предоставляйте доступ только доверенным приложениям. Отозвать токен можно в любое время в разделе «Настройки › Подключения».
 auth.signedIn: Выполнен вход
 auth.signInRetry.confirm: Повторить попытку
 auth.signInRetry.message: Не удалось открыть окно входа. Повторить попытку?
@@ -1177,7 +1203,7 @@ gallery.searchSnippets: Поиск сниппетов
 gallery.submitPlugin: Добавить свой плагин
 gallery.submitSnippet: Отправить свой сниппет
 gallery.submitTheme: Добавить свою тему
-general.closeToTray: Закрывать в трей
+general.closeToTray: Сворачивать в трей
 general.closeToTray.description:
   value: Кнопка закрытия должна сворачивать окно Cider
   source: ai
@@ -3206,7 +3232,10 @@ oobe.amupsell.text: |-
   Cider не поддерживает тарифный план Apple Music Voice Plan и некоторые промо-подписки. Если у вас уже есть подходящая подписка Apple Music, нажмите «Далее», чтобы продолжить.
 oobe.amupsell.title: Перед началом
 oobe.appearance.accentHint: Используется для кнопок, выделения и индикаторов в приложении. Выберите цвет для мгновенного предпросмотра.
-oobe.appearance.subtitle: Выберите цветовую схему и акцентный цвет. Их можно изменить в любое время в меню Настройки → Оформление.
+oobe.appearance.changeLater: Изменить это можно в любой момент в разделе {path}.
+oobe.appearance.colorScheme: Цветовая схема
+oobe.appearance.subtitle: Выберите цветовую схему и акцентный цвет. Изменить их можно в любой момент в разделе «Настройки › Оформление».
+oobe.appearance.subtitleV2: Выберите цветовую схему и акцентный цвет.
 oobe.appearance.title: Настройте Cider под себя
 oobe.appleNotice: "Обратите внимание: Apple Music является товарным знаком Apple Inc. Cider — клиент стороннего разработчика для Apple Music и не связан с Apple Inc."
 oobe.audio.advancedFunctionality: ""
@@ -3221,14 +3250,15 @@ oobe.connections.atmosRatingsHint: Смотрите и делитесь тем, 
 oobe.connections.lastfm.connected: Подключено
 oobe.connections.lastfm.connectedAs: Подключено как {username}
 oobe.connections.lastfm.hint: Скроблите историю прослушиваний.
-oobe.connections.moreHint: Другие интеграции, такие как Libre.fm, Maloja, ListenBrainz, а также WebSockets и RPC API, находятся в меню Настройки → Подключения.
-oobe.connections.pairDevice: Создать пару
+oobe.connections.moreHint: Другие интеграции, такие как Libre.fm, Maloja, ListenBrainz, а также API WebSockets и RPC, находятся в разделе «Настройки › Подключения».
+oobe.connections.pairDevice: Подключить устройство
 oobe.connections.remoteHint: Управляйте Cider со своего телефона.
 oobe.connections.subtitle: Свяжите Cider с другими приложениями и сервисами.
 oobe.connections.title: Оставайтесь на связи
 oobe.done: Готово
 oobe.features.discordHint: Показывайте, что вы слушаете, в Discord.
 oobe.features.normalizationHint: Воспроизведение всех песен на одинаковом уровне громкости.
+oobe.features.quality: Качество и улучшения
 oobe.features.subtitle: Качество, переходы и улучшения. Всё это можно изменить позже в Настройках.
 oobe.features.title: Настройте звук
 oobe.features.transitions: Переходы между песнями
@@ -3282,6 +3312,14 @@ oobe.previous:
   superseded_at: 2026-07-08
 oobe.progress: "Шаг {current} из {total}: {title}"
 oobe.progress.label: Ход настройки
+oobe.scene.content: Содержимое
+oobe.scene.grid: Медиатека
+oobe.scene.inset: Мини-плеер
+oobe.scene.lcd: Сейчас играет
+oobe.scene.player: Плеер
+oobe.scene.queue: Далее
+oobe.scene.sidebar: Боковая панель
+oobe.scene.toolbar: Панель инструментов
 oobe.step.appearance: Оформление
 oobe.step.connections: Подключения
 oobe.step.features: Звук
@@ -3301,9 +3339,18 @@ oobe.visual.layout.text: |-
 oobe.visual.subtitle: ""
 oobe.visual.text: ""
 oobe.visual.title: Внешний вид
+oobe.welcome.allLanguagesSubtitle: "Cider поддерживает языков: {count}."
+oobe.welcome.allLanguagesTitle: Выберите язык
 oobe.welcome.getStarted: Начать
 oobe.welcome.importSettings: Импортировать настройки…
+oobe.welcome.moreLanguages: Другие языки
+oobe.welcome.noLanguages: Языки не найдены
+oobe.welcome.searchLanguages: Поиск языков
 oobe.welcome.selectLanguage: Выберите предпочитаемый язык
+oobe.welcome.subscriptionDetail: Для Cider нужна активная платная подписка. Apple Music Voice и некоторые промопробные периоды не поддерживаются.
+oobe.welcome.subscriptionTitle: Подписка Apple Music
+oobe.welcome.subtitle: Несколько быстрых выборов, и Cider станет вашим. Это займёт около двух минут, а всё можно будет изменить позже в настройках.
+oobe.welcome.systemLanguage: Как в системе
 oobe.window.native: Нативное окно
 oobe.window.native.description: Использует строку заголовка и рамки вашей среды рабочего стола.
 oobe.window.styled: Оформленные элементы управления
@@ -3437,10 +3484,22 @@ playlist.refresh.title: Требуется обновление плейлист
 playlist.suggestions.subtitle: Просмотр и добавление в плейлист
 playlist.suggestions.title: Рекомендуемые песни
 playlist.untitled: Без названия
+plugin.install.byAuthor: от {author}
+plugin.install.identifier: Идентификатор
+plugin.install.install: Установить
+plugin.install.installing: Установка…
+plugin.install.source: Источник
+plugin.install.subtitle: Плагин Cider хочет быть добавлен в вашу медиатеку.
+plugin.install.title: Установить плагин
+plugin.install.update: Обновить
+plugin.install.updateSubtitle: Плагин Cider хочет заменить установленную версию.
+plugin.install.updateTitle: Обновить плагин
+plugin.install.warning: Плагины могут выполнять код внутри Cider с доступом к воспроизведению, очереди и медиатеке. Устанавливайте плагины только из доверенных источников.
 podcast.comingSoon.description: Поддержка подкастов перерабатывается из-за крупных изменений в механизме воспроизведения Cider. Она вернется в одном из будущих обновлений.
 podcast.comingSoon.hide: Скрыть из боковой панели
 podcast.comingSoon.hint: Вы можете снова включить этот параметр в настройках внешнего вида, в разделе «Боковая панель и навигация».
 podcast.comingSoon.title: Подкасты скоро появятся
+podcast.comingSoon.tweaksHint: Включить его можно в настройках Tweaks в разделе «Боковая панель и навигация».
 podcast.episodes:
   value: Выпуски
   source: ai
@@ -3543,6 +3602,11 @@ settings.accessibility.section.motion: Движение
 settings.accessibility.section.motion.description: Интенсивность анимации кнопок, карточек и других элементов интерфейса.
 settings.accessibility.section.soundEffects: Звуковые эффекты
 settings.accessibility.section.soundEffects.description: Звуки интерфейса для кнопок, переключателей и ползунков, а также громкость их воспроизведения.
+settings.accessibility.soundPreview.click: Нажатие
+settings.accessibility.soundPreview.slider: Ползунок
+settings.accessibility.soundPreview.switch: Переключатель
+settings.accounts.appleMusic: Apple Music
+settings.accounts.appleMusic.description: Включить Apple Music
 settings.advanced.section.backups: Резервные копии и сброс
 settings.advanced.section.backups.description: Сохраняйте копии настроек, восстанавливайте сохраненные Cider версии или сбрасывайте все параметры до значений по умолчанию.
 settings.advanced.section.client: Этот клиент
@@ -3552,24 +3616,24 @@ settings.airplay.installed.title: AirPlay установлен
 settings.airplay.requiresCiderAudio: Требуется включить CiderAudio
 settings.appleMusic.storefront.warning: Смена региона магазина может привести к проблемам с воспроизведением. Вы были предупреждены.
 settings.artwork.disableFadeIn: Отключить эффект плавного появления
-settings.artwork.highlighting: Подсветка обложек
+settings.artwork.highlighting: Подсветка обложки
 settings.artwork.hiresImages: Использовать изображения высокого разрешения
 settings.artwork.hiresImages.warning: Это может увеличить время загрузки и снизить производительность.
 settings.audio.atmos: Dolby Atmos
-settings.audio.atmos.binaural.desc: Atmos воспроизводится как бинауральное стерео через CiderAudio. Перекрестное затухание, Автомикс и Плавные переходы продолжают работать как обычно.
+settings.audio.atmos.binaural.desc: Atmos воспроизводится как бинауральный стерео через CiderAudio. Кроссфейд, Automix и бесшовные переходы продолжают работать как обычно.
 settings.audio.atmos.description: Настройка воспроизведения Atmos для текущего устройства вывода.
 settings.audio.atmos.normalizationHint: Миксы Dolby Atmos звучат тише стерео-мастеров. Включите нормализацию звука, чтобы выровнять громкость.
 settings.audio.atmos.off.desc: Atmos выключен. Весь контент воспроизводится в стандартном стерео.
 settings.audio.atmos.passthrough: Сквозной режим
 settings.audio.atmos.passthrough.desc: Обход всей обработки звука. Многоканальный Atmos передается напрямую на устройство. Идеально для AV-ресиверов.
-settings.audio.atmos.passthrough.descV2: Передаёт многоканальный Atmos напрямую на устройство, например на AV-ресиверы. Audio Lab, эквалайзер и Listening Mode отключаются.
+settings.audio.atmos.passthrough.descV2: Передает многоканальный Atmos напрямую на устройство, например на AV-ресиверы. Audio Lab, эквалайзер и режим прослушивания отключены.
 settings.audio.atmos.passthroughActive: Активен режим сквозной передачи — измените в полных настройках.
-settings.audio.atmos.standard.desc: Многоканальный Atmos с обработкой CiderAudio. Перекрестное затухание, Автомикс и Плавные переходы продолжают работать как обычно.
+settings.audio.atmos.standard.desc: Многоканальный Atmos с обработкой CiderAudio. Кроссфейд, Automix и бесшовные переходы продолжают работать как обычно.
 settings.audio.atmosMode: Режим Atmos
 settings.audio.atmosMode.switchFromPassthroughConfirm: Для переключения из режима сквозной передачи требуется перезапуск приложения. Продолжить?
 settings.audio.atmosMode.switchToPassthroughConfirm: Для переключения в режим сквозной передачи требуется перезапуск приложения. Продолжить?
 settings.audio.automix: Автомикс
-settings.audio.card.advancedVolume: Дополнительные настройки громкости
+settings.audio.card.advancedVolume: Расширенная громкость
 settings.audio.card.badges: Значки
 settings.audio.card.streaming: Стриминг
 settings.audio.ciderAudio: Cider Audio
@@ -3601,11 +3665,11 @@ settings.audio.hostCapture.bitDepthHint: В автоматическом реж�
 settings.audio.hostCapture.exclusiveNote: Монопольный вывод, побитовая точность, захват невозможен.
 settings.audio.hostCapture.gain: Коррекция уровня выхода
 settings.audio.hostCapture.gainHint: Выравнивание громкости захваченного звука с обычным выводом.
-settings.audio.hostCapture.mode: Режим вывода аудио
+settings.audio.hostCapture.mode: Режим аудиовыхода
 settings.audio.hostCapture.modeCapture: Захват
 settings.audio.hostCapture.modeCaptureLong: С возможностью захвата (OBS, Discord)
 settings.audio.hostCapture.modeExclusive: Монопольный
-settings.audio.hostCapture.modeExclusiveLong: Монопольный режим WASAPI
+settings.audio.hostCapture.modeExclusiveLong: WASAPI эксклюзивный
 settings.audio.hostCapture.modeHintCapture: Воспроизводит аудио через процесс Cider, чтобы его могли захватывать OBS, Discord и другие приложения.
 settings.audio.hostCapture.modeHintExclusive: Побитово-точный вывод напрямую на ваш ЦАП в обход микшера Windows. Захват невозможен.
 settings.audio.hostCapture.modeHintOff: "Выкл.: аудио воспроизводится в обычном режиме через процесс WebView2. Недоступно при сквозной передаче Atmos или просмотре клипов."
@@ -3631,7 +3695,7 @@ settings.audio.occlusion.game.desc: Музыка приглушается на �
 settings.audio.occlusion.off.desc: Музыка воспроизводится без изменений.
 settings.audio.occlusion.passthroughNote: Недоступно при включенной сквозной передаче Dolby Atmos.
 settings.audio.occlusion.passthroughNote.short: Недоступно при сквозной передаче Atmos.
-settings.audio.outputDevice: Выбор устройства вывода звука
+settings.audio.outputDevice: Выберите устройство аудиовыхода
 settings.audio.outputDeviceHint: Выберите устройство вывода звука для воспроизведения.
 settings.audio.outputDeviceHintHost: Захват аудио включен, воспроизведение использует это устройство вывода Windows.
 settings.audio.section.ciderAudio: Cider Audio и индикаторы
@@ -3645,18 +3709,47 @@ settings.audio.section.playback: Воспроизведение
 settings.audio.section.playback.description: Качество звука, пространственное аудио, режимы прослушивания и скорость воспроизведения подкастов.
 settings.audio.section.volume: Громкость
 settings.audio.section.volume.description: Выравнивание громкости, шаг изменения уровня колесиком мыши и шкала ползунка.
+settings.audio.signal.atmosCodecs: Доступные кодеки Atmos
+settings.audio.signal.atmosNativeMac: Нативный (macOS)
+settings.audio.signal.atmosNativeMacTooltip: Dolby Atmos декодируется нативно средствами macOS CoreAudio. Пространственный рендеринг выполняется системой.
+settings.audio.signal.atmosOffTooltip: Atmos отключен для этого устройства. Контент воспроизводится как обычное стерео.
+settings.audio.signal.atmosOffTooltipMac: Atmos отключен для этого устройства.
+settings.audio.signal.atmosSupported: Поддерживается
+settings.audio.signal.binauralSubtitle: Рендеринг для наушников
+settings.audio.signal.binauralTooltip: Контент Atmos воспроизводится как бинауральный стерео через конвейер CiderAudio.
+settings.audio.signal.channels: "Каналов: {count}"
+settings.audio.signal.codecs: Кодеки
+settings.audio.signal.deviceRateTooltip: Частота дискретизации текущего устройства
+settings.audio.signal.directOutput: Прямой вывод
+settings.audio.signal.directOutputChannels: Прямой вывод ({count} кан.)
+settings.audio.signal.loading: Загрузка…
+settings.audio.signal.nativeMatch: Нативное совпадение
+settings.audio.signal.noAtmosCodecs: Кодеки Atmos недоступны
+settings.audio.signal.output: Вывод
+settings.audio.signal.passthroughMode: Режим передачи без обработки
+settings.audio.signal.passthroughSubtitle: Обработка звука отключена, прямой вывод на устройство
+settings.audio.signal.passthroughTooltip: Аудио обходит всю обработку и отправляется напрямую на устройство. Функции CiderAudio, такие как кроссфейд, Automix и бесшовные переходы, неактивны.
+settings.audio.signal.sampleRate: Частота дискретизации
+settings.audio.signal.source: Источник {rate}
+settings.audio.signal.sourceRateTooltip: Частота воспроизведения Apple Music
+settings.audio.signal.standardSubtitle: Многоканальный + CiderAudio
+settings.audio.signal.standardTooltip: Многоканальный контент Atmos воспроизводится через обработку CiderAudio и выводится с учётом возможностей устройства.
+settings.audio.signal.stereo: Стерео
+settings.audio.signal.surround51: Объёмный звук 5.1
+settings.audio.signal.surround71: Объёмный звук 7.1+
+settings.audio.signal.upsamplingTooltip: Система выполняет передискретизацию с частоты источника Apple Music
 settings.automix.allowTempoKeyShifts: Разрешить изменение темпа/тональности
 settings.automix.allowTempoKeyShiftsHint: Разрешить небольшие изменения темпа и тональности для сохранения динамики переходов. (Временно отключено, находится в разработке.)
 settings.automix.description: Интеллектуальный переход между треками на основе темпа и тональности.
 settings.automix.descriptionV2: Сводит треки, используя индивидуальные параметры затухания и вокала для каждого трека вместо фиксированного кроссфейда.
-settings.automix.disableFor: Отключить автомикс для...
+settings.automix.disableFor: Отключить Automix для…
 settings.automix.disableForAlbums: Альбомов
 settings.automix.disableForAlbumsHint: Не применять автомикс при воспроизведении альбомов.
 settings.automix.disableForAutoplayContinuation: Продолжение автовоспроизведения
 settings.automix.disableForAutoplayContinuationHint: Не применять автомикс при переходе к радиостанции или автовоспроизведению треков после окончания исходной коллекции.
-settings.automix.disableForDjMixes: DJ-миксов
+settings.automix.disableForDjMixes: DJ-миксы
 settings.automix.disableForDjMixesHint: Не применять автомикс для DJ-миксов и непрерывных миксов.
-settings.automix.disableForLiveAlbums: Концертные альбомы
+settings.automix.disableForLiveAlbums: Live-альбомы
 settings.automix.disableForLiveAlbumsHint: Не применять автомикс для живых записей и концертов.
 settings.automix.disableForPlaylists: Плейлистов
 settings.automix.disableForPlaylistsHint: Не применять автомикс при воспроизведении плейлистов.
@@ -3668,19 +3761,19 @@ settings.automix.spectralSeparationHint: Степень частотного р�
 settings.automix.spectralSeparationHintV2: Насколько далеко два трека разводятся по частоте во время перехода ({value}).
 settings.automix.speedSettle: Время стабилизации скорости
 settings.automix.speedSettleHint: Время, за которое скорость воспроизведения возвращается к исходной после сведения с выравниванием темпа ({ms} мс)
-settings.automix.tempoAlign: Синхронизация темпа
+settings.automix.tempoAlign: Сведение по ритму
 settings.automix.tempoAlignHint: Корректировка темпа для точного совмещения треков, когда они уже близки по скорости.
 settings.automix.vocalGuard: Защита вокала
 settings.automix.vocalGuardHint: Сокращение времени сведения, если в обоих треках одновременно звучит вокал.
 settings.cache.all: Все
-settings.cache.artistChips: Теги исполнителей
+settings.cache.artistChips: Чипы исполнителей
 settings.cache.artwork: Обложки
 settings.cache.clear: Очистить кэш
 settings.cache.content: Контент
 settings.cache.entries: "Количество записей: {{ count }}"
 settings.cache.homeData: Данные главной страницы
 settings.cache.library: Медиатека
-settings.cache.marketplaceListings: Элементы Marketplace
+settings.cache.marketplaceListings: Списки Marketplace
 settings.cache.playlistIndex: Индекс плейлистов
 settings.cache.prompt.artwork.cleared.message: Кэш обложек очищен. Обновить сейчас?
 settings.cache.prompt.artwork.cleared.title: Кэш обложек очищен
@@ -3689,10 +3782,10 @@ settings.cache.prompt.clearAll.cleared.message: Кэш очищен. Обнов�
 settings.cache.prompt.clearAll.cleared.title: Кэш очищен
 settings.cache.prompt.clearAll.title: Очистить кэш
 settings.cache.prompt.marketplace.cleared.message: Кэш маркетплейса очищен. Обновить сейчас?
-settings.cache.prompt.marketplace.cleared.title: Кэш маркетплейса очищен
+settings.cache.prompt.marketplace.cleared.title: Кэш Marketplace очищен
 settings.cache.prompt.playlist.cleared.message: Кэш плейлистов очищен. Обновить сейчас?
 settings.cache.prompt.playlist.cleared.title: Кэш плейлистов очищен
-settings.cache.recentlyModifiedPlaylists: Недавно измененные плейлисты
+settings.cache.recentlyModifiedPlaylists: Недавно изменённые плейлисты
 settings.cache.storageUsed: "Использовано места: {{ usage }}"
 settings.client.genten.enableTrayIcon: Включить значок в трее
 settings.client.genten.enableTrayIcon.desc: Включение или выключение значка в системном трее
@@ -3828,7 +3921,7 @@ settings.configBackups.empty: Резервные копии еще не сохр
 settings.configBackups.subtitle: Cider сохраняет копию файла настроек перед его перезаписью. Восстановите ее, если ваши настройки были утеряны или сброшены.
 settings.configBackups.unreachable: Cider не удалось получить доступ к сохраненным резервным копиям, поэтому они не могут быть показаны. Повторите попытку позже.
 settings.configBackups.unsupported: Этот клиент не сохраняет резервные копии конфигурации.
-settings.connectivity.connectedDevices: Подключенные устройства
+settings.connectivity.connectedDevices: Подключённые устройства
 settings.connectivity.connectedDevices.desc: Управление сопряженными устройствами Cider Remote
 settings.connectivity.connectNewDevice: Подключить новое устройство
 settings.connectivity.lanPairing.desc: Связывание по локальной сети позволяет Cider принимать подключения из вашей локальной сети.
@@ -3990,23 +4083,24 @@ settings.connectivity.section.parties.description: Синхронное прос
 settings.connectivity.section.vrOverlay.description: Плеер Cider и закрепляемые панели поверх SteamVR и VDXR, взаимодействующие с этим приложением по RPC.
 settings.connectivity.tokenCopied: Токен скопирован в буфер обмена
 settings.connectivity.tokens: Токены
+settings.connectivity.tokens.empty: Токенов пока нет.
 settings.contentFilter.description: Разделы во вкладках «Обзор» и «Слушать», чьи названия или содержимое соответствуют этим ключевым словам, будут скрыты.
 settings.contentFilter.empty: Ключевые слова еще не добавлены.
 settings.contentFilter.inputPlaceholder: Добавить ключевое слово...
 settings.contentFilter.title: Фильтр ключевых слов
-settings.crossfade.advanced: Дополнительные настройки перекрестного затухания
+settings.crossfade.advanced: Расширенные настройки кроссфейда
 settings.crossfade.automixStillBlends: Automix включён, поэтому песни всё равно могут переходить одна в другую. Выключите Automix ниже, чтобы отключить все переходы.
 settings.crossfade.description: Плавное затухание текущего трека при переходе к следующему.
-settings.crossfade.disableFor: Отключить перекрестное затухание для...
+settings.crossfade.disableFor: Отключить кроссфейд для…
 settings.crossfade.duration: Длительность
-settings.crossfade.enable: Включить перекрестное затухание
+settings.crossfade.enable: Включить кроссфейд
 settings.crossfade.exclusions.albums: Альбомы
 settings.crossfade.exclusions.albums.description: Не использовать перекрестное затухание при воспроизведении альбомов.
 settings.crossfade.exclusions.autoplayContinuation: Продолжение автовоспроизведения
 settings.crossfade.exclusions.autoplayContinuation.description: Не использовать плавный переход при переходе к радиостанции или автовоспроизведению треков после окончания исходной коллекции.
 settings.crossfade.exclusions.djMixes: DJ-миксы
 settings.crossfade.exclusions.djMixes.description: Не использовать перекрестное затухание для DJ-миксов и непрерывных миксов.
-settings.crossfade.exclusions.liveAlbums: Концертные альбомы
+settings.crossfade.exclusions.liveAlbums: Live-альбомы
 settings.crossfade.exclusions.liveAlbums.description: Не использовать перекрестное затухание для живых выступлений и концертных записей.
 settings.crossfade.exclusions.playlists: Плейлисты
 settings.crossfade.exclusions.playlists.description: Не использовать перекрестное затухание при воспроизведении плейлистов.
@@ -4016,9 +4110,9 @@ settings.crossfade.smoothSkip: Плавный пропуск
 settings.crossfade.smoothSkip.description: Плавное затухание звука при пропуске треков.
 settings.crossfade.tempoSensitivity: Чувствительность к темпу
 settings.crossfade.tempoSensitivity.description: Реакция на изменение темпа ({{ value }}%)
-settings.customCss.createSnippet: Создать сниппет
+settings.customCss.createSnippet: Создать фрагмент
 settings.customCss.migrate.confirm: Это действие преобразует ваш текущий пользовательский CSS в новый сниппет и очистит текущее поле CSS. Продолжить?
-settings.customCss.migrate.title: Преобразовать пользовательский CSS
+settings.customCss.migrate.title: Конвертировать пользовательский CSS
 settings.customCss.title: Пользовательский CSS
 settings.description.albums: Альбомы медиатеки
 settings.description.artists:
@@ -4070,7 +4164,7 @@ settings.extensions.checkUpdates.desc: Проверять наличие обн�
 settings.extensions.createPlugin: Создать плагин
 settings.extensions.createSnippet: Создать сниппет
 settings.extensions.createTheme: Создать тему
-settings.extensions.cssSnippets: CSS-сниппеты
+settings.extensions.cssSnippets: Фрагменты CSS
 settings.extensions.fileWatcher: Включить отслеживание файлов тем
 settings.extensions.fileWatcher.desc: Автоматически перезагружать таблицы стилей тем при изменении их файлов на диске.
 settings.extensions.importFromFile: Импортировать из файла
@@ -4096,26 +4190,30 @@ settings.extensions.plugins.uninstallTitle: Удаление плагина
 settings.extensions.refresh: Обновить расширения
 settings.extensions.refresh.desc: Повторно сканировать темы, сниппеты и плагины на диске.
 settings.extensions.refreshed: Темы, сниппеты и плагины обновлены
+settings.extensions.snippets.author: "Автор: {{ author }}"
 settings.extensions.snippets.created: Сниппет создан
-settings.extensions.snippets.createTitle: Создать новый CSS-сниппет
+settings.extensions.snippets.createTitle: Создать новый фрагмент CSS
 settings.extensions.snippets.deleteConfirm: Вы уверены, что хотите удалить этот CSS-сниппет? Это действие нельзя отменить.
 settings.extensions.snippets.deleted: Сниппет удален
-settings.extensions.snippets.deleteTitle: Удалить CSS-сниппет
+settings.extensions.snippets.deleteTitle: Удалить фрагмент CSS
 settings.extensions.snippets.empty: Нет установленных CSS-сниппетов.
 settings.extensions.snippets.exported: Сниппет экспортирован
 settings.extensions.snippets.imported: Импортировано {{ count }} сниппет(ов)
 settings.extensions.snippets.importFailed: "Не удалось импортировать {{ file }}: {{ error }}"
+settings.extensions.snippets.invalidFile: "Неверный формат файла: {{ file }}"
 settings.extensions.snippets.namePrompt: Введите название нового CSS-фрагмента.
 settings.extensions.snippets.orderUpdated: Порядок обновлен
 settings.extensions.snippets.saved: Фрагмент сохранен
 settings.extensions.themeCreated: Новая тема успешно создана
 settings.extensions.themes.activeCount: "Активно: {{ count }}"
 settings.extensions.themes.empty: Нет установленных тем.
+settings.extensions.themes.getMore: Больше тем
+settings.extensions.themes.refreshList: Обновить список тем
 settings.extensions.themes.stylesheetMany: "{{ count }} таблиц стилей"
 settings.extensions.themes.stylesheetOne: 1 таблица стилей
 settings.extensions.viewOnMarketplace: Открыть в маркетплейсе
 settings.fonts.description: Изменение шрифта приложения
-settings.fonts.lyrics: Шрифт текста песен
+settings.fonts.lyrics: Шрифт текстов песен
 settings.fonts.lyrics.description: Шрифт, используемый для отображения текста песен
 settings.fonts.primary: Основной шрифт
 settings.fonts.primary.description: Шрифт, используемый для большей части текста в приложении
@@ -4136,6 +4234,7 @@ settings.general.section.language: Язык
 settings.general.section.language.description: Язык интерфейса, а также информация о переводчиках и отправка отчетов об ошибках перевода.
 settings.general.section.playback: Воспроизведение
 settings.general.section.playback.description: Действие кнопки воспроизведения, когда ничего не играет.
+settings.general.section.playback.descriptionV2: Действие кнопки воспроизведения, когда ничего не играет, и где можно изменить скорость воспроизведения.
 settings.general.section.privacy: Конфиденциальность
 settings.general.section.privacy.description: Имя, которое Cider использует для приветствия, и разрешение на доступ к вашей геопозиции.
 settings.general.section.queue: Очередь
@@ -4247,7 +4346,7 @@ settings.intensive.animatedArtworkQuality.description: Более высокое
 settings.intensive.catalogAnimatedArtwork.description: Воспроизводит несколько анимированных обложек одновременно при просмотре каталога.
 settings.intensive.characterFlow.description: Анимирует каждый символ текста песни по отдельности, а не строки целиком.
 settings.intensive.confirm.enable: Включить
-settings.intensive.confirm.message: Эта функция очень ресурсоемкая и может значительно увеличить нагрузку на процессор и видеокарту, нагрев устройства и разряд батареи — особенно на слабых компьютерах. Вы можете просмотреть ресурсоемкие функции в любое время, нажав на кнопку с лампочкой в верхней части настроек.
+settings.intensive.confirm.message: Эта функция требовательна к производительности и может значительно повысить нагрузку на CPU/GPU, нагрев и расход батареи, особенно на менее мощном оборудовании. Ресурсоёмкие функции можно просмотреть в любое время в разделе Настройки › Энергопотребление.
 settings.intensive.emotionEngine.description: Анализирует обложку альбома для создания цветовой палитры.
 settings.intensive.fsrUpscale.description: Масштабирует обложки альбомов на видеокарте с помощью FidelityFX Super Resolution.
 settings.intensive.immersiveAnimatedArtwork.description: Воспроизводит анимированную обложку в режиме погружения.
@@ -4264,27 +4363,27 @@ settings.intensive.viewTransitions.description: Анимирует перехо�
 settings.intensive.warning: Ресурсоемкая функция — может вызвать высокую нагрузку на процессор и видеокарту.
 settings.keybindings.recordingHint: Запись. Нажмите Escape для отмены
 settings.lyrics.card.providers: Провайдеры
-settings.lyrics.card.songOverrides: Исключения для песен
-settings.lyrics.localeOverrides: Правила на основе локали
-settings.lyrics.localeOverrides.add: Добавить исключение для локали
-settings.lyrics.localeOverrides.audioLocale: Локаль аудио
+settings.lyrics.card.songOverrides: Переопределения для песен
+settings.lyrics.localeOverrides: Правила для языков
+settings.lyrics.localeOverrides.add: Добавить переопределение языка
+settings.lyrics.localeOverrides.audioLocale: Язык аудио
 settings.lyrics.localeOverrides.desc: Задайте предпочтительного провайдера и параметры перевода для песен на определенных языках. Если локаль аудио песни совпадает с правилом, эти настройки заменят стандартные.
-settings.lyrics.localeOverrides.dialogTitle.add: Добавить исключение для локали
-settings.lyrics.localeOverrides.dialogTitle.edit: Изменить исключение для локали
+settings.lyrics.localeOverrides.dialogTitle.add: Добавить переопределение языка
+settings.lyrics.localeOverrides.dialogTitle.edit: Изменить переопределение языка
 settings.lyrics.localeOverrides.empty: Правил пока нет. Нажмите «+», чтобы добавить.
 settings.lyrics.localeOverrides.overrideTranslation: Переопределить перевод
-settings.lyrics.localeOverrides.preferredProvider: Предпочтительный провайдер
+settings.lyrics.localeOverrides.preferredProvider: Предпочитаемый источник
 settings.lyrics.localeOverrides.provider.apple: Apple Music
 settings.lyrics.localeOverrides.provider.auto: По умолчанию (авто)
 settings.lyrics.localeOverrides.provider.mxm: Musixmatch
 settings.lyrics.localeOverrides.provider.netease: NetEase
-settings.lyrics.localeOverrides.provider.user: Отправлено пользователями
+settings.lyrics.localeOverrides.provider.user: Добавлено пользователями
 settings.lyrics.localeOverrides.providerLabel: "Провайдер:"
-settings.lyrics.localeOverrides.translateTo: Переводить на
+settings.lyrics.localeOverrides.translateTo: Перевести на
 settings.lyrics.localeOverrides.translateToLabel: "Переводить на:"
 settings.lyrics.player.cascade: Интенсивность каскада
 settings.lyrics.player.cascade.desc: Насколько выражено ступенчатое появление строк.
-settings.lyrics.player.cta: Анимация текста
+settings.lyrics.player.cta: Анимации текста песни
 settings.lyrics.player.cta.description:
   value: "Настройте внешний вид и поведение анимации текста: акценты, свечение, приподнимание слов, скорость, затухание и каскадные эффекты."
   source: human
@@ -4312,7 +4411,7 @@ settings.lyrics.scroll.easing: Функция сглаживания
 settings.lyrics.scroll.easing.curveExample: "Пример кривой:"
 settings.lyrics.scroll.easing.description1: Настройка функции сглаживания прокрутки текста. Это свойство
 settings.lyrics.scroll.easing.description2: CSS.
-settings.lyrics.scroll.easing.namedExample: "Именованный пример:"
+settings.lyrics.scroll.easing.namedExample: "Пример по названию:"
 settings.lyrics.scroll.easing.presetDefault: "Значения по умолчанию: быстрое появление и плавное затухание"
 settings.lyrics.scroll.easing.presetSmooth: Плавное появление и затухание — (от cryptofyre)
 settings.lyrics.scroll.easing.presetSpring: Пружинная анимация — (от SoNothing)
@@ -4327,14 +4426,14 @@ settings.lyrics.section.sources: Источники
 settings.lyrics.section.sources.description: Источники текстов песен, а также правила для отдельных языков или треков, имеющие приоритет над провайдером по умолчанию.
 settings.lyrics.section.translation: Перевод
 settings.lyrics.section.translation.description: Перевод текстов песен, целевой язык и отображение оригинального текста на экране.
-settings.lyrics.trackOverrides.clearAll: Сбросить все исключения
+settings.lyrics.trackOverrides.clearAll: Сбросить все переопределения
 settings.lyrics.trackOverrides.desc: Для перечисленных здесь треков всегда используется выбранный вами провайдер текстов песен или заданное вручную наличие вокала вместо данных от Apple. Эти исключения настраиваются в меню текста песни и в контекстном меню трека.
 settings.lyrics.trackOverrides.empty: Исключений пока нет. Здесь будут показаны все элементы, которые вы закрепите в этих меню.
 settings.lyrics.trackOverrides.lyricsForced: Принудительный текст
 settings.lyrics.trackOverrides.markedInstrumental: Отмечен как инструментал
 settings.lyrics.trackOverrides.providerLabel: "Источник:"
-settings.lyrics.trackOverrides.remove: Удалить исключение
-settings.lyrics.trackOverrides.title: Исключения для конкретных треков
+settings.lyrics.trackOverrides.remove: Удалить переопределение
+settings.lyrics.trackOverrides.title: Переопределения для отдельных треков
 settings.micaish.blurAmount: Степень размытия
 settings.micaish.brightness: Яркость, %
 settings.micaish.contrast: Контрастность, %
@@ -4350,7 +4449,9 @@ settings.miniplayer.unpinWindow: Открепить окно
 settings.nav.accessibility: Универсальный доступ
 settings.nav.accounts: Учетные записи
 settings.nav.advanced: Дополнительно
+settings.nav.appleMusicWordmark: music
 settings.nav.audio: Аудио
+settings.nav.categories: Категории настроек
 settings.nav.concerts: Концерты
 settings.nav.config-backups: Резервные копии конфигурации
 settings.nav.connectivity: Подключения
@@ -4359,21 +4460,41 @@ settings.nav.general: Основные
 settings.nav.group.account: Учетная запись
 settings.nav.group.advanced: Дополнительно
 settings.nav.group.appearance: Оформление
+settings.nav.group.connections: Подключения
 settings.nav.group.general: Основные
 settings.nav.group.integrations: Интеграции
 settings.nav.group.library: Медиатека
+settings.nav.group.lookAndFeel: Внешний вид и ощущения
 settings.nav.group.playback: Воспроизведение
 settings.nav.lyrics: Тексты песен
 settings.nav.notifications: Уведомления
 settings.nav.plugins: Плагины
-settings.nav.power: Энергопотребление
+settings.nav.power: Расход энергии
 settings.nav.privacy: Конфиденциальность
 settings.nav.profile: Профиль
 settings.nav.search: Поиск
-settings.nav.searchPlaceholder: Поиск настроек...
+settings.nav.searchPlaceholder: Поиск в настройках
+settings.nav.summary.accessibility: Полужирный текст, масштаб интерфейса, анимации, звуковые эффекты
+settings.nav.summary.advanced: Резервные копии, устранение неполадок, эксперименты
+settings.nav.summary.audio: Вывод, качество, кроссфейд, нормализация
+settings.nav.summary.concerts: Местоположение, радиус, сортировка
+settings.nav.summary.connectivity: Discord, скробблинг, совместное прослушивание, удалённое управление
+settings.nav.summary.extensions: Темы, CSS-сниппеты, плагины
+settings.nav.summary.general: Запуск, очередь, таймер сна, горячие клавиши
+settings.nav.summary.lyrics: Источники, перевод, отображение, синхронизация
+settings.nav.summary.notifications: Категории, история, системные уведомления
+settings.nav.summary.power: Производительность, частота кадров, энергосбережение
+settings.nav.summary.profile: Аккаунт Apple Music
+settings.nav.summary.sid: Где появляется Sid и как он работает
+settings.nav.summary.smartPlaylists: Правила и обслуживание умных плейлистов
+settings.nav.summary.subscriberYear: подписчик в течение года
+settings.nav.summary.subscriberYears: подписчик в течение {{count}} лет
+settings.nav.summary.tweaks: Небольшие изменения плеера, боковой панели и не только
+settings.nav.summary.visual: Цветовая схема, макет, окно, погружение
 settings.nav.themes: Темы
+settings.nav.tweaks: Твики
 settings.nav.updates: Обновления
-settings.nav.visual: Визуальные эффекты
+settings.nav.visual: Оформление
 settings.normalization.louderTargetHint: Если Cider всё ещё звучит слишком тихо на 100% громкости, выберите более высокий целевой уровень. Более высокие значения LUFS звучат громче, но защита от пиков может ограничить усиление для предотвращения клиппинга.
 settings.normalization.presets.apple: Apple
 settings.normalization.presets.balanced: Сбалансированный
@@ -4384,7 +4505,7 @@ settings.normalization.target: Целевая громкость
 settings.normalization.unit: LUFS
 settings.notifications.alwaysOn: Всегда включено
 settings.notifications.alwaysOn.description: Эти уведомления содержат важные сведения о проблемах и состоянии приложения, поэтому их нельзя отключить. Ошибки отображаются всегда, независимо от категории.
-settings.notifications.category.accountAuth: Учетная запись и вход
+settings.notifications.category.accountAuth: Аккаунт и вход
 settings.notifications.category.accountAuth.description: Вход и выход из системы, статус подписки и подключенные службы.
 settings.notifications.category.castingAirplay: Трансляция и AirPlay
 settings.notifications.category.castingAirplay.description: Подключение и отключение внешних устройств воспроизведения.
@@ -4408,7 +4529,7 @@ settings.notifications.category.scrobbling: Скробблинг
 settings.notifications.category.scrobbling.description: Результаты скробблинга треков в Last.fm, ListenBrainz и другие сервисы.
 settings.notifications.category.settingsBackups: Настройки и резервные копии
 settings.notifications.category.settingsBackups.description: Импорт, экспорт настроек и резервное копирование конфигурации.
-settings.notifications.category.sharingClipboard: Поделиться и буфер обмена
+settings.notifications.category.sharingClipboard: Общий доступ и буфер обмена
 settings.notifications.category.sharingClipboard.description: Создание и копирование ссылок для отправки.
 settings.notifications.muted.empty: Список пуст. Если вы отключите отдельное уведомление в списке, оно появится здесь, и вы сможете включить его снова.
 settings.notifications.section.categories: Категории
@@ -4416,6 +4537,7 @@ settings.notifications.section.history: История
 settings.notifications.section.muted: Отключенные уведомления
 settings.notifications.section.system: Системные уведомления
 settings.notifications.summary.categoriesOn: Включенные категории
+settings.notifications.summary.categoriesOnCount: "{{on}} из {{total}} включено"
 settings.notifications.summary.description: Выберите типы уведомлений, которые будет показывать Cider. Отключенные уведомления все равно будут записываться в список, чтобы вы могли просмотреть их позже.
 settings.notifications.unmute: Включить звук
 settings.notifications.unmuteAll: Включить звук для всех
@@ -4446,27 +4568,27 @@ settings.notyf.visual.plugin.install.success: Плагин успешно уст
 settings.notyf.visual.theme.install.error: Не удалось установить тему
 settings.notyf.visual.theme.install.success: Тема успешно установлена
 settings.notyf.visual.theme.updateAvailable: "[Темы] Доступно обновление для {{ theme }}"
-settings.option.accessibility.boldText: Жирный шрифт
+settings.option.accessibility.boldText: Полужирный текст
 settings.option.accessibility.boldText.description: Увеличивает толщину шрифта в приложении для улучшения читаемости.
-settings.option.accessibility.cardHoverMotion: Анимация при наведении на карточки
+settings.option.accessibility.cardHoverMotion: Анимация карточек при наведении
 settings.option.accessibility.cardHoverMotion.description: Интерактивные карточки (альбомы, функции, элементы сетки) плавно увеличиваются при наведении и сжимаются при нажатии. По умолчанию выключено.
 settings.option.accessibility.enableSoundEffects: Включить звуковые эффекты
 settings.option.accessibility.enableSoundEffects.description: Воспроизведение негромких звуков при взаимодействии с кнопками, переключателями и ползунками.
-settings.option.accessibility.forceFocusVisible: Всегда показывать рамку фокуса
+settings.option.accessibility.forceFocusVisible: Всегда показывать контур фокуса
 settings.option.accessibility.forceFocusVisible.description: Принудительно отображать контур вокруг активных элементов при навигации с клавиатуры.
 settings.option.accessibility.highContrast: Высокая контрастность
 settings.option.accessibility.highContrast.description: Повышает контрастность между текстом, фоном и элементами интерфейса.
 settings.option.accessibility.motion: Движение
-settings.option.accessibility.motionIntensity: Интенсивность движения
+settings.option.accessibility.motionIntensity: Интенсивность анимации
 settings.option.accessibility.motionIntensity.description: Управляет интенсивностью анимации кнопок и панелей при наведении и нажатии. Выберите «Нет», чтобы полностью отключить анимацию; «Игривая» добавляет дополнительный отскок.
 settings.option.accessibility.motionIntensity.none: Нет
 settings.option.accessibility.motionIntensity.normal: Обычная
 settings.option.accessibility.motionIntensity.playful: Игривая
 settings.option.accessibility.motionIntensity.reduced: Уменьшенная
-settings.option.accessibility.playOnHover: Звук при наведении
+settings.option.accessibility.playOnHover: Воспроизведение при наведении
 settings.option.accessibility.playOnHover.description: Воспроизводить тихий щелчок при наведении указателя на интерактивные элементы.
 settings.option.accessibility.soundEffects: Звуковые эффекты
-settings.option.accessibility.soundPreview: Проверка звука
+settings.option.accessibility.soundPreview: Предпросмотр звука
 settings.option.accessibility.soundPreview.description: Воспроизведение примера звуков интерфейса на текущей громкости.
 settings.option.accessibility.text: Текст
 settings.option.accessibility.uiScale: Масштаб интерфейса
@@ -4482,7 +4604,7 @@ settings.option.advanced.compactSidebar.size: Размер
 settings.option.advanced.configBackups.description: Восстановите копию файла настроек, сохраненную Cider, на случай, если ваши настройки были утеряны или сброшены.
 settings.option.advanced.experimentalFeatures: Экспериментальные функции
 settings.option.advanced.experimentalFeatures.description: Функции в разработке и экспериментальные параметры.
-settings.option.advanced.floatingSearch: Всплывающая панель поиска
+settings.option.advanced.floatingSearch: Плавающий оверлей поиска
 settings.option.advanced.floatingSearch.blurBackground: Размытие фона
 settings.option.advanced.floatingSearch.blurBackground.description: Если включено, фон будет размываться при фокусировке на строке поиска.
 settings.option.advanced.floatingSearch.clearSearchOnClose: Очищать поиск при закрытии
@@ -4491,26 +4613,26 @@ settings.option.advanced.floatingSearch.description: Панель поиска, 
 settings.option.advanced.floatingSearch.enterShowsResults: Enter показывает результаты
 settings.option.advanced.floatingSearch.enterShowsResults.description: Если включено, нажатие клавиши Enter будет сразу открывать страницу с результатами поиска.
 settings.option.advanced.home: Главная
-settings.option.advanced.home.buttonLocation: Расположение кнопки «Главная»
+settings.option.advanced.home.buttonLocation: Расположение кнопки «Домой»
 settings.option.advanced.home.buttonLocation.sidebar: Боковая панель
 settings.option.advanced.home.buttonLocation.sidebar2023: Боковая панель (2023)
 settings.option.advanced.home.buttonLocation.topBar: Верхняя панель
-settings.option.advanced.immersive: Режим погружения
+settings.option.advanced.immersive: Погружённый режим
 settings.option.advanced.immersive.artworkHighlight: Подсветка обложки
-settings.option.advanced.immersive.controlsTimeout: Время ожидания активных элементов управления (сек.)
+settings.option.advanced.immersive.controlsTimeout: Время скрытия элементов управления (секунды)
 settings.option.advanced.immersive.description: Сам режим погружения. Его макет настраивается в разделе «Внешний вид».
-settings.option.advanced.immersive.glowEffectOnActiveLyrics: Эффект свечения для активного текста песни
-settings.option.advanced.lyrics: Анимация текста
+settings.option.advanced.immersive.glowEffectOnActiveLyrics: Эффект свечения у активной строки текста
+settings.option.advanced.lyrics: Анимация текста песни
 settings.option.advanced.lyrics.characterFlow: Плавные символы
 settings.option.advanced.lyrics.characterFlow.description: Отдельные символы будут плавно подниматься вверх вместо всей строки. Требует больше ресурсов.
 settings.option.advanced.lyrics.description: Движение строк и символов текста во время воспроизведения песни.
-settings.option.advanced.lyrics.lineStaggering: Задержка строк
+settings.option.advanced.lyrics.lineStaggering: Поочерёдное появление строк
 settings.option.advanced.lyrics.lineStaggering.description: Следующие строки текста будут появляться с небольшой задержкой при переходе фокуса на текущую строку.
-settings.option.advanced.lyrics.lineStaggeringImmersive: Задержка строк (Иммерсивный)
+settings.option.advanced.lyrics.lineStaggeringImmersive: Поочерёдное появление строк (погружённый режим)
 settings.option.advanced.lyrics.lineStaggeringImmersive.description: Требует больше ресурсов.
-settings.option.advanced.lyrics.scaleOnAny: Масштабирование любого слова
+settings.option.advanced.lyrics.scaleOnAny: Эффект масштабирования для любого слова
 settings.option.advanced.lyrics.scaleOnAny.description: Позволяет масштабировать любое слово, а не только те, на которые делается акцент.
-settings.option.advanced.lyrics.singEngine: Иммерсивный движок Sing
+settings.option.advanced.lyrics.singEngine: Движок пения в погружённом режиме
 settings.option.advanced.lyrics.singEngine.classic: Классический
 settings.option.advanced.lyrics.singEngine.description:
   value: Движок Sing для режима Immersive. Классический движок использует легковесные CSS-анимации и лучше всего подходит для маломощных систем. В боковой панели всегда используется классический движок.
@@ -4520,42 +4642,42 @@ settings.option.advanced.lyrics.singEngine.description:
   superseded_at: 2026-07-30
 settings.option.advanced.lyrics.singEngine.legacy: Классический
 settings.option.advanced.lyrics.singEngine.waapi: GPU (Web Animations)
-settings.option.advanced.lyrics.singLyricsEverywhere: Функция Sing везде
+settings.option.advanced.lyrics.singLyricsEverywhere: Пение текста везде
 settings.option.advanced.lyrics.singLyricsEverywhere.description: Включить отображение текста Sing за пределами иммерсивного режима. Требует больше ресурсов.
 settings.option.advanced.mavericksLcd: ЖК-экран Mavericks
 settings.option.advanced.mavericksLcd.style: Стиль
 settings.option.advanced.mavericksLcd.style.glass: Стекло
-settings.option.advanced.mediaArtwork: Обложка медиафайла
+settings.option.advanced.mediaArtwork: Обложка медиаэлемента
 settings.option.advanced.mediaArtwork.controls: Подсветка обложек и изображения высокого разрешения
-settings.option.advanced.mediaArtwork.controlsV2: Подсветка и плавное появление обложки
+settings.option.advanced.mediaArtwork.controlsV2: Подсветка обложки и плавное появление
 settings.option.advanced.mediaArtwork.description: Обложки в сетках, списках и строках по всему приложению.
 settings.option.advanced.notificationStyle: Стиль уведомлений
 settings.option.advanced.performance: Производительность
 settings.option.advanced.performance.description: Ограничение частоты кадров, выбор рендерера и пороговые значения ресурсов.
 settings.option.advanced.playback: Скорость воспроизведения
-settings.option.advanced.playback.allowPlaybackRateChangeEverywhere: Изменение скорости воспроизведения песен
+settings.option.advanced.playback.allowPlaybackRateChangeEverywhere: Разрешить изменение скорости воспроизведения для песен
 settings.option.advanced.playback.allowPlaybackRateChangeEverywhere.description: Включено по умолчанию для подкастов. Включите, чтобы управлять скоростью воспроизведения любых медиафайлов, включая песни.
 settings.option.advanced.playlistTrackMapping: Сопоставление треков в плейлистах
 settings.option.advanced.playlistTrackMapping.description: Включает глубокое сканирование плейлистов для определения того, какие треки находятся в каких плейлистах. Время создания кэша плейлистов может значительно увеличиться.
 settings.option.advanced.powerUsage.description: Ограничение частоты кадров, выбор рендерера и ресурсоемкие визуальные эффекты.
-settings.option.advanced.progressBar: Шкала воспроизведения
+settings.option.advanced.progressBar: Полоса прогресса
 settings.option.advanced.progressBar.useAccentColor: Использовать акцентный цвет
 settings.option.advanced.resetCider: Сбросить Cider
 settings.option.advanced.resetCider.description: Сброс настроек, кэша и локальных данных. Выход из Apple Music и Taproom выполнен не будет, если вы не выберете обратное.
-settings.option.advanced.resizableMiniplayer: Мини-плеер с изменяемым размером
-settings.option.advanced.richAlbumGrid: Улучшенная сетка альбомов
+settings.option.advanced.resizableMiniplayer: Изменяемый размер мини-плеера
+settings.option.advanced.richAlbumGrid: Расширенная сетка альбомов
 settings.option.advanced.richAlbumGrid.alwaysNavigateToPage: Всегда переходить на страницу
 settings.option.advanced.richAlbumGrid.disableScrollAnimation: Отключить анимацию прокрутки
-settings.option.advanced.richAlbumGrid.scrollToPosition: Прокрутить к позиции
+settings.option.advanced.richAlbumGrid.scrollToPosition: Прокрутка к позиции
 settings.option.advanced.richAlbumGrid.scrollToPosition.bottom: Вниз
 settings.option.advanced.richAlbumGrid.scrollToPosition.top: Вверх
-settings.option.advanced.searchBar: Главная строка поиска
+settings.option.advanced.searchBar: Основная строка поиска
 settings.option.advanced.searchBar.description: Поле поиска в строке заголовка.
-settings.option.advanced.searchBar.noRedirectOnSelect: Без перехода на целевую страницу при фокусе
+settings.option.advanced.searchBar.noRedirectOnSelect: Без стартовой страницы при фокусе
 settings.option.advanced.searchBar.noRedirectOnSelect.description: Если включено, при выборе строки поиска не будет происходить переход на целевую страницу. Чтобы перейти на нее, удерживайте SHIFT при выборе строки поиска.
 settings.option.advanced.settingsTakeout: Экспорт / импорт настроек
 settings.option.advanced.settingsTakeout.description: Создайте резервную копию настроек в файл или восстановите их на другом устройстве. Данные для входа в учетную запись никогда не экспортируются.
-settings.option.advanced.simpleArtworkBg: Простой фон с обложкой
+settings.option.advanced.simpleArtworkBg: Простой фон обложки
 settings.option.advanced.simpleArtworkBg.brightness: Яркость, %
 settings.option.advanced.simpleArtworkBg.brightnessV2: Яркость
 settings.option.advanced.simpleArtworkBg.contrast: Контрастность, %
@@ -4564,7 +4686,7 @@ settings.option.advanced.simpleArtworkBg.saturate: Насыщенность (%)
 settings.option.advanced.simpleArtworkBg.saturateV2: Насыщенность
 settings.option.advanced.simpleArtworkBg.useMask: Использовать нижнюю маску
 settings.option.advanced.sonoma: Sonoma
-settings.option.advanced.sonoma.lyricArc: Текст по дуге
+settings.option.advanced.sonoma.lyricArc: Изогнутый текст песни
 settings.option.advanced.sonoma.lyricArc.description: Активные строки текста изгибаются к центру экрана, создавая тонкое ощущение глубины.
 settings.option.advanced.sonoma.radialMask: Использовать альтернативную маску
 settings.option.advanced.sonoma.radialMask.description: Если включено, в режиме Sonoma для обложки будет использоваться другая, радиальная маска, обеспечивающая большую четкость и меньшее размытие.
@@ -4572,13 +4694,13 @@ settings.option.advanced.title: Дополнительно
 settings.option.advanced.tweaks: Тонкие настройки
 settings.option.advanced.tweaks.description: Параметры тонкой настройки, которые не подошли для других разделов
 settings.option.advanced.volumeSlider: Ползунок громкости плеера
-settings.option.advanced.volumeSlider.iOSStyle: В стиле iOS
+settings.option.advanced.volumeSlider.iOSStyle: Стиль iOS
 settings.option.advanced.window: Поведение окна
 settings.option.advanced.window.description: Изменение размера миниплеера и стиль полосы прокрутки в приложении. Управление окнами и эффект размытия находятся в разделе «Визуальное оформление».
 settings.option.advanced.window.scrollbarType: Тип полосы прокрутки
 settings.option.all: Все
 settings.option.alwaysShow: Показывать всегда
-settings.option.appleMusic.behavior.playButtonOnStop: Действие кнопки воспроизведения при остановке
+settings.option.appleMusic.behavior.playButtonOnStop: Кнопка воспроизведения при остановке
 settings.option.audio.advanced: Расширенное управление громкостью
 settings.option.audio.airplay: Трансляция AirPlay
 settings.option.audio.airplay.description:
@@ -4599,15 +4721,15 @@ settings.option.audio.audioLab:
   superseded_at: 2026-07-08
 settings.option.audio.audioLab.description: Набор аудиоэффектов собственной разработки для Cider.
 settings.option.audio.audioLab.subheader: Разработано Cider Acoustic Technologies в Калифорнии
-settings.option.audio.audioQuality: Качество звука
+settings.option.audio.audioQuality: Качество аудио
 settings.option.audio.automix: Автомикс
 settings.option.audio.changePlaybackRate: Изменить скорость воспроизведения
 settings.option.audio.ciderAudio: Cider Audio
-settings.option.audio.ciderAudio.showBadges: Показывать значки в «Исполняется»
+settings.option.audio.ciderAudio.showBadges: Показывать значки в сейчас играет
 settings.option.audio.ciderAudio.showInToolbar: Показывать Cider Audio на панели инструментов
 settings.option.audio.ciderAudioSettings: Настройки Cider Audio
 settings.option.audio.crossfade: Перекрестное затухание
-settings.option.audio.dbfs.calibration: 0 dBFS Калибровка
+settings.option.audio.dbfs.calibration: Калибровка 0 dBFS
 settings.option.audio.dbfs.description: Введите пиковый Z-взвешенный уровень звукового давления в дБ, когда Cider находится на уровне 0 дБ полной шкалы.
 settings.option.audio.dbspl.description: (Только для опытных пользователей) Отображение dB SPL вместо dBFS на ползунке громкости.
 settings.option.audio.dbspl.display: Отображение dB SPL
@@ -4665,11 +4787,11 @@ settings.option.audio.enableAdvancedFunctionality.tunedAudioSpatialization.profi
 settings.option.audio.enableAdvancedFunctionality.tunedAudioSpatialization.profile.standard: Стандартный
 settings.option.audio.exponentialVolume: Экспоненциальная кривая громкости
 settings.option.audio.exponentialVolume.description: Использование более плавной кривой громкости для более точной регулировки на низких уровнях.
-settings.option.audio.hostCapture: Аудио с возможностью захвата (OBS / Discord)
+settings.option.audio.hostCapture: Захватываемое аудио (OBS / Discord)
 settings.option.audio.hostCapture.description: Приложениям для стриминга и захвата экрана (например, OBS или Discord) требуется хост Windows для маршрутизации звука.
 settings.option.audio.maxVolume: Максимальная громкость
 settings.option.audio.mixing: Микширование
-settings.option.audio.normalization: Выравнивание громкости
+settings.option.audio.normalization: Нормализация аудио
 settings.option.audio.normalization.description: Автоматически выравнивает громкость всех треков. Тихие треки безопасно усиливаются, а громкие становятся тише.
 settings.option.audio.occlusion: Режим прослушивания
 settings.option.audio.outputDevice: Устройство вывода
@@ -4684,20 +4806,21 @@ settings.option.audio.podcasts.playbackRate:
   issue: 37
   superseded_at: 2026-07-08
 settings.option.audio.podcasts.playbackRate.description: Настройка скорости воспроизведения подкастов.
-settings.option.audio.quality: Качество звука
+settings.option.audio.quality: Качество аудио
 settings.option.audio.seamlessAudioTransitions:
   value: Воспроизведение без пауз
-  source: human
+  source: ai
   by: "@kinlay0"
   issue: 27
+  superseded_at: 2026-10-16
 settings.option.audio.seamlessTransition: Бесшовный переход аудио
 settings.option.audio.seamlessTransitions: Плавные переходы
-settings.option.audio.showBitrate: Показывать битрейт в «Исполняется»
+settings.option.audio.showBitrate: Показывать битрейт в проигрывании
 settings.option.audio.streaming: Потоковая передача
 settings.option.audio.volume: Громкость
 settings.option.audio.volumeScrollStep: Шаг прокрутки громкости
 settings.option.audio.volumeScrollStep.description: На сколько изменяется громкость при прокрутке вверх или вниз на ползунке громкости.
-settings.option.audio.volumeStep: Шаг прокрутки громкости
+settings.option.audio.volumeStep: Шаг громкости при прокрутке
 settings.option.audio.volumeStep.description: Настройка шага изменения громкости при прокрутке.
 settings.option.audio.yourSystem: Ваша система
 settings.option.automatic: Автоматически
@@ -4705,13 +4828,13 @@ settings.option.behavior.addToLibraryOnFavorite.caption: Добавляет но
 settings.option.concerts.geolocation: Геолокация
 settings.option.concerts.radius: Радиус
 settings.option.concerts.radius.description: Показывать концерты только в пределах этого расстояния от вас (требуется включить геолокацию)
-settings.option.concerts.radiusUnit: Единица измерения радиуса
+settings.option.concerts.radiusUnit: Единица радиуса
 settings.option.concerts.radiusUnit.description: Единица измерения для фильтра радиуса
 settings.option.concerts.radiusUnit.kilometers: Километры
 settings.option.concerts.radiusUnit.miles: Мили
-settings.option.concerts.showInSidebar: Показывать «Концерты» в боковой панели
+settings.option.concerts.showInSidebar: Показывать концерты в боковой панели
 settings.option.concerts.showInSidebar.description: Отображать раздел «Концерты» в боковой панели
-settings.option.concerts.sortBy: Сортировка
+settings.option.concerts.sortBy: Сортировать по
 settings.option.concerts.sortBy.date: По дате
 settings.option.concerts.sortBy.description: Способ сортировки концертов в списке
 settings.option.concerts.sortBy.distance: По расстоянию
@@ -4721,7 +4844,7 @@ settings.option.connect.link_account.description:
   by: "@kinlay0"
   issue: 13
   superseded_at: 2026-07-08
-settings.option.connectivity.atmosRatings: Рейтинги Atmos от сообщества
+settings.option.connectivity.atmosRatings: Оценки Dolby Atmos от сообщества
 settings.option.connectivity.atmosRatings.description: Просматривайте оценки и делитесь своим мнением о том, какие альбомы отлично звучат в Dolby Atmos.
 settings.option.connectivity.ciderConnect.description: Совместное прослушивание, общие плейлисты, удаленное управление приложением и многое другое!
 settings.option.connectivity.ciderRemote: Cider Remote
@@ -4845,7 +4968,7 @@ settings.option.connectivity.partiesTransportDefault.everyone: Все
 settings.option.connectivity.partiesTransportDefault.host: Только организатор
 settings.option.connectivity.playbackNotifications: Уведомления о воспроизведении
 settings.option.connectivity.playbackNotifications.description: Показывать уведомление с новой песней при смене текущего трека.
-settings.option.connectivity.remoteConnection: Удаленное подключение
+settings.option.connectivity.remoteConnection: Удалённое подключение
 settings.option.connectivity.remoteConnection.description: Подключение телефона или планшета, а также отключение устройств, управляющих воспроизведением.
 settings.option.connectivity.rpcServer: RPC-сервер
 settings.option.connectivity.rpcServer.description: Управление доступом внешних приложений к Cider через RPC-сервер.
@@ -4887,27 +5010,28 @@ settings.option.experimental.unknownPlugin: Неизвестные источн�
 settings.option.experimental.unknownPlugin.description: Разрешить установку плагинов из репозиториев, отличных от официального репозитория плагинов Cider
 settings.option.experiments.chromecast: Включить Chromecast
 settings.option.experiments.chromecast.description: Добавляет кнопку трансляции для устройств Google Cast в этой сети.
-settings.option.experiments.chromecastLyrics: Текст песни на Chromecast
+settings.option.experiments.chromecastLyrics: Тексты для Chromecast
 settings.option.experiments.chromecastLyrics.description: Показывать синхронизированный текст песни на экране Chromecast.
 settings.option.experiments.floatingSearch: Включить плавающий поиск
 settings.option.experiments.forceExplicit: Автопереключение на версию альбома без цензуры
 settings.option.experiments.forceExplicit.description: Может увеличить время загрузки при поиске версий альбомов без цензуры.
 settings.option.experiments.legacyFetch: Устаревший Fetch
-settings.option.experiments.musicVideos: Включить музыкальные видео в медиатеке
+settings.option.experiments.musicVideos: Включить музыкальные видео из медиатеки
 settings.option.experiments.title: Экспериментальные функции
 settings.option.general.app: Приложение
 settings.option.general.artistChips:
-  value: Теги артистов
-  source: human
+  value: Чипы исполнителей
+  source: ai
   by: "@kinlay0"
   issue: 27
+  superseded_at: 2026-10-16
 settings.option.general.autoplayByDefault: Автовоспроизведение по умолчанию
 settings.option.general.autoplayByDefault.description: Автоматически включать автовоспроизведение при проигрывании музыки (не применяется к радиостанциям).
 settings.option.general.autoRemoveDisliked: Удалять непонравившиеся треки из очереди
 settings.option.general.autoRemoveDisliked.description: Автоматически удалять треки из очереди, если они отмечены как непонравившиеся.
 settings.option.general.cache: Кэш
-settings.option.general.clearCacheDropdown: Выпадающее меню очистки кэша
-settings.option.general.contentToCache: Кэшируемый контент
+settings.option.general.clearCacheDropdown: Раскрывающийся список очистки кэша
+settings.option.general.contentToCache: Содержимое для кэширования
 settings.option.general.customizeSidebar: Настройка боковой панели
 settings.option.general.customizeSidebar.customize: Настроить
 settings.option.general.displayName: Отображаемое имя
@@ -4932,13 +5056,13 @@ settings.option.general.language.main: Языки
 settings.option.general.language.unsorted: Без категории
 settings.option.general.noPlayingAction.newMusicMix: Воспроизвести микс «Новая музыка»
 settings.option.general.noPlayingAction.none: Ничего не делать
-settings.option.general.noPlayingAction.personalStation: Запустить личную станцию
+settings.option.general.noPlayingAction.personalStation: Запустить персональную станцию
 settings.option.general.noPlayingAction.recent: Воспроизвести недавние треки
 settings.option.general.noPlayingAction.recentlyAdded: Воспроизвести недавно добавленные треки
 settings.option.general.noPlayingAction.shuffleLibrary: Перемешать песни из медиатеки
 settings.option.general.onStartup: При запуске
-settings.option.general.onStartup.openStartup: Открывать стартовую страницу
-settings.option.general.onStartup.resume: Возобновлять последний сеанс
+settings.option.general.onStartup.openStartup: Открыть стартовую страницу
+settings.option.general.onStartup.resume: Продолжить последний сеанс
 settings.option.general.pagination: Количество элементов на странице
 settings.option.general.preventDisplaySleep: Не выключать экран во время воспроизведения
 settings.option.general.preventSystemSleep: Не переводить компьютер в спящий режим во время воспроизведения
@@ -4993,11 +5117,12 @@ settings.option.general.startupPage:
 settings.option.general.startupPage.blank: Пустая страница
 settings.option.general.startupPage.description: Выберите страницу, которая будет отображаться при открытии Cider.
 settings.option.general.startupPage.descriptionV2: Страница, которую Cider открывает в новых вкладках и при запуске, если в пункте «При запуске» выбрано «Открыть стартовую страницу».
-settings.option.general.startupPage.newTab: Новая вкладка
-settings.option.general.startupPage.personalHome: Личная главная страница
+settings.option.general.startupPage.descriptionV3: Страница, которую Cider открывает при запуске.
+settings.option.general.startupPage.newTab: Страница новой вкладки
+settings.option.general.startupPage.personalHome: Персональная домашняя страница
 settings.option.general.themeUpdateNotification: Автоматически проверять обновления тем
-settings.option.general.translationCredits: Авторы перевода
-settings.option.general.translationFeedback: Обратная связь по переводу
+settings.option.general.translationCredits: Авторы переводов
+settings.option.general.translationFeedback: Отзыв о переводе
 settings.option.general.translators: Переводчики
 settings.option.general.translators.description: Спасибо этим участникам за помощь в переводе Cider. Нажмите на имя, чтобы открыть профиль на GitHub.
 settings.option.general.useSmartQueueByDefault: Использовать смарт-очередь по умолчанию
@@ -5006,9 +5131,9 @@ settings.option.general.useSmartQueueByDefault.needsAutomix: Automix выклю�
 settings.option.general.warnBeforeQueueOverride: Предупреждать перед заменой очереди
 settings.option.hide: Скрыть
 settings.option.left: Слева
-settings.option.lyrics.contributeCta: Добавить и отправить текст песни
+settings.option.lyrics.contributeCta: Добавить и загрузить тексты
 settings.option.lyrics.contributeCta.description: Загружайте синхронизированные тексты песен, просматривайте их в реальном времени и следите за таблицей лидеров.
-settings.option.lyrics.customScrollerProperties: Настройки прокрутки текста
+settings.option.lyrics.customScrollerProperties: Свойства пользовательской прокрутки
 settings.option.lyrics.customScrollerProperties.description: Включить собственное оформление для анимации прокрутки текста песен.
 settings.option.lyrics.defaultProvider: Источник по умолчанию
 settings.option.lyrics.defaultProvider.description: Выберите предпочитаемый источник текста песен. Вариант «Авто» автоматически выберет лучший доступный источник.
@@ -5018,62 +5143,63 @@ settings.option.lyrics.enableMusixmatch: Включить тексты песе�
 settings.option.lyrics.enableMusixmatchKaraoke: Включить режим караоке (только Musixmatch)
 settings.option.lyrics.enableQQLyrics: Включить тексты песен QQ
 settings.option.lyrics.enableSingLyrics:
-  value: Включить режим Apple Music Sing
-  source: human
+  value: Включить караоке-тексты
+  source: ai
   by: "@kinlay0"
   issue: 27
+  superseded_at: 2026-10-16
 settings.option.lyrics.enableSingLyrics.description: Если доступно, показывать текст с пословесной синхронизацией, подсвечивающийся в такт музыке.
-settings.option.lyrics.enableStaticLyrics: Включить статичный текст
+settings.option.lyrics.enableStaticLyrics: Включить статические тексты
 settings.option.lyrics.enableStaticLyrics.description: Показывать текст песен, даже если нет данных о синхронизации. Такой текст не будет прокручиваться автоматически.
-settings.option.lyrics.enableTranslations: Включить перевод
+settings.option.lyrics.enableTranslations: Включить переводы
 settings.option.lyrics.enableTranslations.description:
   value: Показывать перевод текста песен, если он доступен. Переводы предоставляются сообществом Musixmatch или создаются с помощью машинного перевода.
   source: human
   by: "@kinlay0"
   issue: 36
 settings.option.lyrics.enableYoutubeLyrics: Включить тексты песен Youtube для видеоклипов
-settings.option.lyrics.fpsLimit: Частота кадров текста
+settings.option.lyrics.fpsLimit: Частота кадров текстов
 settings.option.lyrics.fpsLimit.description: Максимальная частота кадров для анимации текста песен. Более высокая частота выглядит плавнее на экранах с высокой частотой обновления, но сильнее нагружает процессор и видеокарту. Параметр «Соответствовать экрану» использует частоту обновления вашего монитора.
-settings.option.lyrics.fpsLimit.matchDisplay: Соответствовать экрану
-settings.option.lyrics.keepCompleted: Оставлять спетые строки
+settings.option.lyrics.fpsLimit.matchDisplay: Как у дисплея
+settings.option.lyrics.keepCompleted: Сохранять завершённые тексты
 settings.option.lyrics.keepCompleted.description: Оставлять уже спетые строки видимыми (затемненными) над текущей строкой. Если отключено, пройденные строки скрываются.
-settings.option.lyrics.localeOverrides: Настройки для отдельных языков
+settings.option.lyrics.localeOverrides: Переопределения языка
 settings.option.lyrics.localeOverrides.description: Настройка отдельных источников и правил перевода для конкретных языков аудио.
 settings.option.lyrics.musixmatchPreferredLanguage: Предпочитаемый язык перевода Musixmatch
-settings.option.lyrics.preferUserLyrics: Предпочитать пользовательские тексты
+settings.option.lyrics.preferUserLyrics: Предпочитать тексты, добавленные пользователями
 settings.option.lyrics.preferUserLyrics.description: Если доступно, отдавать приоритет текстам от пользователей, если у них лучше синхронизация.
 settings.option.lyrics.provider.apple: Apple Music
 settings.option.lyrics.provider.auto: Авто (лучший доступный)
 settings.option.lyrics.provider.mxm: Musixmatch
 settings.option.lyrics.provider.netease: NetEase
-settings.option.lyrics.provider.user: От пользователей
+settings.option.lyrics.provider.user: Добавлено пользователями
 settings.option.lyrics.providerPreferences: Настройки источников
 settings.option.lyrics.providerPreferences.description: Настройка используемых источников текста и их приоритета.
-settings.option.lyrics.scrollTuning: Длительность и плавность прокрутки
+settings.option.lyrics.scrollTuning: Длительность прокрутки и плавность
 settings.option.lyrics.scrollTuning.description: Настройте длительность и кривую плавности прокрутки строк текста отдельно для боковой панели и иммерсивного плеера.
 settings.option.lyrics.showDualLanguage: Показывать два языка
 settings.option.lyrics.showDualLanguage.description: Отображать одновременно оригинальный текст песни и перевод.
-settings.option.lyrics.showTimestamps: Показывать таймкоды при наведении
+settings.option.lyrics.showTimestamps: Показывать метки времени при наведении
 settings.option.lyrics.showTimestamps.description: Показывать временную метку строки текста при наведении курсора.
 settings.option.lyrics.thirdPartySources: Включить сторонние источники
 settings.option.lyrics.thirdPartySources.description: Разрешить загрузку текстов из Musixmatch и NetEase, если они недоступны в Apple Music. Качество может отличаться, а частое использование может привести к ограничениям частоты запросов.
-settings.option.lyrics.timeOffset: Смещение синхронизации текста (сек.)
+settings.option.lyrics.timeOffset: Смещение времени текста (секунды)
 settings.option.lyrics.timeOffset.description: Настройка времени отображения текста. Положительные значения показывают текст раньше, отрицательные — позже. Полезно для исправления рассинхронизации звука.
 settings.option.lyrics.timeOffset.descriptionV2: Настройка времени отображения текста песни. Положительные значения показывают текст позже, отрицательные — раньше. Полезно для исправления рассинхронизации звука.
-settings.option.lyrics.timestampStyle: Стиль временных меток
+settings.option.lyrics.timestampStyle: Стиль меток времени
 settings.option.lyrics.timestampStyle.both: Оба
 settings.option.lyrics.timestampStyle.chip: Плашка
 settings.option.lyrics.timestampStyle.description: Выберите способ отображения временных меток при наведении на текст.
 settings.option.lyrics.timestampStyle.ring: Кольцо
-settings.option.lyrics.trackOverrides: Настройки для отдельных треков
+settings.option.lyrics.trackOverrides: Переопределения для треков
 settings.option.lyrics.trackOverrides.description: Управление закрепленными источниками текста и предпочтениями для отдельных треков.
 settings.option.lyrics.translationLanguage: Язык перевода
 settings.option.lyrics.translationLanguage.description: Язык, на который будет переводиться текст. Используется, только если для режима перевода выбрано значение «Вручную».
 settings.option.lyrics.translationMode: Режим перевода
-settings.option.lyrics.translationMode.appLanguage: Авто по языку приложения
+settings.option.lyrics.translationMode.appLanguage: Автоматически из языка приложения
 settings.option.lyrics.translationMode.description: Способ определения целевого языка перевода.
 settings.option.lyrics.translationMode.manual: Вручную (выбранный язык)
-settings.option.lyrics.translationMode.system: Авто по системному языку
+settings.option.lyrics.translationMode.system: Автоматически из системного языка
 settings.option.lyrics.translationSettings: Настройки перевода
 settings.option.lyrics.translationSettings.description: Настройка поведения при переводе текста песен.
 settings.option.medium: Средний
@@ -5092,7 +5218,7 @@ settings.option.performance.backgroundRefreshTime.description: Интервал 
 settings.option.performance.dataAndUiLoad: Загрузка данных и интерфейса
 settings.option.performance.disableLargeRequestOffloading: Отключить разгрузку больших запросов
 settings.option.performance.disableLargeRequestOffloading.description: Это повлияет на производительность интерфейса при обработке больших запросов.
-settings.option.performance.enableMediaItemInspect: Включить инспектор MediaItems для разработчиков
+settings.option.performance.enableMediaItemInspect: Включить режим разработчика для MediaItems
 settings.option.performance.enableMediaItemInspect.description: Может незначительно повлиять на производительность.
 settings.option.performance.gameMode: Игровой режим
 settings.option.performance.gameMode.description: Уменьшает визуальные эффекты и может включать режим эффективности Windows для снижения нагрузки на процессор.
@@ -5109,7 +5235,7 @@ settings.option.performance.limitBlurMapFramerateOnBlur: Ограничиват�
 settings.option.performance.limitBlurMapFramerateOnBlur.description: Снижает частоту кадров иммерсивного анимированного фона, когда окно не в фокусе, для экономии энергии. Отключите, чтобы он работал на максимальной скорости.
 settings.option.performance.limitImmersiveBgFramerateOnBlur: Ограничивать частоту кадров иммерсивного фона, когда окно не в фокусе
 settings.option.performance.motion: Движение
-settings.option.performance.powerSaverOnBattery: Энергосбережение при работе от батареи
+settings.option.performance.powerSaverOnBattery: Экономить энергию от батареи
 settings.option.performance.powerSaverOnBattery.description: При работе устройства от батареи частота кадров иммерсивного фона ограничивается 30 кадр/с, а анимация текста песен — 60 кадр/с.
 settings.option.performance.preloadSidebarPages: Предзагрузка страниц боковой панели
 settings.option.performance.preloadSidebarPages.description: Загружает страницы боковой панели до того, как вы их откроете. Вариант «При наведении» запускает загрузку, когда курсор задерживается на элементе боковой панели. Вариант «При простое» также загружает разделы «Слушать сейчас», «Обзор» и «Радио» после запуска приложения и обновляет ранее открытые списки медиатеки.
@@ -5172,7 +5298,7 @@ settings.option.sweetener.immersiveBackground.frameRate: Частота кадр
 settings.option.sweetener.immersiveBackground.frameRate.description: Рекомендуется 15–30 FPS
 settings.option.sweetener.immersiveBackground.header.filters: Фильтры
 settings.option.sweetener.immersiveBackground.lightModeWarning:
-  value: Иммерсивный фон в настоящее время не поддерживается в светлом режиме.
+  value: Иммерсивный фон сейчас не поддерживается в светлой теме.
   source: ai
   by: "@kinlay0"
   issue: 27
@@ -5193,8 +5319,8 @@ settings.option.sweetener.useCustomAccentColor:
   by: "@kinlay0"
   issue: 27
   superseded_at: 2026-07-08
-settings.option.sweetener.useCustomAccentColor.accentColor: Цвет акцента
-settings.option.sweetener.useCustomTintColor: Использовать собственный цвет оттенка
+settings.option.sweetener.useCustomAccentColor.accentColor: Акцентный цвет
+settings.option.sweetener.useCustomTintColor: Использовать свой цвет тонировки
 settings.option.sweetener.useCustomTintColor.lightModeWarning:
   value: Коэффициенты оттенка ниже 0,8 игнорируются в светлом режиме.
   source: ai
@@ -5202,7 +5328,7 @@ settings.option.sweetener.useCustomTintColor.lightModeWarning:
   issue: 13
   superseded_at: 2026-07-08
 settings.option.sweetener.useCustomTintColor.tintColor:
-  value: Цвет оттенка
+  value: Цвет тонировки
   source: ai
   by: "@kinlay0"
   issue: 13
@@ -5218,11 +5344,11 @@ settings.option.v2rp: V2 RP
 settings.option.v3: V3
 settings.option.v3rp: V3 RP
 settings.option.visual.accentColor: Акцентный цвет
-settings.option.visual.adaptiveColorPercent: Адаптивный цвет процентов
+settings.option.visual.adaptiveColorPercent: Процент адаптивного цвета
 settings.option.visual.additionalAnimatedArtwork: Дополнительные анимированные обложки в каталоге
 settings.option.visual.additionalAnimatedArtwork.description: Показывать больше анимированных обложек, если они доступны. При отображении большого количества обложек производительность может снизиться.
-settings.option.visual.animateArtworkOnHover: Анимировать обложки при наведении курсора
-settings.option.visual.animatedArtwork: Анимированная обложка
+settings.option.visual.animateArtworkOnHover: Анимировать обложку при наведении
+settings.option.visual.animatedArtwork: Анимированные обложки
 settings.option.visual.animatedArtwork.description: Включить анимированные обложки (пауза, когда окно не в фокусе)
 settings.option.visual.animatedArtwork.warningDescription: Показывать анимированные обложки, если они доступны. Это может снизить производительность на слабых устройствах.
 settings.option.visual.animatedArtworkEngine: Движок анимированных обложек
@@ -5236,15 +5362,16 @@ settings.option.visual.animatedArtworkQuality.performance: Производит�
 settings.option.visual.animatedArtworkQuality.quality: Качество
 settings.option.visual.animatedBackgroundFramerate: Частота кадров анимированного фона
 settings.option.visual.animatedWindowBackground: Анимированный фон окна
-settings.option.visual.artistHeaderAlignment: Выравнивание в заголовке артиста
+settings.option.visual.artistHeaderAlignment: Расположение заголовка исполнителя
 settings.option.visual.artistHeaderAlignment.center: По центру
 settings.option.visual.artistHeaderAlignment.description: Определяет расположение имени артиста и кнопок действий в заголовке страницы артиста.
 settings.option.visual.artistHeaderAlignment.left: По левому краю (по умолчанию)
 settings.option.visual.artworkLoadingMethod:
   value: Способ загрузки обложек
-  source: human
+  source: ai
   by: "@kinlay0"
   issue: 36
+  superseded_at: 2026-10-16
 settings.option.visual.artworkLoadingMethod.eager: Активная
 settings.option.visual.artworkLoadingMethod.lazy: Отложенная
 settings.option.visual.chromaticAberrationIntensity: Интенсивность хроматической аберрации
@@ -5257,39 +5384,39 @@ settings.option.visual.compactArtistHeader:
   by: "@kinlay0"
   issue: 27
   superseded_at: 2026-07-08
-settings.option.visual.contentFilterKeywords: Ключевые слова для фильтрации контента
+settings.option.visual.contentFilterKeywords: Ключевые слова фильтра контента
 settings.option.visual.contentPreferences: Настройки контента
 settings.option.visual.contentPreferences.description: Изменение макета определенных страниц
-settings.option.visual.contextMenuIcons: Значки меню
+settings.option.visual.contextMenuIcons: Значки в меню
 settings.option.visual.customAccentColor: Собственный акцентный цвет
-settings.option.visual.customScalingFactor: Пользовательский масштаб
+settings.option.visual.customScalingFactor: Пользовательский коэффициент масштабирования
 settings.option.visual.customScalingFactor.description: Настройка масштабирования интерфейса приложения
-settings.option.visual.enableAnimatedArtworkInMiniPlayer: Включить анимированные обложки в мини-плеере
-settings.option.visual.extendedEditorialLayout: Использовать расширенное оформление страниц альбомов
+settings.option.visual.enableAnimatedArtworkInMiniPlayer: Анимированные обложки в мини-плеере
+settings.option.visual.extendedEditorialLayout: Расширенная редакционная верстка на страницах альбомов
 settings.option.visual.extendedEditorialLayout.description: Если включено, на страницах некоторых альбомов будет отображаться редакционный баннер и применяться цветовая палитра на основе доступных медиаматериалов.
-settings.option.visual.filterPromotionalContent: Фильтровать промоматериалы
+settings.option.visual.filterPromotionalContent: Скрывать рекламный контент
 settings.option.visual.filterPromotionalContent.description: Если включено, разделы во вкладках «Обзор» и «Слушать сейчас», соответствующие вашим ключевым словам для фильтрации, будут скрыты.
 settings.option.visual.floatingPlayer: Плавающий плеер
 settings.option.visual.floatingPlayer.description: Отсоединить панель плеера от краев экрана для придания ей вида плавающей капсулы
-settings.option.visual.floatingPlayerPadding: Отступы плавающего плеера
+settings.option.visual.floatingPlayerPadding: Отступ плавающего плеера
 settings.option.visual.floatingPlayerPadding.description: Управляет размером пространства вокруг плавающего плеера
 settings.option.visual.floatingPlayerRoundness: Скругление плавающего плеера
 settings.option.visual.floatingPlayerRoundness.description: Радиус скругления углов плавающего плеера (0 — по размеру окна)
 settings.option.visual.fonts: Шрифты
-settings.option.visual.forceMpWindowControls: Мультиплатформенные кнопки управления окном
+settings.option.visual.forceMpWindowControls: Использовать мультиплатформенные элементы управления окном
 settings.option.visual.forceRoundedViewport: Использовать скругленную область просмотра
 settings.option.visual.forceRoundedViewport.description: Применять скругленные углы к основному окну просмотра во всех макетах
 settings.option.visual.hardwareAcceleration: Аппаратное ускорение
 settings.option.visual.hardwareAcceleration.description: Требуется перезапуск
-settings.option.visual.headerStyle: Стиль заголовка альбомов и плейлистов
+settings.option.visual.headerStyle: Стиль заголовка альбома и плейлиста
 settings.option.visual.headerStyle.appleMusic: Apple Music
 settings.option.visual.headerStyle.appleMusic.description: Элементы управления находятся в правом верхнем углу страницы.
 settings.option.visual.headerStyle.classic: Классический
 settings.option.visual.headerStyle.classic.description: Элементы управления отображаются внутри заголовка страницы.
 settings.option.visual.headerStyle.description: В классическом стиле кнопки действий находятся внутри заголовка. В стиле Apple Music кнопки «Поделиться», «Еще» и «Добавить в медиатеку» переносятся на плавающую панель в правом верхнем углу страницы.
-settings.option.visual.hideAppleRecommends: Скрывать карточки «Apple рекомендует»
+settings.option.visual.hideAppleRecommends: Скрыть карточки «Рекомендации Apple»
 settings.option.visual.hideAppleRecommends.description: Удаляет промо-карточки «Apple рекомендует» из разделов рекомендаций на вкладках «Слушать сейчас» и «Главная».
-settings.option.visual.hideHeroItems: Скрывать главные баннеры на вкладке «Обзор»
+settings.option.visual.hideHeroItems: Скрыть главные элементы в разделе «Обзор»
 settings.option.visual.immersive.adjustVisuals: Настройка визуализации
 settings.option.visual.immersive.background.artwork: Простая обложка
 settings.option.visual.immersive.background.blank: Пусто
@@ -5303,17 +5430,17 @@ settings.option.visual.immersive.coverflowStyle: Стиль Coverflow
 settings.option.visual.immersive.coverflowStyle.default: По умолчанию
 settings.option.visual.immersive.description: Настройка иммерсивного режима
 settings.option.visual.immersive.enableHdr: Включить HDR
-settings.option.visual.immersive.fsrUpscale: Масштабирование обложек с помощью FSR
-settings.option.visual.immersive.fsrUpscale.applyToAll: "FSR: применять ко всем трекам"
+settings.option.visual.immersive.fsrUpscale: Увеличение обложек с помощью FSR
+settings.option.visual.immersive.fsrUpscale.applyToAll: "FSR: применить ко всем трекам"
 settings.option.visual.immersive.fsrUpscale.applyToAll.description: Если выключено, FSR применяется только к трекам, выпущенным ранее указанного года. Включите, чтобы масштабировать обложки всех треков.
 settings.option.visual.immersive.fsrUpscale.description: Масштабирование обложек альбомов с помощью AMD FidelityFX Super Resolution. Помогает старым обложкам (до 2010 года) выглядеть четче. Требуется WebGPU.
 settings.option.visual.immersive.fsrUpscale.sharpness: "FSR: резкость"
 settings.option.visual.immersive.fsrUpscale.sharpness.description: Интенсивность адаптивного повышения резкости (RCAS). 0 — минимальная резкость, 1 — максимальная.
-settings.option.visual.immersive.fsrUpscale.thresholdYear: "FSR: пороговый год"
+settings.option.visual.immersive.fsrUpscale.thresholdYear: "FSR: год отсечения"
 settings.option.visual.immersive.fsrUpscale.thresholdYear.description: Треки, выпущенные ранее этого года, будут масштабироваться, если функция «Применять ко всем трекам» выключена.
 settings.option.visual.immersive.hdrBoostScale: Масштаб усиления HDR
 settings.option.visual.immersive.hideLyricsWhenUnavailable: Скрывать текст песни, если он недоступен
-settings.option.visual.immersive.keepCompletedLyrics: Оставлять спетые строки текста
+settings.option.visual.immersive.keepCompletedLyrics: Сохранять пройденные строки текста
 settings.option.visual.immersive.keepCompletedLyrics.description: Оставлять уже спетые строки на экране отображения текста песни.
 settings.option.visual.immersive.layout.default: One (по умолчанию)
 settings.option.visual.immersive.layout.minimal: Минималистичный
@@ -5322,15 +5449,15 @@ settings.option.visual.immersive.layout.solarium: Solarium
 settings.option.visual.immersive.layout.sonoma: Sonoma
 settings.option.visual.immersive.layout.spectrumDeck: Spectrum Deck
 settings.option.visual.immersive.maxBrightness: Максимальная яркость
-settings.option.visual.immersive.maxLyricFontSize: Макс. размер шрифта текста песни (px)
+settings.option.visual.immersive.maxLyricFontSize: Максимальный размер шрифта текста (px)
 settings.option.visual.immersive.startFullscreen: Запускать в полноэкранном режиме
-settings.option.visual.immersive.startingTab: Начальная вкладка
+settings.option.visual.immersive.startingTab: Вкладка при запуске
 settings.option.visual.immersive.startingTab.history: История
 settings.option.visual.immersive.startingTab.lyrics: Текст песни
 settings.option.visual.immersive.startingTab.queue: Очередь
-settings.option.visual.immersive.ultraHdr: Апскейлинг обложек с Ultra HDR
+settings.option.visual.immersive.ultraHdr: Увеличение обложек с Ultra HDR
 settings.option.visual.immersive.ultraHdr.description: Добавляет HDR-блики, контраст и цвет к обложкам каждого трека. Лучше всего выглядит на HDR-дисплее; на других дисплеях эффект мягче. Требуется WebGPU.
-settings.option.visual.immersive.ultraHdr.headroom: "Ultra HDR: запас яркости"
+settings.option.visual.immersive.ultraHdr.headroom: "Ultra HDR: запас пиковой яркости"
 settings.option.visual.immersive.ultraHdr.headroom.description: Максимальная яркость бликов как множитель стандартного белого. Уменьшите значение, если блики выглядят слишком яркими на вашем дисплее.
 settings.option.visual.immersive.ultraHdr.intensity: "Ultra HDR: интенсивность"
 settings.option.visual.immersive.ultraHdr.intensity.description: Сила эффекта. 0 оставляет обложку без изменений, 1 применяет полный профиль.
@@ -5342,14 +5469,14 @@ settings.option.visual.immersive.ultraHdr.profile.vivid: Яркий
 settings.option.visual.immersive.useAnimatedArtwork: Использовать анимированные обложки
 settings.option.visual.immersive.useAnimatedArtwork.description: Показывать анимированные обложки, если они доступны. Это может снизить производительность на менее мощных устройствах.
 settings.option.visual.immersive.useAnimatedBackground: Анимированный фон в режиме погружения
-settings.option.visual.immersive.useBackgroundBpm: Скорость фона на основе BPM
+settings.option.visual.immersive.useBackgroundBpm: Скорость фона по BPM
 settings.option.visual.immersiveBackground.blank: Пустой фон
-settings.option.visual.immersiveBackground.customImage: Собственное изображение
-settings.option.visual.immersiveBackground.customImageMixed: Собственное изображение (смешанное)
+settings.option.visual.immersiveBackground.customImage: Своё изображение
+settings.option.visual.immersiveBackground.customImageMixed: Своё изображение (смешанный режим)
 settings.option.visual.immersiveBackground.gradientMesh: Градиентная сетка
 settings.option.visual.immersiveBackground.simpleArtwork: Простая обложка
 settings.option.visual.immersiveBackground.simpleColor: Простой цвет
-settings.option.visual.immersiveBgSettings: Настройки иммерсивного фона
+settings.option.visual.immersiveBgSettings: Настройки фона погружения
 settings.option.visual.immersiveBgSettings.description: Улучшения и фильтры фона приложения.
 settings.option.visual.immersiveLayout.classic: One Classic
 settings.option.visual.immersiveLayout.classic.description: Оригинальный иммерсивный макет с полноширинным нижним плеером.
@@ -5369,13 +5496,13 @@ settings.option.visual.immersiveLayout.spectrumDeck.description:
   source: human
   by: "@kinlay0"
   issue: 42
-settings.option.visual.immersiveStyle: Иммерсивный стиль
-settings.option.visual.immersiveStylePortrait: Иммерсивный стиль (портретный)
+settings.option.visual.immersiveStyle: Стиль погружения
+settings.option.visual.immersiveStylePortrait: Стиль погружения (портрет)
 settings.option.visual.largeHeaderTitles: Крупные заголовки
 settings.option.visual.largeHeaderTitles.description: Увеличивает текст заголовков на страницах альбомов и плейлистов для более выразительного вида.
 settings.option.visual.layoutProfile: Тип профиля макета
 settings.option.visual.layoutProfile.description: Настройте макет приложения по своему вкусу
-settings.option.visual.layoutType: Тип оформления
+settings.option.visual.layoutType: Тип макета
 settings.option.visual.layoutType.calico: Calico
 settings.option.visual.layoutType.calico.description: Боковая панель во всю высоту с плеером внутри области контента.
 settings.option.visual.layoutType.mavericks: Mavericks
@@ -5384,19 +5511,19 @@ settings.option.visual.layoutType.mojave: Mojave
 settings.option.visual.layoutType.mojave.description: Полноширинная панель инструментов с нижним плеером.
 settings.option.visual.layoutType.montara: Montara
 settings.option.visual.layoutType.montara.description: Боковая панель во всю высоту с верхним плеером внутри области контента.
-settings.option.visual.lcdChromaticAberration: Хроматическая аберрация LCD
+settings.option.visual.lcdChromaticAberration: Хроматическая аберрация ЖК
 settings.option.visual.lcdChromaticAberration.description: Преломление фона LCD-дисплея «Исполняется» через шейдер жидкого стекла с RGB-каймой.
 settings.option.visual.liquidGlassPlayer: Панель плеера Liquid Glass
 settings.option.visual.liquidGlassPlayer.description: Использовать эффект жидкого стекла для панели текущего воспроизведения. Отключите для отображения плоской сплошной панели (которая также требует меньше ресурсов для рендеринга).
-settings.option.visual.liquidGlassScrollPerf: Легкое стекло при прокрутке
+settings.option.visual.liquidGlassScrollPerf: Облегчённое стекло при прокрутке
 settings.option.visual.liquidGlassScrollPerf.description: Упрощает преломление жидкого стекла до обычного размытия при прокрутке, плавно возвращая исходный эффект при остановке. Снижает задержки прокрутки на требовательных системах, не меняя визуальный стиль в состоянии покоя. Всегда включено в игровом режиме.
 settings.option.visual.liquidGlassScrollPerf.descriptionV2: Во время прокрутки упрощает преломление «жидкого стекла» до обычного размытия, а после остановки плавно возвращает эффект. Уменьшает подвисания прокрутки на слабых системах и не меняет вид в покое.
 settings.option.visual.mainMenuPosition: Положение главного меню
 settings.option.visual.matchPageToArtwork: Подстраивать страницу под обложку
 settings.option.visual.matchPageToArtwork.description: Окрашивает страницы альбомов и плейлистов в цвета их обложек в светлом и тёмном режимах.
-settings.option.visual.mergeAppleMusicPlaylists: Объединить плейлисты Apple Music
+settings.option.visual.mergeAppleMusicPlaylists: Объединять плейлисты Apple Music
 settings.option.visual.mergeAppleMusicPlaylists.description: Смешивать плейлисты от Apple Music с основными плейлистами вместо отображения их отдельной группой.
-settings.option.visual.miniplayerSkin: Стиль мини-плеера
+settings.option.visual.miniplayerSkin: Макет мини-плеера
 settings.option.visual.miniplayerSkin.aluminum: Алюминий
 settings.option.visual.miniplayerSkin.aqua: Aqua
 settings.option.visual.miniplayerSkin.aquaAlt: Aqua (альт.)
@@ -5411,21 +5538,21 @@ settings.option.visual.mojavePlayerType.comfy: Уютный
 settings.option.visual.mojavePlayerType.comfy.description: Увеличенный плеер с обложкой и метаданными слева.
 settings.option.visual.mojavePlayerType.compact: Компактный
 settings.option.visual.mojavePlayerType.compact.description: Компактный плеер с LCD-дисплеем по центру и шкалой воспроизведения сверху.
-settings.option.visual.mojavePlayerType.compactInline: Встроенный компактный
+settings.option.visual.mojavePlayerType.compactInline: Компактный встроенный
 settings.option.visual.mojavePlayerType.compactInline.description: Одна узкая строка со шкалой воспроизведения внутри LCD-дисплея.
-settings.option.visual.moveUpLinks: Переместить ссылки «Смотрите также» в разделе «Обзор» наверх
+settings.option.visual.moveUpLinks: Перемещать ссылки «Ещё для просмотра» в Обзоре наверх
 settings.option.visual.musicVideoPinMaxResolution: Всегда воспроизводить клипы в максимальном разрешении
 settings.option.visual.musicVideoPinMaxResolution.description: Сразу запускает видео в максимальном качестве вместо постепенного повышения разрешения. В маленьком окне или при лимитном подключении это расходует заметно больше трафика.
-settings.option.visual.musicVideoPrefetchOnHover: Подготовка клипов при наведении
+settings.option.visual.musicVideoPrefetchOnHover: Подготавливать клипы при наведении
 settings.option.visual.musicVideoPrefetchOnHover.description: Загрузка видео начинается при наведении курсора на значок, чтобы оно открывалось быстрее при нажатии.
 settings.option.visual.musicVideoPrefetchSegmentsOnHover: Загружать первый фрагмент при наведении
 settings.option.visual.musicVideoPrefetchSegmentsOnHover.description: Также предварительно загружает первые несколько секунд видео. Это расходует несколько мегабайт при каждом наведении, даже если видео в итоге не будет открыто.
-settings.option.visual.paletteContrast: Контрастность цветов обложки
+settings.option.visual.paletteContrast: Контраст цветов обложки
 settings.option.visual.paletteContrast.description: Определяет, насколько цвета альбомов и плейлистов смещаются относительно фона страницы, чтобы кнопки и индикатор воспроизведения оставались читаемыми. В режиме повышенной контрастности всегда используется значение «Максимальный».
 settings.option.visual.paletteContrast.enhanced: Повышенный
 settings.option.visual.paletteContrast.maximum: Максимальный
 settings.option.visual.paletteContrast.standard: Стандартный
-settings.option.visual.pauseAnimatedOnBlur: Приостанавливать анимацию обложек в фоновом режиме
+settings.option.visual.pauseAnimatedOnBlur: Приостанавливать анимированные обложки вне фокуса
 settings.option.visual.playerMaterial: Материал плеера
 settings.option.visual.playerMaterial.blur: Размытие
 settings.option.visual.playerMaterial.blur.description: Использовать полупрозрачный матовый материал для панели воспроизведения без эффекта преломления «Жидкого стекла».
@@ -5455,25 +5582,25 @@ settings.option.visual.popularityThreshold.description: Минимальный �
 settings.option.visual.precisionScrollSpeed: Скорость точной прокрутки
 settings.option.visual.precisionScrollSpeed.description: Тонкая настройка прокрутки тачпада в новом оконном движке (glass). Меньшие значения замедляют прокрутку для большей точности, большие — ускоряют её.
 settings.option.visual.purplePodcastPlaybackBar: Фиолетовая шкала воспроизведения для подкастов
-settings.option.visual.realtimeVisualizer: Аудиовизуализатор в реальном времени
+settings.option.visual.realtimeVisualizer: Визуализатор аудио в реальном времени
 settings.option.visual.realtimeVisualizer.description: Показывать аудиовизуализатор в реальном времени для воспроизводимых треков вместо анимированных полос.
 settings.option.visual.searchType: Тип поиска
 settings.option.visual.searchType.floating: Плавающий
 settings.option.visual.searchType.inline: Встроенный
-settings.option.visual.showBpmAndKey: Показывать BPM и тональность треков в плейлистах и альбомах
+settings.option.visual.showBpmAndKey: Показывать BPM и тональность у треков в плейлистах и альбомах
 settings.option.visual.showBpmAndKey.description: При включении этой функции загрузка контента займет больше времени.
 settings.option.visual.showPersonalInfo: Показывать личную информацию
 settings.option.visual.showPlaylistArtworkInSidebar: Показывать обложки плейлистов в боковой панели
 settings.option.visual.showPodcastsInSidebar: Показывать подкасты в боковой панели
 settings.option.visual.showPodcastsInSidebar.description: Поддержка подкастов всё ещё перерабатывается, поэтому в медиатеке пока отображается только заглушка.
-settings.option.visual.showQuickActions: Показать быстрые действия
-settings.option.visual.showWatchMusicVideoWhenAvailable: Показывать «Смотреть видеоклип», если доступно
+settings.option.visual.showQuickActions: Показывать быстрые действия
+settings.option.visual.showWatchMusicVideoWhenAvailable: Показывать «Смотреть клип», когда доступно
 settings.option.visual.sidebarStyle: Стиль боковой панели
 settings.option.visual.sidebarStyle.apple: Apple Music
 settings.option.visual.sidebarStyle.default: По умолчанию
 settings.option.visual.sidebarStyle.description: Выберите оформление боковой панели. В стиле «Apple Music» закрепленные элементы помещаются в раздел «Медиатека», а заголовок раздела «Apple Music» скрывается.
 settings.option.visual.simpleArtworkBg.saturate: Насыщенность
-settings.option.visual.sizeProfile: Размер пользовательского интерфейса
+settings.option.visual.sizeProfile: Профиль размера интерфейса
 settings.option.visual.sizeProfile.description.default: Стандартный размер для любых устройств ввода. Стиль iOS / Android / современной Windows.
 settings.option.visual.sizeProfile.description.desktop: Оптимизировано для компьютеров с мышью и клавиатурой. Стиль macOS / классической Windows.
 settings.option.visual.sizeProfile.desktop: Настольный
@@ -5515,7 +5642,7 @@ settings.option.visual.uiscale: Масштаб интерфейса
 settings.option.visual.useAdaptiveColors: Использовать адаптивные цвета
 settings.option.visual.useAdaptiveColors.description: Изменить цвет акцента, чтобы он соответствовал текущей песне
 settings.option.visual.useAdaptiveColors.popup: Адаптивные цвета будут применены к следующему треку.
-settings.option.visual.verticalDrawerMode: Размещение очереди и текста песен
+settings.option.visual.verticalDrawerMode: Расположение очереди и текстов
 settings.option.visual.verticalDrawerMode.auto.description: Использовать нижнюю панель под плеером/контентом на портретных экранах и боковую панель на широкоформатных.
 settings.option.visual.verticalDrawerMode.bottom: Нижняя панель
 settings.option.visual.verticalDrawerMode.bottom.description: Всегда показывать очередь и текст песен в нижней панели под плеером/контентом.
@@ -5525,11 +5652,11 @@ settings.option.visual.verticalDrawerMode.side.description: Всегда пок�
 settings.option.visual.vibrancyMode.acrylic: Акрил
 settings.option.visual.vibrancyMode.mica: Слюда
 settings.option.visual.vibrancyMode.tabbed: Вкладки
-settings.option.visual.vibrancySettings: Настройки эффекта размытия
+settings.option.visual.vibrancySettings: Настройки яркости
 settings.option.visual.windowBackgroundStyle: Стиль фона окна
 settings.option.visual.windowColor: Цвет оттенка окна
-settings.option.visual.windowControlPosition: Положение кнопок управления окном
-settings.option.visual.windowingMode: Режим прокрутки и рендеринга
+settings.option.visual.windowControlPosition: Положение кнопок окна
+settings.option.visual.windowingMode: Режим прокрутки и отрисовки
 settings.option.visual.windowingMode.auto: Авто (с поддержкой тачпада)
 settings.option.visual.windowingMode.description: Выберите способ отрисовки и прокрутки контента. Режим «Авто» рекомендуется для большинства пользователей. На некоторых устройствах с тачпадом режим «Старый» может работать быстрее.
 settings.option.visual.windowingMode.fallbackNotice.body: Вместо этого Cider использует старый режим.
@@ -5538,7 +5665,7 @@ settings.option.visual.windowingMode.glass: Новый
 settings.option.visual.windowingMode.performance: Старый
 settings.option.visual.windowStyle: Стиль окна
 settings.option.visual.windowVibrancy:
-  value: Эффект размытия окна
+  value: Яркость окна
   source: ai
   by: "@kinlay0"
   issue: 36
@@ -5578,6 +5705,17 @@ settings.power.savers: Энергосбережение
 settings.power.summary.count: "Включено функций: с высокой нагрузкой — {{high}}, со средней — {{medium}}"
 settings.power.summary.high: Высокая нагрузка
 settings.power.summary.medium: Средняя нагрузка
+settings.privacy.appPreferences: Настройки приложения
+settings.privacy.appPreferences.description: Поделитесь настройками приложения, чтобы мы знали, как вам удобнее настроить Cider.
+settings.privacy.appUsage: Использование функций приложения
+settings.privacy.appUsage.description: Отправлять анонимные данные об использовании функций Cider. Они не включают личные данные и данные Apple Music.
+settings.privacy.audioLabs: Экспериментальные функции Cider Audio
+settings.privacy.audioLabs.description: Отправляет информацию о настройках экспериментальных функций Cider Audio.
+settings.privacy.deviceSpecs: Характеристики устройства
+settings.privacy.deviceSpecs.description: "Отправляет информацию о текущем оборудовании: процессоре, графическом процессоре, ОЗУ, аудиоустройствах, а также об операционной системе. Информация базовая и не включает серийные номера или идентификаторы устройств."
+settings.privacy.replay: Передавать историю прослушивания для Cider Replay
+settings.privacy.replay.description: Анонимно отправлять историю прослушивания для участия в ежегодном общем проекте Cider Replay. Публичную статистику можно посмотреть на cider.sh/replay.
+settings.privacy.statement: Компания Cider Collective очень серьёзно относится к конфиденциальности. Мы не собираем никакие персональные данные и не продаём данные третьим лицам. Любые данные, которыми вы решите поделиться, используются для улучшения приложения и не передаются никому другому; все личные сведения, которые могут храниться, удаляются до их отправки нам.
 settings.profile.crop.hint: Перетаскивайте для перемещения, прокручивайте для масштабирования
 settings.profile.crop.title: Выберите область фото
 settings.profile.defaultName: Пользователь Apple Music
@@ -5585,21 +5723,23 @@ settings.profile.field.displayName: Отображаемое имя
 settings.profile.field.displayName.description: Отображается в боковой панели и в других разделах Cider.
 settings.profile.field.handle.description: Ваш @username, используется для того, чтобы делиться профилем.
 settings.profile.field.photo: Фото профиля
+settings.profile.field.photo.change: Изменить фото профиля
 settings.profile.field.photo.description: Установлено собственное фото.
 settings.profile.header.identity: Редактировать профиль
 settings.profile.header.region: Регион и язык
 settings.profile.header.visibility: Отображение в боковой панели
 settings.profile.language.description: Язык метаданных каталога для выбранного регионального магазина.
-settings.profile.option.showHandle: Показывать имя пользователя
+settings.profile.option.showHandle: Показывать соцсеть
 settings.profile.option.showMainMenu: Главное меню в области профиля боковой панели
 settings.profile.option.showName: Показывать имя профиля
 settings.profile.option.showProfile: Показывать профиль в боковой панели
 settings.profile.policy.allowed: Разрешено
 settings.profile.policy.label:
-  value: Нецензурный контент
-  source: human
+  value: Контент с ненормативной лексикой
+  source: ai
   by: "@kinlay0"
   issue: 36
+  superseded_at: 2026-10-16
 settings.profile.policy.restricted: Ограничено
 settings.profile.signOut.confirmMessage: Вы вернетесь на экран входа, а кэш вашей медиатеки будет очищен. Продолжить?
 settings.profile.signOut.confirmTitle: Выйти из Apple Music?
@@ -5642,6 +5782,7 @@ settings.resetCider.confirm.ok: Сбросить Cider
 settings.resetCider.confirm.title: Сбросить Cider?
 settings.resetCider.confirm.warning: Это действие нельзя отменить. После сброса Cider перезапустится.
 settings.resetCider.confirm.willReset: Будет сброшено
+settings.resetCider.deselectAll: Снять выделение
 settings.resetCider.error: Во время сброса произошла ошибка.
 settings.resetCider.group.accounts: Учетные записи
 settings.resetCider.group.core: Сброс
@@ -5651,6 +5792,10 @@ settings.resetCider.resetButton: Сбросить Cider
 settings.resetCider.resetting: Сброс…
 settings.resetCider.selectAll: Выбрать все
 settings.resetCider.title: Сброс Cider
+settings.search.empty: Нет настроек, соответствующих запросу.
+settings.search.pages: Страницы
+settings.search.resultCount: "Совпадений настроек: {{count}}"
+settings.search.resultCountOne: Совпадает 1 настройка
 settings.sleepTimer.endsIn: "Осталось: {{remainingTime}} ({{endTime}})"
 settings.sleepTimer.notSet: Таймер не установлен
 settings.sleepTimer.title: Установить таймер сна
@@ -5660,7 +5805,7 @@ settings.smartPlaylists.section.maintenance.description: Принудитель�
 settings.smartPlaylists.section.rules: Правила
 settings.smartPlaylists.section.rules.description: Определяет, применяет ли Cider встроенные правила плейлистов и как часто они обновляются.
 settings.smartPlaylists.section.rules.descriptionV2: Применяет ли Cider встроенные правила плейлистов. Они перезапускаются с интервалом «Время фонового обновления» в разделе «Энергопотребление».
-settings.sweetener.useSystemAccentColor: Использовать системный акцентный цвет
+settings.sweetener.useSystemAccentColor: Использовать системный цвет акцента
 settings.takeout.chooseFile: Выбрать файл…
 settings.takeout.error.badVersion: В этом файле отсутствует информация о версии.
 settings.takeout.error.generic: Не удалось прочитать этот файл.
@@ -5703,7 +5848,7 @@ settings.troubleshooting.impressionReporting.warning2: Это реальная �
 settings.troubleshooting.logFile: Файл журнала
 settings.troubleshooting.logFile.actions: Действия с файлом журнала
 settings.troubleshooting.logFile.desc: Просмотр, копирование или очистка файла журнала
-settings.troubleshooting.mkliteDebug: Отладочное логирование MKLite
+settings.troubleshooting.mkliteDebug: Журнал отладки MKLite
 settings.troubleshooting.mkliteDebug.desc: Подробный вывод консоли MKLite — данные PlayActivity (JSPLAY), смена треков и состояние воспроизведения. Полезно для сравнения отправляемых в Apple данных с music.apple.com. Отключите при обычном использовании.
 settings.troubleshooting.mkLoadingMethod: Метод загрузки MusicKit
 settings.troubleshooting.mkLoadingMethod.warning1: Изменение метода загрузки MusicKit. Используется для решения возможных проблем с загрузкой после обновлений MusicKit.
@@ -5714,17 +5859,76 @@ settings.troubleshooting.rebootMk.desc: Перезапуск MusicKit для у�
 settings.troubleshooting.testSignIn: Проверить вход в Apple Music
 settings.troubleshooting.testSignIn.desc: Запустите всплывающее окно входа Apple Music, чтобы проверить работу авторизации, а затем подтвердить токен через API. Никакие данные не сохраняются, а ваш текущий сеанс остается без изменений.
 settings.troubleshooting.title: Устранение неполадок
+settings.tweaks.animateArtworkOnHover.description: Воспроизводить анимированные обложки при наведении указателя.
+settings.tweaks.artworkFadeIn.description: Показывать обложки сразу, без плавного появления при загрузке.
+settings.tweaks.artworkHighlighting.description: Добавлять мягкую тень и подсветку к обложкам в сетках и списках.
+settings.tweaks.artworkLoadingMethod.description: Ленивая загрузка обложек по мере прокрутки. Немедленная загружает их сразу.
+settings.tweaks.card.musicVideos: Музыкальные видео
+settings.tweaks.ciderAudioBadges.description: Показывать значки Cider Audio рядом с песней в плеере.
+settings.tweaks.ciderAudioToolbar.description: Показывать кнопку Cider Audio на панели инструментов.
+settings.tweaks.compactSidebarSize: Компактный размер боковой панели
+settings.tweaks.contextMenuIcons.description: Какие пункты меню показывают значок.
+settings.tweaks.floatingSearchBlur: Размытие фона плавающего поиска
+settings.tweaks.floatingSearchClear: Очищать плавающий поиск при закрытии
+settings.tweaks.forceMpWindowControls.description: Использовать собственные кнопки окна Cider вместо системных.
+settings.tweaks.hideHeroItems.description: Скрывать крупные баннеры с избранным вверху раздела «Обзор».
+settings.tweaks.homeButtonLocation.description: Где расположена кнопка «Домой».
+settings.tweaks.immersiveArtworkHighlight: Подсветка обложек в режиме погружения
+settings.tweaks.immersiveArtworkHighlight.description: Добавлять подсветку к обложке в режиме погружения.
+settings.tweaks.immersiveBackgroundBpm.description: Анимировать фон в такт темпу песни.
+settings.tweaks.immersiveControlsTimeout: Время скрытия элементов управления в режиме погружения
+settings.tweaks.immersiveControlsTimeout.description: Количество секунд до скрытия элементов управления.
+settings.tweaks.immersiveHideLyrics.description: Скрывать панель текста для песен без текста.
+settings.tweaks.immersiveLyricGlow: Свечение активной строки текста
+settings.tweaks.immersiveLyricGlow.description: Добавлять свечение к строке, которая исполняется.
+settings.tweaks.immersiveMaxLyricSize.description: Максимальный размер текста песни в режиме погружения.
+settings.tweaks.mainMenuPosition.description: Где расположена кнопка главного меню.
+settings.tweaks.mavericksLcdStyle: Стиль ЖК-дисплея Mavericks
+settings.tweaks.mavericksLcdStyle.description: Как выглядит дисплей текущего воспроизведения в макете Mavericks.
+settings.tweaks.miniPlayerAnimatedArtwork.description: Воспроизводить анимированные обложки в окне мини-плеера.
+settings.tweaks.moveUpLinks.description: Размещать ссылки на другой контент вверху раздела «Обзор».
+settings.tweaks.musicVideoBadge.description: Показывать кнопку в плеере, если у песни есть музыкальное видео.
+settings.tweaks.pauseAnimatedOnBlur.description: Приостанавливать анимированные обложки, когда Cider не активен.
+settings.tweaks.progressAccent: Полоса прогресса в цвете акцента
+settings.tweaks.progressAccent.description: Заполнять полосу прогресса песни цветом акцента.
+settings.tweaks.resizableMiniPlayer.description: Разрешить изменение размера окна мини-плеера.
+settings.tweaks.richGridNoScrollAnimation: Мгновенная прокрутка в расширенной сетке альбомов
+settings.tweaks.richGridNoScrollAnimation.description: Переходить к альбому без анимации прокрутки.
+settings.tweaks.richGridOpenPage: Открывать альбомы как страницы из расширенной сетки
+settings.tweaks.richGridOpenPage.description: Переходить на страницу альбома вместо раскрытия в сетке.
+settings.tweaks.richGridScrollPosition: Положение прокрутки расширенной сетки альбомов
+settings.tweaks.richGridScrollPosition.description: Где сетка прокручивается при открытии альбома.
+settings.tweaks.scrollbarType.description: Использовать собственные полосы прокрутки Cider или системные.
+settings.tweaks.searchStyle: Стиль поиска
+settings.tweaks.searchStyle.description: Поиск в строке заголовка или в панели поверх страницы.
+settings.tweaks.section.artwork: Обложки
+settings.tweaks.section.browse: Обзор
+settings.tweaks.section.immersive: Режим погружения
+settings.tweaks.section.lyrics: Текст песни
+settings.tweaks.section.pagesGrids: Страницы и сетки
+settings.tweaks.section.playerBar: Панель плеера
+settings.tweaks.section.search: Поиск
+settings.tweaks.section.sidebarNavigation: Боковая панель и навигация
+settings.tweaks.section.windowToolbar: Окно и панель инструментов
+settings.tweaks.showBitrate.description: Показывать битрейт потока рядом с песней в плеере.
+settings.tweaks.sidebarPlaylistArtwork.description: Показывать обложку каждого плейлиста рядом с его названием.
+settings.tweaks.simpleArtworkMask.description: Плавно затемнять нижнюю часть фоновой обложки.
+settings.tweaks.sonomaLyricArc: Изогнутые строки текста в Sonoma
+settings.tweaks.sonomaRadialMask: Альтернативная маска Sonoma
+settings.tweaks.volumeIosStyle: Ползунок громкости в стиле iOS
+settings.tweaks.volumeIosStyle.description: Отображать ползунок громкости в стиле, используемом на iPhone.
+settings.tweaks.windowControlPosition.description: С какой стороны расположены кнопки окна.
 settings.updates.action.check: Проверить обновления
 settings.updates.action.install: Установить обновление
 settings.updates.action.restart: Перезапустить Cider
-settings.updates.action.retry: Повторить попытку
+settings.updates.action.retry: Повторить
 settings.updates.autoCheck: Проверять обновления автоматически
 settings.updates.autoCheck.description: Если выключено, Cider проверяет обновления только при открытии этой страницы.
 settings.updates.build: Сборка
 settings.updates.channel: Канал
 settings.updates.codename: Кодовое имя
 settings.updates.currentlyRunning: Текущая версия
-settings.updates.firstInstalled: Впервые установлено
+settings.updates.firstInstalled: Установлено впервые
 settings.updates.platform: Платформа
 settings.updates.progress.failed: Ошибка обновления
 settings.updates.progress.failed.sub: Во время обновления произошла ошибка.
@@ -5749,43 +5953,48 @@ settings.updates.progress.working.sub: Подождите немного, это
 settings.updates.section.about: О вашей версии
 settings.updates.section.alsoAvailable: Также доступно
 settings.updates.section.history: История обновлений
-settings.updates.section.whatsNew: Что нового в Cider
+settings.updates.section.whatsNew: Что нового в Cider {version}
 settings.updates.status.available: Доступно обновление
 settings.updates.status.checking: Проверка обновлений...
-settings.updates.status.failed: Ошибка обновления
+settings.updates.status.failed: Не удалось обновить
 settings.updates.status.idle: Установлена последняя версия Cider
 settings.updates.status.success: Требуется перезапуск
 settings.updates.status.working: Установка...
 settings.visual.card.appBackground: Фон приложения
-settings.visual.card.behaviorLyrics: Поведение и тексты песен
+settings.visual.card.behavior: Поведение
+settings.visual.card.behaviorLyrics: Поведение и текст песен
 settings.visual.card.browse: Обзор
-settings.visual.card.contentFilter: Фильтрация контента
+settings.visual.card.contentFilter: Фильтр контента
 settings.visual.card.experimental: Экспериментальные
-settings.visual.card.fsrUpscaling: Масштабирование FSR
+settings.visual.card.fsrUpscaling: Апскейлинг FSR
 settings.visual.card.moreAnimatedArtwork: Больше анимированных обложек
 settings.visual.card.playerEffects: Эффекты плеера
 settings.visual.card.sidebarNavigation: Боковая панель и навигация
-settings.visual.card.trackMetadata: Метаданные трека
+settings.visual.card.trackMetadata: Метаданные треков
 settings.visual.card.ultraHdr: Апскейлинг Ultra HDR
-settings.visual.editorialLayout: Использовать редакционное оформление
+settings.visual.editorialLayout: Использовать редакционную компоновку
 settings.visual.editorialLayout.desc: Отображает редакционный баннер и применяет цветовую палитру для некоторых альбомов
-settings.visual.editorialPreferenceOrder: Порядок приоритета редакционного оформления
+settings.visual.editorialPreferenceOrder: Порядок предпочтения редакционного контента
 settings.visual.section.appearance: Оформление
 settings.visual.section.appearance.description: Цветовая схема, цвета акцентов и фон приложения.
 settings.visual.section.artwork: Обложки и анимация
 settings.visual.section.artwork.description: Анимированные обложки и настройки движения.
-settings.visual.section.content: Обзор и контент
+settings.visual.section.content: Просмотр и контент
 settings.visual.section.content.description: Макеты страниц, настройки обзора и фильтрация контента.
 settings.visual.section.customCss.description: Применение собственных стилей CSS поверх оформления Cider.
 settings.visual.section.layout: Макет
 settings.visual.section.layout.description: Макет приложения, стиль плеера, боковая панель и навигация.
+settings.visual.section.pages: Страницы
+settings.visual.section.pages.description: Как выстроены страницы альбомов и плейлистов.
+settings.visual.section.themeColors: Тема и цвета
 settings.visual.section.window: Окно
 settings.visual.section.window.description:
   value: Оформление окна, эффект прозрачности, элементы управления и масштаб.
   source: human
   by: "@kinlay0"
   issue: 42
-settings.visual.vibrancy.acrylicDarkness: Степень затемнения эффекта Acrylic
+settings.visual.section.window.descriptionV2: Оформление окна, прозрачность, рендеринг и масштабирование.
+settings.visual.vibrancy.acrylicDarkness: Значение затемнения акрила
 settings.visual.vibrancy.mode.acrylic: Акрил
 settings.visual.vibrancy.mode.mica: Слюда
 settings.visual.vibrancy.mode.none: Нет
@@ -6649,10 +6858,11 @@ term.uniqueArtists:
   superseded_at: 2026-07-08
 term.uniqueSongs: Уникальные песни
 term.unknownArtist:
-  value: Неизвестный артист
-  source: human
+  value: Неизвестный исполнитель
+  source: ai
   by: "@kinlay0"
   issue: 27
+  superseded_at: 2026-10-16
 term.unknownDevice: Неизвестное устройство
 term.unknownError: Неизвестная ошибка
 term.unmute: Включить звук
