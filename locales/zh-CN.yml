@@ -172,10 +172,11 @@ action.cancel:
   by: "@Tesutarin"
   issue: 7
 action.cancelTimer:
-  value: 取消定时
-  source: human
+  value: 取消定时器
+  source: ai
   by: "@Tesutarin"
   issue: 25
+  superseded_at: 2026-10-16
 action.cast.airplay:
   value: AirPlay
   source: ai
@@ -229,6 +230,7 @@ action.close:
   source: human
   by: "@Tesutarin"
   issue: 7
+action.configure: 配置
 action.connect:
   value: 连接
   source: human
@@ -263,10 +265,11 @@ action.copy:
   by: "@Tesutarin"
   issue: 7
 action.copyToken:
-  value: 拷贝 Token
-  source: human
+  value: 复制令牌
+  source: ai
   by: "@Tesutarin"
   issue: 7
+  superseded_at: 2026-10-16
 action.create:
   value: 新建
   source: human
@@ -325,6 +328,7 @@ action.deletepreset:
   by: "@Tesutarin"
   issue: 7
   superseded_at: 2026-07-08
+action.deny: 拒绝
 action.disablePlugins:
   value: 在本次会话中停用插件
   source: human
@@ -538,9 +542,10 @@ action.paste:
 action.pause: 暂停
 action.pickTime:
   value: 选择时间
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 7
+  superseded_at: 2026-10-16
 action.pin:
   value: 置顶
   source: human
@@ -832,14 +837,16 @@ action.sidebar.signIn.with:
   superseded_at: 2026-07-08
 action.signIn:
   value: 登录
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 7
+  superseded_at: 2026-10-16
 action.signOut:
   value: 退出登录
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 7
+  superseded_at: 2026-10-16
 action.skip: 跳过
 action.smartQueue.disable:
   value: 关闭智能队列
@@ -1529,6 +1536,12 @@ assistant.sid.settings.freshDetail: 根据情绪、时刻或几位艺人创建�
 assistant.sid.settings.gemmaHere: Gemma 所在位置
 assistant.sid.settings.gpu: 显卡
 assistant.sid.settings.group: 助手
+assistant.sid.settings.helloEdit: 打开一个播放列表并选择“用 Sid 编辑”，我会帮你整理好。
+assistant.sid.settings.helloFresh: 告诉我心情或几位艺人，我就能为你生成一整个播放列表。
+assistant.sid.settings.helloRequest: 在一场打碟中点播一首歌，我会在 Apple Music 上为你找到它。
+assistant.sid.settings.helloSet: 打碟时，我会根据调性和速度挑选接下来播放的曲目。
+assistant.sid.settings.helloSort: 让我把播放列表从舒缓排到热烈，或者按调性让它衔接顺畅。
+assistant.sid.settings.helloTrim: 我可以把播放列表裁剪到一小时，或保持在同一速度。
 assistant.sid.settings.inEdit: 编辑播放列表时
 assistant.sid.settings.inEditDetail: 在播放列表标题栏中使用 Sid 编辑
 assistant.sid.settings.inImmersive: 沉浸模式
@@ -1557,6 +1570,11 @@ assistant.sid.settings.position: 位置
 assistant.sid.settings.positionDetail: Sid 在封面上的位置
 assistant.sid.settings.privacyChat: 你输入的内容会保留在这台电脑上：Sid 在此使用 Gemma 进行思考。为了查找音乐，Sid 会将搜索词发送到 Apple Music；当你提出请求时，它还会从你的 Apple Music 账户读取播放列表、近期播放记录和 Apple Music Replay。在你点击“应用”之前，不会做出任何更改。
 assistant.sid.settings.privacyEngine: 你输入的内容会保留在这台电脑上：Sid 会在本机通过 {engine} 进行思考。为了查找音乐，Sid 会将搜索词发送至 Apple Music；当你提出请求时，它还会从你的 Apple Music 账户中读取你的播放列表、最近播放记录和 Apple Music Replay。在你点按“应用”之前，不会做出任何更改。
+assistant.sid.settings.quipGaming: 你的 {gpu} 和我会相处得很好。
+assistant.sid.settings.quipIntegrated: 集成显卡。我会让一切保持轻盈舒适。
+assistant.sid.settings.quipOther: 不错的 {gpu}，我会好好利用它。
+assistant.sid.settings.quipSetsOnly: 你的 {gpu} 和我目前只负责运行打碟。
+assistant.sid.settings.quipTop: "{gpu}？我几乎不会累。"
 assistant.sid.settings.reads: 读取完整播放列表耗时 {seconds} 秒（需要少于 {floor} 秒）
 assistant.sid.settings.regular: 标准
 assistant.sid.settings.remove: 移除
@@ -1676,6 +1694,19 @@ auth.error.unavailable: 此 Apple ID 无法在 Cider 中使用 Apple Music。Cid
 auth.error.windowFailed: 无法打开登录窗口
 auth.mutExpired.confirm: 登录
 auth.mutExpired.message: 您的 Apple Music 会话已过期。请重新登录以继续。
+auth.request.authorizing: 正在授权…
+auth.request.copyToken: 复制令牌
+auth.request.granted: 已授权
+auth.request.requestedAccess: 请求访问
+auth.request.revealNote: 此令牌仅显示这一次。请立即将其粘贴到 {app} 中。
+auth.request.subtitle: 希望访问 Cider
+auth.request.toast.copied: 令牌已复制到剪贴板
+auth.request.toast.failed: 无法创建令牌
+auth.request.toast.granted: 已授予 {app} 访问权限
+auth.request.toast.title: 授权
+auth.request.tokenCreated: 令牌已创建
+auth.request.tokenFor: 用于 {app}
+auth.request.trustNote: 仅向您信任的应用授予访问权限。您可以随时在“设置 › 连接”中撤销此令牌。
 auth.signedIn: 已登录
 auth.signInRetry.confirm: 重试
 auth.signInRetry.message: 无法打开登录窗口。要重试吗？
@@ -2223,7 +2254,7 @@ gallery.submitTheme:
   by: "@Tesutarin"
   issue: 25
 general.closeToTray:
-  value: 关闭到系统托盘
+  value: 关闭时最小化到托盘
   source: ai
   by: "@Tesutarin"
   issue: 7
@@ -5321,7 +5352,7 @@ oobe.amupsell.title:
   issue: 32
   superseded_at: 2026-07-08
 oobe.appearance.accentHint: 用于应用内的按钮、高亮和进度条。点击尝试，可实时预览。
-oobe.appearance.subtitle: 选择配色方案和强调色。你可以随时在“设置 → 视觉”中进行更改。
+oobe.appearance.subtitle: 选择配色方案和强调色。您可以随时在“设置 › 外观”中更改。
 oobe.appearance.title: 打造你的专属 Cider
 oobe.appleNotice: 请注意：Apple Music 是 Apple Inc. 的商标。Cider 是 Apple Music 的第三方客户端，与 Apple Inc. 无关联。
 oobe.audio.advancedFunctionality: ""
@@ -5345,7 +5376,7 @@ oobe.connections.atmosRatingsHint: 查看并分享哪些专辑在 Dolby Atmos �
 oobe.connections.lastfm.connected: 已连接
 oobe.connections.lastfm.connectedAs: 已作为 {username} 连接
 oobe.connections.lastfm.hint: 记录你的听歌历史。
-oobe.connections.moreHint: 更多集成（如 Libre.fm、Maloja、ListenBrainz 以及 WebSockets 和 RPC API）位于“设置 → 连接”。
+oobe.connections.moreHint: 更多集成（如 Libre.fm、Maloja、ListenBrainz，以及 WebSockets 和 RPC API）位于“设置 › 连接”中。
 oobe.connections.pairDevice: 配对设备
 oobe.connections.remoteHint: 从手机控制 Cider。
 oobe.connections.subtitle: 将 Cider 与你的其他应用和服务关联。
@@ -5663,10 +5694,22 @@ playlist.untitled:
   source: human
   by: "@Tesutarin"
   issue: 7
+plugin.install.byAuthor: 作者：{author}
+plugin.install.identifier: 标识符
+plugin.install.install: 安装
+plugin.install.installing: 正在安装…
+plugin.install.source: 来源
+plugin.install.subtitle: 一个 Cider 插件希望添加到您的资料库中。
+plugin.install.title: 安装插件
+plugin.install.update: 更新
+plugin.install.updateSubtitle: 一个 Cider 插件希望替换已安装的版本。
+plugin.install.updateTitle: 更新插件
+plugin.install.warning: 插件可在 Cider 内运行代码，并可访问您的播放、队列和资料库。请仅从您信任的来源安装插件。
 podcast.comingSoon.description: 由于 Cider 对播放处理方式进行了重大调整，播客支持正在重新构建。它将在未来的更新中回归。
 podcast.comingSoon.hide: 在边栏中隐藏
 podcast.comingSoon.hint: 您可以在“外观”设置的“边栏与导航”中重新开启。
 podcast.comingSoon.title: 播客即将推出
+podcast.comingSoon.tweaksHint: 您可以在“微调”设置的“侧边栏和导航”下重新开启它。
 podcast.episodes:
   value: 单集
   source: ai
@@ -5940,7 +5983,7 @@ settings.about.viewLicense:
   source: human
   by: "@Tesutarin"
   issue: 25
-settings.accessibility.card.textSize: 文本与大小
+settings.accessibility.card.textSize: 文字与大小
 settings.accessibility.card.visibility: 可见性
 settings.accessibility.section.display: 显示
 settings.accessibility.section.display.description: 字体粗细、界面缩放、对比度和焦点指示器。
@@ -5948,6 +5991,11 @@ settings.accessibility.section.motion: 动态效果
 settings.accessibility.section.motion.description: 按钮、卡片和其他界面元素使用的动画幅度。
 settings.accessibility.section.soundEffects: 音效
 settings.accessibility.section.soundEffects.description: 按钮、开关和滑块的界面音效及其播放音量。
+settings.accessibility.soundPreview.click: 点击
+settings.accessibility.soundPreview.slider: 滑块
+settings.accessibility.soundPreview.switch: 开关
+settings.accounts.appleMusic: Apple Music
+settings.accounts.appleMusic.description: 启用 Apple Music
 settings.advanced.section.backups: 备份与重置
 settings.advanced.section.backups.description: 保存设置副本、恢复 Cider 为您保留的设置，或将所有内容恢复为默认值。
 settings.advanced.section.client: 此客户端
@@ -5973,15 +6021,17 @@ settings.appleMusic.storefront.warning:
   by: "@Tesutarin"
   issue: 7
 settings.artwork.disableFadeIn:
-  value: 停用淡入效果
-  source: human
+  value: 禁用淡入效果
+  source: ai
   by: "@Tesutarin"
   issue: 7
+  superseded_at: 2026-10-16
 settings.artwork.highlighting:
-  value: 插图高亮
-  source: human
+  value: 封面取色高亮
+  source: ai
   by: "@jay900604"
   issue: 74
+  superseded_at: 2026-10-16
 settings.artwork.hiresImages:
   value: 使用高分辨率图像
   source: human
@@ -5998,16 +6048,17 @@ settings.audio.atmos:
   by: "@Tesutarin"
   issue: 7
 settings.audio.atmos.binaural.desc:
-  value: 通过 Cider 音频将 Atmos 渲染为双耳立体声输出。淡入淡出、自动混音、无缝过渡均可正常使用。
-  source: human
+  value: 通过 CiderAudio 将 Atmos 渲染为双耳立体声。交叉淡化、自动混音和无缝过渡仍可正常使用。
+  source: ai
   by: "@Tesutarin"
   issue: 32
+  superseded_at: 2026-10-16
 settings.audio.atmos.description:
   value: 为当前输出设备配置 Atmos 播放。
   source: human
   by: "@Tesutarin"
   issue: 7
-settings.audio.atmos.normalizationHint: Dolby Atmos 混音的音量比立体声母带低。开启音频标准化可使两者音量趋于一致。
+settings.audio.atmos.normalizationHint: 杜比全景声混音的音量比立体声母带更低。开启音频标准化可使其保持一致。
 settings.audio.atmos.off.desc:
   value: Atmos 已停用，所有内容将以标准立体声播放。
   source: human
@@ -6023,22 +6074,24 @@ settings.audio.atmos.passthrough.desc:
   source: human
   by: "@Tesutarin"
   issue: 32
-settings.audio.atmos.passthrough.descV2: 将多声道 Atmos 直接发送到设备，适用于 AV 功放。Audio Lab、均衡器和聆听模式将被绕过。
+settings.audio.atmos.passthrough.descV2: 将多声道 Atmos 直接发送至设备，适用于 AV 接收机。Audio Lab、均衡器和聆听模式将被绕过。
 settings.audio.atmos.passthroughActive:
   value: 直通模式已激活。请在完整设置中更改。
   source: human
   by: "@Tesutarin"
   issue: 25
 settings.audio.atmos.standard.desc:
-  value: 经过 Cider 音频处理的多声道 Atmos。淡入淡出、自动混音、无缝过渡均可正常使用。
-  source: human
+  value: 经 CiderAudio 处理的多声道 Atmos。交叉淡化、自动混音和无缝过渡仍可正常使用。
+  source: ai
   by: "@Tesutarin"
   issue: 32
+  superseded_at: 2026-10-16
 settings.audio.atmosMode:
   value: Atmos 模式
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 7
+  superseded_at: 2026-10-16
 settings.audio.atmosMode.switchFromPassthroughConfirm:
   value: 退出直通模式需要刷新应用。是否继续？
   source: human
@@ -6073,7 +6126,7 @@ settings.audio.ciderAudio.enable:
   by: "@Tesutarin"
   issue: 7
 settings.audio.ciderAudio.requiredHint:
-  value: 使用均衡器所需
+  value: 均衡器需要此功能
   source: ai
   by: "@Tesutarin"
   issue: 32
@@ -6102,7 +6155,7 @@ settings.audio.hostCapture.bit16: 16 位
 settings.audio.hostCapture.bit24: 24 位
 settings.audio.hostCapture.bit32: 32 位浮点
 settings.audio.hostCapture.bitAuto: 自动（最高）
-settings.audio.hostCapture.bitDepth: 位深
+settings.audio.hostCapture.bitDepth: 位深度
 settings.audio.hostCapture.bitDepthHint: “自动”将使用您设备支持的最高位深。
 settings.audio.hostCapture.exclusiveNote: 独占输出，源码输出（Bit-transparent），无法采集。
 settings.audio.hostCapture.gain: 输出电平微调
@@ -6163,16 +6216,17 @@ settings.audio.occlusion.passthroughNote: 启用 Dolby Atmos 直通时不可用�
 settings.audio.occlusion.passthroughNote.short: 启用 Atmos 直通时不可用。
 settings.audio.outputDevice:
   value: 选择音频输出设备
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 7
+  superseded_at: 2026-10-16
 settings.audio.outputDeviceHint:
   value: 选择用于播放的音频输出设备。
   source: human
   by: "@Tesutarin"
   issue: 25
 settings.audio.outputDeviceHintHost: 可采集音频已开启，播放将使用此 Windows 输出设备。
-settings.audio.section.ciderAudio: Cider 音频与指示器
+settings.audio.section.ciderAudio: Cider Audio 与指示器
 settings.audio.section.ciderAudio.description: Cider 音频处理架构以及播放曲目时显示的徽章。
 settings.audio.section.currentSignal: 当前信号
 settings.audio.section.mixing: 混音
@@ -6183,6 +6237,35 @@ settings.audio.section.playback: 播放
 settings.audio.section.playback.description: 音频质量、空间音频、聆听模式以及播客播放速度。
 settings.audio.section.volume: 音量
 settings.audio.section.volume.description: 响度匹配、滚轮调节音量的幅度以及滑块的读数方式。
+settings.audio.signal.atmosCodecs: 可用的 Atmos 编解码器
+settings.audio.signal.atmosNativeMac: 原生 (macOS)
+settings.audio.signal.atmosNativeMacTooltip: Dolby Atmos 由 macOS CoreAudio 原生解码，空间音频渲染由系统处理。
+settings.audio.signal.atmosOffTooltip: 此设备已禁用 Atmos，内容将以标准立体声播放。
+settings.audio.signal.atmosOffTooltipMac: 此设备已禁用 Atmos。
+settings.audio.signal.atmosSupported: 支持
+settings.audio.signal.binauralSubtitle: 耳机渲染
+settings.audio.signal.binauralTooltip: Atmos 内容通过 CiderAudio 管道渲染为双耳立体声。
+settings.audio.signal.channels: "{count} 声道"
+settings.audio.signal.codecs: 编解码器
+settings.audio.signal.deviceRateTooltip: 当前设备的采样率
+settings.audio.signal.directOutput: 直通输出
+settings.audio.signal.directOutputChannels: 直通输出（{count} 声道）
+settings.audio.signal.loading: 正在加载…
+settings.audio.signal.nativeMatch: 原生匹配
+settings.audio.signal.noAtmosCodecs: 无 Atmos 编解码器
+settings.audio.signal.output: 输出
+settings.audio.signal.passthroughMode: 直通模式
+settings.audio.signal.passthroughSubtitle: 已绕过音频处理，直接输出到设备
+settings.audio.signal.passthroughTooltip: 音频将绕过所有处理并直接发送到设备。淡入淡出、自动混音和无缝过渡等 CiderAudio 功能均不生效。
+settings.audio.signal.sampleRate: 采样率
+settings.audio.signal.source: 源 {rate}
+settings.audio.signal.sourceRateTooltip: Apple Music 播放速率
+settings.audio.signal.standardSubtitle: 多声道 + CiderAudio
+settings.audio.signal.standardTooltip: 多声道 Atmos 内容将通过 CiderAudio 处理，并按设备能力进行渲染。
+settings.audio.signal.stereo: 立体声
+settings.audio.signal.surround51: 5.1 环绕声
+settings.audio.signal.surround71: 7.1+ 环绕声
+settings.audio.signal.upsamplingTooltip: 系统正在从 Apple Music 源采样率进行升采样
 settings.automix.allowTempoKeyShifts:
   value: 允许变速/变调
   source: human
@@ -6200,10 +6283,11 @@ settings.automix.description:
   issue: 25
 settings.automix.descriptionV2: 融合曲目时使用每首曲目自身的淡入淡出和人声数据，而非固定的交叉渐变。
 settings.automix.disableFor:
-  value: 对以下内容停用自动混音
-  source: human
+  value: 在以下情况禁用自动混音…
+  source: ai
   by: "@Tesutarin"
   issue: 25
+  superseded_at: 2026-10-16
 settings.automix.disableForAlbums:
   value: 专辑
   source: human
@@ -6215,10 +6299,11 @@ settings.automix.disableForAlbumsHint:
   by: "@Tesutarin"
   issue: 7
 settings.automix.disableForAutoplayContinuation:
-  value: 自动播放续播
-  source: human
+  value: 自动播放延续
+  source: ai
   by: "@Tesutarin"
   issue: 32
+  superseded_at: 2026-10-16
 settings.automix.disableForAutoplayContinuationHint:
   value: 当前播放结束后，转入电台或自动播放曲目时不应用自动混音。
   source: human
@@ -6226,9 +6311,10 @@ settings.automix.disableForAutoplayContinuationHint:
   issue: 32
 settings.automix.disableForDjMixes:
   value: DJ 混音
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 7
+  superseded_at: 2026-10-16
 settings.automix.disableForDjMixesHint:
   value: 对 DJ 混音及连续混音不应用自动混音。
   source: human
@@ -6236,9 +6322,10 @@ settings.automix.disableForDjMixesHint:
   issue: 7
 settings.automix.disableForLiveAlbums:
   value: 现场专辑
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 7
+  superseded_at: 2026-10-16
 settings.automix.disableForLiveAlbumsHint:
   value: 对现场录音和音乐会不应用自动混音。
   source: human
@@ -6272,11 +6359,11 @@ settings.automix.normalizeDurationHint:
 settings.automix.spectralSeparation: 频谱分离
 settings.automix.spectralSeparationHint: 在过渡期间，两首曲目在频率上的分离程度。
 settings.automix.spectralSeparationHintV2: 过渡期间两首歌曲在频率上的分离程度（{value}）。
-settings.automix.speedSettle: 速度恢复时间
+settings.automix.speedSettle: 速度稳定时间
 settings.automix.speedSettleHint: 在速度匹配混合后，播放速度恢复正常所需的时间（{ms}毫秒）
 settings.automix.tempoAlign: 节拍匹配
 settings.automix.tempoAlignHint: 当两首曲目的速度已经接近时，微调速度以使它们对齐。
-settings.automix.vocalGuard: 人声保护
+settings.automix.vocalGuard: 保护人声
 settings.automix.vocalGuardHint: 当两首曲目同时有人声演唱时，缩短混合过渡时间。
 settings.cache.all:
   value: 全部
@@ -6285,9 +6372,10 @@ settings.cache.all:
   issue: 7
 settings.cache.artistChips:
   value: 艺人标签
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 7
+  superseded_at: 2026-10-16
 settings.cache.artwork:
   value: 插图
   source: human
@@ -6295,9 +6383,10 @@ settings.cache.artwork:
   issue: 74
 settings.cache.clear:
   value: 清除缓存
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 7
+  superseded_at: 2026-10-16
 settings.cache.content:
   value: 内容
   source: human
@@ -6310,39 +6399,44 @@ settings.cache.entries:
   issue: 7
 settings.cache.homeData:
   value: 主页数据
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 7
+  superseded_at: 2026-10-16
 settings.cache.library:
   value: 资料库
   source: human
   by: "@Tesutarin"
   issue: 7
 settings.cache.marketplaceListings:
-  value: 市场列表
-  source: human
+  value: 商店列表
+  source: ai
   by: "@Tesutarin"
   issue: 7
+  superseded_at: 2026-10-16
 settings.cache.playlistIndex:
   value: 播放列表索引
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 7
+  superseded_at: 2026-10-16
 settings.cache.prompt.artwork.cleared.message:
   value: 插图缓存已清除。立即刷新？
   source: human
   by: "@jay900604"
   issue: 74
 settings.cache.prompt.artwork.cleared.title:
-  value: 插图缓存已清除
-  source: human
+  value: 已清除封面缓存
+  source: ai
   by: "@jay900604"
   issue: 74
+  superseded_at: 2026-10-16
 settings.cache.prompt.artwork.title:
-  value: 清除插图缓存
-  source: human
+  value: 清除封面缓存
+  source: ai
   by: "@jay900604"
   issue: 74
+  superseded_at: 2026-10-16
 settings.cache.prompt.clearAll.cleared.message:
   value: 缓存已清除。立即刷新？
   source: human
@@ -6350,39 +6444,44 @@ settings.cache.prompt.clearAll.cleared.message:
   issue: 7
 settings.cache.prompt.clearAll.cleared.title:
   value: 缓存已清除
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 7
+  superseded_at: 2026-10-16
 settings.cache.prompt.clearAll.title:
   value: 清除缓存
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 7
+  superseded_at: 2026-10-16
 settings.cache.prompt.marketplace.cleared.message:
   value: 缓存已清除。立即刷新？
   source: human
   by: "@Tesutarin"
   issue: 7
 settings.cache.prompt.marketplace.cleared.title:
-  value: 市场缓存已清除
-  source: human
+  value: 已清除商店缓存
+  source: ai
   by: "@Tesutarin"
   issue: 7
+  superseded_at: 2026-10-16
 settings.cache.prompt.playlist.cleared.message:
   value: 缓存已清除。立即刷新？
   source: human
   by: "@Tesutarin"
   issue: 7
 settings.cache.prompt.playlist.cleared.title:
-  value: 播放列表缓存已清除
-  source: human
+  value: 已清除播放列表缓存
+  source: ai
   by: "@Tesutarin"
   issue: 7
+  superseded_at: 2026-10-16
 settings.cache.recentlyModifiedPlaylists:
   value: 最近修改的播放列表
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 7
+  superseded_at: 2026-10-16
 settings.cache.storageUsed:
   value: 已使用存储：{{ usage }}
   source: human
@@ -6770,9 +6869,10 @@ settings.configBackups.unreachable: Cider 刚才无法获取您保存的备份�
 settings.configBackups.unsupported: 此客户端不保留配置备份。
 settings.connectivity.connectedDevices:
   value: 已连接的设备
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 32
+  superseded_at: 2026-10-16
 settings.connectivity.connectedDevices.desc:
   value: 管理已配对的 Cider 遥控设备
   source: human
@@ -6780,9 +6880,10 @@ settings.connectivity.connectedDevices.desc:
   issue: 8
 settings.connectivity.connectNewDevice:
   value: 连接新设备
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 8
+  superseded_at: 2026-10-16
 settings.connectivity.lanPairing.desc: 通过局域网配对可让 Cider 接受来自本地网络的连接。
 settings.connectivity.lastfm.context:
   value: 登录 Last.FM 以启用 Scrobble 记录和“正在播放”状态更新
@@ -6887,10 +6988,11 @@ settings.connectivity.noDevices:
   by: "@Tesutarin"
   issue: 25
 settings.connectivity.requireTokens:
-  value: 需要 API Token
-  source: human
+  value: 需要 API 令牌
+  source: ai
   by: "@Tesutarin"
   issue: 25
+  superseded_at: 2026-10-16
 settings.connectivity.requireTokens.desc:
   value: 启用后，所有 API 请求必须包含有效的 Token。
   source: human
@@ -7112,6 +7214,7 @@ settings.connectivity.tokens:
   source: human
   by: "@Tesutarin"
   issue: 8
+settings.connectivity.tokens.empty: 暂无令牌。
 settings.contentFilter.description:
   value: 浏览和立即收听页面中标题或内容匹配以下关键词的栏目将被隐藏。
   source: human
@@ -7129,14 +7232,16 @@ settings.contentFilter.inputPlaceholder:
   issue: 25
 settings.contentFilter.title:
   value: 过滤关键词
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 8
+  superseded_at: 2026-10-16
 settings.crossfade.advanced:
-  value: 高级交叉渐入渐出设置
-  source: human
+  value: 高级交叉淡化设置
+  source: ai
   by: "@Tesutarin"
   issue: 19
+  superseded_at: 2026-10-16
 settings.crossfade.automixStillBlends: 自动混音已开启，因此歌曲仍可能相互衔接。关闭下方的自动混音即可停止所有衔接。
 settings.crossfade.description:
   value: 在当前曲目平滑淡出的同时，让下一首曲目淡入。
@@ -7144,20 +7249,22 @@ settings.crossfade.description:
   by: "@Tesutarin"
   issue: 25
 settings.crossfade.disableFor:
-  value: 对以下内容停用渐入渐出
-  source: human
+  value: 在以下情况下禁用交叉淡化...
+  source: ai
   by: "@Tesutarin"
   issue: 25
+  superseded_at: 2026-10-16
 settings.crossfade.duration:
   value: 时长
   source: human
   by: "@Tesutarin"
   issue: 8
 settings.crossfade.enable:
-  value: 启用交叉渐入渐出
-  source: human
+  value: 启用交叉淡化
+  source: ai
   by: "@Tesutarin"
   issue: 19
+  superseded_at: 2026-10-16
 settings.crossfade.exclusions.albums:
   value: 专辑
   source: human
@@ -7169,10 +7276,11 @@ settings.crossfade.exclusions.albums.description:
   by: "@Tesutarin"
   issue: 19
 settings.crossfade.exclusions.autoplayContinuation:
-  value: 自动播放续播
-  source: human
+  value: 自动播放延续
+  source: ai
   by: "@Tesutarin"
   issue: 32
+  superseded_at: 2026-10-16
 settings.crossfade.exclusions.autoplayContinuation.description:
   value: 当前播放结束后，转入电台或自动播放曲目时不应用淡入淡出。
   source: human
@@ -7180,9 +7288,10 @@ settings.crossfade.exclusions.autoplayContinuation.description:
   issue: 32
 settings.crossfade.exclusions.djMixes:
   value: DJ 混音
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 8
+  superseded_at: 2026-10-16
 settings.crossfade.exclusions.djMixes.description:
   value: 对 DJ 混音及连续混音不应用交叉渐入渐出。
   source: human
@@ -7190,9 +7299,10 @@ settings.crossfade.exclusions.djMixes.description:
   issue: 19
 settings.crossfade.exclusions.liveAlbums:
   value: 现场专辑
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 8
+  superseded_at: 2026-10-16
 settings.crossfade.exclusions.liveAlbums.description:
   value: 对现场录音和音乐会不应用交叉渐入渐出。
   source: human
@@ -7209,40 +7319,44 @@ settings.crossfade.exclusions.playlists.description:
   by: "@Tesutarin"
   issue: 19
 settings.crossfade.loudnessSensitivity:
-  value: 响度灵敏度
-  source: human
+  value: 响度敏感度
+  source: ai
   by: "@Tesutarin"
   issue: 8
+  superseded_at: 2026-10-16
 settings.crossfade.loudnessSensitivity.description:
   value: 平衡曲目间的响度差异（{{ value }}%）
   source: human
   by: "@Tesutarin"
   issue: 25
 settings.crossfade.smoothSkip:
-  value: 平滑跳转
-  source: human
+  value: 平滑跳过
+  source: ai
   by: "@Tesutarin"
   issue: 8
+  superseded_at: 2026-10-16
 settings.crossfade.smoothSkip.description:
   value: 跳转时在曲目间应用淡入淡出。
   source: human
   by: "@Tesutarin"
   issue: 8
 settings.crossfade.tempoSensitivity:
-  value: 速度灵敏度
-  source: human
+  value: 节奏敏感度
+  source: ai
   by: "@Tesutarin"
   issue: 8
+  superseded_at: 2026-10-16
 settings.crossfade.tempoSensitivity.description:
   value: 对曲目速度变化的响应（{{ value }}%）
   source: human
   by: "@Tesutarin"
   issue: 32
 settings.customCss.createSnippet:
-  value: 新建代码片段
-  source: human
+  value: 创建片段
+  source: ai
   by: "@Tesutarin"
   issue: 8
+  superseded_at: 2026-10-16
 settings.customCss.migrate.confirm:
   value: 这将把你现有的自定义 CSS 转换为新代码片段并清除当前的自定义 CSS。是否继续？
   source: human
@@ -7250,9 +7364,10 @@ settings.customCss.migrate.confirm:
   issue: 25
 settings.customCss.migrate.title:
   value: 转换自定义 CSS
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 8
+  superseded_at: 2026-10-16
 settings.customCss.title:
   value: 自定义 CSS
   source: human
@@ -7387,9 +7502,10 @@ settings.extensions.browseThemeMarket:
 settings.extensions.byAuthor: 作者：{author}
 settings.extensions.checkUpdates:
   value: 启动时检查扩展更新
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 32
+  superseded_at: 2026-10-16
 settings.extensions.checkUpdates.desc:
   value: 每次 Cider 启动时检查主题、代码片段和插件的更新。
   source: human
@@ -7411,10 +7527,11 @@ settings.extensions.createTheme:
   by: "@Tesutarin"
   issue: 32
 settings.extensions.cssSnippets:
-  value: CSS 代码片段
-  source: human
+  value: CSS 片段
+  source: ai
   by: "@Tesutarin"
   issue: 32
+  superseded_at: 2026-10-16
 settings.extensions.fileWatcher:
   value: 启用主题文件监听
   source: human
@@ -7443,14 +7560,16 @@ settings.extensions.newThemeDialog.identifier:
   issue: 32
 settings.extensions.newThemeDialog.name:
   value: 主题名称
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 32
+  superseded_at: 2026-10-16
 settings.extensions.newThemeDialog.title:
   value: 新建主题
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 32
+  superseded_at: 2026-10-16
 settings.extensions.openAppData:
   value: 打开 AppData 文件夹
   source: human
@@ -7496,16 +7615,18 @@ settings.extensions.refreshed:
   source: human
   by: "@Tesutarin"
   issue: 32
+settings.extensions.snippets.author: 作者：{{ author }}
 settings.extensions.snippets.created:
   value: 代码片段已创建
   source: human
   by: "@Tesutarin"
   issue: 32
 settings.extensions.snippets.createTitle:
-  value: 新建 CSS 代码片段
-  source: human
+  value: 创建新的 CSS 片段
+  source: ai
   by: "@Tesutarin"
   issue: 32
+  superseded_at: 2026-10-16
 settings.extensions.snippets.deleteConfirm:
   value: 确定要删除此 CSS 代码片段吗？此操作无法撤销。
   source: human
@@ -7517,10 +7638,11 @@ settings.extensions.snippets.deleted:
   by: "@Tesutarin"
   issue: 32
 settings.extensions.snippets.deleteTitle:
-  value: 删除 CSS 代码片段
-  source: human
+  value: 删除 CSS 片段
+  source: ai
   by: "@Tesutarin"
   issue: 32
+  superseded_at: 2026-10-16
 settings.extensions.snippets.empty:
   value: 未安装任何 CSS 代码片段。
   source: human
@@ -7541,6 +7663,7 @@ settings.extensions.snippets.importFailed:
   source: human
   by: "@Tesutarin"
   issue: 32
+settings.extensions.snippets.invalidFile: 文件格式无效：{{ file }}
 settings.extensions.snippets.namePrompt:
   value: 输入新 CSS 代码片段的名称。
   source: human
@@ -7571,6 +7694,8 @@ settings.extensions.themes.empty:
   source: human
   by: "@Tesutarin"
   issue: 32
+settings.extensions.themes.getMore: 获取更多主题
+settings.extensions.themes.refreshList: 刷新主题列表
 settings.extensions.themes.stylesheetMany:
   value: "{{ count }} 个样式表"
   source: human
@@ -7589,19 +7714,21 @@ settings.fonts.description:
   issue: 8
 settings.fonts.lyrics:
   value: 歌词字体
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 8
+  superseded_at: 2026-10-16
 settings.fonts.lyrics.description:
   value: 歌词所使用的字体
   source: human
   by: "@Tesutarin"
   issue: 8
 settings.fonts.primary:
-  value: 主字体
-  source: human
+  value: 主要字体
+  source: ai
   by: "@Tesutarin"
   issue: 8
+  superseded_at: 2026-10-16
 settings.fonts.primary.description:
   value: 应用中大多数文字所使用的字体
   source: human
@@ -7653,6 +7780,7 @@ settings.general.section.language: 语言
 settings.general.section.language.description: 界面语言，以及如何反馈翻译问题或查看翻译贡献者。
 settings.general.section.playback: 播放
 settings.general.section.playback.description: 未播放任何内容时，播放按钮执行的操作。
+settings.general.section.playback.descriptionV2: 未播放任何内容时播放按钮的行为，以及可更改播放速率的位置。
 settings.general.section.privacy: 隐私
 settings.general.section.privacy.description: Cider 称呼您的名字，以及是否允许其使用您的位置。
 settings.general.section.queue: 待播清单
@@ -8047,7 +8175,7 @@ settings.intensive.catalogAnimatedArtwork.description:
   issue: 74
 settings.intensive.characterFlow.description: 逐字播放歌词动画，而非整行播放。
 settings.intensive.confirm.enable: 启用
-settings.intensive.confirm.message: 此功能负载较高，可能会显著增加 CPU/GPU 占用、发热和电池消耗——尤其是在低端硬件上。您可以随时通过“设置”顶部的灯泡按钮查看高负载功能。
+settings.intensive.confirm.message: 此功能对性能要求较高，可能显著增加 CPU/GPU 占用、发热和电量消耗，尤其是在低端硬件上。你可以随时在“设置 › 电源用量”中查看高耗能功能。
 settings.intensive.emotionEngine.description:
   value: 分析专辑插图以提取调色板。
   source: human
@@ -8092,37 +8220,42 @@ settings.keybindings.recordingHint:
   by: "@Tesutarin"
   issue: 28
 settings.lyrics.card.providers: 提供商
-settings.lyrics.card.songOverrides: 单曲覆盖
+settings.lyrics.card.songOverrides: 歌曲覆盖设置
 settings.lyrics.localeOverrides:
-  value: 基于语言的规则
-  source: human
+  value: 基于语言区域的规则
+  source: ai
   by: "@Tesutarin"
   issue: 28
+  superseded_at: 2026-10-16
 settings.lyrics.localeOverrides.add:
-  value: 添加语言复写
-  source: human
+  value: 添加语言区域覆盖
+  source: ai
   by: "@Tesutarin"
   issue: 28
+  superseded_at: 2026-10-16
 settings.lyrics.localeOverrides.audioLocale:
-  value: 音频语言
-  source: human
+  value: 音频语言区域
+  source: ai
   by: "@Tesutarin"
   issue: 28
+  superseded_at: 2026-10-16
 settings.lyrics.localeOverrides.desc:
   value: 为特定语言的歌曲设置自定义歌词来源和翻译偏好。当歌曲的音频语言与某条规则匹配时，这些设置将覆盖默认值。
   source: human
   by: "@Tesutarin"
   issue: 28
 settings.lyrics.localeOverrides.dialogTitle.add:
-  value: 添加语言复写
-  source: human
+  value: 添加语言区域覆盖
+  source: ai
   by: "@Tesutarin"
   issue: 28
+  superseded_at: 2026-10-16
 settings.lyrics.localeOverrides.dialogTitle.edit:
-  value: 编辑语言复写
-  source: human
+  value: 编辑语言区域覆盖
+  source: ai
   by: "@Tesutarin"
   issue: 28
+  superseded_at: 2026-10-16
 settings.lyrics.localeOverrides.empty:
   value: 暂无规则。使用 + 添加。
   source: ai
@@ -8130,15 +8263,17 @@ settings.lyrics.localeOverrides.empty:
   issue: 28
   superseded_at: 2026-09-01
 settings.lyrics.localeOverrides.overrideTranslation:
-  value: 覆写翻译
-  source: human
+  value: 覆盖翻译
+  source: ai
   by: "@Tesutarin"
   issue: 32
+  superseded_at: 2026-10-16
 settings.lyrics.localeOverrides.preferredProvider:
-  value: 首选来源
-  source: human
+  value: 首选提供方
+  source: ai
   by: "@Tesutarin"
   issue: 8
+  superseded_at: 2026-10-16
 settings.lyrics.localeOverrides.provider.apple:
   value: Apple Music
   source: human
@@ -8161,9 +8296,10 @@ settings.lyrics.localeOverrides.provider.netease:
   issue: 8
 settings.lyrics.localeOverrides.provider.user:
   value: 用户提交
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 8
+  superseded_at: 2026-10-16
 settings.lyrics.localeOverrides.providerLabel:
   value: 来源：
   source: human
@@ -8171,9 +8307,10 @@ settings.lyrics.localeOverrides.providerLabel:
   issue: 8
 settings.lyrics.localeOverrides.translateTo:
   value: 翻译为
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 8
+  superseded_at: 2026-10-16
 settings.lyrics.localeOverrides.translateToLabel:
   value: 翻译为：
   source: human
@@ -8191,9 +8328,10 @@ settings.lyrics.player.cascade.desc:
   issue: 40
 settings.lyrics.player.cta:
   value: 歌词动画
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 40
+  superseded_at: 2026-10-16
 settings.lyrics.player.cta.description:
   value: 精细调整歌词动画的外观与行为，包括强调、发光、上浮、速度、淡化和层叠效果。
   source: human
@@ -8276,9 +8414,10 @@ settings.lyrics.player.title:
   issue: 40
 settings.lyrics.scroll.duration:
   value: 歌词滚动时长
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 8
+  superseded_at: 2026-10-16
 settings.lyrics.scroll.duration.desc1:
   value: 调整歌词滚动的速度
   source: human
@@ -8291,14 +8430,16 @@ settings.lyrics.scroll.duration.desc2:
   issue: 8
 settings.lyrics.scroll.easing:
   value: 缓动函数
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 8
+  superseded_at: 2026-10-16
 settings.lyrics.scroll.easing.curveExample:
   value: 曲线示例：
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 8
+  superseded_at: 2026-10-16
 settings.lyrics.scroll.easing.description1:
   value: 调整歌词滚动的缓动函数。这是一个 CSS
   source: human
@@ -8311,9 +8452,10 @@ settings.lyrics.scroll.easing.description2:
   issue: 8
 settings.lyrics.scroll.easing.namedExample:
   value: 命名示例：
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 8
+  superseded_at: 2026-10-16
 settings.lyrics.scroll.easing.presetDefault:
   value: 默认值。快速渐入，平滑淡出
   source: human
@@ -8353,10 +8495,11 @@ settings.lyrics.section.sources.description: 歌词来源，以及优先级高�
 settings.lyrics.section.translation: 翻译
 settings.lyrics.section.translation.description: 翻译歌词、目标语言，以及是否在屏幕上保留原文。
 settings.lyrics.trackOverrides.clearAll:
-  value: 清除所有复写
-  source: human
+  value: 清除所有覆盖设置
+  source: ai
   by: "@Tesutarin"
   issue: 28
+  superseded_at: 2026-10-16
 settings.lyrics.trackOverrides.desc:
   value: 此处列出的歌曲将始终使用您锁定的歌词源，或您手动设置的人声状态，而非 Apple 报告的状态。这些覆盖设置可通过歌词菜单和歌曲右键菜单进行配置。
   source: ai
@@ -8377,15 +8520,17 @@ settings.lyrics.trackOverrides.providerLabel:
   by: "@Tesutarin"
   issue: 8
 settings.lyrics.trackOverrides.remove:
-  value: 移除复写
-  source: human
+  value: 移除覆盖设置
+  source: ai
   by: "@Tesutarin"
   issue: 28
+  superseded_at: 2026-10-16
 settings.lyrics.trackOverrides.title:
-  value: 曲目特定复写
-  source: human
+  value: 单曲专属覆盖设置
+  source: ai
   by: "@Tesutarin"
   issue: 28
+  superseded_at: 2026-10-16
 settings.micaish.blurAmount:
   value: 模糊度
   source: human
@@ -8461,11 +8606,13 @@ settings.nav.advanced:
   source: human
   by: "@Tesutarin"
   issue: 8
+settings.nav.appleMusicWordmark: music
 settings.nav.audio:
   value: 音频
   source: human
   by: "@Tesutarin"
   issue: 8
+settings.nav.categories: 设置分类
 settings.nav.concerts:
   value: 音乐会
   source: human
@@ -8502,6 +8649,7 @@ settings.nav.group.appearance:
   source: human
   by: "@Tesutarin"
   issue: 8
+settings.nav.group.connections: 连接
 settings.nav.group.general:
   value: 通用
   source: human
@@ -8517,6 +8665,7 @@ settings.nav.group.library:
   source: human
   by: "@Tesutarin"
   issue: 8
+settings.nav.group.lookAndFeel: 外观与体验
 settings.nav.group.playback:
   value: 播放
   source: human
@@ -8533,7 +8682,7 @@ settings.nav.plugins:
   source: human
   by: "@Tesutarin"
   issue: 8
-settings.nav.power: 能耗
+settings.nav.power: 电源用量
 settings.nav.privacy:
   value: 隐私
   source: human
@@ -8551,24 +8700,44 @@ settings.nav.search:
   issue: 8
 settings.nav.searchPlaceholder:
   value: 搜索设置
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 28
+  superseded_at: 2026-10-16
+settings.nav.summary.accessibility: 粗体文本、界面缩放、动效、音效
+settings.nav.summary.advanced: 备份、故障排除、实验性功能
+settings.nav.summary.audio: 输出、音质、交叉淡化、音量标准化
+settings.nav.summary.concerts: 位置、半径、排序
+settings.nav.summary.connectivity: Discord、听歌记录、一起听、远程控制
+settings.nav.summary.extensions: 主题、CSS 片段、插件
+settings.nav.summary.general: 启动、队列、睡眠定时器、快捷键
+settings.nav.summary.lyrics: 来源、翻译、显示、时间同步
+settings.nav.summary.notifications: 类别、历史记录、系统通知
+settings.nav.summary.power: 性能、帧率、省电模式
+settings.nav.summary.profile: Apple Music 账户
+settings.nav.summary.sid: Sid 的显示位置及工作方式
+settings.nav.summary.smartPlaylists: 智能播放列表的规则与维护
+settings.nav.summary.subscriberYear: 订阅一年
+settings.nav.summary.subscriberYears: 订阅 {{count}} 年
+settings.nav.summary.tweaks: 播放器、侧边栏等的小幅调整
+settings.nav.summary.visual: 配色方案、布局、窗口、沉浸式
 settings.nav.themes:
   value: 主题
   source: human
   by: "@Tesutarin"
   issue: 8
+settings.nav.tweaks: 微调
 settings.nav.updates:
   value: 更新
   source: human
   by: "@Tesutarin"
   issue: 8
 settings.nav.visual:
-  value: 视觉
-  source: human
+  value: 外观
+  source: ai
   by: "@Tesutarin"
   issue: 8
+  superseded_at: 2026-10-16
 settings.normalization.louderTargetHint: 如果 Cider 在 100% 音量下听起来依然偏小，请选择更响的目标值。较高的 LUFS 值听起来更响亮，但峰值保护可能会限制提升幅度以防止破音。
 settings.normalization.presets.apple: Apple
 settings.normalization.presets.balanced: 均衡
@@ -8587,13 +8756,13 @@ settings.notifications.category.extensionsThemes: 扩展与主题
 settings.notifications.category.extensionsThemes.description: 安装、更新和移除插件、主题及代码片段。
 settings.notifications.category.general: 通用
 settings.notifications.category.general.description: 所有未归类的通知。
-settings.notifications.category.listeningTogether: 同乐旁听
+settings.notifications.category.listeningTogether: 一起听
 settings.notifications.category.listeningTogether.description: 派对邀请、嘉宾加入或离开以及会话状态。
 settings.notifications.category.lyrics: 歌词
 settings.notifications.category.lyrics.description: 歌词查询、贡献和音译。
 settings.notifications.category.playbackSystem: 播放与系统
 settings.notifications.category.playbackSystem.description: 播放问题和您需要了解的应用级状态。
-settings.notifications.category.playlistsLibrary: 歌单与资料库
+settings.notifications.category.playlistsLibrary: 播放列表与资料库
 settings.notifications.category.playlistsLibrary.description: 添加、移除、编辑和同步资料库内容。
 settings.notifications.category.plugins: 插件
 settings.notifications.category.plugins.description: 由您安装的插件自身发出的消息，而非由 Cider 报告的消息。
@@ -8611,6 +8780,7 @@ settings.notifications.section.history: 历史记录
 settings.notifications.section.muted: 已静音的通知
 settings.notifications.section.system: 系统通知
 settings.notifications.summary.categoriesOn: 已启用的类别
+settings.notifications.summary.categoriesOnCount: 已开启 {{on}} / {{total}}
 settings.notifications.summary.description: 选择 Cider 向您显示的通知类型。即使关闭某类通知，它们仍会记录在通知列表中，方便您稍后查看。
 settings.notifications.unmute: 取消静音
 settings.notifications.unmuteAll: 全部取消静音
@@ -8688,9 +8858,10 @@ settings.notyf.visual.theme.updateAvailable:
   superseded_at: 2026-07-08
 settings.option.accessibility.boldText:
   value: 粗体文本
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 28
+  superseded_at: 2026-10-16
 settings.option.accessibility.boldText.description:
   value: 加粗应用内所有文本以提升可读性。
   source: human
@@ -8698,29 +8869,32 @@ settings.option.accessibility.boldText.description:
   issue: 28
 settings.option.accessibility.cardHoverMotion:
   value: 卡片悬停动效
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 28
+  superseded_at: 2026-10-16
 settings.option.accessibility.cardHoverMotion.description:
   value: 可点击卡片（专辑插图、精选卡片、网格元素）在悬停时轻微放大，按下时轻微缩进。默认关闭。
   source: human
   by: "@jay900604"
   issue: 74
 settings.option.accessibility.enableSoundEffects:
-  value: 启用提示音效
-  source: human
+  value: 启用音效
+  source: ai
   by: "@Tesutarin"
   issue: 28
+  superseded_at: 2026-10-16
 settings.option.accessibility.enableSoundEffects.description:
   value: 与按钮、开关和滑块交互时播放轻微音效。
   source: human
   by: "@Tesutarin"
   issue: 8
 settings.option.accessibility.forceFocusVisible:
-  value: 始终显示焦点框
-  source: human
+  value: 始终显示焦点环
+  source: ai
   by: "@Tesutarin"
   issue: 32
+  superseded_at: 2026-10-16
 settings.option.accessibility.forceFocusVisible.description:
   value: 强制在获得焦点的元素上显示可见轮廓，以用于键盘导航。
   source: human
@@ -8728,9 +8902,10 @@ settings.option.accessibility.forceFocusVisible.description:
   issue: 32
 settings.option.accessibility.highContrast:
   value: 高对比度
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 8
+  superseded_at: 2026-10-16
 settings.option.accessibility.highContrast.description:
   value: 增强文本、背景与界面元素之间的对比度。
   source: human
@@ -8743,9 +8918,10 @@ settings.option.accessibility.motion:
   issue: 8
 settings.option.accessibility.motionIntensity:
   value: 动效强度
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 8
+  superseded_at: 2026-10-16
 settings.option.accessibility.motionIntensity.description:
   value: 控制按钮和界面在悬停与按下时的动效幅度。选择“无”将完全禁用动效，“灵动”会带来额外的弹性反馈。
   source: human
@@ -8772,10 +8948,11 @@ settings.option.accessibility.motionIntensity.reduced:
   by: "@Tesutarin"
   issue: 8
 settings.option.accessibility.playOnHover:
-  value: 悬停时播放
-  source: human
+  value: 悬停播放
+  source: ai
   by: "@Tesutarin"
   issue: 8
+  superseded_at: 2026-10-16
 settings.option.accessibility.playOnHover.description:
   value: 指针移入可交互元素时也播放轻微音效。
   source: human
@@ -8795,9 +8972,10 @@ settings.option.accessibility.text:
   issue: 28
 settings.option.accessibility.uiScale:
   value: 界面缩放
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 8
+  superseded_at: 2026-10-16
 settings.option.accessibility.uiScale.description:
   value: 缩放文本和界面元素。部分布局元素使用固定尺寸，可能无法缩放。
   source: human
@@ -8816,9 +8994,10 @@ settings.option.accessibility.volume:
 settings.option.accessibility.volume.description: 界面音效的播放音量。
 settings.option.advanced.clientSettings:
   value: 客户端设置
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 8
+  superseded_at: 2026-10-16
 settings.option.advanced.clientSettings.description:
   value: 当前客户端框架的专属设置
   source: human
@@ -8826,9 +9005,10 @@ settings.option.advanced.clientSettings.description:
   issue: 8
 settings.option.advanced.compactSidebar:
   value: 紧凑侧边栏
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 8
+  superseded_at: 2026-10-16
 settings.option.advanced.compactSidebar.description: 适用于窗口足够窄以致侧边栏折叠的情况。
 settings.option.advanced.compactSidebar.size:
   value: 大小
@@ -8838,9 +9018,10 @@ settings.option.advanced.compactSidebar.size:
 settings.option.advanced.configBackups.description: 恢复 Cider 保存的设置文件副本，以防您的设置丢失或被重置。
 settings.option.advanced.experimentalFeatures:
   value: 实验性功能
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 8
+  superseded_at: 2026-10-16
 settings.option.advanced.experimentalFeatures.description:
   value: 正在开发中的实验性功能与开关。
   source: human
@@ -8853,20 +9034,22 @@ settings.option.advanced.floatingSearch:
   issue: 28
   superseded_at: 2026-09-01
 settings.option.advanced.floatingSearch.blurBackground:
-  value: 背景模糊
-  source: human
+  value: 模糊背景
+  source: ai
   by: "@Tesutarin"
   issue: 28
+  superseded_at: 2026-10-16
 settings.option.advanced.floatingSearch.blurBackground.description:
   value: 启用后，聚焦搜索栏时背景将模糊。
   source: human
   by: "@Tesutarin"
   issue: 28
 settings.option.advanced.floatingSearch.clearSearchOnClose:
-  value: 关闭时清空搜索
-  source: human
+  value: 关闭时清除搜索
+  source: ai
   by: "@Tesutarin"
   issue: 8
+  superseded_at: 2026-10-16
 settings.option.advanced.floatingSearch.clearSearchOnClose.description:
   value: 启用后，搜索栏关闭时将清空文本。
   source: human
@@ -8890,9 +9073,10 @@ settings.option.advanced.home:
   issue: 8
 settings.option.advanced.home.buttonLocation:
   value: 主页按钮位置
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 8
+  superseded_at: 2026-10-16
 settings.option.advanced.home.buttonLocation.sidebar:
   value: 侧边栏
   source: human
@@ -8904,10 +9088,11 @@ settings.option.advanced.home.buttonLocation.sidebar2023:
   by: "@Tesutarin"
   issue: 8
 settings.option.advanced.home.buttonLocation.topBar:
-  value: 顶部栏
-  source: human
+  value: 顶栏
+  source: ai
   by: "@Tesutarin"
   issue: 8
+  superseded_at: 2026-10-16
 settings.option.advanced.immersive:
   value: 沉浸式视图
   source: ai
@@ -8915,21 +9100,24 @@ settings.option.advanced.immersive:
   issue: 28
   superseded_at: 2026-09-01
 settings.option.advanced.immersive.artworkHighlight:
-  value: 插图高亮
-  source: human
+  value: 封面高亮
+  source: ai
   by: "@jay900604"
   issue: 74
+  superseded_at: 2026-10-16
 settings.option.advanced.immersive.controlsTimeout:
-  value: 活跃控件超时时间（秒）
-  source: human
+  value: 控件自动隐藏时间（秒）
+  source: ai
   by: "@Tesutarin"
   issue: 32
+  superseded_at: 2026-10-16
 settings.option.advanced.immersive.description: 沉浸式视图本身。其使用的布局可在“视觉”下选择。
 settings.option.advanced.immersive.glowEffectOnActiveLyrics:
-  value: 歌词发光效果
-  source: human
+  value: 当前歌词发光效果
+  source: ai
   by: "@Tesutarin"
   issue: 32
+  superseded_at: 2026-10-16
 settings.option.advanced.lyrics:
   value: 歌词动画
   source: ai
@@ -8937,10 +9125,11 @@ settings.option.advanced.lyrics:
   issue: 28
   superseded_at: 2026-09-01
 settings.option.advanced.lyrics.characterFlow:
-  value: 逐字流动
-  source: human
+  value: 流动字符
+  source: ai
   by: "@Tesutarin"
   issue: 32
+  superseded_at: 2026-10-16
 settings.option.advanced.lyrics.characterFlow.description:
   value: 字符将逐个向上流动，而非整行整体切换。较为消耗资源。
   source: human
@@ -8948,37 +9137,40 @@ settings.option.advanced.lyrics.characterFlow.description:
   issue: 32
 settings.option.advanced.lyrics.description: 歌曲播放时歌词行和字符的移动方式。
 settings.option.advanced.lyrics.lineStaggering:
-  value: 多行交错延迟
-  source: human
+  value: 逐行错位
+  source: ai
   by: "@Tesutarin"
   issue: 32
+  superseded_at: 2026-10-16
 settings.option.advanced.lyrics.lineStaggering.description:
   value: 当下一行歌词获得焦点时，随后的歌词行将带有微小的交错延迟。
   source: human
   by: "@Tesutarin"
   issue: 32
 settings.option.advanced.lyrics.lineStaggeringImmersive:
-  value: 多行交错延迟（沉浸模式）
-  source: human
+  value: 逐行错位（沉浸式）
+  source: ai
   by: "@Tesutarin"
   issue: 32
+  superseded_at: 2026-10-16
 settings.option.advanced.lyrics.lineStaggeringImmersive.description:
   value: 较为消耗资源。
   source: human
   by: "@Tesutarin"
   issue: 28
 settings.option.advanced.lyrics.scaleOnAny:
-  value: 允许任意单词应用缩放效果
-  source: human
+  value: 允许任意单词使用缩放效果
+  source: ai
   by: "@Tesutarin"
   issue: 28
+  superseded_at: 2026-10-16
 settings.option.advanced.lyrics.scaleOnAny.description:
   value: 允许任意单词（而非仅强调词）应用缩放效果。
   source: human
   by: "@Tesutarin"
   issue: 28
 settings.option.advanced.lyrics.singEngine:
-  value: 沉浸式唱歌引擎
+  value: 沉浸式演唱引擎
   source: ai
   by: "@Tesutarin"
   issue: 40
@@ -9001,10 +9193,11 @@ settings.option.advanced.lyrics.singEngine.waapi:
   by: "@Tesutarin"
   issue: 40
 settings.option.advanced.lyrics.singLyricsEverywhere:
-  value: 全局启用逐字歌词
-  source: human
+  value: 在所有位置演唱歌词
+  source: ai
   by: "@Tesutarin"
   issue: 28
+  superseded_at: 2026-10-16
 settings.option.advanced.lyrics.singLyricsEverywhere.description:
   value: 在沉浸模式以外也启用逐字歌词，较为消耗资源。
   source: human
@@ -9026,10 +9219,11 @@ settings.option.advanced.mavericksLcd.style.glass:
   by: "@Tesutarin"
   issue: 8
 settings.option.advanced.mediaArtwork:
-  value: 媒体项目插图
-  source: human
+  value: 媒体项目封面
+  source: ai
   by: "@jay900604"
   issue: 74
+  superseded_at: 2026-10-16
 settings.option.advanced.mediaArtwork.controls: 插图高亮与高分辨率图像
 settings.option.advanced.mediaArtwork.controlsV2: 封面高亮与淡入
 settings.option.advanced.mediaArtwork.description: 整个应用中网格、列表和行上的插图。
@@ -9055,10 +9249,11 @@ settings.option.advanced.playback:
   issue: 28
   superseded_at: 2026-09-01
 settings.option.advanced.playback.allowPlaybackRateChangeEverywhere:
-  value: 允许调整歌曲的播放速度
-  source: human
+  value: 允许为歌曲更改播放速率
+  source: ai
   by: "@Tesutarin"
   issue: 28
+  superseded_at: 2026-10-16
 settings.option.advanced.playback.allowPlaybackRateChangeEverywhere.description:
   value: 默认对播客启用，开启后可对包括歌曲在内的所有媒体方便地调整播放速度。
   source: human
@@ -9079,41 +9274,48 @@ settings.option.advanced.playlistTrackMapping.description:
 settings.option.advanced.powerUsage.description: 帧率限制、渲染器选择以及高负载的视觉功能。
 settings.option.advanced.progressBar:
   value: 进度条
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 8
+  superseded_at: 2026-10-16
 settings.option.advanced.progressBar.useAccentColor:
   value: 使用强调色
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 8
+  superseded_at: 2026-10-16
 settings.option.advanced.resetCider: 重置 Cider
 settings.option.advanced.resetCider.description: 重置偏好设置、缓存和本地数据。除非您另有选择，否则 Apple Music 和 Taproom 将保持登录状态。
 settings.option.advanced.resizableMiniplayer:
   value: 可调整大小的迷你播放器
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 8
+  superseded_at: 2026-10-16
 settings.option.advanced.richAlbumGrid:
-  value: 丰富专辑网格
-  source: human
+  value: 丰富的专辑网格
+  source: ai
   by: "@Tesutarin"
   issue: 8
+  superseded_at: 2026-10-16
 settings.option.advanced.richAlbumGrid.alwaysNavigateToPage:
   value: 始终跳转到页面
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 8
+  superseded_at: 2026-10-16
 settings.option.advanced.richAlbumGrid.disableScrollAnimation:
-  value: 停用滚动动画
-  source: human
+  value: 禁用滚动动画
+  source: ai
   by: "@Tesutarin"
   issue: 8
+  superseded_at: 2026-10-16
 settings.option.advanced.richAlbumGrid.scrollToPosition:
   value: 滚动到位置
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 8
+  superseded_at: 2026-10-16
 settings.option.advanced.richAlbumGrid.scrollToPosition.bottom:
   value: 底部
   source: human
@@ -9132,19 +9334,20 @@ settings.option.advanced.searchBar:
   superseded_at: 2026-09-01
 settings.option.advanced.searchBar.description: 标题栏中的搜索框。
 settings.option.advanced.searchBar.noRedirectOnSelect:
-  value: 聚焦时不跳转结果页
-  source: human
+  value: 聚焦时不显示首页
+  source: ai
   by: "@Tesutarin"
   issue: 32
+  superseded_at: 2026-10-16
 settings.option.advanced.searchBar.noRedirectOnSelect.description:
   value: 启用后，选中搜索栏时不会跳转到落地页。按住 Shift 键选中搜索栏可跳转到结果页。
   source: human
   by: "@Tesutarin"
   issue: 32
-settings.option.advanced.settingsTakeout: 导出/导入设置
+settings.option.advanced.settingsTakeout: 导出 / 导入设置
 settings.option.advanced.settingsTakeout.description: 将您的偏好设置备份到文件，或在其他设备上进行恢复。备份中绝不包含账户登录信息。
 settings.option.advanced.simpleArtworkBg:
-  value: 极简插图背景
+  value: 简约封面背景
   source: ai
   by: "@jay900604"
   issue: 74
@@ -9170,9 +9373,10 @@ settings.option.advanced.simpleArtworkBg.saturate:
 settings.option.advanced.simpleArtworkBg.saturateV2: 饱和度
 settings.option.advanced.simpleArtworkBg.useMask:
   value: 使用下方遮罩
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 8
+  superseded_at: 2026-10-16
 settings.option.advanced.sonoma:
   value: Sonoma
   source: ai
@@ -9182,10 +9386,11 @@ settings.option.advanced.sonoma:
 settings.option.advanced.sonoma.lyricArc: 弧形歌词
 settings.option.advanced.sonoma.lyricArc.description: 当前播放的歌词行会向屏幕中心弯曲，呈现出微妙的景深感。
 settings.option.advanced.sonoma.radialMask:
-  value: 使用径向遮罩
-  source: human
+  value: 使用备用遮罩
+  source: ai
   by: "@Tesutarin"
   issue: 28
+  superseded_at: 2026-10-16
 settings.option.advanced.sonoma.radialMask.description:
   value: 启用后，Sonoma 将对封面使用径向遮罩，以更清晰、更少模糊为主。
   source: human
@@ -9213,10 +9418,11 @@ settings.option.advanced.volumeSlider:
   issue: 8
   superseded_at: 2026-09-01
 settings.option.advanced.volumeSlider.iOSStyle:
-  value: iOS 样式
-  source: human
+  value: iOS 风格
+  source: ai
   by: "@Tesutarin"
   issue: 8
+  superseded_at: 2026-10-16
 settings.option.advanced.window:
   value: 窗口行为
   source: ai
@@ -9232,7 +9438,7 @@ settings.option.alwaysShow:
   by: "@Tesutarin"
   issue: 8
 settings.option.appleMusic.behavior.playButtonOnStop:
-  value: 停止播放时的播放按钮行为
+  value: 停止后的播放按钮操作
   source: ai
   by: "@Tesutarin"
   issue: 28
@@ -9272,9 +9478,10 @@ settings.option.audio.atmos.standard:
   issue: 28
 settings.option.audio.audioConfiguration:
   value: 音频配置
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 8
+  superseded_at: 2026-10-16
 settings.option.audio.audioLab:
   value: Cider 音频实验室
   source: ai
@@ -9295,9 +9502,10 @@ settings.option.audio.audioLab.subheader:
   superseded_at: 2026-07-08
 settings.option.audio.audioQuality:
   value: 音频质量
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 8
+  superseded_at: 2026-10-16
 settings.option.audio.automix:
   value: 自动混音
   source: human
@@ -9315,30 +9523,34 @@ settings.option.audio.ciderAudio:
   by: "@Tesutarin"
   issue: 28
 settings.option.audio.ciderAudio.showBadges:
-  value: 在正在播放中显示徽章
-  source: human
+  value: 在正在播放中显示标识
+  source: ai
   by: "@Tesutarin"
   issue: 8
+  superseded_at: 2026-10-16
 settings.option.audio.ciderAudio.showInToolbar:
-  value: 在工具栏中显示 Cider 音频
-  source: human
+  value: 在工具栏中显示 Cider Audio
+  source: ai
   by: "@Tesutarin"
   issue: 8
+  superseded_at: 2026-10-16
 settings.option.audio.ciderAudioSettings:
-  value: Cider 音频设置
-  source: human
+  value: Cider Audio 设置
+  source: ai
   by: "@Tesutarin"
   issue: 8
+  superseded_at: 2026-10-16
 settings.option.audio.crossfade:
   value: 交叉淡入淡出
   source: human
   by: "@Tesutarin"
   issue: 8
 settings.option.audio.dbfs.calibration:
-  value: 0 dBFS 校准值
-  source: human
+  value: 0 dBFS 校准
+  source: ai
   by: "@Tesutarin"
   issue: 28
+  superseded_at: 2026-10-16
 settings.option.audio.dbfs.description:
   value: 输入当 Cider 音量处于 0 dBFS 时所对应的 Z 计权峰值声压级（dB SPL）。
   source: human
@@ -9350,10 +9562,11 @@ settings.option.audio.dbspl.description:
   by: "@Tesutarin"
   issue: 28
 settings.option.audio.dbspl.display:
-  value: 显示 dB SPL 声压级
-  source: human
+  value: dB SPL 显示
+  source: ai
   by: "@Tesutarin"
   issue: 28
+  superseded_at: 2026-10-16
 settings.option.audio.drmSystem:
   value: DRM 系统
   source: ai
@@ -9654,15 +9867,16 @@ settings.option.audio.enableAdvancedFunctionality.tunedAudioSpatialization.profi
   superseded_at: 2026-07-08
 settings.option.audio.exponentialVolume:
   value: 指数音量曲线
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 8
+  superseded_at: 2026-10-16
 settings.option.audio.exponentialVolume.description:
   value: 采用更平缓的音量曲线，在低音量时实现更精确的控制。
   source: human
   by: "@Tesutarin"
   issue: 8
-settings.option.audio.hostCapture: 可采集音频 (OBS / Discord)
+settings.option.audio.hostCapture: 可捕获音频（OBS / Discord）
 settings.option.audio.hostCapture.description: OBS 或 Discord 等流媒体和捕获应用需要 Windows 主机来路由播放。
 settings.option.audio.maxVolume:
   value: 最大音量
@@ -9676,22 +9890,24 @@ settings.option.audio.mixing:
   by: "@Tesutarin"
   issue: 8
 settings.option.audio.normalization:
-  value: 音量平衡
-  source: human
+  value: 音频标准化
+  source: ai
   by: "@Tesutarin"
   issue: 28
+  superseded_at: 2026-10-16
 settings.option.audio.normalization.description:
   value: 自动调整每首曲目的音量，使其响度保持一致。音量较小的曲目会被安全地提升，音量较大的曲目则会被调低。
   source: ai
   by: "@Tesutarin"
   issue: 28
   superseded_at: 2026-07-11
-settings.option.audio.occlusion: 聆听模式
+settings.option.audio.occlusion: 收听模式
 settings.option.audio.outputDevice:
   value: 输出设备
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 8
+  superseded_at: 2026-10-16
 settings.option.audio.playback:
   value: 播放
   source: human
@@ -9711,14 +9927,16 @@ settings.option.audio.playbackRate.change:
   superseded_at: 2026-07-08
 settings.option.audio.podcastPlayback:
   value: 播客播放
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.audio.podcasts.playbackRate:
-  value: Apple 播客播放速率
-  source: human
+  value: Apple 播客的播放速率
+  source: ai
   by: "@jay900604"
   issue: 74
+  superseded_at: 2026-10-16
 settings.option.audio.podcasts.playbackRate.description:
   value: 调整播客的播放速度。
   source: ai
@@ -9726,16 +9944,17 @@ settings.option.audio.podcasts.playbackRate.description:
   issue: 10
   superseded_at: 2026-07-08
 settings.option.audio.quality:
-  value: 音质
+  value: 音频质量
   source: ai
   by: "@Tesutarin"
   issue: 28
   superseded_at: 2026-07-08
 settings.option.audio.seamlessAudioTransitions:
   value: 无缝播放
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.audio.seamlessTransition:
   value: 无缝音频过渡
   source: ai
@@ -9744,14 +9963,16 @@ settings.option.audio.seamlessTransition:
   superseded_at: 2026-07-08
 settings.option.audio.seamlessTransitions:
   value: 无缝过渡
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.audio.showBitrate:
-  value: 在正在播放中显示码率
-  source: human
+  value: 在正在播放中显示比特率
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.audio.streaming: 流媒体
 settings.option.audio.volume:
   value: 音量
@@ -9772,9 +9993,10 @@ settings.option.audio.volumeScrollStep.description:
   superseded_at: 2026-07-08
 settings.option.audio.volumeStep:
   value: 音量滚动步长
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.audio.volumeStep.description:
   value: 调整滚动滚轮时音量的增减幅度。
   source: human
@@ -9813,9 +10035,10 @@ settings.option.concerts.radius.description:
   issue: 19
 settings.option.concerts.radiusUnit:
   value: 半径单位
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.concerts.radiusUnit.description:
   value: 半径所使用的单位
   source: human
@@ -9832,10 +10055,11 @@ settings.option.concerts.radiusUnit.miles:
   by: "@Tesutarin"
   issue: 10
 settings.option.concerts.showInSidebar:
-  value: 在侧边栏显示音乐会
-  source: human
+  value: 在侧边栏中显示演出
+  source: ai
   by: "@Tesutarin"
   issue: 19
+  superseded_at: 2026-10-16
 settings.option.concerts.showInSidebar.description:
   value: 在侧边栏显示音乐会栏目
   source: human
@@ -9843,9 +10067,10 @@ settings.option.concerts.showInSidebar.description:
   issue: 32
 settings.option.concerts.sortBy:
   value: 排序方式
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.concerts.sortBy.date:
   value: 日期
   source: human
@@ -9868,10 +10093,11 @@ settings.option.connect.link_account.description:
   issue: 28
   superseded_at: 2026-07-08
 settings.option.connectivity.atmosRatings:
-  value: 社区 Atmos 评分
-  source: human
+  value: 社区 Dolby Atmos 评分
+  source: ai
   by: "@Tesutarin"
   issue: 28
+  superseded_at: 2026-10-16
 settings.option.connectivity.atmosRatings.description: 查看并分享哪些专辑在 Dolby Atmos 下听起来很棒。
 settings.option.connectivity.ciderConnect.description:
   value: 一起聆听、协作歌单、远程 App 控制等更多功能！
@@ -10141,9 +10367,10 @@ settings.option.connectivity.discordRPC.timestamp.remaining:
   superseded_at: 2026-07-08
 settings.option.connectivity.externalApplications:
   value: 外部应用
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.connectivity.header.externalApplications:
   value: 外部应用程序
   source: ai
@@ -10210,10 +10437,10 @@ settings.option.connectivity.lastfmScrobble.removeFeatured:
   by: "@Tesutarin"
   issue: 10
   superseded_at: 2026-07-08
-settings.option.connectivity.parties: 听歌派对
-settings.option.connectivity.partiesEnabled: 启用听歌派对
+settings.option.connectivity.parties: 一起听
+settings.option.connectivity.partiesEnabled: 启用一起听
 settings.option.connectivity.partiesEnabled.description: 与其他 Cider 用户一起发起或加入同步听歌会。
-settings.option.connectivity.partiesQueueDefault: 默认待播清单模式
+settings.option.connectivity.partiesQueueDefault: 默认队列模式
 settings.option.connectivity.partiesQueueDefault.audited: 主持人批准添加
 settings.option.connectivity.partiesQueueDefault.description: 在您主持的派对中，访客添加歌曲是否需要您的批准。
 settings.option.connectivity.partiesQueueDefault.open: 开放
@@ -10235,15 +10462,17 @@ settings.option.connectivity.playbackNotifications.description:
   superseded_at: 2026-07-08
 settings.option.connectivity.remoteConnection:
   value: 远程连接
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.connectivity.remoteConnection.description: 配对手机或平板电脑，以及取消配对控制播放的设备。
 settings.option.connectivity.rpcServer:
   value: RPC 服务器
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.connectivity.rpcServer.description: 管理外部应用使用 RPC 服务器访问 Cider 的权限。
 settings.option.connectivity.rpcServer.manageAccess: 管理外部应用对 Cider 的访问
 settings.option.connectivity.scrobbler:
@@ -10252,10 +10481,11 @@ settings.option.connectivity.scrobbler:
   by: "@Tesutarin"
   issue: 28
 settings.option.connectivity.scrobblerIntegration:
-  value: 记录器集成
-  source: human
+  value: Scrobbler 集成
+  source: ai
   by: "@Tesutarin"
   issue: 28
+  superseded_at: 2026-10-16
 settings.option.connectivity.scrobblerIntegration.description: Last.fm、ListenBrainz、Libre.fm 和 Maloja 记录服务，用于保存播放历史记录。
 settings.option.connectivity.steam.clearOnPause:
   value: 暂停时清除 Rich Presence
@@ -10379,9 +10609,10 @@ settings.option.experiments.forceExplicit.description:
 settings.option.experiments.legacyFetch: 旧版获取
 settings.option.experiments.musicVideos:
   value: 启用资料库音乐视频
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.experiments.title:
   value: 实验性功能
   source: human
@@ -10394,9 +10625,10 @@ settings.option.general.app:
   issue: 10
 settings.option.general.artistChips:
   value: 艺人标签
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.general.autoplayByDefault:
   value: 默认启用自动连播
   source: human
@@ -10424,14 +10656,16 @@ settings.option.general.cache:
   issue: 10
 settings.option.general.clearCacheDropdown:
   value: 清除缓存下拉菜单
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.general.contentToCache:
   value: 缓存内容
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.general.customizeSidebar:
   value: 自定义侧边栏项目
   source: ai
@@ -10565,44 +10799,52 @@ settings.option.general.noPlayingAction.newMusicMix:
   issue: 10
 settings.option.general.noPlayingAction.none:
   value: 不执行任何操作
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.general.noPlayingAction.personalStation:
-  value: 开启个人电台
-  source: human
+  value: 开始个人电台
+  source: ai
   by: "@Tesutarin"
   issue: 28
+  superseded_at: 2026-10-16
 settings.option.general.noPlayingAction.recent:
-  value: 播放最近曲目
-  source: human
+  value: 播放最近的歌曲
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.general.noPlayingAction.recentlyAdded:
-  value: 播放最近添加的曲目
-  source: human
+  value: 播放最近添加的歌曲
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.general.noPlayingAction.shuffleLibrary:
   value: 随机播放资料库歌曲
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.general.onStartup:
   value: 启动时
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.general.onStartup.openStartup:
-  value: 打开启动页面
-  source: human
+  value: 打开启动页
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.general.onStartup.resume:
   value: 恢复上次会话
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.general.pagination:
   value: 每页显示的项目数
   source: ai
@@ -10727,21 +10969,23 @@ settings.option.general.sleepTimer:
   by: "@Tesutarin"
   issue: 28
 settings.option.general.sleepTimerSettings:
-  value: 睡眠定时设置
-  source: human
+  value: 睡眠定时器设置
+  source: ai
   by: "@Tesutarin"
   issue: 28
+  superseded_at: 2026-10-16
 settings.option.general.startupPage:
-  value: 启动页面
+  value: 启动页
   source: ai
   by: "@Tesutarin"
   issue: 10
   superseded_at: 2026-07-08
 settings.option.general.startupPage.blank:
   value: 空白页
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.general.startupPage.description:
   value: 选择打开 Cider 时显示的页面。
   source: ai
@@ -10749,16 +10993,19 @@ settings.option.general.startupPage.description:
   issue: 10
   superseded_at: 2026-07-08
 settings.option.general.startupPage.descriptionV2: Cider 在新标签页中打开的页面；当“启动时”设置为“打开启动页面”时，也会在启动时打开该页面。
+settings.option.general.startupPage.descriptionV3: Cider 启动时打开的页面。
 settings.option.general.startupPage.newTab:
   value: 新标签页
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.general.startupPage.personalHome:
   value: 个人主页
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.general.themeUpdateNotification:
   value: 自动检查主题更新
   source: ai
@@ -10767,14 +11014,16 @@ settings.option.general.themeUpdateNotification:
   superseded_at: 2026-07-08
 settings.option.general.translationCredits:
   value: 翻译致谢
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.general.translationFeedback:
   value: 翻译反馈
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.general.translators:
   value: 翻译贡献者
   source: human
@@ -10814,9 +11063,10 @@ settings.option.left:
   issue: 10
 settings.option.lyrics.contributeCta:
   value: 贡献并上传歌词
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 32
+  superseded_at: 2026-10-16
 settings.option.lyrics.contributeCta.description:
   value: 上传同步歌词，实时预览，并查看贡献者排行榜。
   source: human
@@ -10824,9 +11074,10 @@ settings.option.lyrics.contributeCta.description:
   issue: 32
 settings.option.lyrics.customScrollerProperties:
   value: 自定义滚动属性
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.lyrics.customScrollerProperties.description:
   value: 为歌词滚动动画启用自定义样式。
   source: human
@@ -10834,9 +11085,10 @@ settings.option.lyrics.customScrollerProperties.description:
   issue: 10
 settings.option.lyrics.defaultProvider:
   value: 默认来源
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.lyrics.defaultProvider.description:
   value: 选择首选歌词来源，“自动”将自动选择最佳可用来源。
   source: human
@@ -10871,10 +11123,11 @@ settings.option.lyrics.enableQQLyrics:
   issue: 10
   superseded_at: 2026-07-08
 settings.option.lyrics.enableSingLyrics:
-  value: 启用逐字歌词
-  source: human
+  value: 启用演唱歌词
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.lyrics.enableSingLyrics.description:
   value: 有条件时显示随音乐实时高亮的逐字同步歌词。
   source: human
@@ -10882,9 +11135,10 @@ settings.option.lyrics.enableSingLyrics.description:
   issue: 10
 settings.option.lyrics.enableStaticLyrics:
   value: 启用静态歌词
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.lyrics.enableStaticLyrics.description:
   value: 即使没有时间轴信息也显示歌词，这类歌词不会自动滚动。
   source: human
@@ -10892,9 +11146,10 @@ settings.option.lyrics.enableStaticLyrics.description:
   issue: 10
 settings.option.lyrics.enableTranslations:
   value: 启用翻译
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.lyrics.enableTranslations.description:
   value: 有条件时显示翻译歌词，翻译来源于 Musixmatch 社区贡献或机器翻译。
   source: human
@@ -10908,22 +11163,24 @@ settings.option.lyrics.enableYoutubeLyrics:
   superseded_at: 2026-07-08
 settings.option.lyrics.fpsLimit: 歌词帧率
 settings.option.lyrics.fpsLimit.description: 歌词动画的最大帧率。更高的帧率在高刷新率显示器上看起来更平滑，但会占用更多 CPU 和 GPU 资源。“与显示器同步”将匹配您显示器的刷新率。
-settings.option.lyrics.fpsLimit.matchDisplay: 与显示器同步
+settings.option.lyrics.fpsLimit.matchDisplay: 与显示器一致
 settings.option.lyrics.keepCompleted:
-  value: 保留已唱歌词
-  source: human
+  value: 保留已完成的歌词
+  source: ai
   by: "@Tesutarin"
   issue: 40
+  superseded_at: 2026-10-16
 settings.option.lyrics.keepCompleted.description:
   value: 将已唱过的歌词保持可见（变暗）并显示在当前行上方，关闭后已唱歌词将隐藏。
   source: human
   by: "@Tesutarin"
   issue: 40
 settings.option.lyrics.localeOverrides:
-  value: 语言复写
-  source: human
+  value: 区域设置覆盖
+  source: ai
   by: "@Tesutarin"
   issue: 28
+  superseded_at: 2026-10-16
 settings.option.lyrics.localeOverrides.description:
   value: 为特定语言设置自定义来源和翻译规则
   source: human
@@ -10937,9 +11194,10 @@ settings.option.lyrics.musixmatchPreferredLanguage:
   superseded_at: 2026-07-08
 settings.option.lyrics.preferUserLyrics:
   value: 优先使用用户提交的歌词
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.lyrics.preferUserLyrics.description:
   value: 若用户提交的歌词时间轴质量更好，则优先使用。
   source: human
@@ -10952,9 +11210,10 @@ settings.option.lyrics.provider.apple:
   issue: 10
 settings.option.lyrics.provider.auto:
   value: 自动（最佳可用）
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.lyrics.provider.mxm:
   value: Musixmatch
   source: human
@@ -10967,9 +11226,10 @@ settings.option.lyrics.provider.netease:
   issue: 10
 settings.option.lyrics.provider.user:
   value: 用户提交
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.lyrics.providerPreferences:
   value: 来源偏好
   source: human
@@ -10984,9 +11244,10 @@ settings.option.lyrics.scrollTuning: 滚动时长与缓动
 settings.option.lyrics.scrollTuning.description: 分别为侧边栏和沉浸式播放器设置歌词滚动所需的时间及所采用的缓动曲线。
 settings.option.lyrics.showDualLanguage:
   value: 显示双语
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.lyrics.showDualLanguage.description:
   value: 同时显示原文歌词和译文。
   source: human
@@ -10994,9 +11255,10 @@ settings.option.lyrics.showDualLanguage.description:
   issue: 10
 settings.option.lyrics.showTimestamps:
   value: 悬停时显示时间戳
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.lyrics.showTimestamps.description:
   value: 悬停时显示每行歌词的时间戳。
   source: human
@@ -11004,9 +11266,10 @@ settings.option.lyrics.showTimestamps.description:
   issue: 10
 settings.option.lyrics.thirdPartySources:
   value: 启用第三方来源
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.lyrics.thirdPartySources.description:
   value: 当 Apple Music 歌词不可用时，允许从 Musixmatch 和网易云音乐获取。质量可能有所差异，持续使用可能触发频率限制。
   source: human
@@ -11014,9 +11277,10 @@ settings.option.lyrics.thirdPartySources.description:
   issue: 32
 settings.option.lyrics.timeOffset:
   value: 歌词时间偏移（秒）
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.lyrics.timeOffset.description:
   value: 调整歌词显示时机，正值提前，负值延后，可用于校正音频不同步的情况。
   source: human
@@ -11025,9 +11289,10 @@ settings.option.lyrics.timeOffset.description:
 settings.option.lyrics.timeOffset.descriptionV2: 调整歌词显示的时间。正值会让歌词延后显示，负值会让歌词提前显示。适用于校正音频与歌词不同步的情况。
 settings.option.lyrics.timestampStyle:
   value: 时间戳样式
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.lyrics.timestampStyle.both:
   value: 两者
   source: human
@@ -11049,10 +11314,11 @@ settings.option.lyrics.timestampStyle.ring:
   by: "@Tesutarin"
   issue: 10
 settings.option.lyrics.trackOverrides:
-  value: 曲目复写
-  source: human
+  value: 单曲覆盖
+  source: ai
   by: "@Tesutarin"
   issue: 28
+  superseded_at: 2026-10-16
 settings.option.lyrics.trackOverrides.description:
   value: 管理各曲目的歌词来源锁定与偏好设置
   source: human
@@ -11060,9 +11326,10 @@ settings.option.lyrics.trackOverrides.description:
   issue: 10
 settings.option.lyrics.translationLanguage:
   value: 翻译语言
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.lyrics.translationLanguage.description:
   value: 歌词翻译的目标语言，仅在翻译模式设为“手动”时使用。
   source: human
@@ -11070,14 +11337,16 @@ settings.option.lyrics.translationLanguage.description:
   issue: 28
 settings.option.lyrics.translationMode:
   value: 翻译模式
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.lyrics.translationMode.appLanguage:
-  value: 自动（跟随应用语言）
-  source: human
+  value: 自动跟随应用语言
+  source: ai
   by: "@Tesutarin"
   issue: 32
+  superseded_at: 2026-10-16
 settings.option.lyrics.translationMode.description:
   value: 确定目标翻译语言的方式。
   source: human
@@ -11089,10 +11358,11 @@ settings.option.lyrics.translationMode.manual:
   by: "@Tesutarin"
   issue: 10
 settings.option.lyrics.translationMode.system:
-  value: 自动（跟随系统语言）
-  source: human
+  value: 自动跟随系统语言
+  source: ai
   by: "@Tesutarin"
   issue: 32
+  superseded_at: 2026-10-16
 settings.option.lyrics.translationSettings:
   value: 翻译设置
   source: human
@@ -11140,10 +11410,11 @@ settings.option.performance.app:
   by: "@Tesutarin"
   issue: 10
 settings.option.performance.backgroundRefreshTime:
-  value: 后台刷新间隔
-  source: human
+  value: 后台刷新时间
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.performance.backgroundRefreshTime.description:
   value: 每次后台刷新的间隔（秒），过低可能影响性能。
   source: human
@@ -11155,20 +11426,22 @@ settings.option.performance.dataAndUiLoad:
   by: "@Tesutarin"
   issue: 10
 settings.option.performance.disableLargeRequestOffloading:
-  value: 停用大型请求卸载
-  source: human
+  value: 禁用大型请求卸载
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.performance.disableLargeRequestOffloading.description:
   value: 将影响大型请求期间的界面性能
   source: human
   by: "@Tesutarin"
   issue: 10
 settings.option.performance.enableMediaItemInspect:
-  value: 为媒体项目启用开发者检查
-  source: human
+  value: 为 MediaItem 启用开发者检查
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.performance.enableMediaItemInspect.description:
   value: 可能略微影响性能
   source: human
@@ -11198,10 +11471,11 @@ settings.option.performance.host:
   by: "@Tesutarin"
   issue: 10
 settings.option.performance.immersiveRenderer:
-  value: 沉浸模式渲染器
-  source: human
+  value: 沉浸式渲染器
+  source: ai
   by: "@Tesutarin"
   issue: 28
+  superseded_at: 2026-10-16
 settings.option.performance.immersiveRenderer.description:
   value: 若沉浸模式的动态背景出现异常或 GPU 占用过高，可切换为 Canvas 2D 而非 WebGPU。
   source: human
@@ -11229,7 +11503,7 @@ settings.option.performance.motion:
   source: human
   by: "@Tesutarin"
   issue: 10
-settings.option.performance.powerSaverOnBattery: 使用电池时节省电量
+settings.option.performance.powerSaverOnBattery: 使用电池时节能
 settings.option.performance.powerSaverOnBattery.description: 当设备使用电池供电时，沉浸式背景的渲染帧率最高限制为 30 帧/秒，歌词动画限制为 60 帧/秒。
 settings.option.performance.preloadSidebarPages: 预加载侧边栏页面
 settings.option.performance.preloadSidebarPages.description: 在您打开侧边栏页面之前进行加载。“悬停时”会在光标停留在侧边栏项目上时开始加载。“空闲时”还会在启动后加载“现在就听”、“浏览”和“广播”，并刷新您之前打开过的资料库列表。
@@ -11253,10 +11527,11 @@ settings.option.performance.renderer.webgpu:
   by: "@Tesutarin"
   issue: 10
 settings.option.performance.ultraWide:
-  value: 超宽屏
-  source: human
+  value: 超宽
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.performance.ultraWide.description:
   value: 移除页面宽度限制，但应用未针对超宽屏优化，部分元素可能显示异常。
   source: human
@@ -11320,9 +11595,10 @@ settings.option.smartPlaylists.defaultTrackLimit:
   issue: 10
 settings.option.smartPlaylists.enabled:
   value: 启用播放列表规则
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.smartPlaylists.enabled.description:
   value: 允许 Cider 根据内嵌规则自动管理播放列表。
   source: human
@@ -11377,9 +11653,10 @@ settings.option.sweetener.enableSweetener:
   superseded_at: 2026-07-08
 settings.option.sweetener.header.uiCustomization:
   value: 界面自定义
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.sweetener.header.uiCustomization.description: 在整个应用中使用的强调色和色调。
 settings.option.sweetener.immersiveBackground.brightnessPercentage:
   value: 亮度 %
@@ -11412,7 +11689,7 @@ settings.option.sweetener.immersiveBackground.header.filters:
   issue: 10
   superseded_at: 2026-07-08
 settings.option.sweetener.immersiveBackground.lightModeWarning:
-  value: 沉浸式背景目前不支持浅色模式。
+  value: 浅色模式下目前不支持沉浸式背景。
   source: ai
   by: "@Tesutarin"
   issue: 28
@@ -11430,10 +11707,11 @@ settings.option.sweetener.immersiveBackground.use:
   issue: 28
   superseded_at: 2026-07-08
 settings.option.sweetener.immersiveBackgroundType:
-  value: 沉浸背景类型
-  source: human
+  value: 沉浸式背景类型
+  source: ai
   by: "@Tesutarin"
   issue: 28
+  superseded_at: 2026-10-16
 settings.option.sweetener.immersiveBackgroundType.immersive:
   value: 沉浸
   source: human
@@ -11452,11 +11730,12 @@ settings.option.sweetener.useCustomAccentColor:
   superseded_at: 2026-07-08
 settings.option.sweetener.useCustomAccentColor.accentColor:
   value: 强调色
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.sweetener.useCustomTintColor:
-  value: 使用自定义色调
+  value: 使用自定义着色
   source: ai
   by: "@Tesutarin"
   issue: 10
@@ -11468,7 +11747,7 @@ settings.option.sweetener.useCustomTintColor.lightModeWarning:
   issue: 10
   superseded_at: 2026-07-08
 settings.option.sweetener.useCustomTintColor.tintColor:
-  value: 色调
+  value: 着色颜色
   source: ai
   by: "@Tesutarin"
   issue: 10
@@ -11507,29 +11786,33 @@ settings.option.visual.accentColor:
   superseded_at: 2026-07-08
 settings.option.visual.adaptiveColorPercent:
   value: 自适应颜色百分比
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.visual.additionalAnimatedArtwork:
-  value: 目录中的额外动态封面
-  source: human
+  value: 曲库中的额外动态封面
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.visual.additionalAnimatedArtwork.description:
   value: 可用时显示更多动态封面，同屏数量过多可能影响性能。
   source: human
   by: "@Tesutarin"
   issue: 32
 settings.option.visual.animateArtworkOnHover:
-  value: 悬停时播放媒体封面动画
-  source: human
+  value: 悬停时播放媒体项目封面动画
+  source: ai
   by: "@Tesutarin"
   issue: 32
+  superseded_at: 2026-10-16
 settings.option.visual.animatedArtwork:
   value: 动态封面
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.visual.animatedArtwork.description:
   value: 启用动态封面，未聚焦时暂停
   source: ai
@@ -11546,7 +11829,7 @@ settings.option.visual.animatedArtworkEngine.description: “原生”会下载�
 settings.option.visual.animatedArtworkEngine.hls: 传统 (hls.js)
 settings.option.visual.animatedArtworkEngine.native: 原生（推荐）
 settings.option.visual.animatedArtworkQuality:
-  value: 动态封面画质
+  value: 动态封面质量
   source: ai
   by: "@Tesutarin"
   issue: 10
@@ -11567,15 +11850,16 @@ settings.option.visual.animatedWindowBackground:
   by: "@Tesutarin"
   issue: 10
   superseded_at: 2026-07-08
-settings.option.visual.artistHeaderAlignment: 艺人页眉布局
+settings.option.visual.artistHeaderAlignment: 艺人页头部布局
 settings.option.visual.artistHeaderAlignment.center: 居中
 settings.option.visual.artistHeaderAlignment.description: 艺人姓名和操作在艺人页面页眉中的显示位置。
 settings.option.visual.artistHeaderAlignment.left: 左对齐 (默认)
 settings.option.visual.artworkLoadingMethod:
   value: 封面加载方式
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.visual.artworkLoadingMethod.eager:
   value: 立即加载
   source: human
@@ -11588,9 +11872,10 @@ settings.option.visual.artworkLoadingMethod.lazy:
   issue: 10
 settings.option.visual.chromaticAberrationIntensity:
   value: 色差强度
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.visual.chromaticAberrationIntensity.description:
   value: LCD 玻璃上 RGB 色散的强度。
   source: human
@@ -11604,16 +11889,17 @@ settings.option.visual.colorCustomization:
   superseded_at: 2026-07-08
 settings.option.visual.colorScheme:
   value: 配色方案
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.visual.compactArtistHeader:
   value: 紧凑型艺人页眉
   source: ai
   by: "@Tesutarin"
   issue: 10
   superseded_at: 2026-07-08
-settings.option.visual.contentFilterKeywords: 内容过滤关键字
+settings.option.visual.contentFilterKeywords: 内容过滤关键词
 settings.option.visual.contentPreferences:
   value: 内容偏好设置
   source: ai
@@ -11634,21 +11920,24 @@ settings.option.visual.customAccentColor:
   issue: 10
   superseded_at: 2026-07-08
 settings.option.visual.customScalingFactor:
-  value: 自定义缩放比例
-  source: human
+  value: 自定义缩放系数
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.visual.customScalingFactor.description: 调整应用程序的 UI 缩放比例
 settings.option.visual.enableAnimatedArtworkInMiniPlayer:
   value: 在迷你播放器中启用动态封面
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.visual.extendedEditorialLayout:
   value: 在专辑页面使用扩展编辑布局
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.visual.extendedEditorialLayout.description:
   value: 启用后，专辑页面将显示编辑横幅，并根据可用素材为特定专辑应用配色方案。
   source: human
@@ -11656,9 +11945,10 @@ settings.option.visual.extendedEditorialLayout.description:
   issue: 10
 settings.option.visual.filterPromotionalContent:
   value: 过滤推广内容
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.visual.filterPromotionalContent.description:
   value: 启用后，浏览和立即收听页面中匹配过滤关键词的栏目将被隐藏。
   source: human
@@ -11666,19 +11956,21 @@ settings.option.visual.filterPromotionalContent.description:
   issue: 32
 settings.option.visual.floatingPlayer:
   value: 浮动播放器
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.visual.floatingPlayer.description:
   value: 将播放条从边缘分离，呈现浮动胶囊外观
   source: human
   by: "@Tesutarin"
   issue: 10
 settings.option.visual.floatingPlayerPadding:
-  value: 浮动播放器边距
-  source: human
+  value: 浮动播放器内边距
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.visual.floatingPlayerPadding.description:
   value: 控制浮动播放器周围的留白大小
   source: human
@@ -11686,9 +11978,10 @@ settings.option.visual.floatingPlayerPadding.description:
   issue: 10
 settings.option.visual.floatingPlayerRoundness:
   value: 浮动播放器圆角
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.visual.floatingPlayerRoundness.description:
   value: 浮动播放器的圆角半径（0 与窗口保持一致）
   source: human
@@ -11700,12 +11993,13 @@ settings.option.visual.fonts:
   by: "@Tesutarin"
   issue: 10
 settings.option.visual.forceMpWindowControls:
-  value: 使用跨平台窗口控件
-  source: human
+  value: 使用多平台窗口控件
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.visual.forceRoundedViewport:
-  value: 使用圆角视窗
+  value: 使用圆角视口
   source: ai
   by: "@Tesutarin"
   issue: 32
@@ -11727,10 +12021,11 @@ settings.option.visual.hardwareAcceleration.description:
   issue: 10
   superseded_at: 2026-07-08
 settings.option.visual.headerStyle:
-  value: 专辑与播放列表标题样式
-  source: human
+  value: 专辑和播放列表标题样式
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.visual.headerStyle.appleMusic:
   value: Apple Music
   source: human
@@ -11750,19 +12045,21 @@ settings.option.visual.headerStyle.description:
   issue: 32
 settings.option.visual.hideAppleRecommends:
   value: 隐藏“Apple 推荐”卡片
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.visual.hideAppleRecommends.description:
   value: 从立即收听和主页推荐架中移除推广性“Apple 推荐”卡片。
   source: human
   by: "@Tesutarin"
   issue: 10
 settings.option.visual.hideHeroItems:
-  value: 隐藏浏览页面的精选内容
-  source: human
+  value: 在“浏览”中隐藏焦点项目
+  source: ai
   by: "@Tesutarin"
   issue: 32
+  superseded_at: 2026-10-16
 settings.option.visual.immersive.adjustVisuals:
   value: 调整视觉效果
   source: human
@@ -11806,9 +12103,10 @@ settings.option.visual.immersive.background.default:
   superseded_at: 2026-07-08
 settings.option.visual.immersive.backgroundType:
   value: 背景类型
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.visual.immersive.contrastRatio:
   value: 对比度
   source: human
@@ -11835,15 +12133,17 @@ settings.option.visual.immersive.enableHdr:
   by: "@Tesutarin"
   issue: 10
 settings.option.visual.immersive.fsrUpscale:
-  value: FSR 封面超分辨率
-  source: human
+  value: FSR 封面放大
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.visual.immersive.fsrUpscale.applyToAll:
-  value: FSR：应用到所有曲目
-  source: human
+  value: FSR：应用于所有曲目
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.visual.immersive.fsrUpscale.applyToAll.description:
   value: 关闭时，FSR 仅对阈值年份之前发行的曲目生效，开启后对所有曲目进行超分。
   source: human
@@ -11855,10 +12155,11 @@ settings.option.visual.immersive.fsrUpscale.description:
   by: "@Tesutarin"
   issue: 10
 settings.option.visual.immersive.fsrUpscale.sharpness:
-  value: FSR：锐度
-  source: human
+  value: FSR：锐化程度
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.visual.immersive.fsrUpscale.sharpness.description:
   value: 对比度自适应锐化（RCAS）的强度，0 最柔和，1 最锐利。
   source: human
@@ -11866,9 +12167,10 @@ settings.option.visual.immersive.fsrUpscale.sharpness.description:
   issue: 10
 settings.option.visual.immersive.fsrUpscale.thresholdYear:
   value: FSR：阈值年份
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.visual.immersive.fsrUpscale.thresholdYear.description:
   value: 当“应用到所有曲目”关闭时，此年份之前发行的曲目将进行超分。
   source: human
@@ -11881,14 +12183,16 @@ settings.option.visual.immersive.hdrBoostScale:
   issue: 10
 settings.option.visual.immersive.hideLyricsWhenUnavailable:
   value: 无歌词时隐藏歌词
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 32
+  superseded_at: 2026-10-16
 settings.option.visual.immersive.keepCompletedLyrics:
-  value: 保留已完成的歌词
-  source: human
+  value: 保留已唱完的歌词
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.visual.immersive.keepCompletedLyrics.description:
   value: 在歌词视图中保留已播放的歌词。
   source: human
@@ -11932,24 +12236,28 @@ settings.option.visual.immersive.layout.spectrumDeck:
   superseded_at: 2026-07-08
 settings.option.visual.immersive.maxBrightness:
   value: 最大亮度
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.visual.immersive.maxLyricFontSize:
-  value: 最大歌词字号（px）
-  source: human
+  value: 歌词最大字号（px）
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.visual.immersive.startFullscreen:
   value: 以全屏模式启动
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.visual.immersive.startingTab:
-  value: 起始标签页
-  source: human
+  value: 启动标签页
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.visual.immersive.startingTab.history:
   value: 历史记录
   source: human
@@ -11965,7 +12273,7 @@ settings.option.visual.immersive.startingTab.queue:
   source: human
   by: "@Tesutarin"
   issue: 19
-settings.option.visual.immersive.ultraHdr: Ultra HDR 封面增强
+settings.option.visual.immersive.ultraHdr: Ultra HDR 封面放大
 settings.option.visual.immersive.ultraHdr.description: 为每首曲目的专辑封面添加 HDR 高光、对比度和色彩。在 HDR 显示器上效果最佳；其他显示器的效果较为柔和。需要 WebGPU。
 settings.option.visual.immersive.ultraHdr.headroom: Ultra HDR：峰值余量
 settings.option.visual.immersive.ultraHdr.headroom.description: 高光的最大亮度，以标准白色的倍数表示。如果高光在您的显示器上显得过亮，请降低此值。
@@ -11978,9 +12286,10 @@ settings.option.visual.immersive.ultraHdr.profile.natural: 自然
 settings.option.visual.immersive.ultraHdr.profile.vivid: 鲜艳
 settings.option.visual.immersive.useAnimatedArtwork:
   value: 使用动态封面
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.visual.immersive.useAnimatedArtwork.description:
   value: 有条件时显示动态封面，可能在低端设备上影响性能。
   source: human
@@ -11988,41 +12297,47 @@ settings.option.visual.immersive.useAnimatedArtwork.description:
   issue: 10
 settings.option.visual.immersive.useAnimatedBackground: 沉浸式动态背景
 settings.option.visual.immersive.useBackgroundBpm:
-  value: 背景速度跟随 BPM
-  source: human
+  value: 根据 BPM 调整背景速度
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.visual.immersiveBackground.blank:
   value: 空白
   source: human
   by: "@Tesutarin"
   issue: 10
 settings.option.visual.immersiveBackground.customImage:
-  value: 自定义图像
-  source: human
+  value: 自定义图片
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.visual.immersiveBackground.customImageMixed:
-  value: 自定义图像（混合）
-  source: human
+  value: 自定义图片（混合）
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.visual.immersiveBackground.gradientMesh: 渐变网格
 settings.option.visual.immersiveBackground.simpleArtwork:
   value: 简单封面
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.visual.immersiveBackground.simpleColor:
   value: 纯色
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.visual.immersiveBgSettings:
-  value: 沉浸模式背景设置
-  source: human
+  value: 沉浸式背景设置
+  source: ai
   by: "@Tesutarin"
   issue: 28
+  superseded_at: 2026-10-16
 settings.option.visual.immersiveBgSettings.description: 应用背景美化与滤镜。
 settings.option.visual.immersiveLayout.classic:
   value: One Classic
@@ -12064,20 +12379,23 @@ settings.option.visual.immersiveLayout.spectrumDeck:
   issue: 10
 settings.option.visual.immersiveLayout.spectrumDeck.description: 实时频谱场景，配备悬浮专辑封面。
 settings.option.visual.immersiveStyle:
-  value: 沉浸样式
-  source: human
+  value: 沉浸式样式
+  source: ai
   by: "@Tesutarin"
   issue: 28
+  superseded_at: 2026-10-16
 settings.option.visual.immersiveStylePortrait:
-  value: 沉浸样式（竖屏）
-  source: human
+  value: 沉浸式样式（竖屏）
+  source: ai
   by: "@Tesutarin"
   issue: 28
+  superseded_at: 2026-10-16
 settings.option.visual.largeHeaderTitles:
-  value: 大标题
-  source: human
+  value: 大号标题
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.visual.largeHeaderTitles.description:
   value: 放大专辑和播放列表页面的标题文字，呈现更醒目的外观。
   source: human
@@ -12097,9 +12415,10 @@ settings.option.visual.layoutProfile.description:
   superseded_at: 2026-07-08
 settings.option.visual.layoutType:
   value: 布局类型
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.visual.layoutType.calico:
   value: Calico
   source: human
@@ -12125,10 +12444,11 @@ settings.option.visual.layoutType.montara:
   issue: 10
 settings.option.visual.layoutType.montara.description: 全高侧边栏，顶部播放器位于内容区域内。
 settings.option.visual.lcdChromaticAberration:
-  value: LCD 色差效果
-  source: human
+  value: LCD 色差
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.visual.lcdChromaticAberration.description:
   value: 通过液态玻璃着色器对正在播放的 LCD 背景进行折射，添加 RGB 色散效果。
   source: human
@@ -12136,21 +12456,23 @@ settings.option.visual.lcdChromaticAberration.description:
   issue: 10
 settings.option.visual.liquidGlassPlayer: 流光玻璃播放栏
 settings.option.visual.liquidGlassPlayer.description: 为“正在播放”播放栏使用流光玻璃外观。关闭以使用扁平纯色面板（渲染更轻量）。
-settings.option.visual.liquidGlassScrollPerf: 滚动时轻量玻璃效果
+settings.option.visual.liquidGlassScrollPerf: 滚动时使用轻量玻璃效果
 settings.option.visual.liquidGlassScrollPerf.description: 在滚动时将流体玻璃折射简化为普通模糊，并在停止滚动时平滑恢复。这可以在不改变静止效果的前提下，减少高负载系统上的滚动卡顿。在游戏模式下始终启用。
 settings.option.visual.liquidGlassScrollPerf.descriptionV2: 滚动时将液态玻璃折射简化为普通模糊，停止滚动后再逐渐恢复。在负载较高的系统上可减少滚动卡顿，静止时外观不变。
 settings.option.visual.mainMenuPosition:
   value: 主菜单位置
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.visual.matchPageToArtwork: 根据封面匹配页面
 settings.option.visual.matchPageToArtwork.description: 以专辑和播放列表封面的颜色为页面着色，同时支持浅色和深色模式。
 settings.option.visual.mergeAppleMusicPlaylists:
   value: 合并 Apple Music 播放列表
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.visual.mergeAppleMusicPlaylists.description:
   value: 将 Apple Music 精选播放列表合并到主播放列表栏目，而非单独显示。
   source: human
@@ -12180,32 +12502,35 @@ settings.option.visual.mojavePlayerType.compact:
   issue: 10
 settings.option.visual.mojavePlayerType.compact.description: 紧凑型播放器，配备居中的 LCD 和上方的进度条。
 settings.option.visual.mojavePlayerType.compactInline:
-  value: 横向紧凑
-  source: human
+  value: 紧凑内联
+  source: ai
   by: "@Tesutarin"
   issue: 32
+  superseded_at: 2026-10-16
 settings.option.visual.mojavePlayerType.compactInline.description: 单行紧凑栏，进度条位于 LCD 内部。
 settings.option.visual.moveUpLinks:
-  value: 将浏览页面的“更多内容”链接移至顶部
-  source: human
+  value: 将“浏览”中的“更多内容”链接移至顶部
+  source: ai
   by: "@Tesutarin"
   issue: 28
+  superseded_at: 2026-10-16
 settings.option.visual.musicVideoPinMaxResolution: 始终以最高分辨率播放音乐视频
 settings.option.visual.musicVideoPinMaxResolution.description: 锁定视频支持的最高画质，而非从低画质开始逐步提升。在小窗口或按流量计费的连接下，这会显著增加带宽消耗。
-settings.option.visual.musicVideoPrefetchOnHover: 悬停时预加载音乐视频
+settings.option.visual.musicVideoPrefetchOnHover: 悬停时准备音乐视频
 settings.option.visual.musicVideoPrefetchOnHover.description: 当指针停留在角标上时开始加载视频，以便在点击时更快打开。
-settings.option.visual.musicVideoPrefetchSegmentsOnHover: 悬停时下载首个片段
+settings.option.visual.musicVideoPrefetchSegmentsOnHover: 悬停时下载第一个分段
 settings.option.visual.musicVideoPrefetchSegmentsOnHover.description: 在点击前提前加载视频的前几秒内容。每次悬停都会消耗几兆字节的流量，即使最终未打开视频。
-settings.option.visual.paletteContrast: 插图颜色对比度
+settings.option.visual.paletteContrast: 封面色彩对比度
 settings.option.visual.paletteContrast.description: 调整专辑和播放列表颜色与页面的偏离程度，以确保按钮和播放指示器清晰易读。“高对比度”辅助功能设置将始终使用“最大”。
 settings.option.visual.paletteContrast.enhanced: 增强
 settings.option.visual.paletteContrast.maximum: 最大
 settings.option.visual.paletteContrast.standard: 标准
 settings.option.visual.pauseAnimatedOnBlur:
   value: 失去焦点时暂停动态封面
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.visual.playerMaterial: 播放器材质
 settings.option.visual.playerMaterial.blur: 模糊
 settings.option.visual.playerMaterial.blur.description: 为“正在播放”控制栏使用半透明磨砂材质，不启用液态玻璃折射效果。
@@ -12223,9 +12548,10 @@ settings.option.visual.playerPosition:
   superseded_at: 2026-07-08
 settings.option.visual.playerType:
   value: 播放器类型
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.visual.plugin.github.download:
   value: 从 GitHub URL 安装
   source: ai
@@ -12245,10 +12571,11 @@ settings.option.visual.plugin.github.install.confirm:
   issue: 10
   superseded_at: 2026-07-08
 settings.option.visual.popularityThreshold:
-  value: 热度阈值
-  source: human
+  value: 热门度阈值
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.visual.popularityThreshold.description:
   value: 曲目热度达到此值时，才会在其旁边显示热度标记。
   source: human
@@ -12264,9 +12591,10 @@ settings.option.visual.purplePodcastPlaybackBar:
   superseded_at: 2026-07-08
 settings.option.visual.realtimeVisualizer:
   value: 实时音频可视化
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.visual.realtimeVisualizer.description:
   value: 在播放曲目时显示实时音频可视化，替代动态条形动画。
   source: human
@@ -12274,9 +12602,10 @@ settings.option.visual.realtimeVisualizer.description:
   issue: 32
 settings.option.visual.searchType:
   value: 搜索类型
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.visual.searchType.floating:
   value: 浮动
   source: human
@@ -12288,10 +12617,11 @@ settings.option.visual.searchType.inline:
   by: "@Tesutarin"
   issue: 32
 settings.option.visual.showBpmAndKey:
-  value: 在播放列表和专辑的曲目上显示 BPM 和调性
-  source: human
+  value: 在播放列表和专辑曲目中显示 BPM 和调号
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.visual.showBpmAndKey.description:
   value: 启用后内容加载时间将增加。
   source: human
@@ -12304,23 +12634,26 @@ settings.option.visual.showPersonalInfo:
   issue: 10
   superseded_at: 2026-07-08
 settings.option.visual.showPlaylistArtworkInSidebar:
-  value: 在侧边栏显示播放列表封面
-  source: human
+  value: 在侧边栏中显示播放列表封面
+  source: ai
   by: "@Tesutarin"
   issue: 10
-settings.option.visual.showPodcastsInSidebar: 在边栏中显示播客
+  superseded_at: 2026-10-16
+settings.option.visual.showPodcastsInSidebar: 在侧边栏中显示播客
 settings.option.visual.showPodcastsInSidebar.description: 播客支持仍处于重构阶段，因此资料库入口目前仅显示占位符。
 settings.option.visual.showQuickActions:
-  value: 显示快速操作
-  source: human
+  value: 显示快捷操作
+  source: ai
   by: "@Tesutarin"
   issue: 10
-settings.option.visual.showWatchMusicVideoWhenAvailable: 可用时显示“观看音乐录像带”
+  superseded_at: 2026-10-16
+settings.option.visual.showWatchMusicVideoWhenAvailable: 有可用时显示"观看音乐视频"
 settings.option.visual.sidebarStyle:
   value: 侧边栏样式
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.visual.sidebarStyle.apple:
   value: Apple Music
   source: human
@@ -12343,9 +12676,10 @@ settings.option.visual.simpleArtworkBg.saturate:
   issue: 10
 settings.option.visual.sizeProfile:
   value: 界面尺寸配置
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.visual.sizeProfile.description.default:
   value: 默认尺寸，适用于任何输入设备。iOS / Android / 现代 Windows 风格。
   source: ai
@@ -12441,9 +12775,10 @@ settings.option.visual.theme.viewInfo:
   superseded_at: 2026-07-08
 settings.option.visual.titleBarStyle:
   value: 标题栏样式
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.visual.titleBarStyle.winui:
   value: WinUI
   source: human
@@ -12456,10 +12791,11 @@ settings.option.visual.topToolbarWidget:
   issue: 10
   superseded_at: 2026-07-08
 settings.option.visual.transparency:
-  value: 启用透明度
-  source: human
+  value: 启用透明效果
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.visual.transparent:
   value: 透明边框
   source: ai
@@ -12480,9 +12816,10 @@ settings.option.visual.uiscale:
   superseded_at: 2026-07-08
 settings.option.visual.useAdaptiveColors:
   value: 使用自适应颜色
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.visual.useAdaptiveColors.description:
   value: 根据当前歌曲更改强调色
   source: human
@@ -12494,7 +12831,7 @@ settings.option.visual.useAdaptiveColors.popup:
   by: "@Tesutarin"
   issue: 10
   superseded_at: 2026-07-08
-settings.option.visual.verticalDrawerMode: 待播清单与歌词位置
+settings.option.visual.verticalDrawerMode: 队列和歌词位置
 settings.option.visual.verticalDrawerMode.auto.description: 在纵向显示屏上，在播放器/内容下方使用底部抽屉；在宽屏上使用侧边抽屉。
 settings.option.visual.verticalDrawerMode.bottom: 底部抽屉
 settings.option.visual.verticalDrawerMode.bottom.description: 始终在播放器/内容下方的底部抽屉中显示待播清单和歌词。
@@ -12505,10 +12842,11 @@ settings.option.visual.vibrancyMode.acrylic: 亚克力
 settings.option.visual.vibrancyMode.mica: 云母
 settings.option.visual.vibrancyMode.tabbed: 标签页
 settings.option.visual.vibrancySettings:
-  value: 毛玻璃效果设置
-  source: human
+  value: 活力效果设置
+  source: ai
   by: "@Tesutarin"
   issue: 10
+  superseded_at: 2026-10-16
 settings.option.visual.windowBackgroundStyle:
   value: 窗口背景样式
   source: ai
@@ -12522,11 +12860,12 @@ settings.option.visual.windowColor:
   issue: 10
   superseded_at: 2026-07-08
 settings.option.visual.windowControlPosition:
-  value: 窗口控制按钮位置
-  source: human
+  value: 窗口控件位置
+  source: ai
   by: "@Tesutarin"
   issue: 10
-settings.option.visual.windowingMode: 滚动与渲染模式
+  superseded_at: 2026-10-16
+settings.option.visual.windowingMode: 滚动和渲染模式
 settings.option.visual.windowingMode.auto: 自动 (适配触控板)
 settings.option.visual.windowingMode.description: 选择应用的渲染和滚动方式。推荐大多数用户选择“自动”，在某些触控板设备上，选择“旧版”可能会获得更灵敏的响应。
 settings.option.visual.windowingMode.fallbackNotice.body: Cider 正在使用旧版模式。
@@ -12540,10 +12879,11 @@ settings.option.visual.windowStyle:
   issue: 10
   superseded_at: 2026-07-08
 settings.option.visual.windowVibrancy:
-  value: 窗口动态效果
-  source: human
+  value: 窗口活力效果
+  source: ai
   by: "@jay900604"
   issue: 74
+  superseded_at: 2026-10-16
 settings.option.window.close_button_hide:
   value: 点击关闭按钮时隐藏应用程序
   source: ai
@@ -12639,6 +12979,17 @@ settings.power.savers: 节能选项
 settings.power.summary.count: 已开启 {{high}} 个高影响、{{medium}} 个中影响功能
 settings.power.summary.high: 高影响
 settings.power.summary.medium: 中影响
+settings.privacy.appPreferences: 应用偏好设置
+settings.privacy.appPreferences.description: 分享您的应用偏好设置，让我们了解您希望如何配置 Cider。
+settings.privacy.appUsage: 应用特定使用情况
+settings.privacy.appUsage.description: 发送 Cider 特定功能的匿名使用数据。不包括任何个人信息或 Apple Music 数据。
+settings.privacy.audioLabs: Cider Audio 实验室
+settings.privacy.audioLabs.description: 发送您配置 Cider Audio 实验室的相关信息。
+settings.privacy.deviceSpecs: 设备规格
+settings.privacy.deviceSpecs.description: 发送您当前硬件（CPU、GPU、内存、音频设备）以及操作系统的基本信息。这些信息较为简略，不包括序列号或设备 ID。
+settings.privacy.replay: 为 Cider Replay 贡献收听历史
+settings.privacy.replay.description: 匿名发送收听历史，以参与 Cider 年度社区 Replay 项目。公开统计数据可在 cider.sh/replay 查看。
+settings.privacy.statement: Cider Collective 非常重视隐私。我们不收集任何可识别个人身份的信息，也不向第三方出售任何数据。您选择与我们分享的任何数据仅用于改进应用，不会与其他任何人共享；所有可能存储的个人信息在与我们共享前都会被删除。
 settings.profile.crop.hint:
   value: 拖动以移动，滚动以缩放
   source: human
@@ -12656,9 +13007,10 @@ settings.profile.defaultName:
   issue: 11
 settings.profile.field.displayName:
   value: 显示名称
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 11
+  superseded_at: 2026-10-16
 settings.profile.field.displayName.description:
   value: 显示在侧边栏及 Cider 各处。
   source: human
@@ -12670,10 +13022,12 @@ settings.profile.field.handle.description:
   by: "@Tesutarin"
   issue: 11
 settings.profile.field.photo:
-  value: 个人头像
-  source: human
+  value: 个人资料照片
+  source: ai
   by: "@Tesutarin"
   issue: 11
+  superseded_at: 2026-10-16
+settings.profile.field.photo.change: 更改个人资料照片
 settings.profile.field.photo.description:
   value: 已设置自定义头像。
   source: human
@@ -12681,54 +13035,62 @@ settings.profile.field.photo.description:
   issue: 11
 settings.profile.header.identity:
   value: 编辑个人资料
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 11
+  superseded_at: 2026-10-16
 settings.profile.header.region:
-  value: 地区与语言
-  source: human
+  value: 地区和语言
+  source: ai
   by: "@Tesutarin"
   issue: 11
+  superseded_at: 2026-10-16
 settings.profile.header.visibility:
   value: 侧边栏显示
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 11
+  superseded_at: 2026-10-16
 settings.profile.language.description:
   value: Apple Music 内容的显示语言。
   source: human
   by: "@Tesutarin"
   issue: 32
 settings.profile.option.showHandle:
-  value: 显示用户名
-  source: human
+  value: 显示社交账号
+  source: ai
   by: "@Tesutarin"
   issue: 19
+  superseded_at: 2026-10-16
 settings.profile.option.showMainMenu:
   value: 在侧边栏个人资料区域显示主菜单
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 11
+  superseded_at: 2026-10-16
 settings.profile.option.showName:
   value: 显示个人资料名称
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 11
+  superseded_at: 2026-10-16
 settings.profile.option.showProfile:
   value: 在侧边栏显示个人资料
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 11
+  superseded_at: 2026-10-16
 settings.profile.policy.allowed:
   value: 允许
   source: human
   by: "@Tesutarin"
   issue: 11
 settings.profile.policy.label:
-  value: 脏话内容
-  source: human
+  value: 露骨内容
+  source: ai
   by: "@Tesutarin"
   issue: 32
+  superseded_at: 2026-10-16
 settings.profile.policy.restricted:
   value: 限制
   source: human
@@ -12811,6 +13173,7 @@ settings.resetCider.confirm.ok: 重置 Cider
 settings.resetCider.confirm.title: 重置 Cider？
 settings.resetCider.confirm.warning: 此操作无法撤销。重置后 Cider 将重新启动。
 settings.resetCider.confirm.willReset: 将重置
+settings.resetCider.deselectAll: 取消全选
 settings.resetCider.error: 重置过程中出错。
 settings.resetCider.group.accounts: 帐户
 settings.resetCider.group.core: 重置
@@ -12820,6 +13183,10 @@ settings.resetCider.resetButton: 重置 Cider
 settings.resetCider.resetting: 正在重置…
 settings.resetCider.selectAll: 全选
 settings.resetCider.title: 重置 Cider
+settings.search.empty: 没有与该搜索匹配的设置。
+settings.search.pages: 页面
+settings.search.resultCount: "{{count}} 项设置匹配"
+settings.search.resultCountOne: 1 项设置匹配
 settings.sleepTimer.endsIn:
   value: 剩余时间：{{remainingTime}}（{{endTime}}）
   source: human
@@ -12843,9 +13210,10 @@ settings.smartPlaylists.section.rules.description: Cider 是否应用嵌入的�
 settings.smartPlaylists.section.rules.descriptionV2: Cider 是否应用播放列表中嵌入的规则。这些规则会在“电源使用”中的“后台刷新时间”下重新运行。
 settings.sweetener.useSystemAccentColor:
   value: 使用系统强调色
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 11
+  superseded_at: 2026-10-16
 settings.takeout.chooseFile: 选择文件…
 settings.takeout.error.badVersion: 该文件缺少版本信息。
 settings.takeout.error.generic: 无法读取该文件。
@@ -12927,9 +13295,10 @@ settings.troubleshooting.logFile.desc:
   issue: 32
 settings.troubleshooting.mkliteDebug:
   value: MKLite 调试日志
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 11
+  superseded_at: 2026-10-16
 settings.troubleshooting.mkliteDebug.desc:
   value: 来自 MKLite 的详细控制台输出，包括 PlayActivity 负载（JSPLAY）、曲目变更和播放状态。可用于与 music.apple.com 对比发送内容。正常使用时请保持关闭。
   source: human
@@ -12972,16 +13341,77 @@ settings.troubleshooting.title:
   source: human
   by: "@Tesutarin"
   issue: 11
+settings.tweaks.animateArtworkOnHover.description: 指针停留在封面上时播放动态封面。
+settings.tweaks.artworkFadeIn.description: 立即显示封面，而不是在加载时淡入。
+settings.tweaks.artworkHighlighting.description: 为网格和列表中的封面添加柔和的阴影和高光。
+settings.tweaks.artworkLoadingMethod.description: 封面滚动到可见区域时再加载（懒加载）。立即加载则会马上载入所有封面。
+settings.tweaks.card.musicVideos: 音乐视频
+settings.tweaks.ciderAudioBadges.description: 在播放器中歌曲旁显示 Cider Audio 标识。
+settings.tweaks.ciderAudioToolbar.description: 在工具栏中显示 Cider Audio 按钮。
+settings.tweaks.compactSidebarSize: 紧凑侧边栏尺寸
+settings.tweaks.contextMenuIcons.description: 哪些菜单项显示图标。
+settings.tweaks.floatingSearchBlur: 浮动搜索背后模糊
+settings.tweaks.floatingSearchClear: 关闭浮动搜索时清除内容
+settings.tweaks.forceMpWindowControls.description: 使用 Cider 自带的窗口按钮，而不是系统按钮。
+settings.tweaks.hideHeroItems.description: 隐藏“浏览”顶部的大型推荐横幅。
+settings.tweaks.homeButtonLocation.description: 主页按钮的位置。
+settings.tweaks.immersiveArtworkHighlight: 沉浸式封面高光
+settings.tweaks.immersiveArtworkHighlight.description: 在沉浸式视图中为封面添加高光。
+settings.tweaks.immersiveBackgroundBpm.description: 让背景随歌曲节奏同步动画。
+settings.tweaks.immersiveControlsTimeout: 沉浸模式控件超时
+settings.tweaks.immersiveControlsTimeout.description: 控件隐藏前的等待秒数。
+settings.tweaks.immersiveHideLyrics.description: 对没有歌词的歌曲隐藏歌词面板。
+settings.tweaks.immersiveLyricGlow: 当前歌词发光
+settings.tweaks.immersiveLyricGlow.description: 为正在演唱的歌词行添加光晕。
+settings.tweaks.immersiveMaxLyricSize.description: 沉浸视图中歌词可放大的最大尺寸。
+settings.tweaks.mainMenuPosition.description: 主菜单按钮的位置。
+settings.tweaks.mavericksLcdStyle: Mavericks LCD 样式
+settings.tweaks.mavericksLcdStyle.description: 在 Mavericks 布局中“正在播放”显示的外观。
+settings.tweaks.miniPlayerAnimatedArtwork.description: 在迷你播放器窗口中播放动态封面。
+settings.tweaks.moveUpLinks.description: 将更多内容的链接置于“浏览”顶部。
+settings.tweaks.musicVideoBadge.description: 当歌曲有音乐视频时，在播放器中显示按钮。
+settings.tweaks.pauseAnimatedOnBlur.description: Cider 不是活动窗口时暂停动态封面。
+settings.tweaks.progressAccent: 强调色进度条
+settings.tweaks.progressAccent.description: 用强调色填充歌曲进度条。
+settings.tweaks.resizableMiniPlayer.description: 允许调整迷你播放器窗口的大小。
+settings.tweaks.richGridNoScrollAnimation: 专辑网格中即时滚动
+settings.tweaks.richGridNoScrollAnimation.description: 直接跳转到专辑，不显示滚动动画。
+settings.tweaks.richGridOpenPage: 从专辑网格以页面形式打开专辑
+settings.tweaks.richGridOpenPage.description: 进入专辑页面，而不是在网格中展开。
+settings.tweaks.richGridScrollPosition: 专辑网格滚动位置
+settings.tweaks.richGridScrollPosition.description: 打开专辑时网格的滚动位置。
+settings.tweaks.scrollbarType.description: 使用 Cider 自带的滚动条还是系统滚动条。
+settings.tweaks.searchStyle: 搜索样式
+settings.tweaks.searchStyle.description: 在标题栏中搜索，还是在页面上方的面板中搜索。
+settings.tweaks.section.artwork: 封面
+settings.tweaks.section.browse: 浏览
+settings.tweaks.section.immersive: 沉浸
+settings.tweaks.section.lyrics: 歌词
+settings.tweaks.section.pagesGrids: 页面与网格
+settings.tweaks.section.playerBar: 播放器栏
+settings.tweaks.section.search: 搜索
+settings.tweaks.section.sidebarNavigation: 侧边栏与导航
+settings.tweaks.section.windowToolbar: 窗口与工具栏
+settings.tweaks.showBitrate.description: 在播放器中歌曲旁显示流媒体比特率。
+settings.tweaks.sidebarPlaylistArtwork.description: 在播放列表名称旁显示其封面。
+settings.tweaks.simpleArtworkMask.description: 使背景封面底部逐渐淡出。
+settings.tweaks.sonomaLyricArc: Sonoma 中的弧形歌词
+settings.tweaks.sonomaRadialMask: 备用 Sonoma 遮罩
+settings.tweaks.volumeIosStyle: iOS 风格音量滑块
+settings.tweaks.volumeIosStyle.description: 以 iPhone 上的样式绘制音量滑块。
+settings.tweaks.windowControlPosition.description: 窗口按钮位于哪一侧。
 settings.updates.action.check:
   value: 检查更新
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 11
+  superseded_at: 2026-10-16
 settings.updates.action.install:
   value: 安装更新
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 11
+  superseded_at: 2026-10-16
 settings.updates.action.restart:
   value: 重启 Cider
   source: human
@@ -12989,9 +13419,10 @@ settings.updates.action.restart:
   issue: 11
 settings.updates.action.retry:
   value: 重试
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 11
+  superseded_at: 2026-10-16
 settings.updates.autoCheck: 自动检查更新
 settings.updates.autoCheck.description: 关闭后，Cider 仅在你打开此页面时检查更新。
 settings.updates.build:
@@ -13015,10 +13446,11 @@ settings.updates.currentlyRunning:
   by: "@Tesutarin"
   issue: 32
 settings.updates.firstInstalled:
-  value: 首次安装版本
-  source: human
+  value: 首次安装
+  source: ai
   by: "@jay900604"
   issue: 74
+  superseded_at: 2026-10-16
 settings.updates.platform:
   value: 平台
   source: human
@@ -13105,47 +13537,54 @@ settings.updates.progress.working.sub:
   by: "@jay900604"
   issue: 74
 settings.updates.section.about:
-  value: 当前版本信息
-  source: human
+  value: 关于当前版本
+  source: ai
   by: "@Tesutarin"
   issue: 32
+  superseded_at: 2026-10-16
 settings.updates.section.alsoAvailable:
-  value: 其他可用版本
-  source: human
+  value: 其他可用项
+  source: ai
   by: "@Tesutarin"
   issue: 11
+  superseded_at: 2026-10-16
 settings.updates.section.history:
   value: 更新历史
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 11
+  superseded_at: 2026-10-16
 settings.updates.section.whatsNew:
-  value: Cider 新功能
-  source: human
+  value: Cider {version} 的新功能
+  source: ai
   by: "@Tesutarin"
   issue: 11
+  superseded_at: 2026-10-16
 settings.updates.status.available:
   value: 有可用更新
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 11
+  superseded_at: 2026-10-16
 settings.updates.status.checking:
-  value: 正在检查更新…
-  source: human
+  value: 正在检查更新...
+  source: ai
   by: "@Tesutarin"
   issue: 11
+  superseded_at: 2026-10-16
 settings.updates.status.failed:
   value: 更新失败
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 11
+  superseded_at: 2026-10-16
 settings.updates.status.idle:
   value: Cider 已是最新版本
   source: human
   by: "@Tesutarin"
   issue: 11
 settings.updates.status.success:
-  value: 需要重新启动
+  value: 需要重启
   source: ai
   by: "@Tesutarin"
   issue: 11
@@ -13157,38 +13596,42 @@ settings.updates.status.working:
   issue: 11
   superseded_at: 2026-06-28
 settings.visual.card.appBackground: 应用背景
+settings.visual.card.behavior: 行为
 settings.visual.card.behaviorLyrics: 行为与歌词
 settings.visual.card.browse: 浏览
 settings.visual.card.contentFilter: 内容过滤
 settings.visual.card.experimental: 实验性
-settings.visual.card.fsrUpscaling: FSR 超分辨率
+settings.visual.card.fsrUpscaling: FSR 放大
 settings.visual.card.moreAnimatedArtwork: 更多动态封面
-settings.visual.card.playerEffects: 播放器特效
+settings.visual.card.playerEffects: 播放器效果
 settings.visual.card.sidebarNavigation: 侧边栏与导航
-settings.visual.card.trackMetadata: 歌曲元数据
-settings.visual.card.ultraHdr: Ultra HDR 增强
+settings.visual.card.trackMetadata: 曲目元数据
+settings.visual.card.ultraHdr: Ultra HDR 升频
 settings.visual.editorialLayout:
-  value: 使用编辑布局
-  source: human
+  value: 使用编辑式布局
+  source: ai
   by: "@Tesutarin"
   issue: 28
+  superseded_at: 2026-10-16
 settings.visual.editorialLayout.desc:
   value: 在特定专辑上显示编辑横幅并应用配色方案
   source: human
   by: "@Tesutarin"
   issue: 28
 settings.visual.editorialPreferenceOrder:
-  value: 编辑偏好顺序
-  source: human
+  value: 编辑推荐排序
+  source: ai
   by: "@Tesutarin"
   issue: 28
+  superseded_at: 2026-10-16
 settings.visual.section.appearance: 外观
 settings.visual.section.appearance.description: 配色方案、强调色和应用背景。
 settings.visual.section.artwork:
-  value: 插图与动态效果
-  source: human
+  value: 封面与动态效果
+  source: ai
   by: "@jay900604"
   issue: 74
+  superseded_at: 2026-10-16
 settings.visual.section.artwork.description:
   value: 动态插图和动态效果偏好设置。
   source: human
@@ -13199,13 +13642,18 @@ settings.visual.section.content.description: 页面布局、浏览偏好设置�
 settings.visual.section.customCss.description: 在 Cider 样式之上应用您自己的 CSS。
 settings.visual.section.layout: 布局
 settings.visual.section.layout.description: 应用布局、播放器样式、侧边栏和导航。
+settings.visual.section.pages: 页面
+settings.visual.section.pages.description: 专辑和播放列表页面的布局方式。
+settings.visual.section.themeColors: 主题与颜色
 settings.visual.section.window: 窗口
 settings.visual.section.window.description: 窗口边框、鲜活度、控件和缩放。
+settings.visual.section.window.descriptionV2: 窗口外观、透明材质、渲染和缩放。
 settings.visual.vibrancy.acrylicDarkness:
   value: 亚克力暗度值
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 28
+  superseded_at: 2026-10-16
 settings.visual.vibrancy.mode.acrylic:
   value: 亚克力
   source: human
@@ -15640,10 +16088,11 @@ term.skip:
   issue: 12
   superseded_at: 2026-07-08
 term.sleepTimer:
-  value: 睡眠定时
-  source: human
+  value: 睡眠定时器
+  source: ai
   by: "@Tesutarin"
   issue: 32
+  superseded_at: 2026-10-16
 term.snippets:
   value: 代码片段
   source: human
@@ -16062,15 +16511,17 @@ term.uniqueSongs:
   issue: 12
   superseded_at: 2026-07-08
 term.unknownArtist:
-  value: 未知艺人
-  source: human
+  value: 未知艺术家
+  source: ai
   by: "@Tesutarin"
   issue: 12
+  superseded_at: 2026-10-16
 term.unknownDevice:
   value: 未知设备
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 12
+  superseded_at: 2026-10-16
 term.unknownError:
   value: 未知错误
   source: human
@@ -16116,9 +16567,10 @@ term.userPresets:
   superseded_at: 2026-07-08
 term.userSubmitted:
   value: 用户提交
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 12
+  superseded_at: 2026-10-16
 term.userToken:
   value: 用户 Token
   source: ai
