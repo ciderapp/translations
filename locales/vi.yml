@@ -61,13 +61,14 @@ action.cast.todevices: Phát đến thiết bị
 action.change: Thay đổi
 action.clear: Xóa
 action.close: Đóng
+action.configure: Cấu hình
 action.connect: Kết nối
 action.connect.createCollabPlaylist: Tạo danh sách phát cộng tác mới
 action.connect.listenTogether: Nghe cùng nhau
 action.connect.signIn: Đăng nhập bằng {account}
 action.connectRemoteApp: Kết nối ứng dụng Remote
 action.copy: Sao chép
-action.copyToken: Sao chép Token
+action.copyToken: Sao chép mã thông báo
 action.create: Tạo
 action.createNew: Tạo mới
 action.createNewPlaylist: Tạo danh sách phát mới
@@ -79,6 +80,7 @@ action.deleteFolder: Bạn có chắc chắn muốn xóa thư mục "{{folderNam
 action.deleteFolder.message: Tất cả thư mục và danh sách phát bên trong thư mục này cũng sẽ bị xóa.
 action.deletePlaylist: Bạn có chắc chắn muốn xóa danh sách phát "{{playlistName}}" không?
 action.deletepreset: Xóa cấu hình sẵn
+action.deny: Từ chối
 action.disablePlugins: Tắt plugin cho phiên này
 action.disconnect: Ngắt kết nối
 action.dislike: Không thích
@@ -623,6 +625,12 @@ assistant.sid.settings.freshDetail: Tạo cả một danh sách phát từ tâm 
 assistant.sid.settings.gemmaHere: Gemma ở đây
 assistant.sid.settings.gpu: Card đồ họa
 assistant.sid.settings.group: Trợ lý
+assistant.sid.settings.helloEdit: Mở một danh sách phát và chọn Chỉnh sửa với Sid, tôi sẽ sắp xếp lại cho gọn gàng.
+assistant.sid.settings.helloFresh: Hãy cho tôi một tâm trạng hoặc vài nghệ sĩ, tôi sẽ tạo cả một danh sách phát.
+assistant.sid.settings.helloRequest: Yêu cầu một bài hát trong lúc phát, tôi sẽ tìm nó trên Apple Music.
+assistant.sid.settings.helloSet: Trong lúc phát, tôi sẽ chọn bài tiếp theo theo khóa và tempo.
+assistant.sid.settings.helloSort: Hãy nhờ tôi sắp xếp danh sách phát từ êm dịu đến sôi động, hoặc để các khóa nhạc liền mạch.
+assistant.sid.settings.helloTrim: Tôi có thể cắt danh sách phát còn một giờ, hoặc giữ nguyên một tempo.
 assistant.sid.settings.inEdit: Khi bạn chỉnh sửa danh sách phát
 assistant.sid.settings.inEditDetail: Chỉnh sửa cùng Sid từ tiêu đề của danh sách phát
 assistant.sid.settings.inImmersive: Trong chế độ toàn màn hình
@@ -651,6 +659,11 @@ assistant.sid.settings.position: Vị trí
 assistant.sid.settings.positionDetail: Vị trí của Sid trên ảnh bìa
 assistant.sid.settings.privacyChat: "Nội dung bạn nhập được giữ trên máy tính này: Sid suy nghĩ cùng Gemma ngay tại đây. Để tìm nhạc, Sid gửi các từ khóa tìm kiếm đến Apple Music, và khi bạn yêu cầu, Sid đọc danh sách phát, lượt nghe gần đây và Apple Music Replay của bạn từ tài khoản Apple Music. Không có gì thay đổi cho đến khi bạn nhấn Áp dụng."
 assistant.sid.settings.privacyEngine: "Nội dung bạn nhập sẽ ở lại trên máy tính này: Sid suy nghĩ bằng {engine} ngay tại đây. Để tìm nhạc, Sid gửi các từ khóa tìm kiếm đến Apple Music, và khi bạn yêu cầu, Sid đọc danh sách phát, lượt phát gần đây và Apple Music Replay của bạn từ tài khoản Apple Music. Không có gì thay đổi cho đến khi bạn nhấn Apply."
+assistant.sid.settings.quipGaming: "{gpu} của bạn và tôi sẽ hợp nhau thôi."
+assistant.sid.settings.quipIntegrated: Đồ họa tích hợp. Tôi sẽ giữ mọi thứ nhẹ nhàng và ấm cúng.
+assistant.sid.settings.quipOther: "{gpu} thật tuyệt. Tôi sẽ tận dụng nó thật tốt."
+assistant.sid.settings.quipSetsOnly: Hiện tại {gpu} của bạn và tôi sẽ chỉ chạy các set nhạc.
+assistant.sid.settings.quipTop: "{gpu} à? Tôi gần như chẳng đổ mồ hôi."
 assistant.sid.settings.reads: Đọc toàn bộ danh sách phát trong {seconds} giây (cần dưới {floor} giây)
 assistant.sid.settings.regular: Thường
 assistant.sid.settings.remove: Xóa
@@ -753,6 +766,19 @@ auth.error.unavailable: Apple ID này không thể dùng Apple Music trong Cider
 auth.error.windowFailed: Không thể mở cửa sổ đăng nhập
 auth.mutExpired.confirm: Đăng nhập
 auth.mutExpired.message: Phiên đăng nhập Apple Music của bạn đã hết hạn. Hãy đăng nhập lại để tiếp tục.
+auth.request.authorizing: Đang cấp quyền…
+auth.request.copyToken: Sao chép mã thông báo
+auth.request.granted: Đã cấp quyền
+auth.request.requestedAccess: Yêu cầu quyền truy cập
+auth.request.revealNote: Đây là lần duy nhất mã thông báo này được hiển thị. Hãy dán vào {app} ngay bây giờ.
+auth.request.subtitle: muốn truy cập Cider
+auth.request.toast.copied: Đã sao chép mã thông báo vào bảng nhớ tạm
+auth.request.toast.failed: Không thể tạo mã thông báo
+auth.request.toast.granted: Đã cấp quyền truy cập cho {app}
+auth.request.toast.title: Ủy quyền
+auth.request.tokenCreated: Đã tạo mã thông báo
+auth.request.tokenFor: cho {app}
+auth.request.trustNote: Chỉ cấp quyền truy cập cho các ứng dụng bạn tin cậy. Bạn có thể thu hồi mã thông báo này bất cứ lúc nào trong Cài đặt › Kết nối.
 auth.signedIn: Đã đăng nhập
 auth.signInRetry.confirm: Thử lại
 auth.signInRetry.message: Không thể mở cửa sổ đăng nhập. Thử lại?
@@ -951,7 +977,7 @@ gallery.searchSnippets: Tìm kiếm snippet
 gallery.submitPlugin: Gửi Plugin của bạn
 gallery.submitSnippet: Gửi Snippet của bạn
 gallery.submitTheme: Gửi Giao diện của bạn
-general.closeToTray: Đóng vào khay hệ thống
+general.closeToTray: Đóng xuống khay
 general.closeToTray.description: Nút đóng sẽ thu nhỏ cửa sổ Cider
 home.artistsFeed: Bảng tin nghệ sĩ của bạn
 home.artistsFeed.noArtist: Theo dõi một số nghệ sĩ để xem các bản phát hành mới nhất của họ
@@ -2865,7 +2891,7 @@ oobe.amupsell.text: |-
   Cider sẽ không hoạt động với Apple Music Voice Plan hoặc một số đăng ký dùng thử khuyến mại. Nếu bạn đã có đăng ký Apple Music đủ điều kiện, hãy nhấp vào Tiếp theo để tiếp tục.
 oobe.amupsell.title: Trước khi bắt đầu
 oobe.appearance.accentHint: Được dùng cho các nút, vùng nổi bật và thanh tiến trình trong ứng dụng. Hãy thử một màu để xem trước trực tiếp.
-oobe.appearance.subtitle: Chọn bảng màu và màu nhấn. Bạn có thể thay đổi bất kỳ lúc nào trong Cài đặt → Giao diện.
+oobe.appearance.subtitle: Chọn bảng màu và màu nhấn. Bạn có thể thay đổi các mục này bất cứ lúc nào trong Cài đặt › Giao diện.
 oobe.appearance.title: Cá nhân hóa Cider
 oobe.appleNotice: "Lưu ý: Apple Music là nhãn hiệu của Apple Inc. Cider là ứng dụng khách bên thứ ba dành cho Apple Music và không liên kết với Apple Inc."
 oobe.audio.advancedFunctionality: ""
@@ -2880,7 +2906,7 @@ oobe.connections.atmosRatingsHint: Xem và chia sẻ những album có âm thanh
 oobe.connections.lastfm.connected: Đã kết nối
 oobe.connections.lastfm.connectedAs: Đã kết nối với tư cách {username}
 oobe.connections.lastfm.hint: Scrobble lịch sử nghe nhạc của bạn.
-oobe.connections.moreHint: Các tích hợp khác như Libre.fm, Maloja, ListenBrainz, cùng với WebSockets và RPC API nằm trong Cài đặt → Kết nối.
+oobe.connections.moreHint: Các tích hợp khác như Libre.fm, Maloja, ListenBrainz, cùng các API WebSockets và RPC nằm trong Cài đặt › Kết nối.
 oobe.connections.pairDevice: Ghép đôi thiết bị
 oobe.connections.remoteHint: Điều khiển Cider từ điện thoại của bạn.
 oobe.connections.subtitle: Liên kết Cider với các ứng dụng và dịch vụ khác của bạn.
@@ -3074,10 +3100,22 @@ playlist.refresh.title: Cần làm mới danh sách phát
 playlist.suggestions.subtitle: Xem trước và thêm vào danh sách phát
 playlist.suggestions.title: Bài hát gợi ý
 playlist.untitled: Chưa có tiêu đề
+plugin.install.byAuthor: bởi {author}
+plugin.install.identifier: Mã định danh
+plugin.install.install: Cài đặt
+plugin.install.installing: Đang cài đặt…
+plugin.install.source: Nguồn
+plugin.install.subtitle: Một plugin của Cider muốn được thêm vào thư viện của bạn.
+plugin.install.title: Cài đặt plugin
+plugin.install.update: Cập nhật
+plugin.install.updateSubtitle: Một plugin của Cider muốn thay thế phiên bản đã cài đặt.
+plugin.install.updateTitle: Cập nhật plugin
+plugin.install.warning: Plugin có thể chạy mã bên trong Cider với quyền truy cập vào phát nhạc, hàng đợi và thư viện của bạn. Chỉ cài đặt plugin từ các nguồn bạn tin cậy.
 podcast.comingSoon.description: Tính năng hỗ trợ Podcast đang được xây dựng lại sau những thay đổi lớn về cách Cider xử lý phát nhạc. Tính năng này sẽ quay trở lại trong một bản cập nhật tương lai.
 podcast.comingSoon.hide: Ẩn khỏi thanh bên
 podcast.comingSoon.hint: Bạn có thể bật lại trong cài đặt Giao diện, dưới mục Thanh bên & Điều hướng.
 podcast.comingSoon.title: Podcast sắp ra mắt
+podcast.comingSoon.tweaksHint: Bạn có thể bật lại trong cài đặt Tùy chỉnh, mục Thanh bên và điều hướng.
 podcast.episodes: Tập
 podcast.followedOnCider: Đang theo dõi trên Cider
 podcast.followOnCider: Theo dõi trên Cider
@@ -3152,7 +3190,7 @@ settings.about.sponsors.opencollective: Open Collective
 settings.about.thirdPartyLicenses: Giấy phép bên thứ ba
 settings.about.thirdPartyLicenses.desc: Đây là các tài nguyên, thư viện và công cụ của bên thứ ba mà Cider sử dụng. Vui lòng tham khảo giấy phép tương ứng của chúng để biết thêm thông tin.
 settings.about.viewLicense: Xem giấy phép
-settings.accessibility.card.textSize: Chữ & Kích thước
+settings.accessibility.card.textSize: Văn bản & kích thước
 settings.accessibility.card.visibility: Khả năng hiển thị
 settings.accessibility.section.display: Màn hình
 settings.accessibility.section.display.description: Độ đậm của chữ, tỷ lệ giao diện, độ tương phản và chỉ báo tiêu điểm.
@@ -3160,7 +3198,12 @@ settings.accessibility.section.motion: Chuyển động
 settings.accessibility.section.motion.description: Mức độ sử dụng hiệu ứng chuyển động của các nút, thẻ và các bề mặt khác.
 settings.accessibility.section.soundEffects: Hiệu ứng âm thanh
 settings.accessibility.section.soundEffects.description: Âm thanh giao diện cho các nút, công tắc, thanh trượt và mức âm lượng của chúng.
-settings.advanced.section.backups: Sao lưu & Đặt lại
+settings.accessibility.soundPreview.click: Nhấp
+settings.accessibility.soundPreview.slider: Thanh trượt
+settings.accessibility.soundPreview.switch: Công tắc
+settings.accounts.appleMusic: Apple Music
+settings.accounts.appleMusic.description: Bật Apple Music
+settings.advanced.section.backups: Sao lưu & đặt lại
 settings.advanced.section.backups.description: Lưu bản sao cài đặt của bạn, khôi phục bản sao Cider đã lưu cho bạn hoặc đặt mọi thứ về mặc định.
 settings.advanced.section.client: Ứng dụng này
 settings.advanced.section.client.description: Giới hạn hiệu năng và các cài đặt thuộc về ứng dụng Cider đang chạy thay vì tài khoản của bạn.
@@ -3173,15 +3216,15 @@ settings.artwork.highlighting: Làm nổi bật ảnh bìa
 settings.artwork.hiresImages: Sử dụng hình ảnh độ phân giải cao
 settings.artwork.hiresImages.warning: Có thể làm tăng thời gian tải và giảm hiệu năng.
 settings.audio.atmos: Dolby Atmos
-settings.audio.atmos.binaural.desc: Atmos được kết xuất dưới dạng âm thanh nổi hai tai (binaural stereo) qua CiderAudio. Crossfade, Automix, Seamless Transitions tiếp tục hoạt động bình thường.
+settings.audio.atmos.binaural.desc: Atmos được kết xuất thành âm thanh nổi nhị thiên qua CiderAudio. Crossfade, Automix và chuyển tiếp liền mạch vẫn hoạt động như mong đợi.
 settings.audio.atmos.description: Cấu hình phát Atmos cho thiết bị đầu ra hiện tại của bạn.
-settings.audio.atmos.normalizationHint: Các bản phối Dolby Atmos nhỏ hơn bản stereo gốc. Bật Chuẩn hóa âm thanh để cân bằng âm lượng.
+settings.audio.atmos.normalizationHint: Các bản phối Dolby Atmos nhỏ hơn bản stereo gốc. Bật chuẩn hóa âm thanh để cân bằng lại.
 settings.audio.atmos.off.desc: Đã tắt Atmos. Tất cả nội dung sẽ phát dưới dạng âm thanh nổi tiêu chuẩn.
 settings.audio.atmos.passthrough: Passthrough
 settings.audio.atmos.passthrough.desc: Bỏ qua mọi quá trình xử lý âm thanh. Atmos đa kênh được gửi trực tiếp đến thiết bị. Lý tưởng cho đầu thu AV.
-settings.audio.atmos.passthrough.descV2: Gửi âm thanh Atmos đa kênh trực tiếp đến thiết bị, dành cho bộ thu AV. Audio Lab, bộ cân bằng và Chế độ nghe sẽ bị bỏ qua.
+settings.audio.atmos.passthrough.descV2: Gửi Atmos đa kênh trực tiếp đến thiết bị, dành cho bộ thu AV. Audio Lab, bộ cân bằng và chế độ nghe sẽ bị bỏ qua.
 settings.audio.atmos.passthroughActive: Chế độ truyền qua đang hoạt động — thay đổi trong cài đặt đầy đủ.
-settings.audio.atmos.standard.desc: Atmos đa kênh với bộ xử lý CiderAudio. Crossfade, Automix, Seamless Transitions tiếp tục hoạt động bình thường.
+settings.audio.atmos.standard.desc: Atmos đa kênh với xử lý CiderAudio. Crossfade, Automix và chuyển tiếp liền mạch vẫn hoạt động như mong đợi.
 settings.audio.atmosMode: Chế độ Atmos
 settings.audio.atmosMode.switchFromPassthroughConfirm: Chuyển đổi từ chế độ truyền qua yêu cầu làm mới ứng dụng. Tiếp tục?
 settings.audio.atmosMode.switchToPassthroughConfirm: Chuyển đổi sang chế độ truyền qua yêu cầu làm mới ứng dụng. Tiếp tục?
@@ -3192,7 +3235,7 @@ settings.audio.card.streaming: Phát trực tuyến
 settings.audio.ciderAudio: Cider Audio
 settings.audio.ciderAudio.description: Hệ thống âm thanh được thiết kế và tinh chỉnh riêng mang lại trải nghiệm âm thanh chất lượng cao, phong phú. Được khuyên dùng thay cho bộ chỉnh âm truyền thống.
 settings.audio.ciderAudio.enable: Bật Cider Audio
-settings.audio.ciderAudio.requiredHint: Yêu cầu đối với Bộ chỉnh âm
+settings.audio.ciderAudio.requiredHint: Cần để sử dụng bộ cân bằng
 settings.audio.crossfade: Crossfade
 settings.audio.hostCapture.apps: Ứng dụng kích hoạt
 settings.audio.hostCapture.apps.count: "{{ n }} ứng dụng sẽ kích hoạt thu âm."
@@ -3218,11 +3261,11 @@ settings.audio.hostCapture.bitDepthHint: Tự động sử dụng độ sâu bit
 settings.audio.hostCapture.exclusiveNote: Đầu ra độc quyền, bit-transparent, không thể thu âm.
 settings.audio.hostCapture.gain: Điều chỉnh mức đầu ra
 settings.audio.hostCapture.gainHint: Khớp âm lượng thu được với đầu ra bình thường.
-settings.audio.hostCapture.mode: Chế độ đầu ra âm thanh
+settings.audio.hostCapture.mode: Chế độ xuất âm thanh
 settings.audio.hostCapture.modeCapture: Thu âm
 settings.audio.hostCapture.modeCaptureLong: Có thể thu âm (OBS, Discord)
 settings.audio.hostCapture.modeExclusive: Độc quyền
-settings.audio.hostCapture.modeExclusiveLong: WASAPI Độc quyền
+settings.audio.hostCapture.modeExclusiveLong: WASAPI độc quyền
 settings.audio.hostCapture.modeHintCapture: Phát âm thanh từ tiến trình Cider để OBS, Discord và các ứng dụng khác có thể thu âm.
 settings.audio.hostCapture.modeHintExclusive: Đầu ra bit-transparent truyền thẳng đến DAC của bạn, bỏ qua bộ trộn Windows. Không thể thu âm.
 settings.audio.hostCapture.modeHintOff: "Tắt: âm thanh phát bình thường từ tiến trình WebView2. Không khả dụng khi truyền qua Atmos hoặc phát video ca nhạc."
@@ -3248,10 +3291,10 @@ settings.audio.occlusion.game.desc: Nhạc sẽ tự động giảm ở các t�
 settings.audio.occlusion.off.desc: Nhạc được phát nguyên bản.
 settings.audio.occlusion.passthroughNote: Không khả dụng khi tính năng truyền thẳng Dolby Atmos đang hoạt động.
 settings.audio.occlusion.passthroughNote.short: Không khả dụng khi truyền thẳng Atmos đang hoạt động.
-settings.audio.outputDevice: Chọn thiết bị đầu ra âm thanh
+settings.audio.outputDevice: Chọn thiết bị xuất âm thanh
 settings.audio.outputDeviceHint: Chọn thiết bị đầu ra âm thanh để phát.
 settings.audio.outputDeviceHintHost: Tính năng thu âm thanh đang bật, phát nhạc sẽ sử dụng thiết bị đầu ra Windows này.
-settings.audio.section.ciderAudio: Cider Audio & Chỉ báo
+settings.audio.section.ciderAudio: Cider Audio & chỉ báo
 settings.audio.section.ciderAudio.description: Bộ xử lý Cider Audio và các huy hiệu hiển thị khi bài hát đang phát.
 settings.audio.section.currentSignal: Tín hiệu hiện tại
 settings.audio.section.mixing: Trộn âm
@@ -3262,6 +3305,35 @@ settings.audio.section.playback: Phát lại
 settings.audio.section.playback.description: Chất lượng âm thanh, âm thanh không gian, chế độ nghe và tốc độ phát podcast.
 settings.audio.section.volume: Âm lượng
 settings.audio.section.volume.description: Cân bằng âm lượng, mức thay đổi âm lượng khi cuộn chuột và cách hiển thị của thanh trượt.
+settings.audio.signal.atmosCodecs: Có sẵn codec Atmos
+settings.audio.signal.atmosNativeMac: Gốc (macOS)
+settings.audio.signal.atmosNativeMacTooltip: Dolby Atmos được giải mã trực tiếp bởi macOS CoreAudio. Việc kết xuất âm thanh không gian do hệ thống xử lý.
+settings.audio.signal.atmosOffTooltip: Atmos đã bị tắt cho thiết bị này. Nội dung phát dưới dạng stereo tiêu chuẩn.
+settings.audio.signal.atmosOffTooltipMac: Atmos đã bị tắt cho thiết bị này.
+settings.audio.signal.atmosSupported: Được hỗ trợ
+settings.audio.signal.binauralSubtitle: Kết xuất tai nghe
+settings.audio.signal.binauralTooltip: Nội dung Atmos được kết xuất thành stereo nhị âm qua quy trình CiderAudio.
+settings.audio.signal.channels: "{count} kênh"
+settings.audio.signal.codecs: Codec
+settings.audio.signal.deviceRateTooltip: Tần số lấy mẫu của thiết bị hiện tại
+settings.audio.signal.directOutput: Xuất trực tiếp
+settings.audio.signal.directOutputChannels: Xuất trực tiếp ({count} kênh)
+settings.audio.signal.loading: Đang tải…
+settings.audio.signal.nativeMatch: Khớp gốc
+settings.audio.signal.noAtmosCodecs: Không có codec Atmos
+settings.audio.signal.output: Đầu ra
+settings.audio.signal.passthroughMode: Chế độ truyền thẳng
+settings.audio.signal.passthroughSubtitle: Bỏ qua xử lý âm thanh, xuất trực tiếp ra thiết bị
+settings.audio.signal.passthroughTooltip: Âm thanh bỏ qua mọi xử lý và được gửi trực tiếp đến thiết bị. Các tính năng CiderAudio như crossfade, Automix và chuyển tiếp liền mạch sẽ không hoạt động.
+settings.audio.signal.sampleRate: Tần số lấy mẫu
+settings.audio.signal.source: Nguồn {rate}
+settings.audio.signal.sourceRateTooltip: Tốc độ phát của Apple Music
+settings.audio.signal.standardSubtitle: Đa kênh + CiderAudio
+settings.audio.signal.standardTooltip: Nội dung Atmos đa kênh được phát qua xử lý CiderAudio và kết xuất theo khả năng của thiết bị.
+settings.audio.signal.stereo: Stereo
+settings.audio.signal.surround51: Âm thanh vòm 5.1
+settings.audio.signal.surround71: Âm thanh vòm 7.1+
+settings.audio.signal.upsamplingTooltip: Hệ thống đang nội suy tần số lấy mẫu từ nguồn Apple Music
 settings.automix.allowTempoKeyShifts: Cho phép thay đổi Nhịp độ/Tông
 settings.automix.allowTempoKeyShiftsHint: Cho phép thay đổi nhỏ để giữ cho các chuyển tiếp luôn tràn đầy năng lượng. (Tạm thời bị vô hiệu hóa, đang được làm lại.)
 settings.automix.description: Chuyển tiếp thông minh giữa các bài hát dựa trên nhịp độ và tông nhạc.
@@ -3271,7 +3343,7 @@ settings.automix.disableForAlbums: Album
 settings.automix.disableForAlbumsHint: Không áp dụng Automix khi phát từ album.
 settings.automix.disableForAutoplayContinuation: Tiếp tục tự động phát
 settings.automix.disableForAutoplayContinuationHint: Không áp dụng automix khi chuyển sang đài phát hoặc các bài hát tự động phát sau khi danh sách ban đầu kết thúc.
-settings.automix.disableForDjMixes: Bản mix của DJ
+settings.automix.disableForDjMixes: Bản mix DJ
 settings.automix.disableForDjMixesHint: Không áp dụng Automix cho các bản mix của DJ và bản mix liên tục.
 settings.automix.disableForLiveAlbums: Album trực tiếp
 settings.automix.disableForLiveAlbumsHint: Không áp dụng automix cho các bản ghi âm trực tiếp và buổi hòa nhạc.
@@ -3280,7 +3352,7 @@ settings.automix.disableForPlaylistsHint: Không áp dụng Automix khi phát t�
 settings.automix.enable: Bật Automix
 settings.automix.normalizeDuration: Chuẩn hóa thời lượng
 settings.automix.normalizeDurationHint: Thời gian hòa trộn để khớp độ lớn ({ms}ms)
-settings.automix.spectralSeparation: Phân tách phổ
+settings.automix.spectralSeparation: Tách phổ
 settings.automix.spectralSeparationHint: Mức độ phân tách tần số giữa hai bài hát trong quá trình chuyển tiếp.
 settings.automix.spectralSeparationHintV2: Mức độ tách hai bản nhạc ra khỏi nhau về tần số trong quá trình chuyển tiếp ({value}).
 settings.automix.speedSettle: Thời gian ổn định tốc độ
@@ -3295,9 +3367,9 @@ settings.cache.artwork: Ảnh bìa
 settings.cache.clear: Xóa bộ nhớ đệm
 settings.cache.content: Nội dung
 settings.cache.entries: "Số lượng mục: {{ count }}"
-settings.cache.homeData: Dữ liệu Trang chủ
+settings.cache.homeData: Dữ liệu trang chủ
 settings.cache.library: Thư viện
-settings.cache.marketplaceListings: Danh sách Cửa hàng
+settings.cache.marketplaceListings: Danh sách marketplace
 settings.cache.playlistIndex: Chỉ mục danh sách phát
 settings.cache.prompt.artwork.cleared.message: Bộ nhớ đệm ảnh bìa đã được xóa. Làm mới ngay?
 settings.cache.prompt.artwork.cleared.title: Đã xóa bộ nhớ đệm ảnh bìa
@@ -3306,10 +3378,10 @@ settings.cache.prompt.clearAll.cleared.message: Bộ nhớ đệm đã được 
 settings.cache.prompt.clearAll.cleared.title: Đã xóa bộ nhớ đệm
 settings.cache.prompt.clearAll.title: Xóa bộ nhớ đệm
 settings.cache.prompt.marketplace.cleared.message: Bộ nhớ đệm đã được xóa. Làm mới ngay?
-settings.cache.prompt.marketplace.cleared.title: Đã xóa bộ nhớ đệm Marketplace
+settings.cache.prompt.marketplace.cleared.title: Đã xóa bộ nhớ đệm marketplace
 settings.cache.prompt.playlist.cleared.message: Bộ nhớ đệm đã được xóa. Làm mới ngay?
 settings.cache.prompt.playlist.cleared.title: Đã xóa bộ nhớ đệm danh sách phát
-settings.cache.recentlyModifiedPlaylists: Danh sách phát đã sửa đổi gần đây
+settings.cache.recentlyModifiedPlaylists: Danh sách phát được chỉnh sửa gần đây
 settings.cache.storageUsed: "Dung lượng đã dùng: {{ usage }}"
 settings.client.genten.enableTrayIcon: Bật biểu tượng khay hệ thống
 settings.client.genten.enableTrayIcon.desc: Bật hoặc tắt biểu tượng trên khay hệ thống
@@ -3467,7 +3539,7 @@ settings.connectivity.lastfm.useAlbumArtist.description: Scrobble bằng cách s
 settings.connectivity.legacyToken: Cũ (toàn quyền truy cập)
 settings.connectivity.legacyToken.tooltip: Token này có trước khi có quyền truy cập theo phạm vi và cấp mọi quyền. Hãy cấp lại để giới hạn phạm vi.
 settings.connectivity.noDevices: Không có thiết bị nào được kết nối
-settings.connectivity.requireTokens: Yêu cầu Token API
+settings.connectivity.requireTokens: Yêu cầu mã API
 settings.connectivity.requireTokens.desc: Khi bật, tất cả các yêu cầu API phải bao gồm một token hợp lệ.
 settings.connectivity.scrobbler: Scrobbler
 settings.connectivity.scrobbler.blacklist: Danh sách đen
@@ -3533,7 +3605,7 @@ settings.connectivity.scrobbler.trigger.mode: Chế độ kích hoạt
 settings.connectivity.scrobbler.trigger.mode.desc: Thời điểm gửi scrobble. "Điều kiện nào đến trước" là quy tắc Last.fm cổ điển.
 settings.connectivity.scrobbler.trigger.percent: Phần trăm
 settings.connectivity.scrobbler.zeroOff: Nhập 0 để tắt bộ lọc này.
-settings.connectivity.section.communityRatings: Đánh giá từ cộng đồng
+settings.connectivity.section.communityRatings: Đánh giá cộng đồng
 settings.connectivity.section.communityRatings.description: Đánh giá bản phối Dolby Atmos từ những người nghe Cider khác trên trang album, và liệu đánh giá của bạn có được chia sẻ lại hay không.
 settings.connectivity.section.discord.description: Những gì Cider hiển thị trên hồ sơ Discord của bạn khi đang phát nhạc, và ứng dụng khách mà nó kết nối qua.
 settings.connectivity.section.externalApplications.description: Cổng WebSockets và máy chủ RPC mà các chương trình khác sử dụng để đọc thông tin phát nhạc và điều khiển Cider, cũng như chương trình nào được phép truy cập.
@@ -3541,21 +3613,22 @@ settings.connectivity.section.parties.description: Nghe nhạc đồng bộ vớ
 settings.connectivity.section.vrOverlay.description: Trình phát Cider và các bảng có thể ghim trên SteamVR và VDXR, giao tiếp với ứng dụng này qua RPC.
 settings.connectivity.tokenCopied: Đã sao chép token vào khay nhớ tạm
 settings.connectivity.tokens: Token
+settings.connectivity.tokens.empty: Chưa có mã nào.
 settings.contentFilter.description: Các mục trong Khám phá và Nghe ngay có tiêu đề hoặc nội dung khớp với bất kỳ từ khóa nào trong số này sẽ bị ẩn.
 settings.contentFilter.empty: Chưa có từ khóa nào được thêm.
 settings.contentFilter.inputPlaceholder: Thêm từ khóa...
-settings.contentFilter.title: Bộ lọc từ khóa
-settings.crossfade.advanced: Cài đặt chuyển tiếp âm thanh nâng cao
+settings.contentFilter.title: Lọc từ khóa
+settings.crossfade.advanced: Cài đặt chuyển tiếp nâng cao
 settings.crossfade.automixStillBlends: Automix đang bật, nên các bài hát vẫn có thể hòa vào nhau. Tắt Automix bên dưới để ngừng mọi hiệu ứng hòa trộn.
 settings.crossfade.description: Giảm dần âm lượng của bài hát hiện tại trong khi tăng dần âm lượng của bài hát tiếp theo một cách mượt mà.
-settings.crossfade.disableFor: Tắt chuyển tiếp âm thanh cho...
+settings.crossfade.disableFor: Tắt chuyển tiếp cho...
 settings.crossfade.duration: Thời lượng
-settings.crossfade.enable: Bật chuyển tiếp âm thanh
+settings.crossfade.enable: Bật chuyển tiếp
 settings.crossfade.exclusions.albums: Album
 settings.crossfade.exclusions.albums.description: Không chuyển tiếp âm thanh khi phát từ album.
 settings.crossfade.exclusions.autoplayContinuation: Tiếp tục tự động phát
 settings.crossfade.exclusions.autoplayContinuation.description: Không crossfade khi chuyển sang đài phát hoặc các bài hát tự động phát sau khi danh sách ban đầu kết thúc.
-settings.crossfade.exclusions.djMixes: Bản phối DJ
+settings.crossfade.exclusions.djMixes: DJ mix
 settings.crossfade.exclusions.djMixes.description: Không chuyển tiếp âm thanh cho các bản phối DJ và bản phối liên tục.
 settings.crossfade.exclusions.liveAlbums: Album trực tiếp
 settings.crossfade.exclusions.liveAlbums.description: Không chuyển tiếp âm thanh cho các bản ghi âm trực tiếp và buổi hòa nhạc.
@@ -3563,7 +3636,7 @@ settings.crossfade.exclusions.playlists: Danh sách phát
 settings.crossfade.exclusions.playlists.description: Không chuyển tiếp âm thanh khi phát từ danh sách phát.
 settings.crossfade.loudnessSensitivity: Độ nhạy âm lượng
 settings.crossfade.loudnessSensitivity.description: Cân bằng sự khác biệt về âm lượng ({{ value }}%)
-settings.crossfade.smoothSkip: Bỏ qua mượt mà
+settings.crossfade.smoothSkip: Chuyển bài mượt
 settings.crossfade.smoothSkip.description: Tự động tăng/giảm âm lượng giữa các bài hát khi bỏ qua.
 settings.crossfade.tempoSensitivity: Độ nhạy nhịp độ
 settings.crossfade.tempoSensitivity.description: Phản hồi đối với các thay đổi nhịp độ ({{ value }}%)
@@ -3606,7 +3679,7 @@ settings.extensions.addBuiltInSnippet: Thêm đoạn mã tích hợp
 settings.extensions.browsePluginMarket: Duyệt cửa hàng plugin
 settings.extensions.browseThemeMarket: Duyệt cửa hàng giao diện
 settings.extensions.byAuthor: bởi {author}
-settings.extensions.checkUpdates: Kiểm tra bản cập nhật tiện ích mở rộng khi khởi động
+settings.extensions.checkUpdates: Kiểm tra bản cập nhật tiện ích khi khởi động
 settings.extensions.checkUpdates.desc: Tìm kiếm bản cập nhật cho giao diện, đoạn mã và plugin mỗi khi Cider khởi động.
 settings.extensions.createPlugin: Tạo plugin
 settings.extensions.createSnippet: Tạo đoạn mã mới
@@ -3637,6 +3710,7 @@ settings.extensions.plugins.uninstallTitle: Gỡ cài đặt plugin
 settings.extensions.refresh: Làm mới tiện ích mở rộng
 settings.extensions.refresh.desc: Quét lại giao diện, đoạn mã và plugin từ ổ đĩa.
 settings.extensions.refreshed: Đã làm mới giao diện, đoạn mã và plugin
+settings.extensions.snippets.author: Bởi {{ author }}
 settings.extensions.snippets.created: Đã tạo đoạn mã
 settings.extensions.snippets.createTitle: Tạo đoạn mã CSS mới
 settings.extensions.snippets.deleteConfirm: Bạn có chắc chắn muốn xóa đoạn mã CSS này không? Hành động này không thể hoàn tác.
@@ -3646,12 +3720,15 @@ settings.extensions.snippets.empty: Chưa cài đặt đoạn mã CSS nào.
 settings.extensions.snippets.exported: Đã xuất đoạn mã
 settings.extensions.snippets.imported: Đã nhập {{ count }} đoạn mã
 settings.extensions.snippets.importFailed: "Không thể nhập {{ file }}: {{ error }}"
+settings.extensions.snippets.invalidFile: "Định dạng tệp không hợp lệ: {{ file }}"
 settings.extensions.snippets.namePrompt: Nhập tên cho đoạn mã CSS mới của bạn.
 settings.extensions.snippets.orderUpdated: Đã cập nhật thứ tự
 settings.extensions.snippets.saved: Đã lưu đoạn mã
 settings.extensions.themeCreated: Đã tạo chủ đề mới thành công
 settings.extensions.themes.activeCount: "{{ count }} đang hoạt động"
 settings.extensions.themes.empty: Chưa cài đặt chủ đề nào.
+settings.extensions.themes.getMore: Tải thêm giao diện
+settings.extensions.themes.refreshList: Làm mới danh sách giao diện
 settings.extensions.themes.stylesheetMany: "{{ count }} bảng kiểu"
 settings.extensions.themes.stylesheetOne: 1 bảng kiểu
 settings.extensions.viewOnMarketplace: Xem trên Marketplace
@@ -3677,6 +3754,7 @@ settings.general.section.language: Ngôn ngữ
 settings.general.section.language.description: Ngôn ngữ giao diện, và cách báo cáo hoặc ghi nhận các bản dịch.
 settings.general.section.playback: Phát nhạc
 settings.general.section.playback.description: Hành động của nút phát khi không có gì đang phát.
+settings.general.section.playback.descriptionV2: Nút phát hoạt động thế nào khi không có gì đang phát và nơi có thể thay đổi tốc độ phát.
 settings.general.section.privacy: Quyền riêng tư
 settings.general.section.privacy.description: Tên Cider dùng để chào bạn, và liệu ứng dụng có thể sử dụng vị trí của bạn hay không.
 settings.general.section.queue: Hàng chờ
@@ -3753,7 +3831,7 @@ settings.intensive.animatedArtworkQuality.description: Chất lượng cao hơn 
 settings.intensive.catalogAnimatedArtwork.description: Phát nhiều ảnh bìa động cùng lúc khi duyệt danh mục.
 settings.intensive.characterFlow.description: Tạo hoạt ảnh cho từng ký tự lời bài hát thay vì cả dòng.
 settings.intensive.confirm.enable: Bật
-settings.intensive.confirm.message: Tính năng này tiêu tốn nhiều hiệu năng và có thể làm tăng đáng kể mức sử dụng CPU/GPU, gây nóng máy và hao pin — đặc biệt là trên phần cứng cấu hình thấp. Bạn có thể xem lại các tính năng ngốn tài nguyên bất kỳ lúc nào qua nút hình bóng đèn ở đầu Cài đặt.
+settings.intensive.confirm.message: Tính năng này tiêu tốn nhiều hiệu năng và có thể làm tăng đáng kể mức sử dụng CPU/GPU, nhiệt độ và hao pin, đặc biệt trên thiết bị cấu hình thấp. Bạn có thể xem lại các tính năng tốn tài nguyên bất cứ lúc nào trong Cài đặt › Mức sử dụng năng lượng.
 settings.intensive.emotionEngine.description: Phân tích ảnh bìa album để tạo ra bảng màu phù hợp.
 settings.intensive.fsrUpscale.description: Nâng cấp độ phân giải ảnh bìa album trên GPU bằng FidelityFX Super Resolution.
 settings.intensive.immersiveAnimatedArtwork.description: Phát ảnh bìa động trong chế độ xem Đắm chìm.
@@ -3770,13 +3848,13 @@ settings.intensive.viewTransitions.description: Tạo hoạt ảnh chuyển cả
 settings.intensive.warning: Tiêu tốn hiệu năng — có thể gây ngốn CPU/GPU.
 settings.keybindings.recordingHint: Đang ghi. Nhấn Escape để hủy
 settings.lyrics.card.providers: Nhà cung cấp
-settings.lyrics.card.songOverrides: Ghi đè bài hát
+settings.lyrics.card.songOverrides: Ghi đè theo bài hát
 settings.lyrics.localeOverrides: Quy tắc theo ngôn ngữ
 settings.lyrics.localeOverrides.add: Thêm ghi đè ngôn ngữ
 settings.lyrics.localeOverrides.audioLocale: Ngôn ngữ âm thanh
 settings.lyrics.localeOverrides.desc: Thiết lập nhà cung cấp và tùy chọn dịch thuật tùy chỉnh cho các bài hát bằng ngôn ngữ cụ thể. Khi ngôn ngữ âm thanh của bài hát khớp với một quy tắc, các cài đặt này sẽ ghi đè lên mặc định.
 settings.lyrics.localeOverrides.dialogTitle.add: Thêm ghi đè ngôn ngữ
-settings.lyrics.localeOverrides.dialogTitle.edit: Sửa ghi đè ngôn ngữ
+settings.lyrics.localeOverrides.dialogTitle.edit: Chỉnh sửa ghi đè ngôn ngữ
 settings.lyrics.localeOverrides.empty: Chưa có quy tắc nào. Sử dụng nút + để thêm.
 settings.lyrics.localeOverrides.overrideTranslation: Ghi đè bản dịch
 settings.lyrics.localeOverrides.preferredProvider: Nhà cung cấp ưu tiên
@@ -3784,7 +3862,7 @@ settings.lyrics.localeOverrides.provider.apple: Apple Music
 settings.lyrics.localeOverrides.provider.auto: Mặc định (Tự động)
 settings.lyrics.localeOverrides.provider.mxm: Musixmatch
 settings.lyrics.localeOverrides.provider.netease: NetEase
-settings.lyrics.localeOverrides.provider.user: Người dùng đóng góp
+settings.lyrics.localeOverrides.provider.user: Người dùng gửi
 settings.lyrics.localeOverrides.providerLabel: "Nhà cung cấp:"
 settings.lyrics.localeOverrides.translateTo: Dịch sang
 settings.lyrics.localeOverrides.translateToLabel: "Dịch sang:"
@@ -3807,14 +3885,14 @@ settings.lyrics.player.reset: Đặt lại về mặc định
 settings.lyrics.player.speed: Tốc độ hiệu ứng
 settings.lyrics.player.speed.desc: Tốc độ chuyển dòng đàn hồi — giá trị cao hơn giúp chuyển dòng nhanh và dứt khoát hơn.
 settings.lyrics.player.title: Hiệu ứng lời bài hát
-settings.lyrics.scroll.duration: Thời gian cuộn lời bài hát
+settings.lyrics.scroll.duration: Thời lượng cuộn lời
 settings.lyrics.scroll.duration.desc1: Điều chỉnh tốc độ cuộn lời bài hát bằng
 settings.lyrics.scroll.duration.desc2: Điều này sẽ không ảnh hưởng đến tốc độ của bài hát.
-settings.lyrics.scroll.easing: Hàm chuyển động (Easing)
+settings.lyrics.scroll.easing: Hàm chuyển động
 settings.lyrics.scroll.easing.curveExample: "Ví dụ đường cong:"
 settings.lyrics.scroll.easing.description1: Điều chỉnh hàm chuyển động của cuộn lời bài hát. Đây là một thuộc tính
 settings.lyrics.scroll.easing.description2: CSS.
-settings.lyrics.scroll.easing.namedExample: "Ví dụ theo tên:"
+settings.lyrics.scroll.easing.namedExample: "Ví dụ có tên:"
 settings.lyrics.scroll.easing.presetDefault: Giá trị mặc định, chuyển vào nhanh và chuyển ra mượt
 settings.lyrics.scroll.easing.presetSmooth: Chuyển vào và ra mượt mà - (bởi cryptofyre)
 settings.lyrics.scroll.easing.presetSpring: Hiệu ứng đàn hồi (Spring) - (bởi SoNothing)
@@ -3835,8 +3913,8 @@ settings.lyrics.trackOverrides.empty: Chưa có mục nào bị ghi đè. Bất 
 settings.lyrics.trackOverrides.lyricsForced: Bắt buộc dùng lời bài hát
 settings.lyrics.trackOverrides.markedInstrumental: Đã đánh dấu là nhạc không lời
 settings.lyrics.trackOverrides.providerLabel: "Nhà cung cấp:"
-settings.lyrics.trackOverrides.remove: Gỡ bỏ ghi đè
-settings.lyrics.trackOverrides.title: Ghi đè riêng cho bài hát
+settings.lyrics.trackOverrides.remove: Xóa ghi đè
+settings.lyrics.trackOverrides.title: Ghi đè riêng cho từng bài
 settings.micaish.blurAmount: Độ mờ
 settings.micaish.brightness: Độ sáng %
 settings.micaish.contrast: Độ tương phản %
@@ -3852,7 +3930,9 @@ settings.miniplayer.unpinWindow: Bỏ ghim cửa sổ
 settings.nav.accessibility: Trợ năng
 settings.nav.accounts: Tài khoản
 settings.nav.advanced: Nâng cao
+settings.nav.appleMusicWordmark: music
 settings.nav.audio: Âm thanh
+settings.nav.categories: Danh mục cài đặt
 settings.nav.concerts: Buổi hòa nhạc
 settings.nav.config-backups: Sao lưu cấu hình
 settings.nav.connectivity: Kết nối
@@ -3861,46 +3941,66 @@ settings.nav.general: Chung
 settings.nav.group.account: Tài khoản
 settings.nav.group.advanced: Nâng cao
 settings.nav.group.appearance: Giao diện
+settings.nav.group.connections: Kết nối
 settings.nav.group.general: Chung
 settings.nav.group.integrations: Tích hợp
 settings.nav.group.library: Thư viện
+settings.nav.group.lookAndFeel: Giao diện & cảm nhận
 settings.nav.group.playback: Phát lại
 settings.nav.lyrics: Lời bài hát
 settings.nav.notifications: Thông báo
 settings.nav.plugins: Plugin
-settings.nav.power: Mức sử dụng điện năng
+settings.nav.power: Mức sử dụng năng lượng
 settings.nav.privacy: Quyền riêng tư
 settings.nav.profile: Hồ sơ
 settings.nav.search: Tìm kiếm
-settings.nav.searchPlaceholder: Tìm kiếm cài đặt...
+settings.nav.searchPlaceholder: Tìm cài đặt
+settings.nav.summary.accessibility: Chữ đậm, tỷ lệ giao diện, chuyển động, hiệu ứng âm thanh
+settings.nav.summary.advanced: Sao lưu, khắc phục sự cố, thử nghiệm
+settings.nav.summary.audio: Đầu ra, chất lượng, chuyển tiếp, chuẩn hóa âm lượng
+settings.nav.summary.concerts: Vị trí, bán kính, sắp xếp
+settings.nav.summary.connectivity: Discord, scrobbling, phiên nghe chung, điều khiển từ xa
+settings.nav.summary.extensions: Giao diện, đoạn CSS, tiện ích mở rộng
+settings.nav.summary.general: Khởi động, hàng đợi, hẹn giờ tắt, phím tắt
+settings.nav.summary.lyrics: Nguồn, bản dịch, hiển thị, thời gian
+settings.nav.summary.notifications: Danh mục, lịch sử, thông báo hệ thống
+settings.nav.summary.power: Hiệu năng, tốc độ khung hình, tiết kiệm pin
+settings.nav.summary.profile: Tài khoản Apple Music
+settings.nav.summary.sid: Nơi Sid xuất hiện và cách hoạt động
+settings.nav.summary.smartPlaylists: Quy tắc và bảo trì danh sách phát thông minh
+settings.nav.summary.subscriberYear: thuê bao trong một năm
+settings.nav.summary.subscriberYears: thuê bao trong {{count}} năm
+settings.nav.summary.tweaks: Thay đổi nhỏ cho trình phát, thanh bên và hơn thế nữa
+settings.nav.summary.visual: Bảng màu, bố cục, cửa sổ, chế độ đắm chìm
 settings.nav.themes: Chủ đề
+settings.nav.tweaks: Tùy chỉnh
 settings.nav.updates: Cập nhật
-settings.nav.visual: Trực quan
+settings.nav.visual: Giao diện
 settings.normalization.louderTargetHint: Nếu Cider vẫn nghe quá nhỏ ở mức âm lượng 100%, hãy chọn mục tiêu lớn hơn. Giá trị LUFS cao hơn sẽ cho âm thanh lớn hơn, nhưng tính năng bảo vệ đỉnh có thể giới hạn mức tăng để tránh vỡ tiếng.
 settings.normalization.presets.apple: Apple
 settings.normalization.presets.balanced: Cân bằng
 settings.normalization.presets.dynamic: Sống động
 settings.normalization.presets.loud: Lớn
 settings.normalization.presets.maximum: Tối đa
-settings.normalization.target: Mức âm lượng mục tiêu
+settings.normalization.target: Mục tiêu độ to
 settings.normalization.unit: LUFS
 settings.notifications.alwaysOn: Luôn bật
 settings.notifications.alwaysOn.description: Các thông báo này mang thông tin về sự cố và trạng thái ứng dụng mà bạn cần xem, vì vậy không thể tắt chúng. Các lỗi luôn được gửi đến, bất kể chúng thuộc danh mục nào.
-settings.notifications.category.accountAuth: Tài khoản và Đăng nhập
+settings.notifications.category.accountAuth: Tài khoản và đăng nhập
 settings.notifications.category.accountAuth.description: Đăng nhập và đăng xuất, trạng thái đăng ký và các dịch vụ đã kết nối.
 settings.notifications.category.castingAirplay: Truyền phát và AirPlay
 settings.notifications.category.castingAirplay.description: Kết nối và ngắt kết nối với các thiết bị phát bên ngoài.
-settings.notifications.category.extensionsThemes: Tiện ích mở rộng và Giao diện
+settings.notifications.category.extensionsThemes: Tiện ích mở rộng và giao diện
 settings.notifications.category.extensionsThemes.description: Cài đặt, cập nhật và gỡ bỏ các plugin, giao diện và đoạn mã.
 settings.notifications.category.general: Chung
 settings.notifications.category.general.description: Bất kỳ thông báo nào không thuộc danh mục riêng.
-settings.notifications.category.listeningTogether: Cùng nghe
+settings.notifications.category.listeningTogether: Nghe cùng nhau
 settings.notifications.category.listeningTogether.description: Lời mời tham gia phòng, khách tham gia hoặc rời đi, và trạng thái phiên nghe.
 settings.notifications.category.lyrics: Lời bài hát
 settings.notifications.category.lyrics.description: Tra cứu, đóng góp và phiên âm lời bài hát.
-settings.notifications.category.playbackSystem: Phát lại và Hệ thống
+settings.notifications.category.playbackSystem: Phát nhạc và hệ thống
 settings.notifications.category.playbackSystem.description: Các sự cố phát lại và trạng thái cấp ứng dụng mà bạn cần xem.
-settings.notifications.category.playlistsLibrary: Danh sách phát và Thư viện
+settings.notifications.category.playlistsLibrary: Danh sách phát và thư viện
 settings.notifications.category.playlistsLibrary.description: Thêm, xóa, chỉnh sửa và đồng bộ hóa nội dung thư viện.
 settings.notifications.category.plugins: Plugin
 settings.notifications.category.plugins.description: Các thông báo do chính plugin bạn đã cài đặt tạo ra, thay vì do Cider báo cáo.
@@ -3908,9 +4008,9 @@ settings.notifications.category.queueUpNext: Hàng chờ và Tiếp theo
 settings.notifications.category.queueUpNext.description: Các bài hát được xếp hàng để phát tiếp theo hoặc được thêm vào cuối hàng chờ.
 settings.notifications.category.scrobbling: Scrobble
 settings.notifications.category.scrobbling.description: Kết quả scrobble cho từng bài hát từ Last.fm, ListenBrainz và các dịch vụ khác.
-settings.notifications.category.settingsBackups: Cài đặt và Sao lưu
+settings.notifications.category.settingsBackups: Cài đặt và bản sao lưu
 settings.notifications.category.settingsBackups.description: Nhập và xuất cài đặt, và sao lưu cấu hình.
-settings.notifications.category.sharingClipboard: Chia sẻ và Bộ nhớ tạm
+settings.notifications.category.sharingClipboard: Chia sẻ và bộ nhớ tạm
 settings.notifications.category.sharingClipboard.description: Các liên kết chia sẻ đang được tạo và sao chép.
 settings.notifications.muted.empty: Không có thông báo riêng lẻ nào bị tắt. Việc tắt một thông báo cụ thể từ danh sách thông báo của bạn sẽ thêm thông báo đó vào đây, và đây là nơi bạn có thể bật lại.
 settings.notifications.section.categories: Danh mục
@@ -3918,6 +4018,7 @@ settings.notifications.section.history: Lịch sử
 settings.notifications.section.muted: Thông báo đã tắt
 settings.notifications.section.system: Thông báo hệ thống
 settings.notifications.summary.categoriesOn: Danh mục đang bật
+settings.notifications.summary.categoriesOnCount: "{{on}} trên {{total}} đang bật"
 settings.notifications.summary.description: Chọn loại thông báo Cider sẽ hiển thị cho bạn. Những thông báo bạn tắt vẫn sẽ được ghi lại trong danh sách thông báo để bạn có thể xem lại sau.
 settings.notifications.unmute: Bật tiếng
 settings.notifications.unmuteAll: Bật tiếng tất cả
@@ -3935,25 +4036,25 @@ settings.notyf.visual.theme.install.success: Cài đặt chủ đề thành côn
 settings.notyf.visual.theme.updateAvailable: "[Chủ đề] Đã có bản cập nhật cho {{ theme }}"
 settings.option.accessibility.boldText: Chữ đậm
 settings.option.accessibility.boldText.description: Tăng độ dày của chữ trong ứng dụng để dễ đọc hơn.
-settings.option.accessibility.cardHoverMotion: Hiệu ứng di chuột qua thẻ
+settings.option.accessibility.cardHoverMotion: Chuyển động khi di chuột qua thẻ
 settings.option.accessibility.cardHoverMotion.description: Làm cho các thẻ có thể nhấp (ô album, thẻ tính năng, mục lưới) phóng to nhẹ khi di chuột và thu nhỏ khi nhấn. Mặc định tắt.
 settings.option.accessibility.enableSoundEffects: Bật hiệu ứng âm thanh
 settings.option.accessibility.enableSoundEffects.description: Phát âm thanh nhẹ khi tương tác với các nút, công tắc và thanh trượt.
-settings.option.accessibility.forceFocusVisible: Luôn hiển thị viền tập trung
+settings.option.accessibility.forceFocusVisible: Luôn hiển thị viền lấy nét
 settings.option.accessibility.forceFocusVisible.description: Bắt buộc hiển thị viền xung quanh các thành phần được tập trung để điều hướng bằng bàn phím.
 settings.option.accessibility.highContrast: Độ tương phản cao
 settings.option.accessibility.highContrast.description: Tăng độ tương phản giữa văn bản, nền và các thành phần giao diện.
 settings.option.accessibility.motion: Chuyển động
-settings.option.accessibility.motionIntensity: Mức độ chuyển động
+settings.option.accessibility.motionIntensity: Cường độ chuyển động
 settings.option.accessibility.motionIntensity.description: Kiểm soát mức độ chuyển động của các nút và bề mặt khi di chuột và nhấn. Chọn 'Không' để tắt hoàn toàn chuyển động; 'Sinh động' sẽ thêm hiệu ứng nảy.
 settings.option.accessibility.motionIntensity.none: Không
 settings.option.accessibility.motionIntensity.normal: Bình thường
 settings.option.accessibility.motionIntensity.playful: Sinh động
 settings.option.accessibility.motionIntensity.reduced: Giảm
-settings.option.accessibility.playOnHover: Phát âm thanh khi di chuột
+settings.option.accessibility.playOnHover: Phát khi di chuột
 settings.option.accessibility.playOnHover.description: Phát một tiếng tích nhẹ khi con trỏ di chuyển vào các thành phần tương tác.
 settings.option.accessibility.soundEffects: Hiệu ứng âm thanh
-settings.option.accessibility.soundPreview: Nghe thử âm thanh
+settings.option.accessibility.soundPreview: Xem trước âm thanh
 settings.option.accessibility.soundPreview.description: Phát thử âm thanh giao diện ở mức âm lượng hiện tại.
 settings.option.accessibility.text: Chữ
 settings.option.accessibility.uiScale: Tỷ lệ giao diện
@@ -3969,7 +4070,7 @@ settings.option.advanced.compactSidebar.size: Kích thước
 settings.option.advanced.configBackups.description: Khôi phục bản sao tệp cài đặt mà Cider đã lưu, trong trường hợp cài đặt của bạn bị mất hoặc bị đặt lại.
 settings.option.advanced.experimentalFeatures: Tính năng thử nghiệm
 settings.option.advanced.experimentalFeatures.description: Các tính năng đang phát triển và gắn cờ tính năng.
-settings.option.advanced.floatingSearch: Lớp phủ tìm kiếm nổi
+settings.option.advanced.floatingSearch: Lớp tìm kiếm nổi
 settings.option.advanced.floatingSearch.blurBackground: Làm mờ nền
 settings.option.advanced.floatingSearch.blurBackground.description: Khi bật, nền sẽ được làm mờ khi thanh tìm kiếm được tập trung.
 settings.option.advanced.floatingSearch.clearSearchOnClose: Xóa tìm kiếm khi đóng
@@ -3982,60 +4083,60 @@ settings.option.advanced.home.buttonLocation: Vị trí nút Trang chủ
 settings.option.advanced.home.buttonLocation.sidebar: Thanh bên
 settings.option.advanced.home.buttonLocation.sidebar2023: Thanh bên (2023)
 settings.option.advanced.home.buttonLocation.topBar: Thanh trên cùng
-settings.option.advanced.immersive: Chế độ xem đắm chìm
+settings.option.advanced.immersive: Chế độ đắm chìm
 settings.option.advanced.immersive.artworkHighlight: Làm nổi bật ảnh bìa
-settings.option.advanced.immersive.controlsTimeout: Thời gian chờ điều khiển hoạt động (Giây)
+settings.option.advanced.immersive.controlsTimeout: Thời gian chờ điều khiển (giây)
 settings.option.advanced.immersive.description: Bản thân chế độ xem đắm chìm. Bố cục sử dụng được chọn trong mục Trực quan.
-settings.option.advanced.immersive.glowEffectOnActiveLyrics: Hiệu ứng phát sáng trên lời bài hát đang phát
+settings.option.advanced.immersive.glowEffectOnActiveLyrics: Hiệu ứng phát sáng cho lời đang hát
 settings.option.advanced.lyrics: Hoạt ảnh lời bài hát
-settings.option.advanced.lyrics.characterFlow: Ký tự bay bổng
+settings.option.advanced.lyrics.characterFlow: Ký tự chuyển động mềm mại
 settings.option.advanced.lyrics.characterFlow.description: Các ký tự riêng lẻ sẽ bay lên thay vì cả dòng. Tiêu tốn nhiều tài nguyên hơn.
 settings.option.advanced.lyrics.description: Cách các dòng và ký tự lời bài hát chuyển động khi bài hát đang phát.
-settings.option.advanced.lyrics.lineStaggering: Xuất hiện dòng so le
+settings.option.advanced.lyrics.lineStaggering: Hiệu ứng so le dòng
 settings.option.advanced.lyrics.lineStaggering.description: Lời bài hát tiếp theo sẽ có độ trễ nhẹ khi dòng hiện tại được làm nổi bật.
-settings.option.advanced.lyrics.lineStaggeringImmersive: Xuất hiện dòng so le (Đắm chìm)
+settings.option.advanced.lyrics.lineStaggeringImmersive: Hiệu ứng so le dòng (Đắm chìm)
 settings.option.advanced.lyrics.lineStaggeringImmersive.description: Tiêu tốn nhiều tài nguyên hơn.
-settings.option.advanced.lyrics.scaleOnAny: Cho phép hiệu ứng thu phóng trên mọi từ
+settings.option.advanced.lyrics.scaleOnAny: Cho phép hiệu ứng phóng to trên mọi từ
 settings.option.advanced.lyrics.scaleOnAny.description: Cho phép thu phóng bất kỳ từ nào, không chỉ những từ được nhấn mạnh.
-settings.option.advanced.lyrics.singEngine: Công cụ Hát Đắm chìm
+settings.option.advanced.lyrics.singEngine: Công cụ hát đắm chìm
 settings.option.advanced.lyrics.singEngine.classic: Cổ điển
 settings.option.advanced.lyrics.singEngine.description: Công cụ hát cho chế độ xem Đắm chìm. Cổ điển sử dụng hiệu ứng CSS nhẹ, là lựa chọn tốt nhất cho các hệ thống cấu hình thấp. Thanh bên luôn sử dụng Cổ điển.
 settings.option.advanced.lyrics.singEngine.legacy: Truyền thống
 settings.option.advanced.lyrics.singEngine.waapi: GPU (Web Animations)
-settings.option.advanced.lyrics.singLyricsEverywhere: Lời bài hát Sing ở mọi nơi
+settings.option.advanced.lyrics.singLyricsEverywhere: Hát lời ở mọi nơi
 settings.option.advanced.lyrics.singLyricsEverywhere.description: Bật lời bài hát Sing bên ngoài chế độ xem Đắm chìm. Tiêu tốn nhiều tài nguyên hơn.
 settings.option.advanced.mavericksLcd: LCD Mavericks
 settings.option.advanced.mavericksLcd.style: Kiểu
 settings.option.advanced.mavericksLcd.style.glass: Kính
 settings.option.advanced.mediaArtwork: Ảnh bìa mục phương tiện
 settings.option.advanced.mediaArtwork.controls: Điểm nhấn ảnh bìa và hình ảnh độ phân giải cao
-settings.option.advanced.mediaArtwork.controlsV2: Làm nổi bật và mờ dần ảnh bìa
+settings.option.advanced.mediaArtwork.controlsV2: Làm nổi bật và hiệu ứng mờ dần ảnh bìa
 settings.option.advanced.mediaArtwork.description: Ảnh bìa trên lưới, danh sách và các hàng trong ứng dụng.
 settings.option.advanced.notificationStyle: Kiểu thông báo
 settings.option.advanced.performance: Hiệu năng
 settings.option.advanced.performance.description: Giới hạn tốc độ khung hình, lựa chọn bộ dựng hình và ngưỡng tài nguyên.
 settings.option.advanced.playback: Tốc độ phát
-settings.option.advanced.playback.allowPlaybackRateChangeEverywhere: Cho phép thay đổi tốc độ phát bài hát
+settings.option.advanced.playback.allowPlaybackRateChangeEverywhere: Cho phép thay đổi tốc độ phát đối với bài hát
 settings.option.advanced.playback.allowPlaybackRateChangeEverywhere.description: Được bật theo mặc định cho podcast. Bật tính năng này để cho phép kiểm soát tốc độ phát tương tự cho tất cả phương tiện, bao gồm cả bài hát.
 settings.option.advanced.playlistTrackMapping: Ánh xạ bài hát trong danh sách phát
 settings.option.advanced.playlistTrackMapping.description: Bật quét sâu danh sách phát để xác định bài hát nào nằm trong danh sách phát nào. Thời gian tạo bộ nhớ đệm danh sách phát có thể tăng lên đáng kể.
 settings.option.advanced.powerUsage.description: Giới hạn tốc độ khung hình, lựa chọn bộ dựng hình, và các tính năng trực quan tiêu tốn tài nguyên.
 settings.option.advanced.progressBar: Thanh tiến trình
-settings.option.advanced.progressBar.useAccentColor: Sử dụng màu nhấn
+settings.option.advanced.progressBar.useAccentColor: Dùng màu nhấn
 settings.option.advanced.resetCider: Đặt lại Cider
 settings.option.advanced.resetCider.description: Đặt lại tùy chọn, bộ nhớ đệm và dữ liệu cục bộ. Apple Music và Taproom vẫn duy trì đăng nhập trừ khi bạn chọn khác.
 settings.option.advanced.resizableMiniplayer: Trình phát thu nhỏ có thể đổi kích thước
-settings.option.advanced.richAlbumGrid: Lưới album chi tiết
-settings.option.advanced.richAlbumGrid.alwaysNavigateToPage: Luôn chuyển hướng đến trang
+settings.option.advanced.richAlbumGrid: Lưới album nâng cao
+settings.option.advanced.richAlbumGrid.alwaysNavigateToPage: Luôn chuyển đến trang
 settings.option.advanced.richAlbumGrid.disableScrollAnimation: Tắt hiệu ứng cuộn
 settings.option.advanced.richAlbumGrid.scrollToPosition: Cuộn đến vị trí
 settings.option.advanced.richAlbumGrid.scrollToPosition.bottom: Dưới cùng
 settings.option.advanced.richAlbumGrid.scrollToPosition.top: Trên cùng
 settings.option.advanced.searchBar: Thanh tìm kiếm chính
 settings.option.advanced.searchBar.description: Trường tìm kiếm trên thanh tiêu đề.
-settings.option.advanced.searchBar.noRedirectOnSelect: Không chuyển hướng đến trang đích khi chọn
+settings.option.advanced.searchBar.noRedirectOnSelect: Không mở trang chính khi chọn
 settings.option.advanced.searchBar.noRedirectOnSelect.description: Khi được bật, thanh tìm kiếm sẽ không chuyển hướng đến trang đích khi được chọn. Để đến trang đích, hãy giữ phím SHIFT trong khi chọn thanh tìm kiếm.
-settings.option.advanced.settingsTakeout: Xuất / Nhập cài đặt
+settings.option.advanced.settingsTakeout: Xuất / nhập cài đặt
 settings.option.advanced.settingsTakeout.description: Sao lưu tùy chọn của bạn vào một tệp hoặc khôi phục chúng trên thiết bị khác. Thông tin đăng nhập tài khoản sẽ không được bao gồm.
 settings.option.advanced.simpleArtworkBg: Nền ảnh bìa đơn giản
 settings.option.advanced.simpleArtworkBg.brightness: "% Độ sáng"
@@ -4044,23 +4145,23 @@ settings.option.advanced.simpleArtworkBg.contrast: "% Độ tương phản"
 settings.option.advanced.simpleArtworkBg.contrastV2: Độ tương phản
 settings.option.advanced.simpleArtworkBg.saturate: "% Độ bão hòa"
 settings.option.advanced.simpleArtworkBg.saturateV2: Độ bão hòa
-settings.option.advanced.simpleArtworkBg.useMask: Sử dụng mặt nạ dưới
+settings.option.advanced.simpleArtworkBg.useMask: Dùng lớp phủ dưới
 settings.option.advanced.sonoma: Sonoma
-settings.option.advanced.sonoma.lyricArc: Lời bài hát dạng vòng cung
+settings.option.advanced.sonoma.lyricArc: Lời bài hát dạng cung
 settings.option.advanced.sonoma.lyricArc.description: Các dòng lời bài hát đang hoạt động sẽ uốn cong về phía trung tâm màn hình với cảm giác có chiều sâu tinh tế.
-settings.option.advanced.sonoma.radialMask: Sử dụng mặt nạ thay thế
+settings.option.advanced.sonoma.radialMask: Dùng lớp phủ thay thế
 settings.option.advanced.sonoma.radialMask.description: Khi được bật, Sonoma sẽ sử dụng một mặt nạ tỏa tròn khác cho ảnh bìa, tập trung vào độ rõ nét hơn và ít mờ hơn.
 settings.option.advanced.title: Nâng cao
 settings.option.advanced.tweaks: Tinh chỉnh
 settings.option.advanced.tweaks.description: Các cài đặt tinh chỉnh không thực sự thuộc về bất kỳ mục nào khác.
-settings.option.advanced.volumeSlider: Thanh trượt âm lượng trình phát
+settings.option.advanced.volumeSlider: Thanh âm lượng trình phát
 settings.option.advanced.volumeSlider.iOSStyle: Kiểu iOS
 settings.option.advanced.window: Hành vi cửa sổ
 settings.option.advanced.window.description: Thay đổi kích thước Miniplayer và kiểu thanh cuộn được sử dụng trong ứng dụng. Các nút điều khiển cửa sổ và hiệu ứng mờ nằm trong mục Trực quan.
 settings.option.advanced.window.scrollbarType: Kiểu thanh cuộn
 settings.option.all: Tất cả
 settings.option.alwaysShow: Luôn hiển thị
-settings.option.appleMusic.behavior.playButtonOnStop: Hành vi nút Phát khi dừng
+settings.option.appleMusic.behavior.playButtonOnStop: Nút phát khi hành động dừng
 settings.option.audio.advanced: Điều khiển âm lượng nâng cao
 settings.option.audio.airplay: Truyền phát AirPlay
 settings.option.audio.airplay.description: Bật menu truyền phát AirPlay 2 thử nghiệm
@@ -4075,14 +4176,14 @@ settings.option.audio.audioQuality: Chất lượng âm thanh
 settings.option.audio.automix: Trộn tự động
 settings.option.audio.changePlaybackRate: Thay đổi tốc độ phát
 settings.option.audio.ciderAudio: Cider Audio
-settings.option.audio.ciderAudio.showBadges: Hiển thị huy hiệu trong Đang phát
+settings.option.audio.ciderAudio.showBadges: Hiển thị huy hiệu trong đang phát
 settings.option.audio.ciderAudio.showInToolbar: Hiển thị Cider Audio trên thanh công cụ
 settings.option.audio.ciderAudioSettings: Cài đặt Cider Audio
 settings.option.audio.crossfade: Chuyển tiếp mượt mà
-settings.option.audio.dbfs.calibration: 0 dBFS Calibration
+settings.option.audio.dbfs.calibration: Hiệu chuẩn 0 dBFS
 settings.option.audio.dbfs.description: Điền vào chỉ số áp suất âm thanh SPL cao nhất khi Cider ở  0 dBFS.
 settings.option.audio.dbspl.description: (Chỉ dành cho người dùng nâng cao) Hiểu thị dB SPL thay vì dBFS trên thanh âm lượng.
-settings.option.audio.dbspl.display: dB SPL Display
+settings.option.audio.dbspl.display: Hiển thị dB SPL
 settings.option.audio.drmSystem: Hệ thống DRM
 settings.option.audio.drmSystem.description: Hệ thống DRM sử dụng cho việc phát nhạc trên Apple Music
 settings.option.audio.drmSystem.PlayReadyCAWarning: Chức năng âm thanh của Cider không hoạt động khi sử dụng Microsoft PlayReady.
@@ -4135,32 +4236,32 @@ settings.option.audio.enableAdvancedFunctionality.tunedAudioSpatialization.profi
 settings.option.audio.enableAdvancedFunctionality.tunedAudioSpatialization.profile.separation: Tách bạch
 settings.option.audio.enableAdvancedFunctionality.tunedAudioSpatialization.profile.soundstage: Âm trường
 settings.option.audio.enableAdvancedFunctionality.tunedAudioSpatialization.profile.standard: Tiêu chuẩn
-settings.option.audio.exponentialVolume: Đường cong âm lượng lũy thừa
+settings.option.audio.exponentialVolume: Đường cong âm lượng hàm mũ
 settings.option.audio.exponentialVolume.description: Tuân theo đường cong âm lượng dần dần hơn, cho phép kiểm soát âm lượng chính xác hơn ở mức âm lượng thấp.
-settings.option.audio.hostCapture: Âm thanh có thể thu (OBS / Discord)
+settings.option.audio.hostCapture: Âm thanh có thể ghi lại (OBS / Discord)
 settings.option.audio.hostCapture.description: Các ứng dụng phát trực tuyến và ghi màn hình như OBS hoặc Discord cần máy chủ Windows để định tuyến âm thanh phát.
 settings.option.audio.maxVolume: Âm lượng tối đa
 settings.option.audio.mixing: Trộn âm
-settings.option.audio.normalization: Cân bằng âm lượng
+settings.option.audio.normalization: Chuẩn hóa âm thanh
 settings.option.audio.normalization.description: Tự động điều chỉnh từng bài hát để đạt mức âm lượng đồng đều. Các bài hát nhỏ được tăng âm lượng một cách an toàn; các bài hát lớn được giảm xuống.
 settings.option.audio.occlusion: Chế độ nghe
 settings.option.audio.outputDevice: Thiết bị đầu ra
 settings.option.audio.playback: Phát lại
 settings.option.audio.playbackRate: Tốc độ phát
 settings.option.audio.playbackRate.change: Thay đổi
-settings.option.audio.podcastPlayback: Phát lại Podcast
+settings.option.audio.podcastPlayback: Phát podcast
 settings.option.audio.podcasts.playbackRate: Tốc độ phát của Apple Podcasts
 settings.option.audio.podcasts.playbackRate.description: Adjust the playback speed of podcasts.
 settings.option.audio.quality: Chất lượng âm thanh
-settings.option.audio.seamlessAudioTransitions: Chuyển tiếp nhạc liền mạch
+settings.option.audio.seamlessAudioTransitions: Phát liền mạch
 settings.option.audio.seamlessTransition: Chuyển tiếp âm thanh liền mạch
-settings.option.audio.seamlessTransitions: Chuyển tiếp mượt mà
-settings.option.audio.showBitrate: Hiển thị Bitrate trong Đang phát
+settings.option.audio.seamlessTransitions: Chuyển bài liền mạch
+settings.option.audio.showBitrate: Hiển thị bitrate trong đang phát
 settings.option.audio.streaming: Truyền phát
 settings.option.audio.volume: Âm lượng
 settings.option.audio.volumeScrollStep: Bước cuộn âm lượng
 settings.option.audio.volumeScrollStep.description: Mức thay đổi âm lượng khi bạn cuộn lên hoặc xuống trên thanh trượt âm lượng.
-settings.option.audio.volumeStep: Mức cuộn âm lượng
+settings.option.audio.volumeStep: Bước cuộn âm lượng
 settings.option.audio.volumeStep.description: Điều chỉnh mức tăng giảm âm lượng khi cuộn chuột.
 settings.option.audio.yourSystem: Hệ thống của bạn
 settings.option.automatic: Tự động
@@ -4172,7 +4273,7 @@ settings.option.concerts.radiusUnit: Đơn vị bán kính
 settings.option.concerts.radiusUnit.description: Đơn vị cho bộ lọc bán kính
 settings.option.concerts.radiusUnit.kilometers: Kilômét
 settings.option.concerts.radiusUnit.miles: Dặm
-settings.option.concerts.showInSidebar: Hiện Buổi hòa nhạc ở thanh bên
+settings.option.concerts.showInSidebar: Hiển thị buổi hòa nhạc trên thanh bên
 settings.option.concerts.showInSidebar.description: Hiển thị mục Buổi hòa nhạc trong thanh bên
 settings.option.concerts.sortBy: Sắp xếp theo
 settings.option.concerts.sortBy.date: Ngày
@@ -4193,7 +4294,7 @@ settings.option.connectivity.discordRPC.buttons.listenOnCider: Nghe trên Cider
 settings.option.connectivity.discordRPC.buttons.viewOnAppleMusic: Xem trên Apple Music
 settings.option.connectivity.discordRPC.buttons.viewOnOtherMusicServices: Xem trên các dịch vụ nhạc khác
 settings.option.connectivity.discordRPC.clearOnPause: Xóa Discord Rich Presence khi tạm dừng
-settings.option.connectivity.discordRPC.clientName: Tên ứng dụng khách
+settings.option.connectivity.discordRPC.clientName: Tên ứng dụng
 settings.option.connectivity.discordRPC.customize: Tùy chỉnh Discord Rich Presence của bạn
 settings.option.connectivity.discordRPC.customize.applyButton: Áp dụng
 settings.option.connectivity.discordRPC.customize.artistImageSource.apple: Apple Music
@@ -4245,10 +4346,10 @@ settings.option.connectivity.lastfmScrobble.manualToken: Nhập mã Token Last.f
 settings.option.connectivity.lastfmScrobble.manualToken.link: Nhấp vào đây để lấy mã token Last.fm
 settings.option.connectivity.lastfmScrobble.nowPlaying: Bật trạng thái Đang phát trên Last.FM
 settings.option.connectivity.lastfmScrobble.removeFeatured: Xóa nghệ sĩ hợp tác khỏi tiêu đề bài hát (Last.fm)
-settings.option.connectivity.parties: Phòng nghe chung
-settings.option.connectivity.partiesEnabled: Bật Phòng nghe chung
+settings.option.connectivity.parties: Bữa tiệc nghe nhạc
+settings.option.connectivity.partiesEnabled: Bật bữa tiệc nghe nhạc
 settings.option.connectivity.partiesEnabled.description: Chủ trì hoặc tham gia các phiên nghe đồng bộ hóa với những người dùng Cider khác.
-settings.option.connectivity.partiesQueueDefault: Chế độ hàng chờ mặc định
+settings.option.connectivity.partiesQueueDefault: Chế độ hàng đợi mặc định
 settings.option.connectivity.partiesQueueDefault.audited: Chủ phòng phê duyệt
 settings.option.connectivity.partiesQueueDefault.description: Yêu cầu phê duyệt của bạn khi khách thêm bài hát trong phòng do bạn chủ trì.
 settings.option.connectivity.partiesQueueDefault.open: Mở
@@ -4262,7 +4363,7 @@ settings.option.connectivity.remoteConnection: Kết nối từ xa
 settings.option.connectivity.remoteConnection.description: Ghép nối điện thoại hoặc máy tính bảng, và hủy ghép nối các thiết bị điều khiển phát nhạc.
 settings.option.connectivity.rpcServer: Máy chủ RPC
 settings.option.connectivity.rpcServer.description: Quản lý quyền truy cập vào Cider cho các ứng dụng bên ngoài bằng máy chủ RPC.
-settings.option.connectivity.rpcServer.manageAccess: Quản lý quyền truy cập của ứng dụng bên ngoài vào Cider
+settings.option.connectivity.rpcServer.manageAccess: Quản lý quyền truy cập Cider của ứng dụng bên ngoài
 settings.option.connectivity.scrobbler: Scrobbler
 settings.option.connectivity.scrobblerIntegration: Tích hợp Scrobbler
 settings.option.connectivity.scrobblerIntegration.description: Scrobble qua Last.fm, ListenBrainz, Libre.fm và Maloja để lưu lịch sử nghe nhạc.
@@ -4306,7 +4407,7 @@ settings.option.experiments.floatingSearch: Bật Tìm kiếm nổi
 settings.option.experiments.forceExplicit: Tự động chuyển sang phiên bản Album Explicit
 settings.option.experiments.forceExplicit.description: Có thể làm tăng thời gian tải khi tìm kiếm các phiên bản Explicit của album.
 settings.option.experiments.legacyFetch: Tải dữ liệu cũ (Legacy)
-settings.option.experiments.musicVideos: Bật Video ca nhạc trong Thư viện
+settings.option.experiments.musicVideos: Bật video âm nhạc trong thư viện
 settings.option.experiments.title: Tính năng thử nghiệm
 settings.option.general.app: Ứng dụng
 settings.option.general.artistChips: Thẻ nghệ sĩ
@@ -4316,7 +4417,7 @@ settings.option.general.autoRemoveDisliked: Tự động xóa các bài hát kh�
 settings.option.general.autoRemoveDisliked.description: Tự động xóa các bài hát khỏi hàng chờ khi chúng bị đánh dấu là không thích.
 settings.option.general.cache: Bộ nhớ đệm
 settings.option.general.clearCacheDropdown: Menu xóa bộ nhớ đệm
-settings.option.general.contentToCache: Nội dung cần lưu vào bộ nhớ đệm
+settings.option.general.contentToCache: Nội dung lưu vào bộ nhớ đệm
 settings.option.general.customizeSidebar: Tùy chỉnh các mục trên thanh bên
 settings.option.general.customizeSidebar.customize: Tùy chỉnh
 settings.option.general.displayName: Tên hiển thị
@@ -4341,13 +4442,13 @@ settings.option.general.language.main: Ngôn ngữ
 settings.option.general.language.unsorted: Chưa phân loại
 settings.option.general.noPlayingAction.newMusicMix: Phát Bản phối nhạc mới
 settings.option.general.noPlayingAction.none: Không làm gì
-settings.option.general.noPlayingAction.personalStation: Phát Đài phát cá nhân
-settings.option.general.noPlayingAction.recent: Phát các bài hát gần đây
-settings.option.general.noPlayingAction.recentlyAdded: Phát các bài hát đã thêm gần đây
-settings.option.general.noPlayingAction.shuffleLibrary: Trộn bài hát trong Thư viện
+settings.option.general.noPlayingAction.personalStation: Bắt đầu trạm cá nhân
+settings.option.general.noPlayingAction.recent: Phát bài hát gần đây
+settings.option.general.noPlayingAction.recentlyAdded: Phát bài hát mới thêm gần đây
+settings.option.general.noPlayingAction.shuffleLibrary: Phát ngẫu nhiên bài hát trong thư viện
 settings.option.general.onStartup: Khi khởi động
 settings.option.general.onStartup.openStartup: Mở trang khởi động
-settings.option.general.onStartup.resume: Tiếp tục phiên làm việc trước
+settings.option.general.onStartup.resume: Tiếp tục phiên trước
 settings.option.general.pagination: Số mục hiển thị trên mỗi trang
 settings.option.general.preventDisplaySleep: Giữ màn hình sáng khi đang phát
 settings.option.general.preventSystemSleep: Giữ máy tính thức khi đang phát
@@ -4378,11 +4479,12 @@ settings.option.general.startupPage: Trang khởi động
 settings.option.general.startupPage.blank: Trang trống
 settings.option.general.startupPage.description: Chọn trang sẽ hiển thị khi bạn mở Cider.
 settings.option.general.startupPage.descriptionV2: Trang Cider mở trong các tab mới và khi khởi động, khi Khi khởi động được đặt thành Mở trang khởi động.
+settings.option.general.startupPage.descriptionV3: Trang mà Cider mở khi khởi chạy.
 settings.option.general.startupPage.newTab: Trang thẻ mới
 settings.option.general.startupPage.personalHome: Trang chủ cá nhân
 settings.option.general.themeUpdateNotification: Tự động kiểm tra cập nhật giao diện
-settings.option.general.translationCredits: Đóng góp dịch thuật
-settings.option.general.translationFeedback: Phản hồi bản dịch
+settings.option.general.translationCredits: Ghi nhận người dịch
+settings.option.general.translationFeedback: Góp ý bản dịch
 settings.option.general.translators: Người dịch
 settings.option.general.translators.description: Cảm ơn các cộng tác viên đã giúp dịch Cider. Nhấp vào một tên để mở hồ sơ GitHub của họ.
 settings.option.general.useSmartQueueByDefault: Sử dụng Hàng đợi thông minh theo mặc định
@@ -4391,18 +4493,18 @@ settings.option.general.useSmartQueueByDefault.needsAutomix: Automix đang tắt
 settings.option.general.warnBeforeQueueOverride: Cảnh báo trước khi ghi đè hàng đợi
 settings.option.hide: Ẩn
 settings.option.left: Trái
-settings.option.lyrics.contributeCta: Đóng góp & Tải lên lời bài hát
+settings.option.lyrics.contributeCta: Đóng góp và tải lên lời bài hát
 settings.option.lyrics.contributeCta.description: Tải lên lời bài hát đã đồng bộ, xem trước trực tiếp và xem bảng xếp hạng người đóng góp.
-settings.option.lyrics.customScrollerProperties: Thuộc tính cuộn tùy chỉnh
+settings.option.lyrics.customScrollerProperties: Thuộc tính thanh cuộn tùy chỉnh
 settings.option.lyrics.customScrollerProperties.description: Bật kiểu tùy chỉnh cho hiệu ứng cuộn lời bài hát.
-settings.option.lyrics.defaultProvider: Nguồn cung cấp mặc định
+settings.option.lyrics.defaultProvider: Nhà cung cấp mặc định
 settings.option.lyrics.defaultProvider.description: Chọn nguồn cung cấp lời bài hát ưu tiên. "Tự động" sẽ tự động chọn nguồn tốt nhất hiện có.
 settings.option.lyrics.displayOptions: Tùy chọn hiển thị
 settings.option.lyrics.displayOptions.description: Tùy chỉnh cách hiển thị lời bài hát
 settings.option.lyrics.enableMusixmatch: Bật lời bài hát Musixmatch
 settings.option.lyrics.enableMusixmatchKaraoke: Bật chế độ Karaoke (chỉ dành cho Musixmatch)
 settings.option.lyrics.enableQQLyrics: Bật lời bài hát QQ
-settings.option.lyrics.enableSingLyrics: Bật lời bài hát hát theo
+settings.option.lyrics.enableSingLyrics: Bật lời hát theo nhịp
 settings.option.lyrics.enableSingLyrics.description: Khi có sẵn, hiển thị lời bài hát đồng bộ theo từng từ và làm nổi bật theo thời gian của nhạc.
 settings.option.lyrics.enableStaticLyrics: Bật lời bài hát tĩnh
 settings.option.lyrics.enableStaticLyrics.description: Hiển thị lời bài hát ngay cả khi không có thông tin thời gian. Những lời bài hát này sẽ không tự động cuộn.
@@ -4412,21 +4514,21 @@ settings.option.lyrics.enableYoutubeLyrics: Bật lời bài hát Youtube cho Vi
 settings.option.lyrics.fpsLimit: Tốc độ khung hình lời bài hát
 settings.option.lyrics.fpsLimit.description: Tốc độ khung hình tối đa cho hiệu ứng lời bài hát. Tốc độ cao hơn giúp hiển thị mượt mà hơn trên màn hình có tần số quét cao nhưng sẽ tốn CPU và GPU hơn. "Khớp với màn hình" sẽ theo tần số quét của màn hình của bạn.
 settings.option.lyrics.fpsLimit.matchDisplay: Khớp với màn hình
-settings.option.lyrics.keepCompleted: Giữ lại lời đã phát
+settings.option.lyrics.keepCompleted: Giữ lời bài hát đã hoàn tất
 settings.option.lyrics.keepCompleted.description: Giữ các dòng đã hát hiển thị (làm mờ) phía trên dòng hiện tại. Khi tắt, các dòng đã hát sẽ bị ẩn.
-settings.option.lyrics.localeOverrides: Ghi đè theo ngôn ngữ
+settings.option.lyrics.localeOverrides: Ghi đè ngôn ngữ vùng
 settings.option.lyrics.localeOverrides.description: Thiết lập nguồn cung cấp tùy chỉnh và quy tắc dịch cho các ngôn ngữ âm thanh cụ thể
 settings.option.lyrics.musixmatchPreferredLanguage: Ngôn ngữ dịch ưu tiên của Musixmatch
-settings.option.lyrics.preferUserLyrics: Ưu tiên lời bài hát do người dùng đóng góp
+settings.option.lyrics.preferUserLyrics: Ưu tiên lời do người dùng gửi
 settings.option.lyrics.preferUserLyrics.description: Khi có sẵn, ưu tiên lời bài hát do người dùng đóng góp hơn các nguồn khác nếu chúng có chất lượng đồng bộ thời gian tốt hơn.
 settings.option.lyrics.provider.apple: Apple Music
-settings.option.lyrics.provider.auto: Tự động (Tốt nhất hiện có)
+settings.option.lyrics.provider.auto: Tự động (tốt nhất hiện có)
 settings.option.lyrics.provider.mxm: Musixmatch
 settings.option.lyrics.provider.netease: NetEase
-settings.option.lyrics.provider.user: Người dùng đóng góp
+settings.option.lyrics.provider.user: Do người dùng gửi
 settings.option.lyrics.providerPreferences: Tùy chọn nguồn cung cấp
 settings.option.lyrics.providerPreferences.description: Cấu hình nguồn lời bài hát cần sử dụng và mức độ ưu tiên của chúng
-settings.option.lyrics.scrollTuning: Thời gian & Gia tốc cuộn
+settings.option.lyrics.scrollTuning: Thời lượng và easing cuộn
 settings.option.lyrics.scrollTuning.description: Thiết lập thời gian cuộn và đường cong gia tốc của lời bài hát, tùy chỉnh riêng cho thanh bên và trình phát đắm chìm.
 settings.option.lyrics.showDualLanguage: Hiển thị song ngữ
 settings.option.lyrics.showDualLanguage.description: Hiển thị đồng thời cả lời bài hát gốc và bản dịch.
@@ -4434,7 +4536,7 @@ settings.option.lyrics.showTimestamps: Hiển thị mốc thời gian khi di chu
 settings.option.lyrics.showTimestamps.description: Hiển thị mốc thời gian của từng dòng lời bài hát khi di chuột qua.
 settings.option.lyrics.thirdPartySources: Bật nguồn bên thứ ba
 settings.option.lyrics.thirdPartySources.description: Cho phép tải lời bài hát từ Musixmatch và NetEase khi không có lời bài hát từ Apple Music. Chất lượng có thể khác nhau và việc sử dụng liên tục có thể dẫn đến giới hạn lượt yêu cầu.
-settings.option.lyrics.timeOffset: Độ lệch thời gian lời bài hát (Giây)
+settings.option.lyrics.timeOffset: Độ lệch thời gian lời bài hát (giây)
 settings.option.lyrics.timeOffset.description: Điều chỉnh thời gian hiển thị lời bài hát. Giá trị dương hiển thị lời bài hát sớm hơn, giá trị âm hiển thị muộn hơn. Hữu ích cho việc khắc phục thiết lập âm thanh không đồng bộ.
 settings.option.lyrics.timeOffset.descriptionV2: Điều chỉnh thời gian hiển thị lời bài hát. Giá trị dương hiển thị lời muộn hơn, giá trị âm hiển thị sớm hơn. Hữu ích để khắc phục tình trạng âm thanh bị lệch.
 settings.option.lyrics.timestampStyle: Kiểu mốc thời gian
@@ -4467,9 +4569,9 @@ settings.option.performance.app: Ứng dụng
 settings.option.performance.backgroundRefreshTime: Thời gian làm mới nền
 settings.option.performance.backgroundRefreshTime.description: Thời gian tính bằng giây giữa mỗi lần làm mới nền. Giá trị thấp hơn có thể gây ra sự cố hiệu năng.
 settings.option.performance.dataAndUiLoad: Tải dữ liệu và giao diện
-settings.option.performance.disableLargeRequestOffloading: Tắt giảm tải yêu cầu lớn
+settings.option.performance.disableLargeRequestOffloading: Tắt chuyển tải yêu cầu lớn
 settings.option.performance.disableLargeRequestOffloading.description: Sẽ ảnh hưởng đến hiệu năng giao diện khi có các yêu cầu lớn
-settings.option.performance.enableMediaItemInspect: Bật kiểm tra nhà phát triển cho MediaItems
+settings.option.performance.enableMediaItemInspect: Bật công cụ kiểm tra MediaItem cho nhà phát triển
 settings.option.performance.enableMediaItemInspect.description: Có thể ảnh hưởng nhẹ đến hiệu năng
 settings.option.performance.gameMode: Chế độ trò chơi
 settings.option.performance.gameMode.description: Giảm hiệu ứng hình ảnh và có thể bật chế độ hiệu quả của Windows để giảm mức sử dụng CPU.
@@ -4478,7 +4580,7 @@ settings.option.performance.graphicsAcceleration: Tăng tốc đồ họa
 settings.option.performance.graphicsAcceleration.autoOff: Đã tắt vì máy tính này vẽ đồ họa bằng phần mềm.
 settings.option.performance.graphicsAcceleration.description: Tự động sẽ tắt tính năng này trong máy ảo vẽ đồ họa bằng phần mềm. Thay đổi có hiệu lực lần tới khi Cider khởi động.
 settings.option.performance.host: Máy chủ
-settings.option.performance.immersiveRenderer: Trình dựng hình đắm chìm
+settings.option.performance.immersiveRenderer: Bộ dựng hình nhập vai
 settings.option.performance.immersiveRenderer.description: Sử dụng Canvas 2D thay vì WebGPU nếu nền động hoạt động không đúng hoặc sử dụng quá nhiều GPU.
 settings.option.performance.libraryQueueLimit: Giới hạn hàng chờ thư viện
 settings.option.performance.libraryQueueLimit.description: Giới hạn số lượng bài hát có thể thêm vào hàng chờ từ thư viện, nhập 0 để không giới hạn. Giá trị cao hơn hoặc không giới hạn có thể gây ra sự cố hiệu năng.
@@ -4486,7 +4588,7 @@ settings.option.performance.limitBlurMapFramerateOnBlur: Giới hạn tốc đ�
 settings.option.performance.limitBlurMapFramerateOnBlur.description: Giảm tốc độ khung hình của nền động sống động khi cửa sổ không hoạt động để tiết kiệm điện năng. Tắt tùy chọn này để giữ nền chạy ở tốc độ tối đa.
 settings.option.performance.limitImmersiveBgFramerateOnBlur: Giới hạn tốc độ khung hình nền đắm chìm khi mất tiêu điểm
 settings.option.performance.motion: Chuyển động
-settings.option.performance.powerSaverOnBattery: Tiết kiệm năng lượng khi dùng pin
+settings.option.performance.powerSaverOnBattery: Tiết kiệm pin khi dùng pin
 settings.option.performance.powerSaverOnBattery.description: Khi thiết bị chạy bằng pin, hình nền động sẽ kết xuất ở mức tối đa 30 khung hình/giây và hiệu ứng chuyển động của lời bài hát được giới hạn ở mức 60 khung hình/giây.
 settings.option.performance.preloadSidebarPages: Tải trước các trang trên thanh bên
 settings.option.performance.preloadSidebarPages.description: Tải trước các trang trên thanh bên trước khi bạn mở chúng. Tùy chọn 'Khi di chuột' sẽ bắt đầu khi con trỏ dừng trên một mục ở thanh bên. Tùy chọn 'Khi rảnh' cũng sẽ tải Nghe ngay, Khám phá và Radio sau khi khởi động, đồng thời làm mới danh sách thư viện bạn đã mở trước đó.
@@ -4497,7 +4599,7 @@ settings.option.performance.reduceEffects.description: Tắt làm mờ, hiệu �
 settings.option.performance.renderer.auto: Tự động (WebGPU khi được hỗ trợ)
 settings.option.performance.renderer.canvas: Canvas 2D
 settings.option.performance.renderer.webgpu: WebGPU
-settings.option.performance.ultraWide: Màn hình siêu rộng
+settings.option.performance.ultraWide: Siêu rộng
 settings.option.performance.ultraWide.description: Thao tác này sẽ loại bỏ giới hạn biên trang, tuy nhiên ứng dụng không được tối ưu hóa cho màn hình siêu rộng, vì vậy các thành phần có thể hiển thị bất thường.
 settings.option.performance.useEmotionEngine: Sử dụng Emotion Engine
 settings.option.performance.useEmotionEngine.description: Khi được bật, ứng dụng sẽ sử dụng Emotion Engine để xác định bảng màu của ảnh bìa album. Điều này có thể gây ra sự cố hiệu năng trên các thiết bị cấu hình thấp.
@@ -4511,7 +4613,7 @@ settings.option.smartPlaylists.autoRefreshIntervalMinutes: Khoảng thời gian 
 settings.option.smartPlaylists.clearLibraryCache: Xóa bộ nhớ đệm bài hát trong thư viện
 settings.option.smartPlaylists.clearLibraryCache.description: Bắt buộc lần làm mới tiếp theo phải tải lại thư viện của bạn từ Apple Music.
 settings.option.smartPlaylists.defaultTrackLimit: Giới hạn bài hát mặc định
-settings.option.smartPlaylists.enabled: Bật Quy tắc danh sách phát
+settings.option.smartPlaylists.enabled: Bật quy tắc danh sách phát
 settings.option.smartPlaylists.enabled.description: Cho phép Cider tự động quản lý các danh sách phát bằng các quy tắc được tích hợp.
 settings.option.smartPlaylists.maintenance: Bảo trì
 settings.option.smartPlaylists.perPlaylistMinIntervalMinutes: Khoảng thời gian tối thiểu cho mỗi danh sách phát (phút)
@@ -4531,34 +4633,34 @@ settings.option.sweetener.accentColor.purple: Tím
 settings.option.sweetener.accentColor.systemHint: Tắt màu nổi bật của hệ thống để tự chọn màu của bạn.
 settings.option.sweetener.accentColor.yellow: Vàng
 settings.option.sweetener.enableSweetener: Bật Sweetener
-settings.option.sweetener.header.uiCustomization: Tuỳ chỉnh UI
+settings.option.sweetener.header.uiCustomization: Tùy chỉnh giao diện
 settings.option.sweetener.header.uiCustomization.description: Màu nổi bật và màu sắc thái được sử dụng trong ứng dụng.
 settings.option.sweetener.immersiveBackground.brightnessPercentage: Độ sáng %
 settings.option.sweetener.immersiveBackground.contrastPercentage: Độ tương phản %
-settings.option.sweetener.immersiveBackground.frameRate: Tốc độ khung hình (Khi chọn cửa sổ)
+settings.option.sweetener.immersiveBackground.frameRate: Tốc độ khung hình (khi cửa sổ được chọn)
 settings.option.sweetener.immersiveBackground.frameRate.description: Khuyên dùng 15-30 FPS
 settings.option.sweetener.immersiveBackground.header.filters: Bộ lọc
-settings.option.sweetener.immersiveBackground.lightModeWarning: Nền nhập vai hiện không được hỗ trợ ở chế độ sáng.
+settings.option.sweetener.immersiveBackground.lightModeWarning: Hình nền nhập vai hiện chưa được hỗ trợ ở chế độ sáng.
 settings.option.sweetener.immersiveBackground.saturationPercentage: Độ bão hòa %
-settings.option.sweetener.immersiveBackground.use: Sử dụng Nền nhập vai
-settings.option.sweetener.immersiveBackgroundType: Kiểu nền sống động
+settings.option.sweetener.immersiveBackground.use: Dùng hình nền nhập vai
+settings.option.sweetener.immersiveBackgroundType: Loại hình nền nhập vai
 settings.option.sweetener.immersiveBackgroundType.immersive: Immersive
 settings.option.sweetener.immersiveBackgroundType.immersiveLite: Immersive Lite
 settings.option.sweetener.useCustomAccentColor: Sử dụng màu nhấn tùy chỉnh
 settings.option.sweetener.useCustomAccentColor.accentColor: Màu nhấn
-settings.option.sweetener.useCustomTintColor: Sử dụng màu sắc thái tùy chỉnh
+settings.option.sweetener.useCustomTintColor: Dùng màu phủ tùy chỉnh
 settings.option.sweetener.useCustomTintColor.lightModeWarning: Tỷ lệ màu sắc thái dưới 0,8 sẽ bị bỏ qua khi sử dụng chế độ sáng.
-settings.option.sweetener.useCustomTintColor.tintColor: Màu sắc thái
+settings.option.sweetener.useCustomTintColor.tintColor: Màu phủ
 settings.option.sweetener.useCustomTintColor.tintRatio: Tỷ lệ màu sắc thái
 settings.option.v2: V2
 settings.option.v2rp: V2 RP
 settings.option.v3: V3
 settings.option.v3rp: V3 RP
 settings.option.visual.accentColor: Màu nhấn
-settings.option.visual.adaptiveColorPercent: Phần trăm Độ thích ứng Màu
-settings.option.visual.additionalAnimatedArtwork: Ảnh bìa động bổ sung trong Danh mục
+settings.option.visual.adaptiveColorPercent: Tỷ lệ màu thích ứng
+settings.option.visual.additionalAnimatedArtwork: Ảnh bìa động bổ sung trong thư viện
 settings.option.visual.additionalAnimatedArtwork.description: Hiển thị thêm ảnh bìa động khi có sẵn. Hiệu năng có thể giảm khi có nhiều ảnh bìa trên màn hình.
-settings.option.visual.animateArtworkOnHover: Chạy ảnh bìa động của mục phương tiện khi di chuột qua
+settings.option.visual.animateArtworkOnHover: Tạo chuyển động cho ảnh bìa khi di chuột
 settings.option.visual.animatedArtwork: Ảnh bìa động
 settings.option.visual.animatedArtwork.description: Bật ảnh bìa động, tạm dừng khi cửa sổ không được chọn
 settings.option.visual.animatedArtwork.warningDescription: Hiển thị ảnh bìa động khi có sẵn. Điều này có thể gây ra sự cố hiệu năng trên các thiết bị cấu hình thấp.
@@ -4573,29 +4675,29 @@ settings.option.visual.animatedArtworkQuality.performance: Hiệu năng
 settings.option.visual.animatedArtworkQuality.quality: Chất lượng
 settings.option.visual.animatedBackgroundFramerate: Tốc độ khung hình nền động
 settings.option.visual.animatedWindowBackground: Nền cửa sổ động
-settings.option.visual.artistHeaderAlignment: Bố cục đầu trang nghệ sĩ
+settings.option.visual.artistHeaderAlignment: Bố cục tiêu đề nghệ sĩ
 settings.option.visual.artistHeaderAlignment.center: Căn giữa
 settings.option.visual.artistHeaderAlignment.description: Vị trí hiển thị tên nghệ sĩ và các tác vụ trên đầu trang nghệ sĩ.
 settings.option.visual.artistHeaderAlignment.left: Căn trái (Mặc định)
-settings.option.visual.artworkLoadingMethod: Cách thức tải ảnh bìa
+settings.option.visual.artworkLoadingMethod: Phương thức tải ảnh bìa
 settings.option.visual.artworkLoadingMethod.eager: Tải ngay
 settings.option.visual.artworkLoadingMethod.lazy: Tải khi cần
-settings.option.visual.chromaticAberrationIntensity: Cường độ sắc sai
+settings.option.visual.chromaticAberrationIntensity: Cường độ quang sai màu
 settings.option.visual.chromaticAberrationIntensity.description: Độ mạnh của viền RGB trên kính LCD.
 settings.option.visual.colorCustomization: Tùy chỉnh màu sắc
-settings.option.visual.colorScheme: Bảng Màu
+settings.option.visual.colorScheme: Bảng màu
 settings.option.visual.compactArtistHeader: Tiêu đề nghệ sĩ thu gọn
-settings.option.visual.contentFilterKeywords: Từ khóa bộ lọc nội dung
+settings.option.visual.contentFilterKeywords: Từ khóa lọc nội dung
 settings.option.visual.contentPreferences: Tùy chọn nội dung
 settings.option.visual.contentPreferences.description: Thay đổi bố cục của một số trang nhất định
 settings.option.visual.contextMenuIcons: Biểu tượng menu
 settings.option.visual.customAccentColor: Màu nhấn tùy chỉnh
-settings.option.visual.customScalingFactor: Tỷ lệ thu phóng tùy chỉnh
+settings.option.visual.customScalingFactor: Hệ số tỷ lệ tùy chỉnh
 settings.option.visual.customScalingFactor.description: Điều chỉnh tỷ lệ giao diện của ứng dụng
-settings.option.visual.enableAnimatedArtworkInMiniPlayer: Bật ảnh bìa động trong Trình phát thu nhỏ
-settings.option.visual.extendedEditorialLayout: Sử dụng bố cục biên tập mở rộng trên trang album
+settings.option.visual.enableAnimatedArtworkInMiniPlayer: Bật ảnh bìa động trong trình phát mini
+settings.option.visual.extendedEditorialLayout: Dùng bố cục biên tập mở rộng trên trang album
 settings.option.visual.extendedEditorialLayout.description: Khi bật, trang album sẽ hiển thị biểu ngữ biên tập và áp dụng bảng màu trên một số album nhất định dựa trên các tài nguyên có sẵn.
-settings.option.visual.filterPromotionalContent: Lọc nội dung quảng cáo
+settings.option.visual.filterPromotionalContent: Lọc nội dung quảng bá
 settings.option.visual.filterPromotionalContent.description: Khi bật, các mục trên Khám phá và Nghe ngay khớp với từ khóa lọc của bạn sẽ bị ẩn.
 settings.option.visual.floatingPlayer: Trình phát nổi
 settings.option.visual.floatingPlayer.description: Tách thanh trình phát khỏi các cạnh để có giao diện dạng viên thuốc nổi
@@ -4604,20 +4706,20 @@ settings.option.visual.floatingPlayerPadding.description: Điều chỉnh khoả
 settings.option.visual.floatingPlayerRoundness: Độ bo góc trình phát nổi
 settings.option.visual.floatingPlayerRoundness.description: Bán kính góc của trình phát nổi (0 = khớp với khung nhìn)
 settings.option.visual.fonts: Phông chữ
-settings.option.visual.forceMpWindowControls: Sử dụng điều khiển cửa sổ đa nền tảng
-settings.option.visual.forceRoundedViewport: Sử dụng khung nhìn bo góc
+settings.option.visual.forceMpWindowControls: Dùng nút điều khiển cửa sổ đa nền tảng
+settings.option.visual.forceRoundedViewport: Dùng khung hiển thị bo góc
 settings.option.visual.forceRoundedViewport.description: Áp dụng bo góc cho khung nhìn chính trên tất cả bố cục
 settings.option.visual.hardwareAcceleration: Chế độ Hiển thị
 settings.option.visual.hardwareAcceleration.description: Yêu cầu khởi động lại
-settings.option.visual.headerStyle: Kiểu tiêu đề Album & Danh sách phát
+settings.option.visual.headerStyle: Kiểu tiêu đề album và danh sách phát
 settings.option.visual.headerStyle.appleMusic: Apple Music
 settings.option.visual.headerStyle.appleMusic.description: Các tác vụ nổi ở góc trên bên phải của trang.
 settings.option.visual.headerStyle.classic: Cổ điển
 settings.option.visual.headerStyle.classic.description: Các tác vụ nằm cùng dòng trong phần đầu trang.
 settings.option.visual.headerStyle.description: Kiểu Cổ điển giữ các tác vụ nằm cùng dòng trong tiêu đề. Apple Music di chuyển Chia sẻ / Thêm / Thêm vào Thư viện vào một thanh nổi ở góc trên cùng bên phải của trang.
-settings.option.visual.hideAppleRecommends: Ẩn thẻ "Apple khuyên dùng"
+settings.option.visual.hideAppleRecommends: Ẩn thẻ "Apple đề xuất"
 settings.option.visual.hideAppleRecommends.description: Loại bỏ các thẻ quảng cáo "Apple khuyên dùng" khỏi mục đề xuất Nghe ngay và Trang chủ.
-settings.option.visual.hideHeroItems: Ẩn các mục nổi bật trên Khám phá
+settings.option.visual.hideHeroItems: Ẩn mục nổi bật trong Duyệt
 settings.option.visual.immersive.adjustVisuals: Điều chỉnh hiệu ứng hình ảnh
 settings.option.visual.immersive.background.artwork: Ảnh bìa đơn giản
 settings.option.visual.immersive.background.blank: Trống
@@ -4631,17 +4733,17 @@ settings.option.visual.immersive.coverflowStyle: Kiểu Coverflow
 settings.option.visual.immersive.coverflowStyle.default: Mặc định
 settings.option.visual.immersive.description: Tùy chỉnh trải nghiệm chế độ Đắm chìm
 settings.option.visual.immersive.enableHdr: Bật HDR
-settings.option.visual.immersive.fsrUpscale: Nâng cấp ảnh bìa bằng FSR
-settings.option.visual.immersive.fsrUpscale.applyToAll: "FSR: Áp dụng cho tất cả bài hát"
+settings.option.visual.immersive.fsrUpscale: Nâng tỷ lệ ảnh bìa FSR
+settings.option.visual.immersive.fsrUpscale.applyToAll: "FSR: áp dụng cho tất cả bản nhạc"
 settings.option.visual.immersive.fsrUpscale.applyToAll.description: Khi tắt, FSR chỉ chạy trên các bài hát được phát hành trước năm ngưỡng. Bật để nâng cấp mọi bài hát.
 settings.option.visual.immersive.fsrUpscale.description: Nâng cấp ảnh bìa album bằng AMD FidelityFX Super Resolution. Giúp ảnh bìa cũ hơn (trước năm 2010) trông sắc nét hơn. Yêu cầu WebGPU.
-settings.option.visual.immersive.fsrUpscale.sharpness: "FSR: Độ sắc nét"
+settings.option.visual.immersive.fsrUpscale.sharpness: "FSR: độ sắc nét"
 settings.option.visual.immersive.fsrUpscale.sharpness.description: Độ mạnh của bước làm sắc nét thích ứng tương phản (RCAS). 0 là dịu nhất, 1 là sắc nét nhất.
-settings.option.visual.immersive.fsrUpscale.thresholdYear: "FSR: Năm ngưỡng"
+settings.option.visual.immersive.fsrUpscale.thresholdYear: "FSR: năm ngưỡng"
 settings.option.visual.immersive.fsrUpscale.thresholdYear.description: Các bài hát được phát hành trước năm này sẽ đủ điều kiện để nâng cấp khi tắt "Áp dụng cho tất cả bài hát".
 settings.option.visual.immersive.hdrBoostScale: Tỷ lệ tăng cường HDR
-settings.option.visual.immersive.hideLyricsWhenUnavailable: Ẩn lời bài hát khi không có sẵn
-settings.option.visual.immersive.keepCompletedLyrics: Giữ lại lời bài hát đã qua
+settings.option.visual.immersive.hideLyricsWhenUnavailable: Ẩn lời bài hát khi không có
+settings.option.visual.immersive.keepCompletedLyrics: Giữ lời bài hát đã hoàn thành
 settings.option.visual.immersive.keepCompletedLyrics.description: Giữ lại các dòng lời bài hát đã hát xong trong chế độ xem lời bài hát.
 settings.option.visual.immersive.layout.default: Một (Mặc định)
 settings.option.visual.immersive.layout.minimal: Tối giản
@@ -4652,28 +4754,28 @@ settings.option.visual.immersive.layout.spectrumDeck: Spectrum Deck
 settings.option.visual.immersive.maxBrightness: Độ sáng tối đa
 settings.option.visual.immersive.maxLyricFontSize: Cỡ chữ lời bài hát tối đa (px)
 settings.option.visual.immersive.startFullscreen: Bắt đầu ở chế độ toàn màn hình
-settings.option.visual.immersive.startingTab: Tab bắt đầu
+settings.option.visual.immersive.startingTab: Tab khởi đầu
 settings.option.visual.immersive.startingTab.history: Lịch sử
 settings.option.visual.immersive.startingTab.lyrics: Lời bài hát
 settings.option.visual.immersive.startingTab.queue: Hàng chờ
-settings.option.visual.immersive.ultraHdr: Nâng cấp ảnh bìa Ultra HDR
+settings.option.visual.immersive.ultraHdr: Nâng tỷ lệ ảnh bìa Ultra HDR
 settings.option.visual.immersive.ultraHdr.description: Thêm vùng sáng HDR, độ tương phản và màu sắc cho ảnh bìa album ở mọi bài hát. Hiển thị tốt nhất trên màn hình HDR; các màn hình khác sẽ có hiệu ứng nhẹ hơn. Yêu cầu WebGPU.
-settings.option.visual.immersive.ultraHdr.headroom: "Ultra HDR: Biên độ sáng tối đa"
+settings.option.visual.immersive.ultraHdr.headroom: "Ultra HDR: vùng đỉnh sáng"
 settings.option.visual.immersive.ultraHdr.headroom.description: Độ sáng tối đa của vùng sáng, tính theo bội số của màu trắng tiêu chuẩn. Giảm giá trị này nếu vùng sáng trông quá chói trên màn hình của bạn.
-settings.option.visual.immersive.ultraHdr.intensity: "Ultra HDR: Cường độ"
+settings.option.visual.immersive.ultraHdr.intensity: "Ultra HDR: cường độ"
 settings.option.visual.immersive.ultraHdr.intensity.description: Mức độ mạnh của hiệu ứng. 0 giữ nguyên ảnh bìa, 1 áp dụng toàn bộ hồ sơ.
-settings.option.visual.immersive.ultraHdr.profile: "Ultra HDR: Hồ sơ"
+settings.option.visual.immersive.ultraHdr.profile: "Ultra HDR: hồ sơ"
 settings.option.visual.immersive.ultraHdr.profile.cinematic: Điện ảnh
 settings.option.visual.immersive.ultraHdr.profile.description: Tự nhiên giữ gần với bản gốc, Sống động có màu đậm và rực rỡ, Điện ảnh có độ tương phản cao với màu sắc tiết chế.
 settings.option.visual.immersive.ultraHdr.profile.natural: Tự nhiên
 settings.option.visual.immersive.ultraHdr.profile.vivid: Sống động
-settings.option.visual.immersive.useAnimatedArtwork: Sử dụng ảnh bìa động
+settings.option.visual.immersive.useAnimatedArtwork: Dùng ảnh bìa động
 settings.option.visual.immersive.useAnimatedArtwork.description: Hiển thị ảnh bìa động khi có sẵn. Tính năng này có thể gây giảm hiệu năng trên các thiết bị cấu hình thấp.
 settings.option.visual.immersive.useAnimatedBackground: Nền động đắm chìm
-settings.option.visual.immersive.useBackgroundBpm: Tốc độ nền dựa trên BPM
+settings.option.visual.immersive.useBackgroundBpm: Tốc độ nền theo BPM
 settings.option.visual.immersiveBackground.blank: Trống
 settings.option.visual.immersiveBackground.customImage: Ảnh tùy chỉnh
-settings.option.visual.immersiveBackground.customImageMixed: Ảnh tùy chỉnh (Trộn)
+settings.option.visual.immersiveBackground.customImageMixed: Ảnh tùy chỉnh (kết hợp)
 settings.option.visual.immersiveBackground.gradientMesh: Lưới gradient
 settings.option.visual.immersiveBackground.simpleArtwork: Ảnh bìa đơn giản
 settings.option.visual.immersiveBackground.simpleColor: Màu đơn giản
@@ -4694,12 +4796,12 @@ settings.option.visual.immersiveLayout.sonoma.description: Ảnh bìa hòa vào 
 settings.option.visual.immersiveLayout.spectrumDeck: Spectrum Deck
 settings.option.visual.immersiveLayout.spectrumDeck.description: Cảnh quang phổ thời gian thực với ảnh bìa nổi.
 settings.option.visual.immersiveStyle: Kiểu đắm chìm
-settings.option.visual.immersiveStylePortrait: Kiểu đắm chìm (Chân dung)
-settings.option.visual.largeHeaderTitles: Tiêu đề đầu trang lớn
+settings.option.visual.immersiveStylePortrait: Kiểu đắm chìm (dọc)
+settings.option.visual.largeHeaderTitles: Tiêu đề lớn
 settings.option.visual.largeHeaderTitles.description: Phóng to văn bản tiêu đề trên các trang album và danh sách phát để có giao diện nổi bật hơn.
 settings.option.visual.layoutProfile: Loại hồ sơ bố cục
 settings.option.visual.layoutProfile.description: Điều chỉnh bố cục của ứng dụng theo sở thích của bạn
-settings.option.visual.layoutType: Kiểu bố cục
+settings.option.visual.layoutType: Loại bố cục
 settings.option.visual.layoutType.calico: Calico
 settings.option.visual.layoutType.calico.description: Thanh bên có chiều cao đầy đủ với trình phát bên trong vùng nội dung.
 settings.option.visual.layoutType.mavericks: Mavericks
@@ -4708,7 +4810,7 @@ settings.option.visual.layoutType.mojave: Mojave
 settings.option.visual.layoutType.mojave.description: Thanh công cụ toàn chiều rộng với thanh trình phát ở phía dưới.
 settings.option.visual.layoutType.montara: Montara
 settings.option.visual.layoutType.montara.description: Thanh bên có chiều cao đầy đủ với trình phát phía trên bên trong vùng nội dung.
-settings.option.visual.lcdChromaticAberration: Sắc sai LCD
+settings.option.visual.lcdChromaticAberration: Quang sai màu LCD
 settings.option.visual.lcdChromaticAberration.description: Khúc xạ nền LCD đang phát qua trình đổ bóng kính lỏng với viền RGB.
 settings.option.visual.liquidGlassPlayer: Thanh trình phát Liquid Glass
 settings.option.visual.liquidGlassPlayer.description: Sử dụng bề mặt liquid-glass cho thanh trình phát đang phát. Tắt để sử dụng bảng điều khiển phẳng, đơn sắc (giúp kết xuất nhẹ hơn).
@@ -4720,7 +4822,7 @@ settings.option.visual.matchPageToArtwork: Khớp trang với ảnh bìa
 settings.option.visual.matchPageToArtwork.description: Tô trang album và danh sách phát theo màu của ảnh bìa, ở cả chế độ sáng và tối.
 settings.option.visual.mergeAppleMusicPlaylists: Gộp danh sách phát Apple Music
 settings.option.visual.mergeAppleMusicPlaylists.description: Trộn các danh sách phát do Apple Music tuyển chọn vào mục Danh sách phát chính thay vì hiển thị chúng dưới dạng một nhóm riêng biệt.
-settings.option.visual.miniplayerSkin: Bố cục Trình phát thu nhỏ
+settings.option.visual.miniplayerSkin: Bố cục trình phát mini
 settings.option.visual.miniplayerSkin.aluminum: Nhôm
 settings.option.visual.miniplayerSkin.aqua: Aqua
 settings.option.visual.miniplayerSkin.aquaAlt: Aqua (thay thế)
@@ -4735,14 +4837,14 @@ settings.option.visual.mojavePlayerType.comfy: Dễ chịu
 settings.option.visual.mojavePlayerType.comfy.description: Trình phát cao hơn với ảnh bìa và siêu dữ liệu ở bên trái.
 settings.option.visual.mojavePlayerType.compact: Thu gọn
 settings.option.visual.mojavePlayerType.compact.description: Trình phát mỏng với màn hình LCD ở giữa và thanh tiến trình ở phía trên.
-settings.option.visual.mojavePlayerType.compactInline: Thu gọn nội dòng
+settings.option.visual.mojavePlayerType.compactInline: Gọn trên một dòng
 settings.option.visual.mojavePlayerType.compactInline.description: Một hàng mỏng duy nhất với tiến trình bên trong màn hình LCD.
-settings.option.visual.moveUpLinks: Di chuyển các liên kết "Xem thêm" trong Khám phá lên đầu
-settings.option.visual.musicVideoPinMaxResolution: Luôn phát video ca nhạc ở độ phân giải tối đa
+settings.option.visual.moveUpLinks: Chuyển liên kết "Xem thêm" trong Duyệt lên đầu
+settings.option.visual.musicVideoPinMaxResolution: Luôn phát video âm nhạc ở độ phân giải tối đa
 settings.option.visual.musicVideoPinMaxResolution.description: Duy trì chất lượng cao nhất của video thay vì bắt đầu ở mức thấp rồi tăng dần. Trên cửa sổ nhỏ hoặc kết nối giới hạn lưu lượng, tùy chọn này sẽ tiêu tốn nhiều băng thông hơn đáng kể.
-settings.option.visual.musicVideoPrefetchOnHover: Chuẩn bị sẵn video ca nhạc khi di chuột qua
+settings.option.visual.musicVideoPrefetchOnHover: Chuẩn bị video âm nhạc khi di chuột
 settings.option.visual.musicVideoPrefetchOnHover.description: Bắt đầu tải video khi con trỏ chuột dừng trên biểu tượng, giúp video mở nhanh hơn khi bạn nhấp vào.
-settings.option.visual.musicVideoPrefetchSegmentsOnHover: Tải trước phân đoạn đầu tiên khi di chuột qua
+settings.option.visual.musicVideoPrefetchSegmentsOnHover: Tải phân đoạn đầu khi di chuột
 settings.option.visual.musicVideoPrefetchSegmentsOnHover.description: Tải trước vài giây đầu của video trước khi nhấp chuột. Việc này sẽ tiêu tốn vài megabyte cho mỗi lần di chuột, kể cả những lần bạn không mở video.
 settings.option.visual.paletteContrast: Độ tương phản màu ảnh bìa
 settings.option.visual.paletteContrast.description: Mức độ điều chỉnh màu sắc của album và danh sách phát để các nút và chỉ báo đang phát luôn dễ đọc. Cài đặt trợ năng Độ tương phản cao luôn sử dụng mức Tối đa.
@@ -4764,30 +4866,30 @@ settings.option.visual.playerType: Kiểu trình phát
 settings.option.visual.plugin.github.download: Cài đặt từ URL GitHub
 settings.option.visual.plugin.github.explore: Khám phá plugin GitHub
 settings.option.visual.plugin.github.install.confirm: Bạn có chắc chắn muốn cài đặt {{repo}} không?
-settings.option.visual.popularityThreshold: Ngưỡng phổ biến
+settings.option.visual.popularityThreshold: Ngưỡng độ phổ biến
 settings.option.visual.popularityThreshold.description: Mức độ phổ biến tối thiểu để hiển thị các chỉ báo bên cạnh bài hát.
 settings.option.visual.precisionScrollSpeed: Tốc độ cuộn chính xác
 settings.option.visual.precisionScrollSpeed.description: Tinh chỉnh cuộn bằng bàn di chuột trong cơ chế cửa sổ Mới (kính). Giá trị thấp hơn giúp cuộn chậm và chính xác hơn khi điều chỉnh nhỏ; giá trị cao hơn giúp cuộn nhanh hơn.
 settings.option.visual.purplePodcastPlaybackBar: Thanh phát màu tím cho Podcast
-settings.option.visual.realtimeVisualizer: Trình trực quan hóa âm thanh thời gian thực
+settings.option.visual.realtimeVisualizer: Hiển thị âm thanh thời gian thực
 settings.option.visual.realtimeVisualizer.description: Hiển thị trình trực quan hóa âm thanh thời gian thực trên các bài hát đang phát thay vì các thanh chuyển động.
 settings.option.visual.searchType: Kiểu tìm kiếm
 settings.option.visual.searchType.floating: Nổi
 settings.option.visual.searchType.inline: Nội dòng
-settings.option.visual.showBpmAndKey: Hiển thị BPM và Khóa nhạc của bài hát trong Danh sách phát và Album
+settings.option.visual.showBpmAndKey: Hiện BPM và khóa nhạc trên bản nhạc trong danh sách phát và album
 settings.option.visual.showBpmAndKey.description: Nội dung sẽ mất nhiều thời gian tải hơn khi bật tính năng này.
 settings.option.visual.showPersonalInfo: Hiển thị thông tin cá nhân
-settings.option.visual.showPlaylistArtworkInSidebar: Hiển thị ảnh bìa danh sách phát ở thanh bên
-settings.option.visual.showPodcastsInSidebar: Hiển thị Podcast ở thanh bên
+settings.option.visual.showPlaylistArtworkInSidebar: Hiện ảnh bìa danh sách phát trong thanh bên
+settings.option.visual.showPodcastsInSidebar: Hiện podcast trong thanh bên
 settings.option.visual.showPodcastsInSidebar.description: Tính năng hỗ trợ Podcast vẫn đang được xây dựng lại, vì vậy mục Thư viện hiện chỉ hiển thị một mục tạm thời.
-settings.option.visual.showQuickActions: Hiển thị các thao tác nhanh
-settings.option.visual.showWatchMusicVideoWhenAvailable: Hiển thị "Xem video ca nhạc" khi khả dụng
+settings.option.visual.showQuickActions: Hiện thao tác nhanh
+settings.option.visual.showWatchMusicVideoWhenAvailable: Hiển thị "Xem video âm nhạc" khi có sẵn
 settings.option.visual.sidebarStyle: Kiểu thanh bên
 settings.option.visual.sidebarStyle.apple: Apple Music
 settings.option.visual.sidebarStyle.default: Mặc định
 settings.option.visual.sidebarStyle.description: Chọn cách bố trí thanh bên. "Apple Music" sẽ lồng các mục đã ghim vào trong mục Thư viện và loại bỏ tiêu đề mục Apple Music.
 settings.option.visual.simpleArtworkBg.saturate: Độ bão hòa
-settings.option.visual.sizeProfile: Kích thước giao diện
+settings.option.visual.sizeProfile: Hồ sơ kích thước giao diện
 settings.option.visual.sizeProfile.description.default: Kích thước mặc định, dùng cho mọi thiết bị đầu vào. Kiểu iOS / Android / Windows hiện đại.
 settings.option.visual.sizeProfile.description.desktop: Kích thước tối ưu cho máy tính, dùng với chuột và bàn phím. Kiểu macOS / Windows cổ điển.
 settings.option.visual.sizeProfile.desktop: Máy tính
@@ -4807,28 +4909,28 @@ settings.option.visual.theme.viewInfo: Xem thông tin
 settings.option.visual.titleBarStyle: Kiểu thanh tiêu đề
 settings.option.visual.titleBarStyle.winui: WinUI
 settings.option.visual.topToolbarWidget: Widget thanh công cụ phía trên
-settings.option.visual.transparency: Bật hiệu ứng trong suốt
+settings.option.visual.transparency: Bật độ trong suốt
 settings.option.visual.transparent: Khung trong suốt
 settings.option.visual.transparent.description: yêu cầu Giao diện hỗ trợ, cần khởi động lại
 settings.option.visual.uiscale: Tỷ lệ giao diện
-settings.option.visual.useAdaptiveColors: Sử dụng màu sắc tuỳ biến
+settings.option.visual.useAdaptiveColors: Sử dụng màu thích ứng
 settings.option.visual.useAdaptiveColors.description: Thay đổi màu chủ đạo theo bài hát hiện tại
 settings.option.visual.useAdaptiveColors.popup: Màu sắc thích ứng sẽ có hiệu lực ở bài hát tiếp theo.
-settings.option.visual.verticalDrawerMode: Vị trí Hàng đợi & Lời bài hát
+settings.option.visual.verticalDrawerMode: Vị trí hàng đợi và lời bài hát
 settings.option.visual.verticalDrawerMode.auto.description: Sử dụng ngăn kéo phía dưới trình phát/nội dung trên màn hình dọc và ngăn kéo bên cạnh trên màn hình rộng.
-settings.option.visual.verticalDrawerMode.bottom: Ngăn kéo phía dưới
+settings.option.visual.verticalDrawerMode.bottom: Ngăn kéo dưới
 settings.option.visual.verticalDrawerMode.bottom.description: Luôn hiển thị hàng đợi và lời bài hát trong ngăn kéo phía dưới trình phát/nội dung.
 settings.option.visual.verticalDrawerMode.description: Thiết lập hiển thị hàng đợi và lời bài hát dưới dạng ngăn kéo phía dưới hoặc ngăn kéo bên cạnh trên màn hình dọc.
-settings.option.visual.verticalDrawerMode.side: Ngăn kéo bên cạnh
+settings.option.visual.verticalDrawerMode.side: Ngăn kéo bên
 settings.option.visual.verticalDrawerMode.side.description: Luôn hiển thị hàng đợi và lời bài hát trong ngăn kéo bên cạnh ở bên phải.
 settings.option.visual.vibrancyMode.acrylic: Acrylic
 settings.option.visual.vibrancyMode.mica: Mica
 settings.option.visual.vibrancyMode.tabbed: Tabbed
-settings.option.visual.vibrancySettings: Cài đặt hiệu ứng rực rỡ
+settings.option.visual.vibrancySettings: Cài đặt độ rực màu
 settings.option.visual.windowBackgroundStyle: Kiểu nền cửa sổ
 settings.option.visual.windowColor: Màu sắc cửa sổ
 settings.option.visual.windowControlPosition: Vị trí nút điều khiển cửa sổ
-settings.option.visual.windowingMode: Chế độ cuộn & kết xuất
+settings.option.visual.windowingMode: Chế độ cuộn và hiển thị
 settings.option.visual.windowingMode.auto: Tự động (nhận diện bàn di chuột)
 settings.option.visual.windowingMode.description: Chọn cách ứng dụng kết xuất và cuộn nội dung. Khuyên dùng "Tự động" cho hầu hết người dùng, trên một số thiết bị bàn di chuột thì chế độ "Cũ" có thể phản hồi tốt hơn.
 settings.option.visual.windowingMode.fallbackNotice.body: Cider đang sử dụng chế độ Cũ để thay thế.
@@ -4836,7 +4938,7 @@ settings.option.visual.windowingMode.fallbackNotice.title: Chế độ dựng h�
 settings.option.visual.windowingMode.glass: Mới
 settings.option.visual.windowingMode.performance: Cũ
 settings.option.visual.windowStyle: Kiểu cửa sổ
-settings.option.visual.windowVibrancy: Hiệu ứng mờ cửa sổ
+settings.option.visual.windowVibrancy: Độ rực màu cửa sổ
 settings.option.window.close_button_hide: Nút đóng sẽ ẩn ứng dụng
 settings.option.window.maxElementScale: Tỷ lệ phần tử tối đa
 settings.option.window.openOnStartup: Mở Cider khi khởi động
@@ -4867,6 +4969,17 @@ settings.power.savers: Trình tiết kiệm điện năng
 settings.power.summary.count: Đang bật {{high}} tính năng tác động lớn, {{medium}} tính năng tác động trung bình
 settings.power.summary.high: Tác động lớn
 settings.power.summary.medium: Tác động trung bình
+settings.privacy.appPreferences: Tùy chọn ứng dụng
+settings.privacy.appPreferences.description: Chia sẻ tùy chọn ứng dụng để chúng tôi biết bạn muốn Cider được cấu hình như thế nào.
+settings.privacy.appUsage: Mức sử dụng riêng của ứng dụng
+settings.privacy.appUsage.description: Gửi dữ liệu sử dụng ẩn danh cho các tính năng riêng của Cider. Dữ liệu này không bao gồm thông tin cá nhân hoặc dữ liệu Apple Music.
+settings.privacy.audioLabs: Phòng thí nghiệm âm thanh Cider
+settings.privacy.audioLabs.description: Gửi thông tin về cách bạn đã cấu hình Phòng thí nghiệm âm thanh Cider.
+settings.privacy.deviceSpecs: Thông số thiết bị
+settings.privacy.deviceSpecs.description: Gửi thông tin về phần cứng hiện tại của bạn gồm CPU, GPU, RAM, thiết bị âm thanh và hệ điều hành. Thông tin này ở mức cơ bản và không bao gồm số sê-ri hoặc mã thiết bị.
+settings.privacy.replay: Đóng góp lịch sử nghe cho Cider Replay
+settings.privacy.replay.description: Gửi lịch sử nghe một cách ẩn danh để đóng góp cho dự án Replay cuối năm của cộng đồng Cider. Có thể xem thống kê công khai tại cider.sh/replay.
+settings.privacy.statement: Chúng tôi tại Cider Collective rất coi trọng quyền riêng tư. Chúng tôi không thu thập bất kỳ thông tin nhận dạng cá nhân nào và không bán dữ liệu cho bên thứ ba. Mọi dữ liệu bạn chọn chia sẻ với chúng tôi được dùng để cải thiện ứng dụng và không được chia sẻ với ai khác; mọi thông tin cá nhân có thể được lưu trữ sẽ bị xóa trước khi chia sẻ với chúng tôi.
 settings.profile.crop.hint: Kéo để di chuyển, cuộn để thu phóng
 settings.profile.crop.title: Căn chỉnh ảnh của bạn
 settings.profile.defaultName: Người dùng Apple Music
@@ -4874,17 +4987,18 @@ settings.profile.field.displayName: Tên hiển thị
 settings.profile.field.displayName.description: Hiển thị ở thanh bên và trên toàn bộ Cider.
 settings.profile.field.handle.description: "@username của bạn, dùng để chia sẻ."
 settings.profile.field.photo: Ảnh hồ sơ
+settings.profile.field.photo.change: Đổi ảnh hồ sơ
 settings.profile.field.photo.description: Ảnh tùy chỉnh hiện đang được thiết lập.
 settings.profile.header.identity: Chỉnh sửa hồ sơ
-settings.profile.header.region: Vùng & Ngôn ngữ
+settings.profile.header.region: Khu vực và ngôn ngữ
 settings.profile.header.visibility: Hiển thị thanh bên
 settings.profile.language.description: Ngôn ngữ siêu dữ liệu danh mục cho cửa hàng đã chọn.
-settings.profile.option.showHandle: Hiện tên người dùng mạng xã hội
-settings.profile.option.showMainMenu: Menu chính trong vùng hồ sơ thanh bên
-settings.profile.option.showName: Hiện tên hồ sơ
-settings.profile.option.showProfile: Hiện hồ sơ ở thanh bên
+settings.profile.option.showHandle: Hiển thị tên người dùng mạng xã hội
+settings.profile.option.showMainMenu: Menu chính trong khu vực hồ sơ thanh bên
+settings.profile.option.showName: Hiển thị tên hồ sơ
+settings.profile.option.showProfile: Hiển thị hồ sơ trên thanh bên
 settings.profile.policy.allowed: Được phép
-settings.profile.policy.label: Nội dung Explicit
+settings.profile.policy.label: Nội dung nhạy cảm
 settings.profile.policy.restricted: Bị hạn chế
 settings.profile.signOut.confirmMessage: Bạn sẽ được đưa trở lại màn hình đăng nhập và bộ nhớ đệm thư viện cục bộ sẽ bị xóa. Tiếp tục?
 settings.profile.signOut.confirmTitle: Đăng xuất khỏi Apple Music?
@@ -4922,6 +5036,7 @@ settings.resetCider.confirm.ok: Đặt lại Cider
 settings.resetCider.confirm.title: Đặt lại Cider?
 settings.resetCider.confirm.warning: Hành động này không thể hoàn tác. Cider sẽ khởi động lại sau khi đặt lại.
 settings.resetCider.confirm.willReset: Sẽ đặt lại
+settings.resetCider.deselectAll: Bỏ chọn tất cả
 settings.resetCider.error: Đã xảy ra lỗi trong quá trình đặt lại.
 settings.resetCider.group.accounts: Tài khoản
 settings.resetCider.group.core: Đặt lại
@@ -4931,6 +5046,10 @@ settings.resetCider.resetButton: Đặt lại Cider
 settings.resetCider.resetting: Đang đặt lại…
 settings.resetCider.selectAll: Chọn tất cả
 settings.resetCider.title: Đặt lại Cider
+settings.search.empty: Không có cài đặt nào khớp với tìm kiếm này.
+settings.search.pages: Trang
+settings.search.resultCount: "{{count}} cài đặt khớp"
+settings.search.resultCountOne: 1 cài đặt khớp
 settings.sleepTimer.endsIn: "Kết thúc sau: {{remainingTime}} ({{endTime}})"
 settings.sleepTimer.notSet: Chưa hẹn giờ
 settings.sleepTimer.title: Hẹn giờ tắt
@@ -4967,7 +5086,7 @@ settings.takeout.reloadPrompt: Một số cài đặt chỉ có hiệu lực sau
 settings.takeout.selectAll: Chọn tất cả
 settings.takeout.title: Trích xuất cài đặt
 settings.title: Cài đặt
-settings.troubleshooting.bgDiagnostics: Chẩn đoán phát trong nền
+settings.troubleshooting.bgDiagnostics: Chẩn đoán phát nhạc nền
 settings.troubleshooting.bgDiagnostics.desc: Nhật ký bổ sung để chẩn đoán sự cố phát nhạc khi cửa sổ bị thu nhỏ hoặc không được tập trung — ai đã tạm dừng trình phát, thiếu hụt bộ hẹn giờ và các giai đoạn tạm ngưng của hệ điều hành. Hãy bật khi báo cáo lỗi phát trong nền.
 settings.troubleshooting.desc: Các tệp nhật ký và nhật ký gỡ lỗi MKLite.
 settings.troubleshooting.descV2: Ghi nhật ký MKLite và phát nhạc nền.
@@ -4987,9 +5106,68 @@ settings.troubleshooting.mkLoadingMethod.warning2: KHÔNG nên thay đổi cài 
 settings.troubleshooting.mkLoadingMethod.warning3: Tùy chọn này không dùng để khắc phục các sự cố kết nối hoặc phát nhạc chung.
 settings.troubleshooting.rebootMk: Khởi động lại MusicKit
 settings.troubleshooting.rebootMk.desc: Khởi động lại MusicKit để khắc phục các sự cố phát nhạc
-settings.troubleshooting.testSignIn: Kiểm tra đăng nhập Apple Music
+settings.troubleshooting.testSignIn: Thử đăng nhập Apple Music
 settings.troubleshooting.testSignIn.desc: Mở cửa sổ đăng nhập Apple Music để kiểm tra xem việc đăng nhập có hoạt động không, sau đó xác thực token với API. Không có thông tin nào được lưu và phiên làm việc hiện tại của bạn sẽ không bị ảnh hưởng.
 settings.troubleshooting.title: Khắc phục sự cố
+settings.tweaks.animateArtworkOnHover.description: Phát ảnh bìa động khi con trỏ di chuột lên.
+settings.tweaks.artworkFadeIn.description: Hiển thị ảnh bìa ngay lập tức thay vì làm mờ dần khi tải.
+settings.tweaks.artworkHighlighting.description: Thêm bóng mờ và hiệu ứng nổi bật cho ảnh bìa trong lưới và danh sách.
+settings.tweaks.artworkLoadingMethod.description: Tải lười ảnh bìa khi cuộn đến. Tải sớm sẽ tải ngay lập tức.
+settings.tweaks.card.musicVideos: Video âm nhạc
+settings.tweaks.ciderAudioBadges.description: Hiển thị huy hiệu Cider Audio bên cạnh bài hát trong trình phát.
+settings.tweaks.ciderAudioToolbar.description: Hiển thị nút Cider Audio trên thanh công cụ.
+settings.tweaks.compactSidebarSize: Kích thước thanh bên thu gọn
+settings.tweaks.contextMenuIcons.description: Các mục menu nào hiển thị biểu tượng.
+settings.tweaks.floatingSearchBlur: Làm mờ phía sau tìm kiếm nổi
+settings.tweaks.floatingSearchClear: Xóa tìm kiếm nổi khi đóng
+settings.tweaks.forceMpWindowControls.description: Dùng nút cửa sổ riêng của Cider thay vì nút của hệ thống.
+settings.tweaks.hideHeroItems.description: Ẩn các banner nổi bật lớn ở đầu trang Duyệt.
+settings.tweaks.homeButtonLocation.description: Vị trí của nút Trang chủ.
+settings.tweaks.immersiveArtworkHighlight: Làm nổi bật ảnh bìa chế độ đắm chìm
+settings.tweaks.immersiveArtworkHighlight.description: Thêm hiệu ứng nổi bật cho ảnh bìa trong chế độ đắm chìm.
+settings.tweaks.immersiveBackgroundBpm.description: Làm nền chuyển động theo nhịp của bài hát.
+settings.tweaks.immersiveControlsTimeout: Thời gian ẩn điều khiển ở chế độ Immersive
+settings.tweaks.immersiveControlsTimeout.description: Số giây trước khi các điều khiển ẩn đi.
+settings.tweaks.immersiveHideLyrics.description: Ẩn khung lời bài hát với các bài không có lời.
+settings.tweaks.immersiveLyricGlow: Hiệu ứng phát sáng ở lời đang hát
+settings.tweaks.immersiveLyricGlow.description: Thêm hiệu ứng phát sáng cho dòng đang được hát.
+settings.tweaks.immersiveMaxLyricSize.description: Kích thước lớn nhất mà lời bài hát có thể đạt tới trong chế độ Immersive.
+settings.tweaks.mainMenuPosition.description: Vị trí của nút menu chính.
+settings.tweaks.mavericksLcdStyle: Kiểu màn hình LCD Mavericks
+settings.tweaks.mavericksLcdStyle.description: Giao diện hiển thị đang phát trong bố cục Mavericks.
+settings.tweaks.miniPlayerAnimatedArtwork.description: Phát ảnh bìa động trong cửa sổ trình phát mini.
+settings.tweaks.moveUpLinks.description: Đưa các liên kết đến nội dung khác lên đầu mục Browse.
+settings.tweaks.musicVideoBadge.description: Hiển thị nút trong trình phát khi bài hát có video âm nhạc.
+settings.tweaks.pauseAnimatedOnBlur.description: Tạm dừng ảnh bìa động khi Cider không phải cửa sổ đang dùng.
+settings.tweaks.progressAccent: Thanh tiến trình màu nhấn
+settings.tweaks.progressAccent.description: Tô thanh tiến trình bài hát bằng màu nhấn.
+settings.tweaks.resizableMiniPlayer.description: Cho phép thay đổi kích thước cửa sổ trình phát mini.
+settings.tweaks.richGridNoScrollAnimation: Cuộn tức thì trong lưới album phong phú
+settings.tweaks.richGridNoScrollAnimation.description: Chuyển thẳng đến album mà không có hiệu ứng cuộn.
+settings.tweaks.richGridOpenPage: Mở album dạng trang từ lưới album phong phú
+settings.tweaks.richGridOpenPage.description: Chuyển đến trang album thay vì mở rộng trong lưới.
+settings.tweaks.richGridScrollPosition: Vị trí cuộn của lưới album phong phú
+settings.tweaks.richGridScrollPosition.description: Vị trí lưới cuộn đến khi bạn mở một album.
+settings.tweaks.scrollbarType.description: Dùng thanh cuộn riêng của Cider hoặc thanh cuộn của hệ thống.
+settings.tweaks.searchStyle: Kiểu tìm kiếm
+settings.tweaks.searchStyle.description: Tìm kiếm trên thanh tiêu đề hoặc trong một bảng phía trên trang.
+settings.tweaks.section.artwork: Ảnh bìa
+settings.tweaks.section.browse: Browse
+settings.tweaks.section.immersive: Immersive
+settings.tweaks.section.lyrics: Lời bài hát
+settings.tweaks.section.pagesGrids: Trang và lưới
+settings.tweaks.section.playerBar: Thanh trình phát
+settings.tweaks.section.search: Tìm kiếm
+settings.tweaks.section.sidebarNavigation: Thanh bên và điều hướng
+settings.tweaks.section.windowToolbar: Cửa sổ và thanh công cụ
+settings.tweaks.showBitrate.description: Hiển thị bitrate của luồng phát cạnh bài hát trong trình phát.
+settings.tweaks.sidebarPlaylistArtwork.description: Hiển thị ảnh bìa của mỗi danh sách phát cạnh tên.
+settings.tweaks.simpleArtworkMask.description: Làm mờ dần phần dưới của ảnh bìa nền.
+settings.tweaks.sonomaLyricArc: Lời bài hát cong trên Sonoma
+settings.tweaks.sonomaRadialMask: Lớp phủ Sonoma thay thế
+settings.tweaks.volumeIosStyle: Thanh âm lượng kiểu iOS
+settings.tweaks.volumeIosStyle.description: Vẽ thanh âm lượng theo kiểu dùng trên iPhone.
+settings.tweaks.windowControlPosition.description: Các nút cửa sổ nằm ở phía nào.
 settings.updates.action.check: Kiểm tra cập nhật
 settings.updates.action.install: Cài đặt bản cập nhật
 settings.updates.action.restart: Khởi động lại Cider
@@ -5000,7 +5178,7 @@ settings.updates.build: Bản dựng
 settings.updates.channel: Kênh
 settings.updates.codename: Mật danh
 settings.updates.currentlyRunning: Phiên bản đang chạy
-settings.updates.firstInstalled: Đã cài đặt lần đầu
+settings.updates.firstInstalled: Cài đặt lần đầu
 settings.updates.platform: Nền tảng
 settings.updates.progress.failed: Cập nhật thất bại
 settings.updates.progress.failed.sub: Đã xảy ra lỗi trong quá trình cập nhật.
@@ -5018,25 +5196,26 @@ settings.updates.progress.success: Đã cài đặt bản cập nhật
 settings.updates.progress.success.sub: Khởi động lại Cider để áp dụng các thay đổi.
 settings.updates.progress.working: Đang cài đặt bản cập nhật
 settings.updates.progress.working.sub: Vui lòng chờ trong giây lát.
-settings.updates.section.about: Giới thiệu về phiên bản của bạn
+settings.updates.section.about: Về phiên bản của bạn
 settings.updates.section.alsoAvailable: Cũng có sẵn
 settings.updates.section.history: Lịch sử cập nhật
-settings.updates.section.whatsNew: Tính năng mới trong Cider
-settings.updates.status.available: Có bản cập nhật mới
+settings.updates.section.whatsNew: Có gì mới trong Cider {version}
+settings.updates.status.available: Có bản cập nhật
 settings.updates.status.checking: Đang kiểm tra cập nhật...
 settings.updates.status.failed: Cập nhật thất bại
 settings.updates.status.idle: Cider đã được cập nhật
-settings.updates.status.success: Yêu cầu khởi động lại
+settings.updates.status.success: Cần khởi động lại
 settings.updates.status.working: Đang cài đặt...
 settings.visual.card.appBackground: Nền ứng dụng
-settings.visual.card.behaviorLyrics: Hành vi & Lời bài hát
+settings.visual.card.behavior: Hành vi
+settings.visual.card.behaviorLyrics: Hành vi và lời bài hát
 settings.visual.card.browse: Khám phá
 settings.visual.card.contentFilter: Bộ lọc nội dung
 settings.visual.card.experimental: Thử nghiệm
-settings.visual.card.fsrUpscaling: Nâng cấp FSR
+settings.visual.card.fsrUpscaling: Nâng tỷ lệ FSR
 settings.visual.card.moreAnimatedArtwork: Thêm ảnh bìa động
 settings.visual.card.playerEffects: Hiệu ứng trình phát
-settings.visual.card.sidebarNavigation: Thanh bên & Điều hướng
+settings.visual.card.sidebarNavigation: Thanh bên & điều hướng
 settings.visual.card.trackMetadata: Siêu dữ liệu bài hát
 settings.visual.card.ultraHdr: Nâng cấp Ultra HDR
 settings.visual.editorialLayout: Sử dụng bố cục biên tập
@@ -5044,15 +5223,19 @@ settings.visual.editorialLayout.desc: Hiển thị biểu ngữ biên tập và 
 settings.visual.editorialPreferenceOrder: Thứ tự ưu tiên biên tập
 settings.visual.section.appearance: Giao diện
 settings.visual.section.appearance.description: Phối màu, màu nổi bật và nền ứng dụng.
-settings.visual.section.artwork: Ảnh bìa & Chuyển động
+settings.visual.section.artwork: Ảnh bìa & chuyển động
 settings.visual.section.artwork.description: Ảnh bìa động và tùy chọn chuyển động.
-settings.visual.section.content: Khám phá & Nội dung
+settings.visual.section.content: Duyệt & nội dung
 settings.visual.section.content.description: Bố cục trang, tùy chọn khám phá và bộ lọc nội dung.
 settings.visual.section.customCss.description: Áp dụng CSS của riêng bạn đè lên kiểu dáng của Cider.
 settings.visual.section.layout: Bố cục
 settings.visual.section.layout.description: Bố cục ứng dụng, kiểu trình phát, thanh bên và điều hướng.
+settings.visual.section.pages: Trang
+settings.visual.section.pages.description: Cách bố cục trang album và danh sách phát được hiển thị.
+settings.visual.section.themeColors: Chủ đề và màu sắc
 settings.visual.section.window: Cửa sổ
 settings.visual.section.window.description: Khung cửa sổ, độ sống động, bộ điều khiển và tỷ lệ.
+settings.visual.section.window.descriptionV2: Khung cửa sổ, hiệu ứng mờ, kết xuất và tỷ lệ hiển thị.
 settings.visual.vibrancy.acrylicDarkness: Giá trị độ tối Acrylic
 settings.visual.vibrancy.mode.acrylic: Acrylic
 settings.visual.vibrancy.mode.mica: Mica
@@ -5633,7 +5816,7 @@ term.updates: Bản cập nhật
 term.upNext: Kế tiếp
 term.username: Tên người dùng
 term.userPresets: Cài đặt sẵn của người dùng
-term.userSubmitted: Do người dùng gửi
+term.userSubmitted: Người dùng gửi
 term.userToken: Token người dùng
 term.variables: Biến
 term.version: Phiên bản
