@@ -1842,6 +1842,14 @@ lyrics.selectProvider:
   source: human
   by: "@jay900604"
   issue: 69
+lyrics.translation.chip.pronunciation: 發音
+lyrics.translation.chip.translated: 已翻譯
+lyrics.translation.credit: 翻譯來源：{{source}}
+lyrics.translation.credit.apple: 翻譯來源：Apple Music
+lyrics.translation.menu.hide: 隱藏翻譯
+lyrics.translation.menu.hidePronunciation: 隱藏發音
+lyrics.translation.menu.show: 顯示翻譯
+lyrics.translation.source.community: 社群
 marketplace.trustedAuthor.tooltip: 這是受信任且已驗證的作者
 menu.signIn: 登入
 menu.signOut: 登出
@@ -5186,6 +5194,18 @@ playbackHealth.localIssue:
   source: human
   by: "@jay900604"
   issue: 84
+playbackSpeed.keepPitch: 保持音調
+playbackSpeed.preset.normal: 正常
+playbackSpeed.preset.slowed: 放慢
+playbackSpeed.preset.spedUp: 加快
+playbackSpeed.rateValue: "{{rate}}×"
+playbackSpeed.reset: 重設
+playbackSpeed.reverb: 迴響
+playbackSpeed.reverbUnavailable: 使用 Dolby Atmos 直通時無法使用迴響
+playbackSpeed.settings: 播放速度設定
+playbackSpeed.title: 播放速度
+playbackSpeed.unavailable.radio: 無法變更現場電台的播放速度
+playbackSpeed.unavailable.video: 無法變更音樂影片的播放速度
 playlist.collaborative.tooltip:
   value: 此播放列表已開放合作者加入
   source: human
@@ -5575,6 +5595,7 @@ settings.audio.section.output: 輸出
 settings.audio.section.output.description: Cider 播放音訊的裝置，以及音訊傳輸到該裝置的方式。
 settings.audio.section.playback: 播放
 settings.audio.section.playback.description: 音訊品質、空間音訊、聆聽模式，以及 Podcast 的播放速度。
+settings.audio.section.playback.descriptionV2: 音訊品質、空間音訊、聆聽模式與播放速度。
 settings.audio.section.volume: 音量
 settings.audio.section.volume.description: 音量平衡、滾輪調整音量的幅度，以及音量滑桿的顯示方式。
 settings.audio.signal.atmosCodecs: 可用的 Atmos 編解碼器
@@ -6024,6 +6045,9 @@ settings.connectivity.scrobbler.roster.scrobbling: 正在 Scrobble
 settings.connectivity.scrobbler.roster.scrobblingAs: 正在以 {account} 身分 Scrobble
 settings.connectivity.scrobbler.roster.scrobblingTo: 正在 Scrobble 至 {account}
 settings.connectivity.scrobbler.roster.signOut: 登出 {service}
+settings.connectivity.scrobbler.roster.signOut.message: Cider 將停止向此帳號記錄播放紀錄。你隨時可以重新連接。
+settings.connectivity.scrobbler.roster.signOut.ok: 登出
+settings.connectivity.scrobbler.roster.signOut.title: 要登出 {service} 嗎？
 settings.connectivity.scrobbler.roster.switchLabel: Scrobble 至 {service}
 settings.connectivity.scrobbler.roster.waiting: 正在等待瀏覽器…
 settings.connectivity.scrobbler.toast.failed: 無法 Scrobble 至 {services}
@@ -6480,11 +6504,15 @@ settings.lyrics.card.providers: 提供者
 settings.lyrics.card.songOverrides: 歌曲覆寫設定
 settings.lyrics.localeOverrides: 依語言地區的規則
 settings.lyrics.localeOverrides.add: 新增語言地區覆寫
+settings.lyrics.localeOverrides.addRule: 新增規則
 settings.lyrics.localeOverrides.audioLocale: 音訊語言地區
 settings.lyrics.localeOverrides.desc: 為特定語言的歌曲設定自訂的提供者和翻譯偏好設定。當歌曲的音訊語言地區符合規則時，這些設定將會覆寫預設值。
+settings.lyrics.localeOverrides.dialog.addTitle: 新增規則
+settings.lyrics.localeOverrides.dialog.editTitle: 編輯規則
 settings.lyrics.localeOverrides.dialogTitle.add: 新增語言地區覆寫
 settings.lyrics.localeOverrides.dialogTitle.edit: 編輯語言地區覆寫
 settings.lyrics.localeOverrides.empty: 尚無規則。使用 + 新增一個。
+settings.lyrics.localeOverrides.emptyV2: 尚無規則。
 settings.lyrics.localeOverrides.overrideTranslation: 覆寫翻譯
 settings.lyrics.localeOverrides.preferredProvider: 慣用提供者
 settings.lyrics.localeOverrides.provider.apple: Apple Music
@@ -6540,11 +6568,17 @@ settings.lyrics.section.advanced: 進階
 settings.lyrics.section.advanced.description: 同步位移、動畫影格率，以及手動微調的滾動時間。
 settings.lyrics.section.display: 顯示
 settings.lyrics.section.display.description: 顯示哪些歌詞行、其動畫效果，以及懸停時顯示的時間戳記。
+settings.lyrics.section.overrides: 覆寫設定
+settings.lyrics.section.overrides.description: 針對特定語言的歌曲或單一曲目，優先於預設歌詞來源的規則。
 settings.lyrics.section.sources: 來源
 settings.lyrics.section.sources.description: 歌詞來源，以及優先於預設提供者的語言或單曲特定規則。
+settings.lyrics.section.sources.descriptionV2: 歌詞的來源，以及多個來源都有歌詞時優先採用哪一個。
 settings.lyrics.section.translation: 翻譯
 settings.lyrics.section.translation.description: 翻譯歌詞、目標語言，以及是否在螢幕上保留原文。
 settings.lyrics.trackOverrides.clearAll: 清除所有覆寫設定
+settings.lyrics.trackOverrides.clearAll.message: 所有曲目將恢復為預設歌詞來源，以及 Apple 回報的人聲狀態。
+settings.lyrics.trackOverrides.clearAll.title: 要清除所有覆寫設定嗎？
+settings.lyrics.trackOverrides.clearAllShort: 全部清除
 settings.lyrics.trackOverrides.desc:
   value: 此處列出的歌曲將一律使用你鎖定的歌詞提供者，或是你手動設定的人聲狀態，而非 Apple 回報的狀態。這些覆寫設定可在歌詞選單和歌曲的右鍵選單中進行設定。
   source: human
@@ -6999,6 +7033,7 @@ settings.option.audio.audioLab.description: 各種專為 Cider 開發的獨家�
 settings.option.audio.audioLab.subheader: 由加州的 Cider Acoustic Technologies 設計
 settings.option.audio.audioQuality: 音訊品質
 settings.option.audio.automix: 自動混音
+settings.option.audio.automix.pausedForSpeed: 播放速度不是 1× 時，自動混音會暫停。
 settings.option.audio.changePlaybackRate: 變更播放速度
 settings.option.audio.ciderAudio: Cider Audio
 settings.option.audio.ciderAudio.showBadges: 在正在播放中顯示標記
@@ -7132,6 +7167,12 @@ settings.option.audio.outputDevice: 輸出裝置
 settings.option.audio.playback: 播放
 settings.option.audio.playbackRate: 播放速度
 settings.option.audio.playbackRate.change: 變更
+settings.option.audio.playbackSpeed: 播放速度控制
+settings.option.audio.playbackSpeed.description: 在播放器中顯示速度控制，用於放慢或加快聆聽，並可選擇加入迴響。
+settings.option.audio.playbackSpeed.keepPitch: 保持音調
+settings.option.audio.playbackSpeed.keepPitch.description: 變更速度但不改變音調。關閉後可得到放慢或加快的音效。
+settings.option.audio.playbackSpeed.reverb: 迴響
+settings.option.audio.playbackSpeed.reverb.description: 為正在播放的內容加入室內迴響。
 settings.option.audio.podcastPlayback: Podcast 播放
 settings.option.audio.podcasts.playbackRate: Apple Podcasts 播放速率
 settings.option.audio.podcasts.playbackRate.description: 調整 Podcast 的播放速度。
@@ -7672,6 +7713,8 @@ settings.option.lyrics.preferUserLyrics.description:
   source: human
   by: "@jay900604"
   issue: 22
+settings.option.lyrics.pronunciation: 顯示發音
+settings.option.lyrics.pronunciation.description: 當 Apple Music 提供時，以拉丁字母顯示其他文字歌詞的發音。
 settings.option.lyrics.provider.apple: Apple Music
 settings.option.lyrics.provider.auto:
   value: 自動（最佳可用）
@@ -7720,13 +7763,16 @@ settings.option.lyrics.translationLanguage: 翻譯語言
 settings.option.lyrics.translationLanguage.description: 歌詞要翻譯成的語言。僅在「翻譯模式」設定為「手動」時使用。
 settings.option.lyrics.translationMode: 翻譯模式
 settings.option.lyrics.translationMode.appLanguage: 依應用程式語言自動設定
+settings.option.lyrics.translationMode.appLanguageShort: 應用程式語言
 settings.option.lyrics.translationMode.description: 如何決定目標翻譯語言。
 settings.option.lyrics.translationMode.manual:
   value: 手動（使用選取的語言）
   source: human
   by: "@jay900604"
   issue: 24
+settings.option.lyrics.translationMode.manualShort: 手動
 settings.option.lyrics.translationMode.system: 依系統語言自動設定
+settings.option.lyrics.translationMode.systemShort: 系統語言
 settings.option.lyrics.translationSettings: 翻譯設定
 settings.option.lyrics.translationSettings.description: 設定歌詞翻譯行為
 settings.option.medium: 中
