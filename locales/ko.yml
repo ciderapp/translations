@@ -61,6 +61,7 @@ action.cast.todevices: 기기로 전송
 action.change: 변경
 action.clear: 지우기
 action.close: 닫기
+action.configure: 구성
 action.connect: 연결
 action.connect.createCollabPlaylist: 새로운 공동 작업 재생목록 생성
 action.connect.listenTogether: 함께 듣기
@@ -94,6 +95,7 @@ action.deletePlaylist:
   issue: 30
   superseded_at: 2026-07-08
 action.deletepreset: 프리셋 삭제
+action.deny: 거부
 action.disablePlugins:
   value: 이 세션에서 플러그인 비활성화
   source: human
@@ -466,6 +468,8 @@ assistant.sid.chat.suggestQueuePlaylist: 대기열로 플레이리스트 만들�
 assistant.sid.chat.suggestTidyQueue: 대기열 정리하기
 assistant.sid.chat.tooBig: 한 번에 읽기에는 너무 많습니다. 더 짧은 요청을 해 보세요.
 assistant.sid.chat.workingQueue: 대기열 작업 중
+assistant.sid.engine.apple: Apple Intelligence
+assistant.sid.engine.gemma: Gemma
 assistant.sid.entry.edit: Sid로 편집
 assistant.sid.entry.editDetail: 변경할 내용을 설명하면 먼저 검토할 수 있어요
 assistant.sid.entry.start: Sid와 시작하기
@@ -481,9 +485,12 @@ assistant.sid.failure.modelMissing: Gemma 파일이 없어요. 다시 받아야 
 assistant.sid.failure.network: 다운로드가 중단됐어요. 연결을 확인하고 다시 시도해 주세요.
 assistant.sid.failure.notReady: Gemma가 아직 준비되지 않았어요.
 assistant.sid.failure.outOfMemory: 컴퓨터의 응답성을 유지하기 위해 Sid가 Gemma를 중지했어요. 필요한 그래픽 메모리가 부족했어요.
+assistant.sid.failure.stoppedUnexpectedly: Sid가 예기치 않게 중지되었습니다. 다시 시도하세요.
 assistant.sid.failure.storageFull: 다운로드를 마칠 만큼 여유 공간이 부족해요.
 assistant.sid.failure.timeout: Gemma가 응답하는 데 너무 오래 걸렸어요. 다시 시도해 주세요.
+assistant.sid.failure.tookTooLong: Sid의 응답이 너무 오래 걸렸습니다. 다시 시도하세요.
 assistant.sid.failure.tryAgain: 다시 시도
+assistant.sid.failure.unready: Sid가 아직 준비되지 않았습니다.
 assistant.sid.failure.watchLost: 그래픽 메모리 상태를 잃어 Sid가 중지됐어요. 다시 시도해 주세요.
 assistant.sid.gate.description: 아직 완성되지 않은 Sid를 미리 사용해 보세요. 일부 기능은 아직 작동하지 않아요.
 assistant.sid.gate.name: Sid, 플레이리스트 도우미
@@ -642,12 +649,20 @@ assistant.sid.settings.checkGood: Gemma 파일이 정상이에요
 assistant.sid.settings.downloadAgain: 다시 다운로드
 assistant.sid.settings.downloadedSize: 다운로드됨 · {size}
 assistant.sid.settings.duringSet: 세트 재생 중
+assistant.sid.settings.engine: Sid의 생각 엔진
+assistant.sid.settings.engineDetail: Gemma를 사용하거나 Mac에 내장된 Apple Intelligence를 사용하세요
 assistant.sid.settings.found: Sid가 찾아준 곡
 assistant.sid.settings.fresh: 처음부터 시작
 assistant.sid.settings.freshDetail: 분위기, 순간, 또는 몇 명의 아티스트로 플레이리스트 전체를 만들어요
 assistant.sid.settings.gemmaHere: 여기에 Gemma
 assistant.sid.settings.gpu: 그래픽 카드
 assistant.sid.settings.group: 어시스턴트
+assistant.sid.settings.helloEdit: 재생목록을 열고 Sid로 편집을 선택하면 제가 정리해 드릴게요.
+assistant.sid.settings.helloFresh: 분위기나 아티스트 몇 명을 알려주시면 재생목록 전체를 만들어 드릴게요.
+assistant.sid.settings.helloRequest: 세트 중에 곡을 요청하면 Apple Music에서 찾아 드릴게요.
+assistant.sid.settings.helloSet: 세트 중에는 키와 템포를 기준으로 다음에 재생할 곡을 골라 드릴게요.
+assistant.sid.settings.helloSort: 차분한 곡에서 활기찬 곡 순서로 정렬하거나, 키가 자연스럽게 이어지도록 해 달라고 하세요.
+assistant.sid.settings.helloTrim: 재생목록을 한 시간 분량으로 줄이거나, 템포를 일정하게 유지할 수 있어요.
 assistant.sid.settings.inEdit: 플레이리스트를 편집할 때
 assistant.sid.settings.inEditDetail: 플레이리스트 헤더에서 Sid로 편집
 assistant.sid.settings.inImmersive: 몰입 모드에서
@@ -662,6 +677,7 @@ assistant.sid.settings.machine: 이 컴퓨터
 assistant.sid.settings.modelOptions: "{model} 옵션"
 assistant.sid.settings.modelRow: "{style} · {name}"
 assistant.sid.settings.nav: Sid
+assistant.sid.settings.needsEngine: "{engine} 필요"
 assistant.sid.settings.needsGemma: Gemma 필요
 assistant.sid.settings.nods: 비트에 맞춰 고개 끄덕이기
 assistant.sid.settings.nodsDetail: Sid가 노래의 모든 비트에 맞춰 고개를 끄덕입니다
@@ -674,6 +690,12 @@ assistant.sid.settings.partlySize: 일부 다운로드됨 · {size}
 assistant.sid.settings.position: 위치
 assistant.sid.settings.positionDetail: Sid가 아트워크에서 위치하는 곳
 assistant.sid.settings.privacyChat: 입력한 내용은 이 컴퓨터에만 남습니다. Sid는 여기서 Gemma로 생각합니다. 음악을 찾기 위해 Sid는 검색어를 Apple Music에 보내며, 요청하시면 Apple Music 계정의 플레이리스트, 최근 재생 기록, Apple Music Replay를 읽습니다. '적용'을 누르기 전에는 아무것도 바뀌지 않습니다.
+assistant.sid.settings.privacyEngine: 입력한 내용은 이 컴퓨터에 머무릅니다. Sid는 여기서 {engine}을(를) 사용해 생각합니다. 음악을 찾을 때는 검색어를 Apple Music으로 보내며, 요청하면 Apple Music 계정의 재생목록, 최근 재생 기록, Apple Music Replay를 읽습니다. 적용을 누르기 전까지는 아무것도 바뀌지 않습니다.
+assistant.sid.settings.quipGaming: "{gpu}와(과) 저는 잘 어울릴 거예요."
+assistant.sid.settings.quipIntegrated: 내장 그래픽이군요. 가볍고 아늑하게 해 드릴게요.
+assistant.sid.settings.quipOther: 좋은 {gpu}네요. 잘 활용할게요.
+assistant.sid.settings.quipSetsOnly: 당분간은 {gpu}로 세트 실행만 맡을게요.
+assistant.sid.settings.quipTop: "{gpu}요? 거의 땀도 안 날 거예요."
 assistant.sid.settings.reads: 전체 플레이리스트를 {seconds}초에 읽음 ({floor}초 미만 필요)
 assistant.sid.settings.regular: 보통
 assistant.sid.settings.remove: 제거
@@ -704,8 +726,10 @@ assistant.sid.settings.tidyDetail: 중복 제거, 길이에 맞춰 자르기, �
 assistant.sid.settings.together: 지금까지 함께한 곡
 assistant.sid.settings.top: 위
 assistant.sid.settings.unavailableNote: Sid로 플레이리스트를 편집하고 만들려면 실행할 수 있는 컴퓨터에 Gemma가 필요합니다. Sid의 세트 기능은 여기서도 작동합니다.
+assistant.sid.settings.unavailableNoteEngine: Sid로 재생목록을 편집하고 만들려면 {engine}을(를) 실행할 수 있는 컴퓨터가 필요합니다. 이 컴퓨터에서도 Sid의 세트 기능은 계속 작동합니다.
 assistant.sid.settings.unknownGpu: 알 수 없는 그래픽 카드
 assistant.sid.settings.where: Sid 찾는 위치
+assistant.sid.settings.withoutEngine: "{engine} 없이도 Sid는 곡의 템포, 키, 에너지를 기준으로 곡을 고르고, 입력한 요청을 그대로 Apple Music에서 검색합니다."
 assistant.sid.settings.withoutGemma: Gemma가 없으면 Sid는 곡의 템포, 키, 에너지로 곡을 고르고, 요청하신 내용을 입력하신 그대로 Apple Music에서 검색합니다.
 assistant.sid.settings.writes: 초당 {rate}개 토큰 생성 (최소 {floor} 필요)
 assistant.sid.setView.confirmMany: Sid가 이 곡 다음에 대기 중인 {count}곡을 지우고 다음에 재생할 곡을 고릅니다.
@@ -736,6 +760,10 @@ assistant.sid.source.artist: 아티스트의 인기곡
 assistant.sid.source.catalog: Apple Music
 assistant.sid.source.library: 내 보관함
 assistant.sid.source.playlist: 플레이리스트 안
+assistant.sid.unavailable.appleFailed: Sid가 Apple Intelligence에 연결할 수 없습니다.
+assistant.sid.unavailable.appleNotEnabled: Sid와 함께 사용하려면 시스템 설정에서 Apple Intelligence를 켜세요.
+assistant.sid.unavailable.appleNotReady: Apple Intelligence를 준비하는 중입니다. 잠시 후 다시 시도하세요.
+assistant.sid.unavailable.appleUnsupported: 이 컴퓨터에서는 Apple Intelligence를 사용할 수 없습니다.
 assistant.sid.unavailable.belowFloor: 이 컴퓨터에서는 Gemma가 너무 느리게 실행되어 Sid가 사용할 수 없습니다.
 assistant.sid.unavailable.counterMismatch: 안전 검사에 실패하여 Sid가 Gemma를 껐습니다. Cider 또는 그래픽 드라이버가 업데이트된 후 다시 시도합니다.
 assistant.sid.unavailable.gpuLimits: 이 그래픽 카드에는 Gemma에 필요한 여유 공간이 없습니다.
@@ -770,6 +798,19 @@ auth.error.unavailable: 이 Apple ID는 Cider에서 Apple Music을 사용할 수
 auth.error.windowFailed: 로그인 창을 열지 못했습니다
 auth.mutExpired.confirm: 로그인
 auth.mutExpired.message: Apple Music 세션이 만료되었습니다. 계속하려면 다시 로그인하세요.
+auth.request.authorizing: 승인 중…
+auth.request.copyToken: 토큰 복사
+auth.request.granted: 허용됨
+auth.request.requestedAccess: 접근 요청됨
+auth.request.revealNote: 이 토큰은 지금 한 번만 표시됩니다. 지금 {app}에 붙여넣으세요.
+auth.request.subtitle: Cider에 접근하려고 합니다
+auth.request.toast.copied: 토큰이 클립보드에 복사되었습니다
+auth.request.toast.failed: 토큰을 만들 수 없습니다
+auth.request.toast.granted: "{app}에 접근을 허용했습니다"
+auth.request.toast.title: 승인
+auth.request.tokenCreated: 토큰이 생성되었습니다
+auth.request.tokenFor: "{app}용"
+auth.request.trustNote: 신뢰할 수 있는 앱에만 접근을 허용하세요. 설정 › 연결에서 언제든지 이 토큰을 취소할 수 있습니다.
 auth.signedIn: 로그인됨
 auth.signInRetry.confirm: 다시 시도
 auth.signInRetry.message: 로그인 창을 열 수 없습니다. 다시 시도하시겠습니까?
@@ -2906,7 +2947,7 @@ oobe.amupsell.text: |-
   Cider는 Apple Music Voice 요금제 또는 일부 프로모션 체험 구독에서는 작동하지 않습니다. 조건에 맞는 Apple Music 구독을 이미 보유하고 계시다면 '다음'을 클릭하여 계속 진행하세요.
 oobe.amupsell.title: 시작하기 전에
 oobe.appearance.accentHint: 앱 전반의 버튼, 강조 표시, 진행률 표시줄 등에 사용됩니다. 하나를 선택해 실시간 미리보기로 확인해 보세요.
-oobe.appearance.subtitle: 색상 구성표와 강조 색상을 선택하세요. 설정 → 시각 효과에서 언제든지 변경할 수 있습니다.
+oobe.appearance.subtitle: 색 구성표와 강조 색을 선택하세요. 설정 › 모양에서 언제든지 변경할 수 있습니다.
 oobe.appearance.title: 나만의 Cider 만들기
 oobe.appleNotice: "참고: Apple Music은 Apple Inc.의 상표입니다. Cider는 Apple Music용 타사 클라이언트이며 Apple Inc.와 제휴 관계가 없습니다."
 oobe.audio.advancedFunctionality: ""
@@ -2921,7 +2962,7 @@ oobe.connections.atmosRatingsHint: Dolby Atmos로 감상하기 좋은 앨범을 
 oobe.connections.lastfm.connected: 연결됨
 oobe.connections.lastfm.connectedAs: "{username}(으)로 연결됨"
 oobe.connections.lastfm.hint: 감상 기록을 스크로블합니다.
-oobe.connections.moreHint: Libre.fm, Maloja, ListenBrainz 및 WebSockets, RPC API와 같은 더 많은 연동 기능은 설정 → 연결성에서 제공됩니다.
+oobe.connections.moreHint: Libre.fm, Maloja, ListenBrainz, WebSockets 및 RPC API와 같은 추가 연동은 설정 › 연결에서 찾을 수 있습니다.
 oobe.connections.pairDevice: 기기 페어링
 oobe.connections.remoteHint: 휴대폰에서 Cider를 제어해 보세요.
 oobe.connections.subtitle: Cider를 다른 앱 및 서비스와 연결하세요.
@@ -3119,10 +3160,22 @@ playlist.refresh.title: 재생목록 새로 고침 필요
 playlist.suggestions.subtitle: 미리 듣고 플레이리스트에 추가
 playlist.suggestions.title: 추천 곡
 playlist.untitled: 제목 없음
+plugin.install.byAuthor: "제작: {author}"
+plugin.install.identifier: 식별자
+plugin.install.install: 설치
+plugin.install.installing: 설치 중…
+plugin.install.source: 소스
+plugin.install.subtitle: Cider 플러그인이 보관함에 추가되려고 합니다.
+plugin.install.title: 플러그인 설치
+plugin.install.update: 업데이트
+plugin.install.updateSubtitle: Cider 플러그인이 설치된 버전을 교체하려고 합니다.
+plugin.install.updateTitle: 플러그인 업데이트
+plugin.install.warning: 플러그인은 재생, 대기열, 보관함에 대한 접근 권한으로 Cider 안에서 코드를 실행할 수 있습니다. 신뢰할 수 있는 소스의 플러그인만 설치하세요.
 podcast.comingSoon.description: Cider의 재생 처리 방식이 크게 변경됨에 따라 팟캐스트 지원 기능을 재구축하고 있습니다. 향후 업데이트를 통해 다시 제공될 예정입니다.
 podcast.comingSoon.hide: 사이드바에서 숨기기
 podcast.comingSoon.hint: "'화면' 설정의 '사이드바 및 탐색'에서 언제든지 다시 켤 수 있습니다."
 podcast.comingSoon.title: 팟캐스트 기능이 곧 출시됩니다
+podcast.comingSoon.tweaksHint: 설정 › 세부 조정의 사이드바 및 탐색 항목에서 다시 켤 수 있습니다.
 podcast.episodes: 에피소드
 podcast.followedOnCider: Cider에서 팔로우 중
 podcast.followOnCider: Cider에서 팔로우
@@ -3203,9 +3256,14 @@ settings.accessibility.section.display: 디스플레이
 settings.accessibility.section.display.description: 텍스트 두께, 인터페이스 크기 조절, 대비 및 포커스 표시기를 설정합니다.
 settings.accessibility.section.motion: 동작
 settings.accessibility.section.motion.description: 버튼, 카드 및 기타 화면 요소에 적용되는 애니메이션의 양을 설정합니다.
-settings.accessibility.section.soundEffects: 음향 효과
+settings.accessibility.section.soundEffects: 사운드 효과
 settings.accessibility.section.soundEffects.description: 버튼, 스위치, 슬라이더의 인터페이스 사운드와 음량을 설정합니다.
-settings.advanced.section.backups: 백업 및 재설정
+settings.accessibility.soundPreview.click: 클릭
+settings.accessibility.soundPreview.slider: 슬라이더
+settings.accessibility.soundPreview.switch: 스위치
+settings.accounts.appleMusic: Apple Music
+settings.accounts.appleMusic.description: Apple Music 사용
+settings.advanced.section.backups: 백업 및 초기화
 settings.advanced.section.backups.description: 설정 복사본을 저장하거나 Cider가 보관 중인 설정을 복원하고, 모든 설정을 기본값으로 초기화합니다.
 settings.advanced.section.client: 이 클라이언트
 settings.advanced.section.client.description: 성능 제한 및 사용자 계정이 아닌 Cider가 실행 중인 클라이언트에 적용되는 설정입니다.
@@ -3213,31 +3271,31 @@ settings.airplay.installed.message: Airplay가 설치되었습니다
 settings.airplay.installed.title: Airplay 설치 완료
 settings.airplay.requiresCiderAudio: CiderAudio 활성화가 필요합니다
 settings.appleMusic.storefront.warning: 스토어프론트를 변경하면 재생에 문제가 발생할 수 있습니다. 주의하시기 바랍니다.
-settings.artwork.disableFadeIn: 페이드 인 효과 비활성화
-settings.artwork.highlighting: 아트워크 강조
+settings.artwork.disableFadeIn: 페이드 인 효과 끄기
+settings.artwork.highlighting: 아트워크 하이라이트
 settings.artwork.hiresImages: 고해상도 이미지 사용
 settings.artwork.hiresImages.warning: 로딩 시간이 길어지고 성능이 저하될 수 있습니다.
 settings.audio.atmos: Dolby Atmos
-settings.audio.atmos.binaural.desc: CiderAudio를 통해 바이노럴 스테레오로 렌더링된 Atmos입니다. 크로스페이드, 오토믹스, 끊김 없는 전환이 정상적으로 작동합니다.
+settings.audio.atmos.binaural.desc: Atmos를 CiderAudio를 통해 바이노럴 스테레오로 렌더링합니다. 크로스페이드, 자동 믹스 및 끊김 없는 전환이 예상대로 계속 작동합니다.
 settings.audio.atmos.description: 현재 출력 기기의 Atmos 재생을 설정합니다.
-settings.audio.atmos.normalizationHint: Dolby Atmos 믹스는 스테레오 마스터보다 소리가 작습니다. 음량을 고르게 맞추려면 오디오 노멀라이제이션을 켜세요.
+settings.audio.atmos.normalizationHint: Dolby Atmos 믹스는 스테레오 마스터보다 소리가 작습니다. 음량 정규화를 켜서 균일하게 맞추세요.
 settings.audio.atmos.off.desc: Atmos가 비활성화되었습니다. 모든 콘텐츠가 표준 스테레오로 재생됩니다.
 settings.audio.atmos.passthrough: 패스스루
 settings.audio.atmos.passthrough.desc: 모든 오디오 처리를 우회합니다. 다채널 Atmos가 기기로 직접 전송됩니다. AV 리시버에 적합합니다.
-settings.audio.atmos.passthrough.descV2: AV 리시버용으로 다채널 Atmos를 기기에 직접 전송합니다. Audio Lab, 이퀄라이저 및 청취 모드는 우회됩니다.
+settings.audio.atmos.passthrough.descV2: AV 리시버용으로 멀티채널 Atmos를 기기에 직접 전송합니다. Audio Lab, 이퀄라이저 및 청취 모드는 우회됩니다.
 settings.audio.atmos.passthroughActive: 패스스루 활성화됨 — 전체 설정에서 변경할 수 있습니다.
-settings.audio.atmos.standard.desc: CiderAudio 처리 기술이 적용된 다채널 Atmos입니다. 크로스페이드, 오토믹스, 끊김 없는 전환이 정상적으로 작동합니다.
+settings.audio.atmos.standard.desc: CiderAudio 처리를 거친 멀티채널 Atmos입니다. 크로스페이드, 자동 믹스 및 끊김 없는 전환이 예상대로 계속 작동합니다.
 settings.audio.atmosMode: Atmos 모드
 settings.audio.atmosMode.switchFromPassthroughConfirm: 패스스루 모드에서 전환하려면 앱을 새로고침해야 합니다. 계속하시겠습니까?
 settings.audio.atmosMode.switchToPassthroughConfirm: 패스스루 모드로 전환하려면 앱을 새로고침해야 합니다. 계속하시겠습니까?
 settings.audio.automix: 오토믹스
-settings.audio.card.advancedVolume: 고급 음량
+settings.audio.card.advancedVolume: 고급 볼륨
 settings.audio.card.badges: 배지
 settings.audio.card.streaming: 스트리밍
 settings.audio.ciderAudio: Cider Audio
 settings.audio.ciderAudio.description: 풍부하고 고품질의 오디오 경험을 제공하도록 맞춤 튜닝 및 설계된 오디오 스택입니다. 기존 이퀄라이저보다 권장됩니다.
 settings.audio.ciderAudio.enable: Cider Audio 활성화
-settings.audio.ciderAudio.requiredHint: 이퀄라이저 사용에 필요합니다
+settings.audio.ciderAudio.requiredHint: 이퀄라이저에 필요
 settings.audio.crossfade: 크로스페이드
 settings.audio.hostCapture.apps: 트리거 앱
 settings.audio.hostCapture.apps.count: "{{ n }}개의 앱이 캡처를 트리거합니다."
@@ -3251,7 +3309,7 @@ settings.audio.hostCapture.apps.running: 실행 중인 앱
 settings.audio.hostCapture.apps.runningNow: 실행 중
 settings.audio.hostCapture.apps.title: 자동 캡처 트리거 앱
 settings.audio.hostCapture.apps.triggers: 트리거
-settings.audio.hostCapture.auto: 앱 실행 시 자동 활성화
+settings.audio.hostCapture.auto: 앱과 함께 자동 사용
 settings.audio.hostCapture.autoHint: 선택한 앱이 실행 중일 때 자동으로 캡처를 켜고, 앱이 종료되면 끕니다.
 settings.audio.hostCapture.autoNote: 선택한 앱이 실행 중일 때 자동으로 켜집니다.
 settings.audio.hostCapture.bit16: 16비트
@@ -3261,13 +3319,13 @@ settings.audio.hostCapture.bitAuto: 자동(최대)
 settings.audio.hostCapture.bitDepth: 비트 심도
 settings.audio.hostCapture.bitDepthHint: "'자동'은 기기에서 지원하는 가장 높은 비트 심도를 사용합니다."
 settings.audio.hostCapture.exclusiveNote: 단독 출력, 비트 퍼펙트, 캡처 불가.
-settings.audio.hostCapture.gain: 출력 레벨 미세 조정
+settings.audio.hostCapture.gain: 출력 레벨 조정
 settings.audio.hostCapture.gainHint: 캡처된 음량을 일반 출력 음량과 일치시킵니다.
 settings.audio.hostCapture.mode: 오디오 출력 모드
 settings.audio.hostCapture.modeCapture: 캡처
 settings.audio.hostCapture.modeCaptureLong: 캡처 가능(OBS, Discord)
 settings.audio.hostCapture.modeExclusive: 단독
-settings.audio.hostCapture.modeExclusiveLong: WASAPI 단독 모드
+settings.audio.hostCapture.modeExclusiveLong: WASAPI 독점
 settings.audio.hostCapture.modeHintCapture: Cider 프로세스에서 오디오를 재생하여 OBS, Discord 및 기타 앱에서 캡처할 수 있도록 합니다.
 settings.audio.hostCapture.modeHintExclusive: Windows 믹서를 우회하여 DAC로 직접 비트 퍼펙트 출력을 보냅니다. 캡처할 수 없습니다.
 settings.audio.hostCapture.modeHintOff: "끔: WebView2 프로세스에서 오디오가 정상적으로 재생됩니다. Dolby Atmos 패스스루 또는 뮤직비디오 재생 중에는 사용할 수 없습니다."
@@ -3293,7 +3351,7 @@ settings.audio.occlusion.game.desc: 게임과 음성 채팅을 선명하게 들�
 settings.audio.occlusion.off.desc: 음악이 원음 그대로 재생됩니다.
 settings.audio.occlusion.passthroughNote: Dolby Atmos 패스스루가 활성화되어 있는 동안에는 사용할 수 없습니다.
 settings.audio.occlusion.passthroughNote.short: Atmos 패스스루가 활성화된 동안에는 사용할 수 없습니다.
-settings.audio.outputDevice: 오디오 출력 기기 선택
+settings.audio.outputDevice: 오디오 출력 장치 선택
 settings.audio.outputDeviceHint: 재생할 오디오 출력 장치를 선택하세요.
 settings.audio.outputDeviceHintHost: 캡처 가능 오디오가 켜져 있으며, 재생 시 이 Windows 출력 기기를 사용합니다.
 settings.audio.section.ciderAudio: Cider Audio 및 표시기
@@ -3307,11 +3365,40 @@ settings.audio.section.playback: 재생
 settings.audio.section.playback.description: 오디오 음질, 공간 음향, 청취 모드 및 팟캐스트 재생 속도를 설정합니다.
 settings.audio.section.volume: 음량
 settings.audio.section.volume.description: 음량 자동 조절, 스크롤 휠 조작 시 음량 변화 폭, 슬라이더 표시 방식을 설정합니다.
+settings.audio.signal.atmosCodecs: 사용 가능한 Atmos 코덱
+settings.audio.signal.atmosNativeMac: 기본(macOS)
+settings.audio.signal.atmosNativeMacTooltip: Dolby Atmos는 macOS CoreAudio에서 기본적으로 디코딩됩니다. 공간 음향 렌더링은 시스템이 처리합니다.
+settings.audio.signal.atmosOffTooltip: 이 장치에서는 Atmos가 꺼져 있습니다. 콘텐츠는 일반 스테레오로 재생됩니다.
+settings.audio.signal.atmosOffTooltipMac: 이 장치에서는 Atmos가 꺼져 있습니다.
+settings.audio.signal.atmosSupported: 지원됨
+settings.audio.signal.binauralSubtitle: 헤드폰 렌더링
+settings.audio.signal.binauralTooltip: Atmos 콘텐츠는 CiderAudio 파이프라인을 통해 바이노럴 스테레오로 렌더링됩니다.
+settings.audio.signal.channels: "{count}채널"
+settings.audio.signal.codecs: 코덱
+settings.audio.signal.deviceRateTooltip: 현재 장치의 샘플 레이트
+settings.audio.signal.directOutput: 직접 출력
+settings.audio.signal.directOutputChannels: 직접 출력 ({count}ch)
+settings.audio.signal.loading: 불러오는 중…
+settings.audio.signal.nativeMatch: 기본 일치
+settings.audio.signal.noAtmosCodecs: Atmos 코덱 없음
+settings.audio.signal.output: 출력
+settings.audio.signal.passthroughMode: 패스스루 모드
+settings.audio.signal.passthroughSubtitle: 오디오 처리 우회, 장치로 직접 출력
+settings.audio.signal.passthroughTooltip: 오디오는 모든 처리를 우회하여 장치로 직접 전송됩니다. 크로스페이드, 자동 믹스 및 끊김 없는 전환 같은 CiderAudio 기능은 비활성 상태입니다.
+settings.audio.signal.sampleRate: 샘플 레이트
+settings.audio.signal.source: 소스 {rate}
+settings.audio.signal.sourceRateTooltip: Apple Music 재생 레이트
+settings.audio.signal.standardSubtitle: 멀티채널 + CiderAudio
+settings.audio.signal.standardTooltip: 멀티채널 Atmos 콘텐츠는 CiderAudio 처리를 거쳐 장치의 기능에 맞게 렌더링됩니다.
+settings.audio.signal.stereo: 스테레오
+settings.audio.signal.surround51: 5.1 서라운드
+settings.audio.signal.surround71: 7.1+ 서라운드
+settings.audio.signal.upsamplingTooltip: 시스템이 Apple Music 소스 레이트에서 업샘플링 중입니다.
 settings.automix.allowTempoKeyShifts: 템포/키 전환 허용
 settings.automix.allowTempoKeyShiftsHint: 전환을 활기차게 유지하기 위해 미세한 템포 및 키 변화를 허용합니다. (임시 비활성화됨, 재작업 중.)
 settings.automix.description: 템포와 키를 기반으로 트랙 간을 지능적으로 전환합니다.
 settings.automix.descriptionV2: 고정된 크로스페이드 대신 각 트랙 고유의 페이드 및 보컬 데이터를 사용하여 트랙을 혼합합니다.
-settings.automix.disableFor: 다음 항목에서 오토믹스 비활성화...
+settings.automix.disableFor: 다음에서 자동 믹스 끄기...
 settings.automix.disableForAlbums: 앨범
 settings.automix.disableForAlbumsHint: 앨범에서 재생할 때 오토믹스를 적용하지 않습니다.
 settings.automix.disableForAutoplayContinuation: 자동 재생 이어하기
@@ -3343,17 +3430,17 @@ settings.cache.entries: "항목 수: {{ count }}"
 settings.cache.homeData: 홈 데이터
 settings.cache.library: 보관함
 settings.cache.marketplaceListings: 마켓플레이스 목록
-settings.cache.playlistIndex: 재생목록 인덱스
+settings.cache.playlistIndex: 플레이리스트 색인
 settings.cache.prompt.artwork.cleared.message: 아트워크 캐시가 삭제되었습니다. 지금 새로고침하시겠습니까?
-settings.cache.prompt.artwork.cleared.title: 아트워크 캐시 삭제 완료
-settings.cache.prompt.artwork.title: 아트워크 캐시 삭제
+settings.cache.prompt.artwork.cleared.title: 아트워크 캐시가 지워졌습니다
+settings.cache.prompt.artwork.title: 아트워크 캐시 지우기
 settings.cache.prompt.clearAll.cleared.message: 캐시가 삭제되었습니다. 지금 새로고침하시겠습니까?
-settings.cache.prompt.clearAll.cleared.title: 캐시 삭제 완료
-settings.cache.prompt.clearAll.title: 캐시 삭제
+settings.cache.prompt.clearAll.cleared.title: 캐시가 지워졌습니다
+settings.cache.prompt.clearAll.title: 캐시 지우기
 settings.cache.prompt.marketplace.cleared.message: 캐시가 삭제되었습니다. 지금 새로고침하시겠습니까?
-settings.cache.prompt.marketplace.cleared.title: 마켓플레이스 캐시 삭제 완료
+settings.cache.prompt.marketplace.cleared.title: 마켓플레이스 캐시가 지워졌습니다
 settings.cache.prompt.playlist.cleared.message: 캐시가 삭제되었습니다. 지금 새로고침하시겠습니까?
-settings.cache.prompt.playlist.cleared.title: 플레이리스트 캐시 삭제 완료
+settings.cache.prompt.playlist.cleared.title: 플레이리스트 캐시가 지워졌습니다
 settings.cache.recentlyModifiedPlaylists: 최근 수정된 플레이리스트
 settings.cache.storageUsed: "사용 중인 저장 공간: {{ usage }}"
 settings.client.genten.enableTrayIcon: 트레이 아이콘 활성화
@@ -3512,7 +3599,7 @@ settings.connectivity.lastfm.useAlbumArtist.description: 트랙 아티스트 대
 settings.connectivity.legacyToken: 레거시 (모든 권한)
 settings.connectivity.legacyToken.tooltip: 이 토큰은 범위 지정 액세스 이전에 생성되어 모든 권한을 부여합니다. 권한 범위를 지정하려면 다시 발급하세요.
 settings.connectivity.noDevices: 연결된 기기 없음
-settings.connectivity.requireTokens: API 토큰 필수 요구
+settings.connectivity.requireTokens: API 토큰 필요
 settings.connectivity.requireTokens.desc: 활성화하면 모든 API 요청에 유효한 토큰이 포함되어야 합니다.
 settings.connectivity.scrobbler: 스크로블러
 settings.connectivity.scrobbler.blacklist: 차단 목록
@@ -3578,7 +3665,7 @@ settings.connectivity.scrobbler.trigger.mode: 트리거 모드
 settings.connectivity.scrobbler.trigger.mode.desc: 스크로블을 전송할 시점입니다. "둘 중 먼저 해당하는 쪽"은 클래식 Last.fm 규칙입니다.
 settings.connectivity.scrobbler.trigger.percent: 백분율
 settings.connectivity.scrobbler.zeroOff: 0으로 설정하면 이 필터가 비활성화됩니다.
-settings.connectivity.section.communityRatings: 커뮤니티 평가
+settings.connectivity.section.communityRatings: 커뮤니티 평점
 settings.connectivity.section.communityRatings.description: 앨범 페이지에서 다른 Cider 청취자가 평가한 Dolby Atmos 믹스 평점을 확인하고, 내 평점을 공유할지 여부를 설정합니다.
 settings.connectivity.section.discord.description: 음악이 재생되는 동안 Discord 프로필에 표시할 Cider 정보 및 연결할 클라이언트를 설정합니다.
 settings.connectivity.section.externalApplications.description: 다른 프로그램이 재생 정보를 읽고 Cider를 제어하는 데 사용하는 WebSockets 포트 및 RPC 서버와 허용할 프로그램을 설정합니다.
@@ -3586,6 +3673,7 @@ settings.connectivity.section.parties.description: 다른 Cider 사용자와 함
 settings.connectivity.section.vrOverlay.description: RPC를 통해 이 앱과 통신하며, SteamVR 및 VDXR 위에 Cider 플레이어와 고정 가능한 패널을 표시합니다.
 settings.connectivity.tokenCopied: 토큰이 클립보드에 복사되었습니다.
 settings.connectivity.tokens: 토큰
+settings.connectivity.tokens.empty: 아직 토큰이 없습니다.
 settings.contentFilter.description: "'둘러보기' 및 '지금 듣기'에서 제목이나 콘텐츠가 이 키워드와 일치하는 섹션이 숨겨집니다."
 settings.contentFilter.empty: 추가된 키워드가 없습니다.
 settings.contentFilter.inputPlaceholder: 키워드 추가...
@@ -3593,9 +3681,9 @@ settings.contentFilter.title: 필터 키워드
 settings.crossfade.advanced: 고급 크로스페이드 설정
 settings.crossfade.automixStillBlends: 자동 믹스가 켜져 있어 곡들이 여전히 자연스럽게 이어질 수 있습니다. 모든 전환을 중지하려면 아래에서 자동 믹스를 끄세요.
 settings.crossfade.description: 현재 곡이 서서히 사라지면서 다음 곡이 서서히 나타나도록 부드럽게 전환합니다.
-settings.crossfade.disableFor: 크로스페이드 비활성화 대상...
+settings.crossfade.disableFor: 다음에 대해 크로스페이드 끄기...
 settings.crossfade.duration: 시간
-settings.crossfade.enable: 크로스페이드 활성화
+settings.crossfade.enable: 크로스페이드 사용
 settings.crossfade.exclusions.albums: 앨범
 settings.crossfade.exclusions.albums.description: 앨범에서 재생할 때는 크로스페이드를 사용하지 않습니다.
 settings.crossfade.exclusions.autoplayContinuation: 자동 재생 이어하기
@@ -3606,15 +3694,15 @@ settings.crossfade.exclusions.liveAlbums: 라이브 앨범
 settings.crossfade.exclusions.liveAlbums.description: 라이브 녹음 및 콘서트 앨범에서는 크로스페이드를 사용하지 않습니다.
 settings.crossfade.exclusions.playlists: 플레이리스트
 settings.crossfade.exclusions.playlists.description: 플레이리스트에서 재생할 때는 크로스페이드를 사용하지 않습니다.
-settings.crossfade.loudnessSensitivity: 음량 감도
+settings.crossfade.loudnessSensitivity: 라우드니스 민감도
 settings.crossfade.loudnessSensitivity.description: 음량 차이 균형 조정 ({{ value }}%)
-settings.crossfade.smoothSkip: 부드러운 건너뛰기
+settings.crossfade.smoothSkip: 부드럽게 건너뛰기
 settings.crossfade.smoothSkip.description: 곡을 건너뛸 때 페이드 효과를 적용합니다.
-settings.crossfade.tempoSensitivity: 템포 감도
+settings.crossfade.tempoSensitivity: 템포 민감도
 settings.crossfade.tempoSensitivity.description: 템포 변화에 대한 반응 ({{ value }}%)
 settings.customCss.createSnippet: 스니펫 만들기
 settings.customCss.migrate.confirm: 기존 사용자 정의 CSS를 새 스니펫으로 변환하고 현재 사용자 정의 CSS를 지웁니다. 계속하시겠습니까?
-settings.customCss.migrate.title: 사용자 정의 CSS 변환
+settings.customCss.migrate.title: 사용자 지정 CSS 변환
 settings.customCss.title: 사용자 정의 CSS
 settings.description.albums: 보관함 앨범
 settings.description.artists: 보관함 아티스트
@@ -3651,7 +3739,7 @@ settings.extensions.addBuiltInSnippet: 내장 스니펫 추가
 settings.extensions.browsePluginMarket: 플러그인 마켓플레이스 둘러보기
 settings.extensions.browseThemeMarket: 테마 마켓플레이스 둘러보기
 settings.extensions.byAuthor: "제작자: {author}"
-settings.extensions.checkUpdates: 시작 시 확장 프로그램 업데이트 확인
+settings.extensions.checkUpdates: 시작 시 확장 기능 업데이트 확인
 settings.extensions.checkUpdates.desc: Cider가 실행될 때마다 테마, 스니펫 및 플러그인 업데이트를 확인합니다.
 settings.extensions.createPlugin: 플러그인 만들기
 settings.extensions.createSnippet: 새 스니펫 만들기
@@ -3682,6 +3770,7 @@ settings.extensions.plugins.uninstallTitle: 플러그인 제거
 settings.extensions.refresh: 확장 프로그램 새로고침
 settings.extensions.refresh.desc: 디스크에서 테마, 스니펫, 플러그인을 다시 스캔합니다.
 settings.extensions.refreshed: 테마, 스니펫, 플러그인을 새로고침했습니다
+settings.extensions.snippets.author: "작성자: {{ author }}"
 settings.extensions.snippets.created: 스니펫이 생성되었습니다
 settings.extensions.snippets.createTitle: 새 CSS 스니펫 만들기
 settings.extensions.snippets.deleteConfirm: 이 CSS 스니펫을 삭제하시겠습니까? 이 작업은 취소할 수 없습니다.
@@ -3691,19 +3780,22 @@ settings.extensions.snippets.empty: 설치된 CSS 스니펫이 없습니다.
 settings.extensions.snippets.exported: 스니펫을 내보냈습니다
 settings.extensions.snippets.imported: "{{ count }}개의 스니펫을 가져왔습니다"
 settings.extensions.snippets.importFailed: "{{ file }} 가져오기 실패: {{ error }}"
+settings.extensions.snippets.invalidFile: "잘못된 파일 형식: {{ file }}"
 settings.extensions.snippets.namePrompt: 새 CSS 스니펫의 이름을 입력하세요.
 settings.extensions.snippets.orderUpdated: 순서가 업데이트되었습니다
 settings.extensions.snippets.saved: 스니펫이 저장되었습니다
 settings.extensions.themeCreated: 새 테마를 성공적으로 생성했습니다
 settings.extensions.themes.activeCount: "{{ count }}개 활성화됨"
 settings.extensions.themes.empty: 설치된 테마가 없습니다.
+settings.extensions.themes.getMore: 더 많은 테마 보기
+settings.extensions.themes.refreshList: 테마 목록 새로고침
 settings.extensions.themes.stylesheetMany: "{{ count }}개의 스타일시트"
 settings.extensions.themes.stylesheetOne: 1개의 스타일시트
 settings.extensions.viewOnMarketplace: 마켓플레이스에서 보기
 settings.fonts.description: 앱에서 사용할 서체 변경
-settings.fonts.lyrics: 가사 서체
+settings.fonts.lyrics: 가사 글꼴
 settings.fonts.lyrics.description: 가사에 사용할 서체
-settings.fonts.primary: 기본 서체
+settings.fonts.primary: 기본 글꼴
 settings.fonts.primary.description: 앱의 대부분 텍스트에 사용할 서체
 settings.fonts.title: 서체
 settings.gapless.description: 오디오 트랙을 끊김 없이 연속으로 재생할 수 있도록 합니다.
@@ -3722,11 +3814,12 @@ settings.general.section.language: 언어
 settings.general.section.language.description: 인터페이스 언어와 번역 기여자를 확인하거나 번역 오류를 보고하는 방법을 설정합니다.
 settings.general.section.playback: 재생
 settings.general.section.playback.description: 아무것도 재생 중이지 않을 때 재생 버튼을 눌렀을 때의 동작을 설정합니다.
+settings.general.section.playback.descriptionV2: 재생 중이 아닐 때 재생 버튼의 동작과 재생 속도를 변경할 수 있는 위치입니다.
 settings.general.section.privacy: 개인정보 보호
 settings.general.section.privacy.description: Cider가 사용자를 부르는 이름 및 위치 정보 사용 여부를 설정합니다.
 settings.general.section.queue: 대기열
 settings.general.section.queue.description: 대기열 구성 방식, 대기열 추가 허용 항목, Cider 재시작 시 복원할 항목을 설정합니다.
-settings.general.section.sleepTimer: 취침 타이머
+settings.general.section.sleepTimer: 슬립 타이머
 settings.general.section.startup: 시작
 settings.general.section.startup.description: Cider를 시작할 때 열릴 화면과 이전 세션에서 복원할 항목을 설정합니다.
 settings.header.accounts: 계정
@@ -3798,7 +3891,7 @@ settings.intensive.animatedArtworkQuality.description: 고화질 설정 시 더 
 settings.intensive.catalogAnimatedArtwork.description: 카탈로그를 탐색하는 동안 여러 개의 움직이는 아트워크를 동시에 재생합니다.
 settings.intensive.characterFlow.description: 가사 전체 줄 대신 개별 글자 단위로 애니메이션을 적용합니다.
 settings.intensive.confirm.enable: 활성화
-settings.intensive.confirm.message: 이 기능은 리소스를 많이 소모하므로, 특히 사양이 낮은 하드웨어에서 CPU/GPU 사용량, 발열, 배터리 소모를 크게 늘릴 수 있습니다. 설정 상단의 전구 버튼을 통해 언제든지 리소스 소모가 큰 기능들을 검토할 수 있습니다.
+settings.intensive.confirm.message: 이 기능은 성능을 많이 사용하며 특히 사양이 낮은 기기에서 CPU/GPU 사용량, 발열, 배터리 소모를 크게 늘릴 수 있습니다. 설정 › 전력 사용량에서 언제든지 부담이 큰 기능을 확인할 수 있습니다.
 settings.intensive.emotionEngine.description: 앨범 아트워크를 분석하여 색상 팔레트를 추출합니다.
 settings.intensive.fsrUpscale.description: FidelityFX Super Resolution을 사용하여 GPU에서 앨범 아트워크의 해상도를 높입니다.
 settings.intensive.immersiveAnimatedArtwork.description: 몰입형 보기에서 움직이는 아트워크를 재생합니다.
@@ -3815,23 +3908,23 @@ settings.intensive.viewTransitions.description: 일부 화면을 전환할 때 �
 settings.intensive.warning: 리소스 소모가 큼 — 높은 CPU/GPU 사용량을 유발할 수 있습니다.
 settings.keybindings.recordingHint: 입력 중. 취소하려면 Escape 키를 누르세요
 settings.lyrics.card.providers: 제공처
-settings.lyrics.card.songOverrides: 곡별 예외 설정
-settings.lyrics.localeOverrides: 로캘 기반 규칙
-settings.lyrics.localeOverrides.add: 로캘 재정의 추가
-settings.lyrics.localeOverrides.audioLocale: 오디오 로캘
+settings.lyrics.card.songOverrides: 곡별 설정
+settings.lyrics.localeOverrides: 언어 기반 규칙
+settings.lyrics.localeOverrides.add: 언어 재정의 추가
+settings.lyrics.localeOverrides.audioLocale: 오디오 언어
 settings.lyrics.localeOverrides.desc: 특정 언어의 곡에 대한 맞춤 제공업체 및 번역 기본 설정을 지정합니다. 곡의 오디오 로캘이 규칙과 일치하면 이 설정이 기본값보다 우선 적용됩니다.
-settings.lyrics.localeOverrides.dialogTitle.add: 로캘 재정의 추가
-settings.lyrics.localeOverrides.dialogTitle.edit: 로캘 재정의 편집
+settings.lyrics.localeOverrides.dialogTitle.add: 언어 재정의 추가
+settings.lyrics.localeOverrides.dialogTitle.edit: 언어 재정의 편집
 settings.lyrics.localeOverrides.empty: 아직 규칙이 없습니다. +를 눌러 추가하세요.
 settings.lyrics.localeOverrides.overrideTranslation: 번역 재정의
-settings.lyrics.localeOverrides.preferredProvider: 선호하는 제공업체
+settings.lyrics.localeOverrides.preferredProvider: 선호 제공자
 settings.lyrics.localeOverrides.provider.apple: Apple Music
 settings.lyrics.localeOverrides.provider.auto: 기본값 (자동)
 settings.lyrics.localeOverrides.provider.mxm: Musixmatch
 settings.lyrics.localeOverrides.provider.netease: NetEase
 settings.lyrics.localeOverrides.provider.user: 사용자 제출
 settings.lyrics.localeOverrides.providerLabel: "제공업체:"
-settings.lyrics.localeOverrides.translateTo: 번역 대상 언어
+settings.lyrics.localeOverrides.translateTo: 번역 대상
 settings.lyrics.localeOverrides.translateToLabel: "번역 대상 언어:"
 settings.lyrics.player.cascade: 캐스케이드 강도
 settings.lyrics.player.cascade.desc: 가사가 한 줄씩 순차적으로 나타나는 효과의 강도를 조절합니다.
@@ -3859,7 +3952,7 @@ settings.lyrics.scroll.easing: 이징 함수
 settings.lyrics.scroll.easing.curveExample: "곡선 예시:"
 settings.lyrics.scroll.easing.description1: 가사 스크롤의 이징 함수를 조절합니다. 이 값은 CSS
 settings.lyrics.scroll.easing.description2: 속성입니다.
-settings.lyrics.scroll.easing.namedExample: "이름 지정 예시:"
+settings.lyrics.scroll.easing.namedExample: "이름 있는 예시:"
 settings.lyrics.scroll.easing.presetDefault: 기본으로 사용되는 값으로, 빠른 시작과 부드러운 끝맺음이 특징입니다
 settings.lyrics.scroll.easing.presetSmooth: 부드러운 시작 및 끝맺음 - (by cryptofyre)
 settings.lyrics.scroll.easing.presetSpring: 스프링 애니메이션 - (by SoNothing)
@@ -3897,7 +3990,9 @@ settings.miniplayer.unpinWindow: 창 고정 해제
 settings.nav.accessibility: 손쉬운 사용
 settings.nav.accounts: 계정
 settings.nav.advanced: 고급
+settings.nav.appleMusicWordmark: music
 settings.nav.audio: 오디오
+settings.nav.categories: 설정 카테고리
 settings.nav.concerts: 콘서트
 settings.nav.config-backups: 구성 백업
 settings.nav.connectivity: 연결
@@ -3906,28 +4001,48 @@ settings.nav.general: 일반
 settings.nav.group.account: 계정
 settings.nav.group.advanced: 고급
 settings.nav.group.appearance: 화면 스타일
+settings.nav.group.connections: 연결
 settings.nav.group.general: 일반
 settings.nav.group.integrations: 연동
 settings.nav.group.library: 보관함
+settings.nav.group.lookAndFeel: 모양 및 느낌
 settings.nav.group.playback: 재생
 settings.nav.lyrics: 가사
 settings.nav.notifications: 알림
 settings.nav.plugins: 플러그인
-settings.nav.power: 전력 사용량
+settings.nav.power: 전원 사용량
 settings.nav.privacy: 개인정보 보호
 settings.nav.profile: 프로필
 settings.nav.search: 검색
-settings.nav.searchPlaceholder: 설정 검색...
+settings.nav.searchPlaceholder: 설정 검색
+settings.nav.summary.accessibility: 굵은 텍스트, 인터페이스 크기, 모션, 효과음
+settings.nav.summary.advanced: 백업, 문제 해결, 실험 기능
+settings.nav.summary.audio: 출력, 품질, 크로스페이드, 노멀라이제이션
+settings.nav.summary.concerts: 위치, 반경, 정렬
+settings.nav.summary.connectivity: Discord, 스크로블링, 함께 듣기, 원격
+settings.nav.summary.extensions: 테마, CSS 스니펫, 플러그인
+settings.nav.summary.general: 시작, 대기열, 슬립 타이머, 키 바인딩
+settings.nav.summary.lyrics: 소스, 번역, 표시, 타이밍
+settings.nav.summary.notifications: 카테고리, 기록, 시스템 알림
+settings.nav.summary.power: 성능, 프레임 레이트, 절전 기능
+settings.nav.summary.profile: Apple Music 계정
+settings.nav.summary.sid: Sid가 표시되는 위치와 작동 방식
+settings.nav.summary.smartPlaylists: 스마트 플레이리스트 규칙 및 관리
+settings.nav.summary.subscriberYear: 1년 구독자
+settings.nav.summary.subscriberYears: "{{count}}년 구독자"
+settings.nav.summary.tweaks: 플레이어, 사이드바 등의 작은 변경
+settings.nav.summary.visual: 색 구성표, 레이아웃, 창, 몰입형
 settings.nav.themes: 테마
+settings.nav.tweaks: 세부 조정
 settings.nav.updates: 업데이트
-settings.nav.visual: 비주얼
+settings.nav.visual: 모양
 settings.normalization.louderTargetHint: 볼륨을 100%로 설정해도 Cider 소리가 여전히 너무 작게 들린다면 더 높은 목표값을 선택하세요. LUFS 값이 높을수록 소리가 더 크게 들리지만, 클리핑을 방지하기 위해 피크 보호 기능이 증폭을 제한할 수 있습니다.
 settings.normalization.presets.apple: Apple
 settings.normalization.presets.balanced: 균형 잡힘
 settings.normalization.presets.dynamic: 다이내믹
 settings.normalization.presets.loud: 크게
 settings.normalization.presets.maximum: 최대
-settings.normalization.target: 목표 라우드니스
+settings.normalization.target: 라우드니스 목표
 settings.normalization.unit: LUFS
 settings.notifications.alwaysOn: 항상 켜짐
 settings.notifications.alwaysOn.description: 이 알림은 반드시 확인해야 하는 문제 및 앱 상태를 전달하므로 끌 수 없습니다. 오류 알림은 카테고리에 관계없이 항상 전송됩니다.
@@ -3935,7 +4050,7 @@ settings.notifications.category.accountAuth: 계정 및 로그인
 settings.notifications.category.accountAuth.description: 로그인 및 로그아웃, 구독 상태 및 연결된 서비스 관련 알림입니다.
 settings.notifications.category.castingAirplay: 캐스팅 및 AirPlay
 settings.notifications.category.castingAirplay.description: 외부 재생 기기와의 연결 및 연결 해제 관련 알림입니다.
-settings.notifications.category.extensionsThemes: 확장 프로그램 및 테마
+settings.notifications.category.extensionsThemes: 확장 및 테마
 settings.notifications.category.extensionsThemes.description: 플러그인, 테마 및 스니펫의 설치, 업데이트 및 제거 관련 알림입니다.
 settings.notifications.category.general: 일반
 settings.notifications.category.general.description: 별도의 카테고리가 없는 기타 알림입니다.
@@ -3963,6 +4078,7 @@ settings.notifications.section.history: 기록
 settings.notifications.section.muted: 꺼진 알림
 settings.notifications.section.system: 시스템 알림
 settings.notifications.summary.categoriesOn: 켜진 카테고리
+settings.notifications.summary.categoriesOnCount: "{{total}}개 중 {{on}}개 켜짐"
 settings.notifications.summary.description: Cider에서 표시할 알림 유형을 선택합니다. 비활성화한 알림도 알림 목록에 계속 기록되므로 나중에 확인할 수 있습니다.
 settings.notifications.unmute: 음소거 해제
 settings.notifications.unmuteAll: 모두 음소거 해제
@@ -3978,46 +4094,46 @@ settings.notyf.visual.plugin.install.success: 플러그인이 성공적으로 �
 settings.notyf.visual.theme.install.error: 테마 설치 실패
 settings.notyf.visual.theme.install.success: 테마가 성공적으로 설치되었습니다
 settings.notyf.visual.theme.updateAvailable: "[테마] {{ theme }}의 업데이트가 제공됩니다"
-settings.option.accessibility.boldText: 볼드체 텍스트
+settings.option.accessibility.boldText: 굵은 텍스트
 settings.option.accessibility.boldText.description: 가독성을 높이기 위해 앱 전체의 텍스트 두께를 늘립니다.
-settings.option.accessibility.cardHoverMotion: 카드 가리키기 동작
+settings.option.accessibility.cardHoverMotion: 카드 호버 모션
 settings.option.accessibility.cardHoverMotion.description: 클릭 가능한 카드(앨범 타일, 추천 카드, 그리드 항목) 위에 마우스를 올리면 부드럽게 커지고 누르면 수축합니다. 기본값은 꺼짐입니다.
-settings.option.accessibility.enableSoundEffects: 음향 효과 활성화
+settings.option.accessibility.enableSoundEffects: 효과음 사용
 settings.option.accessibility.enableSoundEffects.description: 버튼, 스위치, 슬라이더를 조작할 때 미세한 효과음을 재생합니다.
 settings.option.accessibility.forceFocusVisible: 포커스 링 항상 표시
 settings.option.accessibility.forceFocusVisible.description: 키보드 탐색 시 포커스된 요소에 윤곽선이 항상 표시되도록 합니다.
-settings.option.accessibility.highContrast: 대비 증가
+settings.option.accessibility.highContrast: 고대비
 settings.option.accessibility.highContrast.description: 텍스트, 배경 및 인터페이스 요소 간의 대비를 높입니다.
 settings.option.accessibility.motion: 동작
-settings.option.accessibility.motionIntensity: 동작 강도
+settings.option.accessibility.motionIntensity: 모션 강도
 settings.option.accessibility.motionIntensity.description: 마우스를 올리거나 누를 때 버튼과 표면의 동작 강도를 조절합니다. 동작을 완전히 끄려면 '없음'을 선택하고, '통통 튐'은 더 역동적인 효과를 추가합니다.
 settings.option.accessibility.motionIntensity.none: 없음
 settings.option.accessibility.motionIntensity.normal: 보통
 settings.option.accessibility.motionIntensity.playful: 통통 튐
 settings.option.accessibility.motionIntensity.reduced: 줄임
-settings.option.accessibility.playOnHover: 가리킬 때 재생
+settings.option.accessibility.playOnHover: 마우스 오버 시 재생
 settings.option.accessibility.playOnHover.description: 포인터가 대화형 요소에 진입할 때 미세한 클릭음을 재생합니다.
 settings.option.accessibility.soundEffects: 음향 효과
 settings.option.accessibility.soundPreview: 사운드 미리 듣기
 settings.option.accessibility.soundPreview.description: 현재 볼륨으로 인터페이스 효과음 샘플을 재생합니다.
 settings.option.accessibility.text: 텍스트
-settings.option.accessibility.uiScale: UI 크기 조절
+settings.option.accessibility.uiScale: UI 크기
 settings.option.accessibility.uiScale.description: 텍스트 및 인터페이스 요소의 크기를 조절합니다. 일부 레이아웃 요소는 고정 크기를 사용하여 크기가 조절되지 않을 수 있습니다.
 settings.option.accessibility.visibility: 시각성
 settings.option.accessibility.volume: 음량
 settings.option.accessibility.volume.description: 인터페이스 효과음의 재생 볼륨을 설정합니다.
 settings.option.advanced.clientSettings: 클라이언트 설정
 settings.option.advanced.clientSettings.description: 현재 클라이언트 프레임워크에 특화된 설정입니다.
-settings.option.advanced.compactSidebar: 컴팩트 사이드바
+settings.option.advanced.compactSidebar: 간결한 사이드바
 settings.option.advanced.compactSidebar.description: 창 너비가 좁아져 사이드바가 접힐 때 적용됩니다.
 settings.option.advanced.compactSidebar.size: 크기
 settings.option.advanced.configBackups.description: 설정을 분실하거나 초기화한 경우에 대비하여, Cider가 저장해 둔 설정 파일의 복사본을 복원합니다.
 settings.option.advanced.experimentalFeatures: 실험적 기능
 settings.option.advanced.experimentalFeatures.description: 개발 중인 기능 및 기능 플래그입니다.
 settings.option.advanced.floatingSearch: 플로팅 검색 오버레이
-settings.option.advanced.floatingSearch.blurBackground: 배경 흐리게 처리
+settings.option.advanced.floatingSearch.blurBackground: 배경 흐리게
 settings.option.advanced.floatingSearch.blurBackground.description: 활성화하면 검색창에 포커스가 갈 때 배경이 흐려집니다.
-settings.option.advanced.floatingSearch.clearSearchOnClose: 닫을 때 검색어 지우기
+settings.option.advanced.floatingSearch.clearSearchOnClose: 닫을 때 검색 지우기
 settings.option.advanced.floatingSearch.clearSearchOnClose.description: 활성화하면 검색창을 닫을 때 입력된 검색어가 지워집니다.
 settings.option.advanced.floatingSearch.description: 페이지 위에 열리는 검색 패널입니다.
 settings.option.advanced.floatingSearch.enterShowsResults: Enter 키로 결과 표시
@@ -4029,25 +4145,25 @@ settings.option.advanced.home.buttonLocation.sidebar2023: 사이드바 (2023)
 settings.option.advanced.home.buttonLocation.topBar: 상단 바
 settings.option.advanced.immersive: 몰입형 보기
 settings.option.advanced.immersive.artworkHighlight: 아트워크 강조
-settings.option.advanced.immersive.controlsTimeout: 컨트롤 활성화 시간 제한(초)
+settings.option.advanced.immersive.controlsTimeout: 활성 컨트롤 시간 제한(초)
 settings.option.advanced.immersive.description: 몰입형 보기 기능입니다. 사용할 레이아웃은 '비주얼'에서 선택할 수 있습니다.
-settings.option.advanced.immersive.glowEffectOnActiveLyrics: 활성 가사에 발광 효과
+settings.option.advanced.immersive.glowEffectOnActiveLyrics: 활성 가사 글로우 효과
 settings.option.advanced.lyrics: 가사 애니메이션
-settings.option.advanced.lyrics.characterFlow: 글자 흐름 효과
+settings.option.advanced.lyrics.characterFlow: 부드러운 글자 흐름
 settings.option.advanced.lyrics.characterFlow.description: 전체 줄 대신 개별 글자가 위로 흘러갑니다. 리소스를 더 많이 소모합니다.
 settings.option.advanced.lyrics.description: 곡이 재생되는 동안 가사 줄과 글자가 움직이는 방식을 설정합니다.
-settings.option.advanced.lyrics.lineStaggering: 줄 지연 효과
+settings.option.advanced.lyrics.lineStaggering: 줄 순차 표시
 settings.option.advanced.lyrics.lineStaggering.description: 다음 활성 가사에 포커스가 맞춰질 때, 다음에 올 가사가 미세하게 지연되어 나타납니다.
-settings.option.advanced.lyrics.lineStaggeringImmersive: 줄 지연 효과 (몰입형)
+settings.option.advanced.lyrics.lineStaggeringImmersive: 줄 순차 표시 (몰입형)
 settings.option.advanced.lyrics.lineStaggeringImmersive.description: 리소스를 더 많이 소모합니다.
-settings.option.advanced.lyrics.scaleOnAny: 모든 단어에 확대 효과 허용
+settings.option.advanced.lyrics.scaleOnAny: 모든 단어에 크기 조절 효과 허용
 settings.option.advanced.lyrics.scaleOnAny.description: 강조된 단어뿐만 아니라 모든 단어가 확대될 수 있도록 허용합니다.
-settings.option.advanced.lyrics.singEngine: 몰입형 Sing 엔진
+settings.option.advanced.lyrics.singEngine: 몰입형 노래 엔진
 settings.option.advanced.lyrics.singEngine.classic: 클래식
 settings.option.advanced.lyrics.singEngine.description: 몰입형 보기를 위한 Sing 엔진입니다. 클래식은 가벼운 CSS 애니메이션을 사용하여 저사양 시스템에 가장 적합한 선택입니다. 사이드바는 항상 클래식을 사용합니다.
 settings.option.advanced.lyrics.singEngine.legacy: 레거시
 settings.option.advanced.lyrics.singEngine.waapi: GPU (Web Animations)
-settings.option.advanced.lyrics.singLyricsEverywhere: 모든 화면에서 Sing 가사 보기
+settings.option.advanced.lyrics.singLyricsEverywhere: 어디서나 가사 함께 부르기
 settings.option.advanced.lyrics.singLyricsEverywhere.description: 몰입형 보기 외의 화면에서도 Sing 가사를 활성화합니다. 리소스를 더 많이 소모합니다.
 settings.option.advanced.mavericksLcd: Mavericks LCD
 settings.option.advanced.mavericksLcd.style: 스타일
@@ -4060,29 +4176,29 @@ settings.option.advanced.notificationStyle: 알림 스타일
 settings.option.advanced.performance: 성능
 settings.option.advanced.performance.description: 프레임 레이트 제한, 렌더러 선택 및 리소스 임계값 설정.
 settings.option.advanced.playback: 재생 속도
-settings.option.advanced.playback.allowPlaybackRateChangeEverywhere: 곡 재생 속도 변경 허용
+settings.option.advanced.playback.allowPlaybackRateChangeEverywhere: 곡에 대해 재생 속도 변경 허용
 settings.option.advanced.playback.allowPlaybackRateChangeEverywhere.description: 팟캐스트에는 기본적으로 활성화되어 있습니다. 이 설정을 켜면 곡을 포함한 모든 미디어에서 동일하게 재생 속도를 간편하게 조절할 수 있습니다.
 settings.option.advanced.playlistTrackMapping: 플레이리스트 트랙 매핑
 settings.option.advanced.playlistTrackMapping.description: 플레이리스트를 정밀 스캔하여 어떤 트랙이 어떤 플레이리스트에 있는지 확인합니다. 플레이리스트 캐시 빌드 시간이 크게 늘어날 수 있습니다.
 settings.option.advanced.powerUsage.description: 프레임 레이트 제한, 렌더러 선택, 리소스를 많이 사용하는 시각 효과를 설정합니다.
-settings.option.advanced.progressBar: 진행 표시줄
+settings.option.advanced.progressBar: 진행 막대
 settings.option.advanced.progressBar.useAccentColor: 강조 색상 사용
 settings.option.advanced.resetCider: Cider 초기화
 settings.option.advanced.resetCider.description: 설정, 캐시 및 로컬 데이터를 초기화합니다. 별도로 선택하지 않는 한 Apple Music 및 Taproom 로그인 상태는 유지됩니다.
 settings.option.advanced.resizableMiniplayer: 크기 조절 가능한 미니 플레이어
-settings.option.advanced.richAlbumGrid: 리치 앨범 그리드
+settings.option.advanced.richAlbumGrid: 풍부한 앨범 그리드
 settings.option.advanced.richAlbumGrid.alwaysNavigateToPage: 항상 페이지로 이동
-settings.option.advanced.richAlbumGrid.disableScrollAnimation: 스크롤 애니메이션 비활성화
-settings.option.advanced.richAlbumGrid.scrollToPosition: 특정 위치로 스크롤
+settings.option.advanced.richAlbumGrid.disableScrollAnimation: 스크롤 애니메이션 끄기
+settings.option.advanced.richAlbumGrid.scrollToPosition: 위치로 스크롤
 settings.option.advanced.richAlbumGrid.scrollToPosition.bottom: 맨 아래
 settings.option.advanced.richAlbumGrid.scrollToPosition.top: 맨 위
-settings.option.advanced.searchBar: 메인 검색 바
+settings.option.advanced.searchBar: 기본 검색창
 settings.option.advanced.searchBar.description: 타이틀 바에 있는 검색 필드입니다.
-settings.option.advanced.searchBar.noRedirectOnSelect: 선택 시 랜딩 페이지로 이동하지 않음
+settings.option.advanced.searchBar.noRedirectOnSelect: 포커스 시 시작 페이지 표시 안 함
 settings.option.advanced.searchBar.noRedirectOnSelect.description: 활성화하면 검색창을 선택했을 때 랜딩 페이지로 이동하지 않습니다. 랜딩 페이지로 이동하려면 SHIFT 키를 누른 채 검색창을 선택하세요.
 settings.option.advanced.settingsTakeout: 설정 내보내기 / 가져오기
 settings.option.advanced.settingsTakeout.description: 설정을 파일로 백업하거나 다른 기기에서 복원합니다. 계정 로그인 정보는 포함되지 않습니다.
-settings.option.advanced.simpleArtworkBg: 단순한 앨범 아트 배경
+settings.option.advanced.simpleArtworkBg: 단순 아트워크 배경
 settings.option.advanced.simpleArtworkBg.brightness: 밝기 %
 settings.option.advanced.simpleArtworkBg.brightnessV2: 밝기
 settings.option.advanced.simpleArtworkBg.contrast: 대비 %
@@ -4106,7 +4222,7 @@ settings.option.advanced.window.scrollbarType: 스크롤바 유형
 settings.option.all: 전체
 settings.option.alwaysShow: 항상 표시
 settings.option.appleMusic.behavior.playButtonOnStop:
-  value: 정지 상태에서 재생 버튼 동작
+  value: 정지 시 재생 버튼 동작
   source: ai
   by: "@MP-K"
   issue: 30
@@ -4121,12 +4237,12 @@ settings.option.audio.audioConfiguration: 오디오 구성
 settings.option.audio.audioLab: Cider Audio Laboratories
 settings.option.audio.audioLab.description: Cider를 위해 자체 개발된 다양한 오디오 효과 모음입니다.
 settings.option.audio.audioLab.subheader: Designed by Cider Acoustic Technologies in California
-settings.option.audio.audioQuality: 오디오 음질
+settings.option.audio.audioQuality: 오디오 품질
 settings.option.audio.automix: 오토믹스
 settings.option.audio.changePlaybackRate: 재생 속도 변경
 settings.option.audio.ciderAudio: Cider Audio
-settings.option.audio.ciderAudio.showBadges: 지금 재생 중 화면에 배지 표시
-settings.option.audio.ciderAudio.showInToolbar: 도구 막대에 Cider Audio 표시
+settings.option.audio.ciderAudio.showBadges: 지금 재생 중에 배지 표시
+settings.option.audio.ciderAudio.showInToolbar: 도구 모음에 Cider Audio 표시
 settings.option.audio.ciderAudioSettings: Cider Audio 설정
 settings.option.audio.crossfade: 크로스페이드
 settings.option.audio.dbfs.calibration: 0 dBFS 보정
@@ -4190,32 +4306,32 @@ settings.option.audio.enableAdvancedFunctionality.tunedAudioSpatialization.profi
 settings.option.audio.enableAdvancedFunctionality.tunedAudioSpatialization.profile.separation: 분리형
 settings.option.audio.enableAdvancedFunctionality.tunedAudioSpatialization.profile.soundstage: 사운드스테이지
 settings.option.audio.enableAdvancedFunctionality.tunedAudioSpatialization.profile.standard: 표준
-settings.option.audio.exponentialVolume: 지수형 음량 곡선
+settings.option.audio.exponentialVolume: 지수형 볼륨 곡선
 settings.option.audio.exponentialVolume.description: 더 완만한 음량 곡선을 따라 낮은 음량에서 더욱 정밀하게 음량을 조절할 수 있습니다.
-settings.option.audio.hostCapture: 캡처 가능 오디오(OBS / Discord)
+settings.option.audio.hostCapture: 캡처 가능한 오디오 (OBS / Discord)
 settings.option.audio.hostCapture.description: OBS나 Discord 같은 스트리밍 및 캡처 앱이 재생 오디오를 라우팅하려면 Windows 호스트가 필요합니다.
 settings.option.audio.maxVolume: 최대 음량
 settings.option.audio.mixing: 믹싱
-settings.option.audio.normalization: 음량 자동 조절
+settings.option.audio.normalization: 오디오 정규화
 settings.option.audio.normalization.description: 각 트랙의 음량을 일관된 수준으로 자동 조절합니다. 소리가 작은 트랙은 안전하게 키우고, 소리가 큰 트랙은 낮춥니다.
 settings.option.audio.occlusion: 청취 모드
-settings.option.audio.outputDevice: 출력 기기
+settings.option.audio.outputDevice: 출력 장치
 settings.option.audio.playback: 재생
 settings.option.audio.playbackRate: 재생 속도
 settings.option.audio.playbackRate.change: 변경
 settings.option.audio.podcastPlayback: 팟캐스트 재생
 settings.option.audio.podcasts.playbackRate: Apple Podcasts 재생 속도
 settings.option.audio.podcasts.playbackRate.description: 팟캐스트의 재생 속도를 조절합니다.
-settings.option.audio.quality: 오디오 음질
-settings.option.audio.seamlessAudioTransitions: 매끄러운 오디오 전환
+settings.option.audio.quality: 오디오 품질
+settings.option.audio.seamlessAudioTransitions: 끊김 없는 재생
 settings.option.audio.seamlessTransition: 끊김 없는 오디오 전환
 settings.option.audio.seamlessTransitions: 끊김 없는 전환
-settings.option.audio.showBitrate: "'지금 재생 중'에 비트레이트 표시"
+settings.option.audio.showBitrate: 지금 재생 중에 비트레이트 표시
 settings.option.audio.streaming: 스트리밍
 settings.option.audio.volume: 음량
 settings.option.audio.volumeScrollStep: 음량 스크롤 단계
 settings.option.audio.volumeScrollStep.description: 음량 슬라이더에서 위아래로 스크롤할 때 음량이 변경되는 크기입니다.
-settings.option.audio.volumeStep: 음량 스크롤 단계
+settings.option.audio.volumeStep: 볼륨 스크롤 단계
 settings.option.audio.volumeStep.description: 스크롤할 때 조절되는 음량 단위를 설정합니다.
 settings.option.audio.yourSystem: 시스템 설정
 settings.option.automatic: 자동
@@ -4239,7 +4355,7 @@ settings.option.concerts.sortBy.date: 날짜
 settings.option.concerts.sortBy.description: 목록에서 콘서트를 정렬하는 방법입니다.
 settings.option.concerts.sortBy.distance: 거리
 settings.option.connect.link_account.description: Discord 계정을 Cider Connect와 연동하면 설정, EQ를 포함한 사용자 데이터를 저장할 수 있으며, 향후 더 많은 기능이 추가될 예정입니다. (개발 중)
-settings.option.connectivity.atmosRatings: 커뮤니티 Atmos 평가
+settings.option.connectivity.atmosRatings: 커뮤니티 Dolby Atmos 평점
 settings.option.connectivity.atmosRatings.description: Dolby Atmos 음질이 뛰어난 앨범을 확인하고 공유합니다.
 settings.option.connectivity.ciderConnect.description: 같이 듣기, 공동 작업 플레이리스트, 원격 앱 제어 등 다양한 기능을 만나보세요!
 settings.option.connectivity.ciderRemote: Cider Remote
@@ -4315,8 +4431,8 @@ settings.option.connectivity.lastfmScrobble.manualToken: Last.fm 토큰 수동 �
 settings.option.connectivity.lastfmScrobble.manualToken.link: Last.fm 토큰을 받으려면 여기를 클릭하세요
 settings.option.connectivity.lastfmScrobble.nowPlaying: Last.FM '지금 재생 중' 활성화
 settings.option.connectivity.lastfmScrobble.removeFeatured: 곡 제목에서 피처링 아티스트 제거 (Last.fm)
-settings.option.connectivity.parties: 리스닝 파티
-settings.option.connectivity.partiesEnabled: 리스닝 파티 활성화
+settings.option.connectivity.parties: 같이 듣기
+settings.option.connectivity.partiesEnabled: 같이 듣기 사용
 settings.option.connectivity.partiesEnabled.description: 다른 Cider 사용자와 함께 동기화된 감상 세션을 호스트하거나 참여합니다.
 settings.option.connectivity.partiesQueueDefault: 기본 대기열 모드
 settings.option.connectivity.partiesQueueDefault.audited: 호스트 승인 후 추가
@@ -4332,7 +4448,7 @@ settings.option.connectivity.remoteConnection: 원격 연결
 settings.option.connectivity.remoteConnection.description: 휴대폰이나 태블릿을 페어링하고, 재생을 제어하는 기기의 페어링을 해제합니다.
 settings.option.connectivity.rpcServer: RPC 서버
 settings.option.connectivity.rpcServer.description: RPC 서버를 사용하여 외부 애플리케이션의 Cider 접근 권한을 관리합니다.
-settings.option.connectivity.rpcServer.manageAccess: Cider 외부 애플리케이션 액세스 관리
+settings.option.connectivity.rpcServer.manageAccess: Cider에 대한 외부 애플리케이션 접근 관리
 settings.option.connectivity.scrobbler: 스크로블러
 settings.option.connectivity.scrobblerIntegration: 스크로블러 연동
 settings.option.connectivity.scrobblerIntegration.description: 감상 기록을 유지하기 위한 Last.fm, ListenBrainz, Libre.fm 및 Maloja 스크로블링 기능입니다.
@@ -4376,7 +4492,7 @@ settings.option.experiments.floatingSearch: 플로팅 검색 활성화
 settings.option.experiments.forceExplicit: 무삭제판(Explicit) 앨범으로 자동 전환
 settings.option.experiments.forceExplicit.description: 무삭제판 앨범을 검색하는 동안 로딩 시간이 늘어날 수 있습니다.
 settings.option.experiments.legacyFetch: 레거시 가져오기
-settings.option.experiments.musicVideos: 보관함 뮤직비디오 활성화
+settings.option.experiments.musicVideos: 보관함 뮤직 비디오 사용
 settings.option.experiments.title: 실험적 기능
 settings.option.general.app: 앱
 settings.option.general.artistChips: 아티스트 칩
@@ -4385,7 +4501,7 @@ settings.option.general.autoplayByDefault.description: 음악을 재생할 때 �
 settings.option.general.autoRemoveDisliked: 대기열에서 '추천하지 않음' 트랙 자동 제거
 settings.option.general.autoRemoveDisliked.description: 대기열에서 '추천하지 않음'으로 표시된 트랙을 자동으로 제거합니다.
 settings.option.general.cache: 캐시
-settings.option.general.clearCacheDropdown: 캐시 삭제 드롭다운
+settings.option.general.clearCacheDropdown: 캐시 지우기 드롭다운
 settings.option.general.contentToCache: 캐시할 콘텐츠
 settings.option.general.customizeSidebar: 사이드바 항목 사용자화
 settings.option.general.customizeSidebar.customize: 사용자화
@@ -4410,14 +4526,14 @@ settings.option.general.language.fun: 재미있는 언어
 settings.option.general.language.main: 언어
 settings.option.general.language.unsorted: 분류되지 않음
 settings.option.general.noPlayingAction.newMusicMix: 새로운 음악 믹스 재생
-settings.option.general.noPlayingAction.none: 아무 작업도 하지 않음
+settings.option.general.noPlayingAction.none: 아무 작업 안 함
 settings.option.general.noPlayingAction.personalStation: 개인 스테이션 시작
 settings.option.general.noPlayingAction.recent: 최근 재생한 트랙 재생
-settings.option.general.noPlayingAction.recentlyAdded: 최근 추가된 트랙 재생
-settings.option.general.noPlayingAction.shuffleLibrary: 보관함 노래 임의 재생
+settings.option.general.noPlayingAction.recentlyAdded: 최근 추가한 트랙 재생
+settings.option.general.noPlayingAction.shuffleLibrary: 보관함 노래 셔플 재생
 settings.option.general.onStartup: 시작 시
 settings.option.general.onStartup.openStartup: 시작 페이지 열기
-settings.option.general.onStartup.resume: 이전 세션 이어하기
+settings.option.general.onStartup.resume: 마지막 세션 이어서 시작
 settings.option.general.pagination: 페이지당 표시할 항목 수
 settings.option.general.preventDisplaySleep: 재생 중 디스플레이 켜 두기
 settings.option.general.preventSystemSleep: 재생 중 컴퓨터 깨어 있게 유지
@@ -4443,11 +4559,12 @@ settings.option.general.shareAnalytics: 분석 공유
 settings.option.general.shareAnalytics.description: 앱 분석 및 사용 정보를 공유하여 Cider 개선에 동참해 주세요.
 settings.option.general.showLovedTracksInline: 선호하는 트랙 인라인으로 표시
 settings.option.general.sleepTimer: 취침 타이머
-settings.option.general.sleepTimerSettings: 취침 타이머 설정
+settings.option.general.sleepTimerSettings: 수면 타이머 설정
 settings.option.general.startupPage: 시작 페이지
 settings.option.general.startupPage.blank: 빈 페이지
 settings.option.general.startupPage.description: Cider를 열 때 표시할 페이지를 선택합니다.
 settings.option.general.startupPage.descriptionV2: Cider가 새 탭에서 여는 페이지이며, 시작 시 '시작 시'가 '시작 페이지 열기'로 설정된 경우 실행 시 열리는 페이지입니다.
+settings.option.general.startupPage.descriptionV3: Cider 실행 시 열리는 페이지입니다.
 settings.option.general.startupPage.newTab: 새 탭 페이지
 settings.option.general.startupPage.personalHome: 개인 홈 페이지
 settings.option.general.themeUpdateNotification: 테마 업데이트 자동 확인
@@ -4463,48 +4580,48 @@ settings.option.hide: 가리기
 settings.option.left: 왼쪽
 settings.option.lyrics.contributeCta: 가사 기여 및 업로드
 settings.option.lyrics.contributeCta.description: 동기화된 가사를 업로드하고 실시간으로 미리 보며, 기여자 순위표를 확인할 수 있습니다.
-settings.option.lyrics.customScrollerProperties: 사용자 정의 스크롤러 속성
+settings.option.lyrics.customScrollerProperties: 사용자 지정 스크롤러 속성
 settings.option.lyrics.customScrollerProperties.description: 가사 스크롤 애니메이션에 사용자 정의 스타일을 적용합니다.
-settings.option.lyrics.defaultProvider: 기본 제공처
+settings.option.lyrics.defaultProvider: 기본 제공자
 settings.option.lyrics.defaultProvider.description: 선호하는 가사 제공처를 선택합니다. "자동"은 사용 가능한 최상의 소스를 자동으로 선택합니다.
 settings.option.lyrics.displayOptions: 표시 옵션
 settings.option.lyrics.displayOptions.description: 가사 표시 방식 사용자 정의
 settings.option.lyrics.enableMusixmatch: Musixmatch 가사 활성화
 settings.option.lyrics.enableMusixmatchKaraoke: 가라오케 모드 활성화(Musixmatch 전용)
 settings.option.lyrics.enableQQLyrics: QQ 가사 활성화
-settings.option.lyrics.enableSingLyrics: Sing 가사 활성화
+settings.option.lyrics.enableSingLyrics: 싱 가사 사용
 settings.option.lyrics.enableSingLyrics.description: 가능한 경우, 음악에 맞춰 실시간으로 강조되는 단어별 동기화 가사를 표시합니다.
-settings.option.lyrics.enableStaticLyrics: 정적 가사 활성화
+settings.option.lyrics.enableStaticLyrics: 정적 가사 사용
 settings.option.lyrics.enableStaticLyrics.description: 시간 정보가 없는 경우에도 가사를 표시합니다. 이 가사는 자동으로 스크롤되지 않습니다.
-settings.option.lyrics.enableTranslations: 번역 활성화
+settings.option.lyrics.enableTranslations: 번역 사용
 settings.option.lyrics.enableTranslations.description: 가능한 경우 번역된 가사를 표시합니다. 번역은 Musixmatch 기여 또는 기계 번역을 통해 제공됩니다.
 settings.option.lyrics.enableYoutubeLyrics: 뮤직비디오에 Youtube 가사 활성화
-settings.option.lyrics.fpsLimit: 가사 프레임률
+settings.option.lyrics.fpsLimit: 가사 프레임 속도
 settings.option.lyrics.fpsLimit.description: 가사 애니메이션의 최대 프레임률입니다. 프레임률이 높을수록 고주사율 디스플레이에서 더 부드럽게 표시되지만 CPU 및 GPU 사용량이 증가합니다. '디스플레이에 맞춤'은 모니터의 화면 재생률을 따릅니다.
 settings.option.lyrics.fpsLimit.matchDisplay: 디스플레이에 맞춤
-settings.option.lyrics.keepCompleted: 이전 가사 표시 유지
+settings.option.lyrics.keepCompleted: 완료된 가사 유지
 settings.option.lyrics.keepCompleted.description: 이미 지나간 가사를 현재 가사 위에 흐리게 표시합니다. 비활성화하면 지나간 가사는 숨겨집니다.
 settings.option.lyrics.localeOverrides: 로캘 재정의
 settings.option.lyrics.localeOverrides.description: 특정 오디오 언어에 대한 사용자 정의 제공처 및 번역 규칙을 설정합니다.
 settings.option.lyrics.musixmatchPreferredLanguage: Musixmatch 번역 선호 언어
-settings.option.lyrics.preferUserLyrics: 사용자 제출 가사 선호
+settings.option.lyrics.preferUserLyrics: 사용자 제출 가사 우선
 settings.option.lyrics.preferUserLyrics.description: 가능한 경우, 시간 동기화 품질이 더 좋다면 다른 소스보다 사용자가 제출한 가사를 우선시합니다.
 settings.option.lyrics.provider.apple: Apple Music
-settings.option.lyrics.provider.auto: 자동 (최상의 소스)
+settings.option.lyrics.provider.auto: 자동(가능한 최선)
 settings.option.lyrics.provider.mxm: Musixmatch
 settings.option.lyrics.provider.netease: NetEase
 settings.option.lyrics.provider.user: 사용자 제출
 settings.option.lyrics.providerPreferences: 제공처 기본 설정
 settings.option.lyrics.providerPreferences.description: 사용할 가사 소스 및 우선순위를 구성합니다.
-settings.option.lyrics.scrollTuning: 스크롤 시간 및 이징
+settings.option.lyrics.scrollTuning: 스크롤 지속 시간 및 이징
 settings.option.lyrics.scrollTuning.description: 사이드바와 몰입형 플레이어 각각에 대해 가사 줄이 스크롤되는 시간과 적용할 이징 곡선을 설정합니다.
 settings.option.lyrics.showDualLanguage: 이중 언어 표시
 settings.option.lyrics.showDualLanguage.description: 원문 가사와 번역을 동시에 표시합니다.
-settings.option.lyrics.showTimestamps: 마우스 올릴 때 타임스탬프 표시
+settings.option.lyrics.showTimestamps: 마우스 오버 시 타임스탬프 표시
 settings.option.lyrics.showTimestamps.description: 가사 줄에 마우스를 올렸을 때 해당 타임스탬프를 표시합니다.
-settings.option.lyrics.thirdPartySources: 외부 소스 활성화
+settings.option.lyrics.thirdPartySources: 타사 소스 사용
 settings.option.lyrics.thirdPartySources.description: Apple Music 가사를 사용할 수 없을 때 Musixmatch 및 NetEase에서 가사를 가져오도록 허용합니다. 품질은 다를 수 있으며, 지속적으로 사용할 경우 요청 제한이 발생할 수 있습니다.
-settings.option.lyrics.timeOffset: 가사 시간 오프셋 (초)
+settings.option.lyrics.timeOffset: 가사 타이밍 오프셋(초)
 settings.option.lyrics.timeOffset.description: 가사 표시 시간을 조정합니다. 양수 값은 가사를 더 빨리 표시하고, 음수 값은 더 늦게 표시합니다. 오디오 싱크가 맞지 않는 설정을 보정할 때 유용합니다.
 settings.option.lyrics.timeOffset.descriptionV2: 가사 표시 타이밍을 조정합니다. 양수 값은 가사를 늦게, 음수 값은 일찍 표시합니다. 오디오 싱크가 맞지 않을 때 유용합니다.
 settings.option.lyrics.timestampStyle: 타임스탬프 스타일
@@ -4517,10 +4634,10 @@ settings.option.lyrics.trackOverrides.description: 트랙별 가사 제공처 �
 settings.option.lyrics.translationLanguage: 번역 언어
 settings.option.lyrics.translationLanguage.description: 가사를 번역할 언어입니다. 번역 모드가 '수동'으로 설정된 경우에만 사용됩니다.
 settings.option.lyrics.translationMode: 번역 모드
-settings.option.lyrics.translationMode.appLanguage: 앱 언어에서 자동
+settings.option.lyrics.translationMode.appLanguage: 앱 언어에서 자동 설정
 settings.option.lyrics.translationMode.description: 대상 번역 언어를 결정하는 방법입니다.
 settings.option.lyrics.translationMode.manual: 수동 (선택한 언어 사용)
-settings.option.lyrics.translationMode.system: 시스템 언어에서 자동
+settings.option.lyrics.translationMode.system: 시스템 언어에서 자동 설정
 settings.option.lyrics.translationSettings: 번역 설정
 settings.option.lyrics.translationSettings.description: 가사 번역 동작을 구성합니다.
 settings.option.medium: 중간
@@ -4534,12 +4651,12 @@ settings.option.notifications.history.persist.description: Cider가 종료된 �
 settings.option.off: 끔
 settings.option.on: 켬
 settings.option.performance.app: 앱
-settings.option.performance.backgroundRefreshTime: 백그라운드 새로고침 시간
+settings.option.performance.backgroundRefreshTime: 백그라운드 새로 고침 시간
 settings.option.performance.backgroundRefreshTime.description: 백그라운드 새로고침 간격(초)입니다. 값이 낮을수록 성능 저하가 발생할 수 있습니다.
 settings.option.performance.dataAndUiLoad: 데이터 및 UI 로드
-settings.option.performance.disableLargeRequestOffloading: 대규모 요청 오프로딩 비활성화
+settings.option.performance.disableLargeRequestOffloading: 대용량 요청 오프로딩 사용 안 함
 settings.option.performance.disableLargeRequestOffloading.description: 대규모 요청 시 UI 성능에 영향을 미칠 수 있습니다.
-settings.option.performance.enableMediaItemInspect: MediaItem 개발자 검사 활성화
+settings.option.performance.enableMediaItemInspect: MediaItem 개발자 검사 사용
 settings.option.performance.enableMediaItemInspect.description: 성능에 약간의 영향을 줄 수 있습니다.
 settings.option.performance.gameMode: 게임 모드
 settings.option.performance.gameMode.description: 시각 효과를 줄이고 Windows 효율성 모드를 활성화하여 CPU 사용량을 낮춥니다.
@@ -4556,7 +4673,7 @@ settings.option.performance.limitBlurMapFramerateOnBlur: 비활성 상태일 때
 settings.option.performance.limitBlurMapFramerateOnBlur.description: 창이 비활성 상태일 때 전력을 절약하기 위해 몰입형 애니메이션 배경의 프레임률을 낮춥니다. 항상 최대 속도로 실행하려면 이 옵션을 비활성화하십시오.
 settings.option.performance.limitImmersiveBgFramerateOnBlur: 포커스가 해제되었을 때 몰입형 배경 프레임레이트 제한
 settings.option.performance.motion: 동작
-settings.option.performance.powerSaverOnBattery: 배터리 사용 시 전력 절약
+settings.option.performance.powerSaverOnBattery: 배터리 사용 시 전원 절약
 settings.option.performance.powerSaverOnBattery.description: 기기가 배터리로 작동하는 동안 몰입형 배경은 최대 초당 30프레임으로 렌더링되며, 가사 애니메이션은 초당 60프레임으로 제한됩니다.
 settings.option.performance.preloadSidebarPages: 사이드바 페이지 미리 로드
 settings.option.performance.preloadSidebarPages.description: 사이드바 페이지를 열기 전에 미리 로드합니다. '마우스 올릴 때'는 포인터가 사이드바 항목에 머무를 때 로드를 시작합니다. '대기 상태일 때'는 시작 후 '지금 듣기', '둘러보기', '라디오'도 로드하며 이전에 열었던 보관함 목록을 새로 고칩니다.
@@ -4581,7 +4698,7 @@ settings.option.smartPlaylists.autoRefreshIntervalMinutes: 백그라운드 새�
 settings.option.smartPlaylists.clearLibraryCache: 보관함 곡 캐시 지우기
 settings.option.smartPlaylists.clearLibraryCache.description: 다음 새로고침 시 Apple Music에서 보관함을 강제로 다시 가져옵니다.
 settings.option.smartPlaylists.defaultTrackLimit: 기본 트랙 제한
-settings.option.smartPlaylists.enabled: 플레이리스트 규칙 활성화
+settings.option.smartPlaylists.enabled: 재생목록 규칙 사용
 settings.option.smartPlaylists.enabled.description: Cider가 내장된 규칙에 따라 플레이리스트를 자동으로 관리하도록 허용합니다.
 settings.option.smartPlaylists.maintenance: 유지 관리
 settings.option.smartPlaylists.perPlaylistMinIntervalMinutes: 플레이리스트별 최소 간격 (분)
@@ -4601,11 +4718,11 @@ settings.option.sweetener.accentColor.purple: 보라색
 settings.option.sweetener.accentColor.systemHint: 원하는 색상을 직접 선택하려면 시스템 강조 색상을 끄세요.
 settings.option.sweetener.accentColor.yellow: 노란색
 settings.option.sweetener.enableSweetener: Sweetener 활성화
-settings.option.sweetener.header.uiCustomization: UI 커스터마이즈
+settings.option.sweetener.header.uiCustomization: UI 사용자 지정
 settings.option.sweetener.header.uiCustomization.description: 앱 전반에 사용되는 강조 색상 및 틴트 색상입니다.
 settings.option.sweetener.immersiveBackground.brightnessPercentage: 밝기 %
 settings.option.sweetener.immersiveBackground.contrastPercentage: 대비 %
-settings.option.sweetener.immersiveBackground.frameRate: 프레임 레이트 (창 포커스 시)
+settings.option.sweetener.immersiveBackground.frameRate: 프레임 속도(창 활성 시)
 settings.option.sweetener.immersiveBackground.frameRate.description: 15-30 FPS 권장
 settings.option.sweetener.immersiveBackground.header.filters: 필터
 settings.option.sweetener.immersiveBackground.lightModeWarning: 몰입형 배경은 현재 라이트 모드에서 지원되지 않습니다.
@@ -4626,34 +4743,34 @@ settings.option.v3: V3
 settings.option.v3rp: V3 RP
 settings.option.visual.accentColor: 강조 색상
 settings.option.visual.adaptiveColorPercent: 적응형 색상 비율
-settings.option.visual.additionalAnimatedArtwork: 카탈로그의 추가 모션 아트워크
+settings.option.visual.additionalAnimatedArtwork: 카탈로그의 추가 애니메이션 아트워크
 settings.option.visual.additionalAnimatedArtwork.description: 사용 가능한 경우 더 많은 모션 아트워크를 표시합니다. 화면에 많이 표시될 경우 성능이 저하될 수 있습니다.
-settings.option.visual.animateArtworkOnHover: 마우스를 올렸을 때 미디어 항목 아트워크 움직이기
-settings.option.visual.animatedArtwork: 움직이는 앨범 표지
+settings.option.visual.animateArtworkOnHover: 마우스를 올리면 미디어 항목 아트워크 애니메이션
+settings.option.visual.animatedArtwork: 애니메이션 아트워크
 settings.option.visual.animatedArtwork.description: 움직이는 앨범 아트를 활성화하고, 포커스를 벗어나면 일시 정지합니다.
 settings.option.visual.animatedArtwork.warningDescription: 사용 가능한 경우 모션 아트워크를 표시합니다. 저사양 기기에서는 성능 저하가 발생할 수 있습니다.
-settings.option.visual.animatedArtworkEngine: 움직이는 아트워크 엔진
+settings.option.visual.animatedArtworkEngine: 애니메이션 아트워크 엔진
 settings.option.visual.animatedArtworkEngine.description: 네이티브 방식은 하나의 반복 클립을 다운로드하여 화질 전환 없이 재생합니다. 재생 문제가 발생하는 경우에만 레거시 방식을 사용하세요.
 settings.option.visual.animatedArtworkEngine.hls: 레거시 (hls.js)
 settings.option.visual.animatedArtworkEngine.native: 네이티브 (권장)
-settings.option.visual.animatedArtworkQuality: 움직이는 아트워크 화질
+settings.option.visual.animatedArtworkQuality: 애니메이션 아트워크 품질
 settings.option.visual.animatedArtworkQuality.balanced: 균형
 settings.option.visual.animatedArtworkQuality.description: 움직이는 아트워크의 선명도입니다. '자동'은 각 아트워크를 화면 크기에 맞추며 대부분의 환경에 적합합니다.
 settings.option.visual.animatedArtworkQuality.performance: 성능
 settings.option.visual.animatedArtworkQuality.quality: 품질
-settings.option.visual.animatedBackgroundFramerate: 움직이는 배경 프레임 레이트
+settings.option.visual.animatedBackgroundFramerate: 애니메이션 배경 프레임 레이트
 settings.option.visual.animatedWindowBackground: 움직이는 창 배경
 settings.option.visual.artistHeaderAlignment: 아티스트 헤더 레이아웃
 settings.option.visual.artistHeaderAlignment.center: 가운데
 settings.option.visual.artistHeaderAlignment.description: 아티스트 페이지 헤더에서 아티스트 이름과 작업 버튼이 표시될 위치를 설정합니다.
 settings.option.visual.artistHeaderAlignment.left: 왼쪽 (기본값)
-settings.option.visual.artworkLoadingMethod: 아트워크 불러오기 방법
+settings.option.visual.artworkLoadingMethod: 아트워크 로딩 방식
 settings.option.visual.artworkLoadingMethod.eager: 즉시 로드
 settings.option.visual.artworkLoadingMethod.lazy: 지연 로드
 settings.option.visual.chromaticAberrationIntensity: 색수차 강도
 settings.option.visual.chromaticAberrationIntensity.description: LCD 글래스의 RGB 프린지 강도입니다.
 settings.option.visual.colorCustomization: 색상 사용자 지정
-settings.option.visual.colorScheme: Color Scheme
+settings.option.visual.colorScheme: 색 구성표
 settings.option.visual.compactArtistHeader: 아티스트 헤더 축소
 settings.option.visual.contentFilterKeywords: 콘텐츠 필터 키워드
 settings.option.visual.contentPreferences: 콘텐츠 기본 설정
@@ -4662,24 +4779,24 @@ settings.option.visual.contextMenuIcons: 메뉴 아이콘
 settings.option.visual.customAccentColor: 사용자 지정 강조 색상
 settings.option.visual.customScalingFactor: 사용자 지정 배율
 settings.option.visual.customScalingFactor.description: 애플리케이션의 UI 크기 조절 비율을 조정합니다.
-settings.option.visual.enableAnimatedArtworkInMiniPlayer: 미니 플레이어에서 모션 아트워크 활성화
+settings.option.visual.enableAnimatedArtworkInMiniPlayer: 미니 플레이어에서 애니메이션 아트워크 사용
 settings.option.visual.extendedEditorialLayout: 앨범 페이지에서 확장 에디토리얼 레이아웃 사용
 settings.option.visual.extendedEditorialLayout.description: 활성화하면 사용 가능한 에셋을 기반으로 특정 앨범 페이지에 에디토리얼 배너를 표시하고 색상 팔레트를 적용합니다.
-settings.option.visual.filterPromotionalContent: 프로모션 콘텐츠 필터링
+settings.option.visual.filterPromotionalContent: 홍보 콘텐츠 필터링
 settings.option.visual.filterPromotionalContent.description: 활성화하면 '둘러보기' 및 '지금 듣기'에서 필터 키워드와 일치하는 섹션이 숨겨집니다.
 settings.option.visual.floatingPlayer: 플로팅 플레이어
 settings.option.visual.floatingPlayer.description: 플레이어 바를 가장자리에서 분리하여 둥근 알약 모양의 플로팅 스타일로 표시합니다.
 settings.option.visual.floatingPlayerPadding: 플로팅 플레이어 여백
 settings.option.visual.floatingPlayerPadding.description: 플로팅 플레이어 주변의 여백 크기를 조절합니다.
-settings.option.visual.floatingPlayerRoundness: 플로팅 플레이어 둥글기
+settings.option.visual.floatingPlayerRoundness: 플로팅 플레이어 둥근 모서리
 settings.option.visual.floatingPlayerRoundness.description: 플로팅 플레이어의 모서리 둥글기 반경 (0 = 뷰포트에 맞춤)
 settings.option.visual.fonts: 서체
-settings.option.visual.forceMpWindowControls: 멀티플랫폼 창 제어기 사용
+settings.option.visual.forceMpWindowControls: 멀티플랫폼 창 컨트롤 사용
 settings.option.visual.forceRoundedViewport: 둥근 뷰포트 사용
 settings.option.visual.forceRoundedViewport.description: 모든 레이아웃에서 메인 뷰포트에 둥근 모서리를 적용합니다.
 settings.option.visual.hardwareAcceleration: 하드웨어 가속
 settings.option.visual.hardwareAcceleration.description: 다시 시작해야 적용됨
-settings.option.visual.headerStyle: 앨범 및 플레이리스트 헤더 스타일
+settings.option.visual.headerStyle: 앨범 및 재생목록 헤더 스타일
 settings.option.visual.headerStyle.appleMusic: Apple Music
 settings.option.visual.headerStyle.appleMusic.description: 동작 버튼이 페이지 우측 상단에 플로팅 형태로 표시됩니다.
 settings.option.visual.headerStyle.classic: 클래식
@@ -4687,7 +4804,7 @@ settings.option.visual.headerStyle.classic.description: 동작 버튼이 페이�
 settings.option.visual.headerStyle.description: 클래식은 헤더 내에 동작 버튼을 나란히 유지합니다. Apple Music은 공유 / 더 보기 / 보관함에 추가 버튼을 페이지 우측 상단의 플로팅 바로 이동합니다.
 settings.option.visual.hideAppleRecommends: '"Apple 추천" 카드 숨기기'
 settings.option.visual.hideAppleRecommends.description: "'지금 듣기' 및 홈 추천 영역에서 프로모션용 \"Apple 추천\" 카드를 제거합니다."
-settings.option.visual.hideHeroItems: "'둘러보기'에서 히어로 항목 숨기기"
+settings.option.visual.hideHeroItems: 둘러보기에서 히어로 항목 숨기기
 settings.option.visual.immersive.adjustVisuals: 시각 효과 조정
 settings.option.visual.immersive.background.artwork: 단순한 앨범 아트
 settings.option.visual.immersive.background.blank: 빈 화면
@@ -4710,8 +4827,8 @@ settings.option.visual.immersive.fsrUpscale.sharpness.description: 대비 적응
 settings.option.visual.immersive.fsrUpscale.thresholdYear: "FSR: 기준 연도"
 settings.option.visual.immersive.fsrUpscale.thresholdYear.description: '"모든 트랙에 적용"이 비활성화되어 있을 때, 이 연도 이전에 출시된 트랙이 업스케일링 대상이 됩니다.'
 settings.option.visual.immersive.hdrBoostScale: HDR 부스트 배율
-settings.option.visual.immersive.hideLyricsWhenUnavailable: 가사를 사용할 수 없을 때 가사 숨기기
-settings.option.visual.immersive.keepCompletedLyrics: 지나간 가사 유지
+settings.option.visual.immersive.hideLyricsWhenUnavailable: 가사를 사용할 수 없을 때 숨기기
+settings.option.visual.immersive.keepCompletedLyrics: 완료된 가사 유지
 settings.option.visual.immersive.keepCompletedLyrics.description: 가사 보기에서 이미 재생이 완료된 가사를 계속 표시합니다.
 settings.option.visual.immersive.layout.default: One (기본값)
 settings.option.visual.immersive.layout.minimal: 미니멀
@@ -4720,7 +4837,7 @@ settings.option.visual.immersive.layout.solarium: Solarium
 settings.option.visual.immersive.layout.sonoma: Sonoma
 settings.option.visual.immersive.layout.spectrumDeck: Spectrum Deck
 settings.option.visual.immersive.maxBrightness: 최대 밝기
-settings.option.visual.immersive.maxLyricFontSize: 최대 가사 글자 크기 (px)
+settings.option.visual.immersive.maxLyricFontSize: 최대 가사 글꼴 크기(px)
 settings.option.visual.immersive.startFullscreen: 전체 화면으로 시작
 settings.option.visual.immersive.startingTab: 시작 탭
 settings.option.visual.immersive.startingTab.history: 재생 기록
@@ -4728,7 +4845,7 @@ settings.option.visual.immersive.startingTab.lyrics: 가사
 settings.option.visual.immersive.startingTab.queue: 대기열
 settings.option.visual.immersive.ultraHdr: Ultra HDR 아트워크 업스케일링
 settings.option.visual.immersive.ultraHdr.description: 모든 트랙의 앨범 아트워크에 HDR 하이라이트, 대비, 색상을 추가합니다. HDR 디스플레이에서 가장 잘 보이며, 다른 디스플레이에서는 더 약한 효과가 적용됩니다. WebGPU가 필요합니다.
-settings.option.visual.immersive.ultraHdr.headroom: "Ultra HDR: 최대 헤드룸"
+settings.option.visual.immersive.ultraHdr.headroom: "Ultra HDR: 최고 헤드룸"
 settings.option.visual.immersive.ultraHdr.headroom.description: 기준 흰색 대비 최대 하이라이트 밝기 배수입니다. 디스플레이에서 하이라이트가 너무 밝게 보이면 값을 낮추세요.
 settings.option.visual.immersive.ultraHdr.intensity: "Ultra HDR: 강도"
 settings.option.visual.immersive.ultraHdr.intensity.description: 효과의 강도입니다. 0은 아트워크를 변경하지 않고, 1은 전체 프로필을 적용합니다.
@@ -4737,16 +4854,16 @@ settings.option.visual.immersive.ultraHdr.profile.cinematic: 시네마틱
 settings.option.visual.immersive.ultraHdr.profile.description: 자연스러움은 원본에 가깝게 유지하고, 선명함은 강렬하고 화려하게, 시네마틱은 높은 대비와 절제된 색상을 적용합니다.
 settings.option.visual.immersive.ultraHdr.profile.natural: 자연스러움
 settings.option.visual.immersive.ultraHdr.profile.vivid: 선명함
-settings.option.visual.immersive.useAnimatedArtwork: 움직이는 아트워크 사용
+settings.option.visual.immersive.useAnimatedArtwork: 애니메이션 아트워크 사용
 settings.option.visual.immersive.useAnimatedArtwork.description: 사용 가능한 경우 움직이는 앨범 아트를 표시합니다. 저사양 기기에서는 성능 저하가 발생할 수 있습니다.
 settings.option.visual.immersive.useAnimatedBackground: 몰입형 움직이는 배경
-settings.option.visual.immersive.useBackgroundBpm: BPM 기준 배경 속도
+settings.option.visual.immersive.useBackgroundBpm: BPM 기반 배경 속도
 settings.option.visual.immersiveBackground.blank: 빈 화면
 settings.option.visual.immersiveBackground.customImage: 사용자 지정 이미지
-settings.option.visual.immersiveBackground.customImageMixed: 사용자 지정 이미지 (혼합)
+settings.option.visual.immersiveBackground.customImageMixed: 사용자 지정 이미지(혼합)
 settings.option.visual.immersiveBackground.gradientMesh: 그라데이션 메시
-settings.option.visual.immersiveBackground.simpleArtwork: 단순한 앨범 아트
-settings.option.visual.immersiveBackground.simpleColor: 단색
+settings.option.visual.immersiveBackground.simpleArtwork: 단순 아트워크
+settings.option.visual.immersiveBackground.simpleColor: 단순 색상
 settings.option.visual.immersiveBgSettings: 몰입형 배경 설정
 settings.option.visual.immersiveBgSettings.description: 앱 배경 효과 및 필터 설정입니다.
 settings.option.visual.immersiveLayout.classic: 원 클래식
@@ -4764,12 +4881,12 @@ settings.option.visual.immersiveLayout.sonoma.description: 앨범 아트워크�
 settings.option.visual.immersiveLayout.spectrumDeck: 스펙트럼 덱
 settings.option.visual.immersiveLayout.spectrumDeck.description: 플로팅 앨범 아트워크와 실시간 스펙트럼 화면입니다.
 settings.option.visual.immersiveStyle: 몰입형 스타일
-settings.option.visual.immersiveStylePortrait: 몰입형 스타일 (세로)
+settings.option.visual.immersiveStylePortrait: 몰입형 스타일(세로)
 settings.option.visual.largeHeaderTitles: 큰 헤더 제목
 settings.option.visual.largeHeaderTitles.description: 앨범 및 플레이리스트 페이지의 제목 텍스트를 크게 표시하여 더 강조합니다.
 settings.option.visual.layoutProfile: 레이아웃 프로필 유형
 settings.option.visual.layoutProfile.description: 앱의 레이아웃을 선호도에 맞게 조정합니다.
-settings.option.visual.layoutType: Layout Type
+settings.option.visual.layoutType: 레이아웃 유형
 settings.option.visual.layoutType.calico: 캘리코
 settings.option.visual.layoutType.calico.description: 콘텐츠 영역 내부에 플레이어가 있는 전체 높이 사이드바입니다.
 settings.option.visual.layoutType.mavericks: 매버릭스
@@ -4782,13 +4899,13 @@ settings.option.visual.lcdChromaticAberration: LCD 색수차
 settings.option.visual.lcdChromaticAberration.description: RGB 프린지 효과가 있는 액체 유리 셰이더를 통해 현재 재생 중인 LCD 배경을 굴절시킵니다.
 settings.option.visual.liquidGlassPlayer: 리퀴드 글래스 플레이어 바
 settings.option.visual.liquidGlassPlayer.description: 지금 재생 중 플레이어 바에 리퀴드 글래스 효과를 사용합니다. 평평하고 단색인 패널을 사용하려면 이 옵션을 끄십시오 (렌더링 부하가 줄어듭니다).
-settings.option.visual.liquidGlassScrollPerf: 스크롤 시 가벼운 글래스 효과
+settings.option.visual.liquidGlassScrollPerf: 스크롤 중 가벼운 유리 효과
 settings.option.visual.liquidGlassScrollPerf.description: 스크롤하는 동안 리퀴드 글래스 굴절을 단순한 블러 효과로 간소화하고, 스크롤을 멈추면 서서히 다시 적용합니다. 정지 상태에서는 변화 없이, 시스템 부하가 큰 환경에서 스크롤 끊김 현상을 줄여줍니다. 게임 모드에서는 항상 활성화됩니다.
 settings.option.visual.liquidGlassScrollPerf.descriptionV2: 스크롤하는 동안 리퀴드 글라스 굴절을 단순한 블러로 바꾸고, 멈추면 다시 원래대로 돌립니다. 정지 상태에는 변화가 없으며 사양이 높은 시스템에서 스크롤 끊김을 줄입니다.
-settings.option.visual.mainMenuPosition: 메인 메뉴 위치
+settings.option.visual.mainMenuPosition: 기본 메뉴 위치
 settings.option.visual.matchPageToArtwork: 앨범 아트에 맞춰 페이지 색상 적용
 settings.option.visual.matchPageToArtwork.description: 라이트 모드와 다크 모드에서 앨범 및 플레이리스트 페이지를 아트워크의 색상으로 채웁니다.
-settings.option.visual.mergeAppleMusicPlaylists: Apple Music 플레이리스트 병합
+settings.option.visual.mergeAppleMusicPlaylists: Apple Music 재생목록 병합
 settings.option.visual.mergeAppleMusicPlaylists.description: Apple Music 추천 플레이리스트를 별도의 그룹으로 표시하는 대신 메인 플레이리스트 섹션에 통합하여 표시합니다.
 settings.option.visual.miniplayerSkin: 미니 플레이어 레이아웃
 settings.option.visual.miniplayerSkin.aluminum: 알루미늄
@@ -4807,20 +4924,20 @@ settings.option.visual.mojavePlayerType.compact: 컴팩트
 settings.option.visual.mojavePlayerType.compact.description: 가운데에 LCD가 있고 위에 진행률 표시줄이 있는 슬림한 플레이어입니다.
 settings.option.visual.mojavePlayerType.compactInline: 컴팩트 인라인
 settings.option.visual.mojavePlayerType.compactInline.description: LCD 내부에 진행률이 표시되는 단일 슬림 행 플레이어입니다.
-settings.option.visual.moveUpLinks: 둘러보기의 "더 찾아보기" 링크를 맨 위로 이동
-settings.option.visual.musicVideoPinMaxResolution: 뮤직비디오를 항상 최대 해상도로 재생
+settings.option.visual.moveUpLinks: 둘러보기에서 "더 보기" 링크를 맨 위로 이동
+settings.option.visual.musicVideoPinMaxResolution: 뮤직 비디오를 항상 최고 해상도로 재생
 settings.option.visual.musicVideoPinMaxResolution.description: 낮은 화질로 시작하여 점차 높이는 대신 비디오가 제공하는 최고 화질을 유지합니다. 작은 창이나 종량제 네트워크 연결에서는 데이터 사용량이 눈에 띄게 증가할 수 있습니다.
-settings.option.visual.musicVideoPrefetchOnHover: 마우스 포인터를 올렸을 때 뮤직비디오 준비
+settings.option.visual.musicVideoPrefetchOnHover: 마우스를 올리면 뮤직 비디오 준비
 settings.option.visual.musicVideoPrefetchOnHover.description: 포인터가 배지 위에 있을 때 비디오 로드를 시작하여 클릭 시 더 빠르게 열리도록 합니다.
-settings.option.visual.musicVideoPrefetchSegmentsOnHover: 마우스 포인터를 올렸을 때 첫 부분 다운로드
+settings.option.visual.musicVideoPrefetchSegmentsOnHover: 마우스를 올리면 첫 번째 조각 다운로드
 settings.option.visual.musicVideoPrefetchSegmentsOnHover.description: 클릭하기 전에 비디오의 처음 몇 초 분량을 미리 가져옵니다. 비디오를 열지 않더라도 포인터를 올릴 때마다 수 메가바이트(MB)의 데이터가 소모됩니다.
 settings.option.visual.paletteContrast: 아트워크 색상 대비
 settings.option.visual.paletteContrast.description: 버튼과 재생 표시기의 가독성을 위해 앨범 및 플레이리스트 색상이 페이지 배경과 대비되는 정도를 조절합니다. '고대비' 접근성 설정에서는 항상 '최대'가 사용됩니다.
 settings.option.visual.paletteContrast.enhanced: 향상됨
 settings.option.visual.paletteContrast.maximum: 최대
 settings.option.visual.paletteContrast.standard: 표준
-settings.option.visual.pauseAnimatedOnBlur: 포커스를 벗어날 때 움직이는 앨범 아트 일시정지
-settings.option.visual.playerMaterial: 플레이어 재질
+settings.option.visual.pauseAnimatedOnBlur: 포커스를 벗어나면 애니메이션 아트워크 일시정지
+settings.option.visual.playerMaterial: 플레이어 소재
 settings.option.visual.playerMaterial.blur: 흐림 효과
 settings.option.visual.playerMaterial.blur.description: 지금 재생 중인 플레이어 바에 Liquid Glass 굴절 효과 없이 반투명한 유리 재질을 사용합니다.
 settings.option.visual.playerMaterial.default.description: 플랫폼 기본값을 따릅니다. macOS에서는 Liquid Glass, 기타 플랫폼에서는 흐림 효과가 적용됩니다.
@@ -4830,11 +4947,11 @@ settings.option.visual.playerMaterial.liquidGlass.description: 지금 재생 중
 settings.option.visual.playerMaterial.none: 없음
 settings.option.visual.playerMaterial.none.description: 지금 재생 중인 플레이어 바에 불투명한 단색 패널을 사용합니다.
 settings.option.visual.playerPosition: 플레이어 위치
-settings.option.visual.playerType: Player Type
+settings.option.visual.playerType: 플레이어 유형
 settings.option.visual.plugin.github.download: GitHub URL에서 설치
 settings.option.visual.plugin.github.explore: GitHub 플러그인 탐색
 settings.option.visual.plugin.github.install.confirm: "{{repo}}을(를) 설치하시겠습니까?"
-settings.option.visual.popularityThreshold: 인기도 임계값
+settings.option.visual.popularityThreshold: 인기도 기준
 settings.option.visual.popularityThreshold.description: 트랙 옆에 인기 표시가 나타나기 위한 최소 인기도입니다.
 settings.option.visual.precisionScrollSpeed: 정밀 스크롤 속도
 settings.option.visual.precisionScrollSpeed.description: 새로운 (글래스) 윈도우 엔진에서 터치패드 스크롤을 미세하게 조정합니다. 값이 낮을수록 느리고 정밀하게 조절할 수 있으며, 높을수록 빠르게 스크롤됩니다.
@@ -4844,24 +4961,25 @@ settings.option.visual.realtimeVisualizer.description: 재생 중인 트랙에 �
 settings.option.visual.searchType: 검색 유형
 settings.option.visual.searchType.floating: 플로팅
 settings.option.visual.searchType.inline: 인라인
-settings.option.visual.showBpmAndKey: 플레이리스트 및 앨범의 트랙에 BPM 및 키 표시
+settings.option.visual.showBpmAndKey: 재생목록과 앨범의 트랙에 BPM 및 키 표시
 settings.option.visual.showBpmAndKey.description: 활성화하면 콘텐츠를 불러오는 데 시간이 더 오래 걸릴 수 있습니다.
 settings.option.visual.showPersonalInfo: 개인 정보 표시
-settings.option.visual.showPlaylistArtworkInSidebar: 사이드바에 플레이리스트 앨범 아트 표시
+settings.option.visual.showPlaylistArtworkInSidebar: 사이드바에 재생목록 아트워크 표시
 settings.option.visual.showPodcastsInSidebar: 사이드바에 팟캐스트 표시
 settings.option.visual.showPodcastsInSidebar.description: 팟캐스트 지원 기능이 아직 재구축 중이므로, 현재 보관함 항목에는 임시 안내만 표시됩니다.
-settings.option.visual.showQuickActions: Show Quick Actions
-settings.option.visual.showWatchMusicVideoWhenAvailable: 가능한 경우 '뮤직비디오 감상하기' 표시
+settings.option.visual.showQuickActions: 빠른 작업 표시
+settings.option.visual.showWatchMusicVideoWhenAvailable: 사용 가능한 경우 "뮤직 비디오 보기" 표시
 settings.option.visual.sidebarStyle: 사이드바 스타일
 settings.option.visual.sidebarStyle.apple: Apple Music
 settings.option.visual.sidebarStyle.default: 기본
 settings.option.visual.sidebarStyle.description: 사이드바 레이아웃 방식을 선택합니다. 'Apple Music' 스타일은 보관함 섹션 내에 고정 항목을 배치하고 Apple Music 섹션 헤더를 제거합니다.
 settings.option.visual.simpleArtworkBg.saturate: 채도
 settings.option.visual.sizeProfile:
-  value: UI Size 프로필
-  source: human
+  value: UI 크기 프로필
+  source: ai
   by: "@MP-K"
   issue: 30
+  superseded_at: 2026-10-16
 settings.option.visual.sizeProfile.description.default:
   value: 기본 크기 조정으로, 모든 입력 장치에서 사용하기에 적합합니다. iOS / Android / 최신 Windows 스타일.
   source: ai
@@ -4888,30 +5006,30 @@ settings.option.visual.theme.light: 라이트
 settings.option.visual.theme.manageStyles: 스타일 관리
 settings.option.visual.theme.uninstall: 제거
 settings.option.visual.theme.viewInfo: 정보 보기
-settings.option.visual.titleBarStyle: Title Bar Style
+settings.option.visual.titleBarStyle: 제목 표시줄 스타일
 settings.option.visual.titleBarStyle.winui: WinUI
 settings.option.visual.topToolbarWidget: 상단 도구 막대 위젯
-settings.option.visual.transparency: 투명도 활성화
+settings.option.visual.transparency: 투명도 사용
 settings.option.visual.transparent: 투명 프레임
 settings.option.visual.transparent.description: 테마 지원 필요, 재실행 필요
 settings.option.visual.uiscale: UI 배율
 settings.option.visual.useAdaptiveColors: 적응형 색상 사용
 settings.option.visual.useAdaptiveColors.description: 강조 색을 현재 노래와 맞춥니다
 settings.option.visual.useAdaptiveColors.popup: 적용형 색상은 다음 곡부터 적용됩니다.
-settings.option.visual.verticalDrawerMode: 대기 목록 및 가사 위치
+settings.option.visual.verticalDrawerMode: 대기열 및 가사 위치
 settings.option.visual.verticalDrawerMode.auto.description: 세로형 디스플레이에서는 플레이어/콘텐츠 아래의 하단 서랍을 사용하고, 와이드스크린에서는 측면 서랍을 사용합니다.
-settings.option.visual.verticalDrawerMode.bottom: 하단 서랍
+settings.option.visual.verticalDrawerMode.bottom: 하단 드로어
 settings.option.visual.verticalDrawerMode.bottom.description: 대기 목록과 가사를 항상 플레이어/콘텐츠 아래의 하단 서랍에 표시합니다.
 settings.option.visual.verticalDrawerMode.description: 세로형 디스플레이에서 대기 목록과 가사를 하단 서랍으로 표시할지 측면 서랍으로 표시할지 설정합니다.
-settings.option.visual.verticalDrawerMode.side: 측면 서랍
+settings.option.visual.verticalDrawerMode.side: 측면 드로어
 settings.option.visual.verticalDrawerMode.side.description: 대기 목록과 가사를 항상 오른쪽 측면 서랍에 표시합니다.
 settings.option.visual.vibrancyMode.acrylic: 아크릴
 settings.option.visual.vibrancyMode.mica: 미카
 settings.option.visual.vibrancyMode.tabbed: 탭
-settings.option.visual.vibrancySettings: 바이브런시 설정
+settings.option.visual.vibrancySettings: 비비드니스 설정
 settings.option.visual.windowBackgroundStyle: 윈도우 배경 스타일
 settings.option.visual.windowColor: 윈도우 틴트 색상
-settings.option.visual.windowControlPosition: 창 제어 버튼 위치
+settings.option.visual.windowControlPosition: 창 컨트롤 위치
 settings.option.visual.windowingMode: 스크롤 및 렌더링 모드
 settings.option.visual.windowingMode.auto: 자동 (터치패드 감지)
 settings.option.visual.windowingMode.description: 앱이 콘텐츠를 렌더링하고 스크롤하는 방식을 선택합니다. 대부분의 사용자에게는 "자동"을 권장하며, 일부 터치패드 기기에서는 "기존" 모드가 더 반응이 빠를 수 있습니다.
@@ -4920,7 +5038,7 @@ settings.option.visual.windowingMode.fallbackNotice.title: 이 시스템에서�
 settings.option.visual.windowingMode.glass: 신규
 settings.option.visual.windowingMode.performance: 기존
 settings.option.visual.windowStyle: 윈도우 스타일
-settings.option.visual.windowVibrancy: 윈도우 바이브런시
+settings.option.visual.windowVibrancy: 창 비비드니스
 settings.option.window.close_button_hide: 닫기 버튼 클릭 시 앱 숨기기
 settings.option.window.maxElementScale: 최대 요소 배율
 settings.option.window.openOnStartup: 시스템 시작 시 Cider 열기
@@ -4951,6 +5069,17 @@ settings.power.savers: 절전 기능
 settings.power.summary.count: 영향이 큰 기능 {{high}}개, 중간인 기능 {{medium}}개 켜짐
 settings.power.summary.high: 영향이 큼
 settings.power.summary.medium: 영향이 중간임
+settings.privacy.appPreferences: 앱 환경설정
+settings.privacy.appPreferences.description: 앱 환경설정을 공유하여 Cider를 어떻게 구성하고 싶은지 알려주세요.
+settings.privacy.appUsage: 앱 전용 사용 현황
+settings.privacy.appUsage.description: Cider 전용 기능에 대한 익명 사용 데이터를 보냅니다. 개인 정보나 Apple Music 데이터는 포함되지 않습니다.
+settings.privacy.audioLabs: Cider Audio Labs
+settings.privacy.audioLabs.description: Cider Audio Labs의 구성 방식에 대한 정보를 보냅니다.
+settings.privacy.deviceSpecs: 기기 사양
+settings.privacy.deviceSpecs.description: 현재 하드웨어의 CPU, GPU, RAM, 오디오 기기 및 운영 체제에 대한 정보를 보냅니다. 정보는 기본적인 수준이며 일련번호나 기기 ID는 포함되지 않습니다.
+settings.privacy.replay: Cider Replay에 청취 기록 기여
+settings.privacy.replay.description: Cider의 연말 커뮤니티 Replay 프로젝트에 기여하기 위해 청취 기록을 익명으로 보냅니다. 공개 통계는 cider.sh/replay에서 확인할 수 있습니다.
+settings.privacy.statement: Cider Collective는 개인정보 보호를 매우 중요하게 생각합니다. 개인을 식별할 수 있는 정보는 수집하지 않으며, 어떤 데이터도 제3자에게 판매하지 않습니다. 공유하도록 선택한 데이터는 앱 개선에만 사용되며 다른 누구와도 공유되지 않습니다. 저장될 수 있는 모든 개인 정보는 공유되기 전에 삭제됩니다.
 settings.profile.crop.hint: 드래그하여 이동, 스크롤하여 확대/축소
 settings.profile.crop.title: 사진 위치 조정
 settings.profile.defaultName: Apple Music 사용자
@@ -4958,17 +5087,18 @@ settings.profile.field.displayName: 표시 이름
 settings.profile.field.displayName.description: 사이드바 및 Cider 전체에 표시됩니다.
 settings.profile.field.handle.description: 공유에 사용되는 @사용자이름입니다.
 settings.profile.field.photo: 프로필 사진
+settings.profile.field.photo.change: 프로필 사진 변경
 settings.profile.field.photo.description: 현재 사용자 지정 사진이 설정되어 있습니다.
 settings.profile.header.identity: 프로필 편집
 settings.profile.header.region: 지역 및 언어
 settings.profile.header.visibility: 사이드바 표시
 settings.profile.language.description: 선택한 스토어프론트의 카탈로그 메타데이터 언어입니다.
 settings.profile.option.showHandle: 소셜 핸들 표시
-settings.profile.option.showMainMenu: 사이드바 프로필 영역에 메인 메뉴 표시
+settings.profile.option.showMainMenu: 사이드바 프로필 영역의 기본 메뉴
 settings.profile.option.showName: 프로필 이름 표시
 settings.profile.option.showProfile: 사이드바에 프로필 표시
 settings.profile.policy.allowed: 허용됨
-settings.profile.policy.label: 무삭제판 콘텐츠
+settings.profile.policy.label: 명시적 콘텐츠
 settings.profile.policy.restricted: 제한됨
 settings.profile.signOut.confirmMessage: 로그인 화면으로 돌아가며 로컬 보관함 캐시가 지워집니다. 계속하시겠습니까?
 settings.profile.signOut.confirmTitle: Apple Music에서 로그아웃하시겠습니까?
@@ -5006,6 +5136,7 @@ settings.resetCider.confirm.ok: Cider 초기화
 settings.resetCider.confirm.title: Cider를 초기화하시겠습니까?
 settings.resetCider.confirm.warning: 이 작업은 되돌릴 수 없습니다. 초기화 후 Cider가 재시작됩니다.
 settings.resetCider.confirm.willReset: 초기화 예정
+settings.resetCider.deselectAll: 모두 선택 해제
 settings.resetCider.error: 초기화 중 오류가 발생했습니다.
 settings.resetCider.group.accounts: 계정
 settings.resetCider.group.core: 초기화
@@ -5015,6 +5146,10 @@ settings.resetCider.resetButton: Cider 초기화
 settings.resetCider.resetting: 초기화 중…
 settings.resetCider.selectAll: 전체 선택
 settings.resetCider.title: Reset Cider
+settings.search.empty: 검색과 일치하는 설정이 없습니다.
+settings.search.pages: 페이지
+settings.search.resultCount: "{{count}}개의 설정이 일치합니다"
+settings.search.resultCountOne: 1개의 설정이 일치합니다
 settings.sleepTimer.endsIn: "종료까지: {{remainingTime}} ({{endTime}})"
 settings.sleepTimer.notSet: 타이머가 설정되지 않음
 settings.sleepTimer.title: 취침 타이머 설정
@@ -5074,6 +5209,65 @@ settings.troubleshooting.rebootMk.desc: 재생 문제를 해결하기 위해 Mus
 settings.troubleshooting.testSignIn: Apple Music 로그인 테스트
 settings.troubleshooting.testSignIn.desc: Apple Music 로그인 팝업을 실행하여 로그인이 정상적으로 작동하는지 확인하고, API를 통해 토큰을 검증합니다. 어떠한 정보도 저장되지 않으며 현재 세션은 그대로 유지됩니다.
 settings.troubleshooting.title: 문제 해결
+settings.tweaks.animateArtworkOnHover.description: 포인터를 아트워크 위에 올리면 애니메이션 아트워크를 재생합니다.
+settings.tweaks.artworkFadeIn.description: 로드되는 동안 페이드 인하지 않고 아트워크를 바로 표시합니다.
+settings.tweaks.artworkHighlighting.description: 그리드와 목록의 아트워크에 부드러운 그림자와 하이라이트를 추가합니다.
+settings.tweaks.artworkLoadingMethod.description: 아트워크가 화면에 들어올 때 불러옵니다(지연 로드). 즉시 불러오려면 즉시 로드를 선택합니다.
+settings.tweaks.card.musicVideos: 뮤직 비디오
+settings.tweaks.ciderAudioBadges.description: 플레이어에서 곡 옆에 Cider Audio 배지를 표시합니다.
+settings.tweaks.ciderAudioToolbar.description: 도구 모음에 Cider Audio 버튼을 표시합니다.
+settings.tweaks.compactSidebarSize: 컴팩트 사이드바 크기
+settings.tweaks.contextMenuIcons.description: 아이콘을 표시할 메뉴 항목을 선택합니다.
+settings.tweaks.floatingSearchBlur: 플로팅 검색 뒤 흐림 효과
+settings.tweaks.floatingSearchClear: 닫을 때 플로팅 검색 지우기
+settings.tweaks.forceMpWindowControls.description: 시스템 창 버튼 대신 Cider의 창 버튼을 사용합니다.
+settings.tweaks.hideHeroItems.description: 둘러보기 상단의 큰 추천 배너를 숨깁니다.
+settings.tweaks.homeButtonLocation.description: 홈 버튼의 위치입니다.
+settings.tweaks.immersiveArtworkHighlight: 몰입형 아트워크 강조
+settings.tweaks.immersiveArtworkHighlight.description: 몰입형 보기에서 아트워크에 강조 효과를 추가합니다.
+settings.tweaks.immersiveBackgroundBpm.description: 곡의 템포에 맞춰 배경을 애니메이션으로 표시합니다.
+settings.tweaks.immersiveControlsTimeout: 몰입형 컨트롤 숨김 시간
+settings.tweaks.immersiveControlsTimeout.description: 컨트롤이 숨겨지기 전까지의 시간(초)입니다.
+settings.tweaks.immersiveHideLyrics.description: 가사가 없는 곡에서는 가사 패널을 숨깁니다.
+settings.tweaks.immersiveLyricGlow: 현재 가사 글로우 효과
+settings.tweaks.immersiveLyricGlow.description: 지금 불리는 가사 줄에 글로우 효과를 추가합니다.
+settings.tweaks.immersiveMaxLyricSize.description: 몰입형 보기에서 가사가 커질 수 있는 최대 크기입니다.
+settings.tweaks.mainMenuPosition.description: 기본 메뉴 버튼의 위치입니다.
+settings.tweaks.mavericksLcdStyle: Mavericks LCD 스타일
+settings.tweaks.mavericksLcdStyle.description: Mavericks 레이아웃에서 재생 중 표시 화면의 모양입니다.
+settings.tweaks.miniPlayerAnimatedArtwork.description: 미니 플레이어 창에서 애니메이션 아트워크를 재생합니다.
+settings.tweaks.moveUpLinks.description: 더 많은 콘텐츠로 가는 링크를 둘러보기 상단에 배치합니다.
+settings.tweaks.musicVideoBadge.description: 곡에 뮤직 비디오가 있으면 플레이어에 버튼을 표시합니다.
+settings.tweaks.pauseAnimatedOnBlur.description: Cider가 활성 창이 아닐 때 애니메이션 아트워크를 일시 정지합니다.
+settings.tweaks.progressAccent: 강조 색상 진행 막대
+settings.tweaks.progressAccent.description: 곡 진행 막대를 강조 색상으로 채웁니다.
+settings.tweaks.resizableMiniPlayer.description: 미니 플레이어 창의 크기를 조절할 수 있게 합니다.
+settings.tweaks.richGridNoScrollAnimation: 리치 앨범 그리드에서 즉시 스크롤
+settings.tweaks.richGridNoScrollAnimation.description: 스크롤 애니메이션 없이 앨범으로 바로 이동합니다.
+settings.tweaks.richGridOpenPage: 리치 앨범 그리드에서 페이지로 앨범 열기
+settings.tweaks.richGridOpenPage.description: 그리드에서 펼치는 대신 앨범 페이지로 이동합니다.
+settings.tweaks.richGridScrollPosition: 리치 앨범 그리드 스크롤 위치
+settings.tweaks.richGridScrollPosition.description: 앨범을 열 때 그리드가 스크롤되는 위치입니다.
+settings.tweaks.scrollbarType.description: Cider의 스크롤바 또는 시스템 스크롤바를 사용합니다.
+settings.tweaks.searchStyle: 검색 스타일
+settings.tweaks.searchStyle.description: 제목 표시줄에서 검색하거나 페이지 위 패널에서 검색합니다.
+settings.tweaks.section.artwork: 아트워크
+settings.tweaks.section.browse: 둘러보기
+settings.tweaks.section.immersive: 몰입형
+settings.tweaks.section.lyrics: 가사
+settings.tweaks.section.pagesGrids: 페이지 및 그리드
+settings.tweaks.section.playerBar: 플레이어 막대
+settings.tweaks.section.search: 검색
+settings.tweaks.section.sidebarNavigation: 사이드바 및 탐색
+settings.tweaks.section.windowToolbar: 창 및 도구 모음
+settings.tweaks.showBitrate.description: 플레이어에서 곡 옆에 스트림 비트레이트를 표시합니다.
+settings.tweaks.sidebarPlaylistArtwork.description: 각 재생 목록의 아트워크를 이름 옆에 표시합니다.
+settings.tweaks.simpleArtworkMask.description: 배경 아트워크의 하단을 페이드 처리합니다.
+settings.tweaks.sonomaLyricArc: Sonoma에서 가사 호 형태로 표시
+settings.tweaks.sonomaRadialMask: 대체 Sonoma 마스크
+settings.tweaks.volumeIosStyle: iOS 스타일 볼륨 슬라이더
+settings.tweaks.volumeIosStyle.description: iPhone에서 사용되는 스타일로 볼륨 슬라이더를 그립니다.
+settings.tweaks.windowControlPosition.description: 창 버튼이 놓이는 쪽입니다.
 settings.updates.action.check: 업데이트 확인
 settings.updates.action.install: 업데이트 설치
 settings.updates.action.restart: Cider 재시작
@@ -5102,10 +5296,10 @@ settings.updates.progress.success: 업데이트 설치됨
 settings.updates.progress.success.sub: 변경 사항을 적용하려면 Cider를 재시작하세요.
 settings.updates.progress.working: 업데이트 설치 중
 settings.updates.progress.working.sub: 잠시만 기다려 주세요. 금방 완료됩니다.
-settings.updates.section.about: 버전 정보
-settings.updates.section.alsoAvailable: 이용 가능한 다른 버전
+settings.updates.section.about: 현재 버전 정보
+settings.updates.section.alsoAvailable: 기타 사용 가능
 settings.updates.section.history: 업데이트 기록
-settings.updates.section.whatsNew: Cider의 새로운 기능
+settings.updates.section.whatsNew: Cider {version}의 새로운 기능
 settings.updates.status.available: 업데이트 가능
 settings.updates.status.checking: 업데이트 확인 중...
 settings.updates.status.failed: 업데이트 실패
@@ -5113,12 +5307,13 @@ settings.updates.status.idle: Cider가 최신 버전입니다
 settings.updates.status.success: 재시작 필요
 settings.updates.status.working: 설치 중...
 settings.visual.card.appBackground: 앱 배경
+settings.visual.card.behavior: 동작
 settings.visual.card.behaviorLyrics: 동작 및 가사
 settings.visual.card.browse: 둘러보기
 settings.visual.card.contentFilter: 콘텐츠 필터
 settings.visual.card.experimental: 실험적
 settings.visual.card.fsrUpscaling: FSR 업스케일링
-settings.visual.card.moreAnimatedArtwork: 추가 애니메이션 아트워크
+settings.visual.card.moreAnimatedArtwork: 더 많은 애니메이션 아트워크
 settings.visual.card.playerEffects: 플레이어 효과
 settings.visual.card.sidebarNavigation: 사이드바 및 탐색
 settings.visual.card.trackMetadata: 트랙 메타데이터
@@ -5128,15 +5323,19 @@ settings.visual.editorialLayout.desc: 일부 앨범에서 에디토리얼 배너
 settings.visual.editorialPreferenceOrder: 에디토리얼 우선순위
 settings.visual.section.appearance: 화면 스타일
 settings.visual.section.appearance.description: 색상 구성표, 강조 색상 및 앱 배경을 설정합니다.
-settings.visual.section.artwork: 아트워크 및 동작
+settings.visual.section.artwork: 아트워크 및 모션
 settings.visual.section.artwork.description: 애니메이션 아트워크 및 동작 기본 설정을 설정합니다.
 settings.visual.section.content: 탐색 및 콘텐츠
 settings.visual.section.content.description: 페이지 레이아웃, 둘러보기 기본 설정 및 콘텐츠 필터링을 설정합니다.
 settings.visual.section.customCss.description: Cider 스타일 위에 자신만의 CSS를 적용합니다.
 settings.visual.section.layout: 레이아웃
 settings.visual.section.layout.description: 앱 레이아웃, 플레이어 스타일, 사이드바 및 탐색을 설정합니다.
+settings.visual.section.pages: 페이지
+settings.visual.section.pages.description: 앨범 및 플레이리스트 페이지의 배치 방식입니다.
+settings.visual.section.themeColors: 테마 및 색상
 settings.visual.section.window: 창
 settings.visual.section.window.description: 창 프레임, 생동감 효과, 제어기 및 크기 조절을 설정합니다.
+settings.visual.section.window.descriptionV2: 창 테두리, 비브런시, 렌더링 및 배율 조정.
 settings.visual.vibrancy.acrylicDarkness: 아크릴 어둡기 값
 settings.visual.vibrancy.mode.acrylic: 아크릴
 settings.visual.vibrancy.mode.mica: 미카
@@ -5645,7 +5844,7 @@ term.size: 크기
 term.size.compact: 컴팩트
 term.size.normal: 일반
 term.skip: 건너뛰기
-term.sleepTimer: 취침 예약
+term.sleepTimer: 수면 타이머
 term.snippets: 스니펫
 term.socials: 소셜
 term.socialTeam: 소셜 팀
