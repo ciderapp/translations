@@ -769,6 +769,8 @@ auth.mutExpired.message: Apple Music -istuntosi on vanhentunut. Kirjaudu uudelle
 auth.request.authorizing: Valtuutetaan…
 auth.request.copyToken: Kopioi tunnus
 auth.request.granted: Myönnetty
+auth.request.origin: Käyttö sivustolta {site}
+auth.request.origin.desc: Sallii sivuston {origin} viestiä suoraan Cideriin selaimestasi.
 auth.request.requestedAccess: Pyydetty käyttöoikeus
 auth.request.revealNote: Tämä tunnus näytetään vain kerran. Liitä se sovellukseen {app} nyt.
 auth.request.subtitle: haluaa käyttöoikeuden Cideriin
@@ -1288,6 +1290,14 @@ lyrics.loadingLyrics: Ladataan sanoituksia...
 lyrics.lyricsBy: "Sanoitukset:"
 lyrics.noLyricsAvailable: Sanoituksia ei ole saatavilla tälle kappaleelle
 lyrics.selectProvider: Valitse sanoitusten tarjoaja
+lyrics.translation.chip.pronunciation: Ääntämys
+lyrics.translation.chip.translated: Käännetty
+lyrics.translation.credit: "Kääntäjä: {{source}}"
+lyrics.translation.credit.apple: "Kääntäjä: Apple Music"
+lyrics.translation.menu.hide: Piilota käännökset
+lyrics.translation.menu.hidePronunciation: Piilota ääntämys
+lyrics.translation.menu.show: Näytä käännökset
+lyrics.translation.source.community: Yhteisö
 marketplace.trustedAuthor.tooltip: Tämä on luotettu ja vahvistettu tekijä
 menu.signIn: Kirjaudu sisään
 menu.signOut: Kirjaudu ulos
@@ -3082,6 +3092,19 @@ playbackHealth.backgroundFreeze.title: Järjestelmäsi keskeytti Ciderin taustal
 playbackHealth.hostReinstall.label: Cider on asennettava uudelleen
 playbackHealth.hostReinstall.message: Apple Music ei hyväksy tätä asennusta. Asenna Cider uudelleen Cider Taproomista.
 playbackHealth.localIssue: Paikallinen toisto-ongelma
+playbackSpeed.keepPitch: Säilytä sävelkorkeus
+playbackSpeed.preset.normal: Normaali
+playbackSpeed.preset.slowed: Hidastettu
+playbackSpeed.preset.spedUp: Nopeutettu
+playbackSpeed.rateValue: "{{rate}}×"
+playbackSpeed.reset: Palauta
+playbackSpeed.reverb: Kaiku
+playbackSpeed.reverbUnavailable: Kaiku ei ole käytettävissä Dolby Atmos -läpivientitilassa
+playbackSpeed.reverbUnavailablePlayReady: Kaiku ei ole käytettävissä, kun toisto käyttää PlayReadya
+playbackSpeed.settings: Toistonopeuden asetukset
+playbackSpeed.title: Toistonopeus
+playbackSpeed.unavailable.radio: Nopeutta ei voi muuttaa suorassa radiossa
+playbackSpeed.unavailable.video: Nopeutta ei voi muuttaa musiikkivideoille
 playlist.collaborative.tooltip: Tämä soittolista on avoin yhteistyölle
 playlist.collaborators.andOthers: "{{name}} ja {{count}} muuta"
 playlist.collaborators.count: "{{count}} osallistujaa"
@@ -3324,6 +3347,7 @@ settings.audio.section.output: Äänilähtö
 settings.audio.section.output.description: Laite, jonka kautta Cider toistaa ääntä, ja miten toisto ohjataan sille.
 settings.audio.section.playback: Toisto
 settings.audio.section.playback.description: Äänenlaatu, tilaääni, kuuntelutilat ja podcastien toistonopeus.
+settings.audio.section.playback.descriptionV2: Äänenlaatu, tila-ääni, kuunteluTilat ja toistonopeus.
 settings.audio.section.volume: Äänenvoimakkuus
 settings.audio.section.volume.description: Äänenvoimakkuuden tasaus, kuinka paljon vierityspyörä muuttaa tasoa ja miten liukusäädin toimii.
 settings.audio.signal.atmosCodecs: Atmos-koodekit käytettävissä
@@ -3560,6 +3584,8 @@ settings.connectivity.lastfm.useAlbumArtist.description: Scrobblaa käyttäen al
 settings.connectivity.legacyToken: Legacy (kaikki oikeudet)
 settings.connectivity.legacyToken.tooltip: Tämä tunnus on luotu ennen rajattuja käyttöoikeuksia ja se antaa kaikki oikeudet. Luo uusi tunnus rajoittaaksesi oikeuksia.
 settings.connectivity.noDevices: Ei yhdistettyjä laitteita
+settings.connectivity.origins: Sivustot, jotka voivat käyttää tätä tunnusta selaimestasi
+settings.connectivity.origins.invalid: Anna verkkosivuosoite, joka alkaa http:// tai https://. Tämän tietokoneen osoitteet ja Cider-sivustot ovat aina sallittuja.
 settings.connectivity.requireTokens: Vaadi API-tunnukset
 settings.connectivity.requireTokens.desc: Kun käytössä, kaikkien API-pyyntöjen on sisällettävä kelvollinen tunnus.
 settings.connectivity.scrobbler: Scrobbleri
@@ -3612,6 +3638,9 @@ settings.connectivity.scrobbler.roster.scrobbling: Scrobblataan
 settings.connectivity.scrobbler.roster.scrobblingAs: Scrobblataan käyttäjänä {account}
 settings.connectivity.scrobbler.roster.scrobblingTo: Scrobblataan tilille {account}
 settings.connectivity.scrobbler.roster.signOut: Kirjaudu ulos palvelusta {service}
+settings.connectivity.scrobbler.roster.signOut.message: Cider lopettaa kappaleiden kirjaamisen tälle tilille. Voit yhdistää sen uudelleen milloin tahansa.
+settings.connectivity.scrobbler.roster.signOut.ok: Kirjaudu ulos
+settings.connectivity.scrobbler.roster.signOut.title: Kirjaudutaanko ulos palvelusta {service}?
 settings.connectivity.scrobbler.roster.switchLabel: Scrobblaa palveluun {service}
 settings.connectivity.scrobbler.roster.waiting: Odotetaan selainta…
 settings.connectivity.scrobbler.toast.failed: Could not scrobble to {services}
@@ -3737,13 +3766,19 @@ settings.extensions.snippets.createTitle: Luo uusi CSS-katkelma
 settings.extensions.snippets.deleteConfirm: Haluatko varmasti poistaa tämän CSS-koodinpätkän? Tätä toimintoa ei voi peruuttaa.
 settings.extensions.snippets.deleted: Koodinpätkä poistettu
 settings.extensions.snippets.deleteTitle: Poista CSS-katkelma
+settings.extensions.snippets.editTitle: Muokkaa CSS-katkelmaa
 settings.extensions.snippets.empty: Ei asennettuja CSS-koodinpätkiä.
 settings.extensions.snippets.exported: Koodinpätkä viety
+settings.extensions.snippets.fieldCreatedBy: Tekijä
+settings.extensions.snippets.fieldDescription: Kuvaus
+settings.extensions.snippets.fieldName: Katkelman nimi
 settings.extensions.snippets.imported: Tuotu {{ count }} koodinpätkä(ä)
 settings.extensions.snippets.importFailed: "Tiedoston {{ file }} tuonti epäonnistui: {{ error }}"
 settings.extensions.snippets.invalidFile: "Virheellinen tiedostomuoto: {{ file }}"
 settings.extensions.snippets.namePrompt: Anna nimi uudelle CSS-koodinpätkälle.
 settings.extensions.snippets.orderUpdated: Järjestys päivitetty
+settings.extensions.snippets.preview: Esikatselu
+settings.extensions.snippets.previewDesc: Esikatsele muutokset tallentamatta
 settings.extensions.snippets.saved: Koodinpätkä tallennettu
 settings.extensions.themeCreated: Uusi teema luotu onnistuneesti
 settings.extensions.themes.activeCount: "{{ count }} aktiivista"
@@ -3872,11 +3907,15 @@ settings.lyrics.card.providers: Tarjoajat
 settings.lyrics.card.songOverrides: Kappalekohtaiset ohitukset
 settings.lyrics.localeOverrides: Kielialueeseen perustuvat säännöt
 settings.lyrics.localeOverrides.add: Lisää kielialueen ohitus
+settings.lyrics.localeOverrides.addRule: Lisää sääntö
 settings.lyrics.localeOverrides.audioLocale: Äänen kielialue
 settings.lyrics.localeOverrides.desc: Määritä mukautetut tarjoaja- ja käännösasetukset tietyillä kielillä oleville kappaleille. Kun kappaleen äänen kielialue vastaa sääntöä, nämä asetukset ohittavat oletusasetukset.
+settings.lyrics.localeOverrides.dialog.addTitle: Lisää sääntö
+settings.lyrics.localeOverrides.dialog.editTitle: Muokkaa sääntöä
 settings.lyrics.localeOverrides.dialogTitle.add: Lisää kielialueen ohitus
 settings.lyrics.localeOverrides.dialogTitle.edit: Muokkaa kielialueen ohitusta
 settings.lyrics.localeOverrides.empty: Ei vielä sääntöjä. Lisää sääntö painamalla +.
+settings.lyrics.localeOverrides.emptyV2: Ei vielä sääntöjä.
 settings.lyrics.localeOverrides.overrideTranslation: Ohita käännös
 settings.lyrics.localeOverrides.preferredProvider: Ensisijainen palveluntarjoaja
 settings.lyrics.localeOverrides.provider.apple: Apple Music
@@ -3924,11 +3963,17 @@ settings.lyrics.section.advanced: Lisäasetukset
 settings.lyrics.section.advanced.description: Synkronoinnin siirtymä, animaation kuvataajuus ja käsin säädetty vieritysajoitus.
 settings.lyrics.section.display: Näyttö
 settings.lyrics.section.display.description: Mitkä sanoitusrivit näytetään, miten ne animoidaan ja mitkä aikaleimat näkyvät vietäessä hiiri päälle.
+settings.lyrics.section.overrides: Ohitukset
+settings.lyrics.section.overrides.description: Säännöt, jotka ohittavat oletuspalvelun yhden kielen kappaleille tai yksittäiselle kappaleelle.
 settings.lyrics.section.sources: Lähteet
 settings.lyrics.section.sources.description: Mistä sanoitukset haetaan sekä kieli- tai kappalekohtaiset säännöt, jotka ohittavat oletustarjoajan.
+settings.lyrics.section.sources.descriptionV2: Sanojen lähde ja se, mikä lähde on etusijalla, kun useammassa on sanat.
 settings.lyrics.section.translation: Käännös
 settings.lyrics.section.translation.description: Käännetyt sanoitukset, niiden kohdekieli ja se, säilyykö alkuperäinen teksti näytöllä.
 settings.lyrics.trackOverrides.clearAll: Tyhjennä kaikki ohitukset
+settings.lyrics.trackOverrides.clearAll.message: Jokainen kappale palaa oletuspalveluun ja Applen ilmoittamaan laulutilaan.
+settings.lyrics.trackOverrides.clearAll.title: Tyhjennetäänkö kaikki ohitukset?
+settings.lyrics.trackOverrides.clearAllShort: Tyhjennä kaikki
 settings.lyrics.trackOverrides.desc: Tässä luetellut kappaleet käyttävät aina lukitsemaasi sanoitusten tarjoajaa tai manuaalisesti asettamaasi laulun tilaa Applen ilmoittaman sijaan. Nämä ohitukset asetetaan sanoitusvalikosta ja kappaleen oikean painikkeen valikosta.
 settings.lyrics.trackOverrides.empty: Mitään ei ole vielä ohitettu. Kaikki kyseisistä valikoista lukitsemasi kohteet näkyvät tässä.
 settings.lyrics.trackOverrides.lyricsForced: Sanoitukset pakotettu
@@ -4195,6 +4240,7 @@ settings.option.audio.audioLab.description: Valikoima Ciderille kehitettyjä omi
 settings.option.audio.audioLab.subheader: Suunnitellut Cider Acoustic Technologies Kaliforniassa
 settings.option.audio.audioQuality: Äänenlaatu
 settings.option.audio.automix: Automaattinen miksaus
+settings.option.audio.automix.pausedForSpeed: Automix on pysäytetty, kun toistonopeus ei ole 1×.
 settings.option.audio.changePlaybackRate: Muuta toistonopeutta
 settings.option.audio.ciderAudio: Cider Audio
 settings.option.audio.ciderAudio.showBadges: Näytä merkit nyt soi -näkymässä
@@ -4270,6 +4316,12 @@ settings.option.audio.outputDevice: Toistolaite
 settings.option.audio.playback: Toisto
 settings.option.audio.playbackRate: Toistonopeus
 settings.option.audio.playbackRate.change: Muuta
+settings.option.audio.playbackSpeed: Toistonopeuden säätö
+settings.option.audio.playbackSpeed.description: Näytä soittimessa nopeudensäätö hidastettua tai nopeutettua kuuntelua varten, valinnaisella kaiulla.
+settings.option.audio.playbackSpeed.keepPitch: Säilytä sävelkorkeus
+settings.option.audio.playbackSpeed.keepPitch.description: Muuta nopeutta muuttamatta sävelkorkeutta. Poista käytöstä hidastetulle tai nopeutetulle äänelle.
+settings.option.audio.playbackSpeed.reverb: Kaiku
+settings.option.audio.playbackSpeed.reverb.description: Lisää huonekaiku kaikkeen toistettavaan.
 settings.option.audio.podcastPlayback: Podcastien toisto
 settings.option.audio.podcasts.playbackRate: Apple Podcastsin toistonopeus
 settings.option.audio.podcasts.playbackRate.description: Säädä podcastien toistonopeutta.
@@ -4420,6 +4472,8 @@ settings.option.experimental.reinstallwidevine: Asenna WidevineCDM uudelleen
 settings.option.experimental.reinstallwidevine.confirm: Haluatko varmasti asentaa Widevinen uudelleen?
 settings.option.experimental.unknownPlugin: Tuntemattomat lähteet
 settings.option.experimental.unknownPlugin.description: Salli lisäosien asennus muista lähteistä kuin Ciderin lisäosakirjastosta
+settings.option.experiments.aura: Aura
+settings.option.experiments.aura.description: Värjää sovelluksen taustan nykyisen sivun väreillä.
 settings.option.experiments.chromecast: Ota Chromecast käyttöön
 settings.option.experiments.chromecast.description: Lisää suoratoistopainikkeen verkossa oleville Google Cast -laitteille.
 settings.option.experiments.chromecastLyrics: Chromecast-sanoitukset
@@ -4542,6 +4596,8 @@ settings.option.lyrics.localeOverrides.description: Määritä mukautetut tarjoa
 settings.option.lyrics.musixmatchPreferredLanguage: Musixmatch-käännösten ensisijainen kieli
 settings.option.lyrics.preferUserLyrics: Suosi käyttäjien lisäämiä sanoituksia
 settings.option.lyrics.preferUserLyrics.description: Aseta käyttäjien lähettämät sanoitukset etusijalle muihin lähteisiin nähden, jos niiden ajoitus on tarkempi.
+settings.option.lyrics.pronunciation: Näytä ääntämys
+settings.option.lyrics.pronunciation.description: Näytä, miten muulla kirjoitusjärjestelmällä olevat sanat lausutaan latinalaisin kirjaimin, kun Apple Music tarjoaa sen.
 settings.option.lyrics.provider.apple: Apple Music
 settings.option.lyrics.provider.auto: Automaattinen (paras saatavilla oleva)
 settings.option.lyrics.provider.mxm: Musixmatch
@@ -4571,9 +4627,12 @@ settings.option.lyrics.translationLanguage: Käännöksen kieli
 settings.option.lyrics.translationLanguage.description: Kieli, jolle sanoitukset käännetään. Käytetään vain, kun käännöstilaksi on asetettu Manuaalinen.
 settings.option.lyrics.translationMode: Käännöstila
 settings.option.lyrics.translationMode.appLanguage: Automaattisesti sovelluksen kielestä
+settings.option.lyrics.translationMode.appLanguageShort: Sovelluksen kieli
 settings.option.lyrics.translationMode.description: Miten kohdekäännöskieli määritetään.
 settings.option.lyrics.translationMode.manual: Manuaalinen (käytä valittua kieltä)
+settings.option.lyrics.translationMode.manualShort: Manuaalinen
 settings.option.lyrics.translationMode.system: Automaattisesti järjestelmän kielestä
+settings.option.lyrics.translationMode.systemShort: Järjestelmän kieli
 settings.option.lyrics.translationSettings: Käännösasetukset
 settings.option.lyrics.translationSettings.description: Määritä sanoitusten kääntämisen asetukset
 settings.option.medium: Keskitaso
@@ -4730,6 +4789,16 @@ settings.option.visual.fonts: Fontit
 settings.option.visual.forceMpWindowControls: Käytä monialustaisia ikkunan ohjaimia
 settings.option.visual.forceRoundedViewport: Käytä pyöristettyä näkymää
 settings.option.visual.forceRoundedViewport.description: Käytä pyöristettyjä kulmia päänäkymässä kaikissa asetteluissa
+settings.option.visual.glazeType: Glaze
+settings.option.visual.glazeType.description: Glass-pintojen reunaan piirretty korostusviiva.
+settings.option.visual.glazeType.diffused: Hajautettu
+settings.option.visual.glazeType.diffused.description: Pehmeä hehku koko reunan matkalla.
+settings.option.visual.glazeType.liquidGlass: Liquid Glass
+settings.option.visual.glazeType.liquidGlass.description: Terävä reuna, joka haalistuu päitä kohti.
+settings.option.visual.glazeType.minimal: Minimaalinen
+settings.option.visual.glazeType.minimal.description: Ohut reuna ilman hehkua.
+settings.option.visual.glazeType.none: Ei mitään
+settings.option.visual.glazeType.none.description: Ei reunakorostusta.
 settings.option.visual.hardwareAcceleration: Laitteistokiihdytys
 settings.option.visual.hardwareAcceleration.description: Vaatii uudelleenkäynnistyksen
 settings.option.visual.headerStyle: Albumin ja soittolistan otsikkotyyli
