@@ -4,8 +4,13 @@
  *
  * Modes (set via the MODE env var):
  *   validate: parse the issue body, check it, post a preview comment.
- *   apply:    re-parse, write to locales/<lang>.yml with provenance,
- *             post a success comment, close the issue.
+ *   apply:    re-parse and write to locales/<lang>.yml with provenance.
+ *             Does not comment or close; the workflow pushes first, then
+ *             runs `announce` so a failed push cannot close the issue.
+ *   announce: post the success comment (unless one already exists) and
+ *             close the issue. Idempotent; the sweep uses this when the
+ *             files are already on main.
+ *   fail-comment: upsert the apply-error comment (workflow-level failures).
  *
  * The `apply` path is gated by an actor-permission check in
  * translation-issue.yml (the labeler must have write/maintain/admin on this
@@ -20,7 +25,7 @@
  *   MODE
  */
 
-import { readFileSync, writeFileSync, existsSync } from 'fs';
+import { readFileSync, writeFileSync, existsSync, appendFileSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath, pathToFileURL } from 'url';
 import { parse as parseYaml, stringify as stringifyYaml } from 'yaml';
@@ -29,21 +34,24 @@ import { compareIcu, makeIcuCheck } from './lib/icu.mjs';
 import {
   englishHash, loadState, saveState, seedState, englishAtLastFill, englishAt,
 } from './lib/fill-state.mjs';
+import { githubRequest } from './lib/github.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 
 const REPO         = process.env.GITHUB_REPOSITORY;
 const TOKEN        = process.env.GITHUB_TOKEN;
-const ISSUE_NUMBER = process.env.ISSUE_NUMBER;
-const ISSUE_AUTHOR = process.env.ISSUE_AUTHOR;
-const ISSUE_BODY   = process.env.ISSUE_BODY ?? '';
 const MODE         = process.env.MODE ?? 'validate';
+// Mutated by hydrateIssue() when FETCH_ISSUE=1 or the env payload is incomplete
+// (the sweep only passes ISSUE_NUMBER).
+let ISSUE_NUMBER = process.env.ISSUE_NUMBER;
+let ISSUE_AUTHOR = process.env.ISSUE_AUTHOR;
+let ISSUE_BODY   = process.env.ISSUE_BODY ?? '';
 // 'opened' on the first submission, 'edited' on later body changes, 'labeled'
 // in the apply path. Drives both the comment wording and the upsert behaviour.
 const ISSUE_ACTION = process.env.ISSUE_ACTION ?? 'opened';
 // When the issue was opened (github.event.issue.created_at): the English the
 // contributor was translating is en-US.yml as of then.
-const ISSUE_CREATED_AT = process.env.ISSUE_CREATED_AT ?? '';
+let ISSUE_CREATED_AT = process.env.ISSUE_CREATED_AT ?? '';
 const STATE_DIR = join(ROOT, 'i18n/fill-state');
 
 /**
@@ -101,6 +109,8 @@ export const PREVIEW_LIMIT       = 12;
 // edit it in place when the issue body is re-submitted. GitHub strips HTML
 // comments from the rendered Markdown, so contributors never see this.
 const MARKER_VALIDATION = '<!-- cider-i18n-bot:validation -->';
+export const MARKER_APPLIED = '<!-- cider-i18n-bot:applied -->';
+export const MARKER_APPLY_ERROR = '<!-- cider-i18n-bot:apply-error -->';
 
 // ── Issue body parsing ───────────────────────────────────────────────────────
 // GitHub renders form fields as `### <label>\n\n<value>`. Label aliases let
@@ -259,64 +269,112 @@ export function validateTranslations(translations, sourceStrings, { isIcuKey = (
   return { errors, warnings };
 }
 
-// ── GitHub API ──────────────────────────────────────────────────────────────
-async function ghApi(path, init = {}) {
-  if (!TOKEN) throw new Error('GITHUB_TOKEN is not set.');
-  const res = await fetch(`https://api.github.com${path}`, {
-    ...init,
-    headers: {
-      Accept: 'application/vnd.github+json',
-      Authorization: `Bearer ${TOKEN}`,
-      'X-GitHub-Api-Version': '2022-11-28',
-      'Content-Type': 'application/json',
-      ...(init.headers ?? {}),
-    },
+/**
+ * True when every submitted key is already a human entry on disk for this
+ * issue, so a sweep or a retried apply can skip the write.
+ */
+export function alreadyApplied(existingLocale, translations, issueNumber) {
+  const n = parseInt(issueNumber, 10);
+  const keys = Object.keys(translations ?? {}).filter((k) => KEY_RE.test(k));
+  if (!keys.length || !Number.isFinite(n)) return false;
+  return keys.every((key) => {
+    const e = existingLocale?.[key];
+    return Boolean(
+      e && typeof e === 'object'
+      && e.value === translations[key]
+      && e.source === 'human'
+      && Number(e.issue) === n,
+    );
   });
-  if (!res.ok) {
-    const text = await res.text();
-    throw new Error(`GitHub API ${path} ${res.status}: ${text.slice(0, 300)}`);
-  }
-  return res.status === 204 ? null : res.json();
 }
+
+export function hasAppliedComment(comments) {
+  if (!Array.isArray(comments)) return false;
+  return comments.some((c) => {
+    const body = c?.body;
+    return typeof body === 'string' && (
+      body.startsWith(MARKER_APPLIED) || body.includes('### 🎉 Merged')
+    );
+  });
+}
+
+// ── GitHub API ──────────────────────────────────────────────────────────────
+const ghApi = (path, { method = 'GET', json } = {}) =>
+  githubRequest(path, { token: TOKEN, method, body: json });
 
 const postComment = (body) =>
   ghApi(`/repos/${REPO}/issues/${ISSUE_NUMBER}/comments`, {
     method: 'POST',
-    body: JSON.stringify({ body }),
+    json: { body },
   });
 
-// Edit the bot's previous validation comment in place when the issue body
-// is re-submitted, so each issue carries one rolling "validation status"
-// comment instead of N duplicates. Falls back to posting fresh if no prior
-// validation comment is found (the normal `opened` case). The marker is
-// embedded in the body itself so we don't need extra state.
-async function upsertValidationComment(body) {
-  const tagged = `${MARKER_VALIDATION}\n${body}`;
+async function listComments() {
+  const comments = await ghApi(`/repos/${REPO}/issues/${ISSUE_NUMBER}/comments?per_page=100`);
+  return Array.isArray(comments) ? comments : [];
+}
+
+// Edit the bot's previous tagged comment in place. Falls back to posting
+// fresh if no prior comment is found. Better a duplicate than silence.
+async function upsertTaggedComment(marker, body) {
+  const tagged = body.startsWith(marker) ? body : `${marker}\n${body}`;
   try {
-    const comments = await ghApi(`/repos/${REPO}/issues/${ISSUE_NUMBER}/comments?per_page=100`);
-    // Reverse so the newest tagged comment wins if there are ever duplicates.
-    const previous = Array.isArray(comments)
-      ? [...comments].reverse().find(c => typeof c?.body === 'string' && c.body.startsWith(MARKER_VALIDATION))
-      : null;
+    const comments = await listComments();
+    const previous = [...comments].reverse().find(
+      (c) => typeof c?.body === 'string' && c.body.startsWith(marker),
+    );
     if (previous?.id) {
       return await ghApi(`/repos/${REPO}/issues/comments/${previous.id}`, {
         method: 'PATCH',
-        body: JSON.stringify({ body: tagged }),
+        json: { body: tagged },
       });
     }
   } catch (e) {
-    // If listing/PATCH fails for any reason, fall through to a fresh POST so
-    // the contributor still gets feedback. Better a duplicate than silence.
     console.warn(`[upsert] falling back to POST: ${e.message}`);
   }
   return postComment(tagged);
 }
 
+const upsertValidationComment = (body) => upsertTaggedComment(MARKER_VALIDATION, body);
+
 const closeIssue = () =>
   ghApi(`/repos/${REPO}/issues/${ISSUE_NUMBER}`, {
     method: 'PATCH',
-    body: JSON.stringify({ state: 'closed', state_reason: 'completed' }),
+    json: { state: 'closed', state_reason: 'completed' },
   });
+
+const removeApprovedLabel = () =>
+  ghApi(`/repos/${REPO}/issues/${ISSUE_NUMBER}/labels/approved`, {
+    method: 'DELETE',
+  });
+
+async function hydrateIssue() {
+  if (!ISSUE_NUMBER) throw new Error('ISSUE_NUMBER is not set.');
+  const needFetch = process.env.FETCH_ISSUE === '1' || !ISSUE_BODY || !ISSUE_AUTHOR;
+  if (!needFetch) return;
+  const issue = await ghApi(`/repos/${REPO}/issues/${ISSUE_NUMBER}`);
+  if (!issue || typeof issue !== 'object') {
+    throw new Error(`Could not load issue #${ISSUE_NUMBER}`);
+  }
+  if (process.env.FETCH_ISSUE === '1') {
+    ISSUE_AUTHOR = issue.user?.login || ISSUE_AUTHOR;
+    ISSUE_BODY = issue.body || '';
+    ISSUE_CREATED_AT = issue.created_at || ISSUE_CREATED_AT;
+  } else {
+    ISSUE_AUTHOR = ISSUE_AUTHOR || issue.user?.login;
+    ISSUE_BODY = ISSUE_BODY || issue.body || '';
+    ISSUE_CREATED_AT = ISSUE_CREATED_AT || issue.created_at || '';
+  }
+  if (issue.user?.id) {
+    process.env.ISSUE_AUTHOR_ID = String(issue.user.id);
+  }
+  if (process.env.GITHUB_ENV) {
+    const lines = [];
+    if (ISSUE_AUTHOR) lines.push(`ISSUE_AUTHOR=${ISSUE_AUTHOR}`);
+    if (process.env.ISSUE_AUTHOR_ID) lines.push(`ISSUE_AUTHOR_ID=${process.env.ISSUE_AUTHOR_ID}`);
+    if (ISSUE_CREATED_AT) lines.push(`ISSUE_CREATED_AT=${ISSUE_CREATED_AT}`);
+    if (lines.length) appendFileSync(process.env.GITHUB_ENV, `${lines.join('\n')}\n`);
+  }
+}
 
 // ── File I/O ────────────────────────────────────────────────────────────────
 // Both helpers assume `lang` has already passed LANG_RE. Without that check
@@ -463,6 +521,7 @@ function errorComment(errors, sourceEmptySkips = [], submissionEmptySkips = []) 
 
 function appliedComment(language, languageName, count) {
   return [
+    MARKER_APPLIED,
     `### 🎉 Merged, thanks @${ISSUE_AUTHOR}!`,
     ``,
     `Your ${count} translation${count === 1 ? '' : 's'} ${count === 1 ? 'is' : 'are'} now live in \`locales/${language}.yml\` (${languageName}), with credit attached. It will ship to users in the next OTA build.`,
@@ -471,11 +530,57 @@ function appliedComment(language, languageName, count) {
   ].join('\n');
 }
 
+async function announceApplied(language, languageName, count, errors) {
+  const comments = await listComments();
+  if (!hasAppliedComment(comments)) {
+    if (errors?.length || !language || !languageName) {
+      await postComment([
+        MARKER_APPLIED,
+        `### 🎉 Merged, thanks @${ISSUE_AUTHOR}!`,
+        ``,
+        `Your translation is on main. Closing this one out.`,
+      ].join('\n'));
+    } else {
+      await postComment(appliedComment(language, languageName, count));
+    }
+  }
+  await closeIssue();
+}
+
+async function postFailComment() {
+  const details = process.env.FAIL_COMMENT
+    || 'The apply job failed before the translation landed on main.';
+  const runLine = process.env.RUN_URL ? `\n\nSee the run log: ${process.env.RUN_URL}` : '';
+  await upsertTaggedComment(MARKER_APPLY_ERROR, [
+    `### Apply failed`,
+    ``,
+    details + runLine,
+    ``,
+    `If the \`approved\` label is still present, the sweep workflow will retry. A maintainer can also re-add \`approved\` to retry now.`,
+  ].join('\n'));
+}
+
 // ── Main ────────────────────────────────────────────────────────────────────
 async function main() {
+  if (MODE === 'fail-comment') {
+    if (!ISSUE_NUMBER) throw new Error('ISSUE_NUMBER is not set.');
+    await postFailComment();
+    return;
+  }
+
+  if (MODE === 'apply' || MODE === 'announce' || process.env.FETCH_ISSUE === '1') {
+    await hydrateIssue();
+  }
+
   // Hard caps on untrusted input before we touch anything else.
   if (Buffer.byteLength(ISSUE_BODY, 'utf8') > MAX_BODY_BYTES) {
-    await postComment(`### ❌ Issue body exceeds ${MAX_BODY_BYTES.toLocaleString()} bytes. Trim it down and the bot will re-check.`);
+    const tooBig = `### ❌ Issue body exceeds ${MAX_BODY_BYTES.toLocaleString()} bytes. Trim it down and the bot will re-check.`;
+    if (MODE === 'announce') {
+      await announceApplied(null, null, 0, ['body too large']);
+      return;
+    }
+    await postComment(tooBig);
+    if (MODE === 'apply') process.exit(1);
     return;
   }
   if (ISSUE_AUTHOR && !AUTHOR_RE.test(ISSUE_AUTHOR)) {
@@ -565,23 +670,48 @@ async function main() {
     return;
   }
 
+  if (MODE === 'announce') {
+    await announceApplied(
+      language,
+      language ? languages[language]?.name : undefined,
+      Object.keys(translations.__error ? {} : translations).length,
+      errors,
+    );
+    return;
+  }
+
+  if (MODE !== 'apply') {
+    throw new Error(`unknown MODE: ${MODE}`);
+  }
+
   // MODE === 'apply'. Guard against any new validation failures at apply time
   // (the issue body could have been edited between the maintainer setting the
   // `approved` label and this job running). Post a FRESH comment here instead
-  // of upserting — GitHub doesn't notify subscribers on comment edits, and an
+  // of upserting. GitHub doesn't notify subscribers on comment edits, and an
   // approval that silently didn't apply is exactly the kind of thing the
-  // maintainer needs to be pinged about.
+  // maintainer needs to be pinged about. Drop `approved` so the sweep does
+  // not retry an invalid body in a loop.
   if (errors.length) {
-    await postComment([
+    await upsertTaggedComment(MARKER_APPLY_ERROR, [
       `### Couldn't apply: the issue body changed after approval`,
       ``,
       `Looks like the issue body was edited after the \`approved\` label was set, and the new content doesn't validate:`,
       ``,
       errors.map(e => `- ${e}`).join('\n'),
       ``,
-      `Once @${ISSUE_AUTHOR} fixes the issue, a maintainer can re-apply the \`approved\` label to try again.`,
+      `The \`approved\` label was removed so this does not retry on its own. Once @${ISSUE_AUTHOR} fixes the issue, a maintainer can re-apply the \`approved\` label to try again.`,
     ].join('\n'));
+    try {
+      await removeApprovedLabel();
+    } catch (e) {
+      console.error(`failed to remove approved label: ${e.message}`);
+    }
     process.exit(1);
+  }
+
+  if (alreadyApplied(existingLocale, translations, ISSUE_NUMBER)) {
+    console.log(`Issue #${ISSUE_NUMBER} already applied; skipping file write.`);
+    return;
   }
 
   // Reuse the existingLocale loaded above for the diff preview.
@@ -604,13 +734,6 @@ async function main() {
     keys: Object.keys(translations).filter(k => KEY_RE.test(k)),
     sourceStrings,
   }));
-
-  await postComment(appliedComment(
-    language,
-    languages[language].name,
-    Object.keys(translations).length,
-  ));
-  await closeIssue();
 }
 
 // Only run main() when invoked directly as a script. When this file is
@@ -619,11 +742,24 @@ const isEntrypoint = process.argv[1]
   && import.meta.url === pathToFileURL(process.argv[1]).href;
 
 if (isEntrypoint) {
-  main().catch(err => {
+  main().catch(async (err) => {
     console.error(err);
     // Best-effort error report. Don't leak stack traces; just the message.
-    postComment(`### 💥 Saki hit an error\n\n\`\`\`\n${String(err.message).slice(0, 1500)}\n\`\`\`\n\nNot your fault, @${ISSUE_AUTHOR}. A Cider maintainer will take a look. Sorry for the friction.`)
-      .catch(() => {})
-      .finally(() => process.exit(1));
+    try {
+      if (ISSUE_NUMBER && MODE !== 'fail-comment') {
+        await upsertTaggedComment(MARKER_APPLY_ERROR, [
+          `### 💥 Saki hit an error`,
+          ``,
+          '```',
+          String(err.message).slice(0, 1500),
+          '```',
+          ``,
+          `Not your fault, @${ISSUE_AUTHOR ?? 'contributor'}. A Cider maintainer will take a look. The sweep workflow will retry if the \`approved\` label is still present.`,
+        ].join('\n'));
+      }
+    } catch (commentErr) {
+      console.error('failed to comment on the issue:', commentErr);
+    }
+    process.exit(1);
   });
 }

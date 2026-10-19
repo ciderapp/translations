@@ -6,7 +6,13 @@
 import { test, describe } from 'node:test';
 import assert from 'node:assert/strict';
 
-import { validateTranslations, stampApplied } from '../scripts/lint-translation-issue.mjs';
+import {
+  validateTranslations,
+  stampApplied,
+  alreadyApplied,
+  hasAppliedComment,
+  MARKER_APPLIED,
+} from '../scripts/lint-translation-issue.mjs';
 import { englishHash } from '../scripts/lib/fill-state.mjs';
 
 const source = {
@@ -85,3 +91,34 @@ describe('stampApplied', () => {
     assert.deepEqual(next, { a: englishHash('Apple'), b: englishHash('Banana') });
   });
 });
+
+describe('alreadyApplied', () => {
+  const translations = { 'action.apply': 'Aplicar' };
+  const matching = {
+    'action.apply': { value: 'Aplicar', source: 'human', by: '@you', issue: 96 },
+  };
+
+  test('is true only when every key is already a human entry for this issue', () => {
+    assert.equal(alreadyApplied(matching, translations, '96'), true);
+    assert.equal(alreadyApplied(matching, translations, 96), true);
+  });
+
+  test('is false for scalars, other issues, or missing keys', () => {
+    assert.equal(alreadyApplied({ 'action.apply': 'Aplicar' }, translations, 96), false);
+    assert.equal(alreadyApplied({
+      'action.apply': { value: 'Aplicar', source: 'human', by: '@you', issue: 95 },
+    }, translations, 96), false);
+    assert.equal(alreadyApplied({}, translations, 96), false);
+    assert.equal(alreadyApplied(matching, {}, 96), false);
+  });
+});
+
+describe('hasAppliedComment', () => {
+  test('recognizes the marker and legacy success heading', () => {
+    assert.equal(hasAppliedComment([{ body: `${MARKER_APPLIED}\n### 🎉 Merged` }]), true);
+    assert.equal(hasAppliedComment([{ body: '### 🎉 Merged, thanks @mpratsaki!' }]), true);
+    assert.equal(hasAppliedComment([{ body: 'still waiting' }]), false);
+    assert.equal(hasAppliedComment(null), false);
+  });
+});
+

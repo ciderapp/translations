@@ -4,7 +4,12 @@
 # Purpose: Community contributions come in as issues, not PRs. This workflow:
 #   1. On opened/edited: validate the issue body, post a preview comment.
 #   2. On labeled `approved` (by a maintainer): apply the translation to the
-#      target locale file, commit it, close the issue.
+#      target locale file, push it, then comment and close the issue.
+#
+# Bulk approvals: the apply job uses a per-issue concurrency group plus
+# `queue: max`. A shared group with GitHub's default one-pending-run queue
+# cancelled the middle issues of a bulk label. translation-sweep.yml retries
+# anything that still sits open with `translation` + `approved`.
 #
 # The `approved` label is only acted on if the labeler has write/maintain/admin
 # permission on this repo, verified via the GitHub API at the top of the apply
@@ -77,40 +82,25 @@ jobs:
       contains(github.event.issue.labels.*.name, 'translation')
     name: Apply approved translation
     runs-on: ubuntu-latest
-    # GITHUB_TOKEN is used only by the Verify step (collaborator-permission
-    # lookup needs metadata:read, which is granted implicitly). The actual
-    # apply, push, and comment all authenticate via the App token.
-    permissions: {}
-    # Serialize approvals so two simultaneous `approved` labels can't race
-    # against each other when writing the same locale file. Don't cancel:
-    # losing an approved contribution mid-write would be worse than waiting.
+    # GITHUB_TOKEN is used by the Verify step and as a fallback for the
+    # failure comment if the App token was never minted. Apply, push, and
+    # success comments authenticate via the App token.
+    permissions:
+      contents: read
+      issues: write
+    # Per-issue group so a bulk approval cannot cancel siblings. GitHub's
+    # default concurrency queue is `single`: one running + one pending, and
+    # every newer pending run replaces the previous pending run. A shared
+    # `translation-issue-apply` group with that default dropped the middle
+    # issues of a bulk label (see #96-#101). `queue: max` keeps up to 100
+    # pending runs if the same issue is re-labeled while one apply is already
+    # in flight. File races against other issues / AI fill are handled by
+    # scripts/ci/push-with-remerge.sh.
     concurrency:
-      group: translation-issue-apply
+      group: translation-issue-apply-${{ github.event.issue.number }}
       cancel-in-progress: false
+      queue: max
     steps:
-      - name: 🛡️ Verify approver has write access
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          set -euo pipefail
-          perm=$(gh api "repos/${GITHUB_REPOSITORY}/collaborators/${GITHUB_ACTOR}/permission" --jq .permission)
-          case "$perm" in
-            admin|maintain|write)
-              echo "✓ @${GITHUB_ACTOR} has $perm; proceeding."
-              ;;
-            *)
-              echo "::error::@${GITHUB_ACTOR} cannot apply translations (permission: $perm). Only repo members with write/maintain/admin may approve."
-              exit 1
-              ;;
-          esac
-      - name: 🪪 Mint App installation token
-        id: app-token
-        uses: actions/create-github-app-token@v1
-        with:
-          app-id: ${{ secrets.CIDER_I18N_BOT_APP_ID }}
-          private-key: ${{ secrets.CIDER_I18N_BOT_PRIVATE_KEY }}
-          permission-contents: write
-          permission-issues: write
       - uses: actions/checkout@v4
         with:
           # The push authenticates explicitly with the App token below.
@@ -119,14 +109,26 @@ jobs:
           # as of the issue's creation, and seeds a locale's state from the
           # last fill commit if it has none yet.
           fetch-depth: 0
+      - name: 🛡️ Verify approver has write access
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          APPROVER_LOGIN: ${{ github.actor }}
+        run: bash scripts/ci/verify-approver.sh
+      - name: 🪪 Mint App installation token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.CIDER_I18N_BOT_APP_ID }}
+          private-key: ${{ secrets.CIDER_I18N_BOT_PRIVATE_KEY }}
+          permission-contents: write
+          permission-issues: write
       - uses: actions/setup-node@v4
         with:
           node-version: "24"
       - run: npm install --no-package-lock
       - name: Apply to locale file
         env:
-          # App token so the success comment + close-issue both come from
-          # saki-yuzishima[bot].
+          # App token so comments + close-issue come from saki-yuzishima[bot].
           GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
           ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
@@ -155,11 +157,30 @@ jobs:
           # touches the script source; logins are [A-Za-z0-9-] and the apply
           # step has already hard-failed on anything weirder via AUTHOR_RE.)
           export COMMIT_AUTHOR="${ISSUE_AUTHOR} <${ISSUE_AUTHOR_ID}+${ISSUE_AUTHOR}@users.noreply.github.com>"
-          # The job-level concurrency group serializes applies against each
-          # other, but AI fill jobs push the same locale files concurrently.
-          # A rejected push is re-merged key by key (the human translation
-          # wins a key both sides changed), never rebased. Badges and the
-          # README table are regenerated and ride along in the same commit.
+          # Per-issue concurrency no longer serializes different issues, so
+          # two applies (or an apply and an AI fill) can push the same locale
+          # at once. A rejected push is re-merged key by key (the human
+          # translation wins a key both sides changed), never rebased.
           export REMOTE="https://x-access-token:${APP_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           bash scripts/ci/push-with-remerge.sh "feat(i18n): apply translation from #${ISSUE_NUMBER}" \
             locales/ i18n/fill-state/ .github/badges/ README.md
+      # Comment + close only after the push succeeds, so a rejected push
+      # cannot leave the issue closed with nothing on main.
+      - name: Announce and close
+        env:
+          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_ACTION: ${{ github.event.action }}
+          ISSUE_CREATED_AT: ${{ github.event.issue.created_at }}
+          MODE: announce
+        run: node scripts/lint-translation-issue.mjs
+      - name: Comment on failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token || secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          FAIL_COMMENT: The apply job failed before the translation landed on main.
+        run: bash scripts/ci/comment-apply-failure.sh

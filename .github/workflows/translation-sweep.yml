@@ -1,0 +1,150 @@
+#############################################################################################
+# Sweep approved-but-unprocessed translation issues
+#
+# Purpose: If an `approved` label never produced a commit (bulk-approval
+#          concurrency dropping pending runs, a 429, a push race, a runner
+#          timeout), the issue stays open with both `translation` and
+#          `approved`. This workflow finds those issues and runs the same
+#          apply path the label event uses.
+#
+# Triggers: every 15 minutes, and workflow_dispatch.
+#
+# Each issue is its own matrix job with the same per-issue concurrency
+# group as translation-issue.yml, so a live label-apply and a sweep of the
+# same issue serialize instead of double-writing. Processing is idempotent:
+# already-applied keys skip the write; announce skips a duplicate success
+# comment; close is safe to retry.
+#############################################################################################
+
+name: Translation sweep
+
+on:
+  schedule:
+    - cron: "7,22,37,52 * * * *"
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  find:
+    name: Find approved but unprocessed issues
+    runs-on: ubuntu-latest
+    permissions:
+      issues: read
+      contents: read
+    outputs:
+      issues: ${{ steps.pending.outputs.issues }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: List stuck issues
+        id: pending
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          issues=$(node scripts/sweep-approved-issues.mjs --list-json)
+          echo "issues=${issues}" >> "$GITHUB_OUTPUT"
+          echo "Stuck issues: ${issues}"
+
+  apply:
+    name: Sweep #${{ matrix.issue }}
+    needs: find
+    if: needs.find.outputs.issues != '[]'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        issue: ${{ fromJSON(needs.find.outputs.issues) }}
+    concurrency:
+      group: translation-issue-apply-${{ matrix.issue }}
+      cancel-in-progress: false
+      queue: max
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+          ref: main
+
+      - name: 🛡️ Verify the approver still has write access
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ matrix.issue }}
+        run: |
+          set -euo pipefail
+          login=$(bash scripts/ci/lookup-approver.sh)
+          echo "Approved by @${login}"
+          APPROVER_LOGIN="$login" bash scripts/ci/verify-approver.sh
+
+      - name: 🪪 Mint App installation token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.CIDER_I18N_BOT_APP_ID }}
+          private-key: ${{ secrets.CIDER_I18N_BOT_PRIVATE_KEY }}
+          permission-contents: write
+          permission-issues: write
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - run: npm install --no-package-lock
+
+      - name: Apply to locale file
+        env:
+          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
+          ISSUE_NUMBER: ${{ matrix.issue }}
+          FETCH_ISSUE: "1"
+          ISSUE_ACTION: labeled
+          MODE: apply
+        run: node scripts/lint-translation-issue.mjs
+
+      - name: Update credits and badges
+        run: node scripts/update-credits.mjs
+
+      - name: Commit and push
+        env:
+          APP_TOKEN: ${{ steps.app-token.outputs.token }}
+          ISSUE_NUMBER: ${{ matrix.issue }}
+        run: |
+          set -euo pipefail
+          git config user.name  'saki-yuzishima[bot]'
+          git config user.email '286499753+saki-yuzishima[bot]@users.noreply.github.com'
+          author="${ISSUE_AUTHOR:-}"
+          author_id="${ISSUE_AUTHOR_ID:-}"
+          if [ -z "$author" ] || [ -z "$author_id" ]; then
+            echo "::error::ISSUE_AUTHOR / ISSUE_AUTHOR_ID missing after apply; hydrateIssue should have written them to GITHUB_ENV."
+            exit 1
+          fi
+          export COMMIT_AUTHOR="${author} <${author_id}+${author}@users.noreply.github.com>"
+          export REMOTE="https://x-access-token:${APP_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          bash scripts/ci/push-with-remerge.sh "feat(i18n): apply translation from #${ISSUE_NUMBER}" \
+            locales/ i18n/fill-state/ .github/badges/ README.md
+
+      - name: Announce and close
+        env:
+          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
+          ISSUE_NUMBER: ${{ matrix.issue }}
+          FETCH_ISSUE: "1"
+          ISSUE_ACTION: labeled
+          MODE: announce
+        run: node scripts/lint-translation-issue.mjs
+
+      - name: Comment on failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token || secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ matrix.issue }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          FAIL_COMMENT: The sweep job failed before the translation landed on main.
+        run: bash scripts/ci/comment-apply-failure.sh
