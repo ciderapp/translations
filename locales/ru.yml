@@ -1296,7 +1296,9 @@ ciderAudio.marketplacePresetMigrationNotice:
   by: "@kinlay0"
   issue: 15
   superseded_at: 2026-07-08
+client.boot.backendUnavailable: Cider не удалось запустить локальную службу на порту 10767. Возможно, порт занят другой программой. Закройте её и снова откройте Cider.
 client.boot.cancel: Отмена
+client.boot.elevatedWarning: Cider запущен от имени администратора. Чтобы не повредить настройки, в этом сеансе изменения не будут сохраняться. Закройте Cider и откройте его обычным способом.
 client.boot.failedDetailDefault: Что-то пошло не так при подготовке приложения. Вы можете попробовать еще раз или использовать один из вариантов восстановления ниже.
 client.boot.failedTitle: Не удалось запустить Cider
 client.boot.initializing: Инициализация Cider...
@@ -1306,6 +1308,9 @@ client.boot.loadingWindowConfig: Загрузка конфигурации ок�
 client.boot.noAppData: Нет папки AppData для восстановления. Нажмите «Повторить», чтобы запустить Cider.
 client.boot.openAppData: Открыть AppData
 client.boot.openAppDataDesc: Показать логи и конфигурацию
+client.boot.permissionDenied: "Cider не может читать или записывать свою папку данных. Обычно это происходит, если Cider однажды запускали от имени администратора: папка остаётся во владении учётной записи, которую вы не можете изменить при обычном входе."
+client.boot.permissionRepairCopied: (Команды для исправления скопированы в буфер обмена.)
+client.boot.permissionRepairInstruction: "Закройте Cider, откройте Терминал или Командную строку от имени администратора, выполните две приведённые ниже команды, а затем запустите Cider обычным способом:"
 client.boot.preparing: Подготовка к запуску Cider...
 client.boot.quit: Выйти
 client.boot.ready: Cider готов к работе.
@@ -4434,10 +4439,18 @@ playbackHealth.localIssue: Проблема с локальным воспрои
 playbackHealth.widevineReady.actionHint: Нажмите, чтобы перезапустить Cider.
 playbackHealth.widevineReady.auto: Cider перезапустится автоматически, если воспроизведение будет приостановлено на 5 минут, пока Cider открыт. Очередь восстановится после перезапуска.
 playbackHealth.widevineReady.badge: На этом ПК есть обновлённый Widevine. Перезапустите Cider, чтобы вернуться с PlayReady.
+playbackHealth.widevineReady.badgeRefused: На этом ПК установлена обновлённая Widevine. Перезапустите Cider, чтобы снова воспроизводить Apple Music.
 playbackHealth.widevineReady.body: Cider нашёл обновлённый Widevine на этом ПК. Перезапустите Cider, чтобы вернуться с PlayReady и снова включить аудиоэффекты и Dolby Atmos.
+playbackHealth.widevineReady.bodyRefused: Cider нашёл обновлённую Widevine на этом ПК. Перезапустите Cider, чтобы снова воспроизводить Apple Music.
 playbackHealth.widevineReady.later: Позже
 playbackHealth.widevineReady.manual: Восстановление очереди отключено, поэтому при перезапуске очередь будет очищена.
 playbackHealth.widevineReady.title: Widevine снова готов
+playbackHealth.widevineRefused.badge: Apple Music больше не принимает Widevine на этом ПК.
+playbackHealth.widevineRefused.badgeAwaiting: Apple Music больше не принимает Widevine на этом ПК. Cider получает обновление и предложит вам перезапустить приложение.
+playbackHealth.widevineRefused.body: Widevine, система защиты от копирования, которую обычно использует Apple Music, на этом ПК устарела, и Apple Music её больше не принимает. Microsoft PlayReady, на которую Cider мог бы переключиться, на этом ПК недоступна.
+playbackHealth.widevineRefused.label: Widevine устарела
+playbackHealth.widevineRefused.timelineAwaiting: Ничего делать не нужно. Cider получает обновлённую Widevine, обычно это занимает несколько минут. Когда всё будет готово, Cider предложит перезапустить приложение.
+playbackHealth.widevineRefused.title: Apple Music сейчас не может воспроизводиться
 playbackSpeed.keepPitch: Сохранять высоту тона
 playbackSpeed.preset.normal: Обычная
 playbackSpeed.preset.slowed: Замедленно
@@ -5874,6 +5887,10 @@ settings.option.accessibility.forceFocusVisible: Всегда показыват
 settings.option.accessibility.forceFocusVisible.description: Принудительно отображать контур вокруг активных элементов при навигации с клавиатуры.
 settings.option.accessibility.highContrast: Высокая контрастность
 settings.option.accessibility.highContrast.description: Повышает контрастность между текстом, фоном и элементами интерфейса.
+settings.option.accessibility.libraryAddAnimation: Анимация добавления
+settings.option.accessibility.libraryAddAnimation.description: Определяет, как подтверждается добавление в медиатеку или плейлист или отметка песни как избранной. Genie перемещает копию обложки к её месту на боковой панели. При включённом режиме уменьшенного движения всегда используется пульсация.
+settings.option.accessibility.libraryAddAnimation.genie: Genie
+settings.option.accessibility.libraryAddAnimation.pulse: Пульсация
 settings.option.accessibility.motion: Движение
 settings.option.accessibility.motionIntensity: Интенсивность анимации
 settings.option.accessibility.motionIntensity.description: Управляет интенсивностью анимации кнопок и панелей при наведении и нажатии. Выберите «Нет», чтобы полностью отключить анимацию; «Игривая» добавляет дополнительный отскок.
