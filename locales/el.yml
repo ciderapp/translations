@@ -1502,7 +1502,9 @@ ciderAudio.marketplacePresetMigrationNotice:
   source: human
   by: "@mpratsaki"
   issue: 98
+client.boot.backendUnavailable: Το Cider δεν μπόρεσε να εκκινήσει την τοπική του υπηρεσία στη θύρα 10767. Ίσως την χρησιμοποιεί άλλο πρόγραμμα. Κλείστε αυτό το πρόγραμμα και ανοίξτε ξανά το Cider.
 client.boot.cancel: Ακύρωση
+client.boot.elevatedWarning: Το Cider εκτελείται ως διαχειριστής. Για να αποφευχθεί η καταστροφή των ρυθμίσεών σας, δεν θα αποθηκεύει αλλαγές σε αυτή τη συνεδρία. Κλείστε το Cider και ανοίξτε το ξανά κανονικά.
 client.boot.failedDetailDefault: Παρουσιάστηκε σφάλμα κατά την προετοιμασία της εφαρμογής. Μπορείτε να δοκιμάσετε ξανά ή να χρησιμοποιήσετε μία από τις παρακάτω επιλογές ανάκτησης για να διορθώσετε το πρόβλημα.
 client.boot.failedTitle: Αδυναμία εκκίνησης του Cider
 client.boot.initializing: Προετοιμασία του Cider...
@@ -1512,6 +1514,9 @@ client.boot.loadingWindowConfig: Φόρτωση διαμόρφωσης παρα�
 client.boot.noAppData: Δεν βρέθηκε φάκελος AppData για αναδόμηση. Κάντε κλικ στην «Επανάληψη» για να εκκινήσετε το Cider.
 client.boot.openAppData: Άνοιγμα AppData
 client.boot.openAppDataDesc: Εμφάνιση αρχείων καταγραφής & διαμόρφωσης
+client.boot.permissionDenied: Το Cider δεν μπορεί να διαβάσει ή να γράψει στον φάκελο δεδομένων του. Αυτό συνήθως συμβαίνει όταν το Cider εκκινήθηκε άπαξ ως διαχειριστής, με αποτέλεσμα ο φάκελος να ανήκει σε λογαριασμό που η κανονική σας σύνδεση δεν μπορεί να τροποποιήσει.
+client.boot.permissionRepairCopied: (Οι εντολές επιδιόρθωσης αντιγράφηκαν στο πρόχειρο.)
+client.boot.permissionRepairInstruction: "Κλείστε το Cider, ανοίξτε το Terminal ή τη Γραμμή εντολών ως διαχειριστής, εκτελέστε αυτές τις δύο εντολές και μετά εκκινήστε κανονικά το Cider:"
 client.boot.preparing: Προετοιμασία για την εκκίνηση του Cider...
 client.boot.quit: Έξοδος
 client.boot.ready: Το Cider είναι έτοιμο.
@@ -4224,10 +4229,18 @@ playbackHealth.localIssue: Τοπικό πρόβλημα αναπαραγωγή�
 playbackHealth.widevineReady.actionHint: Κάντε κλικ για επανεκκίνηση του Cider.
 playbackHealth.widevineReady.auto: Το Cider επανεκκινείται αυτόματα όταν η αναπαραγωγή έχει σταματήσει για 5 λεπτά ενώ το Cider είναι ανοιχτό. Η ουρά σας επανέρχεται μετά την επανεκκίνηση.
 playbackHealth.widevineReady.badge: Υπάρχει ενημερωμένο Widevine σε αυτόν τον υπολογιστή. Κάντε επανεκκίνηση του Cider για να επιστρέψετε από το PlayReady.
+playbackHealth.widevineReady.badgeRefused: Υπάρχει ενημερωμένο Widevine σε αυτόν τον υπολογιστή. Επανεκκινήστε το Cider για να ξαναπαίξετε το Apple Music.
 playbackHealth.widevineReady.body: Το Cider βρήκε ενημερωμένο Widevine σε αυτόν τον υπολογιστή. Κάντε επανεκκίνηση του Cider για να επιστρέψετε από το PlayReady και να ενεργοποιήσετε ξανά τα εφέ ήχου και το Dolby Atmos.
+playbackHealth.widevineReady.bodyRefused: Το Cider βρήκε ένα ενημερωμένο Widevine σε αυτόν τον υπολογιστή. Επανεκκινήστε το Cider για να ξαναπαίξετε το Apple Music.
 playbackHealth.widevineReady.later: Αργότερα
 playbackHealth.widevineReady.manual: Η επαναφορά ουράς είναι απενεργοποιημένη, οπότε η επανεκκίνηση θα διαγράψει την ουρά.
 playbackHealth.widevineReady.title: Το Widevine είναι ξανά έτοιμο
+playbackHealth.widevineRefused.badge: Το Apple Music δεν αποδέχεται πλέον το Widevine σε αυτόν τον υπολογιστή.
+playbackHealth.widevineRefused.badgeAwaiting: Το Apple Music δεν αποδέχεται πλέον το Widevine σε αυτόν τον υπολογιστή. Το Cider λαμβάνει ενημέρωση και θα σας ζητήσει να κάνετε επανεκκίνηση.
+playbackHealth.widevineRefused.body: Το Widevine, η προστασία περιεχομένου που χρησιμοποιεί κανονικά το Apple Music, είναι παρωχημένο σε αυτόν τον υπολογιστή και το Apple Music δεν το αποδέχεται πλέον. Το Microsoft PlayReady, στο οποίο θα περνούσε το Cider, δεν είναι διαθέσιμο σε αυτόν τον υπολογιστή.
+playbackHealth.widevineRefused.label: Το Widevine είναι παρωχημένο
+playbackHealth.widevineRefused.timelineAwaiting: Δεν χρειάζεται να κάνετε τίποτα. Το Cider λαμβάνει ένα ενημερωμένο Widevine, που συνήθως φτάνει σε λίγα λεπτά, και θα σας ζητήσει να επανεκκινήσετε το Cider όταν είναι έτοιμο.
+playbackHealth.widevineRefused.title: Το Apple Music δεν μπορεί να παίξει αυτή τη στιγμή
 playbackSpeed.keepPitch:
   value: Διατήρηση τονικού ύψους
   source: human
@@ -5824,6 +5837,10 @@ settings.option.accessibility.forceFocusVisible: Πάντα εμφάνιση δ�
 settings.option.accessibility.forceFocusVisible.description: Επιβολή ορατού περιγράμματος στα εστιασμένα στοιχεία για πλοήγηση με το πληκτρολόγιο.
 settings.option.accessibility.highContrast: Υψηλή αντίθεση
 settings.option.accessibility.highContrast.description: Αυξάνει την αντίθεση μεταξύ κειμένου, φόντου και στοιχείων της διεπαφής.
+settings.option.accessibility.libraryAddAnimation: Κίνηση προσθήκης
+settings.option.accessibility.libraryAddAnimation.description: Τρόπος επιβεβαίωσης της προσθήκης στη βιβλιοθήκη ή σε λίστα αναπαραγωγής, ή της προσθήκης τραγουδιού στα αγαπημένα. Το Genie στέλνει ένα αντίγραφο του εξωφύλλου στη θέση του στην πλαϊνή στήλη. Η μειωμένη κίνηση χρησιμοποιεί πάντα τον παλμό.
+settings.option.accessibility.libraryAddAnimation.genie: Genie
+settings.option.accessibility.libraryAddAnimation.pulse: Παλμός
 settings.option.accessibility.motion: Κίνηση
 settings.option.accessibility.motionIntensity: Ένταση κίνησης
 settings.option.accessibility.motionIntensity.description:
