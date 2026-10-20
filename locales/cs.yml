@@ -870,7 +870,9 @@ ciderAudio.marketplacePresetMigrationNotice: "Jedna nebo více předvoleb Cider 
   <br>\r
 
   Instalace nových předvoleb z Marketplace obnoví vaše předchozí nastavení."
+client.boot.backendUnavailable: Cider nemohla spustit svou místní službu na portu 10767. Port může používat jiný program. Zavřete tento program a znovu otevřete Cider.
 client.boot.cancel: Zrušit
+client.boot.elevatedWarning: Cider běží jako správce. Aby se nepoškodilo nastavení, v této relaci nebudou změny ukládány. Zavřete prosím Cider a otevřete jej znovu běžným způsobem.
 client.boot.failedDetailDefault: Při přípravě aplikace došlo k chybě. Můžete to zkusit znovu nebo použít jednu z níže uvedených možností obnovení.
 client.boot.failedTitle: Cider se nepodařilo spustit
 client.boot.initializing: Inicializace aplikace Cider...
@@ -880,6 +882,9 @@ client.boot.loadingWindowConfig: Načítání konfigurace okna...
 client.boot.noAppData: Žádná složka AppData k obnovení. Kliknutím na Opakovat spustíte Cider.
 client.boot.openAppData: Otevřít AppData
 client.boot.openAppDataDesc: Zobrazit protokoly a konfiguraci
+client.boot.permissionDenied: Cider nemůže číst nebo zapisovat do své datové složky. Obvykle se to stane, když byl Cider jednou spuštěn jako správce a složka tak zůstala ve vlastnictví účtu, který váš běžný přihlašovací účet nemůže upravovat.
+client.boot.permissionRepairCopied: (Opravné příkazy byly zkopírovány do schránky.)
+client.boot.permissionRepairInstruction: "Zavřete Cider, otevřete Terminál nebo Příkazový řádek jako správce, spusťte tyto dva příkazy a poté spusťte Cider běžným způsobem:"
 client.boot.preparing: Příprava ke spuštění aplikace Cider...
 client.boot.quit: Ukončit
 client.boot.ready: Cider je připraven.
@@ -3108,10 +3113,18 @@ playbackHealth.localIssue: Problém s místním přehráváním
 playbackHealth.widevineReady.actionHint: Kliknutím restartujte Cider.
 playbackHealth.widevineReady.auto: Cider se restartuje sám, jakmile je přehrávání pozastaveno po dobu 5 minut, zatímco je Cider otevřený. Fronta se po restartu obnoví.
 playbackHealth.widevineReady.badge: Na tomto PC je aktualizovaný Widevine. Restartujte Cider a přepněte zpět z PlayReady.
+playbackHealth.widevineReady.badgeRefused: Na tomto PC je aktualizovaný Widevine. Restartujte Cider, aby bylo možné znovu přehrávat Apple Music.
 playbackHealth.widevineReady.body: Cider na tomto PC našel aktualizovaný Widevine. Restartujte Cider, přepněte zpět z PlayReady a znovu zapněte zvukové efekty a Dolby Atmos.
+playbackHealth.widevineReady.bodyRefused: Cider na tomto PC našla aktualizovaný Widevine. Restartujte Cider, aby bylo možné znovu přehrávat Apple Music.
 playbackHealth.widevineReady.later: Později
 playbackHealth.widevineReady.manual: Obnovení fronty je vypnuté, takže restart frontu vymaže.
 playbackHealth.widevineReady.title: Widevine je znovu připraven
+playbackHealth.widevineRefused.badge: Apple Music na tomto PC již nepřijímá Widevine.
+playbackHealth.widevineRefused.badgeAwaiting: Apple Music na tomto PC již nepřijímá Widevine. Cider získává aktualizaci a požádá vás o restart.
+playbackHealth.widevineRefused.body: Widevine, ochrana proti kopírování, kterou Apple Music běžně používá, je na tomto PC zastaralý a Apple Music ho již nepřijímá. Microsoft PlayReady, na který by Cider přepnul, na tomto PC není dostupný.
+playbackHealth.widevineRefused.label: Widevine je zastaralý
+playbackHealth.widevineRefused.timelineAwaiting: Nemusíte nic dělat. Cider získává aktualizovaný Widevine, který obvykle dorazí během několika minut, a až bude připraven, požádá vás o restart Cideru.
+playbackHealth.widevineRefused.title: Apple Music teď nelze přehrát
 playbackSpeed.keepPitch: Zachovat výšku tónu
 playbackSpeed.preset.normal: Normální
 playbackSpeed.preset.slowed: Zpomaleně
@@ -4156,6 +4169,10 @@ settings.option.accessibility.forceFocusVisible: Vždy zobrazit rámeček zamě�
 settings.option.accessibility.forceFocusVisible.description: Vynutí viditelný obrys u aktivních prvků pro navigaci klávesnicí.
 settings.option.accessibility.highContrast: Vysoký kontrast
 settings.option.accessibility.highContrast.description: Zvýší kontrast mezi textem, pozadím a prvky rozhraní.
+settings.option.accessibility.libraryAddAnimation: Animace přidání
+settings.option.accessibility.libraryAddAnimation.description: Způsob potvrzení přidání do knihovny nebo playlistu či oblíbení skladby. Genie pošle kopii obalu na jeho místo v postranním panelu. Při omezeném pohybu se vždy použije pulzování.
+settings.option.accessibility.libraryAddAnimation.genie: Genie
+settings.option.accessibility.libraryAddAnimation.pulse: Pulzování
 settings.option.accessibility.motion: Pohyb
 settings.option.accessibility.motionIntensity: Intenzita pohybu
 settings.option.accessibility.motionIntensity.description: Určuje, jak výrazné pohyby tlačítka a povrchy používají při najetí a stisknutí. Výběrem možnosti „Žádná“ pohyb zcela vypnete; možnost „Hravá“ přidá extra pružení.
