@@ -886,7 +886,9 @@ ciderAudio.marketplacePresetMigrationNotice: "Üks või mitu sinu seadistatud Ci
   <br>\r
 
   Uute eelseadistuste installimine Marketplace'ist taastab sinu eelmised seaded."
+client.boot.backendUnavailable: Cider ei saanud oma kohalikku teenust pordil 10767 käivitada. Port võib olla kasutusel teise programmi poolt. Sulge see programm ja ava Cider uuesti.
 client.boot.cancel: Tühista
+client.boot.elevatedWarning: Cider töötab administraatorina. Seadete rikkumise vältimiseks ei salvesta see selles seansis muudatusi. Palun sulge Cider ja ava see uuesti tavalisel viisil.
 client.boot.failedDetailDefault: Rakenduse ettevalmistamisel läks midagi valesti. Võid proovida uuesti või kasutada probleemi lahendamiseks ühte allolevatest taastevalikutest.
 client.boot.failedTitle: Ciderit ei saanud käivitada
 client.boot.initializing: Cideri lähtestamine...
@@ -896,6 +898,9 @@ client.boot.loadingWindowConfig: Akna konfiguratsiooni laadimine...
 client.boot.noAppData: Puudub AppData kaust, mida uuesti luua. Cideri käivitamiseks klõpsa Proovi uuesti.
 client.boot.openAppData: Ava AppData
 client.boot.openAppDataDesc: Kuva logid ja konfiguratsioon
+client.boot.permissionDenied: Cider ei saa oma andmekausta lugeda ega sinna kirjutada. See juhtub tavaliselt siis, kui Ciderit on kunagi administraatorina käivitatud ning kaust on jäänud kontole, mida sinu tavaline sisselogimine ei saa muuta.
+client.boot.permissionRepairCopied: (Parandamise käsud on kopeeritud lõikelauale.)
+client.boot.permissionRepairInstruction: "Sulge Cider, ava administraatorina Terminal või käsuviip ning käivita need kaks käsku, seejärel käivita Cider tavaliselt:"
 client.boot.preparing: Ettevalmistus Cideri käivitamiseks...
 client.boot.quit: Sule
 client.boot.ready: Cider on valmis.
@@ -3186,10 +3191,18 @@ playbackHealth.localIssue: Kohalik esitusprobleem
 playbackHealth.widevineReady.actionHint: Klõpsa Ciderit taaskäivitamiseks.
 playbackHealth.widevineReady.auto: Kui Cider on avatud ja esitamine on 5 minutit peatatud, käivitub Cider automaatselt uuesti. Järjekord taastub pärast taaskäivitamist.
 playbackHealth.widevineReady.badge: Sellel arvutis on uuendatud Widevine. Taaskäivita Cider, et PlayReadyst tagasi lülituda.
+playbackHealth.widevineReady.badgeRefused: Sellesse arvutisse on paigaldatud uuendatud Widevine. Apple Musicu uuesti mängimiseks taaskäivita Cider.
 playbackHealth.widevineReady.body: Cider leidis sellel arvutis uuendatud Widevine'i. Taaskäivita Cider, et PlayReadyst tagasi lülituda ja helliefektid ning Dolby Atmos uuesti sisse lülitada.
+playbackHealth.widevineReady.bodyRefused: Cider leidis sellest arvutist uuendatud Widevine'i. Apple Musicu uuesti mängimiseks taaskäivita Cider.
 playbackHealth.widevineReady.later: Hiljem
 playbackHealth.widevineReady.manual: Järjekorra taastamine on välja lülitatud, seega taaskäivitamine tühjendab järjekorra.
 playbackHealth.widevineReady.title: Widevine on jälle valmis
+playbackHealth.widevineRefused.badge: Apple Music ei aktsepteeri enam selles arvutis olevat Widevine'i.
+playbackHealth.widevineRefused.badgeAwaiting: Apple Music ei aktsepteeri enam selles arvutis olevat Widevine'i. Cider hangib uuendust ja palub sul programmi taaskäivitada.
+playbackHealth.widevineRefused.body: Widevine on kopeerimiskaitse, mida Apple Music tavaliselt kasutab. Selles arvutis on see aegunud ning Apple Music ei aktsepteeri seda enam. Microsoft PlayReady, millele Cider üle läheks, ei ole selles arvutis saadaval.
+playbackHealth.widevineRefused.label: Widevine on aegunud
+playbackHealth.widevineRefused.timelineAwaiting: Sul pole vaja midagi teha. Cider hangib uuendatud Widevine'i, mis tavaliselt saabub mõne minuti jooksul, ja palub sul Ciderit taaskäivitada, kui see on valmis.
+playbackHealth.widevineRefused.title: Apple Music ei saa praegu mängida
 playbackSpeed.keepPitch: Säilita helikõrgus
 playbackSpeed.preset.normal: Tavaline
 playbackSpeed.preset.slowed: Aeglustatud
@@ -4281,6 +4294,10 @@ settings.option.accessibility.forceFocusVisible: Kuva alati fookusrõngas
 settings.option.accessibility.forceFocusVisible.description: Klaviatuuriga navigeerimiseks kuvatakse fookustatud elementidel alati nähtav piirjoon.
 settings.option.accessibility.highContrast: Kõrge kontrast
 settings.option.accessibility.highContrast.description: Suurendab teksti, tausta ja liidese-elementide vahelist kontrastsust.
+settings.option.accessibility.libraryAddAnimation: Lisamise animatsioon
+settings.option.accessibility.libraryAddAnimation.description: Kuidas kinnitatakse kogusse või esitusloendisse lisamist ning laulu lemmikuks märkimist. Genie saadab pildi külgribal oma kohta. Vähendatud liikumise korral kasutatakse alati pulsi.
+settings.option.accessibility.libraryAddAnimation.genie: Genie
+settings.option.accessibility.libraryAddAnimation.pulse: Pulss
 settings.option.accessibility.motion: Liikumine
 settings.option.accessibility.motionIntensity: Liikumise intensiivsus
 settings.option.accessibility.motionIntensity.description: Määrab, kui palju liikumist kasutatakse nuppudel ja pindadel kursoriga peale liikudes ja vajutades. Vali „Puudub“, et liikumine täielikult keelata; „Mänguline“ lisab täiendavat vetruvust.
