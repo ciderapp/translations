@@ -25,8 +25,9 @@ describe('classifyChanges', () => {
       'locales/en-US.yml', 'locales/languages.yml', 'i18n/owners.yml', 'scripts/x.mjs',
     ]);
     assert.deepEqual(r.langs, ['de', 'fr']);
+    assert.equal(r.languagesYml, true);
     assert.deepEqual(r.generated, ['README.md', '.github/badges/translators.json']);
-    assert.deepEqual(r.refused, ['locales/en-US.yml', 'locales/languages.yml', 'i18n/owners.yml', 'scripts/x.mjs']);
+    assert.deepEqual(r.refused, ['locales/en-US.yml', 'i18n/owners.yml', 'scripts/x.mjs']);
   });
 });
 
@@ -71,6 +72,39 @@ describe('re-merge in a real repository', () => {
       const state = parseYaml(readFileSync(join(out, 'i18n/fill-state/de.yml'), 'utf8'));
       assert.deepEqual(locale, { a: human('neu'), b: human('Bee'), d: 'D' });
       assert.deepEqual(state, { a: 'h-a-new', b: 'h-b', d: 'h-d' });
+    } finally {
+      rmSync(dir, { recursive: true, force: true });
+    }
+  });
+
+  test('two jobs adding different languages both survive', () => {
+    const dir = mkdtempSync(join(tmpdir(), 'cider-remerge-lang-'));
+    try {
+      git(dir, 'init', '-q', '-b', 'main');
+      git(dir, 'config', 'user.email', 't@example.com');
+      git(dir, 'config', 'user.name', 'test');
+      git(dir, 'config', 'core.autocrlf', 'false');
+      mkdirSync(join(dir, 'locales'), { recursive: true });
+      const header = '# snapshot\nlanguages:\n';
+      writeFileSync(join(dir, 'locales/languages.yml'), `${header}  de:\n    name: German\n    native: Deutsch\n`);
+      git(dir, 'add', '-A'); git(dir, 'commit', '-qm', 'base');
+      const base = git(dir, 'rev-parse', 'HEAD');
+
+      writeFileSync(join(dir, 'locales/languages.yml'), `${header}  de:\n    name: German\n    native: Deutsch\n  eu:\n    name: Basque\n    native: Euskara\n`);
+      git(dir, 'commit', '-qam', 'theirs eu');
+      const theirs = git(dir, 'rev-parse', 'HEAD');
+
+      git(dir, 'checkout', '-q', '-b', 'ours', base);
+      writeFileSync(join(dir, 'locales/languages.yml'), `${header}  de:\n    name: German\n    native: Deutsch\n  is:\n    name: Icelandic\n    native: Íslenska\n`);
+      git(dir, 'commit', '-qam', 'ours is');
+
+      const out = join(dir, '.remerge');
+      execFileSync(process.execPath, [SCRIPT, '--root', dir, '--base', base, '--ours', 'HEAD', '--theirs', theirs, '--out', out],
+        { stdio: 'pipe' });
+      const langs = parseYaml(readFileSync(join(out, 'locales/languages.yml'), 'utf8')).languages;
+      assert.equal(langs.de.name, 'German');
+      assert.equal(langs.eu.name, 'Basque');
+      assert.equal(langs.is.name, 'Icelandic');
     } finally {
       rmSync(dir, { recursive: true, force: true });
     }

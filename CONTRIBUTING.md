@@ -6,7 +6,8 @@ Translations come in via **issues**, not pull requests. A bot does the actual fi
 
 1. [**Open a translation issue**](../../issues/new?template=translation.yml).
 2. Fill in:
-   - **Language code** (e.g. `es`, `pt-BR`, `zh-CN`). Pick one from [`locales/languages.yml`](locales/languages.yml).
+   - **Language code** (e.g. `es`, `pt-BR`, `zh-CN`, `is`). Prefer one from [`locales/languages.yml`](locales/languages.yml). A new BCP-47 code is fine; a maintainer has to approve before the locale is created.
+   - If the YAML does not fit in the form, attach a `.yml` file to the issue. The bot reads GitHub user-attachments from that same issue.
    - **Translations**, one per line as `key.path: Translated text`.
    - **Notes** if you have context worth sharing.
 3. The bot validates and posts a preview comment within ~1 minute.
@@ -17,7 +18,7 @@ If the bot reports a validation error, edit the issue body and the check re-runs
 
 ## What the bot validates
 
-- The language code is in `locales/languages.yml`.
+- The language code is a valid BCP-47 tag. Codes already in `locales/languages.yml` apply as usual. An unknown code is a new-language request: only a maintainer (write/maintain/admin) can create it, by labeling the issue `approved` or by running **Actions > Add locale**.
 - Every key you reference is in `locales/en-US.yml`.
 - Placeholders are preserved exactly. If the English is `Loading {n} tracks…`, your translation must contain `{n}`. Recognised forms: `{n}`, `{0}`, `${variable}`, `$VARIABLE`, `{{ variable }}`, `{{variable}}`.
 - Proper nouns aren't translated: Cider, Apple Music, AirPlay, Dolby Atmos, Chromecast, AudioLab, ListenBrainz, Last.fm, Maloja, Discord.
@@ -40,13 +41,15 @@ Your name stays attached in the YAML even after an AI re-translation (`source: a
 
 ## Adding a new language
 
-If your language isn't in [`locales/languages.yml`](locales/languages.yml), open an issue titled `[language] Add <Name>` with:
+If your language isn't in [`locales/languages.yml`](locales/languages.yml):
 
-- The locale code (BCP-47, e.g. `eu` for Basque, `mt` for Maltese).
-- The endonym (the language's name in its own script).
-- Why it should be added (target audience size, Apple Music availability, etc.).
+1. Open a translation issue with the BCP-47 **Language code** (e.g. `is`) and the English **Language name** (or title it `[language] Add Icelandic`).
+2. Paste keys, or attach a `.yml` file if the file is too large for GitHub's issue body.
+3. A maintainer with write access labels the issue `approved`, or runs **Actions > Add locale** with the code, name, and issue number.
 
-A maintainer adds it on the Cider side. The next sync pushes the new language here and the AI seeds the initial translation. You can then contribute corrections normally.
+The bot registers the language here, writes `locales/<code>.yml` with your strings, and leaves missing keys unset so Cider falls back to English. AI fill then translates the rest.
+
+`locales/languages.yml` is still snapshotted from Citadel on each desktop sync. That used to overwrite languages added only here (Croatian on 2026-05-25, Estonian on 2026-06-08). The sync now **merges**: codes that exist here and not in Citadel's snapshot are kept. The in-app language picker still reads Citadel, so a maintainer should add the same code to `ciderapp/citadel`'s `locales/languages.yml` when it should show up in Cider.
 
 ## What lives where
 

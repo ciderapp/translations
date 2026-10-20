@@ -174,7 +174,7 @@ describe('KEY_RE — translation key shape', () => {
 
 describe('LANG_RE — locale code shape', () => {
   test('accepts BCP-47 codes from the supported list', () => {
-    for (const c of ['cs', 'de', 'es', 'es-419', 'pt-BR', 'zh-CN', 'sv-SE', 'fr-CA']) {
+    for (const c of ['cs', 'de', 'es', 'es-419', 'pt-BR', 'zh-CN', 'sv-SE', 'fr-CA', 'is', 'is-IS']) {
       assert.ok(LANG_RE.test(c), `should accept: ${c}`);
     }
   });

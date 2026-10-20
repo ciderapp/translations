@@ -12,19 +12,38 @@ body:
 
         - 🇬🇧 **English source of truth:** [`locales/en-US.yml`](https://github.com/ciderapp/translations/blob/main/locales/en-US.yml) lists every translatable key with its English text.
         - 🌐 **Your language's current state:** browse [`locales/`](https://github.com/ciderapp/translations/tree/main/locales) and open `<your-code>.yml` to see what's already translated (or AI-filled) for the language you want to improve.
-        - 📚 **Supported locale codes:** [`locales/languages.yml`](https://github.com/ciderapp/translations/blob/main/locales/languages.yml).
+        - 📚 **Supported locale codes:** [`locales/languages.yml`](https://github.com/ciderapp/translations/blob/main/locales/languages.yml). New languages are welcome: use a real BCP-47 code (e.g. `is`) and a maintainer can register it by approving this issue.
 
-        Adding a brand-new language? Use the `[language] Add <Name>` title pattern instead; the bot skips those and a maintainer handles them manually.
+        If the YAML is too large for the form (GitHub caps the issue body), attach a `.yml` / `.yaml` file to this issue and mention it in Notes. The bot reads GitHub user-attachments from this issue and validates them the same way as pasted keys.
 
   - type: input
     id: language
     attributes:
       label: Language code
       description: |
-        BCP-47 locale code, e.g. `es`, `fr`, `de`, `pt-BR`, `zh-CN`. Must already exist in [`locales/languages.yml`](https://github.com/ciderapp/translations/blob/main/locales/languages.yml).
+        BCP-47 locale code, e.g. `es`, `fr`, `de`, `pt-BR`, `zh-CN`, `is`. Prefer a code already in [`locales/languages.yml`](https://github.com/ciderapp/translations/blob/main/locales/languages.yml). For a language that is not listed yet, still put the code here (and the English name below).
       placeholder: es
     validations:
       required: true
+
+  - type: input
+    id: language_name
+    attributes:
+      label: Language name
+      description: |
+        English name (e.g. `Icelandic`). Needed when the code is not in `locales/languages.yml` yet; ignored for languages that already exist. You can also put `[language] Add Icelandic` in the issue title.
+      placeholder: Icelandic
+    validations:
+      required: false
+
+  - type: input
+    id: native_name
+    attributes:
+      label: Native name
+      description: Endonym in the language's own script (e.g. Íslenska). Optional; inferred from the locale when omitted.
+      placeholder: Íslenska
+    validations:
+      required: false
 
   - type: textarea
     id: translations

@@ -14,7 +14,9 @@
  *
  * The `apply` path is gated by an actor-permission check in
  * translation-issue.yml (the labeler must have write/maintain/admin on this
- * repo); this script trusts that gate and does no extra permission checks.
+ * repo). Creating a locale that is not yet in languages.yml additionally
+ * requires ALLOW_NEW_LOCALE=1, which only the apply / add-locale / sweep
+ * jobs set after that check. Validate never writes files.
  *
  * Inputs (env):
  *   GITHUB_TOKEN
@@ -22,7 +24,9 @@
  *   ISSUE_NUMBER
  *   ISSUE_AUTHOR
  *   ISSUE_BODY
+ *   ISSUE_TITLE
  *   MODE
+ *   ALLOW_NEW_LOCALE     "1" to register an unknown BCP 47 code on apply
  */
 
 import { readFileSync, writeFileSync, existsSync, appendFileSync } from 'fs';
@@ -35,6 +39,14 @@ import {
   englishHash, loadState, saveState, seedState, englishAtLastFill, englishAt,
 } from './lib/fill-state.mjs';
 import { githubRequest } from './lib/github.mjs';
+import {
+  LANG_RE, isValidBcp47, isReservedLocale, resolveLanguageNames, languageNameFromTitle,
+} from './lib/bcp47.mjs';
+import { registerLanguageOnDisk } from './lib/locale-registry.mjs';
+import {
+  loadIssueAttachmentTranslations, translationsNeedAttachment,
+} from './lib/issue-attachments.mjs';
+export { LANG_RE, translationsNeedAttachment };
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -46,9 +58,11 @@ const MODE         = process.env.MODE ?? 'validate';
 let ISSUE_NUMBER = process.env.ISSUE_NUMBER;
 let ISSUE_AUTHOR = process.env.ISSUE_AUTHOR;
 let ISSUE_BODY   = process.env.ISSUE_BODY ?? '';
+let ISSUE_TITLE  = process.env.ISSUE_TITLE ?? '';
 // 'opened' on the first submission, 'edited' on later body changes, 'labeled'
 // in the apply path. Drives both the comment wording and the upsert behaviour.
 const ISSUE_ACTION = process.env.ISSUE_ACTION ?? 'opened';
+const ALLOW_NEW_LOCALE = process.env.ALLOW_NEW_LOCALE === '1';
 // When the issue was opened (github.event.issue.created_at): the English the
 // contributor was translating is en-US.yml as of then.
 let ISSUE_CREATED_AT = process.env.ISSUE_CREATED_AT ?? '';
@@ -95,7 +109,6 @@ export const PROPER_NOUNS = [
 // (e.g. `settings.notyf.updateCider.update-downloaded`,
 // `settings.option.audio...atmosphereRealizerMode.NATURAL_PLUS`).
 export const KEY_RE     = /^[a-zA-Z][a-zA-Z0-9_-]*(?:\.[a-zA-Z][a-zA-Z0-9_-]*)+$/;
-export const LANG_RE    = /^[a-z]{2,3}(?:-[A-Za-z0-9]{2,4})?$/;
 export const AUTHOR_RE  = /^[A-Za-z0-9](?:[A-Za-z0-9-]{0,38})$/;
 
 export const MAX_BODY_BYTES      = 100_000;
@@ -118,6 +131,8 @@ export const MARKER_APPLY_ERROR = '<!-- cider-i18n-bot:apply-error -->';
 const LABEL_ALIASES = {
   'language code': 'language',
   'language': 'language',
+  'language name': 'language_name',
+  'native name': 'native_name',
   'translations': 'translations',
   'notes (optional)': 'notes',
   'notes': 'notes',
@@ -158,13 +173,48 @@ export function extractTranslations(sections) {
 
   try {
     const parsed = parseYaml(raw);
-    if (!parsed || typeof parsed !== 'object') {
+    if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) {
       return { __error: 'Translations did not parse as a YAML map.' };
     }
     return parsed;
   } catch (e) {
     return { __error: `YAML parse error: ${e.message}` };
   }
+}
+
+/**
+ * Body first; if that is not a YAML map, a .yml attached to this issue.
+ * A new locale with neither is allowed (empty file, English fallback).
+ */
+export async function resolveSubmittedTranslations(sections, {
+  body,
+  comments = [],
+  language,
+  isNewLocale = false,
+  fetchImpl,
+} = {}) {
+  const fromBody = extractTranslations(sections);
+  if (!translationsNeedAttachment(fromBody)) {
+    return { translations: fromBody, source: 'body' };
+  }
+  const loaded = await loadIssueAttachmentTranslations({
+    body,
+    comments,
+    language,
+    fetchImpl,
+  });
+  if (loaded.translations) {
+    return { translations: loaded.translations, source: 'attachment', url: loaded.url };
+  }
+  if (isNewLocale) {
+    return {
+      translations: {},
+      source: 'empty',
+      warning: 'No translations in the issue body or a YAML attachment. The locale will be registered and missing keys will fall back to English until the AI fill or a later issue lands them.',
+    };
+  }
+  const parts = [fromBody.__error, loaded.error].filter(Boolean);
+  return { translations: { __error: parts.join(' ') }, source: 'body' };
 }
 
 // ── Validation ──────────────────────────────────────────────────────────────
@@ -201,17 +251,32 @@ function validateIcu(key, english, value, errors, warnings) {
   }
 }
 
-export function validateTranslations(translations, sourceStrings, { isIcuKey = () => false } = {}) {
+export function dropUnknownKeys(translations, sourceStrings) {
+  const dropped = [];
+  const kept = {};
+  for (const [key, value] of Object.entries(translations ?? {})) {
+    if (key.startsWith('__')) continue;
+    if (!Object.hasOwn(sourceStrings, key)) dropped.push(key);
+    else kept[key] = value;
+  }
+  return { kept, dropped };
+}
+
+export function validateTranslations(translations, sourceStrings, {
+  isIcuKey = () => false,
+  maxTranslations = MAX_TRANSLATIONS,
+  allowEmpty = false,
+} = {}) {
   const errors = [];
   const warnings = [];
 
   const ownKeys = Object.keys(translations);
   if (ownKeys.length === 0) {
-    errors.push('No translations provided.');
+    if (!allowEmpty) errors.push('No translations provided.');
     return { errors, warnings };
   }
-  if (ownKeys.length > MAX_TRANSLATIONS) {
-    errors.push(`Too many translations in one issue (${ownKeys.length} > ${MAX_TRANSLATIONS}). Split across multiple issues.`);
+  if (ownKeys.length > maxTranslations) {
+    errors.push(`Too many translations in one issue (${ownKeys.length} > ${maxTranslations}). Split across multiple issues or attach a YAML file.`);
     return { errors, warnings };
   }
 
@@ -358,10 +423,12 @@ async function hydrateIssue() {
   if (process.env.FETCH_ISSUE === '1') {
     ISSUE_AUTHOR = issue.user?.login || ISSUE_AUTHOR;
     ISSUE_BODY = issue.body || '';
+    ISSUE_TITLE = issue.title || ISSUE_TITLE;
     ISSUE_CREATED_AT = issue.created_at || ISSUE_CREATED_AT;
   } else {
     ISSUE_AUTHOR = ISSUE_AUTHOR || issue.user?.login;
     ISSUE_BODY = ISSUE_BODY || issue.body || '';
+    ISSUE_TITLE = ISSUE_TITLE || issue.title || '';
     ISSUE_CREATED_AT = ISSUE_CREATED_AT || issue.created_at || '';
   }
   if (issue.user?.id) {
@@ -468,14 +535,25 @@ function buildSkipNote(sourceEmpty, submissionOnly) {
   return '\n\n' + parts.join('\n\n');
 }
 
-function previewComment(language, languageName, translations, warnings, existingLocale, sourceStrings, sourceEmptySkips = [], submissionEmptySkips = []) {
+function previewComment(language, languageName, translations, warnings, existingLocale, sourceStrings, sourceEmptySkips = [], submissionEmptySkips = [], {
+  isNewLocale = false,
+  fromAttachment = false,
+} = {}) {
   const count = Object.keys(translations).length;
   const isEdit = ISSUE_ACTION === 'edited';
-  const diff = buildDiffBlock(translations, existingLocale, sourceStrings);
+  const diff = count
+    ? buildDiffBlock(translations, existingLocale, sourceStrings)
+    : '_No translation keys in this submission._';
   const warn = warnings.length
     ? `\n\n#### Heads-up (not blockers)\n\n${warnings.map(w => `- ${w}`).join('\n')}`
     : '';
   const skipNote = buildSkipNote(sourceEmptySkips, submissionEmptySkips);
+  const newLocaleNote = isNewLocale
+    ? `\n\n**New language:** \`${language}\` is not in \`locales/languages.yml\` yet. A maintainer with write access can add the \`approved\` label to register **${languageName}** and apply these strings in one commit. Contributors cannot create a locale themselves.`
+    : '';
+  const attachmentNote = fromAttachment
+    ? `\n\nRead the strings from the YAML file attached to this issue.`
+    : '';
 
   const heading = isEdit
     ? `### 🔄 Updated preview for @${ISSUE_AUTHOR}`
@@ -493,6 +571,8 @@ function previewComment(language, languageName, translations, warnings, existing
     diff,
     warn,
     skipNote,
+    newLocaleNote,
+    attachmentNote,
     ``,
     `A Cider maintainer will give this a quick look and add the \`approved\` label to merge it. You'll be credited inside the file (\`source: human, by: @${ISSUE_AUTHOR}, issue: ${ISSUE_NUMBER}\`) and your work will ship in the next OTA build. Appreciate you helping make Cider feel native to more people!`,
   ].join('\n');
@@ -519,12 +599,24 @@ function errorComment(errors, sourceEmptySkips = [], submissionEmptySkips = []) 
   ].join('\n');
 }
 
-function appliedComment(language, languageName, count) {
+function appliedComment(language, languageName, count, {
+  newLocale = false,
+  fromAttachment = false,
+} = {}) {
+  const registered = newLocale
+    ? `Registered **${languageName}** (\`${language}\`) as a new language and applied your ${count} translation${count === 1 ? '' : 's'} to \`locales/${language}.yml\`, with credit attached.`
+    : `Your ${count} translation${count === 1 ? '' : 's'} ${count === 1 ? 'is' : 'are'} now live in \`locales/${language}.yml\` (${languageName}), with credit attached.`;
+  const extras = [
+    fromAttachment ? 'Read the strings from the YAML file attached to this issue.' : null,
+    newLocale ? 'Keys that were not in this submission are left unset, so Cider falls back to English until the AI fill lands the rest.' : null,
+  ].filter(Boolean);
   return [
     MARKER_APPLIED,
     `### 🎉 Merged, thanks @${ISSUE_AUTHOR}!`,
     ``,
-    `Your ${count} translation${count === 1 ? '' : 's'} ${count === 1 ? 'is' : 'are'} now live in \`locales/${language}.yml\` (${languageName}), with credit attached. It will ship to users in the next OTA build.`,
+    registered,
+    ...extras,
+    `It will ship to users in the next OTA build.`,
     ``,
     `Closing this one out. Come back any time you spot something that could be improved, and feel free to reach out on the Cider Discord if you'd like to chat with the team. Thanks again for making Cider better!`,
   ].join('\n');
@@ -541,10 +633,18 @@ async function announceApplied(language, languageName, count, errors) {
         `Your translation is on main. Closing this one out.`,
       ].join('\n'));
     } else {
-      await postComment(appliedComment(language, languageName, count));
+      await postComment(appliedComment(language, languageName, count, {
+        newLocale: process.env.NEW_LOCALE_CREATED === '1',
+        fromAttachment: process.env.FROM_ATTACHMENT === '1',
+      }));
     }
   }
   await closeIssue();
+}
+
+function appendGithubEnv(lines) {
+  if (!process.env.GITHUB_ENV || !lines.length) return;
+  appendFileSync(process.env.GITHUB_ENV, `${lines.join('\n')}\n`);
 }
 
 async function postFailComment() {
@@ -592,10 +692,27 @@ async function main() {
 
   const sections = parseIssueBody(ISSUE_BODY);
   const language = extractLanguage(sections);
-  const translations = extractTranslations(sections);
-
   const languages = parseYaml(readFileSync('locales/languages.yml', 'utf8'))?.languages ?? {};
   const sourceStrings = parseYaml(readFileSync('locales/en-US.yml', 'utf8')) ?? {};
+
+  const bcp47Ok = Boolean(language && LANG_RE.test(language) && isValidBcp47(language));
+  const knownLocale = bcp47Ok && Object.hasOwn(languages, language);
+  const reserved = bcp47Ok && isReservedLocale(language);
+  const canCreateLocale = ALLOW_NEW_LOCALE && MODE === 'apply';
+  const isNewLocale = bcp47Ok && !knownLocale && !reserved
+    && (MODE === 'validate' || canCreateLocale || process.env.NEW_LOCALE_CREATED === '1');
+
+  const comments = (MODE === 'fail-comment')
+    ? []
+    : await listComments().catch(() => []);
+  const resolved = await resolveSubmittedTranslations(sections, {
+    body: ISSUE_BODY,
+    comments,
+    language,
+    isNewLocale,
+  });
+  const translations = resolved.translations;
+  const fromAttachment = resolved.source === 'attachment';
 
   // Drop empty submissions before validation. A common pattern: contributors
   // copy every key out of en-US.yml as a starting point, but a handful of
@@ -621,11 +738,34 @@ async function main() {
   }
 
   const errors = [];
+  let warnings = [];
+  if (resolved.warning) warnings.push(resolved.warning);
+
+  const optionalField = (v) => {
+    if (typeof v !== 'string') return undefined;
+    const t = v.trim();
+    if (!t || t === '_No response_') return undefined;
+    return t.split('\n')[0].trim();
+  };
+  const nameFields = {
+    name: optionalField(sections.language_name) || languageNameFromTitle(ISSUE_TITLE) || optionalField(process.env.LOCALE_NAME),
+    native: optionalField(sections.native_name) || optionalField(process.env.LOCALE_NATIVE),
+  };
+  const inferredNames = bcp47Ok
+    ? resolveLanguageNames(language, nameFields)
+    : { name: language, native: language, errors: [] };
+  if (isNewLocale) errors.push(...inferredNames.errors);
+  const languageName = knownLocale
+    ? languages[language].name
+    : inferredNames.name;
+
   if (!language) {
     errors.push('Language code missing. Fill in the form.');
-  } else if (!LANG_RE.test(language)) {
-    errors.push(`Language code \`${language}\` is not a valid locale shape (expected e.g. \`es\`, \`pt-BR\`).`);
-  } else if (!Object.hasOwn(languages, language)) {
+  } else if (!LANG_RE.test(language) || !isValidBcp47(language)) {
+    errors.push(`Language code \`${language}\` is not a valid BCP 47 locale (expected e.g. \`es\`, \`pt-BR\`, \`is\`).`);
+  } else if (reserved) {
+    errors.push(`Language code \`${language}\` is the English source and cannot be a target locale.`);
+  } else if (!knownLocale && !isNewLocale) {
     const codes = Object.keys(languages).filter(c => c !== 'en-US').sort().join(', ');
     errors.push(`Language code \`${language}\` is not in \`locales/languages.yml\`. Supported: ${codes}.`);
   }
@@ -634,21 +774,41 @@ async function main() {
     errors.push(translations.__error);
   }
 
+  // Full-locale attachments (and new-language dumps) often still list keys
+  // that have since left en-US.yml. Drop those with a warning rather than
+  // rejecting thousands of still-valid strings.
+  if (!translations.__error && (fromAttachment || isNewLocale)) {
+    const { kept, dropped } = dropUnknownKeys(translations, sourceStrings);
+    for (const k of Object.keys(translations)) delete translations[k];
+    Object.assign(translations, kept);
+    if (dropped.length) {
+      const shown = dropped.slice(0, 8).map((k) => `\`${k}\``).join(', ');
+      const more = dropped.length > 8 ? `, +${dropped.length - 8} more` : '';
+      warnings.push(`Skipped ${dropped.length} key${dropped.length === 1 ? '' : 's'} not in \`locales/en-US.yml\`: ${shown}${more}.`);
+    }
+  }
+
   const owners = loadOwners(join(ROOT, 'i18n/owners.yml'));
   const isIcuKey = makeIcuCheck({ sourceStrings, owners, consumers: loadConsumers(join(ROOT, 'i18n/consumers')) });
+  const maxTranslations = (fromAttachment || isNewLocale)
+    ? Math.max(MAX_TRANSLATIONS, Object.keys(sourceStrings).length)
+    : MAX_TRANSLATIONS;
 
-  let warnings = [];
   if (!errors.length && language && !translations.__error) {
-    const result = validateTranslations(translations, sourceStrings, { isIcuKey });
+    const result = validateTranslations(translations, sourceStrings, {
+      isIcuKey,
+      maxTranslations,
+      allowEmpty: isNewLocale,
+    });
     errors.push(...result.errors);
-    warnings = result.warnings;
+    warnings = warnings.concat(result.warnings);
   }
 
   // Load the existing locale for diff context. Only safe once language has
   // been shape-checked; loadLocale itself refuses suspicious codes, but the
   // guard avoids a noisy throw when the contributor's language is invalid.
   let existingLocale = {};
-  if (language && LANG_RE.test(language) && Object.hasOwn(languages, language)) {
+  if (language && LANG_RE.test(language) && (knownLocale || isNewLocale)) {
     existingLocale = loadLocale(language);
   }
 
@@ -659,13 +819,14 @@ async function main() {
     }
     await upsertValidationComment(previewComment(
       language,
-      languages[language].name,
+      languageName,
       translations,
       warnings,
       existingLocale,
       sourceStrings,
       sourceEmptySkips,
       submissionEmptySkips,
+      { isNewLocale, fromAttachment },
     ));
     return;
   }
@@ -673,7 +834,7 @@ async function main() {
   if (MODE === 'announce') {
     await announceApplied(
       language,
-      language ? languages[language]?.name : undefined,
+      languageName,
       Object.keys(translations.__error ? {} : translations).length,
       errors,
     );
@@ -709,12 +870,22 @@ async function main() {
     process.exit(1);
   }
 
+  if (fromAttachment) appendGithubEnv(['FROM_ATTACHMENT=1']);
+
+  if (isNewLocale) {
+    registerLanguageOnDisk(process.cwd(), language, {
+      name: inferredNames.name,
+      native: inferredNames.native,
+    });
+    appendGithubEnv(['NEW_LOCALE_CREATED=1']);
+    console.log(`Registered new locale ${language} (${inferredNames.name}).`);
+  }
+
   if (alreadyApplied(existingLocale, translations, ISSUE_NUMBER)) {
     console.log(`Issue #${ISSUE_NUMBER} already applied; skipping file write.`);
     return;
   }
 
-  // Reuse the existingLocale loaded above for the diff preview.
   const updated = { ...existingLocale };
   for (const key of Object.keys(translations)) {
     // KEY_RE was checked in validateTranslations; double-check here so a
@@ -729,12 +900,16 @@ async function main() {
   }
   saveLocale(language, updated);
   saveState(STATE_DIR, language, stampApplied({
-    state: loadState(STATE_DIR, language),
-    existingLocale,
+    // New locales must not seed fill-state from English copies, or AI fill
+    // would treat the fallback as current and skip the rest of the file.
+    state: isNewLocale ? {} : loadState(STATE_DIR, language),
+    existingLocale: isNewLocale ? {} : existingLocale,
     keys: Object.keys(translations).filter(k => KEY_RE.test(k)),
     sourceStrings,
   }));
 }
+
+export { main as runBot };
 
 // Only run main() when invoked directly as a script. When this file is
 // imported (e.g. by the test suite), the runtime side stays dormant.

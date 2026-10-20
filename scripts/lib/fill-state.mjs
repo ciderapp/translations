@@ -18,8 +18,8 @@ import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
 import { join } from 'path';
 import { parse as parseYaml, stringify as stringifyYaml } from 'yaml';
 import { sortKeys } from './source-yaml.mjs';
-
-export const LANG_RE = /^[a-z]{2,3}(?:-[A-Za-z0-9]{2,4})?$/;
+import { LANG_RE } from './bcp47.mjs';
+export { LANG_RE };
 
 // The subject every fill commit starts with, before and after per-locale
 // commits ("chore(i18n): AI fill" and "chore(i18n): AI fill (de)").
