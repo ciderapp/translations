@@ -11,6 +11,12 @@
 # cancelled the middle issues of a bulk label. translation-sweep.yml retries
 # anything that still sits open with `translation` + `approved`.
 #
+# Unknown locales: if the approver has write access, apply registers the
+# BCP 47 code in languages.yml, writes locales/<code>.yml, and applies the
+# issue (including a YAML attachment on that issue). ALLOW_NEW_LOCALE=1 is
+# set only after verify-approver.sh. Citadel's sync merges extras instead
+# of overwriting languages.yml.
+#
 # The `approved` label is only acted on if the labeler has write/maintain/admin
 # permission on this repo, verified via the GitHub API at the top of the apply
 # job. (`github.event.sender.author_association` is NOT populated on the issues
@@ -72,6 +78,7 @@ jobs:
           # differently and to upsert (edit) its own previous comment rather
           # than posting a new one for every edit.
           ISSUE_ACTION: ${{ github.event.action }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
           MODE: validate
         run: node scripts/lint-translation-issue.mjs
 
@@ -135,6 +142,8 @@ jobs:
           ISSUE_BODY: ${{ github.event.issue.body }}
           ISSUE_ACTION: ${{ github.event.action }}
           ISSUE_CREATED_AT: ${{ github.event.issue.created_at }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ALLOW_NEW_LOCALE: "1"
           MODE: apply
         run: node scripts/lint-translation-issue.mjs
       - name: Update credits and badges
@@ -174,6 +183,7 @@ jobs:
           ISSUE_BODY: ${{ github.event.issue.body }}
           ISSUE_ACTION: ${{ github.event.action }}
           ISSUE_CREATED_AT: ${{ github.event.issue.created_at }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
           MODE: announce
         run: node scripts/lint-translation-issue.mjs
       - name: Comment on failure

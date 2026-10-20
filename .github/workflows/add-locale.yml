@@ -1,0 +1,141 @@
+#############################################################################################
+# Add a locale
+#
+# Purpose: Maintainer-only way to register a BCP 47 language that is not in
+#          locales/languages.yml yet. Optionally apply a translation issue
+#          (including a YAML attachment) in the same commit.
+#
+# Trigger: workflow_dispatch with `code`, `name`, optional `native` and `issue`.
+#
+# Why this exists: Citadel's i18n-extract sync used to overwrite
+# locales/languages.yml. A language added only here was wiped (Croatian
+# 2026-05-25, Estonian 2026-06-08). The sync now merges extras, so a locale
+# registered here survives. The in-app picker still reads Citadel's copy, so
+# add the same code there when you want it listed in Cider.
+#
+# Concurrency: if an issue number is given, this job uses the same per-issue
+# group as translation-issue.yml / translation-sweep.yml (`queue: max`) so a
+# live label-apply and this workflow serialize instead of double-writing.
+#############################################################################################
+
+name: Add locale
+
+on:
+  workflow_dispatch:
+    inputs:
+      code:
+        description: BCP-47 locale code (e.g. is, pt-BR)
+        required: true
+        type: string
+      name:
+        description: English language name (e.g. Icelandic)
+        required: true
+        type: string
+      native:
+        description: Endonym (e.g. Islenska). Leave blank to infer from the locale.
+        required: false
+        type: string
+      issue:
+        description: Optional translation issue number to apply in the same commit
+        required: false
+        type: string
+
+permissions: {}
+
+jobs:
+  add:
+    name: Add ${{ inputs.code }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+    concurrency:
+      group: ${{ inputs.issue && format('translation-issue-apply-{0}', inputs.issue) || format('add-locale-{0}', inputs.code) }}
+      cancel-in-progress: false
+      queue: max
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+          ref: main
+
+      - name: 🛡️ Verify actor has write access
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          APPROVER_LOGIN: ${{ github.actor }}
+        run: bash scripts/ci/verify-approver.sh
+
+      - name: 🪪 Mint App installation token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.CIDER_I18N_BOT_APP_ID }}
+          private-key: ${{ secrets.CIDER_I18N_BOT_PRIVATE_KEY }}
+          permission-contents: write
+          permission-issues: write
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - run: npm install --no-package-lock
+
+      - name: Register locale (and apply issue if given)
+        env:
+          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
+          ALLOW_NEW_LOCALE: "1"
+          LOCALE_CODE: ${{ inputs.code }}
+          LOCALE_NAME: ${{ inputs.name }}
+          LOCALE_NATIVE: ${{ inputs.native }}
+          ISSUE_NUMBER: ${{ inputs.issue }}
+          ISSUE_ACTION: labeled
+          MODE: apply
+        run: node scripts/add-locale.mjs
+
+      - name: Update credits and badges
+        run: node scripts/update-credits.mjs
+
+      - name: Commit and push
+        env:
+          APP_TOKEN: ${{ steps.app-token.outputs.token }}
+          ISSUE_NUMBER: ${{ inputs.issue }}
+          LOCALE_CODE: ${{ inputs.code }}
+        run: |
+          set -euo pipefail
+          git config user.name  'saki-yuzishima[bot]'
+          git config user.email '286499753+saki-yuzishima[bot]@users.noreply.github.com'
+          if [ -n "${ISSUE_NUMBER:-}" ]; then
+            author="${ISSUE_AUTHOR:-}"
+            author_id="${ISSUE_AUTHOR_ID:-}"
+            if [ -z "$author" ] || [ -z "$author_id" ]; then
+              echo "::error::ISSUE_AUTHOR / ISSUE_AUTHOR_ID missing after apply; hydrateIssue should have written them to GITHUB_ENV."
+              exit 1
+            fi
+            export COMMIT_AUTHOR="${author} <${author_id}+${author}@users.noreply.github.com>"
+            msg="feat(i18n): apply translation from #${ISSUE_NUMBER}"
+          else
+            msg="feat(i18n): add locale ${LOCALE_CODE}"
+          fi
+          export REMOTE="https://x-access-token:${APP_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          bash scripts/ci/push-with-remerge.sh "$msg" \
+            locales/ i18n/fill-state/ .github/badges/ README.md
+
+      - name: Announce and close
+        if: inputs.issue != ''
+        env:
+          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
+          ISSUE_NUMBER: ${{ inputs.issue }}
+          FETCH_ISSUE: "1"
+          ISSUE_ACTION: labeled
+          MODE: announce
+        run: node scripts/lint-translation-issue.mjs
+
+      - name: Comment on failure
+        if: failure() && inputs.issue != ''
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token || secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ inputs.issue }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          FAIL_COMMENT: The add-locale job failed before the translation landed on main.
+        run: bash scripts/ci/comment-apply-failure.sh

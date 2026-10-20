@@ -21,8 +21,10 @@
  * <dir> over it, re-runs update-credits.mjs (README.md and the badges are
  * regenerated, never merged), commits and pushes.
  *
- * Exits 2 if ours touched anything else: the fill and the apply never write
- * en-US.yml, languages.yml or the ownership files, so that means a bug.
+ * Exits 2 if ours touched anything else: the fill never writes en-US.yml,
+ * languages.yml or the ownership files. An issue apply / add-locale job may
+ * write languages.yml when registering a new locale; that file is merged as
+ * a map of codes (union, never drop) rather than as locale keys.
  */
 
 import { execFileSync } from 'child_process';
@@ -33,23 +35,30 @@ import { parse as parseYaml, stringify as stringifyYaml } from 'yaml';
 import { mergeLocale3 } from './lib/merge3.mjs';
 import { sortKeys } from './lib/source-yaml.mjs';
 import { LANG_RE } from './lib/fill-state.mjs';
+import { applyLanguageMapToText, mergeLanguageMaps, parseLanguagesFile } from './lib/locale-registry.mjs';
 
 let ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 
 const LOCALE_RE = /^locales\/([A-Za-z0-9-]+)\.yml$/;
 const STATE_RE  = /^i18n\/fill-state\/([A-Za-z0-9-]+)\.yml$/;
 const GENERATED = [/^README\.md$/, /^\.github\/badges\//];
-const NEVER     = new Set(['en-US', 'languages']);
+const NEVER     = new Set(['en-US']);
 
 /**
  * Sort the paths `ours` changed into locales to merge, generated files to
- * leave to update-credits, and anything that must not be there.
+ * leave to update-credits, a languages.yml registry merge, and anything
+ * that must not be there.
  */
 export function classifyChanges(paths) {
   const langs = new Set();
   const generated = [];
   const refused = [];
+  let languagesYml = false;
   for (const p of paths) {
+    if (p === 'locales/languages.yml') {
+      languagesYml = true;
+      continue;
+    }
     const locale = LOCALE_RE.exec(p);
     const state = STATE_RE.exec(p);
     const lang = locale?.[1] ?? state?.[1];
@@ -57,7 +66,7 @@ export function classifyChanges(paths) {
     else if (GENERATED.some(re => re.test(p))) generated.push(p);
     else refused.push(p);
   }
-  return { langs: [...langs].sort(), generated, refused };
+  return { langs: [...langs].sort(), generated, refused, languagesYml };
 }
 
 // Same shape the fill and the linter write locale files in.
@@ -69,17 +78,22 @@ function git(args) {
   return execFileSync('git', args, { cwd: ROOT, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
 }
 
-function showMap(ref, path) {
-  let text;
+function showText(ref, path) {
   try {
-    text = execFileSync('git', ['show', `${ref}:${path}`], {
+    const text = execFileSync('git', ['show', `${ref}:${path}`], {
       cwd: ROOT, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'], maxBuffer: 64 * 1024 * 1024,
     });
+    return { exists: true, text };
   } catch {
-    return { exists: false, map: {} };   // not in that commit
+    return { exists: false, text: '' };
   }
+}
+
+function showMap(ref, path) {
+  const shown = showText(ref, path);
+  if (!shown.exists) return { exists: false, map: {} };
   // A file that exists but doesn't parse is a real problem; let it throw.
-  return { exists: true, map: parseYaml(text) ?? {} };
+  return { exists: true, map: parseYaml(shown.text) ?? {} };
 }
 
 function main() {
@@ -94,12 +108,24 @@ function main() {
   const [b, o, t] = [base, ours, theirs].map(r => git(['rev-parse', '--verify', `${r}^{commit}`]).trim());
 
   const changed = git(['diff', '--name-only', b, o]).split('\n').map(s => s.trim()).filter(Boolean);
-  const { langs, generated, refused } = classifyChanges(changed);
+  const { langs, generated, refused, languagesYml } = classifyChanges(changed);
   if (refused.length) {
     console.error(`refusing to re-merge: this job changed files it never should: ${refused.join(', ')}`);
     process.exit(2);
   }
   if (generated.length) console.log(`regenerate after merge: ${generated.join(', ')}`);
+  if (languagesYml) {
+    const [lb, lo, lt] = [b, o, t].map((r) => showText(r, 'locales/languages.yml'));
+    const merged = mergeLanguageMaps({
+      base: parseLanguagesFile(lb.text).languages,
+      ours: parseLanguagesFile(lo.text).languages,
+      theirs: parseLanguagesFile(lt.text).languages,
+    });
+    const text = applyLanguageMapToText(lt.exists ? lt.text : (lo.text || 'languages:\n'), merged);
+    mkdirSync(join(out, 'locales'), { recursive: true });
+    writeFileSync(join(out, 'locales/languages.yml'), text, 'utf8');
+    console.log('merged locales/languages.yml');
+  }
 
   let conflicts = 0;
   for (const lang of langs) {

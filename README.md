@@ -37,7 +37,7 @@ Three things keep this repo healthy:
 | --- | --- |
 | [`locales/en-US.yml`](locales/en-US.yml) | English source. **Read-only here**; edits get overwritten by the app syncs. |
 | `locales/<code>.yml` | One file per target language. This is where translations live. |
-| [`locales/languages.yml`](locales/languages.yml) | Locked list of supported languages with display names. |
+| [`locales/languages.yml`](locales/languages.yml) | Supported languages with display names. Citadel's snapshot is merged on sync; languages registered here are kept. |
 | [`scripts/i18n-translate.mjs`](scripts/i18n-translate.mjs) | The AI translator (Anthropic Claude Haiku 5.5, with prompt caching on the shared rules prefix). Runs in CI; you generally won't run it locally. Needs `ANTHROPIC_API_KEY`. |
 | [`.github/ISSUE_TEMPLATE/translation.yml`](.github/ISSUE_TEMPLATE/translation.yml) | The contribution form. |
 | [`i18n/owners.yml`](i18n/owners.yml) | Which app owns which keys of `en-US.yml`. |

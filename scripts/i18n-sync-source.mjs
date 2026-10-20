@@ -22,20 +22,25 @@
  *   --borrowed <path>    Keys this owner's app reads from other owners: a YAML
  *                        map (key: inline English) or list. Written to
  *                        i18n/consumers/<owner>.yml
- *   --languages <path>   languages.yml to copy (only the owner marked `languages`)
+ *   --languages <path>   languages.yml snapshot (only the owner marked
+ *                        `languages`). Merged with this repo's copy: languages
+ *                        registered here and missing from the snapshot are
+ *                        kept. A straight overwrite wiped Croatian (2026-05-25)
+ *                        and Estonian (2026-06-08).
  *   --root <dir>         Repository root (default: this script's repo)
  *
  * Exits 1, changing nothing, if the source holds a key the owner doesn't own,
  * a key of the wrong shape, or (for ICU owners) a value that doesn't parse.
  */
 
-import { readFileSync, writeFileSync, existsSync, mkdirSync, copyFileSync } from 'fs';
+import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath, pathToFileURL } from 'url';
 import { parse as parseYaml, stringify as stringifyYaml } from 'yaml';
 import { loadOwners, ownerOf, ownerNamed, loadConsumers } from './lib/owners.mjs';
 import { icuArguments, isBorrowableEnglish } from './lib/icu.mjs';
 import { stringifySource } from './lib/source-yaml.mjs';
+import { mergeLanguageRegistryText } from './lib/locale-registry.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -191,7 +196,16 @@ function main() {
     mkdirSync(dir, { recursive: true });
     writeFileSync(join(dir, `${owner.name}.yml`), borrowedOut, 'utf8');
   }
-  if (languagesPath) copyFileSync(languagesPath, join(root, 'locales/languages.yml'));
+  if (languagesPath) {
+    const dest = join(root, 'locales/languages.yml');
+    const upstream = readFileSync(languagesPath, 'utf8');
+    const local = existsSync(dest) ? readFileSync(dest, 'utf8') : '';
+    const { text, extras } = mergeLanguageRegistryText(upstream, local);
+    writeFileSync(dest, text, 'utf8');
+    if (extras.length) {
+      console.log(`kept locally registered languages: ${extras.join(', ')}`);
+    }
+  }
 
   console.log(`${owner.name}: +${added.length} added, ~${changed.length} changed, -${removed.length} removed` +
     `${next === before ? ' (en-US.yml unchanged)' : ''}`);

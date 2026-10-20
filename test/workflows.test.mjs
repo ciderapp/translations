@@ -47,6 +47,36 @@ describe('translation-sweep.yml', () => {
   });
 });
 
+describe('add-locale.yml', () => {
+  const yml = read('.github/workflows/add-locale.yml');
+
+  test('is maintainer-only workflow_dispatch and verifies write access', () => {
+    assert.match(yml, /workflow_dispatch:/);
+    assert.match(yml, /verify-approver\.sh/);
+    assert.match(yml, /ALLOW_NEW_LOCALE:\s*"1"/);
+    assert.match(yml, /scripts\/add-locale\.mjs/);
+  });
+
+  test('reuses the per-issue apply queue when an issue is given', () => {
+    assert.match(yml, /translation-issue-apply-\{0\}/);
+    assert.match(yml, /queue:\s*max/);
+    assert.match(yml, /cancel-in-progress:\s*false/);
+  });
+});
+
+describe('new locale apply flag', () => {
+  test('label apply and sweep set ALLOW_NEW_LOCALE after the approver check', () => {
+    const issue = read('.github/workflows/translation-issue.yml');
+    const sweep = read('.github/workflows/translation-sweep.yml');
+    assert.match(issue, /ALLOW_NEW_LOCALE:\s*"1"/);
+    assert.match(sweep, /ALLOW_NEW_LOCALE:\s*"1"/);
+    assert.doesNotMatch(
+      issue.split('name: Run linter')[1].split('apply:')[0],
+      /ALLOW_NEW_LOCALE/,
+    );
+  });
+});
+
 describe('ai-fill.yml concurrency', () => {
   const yml = read('.github/workflows/ai-fill.yml');
   test('queues overlapping fills instead of dropping them', () => {
