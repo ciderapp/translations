@@ -870,7 +870,9 @@ ciderAudio.marketplacePresetMigrationNotice: "Yksi tai useampi määrittämäsi 
   <br>\r
 
   Uusien esiasetusten asentaminen Marketplacesta palauttaa aiemmat asetuksesi."
+client.boot.backendUnavailable: Cider ei voinut käynnistää paikallista palveluaan porttiin 10767. Toinen ohjelma saattaa käyttää porttia. Sulje se ohjelma ja avaa Cider uudelleen.
 client.boot.cancel: Peruuta
+client.boot.elevatedWarning: Cider on käynnissä järjestelmänvalvojana. Asetusten vioittumisen välttämiseksi Cider ei tallenna muutoksia tässä istunnossa. Sulje Cider ja avaa se uudelleen tavallisesti.
 client.boot.failedDetailDefault: Jotain meni vikaan sovellusta valmisteltaessa. Voit yrittää uudelleen tai käyttää jotakin alla olevista palautusvaihtoehdoista palataksesi raiteilleen.
 client.boot.failedTitle: Cider ei voinut käynnistyä
 client.boot.initializing: Alustetaan Cideria...
@@ -880,6 +882,9 @@ client.boot.loadingWindowConfig: Ladataan ikkunan määrityksiä...
 client.boot.noAppData: Ei AppData-kansiota uudelleenrakennettavaksi. Napsauta Yritä uudelleen käynnistääksesi Ciderin.
 client.boot.openAppData: Avaa AppData
 client.boot.openAppDataDesc: Näytä lokit ja asetukset
+client.boot.permissionDenied: Cider ei voi lukea tai kirjoittaa datakansiotaan. Näin tapahtuu yleensä, kun Cider on kerran käynnistetty järjestelmänvalvojana ja kansion omistaa tili, jota tavallinen kirjautuminen ei voi muokata.
+client.boot.permissionRepairCopied: (Korjauskomennot kopioitiin leikepöydälle.)
+client.boot.permissionRepairInstruction: "Sulje Cider, avaa Terminal tai Komentokehote järjestelmänvalvojana, suorita nämä kaksi komentoa ja käynnistä Cider sen jälkeen tavallisesti:"
 client.boot.preparing: Valmistellaan Ciderin käynnistämistä...
 client.boot.quit: Lopeta
 client.boot.ready: Cider on valmis.
@@ -3108,10 +3113,18 @@ playbackHealth.localIssue: Paikallinen toisto-ongelma
 playbackHealth.widevineReady.actionHint: Käynnistä Cider uudelleen napsauttamalla.
 playbackHealth.widevineReady.auto: Cider käynnistyy itsestään uudelleen, kun toisto on ollut keskeytettynä 5 minuuttia Ciderin ollessa auki. Jonosi palautuu uudelleenkäynnistyksen jälkeen.
 playbackHealth.widevineReady.badge: Tällä tietokoneella on päivitetty Widevine. Käynnistä Cider uudelleen, jotta vaihto PlayReadysta takaisin tapahtuu.
+playbackHealth.widevineReady.badgeRefused: Tältä tietokoneelta löytyy päivitetty Widevine. Käynnistä Cider uudelleen, jotta voit toistaa Apple Musicia.
 playbackHealth.widevineReady.body: Cider löysi tältä tietokoneelta päivitetyn Widevinen. Käynnistä Cider uudelleen, jotta vaihto PlayReadysta takaisin tapahtuu ja äänitehosteet sekä Dolby Atmos otetaan jälleen käyttöön.
+playbackHealth.widevineReady.bodyRefused: Cider löysi tältä tietokoneelta päivitetyn Widevinen. Käynnistä Cider uudelleen, jotta voit toistaa Apple Musicia.
 playbackHealth.widevineReady.later: Myöhemmin
 playbackHealth.widevineReady.manual: Jonon palautus on pois käytöstä, joten uudelleenkäynnistys tyhjentää jonon.
 playbackHealth.widevineReady.title: Widevine on jälleen valmis
+playbackHealth.widevineRefused.badge: Apple Music ei enää hyväksy tämän tietokoneen Widevinea.
+playbackHealth.widevineRefused.badgeAwaiting: Apple Music ei enää hyväksy tämän tietokoneen Widevinea. Cider hakee päivitystä ja pyytää sinua käynnistämään sovelluksen uudelleen.
+playbackHealth.widevineRefused.body: Widevine, sisällönsuojaus jota Apple Music yleensä käyttää, on vanhentunut tällä tietokoneella, eikä Apple Music enää hyväksy sitä. Microsoft PlayReady, jolle Cider vaihtaisi, ei ole käytettävissä tällä tietokoneella.
+playbackHealth.widevineRefused.label: Widevine on vanhentunut
+playbackHealth.widevineRefused.timelineAwaiting: Sinun ei tarvitse tehdä mitään. Cider hakee päivitettyä Widevinea, joka yleensä saapuu muutamassa minuutissa, ja pyytää sinua käynnistämään Ciderin uudelleen, kun se on valmis.
+playbackHealth.widevineRefused.title: Apple Music ei voi toistaa juuri nyt
 playbackSpeed.keepPitch: Säilytä sävelkorkeus
 playbackSpeed.preset.normal: Normaali
 playbackSpeed.preset.slowed: Hidastettu
@@ -4156,6 +4169,10 @@ settings.option.accessibility.forceFocusVisible: Näytä aina tarkennuskehys
 settings.option.accessibility.forceFocusVisible.description: Pakota näkyvä reunus kohdistetuille elementeille näppäimistönavigointia varten.
 settings.option.accessibility.highContrast: Suuri kontrasti
 settings.option.accessibility.highContrast.description: Parantaa tekstin, taustan ja käyttöliittymän osien välistä kontrastia.
+settings.option.accessibility.libraryAddAnimation: Lisäysanimaatio
+settings.option.accessibility.libraryAddAnimation.description: Kuinka kirjastoon tai soittolistaan lisääminen tai kappaleen suosikkiin merkitseminen vahvistetaan. Genie lähettää kuvituksen kopion sivupalkin kohdalle. Vähennetty liike käyttää aina pulssia.
+settings.option.accessibility.libraryAddAnimation.genie: Genie
+settings.option.accessibility.libraryAddAnimation.pulse: Pulssi
 settings.option.accessibility.motion: Liike
 settings.option.accessibility.motionIntensity: Liikkeen voimakkuus
 settings.option.accessibility.motionIntensity.description: Säätää, kuinka paljon painikkeet ja pinnat liikkuvat, kun osoitin viedään niiden päälle tai niitä painetaan. Valitse ”Ei mitään” poistaaksesi liikkeen kokonaan; ”Leikkisä” lisää ylimääräistä joustavuutta.
