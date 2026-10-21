@@ -870,7 +870,9 @@ ciderAudio.marketplacePresetMigrationNotice: "En eller flera av de Cider Audio-f
   <br>\r
 
   Om du installerar de nya förinställningarna från Marketplace återställs dina tidigare inställningar."
+client.boot.backendUnavailable: Cider kunde inte starta sin lokala tjänst på port 10767. Ett annat program kan använda den. Stäng det programmet och öppna Cider igen.
 client.boot.cancel: Avbryt
+client.boot.elevatedWarning: Cider körs som administratör. För att undvika att dina inställningar skadas sparar Cider inga ändringar under den här sessionen. Stäng Cider och öppna det igen på vanligt sätt.
 client.boot.failedDetailDefault: Något gick fel när appen förbereddes. Du kan försöka igen eller använda något av återställningsalternativen nedan för att komma igång igen.
 client.boot.failedTitle: Cider kunde inte starta
 client.boot.initializing: Initierar Cider...
@@ -880,6 +882,9 @@ client.boot.loadingWindowConfig: Läser in fönsterkonfiguration...
 client.boot.noAppData: Ingen AppData-mapp att bygga om. Klicka på Försök igen för att starta Cider.
 client.boot.openAppData: Öppna AppData
 client.boot.openAppDataDesc: Visa loggar och konfiguration
+client.boot.permissionDenied: Cider kan inte läsa eller skriva i sin datamapp. Detta händer oftast när Cider har startats som administratör en gång, vilket gör att mappen ägs av ett konto som din vanliga inloggning inte kan ändra.
+client.boot.permissionRepairCopied: (Reparationskommandon har kopierats till Urklipp.)
+client.boot.permissionRepairInstruction: "Stäng Cider, öppna Terminal eller Kommandotolken som administratör och kör de två kommandona nedan. Starta sedan Cider på vanligt sätt:"
 client.boot.preparing: Förbereder att starta Cider...
 client.boot.quit: Avsluta
 client.boot.ready: Cider är redo.
@@ -3108,10 +3113,18 @@ playbackHealth.localIssue: Lokalt uppspelningsproblem
 playbackHealth.widevineReady.actionHint: Klicka för att starta om Cider.
 playbackHealth.widevineReady.auto: Cider startar om av sig självt när uppspelningen har varit pausad i 5 minuter medan Cider är öppet. Din kö återställs efter omstarten.
 playbackHealth.widevineReady.badge: En uppdaterad version av Widevine finns på den här datorn. Starta om Cider för att växla tillbaka från PlayReady.
+playbackHealth.widevineReady.badgeRefused: En uppdaterad Widevine finns på datorn. Starta om Cider för att spela Apple Music igen.
 playbackHealth.widevineReady.body: Cider hittade en uppdaterad version av Widevine på den här datorn. Starta om Cider för att växla tillbaka från PlayReady och slå på ljudeffekter och Dolby Atmos igen.
+playbackHealth.widevineReady.bodyRefused: Cider hittade en uppdaterad Widevine på datorn. Starta om Cider för att spela Apple Music igen.
 playbackHealth.widevineReady.later: Senare
 playbackHealth.widevineReady.manual: Återställning av kön är av, så en omstart rensar kön.
 playbackHealth.widevineReady.title: Widevine är redo igen
+playbackHealth.widevineRefused.badge: Apple Music godkänner inte längre Widevine på datorn.
+playbackHealth.widevineRefused.badgeAwaiting: Apple Music godkänner inte längre Widevine på datorn. Cider hämtar en uppdatering och ber dig starta om.
+playbackHealth.widevineRefused.body: Widevine, det kopieringsskydd Apple Music normalt använder, är föråldrat på datorn och Apple Music godkänner det inte längre. Microsoft PlayReady, som Cider skulle byta till, finns inte tillgängligt på datorn.
+playbackHealth.widevineRefused.label: Widevine är föråldrat
+playbackHealth.widevineRefused.timelineAwaiting: Du behöver inte göra något. Cider hämtar en uppdaterad Widevine, vilket vanligtvis tar några minuter, och ber dig starta om Cider när den är klar.
+playbackHealth.widevineRefused.title: Apple Music kan inte spelas just nu
 playbackSpeed.keepPitch: Behåll tonhöjd
 playbackSpeed.preset.normal: Normal
 playbackSpeed.preset.slowed: Långsammare
@@ -4156,6 +4169,10 @@ settings.option.accessibility.forceFocusVisible: Visa alltid fokusram
 settings.option.accessibility.forceFocusVisible.description: Tvinga fram en synlig kontur på fokuserade element för tangentbordsnavigering.
 settings.option.accessibility.highContrast: Hög kontrast
 settings.option.accessibility.highContrast.description: Ökar kontrasten mellan text, bakgrunder och gränssnittselement.
+settings.option.accessibility.libraryAddAnimation: Lägg till animering
+settings.option.accessibility.libraryAddAnimation.description: Hur det bekräftas när du lägger till något i biblioteket eller en spellista, eller gillar en låt. Genie skickar en kopia av omslaget till dess plats i sidofältet. Minskad rörelse använder alltid pulsen.
+settings.option.accessibility.libraryAddAnimation.genie: Genie
+settings.option.accessibility.libraryAddAnimation.pulse: Puls
 settings.option.accessibility.motion: Rörelse
 settings.option.accessibility.motionIntensity: Rörelseintensitet
 settings.option.accessibility.motionIntensity.description: Styr hur mycket rörelse knappar och ytor använder vid hovring och tryck. Välj 'Ingen' för att inaktivera rörelse helt; 'Lekfull' lägger till extra studs.
