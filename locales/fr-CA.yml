@@ -870,7 +870,9 @@ ciderAudio.marketplacePresetMigrationNotice: "Un ou plusieurs préréglages des 
   <br>\r
 
   L'installation des nouveaux préréglages depuis le Cider Marketplace restaurera vos paramètres précédents."
+client.boot.backendUnavailable: Cider n'a pas pu démarrer son service local sur le port 10767. Un autre programme l'utilise peut-être. Fermez ce programme, puis ouvrez Cider à nouveau.
 client.boot.cancel: Annuler
+client.boot.elevatedWarning: Cider s'exécute en tant qu'administrateur. Pour éviter d'endommager vos paramètres, il n'enregistrera pas les modifications pendant cette session. Veuillez fermer Cider, puis l'ouvrir normalement.
 client.boot.failedDetailDefault: Une erreur est survenue lors de la préparation de l'application. Vous pouvez réessayer ou utiliser l'une des options de récupération ci-dessous pour rétablir la situation.
 client.boot.failedTitle: Cider n'a pas pu démarrer
 client.boot.initializing: Initialisation de Cider...
@@ -880,6 +882,9 @@ client.boot.loadingWindowConfig: Chargement de la configuration de la fenêtre..
 client.boot.noAppData: Aucun dossier AppData à reconstruire. Cliquez sur Réessayer pour démarrer Cider.
 client.boot.openAppData: Ouvrir AppData
 client.boot.openAppDataDesc: Afficher les journaux et la config
+client.boot.permissionDenied: Cider ne peut pas lire ni écrire dans son dossier de données. Cela se produit généralement lorsque Cider a été lancé une fois en tant qu'administrateur, ce qui a laissé le dossier appartenir à un compte que votre ouverture de session habituelle ne peut pas modifier.
+client.boot.permissionRepairCopied: (Les commandes de réparation ont été copiées dans le presse-papiers.)
+client.boot.permissionRepairInstruction: "Fermez Cider, ouvrez Terminal ou Invite de commandes en tant qu'administrateur, exécutez ces deux commandes, puis démarrez Cider normalement :"
 client.boot.preparing: Préparation du lancement de Cider...
 client.boot.quit: Quitter
 client.boot.ready: Cider est prêt.
@@ -3108,10 +3113,18 @@ playbackHealth.localIssue: Problème de lecture locale
 playbackHealth.widevineReady.actionHint: Cliquez pour redémarrer Cider.
 playbackHealth.widevineReady.auto: Cider redémarre automatiquement lorsque la lecture est en pause depuis 5 minutes pendant que Cider est ouvert. Votre file d'attente est restaurée après le redémarrage.
 playbackHealth.widevineReady.badge: Une version à jour de Widevine est installée sur cet ordinateur. Redémarrez Cider pour revenir de PlayReady à Widevine.
+playbackHealth.widevineReady.badgeRefused: Une version mise à jour de Widevine est installée sur ce PC. Redémarrez Cider pour lire à nouveau Apple Music.
 playbackHealth.widevineReady.body: Cider a trouvé une version à jour de Widevine sur cet ordinateur. Redémarrez Cider pour revenir de PlayReady à Widevine et réactiver les effets audio et Dolby Atmos.
+playbackHealth.widevineReady.bodyRefused: Cider a trouvé une version mise à jour de Widevine sur ce PC. Redémarrez Cider pour lire à nouveau Apple Music.
 playbackHealth.widevineReady.later: Plus tard
 playbackHealth.widevineReady.manual: La restauration de la file d'attente est désactivée. Le redémarrage vide donc la file d'attente.
 playbackHealth.widevineReady.title: Widevine est de nouveau prêt
+playbackHealth.widevineRefused.badge: Apple Music n'accepte plus le Widevine de ce PC.
+playbackHealth.widevineRefused.badgeAwaiting: Apple Music n'accepte plus le Widevine de ce PC. Cider obtient une mise à jour et vous demandera de redémarrer.
+playbackHealth.widevineRefused.body: Widevine, la protection contre la copie qu'Apple Music utilise normalement, est désuet sur ce PC, et Apple Music ne l'accepte plus. Microsoft PlayReady, vers lequel Cider passerait, n'est pas disponible sur ce PC.
+playbackHealth.widevineRefused.label: Widevine est désuet
+playbackHealth.widevineRefused.timelineAwaiting: Vous n'avez rien à faire. Cider obtient une version mise à jour de Widevine, qui arrive généralement en quelques minutes, et vous demandera de redémarrer Cider lorsqu'elle sera prête.
+playbackHealth.widevineRefused.title: Apple Music ne peut pas lire pour le moment
 playbackSpeed.keepPitch: Conserver la hauteur
 playbackSpeed.preset.normal: Normale
 playbackSpeed.preset.slowed: Ralentie
@@ -4156,6 +4169,10 @@ settings.option.accessibility.forceFocusVisible: Toujours afficher le contour de
 settings.option.accessibility.forceFocusVisible.description: Force un contour visible sur les éléments sélectionnés pour la navigation au clavier.
 settings.option.accessibility.highContrast: Contraste élevé
 settings.option.accessibility.highContrast.description: Augmente le contraste entre le texte, les arrière-plans et les éléments de l'interface.
+settings.option.accessibility.libraryAddAnimation: Ajouter une animation
+settings.option.accessibility.libraryAddAnimation.description: Confirmation lors de l'ajout à votre bibliothèque ou à une liste de lecture, ou lors de l'ajout d'une chanson aux favoris. Genie envoie une copie de l'illustration vers sa place dans la barre latérale. La réduction des mouvements utilise toujours l'animation Pulse.
+settings.option.accessibility.libraryAddAnimation.genie: Genie
+settings.option.accessibility.libraryAddAnimation.pulse: Pulse
 settings.option.accessibility.motion: Mouvement
 settings.option.accessibility.motionIntensity: Intensité des animations
 settings.option.accessibility.motionIntensity.description: Contrôle l'intensité du mouvement des boutons et des surfaces au survol et à la pression. Choisissez « Aucun » pour désactiver complètement le mouvement; « Ludique » ajoute un effet de rebond supplémentaire.
