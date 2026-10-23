@@ -122,10 +122,10 @@ action.addToPlaylist.skipDuplicates: 跳过重复项
 action.addToPlaylist.toggleFolder: 折叠/展开文件夹
 action.addToPlaylist.tracksCount: "{count} 首曲目"
 action.addToQueue:
-  value: 添加到队列
+  value: 添加到待播清单
   source: human
-  by: "@Tesutarin"
-  issue: 19
+  by: "@jay900604"
+  issue: 134
 action.addToQueue.error:
   value: 添加到待播清单时出错
   source: ai
@@ -608,10 +608,10 @@ action.queueGuard.playAndClear:
   by: "@Tesutarin"
   issue: 32
 action.queueGuard.prompt:
-  value: 播放此内容后，你想继续播放之前加入队列的音乐吗？
+  value: 播放完此内容后，要继续播放之前添加到待播清单的音乐吗？
   source: human
-  by: "@Tesutarin"
-  issue: 32
+  by: "@jay900604"
+  issue: 134
 action.quit.consent:
   value: 确定要退出应用吗？
   source: ai
@@ -849,16 +849,20 @@ action.signOut:
   superseded_at: 2026-10-16
 action.skip: 跳过
 action.smartQueue.disable:
-  value: 关闭智能队列
+  value: 关闭智能待播清单
   source: human
-  by: "@Tesutarin"
-  issue: 7
+  by: "@jay900604"
+  issue: 134
 action.smartQueue.enable:
-  value: 开启智能队列
+  value: 开启智能待播清单
   source: human
-  by: "@Tesutarin"
-  issue: 7
-action.smartQueue.requiresAutomix: 智能队列需要自动混音
+  by: "@jay900604"
+  issue: 134
+action.smartQueue.requiresAutomix:
+  value: 智能待播清单需要开启自动过渡
+  source: human
+  by: "@jay900604"
+  issue: 134
 action.start:
   value: 开始
   source: human
@@ -1267,7 +1271,11 @@ assistant.sid.bubble.open: 打开 Sid 的选曲
 assistant.sid.bubble.replay: 显示 Sid 的说明
 assistant.sid.card.add: 添加 {count} 首歌曲
 assistant.sid.card.added: 已添加到 {playlist}
-assistant.sid.card.addedToQueue: 已添加到播放队列
+assistant.sid.card.addedToQueue:
+  value: 已添加到待播清单
+  source: human
+  by: "@jay900604"
+  issue: 134
 assistant.sid.card.addOne: 添加 1 首歌曲
 assistant.sid.card.addTitle: 添加到 {playlist}
 assistant.sid.card.afterSet: 排在 Sid 选出的歌曲之后。
@@ -1278,7 +1286,11 @@ assistant.sid.card.clearOne: 清除 1 首歌曲
 assistant.sid.card.clearTitle: 清除待播歌曲？
 assistant.sid.card.created: 已创建 {name}
 assistant.sid.card.failed: 操作未成功。请稍后再试。
-assistant.sid.card.guest: 你正在参与一次共同聆听，队列由主持人控制。
+assistant.sid.card.guest:
+  value: 你正在参与共同聆听，待播清单由主持人控制。
+  source: human
+  by: "@jay900604"
+  issue: 134
 assistant.sid.card.inLibrary: 在你的资料库中
 assistant.sid.card.leftOut: 已排除 {count} 首无法播放或你标记为“少推荐”的歌曲。
 assistant.sid.card.leftOutOne: 已排除 1 首无法播放或你标记为“少推荐”的歌曲。
@@ -1289,7 +1301,11 @@ assistant.sid.card.notApplied: 未应用
 assistant.sid.card.notNow: 暂不
 assistant.sid.card.open: 打开 {name}
 assistant.sid.card.playing: 正在播放
-assistant.sid.card.playLast: 添加到队列
+assistant.sid.card.playLast:
+  value: 添加到待播清单末尾
+  source: human
+  by: "@jay900604"
+  issue: 134
 assistant.sid.card.playLastTitle: 稍后播放
 assistant.sid.card.playlistChanged: 自 Sid 读取后，此播放列表已更改。请重新询问以重做。
 assistant.sid.card.playNext: 下一首播放
@@ -1298,10 +1314,26 @@ assistant.sid.card.playNow: 立即播放
 assistant.sid.card.playNowTitle: 准备播放
 assistant.sid.card.plays: "{count} 次播放"
 assistant.sid.card.playsOne: 1 次播放
-assistant.sid.card.queueApplied: 你的队列已更新
-assistant.sid.card.queueChanged: 自 Sid 查看后，你的队列已发生变化。请重新询问以重做。
-assistant.sid.card.queued: 已加入队列
-assistant.sid.card.queueUnavailable: Sid 目前还无法更改此版本中的队列。
+assistant.sid.card.queueApplied:
+  value: 已更新待播清单
+  source: human
+  by: "@jay900604"
+  issue: 134
+assistant.sid.card.queueChanged:
+  value: 自 Sid 上次查看以来，你的待播清单已发生变化。请重新发送请求。
+  source: human
+  by: "@jay900604"
+  issue: 134
+assistant.sid.card.queued:
+  value: 已添加到待播清单
+  source: human
+  by: "@jay900604"
+  issue: 134
+assistant.sid.card.queueUnavailable:
+  value: Sid 暂时无法在此版本中更改待播清单。
+  source: human
+  by: "@jay900604"
+  issue: 134
 assistant.sid.card.redo: 重新询问
 assistant.sid.card.refining: Sid 正在更新此计划。
 assistant.sid.card.retry: 重试
@@ -1320,10 +1352,22 @@ assistant.sid.chat.endConfirmTitle: 结束此对话？
 assistant.sid.chat.findingPlaylist: 正在查找你的播放列表
 assistant.sid.chat.foundPlaylist: 已找到 {playlist}
 assistant.sid.chat.foundPlaylists: 已找到 {count} 个播放列表
-assistant.sid.chat.fromQueue: 已从你的队列中选出 {songs}
+assistant.sid.chat.fromQueue:
+  value: 已从你的待播清单中选出 {songs}
+  source: human
+  by: "@jay900604"
+  issue: 134
 assistant.sid.chat.greet: 你好！我们来听点什么？
-assistant.sid.chat.greetDetail: 我可以查找并播放音乐、整理你的队列、编排播放列表，或介绍你的播放习惯。
-assistant.sid.chat.greetDetailNoQueue: 我可以查找并加入队列中的音乐、编排播放列表，或介绍你的播放习惯。
+assistant.sid.chat.greetDetail:
+  value: 我可以查找并播放音乐、整理待播清单、创建播放列表，或介绍你的聆听习惯。
+  source: human
+  by: "@jay900604"
+  issue: 134
+assistant.sid.chat.greetDetailNoQueue:
+  value: 我可以查找音乐并将其添加到待播清单、创建播放列表，或介绍你的聆听习惯。
+  source: human
+  by: "@jay900604"
+  issue: 134
 assistant.sid.chat.jumpLatest: 跳到最新
 assistant.sid.chat.loading: 正在准备 Sid
 assistant.sid.chat.newConfirmTitle: 开始新对话？
@@ -1334,19 +1378,39 @@ assistant.sid.chat.playlistUnread: Sid 无法读取 {playlist}。请稍后再试
 assistant.sid.chat.queueDetail: 接下来 {songs}
 assistant.sid.chat.readingListening: 正在查看你的播放习惯
 assistant.sid.chat.readingPlaylist: 正在读取 {playlist}
-assistant.sid.chat.readingQueue: 正在查看你的队列
+assistant.sid.chat.readingQueue:
+  value: 正在读取待播清单
+  source: human
+  by: "@jay900604"
+  issue: 134
 assistant.sid.chat.readListening: 已查看你的收听记录
-assistant.sid.chat.readQueue: 已读取你的队列
+assistant.sid.chat.readQueue:
+  value: 已读取待播清单
+  source: human
+  by: "@jay900604"
+  issue: 134
 assistant.sid.chat.steps: "{count} 个步骤"
 assistant.sid.chat.stepsOne: 1 个步骤
 assistant.sid.chat.stopped: 你已停止此操作。
 assistant.sid.chat.suggestLikeThis: 播放类似的音乐
 assistant.sid.chat.suggestMostPlayed: 我最常听什么？
 assistant.sid.chat.suggestNowPlaying: 正在播放什么？
-assistant.sid.chat.suggestQueuePlaylist: 用我的队列创建播放列表
-assistant.sid.chat.suggestTidyQueue: 整理我的队列
+assistant.sid.chat.suggestQueuePlaylist:
+  value: 根据我的待播清单创建播放列表
+  source: human
+  by: "@jay900604"
+  issue: 134
+assistant.sid.chat.suggestTidyQueue:
+  value: 整理我的待播清单
+  source: human
+  by: "@jay900604"
+  issue: 134
 assistant.sid.chat.tooBig: 内容太多，我无法一次读取。请尝试更简短的请求。
-assistant.sid.chat.workingQueue: 正在处理你的队列
+assistant.sid.chat.workingQueue:
+  value: 正在整理待播清单
+  source: human
+  by: "@jay900604"
+  issue: 134
 assistant.sid.engine.apple: Apple Intelligence
 assistant.sid.engine.gemma: Gemma
 assistant.sid.entry.edit: 与 Sid 一起编辑
@@ -1511,7 +1575,11 @@ assistant.sid.set.fromRequest: 你的请求
 assistant.sid.set.fromStation: 根据曲目打造的电台
 assistant.sid.set.notFound: 找不到“{search}”。要换个方式再试一次吗？
 assistant.sid.set.nothingPlaying: 请先播放一首歌，然后再问我。
-assistant.sid.set.notQueued: 无法将其添加到队列。
+assistant.sid.set.notQueued:
+  value: 无法将其添加到待播清单。
+  source: human
+  by: "@jay900604"
+  issue: 134
 assistant.sid.set.queued: "{title}（{artist}）{where}。{reason}。"
 assistant.sid.set.request: 你的请求
 assistant.sid.set.whereAfterNext: 紧随下一首之后
@@ -1549,7 +1617,11 @@ assistant.sid.settings.inImmersiveDetail: 沉浸布局中的 Sid 标签页和气
 assistant.sid.settings.inNewPlaylist: 新建播放列表时
 assistant.sid.settings.inNewPlaylistDetail: 在新建播放列表对话框中从 Sid 开始
 assistant.sid.settings.inPlayer: 音乐播放时
-assistant.sid.settings.inPlayerDetail: Sid 的设置位于队列和播放器菜单中
+assistant.sid.settings.inPlayerDetail:
+  value: Sid 的设置位于待播清单和播放器菜单中
+  source: human
+  by: "@jay900604"
+  issue: 134
 assistant.sid.settings.intro: Sid 帮你打造播放列表，就在这台电脑上运行。
 assistant.sid.settings.inUse: 使用中 · {size}
 assistant.sid.settings.machine: 这台电脑
@@ -1626,7 +1698,11 @@ assistant.sid.setView.requestPlaceholder: 向 Sid 请求一首歌
 assistant.sid.setView.start: 开始
 assistant.sid.setView.startSet: 开始 Sid 的合辑
 assistant.sid.setView.stayInKey: 保持调性
-assistant.sid.setView.stayInKeyDetail: 仅在兼容的调性之间混音
+assistant.sid.setView.stayInKeyDetail:
+  value: 仅在兼容的调性之间过渡
+  source: human
+  by: "@jay900604"
+  issue: 134
 assistant.sid.setView.subtitleActive: Sid 正在选择接下来播放的内容
 assistant.sid.setView.subtitleIdle: Sid 选择接下来播放的内容
 assistant.sid.setView.title: Sid 的合辑
@@ -4321,7 +4397,11 @@ mobile.settings.appearance.reduceEffectsAutoDevice: 在此手机上减少
 mobile.settings.appearance.reduceEffectsAutoFull: 只要此手机性能足够，就启用所有效果
 mobile.settings.appearance.reduceEffectsAutoHeat: 手机发热时减少
 mobile.settings.appearance.reduceEffectsAutoLateFrames: 已减少：此手机曾出现掉帧
-mobile.settings.appearance.reduceEffectsFootnote: 减少效果后，应用将跳过屏幕边缘和栏后方的模糊、播放器倒影、动态封面以及动态波纹，以便在性能不足的手机上保持流畅。
+mobile.settings.appearance.reduceEffectsFootnote:
+  value: 开启「减少动态效果」后，应用将不再显示屏幕边缘和栏后方的模糊效果、播放器倒影、动画插图及动态波纹，以便在性能有限的手机上保持流畅运行。
+  source: human
+  by: "@jay900604"
+  issue: 134
 mobile.settings.appearance.reduceEffectsNever: 在所有手机上启用所有效果
 mobile.settings.appearance.reduceEffectsOff: 关闭
 mobile.settings.appearance.reduceEffectsOn: 开启
@@ -4331,7 +4411,11 @@ mobile.settings.appearance.themeDevice: 跟随系统
 mobile.settings.appearance.themeSubtitle: 选择浅色或深色外观
 mobile.settings.appearance.titlesBelow: 封面下方显示标题
 mobile.settings.appearance.titlesBelowSubtitle: 在纯色背景上于封面下方显示曲目标题，而非叠在封面上。更易阅读，并以简洁列表取代折叠轮播。
-mobile.settings.audio.adrenalineShort: Adrenaline
+mobile.settings.audio.adrenalineShort:
+  value: 数字音频增强
+  source: human
+  by: "@jay900604"
+  issue: 134
 mobile.settings.audio.atmosAlways: 始终
 mobile.settings.audio.atmosAlwaysSubtitle: 只要此设备能解码，即使使用立体声扬声器也播放杜比全景声
 mobile.settings.audio.atmosAutomaticSubtitle: 当此输出设备能够呈现时播放杜比全景声
@@ -4410,12 +4494,24 @@ mobile.settings.behavior.swipeRight: 向右滑动
 mobile.settings.beta.badge: 测试版
 mobile.settings.beta.body: 许多功能仍在开发中。功能和设置可能会在更新中更改或调整位置，部分功能（如下载）尚不可用。
 mobile.settings.beta.reportProblem: 报告问题
-mobile.settings.beta.title: Cider for Android 处于测试阶段
-mobile.settings.cache.artworkCache: 封面缓存
+mobile.settings.beta.title:
+  value: Android 版 Cider 仍处于测试阶段
+  source: human
+  by: "@jay900604"
+  issue: 134
+mobile.settings.cache.artworkCache:
+  value: 插图缓存
+  source: human
+  by: "@jay900604"
+  issue: 134
 mobile.settings.cache.calculating: 正在计算…
 mobile.settings.cache.maxSize: 最大缓存大小
 mobile.settings.cache.maxSizeSubtitle: 重启后生效
-mobile.settings.cache.motionArtwork: 动态封面
+mobile.settings.cache.motionArtwork:
+  value: 动画插图
+  source: human
+  by: "@jay900604"
+  issue: 134
 mobile.settings.cache.pageCache: 页面缓存
 mobile.settings.cache.pageCacheSubtitle: 保存您访问过的页面，以便无需等待即可打开
 mobile.settings.cache.pages: 页面
@@ -4425,7 +4521,11 @@ mobile.settings.categories.appearance: 外观
 mobile.settings.categories.appearanceSubtitle: 主题、颜色、圆角
 mobile.settings.categories.assistant: 助手
 mobile.settings.categories.audio: 音频
-mobile.settings.categories.audioSubtitle: 淡入淡出、无缝播放、音量标准化
+mobile.settings.categories.audioSubtitle:
+  value: 歌曲过渡、无缝播放、音量平衡
+  source: human
+  by: "@jay900604"
+  issue: 134
 mobile.settings.categories.audioSubtitleCiderAudio: Cider Audio、均衡器、淡入淡出、Sound Check
 mobile.settings.categories.behaviorSubtitle: 歌曲滑动、通知操作、默认设置
 mobile.settings.categories.cache: 缓存
@@ -4447,15 +4547,39 @@ mobile.settings.categories.navigationBar: 导航栏
 mobile.settings.categories.navigationBarSubtitle: 样式、标签页、滚动时收起
 mobile.settings.categories.playback: 播放
 mobile.settings.categories.player: 播放器
-mobile.settings.categories.playerSubtitle: 播放按钮、自适应颜色、动态封面
+mobile.settings.categories.playerSubtitle:
+  value: 播放按钮、自适应颜色、动画插图
+  source: human
+  by: "@jay900604"
+  issue: 134
 mobile.settings.categories.sidSubtitle: 你的播放列表小助手
 mobile.settings.categories.storage: 存储
-mobile.settings.ciderAudio.adrenaline: Adrenaline 处理器
-mobile.settings.ciderAudio.adrenalineProfile: Adrenaline 配置
-mobile.settings.ciderAudio.adrenalineSubtitle: 基于人类听觉模型及 AAC 编码原理，增强 AAC 流媒体的音质
+mobile.settings.ciderAudio.adrenaline:
+  value: Adrenaline 处理器
+  source: human
+  by: "@jay900604"
+  issue: 134
+mobile.settings.ciderAudio.adrenalineProfile:
+  value: 数字增强音频处理器配置
+  source: human
+  by: "@jay900604"
+  issue: 134
+mobile.settings.ciderAudio.adrenalineSubtitle:
+  value: 模拟顶尖音频设备的声场，呈现与众不同的音乐氛围。
+  source: human
+  by: "@jay900604"
+  issue: 134
 mobile.settings.ciderAudio.effects: 音效
-mobile.settings.ciderAudio.realizerProfile: Realizer 配置
-mobile.settings.ciderAudio.realizerSubtitle: 营造不同的音乐氛围，参照顶级音频设备模拟
+mobile.settings.ciderAudio.realizerProfile:
+  value: 临场音效
+  source: human
+  by: "@jay900604"
+  issue: 134
+mobile.settings.ciderAudio.realizerSubtitle:
+  value: 根据特定设备的声学特性进行调整，使音效更符合 Cider 的风格。
+  source: human
+  by: "@jay900604"
+  issue: 134
 mobile.settings.ciderAudio.selected: 已选择
 mobile.settings.ciderAudio.spatialProfile: 空间化配置
 mobile.settings.ciderAudio.spatialSubtitle: 预调的空间效果，拓宽声场
@@ -4993,7 +5117,11 @@ mobile.sort.recentlyUpdated: 最近更新
 mobile.sort.shortestFirst: 从短到长
 mobile.sort.title: 标题
 mobile.sort.zToA: Z 到 A
-mobile.soundFinder.adrenalineOn: 已开启 Adrenaline 处理器
+mobile.soundFinder.adrenalineOn:
+  value: 已开启数字音频增强处理器
+  source: human
+  by: "@jay900604"
+  issue: 134
 mobile.soundFinder.lessBass: 减少低音
 mobile.soundFinder.lessTreble: 减少高音
 mobile.soundFinder.lessVocals: 减弱人声存在感
@@ -5638,7 +5766,11 @@ playbackHealth.keySystemFallback.bodyExpired: Apple Music 通常使用的版权�
 playbackHealth.keySystemFallback.dismiss: 知道了
 playbackHealth.keySystemFallback.label: 通过 PlayReady 播放
 playbackHealth.keySystemFallback.limits: 使用 PlayReady 时，均衡器、Audio Lab 和其他音频效果将关闭，杜比全景声曲目将以立体声播放，音频输出到默认输出设备。
-playbackHealth.keySystemFallback.stallWorkaround: 如果曲目在开头卡住，请在“音频”设置的“混音”部分关闭“交叉淡化”和“自动混音”。Cider 更新将修复此问题。
+playbackHealth.keySystemFallback.stallWorkaround:
+  value: 如果曲目在开头卡住，请前往“音频”设置中的“歌曲过渡”部分，关闭“渐入渐出”和“自动过渡”。此问题将在后续 Cider 更新中修复。
+  source: human
+  by: "@jay900604"
+  issue: 134
 playbackHealth.keySystemFallback.timeline: 下次启动时，Cider 会再次尝试 Widevine。
 playbackHealth.keySystemFallback.timelineExpired: 你无需进行任何操作。Cider 正在等待更新后的 Widevine，通常几分钟内即可到位，届时会通知你可以切换回来。
 playbackHealth.keySystemFallback.title: Apple Music 正在通过 PlayReady 播放
@@ -6132,17 +6264,20 @@ settings.audio.atmos:
   by: "@Tesutarin"
   issue: 7
 settings.audio.atmos.binaural.desc:
-  value: 通过 CiderAudio 将 Atmos 渲染为双耳立体声。交叉淡化、自动混音和无缝过渡仍可正常使用。
-  source: ai
-  by: "@Tesutarin"
-  issue: 32
-  superseded_at: 2026-10-16
+  value: 通过 Cider Audio 将 Dolby Atmos 渲染为双耳立体声。交叉渐入渐出、自动过渡和无缝衔接仍可正常使用。
+  source: human
+  by: "@jay900604"
+  issue: 134
 settings.audio.atmos.description:
   value: 为当前输出设备配置 Atmos 播放。
   source: human
   by: "@Tesutarin"
   issue: 7
-settings.audio.atmos.normalizationHint: 杜比全景声混音的音量比立体声母带更低。开启音频标准化可使其保持一致。
+settings.audio.atmos.normalizationHint:
+  value: 杜比全景声混音的音量通常低于立体声母带。开启音量平衡可使两者的音量保持一致。
+  source: human
+  by: "@jay900604"
+  issue: 134
 settings.audio.atmos.off.desc:
   value: Atmos 已停用，所有内容将以标准立体声播放。
   source: human
@@ -6165,11 +6300,10 @@ settings.audio.atmos.passthroughActive:
   by: "@Tesutarin"
   issue: 25
 settings.audio.atmos.standard.desc:
-  value: 经 CiderAudio 处理的多声道 Atmos。交叉淡化、自动混音和无缝过渡仍可正常使用。
-  source: ai
-  by: "@Tesutarin"
-  issue: 32
-  superseded_at: 2026-10-16
+  value: 通过 Cider Audio 处理 Dolby Atmos 多声道音频。交叉渐入渐出、自动过渡和无缝衔接仍可正常使用。
+  source: human
+  by: "@jay900604"
+  issue: 134
 settings.audio.atmosMode:
   value: Atmos 模式
   source: ai
@@ -6195,10 +6329,10 @@ settings.audio.card.advancedVolume: 高级音量
 settings.audio.card.badges: 徽章
 settings.audio.card.streaming: 流媒体
 settings.audio.ciderAudio:
-  value: Cider 音频
+  value: Cider Audio
   source: human
-  by: "@Tesutarin"
-  issue: 7
+  by: "@jay900604"
+  issue: 134
 settings.audio.ciderAudio.description:
   value: 经过专门调校设计的音频架构，带来丰富的高品质听觉体验。推荐优先于传统均衡器使用。
   source: human
@@ -6272,11 +6406,15 @@ settings.audio.lab.capProfile:
   by: "@Tesutarin"
   issue: 7
 settings.audio.lab.enableHint:
-  value: 启用 Cider 音频以访问音频实验室配置文件。
+  value: 开启 Cider Audio，即可使用音频实验室配置。
   source: human
-  by: "@Tesutarin"
-  issue: 25
-settings.audio.lab.passthroughNote: 启用 Dolby Atmos 直通时将绕过 Audio Lab。请将 Atmos 模式切换为“标准”或“双耳”以听取这些设置的效果。
+  by: "@jay900604"
+  issue: 134
+settings.audio.lab.passthroughNote:
+  value: 开启 Dolby Atmos 直通后，音频实验室的处理将被绕过。要听到这些设置的效果，请将 Atmos 模式切换为「标准」或「双耳」。
+  source: human
+  by: "@jay900604"
+  issue: 134
 settings.audio.lab.spatialProfile:
   value: 定制空间音频
   source: human
@@ -6337,8 +6475,16 @@ settings.audio.radio.processing: 处理
 settings.audio.section.ciderAudio: Cider Audio 与指示器
 settings.audio.section.ciderAudio.description: Cider 音频处理架构以及播放曲目时显示的徽章。
 settings.audio.section.currentSignal: 当前信号
-settings.audio.section.mixing: 混音
-settings.audio.section.mixing.description: 曲目之间的过渡融合方式，以及是否消除曲目间的间隙。
+settings.audio.section.mixing:
+  value: 歌曲过渡
+  source: human
+  by: "@jay900604"
+  issue: 134
+settings.audio.section.mixing.description:
+  value: 设置歌曲之间的过渡效果，以及是否无缝衔接曲目。
+  source: human
+  by: "@jay900604"
+  issue: 134
 settings.audio.section.output: 输出
 settings.audio.section.output.description: Cider 播放所使用的设备以及音频输出方式。
 settings.audio.section.playback: 播放
@@ -7353,11 +7499,10 @@ settings.contentFilter.title:
   issue: 8
   superseded_at: 2026-10-16
 settings.crossfade.advanced:
-  value: 高级交叉淡化设置
-  source: ai
-  by: "@Tesutarin"
-  issue: 19
-  superseded_at: 2026-10-16
+  value: 高级交叉渐入渐出设置
+  source: human
+  by: "@jay900604"
+  issue: 134
 settings.crossfade.automixStillBlends: 自动混音已开启，因此歌曲仍可能相互衔接。关闭下方的自动混音即可停止所有衔接。
 settings.crossfade.description:
   value: 在当前曲目平滑淡出的同时，让下一首曲目淡入。
@@ -7376,11 +7521,10 @@ settings.crossfade.duration:
   by: "@Tesutarin"
   issue: 8
 settings.crossfade.enable:
-  value: 启用交叉淡化
-  source: ai
-  by: "@Tesutarin"
-  issue: 19
-  superseded_at: 2026-10-16
+  value: 启用交叉渐入渐出
+  source: human
+  by: "@jay900604"
+  issue: 134
 settings.crossfade.exclusions.albums:
   value: 专辑
   source: human
@@ -8286,15 +8430,15 @@ settings.intensive.animatedArtwork.description:
   by: "@jay900604"
   issue: 74
 settings.intensive.animatedArtworkQuality.description:
-  value: 更高的质量会解码更大的动态插图视频流。
+  value: 更高的画质需要解码更大的动画插图视频。
   source: human
   by: "@jay900604"
-  issue: 74
+  issue: 134
 settings.intensive.catalogAnimatedArtwork.description:
-  value: 在浏览目录时同时播放多个动态插图。
+  value: 浏览目录时，同时播放多个动画插图。
   source: human
   by: "@jay900604"
-  issue: 74
+  issue: 134
 settings.intensive.characterFlow.description: 逐字播放歌词动画，而非整行播放。
 settings.intensive.confirm.enable: 启用
 settings.intensive.confirm.message: 此功能对性能要求较高，可能显著增加 CPU/GPU 占用、发热和电量消耗，尤其是在低端硬件上。你可以随时在“设置 › 电源用量”中查看高耗能功能。
@@ -8309,10 +8453,10 @@ settings.intensive.fsrUpscale.description:
   by: "@jay900604"
   issue: 74
 settings.intensive.immersiveAnimatedArtwork.description:
-  value: 在沉浸式视图中播放动态插图。
+  value: 在沉浸模式下播放动画插图。
   source: human
   by: "@jay900604"
-  issue: 74
+  issue: 134
 settings.intensive.immersiveAnimatedBackground.description:
   value: 使沉浸式视图的背景呈现动态效果。
   source: human
@@ -8325,10 +8469,10 @@ settings.intensive.immersiveBackground.description:
   issue: 74
 settings.intensive.lcdChromaticAberration.description: 为“正在播放”的 LCD 玻璃效果添加 RGB 边缘色差通道。
 settings.intensive.miniPlayerAnimatedArtwork.description:
-  value: 在迷你播放器窗口中保持播放动态插图。
+  value: 在迷你播放器窗口中持续播放动画插图。
   source: human
   by: "@jay900604"
-  issue: 74
+  issue: 134
 settings.intensive.playerMaterial.description: “流光玻璃”通过实时着色器折射播放栏。
 settings.intensive.realtimeVisualizer.description: 实时分析音频，在播放的曲目上绘制视觉效果。
 settings.intensive.singEngine.description: （旧版）在 CPU 上逐帧渲染 Sing 动画。
@@ -8840,7 +8984,11 @@ settings.nav.summary.accessibility: 粗体文本、界面缩放、动效、音�
 settings.nav.summary.advanced: 备份、故障排除、实验性功能
 settings.nav.summary.audio: 输出、音质、交叉淡化、音量标准化
 settings.nav.summary.concerts: 位置、半径、排序
-settings.nav.summary.connectivity: Discord、听歌记录、一起听、远程控制
+settings.nav.summary.connectivity:
+  value: Discord、听歌记录、聆听派对、遥控器
+  source: human
+  by: "@jay900604"
+  issue: 134
 settings.nav.summary.extensions: 主题、CSS 片段、插件
 settings.nav.summary.general: 启动、队列、睡眠定时器、快捷键
 settings.nav.summary.lyrics: 来源、翻译、显示、时间同步
@@ -8852,7 +9000,11 @@ settings.nav.summary.smartPlaylists: 智能播放列表的规则与维护
 settings.nav.summary.subscriberYear: 订阅一年
 settings.nav.summary.subscriberYears: 订阅 {{count}} 年
 settings.nav.summary.tweaks: 播放器、侧边栏等的小幅调整
-settings.nav.summary.visual: 配色方案、布局、窗口、沉浸式
+settings.nav.summary.visual:
+  value: 配色方案、布局、窗口、沉浸模式
+  source: human
+  by: "@jay900604"
+  issue: 134
 settings.nav.themes:
   value: 主题
   source: human
@@ -10027,11 +10179,10 @@ settings.option.audio.mixing:
   by: "@Tesutarin"
   issue: 8
 settings.option.audio.normalization:
-  value: 音频标准化
-  source: ai
-  by: "@Tesutarin"
-  issue: 28
-  superseded_at: 2026-10-16
+  value: 音量平衡
+  source: human
+  by: "@jay900604"
+  issue: 134
 settings.option.audio.normalization.description:
   value: 自动调整每首曲目的音量，使其响度保持一致。音量较小的曲目会被安全地提升，音量较大的曲目则会被调低。
   source: ai
@@ -10309,11 +10460,10 @@ settings.option.connectivity.discordRPC.buttons.viewOnOtherMusicServices:
   issue: 10
   superseded_at: 2026-07-08
 settings.option.connectivity.discordRPC.clearOnPause:
-  value: 暂停时清除 Discord Rich Presence
-  source: ai
-  by: "@Tesutarin"
-  issue: 28
-  superseded_at: 2026-07-08
+  value: 暂停时清除 Discord 活动状态
+  source: human
+  by: "@jay900604"
+  issue: 134
 settings.option.connectivity.discordRPC.clientName:
   value: 客户端名称
   source: ai
@@ -10321,11 +10471,10 @@ settings.option.connectivity.discordRPC.clientName:
   issue: 10
   superseded_at: 2026-07-08
 settings.option.connectivity.discordRPC.customize:
-  value: 自定义您的 Discord Rich Presence
-  source: ai
-  by: "@Tesutarin"
-  issue: 28
-  superseded_at: 2026-07-08
+  value: 自定义您的 Discord 活动状态
+  source: human
+  by: "@jay900604"
+  issue: 134
 settings.option.connectivity.discordRPC.customize.applyButton:
   value: 应用
   source: human
@@ -10443,11 +10592,10 @@ settings.option.connectivity.discordRPC.firstButton:
   issue: 10
   superseded_at: 2026-07-08
 settings.option.connectivity.discordRPC.hideButtons:
-  value: 在 Discord Rich Presence 上隐藏按钮
-  source: ai
-  by: "@Tesutarin"
-  issue: 28
-  superseded_at: 2026-07-08
+  value: 在 Discord 活动状态上隐藏按钮
+  source: human
+  by: "@jay900604"
+  issue: 134
 settings.option.connectivity.discordRPC.hideTimestamp:
   value: 在 Discord 活动状态上隐藏时间戳
   source: human
@@ -10589,9 +10737,21 @@ settings.option.connectivity.lastfmScrobble.removeFeatured:
   by: "@Tesutarin"
   issue: 10
   superseded_at: 2026-07-08
-settings.option.connectivity.parties: 一起听
-settings.option.connectivity.partiesEnabled: 启用一起听
-settings.option.connectivity.partiesEnabled.description: 与其他 Cider 用户一起发起或加入同步听歌会。
+settings.option.connectivity.parties:
+  value: 聆听派对
+  source: human
+  by: "@jay900604"
+  issue: 134
+settings.option.connectivity.partiesEnabled:
+  value: 启用聆听派对
+  source: human
+  by: "@jay900604"
+  issue: 134
+settings.option.connectivity.partiesEnabled.description:
+  value: 与其他 Cider 用户一起创建或加入同步聆听派对。
+  source: human
+  by: "@jay900604"
+  issue: 134
 settings.option.connectivity.partiesQueueDefault: 默认队列模式
 settings.option.connectivity.partiesQueueDefault.audited: 主持人批准添加
 settings.option.connectivity.partiesQueueDefault.description: 在您主持的派对中，访客添加歌曲是否需要您的批准。
@@ -13771,7 +13931,11 @@ settings.visual.card.browse: 浏览
 settings.visual.card.contentFilter: 内容过滤
 settings.visual.card.experimental: 实验性
 settings.visual.card.fsrUpscaling: FSR 放大
-settings.visual.card.moreAnimatedArtwork: 更多动态封面
+settings.visual.card.moreAnimatedArtwork:
+  value: 更多动画插图
+  source: human
+  by: "@jay900604"
+  issue: 134
 settings.visual.card.playerEffects: 播放器效果
 settings.visual.card.sidebarNavigation: 侧边栏与导航
 settings.visual.card.trackMetadata: 曲目元数据
@@ -13802,10 +13966,10 @@ settings.visual.section.artwork:
   issue: 74
   superseded_at: 2026-10-16
 settings.visual.section.artwork.description:
-  value: 动态插图和动态效果偏好设置。
+  value: 动画插图与动态效果的偏好设置。
   source: human
   by: "@jay900604"
-  issue: 74
+  issue: 134
 settings.visual.section.content: 浏览与内容
 settings.visual.section.content.description: 页面布局、浏览偏好设置和内容过滤。
 settings.visual.section.customCss.description: 在 Cider 样式之上应用您自己的 CSS。
