@@ -1274,9 +1274,17 @@ ciderAudio.marketplacePresetMigrationNotice:
   source: human
   by: "@jay900604"
   issue: 58
-client.boot.backendUnavailable: Cider 無法在連接埠 10767 啟動本機服務。可能有其他程式正在使用該連接埠。請關閉該程式後重新開啟 Cider。
+client.boot.backendUnavailable:
+  value: Cider 無法在連接埠 10767 啟動本機服務。此連接埠可能正由其他程式使用。請關閉占用該連接埠的程式，再重新啟動 Cider。
+  source: human
+  by: "@jay900604"
+  issue: 133
 client.boot.cancel: 取消
-client.boot.elevatedWarning: Cider 目前以系統管理員身分執行。為避免損壞您的設定，本次工作階段將不會儲存任何變更。請關閉 Cider 後以一般方式重新開啟。
+client.boot.elevatedWarning:
+  value: Cider 目前以系統管理員身分執行。為避免設定遭到損毀，此工作階段中的變更將不會儲存。請關閉 Cider，再以一般使用者身分打開程式。
+  source: human
+  by: "@jay900604"
+  issue: 133
 client.boot.failedDetailDefault:
   value: 準備應用程式時發生錯誤。你可以再試一次，或使用下方的復原選項來恢復正常。
   source: human
@@ -1302,9 +1310,21 @@ client.boot.openAppData:
   by: "@jay900604"
   issue: 63
 client.boot.openAppDataDesc: 顯示記錄檔與設定
-client.boot.permissionDenied: Cider 無法讀取或寫入其資料資料夾。這通常是因為 Cider 曾以系統管理員身分啟動過一次，導致該資料夾的擁有者變成您一般登入帳號無法修改的帳戶。
-client.boot.permissionRepairCopied: （修復指令已複製到您的剪貼簿。）
-client.boot.permissionRepairInstruction: 請關閉 Cider，以系統管理員身分開啟「終端機」或「命令提示字元」，執行以下兩道指令，然後再以一般方式啟動 Cider：
+client.boot.permissionDenied:
+  value: Cider 無法讀取或寫入其資料夾。這通常是因為 Cider 曾以系統管理員身分執行，導致資料夾的擁有權變更，讓你目前使用的帳戶無法存取。
+  source: human
+  by: "@jay900604"
+  issue: 133
+client.boot.permissionRepairCopied:
+  value: （修復指令已拷貝到剪貼簿。）
+  source: human
+  by: "@jay900604"
+  issue: 133
+client.boot.permissionRepairInstruction:
+  value: 請先關閉 Cider，再以系統管理員身分執行「終端機」或「命令提示字元」，輸入與執行以下兩道指令。完成後，請以一般使用者身分重新啟動 Cider：
+  source: human
+  by: "@jay900604"
+  issue: 133
 client.boot.preparing: 正在準備啟動 Cider...
 client.boot.quit: 結束
 client.boot.ready: Cider 已就緒。
@@ -3956,8 +3976,16 @@ mobile.settings.player.pulseButton: 播放按鈕脈動
 mobile.settings.player.pulseButtonSubtitle: 播放按鈕隨每個節拍放大
 mobile.settings.player.pulseTitle: 標題脈動
 mobile.settings.player.pulseTitleSubtitle: 曲目標題隨每個節拍跳動
-mobile.settings.player.pulseWave: 讓波形跟著節拍跳動
-mobile.settings.player.pulseWaveSubtitle: 波形進度條會隨每個節拍升起
+mobile.settings.player.pulseWave:
+  value: 讓波形隨節拍跳動
+  source: human
+  by: "@jay900604"
+  issue: 133
+mobile.settings.player.pulseWaveSubtitle:
+  value: 波形進度列會隨著每個節拍起伏
+  source: human
+  by: "@jay900604"
+  issue: 133
 mobile.settings.player.reflection: 倒影
 mobile.settings.player.reflectionAlways: 總是
 mobile.settings.player.reflectionAlwaysSubtitle:
@@ -5396,21 +5424,65 @@ playbackHealth.localIssue:
 playbackHealth.widevineReady.actionHint: 點一下以重新啟動 Cider。
 playbackHealth.widevineReady.auto: Cider 開啟期間，若播放暫停超過 5 分鐘，將自動重新啟動。重新啟動後，你的播放佇列會恢復。
 playbackHealth.widevineReady.badge: 此電腦上已有更新版的 Widevine。重新啟動 Cider 即可從 PlayReady 切換回來。
-playbackHealth.widevineReady.badgeFallback: Cider 可切換回內建的 Widevine。重新啟動 Cider 即可使用。
-playbackHealth.widevineReady.badgeRefused: 此電腦上已有更新版 Widevine。請重新啟動 Cider 以再次播放 Apple Music。
+playbackHealth.widevineReady.badgeFallback:
+  value: Cider 可切換回內建的 Widevine。重新啟動 Cider 即可套用更改。
+  source: human
+  by: "@jay900604"
+  issue: 133
+playbackHealth.widevineReady.badgeRefused:
+  value: 此電腦上的 Widevine 版本較新。請重新啟動 Cider，以恢復 Apple Music 播放功能。
+  source: human
+  by: "@jay900604"
+  issue: 133
 playbackHealth.widevineReady.body: Cider 在此電腦上偵測到更新版的 Widevine。重新啟動 Cider 即可從 PlayReady 切換回來，並重新開啟音訊效果和杜比全景聲。
-playbackHealth.widevineReady.bodyFallback: 此電腦下載的 Widevine 已不再被 Apple Music 接受。重新啟動 Cider 即可切換回內建的 Widevine，並重新透過 Widevine 播放。重新啟動後，音效與 Dolby Atmos 將恢復使用。
-playbackHealth.widevineReady.bodyFallbackRefused: 此電腦下載的 Widevine 已不再被 Apple Music 接受。重新啟動 Cider 即可切換回內建的 Widevine，並重新透過 Widevine 播放。重新啟動後，Apple Music 將恢復播放。
-playbackHealth.widevineReady.bodyRefused: Cider 在此電腦上找到更新版 Widevine。請重新啟動 Cider 以再次播放 Apple Music。
+playbackHealth.widevineReady.bodyFallback:
+  value: 此電腦上的 Widevine 版本已不再受 Apple Music 支援。重新啟動 Cider，即可切換回內建的 Widevine，並繼續播放音樂。重新啟動後，音效與 Dolby Atmos 也會恢復正常。
+  source: human
+  by: "@jay900604"
+  issue: 133
+playbackHealth.widevineReady.bodyFallbackRefused:
+  value: 此電腦上的 Widevine 版本已不再受 Apple Music 支援。重新啟動 Cider，即可切換回內建的 Widevine，並恢復 Apple Music 播放功能。
+  source: human
+  by: "@jay900604"
+  issue: 133
+playbackHealth.widevineReady.bodyRefused:
+  value: Cider 偵測到此電腦上有較新版本的 Widevine。請重新啟動 Cider，以恢復 Apple Music 播放功能。
+  source: human
+  by: "@jay900604"
+  issue: 133
 playbackHealth.widevineReady.later: 稍後
 playbackHealth.widevineReady.manual: 佇列還原功能已關閉，因此重新啟動會清除播放佇列。
 playbackHealth.widevineReady.title: Widevine 已恢復正常
-playbackHealth.widevineRefused.badge: Apple Music 不再接受此電腦上的 Widevine。
-playbackHealth.widevineRefused.badgeAwaiting: Apple Music 不再接受此電腦上的 Widevine。Cider 正在取得更新，完成後會請您重新啟動。
-playbackHealth.widevineRefused.body: Widevine 是 Apple Music 通常使用的版權保護技術，此電腦上的版本已過時，Apple Music 不再接受。Cider 原本可改用的 Microsoft PlayReady 在此電腦上無法使用。
-playbackHealth.widevineRefused.label: Widevine 已過時
-playbackHealth.widevineRefused.timelineAwaiting: 您不需要採取任何動作。Cider 正在取得更新版 Widevine，通常幾分鐘內即可完成，準備好後會請您重新啟動 Cider。
-playbackHealth.widevineRefused.title: Apple Music 目前無法播放
+playbackHealth.widevineRefused.badge:
+  value: Apple Music 不再支援此電腦上的 Widevine 版本。
+  source: human
+  by: "@jay900604"
+  issue: 133
+playbackHealth.widevineRefused.badgeAwaiting:
+  value: Apple Music 不再支援此電腦上的 Widevine 版本。Cider 正在下載更新，完成後會提示您重新啟動。
+  source: human
+  by: "@jay900604"
+  issue: 133
+playbackHealth.widevineRefused.body:
+  value: Widevine 是 Apple Music 通常使用的版權保護技術，但此電腦上的版本已過時，不再受 Apple Music 支援。Cider 原本可改用的 Microsoft PlayReady，目前無法在此電腦上使用。
+  source: human
+  by: "@jay900604"
+  issue: 133
+playbackHealth.widevineRefused.label:
+  value: Widevine 版本過舊
+  source: human
+  by: "@jay900604"
+  issue: 133
+playbackHealth.widevineRefused.timelineAwaiting:
+  value: 你目前不需要採取任何動作。Cider 正在下載新版 Widevine，通常只需幾分鐘。準備就緒後，系統會提醒你重新啟動 Cider。
+  source: human
+  by: "@jay900604"
+  issue: 133
+playbackHealth.widevineRefused.title:
+  value: 目前無法播放 Apple Music
+  source: human
+  by: "@jay900604"
+  issue: 133
 playbackSpeed.keepPitch: 保持音調
 playbackSpeed.preset.normal: 正常
 playbackSpeed.preset.slowed: 放慢
@@ -5565,11 +5637,15 @@ playlist.refresh.title:
   by: "@jay900604"
   issue: 6
 playlist.suggestions.subtitle:
-  value: 預覽並加入播放列表
+  value: 試聽並加入播放列表
   source: human
   by: "@jay900604"
-  issue: 103
-playlist.suggestions.title: 推薦歌曲
+  issue: 133
+playlist.suggestions.title:
+  value: 建議的歌曲
+  source: human
+  by: "@jay900604"
+  issue: 133
 playlist.untitled: 未命名
 plugin.install.byAuthor: 作者：{author}
 plugin.install.identifier: 識別碼
@@ -5690,7 +5766,11 @@ settings.about.socials.x: X
 settings.about.sponsors.github: GitHub Sponsors
 settings.about.sponsors.kofi: Ko-fi
 settings.about.sponsors.opencollective: Open Collective
-settings.about.thirdPartyLicenses: 第三方授權
+settings.about.thirdPartyLicenses:
+  value: 第三方授權資訊
+  source: human
+  by: "@jay900604"
+  issue: 133
 settings.about.thirdPartyLicenses.desc: 這些是 Cider 使用的第三方素材、函式庫和工具。請參閱其各自的授權條款以取得更多資訊。
 settings.about.viewLicense: 檢視授權條款
 settings.accessibility.card.textSize: 文字與大小
@@ -5741,11 +5821,10 @@ settings.artwork.hiresImages:
 settings.artwork.hiresImages.warning: 可能會增加載入時間並降低效能。
 settings.audio.atmos: Dolby Atmos
 settings.audio.atmos.binaural.desc:
-  value: Atmos 透過 CiderAudio 以雙耳立體聲呈現。交叉淡化、自動混音與無縫轉場會如預期般持續運作。
-  source: ai
+  value: Atmos 透過 Cider Audio 以雙耳立體聲呈現。交叉淡入淡出、自動混音與無縫過渡會如預期般持續運作。
+  source: human
   by: "@jay900604"
-  issue: 59
-  superseded_at: 2026-10-16
+  issue: 133
 settings.audio.atmos.description:
   value: 為你目前的輸出裝置設定 Atmos 播放。
   source: human
@@ -6778,7 +6857,11 @@ settings.immersive.focusMode.title: 專注模式設定
 settings.intensive.animateArtworkOnHover.description: 當滑鼠游標懸停在媒體項目上時，開始播放插圖動畫。
 settings.intensive.animatedArtwork.description: 在可用時播放動態專輯插圖。
 settings.intensive.animatedArtworkQuality.description: 較高畫質會解碼較大的動態插圖影片串流。
-settings.intensive.catalogAnimatedArtwork.description: 在瀏覽目錄時同時播放多個動態插圖。
+settings.intensive.catalogAnimatedArtwork.description:
+  value: 在瀏覽資料庫時，同時播放多個動態插圖。
+  source: human
+  by: "@jay900604"
+  issue: 133
 settings.intensive.characterFlow.description: 逐字播放歌詞動畫，而非整行播放。
 settings.intensive.confirm.enable: 啟用
 settings.intensive.confirm.message:
@@ -6984,10 +7067,10 @@ settings.nav.summary.audio:
   issue: 103
 settings.nav.summary.concerts: 位置、範圍、排序
 settings.nav.summary.connectivity:
-  value: Discord、聆聽記錄、音樂派對、遙控器
+  value: Discord、聆聽記錄、聆聽派對、遙控器
   source: human
   by: "@jay900604"
-  issue: 119
+  issue: 133
 settings.nav.summary.extensions:
   value: 佈景主題、CSS 片段、延伸功能
   source: human
@@ -7170,10 +7253,26 @@ settings.option.accessibility.forceFocusVisible.description:
   issue: 85
 settings.option.accessibility.highContrast: 高對比
 settings.option.accessibility.highContrast.description: 提高文字、背景和介面元素之間的對比度。
-settings.option.accessibility.libraryAddAnimation: 新增動畫
-settings.option.accessibility.libraryAddAnimation.description: 加入資料庫或播放列表，或將歌曲加入最愛時的確認方式。Genie 會將封面的副本移動到側邊欄的對應位置。減少動態效果時一律使用脈動效果。
-settings.option.accessibility.libraryAddAnimation.genie: 精靈
-settings.option.accessibility.libraryAddAnimation.pulse: 脈動
+settings.option.accessibility.libraryAddAnimation:
+  value: 加入項目動畫
+  source: human
+  by: "@jay900604"
+  issue: 133
+settings.option.accessibility.libraryAddAnimation.description:
+  value: 設定將項目加入資料庫或播放列表，以及將歌曲加入最愛時的確認動畫。「精靈」效果會將專輯插圖的副本移動到側邊欄中的對應位置。打開「減少動態效果」時，一律改用脈動效果。
+  source: human
+  by: "@jay900604"
+  issue: 133
+settings.option.accessibility.libraryAddAnimation.genie:
+  value: 精靈效果
+  source: human
+  by: "@jay900604"
+  issue: 133
+settings.option.accessibility.libraryAddAnimation.pulse:
+  value: 脈動效果
+  source: human
+  by: "@jay900604"
+  issue: 133
 settings.option.accessibility.motion: 動態效果
 settings.option.accessibility.motionIntensity: 動態強度
 settings.option.accessibility.motionIntensity.description:
@@ -7267,11 +7366,10 @@ settings.option.advanced.lyrics.lineStaggeringImmersive.description: 較消耗�
 settings.option.advanced.lyrics.scaleOnAny: 允許任何字詞使用縮放效果
 settings.option.advanced.lyrics.scaleOnAny.description: 允許縮放任意單詞，而不僅限於強調的單詞
 settings.option.advanced.lyrics.singEngine:
-  value: 沉浸式演唱引擎
-  source: ai
+  value: 沉浸模式演唱引擎
+  source: human
   by: "@jay900604"
-  issue: 39
-  superseded_at: 2026-07-30
+  issue: 133
 settings.option.advanced.lyrics.singEngine.classic: 經典
 settings.option.advanced.lyrics.singEngine.description:
   value: 適用於沉浸式檢視的開唱引擎。「經典」採用輕量化 CSS 動畫，是低階系統的最佳選擇。側邊欄將一律使用「經典」。
@@ -7763,15 +7861,15 @@ settings.option.connectivity.lastfmScrobble.manualToken.link:
 settings.option.connectivity.lastfmScrobble.nowPlaying: 啟用 Last.FM 「播放中」狀態
 settings.option.connectivity.lastfmScrobble.removeFeatured: 從歌曲標題中移除客串藝人 (Last.fm)
 settings.option.connectivity.parties:
-  value: 音樂派對
+  value: 聆聽派對
   source: human
   by: "@jay900604"
-  issue: 119
+  issue: 133
 settings.option.connectivity.partiesEnabled:
-  value: 啟用音樂派對
+  value: 啟用聆聽派對
   source: human
   by: "@jay900604"
-  issue: 119
+  issue: 133
 settings.option.connectivity.partiesEnabled.description: 與其他 Cider 使用者一起舉辦或加入同步聆聽活動。
 settings.option.connectivity.partiesQueueDefault: 預設佇列模式
 settings.option.connectivity.partiesQueueDefault.audited: 由主辦者核准新增
@@ -8037,8 +8135,16 @@ settings.option.general.startupPage.description:
   by: "@jay900604"
   issue: 58
 settings.option.general.startupPage.descriptionV2: Cider 在新分頁中開啟的頁面；當「啟動時」設為「開啟啟動頁面」時，也會在啟動時開啟此頁面。
-settings.option.general.startupPage.descriptionV3: Cider 啟動時開啟的頁面。
-settings.option.general.startupPage.newTab: 新分頁頁面
+settings.option.general.startupPage.descriptionV3:
+  value: 設定 Cider 啟動時要顯示的頁面。
+  source: human
+  by: "@jay900604"
+  issue: 133
+settings.option.general.startupPage.newTab:
+  value: 新分頁
+  source: human
+  by: "@jay900604"
+  issue: 133
 settings.option.general.startupPage.personalHome: 個人首頁
 settings.option.general.themeUpdateNotification: 自動檢查主題更新
 settings.option.general.translationCredits: 翻譯致謝
@@ -8051,10 +8157,10 @@ settings.option.general.translators.description:
   issue: 6
 settings.option.general.useSmartQueueByDefault: 預設使用智慧待播清單
 settings.option.general.useSmartQueueByDefault.description:
-  value: 建立待播清單時，預設套用「智慧佇列」順序。需要啟用「自動混音」。
+  value: 建立待播清單時，預設使用「智慧佇列」排序。此功能需要啟用「自動混音」。
   source: human
   by: "@jay900604"
-  issue: 85
+  issue: 133
 settings.option.general.useSmartQueueByDefault.needsAutomix: 「音訊」中的自動混音已關閉，因此智慧佇列不會重新排序任何項目。
 settings.option.general.warnBeforeQueueOverride:
   value: 取代待播清單前彈出視窗提醒
@@ -8218,23 +8324,31 @@ settings.option.performance.graphicsAcceleration.autoOff: 因為此電腦以軟�
 settings.option.performance.graphicsAcceleration.description: 「自動」會在以軟體繪製圖形的虛擬機器中關閉此功能。變更會在下次啟動 Cider 時生效。
 settings.option.performance.host: 主機
 settings.option.performance.immersiveRenderer:
-  value: 沉浸式算繪器
+  value: 沉浸模式算繪器
   source: human
   by: "@jay900604"
-  issue: 103
+  issue: 133
 settings.option.performance.immersiveRenderer.description: 若動態背景異常或佔用過多 GPU，請使用 Canvas 2D 代替 WebGPU。
 settings.option.performance.libraryQueueLimit: 資料庫佇列限制
 settings.option.performance.libraryQueueLimit.description: 限制可從資料庫加入佇列的歌曲數量，輸入 0 表示不限制。較高的值或不限制可能會導致效能問題。
 settings.option.performance.limitBlurMapFramerateOnBlur: 視窗未處於焦點時限制動態背景影格率
-settings.option.performance.limitBlurMapFramerateOnBlur.description: 當視窗未處於焦點時，降低沉浸式動態背景的影格率以節省電力。關閉此選項可使其保持全速運作。
-settings.option.performance.limitImmersiveBgFramerateOnBlur: 未聚焦時限制沉浸式背景畫面播放速率
+settings.option.performance.limitBlurMapFramerateOnBlur.description:
+  value: 當視窗未處於焦點時，降低沉浸模式動態背景的影格率以節省電力。關閉此選項可使其保持全速運作。
+  source: human
+  by: "@jay900604"
+  issue: 133
+settings.option.performance.limitImmersiveBgFramerateOnBlur:
+  value: 未聚焦時限制沉浸模式背景畫面播放速率
+  source: human
+  by: "@jay900604"
+  issue: 133
 settings.option.performance.motion: 動態效果
 settings.option.performance.powerSaverOnBattery: 使用電池時節電
 settings.option.performance.powerSaverOnBattery.description:
-  value: 當裝置使用電池供電時，沉浸式背景的算繪格率最高為每秒 30 影格率，且歌詞動畫限制在每秒 60 影格率。
+  value: 當裝置使用電池供電時，沉浸模式背景的算繪格率最高為每秒 30 影格率，且歌詞動畫限制在每秒 60 影格率。
   source: human
   by: "@jay900604"
-  issue: 84
+  issue: 133
 settings.option.performance.preloadSidebarPages: 預載側邊欄頁面
 settings.option.performance.preloadSidebarPages.description:
   value: 在你打開側邊欄頁面之前先進行載入。「指標懸停」會在游標停在側邊欄項目上時開始載入。「系統閒置」則會在啟動後載入「立即聆聽」、「瀏覽」和「廣播」，並重新整理你之前打開過的資料庫清單。
@@ -8345,10 +8459,10 @@ settings.option.visual.adaptiveColorPercent:
   issue: 85
   superseded_at: 2026-10-16
 settings.option.visual.additionalAnimatedArtwork:
-  value: 目錄中的額外動態插圖
+  value: 資料庫中的其他動態插圖
   source: human
   by: "@jay900604"
-  issue: 103
+  issue: 133
 settings.option.visual.additionalAnimatedArtwork.description:
   value: 在可用時顯示更多動態插圖。螢幕上顯示過多動態插圖可能會降低效能。
   source: human
@@ -8396,7 +8510,11 @@ settings.option.visual.animatedWindowBackground: 動態視窗背景
 settings.option.visual.artistHeaderAlignment: 藝人標題版面
 settings.option.visual.artistHeaderAlignment.center: 置中
 settings.option.visual.artistHeaderAlignment.description: 設定藝人姓名與操作按鈕在藝人頁面標頭中的位置。
-settings.option.visual.artistHeaderAlignment.left: 靠左 (預設)
+settings.option.visual.artistHeaderAlignment.left:
+  value: 靠左（預設）
+  source: human
+  by: "@jay900604"
+  issue: 133
 settings.option.visual.artworkLoadingMethod: 封面載入方式
 settings.option.visual.artworkLoadingMethod.eager: 立即載入
 settings.option.visual.artworkLoadingMethod.lazy: 延遲載入
@@ -8600,8 +8718,16 @@ settings.option.visual.immersiveLayout.sonoma: Sonoma
 settings.option.visual.immersiveLayout.sonoma.description: 專輯插圖融入背景，配上懸浮控制卡片。
 settings.option.visual.immersiveLayout.spectrumDeck: Spectrum Deck
 settings.option.visual.immersiveLayout.spectrumDeck.description: 即時頻譜場景配上懸浮專輯插圖。
-settings.option.visual.immersiveStyle: 沉浸式樣式
-settings.option.visual.immersiveStylePortrait: 沉浸式樣式（直向）
+settings.option.visual.immersiveStyle:
+  value: 沉浸模式的樣式
+  source: human
+  by: "@jay900604"
+  issue: 133
+settings.option.visual.immersiveStylePortrait:
+  value: 沉浸模式樣式（直向）
+  source: human
+  by: "@jay900604"
+  issue: 133
 settings.option.visual.largeHeaderTitles: 大型標頭標題
 settings.option.visual.largeHeaderTitles.description: 放大專輯和播放列表頁面上的標題文字，使其外觀更醒目。
 settings.option.visual.layoutProfile: 版面配置設定檔類型
@@ -8696,7 +8822,11 @@ settings.option.visual.paletteContrast:
   source: human
   by: "@jay900604"
   issue: 103
-settings.option.visual.paletteContrast.description: 調整專輯和播放清單色彩與頁面的對比程度，以確保按鈕和播放指示器清晰易讀。「高對比」輔助功能設定將始終使用「最高」。
+settings.option.visual.paletteContrast.description:
+  value: 調整專輯和播放列表色彩與頁面的對比程度，以確保按鈕和播放指示器清晰易讀。「高對比」輔助功能設定將始終使用「最高」。
+  source: human
+  by: "@jay900604"
+  issue: 133
 settings.option.visual.paletteContrast.enhanced: 增強
 settings.option.visual.paletteContrast.maximum: 最高
 settings.option.visual.paletteContrast.standard: 標準
@@ -8705,7 +8835,11 @@ settings.option.visual.pauseAnimatedOnBlur:
   source: human
   by: "@jay900604"
   issue: 103
-settings.option.visual.playerMaterial: 播放器材質
+settings.option.visual.playerMaterial:
+  value: 播放器材質效果
+  source: human
+  by: "@jay900604"
+  issue: 133
 settings.option.visual.playerMaterial.blur: 模糊
 settings.option.visual.playerMaterial.blur.description:
   value: 為「播放中」控制列使用半透明毛玻璃材質，且不套用 Liquid Glass 折射效果。
@@ -8818,7 +8952,11 @@ settings.option.visual.uiscale:
 settings.option.visual.useAdaptiveColors: 使用自適應色彩
 settings.option.visual.useAdaptiveColors.description: 更改強調色以匹配目前播放的歌曲
 settings.option.visual.useAdaptiveColors.popup: 適應性顏色將在播放下一首曲目時生效。
-settings.option.visual.verticalDrawerMode: 佇列與歌詞位置
+settings.option.visual.verticalDrawerMode:
+  value: 待播清單與歌詞位置
+  source: human
+  by: "@jay900604"
+  issue: 133
 settings.option.visual.verticalDrawerMode.auto.description:
   value: 在直向螢幕上，於播放器/內容下方使用底部面板；在寬螢幕上則使用側邊欄。
   source: human
@@ -8896,11 +9034,10 @@ settings.option.visual.windowingMode.glass: 新版
 settings.option.visual.windowingMode.performance: 舊版
 settings.option.visual.windowStyle: 視窗風格
 settings.option.visual.windowVibrancy:
-  value: 視窗鮮明度
-  source: ai
+  value: 視窗透明效果
+  source: human
   by: "@jay900604"
-  issue: 53
-  superseded_at: 2026-10-16
+  issue: 133
 settings.option.window.close_button_hide: 關閉按鈕應隱藏應用程式
 settings.option.window.maxElementScale: 最大元素縮放比例
 settings.option.window.openOnStartup: 開機時啟動 Cider
