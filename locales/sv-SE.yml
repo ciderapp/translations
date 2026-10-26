@@ -118,6 +118,7 @@ action.moveToFolder.here: Flytta "{{name}}" hit
 action.moveToTop: Flytta överst
 action.newpreset: Ny förinställning...
 action.next: Nästa
+action.notNow: Inte nu
 action.ok: OK
 action.open: Öppna
 action.openArtworkInBrowser: Öppna omslagsbild i webbläsare
@@ -945,6 +946,43 @@ connect.instances: Instanser
 connect.profilePictureSource: Källa för profilbild
 connect.relay.desc: Relay gör det möjligt för Connect att läsa och lagra din aktuella uppspelningsinformation samt tillåta interaktioner från Connect, såsom uppspelningskontroller. Detta måste vara aktiverat för fjärrstyrning.
 connect.remote.notification: "Ansluten till fjärrinstans: $NAME"
+contentRestrictions.allowed: Explicit innehåll tillåtet
+contentRestrictions.allowExplicit: Tillåt explicit innehåll
+contentRestrictions.dialog.changeEmailMessage: Ange din kod och en ny e-postadress som Apple kan använda för att återställa den.
+contentRestrictions.dialog.changeEmailTitle: Ändra återställningsadress
+contentRestrictions.dialog.changePasscodeMessage: Ange din nuvarande kod och välj sedan en ny kod med 4 siffror.
+contentRestrictions.dialog.changePasscodeTitle: Ändra kod
+contentRestrictions.dialog.checking: Kontrollerar…
+contentRestrictions.dialog.confirm: Bekräfta kod
+contentRestrictions.dialog.createMessage: Apple kräver en kod för innehållsbegränsningar för att tillåta explicit innehåll. Välj en kod med 4 siffror och en e-postadress som Apple kan använda för att återställa den.
+contentRestrictions.dialog.createRestrictMessage: Apple kräver en kod för innehållsbegränsningar för att begränsa explicit innehåll. Välj en kod med 4 siffror och en e-postadress som Apple kan använda för att återställa den.
+contentRestrictions.dialog.createRestrictSubmit: Skapa och begränsa
+contentRestrictions.dialog.createSubmit: Skapa och tillåt
+contentRestrictions.dialog.createTitle: Skapa en kod
+contentRestrictions.dialog.currentPasscode: Nuvarande kod
+contentRestrictions.dialog.failed: Kunde inte nå Apple. Kontrollera anslutningen och försök igen.
+contentRestrictions.dialog.forgot: Glömt koden?
+contentRestrictions.dialog.locked: För många försök. Försök igen om {minutes} min.
+contentRestrictions.dialog.message: Apple kräver din kod för innehållsbegränsningar för att tillåta explicit innehåll.
+contentRestrictions.dialog.mismatch: Koderna stämmer inte överens.
+contentRestrictions.dialog.newPasscode: Ny kod
+contentRestrictions.dialog.newRecoveryEmail: Ny återställningsadress
+contentRestrictions.dialog.notApplied: Apple tillämpade inte ändringen. Försök igen eller ändra den på Apple Music-webbplatsen.
+contentRestrictions.dialog.placeholder: Kod
+contentRestrictions.dialog.recoveryEmail: Återställningsadress
+contentRestrictions.dialog.recoveryEmailPlaceholder: namn@exempel.se
+contentRestrictions.dialog.rejected: Apple kunde inte spara ändringen. Kontrollera det du angav och försök igen.
+contentRestrictions.dialog.restrictMessage: Ange din kod för innehållsbegränsningar för att begränsa explicit innehåll.
+contentRestrictions.dialog.restrictSubmit: Begränsa
+contentRestrictions.dialog.restrictTitle: Begränsa explicit innehåll
+contentRestrictions.dialog.submit: Tillåt
+contentRestrictions.dialog.title: Tillåt explicit innehåll
+contentRestrictions.dialog.wrongPasscode: Koden är felaktig. Försök igen.
+contentRestrictions.emailChanged: Återställningsadress ändrad
+contentRestrictions.offer.message: Explicit innehåll är begränsat på ditt Apple-konto, så explicita låtar döljs och hoppas över. Du kan tillåta explicit innehåll med din kod för innehållsbegränsningar.
+contentRestrictions.offer.messageCreate: Explicit innehåll är begränsat på ditt Apple-konto, så explicita låtar döljs och hoppas över. Du kan tillåta explicit innehåll genom att skapa en kod för innehållsbegränsningar.
+contentRestrictions.offer.title: Explicit innehåll begränsat
+contentRestrictions.passcodeChanged: Koden ändrades
 date.format: ${d} ${m} ${y}
 developer.copyHref: Kopiera href till urklipp
 developer.copyId: Kopiera ID till urklipp
@@ -1131,50 +1169,99 @@ locale.lang.tr: Turkiska
 locale.lang.vi: Vietnamesiska
 locale.lang.zh: Kinesiska (förenklad)
 lyrics.contrib.confirm.cancel: Avbryt
+lyrics.contrib.confirm.changeCount: "{edited} redigerade, {added} tillagda, {removed} borttagna"
+lyrics.contrib.confirm.changes: Dina ändringar
 lyrics.contrib.confirm.note: Dina låttexter kommer att skickas till community-biblioteket och du kommer att krediteras.
+lyrics.contrib.confirm.showAll: Visa alla
+lyrics.contrib.confirm.showFewer: Visa färre
 lyrics.contrib.confirm.title: Skicka in låttext?
 lyrics.contrib.cta.submit: Skicka in låttext
+lyrics.contrib.detail.delete: Ta bort den här texten
+lyrics.contrib.detail.edit: Redigera i textredigeraren
+lyrics.contrib.detail.new: Ny
+lyrics.contrib.detail.suggestions: Förslag
+lyrics.contrib.detail.syncLine: Rad synkad
+lyrics.contrib.detail.syncSyllable: Stavelse synkad
+lyrics.contrib.detail.syncWord: Ord synkat
 lyrics.contrib.drafts.button: Utkast
 lyrics.contrib.drafts.delete: Radera
 lyrics.contrib.drafts.empty: Inga sparade utkast än. Ditt arbete sparas automatiskt medan du redigerar.
+lyrics.contrib.drafts.kept: Ditt tidigare utkast sparas i Utkast.
 lyrics.contrib.drafts.load: Läs in
 lyrics.contrib.drafts.saveCurrent: Spara nuvarande
+lyrics.contrib.drafts.suggestion: Föreslagen ändring
 lyrics.contrib.drafts.title: Sparade utkast
 lyrics.contrib.editor.addLine: Lägg till rad
 lyrics.contrib.editor.align: Justera synkning
 lyrics.contrib.editor.alignHint: Matcha de markerade raderna med den markerade referensradens synkning
+lyrics.contrib.editor.backgroundHint: Bakgrundssång
 lyrics.contrib.editor.balance: Balansera
 lyrics.contrib.editor.balanceHint: Jämna ut tidsinställningen per ord över upprepade rader, t.ex. en refräng
 lyrics.contrib.editor.batchBg: Växla bakgrund för markerade rader
 lyrics.contrib.editor.batchV2: Växla andra sångare för markerade rader
+lyrics.contrib.editor.check: Kontrollera
+lyrics.contrib.editor.close: Stäng
+lyrics.contrib.editor.creditsFound: '{count} rader ser ut som medverkande eller anteckningar snarare än låttext, till exempel "{example}".'
+lyrics.contrib.editor.dismiss: Avfärda
 lyrics.contrib.editor.dragReorder: Dra för att ändra ordning
+lyrics.contrib.editor.duetHint: Andra sångare
 lyrics.contrib.editor.duplicate: Duplicera
 lyrics.contrib.editor.duplicateHint: Duplicera den markerade raden (Ctrl+D)
 lyrics.contrib.editor.empty: Inga rader än. Lägg till din första rad, eller importera/klistra in TTML.
+lyrics.contrib.editor.follow: Följ
+lyrics.contrib.editor.followHint: Håll den spelande raden synlig
+lyrics.contrib.editor.format: Formatera
 lyrics.contrib.editor.insert: Infoga
 lyrics.contrib.editor.insertInterlude: + Mellanspel
 lyrics.contrib.editor.insertInterludeHint: Infoga ett mellanspel med väntpunkter efter den markerade raden
 lyrics.contrib.editor.insertLine: + Rad
 lyrics.contrib.editor.insertLineHint: Infoga en rad efter den markerade raden
 lyrics.contrib.editor.interlude: Mellanspel
+lyrics.contrib.editor.issueCount: "{count} problem"
+lyrics.contrib.editor.issueLine: Rad {line}
+lyrics.contrib.editor.issueOne: 1 problem
 lyrics.contrib.editor.issues: problem
+lyrics.contrib.editor.joinNext: Slå ihop med nästa
+lyrics.contrib.editor.joinNextHint: Sjung denna bit och nästa som ett ord
+lyrics.contrib.editor.keepCredits: Behåll dem
+lyrics.contrib.editor.lcdLine: Rad {line} av {total}
+lyrics.contrib.editor.lcdLines: "{total} rader"
 lyrics.contrib.editor.line: Rad
+lyrics.contrib.editor.lineEnd: Radslut
+lyrics.contrib.editor.lineStart: Radstart
+lyrics.contrib.editor.lineTiming: Radtiming
+lyrics.contrib.editor.localizationsApart: Översättningar och uttal redigeras inte här. Community-versioner sparas separat.
+lyrics.contrib.editor.lossInvalid: Denna TTML innehåller fel, så redigeraren kan inte läsa den.
+lyrics.contrib.editor.lossLines: Vissa rader kommer att visas på ett annat sätt i spelaren.
+lyrics.contrib.editor.lossMarkup: "Märkning som inte stöds tas bort: {names}"
+lyrics.contrib.editor.lossOnEdit: Redigering här ändrar denna TTML
+lyrics.contrib.editor.lossStay: Fortsätt redigera TTML
+lyrics.contrib.editor.lossSwitch: Byt ändå
 lyrics.contrib.editor.markerAdd: Lägg till en markör vid spelhuvudet
 lyrics.contrib.editor.markerJump: Hoppa till markör
 lyrics.contrib.editor.markers: Markörer
 lyrics.contrib.editor.markersClear: Rensa
 lyrics.contrib.editor.modeEdit: Redigera
+lyrics.contrib.editor.modeLayers: Lager
 lyrics.contrib.editor.modePreview: Förhandsgranska
 lyrics.contrib.editor.modeTime: Tid
 lyrics.contrib.editor.noLines: Inga rader
+lyrics.contrib.editor.offTrack: Ett annat spår spelas. Spela upp detta
 lyrics.contrib.editor.offTrackHint: Ett annat spår spelas — klicka för att spela detta
 lyrics.contrib.editor.playThisTrack: Spela detta spår
+lyrics.contrib.editor.prettyPrint: Snygg formatering
+lyrics.contrib.editor.prettyPrintHint: Lägg varje rad och element på en egen indragen rad
 lyrics.contrib.editor.previewingInPlayer: Förhandsgranskar i spelaren
+lyrics.contrib.editor.previewNote: Spelar upp ditt utkast så som lyssnarna ser det, med dina lager.
+lyrics.contrib.editor.redo: Gör om
+lyrics.contrib.editor.redoHint: Gör om ({keys})
+lyrics.contrib.editor.removeCredits: Ta bort dem
 lyrics.contrib.editor.repeats: Upprepningar
 lyrics.contrib.editor.segment: Segment
 lyrics.contrib.editor.segmentAll: Alla
 lyrics.contrib.editor.segmentAllHint: Dela upp varje radsynkad rad i ord
 lyrics.contrib.editor.selected: markerade
+lyrics.contrib.editor.selectedCount: "{count} valda"
 lyrics.contrib.editor.selectWord: Välj ett ord…
 lyrics.contrib.editor.showInPlayer: Visa i spelaren
 lyrics.contrib.editor.showInPlayerHint: Visa det här utkastet i spelarens låttextpanel medan låten spelas
@@ -1183,8 +1270,90 @@ lyrics.contrib.editor.speedHint: Uppspelningshastighet — sänk farten för mer
 lyrics.contrib.editor.splitWords: Dela upp i ord
 lyrics.contrib.editor.splitWordsHint: Dela upp denna rad i ord-för-ord-synkning
 lyrics.contrib.editor.submit: Skicka in
+lyrics.contrib.editor.undoHint: Ångra ({keys})
 lyrics.contrib.editor.unsynced: Osynkad
+lyrics.contrib.editor.valid: Giltig
 lyrics.contrib.editor.word: Ord
+lyrics.contrib.editor.wordEnd: Ordslut
+lyrics.contrib.editor.wordStart: Ordstart
+lyrics.contrib.editor.wordTiming: Ordtiming
+lyrics.contrib.error.rateLimited: Du har nått gränsen för tillfället. Försök igen senare.
+lyrics.contrib.error.tooLarge: Texten är för stor för att laddas upp. TTML kan vara upp till 512 KB.
+lyrics.contrib.history.button: Historik
+lyrics.contrib.history.current: Aktuell
+lyrics.contrib.history.empty: Ingen historik ännu.
+lyrics.contrib.history.open: Öppna
+lyrics.contrib.history.openTitle: Öppna i låttextredigeraren
+lyrics.contrib.history.restore: Återställ
+lyrics.contrib.history.restored: Versionen har återställts.
+lyrics.contrib.history.restoreFailed: Det gick inte att återställa den här versionen.
+lyrics.contrib.history.restoreMessage: Din låttext återgår till denna version. De nyare versionerna finns kvar i historiken.
+lyrics.contrib.history.restoreTitle: Återställ denna version?
+lyrics.contrib.history.stale: Låttexten har ändrats sedan listan laddades. Försök igen.
+lyrics.contrib.history.suggestedBy: Föreslagen av {name}
+lyrics.contrib.hub.editName: Redigera namn
+lyrics.contrib.hub.layersCount: "{count} skrivna"
+lyrics.contrib.hub.lyricsCount: "{count} låttexter"
+lyrics.contrib.hub.lyricsCount.many: "{count} låtar"
+lyrics.contrib.hub.lyricsCount.one: 1 låt
+lyrics.contrib.hub.none: Inga ännu
+lyrics.contrib.hub.pin: Visa dina låttexter i inställningsmenyn
+lyrics.contrib.hub.pinDesc: Med antal förslag som väntar på din granskning
+lyrics.contrib.hub.sent: Förslag du skickat
+lyrics.contrib.hub.sentCount: "{count} skickade"
+lyrics.contrib.hub.sentOutdated: "{count} föråldrade"
+lyrics.contrib.hub.sentWaiting: "{count} väntar"
+lyrics.contrib.hub.work: Ditt arbete
+lyrics.contrib.import.backgroundVocals: Bakgrundssång
+lyrics.contrib.import.currentSong: Aktuell låt
+lyrics.contrib.import.dropHint: Släpp för att redigera låttexter
+lyrics.contrib.import.empty: Filen är tom.
+lyrics.contrib.import.failed: Det gick inte att importera låttexten
+lyrics.contrib.import.included: Inkluderad
+lyrics.contrib.import.lines: Rader
+lyrics.contrib.import.noCurrent: Ingen låt spelas. Välj ett spår i redigeraren.
+lyrics.contrib.import.notTtml: Den här XML-filen är inte TTML-låttext.
+lyrics.contrib.import.open: Öppna i redigeraren
+lyrics.contrib.import.openFile: Öppna en TTML-fil
+lyrics.contrib.import.otherTrack: Välj ett annat spår
+lyrics.contrib.import.pronunciations: Uttal
+lyrics.contrib.import.replace: Ersätt
+lyrics.contrib.import.replaceMessage: Filen ersätter det som finns i redigeraren. Din nuvarande text sparas i Utkast.
+lyrics.contrib.import.replaceTitle: Ersätta dina ändringar?
+lyrics.contrib.import.singers: Sångare
+lyrics.contrib.import.songParts: Låtdelar
+lyrics.contrib.import.timing: Tidsinställning
+lyrics.contrib.import.timingLine: Rad för rad
+lyrics.contrib.import.timingWord: Ord för ord
+lyrics.contrib.import.title: Importera låttext
+lyrics.contrib.import.tooLarge: Filen är större än 512 KB.
+lyrics.contrib.import.translation: Översättning
+lyrics.contrib.import.unreadable: Filen kunde inte läsas.
+lyrics.contrib.import.wrongType: Endast filer med ändelsen .ttml och .xml kan importeras.
+lyrics.contrib.lane.edit: Redigera
+lyrics.contrib.lane.fillHint: Spela upp låten för att fylla i detaljerna.
+lyrics.contrib.lane.fixOverlaps: Åtgärda överlappningar
+lyrics.contrib.lane.fixOverlapsHint: Avsluta varje ord och rad där nästa ord eller rad i samma röst börjar
+lyrics.contrib.lane.free: Fri
+lyrics.contrib.lane.freeHint: När du drar en kant ändras bara det ordet
+lyrics.contrib.lane.push: Skjut
+lyrics.contrib.lane.pushHint: När du drar en kant flyttas orden bortom den med
+lyrics.contrib.lane.resizeHint: Dra för att ändra storlek på tidslinjen, dubbelklicka för att återställa
+lyrics.contrib.lane.show: Tidslinje
+lyrics.contrib.lane.showHint: Visa låten under orden att tajma mot
+lyrics.contrib.lane.snap: Fäst
+lyrics.contrib.lane.snapHint: Flytta tryck och drag till en närliggande början eller takt. Håll ned Skift när du drar för att hoppa över det.
+lyrics.contrib.lane.squeeze: Komprimera
+lyrics.contrib.lane.squeezeHint: När du drar en kant tas tiden från orden bredvid
+lyrics.contrib.lane.view: Visa
+lyrics.contrib.lane.zoomIn: Zooma in
+lyrics.contrib.lane.zoomOut: Zooma ut
+lyrics.contrib.layers.coverage: "{n} % av raderna"
+lyrics.contrib.layers.empty: Översättningar och uttal du skriver visas här.
+lyrics.contrib.layers.pronunciation: Uttal
+lyrics.contrib.layers.stale: "{n} rader behöver uppdateras"
+lyrics.contrib.layers.staleOne: 1 rad behöver uppdateras
+lyrics.contrib.layers.translation: Översättning
 lyrics.contrib.leaderboard.contributor: Bidragsgivare
 lyrics.contrib.leaderboard.empty: Inga bidragsgivare än.
 lyrics.contrib.leaderboard.error: Kunde inte läsa in topplistan.
@@ -1193,15 +1362,50 @@ lyrics.contrib.leaderboard.loadMore: Visa fler
 lyrics.contrib.leaderboard.plays: Spelningar
 lyrics.contrib.leaderboard.submissions: Låttexter
 lyrics.contrib.menu.addEdit: Lägg till / redigera låttext
+lyrics.contrib.menu.closeGaps: Stäng luckor
+lyrics.contrib.menu.copyLine: Kopiera rad
+lyrics.contrib.menu.copyRepeats: Kopiera tidsinställning till upprepningar
+lyrics.contrib.menu.deleteLine: Ta bort rad
+lyrics.contrib.menu.deleteWord: Ta bort ord
+lyrics.contrib.menu.editText: Redigera text
+lyrics.contrib.menu.firstVocalist: Första sångare
+lyrics.contrib.menu.insertInterlude: Infoga ett mellanspel efter
+lyrics.contrib.menu.insertLine: Infoga en rad efter
+lyrics.contrib.menu.joinNext: Slå ihop med nästa ord
+lyrics.contrib.menu.mainVocal: Huvudsång
+lyrics.contrib.menu.pasteLine: Klistra in rad efter
+lyrics.contrib.menu.playFrom: Spela från här
+lyrics.contrib.menu.removeWordTiming: Ta bort ordtidning
+lyrics.contrib.menu.setEnd: Ange slut till uppspelningspositionen
+lyrics.contrib.menu.setStart: Ange start till uppspelningspositionen
+lyrics.contrib.menu.snapOnsets: Justera mot anslag
+lyrics.contrib.menu.spaceEvenly: Fördela jämnt
+lyrics.contrib.menu.spaceSyllables: Fördela efter stavelser
+lyrics.contrib.menu.toPlayhead: Flytta till uppspelningspositionen
+lyrics.contrib.menu.unjoinNext: Separera från nästa ord
 lyrics.contrib.mine.cancel: Avbryt
 lyrics.contrib.mine.chooseName: Välj ett visningsnamn
 lyrics.contrib.mine.chooseNameSub: Ange ett offentligt namn som visas på ledartavlan och ger dig erkännande för dina textbidrag.
+lyrics.contrib.mine.delete: Radera
+lyrics.contrib.mine.deleteFailed: Det gick inte att radera texterna.
+lyrics.contrib.mine.deleteMessage: Dina texter för {name} tas bort från gemenskapsbiblioteket.
+lyrics.contrib.mine.deleteTitle: Radera dessa texter?
 lyrics.contrib.mine.edit: Redigera
 lyrics.contrib.mine.error: Det gick inte att läsa in din profil.
+lyrics.contrib.mine.hidden: Dold
 lyrics.contrib.mine.joined: Gick med
+lyrics.contrib.mine.joinedOn: Gick med {date}
+lyrics.contrib.mine.layersTitle: Översättningar och uttal
 lyrics.contrib.mine.listNote: Dina bidrag visas i appen på de låtar som du har lagt till låttexter för.
 lyrics.contrib.mine.loading: Läser in…
+lyrics.contrib.mine.lyricsEmpty: Texter du lägger till visas här.
+lyrics.contrib.mine.lyricsError: Det gick inte att läsa in dina texter.
+lyrics.contrib.mine.lyricsTitle: Dina texter
 lyrics.contrib.mine.namePlaceholder: Visningsnamn
+lyrics.contrib.mine.otherSuggestions: Andra förslag till dig
+lyrics.contrib.mine.pendingMany: "{count} förslag väntar"
+lyrics.contrib.mine.pendingOne: 1 förslag väntar
+lyrics.contrib.mine.remixedFrom: Remixad från {name}
 lyrics.contrib.mine.retry: Försök igen
 lyrics.contrib.mine.save: Spara
 lyrics.contrib.mine.saved: Visningsnamnet har sparats.
@@ -1211,17 +1415,54 @@ lyrics.contrib.mine.statPlays: Totalt antal spelningar
 lyrics.contrib.mine.statSubmissions: Bidragna låttexter
 lyrics.contrib.mine.vanityTooShort: Välj ett namn med minst 2 tecken.
 lyrics.contrib.notify.importedApple: Importerade låttexter från Apple Music.
+lyrics.contrib.notify.importedSource: Importerade de tidsstämplade texterna från {source}.
 lyrics.contrib.notify.importedUser: Importerade befintliga låttexter från communityn.
 lyrics.contrib.notify.importFailed: Det gick inte att importera låttexter.
 lyrics.contrib.notify.importNone: Det finns inga låttexter att importera för det här spåret.
+lyrics.contrib.notify.loadFailed: Det gick inte att läsa in dessa texter.
+lyrics.contrib.notify.localUnsupported: Texter för lokala filer kan inte laddas upp ännu.
+lyrics.contrib.notify.mineLookupFailed: Det gick inte att kontrollera om du redan har texter för den här låten.
 lyrics.contrib.notify.noCurrent: Ingen låt spelas för närvarande.
 lyrics.contrib.notify.notLoggedIn: Du måste vara inloggad för att ladda upp låttexter.
 lyrics.contrib.notify.profileRequired: Skapa en bidragsgivarprofil innan du laddar upp låttexter.
 lyrics.contrib.notify.submitFailed: Det gick inte att skicka in låttexter.
 lyrics.contrib.notify.submitted: Låttexterna har skickats in – tack för ditt bidrag!
+lyrics.contrib.notify.title: Gemenskapstexter
 lyrics.contrib.preview.empty: Klistra in eller importera TTML för att förhandsgranska låttexten här.
+lyrics.contrib.profile.avatar: Bild
+lyrics.contrib.profile.avatarBlocked: Uppladdning av bilder är avstängd för din profil.
+lyrics.contrib.profile.avatarBusy: Uppladdningar av bilder är upptagna. Försök igen om en stund.
+lyrics.contrib.profile.avatarFailed: Det gick inte att ladda upp din bild.
+lyrics.contrib.profile.avatarHidden: Din bild togs bort.
+lyrics.contrib.profile.avatarInvalid: Den bilden kunde inte användas. Prova en annan.
+lyrics.contrib.profile.avatarRemove: Ta bort
+lyrics.contrib.profile.avatarRemoved: Bilden togs bort.
+lyrics.contrib.profile.avatarRemoveFailed: Det gick inte att ta bort din bild.
+lyrics.contrib.profile.avatarSaved: Bilden uppdaterades.
+lyrics.contrib.profile.avatarTooLarge: Bilden är för stor. Prova en mindre.
+lyrics.contrib.profile.avatarUnreadable: Bilden kunde inte öppnas.
+lyrics.contrib.profile.avatarUpload: Ladda upp
+lyrics.contrib.profile.country: Land eller region
+lyrics.contrib.profile.countryAll: Alla länder och regioner
+lyrics.contrib.profile.countryFailed: Det gick inte att spara ditt land eller din region.
+lyrics.contrib.profile.countryNoMatch: Inga träffar
+lyrics.contrib.profile.countryNone: Visas inte
+lyrics.contrib.profile.countryNoneChoice: Vill hellre inte säga
+lyrics.contrib.profile.countrySearch: Sök länder och regioner
+lyrics.contrib.profile.countrySuggested: Föreslagna
+lyrics.contrib.profile.name: Visningsnamn
+lyrics.contrib.profile.nameLocked: En moderator ändrade ditt namn, så det kan inte ändras just nu.
 lyrics.contrib.profile.nameRules: Använd 3 till 24 bokstäver, siffror, bindestreck eller understreck.
+lyrics.contrib.profile.notFound: Välj ett visningsnamn först.
+lyrics.contrib.profile.rateLimited: Du har gjort för många ändringar. Försök igen senare.
+lyrics.contrib.profile.section: Profil
 lyrics.contrib.profile.signedOut: Du måste vara inloggad.
+lyrics.contrib.profile.upgradeDesc: Lägg till en bild och ditt land eller din region nedan.
+lyrics.contrib.profile.upgradeDismiss: Stäng
+lyrics.contrib.profile.upgradeTitle: Uppdatera din profil
+lyrics.contrib.replace.confirm: Ersätt
+lyrics.contrib.replace.message: Varje person har en version av en låt. Om du skickar in den här remixen ersätts din, och dina tidigare revideringar finns kvar i historiken.
+lyrics.contrib.replace.title: Ersätta din version?
 lyrics.contrib.signin.button: Logga in med Cider Taproom
 lyrics.contrib.signin.manual: Ange token manuellt
 lyrics.contrib.signin.sub: Anslut ditt Cider Taproom-konto för att ladda upp låttexter och synas på ledartavlan.
@@ -1229,10 +1470,47 @@ lyrics.contrib.signin.title: Logga in för att bidra med låttexter
 lyrics.contrib.signin.tokenPrompt: Ange din åtkomsttoken
 lyrics.contrib.signin.tokenTitle: Taproom-token
 lyrics.contrib.signin.waiting: Väntar på webbläsare…
+lyrics.contrib.stale.message: En nyare version av låttexten sparades sedan du började, kanske från en annan enhet. Ladda om den och gör dina ändringar igen, med din text som utkast, eller skriv över den med din version.
+lyrics.contrib.stale.messageGone: Din version togs bort sedan du började. Skriv över för att spara din version som den är.
+lyrics.contrib.stale.overwrite: Skriv över
+lyrics.contrib.stale.reload: Ladda om
+lyrics.contrib.stale.title: Den här låttexten har ändrats
 lyrics.contrib.subtitle: Ladda upp synkade låttexter, följ din inverkan och klättra på ledartavlan.
+lyrics.contrib.success.private: Endast du kan se den här låttexten.
 lyrics.contrib.success.sub: Tack för ditt bidrag.
 lyrics.contrib.success.title: Låttexterna har skickats in!
+lyrics.contrib.suggest.accept: Acceptera
+lyrics.contrib.suggest.again: Föreslå ordtiming igen
+lyrics.contrib.suggest.allTimed: Varje rad har redan timing.
+lyrics.contrib.suggest.cancel: Avbryt
+lyrics.contrib.suggest.caption: Föreslå
+lyrics.contrib.suggest.clearPicked: Rensa de valda raderna
+lyrics.contrib.suggest.discard: Kassera
+lyrics.contrib.suggest.failed: Hela låten kunde inte tidsättas.
+lyrics.contrib.suggest.heard: "{percent}% hörd"
+lyrics.contrib.suggest.lines: Rader
+lyrics.contrib.suggest.linesCount: "{count} rader föreslagna"
+lyrics.contrib.suggest.linesHint: Föreslå timing för rader som saknar det, utifrån de sjungna delarna och inslagen
+lyrics.contrib.suggest.noLines: Varje rad har redan ordtiming.
+lyrics.contrib.suggest.picked: "{count} valda"
+lyrics.contrib.suggest.pickHint: Välj den här raden för att föreslå ordtiming igen. Skift väljer ett intervall.
+lyrics.contrib.suggest.quick: Snabbanalys
+lyrics.contrib.suggest.quickHint: Spela igenom låten snabbt och tyst för att registrera den
+lyrics.contrib.suggest.quickNeedsPlay: Spela den här låten först, och analysera den sedan snabbt.
+lyrics.contrib.suggest.scanning: Skannar {percent}%
+lyrics.contrib.suggest.timedCount: "{count} rader tidsatta, {unsure} osäkra"
+lyrics.contrib.suggest.timedLines: "{count} rader tidsatta"
+lyrics.contrib.suggest.timing: Tidsätter låten… {percent}%
+lyrics.contrib.suggest.unheardNote: Delar som ännu inte spelats placeras utifrån Apples sångtiming och markeras som osäkra.
+lyrics.contrib.suggest.wholeSong: Hela låten
+lyrics.contrib.suggest.wholeSongHint: Tidsätt rader och ord mot hela låten så långt den hörts hittills
+lyrics.contrib.suggest.words: Ord
+lyrics.contrib.suggest.wordsCount: "{count} rader uppdelade i ord"
+lyrics.contrib.suggest.wordsHint: Dela upp tidsatta rader i ord placerade på inslagen
 lyrics.contrib.sync.back: Tillbaka
+lyrics.contrib.sync.colBegin: Början
+lyrics.contrib.sync.colEnd: Slut
+lyrics.contrib.sync.cursor: Markör
 lyrics.contrib.sync.endGap: Slut (mellanrum)
 lyrics.contrib.sync.endNext: Slut och nästa rad
 lyrics.contrib.sync.follow: Följ
@@ -1265,13 +1543,21 @@ lyrics.contrib.time.markBegin: Börja
 lyrics.contrib.time.markEnd: Slut
 lyrics.contrib.time.markNext: Nästa
 lyrics.contrib.time.next: nästa
+lyrics.contrib.time.tapCaption: Tryck i takt med uppspelningen
+lyrics.contrib.time.timing: Timing
 lyrics.contrib.upload.change: Ändra
+lyrics.contrib.upload.changeTrack: Byt låt
+lyrics.contrib.upload.details: Detaljer
 lyrics.contrib.upload.import: Importera nuvarande låttext
 lyrics.contrib.upload.language: Språk
+lyrics.contrib.upload.libraryNote: Titeln, artisten och albumet sparas tillsammans med ditt bidrag.
 lyrics.contrib.upload.lyrics: Låttext
 lyrics.contrib.upload.noResults: Inga låtar hittades.
 lyrics.contrib.upload.openWindow: Öppna i fönster
 lyrics.contrib.upload.preview: Förhandsgranska
+lyrics.contrib.upload.remixNote: Din version blir en remix av den här låttexten.
+lyrics.contrib.upload.replaceNote: Att skicka in ersätter din version av den här låten med en remix av den här låttexten.
+lyrics.contrib.upload.searchFailed: "Det gick inte att söka i Apple Music: {reason}"
 lyrics.contrib.upload.searchPlaceholder: Sök i Apple Music-katalogen…
 lyrics.contrib.upload.signedOut: Logga in på ditt Cider Taproom-konto för att ladda upp låttexter.
 lyrics.contrib.upload.submit: Skicka in låttext
@@ -1280,25 +1566,262 @@ lyrics.contrib.upload.track: Låt
 lyrics.contrib.upload.ttml: Låttext (TTML)
 lyrics.contrib.upload.useCurrent: Använd nuvarande låt
 lyrics.contrib.upload.writers: Låtskrivare (valfritt)
+lyrics.contrib.upload.writersOptional: Namn separerade med kommatecken (valfritt)
 lyrics.contrib.upload.writersPlaceholder: Namn separerade med kommatecken
+lyrics.contrib.upload.writersShort: Textförfattare
+lyrics.contrib.validate.empty: Lägg till låttext innan du skickar in.
+lyrics.contrib.validate.interludeEmpty: "Rad {n}: mellanspelet saknar längd"
+lyrics.contrib.validate.interludeShort: "Rad {n}: mellanspel kortare än 5 s visar kanske inte väntepunkterna"
 lyrics.contrib.validate.invalidXml: Ogiltig XML — kontrollera din TTML-syntax.
+lyrics.contrib.validate.libraryMetadata: Låten behöver en titel och en artist innan låttext kan läggas till.
+lyrics.contrib.validate.lineEnd: "Rad {n}: slutet är inte efter starten"
+lyrics.contrib.validate.lineNoText: "Rad {n}: har ingen text"
+lyrics.contrib.validate.lineOrder: "Rad {n}: är i fel ordning (startar före föregående rad)"
 lyrics.contrib.validate.lines: rader
+lyrics.contrib.validate.markWordSynced: Markera som ordsynkad
 lyrics.contrib.validate.noLyrics: Ingen låttext hittades i denna TTML.
 lyrics.contrib.validate.noTimed: Ingen tidsanpassad låttext hittades i denna TTML.
+lyrics.contrib.validate.noTrack: Välj en låt först.
 lyrics.contrib.validate.parseError: Kunde inte tolka TTML.
 lyrics.contrib.validate.valid: Giltig
+lyrics.contrib.validate.wordEnd: '"{word}": slutet är inte efter starten'
+lyrics.contrib.validate.wordOverlap: '"{word}": överlappar föregående ord'
+lyrics.contrib.validate.wordTimingHidden: Den här TTML-filen har ordtider men är markerad som radsynkad, så Cider visar den rad för rad.
+lyrics.contrib.window.close: Stäng
+lyrics.contrib.window.maximize: Maximera
+lyrics.contrib.window.minimize: Minimera
+lyrics.contrib.window.restore: Återställ
+lyrics.contrib.write: Skriv låttext
+lyrics.empty.localFileHint: Låttexter kan inte läggas till i lokala filer ännu.
+lyrics.empty.title: Det finns inga låttexter för den här låten ännu
+lyrics.empty.ttmlChoose: Välj en fil
+lyrics.empty.ttmlHint: Har du en TTML-fil? Släpp den här.
 lyrics.fetchingFrom: Hämtar låttext från
 lyrics.instrumental.markInstrumental: Markera som instrumental
 lyrics.instrumental.searchAnyway: Sök efter låttext ändå
 lyrics.instrumental.title: Den här låten är instrumental
+lyrics.layers.background: Bakgrund
+lyrics.layers.bodyEdited: Lager följer de publicerade raderna. Dina radändringar gäller för dem när de har publicerats.
+lyrics.layers.completeness: Fullständighet
+lyrics.layers.conflict: Ditt publicerade lager ändrades efter att det här utkastet startades.
+lyrics.layers.coverageHint: Andelen rader med text som det här lagret täcker
+lyrics.layers.coveragePercent: "{percent} %"
+lyrics.layers.delete: Ta bort lager
+lyrics.layers.deleteCancel: Avbryt
+lyrics.layers.deleteConfirm: Ta bort ditt publicerade {lang}-lager och ditt utkast till det? Lyssnare slutar se det.
+lyrics.layers.deleted: Borttaget.
+lyrics.layers.deleteFailed: Det gick inte att ta bort lagret. Försök igen.
+lyrics.layers.deleteYes: Ta bort
+lyrics.layers.deleting: Tar bort…
+lyrics.layers.dropped: "{count} rader från ditt lager finns inte längre i de här låttexterna och utelämnas när du sparar."
+lyrics.layers.editor.notePronunciation: Lägger till uttal till de här låttexterna. Det sparas under ditt namn.
+lyrics.layers.editor.notePronunciationOwner: Lägger till uttal till {name}s låttexter. Det sparas under ditt namn.
+lyrics.layers.editor.noteTranslation: Lägger till en översättning till de här låttexterna. Den sparas under ditt namn.
+lyrics.layers.editor.noteTranslationOwner: Lägger till en översättning till {name}s låttexter. Den sparas under ditt namn.
+lyrics.layers.gone: De här låttexterna är inte längre tillgängliga.
+lyrics.layers.import.include: Publicera som lager
+lyrics.layers.import.keptFailed: Det gick inte att spara {layers}. Behölls som utkast på fliken Lager.
+lyrics.layers.import.keptSuggest: Behöll {layers} som utkast på fliken Lager för de här låttexterna.
+lyrics.layers.import.lines: "{count} rader"
+lyrics.layers.import.none: "{layer} matchade inga av de publicerade raderna."
+lyrics.layers.import.note: Sparas som dina lager på de här låttexterna när de har skickats in.
+lyrics.layers.import.noteSuggest: Behålls som utkast på fliken Lager, eftersom de här låttexterna inte är dina.
+lyrics.layers.import.saved: "{layer} sparat på {count} av {total} rader."
+lyrics.layers.import.skipped: "{layer} utelämnades. {problem}"
+lyrics.layers.invalid: Rise godkände inte det här lagret. Kontrollera språket och försök igen.
+lyrics.layers.keep: Fortfarande rätt
+lyrics.layers.keepDraft: Behåll mitt utkast
+lyrics.layers.keysMismatch: De publicerade låttexterna har ändrats sedan de öppnades. Ladda om dem och försök igen.
+lyrics.layers.lang.all: Alla språk
+lyrics.layers.lang.jyutping: Kantonesiska (Jyutping)
+lyrics.layers.lang.korean: Koreanska (romanisering)
+lyrics.layers.lang.more: "{count} till"
+lyrics.layers.lang.none: Inga språk matchar.
+lyrics.layers.lang.onLyrics: På de här låttexterna
+lyrics.layers.lang.own: En översättning är till ett annat språk än låttextens eget.
+lyrics.layers.lang.pick: Välj ett språk
+lyrics.layers.lang.pinyin: Kinesiska (pinyin)
+lyrics.layers.lang.romaji: Japanska (romaji)
+lyrics.layers.lang.search: Sök språk eller skriv en språkkod
+lyrics.layers.lang.searchLabel: Sök språk
+lyrics.layers.lang.suggested: Föreslagna
+lyrics.layers.lang.use: Använd {name}
+lyrics.layers.lang.yours: Dina
+lyrics.layers.langInvalid: Använd en språkkod som fr eller pt-BR.
+lyrics.layers.langLatin: Ett uttal behöver en latinsk skriftkod, till exempel ja-Latn.
+lyrics.layers.langMissing: Välj ett språk för det här lagret.
+lyrics.layers.language: Språk
+lyrics.layers.languageHint: En språkkod som fr, pt-BR eller ja-Latn
+lyrics.layers.layer: Lager
+lyrics.layers.loadFailed: Det gick inte att kontrollera ett lager du redan har publicerat, så sparande är avstängt för att inte ersätta det.
+lyrics.layers.loading: Läser in lagren som redan finns för den här texten…
+lyrics.layers.needsLines: Lägg till några rader först och skriv sedan deras översättningar och uttal här.
+lyrics.layers.noKeys: Den här texten har ännu inga radnycklar. Läs in den publicerade versionen igen för att lägga till lager.
+lyrics.layers.options: Alternativ
+lyrics.layers.perSyllable: Per stavelse
+lyrics.layers.profileRequired: Skapa en bidragsgivarprofil innan du sparar lager.
+lyrics.layers.pronunciation: Uttal
+lyrics.layers.publish: Publicera
+lyrics.layers.rateLimited: För många lagersparningar just nu. Försök igen senare.
+lyrics.layers.save: Spara lager
+lyrics.layers.saved: Sparat.
+lyrics.layers.saveFailed: Det gick inte att spara lagret. Försök igen.
+lyrics.layers.saving: Sparar…
+lyrics.layers.signedOut: Logga in för att spara lager.
+lyrics.layers.stale: Ändrad
+lyrics.layers.staleCount: "{count} ändrade sedan de skrevs"
+lyrics.layers.staleHint: Raden ändrades efter att detta skrevs
+lyrics.layers.translation: Översättning
+lyrics.layers.usePublished: Använd det publicerade lagret
+lyrics.layers.withSubmit: Publiceras när du skickar in
+lyrics.liveRadio.synced: Texten synkroniserad
+lyrics.liveRadio.syncedDetail: Framsteg, Discord och scrobblern följer nu den här raden.
 lyrics.loadingLyrics: Laddar låttext...
 lyrics.lyricsBy: Låttext av
 lyrics.noLyricsAvailable: Ingen låttext tillgänglig för den här låten
+lyrics.platter.addPronunciation: Lägg till uttal
+lyrics.platter.addTranslation: Lägg till översättning
+lyrics.platter.byContributor: av {{name}}
+lyrics.platter.communityVersions: Versioner från communityn
+lyrics.platter.contribute: Bidra
+lyrics.platter.earlier: Visa texten tidigare
+lyrics.platter.editMine: Redigera din version
+lyrics.platter.fetching: Hämtar {{source}}…
+lyrics.platter.fetchingLyrics: Hämtar låttext…
+lyrics.platter.languagePair: "{{from}} till {{to}}"
+lyrics.platter.later: Visa texten senare
+lyrics.platter.latinLetters: Med latinska bokstäver
+lyrics.platter.layerHint: Sparas under ditt namn
+lyrics.platter.lineByLine: Rad för rad
+lyrics.platter.lyricsFrom: Låttext från
+lyrics.platter.machineTranslation: Maskinöversättning
+lyrics.platter.noLyrics: Ingen låttext
+lyrics.platter.nothingFound: Inget hittades
+lyrics.platter.options: Alternativ för låttext
+lyrics.platter.pickSource: Välj en annan källa
+lyrics.platter.refresh: Uppdatera låttext
+lyrics.platter.remix: Remix
+lyrics.platter.remixed: Remixad
+lyrics.platter.remixHint: Starta din egen version från den här
+lyrics.platter.replaceMine: Ersätt min version med den här
+lyrics.platter.replaceMineHint: Din behåller sin historik
+lyrics.platter.romaji: Romaji
+lyrics.platter.searching: Söker
+lyrics.platter.seconds: "{{value}} s"
+lyrics.platter.suggestEdit: Föreslå en ändring
+lyrics.platter.suggestEditHint: "{{name}} granskar den"
+lyrics.platter.syllableBySyllable: Stavelse för stavelse
+lyrics.platter.translateFailed: Det gick inte att översätta
+lyrics.platter.translating: Översätter
+lyrics.platter.translatingTo: Översätter till {{language}}…
+lyrics.platter.unknownSource: Okänd källa
+lyrics.platter.via: via {{app}}
+lyrics.platter.wordByWord: Ord för ord
+lyrics.search.checked: Kontrollerade {{sources}}
+lyrics.search.checking: Kontrollerar
+lyrics.search.checkingSource: Kontrollerar {{source}}
+lyrics.search.found: Hittade
+lyrics.search.title: Söker efter låttext
+lyrics.search.waiting: Väntar
 lyrics.selectProvider: Välj låttextleverantör
+lyrics.suggestions.accept: Godkänn
+lyrics.suggestions.changes: Ändringar
+lyrics.suggestions.confirm.note: Ägaren av den här låttexten ser ditt förslag och kan godkänna eller avvisa det.
+lyrics.suggestions.confirm.noteTo: Meddelande till {name}
+lyrics.suggestions.confirm.owner: Ägare av den här låttexten. De ser dina ändringar och godkänner eller avvisar dem, och du krediteras om de godkänner.
+lyrics.suggestions.confirm.send: Skicka förslag
+lyrics.suggestions.confirm.sending: Skickar…
+lyrics.suggestions.confirm.sendTo: Skicka till {name}
+lyrics.suggestions.confirm.sentAs: Skickat som {name}
+lyrics.suggestions.confirm.title: Skicka förslag?
+lyrics.suggestions.confirm.titleTo: Skicka ett förslag till {name}
+lyrics.suggestions.diff.added: Tillagd
+lyrics.suggestions.diff.agent: Sjungs av {before}, nu {after}
+lyrics.suggestions.diff.backgroundRetimed: Bakgrundssång har fått ny tidsangivelse
+lyrics.suggestions.diff.empty: Inga radändringar.
+lyrics.suggestions.diff.endsEarlier: Slutar {s} s tidigare
+lyrics.suggestions.diff.endsLater: Slutar {s} s senare
+lyrics.suggestions.diff.gapMany: "{count} oförändrade rader"
+lyrics.suggestions.diff.gapOne: 1 oförändrad rad
+lyrics.suggestions.diff.language: "Språk: {before}, nu {after}"
+lyrics.suggestions.diff.none: ingen
+lyrics.suggestions.diff.noPart: ingen del
+lyrics.suggestions.diff.noSinger: Ingen sångare
+lyrics.suggestions.diff.nowLineSynced: Tidsatt endast per rad nu
+lyrics.suggestions.diff.nowWordSynced: Tidsatt ord för ord nu
+lyrics.suggestions.diff.otherDetails: Den ändrar också detaljer som finns i själva låttextfilen, till exempel översättningar som skrivits in i den.
+lyrics.suggestions.diff.part: Del {before}, nu {after}
+lyrics.suggestions.diff.play: Spela upp den här delen av låten
+lyrics.suggestions.diff.removed: Borttagen
+lyrics.suggestions.diff.resegmented: Orden delas upp i stavelser på ett annat sätt
+lyrics.suggestions.diff.retimedMany: "{count} ord har fått ny tidsangivelse"
+lyrics.suggestions.diff.retimedOne: 1 ord har fått ny tidsangivelse
+lyrics.suggestions.diff.singer: Sångare {n}
+lyrics.suggestions.diff.startsEarlier: Börjar {s} s tidigare
+lyrics.suggestions.diff.startsLater: Börjar {s} s senare
+lyrics.suggestions.diff.textOnly: Endast textändringar kan visas för det här förslaget.
+lyrics.suggestions.diff.unexplained: Förslaget ändrar också delar av låttextfilen som inte kan visas här.
+lyrics.suggestions.diff.writers: "Upphovsmän: {before}, nu {after}"
+lyrics.suggestions.editor.note: Föreslår en redigering av den här låttexten. Ägaren avgör om den ska godkännas.
+lyrics.suggestions.editor.noteOwner: Föreslår en redigering av låttexten av {name}. De avgör om den ska godkännas.
+lyrics.suggestions.editor.summary: Sammanfattning
+lyrics.suggestions.editor.summaryPlaceholder: Vad ändrade du?
+lyrics.suggestions.error.generic: Något gick fel. Försök igen.
+lyrics.suggestions.error.limit: Du har för många förslag som väntar. Försök igen när några har besvarats.
+lyrics.suggestions.error.load: Det gick inte att läsa in förslagen.
+lyrics.suggestions.error.noChange: Detta är samma som den nuvarande låttexten.
+lyrics.suggestions.error.notPending: Det här förslaget har redan besvarats eller dragits tillbaka.
+lyrics.suggestions.error.outdated: Låttexten har ändrats sedan det här föreslogs, så det kan inte längre godkännas.
+lyrics.suggestions.error.ownVariation: Det här är dina egna låttexter, så du kan redigera dem direkt.
+lyrics.suggestions.error.unshareable: Dessa låttexter är privata för sin ägare, så de kan inte ta emot förslag.
+lyrics.suggestions.fork: Forka med denna ändring
+lyrics.suggestions.from: Från {name}
+lyrics.suggestions.incomingEmpty: När någon föreslår en ändring i dina låttexter visas den här.
+lyrics.suggestions.incomingTitle: Förslag till dig
+lyrics.suggestions.loadFailed: Det gick inte att läsa in det här förslaget.
+lyrics.suggestions.notify.accepted: Förslaget godkändes.
+lyrics.suggestions.notify.rejected: Förslaget avvisades.
+lyrics.suggestions.notify.sent: Förslaget skickades. Tack för att du hjälper till!
+lyrics.suggestions.notify.withdrawn: Förslaget återkallades.
+lyrics.suggestions.outdated.acceptReason: Dina låttexter ändrades efter att det här föreslogs, så det kan inte godkännas i sitt nuvarande skick.
+lyrics.suggestions.outdated.author: Låttexterna ändrades efter att du föreslog det här, så det kan inte godkännas i sitt nuvarande skick. Utgå från den senaste versionen för att föreslå det igen.
+lyrics.suggestions.outdated.owner: Dina låttexter ändrades efter att det här föreslogs, så det kan inte godkännas i sitt nuvarande skick. {name} kan utgå från den senaste versionen och föreslå det igen.
+lyrics.suggestions.outdated.suggester: Den som föreslog
+lyrics.suggestions.outgoingEmpty: Ändringar du föreslår i andras låttexter visas här.
+lyrics.suggestions.outgoingTitle: Dina förslag
+lyrics.suggestions.rebase: Utgå från den senaste versionen
+lyrics.suggestions.reference.hide: Dölj
+lyrics.suggestions.reference.note: Dessa ändringar gjordes mot en äldre version. Gör dem igen i redigeraren nedan.
+lyrics.suggestions.reference.title: Ändringar att göra om
+lyrics.suggestions.reject.button: Avvisa
+lyrics.suggestions.reject.message: Berätta gärna varför.
+lyrics.suggestions.reject.title: Avvisa det här förslaget?
+lyrics.suggestions.review: Granska
+lyrics.suggestions.reviewTitle: Föreslagen ändring
+lyrics.suggestions.stale.message: En nyare version av de här låttexterna har sparats sedan du började. Läs in den för att göra dina ändringar igen ovanpå. Din text sparas som ett utkast.
+lyrics.suggestions.state.accepted: Godkänd
+lyrics.suggestions.state.expired: Utgången
+lyrics.suggestions.state.outdated: Föråldrad
+lyrics.suggestions.state.pending: Väntar på granskning
+lyrics.suggestions.state.rejected: Avvisad
+lyrics.suggestions.state.withdrawn: Återkallad
+lyrics.suggestions.success.title: Förslaget skickades!
+lyrics.suggestions.summary.language: Språket ändrades
+lyrics.suggestions.summary.noLines: Inga radändringar hittades
+lyrics.suggestions.summary.none: Inga ändringar i låttexten
+lyrics.suggestions.summary.otherDetails: Andra filuppgifter ändrades
+lyrics.suggestions.summary.singerNames: Sångarnas namn ändrades
+lyrics.suggestions.summary.writers: Låtskrivare ändrades
+lyrics.suggestions.to: Till {name}
+lyrics.suggestions.validate.noBase: De här låttexterna kan inte ta emot förslag än.
+lyrics.suggestions.withdraw.confirm: Återkalla
+lyrics.suggestions.withdraw.message: Ägaren kommer inte längre att se det.
+lyrics.suggestions.withdraw.title: Återkalla det här förslaget?
 lyrics.translation.chip.pronunciation: Uttal
 lyrics.translation.chip.translated: Översatt
 lyrics.translation.credit: Översatt av {{source}}
 lyrics.translation.credit.apple: Översatt av Apple Music
+lyrics.translation.credit.community: Gemenskapens översättning
 lyrics.translation.menu.hide: Dölj översättningar
 lyrics.translation.menu.hidePronunciation: Dölj uttal
 lyrics.translation.menu.show: Visa översättningar
@@ -1648,13 +2171,16 @@ mobile.lyrics.instrumentalNote: Det här spåret har ingen sång.
 mobile.lyrics.loadFailed: Det gick inte att läsa in låttexten
 mobile.lyrics.noneAvailable: Inga låttexter tillgängliga
 mobile.lyrics.noneFound: Vi kunde inte hitta några låttexter för den här låten.
+mobile.lyrics.pronunciation: Uttal
 mobile.lyrics.providerAvailable: Tillgänglig
 mobile.lyrics.providerChecking: Kontrollerar…
 mobile.lyrics.providerCommunity: Community (Rise)
 mobile.lyrics.providerMenu: Leverantörsmeny
 mobile.lyrics.providerNotChecked: Inte kontrollerad
 mobile.lyrics.providerUnavailable: Inte tillgänglig
+mobile.lyrics.remixedFrom: Remixad från {contributor}
 mobile.lyrics.source: Källa för låttexter
+mobile.lyrics.togglePronunciation: Växla uttal
 mobile.lyrics.toggleTranslation: Växla översättning
 mobile.lyrics.writtenBy: "Skriven av: "
 mobile.manifest.lyrics: Låttexter
@@ -2890,6 +3416,8 @@ notificationCenter.row.muted: Tystad
 notificationCenter.section.active: Aktiva
 notificationCenter.section.history: Historik
 notificationCenter.title: Notiser
+notify.explicitRestricted: Explicit innehåll är begränsat på ditt Apple-konto
+notify.explicitRestricted.allow: Explicit innehåll är begränsat på ditt Apple-konto. Du kan ändra det under Innehållsbegränsningar i profilinställningarna.
 notify.explicitRestrictedSkip: 'Hoppar över "{name}": explicit innehåll är begränsat på ditt Apple-konto'
 notify.explicitRestrictedStop: 'Uppspelningen stoppades: "{name}" är explicit, och explicit innehåll är begränsat på ditt Apple-konto'
 notify.licenseRefusedSkip: '"{name}" kan inte spelas just nu, hoppar över'
@@ -4095,6 +4623,11 @@ settings.nav.summary.connectivity: Discord, scrobbling, lyssningsfester, fjärrs
 settings.nav.summary.extensions: Teman, CSS-snuttar, tillägg
 settings.nav.summary.general: Start, kö, sovtimer, tangentbindningar
 settings.nav.summary.lyrics: Källor, översättning, visning, tidsinställning
+settings.nav.summary.lyricsYours: Låttexter du bidragit med
+settings.nav.summary.lyricsYours.many: "{count} förslag väntar på granskning"
+settings.nav.summary.lyricsYours.one: 1 förslag väntar på granskning
+settings.nav.summary.lyricsYours.views.many: "{views} visningar på {n} dagar"
+settings.nav.summary.lyricsYours.views.one: "{views} visning på {n} dagar"
 settings.nav.summary.notifications: Kategorier, historik, systemaviseringar
 settings.nav.summary.power: Prestanda, bildfrekvens, energisparlägen
 settings.nav.summary.profile: Apple Music-konto
@@ -4647,7 +5180,7 @@ settings.option.general.useSmartQueueByDefault.needsAutomix: Automix är av i Lj
 settings.option.general.warnBeforeQueueOverride: Varna innan kön skrivs över
 settings.option.hide: Dölj
 settings.option.left: Vänster
-settings.option.lyrics.contributeCta: Bidra och ladda upp låttexter
+settings.option.lyrics.contributeCta: Gemenskapens låttexter
 settings.option.lyrics.contributeCta.description: Ladda upp synkade låttexter, förhandsvisa dem live och se topplistan över bidragsgivare.
 settings.option.lyrics.customScrollerProperties: Anpassade rullningsegenskaper
 settings.option.lyrics.customScrollerProperties.description: Aktivera anpassad stil för rullningsanimationer för låttexter.
@@ -4987,6 +5520,8 @@ settings.option.visual.liquidGlassScrollPerf: Lättviktsglas vid scrollning
 settings.option.visual.liquidGlassScrollPerf.description: Förenklar ljusbrytningen för flytande glas till en enkel oskärpa vid rullning, och tonar sedan mjukt tillbaka den när du stannar. Minskar rullningshack på krävande system utan förändring i stillastående läge. Alltid aktiverat i Game Mode.
 settings.option.visual.liquidGlassScrollPerf.descriptionV2: Förenklar liquid glass-brytningen till en vanlig oskärpa medan du scrollar och tonar sedan in den igen när du slutar. Minskar hack vid scrollning på krävande system utan förändring i vila.
 settings.option.visual.mainMenuPosition: Position för huvudmenyn
+settings.option.visual.matchPageGlow: Omslagsglöd
+settings.option.visual.matchPageGlow.description: Låter omslaget glöda längs överkanten av en matchad sida.
 settings.option.visual.matchPageToArtwork: Anpassa sidan efter omslaget
 settings.option.visual.matchPageToArtwork.description: Färglägger album- och spellistsidor med färgerna från deras omslag, i ljust och mörkt läge.
 settings.option.visual.mergeAppleMusicPlaylists: Slå ihop Apple Music-spellistor
@@ -5149,6 +5684,12 @@ settings.privacy.deviceSpecs.description: "Skickar information om din nuvarande 
 settings.privacy.replay: Bidra med lyssningshistorik för Cider Replay
 settings.privacy.replay.description: Skicka lyssningshistorik anonymt för att bidra till Ciders årliga gemenskapsprojekt Replay. Publik statistik kan ses på cider.sh/replay.
 settings.privacy.statement: På Cider Collective tar vi integritet på största allvar. Vi samlar inte in några personligt identifierbara uppgifter och säljer inga data till tredje part. Eventuella data du väljer att dela med oss används för att förbättra appen och delas inte med någon annan. All personlig information som kan lagras tas bort innan den skickas till oss.
+settings.profile.contentRestrictions.changeEmail: Ändra återställningsmejl
+settings.profile.contentRestrictions.changePasscode: Ändra lösenkod
+settings.profile.contentRestrictions.family: Hanteras av familjeorganisatören.
+settings.profile.contentRestrictions.rating: Musikklassificering
+settings.profile.contentRestrictions.rating.clean: Ren
+settings.profile.contentRestrictions.rating.explicit: Explicit
 settings.profile.crop.hint: Dra för att flytta, scrolla för att zooma
 settings.profile.crop.title: Placera ditt foto
 settings.profile.defaultName: Apple Music-användare
@@ -5158,6 +5699,7 @@ settings.profile.field.handle.description: Ditt @användarnamn, används för de
 settings.profile.field.photo: Profilbild
 settings.profile.field.photo.change: Byt profilbild
 settings.profile.field.photo.description: En anpassad profilbild har ställts in.
+settings.profile.header.contentRestrictions: Innehållsbegränsningar
 settings.profile.header.identity: Redigera profil
 settings.profile.header.region: Region och språk
 settings.profile.header.visibility: Visning i sidofältet
@@ -5169,6 +5711,7 @@ settings.profile.option.showProfile: Visa profil i sidofältet
 settings.profile.policy.allowed: Tillåtet
 settings.profile.policy.label: Innehåll med explicit språk
 settings.profile.policy.restricted: Begränsat
+settings.profile.policy.restrictedClean: Begränsad (Ren)
 settings.profile.signOut.confirmMessage: Du kommer att skickas tillbaka till inloggningsskärmen och din lokala bibliotekscache kommer att rensas. Vill du fortsätta?
 settings.profile.signOut.confirmTitle: Logga ut från Apple Music?
 settings.profile.status.disconnected: Inte inloggad
@@ -5256,7 +5799,7 @@ settings.takeout.selectAll: Markera alla
 settings.takeout.title: Inställningsexport
 settings.title: Inställningar
 settings.troubleshooting.bgDiagnostics: Diagnostik för bakgrundsuppspelning
-settings.troubleshooting.bgDiagnostics.desc: Extra loggdetaljer för att diagnostisera uppspelningsproblem när fönstret är minimerat eller inte är i fokus — vem som pausade spelaren, timer-svält och OS-suspenderingsperioder. Aktivera när du rapporterar ett fel med bakgrundsuppspelning.
+settings.troubleshooting.bgDiagnostics.desc: Extra loggspår för att diagnostisera uppspelningsproblem när fönstret är minimerat eller inte har fokus, t.ex. vem som pausade spelaren, timerfördröjningar och episoder där operativsystemet pausar appen. Aktivera när du rapporterar en bugg med bakgrundsuppspelning.
 settings.troubleshooting.desc: Loggfiler och MKLite-felsökningsloggning.
 settings.troubleshooting.descV2: Loggning för MKLite och uppspelning i bakgrunden.
 settings.troubleshooting.hevcWorkaround: HEVC-lösning
@@ -5267,8 +5810,8 @@ settings.troubleshooting.impressionReporting.warning2: Detta är äkta utgående
 settings.troubleshooting.logFile: Loggfil
 settings.troubleshooting.logFile.actions: Åtgärder för loggfil
 settings.troubleshooting.logFile.desc: Visa, kopiera eller rensa din loggfil
-settings.troubleshooting.mkliteDebug: Felsökningslogg för MKLite
-settings.troubleshooting.mkliteDebug.desc: Detaljerad konsolutskrift från MKLite – PlayActivity-nyttolaster (JSPLAY), spårbyten och uppspelningsstatus. Användbart för att jämföra vad vi skickar till Apple med music.apple.com. Låt vara inaktiverat vid normal användning.
+settings.troubleshooting.mkliteDebug: Felsökningsloggning för Cerium
+settings.troubleshooting.mkliteDebug.desc: Detaljerad konsolutdata från Cerium som hjälper oss att diagnostisera mer komplexa uppspelningsproblem genom att visa extra utförlig felsökningsinformation. Inaktivera när du har skickat de loggar vi behöver.
 settings.troubleshooting.mkLoadingMethod: Laddningsmetod för MusicKit
 settings.troubleshooting.mkLoadingMethod.warning1: Ändra metoden som används för att ladda MusicKit. Detta används för att åtgärda potentiella laddningsproblem efter uppdateringar av MusicKit.
 settings.troubleshooting.mkLoadingMethod.warning2: Denna inställning bör INTE ändras såvida du inte vet vad du gör eller har blivit instruerad att göra det.
