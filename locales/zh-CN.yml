@@ -506,6 +506,7 @@ action.newpreset:
   issue: 32
   superseded_at: 2026-07-08
 action.next: 下一步
+action.notNow: 暂不
 action.ok:
   value: 好
   source: human
@@ -2161,6 +2162,43 @@ connect.remote.notification:
   by: "@Tesutarin"
   issue: 25
   superseded_at: 2026-07-08
+contentRestrictions.allowed: 已允许显式内容
+contentRestrictions.allowExplicit: 允许显式内容
+contentRestrictions.dialog.changeEmailMessage: 输入你的密码，并输入一个 Apple 可用于重置密码的新邮箱。
+contentRestrictions.dialog.changeEmailTitle: 更改恢复邮箱
+contentRestrictions.dialog.changePasscodeMessage: 输入当前密码，然后选择一个新的 4 位数密码。
+contentRestrictions.dialog.changePasscodeTitle: 更改密码
+contentRestrictions.dialog.checking: 正在检查…
+contentRestrictions.dialog.confirm: 确认密码
+contentRestrictions.dialog.createMessage: 允许显式内容需要内容限制密码。请选择一个 4 位数密码，以及一个 Apple 可用于重置密码的邮箱。
+contentRestrictions.dialog.createRestrictMessage: 限制显式内容需要内容限制密码。请选择一个 4 位数密码，以及一个 Apple 可用于重置密码的邮箱。
+contentRestrictions.dialog.createRestrictSubmit: 创建并限制
+contentRestrictions.dialog.createSubmit: 创建并允许
+contentRestrictions.dialog.createTitle: 创建密码
+contentRestrictions.dialog.currentPasscode: 当前密码
+contentRestrictions.dialog.failed: 无法连接 Apple。请检查网络连接后重试。
+contentRestrictions.dialog.forgot: 忘记密码？
+contentRestrictions.dialog.locked: 尝试次数过多。请在 {minutes} 分钟后重试。
+contentRestrictions.dialog.message: 允许显式内容需要你的内容限制密码。
+contentRestrictions.dialog.mismatch: 密码不一致。
+contentRestrictions.dialog.newPasscode: 新密码
+contentRestrictions.dialog.newRecoveryEmail: 新恢复邮箱
+contentRestrictions.dialog.notApplied: Apple 未应用此更改。请重试，或在 Apple Music 网站上更改。
+contentRestrictions.dialog.placeholder: 密码
+contentRestrictions.dialog.recoveryEmail: 恢复邮箱
+contentRestrictions.dialog.recoveryEmailPlaceholder: name@example.com
+contentRestrictions.dialog.rejected: Apple 无法保存此更改。请检查你输入的内容后重试。
+contentRestrictions.dialog.restrictMessage: 输入你的内容限制密码以限制显式内容。
+contentRestrictions.dialog.restrictSubmit: 限制
+contentRestrictions.dialog.restrictTitle: 限制显式内容
+contentRestrictions.dialog.submit: 允许
+contentRestrictions.dialog.title: 允许显式内容
+contentRestrictions.dialog.wrongPasscode: 密码不正确。请重试。
+contentRestrictions.emailChanged: 恢复邮箱已更改
+contentRestrictions.offer.message: 你的 Apple 账户已限制显式内容，因此显式歌曲将被隐藏并跳过。你可以使用内容限制密码允许显式内容。
+contentRestrictions.offer.messageCreate: 你的 Apple 账户已限制显式内容，因此显式歌曲将被隐藏并跳过。你可以通过创建内容限制密码来允许显式内容。
+contentRestrictions.offer.title: 显式内容已限制
+contentRestrictions.passcodeChanged: 密码已更改
 date.format:
   value: ${y}年${m}${d}日
   source: ai
@@ -2780,11 +2818,15 @@ lyrics.contrib.confirm.cancel:
   source: human
   by: "@Tesutarin"
   issue: 32
+lyrics.contrib.confirm.changeCount: 已编辑 {edited} 处，已添加 {added} 处，已删除 {removed} 处
+lyrics.contrib.confirm.changes: 你的更改
 lyrics.contrib.confirm.note:
   value: 你的歌词将提交到社区歌词库，并为你署名。
   source: human
   by: "@Tesutarin"
   issue: 32
+lyrics.contrib.confirm.showAll: 显示全部
+lyrics.contrib.confirm.showFewer: 显示较少
 lyrics.contrib.confirm.title:
   value: 提交歌词？
   source: human
@@ -2795,6 +2837,13 @@ lyrics.contrib.cta.submit:
   source: human
   by: "@Tesutarin"
   issue: 32
+lyrics.contrib.detail.delete: 删除这些歌词
+lyrics.contrib.detail.edit: 在歌词编辑器中编辑
+lyrics.contrib.detail.new: 新建
+lyrics.contrib.detail.suggestions: 建议
+lyrics.contrib.detail.syncLine: 已同步行
+lyrics.contrib.detail.syncSyllable: 已同步音节
+lyrics.contrib.detail.syncWord: 已同步词语
 lyrics.contrib.drafts.button:
   value: 草稿
   source: human
@@ -2810,6 +2859,7 @@ lyrics.contrib.drafts.empty:
   source: human
   by: "@Tesutarin"
   issue: 32
+lyrics.contrib.drafts.kept: 你之前的草稿已保存在“草稿”中。
 lyrics.contrib.drafts.load:
   value: 载入
   source: human
@@ -2820,6 +2870,7 @@ lyrics.contrib.drafts.saveCurrent:
   source: human
   by: "@Tesutarin"
   issue: 32
+lyrics.contrib.drafts.suggestion: 建议的编辑
 lyrics.contrib.drafts.title:
   value: 已存草稿
   source: human
@@ -2840,6 +2891,7 @@ lyrics.contrib.editor.alignHint:
   source: human
   by: "@Tesutarin"
   issue: 32
+lyrics.contrib.editor.backgroundHint: 背景人声
 lyrics.contrib.editor.balance:
   value: 平衡
   source: human
@@ -2860,11 +2912,16 @@ lyrics.contrib.editor.batchV2:
   source: human
   by: "@Tesutarin"
   issue: 32
+lyrics.contrib.editor.check: 检查
+lyrics.contrib.editor.close: 关闭
+lyrics.contrib.editor.creditsFound: 有 {count} 行看起来是署名或备注而非歌词，例如“{example}”。
+lyrics.contrib.editor.dismiss: 忽略
 lyrics.contrib.editor.dragReorder:
   value: 拖动以重新排序
   source: human
   by: "@Tesutarin"
   issue: 32
+lyrics.contrib.editor.duetHint: 第二人声
 lyrics.contrib.editor.duplicate:
   value: 复制
   source: human
@@ -2880,6 +2937,9 @@ lyrics.contrib.editor.empty:
   source: human
   by: "@Tesutarin"
   issue: 32
+lyrics.contrib.editor.follow: 跟随
+lyrics.contrib.editor.followHint: 保持当前播放行可见
+lyrics.contrib.editor.format: 格式
 lyrics.contrib.editor.insert:
   value: 插入
   source: human
@@ -2910,16 +2970,34 @@ lyrics.contrib.editor.interlude:
   source: human
   by: "@Tesutarin"
   issue: 32
+lyrics.contrib.editor.issueCount: "{count} 个问题"
+lyrics.contrib.editor.issueLine: 第 {line} 行
+lyrics.contrib.editor.issueOne: 1 个问题
 lyrics.contrib.editor.issues:
   value: 处问题
   source: human
   by: "@Tesutarin"
   issue: 32
+lyrics.contrib.editor.joinNext: 与下一个合并
+lyrics.contrib.editor.joinNextHint: 将此字块与下一个字块作为一个词演唱
+lyrics.contrib.editor.keepCredits: 保留
+lyrics.contrib.editor.lcdLine: 第 {line} 行，共 {total} 行
+lyrics.contrib.editor.lcdLines: "{total} 行"
 lyrics.contrib.editor.line:
   value: 行
   source: human
   by: "@Tesutarin"
   issue: 32
+lyrics.contrib.editor.lineEnd: 行结束
+lyrics.contrib.editor.lineStart: 行开始
+lyrics.contrib.editor.lineTiming: 行时间
+lyrics.contrib.editor.localizationsApart: 此处不编辑翻译和发音。社区提供的内容会单独保留。
+lyrics.contrib.editor.lossInvalid: 此 TTML 存在错误，编辑器无法读取。
+lyrics.contrib.editor.lossLines: 部分歌词在播放器中的显示方式会发生变化。
+lyrics.contrib.editor.lossMarkup: 不受支持的标记将被移除：{names}
+lyrics.contrib.editor.lossOnEdit: 在此编辑将更改此 TTML
+lyrics.contrib.editor.lossStay: 继续编辑 TTML
+lyrics.contrib.editor.lossSwitch: 仍然切换
 lyrics.contrib.editor.markerAdd:
   value: 在播放头处添加标记
   source: human
@@ -2945,6 +3023,7 @@ lyrics.contrib.editor.modeEdit:
   source: human
   by: "@Tesutarin"
   issue: 32
+lyrics.contrib.editor.modeLayers: 图层
 lyrics.contrib.editor.modePreview:
   value: 预览
   source: human
@@ -2960,6 +3039,7 @@ lyrics.contrib.editor.noLines:
   source: human
   by: "@Tesutarin"
   issue: 32
+lyrics.contrib.editor.offTrack: 正在播放其他曲目。播放此曲目
 lyrics.contrib.editor.offTrackHint:
   value: 当前播放的是其他曲目。点击播放此曲目
   source: human
@@ -2970,11 +3050,17 @@ lyrics.contrib.editor.playThisTrack:
   source: human
   by: "@Tesutarin"
   issue: 32
+lyrics.contrib.editor.prettyPrint: 格式化输出
+lyrics.contrib.editor.prettyPrintHint: 每行和每个元素单独占一行，并缩进
 lyrics.contrib.editor.previewingInPlayer:
   value: 正在播放器中预览
   source: human
   by: "@Tesutarin"
   issue: 32
+lyrics.contrib.editor.previewNote: 以听众的视角播放你的草稿，包括你的图层。
+lyrics.contrib.editor.redo: 重做
+lyrics.contrib.editor.redoHint: 重做（{keys}）
+lyrics.contrib.editor.removeCredits: 移除
 lyrics.contrib.editor.repeats:
   value: 重复
   source: human
@@ -3000,6 +3086,7 @@ lyrics.contrib.editor.selected:
   source: human
   by: "@Tesutarin"
   issue: 32
+lyrics.contrib.editor.selectedCount: 已选择 {count} 项
 lyrics.contrib.editor.selectWord:
   value: 选择一个词…
   source: human
@@ -3040,16 +3127,98 @@ lyrics.contrib.editor.submit:
   source: human
   by: "@Tesutarin"
   issue: 32
+lyrics.contrib.editor.undoHint: 撤销（{keys}）
 lyrics.contrib.editor.unsynced:
   value: 未同步
   source: human
   by: "@Tesutarin"
   issue: 32
+lyrics.contrib.editor.valid: 有效
 lyrics.contrib.editor.word:
   value: 词
   source: human
   by: "@Tesutarin"
   issue: 32
+lyrics.contrib.editor.wordEnd: 词结束
+lyrics.contrib.editor.wordStart: 词开始
+lyrics.contrib.editor.wordTiming: 词时间
+lyrics.contrib.error.rateLimited: 当前已达到上限，请稍后再试。
+lyrics.contrib.error.tooLarge: 这些歌词过大，无法上传。TTML 最大可为 512 KB。
+lyrics.contrib.history.button: 历史记录
+lyrics.contrib.history.current: 当前
+lyrics.contrib.history.empty: 暂无历史记录。
+lyrics.contrib.history.open: 打开
+lyrics.contrib.history.openTitle: 在歌词编辑器中打开
+lyrics.contrib.history.restore: 恢复
+lyrics.contrib.history.restored: 版本已恢复。
+lyrics.contrib.history.restoreFailed: 无法恢复此版本。
+lyrics.contrib.history.restoreMessage: 你的歌词将恢复为此版本。较新的版本会保留在历史记录中。
+lyrics.contrib.history.restoreTitle: 恢复此版本？
+lyrics.contrib.history.stale: 自列表加载以来，这些歌词已更改。请重试。
+lyrics.contrib.history.suggestedBy: 由 {name} 建议
+lyrics.contrib.hub.editName: 编辑名称
+lyrics.contrib.hub.layersCount: 已编写 {count} 个
+lyrics.contrib.hub.lyricsCount: "{count} 首歌词"
+lyrics.contrib.hub.lyricsCount.many: "{count} 首歌曲"
+lyrics.contrib.hub.lyricsCount.one: 1 首歌曲
+lyrics.contrib.hub.none: 暂无
+lyrics.contrib.hub.pin: 在设置侧边栏中显示你的歌词
+lyrics.contrib.hub.pinDesc: 显示等待你审核的建议数量
+lyrics.contrib.hub.sent: 你发送的建议
+lyrics.contrib.hub.sentCount: 已发送 {count} 条
+lyrics.contrib.hub.sentOutdated: "{count} 条已过时"
+lyrics.contrib.hub.sentWaiting: "{count} 条等待中"
+lyrics.contrib.hub.work: 你的作品
+lyrics.contrib.import.backgroundVocals: 背景人声
+lyrics.contrib.import.currentSong: 当前歌曲
+lyrics.contrib.import.dropHint: 松开以编辑歌词
+lyrics.contrib.import.empty: 此文件为空。
+lyrics.contrib.import.failed: 无法导入歌词
+lyrics.contrib.import.included: 已包含
+lyrics.contrib.import.lines: 行
+lyrics.contrib.import.noCurrent: 当前没有播放歌曲。请在编辑器中选择曲目。
+lyrics.contrib.import.notTtml: 此 XML 文件不是 TTML 歌词。
+lyrics.contrib.import.open: 在编辑器中打开
+lyrics.contrib.import.openFile: 打开 TTML 文件
+lyrics.contrib.import.otherTrack: 选择其他曲目
+lyrics.contrib.import.pronunciations: 发音
+lyrics.contrib.import.replace: 替换
+lyrics.contrib.import.replaceMessage: 该文件将替换编辑器中的内容。你当前的文本将保存在草稿中。
+lyrics.contrib.import.replaceTitle: 替换你的编辑内容?
+lyrics.contrib.import.singers: 演唱者
+lyrics.contrib.import.songParts: 歌曲段落
+lyrics.contrib.import.timing: 时间
+lyrics.contrib.import.timingLine: 逐行
+lyrics.contrib.import.timingWord: 逐字
+lyrics.contrib.import.title: 导入歌词
+lyrics.contrib.import.tooLarge: 此文件大于 512 KB。
+lyrics.contrib.import.translation: 翻译
+lyrics.contrib.import.unreadable: 无法读取此文件。
+lyrics.contrib.import.wrongType: 仅可导入 .ttml 和 .xml 文件。
+lyrics.contrib.lane.edit: 编辑
+lyrics.contrib.lane.fillHint: 播放歌曲以补充细节。
+lyrics.contrib.lane.fixOverlaps: 修复重叠
+lyrics.contrib.lane.fixOverlapsHint: 将每个字词和行的结束时间设为同一声部下一个字词或行的开始时间
+lyrics.contrib.lane.free: 自由
+lyrics.contrib.lane.freeHint: 拖动边缘只会改变该字词
+lyrics.contrib.lane.push: 推移
+lyrics.contrib.lane.pushHint: 拖动边缘会带动其后的字词一起移动
+lyrics.contrib.lane.resizeHint: 拖动以调整时间轴大小,双击可重置
+lyrics.contrib.lane.show: 时间轴
+lyrics.contrib.lane.showHint: 显示歌曲波形,以便对齐字词时间
+lyrics.contrib.lane.snap: 吸附
+lyrics.contrib.lane.snapHint: 点击和拖动会吸附到附近的音头或节拍。拖动时按住 Shift 可跳过吸附。
+lyrics.contrib.lane.squeeze: 挤压
+lyrics.contrib.lane.squeezeHint: 拖动边缘会从相邻字词中取走时间
+lyrics.contrib.lane.view: 视图
+lyrics.contrib.lane.zoomIn: 放大
+lyrics.contrib.lane.zoomOut: 缩小
+lyrics.contrib.layers.coverage: "{n}% 的行"
+lyrics.contrib.layers.empty: 你编写的翻译和发音会显示在这里。
+lyrics.contrib.layers.pronunciation: 发音
+lyrics.contrib.layers.stale: "{n} 行需要更新"
+lyrics.contrib.layers.staleOne: 1 行需要更新
+lyrics.contrib.layers.translation: 翻译
 lyrics.contrib.leaderboard.contributor:
   value: 贡献者
   source: human
@@ -3090,6 +3259,27 @@ lyrics.contrib.menu.addEdit:
   source: human
   by: "@Tesutarin"
   issue: 32
+lyrics.contrib.menu.closeGaps: 消除间隙
+lyrics.contrib.menu.copyLine: 复制行
+lyrics.contrib.menu.copyRepeats: 将时间复制到重复部分
+lyrics.contrib.menu.deleteLine: 删除行
+lyrics.contrib.menu.deleteWord: 删除字词
+lyrics.contrib.menu.editText: 编辑文本
+lyrics.contrib.menu.firstVocalist: 第一演唱者
+lyrics.contrib.menu.insertInterlude: 在之后插入间奏
+lyrics.contrib.menu.insertLine: 在之后插入一行
+lyrics.contrib.menu.joinNext: 与下一个字词合并
+lyrics.contrib.menu.mainVocal: 主唱
+lyrics.contrib.menu.pasteLine: 在之后粘贴歌词行
+lyrics.contrib.menu.playFrom: 从此处播放
+lyrics.contrib.menu.removeWordTiming: 移除逐字时间
+lyrics.contrib.menu.setEnd: 将结束设为播放头位置
+lyrics.contrib.menu.setStart: 将开始设为播放头位置
+lyrics.contrib.menu.snapOnsets: 对齐到起音点
+lyrics.contrib.menu.spaceEvenly: 平均分布
+lyrics.contrib.menu.spaceSyllables: 按音节分布
+lyrics.contrib.menu.toPlayhead: 移至播放头位置
+lyrics.contrib.menu.unjoinNext: 与下一个词分开
 lyrics.contrib.mine.cancel:
   value: 取消
   source: human
@@ -3105,6 +3295,10 @@ lyrics.contrib.mine.chooseNameSub:
   source: human
   by: "@Tesutarin"
   issue: 32
+lyrics.contrib.mine.delete: 删除
+lyrics.contrib.mine.deleteFailed: 无法删除这些歌词。
+lyrics.contrib.mine.deleteMessage: 你为 {name} 提交的歌词将从社区歌词库中移除。
+lyrics.contrib.mine.deleteTitle: 删除这些歌词?
 lyrics.contrib.mine.edit:
   value: 编辑
   source: human
@@ -3115,11 +3309,14 @@ lyrics.contrib.mine.error:
   source: human
   by: "@Tesutarin"
   issue: 32
+lyrics.contrib.mine.hidden: 已隐藏
 lyrics.contrib.mine.joined:
   value: 加入时间
   source: human
   by: "@Tesutarin"
   issue: 32
+lyrics.contrib.mine.joinedOn: 加入于 {date}
+lyrics.contrib.mine.layersTitle: 翻译与发音
 lyrics.contrib.mine.listNote:
   value: 你的贡献将在你添加过歌词的曲目中于应用内显示。
   source: human
@@ -3130,11 +3327,18 @@ lyrics.contrib.mine.loading:
   source: human
   by: "@Tesutarin"
   issue: 32
+lyrics.contrib.mine.lyricsEmpty: 你添加的歌词会显示在这里。
+lyrics.contrib.mine.lyricsError: 无法加载你的歌词。
+lyrics.contrib.mine.lyricsTitle: 你的歌词
 lyrics.contrib.mine.namePlaceholder:
   value: 显示名称
   source: human
   by: "@Tesutarin"
   issue: 32
+lyrics.contrib.mine.otherSuggestions: 为你推荐的其他内容
+lyrics.contrib.mine.pendingMany: "{count} 条建议待处理"
+lyrics.contrib.mine.pendingOne: 1 条建议待处理
+lyrics.contrib.mine.remixedFrom: 改编自 {name}
 lyrics.contrib.mine.retry:
   value: 重试
   source: human
@@ -3180,6 +3384,7 @@ lyrics.contrib.notify.importedApple:
   source: human
   by: "@Tesutarin"
   issue: 32
+lyrics.contrib.notify.importedSource: 已导入来自 {source} 的逐时歌词。
 lyrics.contrib.notify.importedUser:
   value: 已导入现有社区歌词。
   source: human
@@ -3195,6 +3400,9 @@ lyrics.contrib.notify.importNone:
   source: human
   by: "@Tesutarin"
   issue: 32
+lyrics.contrib.notify.loadFailed: 无法加载这些歌词。
+lyrics.contrib.notify.localUnsupported: 暂不支持上传本地文件的歌词。
+lyrics.contrib.notify.mineLookupFailed: 无法检查你是否已有这首歌的歌词。
 lyrics.contrib.notify.noCurrent:
   value: 当前没有正在播放的歌曲。
   source: human
@@ -3216,13 +3424,46 @@ lyrics.contrib.notify.submitted:
   source: human
   by: "@Tesutarin"
   issue: 32
+lyrics.contrib.notify.title: 社区歌词
 lyrics.contrib.preview.empty:
   value: 粘贴或导入 TTML 以在此处预览歌词。
   source: human
   by: "@Tesutarin"
   issue: 32
+lyrics.contrib.profile.avatar: 头像
+lyrics.contrib.profile.avatarBlocked: 你的个人资料已关闭头像上传功能。
+lyrics.contrib.profile.avatarBusy: 头像上传繁忙,请稍后再试。
+lyrics.contrib.profile.avatarFailed: 无法上传你的头像。
+lyrics.contrib.profile.avatarHidden: 你的头像已被移除。
+lyrics.contrib.profile.avatarInvalid: 无法使用该图片,请换一张。
+lyrics.contrib.profile.avatarRemove: 移除
+lyrics.contrib.profile.avatarRemoved: 头像已移除。
+lyrics.contrib.profile.avatarRemoveFailed: 无法移除你的头像。
+lyrics.contrib.profile.avatarSaved: 头像已更新。
+lyrics.contrib.profile.avatarTooLarge: 该图片过大,请选择较小的图片。
+lyrics.contrib.profile.avatarUnreadable: 无法打开该图片。
+lyrics.contrib.profile.avatarUpload: 上传
+lyrics.contrib.profile.country: 国家或地区
+lyrics.contrib.profile.countryAll: 所有国家和地区
+lyrics.contrib.profile.countryFailed: 无法保存你的国家或地区。
+lyrics.contrib.profile.countryNoMatch: 没有匹配项
+lyrics.contrib.profile.countryNone: 不显示
+lyrics.contrib.profile.countryNoneChoice: 不便透露
+lyrics.contrib.profile.countrySearch: 搜索国家和地区
+lyrics.contrib.profile.countrySuggested: 推荐
+lyrics.contrib.profile.name: 显示名称
+lyrics.contrib.profile.nameLocked: 你的名称已被管理员更改,目前无法修改。
 lyrics.contrib.profile.nameRules: 使用 3 到 24 个字母、数字、连字符或下划线。
+lyrics.contrib.profile.notFound: 请先选择显示名称。
+lyrics.contrib.profile.rateLimited: 你的修改次数过多,请稍后再试。
+lyrics.contrib.profile.section: 个人资料
 lyrics.contrib.profile.signedOut: 您需要先登录。
+lyrics.contrib.profile.upgradeDesc: 在下方添加头像以及你的国家或地区。
+lyrics.contrib.profile.upgradeDismiss: 关闭
+lyrics.contrib.profile.upgradeTitle: 更新你的个人资料
+lyrics.contrib.replace.confirm: 替换
+lyrics.contrib.replace.message: 每位用户对每首歌曲只能保留一个版本。提交此改编版本将替换你的现有版本,你之前的修订记录会保留在其历史中。
+lyrics.contrib.replace.title: 替换您的版本?
 lyrics.contrib.signin.button:
   value: 通过 Cider Taproom 登录
   source: human
@@ -3258,11 +3499,17 @@ lyrics.contrib.signin.waiting:
   source: human
   by: "@Tesutarin"
   issue: 32
+lyrics.contrib.stale.message: 自您开始编辑以来,可能从其他设备保存了更新版本的歌词。请重新加载并重新进行修改,您的文本可保留为草稿,或用您的版本覆盖。
+lyrics.contrib.stale.messageGone: 自您开始编辑以来,您的版本已被删除。覆盖即可保存您的版本。
+lyrics.contrib.stale.overwrite: 覆盖
+lyrics.contrib.stale.reload: 重新加载
+lyrics.contrib.stale.title: 这些歌词已更改
 lyrics.contrib.subtitle:
   value: 上传同步歌词，追踪你的影响力，登上排行榜。
   source: human
   by: "@Tesutarin"
   issue: 32
+lyrics.contrib.success.private: 只有您能看到这些歌词。
 lyrics.contrib.success.sub:
   value: 感谢你的贡献。
   source: human
@@ -3273,11 +3520,42 @@ lyrics.contrib.success.title:
   source: human
   by: "@Tesutarin"
   issue: 32
+lyrics.contrib.suggest.accept: 接受
+lyrics.contrib.suggest.again: 重新建议单词时间
+lyrics.contrib.suggest.allTimed: 每行都已有时间信息。
+lyrics.contrib.suggest.cancel: 取消
+lyrics.contrib.suggest.caption: 建议
+lyrics.contrib.suggest.clearPicked: 清除已选行
+lyrics.contrib.suggest.discard: 放弃
+lyrics.contrib.suggest.failed: 无法为整首歌曲计时。
+lyrics.contrib.suggest.heard: 已听 {percent}%
+lyrics.contrib.suggest.lines: 行
+lyrics.contrib.suggest.linesCount: 已建议 {count} 行
+lyrics.contrib.suggest.linesHint: 根据演唱部分和起音,为没有时间信息的行提出时间建议
+lyrics.contrib.suggest.noLines: 每行都已有单词时间信息。
+lyrics.contrib.suggest.picked: 已选 {count} 行
+lyrics.contrib.suggest.pickHint: 选择此行以重新建议其单词时间。按住 Shift 可选择范围。
+lyrics.contrib.suggest.quick: 快速分析
+lyrics.contrib.suggest.quickHint: 快速且静音地播放整首歌曲以进行记录
+lyrics.contrib.suggest.quickNeedsPlay: 请先播放此歌曲,然后再进行快速分析。
+lyrics.contrib.suggest.scanning: 正在扫描 {percent}%
+lyrics.contrib.suggest.timedCount: 已计时 {count} 行,{unsure} 行不确定
+lyrics.contrib.suggest.timedLines: 已计时 {count} 行
+lyrics.contrib.suggest.timing: 正在为歌曲计时… {percent}%
+lyrics.contrib.suggest.unheardNote: 尚未播放的部分将根据 Apple 的人声时间放置,并标记为不确定。
+lyrics.contrib.suggest.wholeSong: 整首歌曲
+lyrics.contrib.suggest.wholeSongHint: 根据目前已听部分,为整首歌曲的行和单词计时
+lyrics.contrib.suggest.words: 单词
+lyrics.contrib.suggest.wordsCount: 已将 {count} 行拆分为单词
+lyrics.contrib.suggest.wordsHint: 将已计时的行按起音拆分为单词
 lyrics.contrib.sync.back:
   value: 返回
   source: human
   by: "@Tesutarin"
   issue: 32
+lyrics.contrib.sync.colBegin: 开始
+lyrics.contrib.sync.colEnd: 结束
+lyrics.contrib.sync.cursor: 光标
 lyrics.contrib.sync.endGap:
   value: 结束（间隙）
   source: human
@@ -3380,9 +3658,10 @@ lyrics.contrib.tab.leaderboard:
   issue: 32
 lyrics.contrib.tab.mine:
   value: 我的贡献
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 32
+  superseded_at: 2026-10-26
 lyrics.contrib.tab.upload:
   value: 上传
   source: ai
@@ -3439,11 +3718,15 @@ lyrics.contrib.time.next:
   source: human
   by: "@Tesutarin"
   issue: 32
+lyrics.contrib.time.tapCaption: 随播放点击
+lyrics.contrib.time.timing: 计时
 lyrics.contrib.upload.change:
   value: 更改
   source: human
   by: "@Tesutarin"
   issue: 32
+lyrics.contrib.upload.changeTrack: 更换曲目
+lyrics.contrib.upload.details: 详细信息
 lyrics.contrib.upload.import:
   value: 导入当前歌词
   source: human
@@ -3454,6 +3737,7 @@ lyrics.contrib.upload.language:
   source: human
   by: "@Tesutarin"
   issue: 32
+lyrics.contrib.upload.libraryNote: 标题、艺术家和专辑将与您的提交内容一同保存。
 lyrics.contrib.upload.lyrics:
   value: 歌词
   source: human
@@ -3475,6 +3759,9 @@ lyrics.contrib.upload.preview:
   by: "@Tesutarin"
   issue: 32
   superseded_at: 2026-07-08
+lyrics.contrib.upload.remixNote: 您的版本将是这些歌词的改编版本。
+lyrics.contrib.upload.replaceNote: 提交将用这些歌词的改编版本替换您对这首歌曲的版本。
+lyrics.contrib.upload.searchFailed: 无法搜索 Apple Music:{reason}
 lyrics.contrib.upload.searchPlaceholder:
   value: 搜索 Apple Music 目录…
   source: human
@@ -3512,21 +3799,31 @@ lyrics.contrib.upload.writers:
   source: human
   by: "@Tesutarin"
   issue: 32
+lyrics.contrib.upload.writersOptional: 以逗号分隔的姓名(可选)
 lyrics.contrib.upload.writersPlaceholder:
   value: 以逗号分隔的姓名
   source: human
   by: "@Tesutarin"
   issue: 32
+lyrics.contrib.upload.writersShort: 词曲作者
+lyrics.contrib.validate.empty: 提交前请添加歌词。
+lyrics.contrib.validate.interludeEmpty: 第 {n} 行:间奏没有时长
+lyrics.contrib.validate.interludeShort: 第 {n} 行:少于 5 秒的间奏可能不显示等待点
 lyrics.contrib.validate.invalidXml:
   value: XML 无效。请检查你的 TTML 语法。
   source: human
   by: "@Tesutarin"
   issue: 32
+lyrics.contrib.validate.libraryMetadata: 添加歌词前,此歌曲需要标题和艺术家信息。
+lyrics.contrib.validate.lineEnd: 第 {n} 行:结束时间不晚于开始时间
+lyrics.contrib.validate.lineNoText: 第 {n} 行:没有文本
+lyrics.contrib.validate.lineOrder: 第 {n} 行:顺序错误(开始时间早于上一行)
 lyrics.contrib.validate.lines:
   value: 行
   source: human
   by: "@Tesutarin"
   issue: 32
+lyrics.contrib.validate.markWordSynced: 标记为逐词同步
 lyrics.contrib.validate.noLyrics:
   value: 此 TTML 中未找到歌词。
   source: human
@@ -3538,6 +3835,7 @@ lyrics.contrib.validate.noTimed:
   by: "@Tesutarin"
   issue: 32
   superseded_at: 2026-07-08
+lyrics.contrib.validate.noTrack: 请先选择一首曲目。
 lyrics.contrib.validate.parseError:
   value: 无法解析 TTML。
   source: human
@@ -3549,18 +3847,244 @@ lyrics.contrib.validate.valid:
   by: "@Tesutarin"
   issue: 32
   superseded_at: 2026-07-08
+lyrics.contrib.validate.wordEnd: '"{word}":结束时间不晚于开始时间'
+lyrics.contrib.validate.wordOverlap: '"{word}":与上一个单词重叠'
+lyrics.contrib.validate.wordTimingHidden: 此 TTML 含有逐字时间信息，但被标记为逐行同步，因此 Cider 会逐行显示。
+lyrics.contrib.window.close: 关闭
+lyrics.contrib.window.maximize: 最大化
+lyrics.contrib.window.minimize: 最小化
+lyrics.contrib.window.restore: 还原
+lyrics.contrib.write: 编写歌词
+lyrics.empty.localFileHint: 暂不支持为本地文件添加歌词。
+lyrics.empty.title: 这首歌暂无歌词
+lyrics.empty.ttmlChoose: 选择文件
+lyrics.empty.ttmlHint: 有 TTML 文件？拖放到此处。
 lyrics.fetchingFrom: 正在获取歌词，来源：
 lyrics.instrumental.markInstrumental: 标记为纯音乐
 lyrics.instrumental.searchAnyway: 仍然搜索歌词
 lyrics.instrumental.title: 此歌曲为纯音乐
+lyrics.layers.background: 背景
+lyrics.layers.bodyEdited: 图层跟随已发布的歌词行。你对歌词行的编辑会在发布后应用到图层。
+lyrics.layers.completeness: 完整度
+lyrics.layers.conflict: 自此草稿开始编辑后，你已发布的图层发生了变化。
+lyrics.layers.coverageHint: 此图层覆盖的含文字歌词行所占比例
+lyrics.layers.coveragePercent: "{percent}%"
+lyrics.layers.delete: 删除图层
+lyrics.layers.deleteCancel: 取消
+lyrics.layers.deleteConfirm: 要删除你已发布的{lang}图层及其草稿吗？听众将不再看到该图层。
+lyrics.layers.deleted: 已删除。
+lyrics.layers.deleteFailed: 无法删除此图层，请重试。
+lyrics.layers.deleteYes: 删除
+lyrics.layers.deleting: 正在删除…
+lyrics.layers.dropped: 你的图层中有 {count} 行已不在这些歌词中，保存时将被略去。
+lyrics.layers.editor.notePronunciation: 正在为这些歌词添加发音。将以你的名义保存。
+lyrics.layers.editor.notePronunciationOwner: 正在为 {name} 的歌词添加发音。将以你的名义保存。
+lyrics.layers.editor.noteTranslation: 正在为这些歌词添加翻译。将以你的名义保存。
+lyrics.layers.editor.noteTranslationOwner: 正在为 {name} 的歌词添加翻译。将以你的名义保存。
+lyrics.layers.gone: 这些歌词已不可用。
+lyrics.layers.import.include: 发布为图层
+lyrics.layers.import.keptFailed: 无法保存{layers}。已作为草稿保存在“图层”标签页中。
+lyrics.layers.import.keptSuggest: 已将{layers}作为草稿保存在这些歌词的“图层”标签页中。
+lyrics.layers.import.lines: "{count} 行"
+lyrics.layers.import.none: "{layer}与已发布的歌词行均不匹配。"
+lyrics.layers.import.note: 提交后将作为你在这些歌词上的图层保存。
+lyrics.layers.import.noteSuggest: 由于这些歌词不属于你，已作为草稿保存在“图层”标签页中。
+lyrics.layers.import.saved: "{layer}已保存到 {total} 行中的 {count} 行。"
+lyrics.layers.import.skipped: 已略过{layer}。{problem}
+lyrics.layers.invalid: Rise 未接受此图层。请检查语言后重试。
+lyrics.layers.keep: 仍然正确
+lyrics.layers.keepDraft: 保留我的草稿
+lyrics.layers.keysMismatch: 自打开以来，已发布的歌词已发生变化。请重新加载后重试。
+lyrics.layers.lang.all: 所有语言
+lyrics.layers.lang.jyutping: 粤语（粤拼）
+lyrics.layers.lang.korean: 韩语（罗马字）
+lyrics.layers.lang.more: 另外 {count} 种
+lyrics.layers.lang.none: 没有匹配的语言。
+lyrics.layers.lang.onLyrics: 这些歌词中的语言
+lyrics.layers.lang.own: 翻译所用语言与歌词原文语言不同。
+lyrics.layers.lang.pick: 选择语言
+lyrics.layers.lang.pinyin: 中文（拼音）
+lyrics.layers.lang.romaji: 日语（罗马字）
+lyrics.layers.lang.search: 搜索语言或输入语言标签
+lyrics.layers.lang.searchLabel: 搜索语言
+lyrics.layers.lang.suggested: 推荐
+lyrics.layers.lang.use: 使用{name}
+lyrics.layers.lang.yours: 你的语言
+lyrics.layers.langInvalid: 请使用语言标签，例如 fr 或 pt-BR。
+lyrics.layers.langLatin: 发音需要拉丁字母语言标签，例如 ja-Latn。
+lyrics.layers.langMissing: 请为此图层选择语言。
+lyrics.layers.language: 语言
+lyrics.layers.languageHint: 语言标签，例如 fr、pt-BR 或 ja-Latn
+lyrics.layers.layer: 图层
+lyrics.layers.loadFailed: 无法检查你已发布的图层，因此已关闭保存以避免覆盖。
+lyrics.layers.loading: 正在加载这些歌词已有的图层…
+lyrics.layers.needsLines: 请先添加一些歌词行，然后在此填写翻译和发音。
+lyrics.layers.noKeys: 这些歌词还没有行键。请重新加载已发布的版本以添加图层。
+lyrics.layers.options: 选项
+lyrics.layers.perSyllable: 逐音节
+lyrics.layers.profileRequired: 保存图层前，请先设置贡献者资料。
+lyrics.layers.pronunciation: 发音
+lyrics.layers.publish: 发布
+lyrics.layers.rateLimited: 暂时保存图层的次数过多，请稍后再试。
+lyrics.layers.save: 保存图层
+lyrics.layers.saved: 已保存。
+lyrics.layers.saveFailed: 无法保存此图层，请重试。
+lyrics.layers.saving: 正在保存…
+lyrics.layers.signedOut: 登录后即可保存图层。
+lyrics.layers.stale: 已更改
+lyrics.layers.staleCount: "{count} 项自撰写后已更改"
+lyrics.layers.staleHint: 此内容撰写后，对应歌词行已更改
+lyrics.layers.translation: 翻译
+lyrics.layers.usePublished: 使用已发布的图层
+lyrics.layers.withSubmit: 提交时发布
+lyrics.liveRadio.synced: 歌词已同步
+lyrics.liveRadio.syncedDetail: 进度、Discord 和播放记录现在都将跟随此行。
 lyrics.loadingLyrics: 正在加载歌词...
 lyrics.lyricsBy: 词：
 lyrics.noLyricsAvailable: 此曲目暂无歌词
+lyrics.platter.addPronunciation: 添加发音
+lyrics.platter.addTranslation: 添加翻译
+lyrics.platter.byContributor: 作者：{{name}}
+lyrics.platter.communityVersions: 社区版本
+lyrics.platter.contribute: 贡献
+lyrics.platter.earlier: 提前显示歌词
+lyrics.platter.editMine: 编辑你的版本
+lyrics.platter.fetching: 正在获取 {{source}}…
+lyrics.platter.fetchingLyrics: 正在获取歌词…
+lyrics.platter.languagePair: "{{from}} 译为 {{to}}"
+lyrics.platter.later: 延后显示歌词
+lyrics.platter.latinLetters: 拉丁字母
+lyrics.platter.layerHint: 以你的名义保存
+lyrics.platter.lineByLine: 逐行
+lyrics.platter.lyricsFrom: 歌词来源：
+lyrics.platter.machineTranslation: 机器翻译
+lyrics.platter.noLyrics: 没有歌词
+lyrics.platter.nothingFound: 未找到结果
+lyrics.platter.options: 歌词选项
+lyrics.platter.pickSource: 选择其他来源
+lyrics.platter.refresh: 刷新歌词
+lyrics.platter.remix: 改编
+lyrics.platter.remixed: 已改编
+lyrics.platter.remixHint: 以此为基础创建你自己的版本
+lyrics.platter.replaceMine: 用此内容替换我的版本
+lyrics.platter.replaceMineHint: 你的版本将保留其历史记录
+lyrics.platter.romaji: 罗马音
+lyrics.platter.searching: 搜索中
+lyrics.platter.seconds: "{{value}} 秒"
+lyrics.platter.suggestEdit: 建议编辑
+lyrics.platter.suggestEditHint: 由 {{name}} 审核
+lyrics.platter.syllableBySyllable: 逐字
+lyrics.platter.translateFailed: 无法翻译
+lyrics.platter.translating: 翻译中
+lyrics.platter.translatingTo: 正在翻译为{{language}}…
+lyrics.platter.unknownSource: 未知来源
+lyrics.platter.via: 通过{{app}}
+lyrics.platter.wordByWord: 逐词
+lyrics.search.checked: 已检查{{sources}}
+lyrics.search.checking: 正在检查
+lyrics.search.checkingSource: 正在检查{{source}}
+lyrics.search.found: 已找到
+lyrics.search.title: 正在查找歌词
+lyrics.search.waiting: 等待中
 lyrics.selectProvider: 选择歌词源
+lyrics.suggestions.accept: 接受
+lyrics.suggestions.changes: 更改
+lyrics.suggestions.confirm.note: 这些歌词的所有者会看到您的建议，并可以接受或拒绝。
+lyrics.suggestions.confirm.noteTo: 给{name}的备注
+lyrics.suggestions.confirm.owner: 这些歌词的所有者。对方会看到您的更改并决定接受或拒绝；如果对方接受，将署名您的贡献。
+lyrics.suggestions.confirm.send: 发送建议
+lyrics.suggestions.confirm.sending: 正在发送…
+lyrics.suggestions.confirm.sendTo: 发送给{name}
+lyrics.suggestions.confirm.sentAs: 以{name}身份发送
+lyrics.suggestions.confirm.title: 发送建议？
+lyrics.suggestions.confirm.titleTo: 向{name}发送建议
+lyrics.suggestions.diff.added: 已添加
+lyrics.suggestions.diff.agent: 演唱者：{before}，现为{after}
+lyrics.suggestions.diff.backgroundRetimed: 和声时间已调整
+lyrics.suggestions.diff.empty: 没有行的更改。
+lyrics.suggestions.diff.endsEarlier: 结束时间提前{s}秒
+lyrics.suggestions.diff.endsLater: 结束时间延后{s}秒
+lyrics.suggestions.diff.gapMany: "{count}行未更改"
+lyrics.suggestions.diff.gapOne: 1行未更改
+lyrics.suggestions.diff.language: 语言：{before}，现为{after}
+lyrics.suggestions.diff.none: 无
+lyrics.suggestions.diff.noPart: 无声部
+lyrics.suggestions.diff.noSinger: 无演唱者
+lyrics.suggestions.diff.nowLineSynced: 现仅按行计时
+lyrics.suggestions.diff.nowWordSynced: 现已逐词计时
+lyrics.suggestions.diff.otherDetails: 此建议还会更改歌词文件本身保存的细节，例如其中写入的译文。
+lyrics.suggestions.diff.part: 声部：{before}，现为{after}
+lyrics.suggestions.diff.play: 播放这段歌曲
+lyrics.suggestions.diff.removed: 已移除
+lyrics.suggestions.diff.resegmented: 单词的音节划分方式已改变
+lyrics.suggestions.diff.retimedMany: "{count}个词已调整时间"
+lyrics.suggestions.diff.retimedOne: 1个词已调整时间
+lyrics.suggestions.diff.singer: 演唱者{n}
+lyrics.suggestions.diff.startsEarlier: 开始时间提前{s}秒
+lyrics.suggestions.diff.startsLater: 开始时间延后{s}秒
+lyrics.suggestions.diff.textOnly: 此建议只能显示文本更改。
+lyrics.suggestions.diff.unexplained: 此建议还会更改歌词文件中无法在此显示的部分。
+lyrics.suggestions.diff.writers: 作词人：{before}，现为{after}
+lyrics.suggestions.editor.note: 正在为这些歌词提出编辑建议。由所有者决定是否接受。
+lyrics.suggestions.editor.noteOwner: 正在为{name}的歌词提出编辑建议。由对方决定是否接受。
+lyrics.suggestions.editor.summary: 摘要
+lyrics.suggestions.editor.summaryPlaceholder: 您做了哪些更改？
+lyrics.suggestions.error.generic: 出现错误，请重试。
+lyrics.suggestions.error.limit: 您等待处理的建议过多，请在部分建议得到回复后再试。
+lyrics.suggestions.error.load: 无法加载建议。
+lyrics.suggestions.error.noChange: 这与当前歌词相同。
+lyrics.suggestions.error.notPending: 此建议已被回复或撤回。
+lyrics.suggestions.error.outdated: 自此建议提出后，您的歌词已更改，因此无法再接受。
+lyrics.suggestions.error.ownVariation: 这是您自己的歌词，您可以直接编辑。
+lyrics.suggestions.error.unshareable: 这些歌词仅属于其所有者，无法接受建议。
+lyrics.suggestions.fork: 基于此更改创建分支
+lyrics.suggestions.from: 来自 {name}
+lyrics.suggestions.incomingEmpty: 当有人对你的歌词提出修改建议时，会显示在这里。
+lyrics.suggestions.incomingTitle: 为你推荐的建议
+lyrics.suggestions.loadFailed: 无法加载此建议。
+lyrics.suggestions.notify.accepted: 已接受建议。
+lyrics.suggestions.notify.rejected: 已拒绝建议。
+lyrics.suggestions.notify.sent: 建议已发送。感谢你的帮助！
+lyrics.suggestions.notify.withdrawn: 已撤回建议。
+lyrics.suggestions.outdated.acceptReason: 你的歌词在此建议提出后已有更改，因此无法按原样接受。
+lyrics.suggestions.outdated.author: 你提出此建议后，这些歌词已有更改，因此无法按原样接受。请从最新版本开始，重新提出建议。
+lyrics.suggestions.outdated.owner: 此建议提出后，你的歌词已有更改，因此无法按原样接受。{name} 可以从最新版本开始，重新提出建议。
+lyrics.suggestions.outdated.suggester: 建议者
+lyrics.suggestions.outgoingEmpty: 你对他人歌词提出的修改会显示在这里。
+lyrics.suggestions.outgoingTitle: 你的建议
+lyrics.suggestions.rebase: 从最新版本开始
+lyrics.suggestions.reference.hide: 隐藏
+lyrics.suggestions.reference.note: 这些更改基于较旧的版本。请在下方编辑器中重新进行修改。
+lyrics.suggestions.reference.title: 需要重新修改的内容
+lyrics.suggestions.reject.button: 拒绝
+lyrics.suggestions.reject.message: 如果需要，可以告诉对方原因。
+lyrics.suggestions.reject.title: 拒绝此建议？
+lyrics.suggestions.review: 查看
+lyrics.suggestions.reviewTitle: 建议的编辑
+lyrics.suggestions.stale.message: 自你开始编辑后，这些歌词已保存了更新的版本。请重新加载，以便在最新版本上重新进行修改。你的文字已保存为草稿。
+lyrics.suggestions.state.accepted: 已接受
+lyrics.suggestions.state.expired: 已过期
+lyrics.suggestions.state.outdated: 已过时
+lyrics.suggestions.state.pending: 等待审核
+lyrics.suggestions.state.rejected: 已拒绝
+lyrics.suggestions.state.withdrawn: 已撤回
+lyrics.suggestions.success.title: 建议已发送！
+lyrics.suggestions.summary.language: 语言已更改
+lyrics.suggestions.summary.noLines: 未发现歌词行更改
+lyrics.suggestions.summary.none: 歌词没有更改
+lyrics.suggestions.summary.otherDetails: 其他文件信息已更改
+lyrics.suggestions.summary.singerNames: 演唱者名称已更改
+lyrics.suggestions.summary.writers: 作词者已更改
+lyrics.suggestions.to: 发送给 {name}
+lyrics.suggestions.validate.noBase: 这些歌词暂时无法接受建议。
+lyrics.suggestions.withdraw.confirm: 撤回
+lyrics.suggestions.withdraw.message: 作者将不再看到此建议。
+lyrics.suggestions.withdraw.title: 撤回此建议？
 lyrics.translation.chip.pronunciation: 发音
 lyrics.translation.chip.translated: 已翻译
 lyrics.translation.credit: 翻译来源：{{source}}
 lyrics.translation.credit.apple: 由 Apple Music 翻译
+lyrics.translation.credit.community: 社区翻译
 lyrics.translation.menu.hide: 隐藏翻译
 lyrics.translation.menu.hidePronunciation: 隐藏发音
 lyrics.translation.menu.show: 显示翻译
@@ -4020,13 +4544,16 @@ mobile.lyrics.instrumentalNote: 此曲目没有人声演唱。
 mobile.lyrics.loadFailed: 无法加载歌词
 mobile.lyrics.noneAvailable: 暂无歌词
 mobile.lyrics.noneFound: 找不到这首歌的歌词。
+mobile.lyrics.pronunciation: 发音
 mobile.lyrics.providerAvailable: 可用
 mobile.lyrics.providerChecking: 正在检查…
 mobile.lyrics.providerCommunity: 社区（Rise）
 mobile.lyrics.providerMenu: 歌词来源菜单
 mobile.lyrics.providerNotChecked: 未检查
 mobile.lyrics.providerUnavailable: 不可用
+mobile.lyrics.remixedFrom: 改编自 {contributor}
 mobile.lyrics.source: 歌词来源
+mobile.lyrics.togglePronunciation: 切换发音显示
 mobile.lyrics.toggleTranslation: 切换翻译
 mobile.lyrics.writtenBy: 词：
 mobile.manifest.lyrics: 歌词
@@ -5444,6 +5971,8 @@ notificationCenter.row.muted: 已静音
 notificationCenter.section.active: 当前
 notificationCenter.section.history: 历史记录
 notificationCenter.title: 通知
+notify.explicitRestricted: 你的 Apple 账户已限制显示露骨内容
+notify.explicitRestricted.allow: 你的 Apple 账户已限制显示露骨内容。你可以在个人资料设置的“内容限制”中更改。
 notify.explicitRestrictedSkip: 正在跳过“{name}”：你的 Apple 账户已限制显示露骨内容
 notify.explicitRestrictedStop: 播放已停止：“{name}”包含露骨内容，而你的 Apple 账户已限制显示露骨内容
 notify.licenseRefusedSkip: 暂无法播放“{name}”，正在跳过
@@ -8992,6 +9521,11 @@ settings.nav.summary.connectivity:
 settings.nav.summary.extensions: 主题、CSS 片段、插件
 settings.nav.summary.general: 启动、队列、睡眠定时器、快捷键
 settings.nav.summary.lyrics: 来源、翻译、显示、时间同步
+settings.nav.summary.lyricsYours: 你贡献的歌词
+settings.nav.summary.lyricsYours.many: "{count} 条建议等待审核"
+settings.nav.summary.lyricsYours.one: 1 条建议等待审核
+settings.nav.summary.lyricsYours.views.many: "{n} 天内 {views} 次浏览"
+settings.nav.summary.lyricsYours.views.one: "{n} 天内 {views} 次浏览"
 settings.nav.summary.notifications: 类别、历史记录、系统通知
 settings.nav.summary.power: 性能、帧率、省电模式
 settings.nav.summary.profile: Apple Music 账户
@@ -11376,7 +11910,7 @@ settings.option.left:
   by: "@Tesutarin"
   issue: 10
 settings.option.lyrics.contributeCta:
-  value: 贡献并上传歌词
+  value: 社区歌词
   source: ai
   by: "@Tesutarin"
   issue: 32
@@ -12794,6 +13328,8 @@ settings.option.visual.mainMenuPosition:
   by: "@Tesutarin"
   issue: 10
   superseded_at: 2026-10-16
+settings.option.visual.matchPageGlow: 封面光晕
+settings.option.visual.matchPageGlow.description: 使封面在匹配页面顶部呈现光晕效果。
 settings.option.visual.matchPageToArtwork: 根据封面匹配页面
 settings.option.visual.matchPageToArtwork.description: 以专辑和播放列表封面的颜色为页面着色，同时支持浅色和深色模式。
 settings.option.visual.mergeAppleMusicPlaylists:
@@ -13319,6 +13855,12 @@ settings.privacy.deviceSpecs.description: 发送您当前硬件（CPU、GPU、�
 settings.privacy.replay: 为 Cider Replay 贡献收听历史
 settings.privacy.replay.description: 匿名发送收听历史，以参与 Cider 年度社区 Replay 项目。公开统计数据可在 cider.sh/replay 查看。
 settings.privacy.statement: Cider Collective 非常重视隐私。我们不收集任何可识别个人身份的信息，也不向第三方出售任何数据。您选择与我们分享的任何数据仅用于改进应用，不会与其他任何人共享；所有可能存储的个人信息在与我们共享前都会被删除。
+settings.profile.contentRestrictions.changeEmail: 更改恢复邮箱
+settings.profile.contentRestrictions.changePasscode: 更改密码
+settings.profile.contentRestrictions.family: 由家庭组织者管理。
+settings.profile.contentRestrictions.rating: 音乐分级
+settings.profile.contentRestrictions.rating.clean: 净化版
+settings.profile.contentRestrictions.rating.explicit: 露骨内容
 settings.profile.crop.hint:
   value: 拖动以移动，滚动以缩放
   source: human
@@ -13362,6 +13904,7 @@ settings.profile.field.photo.description:
   source: human
   by: "@Tesutarin"
   issue: 11
+settings.profile.header.contentRestrictions: 内容限制
 settings.profile.header.identity:
   value: 编辑个人资料
   source: ai
@@ -13425,6 +13968,7 @@ settings.profile.policy.restricted:
   source: human
   by: "@Tesutarin"
   issue: 11
+settings.profile.policy.restrictedClean: 受限（净化版）
 settings.profile.signOut.confirmMessage:
   value: 你将返回登录界面，本地资料库缓存将被清除。是否继续？
   source: human
@@ -13574,7 +14118,7 @@ settings.title:
   by: "@Tesutarin"
   issue: 11
 settings.troubleshooting.bgDiagnostics: 后台播放诊断
-settings.troubleshooting.bgDiagnostics.desc: 用于诊断窗口最小化或未聚焦时播放问题的额外日志记录（包括谁暂停了播放器、定时器匮乏以及系统挂起事件）。在报告后台播放问题时请启用此项。
+settings.troubleshooting.bgDiagnostics.desc: 在窗口最小化或失去焦点时，提供额外的日志记录，用于诊断播放问题，包括谁暂停了播放器、计时器饥饿以及系统挂起事件。报告后台播放问题时请启用此选项。
 settings.troubleshooting.desc:
   value: 日志文件和 MKLite 调试日志。
   source: ai
@@ -13623,16 +14167,17 @@ settings.troubleshooting.logFile.desc:
   by: "@Tesutarin"
   issue: 32
 settings.troubleshooting.mkliteDebug:
-  value: MKLite 调试日志
+  value: Cerium 调试日志
   source: ai
   by: "@Tesutarin"
   issue: 11
   superseded_at: 2026-10-16
 settings.troubleshooting.mkliteDebug.desc:
-  value: 来自 MKLite 的详细控制台输出，包括 PlayActivity 负载（JSPLAY）、曲目变更和播放状态。可用于与 music.apple.com 对比发送内容。正常使用时请保持关闭。
-  source: human
+  value: 来自 Cerium 的详细控制台输出，通过提供更详尽的调试信息，帮助我们诊断更复杂的播放问题。提供所需日志后请保持关闭。
+  source: ai
   by: "@Tesutarin"
   issue: 32
+  superseded_at: 2026-10-26
 settings.troubleshooting.mkLoadingMethod:
   value: MusicKit 加载方式
   source: human
