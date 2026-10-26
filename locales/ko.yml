@@ -137,6 +137,7 @@ action.moveToFolder.here: '"{{name}}" 여기로 이동'
 action.moveToTop: 맨 위로 이동
 action.newpreset: 새로운 프리셋...
 action.next: 다음
+action.notNow: 나중에
 action.ok: 확인
 action.open: 열기
 action.openArtworkInBrowser: 브라우저에서 아트워크 열기
@@ -986,6 +987,43 @@ connect.instances: 인스턴스
 connect.profilePictureSource: 프로필 사진 소스
 connect.relay.desc: 릴레이를 사용하면 Connect에서 현재 재생 정보를 읽고 저장할 수 있으며, 재생 제어와 같은 Connect의 상호 작용을 허용할 수 있습니다. 원격 제어를 사용하려면 이 기능을 활성화해야 합니다.
 connect.remote.notification: "원격 인스턴스에 연결됨: $NAME"
+contentRestrictions.allowed: 성인 콘텐츠 허용됨
+contentRestrictions.allowExplicit: 성인 콘텐츠 허용
+contentRestrictions.dialog.changeEmailMessage: 암호를 입력한 다음, Apple이 암호 재설정에 사용할 새 이메일을 입력하세요.
+contentRestrictions.dialog.changeEmailTitle: 복구 이메일 변경
+contentRestrictions.dialog.changePasscodeMessage: 현재 암호를 입력한 다음, 새 4자리 암호를 선택하세요.
+contentRestrictions.dialog.changePasscodeTitle: 암호 변경
+contentRestrictions.dialog.checking: 확인 중…
+contentRestrictions.dialog.confirm: 암호 확인
+contentRestrictions.dialog.createMessage: 성인 콘텐츠를 허용하려면 Apple에서 콘텐츠 제한 암호가 필요합니다. 4자리 암호와 Apple이 암호 재설정에 사용할 수 있는 이메일을 선택하세요.
+contentRestrictions.dialog.createRestrictMessage: 성인 콘텐츠를 제한하려면 Apple에서 콘텐츠 제한 암호가 필요합니다. 4자리 암호와 Apple이 암호 재설정에 사용할 수 있는 이메일을 선택하세요.
+contentRestrictions.dialog.createRestrictSubmit: 만들고 제한
+contentRestrictions.dialog.createSubmit: 만들고 허용
+contentRestrictions.dialog.createTitle: 암호 만들기
+contentRestrictions.dialog.currentPasscode: 현재 암호
+contentRestrictions.dialog.failed: Apple에 연결할 수 없습니다. 연결 상태를 확인한 후 다시 시도하세요.
+contentRestrictions.dialog.forgot: 암호를 잊으셨나요?
+contentRestrictions.dialog.locked: 시도 횟수가 너무 많습니다. {minutes}분 후에 다시 시도하세요.
+contentRestrictions.dialog.message: 성인 콘텐츠를 허용하려면 Apple에서 콘텐츠 제한 암호가 필요합니다.
+contentRestrictions.dialog.mismatch: 암호가 일치하지 않습니다.
+contentRestrictions.dialog.newPasscode: 새 암호
+contentRestrictions.dialog.newRecoveryEmail: 새 복구 이메일
+contentRestrictions.dialog.notApplied: Apple에서 변경 사항을 적용하지 않았습니다. 다시 시도하거나 Apple Music 웹사이트에서 변경하세요.
+contentRestrictions.dialog.placeholder: 암호
+contentRestrictions.dialog.recoveryEmail: 복구 이메일
+contentRestrictions.dialog.recoveryEmailPlaceholder: name@example.com
+contentRestrictions.dialog.rejected: Apple에서 변경 사항을 저장하지 못했습니다. 입력한 내용을 확인한 후 다시 시도하세요.
+contentRestrictions.dialog.restrictMessage: 성인 콘텐츠를 제한하려면 콘텐츠 제한 암호를 입력하세요.
+contentRestrictions.dialog.restrictSubmit: 제한
+contentRestrictions.dialog.restrictTitle: 성인 콘텐츠 제한
+contentRestrictions.dialog.submit: 허용
+contentRestrictions.dialog.title: 성인 콘텐츠 허용
+contentRestrictions.dialog.wrongPasscode: 암호가 올바르지 않습니다. 다시 시도하세요.
+contentRestrictions.emailChanged: 복구 이메일이 변경되었습니다
+contentRestrictions.offer.message: Apple 계정에서 성인 콘텐츠가 제한되어 있어 성인 곡은 숨겨지고 건너뜁니다. 콘텐츠 제한 암호로 성인 콘텐츠를 허용할 수 있습니다.
+contentRestrictions.offer.messageCreate: Apple 계정에서 성인 콘텐츠가 제한되어 있어 성인 곡은 숨겨지고 건너뜁니다. 콘텐츠 제한 암호를 만들어 성인 콘텐츠를 허용할 수 있습니다.
+contentRestrictions.offer.title: 성인 콘텐츠 제한됨
+contentRestrictions.passcodeChanged: 암호가 변경되었습니다
 date.format: ${y}년 ${m} ${d}일
 developer.copyHref: href를 클립보드에 복사
 developer.copyId: ID를 클립보드에 복사
@@ -1182,50 +1220,99 @@ locale.lang.tr: 터키어
 locale.lang.vi: 베트남어
 locale.lang.zh: 중국어(간체)
 lyrics.contrib.confirm.cancel: 취소
+lyrics.contrib.confirm.changeCount: 수정 {edited}개, 추가 {added}개, 삭제 {removed}개
+lyrics.contrib.confirm.changes: 변경 사항
 lyrics.contrib.confirm.note: 작성하신 가사는 커뮤니티 보관함에 제출되며 기여자로 표시됩니다.
+lyrics.contrib.confirm.showAll: 모두 보기
+lyrics.contrib.confirm.showFewer: 간략히 보기
 lyrics.contrib.confirm.title: 가사를 제출하시겠습니까?
 lyrics.contrib.cta.submit: 가사 제출
+lyrics.contrib.detail.delete: 이 가사 삭제
+lyrics.contrib.detail.edit: 가사 편집기에서 수정
+lyrics.contrib.detail.new: 새로 만들기
+lyrics.contrib.detail.suggestions: 제안
+lyrics.contrib.detail.syncLine: 줄 싱크 완료
+lyrics.contrib.detail.syncSyllable: 음절 싱크 완료
+lyrics.contrib.detail.syncWord: 단어 싱크 완료
 lyrics.contrib.drafts.button: 임시 저장
 lyrics.contrib.drafts.delete: 삭제
 lyrics.contrib.drafts.empty: 저장된 임시 저장본이 없습니다. 편집하는 동안 작업 내용이 자동으로 저장됩니다.
+lyrics.contrib.drafts.kept: 이전 임시 저장본은 임시 보관함에 보관됩니다.
 lyrics.contrib.drafts.load: 불러오기
 lyrics.contrib.drafts.saveCurrent: 현재 상태 저장
+lyrics.contrib.drafts.suggestion: 제안된 수정
 lyrics.contrib.drafts.title: 저장된 임시 저장본
 lyrics.contrib.editor.addLine: 줄 추가
 lyrics.contrib.editor.align: 타이밍 맞추기
 lyrics.contrib.editor.alignHint: 선택한 줄의 타이밍을 강조 표시된 기준 줄에 맞춥니다.
+lyrics.contrib.editor.backgroundHint: 배경 보컬
 lyrics.contrib.editor.balance: 밸런스 조정
 lyrics.contrib.editor.balanceHint: 후렴구 등 반복되는 줄에서 단어별 타이밍을 균등하게 맞춥니다.
 lyrics.contrib.editor.batchBg: 선택한 줄의 백그라운드 가사 전환
 lyrics.contrib.editor.batchV2: 선택한 줄의 두 번째 보컬 전환
+lyrics.contrib.editor.check: 확인
+lyrics.contrib.editor.close: 닫기
+lyrics.contrib.editor.creditsFound: '{count}개 줄이 가사가 아닌 크레딧이나 메모처럼 보입니다. 예: "{example}".'
+lyrics.contrib.editor.dismiss: 닫기
 lyrics.contrib.editor.dragReorder: 드래그하여 순서 변경
+lyrics.contrib.editor.duetHint: 두 번째 보컬
 lyrics.contrib.editor.duplicate: 복제
 lyrics.contrib.editor.duplicateHint: 선택한 줄 복제 (Ctrl+D)
 lyrics.contrib.editor.empty: 아직 줄이 없습니다. 첫 줄을 추가하거나 TTML을 가져오기/붙여넣기 하세요.
+lyrics.contrib.editor.follow: 따라가기
+lyrics.contrib.editor.followHint: 재생 중인 줄이 화면에 보이도록 유지
+lyrics.contrib.editor.format: 서식
 lyrics.contrib.editor.insert: 삽입
 lyrics.contrib.editor.insertInterlude: + 간주
 lyrics.contrib.editor.insertInterludeHint: 선택한 줄 뒤에 대기 점 모양의 간주 삽입
 lyrics.contrib.editor.insertLine: + 줄
 lyrics.contrib.editor.insertLineHint: 선택한 줄 뒤에 줄 삽입
 lyrics.contrib.editor.interlude: 간주
+lyrics.contrib.editor.issueCount: 문제 {count}개
+lyrics.contrib.editor.issueLine: "{line}번째 줄"
+lyrics.contrib.editor.issueOne: 문제 1개
 lyrics.contrib.editor.issues: 개의 문제
+lyrics.contrib.editor.joinNext: 다음과 합치기
+lyrics.contrib.editor.joinNextHint: 이 칩과 다음 칩을 한 단어로 부르기
+lyrics.contrib.editor.keepCredits: 유지
+lyrics.contrib.editor.lcdLine: "{total}줄 중 {line}번째 줄"
+lyrics.contrib.editor.lcdLines: "{total}줄"
 lyrics.contrib.editor.line: 줄
+lyrics.contrib.editor.lineEnd: 줄 끝
+lyrics.contrib.editor.lineStart: 줄 시작
+lyrics.contrib.editor.lineTiming: 줄 타이밍
+lyrics.contrib.editor.localizationsApart: 번역과 발음은 여기에서 편집할 수 없습니다. 커뮤니티가 만든 항목은 별도로 보관됩니다.
+lyrics.contrib.editor.lossInvalid: 이 TTML에 오류가 있어 편집기에서 읽을 수 없습니다.
+lyrics.contrib.editor.lossLines: 일부 줄의 플레이어 표시 방식이 바뀝니다.
+lyrics.contrib.editor.lossMarkup: "지원되지 않는 마크업이 제거됩니다: {names}"
+lyrics.contrib.editor.lossOnEdit: 여기서 편집하면 이 TTML이 변경됩니다
+lyrics.contrib.editor.lossStay: TTML 편집 계속하기
+lyrics.contrib.editor.lossSwitch: 그래도 전환
 lyrics.contrib.editor.markerAdd: 재생 헤드 위치에 마커 추가
 lyrics.contrib.editor.markerJump: 마커로 이동
 lyrics.contrib.editor.markers: 마커
 lyrics.contrib.editor.markersClear: 지우기
 lyrics.contrib.editor.modeEdit: 편집
+lyrics.contrib.editor.modeLayers: 레이어
 lyrics.contrib.editor.modePreview: 미리보기
 lyrics.contrib.editor.modeTime: 타이밍
 lyrics.contrib.editor.noLines: 줄 없음
+lyrics.contrib.editor.offTrack: 다른 곡이 재생 중입니다. 이 곡 재생
 lyrics.contrib.editor.offTrackHint: 다른 곡이 재생 중입니다. 이 곡을 재생하려면 클릭하세요.
 lyrics.contrib.editor.playThisTrack: 이 곡 재생
+lyrics.contrib.editor.prettyPrint: 보기 좋게 정렬
+lyrics.contrib.editor.prettyPrintHint: 각 줄과 요소를 들여쓰기하여 별도의 행에 배치
 lyrics.contrib.editor.previewingInPlayer: 플레이어에서 미리 보기 중
+lyrics.contrib.editor.previewNote: 작성한 레이어와 함께 청취자에게 보이는 방식으로 초안을 재생합니다.
+lyrics.contrib.editor.redo: 다시 실행
+lyrics.contrib.editor.redoHint: 다시 실행 ({keys})
+lyrics.contrib.editor.removeCredits: 삭제
 lyrics.contrib.editor.repeats: 반복
 lyrics.contrib.editor.segment: 세그먼트
 lyrics.contrib.editor.segmentAll: 모두
 lyrics.contrib.editor.segmentAllHint: 줄 싱크가 맞춰진 모든 줄을 단어 단위로 분할
 lyrics.contrib.editor.selected: 선택됨
+lyrics.contrib.editor.selectedCount: "{count}개 선택됨"
 lyrics.contrib.editor.selectWord: 단어 선택…
 lyrics.contrib.editor.showInPlayer: 플레이어에 표시
 lyrics.contrib.editor.showInPlayerHint: 트랙이 재생되는 동안 플레이어 가사 패널에 이 초안을 표시합니다.
@@ -1234,8 +1321,90 @@ lyrics.contrib.editor.speedHint: 재생 속도 — 정확한 타이밍 조정을
 lyrics.contrib.editor.splitWords: 단어로 분할
 lyrics.contrib.editor.splitWordsHint: 이 줄을 단어별 타이밍으로 분할
 lyrics.contrib.editor.submit: 제출
+lyrics.contrib.editor.undoHint: 실행 취소 ({keys})
 lyrics.contrib.editor.unsynced: 싱크 안 됨
+lyrics.contrib.editor.valid: 유효함
 lyrics.contrib.editor.word: 단어
+lyrics.contrib.editor.wordEnd: 단어 끝
+lyrics.contrib.editor.wordStart: 단어 시작
+lyrics.contrib.editor.wordTiming: 단어 타이밍
+lyrics.contrib.error.rateLimited: 현재 제한에 도달했습니다. 나중에 다시 시도해 주세요.
+lyrics.contrib.error.tooLarge: 이 가사는 용량이 너무 커서 업로드할 수 없습니다. TTML은 최대 512KB까지 가능합니다.
+lyrics.contrib.history.button: 기록
+lyrics.contrib.history.current: 현재
+lyrics.contrib.history.empty: 아직 기록이 없습니다.
+lyrics.contrib.history.open: 열기
+lyrics.contrib.history.openTitle: 가사 편집기에서 열기
+lyrics.contrib.history.restore: 복원
+lyrics.contrib.history.restored: 버전이 복원되었습니다.
+lyrics.contrib.history.restoreFailed: 이 버전을 복원할 수 없습니다.
+lyrics.contrib.history.restoreMessage: 가사가 이 버전으로 돌아갑니다. 이후의 버전은 기록에 남아 있습니다.
+lyrics.contrib.history.restoreTitle: 이 버전을 복원할까요?
+lyrics.contrib.history.stale: 목록을 불러온 후 이 가사가 변경되었습니다. 다시 시도해 주세요.
+lyrics.contrib.history.suggestedBy: "{name}님이 제안"
+lyrics.contrib.hub.editName: 이름 편집
+lyrics.contrib.hub.layersCount: "{count}개 작성됨"
+lyrics.contrib.hub.lyricsCount: 가사 {count}개
+lyrics.contrib.hub.lyricsCount.many: 곡 {count}개
+lyrics.contrib.hub.lyricsCount.one: 곡 1개
+lyrics.contrib.hub.none: 아직 없음
+lyrics.contrib.hub.pin: 설정 사이드바에 내 가사 표시
+lyrics.contrib.hub.pinDesc: 검토를 기다리는 제안 수와 함께 표시
+lyrics.contrib.hub.sent: 보낸 제안
+lyrics.contrib.hub.sentCount: "{count}개 보냄"
+lyrics.contrib.hub.sentOutdated: "{count}개 오래됨"
+lyrics.contrib.hub.sentWaiting: "{count}개 대기 중"
+lyrics.contrib.hub.work: 내 작업
+lyrics.contrib.import.backgroundVocals: 배경 보컬
+lyrics.contrib.import.currentSong: 현재 곡
+lyrics.contrib.import.dropHint: 놓으면 가사를 편집합니다
+lyrics.contrib.import.empty: 이 파일은 비어 있습니다.
+lyrics.contrib.import.failed: 가사를 가져올 수 없습니다
+lyrics.contrib.import.included: 포함됨
+lyrics.contrib.import.lines: 줄
+lyrics.contrib.import.noCurrent: 재생 중인 곡이 없습니다. 편집기에서 트랙을 선택하세요.
+lyrics.contrib.import.notTtml: 이 XML 파일은 TTML 가사가 아닙니다.
+lyrics.contrib.import.open: 편집기에서 열기
+lyrics.contrib.import.openFile: TTML 파일 열기
+lyrics.contrib.import.otherTrack: 다른 트랙 선택
+lyrics.contrib.import.pronunciations: 발음
+lyrics.contrib.import.replace: 바꾸기
+lyrics.contrib.import.replaceMessage: 파일이 편집기의 내용을 대체합니다. 현재 텍스트는 임시 저장에 보관됩니다.
+lyrics.contrib.import.replaceTitle: 편집 내용을 바꿀까요?
+lyrics.contrib.import.singers: 가수
+lyrics.contrib.import.songParts: 곡 구간
+lyrics.contrib.import.timing: 타이밍
+lyrics.contrib.import.timingLine: 줄 단위
+lyrics.contrib.import.timingWord: 단어 단위
+lyrics.contrib.import.title: 가사 가져오기
+lyrics.contrib.import.tooLarge: 이 파일은 512KB보다 큽니다.
+lyrics.contrib.import.translation: 번역
+lyrics.contrib.import.unreadable: 이 파일을 읽을 수 없습니다.
+lyrics.contrib.import.wrongType: .ttml 및 .xml 파일만 가져올 수 있습니다.
+lyrics.contrib.lane.edit: 편집
+lyrics.contrib.lane.fillHint: 곡을 재생하면 세부 정보가 채워집니다.
+lyrics.contrib.lane.fixOverlaps: 겹침 수정
+lyrics.contrib.lane.fixOverlapsHint: 각 단어와 줄을 같은 보컬의 다음 단어나 줄이 시작되는 지점에서 끝냅니다
+lyrics.contrib.lane.free: 자유
+lyrics.contrib.lane.freeHint: 가장자리를 드래그하면 해당 단어만 변경됩니다
+lyrics.contrib.lane.push: 밀기
+lyrics.contrib.lane.pushHint: 가장자리를 드래그하면 그 뒤의 단어들이 함께 이동합니다
+lyrics.contrib.lane.resizeHint: 드래그하여 타임라인 크기를 조절하고, 두 번 클릭하여 초기화합니다
+lyrics.contrib.lane.show: 타임라인
+lyrics.contrib.lane.showHint: 타이밍을 맞출 곡을 단어 아래에 표시합니다
+lyrics.contrib.lane.snap: 스냅
+lyrics.contrib.lane.snapHint: 탭과 드래그를 가까운 온셋 또는 비트에 맞춥니다. 드래그하면서 Shift를 누르면 건너뜁니다.
+lyrics.contrib.lane.squeeze: 압축
+lyrics.contrib.lane.squeezeHint: 가장자리를 드래그하면 옆 단어들의 시간을 가져옵니다
+lyrics.contrib.lane.view: 보기
+lyrics.contrib.lane.zoomIn: 확대
+lyrics.contrib.lane.zoomOut: 축소
+lyrics.contrib.layers.coverage: 줄의 {n}%
+lyrics.contrib.layers.empty: 작성한 번역과 발음이 여기에 표시됩니다.
+lyrics.contrib.layers.pronunciation: 발음
+lyrics.contrib.layers.stale: "{n}개 줄을 업데이트해야 합니다"
+lyrics.contrib.layers.staleOne: 1개 줄을 업데이트해야 합니다
+lyrics.contrib.layers.translation: 번역
 lyrics.contrib.leaderboard.contributor: 기여자
 lyrics.contrib.leaderboard.empty: 아직 기여자가 없습니다.
 lyrics.contrib.leaderboard.error: 리더보드를 불러올 수 없습니다.
@@ -1244,15 +1413,50 @@ lyrics.contrib.leaderboard.loadMore: 더 보기
 lyrics.contrib.leaderboard.plays: 재생 횟수
 lyrics.contrib.leaderboard.submissions: 가사
 lyrics.contrib.menu.addEdit: 가사 추가/편집
+lyrics.contrib.menu.closeGaps: 간격 닫기
+lyrics.contrib.menu.copyLine: 줄 복사
+lyrics.contrib.menu.copyRepeats: 반복 구간에 타이밍 복사
+lyrics.contrib.menu.deleteLine: 줄 삭제
+lyrics.contrib.menu.deleteWord: 단어 삭제
+lyrics.contrib.menu.editText: 텍스트 편집
+lyrics.contrib.menu.firstVocalist: 첫 번째 보컬
+lyrics.contrib.menu.insertInterlude: 다음에 간주 삽입
+lyrics.contrib.menu.insertLine: 다음에 줄 삽입
+lyrics.contrib.menu.joinNext: 다음 단어와 합치기
+lyrics.contrib.menu.mainVocal: 메인 보컬
+lyrics.contrib.menu.pasteLine: 다음 줄 뒤에 붙여넣기
+lyrics.contrib.menu.playFrom: 여기서부터 재생
+lyrics.contrib.menu.removeWordTiming: 단어 타이밍 제거
+lyrics.contrib.menu.setEnd: 재생 위치를 끝으로 설정
+lyrics.contrib.menu.setStart: 재생 위치를 시작으로 설정
+lyrics.contrib.menu.snapOnsets: 음절 시작점에 맞추기
+lyrics.contrib.menu.spaceEvenly: 고르게 간격 맞추기
+lyrics.contrib.menu.spaceSyllables: 음절 기준으로 간격 맞추기
+lyrics.contrib.menu.toPlayhead: 재생 위치로 이동
+lyrics.contrib.menu.unjoinNext: 다음 단어와 분리
 lyrics.contrib.mine.cancel: 취소
 lyrics.contrib.mine.chooseName: 표시 이름 선택
 lyrics.contrib.mine.chooseNameSub: 리더보드에 표시되고 가사 기여 크레딧에 사용될 공개 이름을 설정하세요.
+lyrics.contrib.mine.delete: 삭제
+lyrics.contrib.mine.deleteFailed: 이 가사를 삭제할 수 없습니다.
+lyrics.contrib.mine.deleteMessage: "{name}의 가사가 커뮤니티 라이브러리에서 제거됩니다."
+lyrics.contrib.mine.deleteTitle: 이 가사를 삭제하시겠습니까?
 lyrics.contrib.mine.edit: 편집
 lyrics.contrib.mine.error: 프로필을 불러올 수 없습니다.
+lyrics.contrib.mine.hidden: 숨김
 lyrics.contrib.mine.joined: 가입일
+lyrics.contrib.mine.joinedOn: "{date}에 가입"
+lyrics.contrib.mine.layersTitle: 번역 및 발음
 lyrics.contrib.mine.listNote: 기여하신 가사는 해당 곡의 앱 내 화면에 표시됩니다.
 lyrics.contrib.mine.loading: 로딩 중…
+lyrics.contrib.mine.lyricsEmpty: 추가한 가사가 여기에 표시됩니다.
+lyrics.contrib.mine.lyricsError: 가사를 불러올 수 없습니다.
+lyrics.contrib.mine.lyricsTitle: 내 가사
 lyrics.contrib.mine.namePlaceholder: 표시 이름
+lyrics.contrib.mine.otherSuggestions: 회원님을 위한 다른 제안
+lyrics.contrib.mine.pendingMany: 검토 대기 중인 제안 {count}개
+lyrics.contrib.mine.pendingOne: 검토 대기 중인 제안 1개
+lyrics.contrib.mine.remixedFrom: "{name}의 리믹스"
 lyrics.contrib.mine.retry: 재시도
 lyrics.contrib.mine.save: 저장
 lyrics.contrib.mine.saved: 표시 이름이 저장되었습니다.
@@ -1262,17 +1466,54 @@ lyrics.contrib.mine.statPlays: 총 재생 횟수
 lyrics.contrib.mine.statSubmissions: 기여한 가사 수
 lyrics.contrib.mine.vanityTooShort: 최소 2자 이상의 이름을 선택하세요.
 lyrics.contrib.notify.importedApple: Apple Music 가사를 가져왔습니다.
+lyrics.contrib.notify.importedSource: "{source}에서 타이밍 가사를 가져왔습니다."
 lyrics.contrib.notify.importedUser: 기존 커뮤니티 가사를 가져왔습니다.
 lyrics.contrib.notify.importFailed: 가사를 가져오지 못했습니다.
 lyrics.contrib.notify.importNone: 이 곡에 가져올 수 있는 가사가 없습니다.
+lyrics.contrib.notify.loadFailed: 이 가사를 불러올 수 없습니다.
+lyrics.contrib.notify.localUnsupported: 로컬 파일의 가사는 아직 업로드할 수 없습니다.
+lyrics.contrib.notify.mineLookupFailed: 이 곡의 가사가 이미 있는지 확인할 수 없습니다.
 lyrics.contrib.notify.noCurrent: 현재 재생 중인 곡이 없습니다.
 lyrics.contrib.notify.notLoggedIn: 가사를 업로드하려면 로그인해야 합니다.
 lyrics.contrib.notify.profileRequired: 가사를 업로드하기 전에 기여자 프로필을 설정하세요.
 lyrics.contrib.notify.submitFailed: 가사를 제출하지 못했습니다.
 lyrics.contrib.notify.submitted: 가사가 제출되었습니다. 기여해 주셔서 감사합니다!
+lyrics.contrib.notify.title: 커뮤니티 가사
 lyrics.contrib.preview.empty: 여기에 가사를 미리 보려면 TTML을 붙여넣거나 가져오세요.
+lyrics.contrib.profile.avatar: 사진
+lyrics.contrib.profile.avatarBlocked: 프로필 사진 업로드가 꺼져 있습니다.
+lyrics.contrib.profile.avatarBusy: 사진 업로드가 혼잡합니다. 잠시 후 다시 시도하세요.
+lyrics.contrib.profile.avatarFailed: 사진을 업로드할 수 없습니다.
+lyrics.contrib.profile.avatarHidden: 사진이 삭제되었습니다.
+lyrics.contrib.profile.avatarInvalid: 이 사진은 사용할 수 없습니다. 다른 사진을 선택하세요.
+lyrics.contrib.profile.avatarRemove: 제거
+lyrics.contrib.profile.avatarRemoved: 사진이 제거되었습니다.
+lyrics.contrib.profile.avatarRemoveFailed: 사진을 제거할 수 없습니다.
+lyrics.contrib.profile.avatarSaved: 사진이 업데이트되었습니다.
+lyrics.contrib.profile.avatarTooLarge: 사진 크기가 너무 큽니다. 더 작은 사진을 선택하세요.
+lyrics.contrib.profile.avatarUnreadable: 이 사진을 열 수 없습니다.
+lyrics.contrib.profile.avatarUpload: 업로드
+lyrics.contrib.profile.country: 국가 또는 지역
+lyrics.contrib.profile.countryAll: 모든 국가 및 지역
+lyrics.contrib.profile.countryFailed: 국가 또는 지역을 저장할 수 없습니다.
+lyrics.contrib.profile.countryNoMatch: 일치하는 항목 없음
+lyrics.contrib.profile.countryNone: 표시 안 함
+lyrics.contrib.profile.countryNoneChoice: 밝히지 않음
+lyrics.contrib.profile.countrySearch: 국가 및 지역 검색
+lyrics.contrib.profile.countrySuggested: 추천
+lyrics.contrib.profile.name: 표시 이름
+lyrics.contrib.profile.nameLocked: 관리자가 이름을 변경하여 현재는 바꿀 수 없습니다.
 lyrics.contrib.profile.nameRules: 3~24자의 문자, 숫자, 하이픈(-) 또는 언더스코어(_)를 사용하세요.
+lyrics.contrib.profile.notFound: 먼저 표시 이름을 선택하세요.
+lyrics.contrib.profile.rateLimited: 변경 요청이 너무 많습니다. 나중에 다시 시도하세요.
+lyrics.contrib.profile.section: 프로필
 lyrics.contrib.profile.signedOut: 로그인이 필요합니다.
+lyrics.contrib.profile.upgradeDesc: 아래에서 사진과 국가 또는 지역을 추가하세요.
+lyrics.contrib.profile.upgradeDismiss: 닫기
+lyrics.contrib.profile.upgradeTitle: 프로필 업데이트
+lyrics.contrib.replace.confirm: 교체
+lyrics.contrib.replace.message: 곡마다 사람당 하나의 버전만 가질 수 있습니다. 이 리믹스를 제출하면 회원님의 기존 버전이 대체되며, 이전 수정 기록은 히스토리에 남습니다.
+lyrics.contrib.replace.title: 기존 버전을 바꿀까요?
 lyrics.contrib.signin.button: Cider Taproom으로 로그인
 lyrics.contrib.signin.manual: 토큰 직접 입력
 lyrics.contrib.signin.sub: Cider Taproom 계정을 연결하여 가사를 업로드하고 리더보드에 이름을 올리세요.
@@ -1280,10 +1521,47 @@ lyrics.contrib.signin.title: 가사 기여를 위해 로그인
 lyrics.contrib.signin.tokenPrompt: 액세스 토큰 입력
 lyrics.contrib.signin.tokenTitle: Taproom 토큰
 lyrics.contrib.signin.waiting: 브라우저 대기 중…
+lyrics.contrib.stale.message: 시작한 이후 다른 기기 등에서 가사의 새 버전이 저장되었습니다. 텍스트는 초안으로 남겨두고 새 버전을 다시 불러와 수정하거나, 내 버전으로 덮어쓰세요.
+lyrics.contrib.stale.messageGone: 시작한 이후 내 버전이 삭제되었습니다. 덮어쓰기를 선택하면 현재 내용으로 저장됩니다.
+lyrics.contrib.stale.overwrite: 덮어쓰기
+lyrics.contrib.stale.reload: 다시 불러오기
+lyrics.contrib.stale.title: 이 가사가 변경되었습니다
 lyrics.contrib.subtitle: 동기화된 가사를 업로드하고, 기여도를 확인하며, 리더보드 순위를 올리세요.
+lyrics.contrib.success.private: 이 가사는 나만 볼 수 있습니다.
 lyrics.contrib.success.sub: 기여해 주셔서 감사합니다.
 lyrics.contrib.success.title: 가사 제출 완료!
+lyrics.contrib.suggest.accept: 수락
+lyrics.contrib.suggest.again: 단어 타이밍 다시 제안
+lyrics.contrib.suggest.allTimed: 모든 줄에 이미 타이밍이 있습니다.
+lyrics.contrib.suggest.cancel: 취소
+lyrics.contrib.suggest.caption: 제안
+lyrics.contrib.suggest.clearPicked: 선택한 줄 지우기
+lyrics.contrib.suggest.discard: 삭제
+lyrics.contrib.suggest.failed: 곡 전체의 타이밍을 맞출 수 없었습니다.
+lyrics.contrib.suggest.heard: "{percent}% 들음"
+lyrics.contrib.suggest.lines: 줄
+lyrics.contrib.suggest.linesCount: "{count}개 줄 제안됨"
+lyrics.contrib.suggest.linesHint: 타이밍이 없는 줄에 대해 노래 부분과 시작점을 바탕으로 타이밍을 제안합니다
+lyrics.contrib.suggest.noLines: 모든 줄에 이미 단어 타이밍이 있습니다.
+lyrics.contrib.suggest.picked: "{count}개 선택됨"
+lyrics.contrib.suggest.pickHint: 이 줄을 선택하면 단어 타이밍을 다시 제안합니다. Shift를 누르면 범위를 선택합니다.
+lyrics.contrib.suggest.quick: 빠른 분석
+lyrics.contrib.suggest.quickHint: 곡을 소리 없이 빠르게 재생하여 기록합니다
+lyrics.contrib.suggest.quickNeedsPlay: 먼저 이 곡을 재생한 후 빠르게 분석하세요.
+lyrics.contrib.suggest.scanning: 스캔 중 {percent}%
+lyrics.contrib.suggest.timedCount: "{count}개 줄 타이밍 완료, {unsure}개 불확실"
+lyrics.contrib.suggest.timedLines: "{count}개 줄 타이밍 완료"
+lyrics.contrib.suggest.timing: 곡 타이밍 맞추는 중… {percent}%
+lyrics.contrib.suggest.unheardNote: 아직 재생되지 않은 부분은 Apple의 보컬 타이밍에 따라 배치되며 불확실로 표시됩니다.
+lyrics.contrib.suggest.wholeSong: 전체 곡
+lyrics.contrib.suggest.wholeSongHint: 지금까지 들은 곡 전체를 기준으로 줄과 단어의 타이밍을 맞춥니다
+lyrics.contrib.suggest.words: 단어
+lyrics.contrib.suggest.wordsCount: "{count}개 줄을 단어로 나눔"
+lyrics.contrib.suggest.wordsHint: 타이밍이 맞춰진 줄을 시작점에 맞춰 단어로 나눕니다
 lyrics.contrib.sync.back: 뒤로
+lyrics.contrib.sync.colBegin: 시작
+lyrics.contrib.sync.colEnd: 끝
+lyrics.contrib.sync.cursor: 커서
 lyrics.contrib.sync.endGap: 종료 (공백)
 lyrics.contrib.sync.endNext: 종료 및 다음 줄
 lyrics.contrib.sync.follow: 팔로우
@@ -1316,13 +1594,21 @@ lyrics.contrib.time.markBegin: 시작
 lyrics.contrib.time.markEnd: 종료
 lyrics.contrib.time.markNext: 다음
 lyrics.contrib.time.next: 다음
+lyrics.contrib.time.tapCaption: 재생에 맞춰 탭
+lyrics.contrib.time.timing: 타이밍
 lyrics.contrib.upload.change: 변경
+lyrics.contrib.upload.changeTrack: 트랙 변경
+lyrics.contrib.upload.details: 상세 정보
 lyrics.contrib.upload.import: 현재 가사 가져오기
 lyrics.contrib.upload.language: 언어
+lyrics.contrib.upload.libraryNote: 제목, 아티스트, 앨범은 제출 내용과 함께 저장됩니다.
 lyrics.contrib.upload.lyrics: 가사
 lyrics.contrib.upload.noResults: 곡을 찾을 수 없습니다.
 lyrics.contrib.upload.openWindow: 새 창에서 열기
 lyrics.contrib.upload.preview: 미리보기
+lyrics.contrib.upload.remixNote: 내 버전은 이 가사의 리믹스가 됩니다.
+lyrics.contrib.upload.replaceNote: 제출하면 이 곡의 내 버전이 이 가사의 리믹스로 대체됩니다.
+lyrics.contrib.upload.searchFailed: "Apple Music을 검색할 수 없습니다: {reason}"
 lyrics.contrib.upload.searchPlaceholder: Apple Music 카탈로그 검색…
 lyrics.contrib.upload.signedOut: 가사를 업로드하려면 Cider Taproom 계정에 로그인하세요.
 lyrics.contrib.upload.submit: 가사 제출
@@ -1331,25 +1617,262 @@ lyrics.contrib.upload.track: 곡
 lyrics.contrib.upload.ttml: 가사 (TTML)
 lyrics.contrib.upload.useCurrent: 현재 곡 사용
 lyrics.contrib.upload.writers: 작사자 (선택 사항)
+lyrics.contrib.upload.writersOptional: 쉼표로 구분된 이름 (선택 사항)
 lyrics.contrib.upload.writersPlaceholder: 쉼표로 구분하여 입력
+lyrics.contrib.upload.writersShort: 작사/작곡
+lyrics.contrib.validate.empty: 제출하기 전에 가사를 추가하세요.
+lyrics.contrib.validate.interludeEmpty: "{n}번째 줄: 간주에 길이가 없습니다"
+lyrics.contrib.validate.interludeShort: "{n}번째 줄: 5초 미만의 간주에서는 대기 점이 표시되지 않을 수 있습니다"
 lyrics.contrib.validate.invalidXml: 올바르지 않은 XML — TTML 구문을 확인하세요.
+lyrics.contrib.validate.libraryMetadata: 가사를 추가하려면 이 곡에 제목과 아티스트가 필요합니다.
+lyrics.contrib.validate.lineEnd: "{n}번째 줄: 끝 시간이 시작 시간보다 뒤에 있지 않습니다"
+lyrics.contrib.validate.lineNoText: "{n}번째 줄: 텍스트가 없습니다"
+lyrics.contrib.validate.lineOrder: "{n}번째 줄: 순서가 맞지 않습니다 (이전 줄보다 먼저 시작함)"
 lyrics.contrib.validate.lines: 줄
+lyrics.contrib.validate.markWordSynced: 단어 싱크로 표시
 lyrics.contrib.validate.noLyrics: 이 TTML에서 가사를 찾을 수 없습니다.
 lyrics.contrib.validate.noTimed: 이 TTML에서 시간 동기화된 가사를 찾을 수 없습니다.
+lyrics.contrib.validate.noTrack: 먼저 트랙을 선택하세요.
 lyrics.contrib.validate.parseError: TTML을 분석할 수 없습니다.
 lyrics.contrib.validate.valid: 유효함
+lyrics.contrib.validate.wordEnd: '"{word}": 끝 시간이 시작 시간보다 뒤에 있지 않습니다'
+lyrics.contrib.validate.wordOverlap: '"{word}": 이전 단어와 겹칩니다'
+lyrics.contrib.validate.wordTimingHidden: 이 TTML에는 단어 타이밍이 있지만 줄 단위 동기화로 표시되어 있어, Cider는 줄 단위로 표시합니다.
+lyrics.contrib.window.close: 닫기
+lyrics.contrib.window.maximize: 최대화
+lyrics.contrib.window.minimize: 최소화
+lyrics.contrib.window.restore: 이전 크기로
+lyrics.contrib.write: 가사 작성
+lyrics.empty.localFileHint: 아직 로컬 파일에는 가사를 추가할 수 없습니다.
+lyrics.empty.title: 이 곡의 가사가 아직 없습니다
+lyrics.empty.ttmlChoose: 파일 선택
+lyrics.empty.ttmlHint: TTML 파일이 있나요? 여기에 놓으세요.
 lyrics.fetchingFrom: "다음에서 가사 가져오는 중:"
 lyrics.instrumental.markInstrumental: 연주곡으로 표시
 lyrics.instrumental.searchAnyway: 그래도 가사 검색하기
 lyrics.instrumental.title: 이 곡은 연주곡입니다
+lyrics.layers.background: 배경
+lyrics.layers.bodyEdited: 레이어는 게시된 줄을 따릅니다. 줄 편집 내용은 게시된 후 레이어에 적용됩니다.
+lyrics.layers.completeness: 완성도
+lyrics.layers.conflict: 이 초안을 시작한 후 게시된 레이어가 변경되었습니다.
+lyrics.layers.coverageHint: 이 레이어가 포함하는 텍스트가 있는 줄의 비율
+lyrics.layers.coveragePercent: "{percent}%"
+lyrics.layers.delete: 레이어 삭제
+lyrics.layers.deleteCancel: 취소
+lyrics.layers.deleteConfirm: 게시된 {lang} 레이어와 이 레이어의 초안을 삭제할까요? 리스너에게 더 이상 표시되지 않습니다.
+lyrics.layers.deleted: 삭제되었습니다.
+lyrics.layers.deleteFailed: 이 레이어를 삭제할 수 없습니다. 다시 시도하세요.
+lyrics.layers.deleteYes: 삭제
+lyrics.layers.deleting: 삭제 중…
+lyrics.layers.dropped: 레이어의 {count}개 줄이 더 이상 이 가사에 없으며, 저장할 때 제외됩니다.
+lyrics.layers.editor.notePronunciation: 이 가사에 발음을 추가합니다. 사용자 이름으로 저장됩니다.
+lyrics.layers.editor.notePronunciationOwner: "{name}님의 가사에 발음을 추가합니다. 사용자 이름으로 저장됩니다."
+lyrics.layers.editor.noteTranslation: 이 가사에 번역을 추가합니다. 사용자 이름으로 저장됩니다.
+lyrics.layers.editor.noteTranslationOwner: "{name}님의 가사에 번역을 추가합니다. 사용자 이름으로 저장됩니다."
+lyrics.layers.gone: 이 가사는 더 이상 사용할 수 없습니다.
+lyrics.layers.import.include: 레이어로 게시
+lyrics.layers.import.keptFailed: "{layers}을(를) 저장할 수 없습니다. 레이어 탭에 초안으로 보관되었습니다."
+lyrics.layers.import.keptSuggest: "{layers}을(를) 이 가사의 레이어 탭에 초안으로 보관했습니다."
+lyrics.layers.import.lines: "{count}줄"
+lyrics.layers.import.none: "{layer}이(가) 게시된 줄과 일치하지 않습니다."
+lyrics.layers.import.note: 제출하면 이 가사의 레이어로 저장됩니다.
+lyrics.layers.import.noteSuggest: 이 가사는 본인의 가사가 아니므로 레이어 탭에 초안으로 보관됩니다.
+lyrics.layers.import.saved: "{layer}이(가) {total}줄 중 {count}줄에 저장되었습니다."
+lyrics.layers.import.skipped: "{layer}이(가) 제외되었습니다. {problem}"
+lyrics.layers.invalid: Rise가 이 레이어를 허용하지 않았습니다. 언어를 확인한 후 다시 시도하세요.
+lyrics.layers.keep: 그대로 유지
+lyrics.layers.keepDraft: 내 초안 유지
+lyrics.layers.keysMismatch: 열어 둔 후 게시된 가사가 변경되었습니다. 다시 불러온 후 시도하세요.
+lyrics.layers.lang.all: 모든 언어
+lyrics.layers.lang.jyutping: 광둥어 (Jyutping)
+lyrics.layers.lang.korean: 한국어 (로마자 표기)
+lyrics.layers.lang.more: "{count}개 더"
+lyrics.layers.lang.none: 일치하는 언어가 없습니다.
+lyrics.layers.lang.onLyrics: 이 가사의 언어
+lyrics.layers.lang.own: 번역은 가사 원래 언어가 아닌 다른 언어로 작성됩니다.
+lyrics.layers.lang.pick: 언어 선택
+lyrics.layers.lang.pinyin: 중국어 (병음)
+lyrics.layers.lang.romaji: 일본어 (로마자)
+lyrics.layers.lang.search: 언어를 검색하거나 태그를 입력하세요
+lyrics.layers.lang.searchLabel: 언어 검색
+lyrics.layers.lang.suggested: 추천
+lyrics.layers.lang.use: "{name} 사용"
+lyrics.layers.lang.yours: 내 언어
+lyrics.layers.langInvalid: fr 또는 pt-BR과 같은 언어 태그를 사용하세요.
+lyrics.layers.langLatin: 발음에는 ja-Latn과 같은 라틴 문자 태그가 필요합니다.
+lyrics.layers.langMissing: 이 레이어의 언어를 선택하세요.
+lyrics.layers.language: 언어
+lyrics.layers.languageHint: fr, pt-BR, ja-Latn 같은 언어 태그
+lyrics.layers.layer: 레이어
+lyrics.layers.loadFailed: 이미 게시된 레이어가 있는지 확인할 수 없어 기존 레이어를 덮어쓰지 않도록 저장을 중지했습니다.
+lyrics.layers.loading: 이 가사에 이미 있는 레이어를 불러오는 중…
+lyrics.layers.needsLines: 먼저 가사 줄을 추가한 다음 여기에서 번역과 발음을 입력하세요.
+lyrics.layers.noKeys: 이 가사에는 아직 줄 키가 없습니다. 레이어를 추가하려면 게시된 버전을 다시 불러오세요.
+lyrics.layers.options: 옵션
+lyrics.layers.perSyllable: 음절별
+lyrics.layers.profileRequired: 레이어를 저장하기 전에 기여자 프로필을 설정하세요.
+lyrics.layers.pronunciation: 발음
+lyrics.layers.publish: 게시
+lyrics.layers.rateLimited: 현재 레이어 저장 요청이 너무 많습니다. 나중에 다시 시도하세요.
+lyrics.layers.save: 레이어 저장
+lyrics.layers.saved: 저장됨.
+lyrics.layers.saveFailed: 이 레이어를 저장하지 못했습니다. 다시 시도하세요.
+lyrics.layers.saving: 저장 중…
+lyrics.layers.signedOut: 레이어를 저장하려면 로그인하세요.
+lyrics.layers.stale: 변경됨
+lyrics.layers.staleCount: 작성 이후 {count}개 변경됨
+lyrics.layers.staleHint: 이것을 작성한 후 이 줄이 변경되었습니다
+lyrics.layers.translation: 번역
+lyrics.layers.usePublished: 게시된 레이어 사용
+lyrics.layers.withSubmit: 제출하면 게시됨
+lyrics.liveRadio.synced: 가사 동기화됨
+lyrics.liveRadio.syncedDetail: 재생 진행, Discord, 스크로블러가 이제 이 줄을 따릅니다.
 lyrics.loadingLyrics: 가사 불러오는 중...
 lyrics.lyricsBy: "작사:"
 lyrics.noLyricsAvailable: 이 곡의 가사가 없습니다
+lyrics.platter.addPronunciation: 발음 추가
+lyrics.platter.addTranslation: 번역 추가
+lyrics.platter.byContributor: "{{name}} 제작"
+lyrics.platter.communityVersions: 커뮤니티 버전
+lyrics.platter.contribute: 기여하기
+lyrics.platter.earlier: 가사를 더 일찍 표시
+lyrics.platter.editMine: 내 버전 편집
+lyrics.platter.fetching: "{{source}} 가져오는 중…"
+lyrics.platter.fetchingLyrics: 가사를 가져오는 중…
+lyrics.platter.languagePair: "{{from}} → {{to}}"
+lyrics.platter.later: 가사를 더 늦게 표시
+lyrics.platter.latinLetters: 라틴 문자로
+lyrics.platter.layerHint: 내 이름으로 저장됨
+lyrics.platter.lineByLine: 줄별
+lyrics.platter.lyricsFrom: 가사 출처
+lyrics.platter.machineTranslation: 기계 번역
+lyrics.platter.noLyrics: 가사 없음
+lyrics.platter.nothingFound: 찾은 항목 없음
+lyrics.platter.options: 가사 옵션
+lyrics.platter.pickSource: 다른 출처 선택
+lyrics.platter.refresh: 가사 새로 고침
+lyrics.platter.remix: 리믹스
+lyrics.platter.remixed: 리믹스됨
+lyrics.platter.remixHint: 이 버전을 바탕으로 내 버전 시작
+lyrics.platter.replaceMine: 내 버전을 이것으로 바꾸기
+lyrics.platter.replaceMineHint: 내 버전의 기록은 유지됩니다
+lyrics.platter.romaji: 로마자
+lyrics.platter.searching: 검색 중
+lyrics.platter.seconds: "{{value}}초"
+lyrics.platter.suggestEdit: 편집 제안
+lyrics.platter.suggestEditHint: "{{name}} 님이 검토합니다"
+lyrics.platter.syllableBySyllable: 음절별
+lyrics.platter.translateFailed: 번역할 수 없음
+lyrics.platter.translating: 번역 중
+lyrics.platter.translatingTo: "{{language}}(으)로 번역 중…"
+lyrics.platter.unknownSource: 알 수 없는 출처
+lyrics.platter.via: "{{app}} 제공"
+lyrics.platter.wordByWord: 단어별
+lyrics.search.checked: "확인됨: {{sources}}"
+lyrics.search.checking: 확인 중
+lyrics.search.checkingSource: "{{source}} 확인 중"
+lyrics.search.found: 찾음
+lyrics.search.title: 가사 찾는 중
+lyrics.search.waiting: 대기 중
 lyrics.selectProvider: 가사 제공업체 선택
+lyrics.suggestions.accept: 수락
+lyrics.suggestions.changes: 변경 사항
+lyrics.suggestions.confirm.note: 이 가사의 소유자가 제안을 확인하고 수락하거나 거절할 수 있습니다.
+lyrics.suggestions.confirm.noteTo: "{name}님에게 메모"
+lyrics.suggestions.confirm.owner: 이 가사의 소유자입니다. 변경 사항을 확인하고 수락하거나 거절하며, 수락되면 기여자로 표시됩니다.
+lyrics.suggestions.confirm.send: 제안 보내기
+lyrics.suggestions.confirm.sending: 보내는 중…
+lyrics.suggestions.confirm.sendTo: "{name}님에게 보내기"
+lyrics.suggestions.confirm.sentAs: "{name}(으)로 보냄"
+lyrics.suggestions.confirm.title: 제안을 보낼까요?
+lyrics.suggestions.confirm.titleTo: "{name}님에게 제안 보내기"
+lyrics.suggestions.diff.added: 추가됨
+lyrics.suggestions.diff.agent: "{before}이(가) 부름, 이제 {after}"
+lyrics.suggestions.diff.backgroundRetimed: 백그라운드 보컬 타이밍 변경됨
+lyrics.suggestions.diff.empty: 줄 변경 사항이 없습니다.
+lyrics.suggestions.diff.endsEarlier: "{s}초 일찍 끝남"
+lyrics.suggestions.diff.endsLater: "{s}초 늦게 끝남"
+lyrics.suggestions.diff.gapMany: 변경되지 않은 줄 {count}개
+lyrics.suggestions.diff.gapOne: 변경되지 않은 줄 1개
+lyrics.suggestions.diff.language: "언어: {before}, 이제 {after}"
+lyrics.suggestions.diff.none: 없음
+lyrics.suggestions.diff.noPart: 파트 없음
+lyrics.suggestions.diff.noSinger: 가수 없음
+lyrics.suggestions.diff.nowLineSynced: 이제 줄 단위로만 타이밍 지정
+lyrics.suggestions.diff.nowWordSynced: 이제 단어별로 타이밍 지정
+lyrics.suggestions.diff.otherDetails: 번역처럼 가사 파일 안에 저장된 세부 정보도 함께 변경됩니다.
+lyrics.suggestions.diff.part: 파트 {before}, 이제 {after}
+lyrics.suggestions.diff.play: 이 곡의 이 부분 재생
+lyrics.suggestions.diff.removed: 삭제됨
+lyrics.suggestions.diff.resegmented: 단어의 음절 나누기가 달라짐
+lyrics.suggestions.diff.retimedMany: 단어 {count}개의 타이밍 변경됨
+lyrics.suggestions.diff.retimedOne: 단어 1개의 타이밍 변경됨
+lyrics.suggestions.diff.singer: 가수 {n}
+lyrics.suggestions.diff.startsEarlier: "{s}초 일찍 시작"
+lyrics.suggestions.diff.startsLater: "{s}초 늦게 시작"
+lyrics.suggestions.diff.textOnly: 이 제안은 텍스트 변경만 표시할 수 있습니다.
+lyrics.suggestions.diff.unexplained: 이 제안은 여기에 표시할 수 없는 가사 파일 일부도 변경합니다.
+lyrics.suggestions.diff.writers: "작사: {before}, 이제 {after}"
+lyrics.suggestions.editor.note: 이 가사의 수정을 제안하고 있습니다. 수락 여부는 소유자가 결정합니다.
+lyrics.suggestions.editor.noteOwner: "{name}의 가사 수정을 제안하고 있습니다. 수락 여부는 소유자가 결정합니다."
+lyrics.suggestions.editor.summary: 요약
+lyrics.suggestions.editor.summaryPlaceholder: 무엇을 변경했나요?
+lyrics.suggestions.error.generic: 문제가 발생했습니다. 다시 시도해 주세요.
+lyrics.suggestions.error.limit: 대기 중인 제안이 너무 많습니다. 일부 제안에 응답한 후 다시 시도해 주세요.
+lyrics.suggestions.error.load: 제안을 불러올 수 없습니다.
+lyrics.suggestions.error.noChange: 현재 가사와 동일합니다.
+lyrics.suggestions.error.notPending: 이 제안은 이미 응답되었거나 철회되었습니다.
+lyrics.suggestions.error.outdated: 제안 이후 가사가 변경되어 더 이상 수락할 수 없습니다.
+lyrics.suggestions.error.ownVariation: 본인의 가사이므로 직접 편집할 수 있습니다.
+lyrics.suggestions.error.unshareable: 이 가사는 소유자만 볼 수 있어 제안을 받을 수 없습니다.
+lyrics.suggestions.fork: 이 변경으로 분기
+lyrics.suggestions.from: "{name}님이 보낸 제안"
+lyrics.suggestions.incomingEmpty: 누군가 내 가사를 수정 제안하면 여기에 표시됩니다.
+lyrics.suggestions.incomingTitle: 나에게 온 제안
+lyrics.suggestions.loadFailed: 이 제안을 불러올 수 없습니다.
+lyrics.suggestions.notify.accepted: 제안을 수락했습니다.
+lyrics.suggestions.notify.rejected: 제안을 거절했습니다.
+lyrics.suggestions.notify.sent: 제안을 보냈습니다. 도와주셔서 감사합니다!
+lyrics.suggestions.notify.withdrawn: 제안을 철회했습니다.
+lyrics.suggestions.outdated.acceptReason: 제안 이후 가사가 변경되어 그대로 수락할 수 없습니다.
+lyrics.suggestions.outdated.author: 제안 이후 이 가사가 변경되어 그대로 수락할 수 없습니다. 최신 버전에서 시작해 다시 제안해 주세요.
+lyrics.suggestions.outdated.owner: 제안 이후 가사가 변경되어 그대로 수락할 수 없습니다. {name}님이 최신 버전에서 시작해 다시 제안할 수 있습니다.
+lyrics.suggestions.outdated.suggester: 제안한 사람
+lyrics.suggestions.outgoingEmpty: 다른 사람의 가사에 보낸 수정 제안이 여기에 표시됩니다.
+lyrics.suggestions.outgoingTitle: 내가 보낸 제안
+lyrics.suggestions.rebase: 최신 버전에서 시작
+lyrics.suggestions.reference.hide: 숨기기
+lyrics.suggestions.reference.note: 이 변경 사항은 이전 버전을 기준으로 만들어졌습니다. 아래 편집기에서 다시 적용해 주세요.
+lyrics.suggestions.reference.title: 다시 적용할 변경 사항
+lyrics.suggestions.reject.button: 거절
+lyrics.suggestions.reject.message: 원하시면 이유를 알려 주세요.
+lyrics.suggestions.reject.title: 이 제안을 거절하시겠어요?
+lyrics.suggestions.review: 검토
+lyrics.suggestions.reviewTitle: 수정 제안
+lyrics.suggestions.stale.message: 작업을 시작한 뒤 이 가사의 새 버전이 저장되었습니다. 다시 불러와서 최신 버전 위에 변경 사항을 다시 적용해 주세요. 입력한 텍스트는 임시 저장본으로 보관됩니다.
+lyrics.suggestions.state.accepted: 수락됨
+lyrics.suggestions.state.expired: 만료됨
+lyrics.suggestions.state.outdated: 오래됨
+lyrics.suggestions.state.pending: 검토 대기 중
+lyrics.suggestions.state.rejected: 거절됨
+lyrics.suggestions.state.withdrawn: 철회됨
+lyrics.suggestions.success.title: 제안을 보냈습니다!
+lyrics.suggestions.summary.language: 언어 변경됨
+lyrics.suggestions.summary.noLines: 변경된 가사 줄이 없습니다
+lyrics.suggestions.summary.none: 가사 변경 사항 없음
+lyrics.suggestions.summary.otherDetails: 기타 파일 정보 변경됨
+lyrics.suggestions.summary.singerNames: 가수 이름 변경됨
+lyrics.suggestions.summary.writers: 작사/작곡가 변경됨
+lyrics.suggestions.to: "{name}님에게 보낸 제안"
+lyrics.suggestions.validate.noBase: 이 가사는 아직 제안을 받을 수 없습니다.
+lyrics.suggestions.withdraw.confirm: 철회
+lyrics.suggestions.withdraw.message: 가사 소유자는 더 이상 이 제안을 볼 수 없습니다.
+lyrics.suggestions.withdraw.title: 이 제안을 철회하시겠어요?
 lyrics.translation.chip.pronunciation: 발음
 lyrics.translation.chip.translated: 번역됨
 lyrics.translation.credit: "{{source}} 번역"
 lyrics.translation.credit.apple: Apple Music 번역
+lyrics.translation.credit.community: 커뮤니티 번역
 lyrics.translation.menu.hide: 번역 숨기기
 lyrics.translation.menu.hidePronunciation: 발음 숨기기
 lyrics.translation.menu.show: 번역 보기
@@ -1704,13 +2227,16 @@ mobile.lyrics.instrumentalNote: 이 곡에는 보컬이 없습니다.
 mobile.lyrics.loadFailed: 가사를 불러올 수 없습니다
 mobile.lyrics.noneAvailable: 사용 가능한 가사가 없습니다
 mobile.lyrics.noneFound: 이 곡의 가사를 찾을 수 없습니다.
+mobile.lyrics.pronunciation: 발음
 mobile.lyrics.providerAvailable: 사용 가능
 mobile.lyrics.providerChecking: 확인 중…
 mobile.lyrics.providerCommunity: 커뮤니티 (Rise)
 mobile.lyrics.providerMenu: 제공자 메뉴
 mobile.lyrics.providerNotChecked: 확인 안 함
 mobile.lyrics.providerUnavailable: 재생할 수 없음
+mobile.lyrics.remixedFrom: "{contributor} 리믹스"
 mobile.lyrics.source: 가사 출처
+mobile.lyrics.togglePronunciation: 발음 표시 전환
 mobile.lyrics.toggleTranslation: 번역 전환
 mobile.lyrics.writtenBy: "작사: "
 mobile.manifest.lyrics: 가사
@@ -2946,6 +3472,8 @@ notificationCenter.row.muted: 알림 꺼짐
 notificationCenter.section.active: 활성
 notificationCenter.section.history: 기록
 notificationCenter.title: 알림
+notify.explicitRestricted: Apple 계정에서 explicit 콘텐츠가 제한되어 있습니다
+notify.explicitRestricted.allow: Apple 계정에서 explicit 콘텐츠가 제한되어 있습니다. 프로필 설정의 콘텐츠 제한에서 변경할 수 있습니다.
 notify.explicitRestrictedSkip: '"{name}"을(를) 건너뜁니다: Apple 계정에서 명시적 콘텐츠가 제한되어 있습니다'
 notify.explicitRestrictedStop: '재생 중지됨: "{name}"은(는) 명시적 콘텐츠이며, Apple 계정에서 명시적 콘텐츠가 제한되어 있습니다'
 notify.licenseRefusedSkip: 지금은 "{name}"을(를) 재생할 수 없어 건너뜁니다.
@@ -4155,6 +4683,11 @@ settings.nav.summary.connectivity: Discord, 스크로블링, 함께 듣기, 원�
 settings.nav.summary.extensions: 테마, CSS 스니펫, 플러그인
 settings.nav.summary.general: 시작, 대기열, 슬립 타이머, 키 바인딩
 settings.nav.summary.lyrics: 소스, 번역, 표시, 타이밍
+settings.nav.summary.lyricsYours: 내가 기여한 가사
+settings.nav.summary.lyricsYours.many: 검토 대기 중인 제안 {count}개
+settings.nav.summary.lyricsYours.one: 검토 대기 중인 제안 1개
+settings.nav.summary.lyricsYours.views.many: "{n}일 동안 조회 {views}회"
+settings.nav.summary.lyricsYours.views.one: "{n}일 동안 조회 {views}회"
 settings.nav.summary.notifications: 카테고리, 기록, 시스템 알림
 settings.nav.summary.power: 성능, 프레임 레이트, 절전 기능
 settings.nav.summary.profile: Apple Music 계정
@@ -4732,7 +5265,7 @@ settings.option.general.useSmartQueueByDefault.needsAutomix: 오디오 설정에
 settings.option.general.warnBeforeQueueOverride: 대기 목록을 덮어쓰기 전에 경고
 settings.option.hide: 가리기
 settings.option.left: 왼쪽
-settings.option.lyrics.contributeCta: 가사 기여 및 업로드
+settings.option.lyrics.contributeCta: 커뮤니티 가사
 settings.option.lyrics.contributeCta.description: 동기화된 가사를 업로드하고 실시간으로 미리 보며, 기여자 순위표를 확인할 수 있습니다.
 settings.option.lyrics.customScrollerProperties: 사용자 지정 스크롤러 속성
 settings.option.lyrics.customScrollerProperties.description: 가사 스크롤 애니메이션에 사용자 정의 스타일을 적용합니다.
@@ -5072,6 +5605,8 @@ settings.option.visual.liquidGlassScrollPerf: 스크롤 중 가벼운 유리 효
 settings.option.visual.liquidGlassScrollPerf.description: 스크롤하는 동안 리퀴드 글래스 굴절을 단순한 블러 효과로 간소화하고, 스크롤을 멈추면 서서히 다시 적용합니다. 정지 상태에서는 변화 없이, 시스템 부하가 큰 환경에서 스크롤 끊김 현상을 줄여줍니다. 게임 모드에서는 항상 활성화됩니다.
 settings.option.visual.liquidGlassScrollPerf.descriptionV2: 스크롤하는 동안 리퀴드 글라스 굴절을 단순한 블러로 바꾸고, 멈추면 다시 원래대로 돌립니다. 정지 상태에는 변화가 없으며 사양이 높은 시스템에서 스크롤 끊김을 줄입니다.
 settings.option.visual.mainMenuPosition: 기본 메뉴 위치
+settings.option.visual.matchPageGlow: 아트워크 글로우
+settings.option.visual.matchPageGlow.description: 매칭된 페이지 상단에 아트워크 글로우 효과를 표시합니다.
 settings.option.visual.matchPageToArtwork: 앨범 아트에 맞춰 페이지 색상 적용
 settings.option.visual.matchPageToArtwork.description: 라이트 모드와 다크 모드에서 앨범 및 플레이리스트 페이지를 아트워크의 색상으로 채웁니다.
 settings.option.visual.mergeAppleMusicPlaylists: Apple Music 재생목록 병합
@@ -5249,6 +5784,12 @@ settings.privacy.deviceSpecs.description: 현재 하드웨어의 CPU, GPU, RAM, 
 settings.privacy.replay: Cider Replay에 청취 기록 기여
 settings.privacy.replay.description: Cider의 연말 커뮤니티 Replay 프로젝트에 기여하기 위해 청취 기록을 익명으로 보냅니다. 공개 통계는 cider.sh/replay에서 확인할 수 있습니다.
 settings.privacy.statement: Cider Collective는 개인정보 보호를 매우 중요하게 생각합니다. 개인을 식별할 수 있는 정보는 수집하지 않으며, 어떤 데이터도 제3자에게 판매하지 않습니다. 공유하도록 선택한 데이터는 앱 개선에만 사용되며 다른 누구와도 공유되지 않습니다. 저장될 수 있는 모든 개인 정보는 공유되기 전에 삭제됩니다.
+settings.profile.contentRestrictions.changeEmail: 복구 이메일 변경
+settings.profile.contentRestrictions.changePasscode: 암호 변경
+settings.profile.contentRestrictions.family: 가족 구성원 관리자가 관리합니다.
+settings.profile.contentRestrictions.rating: 음악 등급
+settings.profile.contentRestrictions.rating.clean: 클린
+settings.profile.contentRestrictions.rating.explicit: Explicit
 settings.profile.crop.hint: 드래그하여 이동, 스크롤하여 확대/축소
 settings.profile.crop.title: 사진 위치 조정
 settings.profile.defaultName: Apple Music 사용자
@@ -5258,6 +5799,7 @@ settings.profile.field.handle.description: 공유에 사용되는 @사용자이�
 settings.profile.field.photo: 프로필 사진
 settings.profile.field.photo.change: 프로필 사진 변경
 settings.profile.field.photo.description: 현재 사용자 지정 사진이 설정되어 있습니다.
+settings.profile.header.contentRestrictions: 콘텐츠 제한
 settings.profile.header.identity: 프로필 편집
 settings.profile.header.region: 지역 및 언어
 settings.profile.header.visibility: 사이드바 표시
@@ -5269,6 +5811,7 @@ settings.profile.option.showProfile: 사이드바에 프로필 표시
 settings.profile.policy.allowed: 허용됨
 settings.profile.policy.label: 명시적 콘텐츠
 settings.profile.policy.restricted: 제한됨
+settings.profile.policy.restrictedClean: 제한됨(클린)
 settings.profile.signOut.confirmMessage: 로그인 화면으로 돌아가며 로컬 보관함 캐시가 지워집니다. 계속하시겠습니까?
 settings.profile.signOut.confirmTitle: Apple Music에서 로그아웃하시겠습니까?
 settings.profile.status.disconnected: 로그인하지 않음
@@ -5356,7 +5899,7 @@ settings.takeout.selectAll: 전체 선택
 settings.takeout.title: 설정 테이크아웃
 settings.title: 설정
 settings.troubleshooting.bgDiagnostics: 백그라운드 재생 진단
-settings.troubleshooting.bgDiagnostics.desc: 창이 최소화되거나 포커스를 잃었을 때 발생하는 재생 문제를 진단하기 위한 추가 로그 기록(플레이어 일시 정지 주체, 타이머 기아 현상, OS 일시 중단 현상 등)입니다. 백그라운드 재생 버그를 신고할 때 활성화하세요.
+settings.troubleshooting.bgDiagnostics.desc: 창이 최소화되거나 포커스를 잃은 동안 재생 문제를 진단하기 위한 추가 로그 정보입니다. 플레이어 일시정지 주체, 타이머 지연, OS 일시 중단 상황을 포함합니다. 백그라운드 재생 버그를 보고할 때 활성화하세요.
 settings.troubleshooting.desc: 로그 파일 및 MKLite 디버그 로깅입니다.
 settings.troubleshooting.descV2: MKLite 및 백그라운드 재생 로깅입니다.
 settings.troubleshooting.hevcWorkaround: HEVC 해결 방법
@@ -5367,8 +5910,8 @@ settings.troubleshooting.impressionReporting.warning2: 이는 Cider가 이미 �
 settings.troubleshooting.logFile: 로그 파일
 settings.troubleshooting.logFile.actions: 로그 파일 작업
 settings.troubleshooting.logFile.desc: 로그 파일 보기, 복사 또는 지우기
-settings.troubleshooting.mkliteDebug: MKLite 디버그 로깅
-settings.troubleshooting.mkliteDebug.desc: MKLite의 상세 콘솔 출력 — PlayActivity 페이로드(JSPLAY), 트랙 변경 및 재생 상태. Apple에 전송하는 내용을 music.apple.com과 비교할 때 유용합니다. 일반적인 사용 시에는 비활성화해 두세요.
+settings.troubleshooting.mkliteDebug: Cerium 디버그 로깅
+settings.troubleshooting.mkliteDebug.desc: Cerium의 자세한 콘솔 출력으로, 더 자세한 디버그 정보를 제공하여 복잡한 재생 문제를 진단하는 데 도움을 줍니다. 필요한 로그를 제공한 후에는 비활성화 상태로 두세요.
 settings.troubleshooting.mkLoadingMethod: MusicKit 로드 방식
 settings.troubleshooting.mkLoadingMethod.warning1: MusicKit을 로드하는 데 사용되는 방식을 변경합니다. 이는 MusicKit 업데이트로 인한 잠재적인 로드 문제를 해결하는 데 사용됩니다.
 settings.troubleshooting.mkLoadingMethod.warning2: 진행 과정을 잘 알고 있거나 지시를 받지 않은 경우 이 설정을 변경하지 마십시오.
