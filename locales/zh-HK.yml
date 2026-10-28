@@ -80,7 +80,11 @@ action.close: 關閉
 action.configure: 設定
 action.connect: 連接
 action.connect.createCollabPlaylist: 建立新合作播放清單
-action.connect.listenTogether: 一起聆聽
+action.connect.listenTogether:
+  value: 一齊聽歌
+  source: human
+  by: "@jay900604"
+  issue: 137
 action.connect.signIn: 使用 {account} 登入
 action.connectRemoteApp:
   value: 連接 Remote App
@@ -464,7 +468,11 @@ assistant.sid.card.clearOne: 清除 1 首歌曲
 assistant.sid.card.clearTitle: 清除待播歌曲？
 assistant.sid.card.created: 已建立 {name}
 assistant.sid.card.failed: 操作未能完成。請稍後再試。
-assistant.sid.card.guest: 你是聆聽派對的賓客，因此由主持人控制播放佇列。
+assistant.sid.card.guest:
+  value: 你正以訪客身分參與一齊聽歌，待播清單由主持人控制。
+  source: human
+  by: "@jay900604"
+  issue: 137
 assistant.sid.card.inLibrary: 已在你的資料庫中
 assistant.sid.card.leftOut: 已略過 {count} 首無法播放或你已標示為「少推薦」的歌曲。
 assistant.sid.card.leftOutOne: 已略過 1 首無法播放或你已標示為「少推薦」的歌曲。
@@ -547,7 +555,11 @@ assistant.sid.failure.crashed: Gemma 意外停止。請再試一次。
 assistant.sid.failure.deviceLost: Sid 思考時顯示卡重設。請再試一次。
 assistant.sid.failure.modelCorrupt: Gemma 的下載檔案已損壞。請重新下載以繼續。
 assistant.sid.failure.modelMissing: Gemma 的檔案遺失。請重新下載以繼續。
-assistant.sid.failure.network: 下載已停止。請檢查連線並再試一次。
+assistant.sid.failure.network:
+  value: 下載已停止。請檢查網絡連接並再試一次。
+  source: human
+  by: "@jay900604"
+  issue: 137
 assistant.sid.failure.notReady: Gemma 尚未準備好。
 assistant.sid.failure.outOfMemory: 為了保持電腦回應流暢，Sid 已停止 Gemma。它需要的顯示記憶體超出可用量。
 assistant.sid.failure.stoppedUnexpectedly: Sid 意外停止運作，請再試一次。
@@ -855,7 +867,11 @@ audio.device.noneFound: 找不到輸出裝置
 audio.device.placeholder: 裝置 {{id}}
 audiolab.waiting: 正在等待歌曲加入待播清單
 auth.error.devToken: 無法連接 Apple Music
-auth.error.generic: 未能完成登入。請檢查網絡連線後再試一次。
+auth.error.generic:
+  value: 未能完成登入。請檢查網絡連接後再試一次。
+  source: human
+  by: "@jay900604"
+  issue: 137
 auth.error.invalidToken: 收到無效的權杖
 auth.error.popupBlocked: 彈出式視窗已被阻擋
 auth.error.timeout: 登入逾時
@@ -881,7 +897,11 @@ auth.request.toast.granted: 已授予 {app} 存取權
 auth.request.toast.title: 授權
 auth.request.tokenCreated: 已建立權杖
 auth.request.tokenFor: 用於 {app}
-auth.request.trustNote: 只向你信任的應用程式授予存取權。你可以隨時在「設定」›「連線」中撤銷此權杖。
+auth.request.trustNote:
+  value: 只向你信任的應用程式授予存取權。你可以隨時在「設定」›「連接」中撤銷此權杖。
+  source: human
+  by: "@jay900604"
+  issue: 137
 auth.signedIn: 已登入
 auth.signInRetry.confirm: 再試一次
 auth.signInRetry.message:
@@ -976,16 +996,32 @@ bugReport.toggleHwid: 匿名裝置 ID
 bugReport.toggleHwidDesc: 經雜湊處理的裝置 ID，以便關聯此裝置傳送的重複報告。
 bugReport.toggleLogs: 最近的 App 記錄
 bugReport.toggleLogsDesc: 最近的主控台輸出 (已隱藏敏感資料)。對修復錯誤最有用。
-cast.connected: 已連線
-cast.connectedLatency: 已連線 · ${ms} 毫秒
-cast.connectFailed: 無法連線至該裝置。
+cast.connected:
+  value: 已連接
+  source: human
+  by: "@jay900604"
+  issue: 137
+cast.connectedLatency:
+  value: 已連接 · ${ms} 毫秒
+  source: human
+  by: "@jay900604"
+  issue: 137
+cast.connectFailed:
+  value: 無法連接至該裝置。
+  source: human
+  by: "@jay900604"
+  issue: 137
 cast.header: 投放至裝置
 cast.headerDesc: 播放將切換至所選裝置。音訊會直接從 Apple 串流至揚聲器，因此 Cider 會停止在本機進行解碼。
 cast.loadFailed: 無法在該裝置上播放該曲目。
 cast.noDevices: 在此網絡上找不到任何投放裝置。
 cast.notSignedIn: 你尚未登入 Apple Music。
 cast.scan: 重新掃描
-cast.sessionEnded: 投放連線已結束。
+cast.sessionEnded:
+  value: 投放連接已結束。
+  source: human
+  by: "@jay900604"
+  issue: 137
 cast.title: 投放
 catalog.new:
   value: 探新
@@ -1054,12 +1090,28 @@ commandCenter.hint.showPlaylist: 顯示資料庫中的播放清單
 commandCenter.moreResults: 更多搜尋結果...
 commandCenter.playNext: 接著播放「{name}」
 concerts.empty.noLocation.action: 設定位置
-concerts.empty.noLocation.body: 音樂會是按地點列出的。選擇一個地點以查看你附近即將舉行的活動。
+concerts.empty.noLocation.body:
+  value: 演唱會是按地點列出的。選擇一個地點以查看你附近即將舉行的活動。
+  source: human
+  by: "@jay900604"
+  issue: 137
 concerts.empty.noLocation.title: 未設定位置
 concerts.empty.noResults.body: 目前沒有符合這些篩選條件的活動。請嘗試不同的日期範圍、類型或地點。
-concerts.empty.noResults.title: 找不到音樂會
-concerts.empty.search.body: 沒有與「{term}」相符的音樂會。請嘗試搜尋其他藝人、場地或活動名稱。
-concerts.empty.search.title: 沒有相符的音樂會
+concerts.empty.noResults.title:
+  value: 找不到演唱會
+  source: human
+  by: "@jay900604"
+  issue: 137
+concerts.empty.search.body:
+  value: 沒有與「{term}」相符的演唱會。請嘗試搜尋其他藝人、場地或活動名稱。
+  source: human
+  by: "@jay900604"
+  issue: 137
+concerts.empty.search.title:
+  value: 沒有相符的演唱會
+  source: human
+  by: "@jay900604"
+  issue: 137
 concerts.getTickets: 購票
 concerts.maps.apple: Apple 地圖
 concerts.maps.google: Google 地圖
@@ -1168,7 +1220,11 @@ dialog.intensiveDisabled.title: 已關閉部分視覺效果功能
 dialog.ok: 確定
 discord.widget.vanityStat: "{year} 音樂回憶"
 error.appleMusicSubRequired: 使用 Apple Music 需要訂閱。
-error.connectionError: 連線至 Apple Music 時發生問題。
+error.connectionError:
+  value: 連接至 Apple Music 時發生問題。
+  source: human
+  by: "@jay900604"
+  issue: 137
 error.musickitError: MusicKit 發生錯誤：
 error.noResults: 沒有結果。
 error.noResults.description: 請嘗試重新搜尋。
@@ -2277,7 +2333,11 @@ mobile.folder.noteTopItems: 新資料夾會放在最上層，{count, plural, one
 mobile.folder.noteTopNamed: 新資料夾會放在最上層，「{name}」會移入其中。
 mobile.folder.noteTopPlaylists: 新資料夾會放在最上層，{count, plural, one {# 個播放清單} other {# 個播放清單}}會移入其中。
 mobile.folder.nothingToMove: 沒有可移動的項目
-mobile.history.checkConnection: 請檢查你的連線並再試一次。
+mobile.history.checkConnection:
+  value: 請檢查你的網絡連接並再試一次。
+  source: human
+  by: "@jay900604"
+  issue: 137
 mobile.history.couldntLoad: 無法載入你的收聽紀錄
 mobile.history.couldntLoadMore: 無法載入更多
 mobile.history.playItem: 播放{name}
@@ -2360,7 +2420,11 @@ mobile.library.syncing: 正在同步資料庫…
 mobile.library.unknownKind: 未知
 mobile.lyrics.autoChain: 自動（串連）
 mobile.lyrics.automaticDetail: 第一個有歌詞的來源
-mobile.lyrics.checkConnection: 請檢查你的連線並再試一次。
+mobile.lyrics.checkConnection:
+  value: 請檢查你的網絡連接並再試一次。
+  source: human
+  by: "@jay900604"
+  issue: 137
 mobile.lyrics.close: 關閉歌詞
 mobile.lyrics.contributedBy: 由 {contributor} 貢獻
 mobile.lyrics.instrumentalNote: 此曲沒有人聲演出。
@@ -2407,7 +2471,11 @@ mobile.onboarding.betaTitle: 這是測試版
 mobile.onboarding.betaUpdatesBody: 新版本會直接在應用程式內提供，而非透過 Play 商店。Cider 會在版本準備好時通知你。
 mobile.onboarding.betaUpdatesTitle: 更新透過 Cider 提供
 mobile.onboarding.ciderAndroidOwner: Cider for Android 用戶
-mobile.onboarding.connected: 已連線
+mobile.onboarding.connected:
+  value: 已連接
+  source: human
+  by: "@jay900604"
+  issue: 137
 mobile.onboarding.continue: 繼續
 mobile.onboarding.continueInBrowser: 請在瀏覽器中繼續。登入後，Cider 會接續你離開的位置。
 mobile.onboarding.didntMakeItBack: 未能返回應用程式？
@@ -2453,7 +2521,11 @@ mobile.playback.drm.brokenTitle: 無法進行受保護播放
 mobile.playback.drm.cantPlayShort: 此裝置無法播放 Apple Music 歌曲
 mobile.playback.drm.cantPlayTitle: 此裝置無法播放 Apple Music
 mobile.playback.drm.revokedMessage: Apple Music 使用 Widevine 保護其歌曲，但 Widevine 已不再信任此裝置。這通常是因為軟件有所改動，例如解鎖了 bootloader。你仍可瀏覽、搜尋、管理資料庫及閱讀歌詞。
-mobile.playback.drm.setupFailedMessage: 此裝置首次播放 Apple Music 前，須設定用來保護歌曲的安全功能 Widevine。設定未能完成。請檢查網絡連線後再試一次。
+mobile.playback.drm.setupFailedMessage:
+  value: 此裝置首次播放 Apple Music 前，須設定用來保護歌曲的安全功能 Widevine。設定未能完成。請檢查網絡連接後再試一次。
+  source: human
+  by: "@jay900604"
+  issue: 137
 mobile.playback.drm.setupFailedShort: 無法設定受保護播放，請再試一次
 mobile.playback.drm.setupFailedTitle: 無法設定受保護播放
 mobile.playback.drm.unsupportedMessage: Apple Music 使用 Widevine 保護其歌曲，這是大多數 Android 裝置內建的安全功能。此裝置並不具備此功能，因此無法在此播放歌曲。你仍可瀏覽、搜尋、管理資料庫及閱讀歌詞。
@@ -2600,26 +2672,42 @@ mobile.remote.pairing.enterToken: 輸入配對代碼
 mobile.remote.pairing.missingAddressOrToken: 缺少地址或代碼
 mobile.remote.pairing.noPlayServices: 掃描功能使用 Google Play 服務，但此裝置無法使用。請改為輸入地址。
 mobile.remote.pairing.playServicesTooOld: 掃描需要較新版本的 Google Play 服務。請從 Play 商店更新，或改為輸入地址。
-mobile.remote.pairing.scannerDownloadFailed: 無法下載掃描器。請檢查網絡連線後再試，或改為輸入地址。
+mobile.remote.pairing.scannerDownloadFailed:
+  value: 無法下載掃描器。請檢查網絡連接後再試，或改為輸入地址。
+  source: human
+  by: "@jay900604"
+  issue: 137
 mobile.remote.pairing.scannerSettingUp: 掃描器仍在設定中，請稍後再試。
 mobile.remote.pairing.scannerStopped: 掃描器意外停止。請再試一次。
 mobile.remote.pairing.scannerWontOpen: 無法開啟掃描器。請再試一次，或改為輸入地址。
 mobile.remote.pairingToken: 配對代碼
 mobile.remote.preparingScanner: 正在準備掃描器…
-mobile.remote.restartAfterwards: 之後，請在該電腦重新啟動 Cider，使其開始接受連線。
+mobile.remote.restartAfterwards:
+  value: 之後，請在該電腦重新啟動 Cider，使其開始接受連接。
+  source: human
+  by: "@jay900604"
+  issue: 137
 mobile.remote.scanInstead: 改為掃描 QR 碼
 mobile.remote.scanQrCode: 掃描 QR 碼
 mobile.remote.selected: 已選取
 mobile.remote.stepCreateCodeManual: 建立 QR 碼，然後在下方輸入其地址和代碼
 mobile.remote.stepCreateCodeScan: 建立 QR 碼，然後在下方掃描
-mobile.remote.stepGoToSettings: 前往「設定」→「連線」→「Cider Remote」
+mobile.remote.stepGoToSettings:
+  value: 前往「設定」→「連接」→「Cider Remote」
+  source: human
+  by: "@jay900604"
+  issue: 137
 mobile.remote.stepOpenCider: 在電腦上開啟 Cider
 mobile.remote.thisPhone: 此手機
 mobile.remote.unreachable: 無法連接 {name}。請確認其已開機，並且與你位於同一網絡。
 mobile.replay.albumsTile: "{count, plural, other {專輯}}"
 mobile.replay.artistsTile: "{count, plural, other {藝人}}"
 mobile.replay.byArtist: "{name}（{artist}）"
-mobile.replay.checkConnection: 請檢查你的連線並再試一次。
+mobile.replay.checkConnection:
+  value: 請檢查你的連接並再試一次。
+  source: human
+  by: "@jay900604"
+  issue: 137
 mobile.replay.chooseYear: 選擇年份
 mobile.replay.couldntPlay: 無法播放{name}
 mobile.replay.couldntPlayThis: 無法播放此項目
@@ -2851,13 +2939,21 @@ mobile.settings.categories.appearance: 外觀
 mobile.settings.categories.appearanceSubtitle: 主題、顏色、圓角
 mobile.settings.categories.assistant: 助理
 mobile.settings.categories.audio: 音訊
-mobile.settings.categories.audioSubtitle: 交叉淡化、無縫播放、音量標準化
+mobile.settings.categories.audioSubtitle:
+  value: 交叉淡化、無縫播放、音量平衡
+  source: human
+  by: "@jay900604"
+  issue: 137
 mobile.settings.categories.audioSubtitleCiderAudio: Cider Audio、均衡器、交叉淡化、Sound Check
 mobile.settings.categories.behaviorSubtitle: 歌曲滑動、通知操作、預設值
 mobile.settings.categories.cache: 快取
 mobile.settings.categories.cacheSubtitle: 封面儲存、頁面快取
 mobile.settings.categories.concertsSubtitle: 位置、範圍、排序
-mobile.settings.categories.connections: 連線
+mobile.settings.categories.connections:
+  value: 連接
+  source: human
+  by: "@jay900604"
+  issue: 137
 mobile.settings.categories.createReportSubtitle: 包含 Cider 記錄的檔案,可附加到你的 Discord 帖文
 mobile.settings.categories.experimentalSubtitle: 捲動時的層架動態效果、卡片式開啟
 mobile.settings.categories.feedback: 意見回饋
@@ -2954,7 +3050,11 @@ mobile.settings.fonts.footnote: Host Grotesk、Figtree 及 Inter 字型透過 Go
 mobile.settings.fonts.interface: 介面
 mobile.settings.fonts.player: 播放器
 mobile.settings.fonts.systemFont: 裝置字型
-mobile.settings.integrations.connected: 已連線
+mobile.settings.integrations.connected:
+  value: 已連接
+  source: human
+  by: "@jay900604"
+  issue: 137
 mobile.settings.integrations.connecting: 正在連接…
 mobile.settings.integrations.notConnected: 未連接
 mobile.settings.integrations.shareListening: 分享你的聆聽內容
@@ -2971,8 +3071,16 @@ mobile.settings.mediaCache.clearing: 正在清除…
 mobile.settings.mediaCache.clearSubtitle: 立即釋放空間。
 mobile.settings.mediaCache.clearSubtitleDownloads: 立即釋放空間。已下載的音樂不受影響。
 mobile.settings.mediaCache.evicted: 已移除
-mobile.settings.mediaCache.footnote: 快取片段會以加密形式儲存在磁碟上，播放時仍需連線。
-mobile.settings.mediaCache.footnoteDownloads: 快取片段會以加密形式儲存在磁碟上，播放時仍需連線。若要無網絡播放音樂，請使用「已下載」。
+mobile.settings.mediaCache.footnote:
+  value: 快取片段會以加密形式儲存在磁碟上，播放時仍需連接。
+  source: human
+  by: "@jay900604"
+  issue: 137
+mobile.settings.mediaCache.footnoteDownloads:
+  value: 快取片段會以加密形式儲存在磁碟上，播放時仍需連接。若要無網絡播放音樂，請使用「已下載」。
+  source: human
+  by: "@jay900604"
+  issue: 137
 mobile.settings.mediaCache.fromCache: 來自快取
 mobile.settings.mediaCache.fromNetwork: 來自網絡
 mobile.settings.mediaCache.hitRate: 由快取提供
@@ -3147,7 +3255,11 @@ mobile.sheet.connectIdle: 已連接 · 閒置
 mobile.sheet.connectNeedsPairing: 需要重新配對
 mobile.sheet.connectNotAnswering: "{device} 沒有回應。如果你剛透過本地網絡配對，需要在該電腦上重新啟動 Cider 一次。否則，請確認它已開機並連接至此網絡。"
 mobile.sheet.connectNotFound: 在此網絡上找不到 {device}。
-mobile.sheet.connectNotLive: "{status} · 未有即時連線"
+mobile.sheet.connectNotLive:
+  value: "{status} · 未有即時連接"
+  source: human
+  by: "@jay900604"
+  issue: 137
 mobile.sheet.connectPairDevice: 配對裝置
 mobile.sheet.connectPaused: 已暫停 · {track}
 mobile.sheet.connectPlaying: 播放中 · {track}
@@ -3390,7 +3502,11 @@ mobile.signIn.sessionExpiredTitle: Apple Music 工作階段已過期
 mobile.signIn.sheetTitle: 使用 Apple Music 登入
 mobile.signIn.timedOut: 登入逾時。請再試一次。
 mobile.signIn.unavailable: 而家無法使用 Apple Music 登入。
-mobile.signIn.unreachable: Cider 無法連接 Apple Music。請檢查網絡連線後再試一次。
+mobile.signIn.unreachable:
+  value: Cider 無法連接 Apple Music。請檢查網絡連接後再試一次。
+  source: human
+  by: "@jay900604"
+  issue: 137
 mobile.signIn.webViewOutdated: Apple Music 登入需要較新版本嘅 Android System WebView。請喺 Play 商店更新後再試一次。
 mobile.signIn.windowFailed: Apple Music 登入視窗無法開啟。
 mobile.sleepTimer.choice: "{minutes, plural, =60 {1 小時} other {# 分鐘}}"
@@ -3507,7 +3623,11 @@ mobile.update.didntFinish: 更新未能完成
 mobile.update.downloadingPercent: 正在下載 {percent}%
 mobile.update.downloadingVersion: 正在下載 {version}
 mobile.update.downloadMismatch: 下載的檔案與已發布的版本不符，請再試一次。
-mobile.update.downloadStopped: 下載已停止。請檢查網絡連線後再試一次。
+mobile.update.downloadStopped:
+  value: 下載已停止。請檢查網絡連接後再試一次。
+  source: human
+  by: "@jay900604"
+  issue: 137
 mobile.update.earlierUpdates: 較早的更新
 mobile.update.gotIt: 知道了
 mobile.update.installFailed: 無法安裝更新，請再試一次。
@@ -3521,7 +3641,11 @@ mobile.update.noStorage: 儲存空間不足，無法安裝更新。
 mobile.update.notNow: 暫時不要
 mobile.update.openInstaller: 開啟安裝程式
 mobile.update.openTaproom: 開啟 Taproom
-mobile.update.serverUnreachable: 無法連線至更新伺服器。請檢查網絡連線後再試一次。
+mobile.update.serverUnreachable:
+  value: 無法連接至更新伺服器。請檢查網絡連接後再試一次。
+  source: human
+  by: "@jay900604"
+  issue: 137
 mobile.update.signedDifferently: 此版本的簽署方式與已安裝的版本不同，因此 Android 無法覆蓋更新。請解除安裝 Cider，然後從 Taproom 重新安裝 APK。
 mobile.update.updateNow: 立即更新
 mobile.update.updateTo: 更新至 {version}
@@ -3661,14 +3785,26 @@ oobe.connections.atmosRatingsHint:
   source: human
   by: "@jay900604"
   issue: 62
-oobe.connections.lastfm.connected: 已連線
-oobe.connections.lastfm.connectedAs: 已作為 {username} 連線
+oobe.connections.lastfm.connected:
+  value: 已連接
+  source: human
+  by: "@jay900604"
+  issue: 137
+oobe.connections.lastfm.connectedAs:
+  value: 已作為 {username} 連接
+  source: human
+  by: "@jay900604"
+  issue: 137
 oobe.connections.lastfm.hint: 記錄你的聆聽歷史。
 oobe.connections.moreHint: 更多整合功能，例如 Libre.fm、Maloja、ListenBrainz，以及 WebSockets 和 RPC API，都可以在「設定」›「連線」中找到。
 oobe.connections.pairDevice: 配對裝置
 oobe.connections.remoteHint: 從你的手機控制 Cider。
 oobe.connections.subtitle: 將 Cider 與你的其他應用程式和服務連結。
-oobe.connections.title: 保持連線
+oobe.connections.title:
+  value: 保持連接
+  source: human
+  by: "@jay900604"
+  issue: 137
 oobe.done: 完成
 oobe.features.discordHint: 在 Discord 上顯示你正在聆聽的內容。
 oobe.features.normalizationHint: 以一致的音量播放每首歌曲。
@@ -3742,7 +3878,11 @@ oobe.scene.queue: 接續播放
 oobe.scene.sidebar: 側邊欄
 oobe.scene.toolbar: 工具列
 oobe.step.appearance: 外觀
-oobe.step.connections: 連線
+oobe.step.connections:
+  value: 連接
+  source: human
+  by: "@jay900604"
+  issue: 137
 oobe.step.features: 聲音
 oobe.step.layout: 版面配置
 oobe.step.login: 登入
@@ -3814,23 +3954,51 @@ party.dialog.memberMuted:
 party.dialog.nameLabel: 派對名稱（選填）
 party.dialog.namePlaceholder: 週五晚上的氛圍
 party.dialog.pendingTitle: 等待批准中
-party.dialog.reconnecting: 正在重新連線
+party.dialog.reconnecting:
+  value: 正在重新連接
+  source: human
+  by: "@jay900604"
+  issue: 137
 party.dialog.reviewAdditions: 審查待播清單新增請求
 party.dialog.seedDesc: 將你目前的待播清單帶入派對。
 party.dialog.seedQueue: 從目前的待播清單開始
-party.dialog.settingsTitle: 派對設定
+party.dialog.settingsTitle:
+  value: 一齊聽歌設定
+  source: human
+  by: "@jay900604"
+  issue: 137
 party.dialog.subtitle: 在 Cider 上與好友完美同步，一起聆聽。
-party.dialog.title: 聆聽派對
-party.ended.kicked.subtitle: 主持人已將你從聆聽派對中移除。
-party.ended.kicked.title: 已從派對中移除
-party.ended.subtitle: 聆聽派對已結束。你的待播清單將保持不變。
+party.dialog.title:
+  value: 一齊聽歌
+  source: human
+  by: "@jay900604"
+  issue: 137
+party.ended.kicked.subtitle:
+  value: 主持人已將你移出一齊聽歌。
+  source: human
+  by: "@jay900604"
+  issue: 137
+party.ended.kicked.title:
+  value: 已被移出一齊聽歌
+  source: human
+  by: "@jay900604"
+  issue: 137
+party.ended.subtitle:
+  value: 一齊聽歌已結束。你的待播清單不會受到影響。
+  source: human
+  by: "@jay900604"
+  issue: 137
 party.ended.title: 派對已結束
 party.error.generic: 派對同步問題
 party.host.youAreHost: 你現在是主持人
 party.member.fallbackName: 成員
 party.member.joined: "{{name}} 已加入派對"
 party.member.left: "{{name}} 已離開派對"
-party.modeLocked.subtitle: 隨機播放、重複播放和自動播放由聆聽派對管理。
+party.modeLocked.subtitle:
+  value: 隨機播放、重複播放及自動播放均由一齊聽歌控制。
+  source: human
+  by: "@jay900604"
+  issue: 137
 party.modeLocked.title: 在派對中無法使用
 party.pending.incoming.title: 來自 {{name}} 的待播清單請求
 party.pending.rejected.title: 請求已拒絕
@@ -3982,7 +4150,11 @@ previouslyPlayed.action.shuffle: 隨機播放最近的項目
 previouslyPlayed.empty: 尚未播放任何內容
 previouslyPlayed.empty.caption: 你播放的專輯和播放清單將會顯示在這裡。
 previouslyPlayed.error: 無法載入你的記錄
-previouslyPlayed.error.caption: 請檢查你的連線，然後再次按右鍵。
+previouslyPlayed.error.caption:
+  value: 請檢查你的連接，然後再次按右鍵。
+  source: human
+  by: "@jay900604"
+  issue: 137
 previouslyPlayed.title: 先前播放
 properties.apiHref: API Href
 properties.appleMusicId: Apple Music ID
@@ -4079,12 +4251,15 @@ settings.artwork.hiresImages.warning: 可能會增加載入時間並降低效能
 settings.audio.atmos: Dolby Atmos
 settings.audio.atmos.binaural.desc:
   value: Atmos 透過 CiderAudio 轉譯為雙耳立體聲。交叉淡化、自動混音和無縫轉場會照常運作。
-  source: ai
+  source: human
   by: "@jay900604"
-  issue: 65
-  superseded_at: 2026-10-16
+  issue: 137
 settings.audio.atmos.description: 為你目前的輸出裝置設定 Atmos 播放。
-settings.audio.atmos.normalizationHint: Dolby Atmos 混音的音量比立體聲母帶低。開啟音量標準化可將其拉平。
+settings.audio.atmos.normalizationHint:
+  value: Dolby Atmos 混音的音量比立體聲母帶低。開啟音量平衡可將其拉平。
+  source: human
+  by: "@jay900604"
+  issue: 137
 settings.audio.atmos.off.desc: 已停用 Atmos。所有內容將以標準立體聲播放。
 settings.audio.atmos.passthrough: 直通
 settings.audio.atmos.passthrough.desc: 繞過所有音訊處理。多聲道 Atmos 會直接傳送到裝置。最適合 AV 擴音機。
@@ -4523,7 +4698,11 @@ settings.configBackups.unsupported:
 settings.connectivity.connectedDevices: 已連接的裝置
 settings.connectivity.connectedDevices.desc: 管理已配對的 Cider Remote 裝置
 settings.connectivity.connectNewDevice: 連接新裝置
-settings.connectivity.lanPairing.desc: 透過區域網路配對可讓 Cider 接受來自你本地網絡的連線。
+settings.connectivity.lanPairing.desc:
+  value: 透過區域網路配對可讓 Cider 接受來自你本地網絡的連接。
+  source: human
+  by: "@jay900604"
+  issue: 137
 settings.connectivity.lastfm.context: 登入 Last.FM 以啟用 Scrobbling 和「播放中」更新
 settings.connectivity.lastfm.header.trackAdjustments: 歌曲調整
 settings.connectivity.lastfm.preview.scrobblingNow: 正在 Scrobble
@@ -4598,8 +4777,16 @@ settings.connectivity.scrobbler.roster.maloja.url: 伺服器位址
 settings.connectivity.scrobbler.roster.maloja.url.hint: 系統會自動為你加入位址前綴和 API 路徑。
 settings.connectivity.scrobbler.roster.paused: 已暫停
 settings.connectivity.scrobbler.roster.pausedAs: 已暫停 · {account}
-settings.connectivity.scrobbler.roster.reconnect: 需要重新連線
-settings.connectivity.scrobbler.roster.reconnectAction: 重新連線
+settings.connectivity.scrobbler.roster.reconnect:
+  value: 需要重新連接
+  source: human
+  by: "@jay900604"
+  issue: 137
+settings.connectivity.scrobbler.roster.reconnectAction:
+  value: 重新連接
+  source: human
+  by: "@jay900604"
+  issue: 137
 settings.connectivity.scrobbler.roster.scrobbling: 正在 Scrobble
 settings.connectivity.scrobbler.roster.scrobblingAs: 正在以 {account} 身份 Scrobble
 settings.connectivity.scrobbler.roster.scrobblingTo: 正在 Scrobble 至 {account}
@@ -4877,8 +5064,16 @@ settings.header.audio.quality.lossless: 保真壓縮
 settings.header.audio.quality.lossless.description: 最高達 24 位元/48 kHz
 settings.header.audio.quality.standard: 標準
 settings.header.audio.quality.standard.description: 64 kbps
-settings.header.connectivity: 連線
-settings.header.connectivity.description: 調整 Cider 的連線設定。
+settings.header.connectivity:
+  value: 連接
+  source: human
+  by: "@jay900604"
+  issue: 137
+settings.header.connectivity.description:
+  value: 調整 Cider 的連接設定。
+  source: human
+  by: "@jay900604"
+  issue: 137
 settings.header.debug: 偵錯
 settings.header.experimental: 實驗性
 settings.header.experimental.description: 調整 Cider 的實驗性設定。
@@ -5085,7 +5280,11 @@ settings.nav.audio: 音訊
 settings.nav.categories: 設定類別
 settings.nav.concerts: 演唱會
 settings.nav.config-backups: 設定備份
-settings.nav.connectivity: 連線
+settings.nav.connectivity:
+  value: 連接
+  source: human
+  by: "@jay900604"
+  issue: 137
 settings.nav.extensions:
   value: 延伸功能
   source: human
@@ -5119,9 +5318,17 @@ settings.nav.search: 搜尋
 settings.nav.searchPlaceholder: 搜尋設定
 settings.nav.summary.accessibility: 粗體文字、介面縮放、動態效果、音效
 settings.nav.summary.advanced: 備份、疑難排解、實驗功能
-settings.nav.summary.audio: 輸出、音質、交叉淡化、音量標準化
+settings.nav.summary.audio:
+  value: 輸出、音質、交叉淡化、音量平衡
+  source: human
+  by: "@jay900604"
+  issue: 137
 settings.nav.summary.concerts: 位置、範圍、排序
-settings.nav.summary.connectivity: Discord、播放記錄、聆聽派對、遙距控制
+settings.nav.summary.connectivity:
+  value: Discord、聆聽記錄、一齊聽歌、遙控器
+  source: human
+  by: "@jay900604"
+  issue: 137
 settings.nav.summary.extensions: 主題、CSS 片段、外掛程式
 settings.nav.summary.general: 啟動、播放佇列、睡眠計時器、快速鍵
 settings.nav.summary.lyrics: 來源、翻譯、顯示、時間
@@ -5189,9 +5396,21 @@ settings.notifications.summary.categoriesOnCount: "{{total}} 項中已開啟 {{o
 settings.notifications.summary.description: 選擇 Cider 向你顯示的通知類型。即使關閉了某些通知，它們仍會記錄在通知清單中，方便你稍後查看。
 settings.notifications.unmute: 取消靜音
 settings.notifications.unmuteAll: 全部取消靜音
-settings.notyf.connectivity.lastfmScrobble.connectError: Last.fm 連線逾時
-settings.notyf.connectivity.lastfmScrobble.connecting: 正在連線至 Last.fm...
-settings.notyf.connectivity.lastfmScrobble.connectSuccess: 成功連線至 Last.fm
+settings.notyf.connectivity.lastfmScrobble.connectError:
+  value: Last.fm 連接逾時
+  source: human
+  by: "@jay900604"
+  issue: 137
+settings.notyf.connectivity.lastfmScrobble.connecting:
+  value: 正在連接至 Last.fm...
+  source: human
+  by: "@jay900604"
+  issue: 137
+settings.notyf.connectivity.lastfmScrobble.connectSuccess:
+  value: 成功連接至 Last.fm
+  source: human
+  by: "@jay900604"
+  issue: 137
 settings.notyf.general.keybindings.update.success: 快速鍵已成功更新
 settings.notyf.updateCider.update-downloaded: 更新已下載，請重新啟動以套用
 settings.notyf.updateCider.update-not-available: 沒有可用的更新
@@ -5508,8 +5727,16 @@ settings.option.audio.exponentialVolume.description: 採用更漸進的音量曲
 settings.option.audio.hostCapture: 可擷取音訊（OBS／Discord）
 settings.option.audio.hostCapture.description: 串流和擷取應用程式（如 OBS 或 Discord）需要 Windows 主機來路由播放。
 settings.option.audio.maxVolume: 最大音量
-settings.option.audio.mixing: 混音
-settings.option.audio.normalization: 音訊標準化
+settings.option.audio.mixing:
+  value: 歌曲過渡
+  source: human
+  by: "@jay900604"
+  issue: 137
+settings.option.audio.normalization:
+  value: 音量平衡
+  source: human
+  by: "@jay900604"
+  issue: 137
 settings.option.audio.normalization.description: 自動調整每首歌曲的音量，使其保持一致。音量較低的歌曲會安全地調高，音量較高的歌曲則會調低。
 settings.option.audio.occlusion: 聆聽模式
 settings.option.audio.outputDevice: 輸出裝置
@@ -5550,16 +5777,28 @@ settings.option.automatic: 自動
 settings.option.behavior.addToLibraryOnFavorite.caption: 將新加入最愛的内容新增至你的資料庫。
 settings.option.concerts.geolocation: 地理定位
 settings.option.concerts.radius: 搜尋半徑
-settings.option.concerts.radius.description: 僅顯示此距離範圍內的音樂會（需要啟用地理定位）
+settings.option.concerts.radius.description:
+  value: 僅顯示此距離範圍內的演唱會（需要啟用地理定位）
+  source: human
+  by: "@jay900604"
+  issue: 137
 settings.option.concerts.radiusUnit: 範圍單位
 settings.option.concerts.radiusUnit.description: 半徑篩選器的單位
 settings.option.concerts.radiusUnit.kilometers: 公里
 settings.option.concerts.radiusUnit.miles: 英里
 settings.option.concerts.showInSidebar: 在側欄顯示演出
-settings.option.concerts.showInSidebar.description: 在側邊欄中顯示「音樂會」部分
+settings.option.concerts.showInSidebar.description:
+  value: 在側邊欄中顯示「演唱會」部分
+  source: human
+  by: "@jay900604"
+  issue: 137
 settings.option.concerts.sortBy: 排序方式
 settings.option.concerts.sortBy.date: 日期
-settings.option.concerts.sortBy.description: 如何對列表中的音樂會進行排序
+settings.option.concerts.sortBy.description:
+  value: 如何對列表中的演唱會進行排序
+  source: human
+  by: "@jay900604"
+  issue: 137
 settings.option.concerts.sortBy.distance: 距離
 settings.option.connect.link_account.description:
   value: 將你的 Discord 帳户與 Cider Connect 連接，即可儲存用户數據（包括設定、均衡器等，更多功能即將推出）。（開發中）
@@ -5641,8 +5880,16 @@ settings.option.connectivity.lastfmScrobble.manualToken: 手動輸入 Last.fm To
 settings.option.connectivity.lastfmScrobble.manualToken.link: 按此獲取 Last.fm token
 settings.option.connectivity.lastfmScrobble.nowPlaying: 啟用 Last.FM 「播放中」狀態
 settings.option.connectivity.lastfmScrobble.removeFeatured: 從歌曲標題中移除客串藝人 (Last.fm)
-settings.option.connectivity.parties: 同步聆聽
-settings.option.connectivity.partiesEnabled: 啟用同步聆聽
+settings.option.connectivity.parties:
+  value: 一齊聽歌
+  source: human
+  by: "@jay900604"
+  issue: 137
+settings.option.connectivity.partiesEnabled:
+  value: 啟用一齊聽歌
+  source: human
+  by: "@jay900604"
+  issue: 137
 settings.option.connectivity.partiesEnabled.description:
   value: 與其他 Cider 用户發起或加入同步聽歌聚會。
   source: human
@@ -5872,11 +6119,10 @@ settings.option.lyrics.enableMusixmatch: 啟用 Musixmatch 歌詞
 settings.option.lyrics.enableMusixmatchKaraoke: 啟用卡拉 OK 模式 (僅限 Musixmatch)
 settings.option.lyrics.enableQQLyrics: 啟用 QQ 歌詞
 settings.option.lyrics.enableSingLyrics:
-  value: 啟用唱歌歌詞
-  source: ai
+  value: 啟用逐拍動態歌詞
+  source: human
   by: "@jay900604"
-  issue: 87
-  superseded_at: 2026-10-16
+  issue: 137
 settings.option.lyrics.enableSingLyrics.description:
   value: 如有提供，顯示與音樂同步的逐字歌詞，並隨音樂播放逐字醒目顯示。
   source: human
