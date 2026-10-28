@@ -94,7 +94,7 @@ Every entry below came from a community member through a [translation issue](../
 | --- | --- | --- |
 | [@JackW25](https://github.com/JackW25) | Icelandic | 3185 |
 | [@Tesutarin](https://github.com/Tesutarin) | Chinese (Simplified) | 2353 |
-| [@jay900604](https://github.com/jay900604) | Chinese (Hong Kong), Chinese (Simplified), Chinese (Traditional) | 1612 |
+| [@jay900604](https://github.com/jay900604) | Chinese (Hong Kong), Chinese (Simplified), Chinese (Traditional) | 1634 |
 | [@mpratsaki](https://github.com/mpratsaki) | Greek | 951 |
 | [@kinlay0](https://github.com/kinlay0) | Russian | 647 |
 | [@szymin22](https://github.com/szymin22) | Polish | 111 |
