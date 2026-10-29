@@ -103,6 +103,7 @@ Every entry below came from a community member through a [translation issue](../
 | [@lumaa-dev](https://github.com/lumaa-dev) | French | 68 |
 | [@MP-K](https://github.com/MP-K) | Korean | 27 |
 | [@ramuuflor](https://github.com/ramuuflor) | Japanese | 22 |
+| [@jamiw1](https://github.com/jamiw1) | Dutch | 18 |
 | [@sh-ayu](https://github.com/sh-ayu) | Japanese | 18 |
 | [@itsmeares](https://github.com/itsmeares) | Turkish | 16 |
 | [@emirasaf](https://github.com/emirasaf) | Turkish | 11 |
