@@ -230,7 +230,11 @@ action.close:
   source: human
   by: "@Tesutarin"
   issue: 7
-action.configure: 配置
+action.configure:
+  value: 设置
+  source: human
+  by: "@jay900604"
+  issue: 136
 action.connect:
   value: 连接
   source: human
@@ -244,10 +248,9 @@ action.connect.createCollabPlaylist:
   superseded_at: 2026-07-08
 action.connect.listenTogether:
   value: 一起听
-  source: ai
-  by: "@Tesutarin"
-  issue: 7
-  superseded_at: 2026-07-08
+  source: human
+  by: "@jay900604"
+  issue: 136
 action.connect.signIn:
   value: 使用 {account} 登录
   source: ai
@@ -330,10 +333,10 @@ action.deletepreset:
   superseded_at: 2026-07-08
 action.deny: 拒绝
 action.disablePlugins:
-  value: 在本次会话中停用插件
+  value: 停用插件 (仅限本次会话)
   source: human
-  by: "@Tesutarin"
-  issue: 7
+  by: "@jay900604"
+  issue: 136
 action.disconnect:
   value: 断开连接
   source: human
@@ -589,10 +592,10 @@ action.playTracksNext:
   issue: 25
   superseded_at: 2026-07-08
 action.plugins.enableVitePlugins:
-  value: 为插件启用 Vite
+  value: 启用 Vite 插件支持
   source: human
-  by: "@Tesutarin"
-  issue: 7
+  by: "@jay900604"
+  issue: 136
 action.properties:
   value: 查看属性
   source: human
@@ -1288,10 +1291,10 @@ assistant.sid.card.clearTitle: 清除待播歌曲？
 assistant.sid.card.created: 已创建 {name}
 assistant.sid.card.failed: 操作未成功。请稍后再试。
 assistant.sid.card.guest:
-  value: 你正在参与共同聆听，待播清单由主持人控制。
+  value: 你正在以访客身份参与一起听，队列由主持人控制。
   source: human
   by: "@jay900604"
-  issue: 134
+  issue: 136
 assistant.sid.card.inLibrary: 在你的资料库中
 assistant.sid.card.leftOut: 已排除 {count} 首无法播放或你标记为“少推荐”的歌曲。
 assistant.sid.card.leftOutOne: 已排除 1 首无法播放或你标记为“少推荐”的歌曲。
@@ -2083,12 +2086,32 @@ commandCenter.playNext:
   by: "@Tesutarin"
   issue: 7
 concerts.empty.noLocation.action: 设置位置
-concerts.empty.noLocation.body: 音乐会将按地点列出。选择一个地点以查看您附近即将举行的活动。
+concerts.empty.noLocation.body:
+  value: 演唱会将按地点列出。选择一个地点以查看您附近即将举行的活动。
+  source: human
+  by: "@jay900604"
+  issue: 136
 concerts.empty.noLocation.title: 未设置位置
-concerts.empty.noResults.body: 当前筛选条件下没有计划的活动。请尝试不同的日期范围、流派或位置。
-concerts.empty.noResults.title: 未找到音乐会
-concerts.empty.search.body: 没有与“{term}”匹配的音乐会。请尝试其他艺人、场地或活动名称。
-concerts.empty.search.title: 无匹配的音乐会
+concerts.empty.noResults.body:
+  value: 当前筛选条件下没有计划的活动。请尝试不同的日期范围、类型或位置。
+  source: human
+  by: "@jay900604"
+  issue: 136
+concerts.empty.noResults.title:
+  value: 未找到演唱会
+  source: human
+  by: "@jay900604"
+  issue: 136
+concerts.empty.search.body:
+  value: 没有与“{term}”匹配的演唱会。请尝试其他艺人、场地或活动名称。
+  source: human
+  by: "@jay900604"
+  issue: 136
+concerts.empty.search.title:
+  value: 无匹配的演唱会
+  source: human
+  by: "@jay900604"
+  issue: 136
 concerts.getTickets:
   value: 获取票务
   source: human
@@ -3210,7 +3233,11 @@ lyrics.contrib.lane.snap: 吸附
 lyrics.contrib.lane.snapHint: 点击和拖动会吸附到附近的音头或节拍。拖动时按住 Shift 可跳过吸附。
 lyrics.contrib.lane.squeeze: 挤压
 lyrics.contrib.lane.squeezeHint: 拖动边缘会从相邻字词中取走时间
-lyrics.contrib.lane.view: 视图
+lyrics.contrib.lane.view:
+  value: 浏览
+  source: human
+  by: "@jay900604"
+  issue: 136
 lyrics.contrib.lane.zoomIn: 放大
 lyrics.contrib.lane.zoomOut: 缩小
 lyrics.contrib.layers.coverage: "{n}% 的行"
@@ -5108,8 +5135,16 @@ mobile.settings.ciderAudio.realizerSubtitle:
   by: "@jay900604"
   issue: 134
 mobile.settings.ciderAudio.selected: 已选择
-mobile.settings.ciderAudio.spatialProfile: 空间化配置
-mobile.settings.ciderAudio.spatialSubtitle: 预调的空间效果，拓宽声场
+mobile.settings.ciderAudio.spatialProfile:
+  value: 空间音频配置
+  source: human
+  by: "@jay900604"
+  issue: 136
+mobile.settings.ciderAudio.spatialSubtitle:
+  value: 预调的空间效果，拓宽声场
+  source: human
+  by: "@jay900604"
+  issue: 136
 mobile.settings.ciderAudio.stereoOnly: 仅适用于立体声播放
 mobile.settings.ciderAudio.stereoOnlyAtmos: 仅适用于立体声播放。杜比全景声混音将按原样播放。
 mobile.settings.ciderAudio.subtitle: Cider 自研的精调音频引擎，声音更丰富。推荐优先于传统均衡器使用。
@@ -5236,7 +5271,11 @@ mobile.settings.navigationBar.tabs: 标签
 mobile.settings.navigationBar.tabsFootnote: 为导航栏选择最多 4 个标签。列表顶部为导航栏左端。
 mobile.settings.player.adaptiveColors: 自适应颜色
 mobile.settings.player.adaptiveColorsSubtitle: 用封面颜色为播放栏着色
-mobile.settings.player.animatedArtworkSubtitle: 有动态封面时予以显示
+mobile.settings.player.animatedArtworkSubtitle:
+  value: 有动态封面时显示
+  source: human
+  by: "@jay900604"
+  issue: 136
 mobile.settings.player.beatAndTempo: 节拍与速度
 mobile.settings.player.besideTitle: 位于标题旁
 mobile.settings.player.besideTitleFootnote: “…”按钮始终位于最后，其菜单保留其余选项，包括音乐视频。歌词和队列按钮也位于播放器底部。
@@ -6247,19 +6286,43 @@ party.dialog.reconnecting: 正在重新连接
 party.dialog.reviewAdditions: 审核待播清单添加请求
 party.dialog.seedDesc: 将您当前的待播清单带入派对。
 party.dialog.seedQueue: 从当前待播清单开始
-party.dialog.settingsTitle: 派对设置
+party.dialog.settingsTitle:
+  value: 一起听设置
+  source: human
+  by: "@jay900604"
+  issue: 136
 party.dialog.subtitle: 在 Cider 上与好友完美同步，共同聆听。
-party.dialog.title: 音乐派对
-party.ended.kicked.subtitle: 房主已将您移出音乐派对。
-party.ended.kicked.title: 已被移出派对
-party.ended.subtitle: 音乐派对已结束。您的待播清单保持不变。
+party.dialog.title:
+  value: 一起听
+  source: human
+  by: "@jay900604"
+  issue: 136
+party.ended.kicked.subtitle:
+  value: 主持人已将你移出一起听。
+  source: human
+  by: "@jay900604"
+  issue: 136
+party.ended.kicked.title:
+  value: 已被移出一起听
+  source: human
+  by: "@jay900604"
+  issue: 136
+party.ended.subtitle:
+  value: 一起听已结束。你的队列不会受到影响。
+  source: human
+  by: "@jay900604"
+  issue: 136
 party.ended.title: 派对已结束
 party.error.generic: 派对同步问题
 party.host.youAreHost: 您现在是房主
 party.member.fallbackName: 某位成员
 party.member.joined: "{{name}} 已加入派对"
 party.member.left: "{{name}} 已离开派对"
-party.modeLocked.subtitle: 随机播放、重复播放和自动播放由音乐派对统一管理。
+party.modeLocked.subtitle:
+  value: 随机播放、重复播放和自动播放均由一起听听控制。
+  source: human
+  by: "@jay900604"
+  issue: 136
 party.modeLocked.title: 在派对中不可用
 party.pending.incoming.title: 来自 {{name}} 的添加请求
 party.pending.rejected.title: 请求已被拒绝
@@ -7419,8 +7482,16 @@ settings.client.genten.vibrancyType.desc:
   source: human
   by: "@Tesutarin"
   issue: 8
-settings.client.naru.evergreen: 使用 Evergreen 运行时
-settings.client.naru.evergreen.desc: 使用 Windows 自带的运行时，而非内置的运行时
+settings.client.naru.evergreen:
+  value: 使用 Evergreen Runtime
+  source: human
+  by: "@jay900604"
+  issue: 136
+settings.client.naru.evergreen.desc:
+  value: 使用 Windows 提供的 Runtime，而非应用内置的 Runtime
+  source: human
+  by: "@jay900604"
+  issue: 136
 settings.client.naru.modifyAudioSession: 修改音频会话（危险！）
 settings.client.naru.modifyAudioSession.desc: 修改 Windows 音频会话，使应用显示为 Cider 而非 WebView2（此选项可能会在启动应用时产生副作用。）
 settings.client.naru.nowPlayingTitle: 将“正在播放”显示为窗口标题
@@ -7459,8 +7530,16 @@ settings.client.pixie.forceSteamDeck.desc: 切换是否强制应用在 Steam Dec
 settings.client.pixie.gtkVersion: GTK 版本
 settings.client.pixie.gtkVersion.desc: Electron 后端要使用的 GTK 版本
 settings.client.pixie.hardwareAcceleration.desc: 切换是否启用硬件加速
-settings.client.pixie.macosVibrancy: macOS 活力效果
-settings.client.pixie.macosVibrancy.desc: 切换是否启用 macOS 活力效果
+settings.client.pixie.macosVibrancy:
+  value: macOS 动态效果
+  source: human
+  by: "@jay900604"
+  issue: 136
+settings.client.pixie.macosVibrancy.desc:
+  value: 开启或关闭 macOS 动态效果
+  source: human
+  by: "@jay900604"
+  issue: 136
 settings.client.pixie.mpris: 使用 Cider 专属媒体控制服务 (MPRIS)
 settings.client.pixie.mpris.desc: 在 D-Bus 上将 Cider 注册为 org.mpris.MediaPlayer2.cider，以便进行 playerctl 和桌面集成，接管 Chromium 内置媒体会话的媒体键。
 settings.client.pixie.proxyPac: 代理 PAC
@@ -7494,15 +7573,15 @@ settings.client.pixie.vibrancyType.desc:
   by: "@jay900604"
   issue: 74
 settings.client.windows.evergreen:
-  value: 使用 Evergreen 运行时
+  value: 使用 Evergreen Runtime
   source: human
-  by: "@Tesutarin"
-  issue: 8
+  by: "@jay900604"
+  issue: 136
 settings.client.windows.evergreen.desc:
-  value: 使用 Windows 内置的运行时，而非应用内置的运行时
+  value: 使用 Windows 提供的 Runtime，而非应用内置的 Runtime
   source: human
-  by: "@Tesutarin"
-  issue: 25
+  by: "@jay900604"
+  issue: 136
 settings.client.windows.modifyAudioSession:
   value: 修改音频会话（危险！）
   source: human
@@ -7543,7 +7622,11 @@ settings.client.windows.preventSleep.desc:
   source: human
   by: "@Tesutarin"
   issue: 32
-settings.client.windows.previewRuntime: 优先使用预览版 WebView2 运行时
+settings.client.windows.previewRuntime:
+  value: 优先使用预览版 WebView2 Runtime
+  source: human
+  by: "@jay900604"
+  issue: 136
 settings.client.windows.previewRuntime.desc: 如已安装 Edge Beta、Dev 或 Canary 运行时，则优先使用。
 settings.client.windows.proxyPac:
   value: 代理 PAC
@@ -8093,10 +8176,10 @@ settings.crossfade.exclusions.liveAlbums:
   issue: 8
   superseded_at: 2026-10-16
 settings.crossfade.exclusions.liveAlbums.description:
-  value: 对现场录音和音乐会不应用交叉渐入渐出。
+  value: 对现场录音和演唱会不应用交叉渐入渐出。
   source: human
-  by: "@Tesutarin"
-  issue: 19
+  by: "@jay900604"
+  issue: 136
 settings.crossfade.exclusions.playlists:
   value: 播放列表
   source: human
@@ -8296,10 +8379,10 @@ settings.extensions.checkUpdates:
   issue: 32
   superseded_at: 2026-10-16
 settings.extensions.checkUpdates.desc:
-  value: 每次 Cider 启动时检查主题、代码片段和插件的更新。
+  value: 每次启动 Cider 时检查主题、代码片段和插件的更新。
   source: human
-  by: "@Tesutarin"
-  issue: 32
+  by: "@jay900604"
+  issue: 136
 settings.extensions.createPlugin:
   value: 创建插件
   source: human
@@ -8565,7 +8648,11 @@ settings.gapless.offset.later:
   source: human
   by: "@Tesutarin"
   issue: 8
-settings.general.card.closing: 正在关闭
+settings.general.card.closing:
+  value: 关闭行为
+  source: human
+  by: "@jay900604"
+  issue: 136
 settings.general.section.cache: 缓存
 settings.general.section.cache.description: Cider 保存在磁盘上的插图和元数据，以便页面加载更快。
 settings.general.section.desktop: 桌面
@@ -8582,7 +8669,11 @@ settings.general.section.queue: 待播清单
 settings.general.section.queue.description: 待播清单的构建方式、允许加入的内容，以及 Cider 重启时恢复的内容。
 settings.general.section.sleepTimer: 睡眠定时器
 settings.general.section.startup: 启动
-settings.general.section.startup.description: Cider 启动时打开的页面，以及从您上次会话中恢复的内容。
+settings.general.section.startup.description:
+  value: 启动 Cider 时打开的页面，以及从您上次会话中恢复的内容。
+  source: human
+  by: "@jay900604"
+  issue: 136
 settings.header.accounts:
   value: 帐户
   source: ai
@@ -8987,10 +9078,10 @@ settings.intensive.immersiveAnimatedArtwork.description:
   by: "@jay900604"
   issue: 134
 settings.intensive.immersiveAnimatedBackground.description:
-  value: 使沉浸式视图的背景呈现动态效果。
+  value: 为沉浸模式启用动态背景。
   source: human
   by: "@jay900604"
-  issue: 74
+  issue: 136
 settings.intensive.immersiveBackground.description:
   value: 在整个应用后台渲染持续播放的动态背景。
   source: human
@@ -9005,9 +9096,17 @@ settings.intensive.miniPlayerAnimatedArtwork.description:
 settings.intensive.playerMaterial.description: “流光玻璃”通过实时着色器折射播放栏。
 settings.intensive.realtimeVisualizer.description: 实时分析音频，在播放的曲目上绘制视觉效果。
 settings.intensive.singEngine.description: （旧版）在 CPU 上逐帧渲染 Sing 动画。
-settings.intensive.singLyricsEverywhere.description: 在沉浸式视图之外运行逐字 Sing 歌词动画。
+settings.intensive.singLyricsEverywhere.description:
+  value: 在沉浸模式之外显示逐字歌词动画。
+  source: human
+  by: "@jay900604"
+  issue: 136
 settings.intensive.ultraHdr.description: 在 GPU 上为专辑封面添加 HDR 高光与对比度。
-settings.intensive.viewTransitions.description: 在切换部分视图时播放过渡动画。
+settings.intensive.viewTransitions.description:
+  value: 切换部分浏览界面时播放过渡动画。
+  source: human
+  by: "@jay900604"
+  issue: 136
 settings.intensive.warning: 高负载功能 — 可能会导致高 CPU/GPU 占用。
 settings.keybindings.recordingHint:
   value: 正在录制按键。按 Escape 取消
@@ -9419,10 +9518,10 @@ settings.nav.audio:
   issue: 8
 settings.nav.categories: 设置分类
 settings.nav.concerts:
-  value: 音乐会
+  value: 演唱会
   source: human
-  by: "@Tesutarin"
-  issue: 19
+  by: "@jay900604"
+  issue: 136
 settings.nav.config-backups: 配置备份
 settings.nav.connectivity:
   value: 连接
@@ -9514,10 +9613,10 @@ settings.nav.summary.advanced: 备份、故障排除、实验性功能
 settings.nav.summary.audio: 输出、音质、交叉淡化、音量标准化
 settings.nav.summary.concerts: 位置、半径、排序
 settings.nav.summary.connectivity:
-  value: Discord、听歌记录、聆听派对、遥控器
+  value: Discord、聆听记录、一起听、遥控器
   source: human
   by: "@jay900604"
-  issue: 134
+  issue: 136
 settings.nav.summary.extensions: 主题、CSS 片段、插件
 settings.nav.summary.general: 启动、队列、睡眠定时器、快捷键
 settings.nav.summary.lyrics: 来源、翻译、显示、时间同步
@@ -9916,11 +10015,10 @@ settings.option.advanced.home.buttonLocation.topBar:
   issue: 8
   superseded_at: 2026-10-16
 settings.option.advanced.immersive:
-  value: 沉浸式视图
-  source: ai
-  by: "@Tesutarin"
-  issue: 28
-  superseded_at: 2026-09-01
+  value: 沉浸模式
+  source: human
+  by: "@jay900604"
+  issue: 136
 settings.option.advanced.immersive.artworkHighlight:
   value: 封面高亮
   source: ai
@@ -9933,7 +10031,11 @@ settings.option.advanced.immersive.controlsTimeout:
   by: "@Tesutarin"
   issue: 32
   superseded_at: 2026-10-16
-settings.option.advanced.immersive.description: 沉浸式视图本身。其使用的布局可在“视觉”下选择。
+settings.option.advanced.immersive.description:
+  value: 沉浸模式的显示方式。可在“视觉”设置中选择布局。
+  source: human
+  by: "@jay900604"
+  issue: 136
 settings.option.advanced.immersive.glowEffectOnActiveLyrics:
   value: 当前歌词发光效果
   source: ai
@@ -9999,11 +10101,10 @@ settings.option.advanced.lyrics.singEngine:
   superseded_at: 2026-07-30
 settings.option.advanced.lyrics.singEngine.classic: 经典
 settings.option.advanced.lyrics.singEngine.description:
-  value: 用于沉浸式视图的唱歌引擎。“经典”模式使用轻量级 CSS 动画，是低配系统的最佳选择。侧边栏将始终使用“经典”模式。
-  source: ai
-  by: "@Tesutarin"
-  issue: 40
-  superseded_at: 2026-07-30
+  value: 用于沉浸模式的歌词动画引擎。“经典”模式使用轻量级 CSS 动画，适合性能较低的设备。侧边栏始终使用“经典”模式。
+  source: human
+  by: "@jay900604"
+  issue: 136
 settings.option.advanced.lyrics.singEngine.legacy:
   value: 旧版
   source: human
@@ -10866,10 +10967,10 @@ settings.option.concerts.radius:
   by: "@Tesutarin"
   issue: 10
 settings.option.concerts.radius.description:
-  value: 仅显示距你位置一定范围内的音乐会（需启用地理位置）
+  value: 仅显示距你位置一定范围内的演唱会（需启用地理位置）
   source: human
-  by: "@Tesutarin"
-  issue: 19
+  by: "@jay900604"
+  issue: 136
 settings.option.concerts.radiusUnit:
   value: 半径单位
   source: ai
@@ -10898,10 +10999,10 @@ settings.option.concerts.showInSidebar:
   issue: 19
   superseded_at: 2026-10-16
 settings.option.concerts.showInSidebar.description:
-  value: 在侧边栏显示音乐会栏目
+  value: 在侧边栏显示演唱会栏目
   source: human
-  by: "@Tesutarin"
-  issue: 32
+  by: "@jay900604"
+  issue: 136
 settings.option.concerts.sortBy:
   value: 排序方式
   source: ai
@@ -10914,10 +11015,10 @@ settings.option.concerts.sortBy.date:
   by: "@Tesutarin"
   issue: 10
 settings.option.concerts.sortBy.description:
-  value: 音乐会列表的排序方式
+  value: 演唱会列表的排序方式
   source: human
-  by: "@Tesutarin"
-  issue: 19
+  by: "@jay900604"
+  issue: 136
 settings.option.concerts.sortBy.distance:
   value: 距离
   source: human
@@ -10965,10 +11066,9 @@ settings.option.connectivity.discordRPC:
   issue: 74
 settings.option.connectivity.discordRPC.animatedArtwork:
   value: 动态封面
-  source: ai
-  by: "@Tesutarin"
-  issue: 10
-  superseded_at: 2026-07-08
+  source: human
+  by: "@jay900604"
+  issue: 136
 settings.option.connectivity.discordRPC.animatedArtwork.description:
   value: 如果封面尚不可用，此选项可能会影响 Rich Presence 的加载时间。
   source: ai
@@ -11272,15 +11372,15 @@ settings.option.connectivity.lastfmScrobble.removeFeatured:
   issue: 10
   superseded_at: 2026-07-08
 settings.option.connectivity.parties:
-  value: 聆听派对
+  value: 一起听（一块听）
   source: human
   by: "@jay900604"
-  issue: 134
+  issue: 136
 settings.option.connectivity.partiesEnabled:
-  value: 启用聆听派对
+  value: 启用一起听
   source: human
   by: "@jay900604"
-  issue: 134
+  issue: 136
 settings.option.connectivity.partiesEnabled.description:
   value: 与其他 Cider 用户一起创建或加入同步聆听派对。
   source: human
@@ -11483,20 +11583,20 @@ settings.option.general.autoplayByDefault:
   by: "@Tesutarin"
   issue: 19
 settings.option.general.autoplayByDefault.description:
-  value: 播放音乐时自动启用自动连播（不适用于电台）。
+  value: 播放音乐时，自动启用自动连播（不适用于电台）。
   source: human
-  by: "@Tesutarin"
-  issue: 19
+  by: "@jay900604"
+  issue: 136
 settings.option.general.autoRemoveDisliked:
-  value: 自动从队列中移除不感兴趣的曲目
+  value: 自动从播放队列中移除不感兴趣的歌曲
   source: human
-  by: "@Tesutarin"
-  issue: 10
+  by: "@jay900604"
+  issue: 136
 settings.option.general.autoRemoveDisliked.description:
-  value: 标记为不感兴趣的曲目将自动从队列中移除。
+  value: 标记为不感兴趣的歌曲将自动从播放队列中移除。
   source: human
-  by: "@Tesutarin"
-  issue: 19
+  by: "@jay900604"
+  issue: 136
 settings.option.general.cache:
   value: 缓存
   source: human
@@ -11539,15 +11639,15 @@ settings.option.general.displayName.description:
   issue: 10
   superseded_at: 2026-07-08
 settings.option.general.filterDislikedOnAdd:
-  value: 添加到队列时过滤不感兴趣的曲目
+  value: 添加到播放队列时过滤掉不感兴趣的歌曲
   source: human
-  by: "@Tesutarin"
-  issue: 10
+  by: "@jay900604"
+  issue: 136
 settings.option.general.filterDislikedOnAdd.description:
-  value: 添加到队列时自动过滤掉不感兴趣的曲目。
+  value: 添加歌曲到播放队列时，自动过滤掉不感兴趣的歌曲。
   source: human
-  by: "@Tesutarin"
-  issue: 32
+  by: "@jay900604"
+  issue: 136
 settings.option.general.geolocation:
   value: 地理位置
   source: human
@@ -11732,7 +11832,11 @@ settings.option.general.reportTranslation.description:
   by: "@Tesutarin"
   issue: 10
 settings.option.general.restoreLastQueue: 启动时恢复上次的待播清单
-settings.option.general.restoreLastQueue.description: 在 Cider 启动时恢复您的待播清单。播放将保持暂停，直到您点击播放。
+settings.option.general.restoreLastQueue.description:
+  value: 启动 Cider 时，恢复上次的待播清单。播放将保持暂停状态，直到您点击播放。
+  source: human
+  by: "@jay900604"
+  issue: 136
 settings.option.general.resumebehavior:
   value: 恢复播放行为
   source: ai
@@ -11841,7 +11945,11 @@ settings.option.general.startupPage.description:
   issue: 10
   superseded_at: 2026-07-08
 settings.option.general.startupPage.descriptionV2: Cider 在新标签页中打开的页面；当“启动时”设置为“打开启动页面”时，也会在启动时打开该页面。
-settings.option.general.startupPage.descriptionV3: Cider 启动时打开的页面。
+settings.option.general.startupPage.descriptionV3:
+  value: 设置 Cider 启动时打开的页面。
+  source: human
+  by: "@jay900604"
+  issue: 136
 settings.option.general.startupPage.newTab:
   value: 新标签页
   source: ai
@@ -12401,15 +12509,15 @@ settings.option.performance.useEmotionEngine.description:
   by: "@Tesutarin"
   issue: 32
 settings.option.performance.viewTransitions:
-  value: 视图过渡
+  value: 浏览过渡效果
   source: human
-  by: "@Tesutarin"
-  issue: 10
+  by: "@jay900604"
+  issue: 136
 settings.option.performance.viewTransitions.description:
-  value: 启用后，切换部分视图时将应用过渡动画（如正在播放切换到沉浸模式）。
+  value: 启用后，切换部分浏览界面时会播放过渡动画，例如从“正在播放”切换到沉浸模式。
   source: human
-  by: "@Tesutarin"
-  issue: 28
+  by: "@jay900604"
+  issue: 136
 settings.option.performance.visualAnalysis:
   value: 视觉分析
   source: human
@@ -12644,16 +12752,15 @@ settings.option.visual.adaptiveColorPercent:
   issue: 10
   superseded_at: 2026-10-16
 settings.option.visual.additionalAnimatedArtwork:
-  value: 曲库中的额外动态封面
-  source: ai
-  by: "@Tesutarin"
-  issue: 10
-  superseded_at: 2026-10-16
-settings.option.visual.additionalAnimatedArtwork.description:
-  value: 可用时显示更多动态封面，同屏数量过多可能影响性能。
+  value: 显示更多的专辑动态封面
   source: human
-  by: "@Tesutarin"
-  issue: 32
+  by: "@jay900604"
+  issue: 136
+settings.option.visual.additionalAnimatedArtwork.description:
+  value: 有可用内容时，显示更多专辑动态封面。同时显示过多封面可能会影响性能。
+  source: human
+  by: "@jay900604"
+  issue: 136
 settings.option.visual.animateArtworkOnHover:
   value: 悬停时播放媒体项目封面动画
   source: ai
@@ -12662,33 +12769,46 @@ settings.option.visual.animateArtworkOnHover:
   superseded_at: 2026-10-16
 settings.option.visual.animatedArtwork:
   value: 动态封面
-  source: ai
-  by: "@Tesutarin"
-  issue: 10
-  superseded_at: 2026-10-16
-settings.option.visual.animatedArtwork.description:
-  value: 启用动态封面，未聚焦时暂停
-  source: ai
-  by: "@Tesutarin"
-  issue: 10
-  superseded_at: 2026-07-08
-settings.option.visual.animatedArtwork.warningDescription:
-  value: 有条件时显示动态封面，可能在低端设备上影响性能。
   source: human
-  by: "@Tesutarin"
-  issue: 10
-settings.option.visual.animatedArtworkEngine: 动态封面引擎
-settings.option.visual.animatedArtworkEngine.description: “原生”会下载一个循环片段并直接播放，无需切换画质。仅在遇到播放问题时才使用“传统”。
+  by: "@jay900604"
+  issue: 136
+settings.option.visual.animatedArtwork.description:
+  value: 启用动态封面。窗口未聚焦时暂停播放。
+  source: human
+  by: "@jay900604"
+  issue: 136
+settings.option.visual.animatedArtwork.warningDescription:
+  value: 在条件允许时显示动态封面，但可能会影响低端设备的性能。
+  source: human
+  by: "@jay900604"
+  issue: 136
+settings.option.visual.animatedArtworkEngine:
+  value: 动态封面引擎
+  source: human
+  by: "@jay900604"
+  issue: 136
+settings.option.visual.animatedArtworkEngine.description:
+  value: “原生”模式会下载循环片段并直接播放，无需切换画质。仅在遇到播放问题时使用“传统”模式。
+  source: human
+  by: "@jay900604"
+  issue: 136
 settings.option.visual.animatedArtworkEngine.hls: 传统 (hls.js)
 settings.option.visual.animatedArtworkEngine.native: 原生（推荐）
 settings.option.visual.animatedArtworkQuality:
   value: 动态封面质量
-  source: ai
-  by: "@Tesutarin"
-  issue: 10
-  superseded_at: 2026-06-28
-settings.option.visual.animatedArtworkQuality.balanced: 平衡
-settings.option.visual.animatedArtworkQuality.description: 动态封面的清晰度。“自动”会根据屏幕上的显示大小匹配每个封面，适合大多数配置。
+  source: human
+  by: "@jay900604"
+  issue: 136
+settings.option.visual.animatedArtworkQuality.balanced:
+  value: 均衡
+  source: human
+  by: "@jay900604"
+  issue: 136
+settings.option.visual.animatedArtworkQuality.description:
+  value: 设置动态封面的清晰度。“自动”模式会根据封面在屏幕上的显示尺寸自动调整，适合大多数设备。
+  source: human
+  by: "@jay900604"
+  issue: 136
 settings.option.visual.animatedArtworkQuality.performance: 性能
 settings.option.visual.animatedArtworkQuality.quality: 质量
 settings.option.visual.animatedBackgroundFramerate:
@@ -13057,10 +13177,10 @@ settings.option.visual.immersive.keepCompletedLyrics:
   issue: 10
   superseded_at: 2026-10-16
 settings.option.visual.immersive.keepCompletedLyrics.description:
-  value: 在歌词视图中保留已播放的歌词。
+  value: 在歌词浏览界面中保留已播放的歌词。
   source: human
-  by: "@Tesutarin"
-  issue: 32
+  by: "@jay900604"
+  issue: 136
 settings.option.visual.immersive.layout.default:
   value: One（默认）
   source: ai
@@ -13707,11 +13827,10 @@ settings.option.visual.vibrancyMode.acrylic: 亚克力
 settings.option.visual.vibrancyMode.mica: 云母
 settings.option.visual.vibrancyMode.tabbed: 标签页
 settings.option.visual.vibrancySettings:
-  value: 活力效果设置
-  source: ai
-  by: "@Tesutarin"
-  issue: 10
-  superseded_at: 2026-10-16
+  value: 动态效果设置
+  source: human
+  by: "@jay900604"
+  issue: 136
 settings.option.visual.windowBackgroundStyle:
   value: 窗口背景样式
   source: ai
@@ -13744,11 +13863,10 @@ settings.option.visual.windowStyle:
   issue: 10
   superseded_at: 2026-07-08
 settings.option.visual.windowVibrancy:
-  value: 窗口活力效果
-  source: ai
+  value: 窗口动态效果
+  source: human
   by: "@jay900604"
-  issue: 74
-  superseded_at: 2026-10-16
+  issue: 136
 settings.option.window.close_button_hide:
   value: 点击关闭按钮时隐藏应用程序
   source: ai
@@ -14230,14 +14348,22 @@ settings.tweaks.forceMpWindowControls.description: 使用 Cider 自带的窗口�
 settings.tweaks.hideHeroItems.description: 隐藏“浏览”顶部的大型推荐横幅。
 settings.tweaks.homeButtonLocation.description: 主页按钮的位置。
 settings.tweaks.immersiveArtworkHighlight: 沉浸式封面高光
-settings.tweaks.immersiveArtworkHighlight.description: 在沉浸式视图中为封面添加高光。
+settings.tweaks.immersiveArtworkHighlight.description:
+  value: 在沉浸模式中为封面添加高光效果。
+  source: human
+  by: "@jay900604"
+  issue: 136
 settings.tweaks.immersiveBackgroundBpm.description: 让背景随歌曲节奏同步动画。
 settings.tweaks.immersiveControlsTimeout: 沉浸模式控件超时
 settings.tweaks.immersiveControlsTimeout.description: 控件隐藏前的等待秒数。
 settings.tweaks.immersiveHideLyrics.description: 对没有歌词的歌曲隐藏歌词面板。
 settings.tweaks.immersiveLyricGlow: 当前歌词发光
 settings.tweaks.immersiveLyricGlow.description: 为正在演唱的歌词行添加光晕。
-settings.tweaks.immersiveMaxLyricSize.description: 沉浸视图中歌词可放大的最大尺寸。
+settings.tweaks.immersiveMaxLyricSize.description:
+  value: 设置沉浸模式下歌词的最大显示尺寸。
+  source: human
+  by: "@jay900604"
+  issue: 136
 settings.tweaks.mainMenuPosition.description: 主菜单按钮的位置。
 settings.tweaks.mavericksLcdStyle: Mavericks LCD 样式
 settings.tweaks.mavericksLcdStyle.description: 在 Mavericks 布局中“正在播放”显示的外观。
@@ -15881,11 +16007,10 @@ term.contributors:
   issue: 11
   superseded_at: 2026-07-08
 term.copyright:
-  value: 版权
-  source: ai
-  by: "@Tesutarin"
-  issue: 11
-  superseded_at: 2026-07-08
+  value: 版权所有
+  source: human
+  by: "@jay900604"
+  issue: 136
 term.createBugIssueReport:
   value: 创建 Bug / 问题报告
   source: ai
@@ -15942,11 +16067,10 @@ term.defaultPresets:
   issue: 11
   superseded_at: 2026-07-08
 term.defaultView:
-  value: 默认视图
-  source: ai
-  by: "@Tesutarin"
-  issue: 11
-  superseded_at: 2026-07-08
+  value: 默认浏览
+  source: human
+  by: "@jay900604"
+  issue: 136
 term.deletedpreset:
   value: 已移除预设
   source: ai
@@ -16124,11 +16248,10 @@ term.fullscreen:
   issue: 11
   superseded_at: 2026-07-08
 term.fullscreenView:
-  value: 全屏视图
-  source: ai
-  by: "@Tesutarin"
-  issue: 11
-  superseded_at: 2026-07-08
+  value: 全屏浏览
+  source: human
+  by: "@jay900604"
+  issue: 136
 term.funLanguages:
   value: 趣味
   source: ai
@@ -17482,10 +17605,10 @@ term.videos:
   issue: 12
   superseded_at: 2026-07-08
 term.view:
-  value: 视图
+  value: 浏览
   source: human
-  by: "@Tesutarin"
-  issue: 12
+  by: "@jay900604"
+  issue: 136
 term.viewAs:
   value: 显示为
   source: ai
