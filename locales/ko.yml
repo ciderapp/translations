@@ -247,15 +247,63 @@ action.update: 업데이트
 action.validate: 확인
 airplay.codeDialog.message: Apple TV에 표시된 코드를 입력하십시오
 airplay.codeDialog.title: AirPlay 코드 입력
+airplay.connectedLatency: 연결됨 · {ms}ms 지연
 airplay.copiedAddress: 주소가 클립보드에 복사되었습니다
+airplay.device.noPairing: 페어링 안 됨
+airplay.device.paired: 페어링됨
+airplay.device.password: 비밀번호 필요
+airplay.device.pin: 코드 필요
+airplay.device.unsupported: 지원되지 않음
 airplay.devices: AirPlay 기기
+airplay.diagnostics: 진단
+airplay.diagnostics.buffered: 버퍼링됨
+airplay.diagnostics.clock: 클록
+airplay.diagnostics.metadataFailed: 트랙 정보 실패
+airplay.diagnostics.noClockExchange: 수신기가 아직 클록 메시지를 주고받지 않았습니다. shairport-sync는 이를 전혀 수행하지 않습니다. Apple 수신기에서 이 상태라면 클록을 따라가지 못해 무음 상태로 남게 됩니다.
+airplay.diagnostics.packets: 전송된 패킷
+airplay.diagnostics.sendErrors: 초당 전송 오류
+airplay.diagnostics.underruns: 초당 끊김
 airplay.disconnectAll: 모두 연결 해제
 airplay.disconnectConfirm: 이 기기와의 연결을 해제하시겠습니까?
 airplay.electronDisabledDesc: 커뮤니티 플러그인 시스템의 재작성 대기로 인해 Electron 빌드에서 AirPlay 및 캐스팅 기능이 비활성화되었습니다.
+airplay.error.badRequest: AirPlay 요청을 처리할 수 없습니다. 다시 시도하세요.
+airplay.error.connect: Cider가 수신기에 연결할 수 없습니다.
+airplay.error.credentials: Cider가 이 수신기의 페어링 정보를 사용할 수 없습니다.
+airplay.error.deviceNotFound: 该 수신기가 더 이상 네트워크에 없습니다. 다시 검색한 후 재시도하세요.
+airplay.error.internal: AirPlay에 문제가 발생했습니다. 다시 시도하세요.
+airplay.error.noSession: 활성 AirPlay 세션이 없습니다.
+airplay.error.pairing: 수신기와의 페어링에 실패했습니다.
+airplay.error.passwordRejected: 수신기가 해당 비밀번호를 허용하지 않았습니다.
+airplay.error.unavailable: 이 버전의 Cider에서는 AirPlay를 사용할 수 없습니다.
 airplay.experimentalDesc: 이 기능은 실험적이며 많은 버그가 발생할 수 있습니다. 기능의 작동 방식상 재생이 약 2~3초 지연됩니다.
+airplay.forget: 삭제
+airplay.headerDesc: Cider는 한 번에 하나의 AirPlay 수신기로 스트리밍합니다. 스피커는 앱보다 약간 늦게 재생됩니다.
 airplay.httpCasting: HTTP 캐스팅
+airplay.noDevices: 이 네트워크에서 AirPlay 수신기를 찾을 수 없습니다.
+airplay.pairAgain: 다시 페어링
+airplay.pairing.codeLabel: 코드
+airplay.pairing.connectPasswordPrompt: "{device}의 AirPlay 비밀번호를 입력하세요."
+airplay.pairing.newCode: 수신기에 새 코드가 표시됩니다.
+airplay.pairing.pair: 페어링
+airplay.pairing.passwordLabel: AirPlay 비밀번호
+airplay.pairing.passwordPrompt: 이 수신기에 설정된 AirPlay 비밀번호를 입력하세요.
+airplay.pairing.pinPrompt: 수신기에 표시된 코드를 입력하세요.
+airplay.pairing.requesting: 수신기에 코드 표시를 요청하는 중...
+airplay.pairing.retryIn: "{seconds}초 후 다시 시도"
+airplay.pairing.stopped: 수신기가 더 이상의 시도를 거부합니다. 수신기를 재시작한 후 다시 페어링하세요.
+airplay.sessionEnded: "{device}과의 세션이 종료되었습니다."
+airplay.sessionEndedReason: "{device}과의 세션이 종료되었습니다: {reason}"
 airplay.supportNotice: 지원 안내
+airplay.tapBlocked.element: 이 항목이 이 컴퓨터에서 재생되는 동안 수신기가 일시 정지됩니다.
+airplay.tapBlocked.passthrough: 이 트랙은 AirPlay로 전달할 수 없는 보호되거나 Dolby Atmos 경로로 재생되므로 대신 이 기기에서 재생됩니다.
+airplay.tapBlocked.video: 뮤직 비디오는 이 기기에서만 재생됩니다. 다음 곡부터 AirPlay가 다시 재개됩니다.
+airplay.timing.none: 없음
+airplay.timing.ptpFollow: 수신기 따라가기
 airplay.title: AirPlay
+airplay.transient.confirm: 그래도 연결
+airplay.transient.message: 이 수신기는 코드나 비밀번호를 요구하지 않으므로 연결이 인증되지 않습니다. 네트워크의 다른 기기가 이 수신기인 척하며 스트림을 받을 수 있습니다. 신뢰할 수 있는 네트워크에서만 계속하세요.
+airplay.transient.title: 페어링 없이 연결할까요?
+airplay.unauthenticated: 인증되지 않음
 album.appleDigitalMaster.label: Apple Digital Master
 album.atmos.noInfo: 추가 정보가 없습니다.
 album.atmos.partial:
@@ -5376,6 +5424,14 @@ settings.option.experimental.reinstallwidevine: WidevineCDM 재설치
 settings.option.experimental.reinstallwidevine.confirm: Widevine을 재설치하시겠습니까?
 settings.option.experimental.unknownPlugin: 알 수 없는 소스
 settings.option.experimental.unknownPlugin.description: Cider 플러그인 저장소 외의 다른 저장소에서 플러그인을 설치할 수 있도록 허용합니다.
+settings.option.experiments.airplay: AirPlay 사용
+settings.option.experiments.airplay.description: 이 네트워크의 Apple TV, HomePod 및 기타 AirPlay 2 수신기용 AirPlay 버튼을 추가합니다.
+settings.option.experiments.airplayTiming: AirPlay 타이밍
+settings.option.experiments.airplayTiming.auto: 자동
+settings.option.experiments.airplayTiming.description: Cider가 수신기와 시간을 맞추는 방식입니다. 수신기가 계속 무음이 아니라면 자동으로 두세요.
+settings.option.experiments.airplayTiming.ntp: NTP
+settings.option.experiments.airplayTiming.ptp: PTP
+settings.option.experiments.airplayTiming.ptpFollow: 수신기 클록 따라가기 (실험적)
 settings.option.experiments.aura: Aura
 settings.option.experiments.aura.description: 현재 페이지의 색상으로 앱 배경을 물들입니다.
 settings.option.experiments.chromecast: Chromecast 활성화
