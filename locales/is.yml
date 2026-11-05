@@ -1062,16 +1062,30 @@ airplay.codeDialog.title:
   source: human
   by: "@JackW25"
   issue: 77
+airplay.connectedLatency: Tengt · {ms} ms á eftir
 airplay.copiedAddress:
   value: Veffang afritað á klemmuspjald
   source: human
   by: "@JackW25"
   issue: 77
+airplay.device.noPairing: Engin pörun
+airplay.device.paired: Parað
+airplay.device.password: Lykilorð krafist
+airplay.device.pin: Kóði krafinn
+airplay.device.unsupported: Ekki stutt
 airplay.devices:
   value: AirPlay-tæki
   source: human
   by: "@JackW25"
   issue: 77
+airplay.diagnostics: Greiningar
+airplay.diagnostics.buffered: Í biðminni
+airplay.diagnostics.clock: Klukka
+airplay.diagnostics.metadataFailed: Villur í upplýsingum um lag
+airplay.diagnostics.noClockExchange: Móttakarinn hefur ekki skipst á klukkuskilaboðum ennþá. shairport-sync gerir það aldrei; á Apple-móttakara þýðir það að hann fylgir ekki klukkunni og verður áfram þögull.
+airplay.diagnostics.packets: Sendir pakkar
+airplay.diagnostics.sendErrors: Sendivillur á sekúndu
+airplay.diagnostics.underruns: Rof á sekúndu
 airplay.disconnectAll:
   value: Aftengja allt
   source: human
@@ -1087,26 +1101,61 @@ airplay.electronDisabledDesc:
   source: human
   by: "@JackW25"
   issue: 77
+airplay.error.badRequest: Ekki tókst að framkvæma þessa AirPlay-beiðni. Reyndu aftur.
+airplay.error.connect: Cider gat ekki tengst móttakaranum.
+airplay.error.credentials: Cider gat ekki notað pörunina fyrir þennan móttakara.
+airplay.error.deviceNotFound: Móttakarinn er ekki lengur á netinu. Leitaðu aftur og reyndu aftur.
+airplay.error.internal: Eitthvað fór úrskeiðis með AirPlay. Reyndu aftur.
+airplay.error.noSession: Engin AirPlay-tenging er virk.
+airplay.error.pairing: Pörun við móttakarann mistókst.
+airplay.error.passwordRejected: Móttakarinn hafnaði þessu lykilorði.
+airplay.error.unavailable: AirPlay er ekki tiltækt í þessari útgáfu af Cider.
 airplay.experimentalDesc:
   value: Þessi eiginleiki er á tilraunastigi og getur innihaldið margar villur. Spilun verður um 2-3 sekúndum á eftir vegna þess hvernig eiginleikinn virkar.
   source: human
   by: "@JackW25"
   issue: 77
+airplay.forget: Gleyma
+airplay.headerDesc: Cider streymir til eins AirPlay-móttakara í einu. Hátalarinn spilar örlítið á eftir forritinu.
 airplay.httpCasting:
   value: HTTP-útsending
   source: human
   by: "@JackW25"
   issue: 77
+airplay.noDevices: Engir AirPlay-móttakarar fundust á þessu neti.
+airplay.pairAgain: Para aftur
+airplay.pairing.codeLabel: Kóði
+airplay.pairing.connectPasswordPrompt: Sláðu inn AirPlay-lykilorðið fyrir {device}.
+airplay.pairing.newCode: Móttakarinn sýnir nýjan kóða.
+airplay.pairing.pair: Para
+airplay.pairing.passwordLabel: AirPlay-lykilorð
+airplay.pairing.passwordPrompt: Sláðu inn AirPlay-lykilorðið sem stillt er á þessum móttakara.
+airplay.pairing.pinPrompt: Sláðu inn kóðann sem birtist á móttakaranum.
+airplay.pairing.requesting: Biður móttakarann um að sýna kóða...
+airplay.pairing.retryIn: Reyndu aftur eftir {seconds} s
+airplay.pairing.stopped: Móttakarinn hafnar frekari tilraunum. Endurræstu hann og paraðu aftur.
+airplay.sessionEnded: Tengingunni við {device} lauk.
+airplay.sessionEndedReason: "Tengingunni við {device} lauk: {reason}"
 airplay.supportNotice:
   value: Tilkynning um stuðning
   source: human
   by: "@JackW25"
   issue: 77
+airplay.tapBlocked.element: Móttakarinn er í bið meðan þetta atriði spilast á þessari tölvu.
+airplay.tapBlocked.passthrough: Þetta lag spilast um varða eða Dolby Atmos leið sem AirPlay getur ekki flutt, þess vegna spilast það á þessu tæki í staðinn.
+airplay.tapBlocked.video: Tónlistarmyndbönd spilast aðeins á þessu tæki. AirPlay heldur áfram með næsta lag.
+airplay.timing.none: Ekkert
+airplay.timing.ptpFollow: Fylgir móttakaranum
 airplay.title:
   value: AirPlay
-  source: human
+  source: ai
   by: "@JackW25"
   issue: 77
+  superseded_at: 2026-11-05
+airplay.transient.confirm: Tengjast samt
+airplay.transient.message: Þessi móttakari biður hvorki um kóða né lykilorð, þannig að tengingin er ekki staðfest. Annað tæki á netinu þínu gæti látist vera hann og tekið við straumnum. Haltu aðeins áfram á neti sem þú treystir.
+airplay.transient.title: Tengjast án pörunar?
+airplay.unauthenticated: Ekki staðfest
 album.appleDigitalMaster.label:
   value: Apple Digital Master
   source: human
@@ -13089,6 +13138,14 @@ settings.option.experimental.unknownPlugin.description:
   source: human
   by: "@JackW25"
   issue: 77
+settings.option.experiments.airplay: Virkja AirPlay
+settings.option.experiments.airplay.description: Bætir AirPlay-hnappi við fyrir Apple TV, HomePod og aðra AirPlay 2-móttakara á þessu neti.
+settings.option.experiments.airplayTiming: AirPlay-tímasetning
+settings.option.experiments.airplayTiming.auto: Sjálfvirk
+settings.option.experiments.airplayTiming.description: Hvernig Cider heldur tíma með móttakaranum. Hafðu á Sjálfvirkri nema móttakari þagni.
+settings.option.experiments.airplayTiming.ntp: NTP
+settings.option.experiments.airplayTiming.ptp: PTP
+settings.option.experiments.airplayTiming.ptpFollow: Fylgja klukku móttakarans (tilraunakennt)
 settings.option.experiments.aura: Aura
 settings.option.experiments.aura.description: Litar bakgrunn forritsins með litunum á núverandi síðu.
 settings.option.experiments.chromecast:
