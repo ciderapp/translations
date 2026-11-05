@@ -269,15 +269,63 @@ action.update: Güncelle
 action.validate: Doğrula
 airplay.codeDialog.message: Lütfen Apple TV'nizde görüntülenen kodu girin
 airplay.codeDialog.title: AirPlay Kodunu Girin
+airplay.connectedLatency: Bağlandı · {ms} ms gecikmeli
 airplay.copiedAddress: Adres panoya kopyalandı
+airplay.device.noPairing: Eşleştirme yok
+airplay.device.paired: Eşleştirildi
+airplay.device.password: Parola gerekli
+airplay.device.pin: Kod gerekli
+airplay.device.unsupported: Desteklenmiyor
 airplay.devices: AirPlay Cihazları
+airplay.diagnostics: Tanılama
+airplay.diagnostics.buffered: Arabelleğe alındı
+airplay.diagnostics.clock: Saat
+airplay.diagnostics.metadataFailed: Parça bilgisi hataları
+airplay.diagnostics.noClockExchange: Alıcı henüz saat mesajı alışverişi yapmadı. shairport-sync bunu hiçbir zaman yapmaz; bir Apple alıcısında bu, saati izlemediği ve sessiz kalacağı anlamına gelir.
+airplay.diagnostics.packets: Gönderilen paketler
+airplay.diagnostics.sendErrors: Saniyedeki gönderme hataları
+airplay.diagnostics.underruns: Saniyedeki kesintiler
 airplay.disconnectAll: Tüm Bağlantıları Kes
 airplay.disconnectConfirm: Bu cihazla olan bağlantıyı kesmek istediğinize emin misiniz?
 airplay.electronDisabledDesc: Topluluk eklenti sisteminde yeniden yazılmayı bekleyen Electron sürümleri için AirPlay ve Yayınlama özellikleri devre dışı bırakıldı.
+airplay.error.badRequest: Bu AirPlay isteği gerçekleştirilemedi. Yeniden deneyin.
+airplay.error.connect: Cider alıcıya bağlanamadı.
+airplay.error.credentials: Cider bu alıcı için eşleştirmeyi kullanamadı.
+airplay.error.deviceNotFound: Bu alıcı artık ağda değil. Yeniden tarayıp deneyin.
+airplay.error.internal: AirPlay ile ilgili bir sorun oluştu. Yeniden deneyin.
+airplay.error.noSession: Etkin bir AirPlay oturumu yok.
+airplay.error.pairing: Alıcıyla eşleştirme başarısız oldu.
+airplay.error.passwordRejected: Alıcı bu parolayı kabul etmedi.
+airplay.error.unavailable: AirPlay, bu Cider sürümünde kullanılamıyor.
 airplay.experimentalDesc: Bu özellik deneyseldir ve birçok hata içerebilir. Oynatma yaklaşık 2-3 saniye gecikmeli olacaktır, bu durum özelliğin çalışma şeklinden kaynaklanmaktadır.
+airplay.forget: Unut
+airplay.headerDesc: Cider aynı anda yalnızca bir AirPlay alıcısına yayın yapar. Hoparlör uygulamanın biraz gerisinde çalar.
 airplay.httpCasting: HTTP Yayınlama
+airplay.noDevices: Bu ağda AirPlay alıcısı bulunamadı.
+airplay.pairAgain: Yeniden eşleştir
+airplay.pairing.codeLabel: Kod
+airplay.pairing.connectPasswordPrompt: "{device} için AirPlay parolasını girin."
+airplay.pairing.newCode: Alıcı yeni bir kod gösterecek.
+airplay.pairing.pair: Eşleştir
+airplay.pairing.passwordLabel: AirPlay parolası
+airplay.pairing.passwordPrompt: Bu alıcıda ayarlanan AirPlay parolasını girin.
+airplay.pairing.pinPrompt: Alıcıda gösterilen kodu girin.
+airplay.pairing.requesting: Alıcıdan kod göstermesi isteniyor...
+airplay.pairing.retryIn: "{seconds} sn içinde yeniden deneyin"
+airplay.pairing.stopped: Alıcı başka denemeleri kabul etmiyor. Yeniden başlatıp tekrar eşleştirin.
+airplay.sessionEnded: "{device} ile oturum sona erdi."
+airplay.sessionEndedReason: "{device} ile oturum sona erdi: {reason}"
 airplay.supportNotice: Destek Bildirimi
+airplay.tapBlocked.element: Bu öğe bu bilgisayarda çalarken alıcı duraklatıldı.
+airplay.tapBlocked.passthrough: Bu parça, AirPlay'in taşıyamayacağı korumalı veya Dolby Atmos yolu üzerinden çalıyor, bu yüzden bunun yerine bu cihazda çalacak.
+airplay.tapBlocked.video: Müzik videoları yalnızca bu cihazda çalar. AirPlay bir sonraki şarkıyla devam eder.
+airplay.timing.none: Yok
+airplay.timing.ptpFollow: Alıcıyı izleme
 airplay.title: AirPlay
+airplay.transient.confirm: Yine de bağlan
+airplay.transient.message: Bu alıcı kod veya parola istemediği için bağlantı doğrulanmamış. Ağınızdaki başka bir cihaz bu alıcıymış gibi davranıp yayını alabilir. Yalnızca güvendiğiniz bir ağda devam edin.
+airplay.transient.title: Eşleştirmeden bağlansın mı?
+airplay.unauthenticated: Doğrulanmadı
 album.appleDigitalMaster.label: Apple Digital Master
 album.atmos.noInfo: Ek bilgi mevcut değil.
 album.atmos.partial: Kısmi Atmos
@@ -5396,6 +5444,14 @@ settings.option.experimental.reinstallwidevine: WidevineCDM'yi Yeniden Yükle
 settings.option.experimental.reinstallwidevine.confirm: Widevine'ı yeniden yüklemek istediğinizden emin misiniz?
 settings.option.experimental.unknownPlugin: Bilinmeyen Kaynaklar
 settings.option.experimental.unknownPlugin.description: Cider Eklenti Deposu dışındaki depolardan eklenti yüklenmesine izin ver
+settings.option.experiments.airplay: AirPlay'i etkinleştir
+settings.option.experiments.airplay.description: Bu ağdaki Apple TV, HomePod ve diğer AirPlay 2 alıcıları için bir AirPlay düğmesi ekler.
+settings.option.experiments.airplayTiming: AirPlay zamanlaması
+settings.option.experiments.airplayTiming.auto: Otomatik
+settings.option.experiments.airplayTiming.description: Cider'ın alıcıyla zamanlamayı nasıl eşitlediği. Bir alıcı sessiz kalmadıkça Otomatik seçili bırakın.
+settings.option.experiments.airplayTiming.ntp: NTP
+settings.option.experiments.airplayTiming.ptp: PTP
+settings.option.experiments.airplayTiming.ptpFollow: Alıcı saatini izle (deneysel)
 settings.option.experiments.aura: Aura
 settings.option.experiments.aura.description: Uygulama arka planını geçerli sayfanın renkleriyle boyar.
 settings.option.experiments.chromecast: Chromecast'i Etkinleştir
