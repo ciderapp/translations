@@ -279,15 +279,63 @@ action.update: Aktualizuj
 action.validate: Zweryfikuj
 airplay.codeDialog.message: Wprowadź kod wyświetlany na Apple TV
 airplay.codeDialog.title: Wprowadź kod AirPlay
+airplay.connectedLatency: Połączono · opóźnienie {ms} ms
 airplay.copiedAddress: Skopiowano adres do schowka
+airplay.device.noPairing: Brak parowania
+airplay.device.paired: Sparowano
+airplay.device.password: Wymagane hasło
+airplay.device.pin: Wymagany kod
+airplay.device.unsupported: Nieobsługiwane
 airplay.devices: Urządzenia AirPlay
+airplay.diagnostics: Diagnostyka
+airplay.diagnostics.buffered: Zbuforowano
+airplay.diagnostics.clock: Zegar
+airplay.diagnostics.metadataFailed: Błędy informacji o utworze
+airplay.diagnostics.noClockExchange: Odbiornik jeszcze nie wymienił komunikatów zegara. shairport-sync nigdy tego nie robi; w odbiorniku Apple oznacza to, że nie śledzi zegara i pozostanie cichy.
+airplay.diagnostics.packets: Wysłane pakiety
+airplay.diagnostics.sendErrors: Błędy wysyłania na sekundę
+airplay.diagnostics.underruns: Przerwy na sekundę
 airplay.disconnectAll: Rozłącz wszystkie
 airplay.disconnectConfirm: Czy na pewno chcesz rozłączyć się z tym urządzeniem?
 airplay.electronDisabledDesc: Obsługa AirPlay i przesyłania strumieniowego została wyłączona w wersjach Electron do czasu przepisania systemu wtyczek społeczności.
+airplay.error.badRequest: Nie udało się wykonać tego żądania AirPlay. Spróbuj ponownie.
+airplay.error.connect: Cider nie mógł połączyć się z odbiornikiem.
+airplay.error.credentials: Cider nie mógł użyć parowania z tym odbiornikiem.
+airplay.error.deviceNotFound: Ten odbiornik nie jest już w sieci. Wyszukaj ponownie i spróbuj jeszcze raz.
+airplay.error.internal: Wystąpił błąd AirPlay. Spróbuj ponownie.
+airplay.error.noSession: Brak aktywnej sesji AirPlay.
+airplay.error.pairing: Parowanie z odbiornikiem nie powiodło się.
+airplay.error.passwordRejected: Odbiornik nie zaakceptował tego hasła.
+airplay.error.unavailable: AirPlay nie jest dostępny w tej wersji Cider.
 airplay.experimentalDesc: Ta funkcja jest eksperymentalna i może zawierać błędy. Odtwarzanie będzie opóźnione o około 2-3 sekundy, co wynika ze sposobu działania tej funkcji.
+airplay.forget: Zapomnij
+airplay.headerDesc: Cider przesyła strumień do jednego odbiornika AirPlay naraz. Głośnik odtwarza z lekkim opóźnieniem względem aplikacji.
 airplay.httpCasting: Przesyłanie HTTP
+airplay.noDevices: Nie znaleziono odbiorników AirPlay w tej sieci.
+airplay.pairAgain: Sparuj ponownie
+airplay.pairing.codeLabel: Kod
+airplay.pairing.connectPasswordPrompt: Wpisz hasło AirPlay dla urządzenia {device}.
+airplay.pairing.newCode: Odbiornik wyświetli nowy kod.
+airplay.pairing.pair: Sparuj
+airplay.pairing.passwordLabel: Hasło AirPlay
+airplay.pairing.passwordPrompt: Wpisz hasło AirPlay ustawione na tym odbiorniku.
+airplay.pairing.pinPrompt: Wpisz kod wyświetlany na odbiorniku.
+airplay.pairing.requesting: Proszę odbiornik o wyświetlenie kodu...
+airplay.pairing.retryIn: Spróbuj ponownie za {seconds} s
+airplay.pairing.stopped: Odbiornik odrzuca kolejne próby. Uruchom go ponownie, a następnie sparuj ponownie.
+airplay.sessionEnded: Sesja z urządzeniem {device} zakończyła się.
+airplay.sessionEndedReason: "Sesja z urządzeniem {device} zakończyła się: {reason}"
 airplay.supportNotice: Informacja o wsparciu
+airplay.tapBlocked.element: Odbiornik jest wstrzymany, ponieważ ten element odtwarza się na tym komputerze.
+airplay.tapBlocked.passthrough: Ten utwór odtwarza się ścieżką chronioną lub Dolby Atmos, której AirPlay nie obsługuje, dlatego odtwarza się na tym urządzeniu.
+airplay.tapBlocked.video: Teledyski odtwarzane są tylko na tym urządzeniu. AirPlay wznowi się przy następnym utworze.
+airplay.timing.none: Brak
+airplay.timing.ptpFollow: Podążanie za odbiornikiem
 airplay.title: AirPlay
+airplay.transient.confirm: Połącz mimo to
+airplay.transient.message: Ten odbiornik nie wymaga kodu ani hasła, więc połączenie nie jest uwierzytelnione. Inne urządzenie w Twojej sieci może się za niego podać i odebrać strumień. Kontynuuj tylko w zaufanej sieci.
+airplay.transient.title: Połączyć bez parowania?
+airplay.unauthenticated: Nieuwierzytelniono
 album.appleDigitalMaster.label: Apple Digital Master
 album.atmos.noInfo: Brak dodatkowych informacji.
 album.atmos.partial: Częściowy Atmos
@@ -5568,6 +5616,14 @@ settings.option.experimental.unknownPlugin.description:
   by: "@szymin22"
   issue: 34
   superseded_at: 2026-07-08
+settings.option.experiments.airplay: Włącz AirPlay
+settings.option.experiments.airplay.description: Dodaje przycisk AirPlay dla Apple TV, HomePod i innych odbiorników AirPlay 2 w tej sieci.
+settings.option.experiments.airplayTiming: Synchronizacja AirPlay
+settings.option.experiments.airplayTiming.auto: Automatycznie
+settings.option.experiments.airplayTiming.description: Sposób, w jaki Cider utrzymuje synchronizację z odbiornikiem. Pozostaw ustawienie Automatycznie, chyba że odbiornik milczy.
+settings.option.experiments.airplayTiming.ntp: NTP
+settings.option.experiments.airplayTiming.ptp: PTP
+settings.option.experiments.airplayTiming.ptpFollow: Podążaj za zegarem odbiornika (eksperymentalne)
 settings.option.experiments.aura: Aura
 settings.option.experiments.aura.description: Koloryzuje tło aplikacji kolorami bieżącej strony.
 settings.option.experiments.chromecast: Włącz Chromecast
