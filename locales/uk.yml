@@ -223,15 +223,63 @@ action.update: Оновити
 action.validate: Перевірити
 airplay.codeDialog.message: Введіть код, що відображається на вашому Apple TV
 airplay.codeDialog.title: Введіть код AirPlay
+airplay.connectedLatency: Підключено · відставання {ms} мс
 airplay.copiedAddress: Адресу скопійовано в буфер обміну
+airplay.device.noPairing: Без сполучення
+airplay.device.paired: Сполучено
+airplay.device.password: Потрібен пароль
+airplay.device.pin: Потрібен код
+airplay.device.unsupported: Не підтримується
 airplay.devices: Пристрої AirPlay
+airplay.diagnostics: Діагностика
+airplay.diagnostics.buffered: Буферизовано
+airplay.diagnostics.clock: Годинник
+airplay.diagnostics.metadataFailed: Помилки даних треку
+airplay.diagnostics.noClockExchange: Приймач ще не обмінявся повідомленнями синхронізації годинника. shairport-sync їх ніколи не надсилає; на пристрої Apple це означає, що він не синхронізується з годинником і мовчатиме.
+airplay.diagnostics.packets: Надіслано пакетів
+airplay.diagnostics.sendErrors: Помилки надсилання за секунду
+airplay.diagnostics.underruns: Переривання за секунду
 airplay.disconnectAll: Відключити всі
 airplay.disconnectConfirm: Ви дійсно бажаєте відключитися від цього пристрою?
 airplay.electronDisabledDesc: Підтримку AirPlay та трансляції вимкнено для збірок Electron до моменту переписування в системі плагінів спільноти.
+airplay.error.badRequest: Не вдалося виконати цей запит AirPlay. Спробуйте ще раз.
+airplay.error.connect: Cider не вдалося підключитися до приймача.
+airplay.error.credentials: Cider не вдалося використати сполучення для цього приймача.
+airplay.error.deviceNotFound: Цього приймача більше немає в мережі. Виконайте пошук знову та повторіть спробу.
+airplay.error.internal: Сталася помилка AirPlay. Спробуйте ще раз.
+airplay.error.noSession: Сеанс AirPlay не активний.
+airplay.error.pairing: Не вдалося сполучитися з приймачем.
+airplay.error.passwordRejected: Приймач не прийняв цей пароль.
+airplay.error.unavailable: AirPlay недоступний у цій збірці Cider.
 airplay.experimentalDesc: Ця функція є експериментальною та може містити багато помилок. Відтворення відбуватиметься із затримкою близько 2–3 секунд через особливості роботи цієї функції.
+airplay.forget: Забути
+airplay.headerDesc: Cider транслює на один приймач AirPlay одночасно. Колонка відтворює трохи з відставанням від застосунку.
 airplay.httpCasting: Трансляція HTTP
+airplay.noDevices: У цій мережі не знайдено приймачів AirPlay.
+airplay.pairAgain: Сполучити знову
+airplay.pairing.codeLabel: Код
+airplay.pairing.connectPasswordPrompt: Введіть пароль AirPlay для {device}.
+airplay.pairing.newCode: Приймач покаже новий код.
+airplay.pairing.pair: Сполучити
+airplay.pairing.passwordLabel: Пароль AirPlay
+airplay.pairing.passwordPrompt: Введіть пароль AirPlay, встановлений на цьому приймачі.
+airplay.pairing.pinPrompt: Введіть код, який показано на приймачі.
+airplay.pairing.requesting: Запит на показ коду на приймачі...
+airplay.pairing.retryIn: Спробуйте знову через {seconds} с
+airplay.pairing.stopped: Приймач відхиляє подальші спроби. Перезапустіть його, а потім сполучіть знову.
+airplay.sessionEnded: Сеанс із {device} завершено.
+airplay.sessionEndedReason: "Сеанс із {device} завершено: {reason}"
 airplay.supportNotice: Примітка щодо підтримки
+airplay.tapBlocked.element: Приймач призупинено, доки цей елемент відтворюється на цьому комп'ютері.
+airplay.tapBlocked.passthrough: Цей трек відтворюється через захищений шлях або шлях Dolby Atmos, який AirPlay не може передати, тож він відтворюється на цьому пристрої.
+airplay.tapBlocked.video: Музичні відео відтворюються лише на цьому пристрої. AirPlay продовжиться з наступною піснею.
+airplay.timing.none: Немає
+airplay.timing.ptpFollow: Синхронізація з приймачем
 airplay.title: AirPlay
+airplay.transient.confirm: Підключитися все одно
+airplay.transient.message: Цей приймач не запитує код або пароль, тож з'єднання не автентифіковано. Інший пристрій у вашій мережі може видати себе за нього та отримати потік. Продовжуйте лише в мережі, якій ви довіряєте.
+airplay.transient.title: Підключитися без сполучення?
+airplay.unauthenticated: Не автентифіковано
 album.appleDigitalMaster.label: Apple Digital Master
 album.atmos.noInfo: Немає додаткової інформації.
 album.atmos.partial: Частковий Atmos
@@ -5291,6 +5339,14 @@ settings.option.experimental.reinstallwidevine: Перевстановити Wid
 settings.option.experimental.reinstallwidevine.confirm: Ви впевнені, що хочете перевстановити Widevine?
 settings.option.experimental.unknownPlugin: Невідомі джерела
 settings.option.experimental.unknownPlugin.description: Дозволити встановлення плагінів із репозиторіїв, відмінних від Cider Plugin Repository
+settings.option.experiments.airplay: Увімкнути AirPlay
+settings.option.experiments.airplay.description: Додає кнопку AirPlay для Apple TV, HomePod та інших приймачів AirPlay 2 у цій мережі.
+settings.option.experiments.airplayTiming: Синхронізація AirPlay
+settings.option.experiments.airplayTiming.auto: Автоматично
+settings.option.experiments.airplayTiming.description: Як Cider підтримує час із приймачем. Залиште «Автоматично», якщо приймач не мовчить.
+settings.option.experiments.airplayTiming.ntp: NTP
+settings.option.experiments.airplayTiming.ptp: PTP
+settings.option.experiments.airplayTiming.ptpFollow: Синхронізація з годинником приймача (експериментально)
 settings.option.experiments.aura: Aura
 settings.option.experiments.aura.description: Забарвлює фон застосунку кольорами поточної сторінки.
 settings.option.experiments.chromecast: Увімкнути Chromecast
