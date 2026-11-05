@@ -220,15 +220,63 @@ action.unpinFromJumpList: Unpin from Jump List
 action.update: Update
 airplay.codeDialog.message: Please enter the code displayed on your Apple TV
 airplay.codeDialog.title: Enter Airplay Code
+airplay.connectedLatency: Connected · {ms} ms behind
 airplay.copiedAddress: Address copied to clipboard
+airplay.device.noPairing: No pairing
+airplay.device.paired: Paired
+airplay.device.password: Password required
+airplay.device.pin: Code required
+airplay.device.unsupported: Not supported
 airplay.devices: AirPlay Devices
+airplay.diagnostics: Diagnostics
+airplay.diagnostics.buffered: Buffered
+airplay.diagnostics.clock: Clock
+airplay.diagnostics.metadataFailed: Track info failures
+airplay.diagnostics.noClockExchange: The receiver has not exchanged clock messages yet. shairport-sync never does; on an Apple receiver it means it is not following the clock and will stay silent.
+airplay.diagnostics.packets: Packets sent
+airplay.diagnostics.sendErrors: Send errors per second
+airplay.diagnostics.underruns: Dropouts per second
 airplay.disconnectAll: Disconnect All
 airplay.disconnectConfirm: Are you sure you want to disconnect from this device?
 airplay.electronDisabledDesc: AirPlay and Casting have been disabled for Electron builds pending a rewrite in the community plugin system.
+airplay.error.badRequest: That AirPlay request could not be carried out. Try again.
+airplay.error.connect: Cider could not connect to the receiver.
+airplay.error.credentials: Cider could not use the pairing for this receiver.
+airplay.error.deviceNotFound: That receiver is no longer on the network. Scan again and retry.
+airplay.error.internal: Something went wrong with AirPlay. Try again.
+airplay.error.noSession: No AirPlay session is active.
+airplay.error.pairing: Pairing with the receiver failed.
+airplay.error.passwordRejected: The receiver did not accept that password.
+airplay.error.unavailable: AirPlay is not available in this build of Cider.
 airplay.experimentalDesc: This feature is experimental and will contain a lot of bugs. Playback will be about 2-3 seconds delayed, this is due to how this feature works.
+airplay.forget: Forget
+airplay.headerDesc: Cider streams to one AirPlay receiver at a time. The speaker plays slightly behind the app.
 airplay.httpCasting: HTTP Casting
+airplay.noDevices: No AirPlay receivers found on this network.
+airplay.pairAgain: Pair again
+airplay.pairing.codeLabel: Code
+airplay.pairing.connectPasswordPrompt: Enter the AirPlay password for {device}.
+airplay.pairing.newCode: The receiver will show a new code.
+airplay.pairing.pair: Pair
+airplay.pairing.passwordLabel: AirPlay password
+airplay.pairing.passwordPrompt: Enter the AirPlay password set on this receiver.
+airplay.pairing.pinPrompt: Enter the code shown on the receiver.
+airplay.pairing.requesting: Asking the receiver to show a code...
+airplay.pairing.retryIn: Try again in {seconds} s
+airplay.pairing.stopped: The receiver refuses further attempts. Restart it, then pair again.
+airplay.sessionEnded: The session with {device} ended.
+airplay.sessionEndedReason: "The session with {device} ended: {reason}"
 airplay.supportNotice: Support Notice
-airplay.title: Airplay
+airplay.tapBlocked.element: The receiver is paused while this item plays on this computer.
+airplay.tapBlocked.passthrough: This track plays through a protected or Dolby Atmos path that AirPlay cannot carry, so it plays on this device instead.
+airplay.tapBlocked.video: Music videos play on this device only. AirPlay resumes with the next song.
+airplay.timing.none: None
+airplay.timing.ptpFollow: Following the receiver
+airplay.title: AirPlay
+airplay.transient.confirm: Connect anyway
+airplay.transient.message: This receiver does not ask for a code or password, so the connection is not authenticated. Another device on your network could pose as it and receive the stream. Only continue on a network you trust.
+airplay.transient.title: Connect without pairing?
+airplay.unauthenticated: Not authenticated
 album.appleDigitalMaster.label: Apple Digital Master
 album.atmos.noInfo: No additional information available.
 album.atmos.partial: Partial Atmos
@@ -5228,6 +5276,14 @@ settings.option.experimental.reinstallwidevine: Reinstall WidevineCDM
 settings.option.experimental.reinstallwidevine.confirm: Are you sure you want to reinstall Widevine?
 settings.option.experimental.unknownPlugin: Unknown Sources
 settings.option.experimental.unknownPlugin.description: Allow installation of plugins from repos other than the Cider Plugin Repository
+settings.option.experiments.airplay: Enable AirPlay
+settings.option.experiments.airplay.description: Adds an AirPlay button for Apple TV, HomePod and other AirPlay 2 receivers on this network.
+settings.option.experiments.airplayTiming: AirPlay timing
+settings.option.experiments.airplayTiming.auto: Automatic
+settings.option.experiments.airplayTiming.description: How Cider keeps time with the receiver. Leave on Automatic unless a receiver stays silent.
+settings.option.experiments.airplayTiming.ntp: NTP
+settings.option.experiments.airplayTiming.ptp: PTP
+settings.option.experiments.airplayTiming.ptpFollow: Follow the receiver clock (experimental)
 settings.option.experiments.aura: Aura
 settings.option.experiments.aura.description: Tints the app background with the colors of the current page.
 settings.option.experiments.chromecast: Enable Chromecast
