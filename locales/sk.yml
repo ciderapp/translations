@@ -223,15 +223,63 @@ action.update: Aktualizovať
 action.validate: Overiť
 airplay.codeDialog.message: Zadajte kód zobrazený na vašej Apple TV
 airplay.codeDialog.title: Zadajte kód AirPlay
+airplay.connectedLatency: Pripojené · o {ms} ms za
 airplay.copiedAddress: Adresa bola skopírovaná do schránky
+airplay.device.noPairing: Bez párovania
+airplay.device.paired: Spárované
+airplay.device.password: Vyžaduje sa heslo
+airplay.device.pin: Vyžaduje sa kód
+airplay.device.unsupported: Nepodporované
 airplay.devices: Zariadenia AirPlay
+airplay.diagnostics: Diagnostika
+airplay.diagnostics.buffered: Vo vyrovnávacej pamäti
+airplay.diagnostics.clock: Hodiny
+airplay.diagnostics.metadataFailed: Chyby informácií o skladbe
+airplay.diagnostics.noClockExchange: Prijímač zatiaľ nevymenil správy o hodinách. shairport-sync ich nikdy nevymieňa; na prijímači Apple to znamená, že nesleduje hodiny a zostane ticho.
+airplay.diagnostics.packets: Odoslané pakety
+airplay.diagnostics.sendErrors: Chyby odosielania za sekundu
+airplay.diagnostics.underruns: Výpadky za sekundu
 airplay.disconnectAll: Odpojiť všetko
 airplay.disconnectConfirm: Naozaj sa chcete odpojiť od tohto zariadenia?
 airplay.electronDisabledDesc: AirPlay a streamovanie boli pre zostavy Electron zakázané, kým nebudú prepísané v komunitnom systéme pluginov.
+airplay.error.badRequest: Túto požiadavku AirPlay sa nepodarilo vykonať. Skúste to znova.
+airplay.error.connect: Cider sa nepodarilo pripojiť k prijímaču.
+airplay.error.credentials: Cider nemohol použiť párovanie pre tento prijímač.
+airplay.error.deviceNotFound: Tento prijímač už nie je v sieti. Vyhľadajte ho znova a skúste to znova.
+airplay.error.internal: Pri AirPlay sa vyskytla chyba. Skúste to znova.
+airplay.error.noSession: Nie je aktívna žiadna relácia AirPlay.
+airplay.error.pairing: Párovanie s prijímačom zlyhalo.
+airplay.error.passwordRejected: Prijímač toto heslo neprijal.
+airplay.error.unavailable: AirPlay nie je v tejto verzii Cideru dostupný.
 airplay.experimentalDesc: Táto funkcia je experimentálna a bude obsahovať veľa chýb. Prehrávanie bude oneskorené o približne 2-3 sekundy, čo je spôsobené fungovaním tejto funkcie.
+airplay.forget: Zabudnúť
+airplay.headerDesc: Cider streamuje naraz do jedného prijímača AirPlay. Reproduktor hrá mierne za aplikáciou.
 airplay.httpCasting: HTTP streamovanie
+airplay.noDevices: V tejto sieti sa nenašli žiadne prijímače AirPlay.
+airplay.pairAgain: Spárovať znova
+airplay.pairing.codeLabel: Kód
+airplay.pairing.connectPasswordPrompt: Zadajte heslo AirPlay pre {device}.
+airplay.pairing.newCode: Prijímač zobrazí nový kód.
+airplay.pairing.pair: Spárovať
+airplay.pairing.passwordLabel: Heslo AirPlay
+airplay.pairing.passwordPrompt: Zadajte heslo AirPlay nastavené na tomto prijímači.
+airplay.pairing.pinPrompt: Zadajte kód zobrazený na prijímači.
+airplay.pairing.requesting: Žiadam prijímač, aby zobrazil kód...
+airplay.pairing.retryIn: Skúste to znova o {seconds} s
+airplay.pairing.stopped: Prijímač ďalšie pokusy odmieta. Reštartujte ho a potom ho spárujte znova.
+airplay.sessionEnded: Relácia s {device} sa skončila.
+airplay.sessionEndedReason: "Relácia s {device} sa skončila: {reason}"
 airplay.supportNotice: Upozornenie o podpore
+airplay.tapBlocked.element: Prijímač je pozastavený, kým sa táto položka prehráva na tomto počítači.
+airplay.tapBlocked.passthrough: Táto skladba sa prehráva cez chránenú alebo Dolby Atmos cestu, ktorú AirPlay nedokáže preniesť, preto sa prehráva na tomto zariadení.
+airplay.tapBlocked.video: Hudobné videá sa prehrávajú iba na tomto zariadení. AirPlay pokračuje s ďalšou skladbou.
+airplay.timing.none: Žiadne
+airplay.timing.ptpFollow: Sledovanie prijímača
 airplay.title: AirPlay
+airplay.transient.confirm: Pripojiť aj tak
+airplay.transient.message: Tento prijímač nevyžaduje kód ani heslo, takže pripojenie nie je overené. Iné zariadenie vo vašej sieti sa môže vydávať za tento prijímač a prijať stream. Pokračujte len v sieti, ktorej dôverujete.
+airplay.transient.title: Pripojiť bez párovania?
+airplay.unauthenticated: Neoverené
 album.appleDigitalMaster.label: Apple Digital Master
 album.atmos.noInfo: Nie sú k dispozícii žiadne ďalšie informácie.
 album.atmos.partial: Čiastočné Atmos
@@ -5291,6 +5339,14 @@ settings.option.experimental.reinstallwidevine: Preinštalovať WidevineCDM
 settings.option.experimental.reinstallwidevine.confirm: Naozaj chcete preinštalovať Widevine?
 settings.option.experimental.unknownPlugin: Neznáme zdroje
 settings.option.experimental.unknownPlugin.description: Povoliť inštaláciu doplnkov z iných repozitárov ako z Cider Plugin Repository
+settings.option.experiments.airplay: Povoliť AirPlay
+settings.option.experiments.airplay.description: Pridá tlačidlo AirPlay pre Apple TV, HomePod a ďalšie prijímače AirPlay 2 v tejto sieti.
+settings.option.experiments.airplayTiming: Časovanie AirPlay
+settings.option.experiments.airplayTiming.auto: Automatické
+settings.option.experiments.airplayTiming.description: Ako Cider udržiava čas s prijímačom. Ponechajte na Automatické, pokiaľ prijímač nezostáva ticho.
+settings.option.experiments.airplayTiming.ntp: NTP
+settings.option.experiments.airplayTiming.ptp: PTP
+settings.option.experiments.airplayTiming.ptpFollow: Sledovať hodiny prijímača (experimentálne)
 settings.option.experiments.aura: Aura
 settings.option.experiments.aura.description: Zafarbí pozadie aplikácie farbami aktuálnej stránky.
 settings.option.experiments.chromecast: Povoliť Chromecast
