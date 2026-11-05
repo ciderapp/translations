@@ -223,15 +223,63 @@ action.update: Cập nhật
 action.validate: Xác thực
 airplay.codeDialog.message: Vui lòng nhập mã hiển thị trên Apple TV của bạn
 airplay.codeDialog.title: Nhập mã AirPlay
+airplay.connectedLatency: Đã kết nối · trễ {ms} ms
 airplay.copiedAddress: Đã sao chép địa chỉ vào bộ nhớ tạm
+airplay.device.noPairing: Chưa ghép nối
+airplay.device.paired: Đã ghép nối
+airplay.device.password: Cần mật khẩu
+airplay.device.pin: Cần mã
+airplay.device.unsupported: Không được hỗ trợ
 airplay.devices: Thiết bị AirPlay
+airplay.diagnostics: Chẩn đoán
+airplay.diagnostics.buffered: Đã đệm
+airplay.diagnostics.clock: Đồng hồ
+airplay.diagnostics.metadataFailed: Lỗi thông tin bài hát
+airplay.diagnostics.noClockExchange: Thiết bị nhận chưa trao đổi thông điệp đồng hồ. shairport-sync không bao giờ làm việc này; trên thiết bị nhận của Apple, điều đó có nghĩa là nó không theo dõi đồng hồ và sẽ im lặng.
+airplay.diagnostics.packets: Gói đã gửi
+airplay.diagnostics.sendErrors: Lỗi gửi mỗi giây
+airplay.diagnostics.underruns: Gián đoạn mỗi giây
 airplay.disconnectAll: Ngắt kết nối tất cả
 airplay.disconnectConfirm: Bạn có chắc chắn muốn ngắt kết nối khỏi thiết bị này không?
 airplay.electronDisabledDesc: AirPlay và truyền phát đã bị vô hiệu hóa đối với các bản dựng Electron trong khi chờ viết lại trong hệ thống plugin cộng đồng.
+airplay.error.badRequest: Không thể thực hiện yêu cầu AirPlay đó. Vui lòng thử lại.
+airplay.error.connect: Cider không thể kết nối với thiết bị nhận.
+airplay.error.credentials: Cider không thể sử dụng thông tin ghép nối cho thiết bị nhận này.
+airplay.error.deviceNotFound: Thiết bị nhận đó không còn trên mạng. Hãy quét lại và thử lần nữa.
+airplay.error.internal: AirPlay gặp sự cố. Vui lòng thử lại.
+airplay.error.noSession: Không có phiên AirPlay nào đang hoạt động.
+airplay.error.pairing: Ghép nối với thiết bị nhận không thành công.
+airplay.error.passwordRejected: Thiết bị nhận không chấp nhận mật khẩu đó.
+airplay.error.unavailable: AirPlay không khả dụng trong bản Cider này.
 airplay.experimentalDesc: Tính năng này đang trong giai đoạn thử nghiệm và sẽ có nhiều lỗi. Quá trình phát sẽ bị trễ khoảng 2-3 giây, điều này là do cách thức hoạt động của tính năng.
+airplay.forget: Quên
+airplay.headerDesc: Cider phát nhạc đến một thiết bị nhận AirPlay tại một thời điểm. Loa phát chậm hơn ứng dụng một chút.
 airplay.httpCasting: Truyền phát HTTP
+airplay.noDevices: Không tìm thấy thiết bị nhận AirPlay nào trên mạng này.
+airplay.pairAgain: Ghép nối lại
+airplay.pairing.codeLabel: Mã
+airplay.pairing.connectPasswordPrompt: Nhập mật khẩu AirPlay cho {device}.
+airplay.pairing.newCode: Thiết bị nhận sẽ hiển thị mã mới.
+airplay.pairing.pair: Ghép nối
+airplay.pairing.passwordLabel: Mật khẩu AirPlay
+airplay.pairing.passwordPrompt: Nhập mật khẩu AirPlay đã đặt trên thiết bị nhận này.
+airplay.pairing.pinPrompt: Nhập mã hiển thị trên thiết bị nhận.
+airplay.pairing.requesting: Đang yêu cầu thiết bị nhận hiển thị mã...
+airplay.pairing.retryIn: Thử lại sau {seconds} giây
+airplay.pairing.stopped: Thiết bị nhận từ chối thêm lần thử nào. Hãy khởi động lại rồi ghép nối lần nữa.
+airplay.sessionEnded: Phiên với {device} đã kết thúc.
+airplay.sessionEndedReason: "Phiên với {device} đã kết thúc: {reason}"
 airplay.supportNotice: Thông báo hỗ trợ
+airplay.tapBlocked.element: Thiết bị nhận tạm dừng trong khi mục này phát trên máy tính này.
+airplay.tapBlocked.passthrough: Bài hát này phát qua đường được bảo vệ hoặc Dolby Atmos mà AirPlay không thể truyền tải, nên sẽ phát trên thiết bị này.
+airplay.tapBlocked.video: Video âm nhạc chỉ phát trên thiết bị này. AirPlay sẽ tiếp tục với bài hát tiếp theo.
+airplay.timing.none: Không có
+airplay.timing.ptpFollow: Theo thiết bị nhận
 airplay.title: AirPlay
+airplay.transient.confirm: Vẫn kết nối
+airplay.transient.message: Thiết bị nhận này không yêu cầu mã hoặc mật khẩu, nên kết nối không được xác thực. Một thiết bị khác trên mạng của bạn có thể giả mạo và nhận luồng phát. Chỉ tiếp tục trên mạng bạn tin cậy.
+airplay.transient.title: Kết nối mà không ghép nối?
+airplay.unauthenticated: Chưa xác thực
 album.appleDigitalMaster.label: Apple Digital Master
 album.atmos.noInfo: Không có thêm thông tin.
 album.atmos.partial: Hỗ trợ Atmos một phần
@@ -5291,6 +5339,14 @@ settings.option.experimental.reinstallwidevine: Cài đặt lại WidevineCDM
 settings.option.experimental.reinstallwidevine.confirm: Bạn có chắc chắn muốn cài đặt lại Widevine không?
 settings.option.experimental.unknownPlugin: Nguồn không xác định
 settings.option.experimental.unknownPlugin.description: Cho phép cài đặt plugin từ các kho lưu trữ khác ngoài Kho lưu trữ Plugin Cider
+settings.option.experiments.airplay: Bật AirPlay
+settings.option.experiments.airplay.description: Thêm nút AirPlay cho Apple TV, HomePod và các thiết bị nhận AirPlay 2 khác trên mạng này.
+settings.option.experiments.airplayTiming: Đồng bộ thời gian AirPlay
+settings.option.experiments.airplayTiming.auto: Tự động
+settings.option.experiments.airplayTiming.description: Cách Cider đồng bộ thời gian với thiết bị nhận. Giữ ở Tự động trừ khi thiết bị nhận luôn im lặng.
+settings.option.experiments.airplayTiming.ntp: NTP
+settings.option.experiments.airplayTiming.ptp: PTP
+settings.option.experiments.airplayTiming.ptpFollow: Theo đồng hồ thiết bị nhận (thử nghiệm)
 settings.option.experiments.aura: Aura
 settings.option.experiments.aura.description: Tô màu nền ứng dụng theo màu của trang hiện tại.
 settings.option.experiments.chromecast: Bật Chromecast
