@@ -1020,16 +1020,30 @@ airplay.codeDialog.title:
   source: human
   by: "@Tesutarin"
   issue: 7
+airplay.connectedLatency: 已连接 · 落后 {ms} 毫秒
 airplay.copiedAddress:
   value: 地址已拷贝到剪贴板
   source: human
   by: "@Tesutarin"
   issue: 7
+airplay.device.noPairing: 未配对
+airplay.device.paired: 已配对
+airplay.device.password: 需要密码
+airplay.device.pin: 需要验证码
+airplay.device.unsupported: 不支持
 airplay.devices:
   value: AirPlay 设备
   source: human
   by: "@Tesutarin"
   issue: 7
+airplay.diagnostics: 诊断
+airplay.diagnostics.buffered: 已缓冲
+airplay.diagnostics.clock: 时钟
+airplay.diagnostics.metadataFailed: 曲目信息失败
+airplay.diagnostics.noClockExchange: 接收端尚未交换时钟消息。shairport-sync 从不交换；在 Apple 接收端上，这意味着它没有跟随时钟，并将保持静音。
+airplay.diagnostics.packets: 已发送数据包
+airplay.diagnostics.sendErrors: 每秒发送错误
+airplay.diagnostics.underruns: 每秒丢失
 airplay.disconnectAll:
   value: 全部断开
   source: human
@@ -1045,26 +1059,61 @@ airplay.electronDisabledDesc:
   source: human
   by: "@Tesutarin"
   issue: 7
+airplay.error.badRequest: 无法完成该 AirPlay 请求。请重试。
+airplay.error.connect: Cider 无法连接到接收端。
+airplay.error.credentials: Cider 无法为此接收端使用配对信息。
+airplay.error.deviceNotFound: 该接收端已不在网络中。请重新扫描后重试。
+airplay.error.internal: AirPlay 出现错误。请重试。
+airplay.error.noSession: 当前没有活动的 AirPlay 会话。
+airplay.error.pairing: 与接收端配对失败。
+airplay.error.passwordRejected: 接收端未接受该密码。
+airplay.error.unavailable: 此版本的 Cider 不支持 AirPlay。
 airplay.experimentalDesc:
   value: 此功能为实验性功能，可能存在较多问题。由于功能原理所限，播放约有 2-3 秒延迟。
   source: human
   by: "@Tesutarin"
   issue: 7
+airplay.forget: 忘记
+airplay.headerDesc: Cider 同一时间只向一台 AirPlay 接收端串流。扬声器播放会略微落后于应用。
 airplay.httpCasting:
   value: HTTP 投放
   source: human
   by: "@Tesutarin"
   issue: 7
+airplay.noDevices: 此网络上未找到 AirPlay 接收端。
+airplay.pairAgain: 重新配对
+airplay.pairing.codeLabel: 验证码
+airplay.pairing.connectPasswordPrompt: 请输入 {device} 的 AirPlay 密码。
+airplay.pairing.newCode: 接收端将显示新的验证码。
+airplay.pairing.pair: 配对
+airplay.pairing.passwordLabel: AirPlay 密码
+airplay.pairing.passwordPrompt: 请输入此接收端设置的 AirPlay 密码。
+airplay.pairing.pinPrompt: 请输入接收端上显示的验证码。
+airplay.pairing.requesting: 正在请求接收端显示验证码...
+airplay.pairing.retryIn: "{seconds} 秒后重试"
+airplay.pairing.stopped: 接收端拒绝进一步尝试。请重启它，然后重新配对。
+airplay.sessionEnded: 与 {device} 的会话已结束。
+airplay.sessionEndedReason: 与 {device} 的会话已结束：{reason}
 airplay.supportNotice:
   value: 支持声明
   source: human
   by: "@Tesutarin"
   issue: 7
+airplay.tapBlocked.element: 此项目在本机播放时，接收端已暂停。
+airplay.tapBlocked.passthrough: 此曲目通过 AirPlay 无法传输的受保护或 Dolby Atmos 通道播放，因此将改为在本设备上播放。
+airplay.tapBlocked.video: 音乐视频仅在本设备上播放。下一首歌曲将恢复 AirPlay。
+airplay.timing.none: 无
+airplay.timing.ptpFollow: 跟随接收端
 airplay.title:
   value: AirPlay
-  source: human
+  source: ai
   by: "@Tesutarin"
   issue: 7
+  superseded_at: 2026-11-05
+airplay.transient.confirm: 仍然连接
+airplay.transient.message: 此接收端不要求验证码或密码，因此连接未经身份验证。网络上的其他设备可能冒充它并接收串流。请仅在可信网络上继续。
+airplay.transient.title: 不配对直接连接？
+airplay.unauthenticated: 未经身份验证
 album.appleDigitalMaster.label:
   value: Apple 数字母带
   source: human
@@ -11740,6 +11789,14 @@ settings.option.experimental.unknownPlugin.description:
   by: "@Tesutarin"
   issue: 28
   superseded_at: 2026-07-08
+settings.option.experiments.airplay: 启用 AirPlay
+settings.option.experiments.airplay.description: 为本网络上的 Apple TV、HomePod 及其他 AirPlay 2 接收端添加 AirPlay 按钮。
+settings.option.experiments.airplayTiming: AirPlay 计时
+settings.option.experiments.airplayTiming.auto: 自动
+settings.option.experiments.airplayTiming.description: Cider 如何与接收端保持同步。除非接收端持续静音，请保持“自动”。
+settings.option.experiments.airplayTiming.ntp: NTP
+settings.option.experiments.airplayTiming.ptp: PTP
+settings.option.experiments.airplayTiming.ptpFollow: 跟随接收端时钟（实验性）
 settings.option.experiments.aura: 光晕
 settings.option.experiments.aura.description: 使用当前页面的颜色为应用背景着色。
 settings.option.experiments.chromecast: 启用 Chromecast
