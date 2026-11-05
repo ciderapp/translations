@@ -449,19 +449,67 @@ action.update: 更新
 action.validate: 驗證
 airplay.codeDialog.message: 請輸入 Apple TV 上顯示的驗證碼
 airplay.codeDialog.title: 輸入 AirPlay 驗證碼
+airplay.connectedLatency: 已連線 · 落後 {ms} 毫秒
 airplay.copiedAddress:
   value: 位址已拷貝到剪貼簿
   source: human
   by: "@jay900604"
   issue: 6
+airplay.device.noPairing: 未配對
+airplay.device.paired: 已配對
+airplay.device.password: 需要密碼
+airplay.device.pin: 需要配對碼
+airplay.device.unsupported: 不支援
 airplay.devices: AirPlay 裝置
+airplay.diagnostics: 診斷
+airplay.diagnostics.buffered: 已緩衝
+airplay.diagnostics.clock: 時鐘
+airplay.diagnostics.metadataFailed: 曲目資訊失敗
+airplay.diagnostics.noClockExchange: 接收端尚未交換時鐘訊息。shairport-sync 從不交換；在 Apple 接收端上，這表示它沒有跟隨時鐘，且會保持靜音。
+airplay.diagnostics.packets: 已傳送封包
+airplay.diagnostics.sendErrors: 每秒傳送錯誤
+airplay.diagnostics.underruns: 每秒斷音
 airplay.disconnectAll: 全部中斷連線
 airplay.disconnectConfirm: 確定要與此裝置中斷連線嗎？
 airplay.electronDisabledDesc: 由於社群外掛系統正等待重寫，Electron 版本已停用 AirPlay 和投放功能。
+airplay.error.badRequest: 無法執行該 AirPlay 要求。請再試一次。
+airplay.error.connect: Cider 無法連線到接收端。
+airplay.error.credentials: Cider 無法使用此接收端的配對資訊。
+airplay.error.deviceNotFound: 該接收端已不在網路上。請重新掃描後再試。
+airplay.error.internal: AirPlay 發生錯誤。請再試一次。
+airplay.error.noSession: 目前沒有使用中的 AirPlay 工作階段。
+airplay.error.pairing: 與接收端配對失敗。
+airplay.error.passwordRejected: 接收端不接受該密碼。
+airplay.error.unavailable: 此版本的 Cider 不提供 AirPlay。
 airplay.experimentalDesc: 此功能為實驗性功能，可能會有很多錯誤。播放將延遲約 2-3 秒，這是此功能的運作機制所致。
+airplay.forget: 忘記
+airplay.headerDesc: Cider 一次只會串流到一個 AirPlay 接收端。喇叭播放會稍微落後於應用程式。
 airplay.httpCasting: HTTP 投放
+airplay.noDevices: 此網路上找不到 AirPlay 接收端。
+airplay.pairAgain: 重新配對
+airplay.pairing.codeLabel: 配對碼
+airplay.pairing.connectPasswordPrompt: 請輸入 {device} 的 AirPlay 密碼。
+airplay.pairing.newCode: 接收端會顯示新的配對碼。
+airplay.pairing.pair: 配對
+airplay.pairing.passwordLabel: AirPlay 密碼
+airplay.pairing.passwordPrompt: 請輸入此接收端設定的 AirPlay 密碼。
+airplay.pairing.pinPrompt: 請輸入接收端上顯示的配對碼。
+airplay.pairing.requesting: 正在要求接收端顯示配對碼...
+airplay.pairing.retryIn: "{seconds} 秒後再試"
+airplay.pairing.stopped: 接收端拒絕再次嘗試。請重新啟動後再重新配對。
+airplay.sessionEnded: 與 {device} 的工作階段已結束。
+airplay.sessionEndedReason: 與 {device} 的工作階段已結束：{reason}
 airplay.supportNotice: 支援須知
+airplay.tapBlocked.element: 此項目在這台電腦上播放時，接收端會暫停。
+airplay.tapBlocked.passthrough: 此曲目透過 AirPlay 無法傳送的受保護或 Dolby Atmos 路徑播放，因此改在此裝置上播放。
+airplay.tapBlocked.video: 音樂影片僅在此裝置上播放。下一首歌曲開始時，AirPlay 會恢復。
+airplay.timing.none: 無
+airplay.timing.ptpFollow: 跟隨接收端
 airplay.title: AirPlay
+airplay.transient.confirm: 仍要連線
+airplay.transient.message: 此接收端不要求配對碼或密碼，因此連線未經驗證。網路上的其他裝置可能冒充它並接收串流。請只在你信任的網路上繼續。
+airplay.transient.title: 不配對即連線？
+airplay.unauthenticated: 未驗證
 album.appleDigitalMaster.label: Apple Digital Master
 album.atmos.noInfo: 沒有可用的其他資訊。
 album.atmos.partial: 部分 Atmos
@@ -8757,6 +8805,14 @@ settings.option.experimental.reinstallwidevine: 重新安裝 WidevineCDM
 settings.option.experimental.reinstallwidevine.confirm: 確定要重新安裝 Widevine 嗎？
 settings.option.experimental.unknownPlugin: 未知的來源
 settings.option.experimental.unknownPlugin.description: 允許從 Cider 外掛程式儲存庫以外的來源安裝外掛程式
+settings.option.experiments.airplay: 啟用 AirPlay
+settings.option.experiments.airplay.description: 為此網路上的 Apple TV、HomePod 及其他 AirPlay 2 接收端新增 AirPlay 按鈕。
+settings.option.experiments.airplayTiming: AirPlay 時序
+settings.option.experiments.airplayTiming.auto: 自動
+settings.option.experiments.airplayTiming.description: Cider 如何與接收端保持時間同步。除非接收端持續靜音，否則請保持為自動。
+settings.option.experiments.airplayTiming.ntp: NTP
+settings.option.experiments.airplayTiming.ptp: PTP
+settings.option.experiments.airplayTiming.ptpFollow: 跟隨接收端時鐘（實驗性）
 settings.option.experiments.aura: Aura
 settings.option.experiments.aura.description: 以目前頁面的色彩為應用程式背景着色。
 settings.option.experiments.chromecast: 啟用 Chromecast
