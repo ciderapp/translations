@@ -223,15 +223,63 @@ action.update: Frissítés
 action.validate: Ellenőrzés
 airplay.codeDialog.message: Add meg az Apple TV-n megjelenő kódot
 airplay.codeDialog.title: AirPlay-kód megadása
+airplay.connectedLatency: Csatlakoztatva · {ms} ms késés
 airplay.copiedAddress: Cím a vágólapra másolva
+airplay.device.noPairing: Nincs párosítás
+airplay.device.paired: Párosítva
+airplay.device.password: Jelszó szükséges
+airplay.device.pin: Kód szükséges
+airplay.device.unsupported: Nem támogatott
 airplay.devices: AirPlay-eszközök
+airplay.diagnostics: Diagnosztika
+airplay.diagnostics.buffered: Pufferelt
+airplay.diagnostics.clock: Óra
+airplay.diagnostics.metadataFailed: Számadat-hibák
+airplay.diagnostics.noClockExchange: A vevőeszköz még nem cserélt órajel-üzeneteket. A shairport-sync soha nem tesz ilyet; Apple-vevőeszköznél ez azt jelenti, hogy nem követi az órajelet, és néma marad.
+airplay.diagnostics.packets: Elküldött csomagok
+airplay.diagnostics.sendErrors: Küldési hibák másodpercenként
+airplay.diagnostics.underruns: Kiesések másodpercenként
 airplay.disconnectAll: Összes leválasztása
 airplay.disconnectConfirm: Biztosan le szeretnél válni erről az eszközről?
 airplay.electronDisabledDesc: Az AirPlay és a streamelés le lett tiltva az Electron-verziókban, amíg a közösségi bővítményrendszerben át nem írják őket.
+airplay.error.badRequest: Ezt az AirPlay-kérést nem sikerült végrehajtani. Próbálja újra.
+airplay.error.connect: A Cider nem tudott csatlakozni a vevőeszközhöz.
+airplay.error.credentials: A Cider nem tudta használni a párosítást ehhez a vevőeszközhöz.
+airplay.error.deviceNotFound: Ez a vevőeszköz már nincs a hálózaton. Keressen újra, majd próbálja meg újra.
+airplay.error.internal: Valami hiba történt az AirPlay-jal. Próbálja újra.
+airplay.error.noSession: Nincs aktív AirPlay-munkamenet.
+airplay.error.pairing: A vevőeszközzel történő párosítás sikertelen.
+airplay.error.passwordRejected: A vevőeszköz nem fogadta el ezt a jelszót.
+airplay.error.unavailable: Az AirPlay nem érhető el a Cider ezen verziójában.
 airplay.experimentalDesc: Ez a funkció kísérleti jellegű, és számos hibát tartalmazhat. A lejátszás körülbelül 2-3 másodpercet késni fog a funkció működési elve miatt.
+airplay.forget: Elfelejtés
+airplay.headerDesc: A Cider egyszerre csak egy AirPlay-vevőeszközre streamel. A hangszóró kissé lemarad az alkalmazáshoz képest.
 airplay.httpCasting: HTTP-streamelés
+airplay.noDevices: Nem található AirPlay-vevőeszköz ezen a hálózaton.
+airplay.pairAgain: Újrapárosítás
+airplay.pairing.codeLabel: Kód
+airplay.pairing.connectPasswordPrompt: Adja meg a(z) {device} AirPlay-jelszavát.
+airplay.pairing.newCode: A vevőeszköz új kódot fog megjeleníteni.
+airplay.pairing.pair: Párosítás
+airplay.pairing.passwordLabel: AirPlay-jelszó
+airplay.pairing.passwordPrompt: Adja meg a vevőeszközön beállított AirPlay-jelszót.
+airplay.pairing.pinPrompt: Adja meg a vevőeszközön megjelenő kódot.
+airplay.pairing.requesting: Kódkérés küldése a vevőeszköznek...
+airplay.pairing.retryIn: Próbálja újra {seconds} mp múlva
+airplay.pairing.stopped: A vevőeszköz nem fogad el további próbálkozásokat. Indítsa újra, majd párosítsa újra.
+airplay.sessionEnded: A(z) {device} munkamenete véget ért.
+airplay.sessionEndedReason: "A(z) {device} munkamenete véget ért: {reason}"
 airplay.supportNotice: Támogatási megjegyzés
+airplay.tapBlocked.element: A vevőeszköz szünetel, mert ez az elem ezen a számítógépen szól.
+airplay.tapBlocked.passthrough: Ez a szám védett vagy Dolby Atmos útvonalon szól, amelyet az AirPlay nem tud továbbítani, ezért ezen az eszközön szól.
+airplay.tapBlocked.video: A zenei videók csak ezen az eszközön szólnak. Az AirPlay a következő dalnál folytatódik.
+airplay.timing.none: Nincs
+airplay.timing.ptpFollow: Követés a vevőeszköz szerint
 airplay.title: AirPlay
+airplay.transient.confirm: Csatlakozás mindenképpen
+airplay.transient.message: Ez a vevőeszköz nem kér kódot vagy jelszót, ezért a kapcsolat nincs hitelesítve. A hálózatán lévő más eszköz kiadhatja magát érte, és megkaphatja a streamet. Csak megbízható hálózaton folytassa.
+airplay.transient.title: Csatlakozik párosítás nélkül?
+airplay.unauthenticated: Nincs hitelesítve
 album.appleDigitalMaster.label: Apple Digital Master
 album.atmos.noInfo: Nincs további információ.
 album.atmos.partial: Részleges Atmos
@@ -5291,6 +5339,14 @@ settings.option.experimental.reinstallwidevine: WidevineCDM újratelepítése
 settings.option.experimental.reinstallwidevine.confirm: Biztosan újra szeretnéd telepíteni a Widevine-t?
 settings.option.experimental.unknownPlugin: Ismeretlen források
 settings.option.experimental.unknownPlugin.description: Bővítmények telepítésének engedélyezése a Cider Plugin Repository-n kívüli forrásokból
+settings.option.experiments.airplay: AirPlay engedélyezése
+settings.option.experiments.airplay.description: AirPlay-gombot ad a hálózaton lévő Apple TV, HomePod és más AirPlay 2 vevőeszközökhöz.
+settings.option.experiments.airplayTiming: AirPlay időzítés
+settings.option.experiments.airplayTiming.auto: Automatikus
+settings.option.experiments.airplayTiming.description: Azt szabályozza, hogyan tartja a Cider az időzítést a vevőeszközzel. Hagyja Automatikus értéken, hacsak egy vevőeszköz nem marad néma.
+settings.option.experiments.airplayTiming.ntp: NTP
+settings.option.experiments.airplayTiming.ptp: PTP
+settings.option.experiments.airplayTiming.ptpFollow: Követés a vevőeszköz órája szerint (kísérleti)
 settings.option.experiments.aura: Aura
 settings.option.experiments.aura.description: Az alkalmazás hátterét az aktuális oldal színeivel színezi.
 settings.option.experiments.chromecast: Chromecast engedélyezése
