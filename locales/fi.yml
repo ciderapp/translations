@@ -223,15 +223,63 @@ action.update: Päivitä
 action.validate: Vahvista
 airplay.codeDialog.message: Syötä Apple TV:ssä näkyvä koodi
 airplay.codeDialog.title: Syötä AirPlay-koodi
+airplay.connectedLatency: Yhdistetty · {ms} ms jäljessä
 airplay.copiedAddress: Osoite kopioitu leikepöydälle
+airplay.device.noPairing: Ei paritusta
+airplay.device.paired: Pariutettu
+airplay.device.password: Salasana vaaditaan
+airplay.device.pin: Koodi vaaditaan
+airplay.device.unsupported: Ei tuettu
 airplay.devices: AirPlay-laitteet
+airplay.diagnostics: Diagnostiikka
+airplay.diagnostics.buffered: Puskuroitu
+airplay.diagnostics.clock: Kello
+airplay.diagnostics.metadataFailed: Kappaletietojen virheet
+airplay.diagnostics.noClockExchange: Vastaanotin ei ole vielä vaihtanut kellosanomia. shairport-sync ei koskaan tee niin; Apple-vastaanottimella tämä tarkoittaa, että se ei seuraa kelloa ja pysyy hiljaa.
+airplay.diagnostics.packets: Lähetetyt paketit
+airplay.diagnostics.sendErrors: Lähetysvirheet sekunnissa
+airplay.diagnostics.underruns: Katkokset sekunnissa
 airplay.disconnectAll: Katkaise kaikki yhteydet
 airplay.disconnectConfirm: Haluatko varmasti katkaista yhteyden tähän laitteeseen?
 airplay.electronDisabledDesc: AirPlay ja lähetys on poistettu käytöstä Electron-versioissa odotettaessa yhteisön liitännäisjärjestelmän uudelleenkirjoitusta.
+airplay.error.badRequest: AirPlay-pyyntöä ei voitu suorittaa. Yritä uudelleen.
+airplay.error.connect: Cider ei voinut yhdistää vastaanottimeen.
+airplay.error.credentials: Cider ei voinut käyttää tämän vastaanottimen paritusta.
+airplay.error.deviceNotFound: Vastaanotin ei ole enää verkossa. Hae laitteita uudelleen ja yritä uudelleen.
+airplay.error.internal: AirPlayssä tapahtui virhe. Yritä uudelleen.
+airplay.error.noSession: AirPlay-istunto ei ole aktiivinen.
+airplay.error.pairing: Vastaanottimen pariutus epäonnistui.
+airplay.error.passwordRejected: Vastaanotin ei hyväksynyt salasanaa.
+airplay.error.unavailable: AirPlay ei ole käytettävissä tässä Cider-versiossa.
 airplay.experimentalDesc: Tämä ominaisuus on kokeellinen ja sisältää virheitä. Toisto viivästyy noin 2–3 sekuntia ominaisuuden toimintatavan vuoksi.
+airplay.forget: Unohda
+airplay.headerDesc: Cider suoratoistaa kerrallaan yhdelle AirPlay-vastaanottimelle. Kaiutin toistaa hieman sovelluksen jäljessä.
 airplay.httpCasting: HTTP-lähetys
+airplay.noDevices: Tästä verkosta ei löytynyt AirPlay-vastaanottimia.
+airplay.pairAgain: Pari uudelleen
+airplay.pairing.codeLabel: Koodi
+airplay.pairing.connectPasswordPrompt: Anna laitteen {device} AirPlay-salasana.
+airplay.pairing.newCode: Vastaanotin näyttää uuden koodin.
+airplay.pairing.pair: Pariuta
+airplay.pairing.passwordLabel: AirPlay-salasana
+airplay.pairing.passwordPrompt: Anna tälle vastaanottimelle asetettu AirPlay-salasana.
+airplay.pairing.pinPrompt: Anna vastaanottimessa näkyvä koodi.
+airplay.pairing.requesting: Pyydetään vastaanitinta näyttämään koodi...
+airplay.pairing.retryIn: Yritä uudelleen {seconds} s kuluttua
+airplay.pairing.stopped: Vastaanotin ei hyväksy enempää yrityksiä. Käynnistä se uudelleen ja pariuta sitten uudelleen.
+airplay.sessionEnded: Istunto laitteen {device} kanssa päättyi.
+airplay.sessionEndedReason: "Istunto laitteen {device} kanssa päättyi: {reason}"
 airplay.supportNotice: Tuki-ilmoitus
+airplay.tapBlocked.element: Vastaanotin on pysäytetty, koska tämä kohde toistuu tällä tietokoneella.
+airplay.tapBlocked.passthrough: Tämä kappale toistuu suojatun tai Dolby Atmos -polun kautta, jota AirPlay ei voi välittää, joten se toistetaan tällä laitteella.
+airplay.tapBlocked.video: Musiikkivideot toistuvat vain tällä laitteella. AirPlay jatkuu seuraavasta kappaleesta.
+airplay.timing.none: Ei mitään
+airplay.timing.ptpFollow: Seurataan vastaanottimen kelloa
 airplay.title: AirPlay
+airplay.transient.confirm: Yhdistä silti
+airplay.transient.message: Tämä vastaanotin ei pyydä koodia tai salasanaa, joten yhteyttä ei todenneta. Toinen verkkosi laite voi esittää olevansa se ja vastaanottaa striimin. Jatka vain verkossa, johon luotat.
+airplay.transient.title: Yhdistetäänkö ilman paritusta?
+airplay.unauthenticated: Ei todennettu
 album.appleDigitalMaster.label: Apple Digital Master
 album.atmos.noInfo: Lisätietoja ei ole saatavilla.
 album.atmos.partial: Osittainen Atmos
@@ -5291,6 +5339,14 @@ settings.option.experimental.reinstallwidevine: Asenna WidevineCDM uudelleen
 settings.option.experimental.reinstallwidevine.confirm: Haluatko varmasti asentaa Widevinen uudelleen?
 settings.option.experimental.unknownPlugin: Tuntemattomat lähteet
 settings.option.experimental.unknownPlugin.description: Salli lisäosien asennus muista lähteistä kuin Ciderin lisäosakirjastosta
+settings.option.experiments.airplay: Ota AirPlay käyttöön
+settings.option.experiments.airplay.description: Lisää AirPlay-painikkeen Apple TV:lle, HomePodille ja muille tämän verkon AirPlay 2 -vastaanottimille.
+settings.option.experiments.airplayTiming: AirPlayn ajastus
+settings.option.experiments.airplayTiming.auto: Automaattinen
+settings.option.experiments.airplayTiming.description: Miten Cider pitää ajan vastaanottimen kanssa. Jätä automaattiseksi, ellei vastaanotin pysy hiljaa.
+settings.option.experiments.airplayTiming.ntp: NTP
+settings.option.experiments.airplayTiming.ptp: PTP
+settings.option.experiments.airplayTiming.ptpFollow: Seuraa vastaanottimen kelloa (kokeellinen)
 settings.option.experiments.aura: Aura
 settings.option.experiments.aura.description: Värjää sovelluksen taustan nykyisen sivun väreillä.
 settings.option.experiments.chromecast: Ota Chromecast käyttöön
