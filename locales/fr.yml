@@ -289,8 +289,22 @@ action.update: Mettre à jour
 action.validate: Valider
 airplay.codeDialog.message: Veuillez saisir le code affiché sur votre Apple TV
 airplay.codeDialog.title: Saisir le code AirPlay
+airplay.connectedLatency: Connecté · {ms} ms de retard
 airplay.copiedAddress: Adresse copiée dans le presse-papiers
+airplay.device.noPairing: Aucun appairage
+airplay.device.paired: Appairé
+airplay.device.password: Mot de passe requis
+airplay.device.pin: Code requis
+airplay.device.unsupported: Non pris en charge
 airplay.devices: Appareils AirPlay
+airplay.diagnostics: Diagnostics
+airplay.diagnostics.buffered: Mis en mémoire tampon
+airplay.diagnostics.clock: Horloge
+airplay.diagnostics.metadataFailed: Échecs des infos de piste
+airplay.diagnostics.noClockExchange: Le récepteur n'a pas encore échangé de messages d'horloge. shairport-sync n'en échange jamais ; sur un récepteur Apple, cela signifie qu'il ne suit pas l'horloge et restera silencieux.
+airplay.diagnostics.packets: Paquets envoyés
+airplay.diagnostics.sendErrors: Erreurs d'envoi par seconde
+airplay.diagnostics.underruns: Interruptions par seconde
 airplay.disconnectAll: Tout déconnecter
 airplay.disconnectConfirm: Voulez-vous vraiment vous déconnecter de cet appareil ?
 airplay.electronDisabledDesc:
@@ -298,10 +312,44 @@ airplay.electronDisabledDesc:
   source: human
   by: "@lumaa-dev"
   issue: 4
+airplay.error.badRequest: Cette requête AirPlay n'a pas pu être exécutée. Réessayez.
+airplay.error.connect: Cider n'a pas pu se connecter au récepteur.
+airplay.error.credentials: Cider n'a pas pu utiliser l'appairage pour ce récepteur.
+airplay.error.deviceNotFound: Ce récepteur n'est plus sur le réseau. Relancez la recherche et réessayez.
+airplay.error.internal: Une erreur s'est produite avec AirPlay. Réessayez.
+airplay.error.noSession: Aucune session AirPlay n'est active.
+airplay.error.pairing: L'appairage avec le récepteur a échoué.
+airplay.error.passwordRejected: Le récepteur n'a pas accepté ce mot de passe.
+airplay.error.unavailable: AirPlay n'est pas disponible dans cette version de Cider.
 airplay.experimentalDesc: Cette fonctionnalité est expérimentale et peut contenir de nombreux bugs. La lecture sera différée d'environ 2 à 3 secondes, ce qui est dû au fonctionnement de cette fonctionnalité.
+airplay.forget: Oublier
+airplay.headerDesc: Cider diffuse vers un seul récepteur AirPlay à la fois. L'enceinte joue légèrement en retard par rapport à l'application.
 airplay.httpCasting: Diffusion HTTP
+airplay.noDevices: Aucun récepteur AirPlay trouvé sur ce réseau.
+airplay.pairAgain: Appairer à nouveau
+airplay.pairing.codeLabel: Code
+airplay.pairing.connectPasswordPrompt: Saisissez le mot de passe AirPlay de {device}.
+airplay.pairing.newCode: Le récepteur affichera un nouveau code.
+airplay.pairing.pair: Appairer
+airplay.pairing.passwordLabel: Mot de passe AirPlay
+airplay.pairing.passwordPrompt: Saisissez le mot de passe AirPlay défini sur ce récepteur.
+airplay.pairing.pinPrompt: Saisissez le code affiché sur le récepteur.
+airplay.pairing.requesting: Demande au récepteur d'afficher un code...
+airplay.pairing.retryIn: Réessayer dans {seconds} s
+airplay.pairing.stopped: Le récepteur refuse de nouvelles tentatives. Redémarrez-le, puis appairez-le à nouveau.
+airplay.sessionEnded: La session avec {device} a pris fin.
+airplay.sessionEndedReason: "La session avec {device} a pris fin : {reason}"
 airplay.supportNotice: Avis d'assistance
+airplay.tapBlocked.element: Le récepteur est en pause pendant que cet élément joue sur cet ordinateur.
+airplay.tapBlocked.passthrough: Cette piste est lue via un chemin protégé ou Dolby Atmos que AirPlay ne peut pas transporter ; elle est donc lue sur cet appareil.
+airplay.tapBlocked.video: Les clips vidéo musicaux ne sont lus que sur cet appareil. AirPlay reprend avec le titre suivant.
+airplay.timing.none: Aucun
+airplay.timing.ptpFollow: Suit le récepteur
 airplay.title: AirPlay
+airplay.transient.confirm: Se connecter quand même
+airplay.transient.message: Ce récepteur ne demande ni code ni mot de passe, la connexion n'est donc pas authentifiée. Un autre appareil de votre réseau pourrait se faire passer pour lui et recevoir le flux. Continuez uniquement sur un réseau de confiance.
+airplay.transient.title: Se connecter sans appairage ?
+airplay.unauthenticated: Non authentifié
 album.appleDigitalMaster.label: Apple Digital Master
 album.atmos.noInfo: Aucune information supplémentaire disponible.
 album.atmos.partial: Atmos partiel
@@ -5501,6 +5549,14 @@ settings.option.experimental.unknownPlugin.description:
   by: "@lumaa-dev"
   issue: 4
   superseded_at: 2026-07-08
+settings.option.experiments.airplay: Activer AirPlay
+settings.option.experiments.airplay.description: Ajoute un bouton AirPlay pour Apple TV, HomePod et d'autres récepteurs AirPlay 2 de ce réseau.
+settings.option.experiments.airplayTiming: Synchronisation AirPlay
+settings.option.experiments.airplayTiming.auto: Automatique
+settings.option.experiments.airplayTiming.description: Méthode que Cider utilise pour se synchroniser avec le récepteur. Laissez sur Automatique sauf si un récepteur reste silencieux.
+settings.option.experiments.airplayTiming.ntp: NTP
+settings.option.experiments.airplayTiming.ptp: PTP
+settings.option.experiments.airplayTiming.ptpFollow: Suivre l'horloge du récepteur (expérimental)
 settings.option.experiments.aura: Aura
 settings.option.experiments.aura.description: Teinte l'arrière-plan de l'app avec les couleurs de la page actuelle.
 settings.option.experiments.chromecast: Activer Chromecast
