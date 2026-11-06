@@ -223,15 +223,63 @@ action.update: Aktualisieren
 action.validate: Validieren
 airplay.codeDialog.message: Bitte gib den Code ein, der auf deinem Apple TV angezeigt wird
 airplay.codeDialog.title: AirPlay-Code eingeben
+airplay.connectedLatency: Verbunden · {ms} ms Verzögerung
 airplay.copiedAddress: Adresse in die Zwischenablage kopiert
+airplay.device.noPairing: Keine Kopplung
+airplay.device.paired: Gekoppelt
+airplay.device.password: Passwort erforderlich
+airplay.device.pin: Code erforderlich
+airplay.device.unsupported: Nicht unterstützt
 airplay.devices: AirPlay-Geräte
+airplay.diagnostics: Diagnose
+airplay.diagnostics.buffered: Gepuffert
+airplay.diagnostics.clock: Takt
+airplay.diagnostics.metadataFailed: Fehler bei Titelinformationen
+airplay.diagnostics.noClockExchange: Der Empfänger hat noch keine Taktnachrichten ausgetauscht. shairport-sync tut das nie; bei einem Apple-Empfänger bedeutet das, dass er dem Takt nicht folgt und stumm bleibt.
+airplay.diagnostics.packets: Gesendete Pakete
+airplay.diagnostics.sendErrors: Sendefehler pro Sekunde
+airplay.diagnostics.underruns: Aussetzer pro Sekunde
 airplay.disconnectAll: Alle trennen
 airplay.disconnectConfirm: Möchtest du die Verbindung zu diesem Gerät wirklich trennen?
 airplay.electronDisabledDesc: AirPlay und Casting wurden für Electron-Builds deaktiviert, bis sie im Community-Plugin-System neu implementiert werden.
+airplay.error.badRequest: Diese AirPlay-Anfrage konnte nicht ausgeführt werden. Versuche es erneut.
+airplay.error.connect: Cider konnte keine Verbindung zum Empfänger herstellen.
+airplay.error.credentials: Cider konnte die Kopplung für diesen Empfänger nicht verwenden.
+airplay.error.deviceNotFound: Dieser Empfänger ist nicht mehr im Netzwerk. Suche erneut und versuche es noch einmal.
+airplay.error.internal: Bei AirPlay ist ein Fehler aufgetreten. Versuche es erneut.
+airplay.error.noSession: Keine AirPlay-Sitzung ist aktiv.
+airplay.error.pairing: Die Kopplung mit dem Empfänger ist fehlgeschlagen.
+airplay.error.passwordRejected: Der Empfänger hat dieses Passwort nicht akzeptiert.
+airplay.error.unavailable: AirPlay ist in dieser Version von Cider nicht verfügbar.
 airplay.experimentalDesc: Dieses Feature ist experimentell und kann viele Fehler enthalten. Die Wiedergabe verzögert sich um ca. 2–3 Sekunden, was an der Funktionsweise dieses Features liegt.
+airplay.forget: Vergessen
+airplay.headerDesc: Cider streamt jeweils an einen AirPlay-Empfänger. Der Lautsprecher spielt etwas verzögert gegenüber der App ab.
 airplay.httpCasting: HTTP-Casting
+airplay.noDevices: Keine AirPlay-Empfänger in diesem Netzwerk gefunden.
+airplay.pairAgain: Erneut koppeln
+airplay.pairing.codeLabel: Code
+airplay.pairing.connectPasswordPrompt: Gib das AirPlay-Passwort für {device} ein.
+airplay.pairing.newCode: Der Empfänger zeigt einen neuen Code an.
+airplay.pairing.pair: Koppeln
+airplay.pairing.passwordLabel: AirPlay-Passwort
+airplay.pairing.passwordPrompt: Gib das AirPlay-Passwort ein, das auf diesem Empfänger festgelegt ist.
+airplay.pairing.pinPrompt: Gib den Code ein, der auf dem Empfänger angezeigt wird.
+airplay.pairing.requesting: Der Empfänger wird gebeten, einen Code anzuzeigen ...
+airplay.pairing.retryIn: Erneut versuchen in {seconds} s
+airplay.pairing.stopped: Der Empfänger lehnt weitere Versuche ab. Starte ihn neu und kopple dann erneut.
+airplay.sessionEnded: Die Sitzung mit {device} wurde beendet.
+airplay.sessionEndedReason: "Die Sitzung mit {device} wurde beendet: {reason}"
 airplay.supportNotice: Support-Hinweis
+airplay.tapBlocked.element: Der Empfänger ist pausiert, während dieses Element auf diesem Computer wiedergegeben wird.
+airplay.tapBlocked.passthrough: Dieser Titel wird über einen geschützten oder Dolby-Atmos-Pfad wiedergegeben, den AirPlay nicht übertragen kann. Deshalb wird er stattdessen auf diesem Gerät abgespielt.
+airplay.tapBlocked.video: Musikvideos werden nur auf diesem Gerät abgespielt. AirPlay wird mit dem nächsten Song fortgesetzt.
+airplay.timing.none: Keine
+airplay.timing.ptpFollow: Dem Empfänger folgen
 airplay.title: AirPlay
+airplay.transient.confirm: Trotzdem verbinden
+airplay.transient.message: Dieser Empfänger verlangt weder Code noch Passwort, daher ist die Verbindung nicht authentifiziert. Ein anderes Gerät in deinem Netzwerk könnte sich als Empfänger ausgeben und den Stream empfangen. Fahre nur in einem Netzwerk fort, dem du vertraust.
+airplay.transient.title: Ohne Kopplung verbinden?
+airplay.unauthenticated: Nicht authentifiziert
 album.appleDigitalMaster.label: Apple Digital Master
 album.atmos.noInfo: Keine zusätzlichen Informationen verfügbar.
 album.atmos.partial: Teilweises Atmos
@@ -5291,6 +5339,14 @@ settings.option.experimental.reinstallwidevine: WidevineCDM neu installieren
 settings.option.experimental.reinstallwidevine.confirm: Möchtest du Widevine wirklich neu installieren?
 settings.option.experimental.unknownPlugin: Unbekannte Quellen
 settings.option.experimental.unknownPlugin.description: Installation von Plugins aus anderen Quellen als dem Cider-Plugin-Repository zulassen
+settings.option.experiments.airplay: AirPlay aktivieren
+settings.option.experiments.airplay.description: Fügt eine AirPlay-Schaltfläche für Apple TV, HomePod und andere AirPlay-2-Empfänger in diesem Netzwerk hinzu.
+settings.option.experiments.airplayTiming: AirPlay-Timing
+settings.option.experiments.airplayTiming.auto: Automatisch
+settings.option.experiments.airplayTiming.description: Wie Cider die Zeit mit dem Empfänger synchron hält. Belasse es auf Automatisch, es sei denn, ein Empfänger bleibt stumm.
+settings.option.experiments.airplayTiming.ntp: NTP
+settings.option.experiments.airplayTiming.ptp: PTP
+settings.option.experiments.airplayTiming.ptpFollow: Dem Takt des Empfängers folgen (experimentell)
 settings.option.experiments.aura: Aura
 settings.option.experiments.aura.description: Färbt den Hintergrund der App mit den Farben der aktuellen Seite.
 settings.option.experiments.chromecast: Chromecast aktivieren
