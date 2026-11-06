@@ -227,15 +227,63 @@ action.update: Uuenda
 action.validate: Kinnita
 airplay.codeDialog.message: Palun sisesta oma Apple TV ekraanil kuvatav kood
 airplay.codeDialog.title: Sisesta AirPlay kood
+airplay.connectedLatency: Ühendatud · {ms} ms viivitusega
 airplay.copiedAddress: Aadress kopeeriti lõikelauale
+airplay.device.noPairing: Sidumine puudub
+airplay.device.paired: Seotud
+airplay.device.password: Nõutav parool
+airplay.device.pin: Nõutav kood
+airplay.device.unsupported: Ei ole toetatud
 airplay.devices: AirPlay seadmed
+airplay.diagnostics: Diagnostika
+airplay.diagnostics.buffered: Puhverdatud
+airplay.diagnostics.clock: Kell
+airplay.diagnostics.metadataFailed: Loo teabe tõrked
+airplay.diagnostics.noClockExchange: Vastuvõtja pole veel kellasõnumeid vahetanud. shairport-sync ei vaheta neid kunagi; Apple'i vastuvõtja puhul tähendab see, et ta ei jälgi kella ja jääb vaikseks.
+airplay.diagnostics.packets: Saadetud paketid
+airplay.diagnostics.sendErrors: Saatmisvead sekundis
+airplay.diagnostics.underruns: Katkestused sekundis
 airplay.disconnectAll: Katkesta kõigi ühendus
 airplay.disconnectConfirm: Kas oled kindel, et soovid selle seadme ühenduse katkestada?
 airplay.electronDisabledDesc: AirPlay ja voogedastus on Electroni versioonides keelatud, kuni need kogukonna pistikprogrammide süsteemis uuesti kirjutatakse.
+airplay.error.badRequest: Seda AirPlay'i päringut ei õnnestunud täita. Proovi uuesti.
+airplay.error.connect: Cider ei saanud vastuvõtjaga ühendust luua.
+airplay.error.credentials: Cider ei saanud selle vastuvõtja jaoks sidumist kasutada.
+airplay.error.deviceNotFound: See vastuvõtja ei ole enam võrgus. Otsi uuesti ja proovi uuesti.
+airplay.error.internal: AirPlay'iga läks midagi valesti. Proovi uuesti.
+airplay.error.noSession: AirPlay'i seanss ei ole aktiivne.
+airplay.error.pairing: Vastuvõtjaga sidumine ebaõnnestus.
+airplay.error.passwordRejected: Vastuvõtja ei aktsepteerinud seda parooli.
+airplay.error.unavailable: AirPlay ei ole selles Cideri versioonis saadaval.
 airplay.experimentalDesc: See funktsioon on eksperimentaalne ja võib sisaldada vigu. Taasesitus viibib umbes 2–3 sekundit, mis tuleneb selle funktsiooni toimimispõhimõttest.
+airplay.forget: Unusta
+airplay.headerDesc: Cider voogedastab korraga ühele AirPlay-vastuvõtjale. Kõlar mängib rakendusest veidi hiljem.
 airplay.httpCasting: HTTP-voogedastus
+airplay.noDevices: Selles võrgus ei leitud ühtegi AirPlay-vastuvõtjat.
+airplay.pairAgain: Seo uuesti
+airplay.pairing.codeLabel: Kood
+airplay.pairing.connectPasswordPrompt: Sisesta seadme {device} AirPlay-parool.
+airplay.pairing.newCode: Vastuvõtja kuvab uue koodi.
+airplay.pairing.pair: Seo
+airplay.pairing.passwordLabel: AirPlay-parool
+airplay.pairing.passwordPrompt: Sisesta selle vastuvõtja AirPlay-parool.
+airplay.pairing.pinPrompt: Sisesta vastuvõtjal kuvatav kood.
+airplay.pairing.requesting: Palun vastuvõtjal kood kuvada...
+airplay.pairing.retryIn: Proovi uuesti {seconds} s pärast
+airplay.pairing.stopped: Vastuvõtja keeldub edasistest katsetest. Taaskäivita see ja seo siis uuesti.
+airplay.sessionEnded: Seanss seadmega {device} lõppes.
+airplay.sessionEndedReason: "Seanss seadmega {device} lõppes: {reason}"
 airplay.supportNotice: Tugiinfo
+airplay.tapBlocked.element: Vastuvõtja on peatatud, kuna see üksus mängib sellel arvutis.
+airplay.tapBlocked.passthrough: See lugu mängib kaitstud või Dolby Atmos'e teed pidi, mida AirPlay ei suuda edastada, seega mängib see hoopis selles seadmes.
+airplay.tapBlocked.video: Muusikavideod mängivad ainult selles seadmes. AirPlay jätkub järgmise looga.
+airplay.timing.none: Puudub
+airplay.timing.ptpFollow: Järgib vastuvõtjat
 airplay.title: AirPlay
+airplay.transient.confirm: Ühenda sellegipoolest
+airplay.transient.message: See vastuvõtja ei nõua koodi ega parooli, seega ühendust ei autentita. Sinu võrgus olev muu seade võib end selle vastuvõtjana esitleda ja voo kätte saada. Jätka ainult usaldusväärses võrgus.
+airplay.transient.title: Kas ühendada ilma sidumata?
+airplay.unauthenticated: Autentimata
 album.appleDigitalMaster.label: Apple Digital Master
 album.atmos.noInfo: Lisateave puudub.
 album.atmos.partial: Osaline Atmos
@@ -5460,6 +5508,14 @@ settings.option.experimental.reinstallwidevine: Installi WidevineCDM uuesti
 settings.option.experimental.reinstallwidevine.confirm: Kas oled kindel, et soovid Widevine'i uuesti installida?
 settings.option.experimental.unknownPlugin: Tundmatud allikad
 settings.option.experimental.unknownPlugin.description: Luba pluginate installimine muudest hoidlatest peale Cideri pluginate hoidla
+settings.option.experiments.airplay: Luba AirPlay
+settings.option.experiments.airplay.description: Lisab nupu AirPlay jaoks Apple TV, HomePod'i ja teiste selle võrgu AirPlay 2 vastuvõtjate jaoks.
+settings.option.experiments.airplayTiming: AirPlay'i ajastus
+settings.option.experiments.airplayTiming.auto: Automaatne
+settings.option.experiments.airplayTiming.description: Kuidas Cider vastuvõtjaga aega hoiab. Jäta automaatseks, kui vastuvõtja just vaikseks ei jää.
+settings.option.experiments.airplayTiming.ntp: NTP
+settings.option.experiments.airplayTiming.ptp: PTP
+settings.option.experiments.airplayTiming.ptpFollow: Järgi vastuvõtja kella (katseline)
 settings.option.experiments.aura: Aura
 settings.option.experiments.aura.description: Värvib rakenduse tausta praeguse lehe värvidega.
 settings.option.experiments.chromecast: Luba Chromecast
