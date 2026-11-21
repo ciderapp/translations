@@ -92,6 +92,7 @@ Every entry below came from a community member through a [translation issue](../
 <!-- translators:start -->
 | Translator | Languages | Entries |
 | --- | --- | --- |
+| [@StrandyLoL](https://github.com/StrandyLoL) | Spanish (Latin America) | 6725 |
 | [@JackW25](https://github.com/JackW25) | Icelandic | 3185 |
 | [@Tesutarin](https://github.com/Tesutarin) | Chinese (Simplified) | 2208 |
 | [@jay900604](https://github.com/jay900604) | Chinese (Hong Kong), Chinese (Simplified), Chinese (Traditional) | 1624 |
