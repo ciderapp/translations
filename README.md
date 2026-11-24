@@ -99,9 +99,9 @@ Every entry below came from a community member through a [translation issue](../
 | [@mpratsaki](https://github.com/mpratsaki) | Greek | 1050 |
 | [@kinlay0](https://github.com/kinlay0) | Russian | 647 |
 | [@Mercerry](https://github.com/Mercerry) | Chinese (Simplified) | 492 |
+| [@nekocats](https://github.com/nekocats) | Estonian | 153 |
 | [@szymin22](https://github.com/szymin22) | Polish | 111 |
 | [@Vudgekek](https://github.com/Vudgekek) | Croatian | 103 |
-| [@nekocats](https://github.com/nekocats) | Estonian | 93 |
 | [@lumaa-dev](https://github.com/lumaa-dev) | French | 68 |
 | [@MP-K](https://github.com/MP-K) | Korean | 27 |
 | [@ramuuflor](https://github.com/ramuuflor) | Japanese | 22 |
