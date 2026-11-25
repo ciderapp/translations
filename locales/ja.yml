@@ -36,11 +36,10 @@ action.addToPlaylist.duplicateFromAlbum: このアルバムの{total}曲中{coun
 action.addToPlaylist.duplicateFromPlaylist: このプレイリストの{total}曲中{count}曲は、すでに「{playlist}」に存在します。
 action.addToPlaylist.duplicateFromSelection: 選択した{total}曲中{count}曲は、すでに「{playlist}」に存在します。
 action.addToPlaylist.duplicateOne:
-  value: 「{songName}」はすでにプレイリスト「{playlist}」に存在します。
-  source: ai
+  value: この曲は既にあなたのプレイリスト '{playlist}' にあります
+  source: human
   by: "@ramuuflor"
   issue: 20
-  superseded_at: 2026-07-08
 action.addToPlaylist.duplicateOneShort: 「{songName}」はすでに「{playlist}」に存在します。
 action.addToPlaylist.duplicateTitle: 重複する曲
 action.addToPlaylist.failed: プレイリストへの追加に失敗しました
@@ -65,17 +64,15 @@ action.addToQueue:
   by: "@ramuuflor"
   issue: 20
 action.addToQueue.error:
-  value: キューへの追加エラー
-  source: ai
+  value: 「次に再生」に追加できませんでした
+  source: human
   by: "@ramuuflor"
   issue: 20
-  superseded_at: 2026-07-08
 action.addToQueue.success:
-  value: キューに追加しました
-  source: ai
+  value: 「次に再生」に項目が追加されました
+  source: human
   by: "@ramuuflor"
   issue: 20
-  superseded_at: 2026-07-08
 action.appleMusic.enterUrl: Apple Music URLを入力
 action.appleMusic.invalidUrl: 有効なApple Music URLではありません
 action.appleMusic.yourProfile: プロフィール
@@ -112,23 +109,20 @@ action.cut: 切り取り
 action.decline: 却下
 action.delete: 削除
 action.deleteFolder:
-  value: フォルダ「{{folderName}}」を削除してもよろしいですか？
-  source: ai
+  value: 本当に "{{folderName}}"を削除しますか?
+  source: human
   by: "@ramuuflor"
   issue: 20
-  superseded_at: 2026-07-08
 action.deleteFolder.message:
-  value: このフォルダ内のすべてのフォルダとプレイリストも削除されます。
-  source: ai
+  value: このフォルダー内のすべてのフォルダーとプレイリストは削除されます
+  source: human
   by: "@ramuuflor"
   issue: 20
-  superseded_at: 2026-07-08
 action.deletePlaylist:
-  value: プレイリスト「{{playlistName}}」を削除してもよろしいですか？
-  source: ai
+  value: 本当に "{{playlistName}}"を削除しますか?
+  source: human
   by: "@ramuuflor"
   issue: 20
-  superseded_at: 2026-07-08
 action.deletepreset: プリセットを削除
 action.deny: 拒否
 action.disablePlugins:
@@ -138,11 +132,10 @@ action.disablePlugins:
   issue: 20
 action.disconnect: 接続解除
 action.dislike:
-  value: おすすめを減らす
-  source: ai
+  value: これに似たものをおすすめしない
+  source: human
   by: "@ramuuflor"
   issue: 20
-  superseded_at: 2026-07-08
 action.dismissHint: 任意の場所をクリックして閉じる
 action.done: 完了
 action.edit: 編集
@@ -215,23 +208,20 @@ action.removeFromLibrary.confirm: ライブラリから「$ITEMNAME」を削除�
 action.removeFromLibrary.success: ライブラリから削除しました
 action.removeFromPlaylist: プレイリストから削除
 action.removeFromQueue:
-  value: キューから削除
-  source: ai
+  value: 「次に再生」から項目を削除
+  source: human
   by: "@ramuuflor"
   issue: 20
-  superseded_at: 2026-07-08
 action.removeFromQueue.error:
-  value: キューからの削除中にエラーが発生しました
-  source: ai
+  value: 「次に再生」から削除できませんでした
+  source: human
   by: "@ramuuflor"
   issue: 20
-  superseded_at: 2026-07-08
 action.removeFromQueue.success:
-  value: キューから削除しました
-  source: ai
+  value: 「次に再生」から項目が削除されました
+  source: human
   by: "@ramuuflor"
   issue: 20
-  superseded_at: 2026-07-08
 action.removeTracks: キューから ${self.selectedItems.length} 曲を削除
 action.rename: 名前を変更
 action.repeat.all: すべてリピート
@@ -989,23 +979,22 @@ ciderAudio.action.downloadAdditionalProfiles:
   by: "@ramuuflor"
   issue: 20
 ciderAudio.marketplacePresetMigrationNotice:
-  value: "設定されていた1つ以上の Cider Audio ラボのプリセットがアプリから削除され、Cider Marketplace で利用可能になりました。\r
+  value: "設定済みのCider Audio labsプリセットがアプリから削除されました。今後はCiderマーケットプレイスから入手できます。\r
 
     <br>\r
 
     <br>\r
 
-    Cider Audio のプリセットはデフォルト値にリセットされました。\r
+    Cider Audioのプリセットをデフォルト設定にリセットしました。\r
 
     <br>\r
 
     <br>\r
 
-    Marketplace から新しいプリセットをインストールすると、以前の設定が復元されます。"
-  source: ai
+    マーケットプレイスから新しいプリセットをインストールすると、以前の設定が復元されます。"
+  source: human
   by: "@ramuuflor"
   issue: 20
-  superseded_at: 2026-07-08
 client.boot.backendUnavailable: Cider はポート 10767 でローカルサービスを開始できませんでした。別のプログラムが使用している可能性があります。そのプログラムを閉じてから、Cider を再度開いてください。
 client.boot.cancel: キャンセル
 client.boot.elevatedWarning: Cider は管理者として実行されています。設定の破損を防ぐため、このセッションでは変更を保存しません。Cider をいったん閉じて、通常の方法で再度開いてください。
@@ -1159,11 +1148,10 @@ gallery.submitSnippet: スニペットを送信
 gallery.submitTheme: テーマを送信する
 general.closeToTray: 閉じるとトレイに格納
 general.closeToTray.description:
-  value: 閉じるボタンを押したときにCiderウィンドウを最小化します
-  source: ai
+  value: 閉じるボタンはサイダーを最小化します
+  source: human
   by: "@ramuuflor"
   issue: 20
-  superseded_at: 2026-07-08
 home.artistsFeed: アーティストフィード
 home.artistsFeed.noArtist: アーティストをフォローして最新リリースをチェックしましょう
 home.bento.a11y.boardLabel: ホームウィジェット
@@ -5031,10 +5019,9 @@ settings.notifications.category.general: 一般
 settings.notifications.category.general.description: 独自のカテゴリを持たないすべての通知。
 settings.notifications.category.listeningTogether:
   value: 一緒に聴く
-  source: ai
+  source: human
   by: "@sh-ayu"
   issue: 91
-  superseded_at: 2026-10-16
 settings.notifications.category.listeningTogether.description: パーティーへの招待、ゲストの参加や退出、およびセッションのステータス。
 settings.notifications.category.lyrics: 歌詞
 settings.notifications.category.lyrics.description: 歌詞の検索、貢献、および音訳。
@@ -5747,11 +5734,10 @@ settings.option.v3: V3
 settings.option.v3rp: V3 RP
 settings.option.visual.accentColor: アクセントカラー
 settings.option.visual.adaptiveColorPercent:
-  value: アダプティブカラーの割合
-  source: ai
+  value: アダプティブカラーの適用率
+  source: human
   by: "@sh-ayu"
   issue: 91
-  superseded_at: 2026-10-16
 settings.option.visual.additionalAnimatedArtwork: カタログ内の追加のアニメーションアートワーク
 settings.option.visual.additionalAnimatedArtwork.description: 利用可能な場合、より多くのアニメーションアートワークを表示します。画面上に多く表示されると、パフォーマンスが低下する可能性があります。
 settings.option.visual.animateArtworkOnHover: ホバー時にメディアアイテムのアートワークをアニメーション
@@ -5851,11 +5837,10 @@ settings.option.visual.immersive.keepCompletedLyrics: 完了した歌詞を保�
 settings.option.visual.immersive.keepCompletedLyrics.description: 歌詞ビューで、すでに歌い終わった歌詞を表示したままにします。
 settings.option.visual.immersive.layout.default: One（デフォルト）
 settings.option.visual.immersive.layout.minimal:
-  value: ミニマル
-  source: ai
+  value: Minimal
+  source: human
   by: "@ramuuflor"
   issue: 20
-  superseded_at: 2026-07-08
 settings.option.visual.immersive.layout.oneClassic: One Classic
 settings.option.visual.immersive.layout.solarium: Solarium
 settings.option.visual.immersive.layout.sonoma: Sonoma
@@ -6031,11 +6016,10 @@ settings.option.visual.uiscale: UIスケール
 settings.option.visual.useAdaptiveColors: 適応カラーを使用
 settings.option.visual.useAdaptiveColors.description: 現在の曲に合わせてアクセントカラーを変更する
 settings.option.visual.useAdaptiveColors.popup:
-  value: アダプティブカラーは次のトラックから適用されます。
-  source: ai
+  value: アダプティブカラーは次のトラックで有効になります
+  source: human
   by: "@ramuuflor"
   issue: 20
-  superseded_at: 2026-07-08
 settings.option.visual.verticalDrawerMode: キューと歌詞の配置
 settings.option.visual.verticalDrawerMode.auto.description: 縦向きの画面ではプレイヤーやコンテンツの下部に、ワイド画面ではサイドにドロワーを表示します。
 settings.option.visual.verticalDrawerMode.bottom: 下部ドロワー
@@ -6880,10 +6864,9 @@ term.sortBy: 並べ替え
 term.sortBy.album: アルバム
 term.sortBy.albumOrder:
   value: アルバム順
-  source: ai
+  source: human
   by: "@ramuuflor"
   issue: 20
-  superseded_at: 2026-07-08
 term.sortBy.artist: アーティスト
 term.sortBy.dateAdded: 追加日
 term.sortBy.defaultOrder: デフォルトの順序
@@ -6893,10 +6876,9 @@ term.sortBy.name: 名前
 term.sortBy.none: なし
 term.sortBy.playlistOrder:
   value: プレイリスト順
-  source: ai
+  source: human
   by: "@ramuuflor"
   issue: 20
-  superseded_at: 2026-07-08
 term.sortBy.trackNumber: トラック番号
 term.sortingOrder: 並べ替え順序
 term.sortOrder: A-Z
