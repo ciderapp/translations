@@ -30,6 +30,8 @@ import { addLocale } from '../scripts/add-locale.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const REAL_LANGUAGES = readFileSync(join(ROOT, 'locales/languages.yml'), 'utf8');
+// The registry as it was before Icelandic joined, so tests can add 'is' again.
+const REGISTRY_WITHOUT_IS = REAL_LANGUAGES.replace(/\n  is:\n(?: {4}.*\n)*/, '\n');
 
 describe('BCP 47', () => {
   test('accepts the codes this repo already ships, plus Icelandic', () => {
@@ -82,7 +84,7 @@ describe('BCP 47', () => {
 
 describe('languages.yml registry', () => {
   test('inserts is between id and it without dropping comments', () => {
-    const { text, added } = insertLanguage(REAL_LANGUAGES, 'is', {
+    const { text, added } = insertLanguage(REGISTRY_WITHOUT_IS, 'is', {
       name: 'Icelandic', native: 'Íslenska',
     });
     assert.equal(added, true);
@@ -97,7 +99,7 @@ describe('languages.yml registry', () => {
   });
 
   test('insert is a no-op when the code exists', () => {
-    const once = insertLanguage(REAL_LANGUAGES, 'is', { name: 'Icelandic', native: 'Íslenska' });
+    const once = insertLanguage(REGISTRY_WITHOUT_IS, 'is', { name: 'Icelandic', native: 'Íslenska' });
     const twice = insertLanguage(once.text, 'is', { name: 'Nope', native: 'Nope' });
     assert.equal(twice.added, false);
     assert.equal(twice.languages.is.name, 'Icelandic');
@@ -107,8 +109,8 @@ describe('languages.yml registry', () => {
     assert.equal(mergeLanguageRegistryText(REAL_LANGUAGES, REAL_LANGUAGES).text, REAL_LANGUAGES);
     assert.deepEqual(mergeLanguageRegistryText(REAL_LANGUAGES, REAL_LANGUAGES).extras, []);
 
-    const local = insertLanguage(REAL_LANGUAGES, 'is', { name: 'Icelandic', native: 'Íslenska' }).text;
-    const { text, extras } = mergeLanguageRegistryText(REAL_LANGUAGES, local);
+    const local = insertLanguage(REGISTRY_WITHOUT_IS, 'is', { name: 'Icelandic', native: 'Íslenska' }).text;
+    const { text, extras } = mergeLanguageRegistryText(REGISTRY_WITHOUT_IS, local);
     assert.deepEqual(extras, ['is']);
     assert.equal(parseLanguagesFile(text).languages.is.name, 'Icelandic');
     assert.match(text, /snapshotted: 2026-05-20/);
@@ -144,7 +146,7 @@ describe('languages.yml registry', () => {
     const dir = mkdtempSync(join(tmpdir(), 'cider-lang-'));
     try {
       mkdirSync(join(dir, 'locales'));
-      writeFileSync(join(dir, 'locales/languages.yml'), REAL_LANGUAGES);
+      writeFileSync(join(dir, 'locales/languages.yml'), REGISTRY_WITHOUT_IS);
       const a = registerLanguageOnDisk(dir, 'is', { name: 'Icelandic', native: 'Íslenska' });
       const b = registerLanguageOnDisk(dir, 'is', { name: 'Icelandic', native: 'Íslenska' });
       assert.equal(a.added, true);
@@ -363,7 +365,7 @@ describe('addLocale maintainer gate', () => {
     process.env.ALLOW_NEW_LOCALE = '1';
     try {
       mkdirSync(join(dir, 'locales'));
-      writeFileSync(join(dir, 'locales/languages.yml'), REAL_LANGUAGES);
+      writeFileSync(join(dir, 'locales/languages.yml'), REGISTRY_WITHOUT_IS);
       const result = await addLocale({
         code: 'is', name: 'Icelandic', native: 'Íslenska', root: dir,
       });
