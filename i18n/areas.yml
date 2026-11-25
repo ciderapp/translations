@@ -1,0 +1,138 @@
+# i18n/areas.yml
+#
+# The functional areas strings are grouped by, so translators can work one
+# screen at a time and see where a string shows up. scripts/i18n-context.mjs
+# resolves every key in en-US.yml to one area and writes i18n/context/.
+#
+# A key gets the area of its longest matching `keys` prefix. Keys whose
+# prefix is shared across the app (action., term., verb.) have no prefix rule
+# here: they take the area of the first source file that uses them, matched
+# against `paths` (relative to Citadel's packages/frontend/src). Source paths
+# are only read in CI; nothing but the area and component names is written
+# to this public repo.
+#
+# Add an area here when a new screen ships. Area ids are stable: issues and
+# worklists refer to them.
+
+areas:
+  # ── Desktop: settings, one area per settings page ──────────────────────────
+  settings.general:
+    name: Settings › General
+    keys: [settings.general., settings.option.general., settings.option.window., settings.option.behavior., settings.search., settings.prompt., settings.warn.]
+  settings.audio:
+    name: Settings › Audio
+    keys: [settings.audio., settings.option.audio., settings.automix., settings.crossfade., settings.normalization., settings.option.sweetener., settings.feel., audio., audiolab., ciderAudio., spatial., playbackSpeed.]
+  settings.visual:
+    name: Settings › Appearance
+    keys: [settings.visual., settings.option.visual., settings.immersive., settings.micaish., settings.fonts., settings.artwork., settings.customCss.]
+  settings.lyrics:
+    name: Settings › Lyrics
+    keys: [settings.lyrics., settings.option.lyrics.]
+  settings.connectivity:
+    name: Settings › Connections
+    keys: [settings.connectivity., settings.option.connectivity., settings.discord., settings.devices., settings.airplay., discord.]
+  settings.notifications:
+    name: Settings › Notifications
+    keys: [settings.notifications., settings.option.notifications., settings.notyf.]
+  settings.accessibility:
+    name: Settings › Accessibility and Performance
+    keys: [settings.accessibility., settings.option.accessibility., settings.performance., settings.option.performance., settings.power., settings.intensive.]
+  settings.advanced:
+    name: Settings › Advanced
+    keys: [settings.advanced., settings.option.advanced., settings.option.experiments., settings.option.experimental., settings.option.debug., settings.tweaks., settings.cache., settings.resetCider., settings.configBackups., settings.takeout., settings.troubleshooting., settings.client., developer., config.]
+  settings.extensions:
+    name: Settings › Themes and Plugins
+    keys: [settings.extensions., plugin., marketplace.]
+  settings.account:
+    name: Settings › Profile, Privacy and Updates
+    keys: [settings.profile., settings.privacy., settings.updates., settings.about., updates., about.]
+  settings.shell:
+    name: Settings › Navigation and headers
+    description: The settings sidebar, page titles and the short summaries under each page name.
+    keys: [settings.nav., settings.header., settings.description., settings.option.]
+    paths: [components/settings/]
+  settings.other:
+    name: Settings › Other pages
+    keys: [settings.]
+
+  # ── Desktop: main window ────────────────────────────────────────────────────
+  shell:
+    name: Sidebar, top bar and window
+    description: The left sidebar, the top bar, the window menus and the command palette.
+    keys: [sidebar., chromeTop., shell3., menubar., menu., commandCenter., pageHistory., nativeUi., tooltips.]
+    paths: [layouts/, components/chrome/, components/applemusic/chrome/, components/applemusic/AMSidebar]
+  player:
+    name: Player, queue and Now Playing
+    keys: [nowPlaying., sleepTimer., previouslyPlayed., musicVideo., playbackHealth.]
+    paths: [components/applemusic/queue/, components/applemusic/immersive/, components/applemusic/AMQueue, components/applemusic/miniplayer-layouts/, components/applemusic/NowPlaying, stores/playback-health]
+  lyrics:
+    name: Lyrics view
+    keys: [lyrics.]
+    paths: [components/cider/lyrics/, utils/ttml]
+  lyrics.editor:
+    name: Lyrics editor and contributions
+    description: The lyrics contribution pages under Settings › Lyrics, where people time, edit and review lyrics.
+    keys: [lyrics.contrib., lyrics.suggestions., lyrics.layers.]
+    paths: [components/settings/pages/lyrics-contributions/]
+  library:
+    name: Library, playlists and smart playlists
+    keys: [library., playlist., smartPlaylist., settings.smartPlaylists., settings.option.smartPlaylists., album., sorting., properties., gallery.]
+    paths: [components/applemusic/playlists/, components/applemusic/FolderListView, components/applemusic/dialog/, pages/gallery/, components/gallery/]
+  browse:
+    name: Home, browse, search and concerts
+    keys: [home., catalog., concerts., settings.option.concerts., podcast., replay.]
+    paths: [components/applemusic/pageContent/, pages/am/]
+  context-menus:
+    name: Right-click menus
+    paths: [musickit/composables/mediaitem-context-menu, musickit/menus/, components/applemusic/MediaItemContextMenu, lib/ContextMenu/]
+  assistant:
+    name: Sid (music assistant)
+    keys: [assistant.]
+    paths: [lib/assistant/, components/assistant/]
+  connect:
+    name: Cider Connect, listening parties and casting
+    keys: [link., connect., party., cast., airplay., remote., share.]
+    paths: [lib/link/, components/link/, lib/party/, components/cider/party/, components/remote-connect/, stores/cast-store]
+  oobe:
+    name: First-run setup
+    keys: [oobe.]
+    paths: [pages/oobe/, layouts/Oobe]
+  account:
+    name: Sign-in, Taproom and Apple Music account
+    keys: [auth., taproom., client., contentRestrictions., spotify.]
+    paths: [lib/auth/, musickit/auth]
+  notifications:
+    name: Notifications, dialogs and errors
+    keys: [notify., notification., notificationCenter., dialog., error., bugReport., hostReinstall.]
+    paths: [lib/notificationCategories]
+  shared:
+    name: Shared words and buttons
+    description: Short words used in many places (Play, Add, Cancel, Song). Keep them short and consistent; one change shows up everywhere.
+    keys: [action., term., verb., general., app., date., locale., i18n.]
+
+  # ── Cider for Android ───────────────────────────────────────────────────────
+  android.settings:
+    name: Android › Settings
+    keys: [mobile.settings.]
+  android.sid:
+    name: Android › Sid
+    keys: [mobile.sid.]
+  android.player:
+    name: Android › Player, queue and lyrics
+    keys: [mobile.player., mobile.queue., mobile.lyrics., mobile.playback., mobile.sleepTimer., mobile.station., mobile.xr., mobile.ciderAudio., mobile.voice.]
+  android.library:
+    name: Android › Library and playlists
+    keys: [mobile.library., mobile.addToPlaylist., mobile.folder., mobile.playlist., mobile.artist., mobile.album., mobile.history., mobile.sort., mobile.detail., mobile.replay., mobile.home., mobile.search., mobile.concerts., mobile.soundFinder.]
+  android.setup:
+    name: Android › Onboarding, sign-in and updates
+    keys: [mobile.onboarding., mobile.signIn., mobile.update., mobile.taproom., mobile.sync., mobile.coachmark., mobile.about.]
+  android.remote:
+    name: Android › Remote control
+    keys: [mobile.remote.]
+  android.other:
+    name: Android › Other
+    keys: [mobile.]
+
+  other:
+    name: Other
+    description: Strings no rule places yet. Add a rule above when you see a pattern.

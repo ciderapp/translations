@@ -60,8 +60,9 @@ import { fileURLToPath, pathToFileURL } from 'url';
 import { parse as parseYaml, stringify as stringifyYaml } from 'yaml';
 import { loadOwners, ownerOf, loadConsumers } from './lib/owners.mjs';
 import { compareIcu, acceptableIcu, pluralCategories, makeIcuCheck } from './lib/icu.mjs';
+import { loadAreas, areaByKey, loadContext } from './lib/areas.mjs';
 import {
-  englishHash, isStale, loadState, saveState, seedState, englishAtLastFill,
+  englishHash, isStale, isCosmeticChange, upgradeStamp, loadState, saveState, seedState, englishAtLastFill,
 } from './lib/fill-state.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -287,10 +288,13 @@ export function buildSystemPrompt({ platform = 'desktop', icu = false, lang = 'e
   return prompt.replace('\n\nRules:\n', `\n\nRules:\n${extra.join('\n')}\n`);
 }
 
-export function buildUserPrompt(strings, targetLang, targetLangName) {
+export function buildUserPrompt(strings, targetLang, targetLangName, area = null) {
   const sourceJson = JSON.stringify(strings, null, 2);
+  const where = area
+    ? `\nThey all appear in one part of Cider: ${area.name}.${area.description ? ` ${area.description}` : ''}\n`
+    : '';
   return `Translate the following UI strings from English to ${targetLangName} (locale: ${targetLang}).
-
+${where}
 English strings:
 ${sourceJson}`;
 }
@@ -423,8 +427,8 @@ export async function callAnthropic(userPrompt, {
   throw new Error(`Rate limited after ${retries} retries`);
 }
 
-async function translateBatch(strings, targetLang, targetLangName, apiOptions) {
-  const userPrompt = buildUserPrompt(strings, targetLang, targetLangName);
+async function translateBatch(strings, targetLang, targetLangName, apiOptions, area = null) {
+  const userPrompt = buildUserPrompt(strings, targetLang, targetLangName, area);
   const response = await callAnthropic(userPrompt, apiOptions);
   const parsed = parseTranslationJson(response);
 
@@ -458,6 +462,7 @@ const isHumanEntry = (e) => !!e && typeof e === 'object' && e.source === 'human'
  *                (feeds mergeTranslations: a human entry there is superseded)
  *   copies       key -> value copied from a same-English desktop translation
  *   pruned       keys removed (AI translations of an owner's deleted keys)
+ *   restamped    human keys kept through a cosmetic English edit
  *   locale       the locale after pruning
  *   state        the state after pruning
  */
@@ -481,16 +486,32 @@ export function planLocale({ sourceStrings, existing, state, owners, isIcuKey, f
     delete locale[key];
     pruned.push(key);
   }
+  // A key that left en-US.yml but whose translation stays (desktop never
+  // prunes) keeps its stamp. On 2026-07-08 one bad Citadel sync dropped 838
+  // keys for eight hours; the fill in between dropped their stamps, so when
+  // the same English came back every human translation of it was superseded.
   for (const key of Object.keys(nextState)) {
-    if (!Object.hasOwn(sourceStrings, key) || !Object.hasOwn(locale, key)) delete nextState[key];
+    if (!Object.hasOwn(locale, key)) delete nextState[key];
   }
 
   const toTranslate = {};
   const changed = new Set();
+  const restamped = [];
   for (const [key, english] of Object.entries(sourceStrings)) {
     if (typeof english !== 'string' || !english.trim()) continue;
     if (force) { toTranslate[key] = english; changed.add(key); continue; }
-    if (!isStale(key, english, locale, nextState)) continue;
+    if (!isStale(key, english, locale, nextState)) {
+      if (Object.hasOwn(nextState, key)) nextState[key] = upgradeStamp(nextState[key], english);
+      continue;
+    }
+    // A human translation survives a cosmetic English edit (case, quotes,
+    // punctuation): on 2026-10-16 a switch to sentence case superseded 663
+    // human entries whose meaning hadn't changed.
+    if (isHumanEntry(locale[key]) && isCosmeticChange(key, english, nextState)) {
+      nextState[key] = englishHash(english);
+      restamped.push(key);
+      continue;
+    }
     toTranslate[key] = english;
     if (Object.hasOwn(locale, key)) changed.add(key);
   }
@@ -521,7 +542,7 @@ export function planLocale({ sourceStrings, existing, state, owners, isIcuKey, f
     }
   }
 
-  return { toTranslate, changed, copies, pruned, locale, state: nextState };
+  return { toTranslate, changed, copies, pruned, restamped, locale, state: nextState };
 }
 
 /**
@@ -549,18 +570,21 @@ export function acceptTranslations({ translated, sourceStrings, isIcuKey }) {
  * Group keys into batches that share a prompt: same owner platform, ICU or
  * not. Returns [{ platform, icu, entries: [[key, english], ...] }].
  */
-export function groupBatches(toTranslate, { owners, isIcuKey, batchSize }) {
+export function groupBatches(toTranslate, { owners, isIcuKey, batchSize, areaOf = null }) {
   const groups = new Map();
   for (const [key, english] of Object.entries(toTranslate)) {
     const platform = ownerOf(key, owners).platform;
     const icu = isIcuKey(key);
-    const id = `${platform}|${icu}`;
-    if (!groups.has(id)) groups.set(id, { platform, icu, entries: [] });
+    // With areas known, a batch is one screen's strings, so the prompt can
+    // say where they appear (i18n/areas.yml).
+    const area = areaOf ? areaOf(key) : null;
+    const id = `${platform}|${icu}|${area?.id ?? ''}`;
+    if (!groups.has(id)) groups.set(id, { platform, icu, area, entries: [] });
     groups.get(id).entries.push([key, english]);
   }
   const batches = [];
   for (const g of groups.values()) {
-    for (const entries of chunk(g.entries, batchSize)) batches.push({ platform: g.platform, icu: g.icu, entries });
+    for (const entries of chunk(g.entries, batchSize)) batches.push({ platform: g.platform, icu: g.icu, area: g.area, entries });
   }
   return batches;
 }
@@ -589,12 +613,15 @@ export function mergeTranslations(existing, translations, changedSourceKeys) {
     const englishChanged = changedSourceKeys.has(key);
 
     if (wasHuman && englishChanged) {
-      // Human entry being superseded. Preserve attribution, mark as AI.
+      // Human entry being superseded. Preserve attribution, mark as AI, and
+      // keep the human text so a translator can restore or adapt it.
       out[key] = {
         ...old,
         value: newValue,
         source: 'ai',
         superseded_at: today,
+        previous: old.value,
+        review: true,
       };
     } else if (isMap) {
       // Map entry but not human. Refresh the value, keep the shape.
@@ -640,7 +667,8 @@ async function main() {
       // A locale whose state has never been written needs a run to seed it.
       if (state === null && Object.keys(existing).length) { pending.push(lang); continue; }
       const plan = planLocale({ sourceStrings, existing, state: state ?? {}, owners, isIcuKey, force: FORCE });
-      if (Object.keys(plan.toTranslate).length || Object.keys(plan.copies).length || plan.pruned.length) {
+      const stateMoved = JSON.stringify(plan.state) !== JSON.stringify(state ?? {});
+      if (Object.keys(plan.toTranslate).length || Object.keys(plan.copies).length || plan.pruned.length || stateMoved) {
         pending.push(lang);
       }
     }
@@ -681,6 +709,16 @@ async function main() {
   const consumers = loadConsumers(CONSUMERS_DIR);
   const isIcuKey  = makeIcuCheck({ sourceStrings, owners, consumers });
   log.info(`Owners: ${owners.map(o => o.name).join(', ')}`);
+  // Areas and context live beside owners.yml (i18n/); without them, batches
+  // are grouped by platform alone.
+  const areasFile = join(dirname(OWNERS_FILE), 'areas.yml');
+  let areaOf = null;
+  if (existsSync(areasFile)) {
+    const areas = loadAreas(areasFile);
+    const byId = new Map(areas.map(a => [a.id, a]));
+    const context = loadContext(join(dirname(OWNERS_FILE), 'context'));
+    areaOf = (key) => byId.get(context[key]?.area ?? areaByKey(key, areas) ?? 'other') ?? null;
+  }
   if (FORCE) log.warn('--force: every key will be re-translated');
 
   // Resolve target languages from locales/languages.yml.
@@ -736,7 +774,7 @@ async function main() {
     const toTranslateCount = Object.keys(plan.toTranslate).length;
     const reuseCount = Object.keys(plan.copies).length;
     log.info(`Existing: ${Object.keys(existing).length}  ·  To translate: ${toTranslateCount}` +
-      `  ·  Reused: ${reuseCount}  ·  Pruned: ${plan.pruned.length}`);
+      `  ·  Reused: ${reuseCount}  ·  Pruned: ${plan.pruned.length}  ·  Kept (cosmetic English edit): ${plan.restamped.length}`);
 
     if (DRY_RUN) {
       const preview = Object.entries(plan.toTranslate).slice(0, 5);
@@ -748,13 +786,13 @@ async function main() {
     const translations = { ...plan.copies };
     totalReused += reuseCount;
 
-    const batches = groupBatches(plan.toTranslate, { owners, isIcuKey, batchSize: BATCH_SIZE });
+    const batches = groupBatches(plan.toTranslate, { owners, isIcuKey, batchSize: BATCH_SIZE, areaOf });
     if (batches.length) log.step(`Translating ${toTranslateCount} strings in ${batches.length} batch(es)…`);
     else if (!reuseCount && !plan.pruned.length) { log.success('All strings already translated'); totalSkipped++; }
 
     let batchErrors = 0;
     for (let i = 0; i < batches.length; i++) {
-      const { platform, icu, entries } = batches[i];
+      const { platform, icu, area, entries } = batches[i];
       const batchObj = Object.fromEntries(entries);
       process.stdout.write(`  Batch ${i + 1}/${batches.length} (${platform}${icu ? ', ICU' : ''})… `);
 
@@ -763,7 +801,7 @@ async function main() {
         const translated = await translateBatch(batchObj, lang, name, {
           system: buildSystemPrompt({ platform, icu, lang }),
           onUsage: (u) => { usage = u; },
-        });
+        }, area);
         const { accepted, rejected } = acceptTranslations({ translated, sourceStrings, isIcuKey });
         Object.assign(translations, accepted);
         const count = Object.keys(accepted).length;

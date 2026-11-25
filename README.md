@@ -44,6 +44,10 @@ Three things keep this repo healthy:
 | `i18n/fill-state/<code>.yml` | Bookkeeping for the AI fill: which English each translation was made from. Written by the bots. |
 | `i18n/consumers/<app>.yml` | Desktop keys the Android app also reads. Written by the Android sync. |
 | [`scripts/i18n-sync-source.mjs`](scripts/i18n-sync-source.mjs) | What each app's sync runs to update its own keys in `en-US.yml`. |
+| [`i18n/areas.yml`](i18n/areas.yml) | The functional areas strings are grouped by (Settings › Audio, Sidebar, Sid…). |
+| `i18n/context/<app>.yml` | Each key's area and the components that use it. Written by the app syncs. |
+| [`i18n/notes.yml`](i18n/notes.yml) | Notes for translators, one per key, written by people. |
+| [`scripts/i18n-worklist.mjs`](scripts/i18n-worklist.mjs) | A language's strings for one area, with English and context as comments, ready to edit and paste into an issue. |
 
 ## File format
 
@@ -63,7 +67,19 @@ action.back:
 
 The runtime reads `value` (or the scalar). The extra fields are credit metadata.
 
-When an AI re-translation overwrites a human entry (because the English source changed), the map is preserved with `source: ai` and a `superseded_at` date, so credit isn't lost. The original contributor is notified on the issue thread.
+When the English changes only cosmetically (letter case, quotes, ellipses, trailing punctuation), a human entry stays as it is. When the meaning changes, the AI re-translates it: the map keeps `source: ai`, a `superseded_at` date, the contributor's text as `previous` and `review: true`, so credit isn't lost and the old wording is one copy away. The original contributor is notified on the issue thread.
+
+## Working by area
+
+Every key belongs to one functional area from [`i18n/areas.yml`](i18n/areas.yml), so you can translate one screen at a time:
+
+```sh
+node scripts/i18n-worklist.mjs --lang zh-CN --summary                 # areas and what's left in each
+node scripts/i18n-worklist.mjs --lang zh-CN --area settings.audio     # one area, ready to edit
+node scripts/i18n-worklist.mjs --lang zh-CN --only review             # entries flagged after an English change
+```
+
+Each line comes with its English, its status and the components that use it as comments. Edit the values and paste the lines you changed into a translation issue.
 
 ## Two apps, one file
 
