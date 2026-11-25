@@ -28,9 +28,15 @@
  *                        kept. A straight overwrite wiped Croatian (2026-05-25)
  *                        and Estonian (2026-06-08).
  *   --root <dir>         Repository root (default: this script's repo)
+ *   --refs <path>        key -> source paths that use it (the owner's extractor
+ *                        output). Writes i18n/context/<owner>.yml with each
+ *                        key's area and component names; paths stay in CI.
+ *   --allow-removals     Delete more of the owner's keys than removalLimit()
+ *                        allows in one sync (a deliberate cleanup)
  *
  * Exits 1, changing nothing, if the source holds a key the owner doesn't own,
- * a key of the wrong shape, or (for ICU owners) a value that doesn't parse.
+ * a key of the wrong shape, (for ICU owners) a value that doesn't parse, or
+ * when it would delete more of the owner's keys than removalLimit() allows.
  */
 
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
@@ -39,8 +45,10 @@ import { fileURLToPath, pathToFileURL } from 'url';
 import { parse as parseYaml, stringify as stringifyYaml } from 'yaml';
 import { loadOwners, ownerOf, ownerNamed, loadConsumers } from './lib/owners.mjs';
 import { icuArguments, isBorrowableEnglish } from './lib/icu.mjs';
-import { stringifySource } from './lib/source-yaml.mjs';
+import { stringifySource, sortKeys } from './lib/source-yaml.mjs';
 import { mergeLanguageRegistryText } from './lib/locale-registry.mjs';
+import { loadAreas } from './lib/areas.mjs';
+import { buildContext } from './i18n-context.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -84,6 +92,16 @@ export function syncSource({ current, source, owner, owners }) {
     ownerOf(k, owners).name === owner.name && !Object.hasOwn(source, k));
 
   return { result, added, removed, changed, errors };
+}
+
+/**
+ * How many of an owner's keys one sync may delete before it needs a person to
+ * confirm. On 2026-07-08 a single Citadel run deleted 838 keys that came back
+ * unchanged eight hours later; that shape is almost always an extraction
+ * glitch, not a real deletion.
+ */
+export function removalLimit(ownedCount) {
+  return Math.max(25, Math.ceil(ownedCount * 0.02));
 }
 
 /** Borrowed keys: a list, or a map of key -> inline English. */
@@ -136,6 +154,7 @@ function main() {
   const sourcePath = arg('--source', null);
   const borrowedPath = arg('--borrowed', null);
   const languagesPath = arg('--languages', null);
+  const refsPath = arg('--refs', null);
   if (!ownerName || !sourcePath) {
     console.error('usage: i18n-sync-source.mjs --owner <name> --source <file> [--borrowed <file>] [--languages <file>]');
     process.exit(2);
@@ -160,6 +179,14 @@ function main() {
   if (errors.length) {
     for (const e of errors) annotate('error', e);
     console.error(`refusing to sync: ${errors.length} problem(s) in ${owner.name}'s source`);
+    process.exit(1);
+  }
+
+  const owned = Object.keys(current).filter(k => ownerOf(k, owners).name === owner.name).length;
+  if (removed.length > removalLimit(owned) && !args.includes('--allow-removals')) {
+    annotate('error', `${owner.name}'s sync would delete ${removed.length} of its ${owned} keys ` +
+      `(limit ${removalLimit(owned)}). If that's intended, re-run with --allow-removals.`);
+    console.error(`first few: ${removed.slice(0, 10).join(', ')}`);
     process.exit(1);
   }
 
@@ -195,6 +222,17 @@ function main() {
     const dir = join(root, 'i18n/consumers');
     mkdirSync(dir, { recursive: true });
     writeFileSync(join(dir, `${owner.name}.yml`), borrowedOut, 'utf8');
+  }
+  if (refsPath) {
+    const refs = readYamlMap(refsPath, 'refs');
+    const areas = loadAreas(join(root, 'i18n/areas.yml'));
+    const context = buildContext({ source: result, refs, owner, owners, areas });
+    const dir = join(root, 'i18n/context');
+    mkdirSync(dir, { recursive: true });
+    writeFileSync(join(dir, `${owner.name}.yml`),
+      `# Translator context for ${owner.repo ?? owner.name}'s keys. Written by its sync\n` +
+      '# (scripts/i18n-context.mjs); do not edit by hand. Notes go in i18n/notes.yml.\n' +
+      stringifyYaml(sortKeys(context), { lineWidth: 0 }), 'utf8');
   }
   if (languagesPath) {
     const dest = join(root, 'locales/languages.yml');
