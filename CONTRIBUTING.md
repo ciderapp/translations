@@ -35,7 +35,9 @@ Cider follows Apple Music's house style.
 
 ## When the English source changes
 
-If a string's English text changes after you translate it, the AI re-translates it. That's intentional; the old human translation was for the old English. You'll get pinged on the original issue thread when this happens and can file a new issue with a corrected version.
+If only the English's letter case, quotes or punctuation change, your translation stays.
+
+If its meaning changes, the AI re-translates it, since your translation was for the old English. Your text is kept beside the new one as `previous`, the entry is flagged `review: true`, and you'll get pinged on the original issue thread. `node scripts/i18n-worklist.mjs --lang <code> --only review` lists every flagged entry with the old and new English, so you can file one issue with corrections.
 
 Your name stays attached in the YAML even after an AI re-translation (`source: ai` plus the original `by` and `issue` fields), so credit isn't lost.
 
